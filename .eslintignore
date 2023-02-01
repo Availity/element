@@ -1,0 +1,11 @@
+.yarn
+!.storybook/
+
+docs/
+storybook-docs/
+coverage/
+static/
+
+/**/.docusaurus
+/**/build
+/**/dist
