@@ -33,9 +33,7 @@
     },
     {
       "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
-      "env": {
-        "vite": true
-      },
+      "env": {},
       "rules": {}
     }
   ]

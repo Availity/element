@@ -1,0 +1,79 @@
+# This workflow will do a clean install of node dependencies, build the source code, and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  # This job will:
+  #   * deploy a draft every time there is a pull request created or synchronized that is not on main branch
+  #   * comment on that pull request with the deploy URL
+  build:
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node: [16]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.BOT_TOKEN }}
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v3
+
+      - name: Set Node Version
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - name: Restore yarn cache
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-${{ matrix.node }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.node }}-yarn-
+
+      # - name: Artifactory Check
+      #   run: yarn check:registry
+
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Build
+        run: yarn build:all
+
+      - name: Lint
+        run: yarn nx affected --target=lint
+
+      - name: Unit Test
+        run: yarn nx affected --target=test
+
+      - name: Version Bump Dry Run
+        run: yarn version:dry-run
+
+      # - name: Upload coverage report
+      #   uses: codecov/codecov-action@v3 # FIXME: no CI provider detected
+      #   with:
+      #     file: ./coverage/coverage-final.json
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+
+      # - name: Build Docs (Node 16+ Only)
+      #   if: ${{matrix.node > 14}}
+      #   run: yarn build:docs
+
+      # - name: Build Storybook
+      #   run: yarn build:storybook
