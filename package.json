@@ -69,6 +69,8 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "build:all": "yarn nx run-many --target=build --all"
+    "build:all": "yarn nx run-many --target=build --all",
+    "version": "nx affected --target version --parallel=1",
+    "version:dry-run": "nx affected --target version --dryRun --parallel=1"
   }
 }
