@@ -14,10 +14,12 @@
     "node": "^16.0.0"
   },
   "scripts": {
-    "build": "yarn nx run-many --target=build --all",
+    "build": "nx run-many --target=build --all",
     "clean": "nx run-many --target=clean --all",
+    "lint:affected": "nx affected --target=lint",
     "prepare": "is-ci || husky install",
     "test": "nx run-many --target=test --all",
+    "test:affected": "nx affected --target=lint",
     "version": "nx affected --target version --parallel=1",
     "version:dry-run": "nx affected --target version --dryRun --parallel=1"
   },

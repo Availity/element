@@ -57,10 +57,10 @@ jobs:
         run: yarn build
 
       - name: Lint
-        run: yarn nx affected --target=lint
+        run: yarn lint:affected
 
       - name: Unit Test
-        run: yarn nx affected --target=test
+        run: yarn test:affected
 
       - name: Version Bump Dry Run
         run: yarn version:dry-run
