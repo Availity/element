@@ -54,7 +54,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Build
-        run: yarn build:all
+        run: yarn build
 
       - name: Lint
         run: yarn nx affected --target=lint
