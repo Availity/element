@@ -9,3 +9,4 @@ static/
 /**/.docusaurus
 /**/build
 /**/dist
+dist/

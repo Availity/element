@@ -1,6 +1,6 @@
 {
   "root": true,
-  "ignorePatterns": ["**/*"],
+  "ignorePatterns": [],
   "plugins": ["@nrwl/nx"],
   "overrides": [
     {
@@ -33,6 +33,7 @@
     },
     {
       "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
       "env": {},
       "rules": {}
     }

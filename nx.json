@@ -42,7 +42,7 @@
         "babel": true
       },
       "library": {
-        "unitTestRunner": "vite"
+        "unitTestRunner": "jest"
       }
     }
   }

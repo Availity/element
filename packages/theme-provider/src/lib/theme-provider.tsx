@@ -1,4 +1,4 @@
-import { lightTheme } from '@availity/design-tokens';
+import { lightTheme } from '@availity/theme';
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
 import type { Theme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
