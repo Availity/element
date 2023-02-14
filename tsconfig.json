@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compileOnSave": false,
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "preserveWatchOutput": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictFunctionTypes": false,
+    "strictNullChecks": true,
+    "lib": ["ES2017", "dom"],
+    "module": "ESNext",
+    "target": "ES6",
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@availity/design-tokens": ["packages/design-tokens/src/index.ts"],
+      "@availity/element": ["packages/element/src/index.ts"],
+      "@availity/theme": ["packages/theme/src/index.ts"],
+      "@availity/theme-provider": ["packages/theme-provider/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
