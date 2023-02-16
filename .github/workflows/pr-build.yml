@@ -53,8 +53,11 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
-      - name: Build
+      - name: Build packages
         run: yarn build
+
+      - name: Build Docs
+        run: yarn build:storybook
 
       - name: Lint
         run: yarn lint:affected
