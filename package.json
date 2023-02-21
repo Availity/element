@@ -19,11 +19,14 @@
     "clean": "nx run-many --target=clean --all",
     "lint:affected": "nx affected --target=lint",
     "prepare": "is-ci || husky install",
+    "publish:affected": "nx affected --target=publish",
+    "publish:affected:canary": "nx affected --target=publish:canary",
     "start:storybook": "nx storybook element-storybook",
     "test": "nx run-many --target=test --all",
-    "test:affected": "nx affected --target=lint",
-    "version": "nx affected --target version --parallel=1",
-    "version:dry-run": "nx affected --target version --dryRun --parallel=1"
+    "test:affected": "nx affected --target=test",
+    "version:affected": "nx affected --target=version --parallel=1",
+    "version:affected:canary": "nx affected --target=version --parallel=1 --verbose --preid=alpha --releaseAs=prerelease",
+    "version:dry-run": "nx affected --target version --dryRun --parallel=1 --verbose"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",

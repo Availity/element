@@ -1,5 +1,21 @@
-# theme
+# @availity/theme
 
-## Running unit tests
+> Theme using @availity/design-tokens
 
-Run `nx test theme` to execute the unit tests
+[![Version](https://img.shields.io/npm/v/@availity/theme.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/theme)
+[![NPM Downloads](https://img.shields.io/npm/dt/@availity/theme.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/theme)
+[![Dependecy Status](https://img.shields.io/librariesio/release/npm/@availity/theme?style=for-the-badge)](https://github.com/Availity/element/blob/master/packages/theme/package.json)
+
+## Installation
+
+### NPM
+
+```bash
+npm install @availity/theme
+```
+
+### Yarn
+
+```bash
+yarn add @availity/theme
+```
