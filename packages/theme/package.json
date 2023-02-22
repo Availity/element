@@ -1,6 +1,6 @@
 {
   "name": "@availity/theme",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Theme for the Element design system",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
@@ -11,7 +11,6 @@
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "clean": "rm -rf dist",
     "clean:nm": "rm -rf node_modules",
-    "bundlesize": "bundlesize",
     "publish": "yarn npm publish --tolerate-republish --access public",
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
