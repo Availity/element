@@ -86,6 +86,9 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
+      - name: Build Packages
+        run: yarn build
+
       # TODO: ngx-deploy-npm? Or continue to leverage nx + yarn npm publish command?
       - name: Release
         run: |
