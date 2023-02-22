@@ -15,7 +15,3 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 ### Features
 
 * **theme-provider:** create component ([c532d6e](https://github.com/Availity/element/commit/c532d6e21c29f428c05a3b2159c18d95555dbbbb))
-
-# Changelog
-
-This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
