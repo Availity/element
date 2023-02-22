@@ -17,7 +17,3 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 ### Features
 
 * **theme:** add theme pkg ([44adfc4](https://github.com/Availity/element/commit/44adfc4c8cdb5be111796ee78edb7388f48806fe))
-
-# Changelog
-
-This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
