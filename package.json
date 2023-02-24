@@ -16,6 +16,7 @@
   "scripts": {
     "build": "nx run-many --target=build --all",
     "build:storybook": "nx build-storybook element-storybook",
+    "build:storybook:ci": "nx run element-storybook:build-storybook:ci",
     "clean": "nx run-many --target=clean --all",
     "lint:affected": "nx affected --target=lint",
     "prepare": "is-ci || husky install",
