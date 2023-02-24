@@ -21,7 +21,7 @@
       "executor": "@nrwl/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/storybook/element-storybook",
+        "outputDir": "dist/storybook",
         "configDir": "apps/element-storybook/.storybook"
       },
       "configurations": {
