@@ -109,5 +109,6 @@ jobs:
           build_dir: dist/storybook
           commit_message: deployed docs [skip ci]
           committer: ${{ secrets.GH_USER }} ${{ secrets.GH_EMAIL }}
+          jekyll: false
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
