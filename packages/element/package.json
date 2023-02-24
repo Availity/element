@@ -14,7 +14,8 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/theme-provider": "workspace:*"
+    "@availity/theme-provider": "workspace:*",
+    "@mui/material": "^5.11.9"
   },
   "devDependencies": {
     "react": "18.2.0",
