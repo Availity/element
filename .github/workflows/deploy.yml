@@ -99,16 +99,15 @@ jobs:
           yarn publish:affected
           git push && git push --tags
 
-      # TODO: nx caching
-      # - name: Build Docs
-      #   run: yarn nx build docusaurus
+      - name: Build Docs
+        run: yarn build:storybook:ci
 
-      # - name: Deploy Docs
-      #   uses: crazy-max/ghaction-github-pages@v3
-      #   with:
-      #     target_branch: gh-pages
-      #     build_dir: docusaurus/build
-      #     commit_message: deployed docs [skip ci]
-      #     committer: ${{ secrets.GH_USER }} ${{ secrets.GH_EMAIL }}
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+      - name: Deploy Docs
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: dist/storybook
+          commit_message: deployed docs [skip ci]
+          committer: ${{ secrets.GH_USER }} ${{ secrets.GH_EMAIL }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
