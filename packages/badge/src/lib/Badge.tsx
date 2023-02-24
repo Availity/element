@@ -7,10 +7,8 @@ export type BadgeProps = {
   children: React.ReactNode;
 } & MUIBadgeProps;
 
-const Badge = ({ children, ...rest }: BadgeProps): JSX.Element => (
+export const Badge = ({ children, ...rest }: BadgeProps): JSX.Element => (
   <MUIBadge {...rest}>
     {children}
   </MUIBadge>
 );
-
-export default Badge;

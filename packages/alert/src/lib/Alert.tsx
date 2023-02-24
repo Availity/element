@@ -7,10 +7,8 @@ export type AlertProps = {
   children: React.ReactNode;
 } & MUIAlertProps;
 
-const Alert = ({ children, ...rest }: AlertProps): JSX.Element => (
+export const Alert = ({ children, ...rest }: AlertProps): JSX.Element => (
   <MUIAlert {...rest}>
     {children}
   </MUIAlert>
 );
-
-export default Alert;

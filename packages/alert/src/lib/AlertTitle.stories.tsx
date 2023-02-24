@@ -1,6 +1,6 @@
 import React from 'react';
 import type { StoryObj } from '@storybook/react';
-import Alert from './Alert';
+import { Alert } from './Alert';
 import { AlertTitle } from './AlertTitle';
 
 export default {
