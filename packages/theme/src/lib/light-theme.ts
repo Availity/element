@@ -93,7 +93,7 @@ export const lightTheme = {
       800: tokens.colorBlue800,
       900: tokens.colorBlue900,
     },
-    contrastThreshold: 2,
+    contrastThreshold: 4.5,
     contrastText: '#fff',
     tonalOffset: 0.2,
     text: {
