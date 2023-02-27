@@ -1,3 +1,4 @@
+*.mdx
 **/*.test.tsx
 **/*.test.ts
-**/*.stories.tsx
+**/stories/
