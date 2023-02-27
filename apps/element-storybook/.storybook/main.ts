@@ -4,10 +4,8 @@ const config: StorybookConfig = {
   stories: [
     '../src/*.mdx',
     '../src/*.stories.@(js|jsx|ts|tsx)',
-    '!../../../packages/**/node_modules/',
-    '../../../packages/**/*.mdx',
-    '../../../packages/**/src/lib/*.stories.@(js|jsx|ts|tsx)',
-    '../../../packages/**/src/lib/stories/'
+    '../../../packages/*/*.mdx',
+    '../../../packages/*/src/lib/stories/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-docs',
@@ -21,6 +19,7 @@ const config: StorybookConfig = {
       },
     },
   },
+  features: { storyStoreV7: false }
 };
 
 export default config;
