@@ -4,7 +4,7 @@ import {LoadingButton, LoadingButtonProps} from '@mui/lab'
 import type {ButtonProps} from '@mui/material'
 
 
-const meta: Meta<typeof Button & { activePage: string }> = {
+const meta: Meta<typeof Button> = {
     /* 👇 The title prop is optional.
      * See https://storybook.js.org/docs/7.0/react/configure/overview#configure-story-loading
      * to learn how to generate automatic titles
@@ -29,11 +29,12 @@ const meta: Meta<typeof Button & { activePage: string }> = {
   );
   Default.storyName = 'Primary';
 
+ 
   export const LoaderButton: Story = ({
     variant,
     color,
     isLoading,
   }: LoadingButtonProps & {isLoading: boolean}) => (
-    <LoadingButton variant={variant} color={color} loading={isLoading}>Primary</LoadingButton>
+    <LoadingButton loadingPosition='end' variant={variant} color={color} loading={isLoading}>Primary</LoadingButton>
   );
  LoaderButton.storyName = 'Loader';

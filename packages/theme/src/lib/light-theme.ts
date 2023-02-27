@@ -249,12 +249,17 @@ export const lightTheme = {
           disableRipple: true, // No more ripple, on the whole application 💣!
           disableElevation: true
         },
+        styleOverrides: {
+          root: {
+            minWidth: '128px',
+            textTransform: "none"
+          }
+        },
         variants: [
           {
             props: { color: "tertiary", variant: "contained" },
             style: {
               backgroundColor: tokens.colorTertiaryMain,
-              textTransform: "none",
               color: tokens.colorTertiaryContrast,
               "&:hover": {
                 backgroundColor: tokens.colorTertiaryDark
@@ -273,7 +278,6 @@ export const lightTheme = {
             props: { color: "secondary" },
             style: {
               backgroundColor: tokens.colorSecondaryMain,
-              textTransform: "none",
               color: tokens.colorSecondaryContrast,
               "&:hover": {
                 backgroundColor: tokens.colorSecondaryDark
@@ -292,7 +296,6 @@ export const lightTheme = {
             props: { color: "primary" },
             style: {
               backgroundColor: tokens.colorPrimaryMain,
-              textTransform: "none",
               color: tokens.colorPrimaryContrast,
               "&:hover": {
                 backgroundColor: tokens.colorPrimaryDark
