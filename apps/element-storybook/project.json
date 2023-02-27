@@ -15,7 +15,8 @@
         "ci": {
           "quiet": true
         }
-      }
+      },
+      "dependsOn": ["^build"]
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
