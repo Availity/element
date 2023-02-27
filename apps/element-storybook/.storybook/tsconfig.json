@@ -25,5 +25,6 @@
     "../../../packages/**/src/lib/*.stories.jsx",
     "../../../packages/**/src/lib/*.stories.ts",
     "../../../packages/**/src/lib/*.stories.tsx",
+    "../../../packages/**/src/lib/stories/*",
   ]
 }

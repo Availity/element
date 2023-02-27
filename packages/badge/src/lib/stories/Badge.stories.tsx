@@ -1,6 +1,6 @@
 import React from 'react';
 import type { StoryObj } from '@storybook/react';
-import { Badge, BadgeProps } from './Badge';
+import { Badge, BadgeProps } from '../Badge';
 
 export default {
   title: 'Components/Badge/Badge',
@@ -8,7 +8,7 @@ export default {
   tags: ['autodocs']
 };
 
-export const _Badge: StoryObj<typeof Badge> = {
+export const Default: StoryObj<typeof Badge> = {
   render: (args: BadgeProps) => (
     <Badge {...args} />
   ),

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { StoryObj } from '@storybook/react';
-import { Alert } from './Alert';
-import { AlertTitle } from './AlertTitle';
+import { Alert } from '../Alert';
+import { AlertTitle } from '../AlertTitle';
 
 export default {
   title: 'Components/Alert/AlertTitle',
@@ -9,7 +9,7 @@ export default {
   tags: ['autodocs']
 };
 
-export const _AlertTitle: StoryObj<typeof AlertTitle> = {
+export const Default: StoryObj<typeof AlertTitle> = {
   render: (args ) => (
     <Alert>
       <AlertTitle {...args}/>
