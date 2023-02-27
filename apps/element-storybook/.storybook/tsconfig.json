@@ -21,9 +21,9 @@
     "../src/*.stories.jsx",
     "../src/*.stories.tsx",
     "../../../packages/*.mdx",
-    "../../../packages/**/src/lib/*.stories.js",
-    "../../../packages/**/src/lib/*.stories.jsx",
-    "../../../packages/**/src/lib/*.stories.ts",
-    "../../../packages/**/src/lib/*.stories.tsx",
+    "../../../packages/*/src/lib/*.stories.js",
+    "../../../packages/*/src/lib/*.stories.jsx",
+    "../../../packages/*/src/lib/*.stories.ts",
+    "../../../packages/*/src/lib/*.stories.tsx",
   ]
 }

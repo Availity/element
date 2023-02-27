@@ -1,4 +1,3 @@
-import React from 'react';
 import type { StoryObj } from '@storybook/react';
 import { Alert, AlertProps } from './Alert';
 
