@@ -242,4 +242,73 @@ export const lightTheme = {
       color: tokens.colorTextPrimary,
     },
   },
-};
+    components: {
+      MuiButton: {
+        defaultProps: {
+          // The props to change the default for.
+          disableRipple: true, // No more ripple, on the whole application 💣!
+          disableElevation: true
+        },
+        variants: [
+          {
+            props: { color: "tertiary", variant: "contained" },
+            style: {
+              backgroundColor: tokens.colorTertiaryMain,
+              textTransform: "none",
+              color: tokens.colorTertiaryContrast,
+              "&:hover": {
+                backgroundColor: tokens.colorTertiaryDark
+              },
+              "&:focus": {
+                backgroundColor: tokens.colorTertiaryDark,
+                outline: "2px solid white",
+                boxShadow: "0 0 0px 4px rgba(0,0,0,1)"
+              },
+              "&:active": {
+                backgroundColor: tokens.colorTertiaryMain
+              }
+            }
+          },
+          {
+            props: { color: "secondary" },
+            style: {
+              backgroundColor: tokens.colorSecondaryMain,
+              textTransform: "none",
+              color: tokens.colorSecondaryContrast,
+              "&:hover": {
+                backgroundColor: tokens.colorSecondaryDark
+              },
+              "&:focus": {
+                backgroundColor: tokens.colorSecondaryDarker,
+                outline: "2px solid white",
+                boxShadow: "0 0 0px 4px rgba(0,0,0,1)"
+              },
+              "&:active": {
+                backgroundColor: tokens.colorSecondaryMain
+              }
+            }
+          },
+          {
+            props: { color: "primary" },
+            style: {
+              backgroundColor: tokens.colorPrimaryMain,
+              textTransform: "none",
+              color: tokens.colorPrimaryContrast,
+              "&:hover": {
+                backgroundColor: tokens.colorPrimaryDark
+              },
+              "&:focus": {
+                backgroundColor: tokens.colorPrimaryMain,
+                outline: "2px solid white",
+                boxShadow: "0 0 0px 4px rgba(21,82,188,1)"
+              },
+              "&:active": {
+                backgroundColor: tokens.colorPrimaryLight
+              }
+            }
+          }
+        ]
+      }
+    }
+}
+
