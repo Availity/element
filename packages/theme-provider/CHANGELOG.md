@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/theme-provider@0.1.2...@availity/theme-provider@0.2.0) (2023-03-01)
+
+
+### Features
+
+* **theme:** update theme for button ([164f831](https://github.com/Availity/element/commit/164f83114c732da85f53bcf772f22b5436f2e9ff))
+
 ## [0.1.2](https://github.com/Availity/element/compare/@availity/theme-provider@0.1.1...@availity/theme-provider@0.1.2) (2023-02-22)
 
 
