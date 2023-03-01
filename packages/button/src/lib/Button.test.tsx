@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import { Alert } from './Button';
+import { Button } from './Button';
 
-describe('Alert', () => {
+describe('Button', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<Alert>Test</Alert>);
+    const { getByText } = render(<Button>Test</Button>);
     expect(getByText('Test')).toBeTruthy();
   });
 });

@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { Button } from '@mui/material';
-import {LoadingButton, LoadingButtonProps} from '@mui/lab'
+import { Button, LoadingButton } from '@availity/element';
+import type {LoadingButtonProps} from '@mui/lab'
 import type {ButtonProps} from '@mui/material'
 
 
