@@ -309,8 +309,33 @@ export const lightTheme = {
                 backgroundColor: tokens.colorPrimaryLight
               }
             }
-          }
+          },
+          {
+            props: { color: "error", variant: "contained" },
+            style: {
+              backgroundColor: tokens.colorErrorMain,
+              color: tokens.colorErrorContrast,
+              "&:hover": {
+                backgroundColor: tokens.colorErrorDark
+              },
+              "&:focus": {
+                backgroundColor: tokens.colorErrorMain,
+                outline: "2px solid white",
+                boxShadow: "0 0 0px 4px rgba(21,82,188,1)"
+              },
+              "&:active": {
+                backgroundColor: tokens.colorErrorLight
+              }
+            }
+          } 
         ]
+      },
+      MuiLoadingButton: {
+        styleOverrides: {
+          root: {
+            position: 'relative'
+          }
+        }
       }
     }
 }
