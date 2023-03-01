@@ -93,7 +93,7 @@ export const lightTheme = {
       800: tokens.colorBlue800,
       900: tokens.colorBlue900,
     },
-    contrastThreshold: 2,
+    contrastThreshold: 4.5,
     contrastText: '#fff',
     tonalOffset: 0.2,
     text: {
@@ -242,4 +242,101 @@ export const lightTheme = {
       color: tokens.colorTextPrimary,
     },
   },
-};
+    components: {
+      MuiButton: {
+        defaultProps: {
+          // The props to change the default for.
+          disableRipple: true, // No more ripple, on the whole application 💣!
+          disableElevation: true
+        },
+        styleOverrides: {
+          root: {
+            minWidth: '128px',
+            textTransform: "none"
+          }
+        },
+        variants: [
+          {
+            props: { color: "tertiary", variant: "contained" },
+            style: {
+              backgroundColor: tokens.colorTertiaryMain,
+              color: tokens.colorTertiaryContrast,
+              "&:hover": {
+                backgroundColor: tokens.colorTertiaryDark
+              },
+              "&:focus": {
+                backgroundColor: tokens.colorTertiaryDark,
+                outline: "2px solid white",
+                boxShadow: "0 0 0px 4px rgba(0,0,0,1)"
+              },
+              "&:active": {
+                backgroundColor: tokens.colorTertiaryMain
+              }
+            }
+          },
+          {
+            props: { color: "secondary" },
+            style: {
+              backgroundColor: tokens.colorSecondaryMain,
+              color: tokens.colorSecondaryContrast,
+              "&:hover": {
+                backgroundColor: tokens.colorSecondaryDark
+              },
+              "&:focus": {
+                backgroundColor: tokens.colorSecondaryDarker,
+                outline: "2px solid white",
+                boxShadow: "0 0 0px 4px rgba(0,0,0,1)"
+              },
+              "&:active": {
+                backgroundColor: tokens.colorSecondaryMain
+              }
+            }
+          },
+          {
+            props: { color: "primary" },
+            style: {
+              backgroundColor: tokens.colorPrimaryMain,
+              color: tokens.colorPrimaryContrast,
+              "&:hover": {
+                backgroundColor: tokens.colorPrimaryDark
+              },
+              "&:focus": {
+                backgroundColor: tokens.colorPrimaryMain,
+                outline: "2px solid white",
+                boxShadow: "0 0 0px 4px rgba(21,82,188,1)"
+              },
+              "&:active": {
+                backgroundColor: tokens.colorPrimaryLight
+              }
+            }
+          },
+          {
+            props: { color: "error", variant: "contained" },
+            style: {
+              backgroundColor: tokens.colorErrorMain,
+              color: tokens.colorErrorContrast,
+              "&:hover": {
+                backgroundColor: tokens.colorErrorDark
+              },
+              "&:focus": {
+                backgroundColor: tokens.colorErrorMain,
+                outline: "2px solid white",
+                boxShadow: "0 0 0px 4px rgba(21,82,188,1)"
+              },
+              "&:active": {
+                backgroundColor: tokens.colorErrorLight
+              }
+            }
+          } 
+        ]
+      },
+      MuiLoadingButton: {
+        styleOverrides: {
+          root: {
+            position: 'relative'
+          }
+        }
+      }
+    }
+}
+

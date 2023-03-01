@@ -35,6 +35,7 @@
     "@commitlint/config-conventional": "^17.0.0",
     "@commitlint/config-nx-scopes": "^17.0.0",
     "@jscutlery/semver": "^2.29.3",
+    "@mui/lab": "^5.0.0-alpha.121",
     "@nrwl/eslint-plugin-nx": "15.6.2",
     "@nrwl/jest": "15.6.2",
     "@nrwl/js": "15.6.2",
