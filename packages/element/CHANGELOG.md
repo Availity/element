@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/element@0.1.3...@availity/element@0.2.0) (2023-03-01)
+
+
+### Features
+
+* **buttons:** create new buttons ([d2dfb1a](https://github.com/Availity/element/commit/d2dfb1af0491adbcdb7d86c5a65d90d23dec5b4a))
+
 ## [0.1.3](https://github.com/Availity/element/compare/@availity/element@0.1.2...@availity/element@0.1.3) (2023-02-28)
 
 ## [0.1.2](https://github.com/Availity/element/compare/@availity/element@0.1.1...@availity/element@0.1.2) (2023-02-22)
