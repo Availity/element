@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/theme@0.1.2...@availity/theme@0.2.0) (2023-03-01)
+
+
+### Features
+
+* **theme:** contrast for 508 ([6d0b0c4](https://github.com/Availity/element/commit/6d0b0c4f7ca79438bcdbc19aa8d30181bc9ae603))
+* **theme:** finishing touches button ([fdb8c71](https://github.com/Availity/element/commit/fdb8c715dd7866f305867775b8e698810a4a255e))
+* **theme:** more minor updates ([1b5c15b](https://github.com/Availity/element/commit/1b5c15bc6cb92bc829d675c158e66066697f7e99))
+* **theme:** update theme for button ([164f831](https://github.com/Availity/element/commit/164f83114c732da85f53bcf772f22b5436f2e9ff))
+
 ## [0.1.2](https://github.com/Availity/element/compare/@availity/theme@0.1.1...@availity/theme@0.1.2) (2023-02-22)
 
 
