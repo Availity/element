@@ -80,6 +80,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@availity/mui-button@workspace:packages/button":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-button@workspace:packages/button"
+  dependencies:
+    "@mui/material": ^5.11.9
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
 "@availity/theme-provider@workspace:*, @availity/theme-provider@workspace:packages/theme-provider":
   version: 0.0.0-use.local
   resolution: "@availity/theme-provider@workspace:packages/theme-provider"
