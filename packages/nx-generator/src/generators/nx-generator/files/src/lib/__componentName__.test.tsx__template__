@@ -1,0 +1,9 @@
+import { render } from '@testing-library/react';
+import { <%= componentName %> } from './<%= componentName %>';
+
+describe('<%= componentName %>', () => {
+  test('should render successfully', () => {
+    const { getByText } = render(<<%= componentName %>>Test</<%= componentName %>>);
+    expect(getByText('Test')).toBeTruthy();
+  });
+});

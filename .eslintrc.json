@@ -36,6 +36,11 @@
       "extends": ["plugin:@nrwl/nx/typescript"],
       "env": {},
       "rules": {}
+    },
+    {
+      "files": "*.json",
+      "parser": "jsonc-eslint-parser",
+      "rules": {}
     }
   ]
 }
