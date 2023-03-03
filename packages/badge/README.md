@@ -8,7 +8,7 @@
 
 ## Documentation
 
-This package extends the MUI Badge component: [MUI Badge Docs](https://v4.mui.com/components/badges/)
+This package extends the MUI Badge component: [MUI Badge Docs](https://mui.com/components/badge/)
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-badge-introduction--docs)
 
@@ -53,5 +53,5 @@ import { Badge } from '@availity/element';
 #### Direct import
 
 ```tsx
-import Badge from '@availity/mui-badge';
+import { Badge } from '@availity/mui-badge';
 ```

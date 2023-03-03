@@ -8,7 +8,7 @@
 
 ## Documentation
 
-This package extends the MUI Alert component: [MUI Alert Docs](https://v4.mui.com/components/alert/)
+This package extends the MUI Alert component: [MUI Alert Docs](https://mui.com/components/alert/)
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-alert-introduction--docs)
 
@@ -53,5 +53,5 @@ import { Alert } from '@availity/element';
 #### Direct import
 
 ```tsx
-import Alert from '@availity/mui-alert';
+import { Alert } from '@availity/mui-alert';
 ```

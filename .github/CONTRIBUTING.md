@@ -141,11 +141,9 @@ Canary Releases can be used to test changes without impacting the `latest` tag.
 
 The first thing we need to do is create a new version to be tagged. Version bumps are generated off the latest commits to the package. You should commit any changes before running the version and publish commands.
 
-Bump the version using a `preid`. The `preid` is the tag you want to use in order to identify the release. If you want to see what version will be created without actually making the changes, then add the `--dry-run` flag to the end.
-
 ```sh
 # Dry run to make sure changes are correct
-yarn version:affected:canary --dry-run
+yarn version:affected:canary --dryRun
 
 # This will make changes to the package.json, changelog.md, and make a commit
 yarn version:affected:canary
@@ -158,5 +156,5 @@ Once you have a newly created version it will need to be published to the regist
 yarn npm login --publish
 
 # publish
-yarn nx publish:canary app-icon
+yarn publish:affected:canary
 ```
