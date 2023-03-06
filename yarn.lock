@@ -110,6 +110,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@availity/nx-generator@workspace:packages/nx-generator":
+  version: 0.0.0-use.local
+  resolution: "@availity/nx-generator@workspace:packages/nx-generator"
+  languageName: unknown
+  linkType: soft
+
 "@availity/theme-provider@workspace:*, @availity/theme-provider@workspace:packages/theme-provider":
   version: 0.0.0-use.local
   resolution: "@availity/theme-provider@workspace:packages/theme-provider"
