@@ -2,7 +2,7 @@ import React from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 import { MemoryRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
-import { AvBreadcrumbs as Breadcrumbs } from '@availity/mui-link';
+import { AvBreadcrumbs as Breadcrumbs } from '@availity/mui-breadcrumbs';
 
 
 const meta: Meta<typeof Breadcrumbs & { activePage: string }> = {
