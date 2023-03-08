@@ -140,7 +140,7 @@ export const AvBreadcrumbs = ({
   };
 
   return (
-    <Breadcrumbs separator={<NavigateNext fontSize="small" />} {...rest} maxItems={2} >
+    <Breadcrumbs separator={<NavigateNext fontSize="small" />} {...rest} maxItems={25} >
       <LinkTag aria-label="Home" href={homeUrl}>
         Home
       </LinkTag>
