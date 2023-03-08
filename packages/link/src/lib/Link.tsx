@@ -99,10 +99,3 @@ export const AvLink = ({
     </Tag>
   );
 };
-
-
-export type Crumb = {
-  url: string;
-  name: string;
-};
-
