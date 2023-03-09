@@ -1,4 +1,3 @@
-import React from 'react';
 import { AlertTitle as MUIAlertTitle } from '@mui/material';
 import type { AlertTitleProps as MUIAlertTitleProps } from '@mui/material';
 
