@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button as MUIButton } from '@mui/material';
 import {LoadingButton as MUILoadingButton} from '@mui/lab'
 import type { ButtonProps as MUIButtonProps } from '@mui/material';
