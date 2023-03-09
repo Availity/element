@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Breadcrumbs, BreadcrumbsProps as MuiBreadcrumbsProps, Typography } from '@mui/material';
 import {NavigateNext} from '@mui/icons-material'
-import {AvLink} from '@availity/mui-link'
+import {AvLink, AvLinkProps} from '@availity/mui-link'
 export interface BreadcrumbsProps extends MuiBreadcrumbsProps {
   crumbs?: Crumb[];
   active: string;
@@ -16,7 +16,7 @@ export type Crumb = {
 };
 
 
-export const BreadcrumbLink = ({children, ...rest}: {children: React.ReactNode}) => {
+export const BreadcrumbLink = ({children, ...rest}: AvLinkProps) => {
   return <AvLink {...rest}>{children}</AvLink>
 }
 
