@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Breadcrumbs, BreadcrumbsProps as MuiBreadcrumbsProps, Typography } from '@mui/material';
-import {NavigateNext} from '@mui/icons-material'
+import NavigateNext from '@mui/icons-material/NavigateNext'
 import {AvLink, AvLinkProps} from '@availity/mui-link'
 export interface BreadcrumbsProps extends MuiBreadcrumbsProps {
   crumbs?: Crumb[];
