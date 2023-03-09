@@ -56,7 +56,7 @@ const setRel = (url: string, target: string, absolute: boolean) => {
   return undefined;
 };
 
-interface Props {
+export type AvLinkProps = {
   tag?: keyof JSX.IntrinsicElements | React.ComponentType;
   href: string;
   target?: string;
@@ -76,7 +76,7 @@ export const AvLink = ({
   loadApp = true,
   rel,
   ...rest
-}: Props) => {
+}: AvLinkProps) => {
   const absolute = isAbsoluteUrl(href);
   const encode = !(absolute || !loadApp);
   const url = encode ? getUrl(href) : href;
