@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import { Breadcrumbs } from './Breadcrumbs';
+import { AvBreadcrumbs as Breadcrumbs } from './Breadcrumbs';
 
 describe('Breadcrumbs', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<Breadcrumbs>Test</Breadcrumbs>);
+    const { getByText } = render(<Breadcrumbs active='Test' linkTag='a'/>);
     expect(getByText('Test')).toBeTruthy();
   });
 });
