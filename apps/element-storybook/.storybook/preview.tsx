@@ -1,4 +1,3 @@
-import React from 'react';
 import { ThemeProvider } from '@availity/theme-provider';
 import { themes } from '@storybook/theming';
 
