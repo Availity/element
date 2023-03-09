@@ -19,6 +19,12 @@ const config: StorybookConfig = {
       },
     },
   },
+  async viteFinal(config) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    config.build.sourcemap = false;
+    return config;
+}
 };
 
 export default config;
