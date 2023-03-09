@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge as MUIBadge } from '@mui/material';
 import type { BadgeProps as MUIBadgeProps } from '@mui/material';
 // import Icon from '@availity/mui-icon';
