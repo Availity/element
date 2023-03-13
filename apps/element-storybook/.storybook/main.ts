@@ -19,6 +19,16 @@ const config: StorybookConfig = {
       },
     },
   },
+  async viteFinal(config) {
+      return {
+        ...config,
+        build: {
+          ...config.build,
+          sourcemap: false,
+          target: ['es2020'],
+        }
+      }
+    }
 };
 
 export default config;

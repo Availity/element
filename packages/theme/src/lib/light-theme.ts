@@ -336,6 +336,20 @@ export const lightTheme = {
             position: 'relative'
           }
         }
+      },
+      MuiLink: {
+        styleOverrides: {
+          root: {
+            fontWeight: 700
+          }
+        }
+      },
+      MuiBreadcrumbs: {
+        styleOverrides: {
+          separator: {
+            margin: 0
+          }
+        }
       }
     }
 }

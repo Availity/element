@@ -79,7 +79,6 @@ function addPathToRootTsConfig(host: Tree, options: NormalizedSchema) {
       joinPathFragments(
         options.projectRoot,
         './src',
-        'lib',
         'index.ts'
       ),
     ];
