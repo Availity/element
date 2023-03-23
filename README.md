@@ -10,13 +10,13 @@ Visit our [documentation site](https://zeroheight.com/07045d232/v/latest/p/753cd
 
 To install the library in your project, you can use either NPM or Yarn:
 
-```
+```sh
 npm install @availity/element
 ```
 
 OR
 
-```
+```sh
 yarn add @availity/element
 ```
 
