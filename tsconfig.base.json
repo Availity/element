@@ -25,7 +25,7 @@
       "@availity/mui-alert": ["packages/alert/src/index.ts"],
       "@availity/mui-badge": ["packages/badge/src/index.ts"],
       "@availity/mui-button": ["packages/button/src/index.ts"],
-      "@availity/mui-icon": ["packages/icon/src/lib/index.ts"],
+      "@availity/mui-icon": ["packages/icon/src/index.ts"],
       "@availity/theme": ["packages/theme/src/index.ts"],
       "@availity/theme-provider": ["packages/theme-provider/src/index.ts"]
     }
