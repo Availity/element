@@ -16,6 +16,7 @@
   "dependencies": {
     "@availity/mui-alert": "workspace:*",
     "@availity/mui-badge": "workspace:*",
+    "@availity/mui-icon": "workspace:*",
     "@availity/theme-provider": "workspace:*",
     "@mui/material": "^5.11.9"
   },

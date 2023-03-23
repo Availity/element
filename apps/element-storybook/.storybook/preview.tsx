@@ -5,14 +5,17 @@ import { themes } from '@storybook/theming';
 export const parameters = {
   docs: {
     theme: themes.light,
+    source: {
+      excludeDecorators: true,
+    }
   },
   options: {
     storySort: {
       order: [
         'Element',
         'Contributing',
-        'Design System/*',
-        'Components/*'
+        'Design System/**',
+        'Components/**'
       ],
     },
   },
