@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/element@0.2.1...@availity/element@0.3.0) (2023-03-23)
+
+
+### Features
+
+* **mui-icon:** init ([f85ea97](https://github.com/Availity/element/commit/f85ea9744a5a7f54eb8a81c439ac6a4b10c8cc33))
+
 ## [0.2.1](https://github.com/Availity/element/compare/@availity/element@0.2.0...@availity/element@0.2.1) (2023-03-06)
 
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/element@0.1.3...@availity/element@0.2.0) (2023-03-01)
