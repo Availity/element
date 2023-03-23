@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-alert.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-alert)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-alert.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-alert)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-alert?style=for-the-badge)](https://github.com/Availity/availity-react/blob/master/packages/mui-alert/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-alert?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/alert/package.json)
 
 ## Documentation
 

@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-button.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-button)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-button.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-button)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-button?style=for-the-badge)](https://github.com/Availity/availity-react/blob/master/packages/mui-button/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-button?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/button/package.json)
 
 ## Documentation
 
