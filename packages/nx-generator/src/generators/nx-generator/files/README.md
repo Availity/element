@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/<%= packageName %>.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/<%= packageName %>)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/<%= packageName %>.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/<%= packageName %>)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/<%= packageName %>?style=for-the-badge)](https://github.com/Availity/availity-react/blob/master/packages/<%= packageName %>/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/<%= packageName %>?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/<%= packageName %>/package.json)
 
 + ⚠️ *needs component theme added to @availity/theme*
 + ⚠️ *needs UI Team Verification (must conform to [Availity's Figma Design Standards](https://www.figma.com/file/bf6l79hehcKdRjb5Kzq1De/Element--MUI-%F0%9F%9A%A7?node-id=4662%3A14&t=QMqHeT6daeqXbjBR-1) - private link)*
