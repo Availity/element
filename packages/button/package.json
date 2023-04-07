@@ -33,6 +33,9 @@
     "publish": "yarn npm publish --tolerate-republish --access public",
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
+  "dependencies": {
+    "@mui/lab": "^5.0.0-alpha.121"
+  },
   "devDependencies": {
     "@mui/material": "^5.11.9",
     "react": "18.2.0",
