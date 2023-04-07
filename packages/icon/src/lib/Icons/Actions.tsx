@@ -32,7 +32,7 @@ export const PlusCircleIcon = ({...props} : SvgIconProps) : JSX.Element => (
   <FaSvgIcon icon={faPlusCircle} titleAccess='Add' {...props}/>
 );
 
-export const CancleCircleIcon = ({...props} : SvgIconProps) : JSX.Element => (
+export const CancelCircleIcon = ({...props} : SvgIconProps) : JSX.Element => (
   <FaSvgIcon icon={faXmarkCircle} titleAccess='Cancel' {...props}/>
 );
 
