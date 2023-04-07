@@ -6,7 +6,7 @@ import { InfoCircleIcon, WarningCircleIcon, SuccessCircleIcon } from '@availity/
 export type AlertProps =  MUIAlertProps;
 
 const iconMapping =  {
-  error: <WarningCircleIcon aria-hidden={false} />,
+  error: <WarningCircleIcon aria-hidden={false} titleAccess="error" />,
   info: <InfoCircleIcon aria-hidden={false} />,
   success: <SuccessCircleIcon aria-hidden={false} />,
   warning: <WarningCircleIcon aria-hidden={false} sx={{ color: 'warning.dark' }}/>

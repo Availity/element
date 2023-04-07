@@ -144,7 +144,6 @@ __metadata:
   resolution: "@availity/theme@workspace:packages/theme"
   dependencies:
     "@availity/design-tokens": "workspace:*"
-    "@availity/mui-icon": "workspace:*"
     tsup: ^5.12.7
     typescript: ~4.8.2
   languageName: unknown
