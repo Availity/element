@@ -110,5 +110,15 @@ jobs:
           commit_message: deployed docs [skip ci]
           committer: ${{ secrets.GH_USER }} ${{ secrets.GH_EMAIL }}
           jekyll: false
+          keep_history: true
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+
+      # - name: Deploy Docs (using same deploy action as preview)
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     branch: gh-pages
+      #     folder: dist/storybook
+      #     commit-message: deployed docs [skip ci]
+      #     force: false
+      #     clean-exclude: pr-preview
