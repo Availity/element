@@ -1,9 +1,11 @@
 import React from 'react';
-import { Alert as MUIAlert } from '@mui/material';
-import type { AlertProps as MUIAlertProps } from '@mui/material';
+import MUIAlert from '@mui/material/Alert';
+import type { AlertProps as MUIAlertProps, AlertColor as MuiAlertColor } from '@mui/material/Alert';
 import { InfoCircleIcon, WarningCircleIcon, SuccessCircleIcon } from '@availity/mui-icon';
 
-export type AlertProps =  MUIAlertProps;
+export type AlertProps = {
+  severity?: MuiAlertColor
+} & MUIAlertProps;
 
 const iconMapping =  {
   error: <WarningCircleIcon aria-hidden={false} titleAccess="error" />,
