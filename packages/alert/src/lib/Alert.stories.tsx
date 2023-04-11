@@ -41,7 +41,7 @@ export const _DismissableAlert: StoryObj<typeof Alert> = {
   }
 };
 
-const severities: AlertColor[] = [ 'info', 'success', 'warning', 'error']
+const severities = [ 'info', 'success', 'warning', 'error']
 
 export const _Severities: StoryObj<typeof Alert> = {
   render: () => (
