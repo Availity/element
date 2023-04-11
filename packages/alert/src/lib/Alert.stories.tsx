@@ -2,6 +2,7 @@ import React from 'react';
 import type { StoryObj } from '@storybook/react';
 import type { AlertColor } from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
+import { InfoCircleIcon, WarningCircleIcon, SuccessCircleIcon } from '@availity/mui-icon';
 import { Alert, AlertProps } from './Alert';
 
 export default {
@@ -13,6 +14,14 @@ export default {
     children: 'This text is inside the alert'
   }
 };
+
+// Does this help with loading icons in alert stories??
+const iconMapping =  {
+  error: <WarningCircleIcon aria-hidden={false} titleAccess="error" />,
+  info: <InfoCircleIcon aria-hidden={false} />,
+  success: <SuccessCircleIcon aria-hidden={false} />,
+  warning: <WarningCircleIcon aria-hidden={false} sx={{ color: 'warning.dark' }}/>
+}
 
 export const _Alert: StoryObj<typeof Alert> = {
   render: (args: AlertProps) => (
