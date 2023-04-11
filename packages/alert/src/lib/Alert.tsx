@@ -4,7 +4,7 @@ import type { AlertProps as MUIAlertProps, AlertColor as MuiAlertColor } from '@
 import { InfoCircleIcon, WarningCircleIcon, SuccessCircleIcon } from '@availity/mui-icon';
 
 export type AlertProps = {
-  severity?: MuiAlertColor
+  severity?: 'info' | 'success' | 'warning' | 'error'
 } & MUIAlertProps;
 
 const iconMapping =  {
