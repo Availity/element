@@ -1,5 +1,24 @@
 import { tokens } from '@availity/design-tokens';
 
+const containedButtonStyles = (color: string) : Record<string, any> => ({
+  backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
+  color: tokens[`color${color}Contrast` as keyof typeof tokens],
+  "&:hover": {
+    backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
+    boxShadow: 'none',
+  },
+  "&:focus": {
+    backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
+    outline: '2px solid white',
+    boxShadow: `0 0 0px 4px ${tokens[`color${color}Dark` as keyof typeof tokens]}`,
+  },
+  "&:active": {
+    backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
+  }
+});
+
+
+
 export const lightTheme = {
   mode: 'light',
   palette: {
@@ -282,84 +301,44 @@ export const lightTheme = {
       },
       styleOverrides: {
         root: {
-          minWidth: '128px',
-          textTransform: "none"
-        }
+          boxShadow: 'none',
+          fontWeight: tokens.fontWeightsBold,
+          textTransform: 'none'
+        },
+        containedPrimary: {
+          ...containedButtonStyles('Primary')
+        },
+        containedSecondary: {
+          ...containedButtonStyles('Secondary')
+        },
+        containedTertiary: {
+          ...containedButtonStyles('Tertiary'),
+          boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`
+        },
+        containedError: {
+          ...containedButtonStyles('Error')
+        },
       },
-      variants: [
-        {
-          props: { color: "tertiary", variant: "contained" },
-          style: {
-            backgroundColor: tokens.colorTertiaryMain,
-            color: tokens.colorTertiaryContrast,
-            "&:hover": {
-              backgroundColor: tokens.colorTertiaryDark
-            },
-            "&:focus": {
-              backgroundColor: tokens.colorTertiaryDark,
-              outline: "2px solid white",
-              boxShadow: "0 0 0px 4px rgba(0,0,0,1)"
-            },
-            "&:active": {
-              backgroundColor: tokens.colorTertiaryMain
-            }
+    },
+    MuiIconButton: {
+      defaultProps: {
+        // The props to change the default for.
+        disableRipple: true, // No more ripple, on the whole application 💣!
+        disableElevation: true
+      },
+      styleOverrides: {
+        root: {
+          color: tokens.colorTextPrimary,
+          "&:hover": {
+            backgroundColor: tokens.colorTertiaryDark,
+          },
+          "&:focus": {
+            backgroundColor: tokens.colorTertiaryDark,
+            outline: `2px solid ${tokens.colorCommonWhite}`,
+            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
           }
         },
-        {
-          props: { color: "secondary" },
-            style: {
-            backgroundColor: tokens.colorSecondaryMain,
-            color: tokens.colorSecondaryContrast,
-            "&:hover": {
-              backgroundColor: tokens.colorSecondaryDark
-            },
-            "&:focus": {
-              backgroundColor: tokens.colorSecondaryDarker,
-              outline: "2px solid white",
-              boxShadow: "0 0 0px 4px rgba(0,0,0,1)"
-            },
-            "&:active": {
-              backgroundColor: tokens.colorSecondaryMain
-            }
-          }
-        },
-        {
-          props: { color: "primary" },
-            style: {
-            backgroundColor: tokens.colorPrimaryMain,
-            color: tokens.colorPrimaryContrast,
-            "&:hover": {
-              backgroundColor: tokens.colorPrimaryDark
-            },
-            "&:focus": {
-              backgroundColor: tokens.colorPrimaryMain,
-              outline: "2px solid white",
-              boxShadow: "0 0 0px 4px rgba(21,82,188,1)"
-            },
-            "&:active": {
-              backgroundColor: tokens.colorPrimaryLight
-            }
-          }
-        },
-        {
-          props: { color: "error", variant: "contained" },
-          style: {
-            backgroundColor: tokens.colorErrorMain,
-            color: tokens.colorErrorContrast,
-            "&:hover": {
-              backgroundColor: tokens.colorErrorDark
-            },
-            "&:focus": {
-              backgroundColor: tokens.colorErrorMain,
-              outline: "2px solid white",
-              boxShadow: "0 0 0px 4px rgba(21,82,188,1)"
-            },
-            "&:active": {
-              backgroundColor: tokens.colorErrorLight
-            }
-          }
-        }
-      ]
+      }
     },
     MuiLoadingButton: {
       styleOverrides: {
@@ -372,6 +351,16 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           fontSize: 'inherit',
+        },
+      },
+    },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: tokens.colorGrey400,
+          fontSize: '.785rem',
+          fontStyle: 'normal',
+          padding: '2px 8px'
         },
       },
     }
