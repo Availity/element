@@ -1,0 +1,2 @@
+import{m as c,n as i,o as a,p as f}from"./useThemeProps-545788c1.js";const x=["sx"],P=t=>{var s,n;const o={systemProps:{},otherProps:{}},r=(s=t==null||(n=t.theme)==null?void 0:n.unstable_sxConfig)!=null?s:a;return Object.keys(t).forEach(e=>{r[e]?o.systemProps[e]=t[e]:o.otherProps[e]=t[e]}),o};function m(t){const{sx:s}=t,n=c(t,x),{systemProps:o,otherProps:r}=P(n);let e;return Array.isArray(s)?e=[o,...s]:typeof s=="function"?e=(...u)=>{const l=s(...u);return f(l)?i({},o,l):o}:e=i({},o,s),i({},r,{sx:e})}export{m as e};
+//# sourceMappingURL=extendSxProp-1d9241a8.js.map
