@@ -3,8 +3,8 @@ import { HomeIcon } from './Icons/Common';
 
 describe('Icons (any named icon)', () => {
   test('should render HomeIcon successfully', () => {
-    const { getByRole } = render(<HomeIcon/>);
-    expect(getByRole('img', { hidden: true })).toBeTruthy();
+    const { getByTestId } = render(<HomeIcon data-testid="homeicon"/>);
+    expect(getByTestId('homeicon')).toBeTruthy();
   });
 
   test('should add title when new title passed', () => {
