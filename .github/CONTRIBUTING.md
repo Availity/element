@@ -124,13 +124,13 @@ Commits should use the [Angular Commit Format](https://github.com/angular/angula
 For example, here is what the commit message would like when fixing a null-checking error in the `icon` package:
 
 ```sh
-git commit -m "fix(icon): check for null before doing the action"
+git commit -m "fix(mui-icon): check for null before doing the action"
 ```
 
 In order to bump a package by a major version you must indicate a `BREAKING CHANGE` in the commit message. Read through the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) for more information
 
 ```sh
-git commit -m "feat(icon)!: add new features
+git commit -m "feat(mui-icon)!: add new features
 
 BREAKING CHANGE: names of props changed"
 ```
