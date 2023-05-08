@@ -1,24 +1,5 @@
 import { tokens } from '@availity/design-tokens';
 
-const containedButtonStyles = (color: string) : Record<string, any> => ({
-  backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
-  color: tokens[`color${color}Contrast` as keyof typeof tokens],
-  "&:hover": {
-    backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
-    boxShadow: 'none',
-  },
-  "&:focus": {
-    backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
-    outline: '2px solid white',
-    boxShadow: `0 0 0px 4px ${tokens[`color${color}Dark` as keyof typeof tokens]}`,
-  },
-  "&:active": {
-    backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
-  }
-});
-
-
-
 export const lightTheme = {
   mode: 'light',
   palette: {
@@ -300,24 +281,38 @@ export const lightTheme = {
         disableElevation: true
       },
       styleOverrides: {
-        root: {
+        root: ({ ownerState } : any) => ({
+          ...(ownerState.variant === 'contained' ?
+            {
+              backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Main` as keyof typeof tokens],
+              color: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Contrast` as keyof typeof tokens],
+              "&:hover": {
+                backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Dark` as keyof typeof tokens],
+                boxShadow: 'none',
+              },
+              "&:focus": {
+                backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Dark` as keyof typeof tokens],
+                outline: '2px solid white',
+                boxShadow: `0 0 0px 4px ${tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Dark` as keyof typeof tokens]}`,
+              },
+              "&:active": {
+                backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Main` as keyof typeof tokens],
+              }
+            }
+            : {
+              "&:hover": {
+                boxShadow: 'none',
+              },
+              "&:focus": {
+                outline: '2px solid white',
+                boxShadow: `0 0 0px 4px ${tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Main` as keyof typeof tokens]}`,
+              },
+            }
+          ),
           boxShadow: 'none',
           fontWeight: tokens.fontWeightsBold,
           textTransform: 'none'
-        },
-        containedPrimary: {
-          ...containedButtonStyles('Primary')
-        },
-        containedSecondary: {
-          ...containedButtonStyles('Secondary')
-        },
-        containedTertiary: {
-          ...containedButtonStyles('Tertiary'),
-          boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`
-        },
-        containedError: {
-          ...containedButtonStyles('Error')
-        },
+        }),
       },
     },
     MuiIconButton: {
@@ -338,13 +333,6 @@ export const lightTheme = {
             boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
           }
         },
-      }
-    },
-    MuiLoadingButton: {
-      styleOverrides: {
-        root: {
-          position: 'relative'
-        }
       }
     },
     MuiSvgIcon: {

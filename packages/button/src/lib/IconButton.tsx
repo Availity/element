@@ -8,7 +8,7 @@ export type IconButtonProps = {
    */
   title: string;
   children: React.ReactNode;
-} & Omit<MUIIconButtonProps, 'aria-label'>;
+} & Omit<MUIIconButtonProps, 'aria-label' | 'centerRipple' | 'disableRipple' | 'disableTouchRipple' | 'focusRipple' | 'disableFocusRipple' | 'TouchRippleProps' | 'touchRippleRef'>;
 
 
 

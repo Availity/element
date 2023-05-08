@@ -7,7 +7,7 @@ export type ButtonProps = {
    * The color of the component.
    */
   color?: "primary" | "secondary" | "tertiary" | "error";
-} & Omit<MUIButtonProps, 'color'>;
+} & Omit<MUIButtonProps, 'color' | 'disableElevation' | 'disableFocusRipple' | 'disableTouchRipple' | 'centerRipple' | 'disableRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef'>;
 
 const tertiaryContainedStyles = {
   bgcolor: 'tertiary.main',
