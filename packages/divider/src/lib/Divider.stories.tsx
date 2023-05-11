@@ -13,7 +13,5 @@ export default meta;
 
 export const _Divider: StoryObj<typeof Divider> = {
   render: (args: DividerProps) => <Divider {...args} />,
-  args: {
-    children: 'Customizable Divider Text',
-  },
+  args: {},
 };
