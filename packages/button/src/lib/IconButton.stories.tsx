@@ -18,17 +18,15 @@ export default {
         search: <SearchIcon/>
       }
     },
-  }
-};
-
-export const _IconButton: StoryObj<typeof IconButton> = {
-  render: ({children, ...args}: IconButtonProps) => (
-    <IconButton {...args}>
-      {children}
-    </IconButton>
-  ),
+  },
   args: {
     children: 'home',
     title: 'title text'
   }
+};
+
+export const _IconButton: StoryObj<typeof IconButton> = {
+  render: ({...args}: IconButtonProps) => (
+    <IconButton {...args}/>
+  )
 };

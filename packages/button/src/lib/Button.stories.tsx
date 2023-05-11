@@ -1,5 +1,7 @@
 import { StoryObj, Meta } from '@storybook/react';
 import Grid from '@mui/material/Grid';
+import { HomeIcon } from '@availity/mui-icon';
+import { IconButton } from './IconButton';
 import { Button, ButtonProps } from './Button'
 import React from 'react';
 
@@ -20,7 +22,7 @@ type Story = StoryObj<typeof Button>;
 
 export const _Button: Story = {
   render: ({...args}: ButtonProps ) => (
-    <Button {...args}>Button</Button>
+    <><Button {...args}>Button</Button><IconButton title="title" sx={{ml: 1}} filled {...args}><HomeIcon/></IconButton></>
   )
 };
 
@@ -47,6 +49,22 @@ export const _Colors: Story = {
       </Grid>
       <Grid item xs={12}>
         <Button color="secondary" variant="outlined">Secondary Outlined</Button>
+      </Grid>
+    </Grid>
+  )
+};
+
+export const _ButtonSizes: Story = {
+  render: ({...args}: ButtonProps ) => (
+    <Grid container spacing={1}>
+      <Grid item xs={12}>
+        <Button {...args} size="small">Small Button</Button><IconButton title="title" sx={{ml: 1}} filled {...args} size="small"><HomeIcon/></IconButton>
+      </Grid>
+      <Grid item xs={12}>
+        <Button {...args} size="medium">Medium Button</Button><IconButton title="title" sx={{ml: 1}} filled {...args} size="medium"><HomeIcon/></IconButton>
+      </Grid>
+      <Grid item xs={12}>
+        <Button {...args} size="large">Large Button</Button><IconButton title="title" sx={{ml: 1}} filled {...args} size="large"><HomeIcon/></IconButton>
       </Grid>
     </Grid>
   )

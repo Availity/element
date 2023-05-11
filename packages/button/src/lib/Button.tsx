@@ -7,7 +7,11 @@ export type ButtonProps = {
    * The color of the component.
    */
   color?: "primary" | "secondary" | "tertiary" | "error";
-} & Omit<MUIButtonProps, 'color' | 'disableElevation' | 'disableFocusRipple' | 'disableTouchRipple' | 'centerRipple' | 'disableRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef'>;
+  /**
+   * Internal prop used by IconButton for contained variant.
+   */
+  iconOnly?: boolean;
+} & Omit<MUIButtonProps, 'color' | 'disableElevation' | 'disableFocusRipple' | 'disableTouchRipple' | 'centerRipple' | 'disableRipple' | 'focusRipple' | 'TouchRippleProps' >;
 
 const tertiaryContainedStyles = {
   bgcolor: 'tertiary.main',
@@ -20,12 +24,30 @@ const tertiaryContainedStyles = {
   }
 };
 
-export const Button = ({ color="secondary",  variant="contained", ...rest }: ButtonProps): JSX.Element => (
-  <MUIButton
-    color={color=="tertiary" ? "secondary" : color}
-    variant={variant}
-    sx={color=="tertiary" && variant=="contained" ? {...tertiaryContainedStyles} : undefined}
-    disableRipple
-    {...rest}
-  />
-);
+const iconOnlyStyles = {
+  minWidth: 0,
+  // px: 1,
+  '& .MuiButton-startIcon': {
+    m: 0
+  },
+  '& .MuiButton-endIcon': {
+    m: 0
+  }
+}
+
+export const Button = ({ color="secondary",  variant="contained", iconOnly, sx, ...rest }: ButtonProps): JSX.Element => {
+  const styles = {
+    ...(color =="tertiary" && variant=="contained") && tertiaryContainedStyles,
+    ...(iconOnly) && iconOnlyStyles,
+  }
+
+  return (
+    <MUIButton
+      color={color=="tertiary" ? "secondary" : color}
+      variant={variant}
+      sx={{...styles, ...sx}}
+      disableRipple
+      {...rest}
+    />
+  );
+}
