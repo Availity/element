@@ -3,7 +3,8 @@ import { Divider } from './Divider';
 
 describe('Divider', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<Divider>Test</Divider>);
-    expect(getByText('Test')).toBeTruthy();
+    const { getByRole } = render(<Divider />);
+    const hrElement = getByRole('separator');
+    expect(hrElement).toBeTruthy();
   });
 });
