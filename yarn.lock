@@ -39,6 +39,7 @@ __metadata:
   dependencies:
     "@availity/mui-alert": "workspace:*"
     "@availity/mui-badge": "workspace:*"
+    "@availity/mui-divider": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@availity/theme-provider": "workspace:*"
     "@mui/material": ^5.11.9
@@ -87,6 +88,21 @@ __metadata:
   resolution: "@availity/mui-button@workspace:packages/button"
   dependencies:
     "@mui/lab": ^5.0.0-alpha.121
+    "@mui/material": ^5.11.9
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-divider@workspace:*, @availity/mui-divider@workspace:packages/divider":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-divider@workspace:packages/divider"
+  dependencies:
     "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0
