@@ -35,7 +35,8 @@ const iconOnlyStyles = {
   }
 }
 
-export const Button = ({ color="secondary",  variant="contained", iconOnly, sx, ...rest }: ButtonProps): JSX.Element => {
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+  const { color="secondary",  variant="contained", iconOnly, sx, ...rest } = props;
   const styles = {
     ...(color =="tertiary" && variant=="contained") && tertiaryContainedStyles,
     ...(iconOnly) && iconOnlyStyles,
@@ -48,6 +49,7 @@ export const Button = ({ color="secondary",  variant="contained", iconOnly, sx, 
       sx={{...styles, ...sx}}
       disableRipple
       {...rest}
+      ref={ref}
     />
   );
-}
+});
