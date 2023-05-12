@@ -11,7 +11,7 @@ export type ButtonProps = {
    * Internal prop used by IconButton for contained variant.
    */
   iconOnly?: boolean;
-} & Omit<MUIButtonProps, 'color' | 'disableElevation' | 'disableFocusRipple' | 'disableTouchRipple' | 'centerRipple' | 'disableRipple' | 'focusRipple' | 'TouchRippleProps' | 'TouchRippleRef' >;
+} & Omit<MUIButtonProps, 'color' | 'disableElevation' | 'disableFocusRipple' | 'disableTouchRipple' | 'centerRipple' | 'disableRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef' >;
 
 const tertiaryContainedStyles = {
   bgcolor: 'tertiary.main',
