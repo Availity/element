@@ -9,12 +9,7 @@ import React from 'react';
 const meta: Meta<typeof Button> = {
   title: 'Components/Button/Button',
   component: Button,
-  tags: ['autodocs'],
-  args: {
-    variant: 'contained',
-    color: 'primary',
-    size: 'medium',
-  },
+  tags: ['autodocs']
 };
 export default meta;
 type Story = StoryObj<typeof Button>;
@@ -22,8 +17,13 @@ type Story = StoryObj<typeof Button>;
 
 export const _Button: Story = {
   render: ({...args}: ButtonProps ) => (
-    <><Button {...args}>Button</Button><IconButton title="title" sx={{ml: 1}} filled {...args}><HomeIcon/></IconButton></>
-  )
+    <Button {...args}>Button</Button>
+  ),
+  args: {
+    variant: 'contained',
+    color: 'primary',
+    size: 'medium',
+  },
 };
 
 /**
@@ -55,16 +55,19 @@ export const _Colors: Story = {
 };
 
 export const _ButtonSizes: Story = {
-  render: ({...args}: ButtonProps ) => (
+  render: () => (
     <Grid container spacing={1}>
       <Grid item xs={12}>
-        <Button {...args} size="small">Small Button</Button><IconButton title="title" sx={{ml: 1}} filled {...args} size="small"><HomeIcon/></IconButton>
+        <Button color="tertiary" size="small">Small Button</Button>
+        <IconButton title="title" sx={{ml: 1}} filled color="tertiary" size="small"><HomeIcon/></IconButton>
       </Grid>
       <Grid item xs={12}>
-        <Button {...args} size="medium">Medium Button</Button><IconButton title="title" sx={{ml: 1}} filled {...args} size="medium"><HomeIcon/></IconButton>
+        <Button color="secondary" size="medium">Medium Button</Button>
+        <IconButton title="title" sx={{ml: 1}} filled color="secondary" size="medium"><HomeIcon/></IconButton>
       </Grid>
       <Grid item xs={12}>
-        <Button {...args} size="large">Large Button</Button><IconButton title="title" sx={{ml: 1}} filled {...args} size="large"><HomeIcon/></IconButton>
+        <Button color="primary" size="large">Large Button</Button>
+        <IconButton title="title" sx={{ml: 1}} filled color="primary" size="large"><HomeIcon/></IconButton>
       </Grid>
     </Grid>
   )

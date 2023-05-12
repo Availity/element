@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Button as MUIButton } from '@mui/material';
 import type { ButtonProps as MUIButtonProps } from '@mui/material';
 
@@ -11,7 +11,7 @@ export type ButtonProps = {
    * Internal prop used by IconButton for contained variant.
    */
   iconOnly?: boolean;
-} & Omit<MUIButtonProps, 'color' | 'disableElevation' | 'disableFocusRipple' | 'disableTouchRipple' | 'centerRipple' | 'disableRipple' | 'focusRipple' | 'TouchRippleProps' >;
+} & Omit<MUIButtonProps, 'color' | 'disableElevation' | 'disableFocusRipple' | 'disableTouchRipple' | 'centerRipple' | 'disableRipple' | 'focusRipple' | 'TouchRippleProps' | 'TouchRippleRef' >;
 
 const tertiaryContainedStyles = {
   bgcolor: 'tertiary.main',
@@ -26,7 +26,7 @@ const tertiaryContainedStyles = {
 
 const iconOnlyStyles = {
   minWidth: 0,
-  // px: 1,
+  px: 1,
   '& .MuiButton-startIcon': {
     m: 0
   },
@@ -35,7 +35,7 @@ const iconOnlyStyles = {
   }
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const { color="secondary",  variant="contained", iconOnly, sx, ...rest } = props;
   const styles = {
     ...(color =="tertiary" && variant=="contained") && tertiaryContainedStyles,
