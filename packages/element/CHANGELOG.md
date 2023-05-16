@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/Availity/element/compare/@availity/element@0.4.0...@availity/element@0.5.0) (2023-05-16)
+
+
+### Features
+
+* **mui-divider:** adding to element ([0998bfe](https://github.com/Availity/element/commit/0998bfe1b5133d01bd6c75d2bba830f72a7e2087))
+
 ## [0.4.0](https://github.com/Availity/element/compare/@availity/element@0.3.1...@availity/element@0.4.0) (2023-05-15)
 
 
