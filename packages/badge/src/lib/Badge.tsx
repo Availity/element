@@ -1,14 +1,15 @@
 import React from 'react';
 import { Badge as MUIBadge } from '@mui/material';
 import type { BadgeProps as MUIBadgeProps } from '@mui/material';
-// import Icon from '@availity/mui-icon';
 
-export type BadgeProps = {
+export interface BadgeProps extends MUIBadgeProps {
+  badgeContent?: number;
   children: React.ReactNode;
-} & MUIBadgeProps;
+  color?: 'primary' | 'error';
+}
 
-export const Badge = ({ children, ...rest }: BadgeProps): JSX.Element => (
-  <MUIBadge {...rest}>
+export const Badge = ({ children, color, ...rest }: BadgeProps): JSX.Element => (
+  <MUIBadge color={color === 'primary' ? 'primary' : 'error'} {...rest}>
     {children}
   </MUIBadge>
 );
