@@ -29,6 +29,14 @@ const config: StorybookConfig = {
       },
     },
   },
+  typescript: {
+    reactDocgenTypescriptOptions: {
+      propFilter: (prop) =>
+        prop.parent
+          ? !/node_modules\/(?!@mui)/.test(prop.parent.fileName) // filter out all node_modules except packages starting with "@mui"
+          : true,
+    }
+  }
 };
 
 export default config;
