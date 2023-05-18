@@ -13,5 +13,6 @@ export const _Badge: StoryObj<typeof Badge> = {
   args: {
     children: 'This text is a child of the badge',
     badgeContent: 3,
+    variant: 'standard',
   },
 };
