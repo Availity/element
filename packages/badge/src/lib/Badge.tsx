@@ -9,7 +9,7 @@ export interface BadgeProps extends MUIBadgeProps {
 }
 
 export const Badge = ({ children, color, ...rest }: BadgeProps): JSX.Element => (
-  <MUIBadge color={color === 'primary' ? 'primary' : 'error'} {...rest}>
+  <MUIBadge color={color || 'error'} {...rest}>
     {children}
   </MUIBadge>
 );
