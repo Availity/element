@@ -1,0 +1,58 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="BS4 Migration/Component" />
+*Copy file into package*
+
+# Component Migration
+
+This migration guide is just an overview. For more in depth component information, visit:
+- [Availity Usage Guide](https://zeroheight.com/2e36e50c7/p/48eb7b-button/b/062837)
+- [MUI Documentation](https://mui.com/material-ui/react-button/)
+
+
+## Key Differences (not exhaustive list)
+
+- Changed
+  - `oldRSProp` -> `newMUIProp` ~1:1 relationship from Reactstrap to MUI
+- New
+  - `newMUIProp` that users will likely need or should be aware of
+- Removed
+  - `oldRSProp` that is not utilized and has no equivalent/relative in MUI
+- Other
+  - List unexpected behavioral differences or other gotchas
+
+## Code Examples
+
+`reactstrap`/`availity-react` Example:
+
+```tsx
+import { Button } from 'reactstrap';
+
+const ReactstrapButton = () => (
+  <Button
+    color="primary"
+    size="lg"
+    outline
+    block
+  >
+    I'm a Button
+  </Button>
+);
+```
+
+`@availity/element` Example:
+
+```tsx
+import { Button } from '@availity/element';
+
+const MUIButton = () => (
+  <Button
+    color="primary"
+    size="large"
+    variant="outlined"
+    fullWidth
+  >
+    I'm a Button
+  </Button>
+);
+```
