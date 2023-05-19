@@ -1,0 +1,6 @@
+import{j as t}from"./jsx-runtime-670450c2.js";import{a as s}from"./index-581a03e3.js";import{I as m}from"./IconButton-73bb3530.js";import"./index-f1f749bf.js";import"./_commonjsHelpers-042e6b4d.js";import"./useThemeProps-4e78108b.js";import"./extends-98964cd2.js";import"./emotion-element-6a883da9.browser.esm-1c5b50fe.js";import"./emotion-use-insertion-effect-with-fallbacks.browser.esm-eaaa54fe.js";import"./emotion-react.browser.esm-5cb50a94.js";import"./inheritsLoose-d374ba88.js";import"./useForkRef-2e794f8b.js";import"./faMagnifyingGlass-fd2e742e.js";import"./faExclamationCircle-878a3411.js";import"./Button-7478b3ac.js";import"./useSlotProps-694166e8.js";import"./index-96c5f47c.js";import"./IconButton-198585d1.js";const P={title:"Components/Button/IconButton",component:m,tags:["autodocs"],args:{title:"title text"}},o={render:({...p})=>t(m,{...p,children:t(s,{})})};var r,n,e;o.parameters={...o.parameters,docs:{...(r=o.parameters)==null?void 0:r.docs,source:{originalSource:`{
+  render: ({
+    ...args
+  }: IconButtonProps) => <IconButton {...args}><SearchIcon /></IconButton>
+}`,...(e=(n=o.parameters)==null?void 0:n.docs)==null?void 0:e.source}}};const b=["_IconButton"];export{o as _IconButton,b as __namedExportsOrder,P as default};
+//# sourceMappingURL=IconButton.stories-a9ee92e3.js.map
