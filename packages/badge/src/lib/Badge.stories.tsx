@@ -14,5 +14,6 @@ export const _Badge: StoryObj<typeof Badge> = {
     children: 'This text is a child of the badge',
     badgeContent: 3,
     variant: 'standard',
+    anchorOrigin: { horizontal: 'right', vertical: 'top' },
   },
 };
