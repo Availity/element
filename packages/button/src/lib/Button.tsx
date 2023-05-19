@@ -1,15 +1,13 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { Button as MUIButton } from '@mui/material';
 import type { ButtonProps as MUIButtonProps } from '@mui/material';
 
 export type ButtonProps = {
-  /**
-   * The color of the component.
-   */
+  /** The color of the component.
+   *
+   * **Default:** `primary` */
   color?: "primary" | "secondary" | "tertiary" | "error";
-  /**
-   * Internal prop used by IconButton for contained variant.
-   */
+  /** Internal prop used by IconButton for contained variant. */
   iconOnly?: boolean;
 } & Omit<MUIButtonProps, 'color' | 'disableElevation' | 'disableFocusRipple' | 'disableTouchRipple' | 'centerRipple' | 'disableRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef' >;
 
@@ -25,7 +23,7 @@ const tertiaryContainedStyles = {
 };
 
 const iconOnlyStyles = {
-  minWidth: 0,
+  minWidth: 2,
   px: 1,
   '& .MuiButton-startIcon': {
     m: 0

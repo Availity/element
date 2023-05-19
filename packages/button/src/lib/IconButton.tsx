@@ -1,4 +1,3 @@
-import React from 'react';
 import { IconButton as MuiIconButton, Tooltip } from '@mui/material';
 import type { IconButtonProps as MUIIconButtonProps } from '@mui/material';
 import { Button } from './Button';

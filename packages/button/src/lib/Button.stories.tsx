@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react';
 import Grid from '@mui/material/Grid';
-import { HomeIcon } from '@availity/mui-icon';
+import { SearchIcon } from '@availity/mui-icon';
 import { IconButton } from './IconButton';
 import { Button, ButtonProps } from './Button'
 import React from 'react';
@@ -59,15 +59,15 @@ export const _ButtonSizes: Story = {
     <Grid container spacing={1}>
       <Grid item xs={12}>
         <Button color="tertiary" size="small">Small Button</Button>
-        <IconButton title="title" sx={{ml: 1}} filled color="tertiary" size="small"><HomeIcon/></IconButton>
+        <IconButton title="small search" sx={{ml: 1}} filled color="tertiary" size="small"><SearchIcon/></IconButton>
       </Grid>
       <Grid item xs={12}>
         <Button color="secondary" size="medium">Medium Button</Button>
-        <IconButton title="title" sx={{ml: 1}} filled color="secondary" size="medium"><HomeIcon/></IconButton>
+        <IconButton title="medium search" sx={{ml: 1}} filled color="secondary" size="medium"><SearchIcon/></IconButton>
       </Grid>
       <Grid item xs={12}>
         <Button color="primary" size="large">Large Button</Button>
-        <IconButton title="title" sx={{ml: 1}} filled color="primary" size="large"><HomeIcon/></IconButton>
+        <IconButton title="large search" sx={{ml: 1}} filled color="primary" size="large"><SearchIcon/></IconButton>
       </Grid>
     </Grid>
   )
