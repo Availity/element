@@ -32,7 +32,7 @@ yarn add @availity/element
 
 ### Direct Import
 
-_This package has a few peer dependencies. Install \`@mui/material\`, \`emotion/react\`, & \`@mui/system\` if it is not in your application already._
+_This package has a few peer dependencies. Install \`@mui/material\`, \`@emotion/react\`, & \`@mui/system\` if it is not in your application already._
 
 #### NPM
 
@@ -61,4 +61,4 @@ import { Link } from '@availity/mui-link';
 \`\`\`
 `;function T(i={}){const{wrapper:t}=Object.assign({},r(),i.components);return t?n(t,Object.assign({},i,{children:n(e,{})})):e();function e(){return a(o,{children:[n(m,{title:"Components/Link/Introduction"}),`
 `,n(s,{children:l})]})}}export{T as default};
-//# sourceMappingURL=introduction-628e89d3.js.map
+//# sourceMappingURL=introduction-a0167a91.js.map
