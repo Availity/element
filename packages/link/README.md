@@ -32,7 +32,7 @@ yarn add @availity/element
 
 ### Direct Import
 
-_This package has a few peer dependencies. Install `@mui/material`, `emotion/react`, & `@mui/system` if it is not in your application already._
+_This package has a few peer dependencies. Install `@mui/material`, `@emotion/react`, & `@mui/system` if it is not in your application already._
 
 #### NPM
 
