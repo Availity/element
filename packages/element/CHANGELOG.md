@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.1](https://github.com/Availity/element/compare/@availity/element@0.7.0...@availity/element@0.7.1) (2023-05-22)
+
+
+### Bug Fixes
+
+* **element:** add missing dependencies/exports ([12d88f4](https://github.com/Availity/element/commit/12d88f4b3ad213be6b4c3e47c6d6189c5a6dfe14))
+
 ## [0.7.0](https://github.com/Availity/element/compare/@availity/element@0.6.0...@availity/element@0.7.0) (2023-05-22)
 
 
