@@ -27,6 +27,7 @@
       "@availity/mui-button": ["packages/button/src/index.ts"],
       "@availity/mui-divider": ["packages/divider/src/index.ts"],
       "@availity/mui-icon": ["packages/icon/src/index.ts"],
+      "@availity/mui-paper": ["packages/paper/src/index.ts"],
       "@availity/mui-tooltip": ["packages/tooltip/src/index.ts"],
       "@availity/theme": ["packages/theme/src/index.ts"],
       "@availity/theme-provider": ["packages/theme-provider/src/index.ts"]
