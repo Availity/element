@@ -1,0 +1,12 @@
+import{j as n}from"./jsx-runtime-670450c2.js";import{r as m}from"./index-f1f749bf.js";import{M as g}from"./Paper-94432ec4.js";import{t as B,v as N,u as y,m as T,n as C,f as q,w,C as b}from"./useThemeProps-99201132.js";import{e as S}from"./extendSxProp-d7e948e5.js";import"./_commonjsHelpers-042e6b4d.js";import"./extends-98964cd2.js";import"./emotion-element-6a883da9.browser.esm-1c5b50fe.js";import"./emotion-use-insertion-effect-with-fallbacks.browser.esm-eaaa54fe.js";const M=["className","component"];function R(e={}){const{defaultTheme:a,defaultClassName:r="MuiBox-root",generateClassName:t}=e,u=B("div",{shouldForwardProp:o=>o!=="theme"&&o!=="sx"&&o!=="as"})(N);return m.forwardRef(function(f,h){const x=y(a),i=S(f),{className:P,component:_="div"}=i,v=T(i,M);return n(u,C({as:_,ref:h,className:q(P,t?t(r):r),theme:x},v))})}const V=w(),j=R({defaultTheme:V,defaultClassName:"MuiBox-root",generateClassName:b.generate}),I=j,d=m.forwardRef(({children:e,variant:a="outlined",...r},t)=>n(g,{variant:a,...r,ref:t,children:e}));try{d.displayName="Paper",d.__docgenInfo={description:"",displayName:"Paper",props:{children:{defaultValue:null,description:"The content of the component.",name:"children",required:!1,type:{name:"ReactNode"}},elevation:{defaultValue:{value:"1"},description:"Shadow depth, corresponds to `dp` in the spec.\nIt accepts values between 0 and 24 inclusive.",name:"elevation",required:!1,type:{name:"number"}},square:{defaultValue:{value:"false"},description:"If `true`, rounded corners are disabled.",name:"square",required:!1,type:{name:"boolean"}},variant:{defaultValue:{value:"outlined"},description:"The variant to use.",name:"variant",required:!1,type:{name:'"elevation" | "outlined"'}}}}}catch{}const D={title:"Components/Paper/Paper",component:d,tags:["autodocs"]},s={render:({children:e,...a})=>n(d,{...a,children:n(I,{p:5,children:e})}),args:{children:"This text is a child of Paper"}};var c,l,p;s.parameters={...s.parameters,docs:{...(c=s.parameters)==null?void 0:c.docs,source:{originalSource:`{
+  render: ({
+    children,
+    ...args
+  }: PaperProps) => <Paper {...args}>
+      <Box p={5}>{children}</Box>
+    </Paper>,
+  args: {
+    children: 'This text is a child of Paper'
+  }
+}`,...(p=(l=s.parameters)==null?void 0:l.docs)==null?void 0:p.source}}};const H=["_Paper"];export{s as _Paper,H as __namedExportsOrder,D as default};
+//# sourceMappingURL=Paper.stories-8369c369.js.map
