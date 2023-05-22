@@ -10,9 +10,12 @@ export default {
 };
 
 export const _Badge: StoryObj<typeof Badge> = {
-  render: (args: BadgeProps) => <Badge {...args} />,
+  render: (args: BadgeProps) => (
+    <Badge {...args}>
+      <HomeIcon fontSize="large" />
+    </Badge>
+  ),
   args: {
-    children: <HomeIcon fontSize="large" />,
     badgeContent: 3,
     variant: 'standard',
     anchorOrigin: { horizontal: 'right', vertical: 'top' },
