@@ -8,7 +8,7 @@ import {
   names,
   offsetFromRoot,
   Tree,
-  updateJson
+  updateJson,
 } from '@nrwl/devkit';
 import { join } from 'path';
 import { NxGeneratorGeneratorSchema } from './schema';
@@ -75,20 +75,14 @@ function addPathToRootTsConfig(host: Tree, options: NormalizedSchema) {
       );
     }
 
-    c.paths[scopedPackageName] = [
-      joinPathFragments(
-        options.projectRoot,
-        './src',
-        'index.ts'
-      ),
-    ];
+    c.paths[scopedPackageName] = [joinPathFragments(options.projectRoot, './src', 'index.ts')];
 
     c.paths = Object.keys(c.paths)
-    .sort()
-    .reduce<Record<string, unknown>>((sorted, key) => {
-      sorted[key] = c.paths[key];
-      return sorted;
-    }, {});
+      .sort()
+      .reduce<Record<string, unknown>>((sorted, key) => {
+        sorted[key] = c.paths[key];
+        return sorted;
+      }, {});
 
     return json;
   });
@@ -97,8 +91,26 @@ function addPathToRootTsConfig(host: Tree, options: NormalizedSchema) {
 function addDependencyToElement(tree: Tree, options: NormalizedSchema) {
   const scopedPackageName = `@availity/${options.packageName}`;
   const elementPath = `${getWorkspaceLayout(tree).libsDir}/element/package.json`;
-  // const elementPath = getRootPathInTree(tree, ['element/package.json']) || `${getWorkspaceLayout(tree).libsDir}/element/package.json`;
-  addDependenciesToPackageJson(tree, { [scopedPackageName] : 'workspace:*'}, {}, elementPath);
+  addDependenciesToPackageJson(tree, { [scopedPackageName]: 'workspace:*' }, {}, elementPath);
+}
+
+function addExportsToElement(tree: Tree, options: NormalizedSchema) {
+  const scopedPackageName = `@availity/${options.packageName}`;
+  const elementIndexPath = `${getWorkspaceLayout(tree).libsDir}/element/src/index.ts`;
+  const indexContents = tree.read(elementIndexPath)?.toString().split(/\r?\n/) || [];
+  indexContents.push(`export * from '${scopedPackageName}';`);
+  const sortedIndexContents = indexContents?.sort((n1, n2) => {
+    if (n1 > n2) {
+      return 1;
+    }
+
+    if (n1 < n2) {
+      return -1;
+    }
+
+    return 0;
+  });
+  tree.write(elementIndexPath, sortedIndexContents.join('\r\n'));
 }
 
 export default async function (tree: Tree, options: NxGeneratorGeneratorSchema) {
@@ -121,7 +133,8 @@ export default async function (tree: Tree, options: NxGeneratorGeneratorSchema) 
   console.log('\u2714 added path to tsconfig');
   addDependencyToElement(tree, normalizedOptions);
   console.log('\u2714 added new package dependency to @availity/element');
+  addExportsToElement(tree, normalizedOptions);
+  console.log('\u2714 added new package exports to @availity/element');
   await formatFiles(tree);
   console.log(`@availity/mui-${names(options.name).fileName} generated! Don't forget to 'yarn install' again.\n`);
 }
-

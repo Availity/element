@@ -384,6 +384,16 @@ export const lightTheme = {
         },
       },
     },
+    MuiPaper: {
+      defaultProps: {
+        variant: 'outlined',
+      },
+      styleOverrides: {
+        root: {
+          borderColor: tokens.colorBackgroundBorder,
+        },
+      },
+    },
     MuiSvgIcon: {
       styleOverrides: {
         root: {
