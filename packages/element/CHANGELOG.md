@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/Availity/element/compare/@availity/element@0.5.0...@availity/element@0.6.0) (2023-05-22)
+
+
+### Features
+
+* create Tooltip component UXDS-187 ([5f50f13](https://github.com/Availity/element/commit/5f50f13b17d3f75a107bbee1a83ac35cfc326b81))
+
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/element@0.4.0...@availity/element@0.5.0) (2023-05-16)
 
 
