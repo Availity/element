@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.0](https://github.com/Availity/element/compare/@availity/element@0.6.0...@availity/element@0.7.0) (2023-05-22)
+
+
+### Features
+
+* **mui-paper:** add paper component ([4bf7776](https://github.com/Availity/element/commit/4bf7776a0f19e3566983e176901233a6292fa745))
+
 ## [0.6.0](https://github.com/Availity/element/compare/@availity/element@0.5.0...@availity/element@0.6.0) (2023-05-22)
 
 
