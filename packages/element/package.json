@@ -18,6 +18,7 @@
     "@availity/mui-badge": "workspace:*",
     "@availity/mui-divider": "workspace:*",
     "@availity/mui-icon": "workspace:*",
+    "@availity/mui-tooltip": "workspace:*",
     "@availity/theme-provider": "workspace:*",
     "@mui/material": "^5.11.9"
   },
