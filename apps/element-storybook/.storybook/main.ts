@@ -1,3 +1,4 @@
+import remarkGfm from 'remark-gfm';
 import { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
@@ -5,11 +6,20 @@ const config: StorybookConfig = {
     '../src/*.mdx',
     '../src/*.stories.@(js|jsx|ts|tsx)',
     '../../../packages/*/*.mdx',
-    '../../../packages/*/src/lib/*.stories.@(js|jsx|ts|tsx|mdx)'
+    '../../../packages/*/src/lib/*.stories.@(js|jsx|ts|tsx|mdx)',
   ],
   addons: [
-    '@storybook/addon-docs',
-    '@storybook/addon-essentials'
+    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -19,6 +29,14 @@ const config: StorybookConfig = {
       },
     },
   },
+  typescript: {
+    reactDocgenTypescriptOptions: {
+      propFilter: (prop) =>
+        prop.parent
+          ? !/node_modules\/(?!@mui)/.test(prop.parent.fileName) // filter out all node_modules except packages starting with "@mui"
+          : true,
+    }
+  }
 };
 
 export default config;
