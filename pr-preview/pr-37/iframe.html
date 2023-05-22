@@ -7,10 +7,10 @@
   <title>Storybook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="preload" href="./sb-common-assets/nunito-sans-regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./sb-common-assets/nunito-sans-italic.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./sb-common-assets/nunito-sans-bold.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./sb-common-assets/nunito-sans-bold-italic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="prefetch" href="./sb-common-assets/nunito-sans-regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="prefetch" href="./sb-common-assets/nunito-sans-italic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="prefetch" href="./sb-common-assets/nunito-sans-bold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="prefetch" href="./sb-common-assets/nunito-sans-bold-italic.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="./sb-common-assets/fonts.css" />
 
   <script>
@@ -18,7 +18,7 @@
     window.LOGLEVEL = 'info';
     window.FRAMEWORK_OPTIONS = {"builder":{"viteConfigPath":""}};
     window.CHANNEL_OPTIONS = {};
-    window.FEATURES = {"warnOnLegacyHierarchySeparator":true,"buildStoriesJson":false,"storyStoreV7":true,"breakingChangesV7":true,"argTypeTargetsV7":true,"legacyDecoratorFileOrder":false};
+    window.FEATURES = {"warnOnLegacyHierarchySeparator":true,"buildStoriesJson":false,"storyStoreV7":true,"argTypeTargetsV7":true,"legacyDecoratorFileOrder":false};
     window.STORIES = [{"titlePrefix":"","directory":"./apps/element-storybook/src","files":"*.mdx","importPathMatcher":"^\\.[\\\\/](?:apps\\/element-storybook\\/src\\/(?!\\.)(?=.)[^/]*?\\.mdx)$"},{"titlePrefix":"","directory":"./apps/element-storybook/src","files":"*.stories.@(js|jsx|ts|tsx)","importPathMatcher":"^\\.[\\\\/](?:apps\\/element-storybook\\/src\\/(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx))$"},{"titlePrefix":"","directory":"./packages","files":"*/*.mdx","importPathMatcher":"^\\.[\\\\/](?:packages\\/(?!\\.)(?=.)[^/]*?\\/(?!\\.)(?=.)[^/]*?\\.mdx)$"},{"titlePrefix":"","directory":"./packages","files":"*/src/lib/*.stories.@(js|jsx|ts|tsx|mdx)","importPathMatcher":"^\\.[\\\\/](?:packages\\/(?!\\.)(?=.)[^/]*?\\/src\\/lib\\/(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx|mdx))$"}];
     window.DOCS_OPTIONS = {"defaultName":"Docs","autodocs":"tag"};
     window.SERVER_CHANNEL_URL = undefined;
@@ -26,6 +26,7 @@
     // We do this so that "module && module.hot" etc. in Storybook source code
     // doesn't fail (it will simply be disabled)
     window.module = undefined;
+    window.global = window;
   </script>
   <base target="_parent" />
 
@@ -357,8 +358,7 @@
   }
 </script>
 
-  <script type="module" crossorigin src="./assets/iframe-650dcf9f.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/preload-helper-41c905a7.js">
+  <script type="module" crossorigin src="./assets/iframe-46f0354b.js"></script>
 </head>
 
 <body>
