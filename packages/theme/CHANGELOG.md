@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/theme@0.3.0...@availity/theme@0.4.0) (2023-05-22)
+
+
+### Features
+
+* **theme:** add paper styles ([fec23ba](https://github.com/Availity/element/commit/fec23ba558417c34bfaba2f428b07f9c46e8b240))
+
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/theme@0.2.2...@availity/theme@0.3.0) (2023-04-07)
 
 

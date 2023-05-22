@@ -2,6 +2,34 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.0](https://github.com/Availity/element/compare/@availity/element@0.6.0...@availity/element@0.7.0) (2023-05-22)
+
+
+### Features
+
+* **mui-paper:** add paper component ([4bf7776](https://github.com/Availity/element/commit/4bf7776a0f19e3566983e176901233a6292fa745))
+
+## [0.6.0](https://github.com/Availity/element/compare/@availity/element@0.5.0...@availity/element@0.6.0) (2023-05-22)
+
+
+### Features
+
+* create Tooltip component UXDS-187 ([5f50f13](https://github.com/Availity/element/commit/5f50f13b17d3f75a107bbee1a83ac35cfc326b81))
+
+## [0.5.0](https://github.com/Availity/element/compare/@availity/element@0.4.0...@availity/element@0.5.0) (2023-05-16)
+
+
+### Features
+
+* **mui-divider:** adding to element ([0998bfe](https://github.com/Availity/element/commit/0998bfe1b5133d01bd6c75d2bba830f72a7e2087))
+
+## [0.4.0](https://github.com/Availity/element/compare/@availity/element@0.3.1...@availity/element@0.4.0) (2023-05-15)
+
+
+### Features
+
+* **mui-divider:** adding divider package to library ([9ff3ec1](https://github.com/Availity/element/commit/9ff3ec19b0dcd2fba354513cb9d3ad45a00c5233))
+
 ## [0.3.1](https://github.com/Availity/element/compare/@availity/element@0.3.0...@availity/element@0.3.1) (2023-03-23)
 
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/element@0.2.1...@availity/element@0.3.0) (2023-03-23)

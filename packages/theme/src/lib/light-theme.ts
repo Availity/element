@@ -247,22 +247,22 @@ export const lightTheme = {
       styleOverrides: {
         action: {
           margin: '-3px -3px -3px auto',
-          padding: '0 0 0 11px'
+          padding: '0 0 0 11px',
         },
         icon: {
           opacity: 1,
           padding: '4px',
           margin: 0,
-          fontSize: tokens.fontSizesBody1
+          fontSize: tokens.fontSizesBody1,
         },
         message: {
           color: tokens.colorTextPrimary,
-          padding: 0
+          padding: 0,
         },
         root: {
           fontSize: tokens.fontSizesBody1,
           lineHeight: tokens.lineHeightsBody1,
-          padding: '8px'
+          padding: '8px',
         },
       },
     },
@@ -270,15 +270,15 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           margin: 0,
-          fontWeight: tokens.fontWeightsBold
-        }
-      }
+          fontWeight: tokens.fontWeightsBold,
+        },
+      },
     },
     MuiButton: {
       defaultProps: {
         // The props to change the default for.
         disableRipple: true, // No more ripple, on the whole application 💣!
-        disableElevation: true
+        disableElevation: true,
       },
       styleOverrides: {
         root: ({ ownerState } : any) => ({
@@ -335,6 +335,16 @@ export const lightTheme = {
         },
       }
     },
+    MuiPaper: {
+      defaultProps: {
+        variant: 'outlined',
+      },
+      styleOverrides: {
+        root: {
+          borderColor: tokens.colorBackgroundBorder,
+        },
+      },
+    },
     MuiSvgIcon: {
       styleOverrides: {
         root: {
@@ -352,6 +362,5 @@ export const lightTheme = {
         },
       },
     }
-  }
-}
-
+  },
+};

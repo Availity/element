@@ -2,12 +2,45 @@ import { Meta } from '@storybook/addon-docs';
 
 <Meta title="BS4 Migration/Getting Started" />
 
-## First Steps
+## Installation
 
-Follow Usage instructions in `@availity/element` ReadMe for installation and theme provider steps.
+To install the library in your project, you can use either NPM or Yarn:
 
-## Reactstrap Component Equivalents
+```sh
+npm install @availity/element
+```
 
-Not all components from Reactstrap have a 1:1 equivalent in MUI. Listed below are some notable changes
+OR
 
-- Badge -> Chip
+```sh
+yarn add @availity/element
+```
+
+## Usage
+
+The [@availity/element](./packages/element/) package contains all of the components and hooks for the design system. We recommend using this package when you want to use multiple components.
+
+To use the components in your project, you will need to import them first:
+
+```tsx
+import { Button, ThemeProvider } from '@availity/element';
+```
+
+Make sure all of the components you use are inside the `ThemeProvider` component. We recommend placing it in your root `index.{js|tsx}` file.
+
+```jsx
+import { ThemePovider } from '@availity/element';
+
+const App = () => {
+  return <ThemeProvider>{/* Application code. Most likely a router. */}</ThemeProvider>;
+};
+```
+
+## Component Equivalents
+
+Not all classes/components from Bootstrap/Reactstrap have a similar name or 1:1 equivalent in MUI. Listed below are some notable changes
+
+| Bootstrap | MUI | Example Use | Description |
+| --- | --- | --- | --- |
+| `Badge`<sup>1</sup> | `Badge` | Counters | Small corner overlay of base element |
+| `Badge`<sup>2</sup> | `Chip` | Status | Inline colored label/descriptor |
