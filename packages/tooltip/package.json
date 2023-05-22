@@ -1,25 +1,24 @@
 {
-  "name": "@availity/mui-badge",
-  "version": "0.1.4",
-  "description": "Availity MUI Badge Component - part of the @availity/element design system",
+  "name": "@availity/mui-tooltip",
+  "version": "0.1.0",
+  "description": "Availity MUI Tooltip Component - part of the @availity/element design system",
   "keywords": [
     "react",
     "typescript",
     "availity",
-    "badge",
     "mui"
   ],
-  "homepage": "https://availity.github.io/element/?path=/docs/components-badge-introduction--docs",
+  "homepage": "https://availity.github.io/element/?path=/docs/components-tooltip-introduction--docs",
   "bugs": {
     "url": "https://github.com/Availity/element/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Availity/element.git",
-    "directory": "packages/badge"
+    "directory": "packages/tooltip"
   },
   "license": "MIT",
-  "author": "Roxanne Young <roxanne.young@availity.com>",
+  "author": "Availity Developers <AVOSS@availity.com>",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

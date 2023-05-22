@@ -1,6 +1,6 @@
 {
   "name": "@availity/element",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -19,6 +19,7 @@
     "@availity/mui-divider": "workspace:*",
     "@availity/mui-icon": "workspace:*",
     "@availity/mui-paper": "workspace:*",
+    "@availity/mui-tooltip": "workspace:*",
     "@availity/theme-provider": "workspace:*",
     "@mui/material": "^5.11.9"
   },

@@ -42,6 +42,7 @@ __metadata:
     "@availity/mui-divider": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@availity/mui-paper": "workspace:*"
+    "@availity/mui-tooltip": "workspace:*"
     "@availity/theme-provider": "workspace:*"
     "@mui/material": ^5.11.9
     react: 18.2.0
@@ -135,6 +136,10 @@ __metadata:
 "@availity/mui-paper@workspace:*, @availity/mui-paper@workspace:packages/paper":
   version: 0.0.0-use.local
   resolution: "@availity/mui-paper@workspace:packages/paper"
+
+"@availity/mui-tooltip@workspace:*, @availity/mui-tooltip@workspace:packages/tooltip":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-tooltip@workspace:packages/tooltip
   dependencies:
     "@mui/material": ^5.11.9
     react: 18.2.0
