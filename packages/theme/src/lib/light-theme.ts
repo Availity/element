@@ -247,22 +247,22 @@ export const lightTheme = {
       styleOverrides: {
         action: {
           margin: '-3px -3px -3px auto',
-          padding: '0 0 0 11px'
+          padding: '0 0 0 11px',
         },
         icon: {
           opacity: 1,
           padding: '4px',
           margin: 0,
-          fontSize: tokens.fontSizesBody1
+          fontSize: tokens.fontSizesBody1,
         },
         message: {
           color: tokens.colorTextPrimary,
-          padding: 0
+          padding: 0,
         },
         root: {
           fontSize: tokens.fontSizesBody1,
           lineHeight: tokens.lineHeightsBody1,
-          padding: '8px'
+          padding: '8px',
         },
       },
     },
@@ -270,103 +270,113 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           margin: 0,
-          fontWeight: tokens.fontWeightsBold
-        }
-      }
+          fontWeight: tokens.fontWeightsBold,
+        },
+      },
     },
     MuiButton: {
       defaultProps: {
         // The props to change the default for.
         disableRipple: true, // No more ripple, on the whole application 💣!
-        disableElevation: true
+        disableElevation: true,
       },
       styleOverrides: {
         root: {
           minWidth: '128px',
-          textTransform: "none"
-        }
+          textTransform: 'none',
+        },
       },
       variants: [
         {
-          props: { color: "tertiary", variant: "contained" },
+          props: { color: 'tertiary', variant: 'contained' },
           style: {
             backgroundColor: tokens.colorTertiaryMain,
             color: tokens.colorTertiaryContrast,
-            "&:hover": {
-              backgroundColor: tokens.colorTertiaryDark
-            },
-            "&:focus": {
+            '&:hover': {
               backgroundColor: tokens.colorTertiaryDark,
-              outline: "2px solid white",
-              boxShadow: "0 0 0px 4px rgba(0,0,0,1)"
             },
-            "&:active": {
-              backgroundColor: tokens.colorTertiaryMain
-            }
-          }
+            '&:focus': {
+              backgroundColor: tokens.colorTertiaryDark,
+              outline: '2px solid white',
+              boxShadow: '0 0 0px 4px rgba(0,0,0,1)',
+            },
+            '&:active': {
+              backgroundColor: tokens.colorTertiaryMain,
+            },
+          },
         },
         {
-          props: { color: "secondary" },
-            style: {
+          props: { color: 'secondary' },
+          style: {
             backgroundColor: tokens.colorSecondaryMain,
             color: tokens.colorSecondaryContrast,
-            "&:hover": {
-              backgroundColor: tokens.colorSecondaryDark
+            '&:hover': {
+              backgroundColor: tokens.colorSecondaryDark,
             },
-            "&:focus": {
+            '&:focus': {
               backgroundColor: tokens.colorSecondaryDarker,
-              outline: "2px solid white",
-              boxShadow: "0 0 0px 4px rgba(0,0,0,1)"
+              outline: '2px solid white',
+              boxShadow: '0 0 0px 4px rgba(0,0,0,1)',
             },
-            "&:active": {
-              backgroundColor: tokens.colorSecondaryMain
-            }
-          }
+            '&:active': {
+              backgroundColor: tokens.colorSecondaryMain,
+            },
+          },
         },
         {
-          props: { color: "primary" },
-            style: {
+          props: { color: 'primary' },
+          style: {
             backgroundColor: tokens.colorPrimaryMain,
             color: tokens.colorPrimaryContrast,
-            "&:hover": {
-              backgroundColor: tokens.colorPrimaryDark
+            '&:hover': {
+              backgroundColor: tokens.colorPrimaryDark,
             },
-            "&:focus": {
+            '&:focus': {
               backgroundColor: tokens.colorPrimaryMain,
-              outline: "2px solid white",
-              boxShadow: "0 0 0px 4px rgba(21,82,188,1)"
+              outline: '2px solid white',
+              boxShadow: '0 0 0px 4px rgba(21,82,188,1)',
             },
-            "&:active": {
-              backgroundColor: tokens.colorPrimaryLight
-            }
-          }
+            '&:active': {
+              backgroundColor: tokens.colorPrimaryLight,
+            },
+          },
         },
         {
-          props: { color: "error", variant: "contained" },
+          props: { color: 'error', variant: 'contained' },
           style: {
             backgroundColor: tokens.colorErrorMain,
             color: tokens.colorErrorContrast,
-            "&:hover": {
-              backgroundColor: tokens.colorErrorDark
+            '&:hover': {
+              backgroundColor: tokens.colorErrorDark,
             },
-            "&:focus": {
+            '&:focus': {
               backgroundColor: tokens.colorErrorMain,
-              outline: "2px solid white",
-              boxShadow: "0 0 0px 4px rgba(21,82,188,1)"
+              outline: '2px solid white',
+              boxShadow: '0 0 0px 4px rgba(21,82,188,1)',
             },
-            "&:active": {
-              backgroundColor: tokens.colorErrorLight
-            }
-          }
-        }
-      ]
+            '&:active': {
+              backgroundColor: tokens.colorErrorLight,
+            },
+          },
+        },
+      ],
     },
     MuiLoadingButton: {
       styleOverrides: {
         root: {
-          position: 'relative'
-        }
-      }
+          position: 'relative',
+        },
+      },
+    },
+    MuiPaper: {
+      defaultProps: {
+        variant: 'outlined',
+      },
+      styleOverrides: {
+        root: {
+          borderColor: tokens.colorBackgroundBorder,
+        },
+      },
     },
     MuiSvgIcon: {
       styleOverrides: {
@@ -374,7 +384,6 @@ export const lightTheme = {
           fontSize: 'inherit',
         },
       },
-    }
-  }
-}
-
+    },
+  },
+};
