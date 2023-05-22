@@ -1,7 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react';
 import Grid from '@mui/material/Grid';
-import { SearchIcon } from '@availity/mui-icon';
-import { IconButton } from './IconButton';
+import { ArrowCircleLeftIcon, ArrowCircleRightIcon } from '@availity/mui-icon';
 import { Button, ButtonProps } from './Button'
 import React from 'react';
 
@@ -59,16 +58,40 @@ export const _ButtonSizes: Story = {
     <Grid container spacing={1}>
       <Grid item xs={12}>
         <Button color="tertiary" size="small">Small Button</Button>
-        <IconButton title="small search" sx={{ml: 1}} filled color="tertiary" size="small"><SearchIcon/></IconButton>
       </Grid>
       <Grid item xs={12}>
         <Button color="secondary" size="medium">Medium Button</Button>
-        <IconButton title="medium search" sx={{ml: 1}} filled color="secondary" size="medium"><SearchIcon/></IconButton>
       </Grid>
       <Grid item xs={12}>
         <Button color="primary" size="large">Large Button</Button>
-        <IconButton title="large search" sx={{ml: 1}} filled color="primary" size="large"><SearchIcon/></IconButton>
       </Grid>
+    </Grid>
+  )
+};
+
+export const _ButtonWithIcon: Story = {
+  render: () => (
+    <Grid container spacing={1}>
+      <Grid item xs={3}>
+        <Button color="primary" size="large" startIcon={<ArrowCircleLeftIcon/>}>Large</Button>
+      </Grid>
+      <Grid item xs={3}>
+        <Button color="primary" size="medium" startIcon={<ArrowCircleLeftIcon/>}>Medium</Button>
+      </Grid>
+      <Grid item xs={3}>
+        <Button color="primary" size="small" startIcon={<ArrowCircleLeftIcon/>}>Small</Button>
+      </Grid>
+      <Grid xs={3}/>
+      <Grid item xs={3}>
+        <Button color="primary" size="large" endIcon={<ArrowCircleRightIcon/>}>Large</Button>
+      </Grid>
+      <Grid item xs={3}>
+        <Button color="primary" size="medium" endIcon={<ArrowCircleRightIcon/>}>Medium</Button>
+      </Grid>
+      <Grid item xs={3}>
+        <Button color="primary" size="small" endIcon={<ArrowCircleRightIcon/>}>Small</Button>
+      </Grid>
+      <Grid xs={3}/>
     </Grid>
   )
 };

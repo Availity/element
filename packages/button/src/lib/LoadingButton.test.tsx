@@ -16,6 +16,6 @@ describe('LoadingButton', () => {
   test('should display spinner in end position when no icon passed', () => {
     const { getByRole } = render(<LoadingButton loading>Test</LoadingButton>);
     expect(getByRole('progressbar')).toBeTruthy();
-    expect(getByRole('progressbar')).tohaveClass('MuiLoadingButton-loadingIndicatorEnd');
+    expect(getByRole('progressbar').parentElement).toHaveClass('MuiLoadingButton-loadingIndicatorEnd');
   });
 });
