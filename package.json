@@ -50,6 +50,7 @@
     "@nrwl/storybook": "^15.7.0",
     "@nrwl/vite": "15.6.2",
     "@nrwl/workspace": "15.6.2",
+    "@storybook/addon-a11y": "^7.0.14",
     "@storybook/addon-essentials": "^7.0.0-beta.64",
     "@storybook/core-server": "^7.0.0-beta.64",
     "@storybook/react-vite": "^7.0.0-beta.64",
