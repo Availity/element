@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.3.0...@availity/mui-tooltip@0.4.0) (2023-05-23)
+
+
+### Features
+
+* comment UXDS-257 ([098b9f6](https://github.com/Availity/element/commit/098b9f633147d7288ea80512ad67dfc727e5e2d4))
+
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.2.0...@availity/mui-tooltip@0.3.0) (2023-05-23)
 
 
