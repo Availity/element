@@ -8,7 +8,6 @@ export type TooltipProps = Omit<
   | 'classes'
   | 'components'
   | 'componentsProps'
-  | 'describeChild'
   | 'disableFocusListener'
   | 'disableHoverListener'
   | 'disableInteractive'
@@ -44,7 +43,6 @@ export const Tooltip = forwardRef<ReactElement, TooltipProps>((props, forwardedR
     classes,
     components,
     componentsProps,
-    describeChild,
     disableFocusListener,
     disableHoverListener,
     disableInteractive,
@@ -65,7 +63,7 @@ export const Tooltip = forwardRef<ReactElement, TooltipProps>((props, forwardedR
     TransitionComponent,
     TransitionProps,
     ...rest
-  } = props as TooltipProps & MuiTooltipProps;
+  } = props;
 
   return (
     <MuiTooltip
