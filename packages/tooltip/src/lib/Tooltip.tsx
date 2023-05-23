@@ -27,8 +27,7 @@ export type TooltipProps = Omit<
   | 'TransitionProps'
 > & {
   /** Sets the duration in ms of the animation to hide/show tooltip.
-   *
-   * **Default:** `100` */
+   * @default 100 */
   dangerouslySetTransitionTimer?: number;
 };
 
