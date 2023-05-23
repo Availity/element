@@ -28,11 +28,17 @@ export type TooltipProps = Omit<
   | 'sx'
   | 'TransitionComponent'
   | 'TransitionProps'
->;
+> & {
+  /** Sets the duration in ms of the animation to hide/show tooltip.
+   *
+   * **Default:** `100` */
+  dangerouslySetTransitionTimer?: number;
+};
 
 export const Tooltip = forwardRef<ReactElement, TooltipProps>((props, forwardedRef) => {
   const {
     children,
+    dangerouslySetTransitionTimer,
     arrow,
     id,
     classes,
@@ -62,7 +68,12 @@ export const Tooltip = forwardRef<ReactElement, TooltipProps>((props, forwardedR
   } = props as TooltipProps & MuiTooltipProps;
 
   return (
-    <MuiTooltip {...rest} ref={forwardedRef} arrow>
+    <MuiTooltip
+      {...rest}
+      ref={forwardedRef}
+      TransitionProps={{ timeout: dangerouslySetTransitionTimer !== undefined ? dangerouslySetTransitionTimer : 100 }}
+      arrow
+    >
       {children}
     </MuiTooltip>
   );
