@@ -1,5 +1,6 @@
 import React from 'react';
 import type { StoryObj } from '@storybook/react';
+import { HomeIcon } from '@availity/mui-icon';
 import { Badge, BadgeProps } from './Badge';
 
 export default {
@@ -9,9 +10,12 @@ export default {
 };
 
 export const _Badge: StoryObj<typeof Badge> = {
-  render: (args: BadgeProps) => <Badge {...args} />,
+  render: (args: BadgeProps) => (
+    <Badge {...args}>
+      <HomeIcon fontSize="large" />
+    </Badge>
+  ),
   args: {
-    children: 'This text is a child of the badge',
     badgeContent: 3,
     variant: 'standard',
     anchorOrigin: { horizontal: 'right', vertical: 'top' },
