@@ -8,7 +8,6 @@ export type TooltipProps = Omit<
   | 'classes'
   | 'components'
   | 'componentsProps'
-  | 'describeChild'
   | 'disableFocusListener'
   | 'disableHoverListener'
   | 'disableInteractive'
@@ -18,8 +17,6 @@ export type TooltipProps = Omit<
   | 'enterTouchDelay'
   | 'followCursor'
   | 'leaveTouchDelay'
-  | 'onClose'
-  | 'onOpen'
   | 'open'
   | 'PopperComponent'
   | 'PopperProps'
@@ -36,37 +33,7 @@ export type TooltipProps = Omit<
 };
 
 export const Tooltip = forwardRef<ReactElement, TooltipProps>((props, forwardedRef) => {
-  const {
-    children,
-    dangerouslySetTransitionTimer,
-    arrow,
-    id,
-    classes,
-    components,
-    componentsProps,
-    describeChild,
-    disableFocusListener,
-    disableHoverListener,
-    disableInteractive,
-    disableTouchListener,
-    enterDelay,
-    enterNextDelay,
-    enterTouchDelay,
-    followCursor,
-    leaveTouchDelay,
-    onClose,
-    onOpen,
-    open,
-    PopperComponent,
-    PopperProps,
-    slotProps,
-    slots,
-    sx,
-    TransitionComponent,
-    TransitionProps,
-    ...rest
-  } = props as TooltipProps & MuiTooltipProps;
-
+  const { children, dangerouslySetTransitionTimer, ...rest } = props;
   return (
     <MuiTooltip
       {...rest}
