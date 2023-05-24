@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import { Tooltip as MuiTooltip, TooltipProps as MuiTooltipProps } from '@mui/material';
 
 export type TooltipProps = Omit<
@@ -29,17 +28,16 @@ export type TooltipProps = Omit<
   dangerouslySetTransitionTimer?: number;
 };
 
-export const Tooltip = forwardRef<unknown, TooltipProps>((props, forwardedRef) => {
+export const Tooltip = (props: TooltipProps) => {
   const { children, dangerouslySetTransitionTimer, ...rest } = props;
 
   return (
     <MuiTooltip
       {...rest}
-      ref={forwardedRef}
       TransitionProps={{ timeout: dangerouslySetTransitionTimer !== undefined ? dangerouslySetTransitionTimer : 100 }}
       arrow
     >
       {children}
     </MuiTooltip>
   );
-});
+};
