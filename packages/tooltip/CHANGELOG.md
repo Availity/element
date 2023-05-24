@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.4.1...@availity/mui-tooltip@0.5.0) (2023-05-24)
+
+
+### Features
+
+* remove forwardref UXDS-257 ([d40b348](https://github.com/Availity/element/commit/d40b348eba68513b9e46a7bc4ed2b918bdcaa44e))
+
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.4.0...@availity/mui-tooltip@0.4.1) (2023-05-24)
 
 
