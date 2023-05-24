@@ -1,10 +1,9 @@
-import React, { forwardRef, ReactElement } from 'react';
+import { forwardRef } from 'react';
 import { Tooltip as MuiTooltip, TooltipProps as MuiTooltipProps } from '@mui/material';
 
 export type TooltipProps = Omit<
   MuiTooltipProps,
   | 'arrow'
-  | 'id'
   | 'classes'
   | 'components'
   | 'componentsProps'
@@ -17,7 +16,6 @@ export type TooltipProps = Omit<
   | 'enterTouchDelay'
   | 'followCursor'
   | 'leaveTouchDelay'
-  | 'open'
   | 'PopperComponent'
   | 'PopperProps'
   | 'slotProps'
@@ -31,8 +29,9 @@ export type TooltipProps = Omit<
   dangerouslySetTransitionTimer?: number;
 };
 
-export const Tooltip = forwardRef<ReactElement, TooltipProps>((props, forwardedRef) => {
+export const Tooltip = forwardRef<unknown, TooltipProps>((props, forwardedRef) => {
   const { children, dangerouslySetTransitionTimer, ...rest } = props;
+
   return (
     <MuiTooltip
       {...rest}
