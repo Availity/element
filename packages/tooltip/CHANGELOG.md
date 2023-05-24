@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.4.0...@availity/mui-tooltip@0.4.1) (2023-05-24)
+
+
+### Bug Fixes
+
+* **mui-tooltip:** change ref type ([1f52f5f](https://github.com/Availity/element/commit/1f52f5fa988c670923b450c6a971c19e4b624136))
+
 ## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.3.0...@availity/mui-tooltip@0.4.0) (2023-05-23)
 
 
