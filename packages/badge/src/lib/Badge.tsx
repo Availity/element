@@ -5,7 +5,7 @@ import type { BadgeProps as MUIBadgeProps } from '@mui/material';
 export interface BadgeProps extends MUIBadgeProps {
   badgeContent?: number;
   children: React.ReactNode;
-  color?: 'primary' | 'error';
+  color?: 'primary' | 'error' | 'success';
 }
 
 export const Badge = ({ children, color = 'error', ...rest }: BadgeProps): JSX.Element => (
