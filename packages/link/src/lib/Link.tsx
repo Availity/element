@@ -46,7 +46,7 @@ export type LinkProps = {
   href: string;
   /** format href to leverage loadApp within home iframe when relative url used.
    *
-   * **Default:** `true` */
+   * @default true */
   loadApp?: boolean;
   /** Where to open the linked document. Adds `OpenInNewIcon` when target is `_blank` */
   target?: string;
@@ -54,7 +54,7 @@ export type LinkProps = {
   onClick?: (event: React.MouseEvent, url: string) => void;
   children?: ReactNode;
   rel?: string;
-} & Omit<MuiLinkProps, 'underline' | 'noWrap' | 'variantMapping' | keyof SystemProps>;
+} & Omit<MuiLinkProps, 'underline' | 'noWrap' | 'variantMapping' | 'variant' | keyof SystemProps>;
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
   const { href, target = '_self', children, onClick, loadApp = true, rel, ...rest } = props;
