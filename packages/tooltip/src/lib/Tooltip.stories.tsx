@@ -77,5 +77,5 @@ export default {
 };
 
 export const _Tooltip: StoryObj<typeof Tooltip> = {
-  render: ({ ...props }: TooltipProps) => <Tooltip {...props} />,
+  render: (props: TooltipProps) => <Tooltip {...props} />,
 };

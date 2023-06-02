@@ -10,6 +10,7 @@ const config: StorybookConfig = {
   ],
   addons: [
     '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
     {
       name: '@storybook/addon-docs',
       options: {
@@ -35,8 +36,8 @@ const config: StorybookConfig = {
         prop.parent
           ? !/node_modules\/(?!@mui)/.test(prop.parent.fileName) // filter out all node_modules except packages starting with "@mui"
           : true,
-    }
-  }
+    },
+  },
 };
 
 export default config;

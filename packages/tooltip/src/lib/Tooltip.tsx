@@ -1,14 +1,11 @@
-import React, { forwardRef, ReactElement } from 'react';
 import { Tooltip as MuiTooltip, TooltipProps as MuiTooltipProps } from '@mui/material';
 
 export type TooltipProps = Omit<
   MuiTooltipProps,
   | 'arrow'
-  | 'id'
   | 'classes'
   | 'components'
   | 'componentsProps'
-  | 'describeChild'
   | 'disableFocusListener'
   | 'disableHoverListener'
   | 'disableInteractive'
@@ -18,9 +15,6 @@ export type TooltipProps = Omit<
   | 'enterTouchDelay'
   | 'followCursor'
   | 'leaveTouchDelay'
-  | 'onClose'
-  | 'onOpen'
-  | 'open'
   | 'PopperComponent'
   | 'PopperProps'
   | 'slotProps'
@@ -28,42 +22,22 @@ export type TooltipProps = Omit<
   | 'sx'
   | 'TransitionComponent'
   | 'TransitionProps'
->;
+> & {
+  /** Sets the duration in ms of the animation to hide/show tooltip.
+   * @default 100 */
+  dangerouslySetTransitionTimer?: number;
+};
 
-export const Tooltip = forwardRef<ReactElement, TooltipProps>((props, forwardedRef) => {
-  const {
-    children,
-    arrow,
-    id,
-    classes,
-    components,
-    componentsProps,
-    describeChild,
-    disableFocusListener,
-    disableHoverListener,
-    disableInteractive,
-    disableTouchListener,
-    enterDelay,
-    enterNextDelay,
-    enterTouchDelay,
-    followCursor,
-    leaveTouchDelay,
-    onClose,
-    onOpen,
-    open,
-    PopperComponent,
-    PopperProps,
-    slotProps,
-    slots,
-    sx,
-    TransitionComponent,
-    TransitionProps,
-    ...rest
-  } = props as TooltipProps & MuiTooltipProps;
+export const Tooltip = (props: TooltipProps) => {
+  const { children, dangerouslySetTransitionTimer, ...rest } = props;
 
   return (
-    <MuiTooltip {...rest} ref={forwardedRef} arrow>
+    <MuiTooltip
+      {...rest}
+      TransitionProps={{ timeout: dangerouslySetTransitionTimer !== undefined ? dangerouslySetTransitionTimer : 100 }}
+      arrow
+    >
       {children}
     </MuiTooltip>
   );
-});
+};

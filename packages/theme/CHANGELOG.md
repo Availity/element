@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/Availity/element/compare/@availity/theme@0.4.0...@availity/theme@0.5.0) (2023-06-01)
+
+
+### Features
+
+* **mui-button:** design specs ([6b67b24](https://github.com/Availity/element/commit/6b67b24cdfef68e14daaeba18a5fd7d90af46a09))
+
 ## [0.4.0](https://github.com/Availity/element/compare/@availity/theme@0.3.0...@availity/theme@0.4.0) (2023-05-22)
 
 

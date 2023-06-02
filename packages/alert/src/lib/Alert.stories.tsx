@@ -9,14 +9,14 @@ export default {
   component: Alert,
   tags: ['autodocs'],
   args: {
-    severity: 'info',
+    // severity: 'info',
     children: 'This text is inside the alert'
   }
 };
 
 export const _Alert: StoryObj<typeof Alert> = {
   render: (args: AlertProps) => (
-    <Alert {...args}/>
+    <Alert severity="info" {...args}/>
   )
 };
 

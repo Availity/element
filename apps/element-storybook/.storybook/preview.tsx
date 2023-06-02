@@ -14,8 +14,10 @@ export const parameters = {
       order: [
         'Element',
         'Contributing',
-        'Design System/**',
-        'Components/**'
+        'BS4 Migration',
+        ['Getting Started'],
+        'Design System',
+        'Components'
       ],
     },
   },

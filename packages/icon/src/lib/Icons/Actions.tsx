@@ -13,45 +13,45 @@ import { SvgIconProps } from '@mui/material';
 import { FaSvgIcon } from '../FaSvgIcon';
 
 export const FilterIcon = ({...props} : SvgIconProps) : JSX.Element => (
-  <FaSvgIcon icon={faFilter} titleAccess='Filter' {...props}/>
+  <FaSvgIcon icon={faFilter} {...props}/>
 );
 
 export const HeartIcon = ({...props} : SvgIconProps) : JSX.Element => (
-  <FaSvgIcon icon={faHeart} titleAccess='Favorite' {...props}/>
+  <FaSvgIcon icon={faHeart} {...props}/>
 );
 
 export const HeartEmptyIcon = ({...props} : SvgIconProps) : JSX.Element => (
-  <FaSvgIcon icon={faHeartEmpty} titleAccess='Favorite' {...props}/>
+  <FaSvgIcon icon={faHeartEmpty} {...props}/>
 );
 
 export const MinusCircleIcon = ({...props} : SvgIconProps) : JSX.Element => (
-  <FaSvgIcon icon={faMinusCircle} titleAccess='Remove' {...props}/>
+  <FaSvgIcon icon={faMinusCircle} {...props}/>
 );
 
 export const PlusCircleIcon = ({...props} : SvgIconProps) : JSX.Element => (
-  <FaSvgIcon icon={faPlusCircle} titleAccess='Add' {...props}/>
+  <FaSvgIcon icon={faPlusCircle} {...props}/>
 );
 
 export const CancelCircleIcon = ({...props} : SvgIconProps) : JSX.Element => (
-  <FaSvgIcon icon={faXmarkCircle} titleAccess='Cancel' {...props}/>
+  <FaSvgIcon icon={faXmarkCircle} {...props}/>
 );
 
 export const SortIcon = ({...props} : SvgIconProps) : JSX.Element => (
-  <FaSvgIcon icon={faSort} titleAccess='Sort' {...props}/>
+  <FaSvgIcon icon={faSort}{...props}/>
 );
 
 export const SortDownIcon = ({...props} : SvgIconProps) : JSX.Element => (
-  <FaSvgIcon icon={faSortDown} titleAccess='Sort Descending' {...props}/>
+  <FaSvgIcon icon={faSortDown} {...props}/>
 );
 
 export const SortUpIcon = ({...props} : SvgIconProps) : JSX.Element => (
-  <FaSvgIcon icon={faSortUp} titleAccess='Sort Ascending' {...props}/>
+  <FaSvgIcon icon={faSortUp} {...props}/>
 );
 
 export const SortAltDownIcon = ({...props} : SvgIconProps) : JSX.Element => (
-  <FaSvgIcon icon={faArrowDownWideShort} titleAccess='Sort Descending' {...props}/>
+  <FaSvgIcon icon={faArrowDownWideShort} {...props}/>
 );
 
 export const SortAltUpIcon = ({...props} : SvgIconProps) : JSX.Element => (
-  <FaSvgIcon icon={faArrowUpShortWide} titleAccess='Sort Ascending' {...props}/>
+  <FaSvgIcon icon={faArrowUpShortWide} {...props}/>
 );
