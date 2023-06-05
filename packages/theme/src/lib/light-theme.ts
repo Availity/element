@@ -335,6 +335,22 @@ export const lightTheme = {
         },
       }
     },
+    MuiLink: {
+      defaultProps: {
+        underline: 'hover',
+      },
+      styleOverrides: {
+        root: {
+          fontWeight: tokens.fontWeightsBold,
+          '&:active': {
+            color: tokens.colorTextPrimary,
+          },
+          '&:visited': {
+            color: tokens.colorIndigo600,
+          },
+        },
+      },
+    },
     MuiPaper: {
       defaultProps: {
         variant: 'outlined',

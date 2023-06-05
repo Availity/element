@@ -19,10 +19,12 @@
     "@availity/mui-button": "workspace:*",
     "@availity/mui-divider": "workspace:*",
     "@availity/mui-icon": "workspace:*",
+    "@availity/mui-link": "workspace:*",
     "@availity/mui-paper": "workspace:*",
     "@availity/mui-tooltip": "workspace:*",
     "@availity/theme-provider": "workspace:*",
-    "@mui/material": "^5.11.9"
+    "@mui/material": "^5.11.9",
+    "@mui/system": "^5.11.9"
   },
   "devDependencies": {
     "react": "18.2.0",
