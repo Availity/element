@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/Availity/element/compare/@availity/element@0.7.1...@availity/element@0.8.0) (2023-06-05)
+
+
+### Features
+
+* **mui-link:** add link package ([dbcf569](https://github.com/Availity/element/commit/dbcf569191cd0525b2c474eab0d2b487feb473ee))
+
 ## [0.7.1](https://github.com/Availity/element/compare/@availity/element@0.7.0...@availity/element@0.7.1) (2023-05-22)
 
 
