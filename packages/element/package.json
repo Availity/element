@@ -20,6 +20,7 @@
     "@availity/mui-divider": "workspace:*",
     "@availity/mui-icon": "workspace:*",
     "@availity/mui-link": "workspace:*",
+    "@availity/mui-menu": "workspace:*",
     "@availity/mui-paper": "workspace:*",
     "@availity/mui-tooltip": "workspace:*",
     "@availity/theme-provider": "workspace:*",
