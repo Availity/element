@@ -1,0 +1,11 @@
+# Changelog
+
+This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
+
+## 0.1.0 (2023-06-06)
+
+
+### Features
+
+* **mui-menu:** add menu component ([5cc8b1f](https://github.com/Availity/element/commit/5cc8b1f15e0aa987135e0bbac99943f2f46f6287))
+* **mui-menu:** omit menu props ([b81152a](https://github.com/Availity/element/commit/b81152a0f7804d34055962617f32194b02f2557f))
