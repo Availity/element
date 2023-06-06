@@ -43,6 +43,7 @@ __metadata:
     "@availity/mui-divider": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@availity/mui-link": "workspace:*"
+    "@availity/mui-menu": "workspace:*"
     "@availity/mui-paper": "workspace:*"
     "@availity/mui-tooltip": "workspace:*"
     "@availity/theme-provider": "workspace:*"
@@ -149,6 +150,21 @@ __metadata:
   peerDependencies:
     "@mui/material": ^5.11.9
     "@mui/system": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-menu@workspace:*, @availity/mui-menu@workspace:packages/menu":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-menu@workspace:packages/menu"
+  dependencies:
+    "@mui/material": ^5.11.9
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@mui/material": ^5.11.9
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft

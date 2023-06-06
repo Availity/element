@@ -4,6 +4,7 @@ export * from '@availity/mui-button';
 export * from '@availity/mui-divider';
 export * from '@availity/mui-icon';
 export * from '@availity/mui-link';
+export * from '@availity/mui-menu';
 export * from '@availity/mui-paper';
-export * from '@availity/theme-provider';
 export * from '@availity/mui-tooltip';
+export * from '@availity/theme-provider';
