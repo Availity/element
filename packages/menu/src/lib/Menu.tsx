@@ -9,7 +9,18 @@ import {
 
 export type MenuProps = Omit<
   MuiMenuProps,
-  'classes' | 'sx' | 'PopoverClasses' | 'BackdropComponent' | 'BackdropProps' | 'onBackdropClick' | 'ref'
+  | 'BackdropComponent'
+  | 'BackdropProps'
+  | 'classes'
+  | 'disableAutoFocusItem'
+  | 'disableEnforceFocus'
+  | 'disableEscapeKeyDown'
+  | 'onBackdropClick'
+  | 'PopoverClasses'
+  | 'ref'
+  | 'sx'
+  | 'TransitionComponent'
+  | 'TransitionProps'
 >;
 
 export const Menu = (props: MenuProps): JSX.Element => {
