@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.0](https://github.com/Availity/element/compare/@availity/element@0.8.0...@availity/element@0.9.0) (2023-06-06)
+
+
+### Features
+
+* **mui-menu:** add menu component ([5cc8b1f](https://github.com/Availity/element/commit/5cc8b1f15e0aa987135e0bbac99943f2f46f6287))
+
 ## [0.8.0](https://github.com/Availity/element/compare/@availity/element@0.7.1...@availity/element@0.8.0) (2023-06-05)
 
 
