@@ -10,25 +10,35 @@ const meta: Meta<typeof Divider> = {
 
 export default meta;
 
+const ContainerStyle = {
+  position: 'fixed',
+};
 // We have to force a width and height for the divider to display when the orientation is vertical
 const VerticalContainerStyle = {
   height: '300px',
   width: '1px',
 };
-const VerticalContainer = ({ children }: { children: React.ReactNode }) => (
-  <div style={VerticalContainerStyle}>{children}</div>
-);
+const HorizontalContainerStyle = {
+  height: '1px',
+  width: '300px',
+};
+// Vertical flex tries to revert to a height of 0, if the container isn't flex
+const VerticalFlexStyle = {
+  display: 'flex',
+};
 
 export const _Divider: StoryObj<typeof Divider> = {
   render: (args: DividerProps) => {
-    if (args.orientation === 'vertical') {
-      return (
-        <VerticalContainer>
-          <Divider {...args} />
-        </VerticalContainer>
-      );
-    }
-    return <Divider {...args} />;
+    const containerStyle = {
+      ...ContainerStyle,
+      ...(args.orientation === 'vertical' ? VerticalContainerStyle : HorizontalContainerStyle),
+      ...(args.orientation === 'vertical' && args.flexItem ? VerticalFlexStyle : {}),
+    };
+
+    return (
+      <div style={containerStyle}>
+        <Divider {...args} />
+      </div>
+    );
   },
-  args: {},
 };
