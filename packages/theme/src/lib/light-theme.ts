@@ -281,59 +281,121 @@ export const lightTheme = {
         disableElevation: true,
       },
       styleOverrides: {
-        root: ({ ownerState } : any) => ({
-          ...(ownerState.variant === 'contained' ?
-            {
-              backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Main` as keyof typeof tokens],
-              color: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Contrast` as keyof typeof tokens],
-              "&:hover": {
-                backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Dark` as keyof typeof tokens],
-                boxShadow: 'none',
-              },
-              "&:focus": {
-                backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Dark` as keyof typeof tokens],
-                outline: '2px solid white',
-                boxShadow: `0 0 0px 4px ${tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Dark` as keyof typeof tokens]}`,
-              },
-              "&:active": {
-                backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Main` as keyof typeof tokens],
+        root: ({ ownerState }: any) => ({
+          ...(ownerState.variant === 'contained'
+            ? {
+                backgroundColor:
+                  tokens[
+                    `color${
+                      ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                    }Main` as keyof typeof tokens
+                  ],
+                color:
+                  tokens[
+                    `color${
+                      ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                    }Contrast` as keyof typeof tokens
+                  ],
+                '&:hover': {
+                  backgroundColor:
+                    tokens[
+                      `color${
+                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                      }Dark` as keyof typeof tokens
+                    ],
+                  boxShadow: 'none',
+                },
+                '&:focus': {
+                  backgroundColor:
+                    tokens[
+                      `color${
+                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                      }Dark` as keyof typeof tokens
+                    ],
+                  outline: '2px solid white',
+                  boxShadow: `0 0 0px 4px ${
+                    tokens[
+                      `color${
+                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                      }Dark` as keyof typeof tokens
+                    ]
+                  }`,
+                },
+                '&:active': {
+                  backgroundColor:
+                    tokens[
+                      `color${
+                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                      }Main` as keyof typeof tokens
+                    ],
+                },
               }
-            }
             : {
-              "&:hover": {
-                boxShadow: 'none',
-              },
-              "&:focus": {
-                outline: '2px solid white',
-                boxShadow: `0 0 0px 4px ${tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Main` as keyof typeof tokens]}`,
-              },
-            }
-          ),
+                '&:hover': {
+                  boxShadow: 'none',
+                },
+                '&:focus': {
+                  outline: '2px solid white',
+                  boxShadow: `0 0 0px 4px ${
+                    tokens[
+                      `color${
+                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                      }Main` as keyof typeof tokens
+                    ]
+                  }`,
+                },
+              }),
           boxShadow: 'none',
           fontWeight: tokens.fontWeightsBold,
-          textTransform: 'none'
+          textTransform: 'none',
         }),
+      },
+    },
+    MuiChip: {
+      defaultProps: {
+        color: 'default',
+      },
+      styleOverrides: {
+        root: {
+          fontSize: 'inherit',
+          height: 'auto',
+        },
+        label: {
+          fontSize: 'inherit',
+        },
+        colorDefault: {
+          backgroundColor: tokens.colorGrey100,
+        },
+        sizeSmall: {
+          fontWeight: tokens.fontWeightsBold,
+          verticalAlign: 'text-bottom',
+          borderRadius: '50px',
+          fontSize: '80%',
+        },
+        sizeMedium: {
+          padding: '3px 0px',
+        },
       },
     },
     MuiIconButton: {
       defaultProps: {
         // The props to change the default for.
         disableRipple: true, // No more ripple, on the whole application 💣!
-        disableElevation: true
+        disableElevation: true,
       },
       styleOverrides: {
         root: {
           color: tokens.colorTextPrimary,
-          "&:hover": {
+          '&:hover': {
             backgroundColor: tokens.colorTertiaryDark,
           },
-          "&:focus": {
+          '&:focus': {
             backgroundColor: tokens.colorTertiaryDark,
             outline: `2px solid ${tokens.colorCommonWhite}`,
             boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
-          }
+          },
         },
-      }
+      },
     },
     MuiPaper: {
       defaultProps: {
@@ -358,9 +420,9 @@ export const lightTheme = {
           backgroundColor: tokens.colorGrey400,
           fontSize: '.785rem',
           fontStyle: 'normal',
-          padding: '2px 8px'
+          padding: '2px 8px',
         },
       },
-    }
+    },
   },
 };
