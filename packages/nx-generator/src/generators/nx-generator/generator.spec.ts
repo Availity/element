@@ -1,4 +1,4 @@
-import { createTree, createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
+import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
 import { Tree, readProjectConfiguration } from '@nrwl/devkit';
 
 import generator from './generator';
@@ -9,7 +9,7 @@ describe('nx-generator generator', () => {
   const options: NxGeneratorGeneratorSchema = { name: 'test' };
 
   beforeEach(async () => {
-    appTree = createTreeWithEmptyWorkspace({layout: 'apps-libs'});
+    appTree = createTreeWithEmptyWorkspace({ layout: 'apps-libs' });
     await generator(appTree, { name: 'element' });
   });
 

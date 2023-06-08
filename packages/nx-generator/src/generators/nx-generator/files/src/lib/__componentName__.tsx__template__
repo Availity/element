@@ -1,7 +1,7 @@
 import { Card as MuiCard, CardProps as MuiCardProps } from '@mui/material';
 
 export interface <%= componentName %>Props extends MuiCardProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const <%= componentName %> = ({ children, ...rest }: <%= componentName %>Props) : JSX.Element => {

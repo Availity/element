@@ -2,6 +2,27 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/Availity/element/compare/@availity/theme@0.5.0...@availity/theme@0.6.0) (2023-06-05)
+
+
+### Features
+
+* **mui-link:** add link package ([dbcf569](https://github.com/Availity/element/commit/dbcf569191cd0525b2c474eab0d2b487feb473ee))
+
+## [0.5.0](https://github.com/Availity/element/compare/@availity/theme@0.4.0...@availity/theme@0.5.0) (2023-06-01)
+
+
+### Features
+
+* **mui-button:** design specs ([6b67b24](https://github.com/Availity/element/commit/6b67b24cdfef68e14daaeba18a5fd7d90af46a09))
+
+## [0.4.0](https://github.com/Availity/element/compare/@availity/theme@0.3.0...@availity/theme@0.4.0) (2023-05-22)
+
+
+### Features
+
+* **theme:** add paper styles ([fec23ba](https://github.com/Availity/element/commit/fec23ba558417c34bfaba2f428b07f9c46e8b240))
+
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/theme@0.2.2...@availity/theme@0.3.0) (2023-04-07)
 
 

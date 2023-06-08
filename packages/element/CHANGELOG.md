@@ -2,6 +2,41 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.0](https://github.com/Availity/element/compare/@availity/element@0.8.0...@availity/element@0.9.0) (2023-06-06)
+
+
+### Features
+
+* **mui-menu:** add menu component ([5cc8b1f](https://github.com/Availity/element/commit/5cc8b1f15e0aa987135e0bbac99943f2f46f6287))
+
+## [0.8.0](https://github.com/Availity/element/compare/@availity/element@0.7.1...@availity/element@0.8.0) (2023-06-05)
+
+
+### Features
+
+* **mui-link:** add link package ([dbcf569](https://github.com/Availity/element/commit/dbcf569191cd0525b2c474eab0d2b487feb473ee))
+
+## [0.7.1](https://github.com/Availity/element/compare/@availity/element@0.7.0...@availity/element@0.7.1) (2023-05-22)
+
+
+### Bug Fixes
+
+* **element:** add missing dependencies/exports ([12d88f4](https://github.com/Availity/element/commit/12d88f4b3ad213be6b4c3e47c6d6189c5a6dfe14))
+
+## [0.7.0](https://github.com/Availity/element/compare/@availity/element@0.6.0...@availity/element@0.7.0) (2023-05-22)
+
+
+### Features
+
+* **mui-paper:** add paper component ([4bf7776](https://github.com/Availity/element/commit/4bf7776a0f19e3566983e176901233a6292fa745))
+
+## [0.6.0](https://github.com/Availity/element/compare/@availity/element@0.5.0...@availity/element@0.6.0) (2023-05-22)
+
+
+### Features
+
+* create Tooltip component UXDS-187 ([5f50f13](https://github.com/Availity/element/commit/5f50f13b17d3f75a107bbee1a83ac35cfc326b81))
+
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/element@0.4.0...@availity/element@0.5.0) (2023-05-16)
 
 

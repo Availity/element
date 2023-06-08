@@ -16,7 +16,7 @@ export const HelpCircleIcon = ({ ...props }: SvgIconProps): JSX.Element => (
 );
 
 export const SuccessCircleIcon = ({ ...props }: SvgIconProps): JSX.Element => (
-  <FaSvgIcon icon={faCheckCircle} titleAccess='success' {...props}/>
+  <FaSvgIcon icon={faCheckCircle} {...props}/>
 );
 
 export const InfoCircleIcon = ({ ...props }: SvgIconProps): JSX.Element => (
@@ -32,21 +32,21 @@ export const WarningTriangleIcon = ({ ...props }: SvgIconProps): JSX.Element => 
 );
 
 export const FaceSmileIcon = ({ ...props }: SvgIconProps): JSX.Element => (
-  <FaSvgIcon icon={faFaceSmile} titleAccess='satisfied' {...props}/>
+  <FaSvgIcon icon={faFaceSmile} {...props}/>
 );
 
 export const FaceNeutralIcon = ({ ...props }: SvgIconProps): JSX.Element => (
-  <FaSvgIcon icon={faFaceMeh} titleAccess='neutral' {...props}/>
+  <FaSvgIcon icon={faFaceMeh} {...props}/>
 );
 
 export const FaceFrownIcon = ({ ...props }: SvgIconProps): JSX.Element => (
-  <FaSvgIcon icon={faFaceFrown} titleAccess='dissatisfied' {...props}/>
+  <FaSvgIcon icon={faFaceFrown} {...props}/>
 );
 
 export const ThumbUpIcon = ({ ...props }: SvgIconProps): JSX.Element => (
-  <FaSvgIcon icon={faThumbsUp} titleAccess='yes' {...props}/>
+  <FaSvgIcon icon={faThumbsUp} {...props}/>
 );
 
 export const ThumbDownIcon = ({ ...props }: SvgIconProps): JSX.Element => (
-  <FaSvgIcon icon={faThumbsDown} titleAccess='no' {...props}/>
+  <FaSvgIcon icon={faThumbsDown} {...props}/>
 );

@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-divider@0.2.0...@availity/mui-divider@0.3.0) (2023-06-08)
+
+
+### Features
+
+* fixing divider display for flex and absolute options UXDS-310 ([dcadafb](https://github.com/Availity/element/commit/dcadafb28ae632005e767060250f85da71b262da))
+
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-divider@0.1.0...@availity/mui-divider@0.2.0) (2023-06-06)
+
+
+### Features
+
+* fixing divider display when orientation is vertical UXDS-310 ([20251a7](https://github.com/Availity/element/commit/20251a7430e029982100881d6db436fddb82608a))
+
 ## 0.1.0 (2023-05-15)
 
 

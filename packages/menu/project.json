@@ -1,0 +1,41 @@
+{
+  "name": "mui-menu",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/menu/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "eslintConfig": ".eslintrc.json",
+        "lintFilePatterns": ["packages/menu/**/*.{js,ts}"],
+        "silent": false,
+        "fix": false,
+        "cache": true,
+        "cacheLocation": "./node_modules/.cache/menu/.eslintcache",
+        "maxWarnings": -1,
+        "quiet": false,
+        "noEslintrc": false,
+        "hasTypeAwareRules": true,
+        "cacheStrategy": "metadata"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/menu"],
+      "options": {
+        "jestConfig": "packages/menu/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
+        "tagPrefix": "@availity/${projectName}@"
+      }
+    }
+  }
+}
