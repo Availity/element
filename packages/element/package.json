@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@availity/mui-alert": "workspace:*",
+    "@availity/mui-avatar": "workspace:*",
     "@availity/mui-badge": "workspace:*",
     "@availity/mui-divider": "workspace:*",
     "@availity/mui-icon": "workspace:*",

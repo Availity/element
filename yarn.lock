@@ -22,7 +22,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/design-tokens@workspace:*, @availity/design-tokens@workspace:packages/design-tokens":
+"@availity/design-tokens@workspace:*, @availity/design-tokens@workspace:^, @availity/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@availity/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -38,6 +38,7 @@ __metadata:
   resolution: "@availity/element@workspace:packages/element"
   dependencies:
     "@availity/mui-alert": "workspace:*"
+    "@availity/mui-avatar": "workspace:*"
     "@availity/mui-badge": "workspace:*"
     "@availity/mui-divider": "workspace:*"
     "@availity/mui-icon": "workspace:*"
@@ -57,6 +58,22 @@ __metadata:
   resolution: "@availity/mui-alert@workspace:packages/alert"
   dependencies:
     "@availity/mui-icon": "workspace:*"
+    "@mui/material": ^5.11.9
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-avatar@workspace:*, @availity/mui-avatar@workspace:packages/avatar":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-avatar@workspace:packages/avatar"
+  dependencies:
+    "@availity/design-tokens": "workspace:^"
     "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0
