@@ -2,6 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar, AvatarProps } from './Avatar';
+import { HomeIcon } from '@availity/mui-icon';
 
 const meta: Meta<typeof Avatar> = {
   title: 'Components/Avatar/Avatar',
@@ -23,4 +24,12 @@ export const _ImageAvatar: StoryObj<typeof Avatar> = {
   args: {
     src: 'https://avatars.githubusercontent.com/u/329985?s=100',
   },
+};
+
+export const _IconAvatar: StoryObj<typeof Avatar> = {
+  render: (args: AvatarProps) => (
+    <Avatar {...args}>
+      <HomeIcon />
+    </Avatar>
+  ),
 };
