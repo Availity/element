@@ -274,14 +274,12 @@ export const lightTheme = {
           color: tokens.colorTextPrimary,
           padding: 0,
         },
-        root: ({ ownerState }: { ownerState: any }) => ({
-          ...(ownerState.variant === 'standard' && {
-            border: 'none',
-          }),
+        root: {
+          border: 'none',
           fontSize: tokens.fontSizesBody1,
           lineHeight: tokens.lineHeightsBody1,
           padding: '8px',
-        }),
+        },
       },
     },
     MuiAlertTitle: {
