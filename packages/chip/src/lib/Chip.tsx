@@ -5,8 +5,8 @@ export type ChipProps = {
   color?: 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
   /** The size of the component. Size `small` is for statuses and inline counters. */
   size?: 'small' | 'medium';
-} & Omit<MuiChipProps, 'children' | 'skipFocusWhenDisabled'>;
+} & Omit<MuiChipProps, 'children' | 'skipFocusWhenDisabled' | 'disabled' | 'size' | 'icon' | 'clickable'>;
 
-export const Chip = ({ color = 'default', ...rest }: ChipProps): JSX.Element => {
-  return <MuiChip color={color} {...rest} />;
+export const Chip = ({ color = 'default', onDelete, ...rest }: ChipProps): JSX.Element => {
+  return <MuiChip color={color} onClick={onDelete} onDelete={onDelete} {...rest} />;
 };

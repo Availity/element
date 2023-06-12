@@ -357,23 +357,56 @@ export const lightTheme = {
       },
       styleOverrides: {
         root: {
-          fontSize: 'inherit',
           height: 'auto',
+          // Bug with state styles being overwritten when not defined in root https://github.com/mui/material-ui/issues/29703#issuecomment-1548356589
+          '&.MuiChip-deletable': {
+            '&:hover': {
+              backgroundColor: tokens.colorActionFocus,
+              boxShadow: 'none',
+              '.MuiChip-deleteIcon': {
+                color: tokens.colorSecondaryLight,
+              },
+            },
+            '&.Mui-focusVisible': {
+              backgroundColor: tokens.colorActionFocus,
+              outline: '2px solid white',
+              boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
+              '.MuiChip-deleteIcon': {
+                color: tokens.colorSecondaryLight,
+              },
+            },
+          },
+        },
+        avatar: {
+          margin: '0',
+          height: '1.125rem',
+          width: '1.125rem',
+        },
+        avatarColorDefault: {
+          backgroundColor: tokens.colorGrey300,
+          color: tokens.colorPrimaryContrast,
+        },
+        deleteIcon: {
+          fontSize: '1rem',
+          margin: '0',
+          transition: 'color 300ms',
         },
         label: {
           fontSize: 'inherit',
+          padding: '0px 6px',
         },
         colorDefault: {
           backgroundColor: tokens.colorGrey100,
         },
         sizeSmall: {
           fontWeight: tokens.fontWeightsBold,
+          fontSize: '.75rem',
           verticalAlign: 'text-bottom',
           borderRadius: '50px',
-          fontSize: '80%',
         },
         sizeMedium: {
-          padding: '3px 0px',
+          fontWeight: tokens.fontWeightsRegular,
+          padding: '3px 4px',
         },
       },
     },
@@ -415,6 +448,9 @@ export const lightTheme = {
       },
     },
     MuiTooltip: {
+      defaultProps: {
+        arrow: true,
+      },
       styleOverrides: {
         tooltip: {
           backgroundColor: tokens.colorGrey400,

@@ -1,12 +1,17 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Collapse } from '@mui/material';
+import { Avatar, Collapse } from '@mui/material';
 import { Chip, ChipProps } from './Chip';
 
 const meta: Meta<typeof Chip> = {
   title: 'Components/Chip/Chip',
   component: Chip,
   tags: ['autodocs'],
+  args: {
+    label: 'Chip',
+    size: 'medium',
+    color: 'default',
+  },
 };
 
 export default meta;
@@ -19,7 +24,7 @@ export const _Chip: StoryObj<typeof Chip> = {
 };
 
 export const _RemovableChip: StoryObj<typeof Chip> = {
-  render: () => {
+  render: (args: ChipProps) => {
     const [visible, setVisible] = useState(true);
 
     const onDelete = () => {
@@ -29,10 +34,14 @@ export const _RemovableChip: StoryObj<typeof Chip> = {
 
     return (
       <Collapse in={visible}>
-        <Chip onDelete={onDelete} label="Chip" />
+        <Chip {...args} onDelete={onDelete} />
       </Collapse>
     );
   },
+};
+
+export const _Avatar: StoryObj<typeof Chip> = {
+  render: (args: ChipProps) => <Chip {...args} avatar={<Avatar>A</Avatar>} />,
 };
 
 /** Status styling is achieved by using size `small` */
@@ -62,7 +71,7 @@ export const _InlineCounter: StoryObj<typeof Chip> = {
   ),
 };
 
-export const _RelativeSizes: StoryObj<typeof Chip> = {
+export const _Typography: StoryObj<typeof Chip> = {
   render: () => (
     <>
       <h1>
@@ -74,9 +83,6 @@ export const _RelativeSizes: StoryObj<typeof Chip> = {
       <div>
         Body <Chip color="info" label="Info" />
       </div>
-      <small>
-        Small <Chip color="info" label="Info" />
-      </small>
     </>
   ),
 };
