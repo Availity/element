@@ -11,7 +11,7 @@ describe('Avatar', () => {
     expect(getByText('TI')).toBeTruthy();
   });
   test('should display first initial when size is small', () => {
-    const { getByText } = render(<Avatar size="small">This is a test</Avatar>);
+    const { getByText } = render(<Avatar size="xs">This is a test</Avatar>);
     expect(getByText('T')).toBeTruthy();
   });
 });
