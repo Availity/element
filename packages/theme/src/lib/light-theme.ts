@@ -278,7 +278,7 @@ export const lightTheme = {
       styleOverrides: {
         colorDefault: {
           backgroundColor: tokens.colorGrey300,
-          color: tokens.colorPrimaryContrast,
+          color: tokens.colorTextSecondary,
         },
       },
     },
