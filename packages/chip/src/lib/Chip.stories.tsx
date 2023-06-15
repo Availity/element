@@ -70,19 +70,3 @@ export const _InlineCounter: StoryObj<typeof Chip> = {
     </div>
   ),
 };
-
-export const _Typography: StoryObj<typeof Chip> = {
-  render: () => (
-    <>
-      <h1>
-        H1 <Chip color="info" label="Info" />
-      </h1>
-      <h2>
-        H2 <Chip color="info" label="Info" />
-      </h2>
-      <div>
-        Body <Chip color="info" label="Info" />
-      </div>
-    </>
-  ),
-};
