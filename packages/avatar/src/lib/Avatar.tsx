@@ -9,6 +9,14 @@ export interface AvatarProps extends Omit<MuiAvatarProps, 'variant'> {
   size?: 'xs' | 's' | 'm' | 'l' | 'xl';
 }
 
+const sizeStyling = {
+  xs: { width: 18, height: 18, fontSize: tokens.fontSizesCaption },
+  s: { width: 24, height: 24, fontSize: tokens.fontSizesCaption },
+  m: { width: 40, height: 40, fontSize: tokens.fontSizesH5, fontWeight: tokens.fontWeightsBold },
+  l: { width: 80, height: 80, fontSize: tokens.fontSizesH3, fontWeight: tokens.fontWeightsBold },
+  xl: { width: 140, height: 140, fontSize: tokens.fontSizesH1, fontWeight: tokens.fontWeightsBold },
+};
+
 const getInitials = (name: string, size: 'xs' | 's' | 'm' | 'l' | 'xl'): string => {
   if (name.split(' ').length > 1 && size !== 'xs') {
     return `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`;
@@ -26,21 +34,14 @@ const formatChildren = (children: React.ReactNode, size: 'xs' | 's' | 'm' | 'l' 
 };
 
 export const Avatar = ({ children, size = 'xl', sx, ...rest }: AvatarProps): JSX.Element => {
-  const sizeStyling = {
-    xs: { width: 18, height: 18, fontSize: tokens.fontSizesCaption },
-    s: { width: 24, height: 24, fontSize: tokens.fontSizesCaption },
-    m: { width: 40, height: 40, fontSize: tokens.fontSizesH5, fontWeight: tokens.fontWeightsBold },
-    l: { width: 80, height: 80, fontSize: tokens.fontSizesH3, fontWeight: tokens.fontWeightsBold },
-    xl: { width: 140, height: 140, fontSize: tokens.fontSizesH1, fontWeight: tokens.fontWeightsBold },
-  };
   return (
     <MuiAvatar
+      {...rest}
       variant="circular"
       sx={{
         ...sx,
         ...(sizeStyling[size] || sizeStyling.xl),
       }}
-      {...rest}
     >
       {formatChildren(children, size)}
     </MuiAvatar>
