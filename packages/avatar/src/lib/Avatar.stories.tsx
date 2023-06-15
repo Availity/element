@@ -15,7 +15,7 @@ export default meta;
 export const _Avatar: StoryObj<typeof Avatar> = {
   render: (args: AvatarProps) => <Avatar {...args} />,
   args: {
-    children: 'This text is a child of Avatar',
+    children: 'John Doe',
   },
 };
 
