@@ -384,7 +384,6 @@ export const lightTheme = {
         },
         avatarColorDefault: {
           backgroundColor: tokens.colorGrey300,
-          color: tokens.colorPrimaryContrast,
         },
         deleteIcon: {
           fontSize: '1rem',
