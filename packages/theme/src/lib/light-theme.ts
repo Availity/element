@@ -281,59 +281,153 @@ export const lightTheme = {
         disableElevation: true,
       },
       styleOverrides: {
-        root: ({ ownerState } : any) => ({
-          ...(ownerState.variant === 'contained' ?
-            {
-              backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Main` as keyof typeof tokens],
-              color: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Contrast` as keyof typeof tokens],
-              "&:hover": {
-                backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Dark` as keyof typeof tokens],
-                boxShadow: 'none',
-              },
-              "&:focus": {
-                backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Dark` as keyof typeof tokens],
-                outline: '2px solid white',
-                boxShadow: `0 0 0px 4px ${tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Dark` as keyof typeof tokens]}`,
-              },
-              "&:active": {
-                backgroundColor: tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Main` as keyof typeof tokens],
+        root: ({ ownerState }: any) => ({
+          ...(ownerState.variant === 'contained'
+            ? {
+                backgroundColor:
+                  tokens[
+                    `color${
+                      ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                    }Main` as keyof typeof tokens
+                  ],
+                color:
+                  tokens[
+                    `color${
+                      ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                    }Contrast` as keyof typeof tokens
+                  ],
+                '&:hover': {
+                  backgroundColor:
+                    tokens[
+                      `color${
+                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                      }Dark` as keyof typeof tokens
+                    ],
+                  boxShadow: 'none',
+                },
+                '&:focus': {
+                  backgroundColor:
+                    tokens[
+                      `color${
+                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                      }Dark` as keyof typeof tokens
+                    ],
+                  outline: '2px solid white',
+                  boxShadow: `0 0 0px 4px ${
+                    tokens[
+                      `color${
+                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                      }Dark` as keyof typeof tokens
+                    ]
+                  }`,
+                },
+                '&:active': {
+                  backgroundColor:
+                    tokens[
+                      `color${
+                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                      }Main` as keyof typeof tokens
+                    ],
+                },
               }
-            }
             : {
-              "&:hover": {
-                boxShadow: 'none',
-              },
-              "&:focus": {
-                outline: '2px solid white',
-                boxShadow: `0 0 0px 4px ${tokens[`color${ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)}Main` as keyof typeof tokens]}`,
-              },
-            }
-          ),
+                '&:hover': {
+                  boxShadow: 'none',
+                },
+                '&:focus': {
+                  outline: '2px solid white',
+                  boxShadow: `0 0 0px 4px ${
+                    tokens[
+                      `color${
+                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
+                      }Main` as keyof typeof tokens
+                    ]
+                  }`,
+                },
+              }),
           boxShadow: 'none',
           fontWeight: tokens.fontWeightsBold,
-          textTransform: 'none'
+          textTransform: 'none',
         }),
+      },
+    },
+    MuiChip: {
+      defaultProps: {
+        color: 'default',
+      },
+      styleOverrides: {
+        root: {
+          height: 'auto',
+          // Bug with state styles being overwritten when not defined in root https://github.com/mui/material-ui/issues/29703#issuecomment-1548356589
+          '&.MuiChip-deletable': {
+            '&:hover': {
+              backgroundColor: tokens.colorActionFocus,
+              boxShadow: 'none',
+              '.MuiChip-deleteIcon': {
+                color: tokens.colorSecondaryLight,
+              },
+            },
+            '&.Mui-focusVisible': {
+              backgroundColor: tokens.colorActionFocus,
+              outline: '2px solid white',
+              boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
+              '.MuiChip-deleteIcon': {
+                color: tokens.colorSecondaryLight,
+              },
+            },
+          },
+        },
+        avatar: {
+          margin: '0',
+          height: '1.125rem',
+          width: '1.125rem',
+        },
+        avatarColorDefault: {
+          backgroundColor: tokens.colorGrey300,
+        },
+        deleteIcon: {
+          fontSize: '1rem',
+          margin: '0',
+          transition: 'color 300ms',
+        },
+        label: {
+          fontSize: 'inherit',
+          padding: '0px 6px',
+        },
+        colorDefault: {
+          backgroundColor: tokens.colorGrey100,
+        },
+        sizeSmall: {
+          fontWeight: tokens.fontWeightsBold,
+          fontSize: '.75rem',
+          verticalAlign: 'text-bottom',
+          borderRadius: '50px',
+        },
+        sizeMedium: {
+          fontWeight: tokens.fontWeightsRegular,
+          padding: '3px 4px',
+        },
       },
     },
     MuiIconButton: {
       defaultProps: {
         // The props to change the default for.
         disableRipple: true, // No more ripple, on the whole application 💣!
-        disableElevation: true
+        disableElevation: true,
       },
       styleOverrides: {
         root: {
           color: tokens.colorTextPrimary,
-          "&:hover": {
+          '&:hover': {
             backgroundColor: tokens.colorTertiaryDark,
           },
-          "&:focus": {
+          '&:focus': {
             backgroundColor: tokens.colorTertiaryDark,
             outline: `2px solid ${tokens.colorCommonWhite}`,
             boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
-          }
+          },
         },
-      }
+      },
     },
     MuiLink: {
       defaultProps: {
@@ -369,14 +463,17 @@ export const lightTheme = {
       },
     },
     MuiTooltip: {
+      defaultProps: {
+        arrow: true,
+      },
       styleOverrides: {
         tooltip: {
           backgroundColor: tokens.colorGrey400,
           fontSize: '.785rem',
           fontStyle: 'normal',
-          padding: '2px 8px'
+          padding: '2px 8px',
         },
       },
-    }
+    },
   },
 };
