@@ -245,21 +245,37 @@ export const lightTheme = {
   components: {
     MuiAlert: {
       styleOverrides: {
+        standardSuccess: {
+          backgroundColor: tokens.colorGreen100,
+        },
+        standardError: {
+          backgroundColor: tokens.colorRed50,
+        },
+        standardWarning: {
+          backgroundColor: tokens.colorYellow50,
+        },
+        standardInfo: {
+          backgroundColor: tokens.colorBlue50,
+        },
         action: {
           margin: '-3px -3px -3px auto',
-          padding: '0 0 0 11px',
+          padding: '0 0 0 8px',
         },
-        icon: {
+        icon: ({ ownerState }: { ownerState: any }) => ({
+          ...(ownerState.severity === 'success' && {
+            color: `${tokens.colorGreen600} !important`,
+          }),
           opacity: 1,
           padding: '4px',
           margin: 0,
           fontSize: tokens.fontSizesBody1,
-        },
+        }),
         message: {
           color: tokens.colorTextPrimary,
           padding: 0,
         },
         root: {
+          border: 'none',
           fontSize: tokens.fontSizesBody1,
           lineHeight: tokens.lineHeightsBody1,
           padding: '8px',
@@ -271,6 +287,11 @@ export const lightTheme = {
         root: {
           margin: 0,
           fontWeight: tokens.fontWeightsBold,
+        },
+        message: {
+          fontSize: tokens.fontSizesBody1,
+          lineHeight: tokens.lineHeightsBody1,
+          padding: '8px',
         },
       },
     },
