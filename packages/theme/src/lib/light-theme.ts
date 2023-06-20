@@ -274,6 +274,14 @@ export const lightTheme = {
         },
       },
     },
+    MuiAvatar: {
+      styleOverrides: {
+        colorDefault: {
+          backgroundColor: tokens.colorGrey300,
+          color: tokens.colorTextSecondary,
+        },
+      },
+    },
     MuiButton: {
       defaultProps: {
         // The props to change the default for.
