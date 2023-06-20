@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/Availity/element/compare/@availity/theme@0.7.1...@availity/theme@0.8.0) (2023-06-20)
+
+
+### Features
+
+* removing border style and removing variant prop UXDS-269 ([46c4712](https://github.com/Availity/element/commit/46c4712bb11885d8e365f8f076f00d7fc5365091))
+* updating Alert styling to match UX design UXDS-269 ([02afeb8](https://github.com/Availity/element/commit/02afeb8d9f9d648d1faa0cfff83fa0c51dcfa936))
+
 ## [0.7.1](https://github.com/Availity/element/compare/@availity/theme@0.7.0...@availity/theme@0.7.1) (2023-06-20)
 
 ## [0.7.0](https://github.com/Availity/element/compare/@availity/theme@0.6.0...@availity/theme@0.7.0) (2023-06-16)
