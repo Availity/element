@@ -7,6 +7,12 @@ import { HomeIcon } from '@availity/mui-icon';
 const meta: Meta<typeof Avatar> = {
   title: 'Components/Avatar/Avatar',
   component: Avatar,
+  argTypes: {
+    size: {
+      // this guarantees the options display in the correct order
+      options: ['xs', 's', 'm', 'l', 'xl'],
+    },
+  },
   tags: ['autodocs'],
 };
 
