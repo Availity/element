@@ -18,6 +18,7 @@
     "@availity/mui-avatar": "workspace:*",
     "@availity/mui-badge": "workspace:*",
     "@availity/mui-button": "workspace:*",
+    "@availity/mui-card": "workspace:*",
     "@availity/mui-chip": "workspace:*",
     "@availity/mui-divider": "workspace:*",
     "@availity/mui-icon": "workspace:*",
