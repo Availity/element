@@ -11,7 +11,7 @@ const meta: Meta<typeof CardActionArea> = {
 
 export default meta;
 
-export const _Card: StoryObj<typeof CardActionArea> = {
+export const _CardActionArea: StoryObj<typeof CardActionArea> = {
   render: (args: CardActionAreaProps) => <CardActionArea {...args} />,
   args: {
     children: 'This text is a child of CardActionArea',
