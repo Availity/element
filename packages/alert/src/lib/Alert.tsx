@@ -3,7 +3,9 @@ import { Alert as MUIAlert } from '@mui/material';
 import type { AlertProps as MUIAlertProps } from '@mui/material';
 import { InfoCircleIcon, WarningCircleIcon, SuccessCircleIcon } from '@availity/mui-icon';
 
-export type AlertProps = Omit<MUIAlertProps, 'variant'>;
+export type AlertProps = Omit<MUIAlertProps, 'variant' | 'color'> & {
+  severity?: 'success' | 'info' | 'warning' | 'error';
+};
 
 const iconMapping = {
   error: <WarningCircleIcon aria-hidden={false} titleAccess="error" />,
