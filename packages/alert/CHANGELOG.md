@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-alert@0.3.0...@availity/mui-alert@0.4.0) (2023-06-27)
+
+
+### Features
+
+* fix warning icon color on Alert UXDS-269 ([fdf6165](https://github.com/Availity/element/commit/fdf616509578c261d6c24b6b38e5de9a855a0619))
+
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-alert@0.2.1...@availity/mui-alert@0.3.0) (2023-06-20)
 
 
