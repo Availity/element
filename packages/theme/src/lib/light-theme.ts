@@ -388,6 +388,17 @@ export const lightTheme = {
         },
       },
     },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          fontSize: tokens.typographyBody2FontSize,
+          fontWeight: tokens.typographyBody2FontWeight,
+          fontFamily: tokens.typographyBody2FontFamily,
+          letterSpacing: tokens.typographyBody2LetterSpacing,
+          color: tokens.colorTextPrimary,
+        },
+      },
+    },
     MuiChip: {
       defaultProps: {
         color: 'default',

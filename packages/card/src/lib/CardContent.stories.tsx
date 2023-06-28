@@ -2,6 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { CardContent, CardContentProps } from './CardContent';
+import { Card } from './Card';
 
 const meta: Meta<typeof CardContent> = {
   title: 'Components/Card/CardContent',
@@ -12,7 +13,11 @@ const meta: Meta<typeof CardContent> = {
 export default meta;
 
 export const _CardContent: StoryObj<typeof CardContent> = {
-  render: (args: CardContentProps) => <CardContent {...args} />,
+  render: (args: CardContentProps) => (
+    <Card>
+      <CardContent {...args} />
+    </Card>
+  ),
   args: {
     children: 'This text is a child of CardContent',
   },
