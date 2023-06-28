@@ -1,9 +1,15 @@
 import { CardHeader as MuiCardHeader, CardHeaderProps as MuiCardHeaderProps } from '@mui/material';
 
-export interface CardHeaderProps extends MuiCardHeaderProps {
+export interface CardHeaderProps extends Omit<MuiCardHeaderProps, 'avatar'> {
   children?: React.ReactNode;
 }
 
-export const CardHeader = ({ children, ...rest }: CardHeaderProps): JSX.Element => {
-  return <MuiCardHeader {...rest}>{children}</MuiCardHeader>;
+export const CardHeader = ({ ...rest }: CardHeaderProps): JSX.Element => {
+  return (
+    <MuiCardHeader
+      {...rest}
+      titleTypographyProps={{ variant: 'h6' }}
+      subheaderTypographyProps={{ variant: 'subtitle2' }}
+    />
+  );
 };

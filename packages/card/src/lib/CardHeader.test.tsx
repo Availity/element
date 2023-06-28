@@ -3,7 +3,7 @@ import { CardHeader } from './CardHeader';
 
 describe('CardHeader', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<CardHeader>Test</CardHeader>);
+    const { getByText } = render(<CardHeader title="Test" />);
     expect(getByText('Test')).toBeTruthy();
   });
 });

@@ -399,6 +399,15 @@ export const lightTheme = {
         },
       },
     },
+    MuiCardHeader: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorBackgroundCanvas,
+          color: tokens.colorTextPrimary,
+          lineHeight: tokens.lineHeightsH6,
+        },
+      },
+    },
     MuiChip: {
       defaultProps: {
         color: 'default',
