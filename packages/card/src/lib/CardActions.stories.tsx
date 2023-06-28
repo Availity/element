@@ -2,6 +2,8 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { CardActions, CardActionsProps } from './CardActions';
+import { Card } from './Card';
+import { Button } from '../../../button';
 
 const meta: Meta<typeof CardActions> = {
   title: 'Components/Card/CardActions',
@@ -12,8 +14,15 @@ const meta: Meta<typeof CardActions> = {
 export default meta;
 
 export const _CardActions: StoryObj<typeof CardActions> = {
-  render: (args: CardActionsProps) => <CardActions {...args} />,
-  args: {
-    children: 'This text is a child of CardActions',
-  },
+  render: (args: CardActionsProps) => (
+    <Card>
+      <CardActions {...args}>
+        <Button size="small" color="primary">
+          Submit
+        </Button>
+        <Button size="small">Cancel</Button>
+      </CardActions>
+    </Card>
+  ),
+  args: {},
 };
