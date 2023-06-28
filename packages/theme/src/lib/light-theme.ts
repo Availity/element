@@ -380,6 +380,14 @@ export const lightTheme = {
         }),
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorBackgroundPaper,
+          maxWidth: '345px',
+        },
+      },
+    },
     MuiChip: {
       defaultProps: {
         color: 'default',
