@@ -408,6 +408,11 @@ export const lightTheme = {
         },
       },
     },
+    MuiCardMedia: {
+      styleOverrides: {
+        maxHeight: '100px',
+      },
+    },
     MuiChip: {
       defaultProps: {
         color: 'default',

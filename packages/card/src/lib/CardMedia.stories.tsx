@@ -2,6 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { CardMedia, CardMediaProps } from './CardMedia';
+import { Card } from './Card';
 
 const meta: Meta<typeof CardMedia> = {
   title: 'Components/Card/CardMedia',
@@ -12,8 +13,13 @@ const meta: Meta<typeof CardMedia> = {
 export default meta;
 
 export const _CardMedia: StoryObj<typeof CardMedia> = {
-  render: (args: CardMediaProps) => <CardMedia {...args} />,
+  render: (args: CardMediaProps) => (
+    <Card>
+      <CardMedia {...args} />
+    </Card>
+  ),
   args: {
-    children: 'This text is a child of CardMedia',
+    image: 'https://avatars.githubusercontent.com/u/329985?s=200&v=4',
+    sx: { height: '100px' },
   },
 };
