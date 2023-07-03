@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.1](https://github.com/Availity/element/compare/@availity/theme@0.8.0...@availity/theme@0.8.1) (2023-07-03)
+
+
+### Bug Fixes
+
+* **mui-card:** header lineHeights and add action example ([71456f8](https://github.com/Availity/element/commit/71456f82a5ace78ef7da752dc649dba709174e02))
+
 ## [0.8.0](https://github.com/Availity/element/compare/@availity/theme@0.7.1...@availity/theme@0.8.0) (2023-06-20)
 
 
