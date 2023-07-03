@@ -192,6 +192,7 @@ export const lightTheme = {
       fontFamily: tokens.typographyH6FontFamily,
       letterSpacing: tokens.typographyH6LetterSpacing,
       color: tokens.colorTextPrimary,
+      lineHeight: tokens.lineHeightsH6,
     },
     subtitle1: {
       fontSize: tokens.typographySubtitle1FontSize,
@@ -206,6 +207,7 @@ export const lightTheme = {
       fontFamily: tokens.typographySubtitle2FontFamily,
       letterSpacing: tokens.typographySubtitle2LetterSpacing,
       color: tokens.colorTextPrimary,
+      lineHeight: tokens.lineHeightsSubtitle2,
     },
     body1: {
       fontSize: tokens.typographyBody1FontSize,
@@ -378,6 +380,45 @@ export const lightTheme = {
           fontWeight: tokens.fontWeightsBold,
           textTransform: 'none',
         }),
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorBackgroundPaper,
+          maxWidth: '345px',
+        },
+      },
+    },
+    MuiCardActions: {
+      styleOverrides: {
+        root: {
+          padding: '16px',
+        },
+      },
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          fontSize: tokens.typographyBody2FontSize,
+          fontWeight: tokens.typographyBody2FontWeight,
+          fontFamily: tokens.typographyBody2FontFamily,
+          letterSpacing: tokens.typographyBody2LetterSpacing,
+          color: tokens.colorTextPrimary,
+        },
+      },
+    },
+    MuiCardHeader: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorBackgroundCanvas,
+          color: tokens.colorTextPrimary,
+        },
+      },
+    },
+    MuiCardMedia: {
+      styleOverrides: {
+        maxHeight: '100px',
       },
     },
     MuiChip: {
