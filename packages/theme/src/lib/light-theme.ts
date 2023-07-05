@@ -532,6 +532,14 @@ export const lightTheme = {
         },
       },
     },
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorBackgroundCanvas,
+          height: '3rem',
+        },
+      },
+    },
     MuiTooltip: {
       defaultProps: {
         arrow: true,
