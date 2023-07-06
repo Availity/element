@@ -3,6 +3,7 @@ import { Tabs as MuiTabs, TabsProps as MuiTabsProps } from '@mui/material';
 export interface TabsProps
   extends Omit<
     MuiTabsProps,
+    | 'centered'
     | 'centerRipple'
     | 'disableFocusRipple'
     | 'disableRipple'
@@ -17,7 +18,7 @@ export interface TabsProps
 
 export const Tabs = ({ children, ...rest }: TabsProps): JSX.Element => {
   return (
-    <MuiTabs {...rest} orientation="horizontal">
+    <MuiTabs {...rest} orientation="horizontal" centered="false">
       {children}
     </MuiTabs>
   );
