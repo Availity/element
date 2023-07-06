@@ -13,5 +13,5 @@ export type TabProps = Omit<
 >;
 
 export const Tab = (props: TabProps): JSX.Element => {
-  return <MuiTab {...props} disableRipple disableFocusRipple disableTouchRipple />;
+  return <MuiTab {...props} />;
 };
