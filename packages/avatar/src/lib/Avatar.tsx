@@ -3,7 +3,6 @@ import React from 'react';
 import { tokens } from '@availity/design-tokens';
 
 export interface AvatarProps extends Omit<MuiAvatarProps, 'variant'> {
-  children: React.ReactNode;
   /** The size of the component.
    * @default xl */
   size?: 'xs' | 's' | 'm' | 'l' | 'xl'; // If this changes, you will need to update the story as well. Options are hardcoded to ensure order.
