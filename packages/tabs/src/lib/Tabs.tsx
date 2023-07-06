@@ -8,6 +8,7 @@ export interface TabsProps
     | 'disableRipple'
     | 'disableTouchRipple'
     | 'focusRipple'
+    | 'orientation'
     | 'TouchRippleProps'
     | 'touchRippleRef'
   > {
@@ -15,5 +16,9 @@ export interface TabsProps
 }
 
 export const Tabs = ({ children, ...rest }: TabsProps): JSX.Element => {
-  return <MuiTabs {...rest}>{children}</MuiTabs>;
+  return (
+    <MuiTabs {...rest} orientation="horizontal">
+      {children}
+    </MuiTabs>
+  );
 };
