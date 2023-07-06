@@ -3,7 +3,7 @@ import { Tab } from './Tab';
 
 describe('Tab', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<Tab title="Test" />);
-    expect(getByText('Test')).toBeTruthy();
+    const { getByTitle } = render(<Tab title="Test" />);
+    expect(getByTitle('Test')).toBeTruthy();
   });
 });

@@ -3,7 +3,7 @@ import { Tabs } from './Tabs';
 
 describe('Tabs', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<Tabs>Test</Tabs>);
-    expect(getByText('Test')).toBeTruthy();
+    const { getByRole } = render(<Tabs />);
+    expect(getByRole('tablist')).toBeTruthy();
   });
 });
