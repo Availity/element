@@ -18,7 +18,7 @@ export interface TabsProps
 
 export const Tabs = ({ children, ...rest }: TabsProps): JSX.Element => {
   return (
-    <MuiTabs {...rest} orientation="horizontal" centered={false}>
+    <MuiTabs {...rest} disableRipple disableTouchRipple orientation="horizontal" centered={false}>
       {children}
     </MuiTabs>
   );
