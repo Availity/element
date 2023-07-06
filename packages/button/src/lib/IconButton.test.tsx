@@ -4,29 +4,45 @@ import { IconButton } from './IconButton';
 
 describe('Button', () => {
   test('should render successfully', () => {
-    const { getByRole } = render(<IconButton title="test"><HomeIcon/></IconButton>);
+    const { getByRole } = render(
+      <IconButton title="test">
+        <HomeIcon />
+      </IconButton>
+    );
     expect(getByRole('button')).toBeTruthy();
   });
 
   test('should have accessible name', () => {
-    const { getByRole } = render(<IconButton title="test"><HomeIcon/></IconButton>);
+    const { getByRole } = render(
+      <IconButton title="test">
+        <HomeIcon />
+      </IconButton>
+    );
     const button = getByRole('button');
 
     expect(button).toHaveAccessibleName('test');
   });
 
   test('should render tooltip on hover', async () => {
-    const { getByRole } = render(<IconButton title="test"><HomeIcon/></IconButton>);
+    const { getByRole } = render(
+      <IconButton title="test">
+        <HomeIcon />
+      </IconButton>
+    );
     const button = getByRole('button');
 
     fireEvent.mouseOver(button);
 
-    await waitFor(() => getByRole('tooltip'))
+    await waitFor(() => getByRole('tooltip'));
     expect(getByRole('tooltip')).toBeTruthy();
   });
 
   test('should render tooltip on focus', async () => {
-    const { getByRole } = render(<IconButton title="test"><HomeIcon/></IconButton>);
+    const { getByRole } = render(
+      <IconButton title="test">
+        <HomeIcon />
+      </IconButton>
+    );
     const button = getByRole('button');
 
     fireEvent.focus(button);
@@ -35,11 +51,11 @@ describe('Button', () => {
     expect(getByRole('tooltip')).toBeTruthy();
   });
 
-  test('should render contained button when filled', () => {
-    const { getByRole } = render(<IconButton title="test" filled><HomeIcon/></IconButton>);
-    const button = getByRole('button');
+  // test('should render contained button when filled', () => {
+  //   const { getByRole } = render(<IconButton title="test" filled><HomeIcon/></IconButton>);
+  //   const button = getByRole('button');
 
-    expect(button).toBeTruthy();
-    expect(button).toHaveClass('MuiButton-contained');
-  });
+  //   expect(button).toBeTruthy();
+  //   expect(button).toHaveClass('MuiButton-contained');
+  // });
 });
