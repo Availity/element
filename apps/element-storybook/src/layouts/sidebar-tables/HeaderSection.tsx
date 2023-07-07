@@ -8,7 +8,7 @@ export const HeaderSection = (): JSX.Element => {
         <IconButton size="small">
           <HomeIcon></HomeIcon>
         </IconButton>
-        <Typography>yoooooo</Typography>
+        <Typography>Current Page</Typography>
       </Breadcrumbs>
     </Box>
   );
