@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.3.0...@availity/mui-icon@0.4.0) (2023-07-11)
+
+
+### Features
+
+* **element-storybook:** add SearchSection to sidebar-tables ([3c51614](https://github.com/Availity/element/commit/3c51614c4260f9ce7f2d2544a6c09d79317ac0b6))
+
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.2.0...@availity/mui-icon@0.3.0) (2023-06-01)
 
 
