@@ -12,6 +12,7 @@ export const SearchSection = (): JSX.Element => {
             <Autocomplete
               disablePortal
               id="payer-filter"
+              size="small"
               options={[
                 { label: 'Payer1', id: 'payer1' },
                 { label: 'Payer2', id: 'payer2' },
@@ -26,6 +27,7 @@ export const SearchSection = (): JSX.Element => {
             <Autocomplete
               disablePortal
               id="status-filter"
+              size="small"
               options={[
                 { label: 'Status1', id: 'status1' },
                 { label: 'Status2', id: 'status2' },
@@ -37,9 +39,9 @@ export const SearchSection = (): JSX.Element => {
             />
           </Grid>
         </Grid>
-        <Grid item container xs={6} justifyContent={'flex-end'}>
+        <Grid item container xs={6} justifyContent={'flex-end'} wrap="nowrap">
           <Input
-            sx={{ bgcolor: 'background.canvas', padding: '0 .5rem', borderRadius: '1.5rem' }}
+            sx={{ bgcolor: 'background.canvas', padding: '0 .5rem', borderRadius: '1.5rem', marginLeft: '.5rem' }}
             disableUnderline
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
