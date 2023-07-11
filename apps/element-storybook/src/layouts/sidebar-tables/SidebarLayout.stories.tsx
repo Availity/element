@@ -1,10 +1,10 @@
+import React, { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 import { Container, Grid } from '@mui/material';
 import { HeaderSection } from './HeaderSection';
 import { SearchSection } from './SearchSection';
-import { SideNavSection } from './SideNavSection';
+import { SidebarNav } from './SidebarNav';
 import { TablesSection } from './TablesSection';
-import React from 'react';
 
 /**
  * *Work In Progress*
@@ -20,14 +20,15 @@ export default meta;
 
 export const _SidebarLayout: StoryObj = {
   render: () => {
-    // TODO: tab logic
+    const [activeTab, setActiveTab] = useState('home');
+
     return (
       <Container maxWidth={false} sx={{ bgcolor: 'background.canvas', minHeight: '75%', padding: '1rem' }}>
         <Container fixed>
           <HeaderSection />
           <Grid container spacing={2}>
             <Grid item xs={12} sm="auto">
-              <SideNavSection />
+              <SidebarNav activeTab={activeTab} onItemClick={setActiveTab} />
             </Grid>
             <Grid item xs>
               <div role="tabpanel">
@@ -58,8 +59,8 @@ export const _HeaderSection: StoryObj = {
   render: () => <HeaderSection />,
 };
 
-export const _SideNavSection: StoryObj = {
-  render: () => <SideNavSection />,
+export const _SidebarNavSection: StoryObj = {
+  render: () => <SidebarNav onItemClick={(item) => console.log(item)} />,
 };
 
 export const _SearchSection: StoryObj = {
