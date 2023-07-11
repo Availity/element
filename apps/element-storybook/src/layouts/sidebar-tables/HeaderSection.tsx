@@ -6,7 +6,7 @@ export const HeaderSection = (): JSX.Element => {
     <Box>
       <Breadcrumbs aria-label="breadcrumbs" separator={<NavigateNextIcon fontSize="small" />}>
         <IconButton size="small">
-          <HomeIcon></HomeIcon>
+          <HomeIcon />
         </IconButton>
         <Typography>Current Page</Typography>
       </Breadcrumbs>
