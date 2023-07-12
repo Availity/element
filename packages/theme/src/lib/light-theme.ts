@@ -1,5 +1,7 @@
 import { tokens } from '@availity/design-tokens';
 
+const important = (style: string) => `${style} !important`;
+
 const containedButtonStyles = (color: string) => ({
   backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
   color: tokens[`color${color}Contrast` as keyof typeof tokens],
@@ -19,11 +21,15 @@ const containedButtonStyles = (color: string) => ({
 
 const outlinedButtonStyles = (color: string) => ({
   '&:hover': {
-    boxShadow: 'none',
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}21`,
   },
   '&:focus': {
     outline: '2px solid white',
     boxShadow: `0 0 0px 4px ${tokens[`color${color}Main` as keyof typeof tokens]}`,
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}21`,
+  },
+  '&:active': {
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}42`,
   },
 });
 
@@ -337,6 +343,7 @@ export const lightTheme = {
         // The props to change the default for.
         disableRipple: true, // No more ripple, on the whole application 💣!
         disableElevation: true,
+        variant: 'contained',
       },
       styleOverrides: {
         root: {
@@ -359,7 +366,10 @@ export const lightTheme = {
         containedError: { ...containedButtonStyles('Error') },
         outlinedPrimary: { ...outlinedButtonStyles('Primary') },
         outlinedSecondary: { ...outlinedButtonStyles('Secondary') },
-        outlinedTertiary: { ...outlinedButtonStyles('Secondary') }, // intended
+        outlinedTertiary: {
+          color: tokens.colorSecondaryMain,
+          ...outlinedButtonStyles('Secondary'),
+        }, // intended
         outlinedSuccess: { ...outlinedButtonStyles('Success') },
         outlinedWarning: { ...outlinedButtonStyles('Warning') },
         outlinedError: { ...outlinedButtonStyles('Error') },
@@ -367,26 +377,27 @@ export const lightTheme = {
     },
     MuiButtonGroup: {
       defaultProps: {
-        color: 'tertiary',
+        color: 'secondary',
         variant: 'contained',
+        disableElevation: true,
+        disableRipple: true,
       },
-      groupedContainedPrimary: { ...containedButtonStyles('Primary') },
-      groupedContainedSecondary: { ...containedButtonStyles('Secondary') },
-      groupedContainedTertiary: {
-        ...containedButtonStyles('Tertiary'),
-        '&:focus': {
-          boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
+      styleOverrides: {
+        grouped: {
+          '&:focus': {
+            zIndex: '1',
+          },
+        },
+        groupedContained: { borderColor: important(tokens.colorPrimaryContrast) },
+        groupedContainedPrimary: { '&:focus:hover': { boxShadow: `0 0 0px 4px ${tokens.colorPrimaryDark}` } },
+        groupedContainedSecondary: { '&:focus:hover': { boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}` } },
+        groupedContainedTertiary: {
+          borderColor: important(tokens.colorSecondaryMain),
+          '&:focus:hover': {
+            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
+          },
         },
       },
-      groupedContainedSuccess: { ...containedButtonStyles('Success') },
-      groupedContainedWarning: { ...containedButtonStyles('Warning') },
-      groupedContainedError: { ...containedButtonStyles('Error') },
-      groupedOutlinedPrimary: { ...outlinedButtonStyles('Primary') },
-      groupedOutlinedSecondary: { ...outlinedButtonStyles('Secondary') },
-      groupedOutlinedTertiary: { ...outlinedButtonStyles('Secondary') }, // intended
-      groupedOutlinedSuccess: { ...outlinedButtonStyles('Success') },
-      groupedOutlinedWarning: { ...outlinedButtonStyles('Warning') },
-      groupedOutlinedError: { ...outlinedButtonStyles('Error') },
     },
     MuiCard: {
       styleOverrides: {
@@ -567,7 +578,7 @@ export const lightTheme = {
             '&.Mui-selected': {
               ...containedButtonStyles('Tertiary'),
               '&:focus': {
-                boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
+                boxShadow: important(`0 0 0px 4px ${tokens.colorSecondaryDark}`),
               },
             },
           },

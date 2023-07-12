@@ -32,6 +32,12 @@ export type ButtonProps = {
   | 'touchRippleRef'
 >;
 
+const overrideProps = {
+  disableRipple: true,
+  disableFocusRipple: true,
+  disableTouchRipple: true,
+};
+
 const iconOnlyStyles = {
   minWidth: 2,
   px: 1,
@@ -49,5 +55,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) =>
     ...(iconOnly && iconOnlyStyles),
   };
 
-  return <MUIButton sx={{ ...styles, ...sx }} disableRipple {...rest} ref={ref} />;
+  return <MUIButton sx={{ ...styles, ...sx }} {...rest} {...overrideProps} ref={ref} />;
 });

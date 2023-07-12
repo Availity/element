@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Typography } from '@mui/material';
 import { ToggleButtonGroup, ToggleButtonGroupProps } from './ToggleButtonGroup';
 import { ThumbUpIcon, ThumbDownIcon } from '@availity/mui-icon';
 import { ToggleButton } from './ToggleButton';
@@ -24,7 +25,7 @@ export const _ToggleButtonGroup: StoryObj<typeof ToggleButtonGroup> = {
       setValue(newValue);
     };
     return (
-      <ToggleButtonGroup {...args} value={value} onChange={handleChange}>
+      <ToggleButtonGroup {...args} aria-label="Sample Toggle Button Group" value={value} onChange={handleChange}>
         <ToggleButton value="one">One</ToggleButton>
         <ToggleButton value="two">Two</ToggleButton>
         <ToggleButton value="three">Three</ToggleButton>
@@ -41,14 +42,26 @@ export const _YesNo: StoryObj<typeof ToggleButtonGroup> = {
       setValue(newValue);
     };
     return (
-      <ToggleButtonGroup color="primary" size="small" value={value} onChange={handleChange} exclusive>
-        <ToggleButton value="yes">
-          <ThumbUpIcon /> Yes
-        </ToggleButton>
-        <ToggleButton value="no">
-          <ThumbDownIcon /> No
-        </ToggleButton>
-      </ToggleButtonGroup>
+      <>
+        <Typography variant="h3" id="yes-no-group-label">
+          Yes/No Question
+        </Typography>
+        <ToggleButtonGroup
+          aria-labelledby="yes-no-group-label"
+          color="primary"
+          size="small"
+          value={value}
+          onChange={handleChange}
+          exclusive
+        >
+          <ToggleButton value="yes">
+            <ThumbUpIcon sx={{ mr: 1 }} /> Yes
+          </ToggleButton>
+          <ToggleButton value="no">
+            <ThumbDownIcon sx={{ mr: 1 }} /> No
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </>
     );
   },
 };

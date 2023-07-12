@@ -1,9 +1,14 @@
 import { render } from '@testing-library/react';
 import { ButtonGroup } from './ButtonGroup';
+import { Button } from './Button';
 
 describe('ButtonGroup', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<ButtonGroup>Test</ButtonGroup>);
-    expect(getByText('Test')).toBeTruthy();
+    const { getByRole } = render(
+      <ButtonGroup aria-label="Test">
+        <Button>button</Button>
+      </ButtonGroup>
+    );
+    expect(getByRole('group')).toBeTruthy();
   });
 });

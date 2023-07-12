@@ -11,7 +11,11 @@ declare module '@mui/material/ButtonGroup' {
   }
 }
 
-export type ButtonGroupProps = Pick<ButtonProps, 'color' | 'variant'> &
+export type ButtonGroupProps = {
+  /** The color of the component.
+   * @default secondary */
+  color?: 'primary' | 'secondary' | 'tertiary';
+} & Pick<ButtonProps, 'variant'> &
   Omit<MuiButtonGroupProps, 'color' | 'variant' | 'disableElevation' | 'disableFocusRipple' | 'disableRipple'>;
 
 export const ButtonGroup = ({ ...args }: ButtonGroupProps): JSX.Element => {

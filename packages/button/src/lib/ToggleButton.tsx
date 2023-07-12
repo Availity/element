@@ -27,5 +27,5 @@ export type ToggleButtonProps = {
 >;
 
 export const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>((props, ref) => {
-  return <MUIToggleButton disableRipple {...props} ref={ref} />;
+  return <MUIToggleButton {...props} disableRipple ref={ref} />;
 });
