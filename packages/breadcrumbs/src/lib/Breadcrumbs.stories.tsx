@@ -16,17 +16,13 @@ export const _Breadcrumbs: StoryObj<typeof Breadcrumbs> = {
   render: (args: BreadcrumbsProps) => <Breadcrumbs {...args} />,
   args: {
     active: 'Current Page',
-    crumbs: [
-      { name: 'Home', url: '#' },
-      { name: 'Previous Page', url: '#' },
-    ],
+    crumbs: [{ name: 'Previous Page', url: '#' }],
   },
 };
 
 export const _BreadcrumbsChildren: StoryObj<typeof Breadcrumbs> = {
   render: (args: BreadcrumbsProps) => (
     <Breadcrumbs {...args}>
-      <Link>Home</Link>
       <Link>Previous Page</Link>
     </Breadcrumbs>
   ),
