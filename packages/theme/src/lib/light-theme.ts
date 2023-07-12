@@ -545,6 +545,9 @@ export const lightTheme = {
           '&:hover': {
             backgroundColor: tokens.colorBackgroundBorder,
           },
+          '&:Mui-selected': {
+            color: tokens.colorPrimaryMain,
+          },
         },
       },
     },
