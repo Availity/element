@@ -1,6 +1,7 @@
 export * from '@availity/mui-alert';
 export * from '@availity/mui-avatar';
 export * from '@availity/mui-badge';
+export * from '@availity/mui-breadcrumbs';
 export * from '@availity/mui-button';
 export * from '@availity/mui-card';
 export * from '@availity/mui-chip';

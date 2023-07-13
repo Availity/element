@@ -25,6 +25,7 @@
       "@availity/mui-alert": ["packages/alert/src/index.ts"],
       "@availity/mui-avatar": ["packages/avatar/src/index.ts"],
       "@availity/mui-badge": ["packages/badge/src/index.ts"],
+      "@availity/mui-breadcrumbs": ["packages/breadcrumbs/src/index.ts"],
       "@availity/mui-button": ["packages/button/src/index.ts"],
       "@availity/mui-card": ["packages/card/src/index.ts"],
       "@availity/mui-chip": ["packages/chip/src/index.ts"],
