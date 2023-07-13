@@ -82,6 +82,7 @@ __metadata:
   resolution: "@availity/mui-avatar@workspace:packages/avatar"
   dependencies:
     "@availity/design-tokens": "workspace:^"
+    "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0
@@ -169,7 +170,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-icon@workspace:*, @availity/mui-icon@workspace:packages/icon":
+"@availity/mui-icon@workspace:*, @availity/mui-icon@workspace:^, @availity/mui-icon@workspace:packages/icon":
   version: 0.0.0-use.local
   resolution: "@availity/mui-icon@workspace:packages/icon"
   dependencies:
