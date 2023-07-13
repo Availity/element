@@ -1,5 +1,5 @@
 import { Breadcrumbs as MuiBreadcrumbs, BreadcrumbsProps as MuiBreadcrumbsProps, Typography } from '@mui/material';
-import { NavigateNextIcon } from '@availity/mui-icon';
+import { NavigateNextIcon, MoreHorizontalIcon } from '@availity/mui-icon';
 import { Link } from '@availity/mui-link';
 
 interface Crumb {
@@ -29,6 +29,7 @@ export const Breadcrumbs = ({
   crumbs,
   emptyState = '...',
   homeUrl = '/public/apps/dashboard',
+  slots,
   ...rest
 }: BreadcrumbsProps): JSX.Element => {
   const renderBreadCrumb = ({ name = emptyState, url }: Crumb) => {
@@ -41,7 +42,12 @@ export const Breadcrumbs = ({
   };
 
   return (
-    <MuiBreadcrumbs {...rest} separator={<NavigateNextIcon fontSize="small" />}>
+    <MuiBreadcrumbs
+      {...rest}
+      separator={<NavigateNextIcon fontSize="small" />}
+      slotProps={{ collapsedIcon: { className: 'breadcrumbs__collapsed-icon' } }}
+      slots={{ ...slots, CollapsedIcon: MoreHorizontalIcon }}
+    >
       <Link aria-label="Home" href={homeUrl}>
         Home
       </Link>

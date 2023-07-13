@@ -305,6 +305,18 @@ export const lightTheme = {
         },
       },
     },
+    MuiBreadcrumbs: {
+      styleOverrides: {
+        root: {
+          '.MuiButtonBase-root': {
+            backgroundColor: 'transparent',
+          },
+          '.breadcrumbs__collapsed-icon': {
+            color: tokens.colorPrimaryMain,
+          },
+        },
+      },
+    },
     MuiButton: {
       defaultProps: {
         // The props to change the default for.
