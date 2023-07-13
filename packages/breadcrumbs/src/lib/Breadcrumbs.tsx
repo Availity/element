@@ -9,7 +9,7 @@ interface Crumb {
   url: string;
 }
 
-export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator'> {
+export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator' | 'slotProps' | 'slots'> {
   /** The name of the active page (the page the user is currently on). */
   active?: string;
   children?: React.ReactNode;
@@ -29,7 +29,6 @@ export const Breadcrumbs = ({
   crumbs,
   emptyState = '...',
   homeUrl = '/public/apps/dashboard',
-  slots,
   ...rest
 }: BreadcrumbsProps): JSX.Element => {
   const renderBreadCrumb = ({ name = emptyState, url }: Crumb) => {
@@ -46,7 +45,7 @@ export const Breadcrumbs = ({
       {...rest}
       separator={<NavigateNextIcon fontSize="small" />}
       slotProps={{ collapsedIcon: { className: 'breadcrumbs__collapsed-icon' } }}
-      slots={{ ...slots, CollapsedIcon: MoreHorizontalIcon }}
+      slots={{ CollapsedIcon: MoreHorizontalIcon }}
     >
       <Link aria-label="Home" href={homeUrl}>
         Home
