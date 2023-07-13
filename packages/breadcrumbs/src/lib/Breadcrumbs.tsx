@@ -1,6 +1,6 @@
 import { Breadcrumbs as MuiBreadcrumbs, BreadcrumbsProps as MuiBreadcrumbsProps, Typography } from '@mui/material';
 import { NavigateNextIcon } from '@availity/mui-icon';
-import { Link } from '../../../link';
+import { Link } from '@availity/mui-link';
 
 interface Crumb {
   /** The name of the ancestor page. */

@@ -2,7 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Breadcrumbs, BreadcrumbsProps } from './Breadcrumbs';
-import { Link } from '@mui/material';
+import { Link } from '@availity/mui-link';
 
 const meta: Meta<typeof Breadcrumbs> = {
   title: 'Components/Breadcrumbs/Breadcrumbs',
@@ -23,7 +23,7 @@ export const _Breadcrumbs: StoryObj<typeof Breadcrumbs> = {
 export const _BreadcrumbsChildren: StoryObj<typeof Breadcrumbs> = {
   render: (args: BreadcrumbsProps) => (
     <Breadcrumbs {...args}>
-      <Link>Previous Page</Link>
+      <Link href="">Previous Page</Link>
     </Breadcrumbs>
   ),
   args: {

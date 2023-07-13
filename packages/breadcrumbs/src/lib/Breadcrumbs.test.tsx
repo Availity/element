@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { Breadcrumbs } from './Breadcrumbs';
-import { Link } from '../../../link';
+import { Link } from '@availity/mui-link';
 
 describe('Breadcrumbs', () => {
   describe('rending with crumbs', () => {
