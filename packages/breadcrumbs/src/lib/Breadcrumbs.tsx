@@ -1,5 +1,5 @@
 import { Breadcrumbs as MuiBreadcrumbs, BreadcrumbsProps as MuiBreadcrumbsProps, Typography } from '@mui/material';
-import { NavigateNextIcon } from '@availity/mui-icon';
+import { NavigateNextIcon, MoreHorizontalIcon } from '@availity/mui-icon';
 import { Link } from '@availity/mui-link';
 
 interface Crumb {
@@ -9,7 +9,7 @@ interface Crumb {
   url: string;
 }
 
-export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator'> {
+export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator' | 'slotProps' | 'slots'> {
   /** The name of the active page (the page the user is currently on). */
   active?: string;
   children?: React.ReactNode;
@@ -41,7 +41,12 @@ export const Breadcrumbs = ({
   };
 
   return (
-    <MuiBreadcrumbs {...rest} separator={<NavigateNextIcon fontSize="small" />}>
+    <MuiBreadcrumbs
+      {...rest}
+      separator={<NavigateNextIcon fontSize="small" />}
+      slotProps={{ collapsedIcon: { className: 'breadcrumbs__collapsed-icon' } }}
+      slots={{ CollapsedIcon: MoreHorizontalIcon }}
+    >
       <Link aria-label="Home" href={homeUrl}>
         Home
       </Link>
