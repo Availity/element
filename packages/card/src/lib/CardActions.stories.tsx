@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CardActions, CardActionsProps } from './CardActions';
 import { Card } from './Card';
-import { Button, IconButton } from '../../../button';
+import { Button, IconButton } from '@availity/mui-button';
 import { SearchIcon } from '@availity/mui-icon';
 
 const meta: Meta<typeof CardActions> = {

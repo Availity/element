@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from './Card';
 import { CardHeader, CardHeaderProps } from './CardHeader';
-import { IconButton } from '../../../button';
+import { IconButton } from '@availity/mui-button';
 import { MoreVerticalIcon } from '@availity/mui-icon';
 
 const meta: Meta<typeof CardHeader> = {
