@@ -26,6 +26,7 @@
     "@availity/mui-link": "workspace:*",
     "@availity/mui-menu": "workspace:*",
     "@availity/mui-paper": "workspace:*",
+    "@availity/mui-tabs": "workspace:*",
     "@availity/mui-tooltip": "workspace:*",
     "@availity/theme-provider": "workspace:*",
     "@mui/material": "^5.11.9",

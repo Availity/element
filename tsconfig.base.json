@@ -34,6 +34,7 @@
       "@availity/mui-link": ["packages/link/src/index.ts"],
       "@availity/mui-menu": ["packages/menu/src/index.ts"],
       "@availity/mui-paper": ["packages/paper/src/index.ts"],
+      "@availity/mui-tabs": ["packages/tabs/src/index.ts"],
       "@availity/mui-tooltip": ["packages/tooltip/src/index.ts"],
       "@availity/theme": ["packages/theme/src/index.ts"],
       "@availity/theme-provider": ["packages/theme-provider/src/index.ts"]

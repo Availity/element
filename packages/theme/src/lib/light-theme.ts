@@ -544,6 +544,33 @@ export const lightTheme = {
         },
       },
     },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          textTransform: 'unset',
+          fontSize: tokens.typographyBody1FontSize,
+          fontWeight: tokens.typographyBody1FontWeight,
+          fontFamily: tokens.typographyBody1FontFamily,
+          letterSpacing: tokens.typographyBody1LetterSpacing,
+          color: tokens.colorTextPrimary,
+          padding: '11px 8px',
+          '&:hover': {
+            backgroundColor: tokens.colorBackgroundBorder,
+          },
+          '&:Mui-selected': {
+            color: tokens.colorPrimaryMain,
+          },
+        },
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorBackgroundCanvas,
+          height: '3rem',
+        },
+      },
+    },
     MuiTooltip: {
       defaultProps: {
         arrow: true,
