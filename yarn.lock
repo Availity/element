@@ -155,7 +155,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-divider@workspace:*, @availity/mui-divider@workspace:packages/divider":
+"@availity/mui-divider@workspace:*, @availity/mui-divider@workspace:^, @availity/mui-divider@workspace:packages/divider":
   version: 0.0.0-use.local
   resolution: "@availity/mui-divider@workspace:packages/divider"
   dependencies:
@@ -238,6 +238,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-tabs@workspace:packages/tabs"
   dependencies:
+    "@availity/mui-divider": "workspace:^"
     "@mui/lab": ^5.0.0-alpha.121
     "@mui/material": ^5.11.9
     react: 18.2.0

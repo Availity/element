@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { TabContext, TabContextProps } from './TabContext';
-import { Divider } from '../../../divider';
+import { Divider } from '@availity/mui-divider';
 import { TabList } from './TabList';
 import { Tab } from './Tab';
 import { TabPanel } from './TabPanel';
