@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.14.0](https://github.com/Availity/element/compare/@availity/element@0.13.0...@availity/element@0.14.0) (2023-07-14)
+
+
+### Features
+
+* **mui-tabs:** tabs component initial commit ([d4e7818](https://github.com/Availity/element/commit/d4e7818f4123d215e4cd0f5df475b5fb0eadc69a))
+
 ## [0.13.0](https://github.com/Availity/element/compare/@availity/element@0.12.0...@availity/element@0.13.0) (2023-07-13)
 
 
