@@ -10,10 +10,11 @@ import {
   TablePagination,
   TableContainer,
   TableBody,
+  Typography,
   Paper,
 } from '@mui/material';
-// import { DataGrid } from '@mui/x-data-grid';
 import type { AlertColor } from '@mui/material';
+import { visuallyHidden } from '@mui/utils';
 import { datarows, Data } from './TableData';
 import { useMemo, useState } from 'react';
 
@@ -49,32 +50,17 @@ function getComparator<Key extends keyof any>(
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
 
-// Since 2020 all major browsers ensure sort stability with Array.prototype.sort().
-// stableSort() brings sort stability to non-modern browsers (notably IE11). If you
-// only support modern browsers you can replace stableSort(exampleArray, exampleComparator)
-// with exampleArray.slice().sort(exampleComparator)
-function stableSort<T>(array: readonly T[], comparator: (a: T, b: T) => number) {
-  const stabilizedThis = array.map((el, index) => [el, index] as [T, number]);
-  stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0]);
-    if (order !== 0) {
-      return order;
-    }
-    return a[1] - b[1];
-  });
-  return stabilizedThis.map((el) => el[0]);
-}
-
 interface HeadCell {
   disablePadding: boolean;
   id: keyof Data;
   label: string;
   numeric: boolean;
+  sortable?: boolean;
 }
 
 const headCells: readonly HeadCell[] = [
   {
-    id: 'transactionid',
+    id: 'id',
     numeric: false,
     disablePadding: true,
     label: 'Transaction ID',
@@ -84,6 +70,7 @@ const headCells: readonly HeadCell[] = [
     numeric: false,
     disablePadding: false,
     label: 'Payer',
+    sortable: true,
   },
   {
     id: 'patientname',
@@ -99,7 +86,7 @@ const headCells: readonly HeadCell[] = [
   },
   {
     id: 'attachments',
-    numeric: true,
+    numeric: false,
     disablePadding: false,
     label: 'Attachments',
   },
@@ -121,7 +108,7 @@ interface EnhancedTableProps {
 }
 
 function EnhancedTableHead(props: EnhancedTableProps) {
-  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
+  const { numSelected, order, orderBy, onRequestSort, onSelectAllClick, rowCount } = props;
   const createSortHandler = (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
     onRequestSort(event, property);
   };
@@ -145,20 +132,24 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             key={headCell.id}
             align={headCell.numeric ? 'right' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
-            // sortDirection={orderBy === headCell.id ? order : false}
+            sortDirection={headCell.sortable && orderBy === headCell.id ? order : false}
           >
-            {/* <TableSortLabel
-              active={orderBy === headCell.id}
-              direction={orderBy === headCell.id ? order : 'asc'}
-              onClick={createSortHandler(headCell.id)}
-            > */}
-            {headCell.label}
-            {/* {orderBy === headCell.id ? (
-                <Box component="span" sx={visuallyHidden}>
-                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                </Box>
-              ) : null}
-            </TableSortLabel> */}
+            {headCell.sortable ? (
+              <TableSortLabel
+                active={orderBy === headCell.id}
+                direction={orderBy === headCell.id ? order : 'asc'}
+                onClick={createSortHandler(headCell.id)}
+              >
+                {headCell.label}
+                {orderBy === headCell.id ? (
+                  <Box component="span" sx={visuallyHidden}>
+                    {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                  </Box>
+                ) : null}
+              </TableSortLabel>
+            ) : (
+              headCell.label
+            )}
           </TableCell>
         ))}
       </TableRow>
@@ -168,7 +159,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 
 export const TablesSection = (): JSX.Element => {
   const [order, setOrder] = useState<Order>('asc');
-  const [orderBy, setOrderBy] = useState<keyof Data>('transactionid');
+  const [orderBy, setOrderBy] = useState<keyof Data>('id');
   const [selected, setSelected] = useState<readonly string[]>([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -181,7 +172,7 @@ export const TablesSection = (): JSX.Element => {
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelected = datarows.map((n) => n.transactionid);
+      const newSelected = datarows.map((n) => n.id);
       setSelected(newSelected);
       return;
     }
@@ -220,14 +211,21 @@ export const TablesSection = (): JSX.Element => {
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - datarows.length) : 0;
 
   const visibleRows = useMemo(
-    () => datarows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage),
+    () =>
+      datarows
+        .slice()
+        .sort(getComparator(order, orderBy))
+        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage),
     [order, orderBy, page, rowsPerPage]
   );
 
   return (
-    <Paper variant="elevation" elevation={0}>
+    <Paper variant="elevation" elevation={0} sx={{ padding: '10px' }}>
+      <Typography variant="h2" id="tableTitle">
+        Table
+      </Typography>
       <TableContainer>
-        <Table sx={{ minWidth: 750 }} aria-labelledby="tableTitle" size="medium">
+        <Table aria-labelledby="tableTitle">
           <EnhancedTableHead
             numSelected={selected.length}
             order={order}
@@ -237,18 +235,18 @@ export const TablesSection = (): JSX.Element => {
             rowCount={datarows.length}
           />
           <TableBody>
-            {visibleRows.map((row, index) => {
-              const isItemSelected = isSelected(row.transactionid);
+            {datarows.map((row, index) => {
+              const isItemSelected = isSelected(row.id);
               const labelId = `enhanced-table-checkbox-${index}`;
 
               return (
                 <TableRow
                   hover
-                  onClick={(event) => handleClick(event, row.transactionid)}
+                  onClick={(event) => handleClick(event, row.id)}
                   role="checkbox"
                   aria-checked={isItemSelected}
                   tabIndex={-1}
-                  key={row.transactionid}
+                  key={row.id}
                   selected={isItemSelected}
                   sx={{ cursor: 'pointer' }}
                 >
@@ -262,14 +260,14 @@ export const TablesSection = (): JSX.Element => {
                     />
                   </TableCell>
                   <TableCell component="th" id={labelId} scope="row" padding="none">
-                    {row.transactionid}
+                    {row.id}
                   </TableCell>
                   <TableCell align="right">{row.payer}</TableCell>
                   <TableCell align="right">{row.patientname}</TableCell>
                   <TableCell align="right">{row.accountid}</TableCell>
                   <TableCell align="right">
                     <Badge badgeContent={row.attachments?.length || 0}>
-                      <AttachmentIcon />
+                      <AttachmentIcon color="primary" />
                     </Badge>
                   </TableCell>
                   <TableCell align="right">{StatusChip(row.status)}</TableCell>
