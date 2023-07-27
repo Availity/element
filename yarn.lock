@@ -1747,6 +1747,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.22.6":
+  version: 7.22.6
+  resolution: "@babel/runtime@npm:7.22.6"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: e585338287c4514a713babf4fdb8fc2a67adcebab3e7723a739fc62c79cfda875b314c90fd25f827afb150d781af97bc16c85bfdbfa2889f06053879a1ddb597
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.18.10, @babel/template@npm:^7.20.7, @babel/template@npm:^7.3.3":
   version: 7.21.9
   resolution: "@babel/template@npm:7.21.9"
@@ -3160,6 +3169,39 @@ __metadata:
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
   checksum: 79cfc91e5a61311ac88680df3ea09f1218d0a5a766b6dadf0c5c9c72a3c36cbd903895ebb0f16497dcffb2e3601cb3b46742ae3c5e2c1f62d5ebf02babfd910f
+  languageName: node
+  linkType: hard
+
+"@mui/utils@npm:^5.13.7":
+  version: 5.14.1
+  resolution: "@mui/utils@npm:5.14.1"
+  dependencies:
+    "@babel/runtime": ^7.22.6
+    "@types/prop-types": ^15.7.5
+    "@types/react-is": ^18.2.1
+    prop-types: ^15.8.1
+    react-is: ^18.2.0
+  peerDependencies:
+    react: ^17.0.0 || ^18.0.0
+  checksum: 39b1ab8d428f1783d0f7621b4ab284f7d035920c43c527114d865ba2d7d467ead850528a042ea986b76d4bac1ad6fc9cb0541add0d17d29d5ad59460c69106d1
+  languageName: node
+  linkType: hard
+
+"@mui/x-data-grid@npm:^6.10.1":
+  version: 6.10.1
+  resolution: "@mui/x-data-grid@npm:6.10.1"
+  dependencies:
+    "@babel/runtime": ^7.22.6
+    "@mui/utils": ^5.13.7
+    clsx: ^1.2.1
+    prop-types: ^15.8.1
+    reselect: ^4.1.8
+  peerDependencies:
+    "@mui/material": ^5.4.1
+    "@mui/system": ^5.4.1
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+  checksum: 7ae6335b8271cee51691400fb4d829e8d5c6b901f2d40752bc6d59fccd129d6a22590bbb0aa9d0487dc36068155acfbad45b5301ae82100eb8195ee578cd44ac
   languageName: node
   linkType: hard
 
@@ -5215,6 +5257,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-is@npm:^18.2.1":
+  version: 18.2.1
+  resolution: "@types/react-is@npm:18.2.1"
+  dependencies:
+    "@types/react": "*"
+  checksum: b44c3262efa2c68fa6fe2beb9ef86170b18305469461a3f97aa14943cc033cb21a26944f718bdb6434eea6e8f7fcba251c4f45b65b897a3fcf751b5a6003cf82
+  languageName: node
+  linkType: hard
+
 "@types/react-transition-group@npm:^4.4.5, @types/react-transition-group@npm:^4.4.6":
   version: 4.4.6
   resolution: "@types/react-transition-group@npm:4.4.6"
@@ -6017,6 +6068,7 @@ __metadata:
     "@commitlint/config-nx-scopes": ^17.0.0
     "@jscutlery/semver": ^2.29.3
     "@mui/lab": ^5.0.0-alpha.121
+    "@mui/x-data-grid": ^6.10.1
     "@nrwl/devkit": 15.6.2
     "@nrwl/eslint-plugin-nx": 15.6.2
     "@nrwl/jest": 15.6.2
@@ -14389,6 +14441,13 @@ __metadata:
   version: 1.0.0
   resolution: "requires-port@npm:1.0.0"
   checksum: eee0e303adffb69be55d1a214e415cf42b7441ae858c76dfc5353148644f6fd6e698926fc4643f510d5c126d12a705e7c8ed7e38061113bdf37547ab356797ff
+  languageName: node
+  linkType: hard
+
+"reselect@npm:^4.1.8":
+  version: 4.1.8
+  resolution: "reselect@npm:4.1.8"
+  checksum: a4ac87cedab198769a29be92bc221c32da76cfdad6911eda67b4d3e7136dca86208c3b210e31632eae31ebd2cded18596f0dd230d3ccc9e978df22f233b5583e
   languageName: node
   linkType: hard
 
