@@ -3,7 +3,7 @@ import { Input } from './Input';
 
 describe('Input', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<Input>Test</Input>);
-    expect(getByText('Test')).toBeTruthy();
+    const { getByTestId } = render(<Input data-testid="test-input" />);
+    expect(getByTestId('test-input')).toBeTruthy();
   });
 });
