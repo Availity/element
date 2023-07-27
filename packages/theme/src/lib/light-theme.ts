@@ -1,5 +1,38 @@
 import { tokens } from '@availity/design-tokens';
 
+const important = (style: string) => `${style} !important`;
+
+const containedButtonStyles = (color: string) => ({
+  backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
+  color: tokens[`color${color}Contrast` as keyof typeof tokens],
+  '&:hover': {
+    backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
+    boxShadow: 'none',
+  },
+  '&:focus': {
+    backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
+    outline: '2px solid white',
+    boxShadow: `0 0 0px 4px ${tokens[`color${color}Dark` as keyof typeof tokens]}`,
+  },
+  '&:active': {
+    backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
+  },
+});
+
+const outlinedButtonStyles = (color: string) => ({
+  '&:hover': {
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}21`,
+  },
+  '&:focus': {
+    outline: '2px solid white',
+    boxShadow: `0 0 0px 4px ${tokens[`color${color}Main` as keyof typeof tokens]}`,
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}21`,
+  },
+  '&:active': {
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}42`,
+  },
+});
+
 export const lightTheme = {
   mode: 'light',
   palette: {
@@ -265,7 +298,7 @@ export const lightTheme = {
         },
         icon: ({ ownerState }: { ownerState: any }) => ({
           ...(ownerState.severity === 'success' && {
-            color: `${tokens.colorGreen600} !important`,
+            color: important(tokens.colorGreen600),
           }),
           opacity: 1,
           padding: '4px',
@@ -322,76 +355,36 @@ export const lightTheme = {
         // The props to change the default for.
         disableRipple: true, // No more ripple, on the whole application 💣!
         disableElevation: true,
+        variant: 'contained',
       },
       styleOverrides: {
-        root: ({ ownerState }: any) => ({
-          ...(ownerState.variant === 'contained'
-            ? {
-                backgroundColor:
-                  tokens[
-                    `color${
-                      ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                    }Main` as keyof typeof tokens
-                  ],
-                color:
-                  tokens[
-                    `color${
-                      ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                    }Contrast` as keyof typeof tokens
-                  ],
-                '&:hover': {
-                  backgroundColor:
-                    tokens[
-                      `color${
-                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                      }Dark` as keyof typeof tokens
-                    ],
-                  boxShadow: 'none',
-                },
-                '&:focus': {
-                  backgroundColor:
-                    tokens[
-                      `color${
-                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                      }Dark` as keyof typeof tokens
-                    ],
-                  outline: '2px solid white',
-                  boxShadow: `0 0 0px 4px ${
-                    tokens[
-                      `color${
-                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                      }Dark` as keyof typeof tokens
-                    ]
-                  }`,
-                },
-                '&:active': {
-                  backgroundColor:
-                    tokens[
-                      `color${
-                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                      }Main` as keyof typeof tokens
-                    ],
-                },
-              }
-            : {
-                '&:hover': {
-                  boxShadow: 'none',
-                },
-                '&:focus': {
-                  outline: '2px solid white',
-                  boxShadow: `0 0 0px 4px ${
-                    tokens[
-                      `color${
-                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                      }Main` as keyof typeof tokens
-                    ]
-                  }`,
-                },
-              }),
+        root: {
           boxShadow: 'none',
           fontWeight: tokens.fontWeightsBold,
           textTransform: 'none',
-        }),
+        },
+        containedPrimary: { ...containedButtonStyles('Primary') },
+        containedSecondary: { ...containedButtonStyles('Secondary') },
+        containedTertiary: {
+          ...containedButtonStyles('Tertiary'),
+          '&:focus': {
+            backgroundColor: tokens.colorTertiaryDark,
+            outline: '2px solid white',
+            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
+          },
+        },
+        containedSuccess: { ...containedButtonStyles('Success') },
+        containedWarning: { ...containedButtonStyles('Warning') },
+        containedError: { ...containedButtonStyles('Error') },
+        outlinedPrimary: { ...outlinedButtonStyles('Primary') },
+        outlinedSecondary: { ...outlinedButtonStyles('Secondary') },
+        outlinedTertiary: {
+          color: tokens.colorSecondaryMain,
+          ...outlinedButtonStyles('Secondary'),
+        }, // intended
+        outlinedSuccess: { ...outlinedButtonStyles('Success') },
+        outlinedWarning: { ...outlinedButtonStyles('Warning') },
+        outlinedError: { ...outlinedButtonStyles('Error') },
       },
     },
     MuiCard: {
@@ -495,7 +488,6 @@ export const lightTheme = {
       defaultProps: {
         // The props to change the default for.
         disableRipple: true, // No more ripple, on the whole application 💣!
-        disableElevation: true,
       },
       styleOverrides: {
         root: {
