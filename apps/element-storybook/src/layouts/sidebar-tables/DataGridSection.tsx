@@ -63,21 +63,6 @@ export const DataGridSection = (): JSX.Element => (
     <Typography variant="h2" id="datagridTitle">
       DataGrid
     </Typography>
-    <DataGrid
-      aria-labelledby="datagridTitle"
-      rows={datarows}
-      columns={columns}
-      initialState={{
-        pagination: {
-          paginationModel: {
-            pageSize: 10,
-          },
-        },
-      }}
-      pageSizeOptions={[10]}
-      checkboxSelection
-      disableRowSelectionOnClick
-      disableColumnMenu
-    />
+    <DataGrid aria-labelledby="datagridTitle" rows={datarows} columns={columns} disableColumnMenu hideFooter />
   </Paper>
 );

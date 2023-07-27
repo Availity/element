@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
-import { Container, Grid, Typography } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import { HeaderSection } from './HeaderSection';
 import { SearchSection } from './SearchSection';
 import { SidebarNav } from './SidebarNav';
