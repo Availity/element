@@ -511,6 +511,41 @@ export const lightTheme = {
         },
       },
     },
+    MuiInputBase: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          '&.MuiInputBase-root': {
+            '& > fieldset': {
+              borderColor: tokens.colorGrey500,
+            },
+            '&:hover > fieldset': {
+              borderColor: 'white', // FIXME: need to update
+            },
+            '&.Mui-focused > fieldset': {
+              borderColor: tokens.colorPrimaryMain,
+            },
+            '&.Mui-error > fieldset': {
+              borderColor: tokens.colorErrorMain,
+            },
+            '&.Mui-disabled > fieldset': {
+              borderColor: tokens.colorGrey200,
+            },
+          },
+        },
+        input: {
+          width: '220px',
+          height: '26px',
+          backgroundColor: 'white',
+          borderRadius: '4px',
+        },
+        inputSizeSmall: {
+          height: '10px',
+        },
+      },
+    },
     MuiLink: {
       defaultProps: {
         underline: 'hover',
