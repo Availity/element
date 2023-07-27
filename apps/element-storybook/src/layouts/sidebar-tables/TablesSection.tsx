@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { AttachmentIcon, Badge, Chip } from '@availity/element';
 import {
   Box,
@@ -27,7 +27,26 @@ const StatusChip = (status: string) => {
   return <Chip size="small" color={color[status]} label={status} />;
 };
 
+function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
+  if (b[orderBy] < a[orderBy]) {
+    return -1;
+  }
+  if (b[orderBy] > a[orderBy]) {
+    return 1;
+  }
+  return 0;
+}
+
 type Order = 'asc' | 'desc';
+
+function getComparator<Key extends keyof any>(
+  order: Order,
+  orderBy: Key
+): (a: { [key in Key]: number | string }, b: { [key in Key]: number | string }) => number {
+  return order === 'desc'
+    ? (a, b) => descendingComparator(a, b, orderBy)
+    : (a, b) => -descendingComparator(a, b, orderBy);
+}
 
 interface HeadCell {
   disablePadding: boolean;
@@ -43,6 +62,7 @@ const headCells: readonly HeadCell[] = [
     numeric: false,
     disablePadding: true,
     label: 'Transaction ID',
+    sortable: true,
   },
   {
     id: 'payer',
@@ -79,8 +99,8 @@ const headCells: readonly HeadCell[] = [
 
 interface EnhancedTableProps {
   onRequestSort: (event: React.MouseEvent<unknown>, property: keyof Data) => void;
-  order: Order;
-  orderBy: string;
+  order?: Order;
+  orderBy?: string;
 }
 
 function EnhancedTableHead(props: EnhancedTableProps) {
@@ -123,14 +143,16 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 }
 
 export const TablesSection = (): JSX.Element => {
-  const [order, setOrder] = useState<Order>('asc');
-  const [orderBy, setOrderBy] = useState<keyof Data>('id');
+  const [order, setOrder] = useState<Order>();
+  const [orderBy, setOrderBy] = useState<keyof Data>();
 
   const handleRequestSort = (event: React.MouseEvent<unknown>, property: keyof Data) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
     setOrderBy(property);
   };
+
+  const sortedRows = useMemo(() => datarows.slice().sort(getComparator(order, orderBy)), [order, orderBy]);
 
   return (
     <Paper variant="elevation" elevation={0} sx={{ padding: '10px' }}>
@@ -141,7 +163,7 @@ export const TablesSection = (): JSX.Element => {
         <Table aria-labelledby="tableTitle">
           <EnhancedTableHead order={order} orderBy={orderBy} onRequestSort={handleRequestSort} />
           <TableBody>
-            {datarows.map((row, index) => {
+            {sortedRows.map((row, index) => {
               const labelId = `enhanced-table-checkbox-${index}`;
 
               return (
