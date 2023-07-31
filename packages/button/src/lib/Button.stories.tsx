@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from '@storybook/react';
-import Grid from '@mui/material/Grid';
+import { Box, Grid } from '@mui/material';
 import { ArrowCircleLeftIcon, ArrowCircleRightIcon } from '@availity/mui-icon';
 import { Button, ButtonProps } from './Button';
 import React from 'react';
@@ -112,4 +112,30 @@ export const _ButtonWithIcon: Story = {
       <Grid item xs={3} />
     </Grid>
   ),
+};
+
+export const _Groups: Story = {
+  render: () => {
+    const groupedButtonStyles = {
+      mr: 1,
+      mb: 1,
+    };
+
+    return (
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', mr: -1, mb: -1 }}>
+        <Button color="tertiary" sx={groupedButtonStyles}>
+          Button 1
+        </Button>
+        <Button color="tertiary" sx={groupedButtonStyles}>
+          Button 2
+        </Button>
+        <Button color="tertiary" sx={groupedButtonStyles}>
+          Button 3
+        </Button>
+        <Button color="tertiary" sx={groupedButtonStyles}>
+          Button 4
+        </Button>
+      </Box>
+    );
+  },
 };

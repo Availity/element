@@ -1,6 +1,12 @@
 import { forwardRef } from 'react';
-import { Button as MUIButton } from '@mui/material';
+import { Button as MUIButton, ButtonPropsColorOverrides } from '@mui/material';
 import type { ButtonProps as MUIButtonProps } from '@mui/material';
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    tertiary: true;
+  }
+}
 
 export type ButtonProps = {
   /** The color of the component.
@@ -14,6 +20,7 @@ export type ButtonProps = {
 } & Omit<
   MUIButtonProps,
   | 'color'
+  | 'component'
   | 'variant'
   | 'disableElevation'
   | 'disableFocusRipple'
@@ -25,15 +32,10 @@ export type ButtonProps = {
   | 'touchRippleRef'
 >;
 
-const tertiaryContainedStyles = {
-  bgcolor: 'tertiary.main',
-  color: 'black',
-  '&:focus, &:hover': {
-    bgcolor: 'tertiary.dark',
-  },
-  '&:active': {
-    bgcolor: 'tertiary.light',
-  },
+const overrideProps = {
+  disableRipple: true,
+  disableFocusRipple: true,
+  disableTouchRipple: true,
 };
 
 const iconOnlyStyles = {
@@ -48,20 +50,10 @@ const iconOnlyStyles = {
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const { color = 'secondary', variant = 'contained', iconOnly, sx, ...rest } = props;
+  const { iconOnly, sx, ...rest } = props;
   const styles = {
-    ...(color == 'tertiary' && variant == 'contained' && tertiaryContainedStyles),
     ...(iconOnly && iconOnlyStyles),
   };
 
-  return (
-    <MUIButton
-      color={color == 'tertiary' ? 'secondary' : color}
-      variant={variant}
-      sx={{ ...styles, ...sx }}
-      disableRipple
-      {...rest}
-      ref={ref}
-    />
-  );
+  return <MUIButton sx={{ ...styles, ...sx }} {...rest} {...overrideProps} ref={ref} />;
 });
