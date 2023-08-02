@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode, MouseEvent, FocusEvent } from 'react';
-
-type LogLevel = 'info' | 'error' | 'debug';
+import { trackEvent, LogLevel } from './telemetry-api';
 
 export type EventTrackerContext = {
   enabled: boolean;
@@ -51,17 +50,17 @@ export const EventTrackerProvider = ({ children, pageTracking = true }: EventTra
 
   const logOnFocus = (event: FocusEvent) => {
     if (!enabled) return;
-    console.log('focus', event);
+    trackEvent(level, { et: event.type });
   };
 
   const logOnBlur = (event: FocusEvent) => {
     if (!enabled) return;
-    console.log('blur', event);
+    trackEvent(level, { et: event.type });
   };
 
   const logOnClick = (event: MouseEvent) => {
     if (!enabled) return;
-    console.log('click', event);
+    trackEvent(level, { et: event.type });
   };
 
   return (

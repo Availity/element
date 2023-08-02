@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@availity/mui-button';
-
 import { EventTrackerProvider, useEventTracker } from './EventTracker';
 
 const meta: Meta<typeof EventTrackerProvider> = {

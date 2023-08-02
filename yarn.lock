@@ -22,6 +22,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@availity/api-axios@npm:^8.0.2":
+  version: 8.0.2
+  resolution: "@availity/api-axios@npm:8.0.2"
+  dependencies:
+    "@availity/resolve-url": 2.0.3
+    lodash: ^4.17.21
+    qs: ^6.10.1
+  peerDependencies:
+    axios: ^1.4.0
+  checksum: 7556e5c75b50e4124b556365d02d8b42a19fedd4ba95d659a50ba761ac60aff515a9e735061a7cff282942ac9ddc4047904583a74b9050239269c89f2a57dc1e
+  languageName: node
+  linkType: hard
+
 "@availity/design-tokens@workspace:*, @availity/design-tokens@workspace:^, @availity/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@availity/design-tokens@workspace:packages/design-tokens"
@@ -68,6 +81,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/event-tracker@workspace:packages/event-tracker"
   dependencies:
+    "@availity/api-axios": ^8.0.2
+    "@availity/mui-button": "workspace:^"
     "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0
@@ -309,6 +324,13 @@ __metadata:
   resolution: "@availity/nx-generator@workspace:packages/nx-generator"
   languageName: unknown
   linkType: soft
+
+"@availity/resolve-url@npm:2.0.3":
+  version: 2.0.3
+  resolution: "@availity/resolve-url@npm:2.0.3"
+  checksum: 280f7ad7c0f769c5431e78b1f7f775b08216f4374988c15b3ad98ab8e9ed46baba2de3aa2fe66810f99af1a8eea084cfbfaed1ebbf50a3ef26e5343cca4aeb45
+  languageName: node
+  linkType: hard
 
 "@availity/theme-provider@workspace:*, @availity/theme-provider@workspace:packages/theme-provider":
   version: 0.0.0-use.local
@@ -13934,7 +13956,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.10.0":
+"qs@npm:^6.10.0, qs@npm:^6.10.1":
   version: 6.11.2
   resolution: "qs@npm:6.11.2"
   dependencies:
