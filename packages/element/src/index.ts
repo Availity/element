@@ -11,5 +11,6 @@ export * from '@availity/mui-link';
 export * from '@availity/mui-menu';
 export * from '@availity/mui-paper';
 export * from '@availity/mui-tabs';
+export * from '@availity/mui-toggle-button';
 export * from '@availity/mui-tooltip';
 export * from '@availity/theme-provider';
