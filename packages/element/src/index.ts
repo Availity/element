@@ -6,6 +6,7 @@ export * from '@availity/mui-button';
 export * from '@availity/mui-card';
 export * from '@availity/mui-chip';
 export * from '@availity/mui-divider';
+export * from '@availity/event-tracker';
 export * from '@availity/mui-icon';
 export * from '@availity/mui-link';
 export * from '@availity/mui-menu';
