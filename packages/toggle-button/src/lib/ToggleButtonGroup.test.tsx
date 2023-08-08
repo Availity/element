@@ -3,7 +3,7 @@ import { ToggleButtonGroup } from './ToggleButtonGroup';
 
 describe('ToggleButtonGroup', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<ToggleButtonGroup value="test">Test</ToggleButtonGroup>);
-    expect(getByText('Test')).toBeTruthy();
+    const { getByRole } = render(<ToggleButtonGroup value="test" />);
+    expect(getByRole('group')).toBeTruthy();
   });
 });

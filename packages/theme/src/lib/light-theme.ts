@@ -563,6 +563,41 @@ export const lightTheme = {
         },
       },
     },
+    MuiToggleButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'unset',
+          fontSize: tokens.fontSizesSubtitle2,
+          backgroundColor: tokens.colorTertiaryMain,
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorTertiaryDarker,
+            borderColor: tokens.colorTertiaryDarker,
+            color: tokens.colorTextInversePrimary,
+            '&:hover': {
+              backgroundColor: tokens.colorTertiaryDark,
+              borderColor: tokens.colorTertiaryMain,
+              color: tokens.colorTextInversePrimary,
+            },
+          },
+          '&:focus': {
+            boxShadow: `0 0 0px 2px ${tokens.colorTertiaryDark}`,
+          },
+          '&:hover': {
+            backgroundColor: tokens.colorTertiaryDark,
+            borderColor: tokens.colorTertiaryMain,
+            color: tokens.colorTextInversePrimary,
+          },
+          '&.Mui-disabled': {
+            backgroundColor: tokens.colorActionDisabledBg,
+            borderColor: tokens.colorActionDisabledBg,
+            color: tokens.colorActionDisabled,
+          },
+          '.MuiSvgIcon-root': {
+            fontSize: '1.5rem',
+          },
+        },
+      },
+    },
     MuiTooltip: {
       defaultProps: {
         arrow: true,
