@@ -530,10 +530,8 @@ export const lightTheme = {
       },
     },
     MuiSvgIcon: {
-      styleOverrides: {
-        root: {
-          fontSize: 'inherit',
-        },
+      defaultProps: {
+        fontSize: 'inherit',
       },
     },
     MuiTab: {
@@ -564,10 +562,12 @@ export const lightTheme = {
       },
     },
     MuiToggleButton: {
+      defaultProps: {
+        size: 'small',
+      },
       styleOverrides: {
         root: {
           textTransform: 'unset',
-          fontSize: tokens.fontSizesSubtitle2,
           backgroundColor: tokens.colorTertiaryMain,
           '&.Mui-selected': {
             backgroundColor: tokens.colorTertiaryDarker,
@@ -591,9 +591,6 @@ export const lightTheme = {
             backgroundColor: tokens.colorActionDisabledBg,
             borderColor: tokens.colorActionDisabledBg,
             color: tokens.colorActionDisabled,
-          },
-          '.MuiSvgIcon-root': {
-            fontSize: '1.5rem',
           },
         },
       },
