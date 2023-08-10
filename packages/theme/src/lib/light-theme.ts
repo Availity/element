@@ -569,6 +569,7 @@ export const lightTheme = {
         root: {
           textTransform: 'unset',
           backgroundColor: tokens.colorTertiaryMain,
+          fontWeight: tokens.fontWeightsBold,
           '&.Mui-selected': {
             backgroundColor: tokens.colorTertiaryDarker,
             borderColor: tokens.colorTertiaryDarker,
