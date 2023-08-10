@@ -581,12 +581,21 @@ export const lightTheme = {
             },
           },
           '&:focus': {
-            boxShadow: `0 0 0px 2px ${tokens.colorTertiaryDark}`,
+            boxShadow: `0 0 0px 2px ${tokens.colorTertiaryDark}50`,
           },
           '&:hover': {
             backgroundColor: tokens.colorTertiaryDark,
             borderColor: tokens.colorTertiaryMain,
             color: tokens.colorTextInversePrimary,
+          },
+          '&.MuiToggleButton-sizeSmall': {
+            padding: '8px 16px',
+          },
+          '&.MuiToggleButton-sizeMedium': {
+            padding: '12px 16px',
+          },
+          '&.MuiToggleButton-sizeLarge': {
+            padding: '16px',
           },
           '&.Mui-disabled': {
             backgroundColor: tokens.colorActionDisabledBg,
