@@ -982,7 +982,7 @@
         "type": "color"
       },
       "300": {
-        "value": "#B5BBC5",
+        "value": "#838795",
         "type": "color"
       },
       "400": {
@@ -1164,19 +1164,19 @@
     },
     "secondary": {
       "main": {
-        "value": "#454754",
-        "type": "color"
-      },
-      "main-20": {
-        "value": "#393B4620",
-        "type": "color"
-      },
-      "light": {
         "value": "#5E616E",
         "type": "color"
       },
+      "main-20": {
+        "value": "#5E616E20",
+        "type": "color"
+      },
+      "light": {
+        "value": "#838795",
+        "type": "color"
+      },
       "dark": {
-        "value": "#292B32",
+        "value": "#393B46",
         "type": "color"
       },
       "darker": {
@@ -1190,7 +1190,7 @@
     },
     "tertiary": {
       "main": {
-        "value": "#00000014",
+        "value": "transparent",
         "type": "color"
       },
       "main20": {
@@ -1198,15 +1198,15 @@
         "type": "color"
       },
       "light": {
-        "value": "#0000000a",
+        "value": "#ffffff",
         "type": "color"
       },
       "dark": {
-        "value": "#00000029",
+        "value": "#5E616E",
         "type": "color"
       },
       "darker": {
-        "value": "#0000003d",
+        "value": "#393B46",
         "type": "color"
       },
       "contrast": {
@@ -1331,16 +1331,6 @@
         "value": "#5E616E",
         "type": "color"
       },
-      "inverse": {
-        "primary": {
-          "value": "#ffffff",
-          "type": "color"
-        },
-        "secondary": {
-          "value": "#B5BBC5",
-          "type": "color"
-        }
-      },
       "info": {
         "value": "#1552BC",
         "type": "color"
@@ -1355,6 +1345,14 @@
       },
       "link": {
         "value": "#1552BC",
+        "type": "color"
+      },
+      "inverse": {
+        "value": "#ffffff",
+        "type": "color"
+      },
+      "inverseSecondary": {
+        "value": "#ffffff84",
         "type": "color"
       }
     },
@@ -2041,6 +2039,48 @@
       "textCase": {
         "value": "none"
       }
+    }
+  },
+  "border": {
+    "primary": {
+      "value": "#1552BC",
+      "type": "color"
+    },
+    "secondary": {
+      "value": "#5E616E",
+      "type": "color"
+    },
+    "error": {
+      "value": "#C70002",
+      "type": "color"
+    },
+    "disabled": {
+      "value": "#838795",
+      "type": "color"
+    },
+    "decorative": {
+      "value": "#D7DAE0",
+      "type": "color"
+    },
+    "input": {
+      "value": "#5E616E",
+      "type": "color"
+    },
+    "inputHover": {
+      "value": "#292B32",
+      "type": "color"
+    },
+    "inputFocus": {
+      "value": "#1552BC",
+      "type": "color"
+    },
+    "inverse": {
+      "value": "#ffffff",
+      "type": "color"
+    },
+    "inverseSecondary": {
+      "value": "#ffffff16",
+      "type": "color"
     }
   }
 }
