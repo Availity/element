@@ -10,6 +10,12 @@ const meta: Meta<typeof ToggleButtonGroup> = {
   title: 'Components/ToggleButton/ToggleButtonGroup',
   component: ToggleButtonGroup,
   tags: ['autodocs'],
+  argTypes: {
+    size: {
+      // this guarantees the options display in the correct order
+      options: ['small', 'medium', 'large'],
+    },
+  },
 };
 
 export default meta;

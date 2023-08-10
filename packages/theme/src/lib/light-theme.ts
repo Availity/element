@@ -595,6 +595,11 @@ export const lightTheme = {
         },
       },
     },
+    MuiToggleButtonGroup: {
+      defaultProps: {
+        size: 'small',
+      },
+    },
     MuiTooltip: {
       defaultProps: {
         arrow: true,

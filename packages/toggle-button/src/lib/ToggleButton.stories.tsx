@@ -8,6 +8,12 @@ const meta: Meta<typeof ToggleButton> = {
   title: 'Components/ToggleButton/ToggleButton',
   component: ToggleButton,
   tags: ['autodocs'],
+  argTypes: {
+    size: {
+      // this guarantees the options display in the correct order
+      options: ['small', 'medium', 'large'],
+    },
+  },
 };
 
 export default meta;
