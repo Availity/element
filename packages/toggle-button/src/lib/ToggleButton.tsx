@@ -1,7 +1,17 @@
 import { ToggleButton as MuiToggleButton, ToggleButtonProps as MuiToggleButtonProps } from '@mui/material';
 
 export interface ToggleButtonProps
-  extends Omit<MuiToggleButtonProps, 'color' | 'disableFocusRipple' | 'disableRipple'> {
+  extends Omit<
+    MuiToggleButtonProps,
+    | 'centerRipple'
+    | 'color'
+    | 'disableFocusRipple'
+    | 'disableRipple'
+    | 'disableTouchRipple'
+    | 'focusRipple'
+    | 'TouchRippleProps'
+    | 'touchRippleRef'
+  > {
   children?: React.ReactNode;
   /**
    * The size of the component. The prop defaults to the value inherited from the parent ToggleButtonGroup component.
@@ -12,7 +22,14 @@ export interface ToggleButtonProps
 
 export const ToggleButton = ({ children, ...rest }: ToggleButtonProps): JSX.Element => {
   return (
-    <MuiToggleButton {...rest} disableFocusRipple disableRipple>
+    <MuiToggleButton
+      {...rest}
+      centerRipple={false}
+      disableFocusRipple
+      disableRipple
+      disableTouchRipple
+      focusRipple={false}
+    >
       {children}
     </MuiToggleButton>
   );
