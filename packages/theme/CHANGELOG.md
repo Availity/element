@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.10.0](https://github.com/Availity/element/compare/@availity/theme@0.9.1...@availity/theme@0.10.0) (2023-08-10)
+
+
+### Features
+
+* **theme:** update text and border ([e2e057f](https://github.com/Availity/element/commit/e2e057fced5756151a3dab67a63ba6905c3d6a29))
+
 ## [0.9.1](https://github.com/Availity/element/compare/@availity/theme@0.9.0...@availity/theme@0.9.1) (2023-07-31)
 
 ## [0.9.0](https://github.com/Availity/element/compare/@availity/theme@0.8.2...@availity/theme@0.9.0) (2023-07-14)
