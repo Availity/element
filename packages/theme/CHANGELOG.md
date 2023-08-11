@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.10.1](https://github.com/Availity/element/compare/@availity/theme@0.10.0...@availity/theme@0.10.1) (2023-08-11)
+
+
+### Bug Fixes
+
+* **mui-toggle-button:** use renamed colorTextInverse token ([7f8b575](https://github.com/Availity/element/commit/7f8b575f21175e575a81c8d6d85addaac3fed5bc))
+
 ## [0.10.0](https://github.com/Availity/element/compare/@availity/theme@0.9.1...@availity/theme@0.10.0) (2023-08-10)
 
 
