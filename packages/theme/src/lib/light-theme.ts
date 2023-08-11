@@ -589,11 +589,11 @@ export const lightTheme = {
           '&.Mui-selected': {
             backgroundColor: tokens.colorTertiaryDarker,
             borderColor: tokens.colorTertiaryDarker,
-            color: tokens.colorTextInversePrimary,
+            color: tokens.colorTextInverse,
             '&:hover': {
               backgroundColor: tokens.colorTertiaryDark,
               borderColor: tokens.colorTertiaryMain,
-              color: tokens.colorTextInversePrimary,
+              color: tokens.colorTextInverse,
             },
           },
           '&:focus': {
@@ -602,7 +602,7 @@ export const lightTheme = {
           '&:hover': {
             backgroundColor: tokens.colorTertiaryDark,
             borderColor: tokens.colorTertiaryMain,
-            color: tokens.colorTextInversePrimary,
+            color: tokens.colorTextInverse,
           },
           '&.MuiToggleButton-sizeSmall': {
             padding: '8px 16px',
