@@ -546,10 +546,8 @@ export const lightTheme = {
       },
     },
     MuiSvgIcon: {
-      styleOverrides: {
-        root: {
-          fontSize: 'inherit',
-        },
+      defaultProps: {
+        fontSize: 'inherit',
       },
     },
     MuiTab: {
@@ -577,6 +575,55 @@ export const lightTheme = {
           backgroundColor: tokens.colorBackgroundCanvas,
           height: '3rem',
         },
+      },
+    },
+    MuiToggleButton: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          textTransform: 'unset',
+          backgroundColor: tokens.colorTertiaryMain,
+          fontWeight: tokens.fontWeightsBold,
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorTertiaryDarker,
+            borderColor: tokens.colorTertiaryDarker,
+            color: tokens.colorTextInverse,
+            '&:hover': {
+              backgroundColor: tokens.colorTertiaryDark,
+              borderColor: tokens.colorTertiaryMain,
+              color: tokens.colorTextInverse,
+            },
+          },
+          '&:focus': {
+            boxShadow: `0 0 0px 2px ${tokens.colorTertiaryDark}50`,
+          },
+          '&:hover': {
+            backgroundColor: tokens.colorTertiaryDark,
+            borderColor: tokens.colorTertiaryMain,
+            color: tokens.colorTextInverse,
+          },
+          '&.MuiToggleButton-sizeSmall': {
+            padding: '8px 16px',
+          },
+          '&.MuiToggleButton-sizeMedium': {
+            padding: '12px 16px',
+          },
+          '&.MuiToggleButton-sizeLarge': {
+            padding: '16px',
+          },
+          '&.Mui-disabled': {
+            backgroundColor: tokens.colorActionDisabledBg,
+            borderColor: tokens.colorActionDisabledBg,
+            color: tokens.colorActionDisabled,
+          },
+        },
+      },
+    },
+    MuiToggleButtonGroup: {
+      defaultProps: {
+        size: 'small',
       },
     },
     MuiTooltip: {
