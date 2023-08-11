@@ -10,7 +10,7 @@
 
 This package extends the MUI ToggleButton component: [MUI ToggleButton Docs](https://mui.com/components/toggle-button/)
 
-Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-toggle-button-introduction--docs)
+Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-togglebutton-introduction--docs)
 
 Availity standards for design and usage can be found in the [Availity Design Guide](https://zeroheight.com/2e36e50c7)
 
