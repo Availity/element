@@ -1,0 +1,41 @@
+{
+  "name": "mui-datepicker",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/datepicker/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "eslintConfig": ".eslintrc.json",
+        "lintFilePatterns": ["packages/datepicker/**/*.{js,ts}"],
+        "silent": false,
+        "fix": false,
+        "cache": true,
+        "cacheLocation": "./node_modules/.cache/datepicker/.eslintcache",
+        "maxWarnings": -1,
+        "quiet": false,
+        "noEslintrc": false,
+        "hasTypeAwareRules": true,
+        "cacheStrategy": "metadata"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/datepicker"],
+      "options": {
+        "jestConfig": "packages/datepicker/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
+        "tagPrefix": "@availity/${projectName}@"
+      }
+    }
+  }
+}

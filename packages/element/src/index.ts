@@ -5,6 +5,7 @@ export * from '@availity/mui-breadcrumbs';
 export * from '@availity/mui-button';
 export * from '@availity/mui-card';
 export * from '@availity/mui-chip';
+export * from '@availity/mui-datepicker';
 export * from '@availity/mui-divider';
 export * from '@availity/mui-icon';
 export * from '@availity/mui-link';
