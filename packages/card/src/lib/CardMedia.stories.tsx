@@ -21,5 +21,6 @@ export const _CardMedia: StoryObj<typeof CardMedia> = {
   args: {
     image: 'https://avatars.githubusercontent.com/u/329985?s=200&v=4',
     sx: { height: '100px' },
+    'aria-label': 'Orange rectangle with interlocking AV logo',
   },
 };
