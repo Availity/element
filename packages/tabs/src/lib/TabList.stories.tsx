@@ -5,6 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TabList, TabListProps } from './TabList';
 import { Tab } from './Tab';
 import { TabContext } from './TabContext';
+import { TabPanel } from './TabPanel';
 
 const meta: Meta<typeof TabList> = {
   title: 'Components/Tabs/TabList',
@@ -28,6 +29,9 @@ export const _TabList: StoryObj<typeof TabList> = {
           <Tab label="Item Two" value="2" />
           <Tab label="Item Three" value="3" />
         </TabList>
+        <TabPanel value="1" children={`Hello from Panel ${value}`} />
+        <TabPanel value="2" children={`Hello from Panel ${value}`} />
+        <TabPanel value="3" children={`Hello from Panel ${value}`} />
       </TabContext>
     );
   },
