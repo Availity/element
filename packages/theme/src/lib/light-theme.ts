@@ -1,5 +1,38 @@
 import { tokens } from '@availity/design-tokens';
 
+const important = (style: string) => `${style} !important`;
+
+const containedButtonStyles = (color: string) => ({
+  backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
+  color: tokens[`color${color}Contrast` as keyof typeof tokens],
+  '&:hover': {
+    backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
+    boxShadow: 'none',
+  },
+  '&:focus': {
+    backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
+    outline: '2px solid white',
+    boxShadow: `0 0 0px 4px ${tokens[`color${color}Dark` as keyof typeof tokens]}`,
+  },
+  '&:active': {
+    backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
+  },
+});
+
+const outlinedButtonStyles = (color: string) => ({
+  '&:hover': {
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}21`,
+  },
+  '&:focus': {
+    outline: '2px solid white',
+    boxShadow: `0 0 0px 4px ${tokens[`color${color}Main` as keyof typeof tokens]}`,
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}21`,
+  },
+  '&:active': {
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}42`,
+  },
+});
+
 export const lightTheme = {
   mode: 'light',
   palette: {
@@ -100,10 +133,26 @@ export const lightTheme = {
       primary: tokens.colorTextPrimary,
       secondary: tokens.colorTextSecondary,
       disabled: tokens.colorTextDisabled,
+      error: tokens.colorErrorMain,
       hint: 'rgba(0, 0, 0, 0.38)',
       divider: 'rgba(0, 0, 0, 0.12)',
-      inverse: '#fff',
-      inverseSecondary: tokens.colorGrey300,
+      success: tokens.colorSuccessMain,
+      info: tokens.colorTextPrimary,
+      link: tokens.colorTextPrimary,
+      inverse: tokens.colorCommonWhite,
+      inverseSecondary: '#ffffff24',
+    },
+    border: {
+      primary: tokens.colorPrimaryMain,
+      secondary: tokens.colorGrey400,
+      error: tokens.colorErrorMain,
+      disabled: tokens.colorGrey300,
+      decorative: tokens.colorGrey200,
+      input: tokens.colorGrey400,
+      inputHover: tokens.colorGrey600,
+      inputFocus: tokens.colorPrimaryMain,
+      inverse: tokens.colorCommonWhite,
+      inverseSecondary: '#ffffff24',
     },
     background: {
       canvas: tokens.colorBackgroundCanvas,
@@ -265,7 +314,7 @@ export const lightTheme = {
         },
         icon: ({ ownerState }: { ownerState: any }) => ({
           ...(ownerState.severity === 'success' && {
-            color: `${tokens.colorGreen600} !important`,
+            color: important(tokens.colorGreen600),
           }),
           opacity: 1,
           padding: '4px',
@@ -322,76 +371,36 @@ export const lightTheme = {
         // The props to change the default for.
         disableRipple: true, // No more ripple, on the whole application 💣!
         disableElevation: true,
+        variant: 'contained',
       },
       styleOverrides: {
-        root: ({ ownerState }: any) => ({
-          ...(ownerState.variant === 'contained'
-            ? {
-                backgroundColor:
-                  tokens[
-                    `color${
-                      ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                    }Main` as keyof typeof tokens
-                  ],
-                color:
-                  tokens[
-                    `color${
-                      ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                    }Contrast` as keyof typeof tokens
-                  ],
-                '&:hover': {
-                  backgroundColor:
-                    tokens[
-                      `color${
-                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                      }Dark` as keyof typeof tokens
-                    ],
-                  boxShadow: 'none',
-                },
-                '&:focus': {
-                  backgroundColor:
-                    tokens[
-                      `color${
-                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                      }Dark` as keyof typeof tokens
-                    ],
-                  outline: '2px solid white',
-                  boxShadow: `0 0 0px 4px ${
-                    tokens[
-                      `color${
-                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                      }Dark` as keyof typeof tokens
-                    ]
-                  }`,
-                },
-                '&:active': {
-                  backgroundColor:
-                    tokens[
-                      `color${
-                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                      }Main` as keyof typeof tokens
-                    ],
-                },
-              }
-            : {
-                '&:hover': {
-                  boxShadow: 'none',
-                },
-                '&:focus': {
-                  outline: '2px solid white',
-                  boxShadow: `0 0 0px 4px ${
-                    tokens[
-                      `color${
-                        ownerState.color.charAt(0).toUpperCase() + ownerState.color.slice(1)
-                      }Main` as keyof typeof tokens
-                    ]
-                  }`,
-                },
-              }),
+        root: {
           boxShadow: 'none',
           fontWeight: tokens.fontWeightsBold,
           textTransform: 'none',
-        }),
+        },
+        containedPrimary: { ...containedButtonStyles('Primary') },
+        containedSecondary: { ...containedButtonStyles('Secondary') },
+        containedTertiary: {
+          ...containedButtonStyles('Tertiary'),
+          '&:focus': {
+            backgroundColor: tokens.colorTertiaryDark,
+            outline: '2px solid white',
+            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
+          },
+        },
+        containedSuccess: { ...containedButtonStyles('Success') },
+        containedWarning: { ...containedButtonStyles('Warning') },
+        containedError: { ...containedButtonStyles('Error') },
+        outlinedPrimary: { ...outlinedButtonStyles('Primary') },
+        outlinedSecondary: { ...outlinedButtonStyles('Secondary') },
+        outlinedTertiary: {
+          color: tokens.colorSecondaryMain,
+          ...outlinedButtonStyles('Secondary'),
+        }, // intended
+        outlinedSuccess: { ...outlinedButtonStyles('Success') },
+        outlinedWarning: { ...outlinedButtonStyles('Warning') },
+        outlinedError: { ...outlinedButtonStyles('Error') },
       },
     },
     MuiCard: {
@@ -495,7 +504,6 @@ export const lightTheme = {
       defaultProps: {
         // The props to change the default for.
         disableRipple: true, // No more ripple, on the whole application 💣!
-        disableElevation: true,
       },
       styleOverrides: {
         root: {
@@ -573,10 +581,8 @@ export const lightTheme = {
       },
     },
     MuiSvgIcon: {
-      styleOverrides: {
-        root: {
-          fontSize: 'inherit',
-        },
+      defaultProps: {
+        fontSize: 'inherit',
       },
     },
     MuiTab: {
@@ -604,6 +610,55 @@ export const lightTheme = {
           backgroundColor: tokens.colorBackgroundCanvas,
           height: '3rem',
         },
+      },
+    },
+    MuiToggleButton: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          textTransform: 'unset',
+          backgroundColor: tokens.colorTertiaryMain,
+          fontWeight: tokens.fontWeightsBold,
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorTertiaryDarker,
+            borderColor: tokens.colorTertiaryDarker,
+            color: tokens.colorTextInverse,
+            '&:hover': {
+              backgroundColor: tokens.colorTertiaryDark,
+              borderColor: tokens.colorTertiaryMain,
+              color: tokens.colorTextInverse,
+            },
+          },
+          '&:focus': {
+            boxShadow: `0 0 0px 2px ${tokens.colorTertiaryDark}50`,
+          },
+          '&:hover': {
+            backgroundColor: tokens.colorTertiaryDark,
+            borderColor: tokens.colorTertiaryMain,
+            color: tokens.colorTextInverse,
+          },
+          '&.MuiToggleButton-sizeSmall': {
+            padding: '8px 16px',
+          },
+          '&.MuiToggleButton-sizeMedium': {
+            padding: '12px 16px',
+          },
+          '&.MuiToggleButton-sizeLarge': {
+            padding: '16px',
+          },
+          '&.Mui-disabled': {
+            backgroundColor: tokens.colorActionDisabledBg,
+            borderColor: tokens.colorActionDisabledBg,
+            color: tokens.colorActionDisabled,
+          },
+        },
+      },
+    },
+    MuiToggleButtonGroup: {
+      defaultProps: {
+        size: 'small',
       },
     },
     MuiTooltip: {

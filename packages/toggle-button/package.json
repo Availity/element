@@ -1,21 +1,21 @@
 {
-  "name": "@availity/mui-breadcrumbs",
+  "name": "@availity/mui-toggle-button",
   "version": "0.1.2",
-  "description": "Availity MUI Breadcrumbs Component - part of the @availity/element design system",
+  "description": "Availity MUI ToggleButton Component - part of the @availity/element design system",
   "keywords": [
     "react",
     "typescript",
     "availity",
     "mui"
   ],
-  "homepage": "https://availity.github.io/element/?path=/docs/components-breadcrumbs-introduction--docs",
+  "homepage": "https://availity.github.io/element/?path=/docs/components-togglebutton-introduction--docs",
   "bugs": {
     "url": "https://github.com/Availity/element/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Availity/element.git",
-    "directory": "packages/breadcrumbs"
+    "directory": "packages/toggle-button"
   },
   "license": "MIT",
   "author": "Availity Developers <AVOSS@availity.com>",
@@ -33,6 +33,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
+    "@availity/mui-icon": "workspace:^",
     "@mui/material": "^5.11.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -45,9 +46,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@availity/mui-icon": "workspace:^",
-    "@availity/mui-link": "workspace:^"
   }
 }

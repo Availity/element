@@ -1,11 +1,12 @@
 import React from 'react';
 import { Meta, Source, Unstyled } from '@storybook/blocks';
-import { Box, Container, Grid } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import { ThemeProvider } from '@availity/element';
 import { HeaderSection } from './HeaderSection';
 import { SearchSection } from './SearchSection';
 import { SidebarNav } from './SidebarNav';
 import { TablesSection } from './TablesSection';
+import { DataGridSection } from './DataGridSection';
 
 <Meta title="Layouts/Sidebar/MDX" />
 
@@ -33,6 +34,9 @@ _Work In Progress_
                 </Grid>
                 <Grid item xs={12}>
                   <TablesSection />
+                </Grid>
+                <Grid item xs={12}>
+                  <DataGridSection />
                 </Grid>
               </Grid>
             </div>
@@ -66,6 +70,9 @@ _Work In Progress_
                 </Grid>
                 <Grid item xs={12}>
                   <TablesSection/>
+                </Grid>
+                <Grid item xs={12}>
+                  <DataGridSection />
                 </Grid>
               </Grid>
           </div>

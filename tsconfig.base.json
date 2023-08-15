@@ -37,6 +37,7 @@
       "@availity/mui-paper": ["packages/paper/src/index.ts"],
       "@availity/mui-tabs": ["packages/tabs/src/index.ts"],
       "@availity/mui-textfield": ["packages/textfield/src/index.ts"],
+      "@availity/mui-toggle-button": ["packages/toggle-button/src/index.ts"],
       "@availity/mui-tooltip": ["packages/tooltip/src/index.ts"],
       "@availity/theme": ["packages/theme/src/index.ts"],
       "@availity/theme-provider": ["packages/theme-provider/src/index.ts"]

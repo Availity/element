@@ -5,6 +5,7 @@ import { HeaderSection } from './HeaderSection';
 import { SearchSection } from './SearchSection';
 import { SidebarNav } from './SidebarNav';
 import { TablesSection } from './TablesSection';
+import { DataGridSection } from './DataGridSection';
 
 /**
  * *Work In Progress*
@@ -39,6 +40,9 @@ export const _SidebarLayout: StoryObj = {
                   <Grid item xs={12}>
                     <TablesSection />
                   </Grid>
+                  <Grid item xs={12}>
+                    <DataGridSection />
+                  </Grid>
                 </Grid>
               </div>
               <div role="tabpanel" hidden>
@@ -69,4 +73,8 @@ export const _SearchSection: StoryObj = {
 
 export const _TablesSection: StoryObj = {
   render: () => <TablesSection />,
+};
+
+export const _DataGridSection: StoryObj = {
+  render: () => <DataGridSection />,
 };

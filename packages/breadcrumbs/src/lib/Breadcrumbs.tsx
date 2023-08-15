@@ -13,7 +13,10 @@ export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator' 
   /** The name of the active page (the page the user is currently on). */
   active?: string;
   children?: React.ReactNode;
-  /** The ancestor pages. */
+  /** The ancestor pages.
+   * An array of objects containing the name and url
+   * { name: 'Page', url: '#' }
+   */
   crumbs?: Crumb[];
   /** The value to display when the active page or an ancestor does not have a value.
    * @default ... */
