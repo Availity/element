@@ -1,11 +1,8 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box, Checkbox, FormControl, InputLabel, OutlinedInput } from '@mui/material';
+import { FormControl, OutlinedInput } from '@mui/material';
 import { FormLabel, FormLabelProps } from './FormLabel';
-import { TextField } from './TextField';
-import { Autocomplete } from './Autocomplete';
-import { FormControlLabel } from './FormControlLabel';
 
 const meta: Meta<typeof FormLabel> = {
   title: 'Components/FormLabel/FormLabel',

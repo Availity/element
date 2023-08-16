@@ -34,7 +34,7 @@ yarn add @availity/element
 
 #### NPM
 
-_This package has a few peer dependencies. Add `@mui/material` & `@emotion/react` to your project if not already installed._
+_This package has a few peer dependencies. Add `@mui/material`, `@emotion/react`, & `@availity/mui-field-help-icon` to your project if not already installed._
 
 ```bash
 npm install @availity/mui-form-label
