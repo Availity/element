@@ -38,22 +38,6 @@ const overrideProps = {
   disableTouchRipple: true,
 };
 
-const iconOnlyStyles = {
-  minWidth: 2,
-  px: 1,
-  '& .MuiButton-startIcon': {
-    m: 0,
-  },
-  '& .MuiButton-endIcon': {
-    m: 0,
-  },
-};
-
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const { iconOnly, sx, ...rest } = props;
-  const styles = {
-    ...(iconOnly && iconOnlyStyles),
-  };
-
-  return <MUIButton sx={{ ...styles, ...sx }} {...rest} {...overrideProps} ref={ref} />;
+  return <MUIButton {...props} {...overrideProps} ref={ref} />;
 });
