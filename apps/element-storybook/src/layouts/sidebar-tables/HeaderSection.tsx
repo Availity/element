@@ -8,7 +8,7 @@ export const HeaderSection = (): JSX.Element => {
         aria-label="breadcrumbs"
         separator={<NavigateNextIcon sx={{ color: 'grey.300', fontSize: '.75rem' }} />}
       >
-        <IconButton size="small" sx={{ color: 'grey.300' }}>
+        <IconButton title="Home" size="small" sx={{ color: 'grey.300' }}>
           <HomeIcon />
         </IconButton>
         <Link underline="hover" href="#" color="grey.300" sx={{ fontWeight: '300' }}>
