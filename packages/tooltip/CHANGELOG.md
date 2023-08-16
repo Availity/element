@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.1](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.5.0...@availity/mui-tooltip@0.5.1) (2023-08-16)
+
+
+### Bug Fixes
+
+* **mui-tooltip:** fix invalid ARIA attributes in Tooltip stories ([bd2d33f](https://github.com/Availity/element/commit/bd2d33fb6736560295ea3bce7a1684c7f9b5fe57))
+
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.4.1...@availity/mui-tooltip@0.5.0) (2023-05-24)
 
 
