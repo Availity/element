@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-card@0.1.1...@availity/mui-card@0.1.2) (2023-08-16)
+
+
+### Bug Fixes
+
+* **mui-card:** add alt text to the CardMedia stories for 508 compliance ([4ead52a](https://github.com/Availity/element/commit/4ead52a56ce0c604d21f0dfd914fa19fbfa7a610))
+
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-card@0.1.0...@availity/mui-card@0.1.1) (2023-07-13)
 
 ## 0.1.0 (2023-07-03)
