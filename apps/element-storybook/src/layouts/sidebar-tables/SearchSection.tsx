@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Paper, Autocomplete, TextField, Input, InputAdornment, IconButton, Grid, Badge, Box } from '@mui/material';
+import { Paper, Autocomplete, TextField, Input, InputAdornment, IconButton, Grid, Badge } from '@mui/material';
 import { SearchIcon, CloseIcon, BellIcon, ChartColumnIcon } from '@availity/mui-icon';
 
 export const SearchSection = (): JSX.Element => {
@@ -52,19 +52,19 @@ export const SearchSection = (): JSX.Element => {
             }
             endAdornment={
               <InputAdornment position="end">
-                <IconButton size="small" onClick={() => setSearchValue('')}>
+                <IconButton title="Clear" size="small" onClick={() => setSearchValue('')}>
                   <CloseIcon />
                 </IconButton>
               </InputAdornment>
             }
             placeholder="Search"
           />
-          <IconButton sx={{ marginLeft: '.5rem', bgcolor: 'background.canvas' }}>
+          <IconButton title="Alerts" sx={{ marginLeft: '.5rem', bgcolor: 'background.canvas' }}>
             <Badge variant="dot" color="error" overlap="circular">
               <BellIcon />
             </Badge>
           </IconButton>
-          <IconButton sx={{ marginLeft: '.5rem', bgcolor: 'background.canvas' }}>
+          <IconButton title="Reports" sx={{ marginLeft: '.5rem', bgcolor: 'background.canvas' }}>
             <ChartColumnIcon />
           </IconButton>
         </Grid>
