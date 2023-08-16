@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.0](https://github.com/Availity/element/compare/@availity/theme@0.10.1...@availity/theme@0.11.0) (2023-08-16)
+
+
+### Features
+
+* **mui-form-label:** add FormLabel and FieldHelpIcon ([8253874](https://github.com/Availity/element/commit/82538741048aec7a8735016c32e22dcdbea91fc9))
+
 ## [0.10.1](https://github.com/Availity/element/compare/@availity/theme@0.10.0...@availity/theme@0.10.1) (2023-08-11)
 
 
