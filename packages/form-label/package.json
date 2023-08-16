@@ -1,22 +1,21 @@
 {
-  "name": "@availity/mui-button",
-  "version": "0.3.0",
-  "description": "Availity MUI Button Component - part of the @availity/element design system",
+  "name": "@availity/mui-form-label",
+  "version": "0.1.0",
+  "description": "Availity MUI FormLabel Component - part of the @availity/element design system",
   "keywords": [
     "react",
     "typescript",
     "availity",
-    "button",
     "mui"
   ],
-  "homepage": "https://availity.github.io/element/?path=/docs/components-button-introduction--docs",
+  "homepage": "https://availity.github.io/element/?path=/docs/components-form-label-introduction--docs",
   "bugs": {
     "url": "https://github.com/Availity/element/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Availity/element.git",
-    "directory": "packages/button"
+    "directory": "packages/form-label"
   },
   "license": "MIT",
   "author": "Availity Developers <AVOSS@availity.com>",
@@ -32,9 +31,6 @@
     "bundlesize": "bundlesize",
     "publish": "yarn npm publish --tolerate-republish --access public",
     "publish:canary": "yarn npm publish --access public --tag canary"
-  },
-  "dependencies": {
-    "@mui/lab": "^5.0.0-alpha.121"
   },
   "devDependencies": {
     "@mui/material": "^5.11.9",

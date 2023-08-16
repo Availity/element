@@ -45,6 +45,8 @@ __metadata:
     "@availity/mui-card": "workspace:*"
     "@availity/mui-chip": "workspace:*"
     "@availity/mui-divider": "workspace:*"
+    "@availity/mui-field-help-icon": "workspace:*"
+    "@availity/mui-form-label": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@availity/mui-input": "workspace:*"
     "@availity/mui-link": "workspace:*"
@@ -65,6 +67,13 @@ __metadata:
     react: ">=16.8.0"
   languageName: unknown
   linkType: soft
+
+"@availity/message-core@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "@availity/message-core@npm:6.1.0"
+  checksum: c6ef958a5c90b1fdeae119990530aeb10e9a017d27bd556cd1b9331b55913be53acf4c4bbfda5d0201d762970b23ea46e317944ef2933bca0158db00119e5df1
+  languageName: node
+  linkType: hard
 
 "@availity/mui-alert@workspace:*, @availity/mui-alert@workspace:packages/alert":
   version: 0.0.0-use.local
@@ -183,6 +192,39 @@ __metadata:
 "@availity/mui-divider@workspace:*, @availity/mui-divider@workspace:^, @availity/mui-divider@workspace:packages/divider":
   version: 0.0.0-use.local
   resolution: "@availity/mui-divider@workspace:packages/divider"
+  dependencies:
+    "@mui/material": ^5.11.9
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-field-help-icon@workspace:*, @availity/mui-field-help-icon@workspace:packages/field-help-icon":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-field-help-icon@workspace:packages/field-help-icon"
+  dependencies:
+    "@availity/message-core": ^6.1.0
+    "@availity/mui-icon": "workspace:*"
+    "@mui/material": ^5.11.9
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@availity/mui-icon": "workspace:*"
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-form-label@workspace:*, @availity/mui-form-label@workspace:packages/form-label":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-form-label@workspace:packages/form-label"
   dependencies:
     "@mui/material": ^5.11.9
     react: 18.2.0
