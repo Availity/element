@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-button@0.2.1...@availity/mui-button@0.3.0) (2023-08-16)
+
+
+### Features
+
+* **mui-button:** remove contained iconbutton styles ([a6ee9c9](https://github.com/Availity/element/commit/a6ee9c948fb1511ec2a1bd8b91b0486a1cef53fd))
+
 ## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-button@0.2.0...@availity/mui-button@0.2.1) (2023-07-31)
 
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-button@0.1.3...@availity/mui-button@0.2.0) (2023-06-01)
