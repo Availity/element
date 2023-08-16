@@ -491,7 +491,6 @@ export const lightTheme = {
       },
       styleOverrides: {
         root: {
-          color: tokens.colorTextPrimary,
           '&:hover': {
             backgroundColor: tokens.colorTertiaryDark,
           },
@@ -500,6 +499,31 @@ export const lightTheme = {
             outline: `2px solid ${tokens.colorCommonWhite}`,
             boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
           },
+        },
+        colorDefault: {
+          color: tokens.colorTextPrimary,
+        },
+      },
+    },
+    MuiFormLabel: {
+      defaultProps: {
+        shrink: false,
+      },
+      styleOverrides: {
+        root: {
+          // move required asterisk before text
+          display: 'flex',
+          flexDirection: 'row-reverse',
+          '&.Mui-error': {
+            color: tokens.colorTextError,
+          },
+          '&.Mui-disabled': {
+            color: tokens.colorTextDisabled,
+          },
+        },
+        asterisk: {
+          color: tokens.colorErrorMain,
+          marginRight: '.25rem',
         },
       },
     },
