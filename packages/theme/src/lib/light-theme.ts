@@ -622,6 +622,8 @@ export const lightTheme = {
           },
           '&:focus': {
             boxShadow: `0 0 0px 2px ${tokens.colorTertiaryDark}50`,
+            backgroundColor: tokens.colorTertiaryLight,
+            color: tokens.colorGrey400,
           },
           '&:hover': {
             backgroundColor: tokens.colorTertiaryDark,
