@@ -610,25 +610,28 @@ export const lightTheme = {
           textTransform: 'unset',
           backgroundColor: tokens.colorTertiaryMain,
           fontWeight: tokens.fontWeightsBold,
+          color: tokens.colorTextPrimary,
+          borderColor: tokens.colorGrey400,
           '&.Mui-selected': {
             backgroundColor: tokens.colorTertiaryDarker,
+            color: tokens.colorTertiaryLight,
             borderColor: tokens.colorTertiaryDarker,
-            color: tokens.colorTextInverse,
             '&:hover': {
               backgroundColor: tokens.colorTertiaryDark,
+              color: tokens.colorTertiaryLight,
               borderColor: tokens.colorTertiaryMain,
-              color: tokens.colorTextInverse,
             },
           },
           '&:focus': {
             boxShadow: `0 0 0px 2px ${tokens.colorTertiaryDark}50`,
             backgroundColor: tokens.colorTertiaryLight,
-            color: tokens.colorGrey400,
+            color: tokens.colorTextPrimary,
+            borderColor: tokens.colorTertiaryDark,
           },
           '&:hover': {
             backgroundColor: tokens.colorTertiaryDark,
+            color: tokens.colorTertiaryLight,
             borderColor: tokens.colorTertiaryMain,
-            color: tokens.colorTextInverse,
           },
           '&.MuiToggleButton-sizeSmall': {
             padding: '8px 16px',
@@ -641,7 +644,7 @@ export const lightTheme = {
           },
           '&.Mui-disabled': {
             backgroundColor: tokens.colorActionDisabledBg,
-            borderColor: tokens.colorActionDisabledBg,
+            borderColor: tokens.colorTertiaryMain,
             color: tokens.colorActionDisabled,
           },
         },
