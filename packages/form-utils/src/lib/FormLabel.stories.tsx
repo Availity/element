@@ -4,8 +4,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { FormControl, OutlinedInput } from '@mui/material';
 import { FormLabel, FormLabelProps } from './FormLabel';
 
+/** Label component for use with individual inputs, form controls,  and form groups. For labels to use with `checkbox`/`radio` see `FormControlLabel`. */
 const meta: Meta<typeof FormLabel> = {
-  title: 'Components/FormLabel/FormLabel',
+  title: 'Components/FormUtils/FormLabel',
   component: FormLabel,
   tags: ['autodocs'],
 };
