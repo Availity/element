@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.1](https://github.com/Availity/element/compare/@availity/theme@0.11.0...@availity/theme@0.11.1) (2023-08-21)
+
+
+### Bug Fixes
+
+* **mui-toggle-button:** fix color contrast issues for 508 compliance ([9e6ec3e](https://github.com/Availity/element/commit/9e6ec3e6451efa9638c10a427bba8aac87b3c419))
+
 ## [0.11.0](https://github.com/Availity/element/compare/@availity/theme@0.10.1...@availity/theme@0.11.0) (2023-08-16)
 
 
