@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.3](https://github.com/Availity/element/compare/@availity/mui-card@0.1.2...@availity/mui-card@0.1.3) (2023-08-22)
+
+
+### Bug Fixes
+
+* **mui-card:** export subcomponents ([7e6c64c](https://github.com/Availity/element/commit/7e6c64c3a22a20213962434b059a7096ce51899c))
+
 ## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-card@0.1.1...@availity/mui-card@0.1.2) (2023-08-16)
 
 
