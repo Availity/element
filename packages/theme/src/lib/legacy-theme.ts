@@ -472,6 +472,9 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           height: 'auto',
+          fontWeight: tokens.fontWeightsBold,
+          fontSize: '.75rem',
+          lineHeight: '.75rem',
           // Bug with state styles being overwritten when not defined in root https://github.com/mui/material-ui/issues/29703#issuecomment-1548356589
           '&.MuiChip-deletable': {
             '&:hover': {
@@ -492,16 +495,16 @@ export const legacyTheme = {
           },
         },
         avatar: {
-          margin: '0',
-          height: '1.125rem',
-          width: '1.125rem',
+          margin: '0 .2rem 0 -.2rem',
+          height: '1rem',
+          width: '1rem',
         },
         avatarColorDefault: {
           backgroundColor: tokens.colorGrey300,
         },
         deleteIcon: {
           fontSize: '1rem',
-          margin: '0',
+          margin: '0 -.2rem 0 .2rem',
           transition: 'color 300ms',
         },
         label: {
@@ -512,16 +515,13 @@ export const legacyTheme = {
           backgroundColor: tokens.colorGrey100,
         },
         sizeSmall: {
-          fontWeight: tokens.fontWeightsBold,
-          fontSize: '.75rem',
-          lineHeight: '.75rem',
           verticalAlign: 'text-bottom',
-          borderRadius: '4px',
-          padding: '3px 4.8px',
+          borderRadius: '.25rem',
+          padding: '0.25rem 0.4rem',
         },
         sizeMedium: {
-          fontWeight: tokens.fontWeightsRegular,
-          padding: '3px 4px',
+          borderRadius: '10rem',
+          padding: '0.25rem 0.6rem',
         },
       },
     },
