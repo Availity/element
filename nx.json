@@ -50,5 +50,13 @@
         "unitTestRunner": "jest"
       }
     }
+  },
+  "targetDependencies": {
+    "version": [
+      {
+        "target": "version",
+        "projects": "dependencies"
+      }
+    ]
   }
 }
