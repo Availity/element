@@ -2,12 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.4.9](https://github.com/Availity/element/compare/@availity/design-tokens@0.4.8...@availity/design-tokens@0.4.9) (2023-08-10)
+## [0.5.1](https://github.com/Availity/element/compare/@availity/design-tokens@0.5.0...@availity/design-tokens@0.5.1) (2023-08-23)
 
+## [0.5.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.4.10...@availity/design-tokens@0.5.0) (2023-08-23)
+
+### Features
+
+- **design-tokens:** update text/error color to red 500 ([0eca108](https://github.com/Availity/element/commit/0eca1084de107aa6fd31b78c28a8d3fb58c06bfe))
+
+## [0.4.10](https://github.com/Availity/element/compare/@availity/design-tokens@0.4.9...@availity/design-tokens@0.4.10) (2023-08-23)
+
+## [0.4.9](https://github.com/Availity/element/compare/@availity/design-tokens@0.4.8...@availity/design-tokens@0.4.9) (2023-08-10)
 
 ### Bug Fixes
 
-* **design-tokens:** update test ([bc3fd8f](https://github.com/Availity/element/commit/bc3fd8ff7cd8f4ffefdf05c9ce8357e3efe8bab3))
+- **design-tokens:** update test ([bc3fd8f](https://github.com/Availity/element/commit/bc3fd8ff7cd8f4ffefdf05c9ce8357e3efe8bab3))
 
 ## [0.4.8](https://github.com/Availity/element/compare/@availity/design-tokens@0.4.7...@availity/design-tokens@0.4.8) (2023-08-03)
 
@@ -21,10 +30,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.4.3](https://github.com/Availity/element/compare/@availity/design-tokens@0.4.2...@availity/design-tokens@0.4.3) (2023-02-22)
 
-
 ### Bug Fixes
 
-* update exports ([af3f9f6](https://github.com/Availity/element/commit/af3f9f6715132b020bf96881dbc70906738bcda7))
+- update exports ([af3f9f6](https://github.com/Availity/element/commit/af3f9f6715132b020bf96881dbc70906738bcda7))
 
 ## [0.4.2](https://github.com/Availity/element/compare/@availity/design-tokens@0.4.1...@availity/design-tokens@0.4.2) (2023-02-22)
 

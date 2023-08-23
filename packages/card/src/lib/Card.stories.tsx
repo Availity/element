@@ -20,7 +20,11 @@ export const _Card: StoryObj<typeof Card> = {
   render: (args: CardProps) => (
     <Card {...args}>
       <CardHeader title="Card header" subheader="Subheader" />
-      <CardMedia sx={{ height: '100px' }} image="https://avatars.githubusercontent.com/u/329985?s=200&v=4" />
+      <CardMedia
+        sx={{ height: '100px' }}
+        image="https://avatars.githubusercontent.com/u/329985?s=200&v=4"
+        aria-label="Orange rectangle with interlocking AV logo"
+      />
       <CardContent>This is the content of the Card.</CardContent>
       <CardActions>
         <Button size="small" color="primary">

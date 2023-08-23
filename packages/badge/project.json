@@ -37,5 +37,6 @@
         "tagPrefix": "@availity/${projectName}@"
       }
     }
-  }
+  },
+  "trackDeps": true
 }

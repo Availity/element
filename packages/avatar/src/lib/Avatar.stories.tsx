@@ -29,6 +29,7 @@ export const _ImageAvatar: StoryObj<typeof Avatar> = {
   render: (args: AvatarProps) => <Avatar {...args} />,
   args: {
     src: 'https://avatars.githubusercontent.com/u/329985?s=100',
+    alt: 'Orange circle with interlocking AV logo',
   },
 };
 

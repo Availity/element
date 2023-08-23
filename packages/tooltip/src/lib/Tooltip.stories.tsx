@@ -71,7 +71,7 @@ export default {
   tags: ['autodocs'],
   argTypes,
   args: {
-    children: 'span',
+    children: 'button',
     title: 'This is a tooltip',
   },
 };
