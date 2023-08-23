@@ -1,12 +1,12 @@
 {
-  "source": ["src/tokens/**/core.json"],
+  "source": ["src/tokens/**/legacy.json"],
   "platforms": {
     "scss": {
       "transformGroup": "custom/web",
       "buildPath": "dist/scss/",
       "files": [
         {
-          "destination": "_variables.scss",
+          "destination": "_legacyvariables.scss",
           "format": "scss/variables"
         }
       ],
@@ -19,7 +19,7 @@
       "buildPath": "dist/css/",
       "files": [
         {
-          "destination": "variables.css",
+          "destination": "legacyvariables.css",
           "format": "css/variables"
         }
       ],
@@ -32,11 +32,11 @@
       "buildPath": "src/generated/",
       "files": [
         {
-          "destination": "tokens.js",
+          "destination": "legacytokens.js",
           "format": "javascript/es6"
         },
         {
-          "destination": "tokens.d.ts",
+          "destination": "legacytokens.d.ts",
           "format": "typescript/es6-declarations"
         }
       ],

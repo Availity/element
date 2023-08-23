@@ -8,8 +8,9 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "transform": "token-transformer src/tokens.json src/tokens/core.json",
+    "transform-legacy": "token-transformer src/legacytokens.json src/tokens/legacy.json",
     "build:style-dict": "node ../../tools/scripts/style-dictionary.build.js",
-    "build": "yarn transform && yarn build:style-dict && tsup src/index.ts --format esm,cjs --dts",
+    "build": "yarn transform && yarn transform-legacy && yarn build:style-dict && tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "clean": "rm -rf dist && rm -rf src/tokens",
     "clean:nm": "rm -rf node_modules",
