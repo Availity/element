@@ -45,8 +45,7 @@ __metadata:
     "@availity/mui-card": "workspace:*"
     "@availity/mui-chip": "workspace:*"
     "@availity/mui-divider": "workspace:*"
-    "@availity/mui-field-help-icon": "workspace:*"
-    "@availity/mui-form-label": "workspace:*"
+    "@availity/mui-form-utils": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@availity/mui-link": "workspace:*"
     "@availity/mui-menu": "workspace:*"
@@ -202,11 +201,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-field-help-icon@workspace:*, @availity/mui-field-help-icon@workspace:packages/field-help-icon":
+"@availity/mui-form-utils@workspace:*, @availity/mui-form-utils@workspace:packages/form-utils":
   version: 0.0.0-use.local
-  resolution: "@availity/mui-field-help-icon@workspace:packages/field-help-icon"
+  resolution: "@availity/mui-form-utils@workspace:packages/form-utils"
   dependencies:
     "@availity/message-core": ^6.1.0
+    "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.11.9
     react: 18.2.0
@@ -214,22 +214,8 @@ __metadata:
     tsup: ^5.12.7
     typescript: ^4.6.4
   peerDependencies:
+    "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^5.11.9
-    react: ">=16.3.0"
-  languageName: unknown
-  linkType: soft
-
-"@availity/mui-form-label@workspace:*, @availity/mui-form-label@workspace:packages/form-label":
-  version: 0.0.0-use.local
-  resolution: "@availity/mui-form-label@workspace:packages/form-label"
-  dependencies:
-    "@mui/material": ^5.11.9
-    react: 18.2.0
-    react-dom: 18.2.0
-    tsup: ^5.12.7
-    typescript: ^4.6.4
-  peerDependencies:
     "@mui/material": ^5.11.9
     react: ">=16.3.0"
   languageName: unknown

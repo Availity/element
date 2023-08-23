@@ -1,7 +1,7 @@
 {
-  "name": "mui-form-label",
+  "name": "mui-form-utils",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/form-label/src",
+  "sourceRoot": "packages/form-utils/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -9,11 +9,11 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/form-label/**/*.{js,ts}"],
+        "lintFilePatterns": ["packages/form-utils/**/*.{js,ts}"],
         "silent": false,
         "fix": false,
         "cache": true,
-        "cacheLocation": "./node_modules/.cache/form-label/.eslintcache",
+        "cacheLocation": "./node_modules/.cache/form-utils/.eslintcache",
         "maxWarnings": -1,
         "quiet": false,
         "noEslintrc": false,
@@ -23,9 +23,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/form-label"],
+      "outputs": ["coverage/form-utils"],
       "options": {
-        "jestConfig": "packages/form-label/jest.config.js",
+        "jestConfig": "packages/form-utils/jest.config.js",
         "passWithNoTests": true
       }
     },

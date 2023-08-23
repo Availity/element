@@ -3,8 +3,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FieldHelpIcon, FieldHelpIconProps } from './FieldHelpIcon';
 
+/** Help Wrapper for Oxygen Learning Docs on the Portal (This component will only work in the Availity Portal). */
 const meta: Meta<typeof FieldHelpIcon> = {
-  title: 'Components/FieldHelpIcon/FieldHelpIcon',
+  title: 'Components/FormUtils/FieldHelpIcon',
   component: FieldHelpIcon,
   tags: ['autodocs'],
 };

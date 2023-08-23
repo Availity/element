@@ -2,6 +2,6 @@ const global = require('../../jest.config.global');
 
 module.exports = {
   ...global,
-  displayName: 'form-label',
-  coverageDirectory: '../../coverage/form-label',
+  displayName: 'form-utils',
+  coverageDirectory: '../../coverage/form-utils',
 };
