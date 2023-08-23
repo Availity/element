@@ -64,5 +64,6 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "trackDeps": true
 }
