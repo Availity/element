@@ -31,6 +31,7 @@ export const _ToggleButtonIcon: StoryObj<typeof ToggleButton> = {
   args: {
     value: '1',
     children: <HomeIcon />,
+    'aria-label': 'Home',
   },
 };
 

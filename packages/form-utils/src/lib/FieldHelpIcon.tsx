@@ -16,7 +16,7 @@ export type FieldHelpIconProps = {
   labelId?: string;
 } & Omit<IconButtonProps, 'title'>;
 
-export const FieldHelpIcon = ({ helpTopicId, labelId, ...rest }: FieldHelpIconProps): JSX.Element => {
+export const FieldHelpIcon = ({ helpTopicId, labelId, sx, ...rest }: FieldHelpIconProps): JSX.Element => {
   return (
     <IconButton
       {...rest}
@@ -26,7 +26,7 @@ export const FieldHelpIcon = ({ helpTopicId, labelId, ...rest }: FieldHelpIconPr
       onClick={() => triggerFieldHelp(helpTopicId)}
       aria-describedby={labelId}
       size="small"
-      sx={{ padding: 0.5, fontSize: 'inherit' }}
+      sx={{ ...sx, padding: 0.5, fontSize: 'inherit', marginTop: '-2px' }}
     >
       <HelpCircleIcon aria-hidden titleAccess={undefined} />
     </IconButton>

@@ -29,9 +29,9 @@ export const _ToggleButtonGroup: StoryObj<typeof ToggleButtonGroup> = {
     };
     return (
       <ToggleButtonGroup {...args} value={value} onChange={handleValue}>
-        <ToggleButton value={1} children="One" />
-        <ToggleButton value={2} children="Two" />
-        <ToggleButton value={3} children="Three" disabled />
+        <ToggleButton value="First" children="First" />
+        <ToggleButton value="Second" children="Second" />
+        <ToggleButton value="Third" children="Third" disabled />
       </ToggleButtonGroup>
     );
   },
@@ -49,9 +49,9 @@ export const _ToggleButtonGroupIcons: StoryObj<typeof ToggleButtonGroup> = {
     };
     return (
       <ToggleButtonGroup {...args} value={value} onChange={handleValue}>
-        <ToggleButton value={1} children={<HomeIcon />} />
-        <ToggleButton value={2} children={<FilterIcon />} />
-        <ToggleButton value={3} children={<BellIcon />} disabled />
+        <ToggleButton value="home" aria-label="Home" children={<HomeIcon />} />
+        <ToggleButton value="filter" aria-label="Filter" children={<FilterIcon />} />
+        <ToggleButton value="notification" aria-label="Notification" children={<BellIcon />} disabled />
       </ToggleButtonGroup>
     );
   },

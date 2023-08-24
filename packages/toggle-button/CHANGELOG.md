@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.4](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.3...@availity/mui-toggle-button@0.1.4) (2023-08-22)
+
+### Bug Fixes
+
+- **mui-toggle-button:** export subcomponents ([49228f4](https://github.com/Availity/element/commit/49228f43d8f90bef8c1d31f7a95a9af2ce631592))
+
+## [0.1.3](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.2...@availity/mui-toggle-button@0.1.3) (2023-08-21)
+
+### Bug Fixes
+
+- **mui-toggle-button:** fix color contrast issues for 508 compliance ([9e6ec3e](https://github.com/Availity/element/commit/9e6ec3e6451efa9638c10a427bba8aac87b3c419))
+
 ## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.1...@availity/mui-toggle-button@0.1.2) (2023-08-11)
 
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.0...@availity/mui-toggle-button@0.1.1) (2023-08-11)

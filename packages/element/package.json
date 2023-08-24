@@ -1,6 +1,6 @@
 {
   "name": "@availity/element",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -22,8 +22,7 @@
     "@availity/mui-card": "workspace:*",
     "@availity/mui-chip": "workspace:*",
     "@availity/mui-divider": "workspace:*",
-    "@availity/mui-field-help-icon": "workspace:*",
-    "@availity/mui-form-label": "workspace:*",
+    "@availity/mui-form-utils": "workspace:*",
     "@availity/mui-icon": "workspace:*",
     "@availity/mui-input": "workspace:*",
     "@availity/mui-link": "workspace:*",

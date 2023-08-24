@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.1](https://github.com/Availity/element/compare/@availity/design-tokens@0.5.0...@availity/design-tokens@0.5.1) (2023-08-23)
+
+## [0.5.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.4.10...@availity/design-tokens@0.5.0) (2023-08-23)
+
+### Features
+
+- **design-tokens:** update text/error color to red 500 ([0eca108](https://github.com/Availity/element/commit/0eca1084de107aa6fd31b78c28a8d3fb58c06bfe))
+
+## [0.4.10](https://github.com/Availity/element/compare/@availity/design-tokens@0.4.9...@availity/design-tokens@0.4.10) (2023-08-23)
+
 ## [0.4.9](https://github.com/Availity/element/compare/@availity/design-tokens@0.4.8...@availity/design-tokens@0.4.9) (2023-08-10)
 
 ### Bug Fixes

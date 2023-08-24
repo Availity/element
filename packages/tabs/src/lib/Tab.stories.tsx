@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { Box, Typography } from '@mui/material';
 import { Tabs } from './Tabs';
 import { Tab, TabProps } from './Tab';
 
@@ -22,17 +23,46 @@ function a11yProps(index: number) {
 
 export const _Tab: StoryObj<typeof Tab> = {
   render: (args: TabProps) => {
+    interface TabPanelProps {
+      children?: React.ReactNode;
+      index: number;
+      value: number;
+    }
     const [value, setValue] = useState(0);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
       setValue(newValue);
     };
+    function CustomTabPanel(props: TabPanelProps) {
+      const { value, index, ...other } = props;
+
+      return (
+        <div
+          role="tabpanel"
+          hidden={value !== index}
+          id={`simple-tabpanel-${index}`}
+          aria-labelledby={`simple-tab-${index}`}
+          {...other}
+        >
+          {value === index && (
+            <Box sx={{ p: 3 }}>
+              <Typography>Hello from panel {index}</Typography>
+            </Box>
+          )}
+        </div>
+      );
+    }
     return (
-      <Tabs value={value} onChange={handleChange}>
-        <Tab label="Item One" {...args} {...a11yProps(0)} />
-        <Tab label="Item Two" {...args} {...a11yProps(1)} />
-        <Tab label="Item Three" {...args} {...a11yProps(2)} disabled />
-      </Tabs>
+      <>
+        <Tabs value={value} onChange={handleChange}>
+          <Tab label="Item One" {...args} {...a11yProps(0)} />
+          <Tab label="Item Two" {...args} {...a11yProps(1)} />
+          <Tab label="Item Three" {...args} {...a11yProps(2)} disabled />
+        </Tabs>
+        <CustomTabPanel value={value} index={0} />
+        <CustomTabPanel value={value} index={1} />
+        <CustomTabPanel value={value} index={2} />
+      </>
     );
   },
   args: {},
