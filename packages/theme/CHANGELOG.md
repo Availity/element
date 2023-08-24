@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.13.0](https://github.com/Availity/element/compare/@availity/theme@0.12.0...@availity/theme@0.13.0) (2023-08-24)
+
+
+### Features
+
+* **theme:** update label states ([69dca20](https://github.com/Availity/element/commit/69dca20d80d521e717049a06702606dd377786ff))
+
 ## [0.12.0](https://github.com/Availity/element/compare/@availity/theme@0.11.2...@availity/theme@0.12.0) (2023-08-23)
 
 
