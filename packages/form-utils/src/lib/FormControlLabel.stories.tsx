@@ -27,8 +27,14 @@ export const _States: StoryObj<typeof FormControlLabel> = {
   render: () => (
     <FormGroup>
       <FormControlLabel control={<Checkbox />} label="Default" />
+      <FormControlLabel helpTopicId="1234" control={<Checkbox />} label="With FieldHelpIcon" />
       <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
-      <FormControlLabel helpTopicId="1234" control={<Checkbox />} label="With Help Topic Icon" />
+      {/* Error state not available on individual control, must be within FormControl. */}
+      <FormControl error>
+        <FormGroup>
+          <FormControlLabel control={<Checkbox />} label="Error (Only visible in FormControl group)" />
+        </FormGroup>
+      </FormControl>
     </FormGroup>
   ),
 };
@@ -36,7 +42,7 @@ export const _States: StoryObj<typeof FormControlLabel> = {
 export const _Groups: StoryObj<typeof FormControlLabel> = {
   render: () => (
     <Box display="flex" flexDirection="column">
-      <FormControl component="fieldset" aria-labelledby="checkbox-group" required error>
+      <FormControl component="fieldset" aria-labelledby="checkbox-group">
         <MuiFormLabel component="legend" id="checkbox-group">
           Checkbox Group
         </MuiFormLabel>

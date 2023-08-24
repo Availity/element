@@ -1,7 +1,8 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { FormControl, OutlinedInput } from '@mui/material';
+import { Box, FormControl, FormHelperText, OutlinedInput } from '@mui/material';
+import { visuallyHidden } from '@mui/utils';
 import { FormLabel, FormLabelProps } from './FormLabel';
 
 /** Label component for use with individual inputs, form controls,  and form groups. For labels to use with `checkbox`/`radio` see `FormControlLabel`. */
@@ -25,21 +26,26 @@ export const _States: StoryObj<typeof FormLabel> = {
   render: () => (
     <>
       <FormLabel>Default</FormLabel>
+      <FormLabel helpTopicId="1234">With Field Help Icon</FormLabel>
       <FormLabel required>Required</FormLabel>
       <FormLabel error>Error</FormLabel>
-      <FormLabel disabled>Disabled</FormLabel>
-      <FormLabel helpTopicId="1234">With Help Topic Icon</FormLabel>
+      {/* A disabled label by itself will throw contrast warning unless used correctly with a disabled input. */}
+      <FormControl disabled size="small">
+        <FormLabel htmlFor="disabled">Disabled</FormLabel>
+        <OutlinedInput id="disabled" sx={visuallyHidden} />
+      </FormControl>
     </>
   ),
 };
 
 export const _Controls: StoryObj<typeof FormLabel> = {
   render: () => (
-    <FormControl required error size="small">
-      <FormLabel htmlFor="field-3" helpTopicId="1234">
-        FormLabel
+    <FormControl required size="small">
+      <FormLabel htmlFor="field-1" helpTopicId="1234">
+        Example
       </FormLabel>
-      <OutlinedInput id="field-3" defaultValue="field3 value" />
+      <OutlinedInput id="field-1" defaultValue="default value" />
+      <FormHelperText>Helper Text</FormHelperText>
     </FormControl>
   ),
 };
