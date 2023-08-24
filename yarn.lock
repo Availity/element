@@ -323,6 +323,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-textfield@workspace:packages/textfield"
   dependencies:
+    "@availity/mui-form-utils": "workspace:*"
     "@availity/mui-input": "workspace:*"
     "@mui/material": ^5.11.9
     react: 18.2.0

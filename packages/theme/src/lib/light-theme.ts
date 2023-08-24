@@ -489,6 +489,7 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           marginBottom: '.5rem',
+          width: '220px',
         },
       },
     },
@@ -561,13 +562,6 @@ export const lightTheme = {
         },
         inputSizeSmall: {
           height: '10px',
-        },
-      },
-    },
-    MuiFormControl: {
-      styleOverrides: {
-        root: {
-          width: '220px',
         },
       },
     },

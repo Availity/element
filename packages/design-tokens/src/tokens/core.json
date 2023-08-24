@@ -1328,7 +1328,7 @@
         "type": "color"
       },
       "disabled": {
-        "value": "#5E616E",
+        "value": "#00000026",
         "type": "color"
       },
       "info": {
@@ -1336,7 +1336,7 @@
         "type": "color"
       },
       "error": {
-        "value": "#981123",
+        "value": "#C70002",
         "type": "color"
       },
       "success": {
@@ -2055,7 +2055,7 @@
       "type": "color"
     },
     "disabled": {
-      "value": "#838795",
+      "value": "#00000012",
       "type": "color"
     },
     "decorative": {
