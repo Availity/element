@@ -29,7 +29,7 @@ export const _PasswordField: StoryObj<typeof TextField> = {
       <TextField
         {...args}
         type={showPassword ? 'text' : 'password'}
-        suffix={
+        endAdornment={
           <IconButton title="password visibility toggle" onClick={() => setShowPassword((prev) => !prev)}>
             {showPassword ? <EyeIcon /> : <EyeSlashIcon />}
           </IconButton>

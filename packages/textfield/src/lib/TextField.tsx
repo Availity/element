@@ -1,46 +1,53 @@
-import type { ReactNode } from 'react';
-import MuiTextField, { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField';
-import MuiLabel from '@mui/material/InputLabel';
+import { forwardRef } from 'react';
+import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
+import FormHelperText from '@mui/material/FormHelperText';
+import { FormLabel } from '@availity/mui-form-label';
+import { Input, InputProps } from '@availity/mui-input';
 
 export type TextFieldProps = {
-  prefix?: ReactNode;
-  suffix?: ReactNode;
-} & Omit<MuiTextFieldProps, 'FormHelperTextProps' | 'select' | 'SelectProps' | 'style'>;
+  helperText?: string;
+} & Omit<
+  InputProps,
+  | 'aria-describedby'
+  | 'classes'
+  | 'disableInjectingGlobalStyles'
+  | 'color'
+  | 'multiline'
+  | 'notched'
+  | 'fullwidth'
+  | 'inputProps'
+>;
 
-/**
- * TODO:\n
- * prefix/suffix https://mui.com/material-ui/react-text-field/#input-adornments
- * label stuff
- */
+export const TextField = forwardRef(
+  (
+    { error, fullWidth, helperText, id, label, startAdornment, endAdornment, required, ...rest }: TextFieldProps,
+    ref
+  ) => {
+    return (
+      <FormControl size="small" fullWidth={fullWidth}>
+        {label && (
+          <FormLabel htmlFor={id} required={required} error={!!error} disabled={rest.disabled}>
+            {label}
+          </FormLabel>
+        )}
+        <Input
+          inputRef={ref}
+          id={id}
+          aria-describedby={`${id}-helper-text`}
+          error={!!error}
+          startAdornment={
+            startAdornment ? <InputAdornment position="start">{startAdornment}</InputAdornment> : undefined
+          }
+          endAdornment={endAdornment ? <InputAdornment position="end">{endAdornment}</InputAdornment> : undefined}
+          {...rest}
+        />
+        <FormHelperText id={`${id}-helper-text`} error={error}>
+          {helperText}
+        </FormHelperText>
+      </FormControl>
+    );
+  }
+);
 
-export const TextField = ({
-  name,
-  id,
-  inputProps,
-  label,
-  disabled,
-  prefix,
-  suffix,
-  ...rest
-}: TextFieldProps): JSX.Element => {
-  const inputId = id || name;
-  const labelId = `${inputId}-label`;
-
-  return (
-    <>
-      <MuiLabel disabled={disabled} htmlFor={inputId} id={labelId}>
-        {label}
-      </MuiLabel>
-      <MuiTextField
-        inputProps={{ ...inputProps, id: inputId, 'aria-labelledby': labelId }}
-        disabled={disabled}
-        InputProps={{
-          startAdornment: prefix ? <InputAdornment position="start">{prefix}</InputAdornment> : undefined,
-          endAdornment: suffix ? <InputAdornment position="end">{suffix}</InputAdornment> : undefined,
-        }}
-        {...rest}
-      />
-    </>
-  );
-};
+TextField.displayName = 'TextField';

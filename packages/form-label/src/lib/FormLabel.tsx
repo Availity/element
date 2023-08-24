@@ -17,7 +17,7 @@ export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>((props, re
       <MuiFormLabel id={labelId} htmlFor={htmlFor} {...rest} ref={ref}>
         {children}
       </MuiFormLabel>
-      {helpTopicId ? <FieldHelpIcon helpTopicId="12345" labelId={labelId} sx={{ px: 0.5 }} /> : null}
+      {helpTopicId ? <FieldHelpIcon helpTopicId={helpTopicId} labelId={labelId} sx={{ px: 0.5 }} /> : null}
     </Box>
   );
 });

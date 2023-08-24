@@ -551,30 +551,37 @@ export const lightTheme = {
         root: {
           '&.MuiInputBase-root': {
             '& > fieldset': {
-              borderColor: tokens.colorGrey500,
+              borderColor: tokens.colorGrey400,
             },
             '&:hover > fieldset': {
-              borderColor: 'white', // FIXME: need to update
+              borderColor: tokens.borderInputHover,
             },
             '&.Mui-focused > fieldset': {
-              borderColor: tokens.colorPrimaryMain,
+              borderColor: tokens.borderInputFocus,
             },
             '&.Mui-error > fieldset': {
               borderColor: tokens.colorErrorMain,
             },
             '&.Mui-disabled > fieldset': {
-              borderColor: tokens.colorGrey200,
+              borderColor: tokens.borderDisabled,
             },
           },
         },
         input: {
-          width: '220px',
           height: '26px',
+          width: '220px',
           backgroundColor: 'white',
           borderRadius: '4px',
         },
         inputSizeSmall: {
           height: '10px',
+        },
+      },
+    },
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          width: '220px',
         },
       },
     },

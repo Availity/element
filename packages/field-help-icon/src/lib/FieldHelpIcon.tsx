@@ -1,4 +1,3 @@
-import { Link as MuiLink, LinkProps as MuiLinkProps } from '@mui/material';
 import avMessages from '@availity/message-core';
 import { HelpCircleIcon } from '@availity/mui-icon';
 import { IconButton, IconButtonProps } from '@availity/mui-button';
