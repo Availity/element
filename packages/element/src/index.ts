@@ -8,7 +8,6 @@ export * from '@availity/mui-chip';
 export * from '@availity/mui-divider';
 export * from '@availity/mui-form-utils';
 export * from '@availity/mui-icon';
-export * from '@availity/mui-input';
 export * from '@availity/mui-link';
 export * from '@availity/mui-menu';
 export * from '@availity/mui-paper';

@@ -5,9 +5,6 @@ export type InputProps = Omit<
   'children' | 'components' | 'componentsProps' | 'inputComponent' | 'slots' | 'slotProps' | 'sx'
 >;
 
-// FIXME: move to theme
-const styles = { input: { padding: '15px 12px' } };
-
 export const Input = (props: InputProps): JSX.Element => {
-  return <MuiInput {...props} sx={styles} />;
+  return <MuiInput {...props} />;
 };

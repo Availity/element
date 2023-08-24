@@ -559,6 +559,7 @@ export const lightTheme = {
           width: '220px',
           backgroundColor: 'white',
           borderRadius: '4px',
+          padding: '15px 12px',
         },
         inputSizeSmall: {
           height: '10px',

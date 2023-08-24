@@ -2,8 +2,7 @@ import { forwardRef } from 'react';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormHelperText from '@mui/material/FormHelperText';
-import { FormLabel } from '@availity/mui-form-utils';
-import { Input, InputProps } from '@availity/mui-input';
+import { FormLabel, Input, InputProps } from '@availity/mui-form-utils';
 
 export type TextFieldProps = {
   helperText?: string;
