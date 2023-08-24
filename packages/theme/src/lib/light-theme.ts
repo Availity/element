@@ -466,8 +466,7 @@ export const lightTheme = {
     },
     MuiIconButton: {
       defaultProps: {
-        // The props to change the default for.
-        disableRipple: true, // No more ripple, on the whole application 💣!
+        disableRipple: true,
       },
       styleOverrides: {
         root: {
@@ -497,6 +496,16 @@ export const lightTheme = {
         labelPlacement: 'end',
       },
       styleOverrides: {
+        root: {
+          '&.Mui-error': {
+            '.MuiFormControlLabel-label': {
+              color: tokens.colorTextError,
+            },
+            '.MuiButtonBase-root, .MuiSvgIcon-root': {
+              color: tokens.colorTextError,
+            },
+          },
+        },
         asterisk: {
           // required indicators shown on the group level
           display: 'none',
@@ -516,16 +525,21 @@ export const lightTheme = {
           // move required asterisk before text
           display: 'flex',
           flexDirection: 'row-reverse',
-          '&.Mui-error': {
-            color: tokens.colorTextError,
-          },
+          justifyContent: 'flex-end',
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
+          },
+          '&.Mui-error, &.Mui-error.Mui-focused': {
+            color: tokens.colorTextError,
+          },
+          '&.Mui-focused': {
+            color: tokens.colorTextPrimary,
           },
         },
         asterisk: {
           color: tokens.colorTextError,
           marginRight: '.25rem',
+          marginLeft: '-.15rem',
         },
       },
     },
@@ -536,6 +550,7 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           fontWeight: tokens.fontWeightsBold,
+          color: tokens.colorTextLink,
           '&:active': {
             color: tokens.colorTextPrimary,
           },
