@@ -36,7 +36,6 @@ export const TextField = forwardRef(
         <Input
           inputRef={ref}
           id={id}
-          aria-labelledby={labelId}
           aria-describedby={helperId}
           error={!!error}
           startAdornment={
