@@ -1,40 +1,52 @@
 import { themes } from '@storybook/theming';
-import { withThemeFromJSXProvider } from '@storybook/addon-styling';
-import type { DecoratorFunction, Renderer, Args } from '@storybook/types';
+import { Preview } from '@storybook/react';
+import type { StoryContext } from '@storybook/types';
 import { ThemeProvider } from '@availity/theme-provider';
-import { ThemeOptions, createTheme } from '@mui/material';
-import { legacyTheme, lightTheme } from '@availity/theme';
 
-export const parameters = {
-  docs: {
+const withThemeProvider = (Story: () => JSX.Element, context: StoryContext) => {
+  return (
+    <ThemeProvider theme={context.globals.theme || 'lightTheme'}>
+      <Story />
+    </ThemeProvider>
+  );
+};
+
+const preview: Preview = {
+  globalTypes: {
+    theme: {
+      description: 'Global theme for components',
+      defaultValue: 'lightTheme',
+      toolbar: {
+        icon: 'switchalt',
+        items: [
+          { value: 'lightTheme', icon: 'sun', title: 'Light (default)' },
+          { value: 'legacyBS', icon: 'markup', title: 'Development' },
+        ],
+        dynamicTitle: true,
+        showName: true,
+      },
+    },
+  },
+  decorators: [withThemeProvider],
+  parameters: {
+    docs: {
+      controls: {
+        sort: 'requiredFirst',
+      },
+      theme: themes.light,
+      source: {
+        excludeDecorators: true,
+      },
+    },
     controls: {
       sort: 'requiredFirst',
     },
-    theme: themes.light,
-    source: {
-      excludeDecorators: true,
-    },
-  },
-  controls: {
-    sort: 'requiredFirst',
-  },
-  options: {
-    storySort: {
-      order: ['Element', 'Contributing', 'BS4 Migration', ['Getting Started'], 'Design System', 'Components'],
+    options: {
+      storySort: {
+        order: ['Element', 'Contributing', 'BS4 Migration', ['Getting Started'], 'Design System', 'Components'],
+      },
     },
   },
 };
 
-const LightTheme = createTheme(lightTheme as ThemeOptions);
-const LegacyTheme = createTheme(legacyTheme as ThemeOptions);
-
-export const decorators: DecoratorFunction<Renderer, Args>[] = [
-  withThemeFromJSXProvider({
-    themes: {
-      Current: LightTheme,
-      Development: LegacyTheme,
-    },
-    defaultTheme: 'Current',
-    Provider: ThemeProvider,
-  }),
-];
+export default preview;

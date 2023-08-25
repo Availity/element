@@ -1339,7 +1339,7 @@
           "type": "color"
         },
         "link": {
-          "value": "{color.blue.600}",
+          "value": "{color.blue.500}",
           "type": "color"
         },
         "inverse": {

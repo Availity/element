@@ -307,6 +307,9 @@ export const legacyTheme = {
         standardWarning: {
           backgroundColor: tokens.colorWarningMain,
           color: tokens.colorWarningContrast,
+          '.MuiAlert-icon .MuiSvgIcon-root': {
+            fill: tokens.colorWarningContrast,
+          },
         },
         standardInfo: {
           backgroundColor: tokens.colorPrimaryMain,
@@ -315,9 +318,16 @@ export const legacyTheme = {
         action: {
           margin: '-3px -3px -3px auto',
           padding: '0 0 0 8px',
+          alignItems: 'center',
+          color: 'inherit',
         },
         icon: {
-          display: 'none',
+          padding: '0',
+          alignItems: 'center',
+          '.MuiSvgIcon-root': {
+            fill: tokens.colorPrimaryContrast,
+            color: tokens.colorPrimaryContrast,
+          },
         },
         message: {
           color: 'inherit',
@@ -363,6 +373,14 @@ export const legacyTheme = {
             color: tokens.colorPrimaryMain,
           },
         },
+        separator: {
+          '.MuiSvgIcon-root': {
+            width: '1rem',
+            height: '1rem',
+            marginX: '.5rem',
+            fontSize: '1rem',
+          },
+        },
       },
     },
     MuiButton: {
@@ -375,7 +393,7 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           boxShadow: 'none',
-          fontWeight: tokens.fontWeightsRegular,
+          fontWeight: tokens.fontWeightsBold,
           textTransform: 'none',
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
@@ -472,7 +490,6 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           height: 'auto',
-          fontWeight: tokens.fontWeightsBold,
           fontSize: '.75rem',
           lineHeight: '.75rem',
           // Bug with state styles being overwritten when not defined in root https://github.com/mui/material-ui/issues/29703#issuecomment-1548356589
@@ -515,11 +532,13 @@ export const legacyTheme = {
           backgroundColor: tokens.colorGrey100,
         },
         sizeSmall: {
+          fontWeight: tokens.fontWeightsBold,
           verticalAlign: 'text-bottom',
           borderRadius: '.25rem',
           padding: '0.25rem 0.4rem',
         },
         sizeMedium: {
+          fontWeight: tokens.fontWeightsRegular,
           borderRadius: '10rem',
           padding: '0.25rem 0.6rem',
         },
@@ -553,6 +572,7 @@ export const legacyTheme = {
           // move required asterisk before text
           display: 'flex',
           flexDirection: 'row-reverse',
+          justifyContent: 'flex-end',
           '&.Mui-error': {
             color: tokens.colorTextError,
           },
@@ -561,8 +581,52 @@ export const legacyTheme = {
           },
         },
         asterisk: {
-          color: tokens.colorErrorMain,
+          color: tokens.colorTextError,
+          fontWeight: tokens.fontWeightsBold,
           marginRight: '.25rem',
+          fontSize: '1.3rem',
+          lineHeight: '100%',
+        },
+      },
+    },
+    MuiInputLabel: {
+      defaultProps: {
+        shrink: true,
+      },
+      styleOverrides: {
+        root: {
+          position: 'relative',
+          display: 'flex',
+          transform: 'none',
+          transition: 'none',
+          animation: 'none',
+        },
+      },
+    },
+    MuiInputBase: {
+      StyleOverrides: {
+        root: {
+          'label + &': {
+            marginTop: '.5rem',
+          },
+        },
+        input: {
+          borderRadius: 4,
+          position: 'relative',
+          border: '1px solid',
+          borderColor: tokens.borderInput,
+          fontSize: 16,
+          width: 'auto',
+          padding: '10px 12px',
+          '&:focus': {
+            boxShadow: `0 0 0px 4px ${tokens.borderInputFocus}`,
+          },
+          '&.Mui-error': {
+            borderColor: tokens.borderError,
+            '&:focus': {
+              boxShadow: `0 0 0px 4px ${tokens.borderInputFocus}`,
+            },
+          },
         },
       },
     },
@@ -572,6 +636,7 @@ export const legacyTheme = {
       },
       styleOverrides: {
         root: {
+          color: tokens.colorTextLink,
           fontWeight: tokens.fontWeightsBold,
           '&:active': {
             color: tokens.colorTextPrimary,
@@ -580,6 +645,23 @@ export const legacyTheme = {
             color: tokens.colorIndigo600,
           },
         },
+      },
+    },
+    MuiMenu: {
+      defaultProps: {
+        anchorOrigin: {
+          vertical: 'bottom',
+          horizontal: 'left',
+        },
+        transformOrigin: {
+          vertical: 'top',
+          horizontal: 'left',
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      defaultProps: {
+        size: 'small',
       },
     },
     MuiPaper: {
@@ -640,6 +722,9 @@ export const legacyTheme = {
             '&.Mui-selected': {
               ...containedButtonStyles('Primary'),
             },
+            '&.Mui-disabled': {
+              color: tokens.colorTextDisabled,
+            },
           },
           '&.MuiToggleButton-secondary': {
             color: tokens.colorSecondaryMain,
@@ -647,6 +732,9 @@ export const legacyTheme = {
             ...outlinedButtonStyles('Secondary'),
             '&.Mui-selected': {
               ...containedButtonStyles('Secondary'),
+            },
+            '&.Mui-disabled': {
+              color: tokens.colorTextDisabled,
             },
           },
           '&.MuiToggleButton-standard': {
@@ -658,6 +746,9 @@ export const legacyTheme = {
               '&:focus': {
                 boxShadow: important(`0 0 0px 4px ${tokens.colorSecondaryDark}`),
               },
+            },
+            '&.Mui-disabled': {
+              color: tokens.colorTextDisabled,
             },
           },
         },
