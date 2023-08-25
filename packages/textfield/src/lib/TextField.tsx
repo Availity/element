@@ -14,20 +14,17 @@ export type TextFieldProps = {
   | 'color'
   | 'multiline'
   | 'notched'
-  | 'fullwidth'
+  | 'fullWidth'
   | 'inputProps'
 >;
 
 export const TextField = forwardRef(
-  (
-    { error, fullWidth, helperText, id, label, startAdornment, endAdornment, required, ...rest }: TextFieldProps,
-    ref
-  ) => {
+  ({ error, helperText, id, label, startAdornment, endAdornment, required, ...rest }: TextFieldProps, ref) => {
     const labelId = `${id}-label`;
     const helperId = `${id}-helper-text`;
 
     return (
-      <FormControl size="small" fullWidth={fullWidth}>
+      <FormControl size="small">
         {label && (
           <FormLabel id={labelId} htmlFor={id} required={required} error={!!error} disabled={rest.disabled}>
             {label}

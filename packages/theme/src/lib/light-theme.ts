@@ -508,6 +508,13 @@ export const lightTheme = {
         },
       },
     },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          marginLeft: '0px',
+        },
+      },
+    },
     MuiFormLabel: {
       defaultProps: {
         shrink: false,
