@@ -404,6 +404,10 @@ export const lightTheme = {
       },
     },
     MuiCard: {
+      defaultProps: {
+        variant: 'elevation',
+        elevation: 1,
+      },
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorBackgroundPaper,

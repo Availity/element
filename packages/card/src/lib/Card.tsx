@@ -5,9 +5,5 @@ export interface CardProps extends Omit<MuiCardProps, 'elevation' | 'variant' | 
 }
 
 export const Card = ({ children, ...rest }: CardProps): JSX.Element => {
-  return (
-    <MuiCard {...rest} variant="elevation" elevation={1}>
-      {children}
-    </MuiCard>
-  );
+  return <MuiCard {...rest}>{children}</MuiCard>;
 };
