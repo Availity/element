@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.14.0](https://github.com/Availity/element/compare/@availity/theme@0.13.0...@availity/theme@0.14.0) (2023-08-28)
+
+
+### Features
+
+* **mui-card:** move default elevation props to theme (legacy compatibility) ([d68dcf8](https://github.com/Availity/element/commit/d68dcf8ac16091a7d2d37cebbe19b4645708a28b))
+* **theme:** added legacy theme ([50b5716](https://github.com/Availity/element/commit/50b5716d901216303b66a21731dfbe09db23af26))
+
 ## [0.13.0](https://github.com/Availity/element/compare/@availity/theme@0.12.0...@availity/theme@0.13.0) (2023-08-24)
 
 
