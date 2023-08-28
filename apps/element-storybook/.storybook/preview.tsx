@@ -1,32 +1,52 @@
 import { themes } from '@storybook/theming';
+import { Preview } from '@storybook/react';
+import type { StoryContext } from '@storybook/types';
 import { ThemeProvider } from '@availity/theme-provider';
 
-export const parameters = {
-  docs: {
-    controls: {
-      sort: 'requiredFirst',
-    },
-    theme: themes.light,
-    source: {
-      excludeDecorators: true,
-    },
-  },
-  controls: {
-    sort: 'requiredFirst',
-  },
-  options: {
-    storySort: {
-      order: ['Element', 'Contributing', 'BS4 Migration', ['Getting Started'], 'Design System', 'Components'],
-    },
-  },
-};
-
-const withThemeProvider = (Story: () => JSX.Element) => {
+const withThemeProvider = (Story: () => JSX.Element, context: StoryContext) => {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={context.globals.theme || 'lightTheme'}>
       <Story />
     </ThemeProvider>
   );
 };
 
-export const decorators = [withThemeProvider];
+const preview: Preview = {
+  globalTypes: {
+    theme: {
+      description: 'Global theme for components',
+      defaultValue: 'lightTheme',
+      toolbar: {
+        icon: 'switchalt',
+        items: [
+          { value: 'lightTheme', icon: 'sun', title: 'Light (default)' },
+          { value: 'legacyBS', icon: 'markup', title: 'Development' },
+        ],
+        dynamicTitle: true,
+        showName: true,
+      },
+    },
+  },
+  decorators: [withThemeProvider],
+  parameters: {
+    docs: {
+      controls: {
+        sort: 'requiredFirst',
+      },
+      theme: themes.light,
+      source: {
+        excludeDecorators: true,
+      },
+    },
+    controls: {
+      sort: 'requiredFirst',
+    },
+    options: {
+      storySort: {
+        order: ['Element', 'Contributing', 'BS4 Migration', ['Getting Started'], 'Design System', 'Components'],
+      },
+    },
+  },
+};
+
+export default preview;

@@ -10,6 +10,7 @@ const config: StorybookConfig = {
   ],
   addons: [
     '@storybook/addon-essentials',
+    '@storybook/addon-styling',
     '@storybook/addon-a11y',
     {
       name: '@storybook/addon-docs',

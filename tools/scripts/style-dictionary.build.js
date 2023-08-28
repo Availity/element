@@ -34,9 +34,13 @@ StyleDictionary.registerTransformGroup({
 // IMPORTANT: the registration of custom transforms
 // needs to be done _before_ applying the configuration
 const StyleDictionaryExtended = StyleDictionary.extend('../../packages/design-tokens/style-dictionary.config.json');
+const StyleDictionaryLegacyExtended = StyleDictionary.extend(
+  '../../packages/design-tokens/style-dictionary-legacy.config.json'
+);
 
 // FINALLY, BUILD ALL THE PLATFORMS
 StyleDictionaryExtended.buildAllPlatforms();
+StyleDictionaryLegacyExtended.buildAllPlatforms();
 
 console.log('\n==============================================');
 console.log('\nBuild completed!');

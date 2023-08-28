@@ -1,4 +1,4 @@
-import { tokens } from '@availity/design-tokens';
+import { legacytokens as tokens } from '@availity/design-tokens';
 
 const important = (style: string) => `${style} !important`;
 
@@ -33,15 +33,7 @@ const outlinedButtonStyles = (color: string) => ({
   },
 });
 
-const typographyStyles = (type: string) => ({
-  fontSize: `${tokens[`typography${type}FontSize` as keyof typeof tokens]}`,
-  fontWeight: `${tokens[`typography${type}FontWeight` as keyof typeof tokens]}`,
-  fontFamily: `${tokens[`typography${type}FontFamily` as keyof typeof tokens]}`,
-  letterSpacing: `${tokens[`typography${type}LetterSpacing` as keyof typeof tokens]}`,
-  lineHeight: `${tokens[`lineHeights${type}` as keyof typeof tokens]}`,
-});
-
-export const lightTheme = {
+export const legacyTheme = {
   mode: 'light',
   palette: {
     primary: {
@@ -188,58 +180,96 @@ export const lightTheme = {
   },
   typography: {
     htmlFontSize: 16,
-    fontFamily: tokens.fontFamiliesBase,
+    fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
     fontSize: 14,
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
     d1: {
-      ...typographyStyles('D1'),
+      fontSize: tokens.typographyD1FontSize,
+      fontWeight: tokens.typographyD1FontWeight,
+      fontFamily: tokens.typographyD1FontFamily,
+      letterSpacing: tokens.typographyD1LetterSpacing,
       color: tokens.colorTextPrimary,
     },
     d2: {
-      ...typographyStyles('D2'),
+      fontSize: tokens.typographyD2FontSize,
+      fontWeight: tokens.typographyD2FontWeight,
+      fontFamily: tokens.typographyD2FontFamily,
+      letterSpacing: tokens.typographyD2LetterSpacing,
       color: tokens.colorTextPrimary,
     },
     h1: {
-      ...typographyStyles('H1'),
+      fontSize: tokens.typographyH1FontSize,
+      fontWeight: tokens.typographyH1FontWeight,
+      fontFamily: tokens.typographyH1FontFamily,
+      letterSpacing: tokens.typographyH1LetterSpacing,
       color: tokens.colorTextPrimary,
     },
     h2: {
-      ...typographyStyles('H2'),
+      fontSize: tokens.typographyH2FontSize,
+      fontWeight: tokens.typographyH2FontWeight,
+      fontFamily: tokens.typographyH2FontFamily,
+      letterSpacing: tokens.typographyH2LetterSpacing,
       color: tokens.colorTextPrimary,
     },
     h3: {
-      ...typographyStyles('H3'),
+      fontSize: tokens.typographyH3FontSize,
+      fontWeight: tokens.typographyH3FontWeight,
+      fontFamily: tokens.typographyH3FontFamily,
+      letterSpacing: tokens.typographyH3LetterSpacing,
       color: tokens.colorTextPrimary,
     },
     h4: {
-      ...typographyStyles('H4'),
+      fontSize: tokens.typographyH4FontSize,
+      fontWeight: tokens.typographyH4FontWeight,
+      fontFamily: tokens.typographyH4FontFamily,
+      letterSpacing: tokens.typographyH4LetterSpacing,
       color: tokens.colorTextPrimary,
     },
     h5: {
-      ...typographyStyles('H5'),
+      fontSize: tokens.typographyH5FontSize,
+      fontWeight: tokens.typographyH5FontWeight,
+      fontFamily: tokens.typographyH5FontFamily,
+      letterSpacing: tokens.typographyH5LetterSpacing,
       color: tokens.colorTextPrimary,
     },
     h6: {
-      ...typographyStyles('H6'),
+      fontSize: tokens.typographyH6FontSize,
+      fontWeight: tokens.typographyH6FontWeight,
+      fontFamily: tokens.typographyH6FontFamily,
+      letterSpacing: tokens.typographyH6LetterSpacing,
       color: tokens.colorTextPrimary,
+      lineHeight: tokens.lineHeightsH6,
     },
     subtitle1: {
-      ...typographyStyles('Subtitle1'),
+      fontSize: tokens.typographySubtitle1FontSize,
+      fontWeight: tokens.typographySubtitle1FontWeight,
+      fontFamily: tokens.typographySubtitle1FontFamily,
+      letterSpacing: tokens.typographySubtitle1LetterSpacing,
       color: tokens.colorTextPrimary,
     },
     subtitle2: {
-      ...typographyStyles('Subtitle2'),
+      fontSize: tokens.typographySubtitle2FontSize,
+      fontWeight: tokens.typographySubtitle2FontWeight,
+      fontFamily: tokens.typographySubtitle2FontFamily,
+      letterSpacing: tokens.typographySubtitle2LetterSpacing,
       color: tokens.colorTextPrimary,
+      lineHeight: tokens.lineHeightsSubtitle2,
     },
     body1: {
-      ...typographyStyles('Body1'),
+      fontSize: tokens.typographyBody1FontSize,
+      fontWeight: tokens.typographyBody1FontWeight,
+      fontFamily: tokens.typographyBody1FontFamily,
+      letterSpacing: tokens.typographyBody1LetterSpacing,
       color: tokens.colorTextPrimary,
     },
     body2: {
-      ...typographyStyles('Body2'),
+      fontSize: tokens.typographyBody2FontSize,
+      fontWeight: tokens.typographyBody2FontWeight,
+      fontFamily: tokens.typographyBody2FontFamily,
+      letterSpacing: tokens.typographyBody2LetterSpacing,
       color: tokens.colorTextPrimary,
     },
     button: {
@@ -249,11 +279,17 @@ export const lightTheme = {
       letterSpacing: 0.2,
     },
     caption: {
-      ...typographyStyles('Caption'),
+      fontSize: tokens.typographyCaptionFontSize,
+      fontWeight: tokens.typographyCaptionFontWeight,
+      fontFamily: tokens.typographyCaptionFontFamily,
+      letterSpacing: tokens.typographyCaptionLetterSpacing,
       color: tokens.colorTextPrimary,
     },
     overline: {
-      ...typographyStyles('Overline'),
+      fontSize: tokens.typographyOverlineFontSize,
+      fontWeight: tokens.typographyOverlineFontWeight,
+      fontFamily: tokens.typographyOverlineFontFamily,
+      letterSpacing: tokens.typographyOverlineLetterSpacing,
       color: tokens.colorTextPrimary,
     },
   },
@@ -261,39 +297,47 @@ export const lightTheme = {
     MuiAlert: {
       styleOverrides: {
         standardSuccess: {
-          backgroundColor: tokens.colorGreen100,
+          backgroundColor: tokens.colorSuccessMain,
+          color: tokens.colorSuccessContrast,
         },
         standardError: {
-          backgroundColor: tokens.colorRed50,
+          backgroundColor: tokens.colorErrorMain,
+          color: tokens.colorErrorContrast,
         },
         standardWarning: {
-          backgroundColor: tokens.colorYellow50,
+          backgroundColor: tokens.colorWarningMain,
+          color: tokens.colorWarningContrast,
+          '.MuiAlert-icon .MuiSvgIcon-root': {
+            fill: tokens.colorWarningContrast,
+          },
         },
         standardInfo: {
-          backgroundColor: tokens.colorBlue50,
+          backgroundColor: tokens.colorPrimaryMain,
+          color: tokens.colorPrimaryContrast,
         },
         action: {
           margin: '-3px -3px -3px auto',
           padding: '0 0 0 8px',
+          alignItems: 'center',
+          color: 'inherit',
         },
-        icon: ({ ownerState }: { ownerState: any }) => ({
-          ...(ownerState.severity === 'success' && {
-            color: important(tokens.colorGreen600),
-          }),
-          opacity: 1,
-          padding: '4px',
-          margin: 0,
-          fontSize: tokens.fontSizesBody1,
-        }),
+        icon: {
+          padding: '0',
+          alignItems: 'center',
+          '.MuiSvgIcon-root': {
+            fill: tokens.colorPrimaryContrast,
+            color: tokens.colorPrimaryContrast,
+          },
+        },
         message: {
-          color: tokens.colorTextPrimary,
+          color: 'inherit',
           padding: 0,
         },
         root: {
           border: 'none',
           fontSize: tokens.fontSizesBody1,
           lineHeight: tokens.lineHeightsBody1,
-          padding: '8px',
+          padding: '0.75rem 1.25rem',
         },
       },
     },
@@ -302,6 +346,7 @@ export const lightTheme = {
         root: {
           margin: 0,
           fontWeight: tokens.fontWeightsBold,
+          color: 'inherit',
         },
         message: {
           fontSize: tokens.fontSizesBody1,
@@ -326,6 +371,14 @@ export const lightTheme = {
           },
           '.breadcrumbs__collapsed-icon': {
             color: tokens.colorPrimaryMain,
+          },
+        },
+        separator: {
+          '.MuiSvgIcon-root': {
+            width: '1rem',
+            height: '1rem',
+            marginX: '.5rem',
+            fontSize: '1rem',
           },
         },
       },
@@ -367,14 +420,38 @@ export const lightTheme = {
         outlinedError: { ...outlinedButtonStyles('Error') },
       },
     },
+    MuiButtonGroup: {
+      defaultProps: {
+        color: 'secondary',
+        variant: 'contained',
+        disableElevation: true,
+        disableRipple: true,
+      },
+      styleOverrides: {
+        grouped: {
+          '&:focus': {
+            zIndex: '1',
+          },
+        },
+        groupedContained: { borderColor: important(tokens.colorPrimaryContrast) },
+        groupedContainedPrimary: { '&:focus:hover': { boxShadow: `0 0 0px 4px ${tokens.colorPrimaryDark}` } },
+        groupedContainedSecondary: { '&:focus:hover': { boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}` } },
+        groupedContainedTertiary: {
+          borderColor: important(tokens.colorSecondaryMain),
+          '&:focus:hover': {
+            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
+          },
+        },
+      },
+    },
     MuiCard: {
       defaultProps: {
-        variant: 'elevation',
-        elevation: 1,
+        variant: 'outlined',
       },
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorBackgroundPaper,
+          borderColor: tokens.colorGrey50,
           maxWidth: '345px',
         },
       },
@@ -400,7 +477,7 @@ export const lightTheme = {
     MuiCardHeader: {
       styleOverrides: {
         root: {
-          backgroundColor: tokens.colorBackgroundCanvas,
+          backgroundColor: tokens.colorGrey50,
           color: tokens.colorTextPrimary,
         },
       },
@@ -417,6 +494,8 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           height: 'auto',
+          fontSize: '.75rem',
+          lineHeight: '.75rem',
           // Bug with state styles being overwritten when not defined in root https://github.com/mui/material-ui/issues/29703#issuecomment-1548356589
           '&.MuiChip-deletable': {
             '&:hover': {
@@ -437,86 +516,54 @@ export const lightTheme = {
           },
         },
         avatar: {
-          margin: '0',
-          height: '1.125rem',
-          width: '1.125rem',
+          margin: '0 .2rem 0 -.2rem',
+          height: '1rem',
+          width: '1rem',
         },
         avatarColorDefault: {
           backgroundColor: tokens.colorGrey300,
         },
         deleteIcon: {
           fontSize: '1rem',
-          margin: '0',
+          margin: '0 -.2rem 0 .2rem',
           transition: 'color 300ms',
         },
         label: {
           fontSize: 'inherit',
-          padding: '0px 6px',
+          padding: '0px',
         },
         colorDefault: {
           backgroundColor: tokens.colorGrey100,
         },
         sizeSmall: {
           fontWeight: tokens.fontWeightsBold,
-          fontSize: '.75rem',
           verticalAlign: 'text-bottom',
-          borderRadius: '50px',
+          borderRadius: '.25rem',
+          padding: '0.25rem 0.4rem',
         },
         sizeMedium: {
           fontWeight: tokens.fontWeightsRegular,
-          padding: '3px 4px',
+          borderRadius: '10rem',
+          padding: '0.25rem 0.6rem',
         },
       },
     },
     MuiIconButton: {
       defaultProps: {
-        disableRipple: true,
+        // The props to change the default for.
+        disableRipple: true, // No more ripple, on the whole application 💣!
       },
       styleOverrides: {
         root: {
-          '&:hover': {
-            backgroundColor: tokens.colorTertiaryDark,
-          },
+          borderRadius: '3px',
+          '&:hover': {},
           '&:focus': {
-            backgroundColor: tokens.colorTertiaryDark,
             outline: `2px solid ${tokens.colorCommonWhite}`,
-            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
+            boxShadow: `0 0 0px 4px ${tokens.colorPrimaryMain}`,
           },
         },
         colorDefault: {
           color: tokens.colorTextPrimary,
-        },
-      },
-    },
-    MuiFormControl: {
-      styleOverrides: {
-        root: {
-          marginBottom: '.5rem',
-        },
-      },
-    },
-    MuiFormControlLabel: {
-      defaultProps: {
-        labelPlacement: 'end',
-      },
-      styleOverrides: {
-        root: {
-          '&.Mui-error': {
-            '.MuiFormControlLabel-label': {
-              color: tokens.colorTextError,
-            },
-            '.MuiButtonBase-root, .MuiSvgIcon-root': {
-              color: tokens.colorTextError,
-            },
-          },
-        },
-        asterisk: {
-          // required indicators shown on the group level
-          display: 'none',
-        },
-        labelPlacementEnd: {
-          marginLeft: 0,
-          marginRight: 0,
         },
       },
     },
@@ -530,20 +577,60 @@ export const lightTheme = {
           display: 'flex',
           flexDirection: 'row-reverse',
           justifyContent: 'flex-end',
-          '&.Mui-disabled': {
-            color: tokens.colorTextDisabled,
-          },
-          '&.Mui-error, &.Mui-error.Mui-focused': {
+          '&.Mui-error': {
             color: tokens.colorTextError,
           },
-          '&.Mui-focused': {
-            color: tokens.colorTextPrimary,
+          '&.Mui-disabled': {
+            color: tokens.colorTextDisabled,
           },
         },
         asterisk: {
           color: tokens.colorTextError,
+          fontWeight: tokens.fontWeightsBold,
           marginRight: '.25rem',
-          marginLeft: '-.15rem',
+          fontSize: '1.3rem',
+          lineHeight: '100%',
+        },
+      },
+    },
+    MuiInputLabel: {
+      defaultProps: {
+        shrink: true,
+      },
+      styleOverrides: {
+        root: {
+          position: 'relative',
+          display: 'flex',
+          transform: 'none',
+          transition: 'none',
+          animation: 'none',
+        },
+      },
+    },
+    MuiInputBase: {
+      StyleOverrides: {
+        root: {
+          'label + &': {
+            marginTop: '.5rem',
+          },
+        },
+        input: {
+          borderRadius: 4,
+          position: 'relative',
+          border: '1px solid',
+          borderColor: tokens.borderInput,
+          fontSize: 16,
+          width: 'auto',
+          padding: '10px 12px',
+          '&:focus': {
+            boxShadow: `0 0 0px 4px ${tokens.borderInputFocus}`,
+          },
+          '&.Mui-error': {
+            borderColor: tokens.borderError,
+            '&:focus': {
+              boxShadow: `0 0 0px 4px ${tokens.borderInputFocus}`,
+            },
+          },
         },
       },
     },
@@ -553,8 +640,8 @@ export const lightTheme = {
       },
       styleOverrides: {
         root: {
-          fontWeight: tokens.fontWeightsBold,
           color: tokens.colorTextLink,
+          fontWeight: tokens.fontWeightsBold,
           '&:active': {
             color: tokens.colorTextPrimary,
           },
@@ -562,6 +649,23 @@ export const lightTheme = {
             color: tokens.colorIndigo600,
           },
         },
+      },
+    },
+    MuiMenu: {
+      defaultProps: {
+        anchorOrigin: {
+          vertical: 'bottom',
+          horizontal: 'left',
+        },
+        transformOrigin: {
+          vertical: 'top',
+          horizontal: 'left',
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      defaultProps: {
+        size: 'small',
       },
     },
     MuiPaper: {
@@ -612,45 +716,44 @@ export const lightTheme = {
       },
       styleOverrides: {
         root: {
-          textTransform: 'unset',
-          backgroundColor: tokens.colorTertiaryMain,
+          textTransform: 'none',
           fontWeight: tokens.fontWeightsBold,
-          color: tokens.colorTextPrimary,
-          borderColor: tokens.colorGrey400,
-          '&.Mui-selected': {
-            backgroundColor: tokens.colorTertiaryDarker,
-            color: tokens.colorTertiaryLight,
-            borderColor: tokens.colorTertiaryDarker,
-            '&:hover': {
-              backgroundColor: tokens.colorTertiaryDark,
-              color: tokens.colorTertiaryLight,
-              borderColor: tokens.colorTertiaryMain,
+          // primary/secondary slots overwritten by root
+          '&.MuiToggleButton-primary': {
+            color: tokens.colorPrimaryMain,
+            borderColor: tokens.colorPrimaryMain,
+            ...outlinedButtonStyles('Primary'),
+            '&.Mui-selected': {
+              ...containedButtonStyles('Primary'),
+            },
+            '&.Mui-disabled': {
+              color: tokens.colorTextDisabled,
             },
           },
-          '&:focus': {
-            boxShadow: `0 0 0px 2px ${tokens.colorTertiaryDark}50`,
-            backgroundColor: tokens.colorTertiaryLight,
-            color: tokens.colorTextPrimary,
-            borderColor: tokens.colorTertiaryDark,
+          '&.MuiToggleButton-secondary': {
+            color: tokens.colorSecondaryMain,
+            borderColor: tokens.colorSecondaryMain,
+            ...outlinedButtonStyles('Secondary'),
+            '&.Mui-selected': {
+              ...containedButtonStyles('Secondary'),
+            },
+            '&.Mui-disabled': {
+              color: tokens.colorTextDisabled,
+            },
           },
-          '&:hover': {
-            backgroundColor: tokens.colorTertiaryDark,
-            color: tokens.colorTertiaryLight,
+          '&.MuiToggleButton-standard': {
+            color: tokens.colorSecondaryMain,
             borderColor: tokens.colorTertiaryMain,
-          },
-          '&.MuiToggleButton-sizeSmall': {
-            padding: '8px 16px',
-          },
-          '&.MuiToggleButton-sizeMedium': {
-            padding: '12px 16px',
-          },
-          '&.MuiToggleButton-sizeLarge': {
-            padding: '16px',
-          },
-          '&.Mui-disabled': {
-            backgroundColor: tokens.colorActionDisabledBg,
-            borderColor: tokens.colorTertiaryMain,
-            color: tokens.colorActionDisabled,
+            ...outlinedButtonStyles('Secondary'), // intentional
+            '&.Mui-selected': {
+              ...containedButtonStyles('Tertiary'),
+              '&:focus': {
+                boxShadow: important(`0 0 0px 4px ${tokens.colorSecondaryDark}`),
+              },
+            },
+            '&.Mui-disabled': {
+              color: tokens.colorTextDisabled,
+            },
           },
         },
       },
