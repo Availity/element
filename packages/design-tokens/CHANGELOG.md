@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.5.1...@availity/design-tokens@0.6.0) (2023-08-28)
+
+
+### Features
+
+* **design-tokens:** added legacy theme tokens ([2eaeac2](https://github.com/Availity/element/commit/2eaeac262f9e74d68e37f4642a48a6763d2aea5f))
+
 ## [0.5.1](https://github.com/Availity/element/compare/@availity/design-tokens@0.5.0...@availity/design-tokens@0.5.1) (2023-08-23)
 
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.4.10...@availity/design-tokens@0.5.0) (2023-08-23)
