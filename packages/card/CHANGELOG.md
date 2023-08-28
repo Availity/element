@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-card@0.1.4...@availity/mui-card@0.2.0) (2023-08-28)
+
+
+### Features
+
+* **mui-card:** move default elevation props to theme (legacy compatibility) ([d68dcf8](https://github.com/Availity/element/commit/d68dcf8ac16091a7d2d37cebbe19b4645708a28b))
+
 ## [0.1.4](https://github.com/Availity/element/compare/@availity/mui-card@0.1.3...@availity/mui-card@0.1.4) (2023-08-23)
 
 ## [0.1.3](https://github.com/Availity/element/compare/@availity/mui-card@0.1.2...@availity/mui-card@0.1.3) (2023-08-22)
