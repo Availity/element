@@ -445,9 +445,13 @@ export const legacyTheme = {
       },
     },
     MuiCard: {
+      defaultProps: {
+        variant: 'outlined',
+      },
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorBackgroundPaper,
+          borderColor: tokens.colorGrey50,
           maxWidth: '345px',
         },
       },
@@ -473,7 +477,7 @@ export const legacyTheme = {
     MuiCardHeader: {
       styleOverrides: {
         root: {
-          backgroundColor: tokens.colorBackgroundCanvas,
+          backgroundColor: tokens.colorGrey50,
           color: tokens.colorTextPrimary,
         },
       },

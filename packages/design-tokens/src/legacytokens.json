@@ -965,11 +965,11 @@
       },
       "grey": {
         "50": {
-          "value": "#F3F5F7",
+          "value": "#F8F8F8",
           "type": "color"
         },
         "100": {
-          "value": "#EEEFF2",
+          "value": "#E8EBEB",
           "type": "color"
         },
         "200": {
