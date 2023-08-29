@@ -14,7 +14,4 @@ export default meta;
 
 export const _FieldHelpIcon: StoryObj<typeof FieldHelpIcon> = {
   render: (args: FieldHelpIconProps) => <FieldHelpIcon {...args} />,
-  args: {
-    children: 'This text is a child of FieldHelpIcon',
-  },
 };
