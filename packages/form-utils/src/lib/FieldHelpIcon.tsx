@@ -14,7 +14,22 @@ export type FieldHelpIconProps = {
   helpTopicId: string;
   /** The id of the on-screen label for aria-describedby, needed for accessibility */
   labelId?: string;
-} & Omit<IconButtonProps, 'title'>;
+} & Omit<
+  IconButtonProps,
+  | 'action'
+  | 'children'
+  | 'classes'
+  | 'className'
+  | 'color'
+  | 'disabled'
+  | 'edge'
+  | 'focusVisibleClassName'
+  | 'onFocusVisible'
+  | 'role'
+  | 'size'
+  | 'tabIndex'
+  | 'title'
+>;
 
 export const FieldHelpIcon = ({ helpTopicId, labelId, sx, ...rest }: FieldHelpIconProps): JSX.Element => {
   return (
