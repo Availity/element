@@ -53,6 +53,7 @@ __metadata:
     "@availity/mui-tabs": "workspace:*"
     "@availity/mui-toggle-button": "workspace:*"
     "@availity/mui-tooltip": "workspace:*"
+    "@availity/mui-typography": "workspace:*"
     "@availity/theme-provider": "workspace:*"
     "@mui/material": ^5.11.9
     "@mui/system": ^5.11.9
@@ -321,6 +322,21 @@ __metadata:
 "@availity/mui-tooltip@workspace:*, @availity/mui-tooltip@workspace:packages/tooltip":
   version: 0.0.0-use.local
   resolution: "@availity/mui-tooltip@workspace:packages/tooltip"
+  dependencies:
+    "@mui/material": ^5.11.9
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-typography@workspace:*, @availity/mui-typography@workspace:packages/typography":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-typography@workspace:packages/typography"
   dependencies:
     "@mui/material": ^5.11.9
     react: 18.2.0

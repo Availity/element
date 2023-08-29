@@ -30,6 +30,7 @@
     "@availity/mui-tabs": "workspace:*",
     "@availity/mui-toggle-button": "workspace:*",
     "@availity/mui-tooltip": "workspace:*",
+    "@availity/mui-typography": "workspace:*",
     "@availity/theme-provider": "workspace:*",
     "@mui/material": "^5.11.9",
     "@mui/system": "^5.11.9"
