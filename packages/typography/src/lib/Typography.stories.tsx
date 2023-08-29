@@ -15,5 +15,6 @@ export const _Typography: StoryObj<typeof Typography> = {
   render: (args: TypographyProps) => <Typography {...args} />,
   args: {
     children: 'This text is a child of Typography',
+    variant: 'h1',
   },
 };
