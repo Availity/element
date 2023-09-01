@@ -10,6 +10,7 @@ export * from '@availity/mui-form-utils';
 export * from '@availity/mui-icon';
 export * from '@availity/mui-link';
 export * from '@availity/mui-menu';
+export * from '@availity/mui-page-header';
 export * from '@availity/mui-paper';
 export * from '@availity/mui-tabs';
 export * from '@availity/mui-toggle-button';
