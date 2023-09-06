@@ -11,7 +11,7 @@ export interface ButtonsProps extends Omit<ButtonProps, 'size' | 'height'> {
 
 export interface PageHeaderProps {
   breadcrumbs: BreadcrumbsProps;
-  buttons?: [ButtonsProps?, ButtonsProps?];
+  buttons?: ButtonProps[];
   headerText: string;
   helpLink?: string;
 }
