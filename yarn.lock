@@ -49,6 +49,7 @@ __metadata:
     "@availity/mui-icon": "workspace:*"
     "@availity/mui-link": "workspace:*"
     "@availity/mui-menu": "workspace:*"
+    "@availity/mui-page-header": "workspace:*"
     "@availity/mui-paper": "workspace:*"
     "@availity/mui-tabs": "workspace:*"
     "@availity/mui-toggle-button": "workspace:*"
@@ -122,7 +123,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-breadcrumbs@workspace:*, @availity/mui-breadcrumbs@workspace:packages/breadcrumbs":
+"@availity/mui-breadcrumbs@workspace:*, @availity/mui-breadcrumbs@workspace:^, @availity/mui-breadcrumbs@workspace:packages/breadcrumbs":
   version: 0.0.0-use.local
   resolution: "@availity/mui-breadcrumbs@workspace:packages/breadcrumbs"
   dependencies:
@@ -271,6 +272,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@availity/mui-page-header@workspace:*, @availity/mui-page-header@workspace:packages/page-header":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-page-header@workspace:packages/page-header"
+  dependencies:
+    "@availity/mui-breadcrumbs": "workspace:^"
+    "@availity/mui-button": "workspace:^"
+    "@availity/mui-divider": "workspace:^"
+    "@availity/mui-link": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
+    "@mui/material": ^5.11.9
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@availity/mui-breadcrumbs": "workspace:^"
+    "@availity/mui-button": "workspace:^"
+    "@availity/mui-divider": "workspace:^"
+    "@availity/mui-link": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
 "@availity/mui-paper@workspace:*, @availity/mui-paper@workspace:packages/paper":
   version: 0.0.0-use.local
   resolution: "@availity/mui-paper@workspace:packages/paper"
@@ -334,7 +360,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-typography@workspace:*, @availity/mui-typography@workspace:packages/typography":
+"@availity/mui-typography@workspace:*, @availity/mui-typography@workspace:^, @availity/mui-typography@workspace:packages/typography":
   version: 0.0.0-use.local
   resolution: "@availity/mui-typography@workspace:packages/typography"
   dependencies:
