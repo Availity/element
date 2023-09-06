@@ -668,6 +668,60 @@ export const legacyTheme = {
         size: 'small',
       },
     },
+    MuiPagination: {
+      defaultProps: {
+        color: 'primary',
+        shape: 'rounded',
+        size: 'small',
+      },
+    },
+    MuiPaginationItem: {
+      defaultProps: {
+        disableRipple: true,
+      },
+      styleOverrides: {
+        root: {
+          borderRadius: '0',
+          height: 'auto',
+          color: tokens.colorTextLink,
+          textDecoration: 'underline',
+          '&:focus': {
+            boxShadow: `0 0 0px 2px ${tokens.colorPrimaryMain}`,
+          },
+          '&.Mui-selected': {
+            '&:focus': {
+              outline: '1px solid white',
+            },
+            fontWeight: tokens.fontWeightsBold,
+            backgroundColor: tokens.colorPrimaryMain,
+            color: tokens.colorCommonWhite,
+            textDecoration: 'none',
+          },
+          '&.Mui-disabled': {
+            color: tokens.colorTextPrimary,
+            textDecoration: 'none',
+          },
+        },
+        ellipsis: {
+          backgroundColor: 'inherit',
+          textDecoration: 'none',
+          color: tokens.colorTextPrimary,
+          border: 'none',
+          margin: '0',
+        },
+        outlined: {
+          padding: '0.5rem 0.75rem',
+          lineHeight: '1.25rem',
+          margin: '-1px',
+          border: '1px solid #ccc',
+          backgroundColor: tokens.colorBackgroundCanvas,
+        },
+        text: {
+          padding: '0.375rem',
+          margin: '0px',
+        },
+      },
+    },
     MuiPaper: {
       defaultProps: {
         variant: 'outlined',
