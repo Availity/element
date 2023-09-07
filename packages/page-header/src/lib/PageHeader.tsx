@@ -5,13 +5,13 @@ import { Breadcrumbs, BreadcrumbsProps } from '@availity/mui-breadcrumbs';
 import { Link } from '@availity/mui-link';
 import { Button, ButtonProps } from '@availity/mui-button';
 
-export interface ButtonsProps extends Omit<ButtonProps, 'size' | 'height'> {
+export interface ButtonsProps extends Omit<ButtonProps, 'size' | 'height' | 'color'> {
   key: string;
 }
 
 export interface PageHeaderProps {
   breadcrumbs: BreadcrumbsProps;
-  buttons?: ButtonProps[];
+  buttons?: ButtonsProps[];
   headerText: string;
   helpLink?: string;
 }
@@ -21,7 +21,11 @@ export const PageHeader = ({ breadcrumbs, buttons, headerText, helpLink }: PageH
     <Grid component={Container} container direction="column">
       {breadcrumbs || helpLink ? (
         <Grid direction="row" item container justifyContent="space-between" marginBottom={4}>
-          {breadcrumbs && <Grid item component={Breadcrumbs} {...breadcrumbs} />}
+          {breadcrumbs && (
+            <Grid item>
+              <Breadcrumbs {...breadcrumbs} />
+            </Grid>
+          )}
           {helpLink && (
             <Grid item marginLeft={2}>
               <Typography variant="body1">
@@ -33,11 +37,15 @@ export const PageHeader = ({ breadcrumbs, buttons, headerText, helpLink }: PageH
       ) : null}
 
       <Grid direction="row" item container marginBottom={2} alignItems="center" justifyContent="space-between">
-        <Grid item component={Typography} variant="h1" children={headerText} />
+        <Grid item>
+          <Typography variant="h1" children={headerText} />
+        </Grid>
         {buttons && buttons.length > 0 && (
           <Grid item container width="auto">
             {buttons?.map((buttonProps) => (
-              <Grid item marginLeft={2} component={Button} {...buttonProps} size="large" height="100%" />
+              <Grid item marginLeft={2} height="100%">
+                <Button {...buttonProps} size="large" color="secondary" />
+              </Grid>
             ))}
           </Grid>
         )}
