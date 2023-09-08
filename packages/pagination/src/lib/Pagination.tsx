@@ -1,4 +1,8 @@
-import { Pagination as MuiPagination, PaginationProps as MuiPaginationProps } from '@mui/material';
+import {
+  Pagination as MuiPagination,
+  PaginationProps as MuiPaginationProps,
+  PaginationPropsSizeOverrides,
+} from '@mui/material';
 import { PaginationItem } from './PaginationItem';
 
 export type PaginationProps = Omit<MuiPaginationProps, 'color' | 'shape' | 'renderItem'>;

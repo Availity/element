@@ -1,12 +1,12 @@
 import { PaginationItem as MuiPaginationItem, PaginationItemProps as MuiPaginationItemProps } from '@mui/material';
-import { NavigateFirstIcon, NavigateLastIcon, NavigateNextIcon, NavigatePreviousIcon } from '@availity/mui-icon';
+import { NavigateNextIcon, NavigatePreviousIcon } from '@availity/mui-icon';
 
 export type PaginationItemProps = Omit<MuiPaginationItemProps, 'components' | 'color' | 'shape'>;
 
 const slots = {
   first: () => (
     <>
-      <NavigateFirstIcon sx={{ mr: '.2rem' }} /> First
+      <NavigatePreviousIcon sx={{ mr: '.2rem' }} /> First
     </>
   ),
   previous: () => (
@@ -21,7 +21,7 @@ const slots = {
   ),
   last: () => (
     <>
-      Last <NavigateLastIcon sx={{ ml: '.2rem' }} />
+      Last <NavigateNextIcon sx={{ ml: '.2rem' }} />
     </>
   ),
 };
