@@ -33,13 +33,13 @@ export const _Variants: StoryObj<typeof Pagination> = {
         Text
       </Grid>
       <Grid item xs={10}>
-        <Pagination variant="text" count={10} />
+        <Pagination variant="text" count={10} aria-label="text pagination" />
       </Grid>
       <Grid item xs={2}>
         Outlined
       </Grid>
       <Grid item xs={10}>
-        <Pagination variant="outlined" count={10} />
+        <Pagination variant="outlined" count={10} aria-label="outlined pagination" />
       </Grid>
     </Grid>
   ),
@@ -54,6 +54,7 @@ export const _FirstLast: StoryObj<typeof Pagination> = {
       <Grid item xs={10}>
         <Pagination
           variant="text"
+          aria-label="text pagination"
           count={10}
           boundaryCount={0}
           hideNextButton
@@ -68,6 +69,7 @@ export const _FirstLast: StoryObj<typeof Pagination> = {
       <Grid item xs={10}>
         <Pagination
           variant="outlined"
+          aria-label="outlined pagination"
           count={10}
           boundaryCount={0}
           hideNextButton

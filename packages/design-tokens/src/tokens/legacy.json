@@ -812,7 +812,7 @@
         "type": "color"
       },
       "500": {
-        "value": "#1B74CB",
+        "value": "#0B64BB",
         "type": "color"
       },
       "600": {
@@ -1146,7 +1146,7 @@
         "type": "color"
       },
       "light": {
-        "value": "#1B74CB",
+        "value": "#0B64BB",
         "type": "color"
       },
       "dark": {
@@ -1224,7 +1224,7 @@
         "type": "color"
       },
       "light": {
-        "value": "#1B74CB",
+        "value": "#0B64BB",
         "type": "color"
       },
       "dark": {
@@ -1344,7 +1344,7 @@
         "type": "color"
       },
       "link": {
-        "value": "#1B74CB",
+        "value": "#0B64BB",
         "type": "color"
       },
       "inverse": {
