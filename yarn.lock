@@ -50,6 +50,7 @@ __metadata:
     "@availity/mui-link": "workspace:*"
     "@availity/mui-menu": "workspace:*"
     "@availity/mui-page-header": "workspace:*"
+    "@availity/mui-pagination": "workspace:*"
     "@availity/mui-paper": "workspace:*"
     "@availity/mui-tabs": "workspace:*"
     "@availity/mui-toggle-button": "workspace:*"
@@ -292,6 +293,23 @@ __metadata:
     "@availity/mui-divider": "workspace:^"
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-pagination@workspace:*, @availity/mui-pagination@workspace:packages/pagination":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-pagination@workspace:packages/pagination"
+  dependencies:
+    "@availity/mui-icon": "workspace:*"
+    "@mui/material": ^5.11.9
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.11.9
     react: ">=16.3.0"
   languageName: unknown

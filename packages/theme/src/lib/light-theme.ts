@@ -564,6 +564,46 @@ export const lightTheme = {
         },
       },
     },
+    MuiPagination: {
+      defaultProps: {
+        color: 'primary',
+        shape: 'rounded',
+        size: 'large',
+      },
+    },
+    MuiPaginationItem: {
+      defaultProps: {
+        color: 'primary',
+        shape: 'rounded',
+        disableRipple: true,
+      },
+      styleOverrides: {
+        root: {
+          '&:active:not(.MuiPaginationItem-ellipsis)': {
+            color: tokens.colorCommonWhite,
+            backgroundColor: tokens.colorActionActive,
+          },
+          '&.Mui-disabled': {
+            opacity: '1',
+            color: tokens.colorTextDisabled,
+          },
+        },
+        ellipsis: {
+          backgroundColor: 'transparent',
+        },
+        outlined: {
+          backgroundColor: tokens.colorBackgroundPaper,
+          borderColor: tokens.colorActionActive,
+          '&.Mui-disabled': {
+            borderColor: tokens.borderDisabled,
+          },
+          '&.Mui-selected': {
+            color: tokens.colorPrimaryMain,
+            backgroundColor: tokens.colorActionSelected,
+          },
+        },
+      },
+    },
     MuiPaper: {
       defaultProps: {
         variant: 'outlined',
