@@ -11,13 +11,6 @@ const meta: Meta<typeof Pagination> = {
   args: {
     count: 10,
   },
-  argTypes: {
-    size: {
-      table: {
-        defaultValue: { summary: `determined by Theme` },
-      },
-    },
-  },
 };
 
 export default meta;

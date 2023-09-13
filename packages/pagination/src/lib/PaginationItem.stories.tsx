@@ -11,13 +11,6 @@ const meta: Meta<typeof PaginationItem> = {
   args: {
     type: 'next',
   },
-  argTypes: {
-    size: {
-      table: {
-        defaultValue: { summary: `determined by Theme` },
-      },
-    },
-  },
 };
 
 export default meta;
