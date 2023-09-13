@@ -1,7 +1,7 @@
 import { PaginationItem as MuiPaginationItem, PaginationItemProps as MuiPaginationItemProps } from '@mui/material';
 import { NavigateNextIcon, NavigatePreviousIcon } from '@availity/mui-icon';
 
-export type PaginationItemProps = Omit<MuiPaginationItemProps, 'components' | 'color' | 'shape'>;
+export type PaginationItemProps = Omit<MuiPaginationItemProps, 'components' | 'color' | 'shape' | 'size'>;
 
 const slots = {
   first: () => (
