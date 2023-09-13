@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-pagination@0.1.1...@availity/mui-pagination@0.2.0) (2023-09-13)
+
+
+### Features
+
+* **mui-pagination:** limit sizes ([77adde6](https://github.com/Availity/element/commit/77adde654bee70d006787a451f9b031e96f2a580))
+
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-pagination@0.1.0...@availity/mui-pagination@0.1.1) (2023-09-11)
 
 ## 0.1.0 (2023-09-11)
