@@ -8,11 +8,13 @@ const containedButtonStyles = (color: string) => ({
   '&:hover': {
     backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
     boxShadow: 'none',
+    color: color === 'Warning' && tokens.colorTextInverse,
   },
   '&:focus': {
     backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
     outline: '2px solid white',
     boxShadow: `0 0 0px 4px ${tokens[`color${color}Dark` as keyof typeof tokens]}`,
+    color: color === 'Warning' && tokens.colorTextInverse,
   },
   '&:active': {
     backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
@@ -22,6 +24,7 @@ const containedButtonStyles = (color: string) => ({
   },
   '&.Mui-selected': {
     backgroundColor: tokens[`color${color}Darker` as keyof typeof tokens],
+    color: color === 'Warning' && tokens.colorTextInverse,
   },
 });
 
@@ -400,6 +403,8 @@ export const legacyTheme = {
         root: {
           boxShadow: 'none',
           textTransform: 'none',
+          padding: '6px 12px',
+          lineHeight: tokens.lineHeightsBody1,
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
@@ -777,10 +782,12 @@ export const legacyTheme = {
         root: {
           textTransform: 'none',
           fontSize: tokens.fontSizesBody1,
+          padding: '6px 12px',
+          lineHeight: tokens.lineHeightsBody1,
           // primary/secondary slots overwritten by root
           '&.MuiToggleButton-primary': { ...containedButtonStyles('Primary') },
           '&.MuiToggleButton-secondary': { ...containedButtonStyles('Secondary') },
-          '&.MuiToggleButton-tertiary': {
+          '&.MuiToggleButton-standard': {
             ...containedButtonStyles('Tertiary'),
             '&:focus': {
               backgroundColor: tokens.colorTertiaryDark,
@@ -792,6 +799,9 @@ export const legacyTheme = {
           '&.MuiToggleButton-success': { ...containedButtonStyles('Success') },
           '&.MuiToggleButton-warning': { ...containedButtonStyles('Warning') },
           '&.Mui-error': { ...containedButtonStyles('Error') },
+          '.MuiSvgIcon-root': {
+            fontSize: '1.125rem',
+          },
         },
       },
     },
