@@ -17,6 +17,9 @@ const containedButtonStyles = (color: string) => ({
   '&:active': {
     backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
   },
+  '&.Mui-disabled': {
+    opacity: 0.65,
+  },
 });
 
 const outlinedButtonStyles = (color: string) => ({
@@ -273,7 +276,7 @@ export const legacyTheme = {
       color: tokens.colorTextPrimary,
     },
     button: {
-      fontSize: '0.875rem',
+      fontSize: tokens.fontSizesBody1,
       fontWeight: tokens.fontWeightsRegular,
       fontFamily: tokens.fontFamiliesBase,
       letterSpacing: 0.2,
@@ -393,7 +396,6 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           boxShadow: 'none',
-          fontWeight: tokens.fontWeightsBold,
           textTransform: 'none',
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
@@ -771,44 +773,22 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           textTransform: 'none',
-          fontWeight: tokens.fontWeightsBold,
+          fontSize: tokens.fontSizesBody1,
           // primary/secondary slots overwritten by root
-          '&.MuiToggleButton-primary': {
-            color: tokens.colorPrimaryMain,
-            borderColor: tokens.colorPrimaryMain,
-            ...outlinedButtonStyles('Primary'),
-            '&.Mui-selected': {
-              ...containedButtonStyles('Primary'),
-            },
-            '&.Mui-disabled': {
-              color: tokens.colorTextDisabled,
-            },
-          },
-          '&.MuiToggleButton-secondary': {
-            color: tokens.colorSecondaryMain,
-            borderColor: tokens.colorSecondaryMain,
-            ...outlinedButtonStyles('Secondary'),
-            '&.Mui-selected': {
-              ...containedButtonStyles('Secondary'),
-            },
-            '&.Mui-disabled': {
-              color: tokens.colorTextDisabled,
+          '&.MuiToggleButton-primary': { ...containedButtonStyles('Primary') },
+          '&.MuiToggleButton-secondary': { ...containedButtonStyles('Secondary') },
+          '&.MuiToggleButton-tertiary': {
+            ...containedButtonStyles('Tertiary'),
+            '&:focus': {
+              backgroundColor: tokens.colorTertiaryDark,
+              outline: '2px solid white',
+              boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
             },
           },
-          '&.MuiToggleButton-standard': {
-            color: tokens.colorSecondaryMain,
-            borderColor: tokens.colorTertiaryMain,
-            ...outlinedButtonStyles('Secondary'), // intentional
-            '&.Mui-selected': {
-              ...containedButtonStyles('Tertiary'),
-              '&:focus': {
-                boxShadow: important(`0 0 0px 4px ${tokens.colorSecondaryDark}`),
-              },
-            },
-            '&.Mui-disabled': {
-              color: tokens.colorTextDisabled,
-            },
-          },
+          '&.MuiToggleButton-info': { ...containedButtonStyles('Info') },
+          '&.MuiToggleButton-success': { ...containedButtonStyles('Success') },
+          '&.MuiToggleButton-warning': { ...containedButtonStyles('Warning') },
+          '&.Mui-error': { ...containedButtonStyles('Error') },
         },
       },
     },
