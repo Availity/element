@@ -470,21 +470,29 @@ export const lightTheme = {
     },
     MuiIconButton: {
       defaultProps: {
-        disableRipple: true,
+        color: 'secondary',
       },
       styleOverrides: {
-        root: {
+        colorSecondary: {
+          border: `1px solid ${tokens.borderSecondary}`,
           '&:hover': {
-            backgroundColor: tokens.colorTertiaryDark,
+            backgroundColor: tokens.colorActionHover,
           },
           '&:focus': {
-            backgroundColor: tokens.colorTertiaryDark,
-            outline: `2px solid ${tokens.colorCommonWhite}`,
-            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
+            backgroundColor: tokens.colorActionFocus,
           },
         },
-        colorDefault: {
-          color: tokens.colorTextPrimary,
+        colorPrimary: {
+          border: `1px solid ${tokens.borderPrimary}`,
+          '&:hover, &:focus': {
+            backgroundColor: tokens.colorActionSelected,
+          },
+        },
+        sizeSmall: {
+          padding: '.25rem',
+        },
+        sizeMedium: {
+          padding: '.75rem',
         },
       },
     },
@@ -706,10 +714,14 @@ export const lightTheme = {
       },
       styleOverrides: {
         tooltip: {
-          backgroundColor: tokens.colorGrey400,
-          fontSize: '.785rem',
+          backgroundColor: tokens.colorSecondaryMain,
+          lineHeight: '1rem',
+          fontSize: '.75rem',
           fontStyle: 'normal',
-          padding: '2px 8px',
+          padding: '4px 8px',
+        },
+        arrow: {
+          color: tokens.colorSecondaryMain,
         },
       },
     },
