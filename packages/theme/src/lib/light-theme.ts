@@ -656,7 +656,7 @@ export const lightTheme = {
           backgroundColor: tokens.colorTertiaryMain,
           fontWeight: tokens.fontWeightsBold,
           color: tokens.colorTextPrimary,
-          borderColor: tokens.colorGrey400,
+          borderColor: tokens.borderSecondary,
           '&.Mui-selected': {
             backgroundColor: tokens.colorTertiaryDarker,
             color: tokens.colorTertiaryLight,
@@ -668,10 +668,10 @@ export const lightTheme = {
             },
           },
           '&:focus': {
-            boxShadow: `0 0 0px 2px ${tokens.colorTertiaryDark}50`,
+            boxShadow: `0 0 0px 2px ${tokens.colorGrey700}78`,
             backgroundColor: tokens.colorTertiaryLight,
             color: tokens.colorTextPrimary,
-            borderColor: tokens.colorTertiaryDark,
+            borderColor: tokens.colorGrey700,
           },
           '&:hover': {
             backgroundColor: tokens.colorTertiaryDark,
@@ -680,12 +680,15 @@ export const lightTheme = {
           },
           '&.MuiToggleButton-sizeSmall': {
             padding: '8px 16px',
+            height: '40px',
           },
           '&.MuiToggleButton-sizeMedium': {
             padding: '12px 16px',
+            height: '48px',
           },
           '&.MuiToggleButton-sizeLarge': {
             padding: '16px',
+            height: '56px',
           },
           '&.Mui-disabled': {
             backgroundColor: tokens.colorActionDisabledBg,
