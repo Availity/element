@@ -20,6 +20,9 @@ const containedButtonStyles = (color: string) => ({
   '&.Mui-disabled': {
     opacity: 0.65,
   },
+  '&.Mui-selected': {
+    backgroundColor: tokens[`color${color}Darker` as keyof typeof tokens],
+  },
 });
 
 const outlinedButtonStyles = (color: string) => ({
