@@ -1,2 +1,0 @@
-import{r as f}from"./index-8db94870.js";function s({props:n,states:t,muiFormControl:o}){return t.reduce((e,r)=>(e[r]=n[r],o&&typeof n[r]>"u"&&(e[r]=o[r]),e),{})}const a=f.createContext(void 0),i=a;function d(){return f.useContext(i)}function u(n){return n!=null&&!(Array.isArray(n)&&n.length===0)}function C(n,t=!1){return n&&(u(n.value)&&n.value!==""||t&&u(n.defaultValue)&&n.defaultValue!=="")}function c(n){return n.startAdornment}export{i as F,C as a,s as f,c as i,d as u};
-//# sourceMappingURL=utils-0a422cdb.js.map
