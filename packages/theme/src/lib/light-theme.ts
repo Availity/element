@@ -680,12 +680,15 @@ export const lightTheme = {
           },
           '&.MuiToggleButton-sizeSmall': {
             padding: '8px 16px',
+            height: '40px',
           },
           '&.MuiToggleButton-sizeMedium': {
             padding: '12px 16px',
+            height: '48px',
           },
           '&.MuiToggleButton-sizeLarge': {
             padding: '16px',
+            height: '56px',
           },
           '&.Mui-disabled': {
             backgroundColor: tokens.colorActionDisabledBg,
