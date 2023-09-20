@@ -489,7 +489,6 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           marginBottom: '.5rem',
-          width: '220px',
         },
       },
     },
@@ -544,6 +543,8 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           '&.MuiInputBase-root': {
+            padding: '0px 4px',
+            backgroundColor: 'white',
             '& > fieldset': {
               borderColor: tokens.colorGrey400,
             },
@@ -560,16 +561,18 @@ export const lightTheme = {
               borderColor: tokens.borderDisabled,
             },
           },
+          '&.MuiButtonBase-root': {
+            padding: '8px 8px',
+          },
         },
         input: {
-          height: '26px',
-          width: '220px',
-          backgroundColor: 'white',
+          width: '196px',
+          height: '24px',
           borderRadius: '4px',
-          padding: '15px 12px',
+          color: tokens.colorGrey400,
         },
-        inputSizeSmall: {
-          height: '10px',
+        adornedEnd: {
+          backgroundColor: 'white',
         },
       },
     },
