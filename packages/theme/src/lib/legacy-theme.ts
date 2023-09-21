@@ -22,10 +22,6 @@ const containedButtonStyles = (color: string) => ({
   '&.Mui-disabled': {
     opacity: 0.65,
   },
-  '&.Mui-selected': {
-    backgroundColor: tokens[`color${color}Darker` as keyof typeof tokens],
-    color: color === 'Warning' && tokens.colorTextInverse,
-  },
 });
 
 const outlinedButtonStyles = (color: string) => ({
@@ -784,21 +780,18 @@ export const legacyTheme = {
           fontSize: tokens.fontSizesBody1,
           padding: '6px 12px',
           lineHeight: tokens.lineHeightsBody1,
-          // primary/secondary slots overwritten by root
-          '&.MuiToggleButton-primary': { ...containedButtonStyles('Primary') },
-          '&.MuiToggleButton-secondary': { ...containedButtonStyles('Secondary') },
-          '&.MuiToggleButton-standard': {
-            ...containedButtonStyles('Tertiary'),
+          ...containedButtonStyles('Tertiary'),
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorPrimaryMain,
+            color: tokens.colorTextInverse,
+            '&:hover': {
+              backgroundColor: tokens.colorPrimaryDark,
+            },
             '&:focus': {
-              backgroundColor: tokens.colorTertiaryDark,
-              outline: '2px solid white',
-              boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
+              backgroundColor: tokens.colorPrimaryDark,
+              boxShadow: `0 0 0px 4px ${tokens.colorPrimaryDark}`,
             },
           },
-          '&.MuiToggleButton-info': { ...containedButtonStyles('Info') },
-          '&.MuiToggleButton-success': { ...containedButtonStyles('Success') },
-          '&.MuiToggleButton-warning': { ...containedButtonStyles('Warning') },
-          '&.Mui-error': { ...containedButtonStyles('Error') },
           '.MuiSvgIcon-root': {
             fontSize: '1.125rem',
           },
