@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.16.0](https://github.com/Availity/element/compare/@availity/theme@0.15.1...@availity/theme@0.16.0) (2023-09-22)
+
+
+### Features
+
+* **mui-toggle-button:** legacy theme init ([7f2a143](https://github.com/Availity/element/commit/7f2a1430ca445b7a77876bcceb20c1350428791d))
+
 ## [0.15.1](https://github.com/Availity/element/compare/@availity/theme@0.15.0...@availity/theme@0.15.1) (2023-09-20)
 
 ## [0.15.0](https://github.com/Availity/element/compare/@availity/theme@0.14.0...@availity/theme@0.15.0) (2023-09-11)
