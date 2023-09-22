@@ -776,6 +776,10 @@ export const legacyTheme = {
         root: {
           textTransform: 'none',
           ...containedButtonStyles('Tertiary'),
+          '&:focus': {
+            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryMain}`,
+            outline: '2px solid white',
+          },
           '&.Mui-selected': {
             backgroundColor: tokens.colorPrimaryMain,
             color: tokens.colorTextInverse,
