@@ -399,8 +399,6 @@ export const legacyTheme = {
         root: {
           boxShadow: 'none',
           textTransform: 'none',
-          padding: '6px 12px',
-          lineHeight: tokens.lineHeightsBody1,
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
