@@ -777,9 +777,6 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           textTransform: 'none',
-          fontSize: tokens.fontSizesBody1,
-          padding: '6px 12px',
-          lineHeight: tokens.lineHeightsBody1,
           ...containedButtonStyles('Tertiary'),
           '&.Mui-selected': {
             backgroundColor: tokens.colorPrimaryMain,
