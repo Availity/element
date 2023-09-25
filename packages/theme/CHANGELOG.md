@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.17.0](https://github.com/Availity/element/compare/@availity/theme@0.16.0...@availity/theme@0.17.0) (2023-09-25)
+
+
+### Features
+
+* **mui-form-utils:** move Input to form-utils pkg ([991596c](https://github.com/Availity/element/commit/991596c5256360979c58e4e7c36313a7f1f4ce09))
+* **mui-input:** add input component ([f671c05](https://github.com/Availity/element/commit/f671c05d8856e27eea933aeca4ca4da9e697258f))
+* **mui-textfield:** add textfield component ([edf7e72](https://github.com/Availity/element/commit/edf7e728e9e8a79ee78219e41fc5659d175d70e5))
+* **mui-textfield:** update styles ([69f8291](https://github.com/Availity/element/commit/69f82910269a6fdcd2b5de852b3c8a777c09b24d))
+* **mui-textfield:** use mui-form-utils ([9623a25](https://github.com/Availity/element/commit/9623a25fc8b6cfafa8c53e383450f501f3068af8))
+
 ## [0.16.0](https://github.com/Availity/element/compare/@availity/theme@0.15.1...@availity/theme@0.16.0) (2023-09-22)
 
 
