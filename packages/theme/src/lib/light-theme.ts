@@ -500,6 +500,13 @@ export const lightTheme = {
         },
       },
     },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          marginLeft: '0px',
+        },
+      },
+    },
     MuiFormLabel: {
       defaultProps: {
         shrink: false,
@@ -554,6 +561,46 @@ export const lightTheme = {
         },
         sizeMedium: {
           padding: '.75rem',
+        },
+      },
+    },
+    MuiInputBase: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          '&.MuiInputBase-root': {
+            padding: '0px 4px',
+            backgroundColor: 'white',
+            '& > fieldset': {
+              borderColor: tokens.colorGrey400,
+            },
+            '&:hover > fieldset': {
+              borderColor: tokens.borderInputHover,
+            },
+            '&.Mui-focused > fieldset': {
+              borderColor: tokens.borderInputFocus,
+            },
+            '&.Mui-error > fieldset': {
+              borderColor: tokens.colorErrorMain,
+            },
+            '&.Mui-disabled > fieldset': {
+              borderColor: tokens.borderDisabled,
+            },
+          },
+          '&.MuiButtonBase-root': {
+            padding: '8px 8px',
+          },
+        },
+        input: {
+          width: '196px',
+          height: '24px',
+          borderRadius: '4px',
+          color: tokens.colorGrey400,
+        },
+        adornedEnd: {
+          backgroundColor: 'white',
         },
       },
     },
@@ -671,7 +718,7 @@ export const lightTheme = {
           backgroundColor: tokens.colorTertiaryMain,
           fontWeight: tokens.fontWeightsBold,
           color: tokens.colorTextPrimary,
-          borderColor: tokens.colorGrey400,
+          borderColor: tokens.borderSecondary,
           '&.Mui-selected': {
             backgroundColor: tokens.colorTertiaryDarker,
             color: tokens.colorTertiaryLight,
@@ -683,10 +730,10 @@ export const lightTheme = {
             },
           },
           '&:focus': {
-            boxShadow: `0 0 0px 2px ${tokens.colorTertiaryDark}50`,
+            boxShadow: `0 0 0px 2px ${tokens.colorGrey700}78`,
             backgroundColor: tokens.colorTertiaryLight,
             color: tokens.colorTextPrimary,
-            borderColor: tokens.colorTertiaryDark,
+            borderColor: tokens.colorGrey700,
           },
           '&:hover': {
             backgroundColor: tokens.colorTertiaryDark,
@@ -695,12 +742,15 @@ export const lightTheme = {
           },
           '&.MuiToggleButton-sizeSmall': {
             padding: '8px 16px',
+            height: '40px',
           },
           '&.MuiToggleButton-sizeMedium': {
             padding: '12px 16px',
+            height: '48px',
           },
           '&.MuiToggleButton-sizeLarge': {
             padding: '16px',
+            height: '56px',
           },
           '&.Mui-disabled': {
             backgroundColor: tokens.colorActionDisabledBg,

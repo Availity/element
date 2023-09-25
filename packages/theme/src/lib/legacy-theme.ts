@@ -8,14 +8,19 @@ const containedButtonStyles = (color: string) => ({
   '&:hover': {
     backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
     boxShadow: 'none',
+    color: color === 'Warning' && tokens.colorTextInverse,
   },
   '&:focus': {
     backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
     outline: '2px solid white',
     boxShadow: `0 0 0px 4px ${tokens[`color${color}Dark` as keyof typeof tokens]}`,
+    color: color === 'Warning' && tokens.colorTextInverse,
   },
   '&:active': {
     backgroundColor: tokens[`color${color}Main` as keyof typeof tokens],
+  },
+  '&.Mui-disabled': {
+    opacity: 0.65,
   },
 });
 
@@ -273,7 +278,7 @@ export const legacyTheme = {
       color: tokens.colorTextPrimary,
     },
     button: {
-      fontSize: '0.875rem',
+      fontSize: tokens.fontSizesBody1,
       fontWeight: tokens.fontWeightsRegular,
       fontFamily: tokens.fontFamiliesBase,
       letterSpacing: 0.2,
@@ -821,43 +826,24 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           textTransform: 'none',
-          fontWeight: tokens.fontWeightsBold,
-          // primary/secondary slots overwritten by root
-          '&.MuiToggleButton-primary': {
-            color: tokens.colorPrimaryMain,
-            borderColor: tokens.colorPrimaryMain,
-            ...outlinedButtonStyles('Primary'),
-            '&.Mui-selected': {
-              ...containedButtonStyles('Primary'),
+          ...containedButtonStyles('Tertiary'),
+          '&:focus': {
+            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryMain}`,
+            outline: '2px solid white',
+          },
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorPrimaryMain,
+            color: tokens.colorTextInverse,
+            '&:hover': {
+              backgroundColor: tokens.colorPrimaryDark,
             },
-            '&.Mui-disabled': {
-              color: tokens.colorTextDisabled,
+            '&:focus': {
+              backgroundColor: tokens.colorPrimaryDark,
+              boxShadow: `0 0 0px 4px ${tokens.colorPrimaryDark}`,
             },
           },
-          '&.MuiToggleButton-secondary': {
-            color: tokens.colorSecondaryMain,
-            borderColor: tokens.colorSecondaryMain,
-            ...outlinedButtonStyles('Secondary'),
-            '&.Mui-selected': {
-              ...containedButtonStyles('Secondary'),
-            },
-            '&.Mui-disabled': {
-              color: tokens.colorTextDisabled,
-            },
-          },
-          '&.MuiToggleButton-standard': {
-            color: tokens.colorSecondaryMain,
-            borderColor: tokens.colorTertiaryMain,
-            ...outlinedButtonStyles('Secondary'), // intentional
-            '&.Mui-selected': {
-              ...containedButtonStyles('Tertiary'),
-              '&:focus': {
-                boxShadow: important(`0 0 0px 4px ${tokens.colorSecondaryDark}`),
-              },
-            },
-            '&.Mui-disabled': {
-              color: tokens.colorTextDisabled,
-            },
+          '.MuiSvgIcon-root': {
+            fontSize: '1.125rem',
           },
         },
       },
