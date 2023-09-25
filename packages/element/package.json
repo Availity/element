@@ -30,6 +30,7 @@
     "@availity/mui-pagination": "workspace:*",
     "@availity/mui-paper": "workspace:*",
     "@availity/mui-tabs": "workspace:*",
+    "@availity/mui-textfield": "workspace:*",
     "@availity/mui-toggle-button": "workspace:*",
     "@availity/mui-tooltip": "workspace:*",
     "@availity/mui-typography": "workspace:*",

@@ -25,10 +25,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.17.0](https://github.com/Availity/element/compare/@availity/element@0.16.1...@availity/element@0.17.0) (2023-08-23)
 
-
 ### Features
 
-* **mui-form-utils:** moved fieldhelpicon, formcontrollabel, and formlabel to new form-utils package ([4a68fcb](https://github.com/Availity/element/commit/4a68fcb96c1a826b7f710b30eceff196d62a0da4))
+- **mui-form-utils:** moved fieldhelpicon, formcontrollabel, and formlabel to new form-utils package ([4a68fcb](https://github.com/Availity/element/commit/4a68fcb96c1a826b7f710b30eceff196d62a0da4))
 
 ## [0.16.1](https://github.com/Availity/element/compare/@availity/element@0.16.0...@availity/element@0.16.1) (2023-08-23)
 

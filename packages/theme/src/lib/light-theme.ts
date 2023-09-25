@@ -520,6 +520,13 @@ export const lightTheme = {
         },
       },
     },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          marginLeft: '0px',
+        },
+      },
+    },
     MuiFormLabel: {
       defaultProps: {
         shrink: false,
@@ -544,6 +551,46 @@ export const lightTheme = {
           color: tokens.colorTextError,
           marginRight: '.25rem',
           marginLeft: '-.15rem',
+        },
+      },
+    },
+    MuiInputBase: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          '&.MuiInputBase-root': {
+            padding: '0px 4px',
+            backgroundColor: 'white',
+            '& > fieldset': {
+              borderColor: tokens.colorGrey400,
+            },
+            '&:hover > fieldset': {
+              borderColor: tokens.borderInputHover,
+            },
+            '&.Mui-focused > fieldset': {
+              borderColor: tokens.borderInputFocus,
+            },
+            '&.Mui-error > fieldset': {
+              borderColor: tokens.colorErrorMain,
+            },
+            '&.Mui-disabled > fieldset': {
+              borderColor: tokens.borderDisabled,
+            },
+          },
+          '&.MuiButtonBase-root': {
+            padding: '8px 8px',
+          },
+        },
+        input: {
+          width: '196px',
+          height: '24px',
+          borderRadius: '4px',
+          color: tokens.colorGrey400,
+        },
+        adornedEnd: {
+          backgroundColor: 'white',
         },
       },
     },
