@@ -395,7 +395,6 @@ export const legacyTheme = {
         root: {
           lineHeight: 1.5,
           boxShadow: 'none',
-          fontWeight: tokens.fontWeightsRegular,
           textTransform: 'none',
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
@@ -565,47 +564,6 @@ export const legacyTheme = {
         },
       },
     },
-    MuiIconButton: {
-      defaultProps: {
-        disableRipple: true,
-        color: 'inherit',
-      },
-      styleOverrides: {
-        root: {
-          // based on reactstrap close buttons for alert/modal
-          borderRadius: '3px',
-          opacity: 0.6,
-          '&:hover, &:focus': {
-            opacity: 1,
-          },
-          '&:focus': {
-            outline: `2px solid ${tokens.colorCommonWhite}`,
-            boxShadow: `0 0 0px 4px ${tokens.colorPrimaryMain}`,
-          },
-        },
-        colorSecondary: {
-          border: `1px solid ${tokens.borderSecondary}`,
-        },
-        colorPrimary: {
-          border: `1px solid ${tokens.borderPrimary}`,
-        },
-        sizeSmall: {
-          padding: '0.25rem 0.5rem',
-          fontSize: '.875rem',
-          borderRadius: '0.2rem',
-        },
-        sizeMedium: {
-          padding: '0.375rem 0.75rem',
-          fontSize: '1rem',
-          borderRadius: '0.25rem',
-        },
-        sizeLarge: {
-          padding: '0.5rem 1rem',
-          fontSize: '1.25rem',
-          borderRadius: '0.3rem',
-        },
-      },
-    },
     MuiFormLabel: {
       defaultProps: {
         shrink: false,
@@ -629,6 +587,47 @@ export const legacyTheme = {
           marginRight: '.25rem',
           fontSize: '1.3rem',
           lineHeight: '100%',
+        },
+      },
+    },
+    MuiIconButton: {
+      defaultProps: {
+        disableRipple: true,
+        color: 'secondary',
+      },
+      styleOverrides: {
+        root: {
+          // based on reactstrap close buttons for alert/modal
+          borderRadius: '3px',
+          opacity: 0.6,
+          '&:hover, &:focus': {
+            opacity: 1,
+          },
+          '&:focus': {
+            outline: `2px solid ${tokens.colorCommonWhite}`,
+            boxShadow: `0 0 0px 4px ${tokens.colorPrimaryMain}`,
+          },
+        },
+        colorSecondary: {
+          border: `2px solid ${tokens.colorSecondaryLight}`,
+        },
+        colorPrimary: {
+          border: `2px solid ${tokens.colorPrimaryMain}`,
+        },
+        sizeSmall: {
+          padding: '0.25rem 0.5rem',
+          fontSize: '.875rem',
+          borderRadius: '0.2rem',
+        },
+        sizeMedium: {
+          padding: '0.375rem 0.75rem',
+          fontSize: '1rem',
+          borderRadius: '0.25rem',
+        },
+        sizeLarge: {
+          padding: '0.5rem 1rem',
+          fontSize: '1.25rem',
+          borderRadius: '0.3rem',
         },
       },
     },
@@ -774,6 +773,18 @@ export const legacyTheme = {
     MuiSvgIcon: {
       defaultProps: {
         fontSize: 'inherit',
+      },
+      sizeXsmall: {
+        fontSize: '.875rem',
+      },
+      sizeSmall: {
+        fontSize: '.875rem',
+      },
+      sizeMedium: {
+        fontSize: '1rem',
+      },
+      sizeLarge: {
+        fontSize: '1.25rem',
       },
     },
     MuiTab: {

@@ -468,34 +468,6 @@ export const lightTheme = {
         },
       },
     },
-    MuiIconButton: {
-      defaultProps: {
-        color: 'secondary',
-      },
-      styleOverrides: {
-        colorSecondary: {
-          border: `1px solid ${tokens.borderSecondary}`,
-          '&:hover': {
-            backgroundColor: tokens.colorActionHover,
-          },
-          '&:focus': {
-            backgroundColor: tokens.colorActionFocus,
-          },
-        },
-        colorPrimary: {
-          border: `1px solid ${tokens.borderPrimary}`,
-          '&:hover, &:focus': {
-            backgroundColor: tokens.colorActionSelected,
-          },
-        },
-        sizeSmall: {
-          padding: '.25rem',
-        },
-        sizeMedium: {
-          padding: '.75rem',
-        },
-      },
-    },
     MuiFormControl: {
       styleOverrides: {
         root: {
@@ -552,6 +524,36 @@ export const lightTheme = {
           color: tokens.colorTextError,
           marginRight: '.25rem',
           marginLeft: '-.15rem',
+        },
+      },
+    },
+    MuiIconButton: {
+      defaultProps: {
+        color: 'secondary',
+      },
+      styleOverrides: {
+        colorSecondary: {
+          border: `1px solid ${tokens.borderSecondary}`,
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+          },
+          '&:focus': {
+            backgroundColor: tokens.colorActionFocus,
+          },
+        },
+        colorPrimary: {
+          border: `1px solid ${tokens.borderPrimary}`,
+          '&:hover, &:focus': {
+            backgroundColor: tokens.colorActionSelected,
+          },
+        },
+        sizeSmall: {
+          // UX wants size to only dictate padding so both sizes correlate to medium fontSize
+          fontSize: '1.5rem',
+          padding: '.25rem',
+        },
+        sizeMedium: {
+          padding: '.75rem',
         },
       },
     },
@@ -625,6 +627,11 @@ export const lightTheme = {
     MuiSvgIcon: {
       defaultProps: {
         fontSize: 'inherit',
+      },
+      styleOverrides: {
+        fontSizeXsmall: {
+          fontSize: '1rem',
+        },
       },
     },
     MuiTab: {
