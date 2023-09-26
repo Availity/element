@@ -3,7 +3,7 @@ import { Checkbox } from './Checkbox';
 
 describe('Checkbox', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<Checkbox>Test</Checkbox>);
-    expect(getByText('Test')).toBeTruthy();
+    const { getByRole } = render(<Checkbox />);
+    expect(getByRole('checkbox')).toBeTruthy();
   });
 });
