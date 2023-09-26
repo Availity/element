@@ -4,6 +4,7 @@ export * from '@availity/mui-badge';
 export * from '@availity/mui-breadcrumbs';
 export * from '@availity/mui-button';
 export * from '@availity/mui-card';
+export * from '@availity/mui-checkbox';
 export * from '@availity/mui-chip';
 export * from '@availity/mui-divider';
 export * from '@availity/mui-form-utils';

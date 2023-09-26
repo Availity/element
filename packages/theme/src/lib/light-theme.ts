@@ -410,6 +410,19 @@ export const lightTheme = {
         maxHeight: '100px',
       },
     },
+    MuiCheckbox: {
+      defaultProps: {
+        color: 'primary',
+      },
+      styleOverrides: {
+        root: {
+          padding: '8px',
+          '&:hover': {
+            backgroundColor: '#00000008',
+          },
+        },
+      },
+    },
     MuiChip: {
       defaultProps: {
         color: 'default',
@@ -517,6 +530,17 @@ export const lightTheme = {
         labelPlacementEnd: {
           marginLeft: 0,
           marginRight: 0,
+        },
+      },
+    },
+    MuiFormGroup: {
+      styleOverrides: {
+        root: {
+          '&.MuiFormGroup-row': {
+            '.MuiBox-root:not(:last-of-type)': {
+              marginRight: '16px',
+            },
+          },
         },
       },
     },
