@@ -1,6 +1,7 @@
 import React from 'react';
 import { Alert as MUIAlert } from '@mui/material';
 import type { AlertProps as MUIAlertProps } from '@mui/material';
+import { IconButton } from '@availity/mui-button';
 import { InfoCircleIcon, WarningCircleIcon, SuccessCircleIcon } from '@availity/mui-icon';
 
 export type AlertProps = Omit<MUIAlertProps, 'variant' | 'color'> & {
@@ -15,5 +16,11 @@ const iconMapping = {
 };
 
 export const Alert = ({ ...args }: AlertProps): JSX.Element => (
-  <MUIAlert variant="standard" iconMapping={iconMapping} closeText="dismiss alert" {...args} />
+  <MUIAlert
+    variant="standard"
+    iconMapping={iconMapping}
+    closeText="dismiss alert"
+    slots={{ closeButton: IconButton }}
+    {...args}
+  />
 );

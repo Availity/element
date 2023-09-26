@@ -1,21 +1,21 @@
 {
-  "name": "@availity/mui-icon",
-  "version": "0.6.0",
-  "description": "Availity MUI Icon Component - part of the @availity/element design system",
+  "name": "@availity/mui-textfield",
+  "version": "0.1.0",
+  "description": "Availity MUI Textfield Component - part of the @availity/element design system",
   "keywords": [
     "react",
     "typescript",
     "availity",
     "mui"
   ],
-  "homepage": "https://availity.github.io/element/?path=/docs/components-icon-introduction--docs",
+  "homepage": "https://availity.github.io/element/?path=/docs/components-textfield-introduction--docs",
   "bugs": {
     "url": "https://github.com/Availity/element/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Availity/element.git",
-    "directory": "packages/icon"
+    "directory": "packages/textfield"
   },
   "license": "MIT",
   "author": "Availity Developers <AVOSS@availity.com>",
@@ -33,8 +33,8 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@fortawesome/free-regular-svg-icons": "^6.3.0",
-    "@fortawesome/free-solid-svg-icons": "^6.3.0"
+    "@availity/mui-form-utils": "workspace:*",
+    "@availity/mui-icon": "workspace:*"
   },
   "devDependencies": {
     "@mui/material": "^5.11.9",

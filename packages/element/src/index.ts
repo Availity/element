@@ -15,6 +15,7 @@ export * from '@availity/mui-page-header';
 export * from '@availity/mui-pagination';
 export * from '@availity/mui-paper';
 export * from '@availity/mui-tabs';
+export * from '@availity/mui-textfield';
 export * from '@availity/mui-toggle-button';
 export * from '@availity/mui-tooltip';
 export * from '@availity/mui-typography';

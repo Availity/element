@@ -2,43 +2,55 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.16.0](https://github.com/Availity/element/compare/@availity/theme@0.15.1...@availity/theme@0.16.0) (2023-09-22)
-
+## [0.18.0](https://github.com/Availity/element/compare/@availity/theme@0.17.0...@availity/theme@0.18.0) (2023-09-26)
 
 ### Features
 
-* **mui-toggle-button:** legacy theme init ([7f2a143](https://github.com/Availity/element/commit/7f2a1430ca445b7a77876bcceb20c1350428791d))
+- **mui-button:** icon button styling ([43c424e](https://github.com/Availity/element/commit/43c424e2f33b0dcd9dca51ec253e54ea3309630b))
+- **mui-icon:** add xsmall fontsize ([aa8e28a](https://github.com/Availity/element/commit/aa8e28a5a7514247db0f65d9120da2847663445a))
+
+## [0.17.0](https://github.com/Availity/element/compare/@availity/theme@0.16.0...@availity/theme@0.17.0) (2023-09-25)
+
+### Features
+
+- **mui-form-utils:** move Input to form-utils pkg ([991596c](https://github.com/Availity/element/commit/991596c5256360979c58e4e7c36313a7f1f4ce09))
+- **mui-input:** add input component ([f671c05](https://github.com/Availity/element/commit/f671c05d8856e27eea933aeca4ca4da9e697258f))
+- **mui-textfield:** add textfield component ([edf7e72](https://github.com/Availity/element/commit/edf7e728e9e8a79ee78219e41fc5659d175d70e5))
+- **mui-textfield:** update styles ([69f8291](https://github.com/Availity/element/commit/69f82910269a6fdcd2b5de852b3c8a777c09b24d))
+- **mui-textfield:** use mui-form-utils ([9623a25](https://github.com/Availity/element/commit/9623a25fc8b6cfafa8c53e383450f501f3068af8))
+
+## [0.16.0](https://github.com/Availity/element/compare/@availity/theme@0.15.1...@availity/theme@0.16.0) (2023-09-22)
+
+### Features
+
+- **mui-toggle-button:** legacy theme init ([7f2a143](https://github.com/Availity/element/commit/7f2a1430ca445b7a77876bcceb20c1350428791d))
 
 ## [0.15.1](https://github.com/Availity/element/compare/@availity/theme@0.15.0...@availity/theme@0.15.1) (2023-09-20)
 
 ## [0.15.0](https://github.com/Availity/element/compare/@availity/theme@0.14.0...@availity/theme@0.15.0) (2023-09-11)
 
-
 ### Features
 
-* **mui-pagination:** add pagination package ([dfe53b0](https://github.com/Availity/element/commit/dfe53b0a3e3b02506fc922ca8beef70d6919b3b0))
+- **mui-pagination:** add pagination package ([dfe53b0](https://github.com/Availity/element/commit/dfe53b0a3e3b02506fc922ca8beef70d6919b3b0))
 
 ## [0.14.0](https://github.com/Availity/element/compare/@availity/theme@0.13.0...@availity/theme@0.14.0) (2023-08-28)
 
-
 ### Features
 
-* **mui-card:** move default elevation props to theme (legacy compatibility) ([d68dcf8](https://github.com/Availity/element/commit/d68dcf8ac16091a7d2d37cebbe19b4645708a28b))
-* **theme:** added legacy theme ([50b5716](https://github.com/Availity/element/commit/50b5716d901216303b66a21731dfbe09db23af26))
+- **mui-card:** move default elevation props to theme (legacy compatibility) ([d68dcf8](https://github.com/Availity/element/commit/d68dcf8ac16091a7d2d37cebbe19b4645708a28b))
+- **theme:** added legacy theme ([50b5716](https://github.com/Availity/element/commit/50b5716d901216303b66a21731dfbe09db23af26))
 
 ## [0.13.0](https://github.com/Availity/element/compare/@availity/theme@0.12.0...@availity/theme@0.13.0) (2023-08-24)
 
-
 ### Features
 
-* **theme:** update label states ([69dca20](https://github.com/Availity/element/commit/69dca20d80d521e717049a06702606dd377786ff))
+- **theme:** update label states ([69dca20](https://github.com/Availity/element/commit/69dca20d80d521e717049a06702606dd377786ff))
 
 ## [0.12.0](https://github.com/Availity/element/compare/@availity/theme@0.11.2...@availity/theme@0.12.0) (2023-08-23)
 
-
 ### Features
 
-* **mui-form-utils:** moved fieldhelpicon, formcontrollabel, and formlabel to new form-utils package ([4a68fcb](https://github.com/Availity/element/commit/4a68fcb96c1a826b7f710b30eceff196d62a0da4))
+- **mui-form-utils:** moved fieldhelpicon, formcontrollabel, and formlabel to new form-utils package ([4a68fcb](https://github.com/Availity/element/commit/4a68fcb96c1a826b7f710b30eceff196d62a0da4))
 
 ## [0.11.2](https://github.com/Availity/element/compare/@availity/theme@0.11.1...@availity/theme@0.11.2) (2023-08-23)
 
