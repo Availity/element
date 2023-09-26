@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.3.0...@availity/mui-form-utils@0.4.0) (2023-09-26)
+
+
+### Features
+
+* **mui-button:** icon button styling ([43c424e](https://github.com/Availity/element/commit/43c424e2f33b0dcd9dca51ec253e54ea3309630b))
+
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.2.0...@availity/mui-form-utils@0.3.0) (2023-09-25)
 
 ### Features
