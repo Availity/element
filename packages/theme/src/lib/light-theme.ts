@@ -468,26 +468,6 @@ export const lightTheme = {
         },
       },
     },
-    MuiIconButton: {
-      defaultProps: {
-        disableRipple: true,
-      },
-      styleOverrides: {
-        root: {
-          '&:hover': {
-            backgroundColor: tokens.colorTertiaryDark,
-          },
-          '&:focus': {
-            backgroundColor: tokens.colorTertiaryDark,
-            outline: `2px solid ${tokens.colorCommonWhite}`,
-            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
-          },
-        },
-        colorDefault: {
-          color: tokens.colorTextPrimary,
-        },
-      },
-    },
     MuiFormControl: {
       styleOverrides: {
         root: {
@@ -551,6 +531,36 @@ export const lightTheme = {
           color: tokens.colorTextError,
           marginRight: '.25rem',
           marginLeft: '-.15rem',
+        },
+      },
+    },
+    MuiIconButton: {
+      defaultProps: {
+        color: 'secondary',
+      },
+      styleOverrides: {
+        colorSecondary: {
+          border: `1px solid ${tokens.borderSecondary}`,
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+          },
+          '&:focus': {
+            backgroundColor: tokens.colorActionFocus,
+          },
+        },
+        colorPrimary: {
+          border: `1px solid ${tokens.borderPrimary}`,
+          '&:hover, &:focus': {
+            backgroundColor: tokens.colorActionSelected,
+          },
+        },
+        sizeSmall: {
+          // UX wants size to only dictate padding so both sizes correlate to medium fontSize
+          fontSize: '1.5rem',
+          padding: '.25rem',
+        },
+        sizeMedium: {
+          padding: '.75rem',
         },
       },
     },
@@ -665,6 +675,11 @@ export const lightTheme = {
       defaultProps: {
         fontSize: 'inherit',
       },
+      styleOverrides: {
+        fontSizeXsmall: {
+          fontSize: '1rem',
+        },
+      },
     },
     MuiTab: {
       styleOverrides: {
@@ -756,10 +771,14 @@ export const lightTheme = {
       },
       styleOverrides: {
         tooltip: {
-          backgroundColor: tokens.colorGrey400,
-          fontSize: '.785rem',
+          backgroundColor: tokens.colorSecondaryMain,
+          lineHeight: '1rem',
+          fontSize: '.75rem',
           fontStyle: 'normal',
-          padding: '2px 8px',
+          padding: '4px 8px',
+        },
+        arrow: {
+          color: tokens.colorSecondaryMain,
         },
       },
     },

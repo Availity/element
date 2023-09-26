@@ -4,10 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.4.1...@availity/mui-icon@0.5.0) (2023-09-25)
 
-
 ### Features
 
-* **mui-textfield:** add textfield component ([fec1a7f](https://github.com/Availity/element/commit/fec1a7fedda2420577e29b6c0e264d244a91a00e))
+- **mui-textfield:** add textfield component ([fec1a7f](https://github.com/Availity/element/commit/fec1a7fedda2420577e29b6c0e264d244a91a00e))
 
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.4.0...@availity/mui-icon@0.4.1) (2023-08-23)
 
