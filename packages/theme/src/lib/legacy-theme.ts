@@ -508,6 +508,15 @@ export const legacyTheme = {
         maxHeight: '100px',
       },
     },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          '.MuiSvgIcon-root': {
+            fontSize: '.875rem',
+          },
+        },
+      },
+    },
     MuiChip: {
       defaultProps: {
         color: 'default',
