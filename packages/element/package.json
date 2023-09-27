@@ -21,6 +21,7 @@
     "@availity/mui-button": "workspace:*",
     "@availity/mui-card": "workspace:*",
     "@availity/mui-chip": "workspace:*",
+    "@availity/mui-datepicker": "workspace:*",
     "@availity/mui-divider": "workspace:*",
     "@availity/mui-form-utils": "workspace:*",
     "@availity/mui-icon": "workspace:*",

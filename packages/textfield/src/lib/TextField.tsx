@@ -40,7 +40,7 @@ export const TextField = forwardRef(
           id={id}
           aria-describedby={helperId}
           error={!!error}
-          inputProps={size === 'medium' ? mediumStyles : smallStyles}
+          // inputProps={size === 'medium' ? mediumStyles : smallStyles}
           startAdornment={
             startAdornment ? <InputAdornment position="start">{startAdornment}</InputAdornment> : undefined
           }

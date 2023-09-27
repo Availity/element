@@ -468,6 +468,28 @@ export const lightTheme = {
         },
       },
     },
+    MuiPickersCalendarHeader: {
+      styleOverrides: {
+        root: {
+          padding: '4px 16px 8px',
+        },
+      },
+    },
+    MuiDayPicker: {
+      styleOverrides: {
+        monthContainer: {
+          padding: '12px 8px 0px',
+        },
+      },
+    },
+    MuiCalendarPicker: {
+      styleOverrides: {
+        root: {
+          height: '328px',
+          width: '310px',
+        },
+      },
+    },
     MuiIconButton: {
       defaultProps: {
         disableRipple: true,
@@ -561,7 +583,7 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           '&.MuiInputBase-root': {
-            padding: '0px 4px',
+            // padding: '0px 4px',
             backgroundColor: 'white',
             '& > fieldset': {
               borderColor: tokens.colorGrey400,
@@ -580,7 +602,7 @@ export const lightTheme = {
             },
           },
           '&.MuiButtonBase-root': {
-            padding: '8px 8px',
+            padding: '0px 0px',
           },
         },
         input: {
