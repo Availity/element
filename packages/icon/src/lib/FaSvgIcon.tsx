@@ -2,11 +2,19 @@
 
 import * as React from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { SvgIcon, SvgIconProps } from '@mui/material';
+import { SvgIcon, SvgIconProps, SvgIconPropsSizeOverrides } from '@mui/material';
+
+declare module '@mui/material/SvgIcon' {
+  interface SvgIconPropsSizeOverrides {
+    xsmall: true;
+  }
+}
 
 export interface FaSvgIconProps extends SvgIconProps {
   /** Font Awesome Svg */
-  icon: IconDefinition
+  icon: IconDefinition;
+  /** The fontSize applied to the icon. @default 'inherit' */
+  fontSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'inherit';
 }
 
 export const FaSvgIcon = React.forwardRef<SVGSVGElement, FaSvgIconProps>((props, ref) => {
@@ -20,13 +28,11 @@ export const FaSvgIcon = React.forwardRef<SVGSVGElement, FaSvgIconProps>((props,
     <SvgIcon ref={ref} viewBox={`0 0 ${width} ${height}`} {...svgProps}>
       {typeof svgPathData === 'string' ? (
         <path d={svgPathData} />
-      ) : (
-        /**
-         * A multi-path Font Awesome icon seems to imply a duotune icon.
-         * Only available in Pro which we wouldn't publicly export regardless.
-         */
-        null
-      )}
+      ) : /**
+       * A multi-path Font Awesome icon seems to imply a duotune icon.
+       * Only available in Pro which we wouldn't publicly export regardless.
+       */
+      null}
     </SvgIcon>
   );
 });

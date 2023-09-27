@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-alert",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Availity MUI Alert Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -34,6 +34,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
+    "@availity/mui-button": "workspace:*",
     "@availity/mui-icon": "workspace:*"
   },
   "devDependencies": {

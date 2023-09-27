@@ -29,6 +29,7 @@ export type FieldHelpIconProps = {
   | 'size'
   | 'tabIndex'
   | 'title'
+  | 'variant'
 >;
 
 export const FieldHelpIcon = ({ helpTopicId, labelId, sx, ...rest }: FieldHelpIconProps): JSX.Element => {
@@ -41,7 +42,7 @@ export const FieldHelpIcon = ({ helpTopicId, labelId, sx, ...rest }: FieldHelpIc
       onClick={() => triggerFieldHelp(helpTopicId)}
       aria-describedby={labelId}
       size="small"
-      sx={{ ...sx, padding: 0.5, fontSize: 'inherit', marginTop: '-2px' }}
+      sx={{ ...sx, padding: 0.5, fontSize: 'inherit', marginTop: '-2px', opacity: 1 }}
     >
       <HelpCircleIcon aria-hidden titleAccess={undefined} />
     </IconButton>

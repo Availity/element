@@ -2,12 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.4.1...@availity/mui-icon@0.5.0) (2023-09-25)
-
+## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.5.0...@availity/mui-icon@0.6.0) (2023-09-26)
 
 ### Features
 
-* **mui-textfield:** add textfield component ([fec1a7f](https://github.com/Availity/element/commit/fec1a7fedda2420577e29b6c0e264d244a91a00e))
+- **mui-icon:** add xsmall fontsize ([aa8e28a](https://github.com/Availity/element/commit/aa8e28a5a7514247db0f65d9120da2847663445a))
+
+## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.4.1...@availity/mui-icon@0.5.0) (2023-09-25)
+
+### Features
+
+- **mui-textfield:** add textfield component ([fec1a7f](https://github.com/Availity/element/commit/fec1a7fedda2420577e29b6c0e264d244a91a00e))
 
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.4.0...@availity/mui-icon@0.4.1) (2023-08-23)
 
