@@ -12,5 +12,5 @@ export type ChipProps = {
 >;
 
 export const Chip = ({ color = 'default', onDelete, ...rest }: ChipProps): JSX.Element => {
-  return <MuiChip color={color} onClick={onDelete} onDelete={onDelete} {...rest} />;
+  return <MuiChip color={color} onDelete={onDelete} {...rest} />;
 };
