@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Avatar, Collapse } from '@mui/material';
+import { Avatar } from '@availity/mui-avatar';
+import { Collapse } from '@mui/material';
 import { Chip, ChipProps } from './Chip';
 
 const meta: Meta<typeof Chip> = {
