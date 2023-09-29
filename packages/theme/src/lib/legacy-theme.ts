@@ -515,7 +515,7 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           '&.MuiCheckbox-colorPrimary': {
-            color: tokens.colorGrey300,
+            color: tokens.colorGrey500,
             '&:hover': {
               color: tokens.colorGrey900,
             },
@@ -525,9 +525,12 @@ export const legacyTheme = {
                 color: tokens.colorPrimaryDark,
               },
             },
+            '&.Mui-disabled': {
+              color: tokens.colorGrey300,
+            },
           },
           '&.MuiCheckbox-colorError': {
-            color: tokens.colorGrey300,
+            color: tokens.colorGrey500,
             '&:hover': {
               color: tokens.colorGrey900,
             },
@@ -536,6 +539,9 @@ export const legacyTheme = {
               '&:hover': {
                 color: tokens.colorErrorDark,
               },
+            },
+            '&.Mui-disabled': {
+              color: tokens.colorGrey300,
             },
           },
           '.MuiSvgIcon-root': {
