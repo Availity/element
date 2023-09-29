@@ -509,10 +509,37 @@ export const legacyTheme = {
       },
     },
     MuiCheckbox: {
+      defaultProps: {
+        disableRipple: true,
+      },
       styleOverrides: {
         root: {
+          '&.MuiCheckbox-colorPrimary': {
+            color: tokens.colorGrey300,
+            '&:hover': {
+              color: tokens.colorGrey900,
+            },
+            '&.Mui-checked': {
+              color: tokens.colorPrimaryMain,
+              '&:hover': {
+                color: tokens.colorPrimaryDark,
+              },
+            },
+          },
+          '&.MuiCheckbox-colorError': {
+            color: tokens.colorGrey300,
+            '&:hover': {
+              color: tokens.colorGrey900,
+            },
+            '&.Mui-checked': {
+              color: tokens.colorErrorMain,
+              '&:hover': {
+                color: tokens.colorErrorDark,
+              },
+            },
+          },
           '.MuiSvgIcon-root': {
-            fontSize: '.875rem',
+            fontSize: '1.25rem',
           },
         },
       },
