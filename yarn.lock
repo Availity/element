@@ -264,6 +264,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-menu@workspace:packages/menu"
   dependencies:
+    "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0

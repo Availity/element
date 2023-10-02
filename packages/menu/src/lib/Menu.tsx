@@ -27,10 +27,13 @@ export const Menu = (props: MenuProps): JSX.Element => {
   return <MuiMenu {...props} />;
 };
 
-export type MenuItemProps = MuiMenuItemProps;
+export type MenuItemProps = Omit<
+  MuiMenuItemProps,
+  'centerRipple' | 'disableRipple' | 'disableTouchRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef'
+>;
 
 export const MenuItem = (props: MenuItemProps) => {
-  return <MuiMenuItem {...props} />;
+  return <MuiMenuItem {...props} disableRipple disableTouchRipple />;
 };
 
 export type MenuListProps = MuiMenuListProps;

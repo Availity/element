@@ -33,6 +33,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
+    "@availity/mui-icon": "workspace:^",
     "@mui/material": "^5.11.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
