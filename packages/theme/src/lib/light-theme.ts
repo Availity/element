@@ -508,9 +508,6 @@ export const lightTheme = {
       },
     },
     MuiFormLabel: {
-      defaultProps: {
-        shrink: false,
-      },
       styleOverrides: {
         root: {
           // move required asterisk before text
@@ -540,7 +537,7 @@ export const lightTheme = {
       },
       styleOverrides: {
         colorSecondary: {
-          border: `1px solid ${tokens.borderSecondary}`,
+          borderColor: tokens.borderSecondary,
           '&:hover': {
             backgroundColor: tokens.colorActionHover,
           },
@@ -549,7 +546,7 @@ export const lightTheme = {
           },
         },
         colorPrimary: {
-          border: `1px solid ${tokens.borderPrimary}`,
+          borderColor: tokens.borderPrimary,
           '&:hover, &:focus': {
             backgroundColor: tokens.colorActionSelected,
           },
