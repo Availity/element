@@ -16,7 +16,7 @@ import { Grid, GridProps } from './Grid';
  * + It does not support row spanning. Children elements cannot span multiple rows. We recommend using CSS Grid if you need this functionality.
  * + It does not automatically place children. It will try to fit the children one by one, and if there is not enough space, the rest of the children will start on the next line, and so on. If you need auto-placement, we recommend using CSS Grid instead.
  *
- * > As a CSS utility, the `Grid` component also supports all [system properties](https://mui.com/system/properties/). They are omitted for brecity, but can be used as props directly on the component.
+ * > As a CSS utility, the `Grid` component also supports all [system properties](https://mui.com/system/properties/). They are omitted for brevity, but can be used as props directly on the component.
  */
 const meta: Meta<typeof Grid> = {
   title: 'Components/Layout/Grid',

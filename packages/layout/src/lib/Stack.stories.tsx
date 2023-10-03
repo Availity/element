@@ -8,7 +8,7 @@ import { Paper } from '@availity/mui-paper';
 /** The `Stack` component manages the layout of its immediate children along the vertical or horizontal axis, with optional spacing and dividers between each child.
  * `Stack` is ideal for one-dimensional layouts, while `Grid` is preferable when you need both vertical and horizontal arrangement.
  *
- * > As a CSS utility, the `Stack` component also supports all [system properties](https://mui.com/system/properties/). They are omitted for brecity, but can be used as props directly on the component.
+ * > As a CSS utility, the `Stack` component also supports all [system properties](https://mui.com/system/properties/). They are omitted for brevity, but can be used as props directly on the component.
  */
 const meta: Meta<typeof Stack> = {
   title: 'Components/Layout/Stack',

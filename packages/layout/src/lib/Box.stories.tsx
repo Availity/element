@@ -6,7 +6,7 @@ import { Box, BoxProps } from './Box';
 
 /** The `Box` component serves as a wrapper component for most of the CSS utility needs.
  *
- * > As a CSS utility, the `Box` component also supports all [system properties](https://mui.com/system/properties/). They are omitted for brecity, but can be used as props directly on the component.
+ * > As a CSS utility, the `Box` component also supports all [system properties](https://mui.com/system/properties/). They are omitted for brevity, but can be used as props directly on the component.
  */
 const meta: Meta<typeof Box> = {
   title: 'Components/Layout/Box',
