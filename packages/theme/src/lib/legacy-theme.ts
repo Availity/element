@@ -514,6 +514,13 @@ export const legacyTheme = {
       },
       styleOverrides: {
         root: {
+          '&.Mui-focusVisible': {
+            '.MuiSvgIcon-root': {
+              backgroundColor: tokens.colorActionFocus,
+              outline: '2px solid white',
+              boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
+            },
+          },
           '&.MuiCheckbox-colorPrimary': {
             color: tokens.colorGrey500,
             '&:hover': {
