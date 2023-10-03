@@ -24,6 +24,7 @@
     "@availity/mui-divider": "workspace:*",
     "@availity/mui-form-utils": "workspace:*",
     "@availity/mui-icon": "workspace:*",
+    "@availity/mui-layout": "workspace:*",
     "@availity/mui-link": "workspace:*",
     "@availity/mui-menu": "workspace:*",
     "@availity/mui-page-header": "workspace:*",
