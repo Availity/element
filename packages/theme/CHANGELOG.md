@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.18.1](https://github.com/Availity/element/compare/@availity/theme@0.18.0...@availity/theme@0.18.1) (2023-10-03)
+
+
+### Bug Fixes
+
+* **mui-button:** fix styling for pure icon button ([9d4a524](https://github.com/Availity/element/commit/9d4a524388d512ecc27e8e803b536036f6fedbc6))
+
 ## [0.18.0](https://github.com/Availity/element/compare/@availity/theme@0.17.0...@availity/theme@0.18.0) (2023-09-26)
 
 
