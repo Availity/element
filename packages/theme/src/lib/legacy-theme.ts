@@ -570,9 +570,6 @@ export const legacyTheme = {
       },
     },
     MuiFormLabel: {
-      defaultProps: {
-        shrink: false,
-      },
       styleOverrides: {
         root: {
           // move required asterisk before text
@@ -614,10 +611,10 @@ export const legacyTheme = {
           },
         },
         colorSecondary: {
-          border: `2px solid ${tokens.colorSecondaryLight}`,
+          border: tokens.colorSecondaryLight,
         },
         colorPrimary: {
-          border: `2px solid ${tokens.colorPrimaryMain}`,
+          border: tokens.colorPrimaryMain,
         },
         sizeSmall: {
           padding: '0.25rem 0.5rem',
