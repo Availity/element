@@ -4,10 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-alert@0.4.1...@availity/mui-alert@0.5.0) (2023-09-26)
 
-
 ### Features
 
-* **mui-button:** icon button styling ([43c424e](https://github.com/Availity/element/commit/43c424e2f33b0dcd9dca51ec253e54ea3309630b))
+- **mui-button:** icon button styling ([43c424e](https://github.com/Availity/element/commit/43c424e2f33b0dcd9dca51ec253e54ea3309630b))
 
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-alert@0.4.0...@availity/mui-alert@0.4.1) (2023-08-23)
 
