@@ -516,9 +516,8 @@ export const legacyTheme = {
         root: {
           '&.Mui-focusVisible': {
             '.MuiSvgIcon-root': {
-              backgroundColor: tokens.colorActionFocus,
-              outline: '2px solid white',
-              boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
+              outline: `2px solid ${tokens.borderInputFocus}`,
+              borderRadius: '3px',
             },
           },
           '&.MuiCheckbox-colorPrimary': {
