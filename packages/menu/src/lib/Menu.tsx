@@ -25,7 +25,7 @@ export type MenuProps = Omit<
 >;
 
 export const Menu = (props: MenuProps): JSX.Element => {
-  return <MuiMenu {...props} elevation={8} />;
+  return <MuiMenu {...props} slotProps={{ paper: { variant: 'elevation' } }} />;
 };
 
 export type MenuItemProps = Omit<
