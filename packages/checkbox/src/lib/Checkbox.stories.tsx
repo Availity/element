@@ -18,10 +18,10 @@ export default meta;
 export const _Checkbox: StoryObj<typeof Checkbox> = {
   render: (args: CheckboxProps) => (
     <>
-      <Checkbox {...args} defaultChecked />
-      <Checkbox {...args} />
-      <Checkbox {...args} disabled />
-      <Checkbox {...args} disabled checked />
+      <Checkbox {...args} defaultChecked inputProps={{ 'aria-label': 'Default Checked example' }} />
+      <Checkbox {...args} inputProps={{ 'aria-label': 'Default Unchecked example' }} />
+      <Checkbox {...args} inputProps={{ 'aria-label': 'Disabled example' }} disabled />
+      <Checkbox {...args} inputProps={{ 'aria-label': 'Disabled Checked example' }} disabled checked />
     </>
   ),
   args: {
@@ -32,10 +32,10 @@ export const _Checkbox: StoryObj<typeof Checkbox> = {
 export const _CustomCheckbox: StoryObj<typeof Checkbox> = {
   render: (args: CheckboxProps) => (
     <>
-      <Checkbox {...args} defaultChecked />
-      <Checkbox {...args} />
-      <Checkbox {...args} disabled />
-      <Checkbox {...args} disabled checked />
+      <Checkbox {...args} defaultChecked inputProps={{ 'aria-label': 'Default Checked example' }} />
+      <Checkbox {...args} inputProps={{ 'aria-label': 'Default Unchecked example' }} />
+      <Checkbox {...args} disabled inputProps={{ 'aria-label': 'Disabled example' }} />
+      <Checkbox {...args} disabled checked inputProps={{ 'aria-label': 'Disabled Checked example' }} />
     </>
   ),
   args: {
