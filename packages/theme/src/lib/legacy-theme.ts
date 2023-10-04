@@ -696,29 +696,42 @@ export const legacyTheme = {
       },
     },
     MuiInputBase: {
-      StyleOverrides: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
         root: {
-          'label + &': {
-            marginTop: '.5rem',
+          '&.MuiInputBase-root': {
+            padding: '0px 4px',
+            backgroundColor: 'white',
+            '& > fieldset': {
+              borderColor: tokens.colorGrey400,
+            },
+            '&:hover > fieldset': {
+              borderColor: tokens.borderInputHover,
+            },
+            '&.Mui-focused > fieldset': {
+              borderColor: tokens.borderInputFocus,
+            },
+            '&.Mui-error > fieldset': {
+              borderColor: tokens.colorErrorMain,
+            },
+            '&.Mui-disabled > fieldset': {
+              borderColor: tokens.borderDisabled,
+            },
+          },
+          '&.MuiButtonBase-root': {
+            padding: '8px 8px',
           },
         },
         input: {
-          borderRadius: 4,
-          position: 'relative',
-          border: '1px solid',
-          borderColor: tokens.borderInput,
-          fontSize: 16,
-          width: 'auto',
-          padding: '10px 12px',
-          '&:focus': {
-            boxShadow: `0 0 0px 4px ${tokens.borderInputFocus}`,
-          },
-          '&.Mui-error': {
-            borderColor: tokens.borderError,
-            '&:focus': {
-              boxShadow: `0 0 0px 4px ${tokens.borderInputFocus}`,
-            },
-          },
+          width: '196px',
+          height: '24px',
+          borderRadius: '4px',
+          color: tokens.colorGrey400,
+        },
+        inputSizeSmall: {
+          width: '100%',
         },
       },
     },
@@ -805,6 +818,7 @@ export const legacyTheme = {
           backgroundColor: tokens.colorBackgroundCanvas,
         },
         text: {
+          marginLeft: '-1px',
           padding: '0.375rem',
           margin: '0px',
         },
@@ -853,6 +867,121 @@ export const legacyTheme = {
           '&:Mui-selected': {
             color: tokens.colorPrimaryMain,
           },
+        },
+      },
+    },
+    MuiTable: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          '&.striped': {
+            '.MuiTableBody-root .MuiTableRow-root:nth-of-type(odd)': {
+              backgroundColor: tokens.colorTertiaryMain,
+            },
+            '.MuiTableHead-root': {
+              backgroundColor: 'inherit',
+            },
+          },
+        },
+      },
+    },
+    MuiTableBody: {
+      styleOverrides: {
+        root: {
+          '&.striped .MuiTableRow-root:nth-of-type(odd), &.striped tr:nth-of-type(odd)': {
+            backgroundColor: tokens.colorTertiaryMain,
+          },
+        },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          borderTop: `1px solid ${tokens.colorGrey200}`,
+          borderBottom: '0px',
+          lineHeight: '1.5rem',
+        },
+        head: {
+          fontWeight: tokens.fontWeightsBold,
+        },
+        sizeMedium: {
+          padding: '.75rem',
+          '.MuiTableSortLabel-root': {
+            width: '100%',
+            height: '100%',
+            margin: '-.75rem',
+            padding: '.75rem',
+          },
+        },
+        sizeSmall: {
+          padding: '.25rem',
+          '.MuiTableSortLabel-root': {
+            width: '100%',
+            height: '100%',
+            margin: '-.25rem',
+            padding: '.25rem',
+          },
+        },
+      },
+    },
+    MuiTableHead: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorTertiaryMain,
+        },
+      },
+    },
+    MuiTablePagination: {
+      defaultProps: {
+        rowsPerPageOptions: [],
+        colSpan: 12,
+      },
+      styleOverrides: {
+        actions: {
+          order: 1,
+          marginRight: '.5rem',
+        },
+        displayedRows: {
+          order: 4,
+          marginRight: '.5rem',
+        },
+        input: {
+          order: 3,
+          marginRight: '.5rem',
+        },
+        selectLabel: {
+          order: 2,
+        },
+        spacer: {
+          order: 0,
+        },
+      },
+    },
+    MuiTableRow: {
+      styleOverrides: {
+        head: {},
+      },
+    },
+    MuiTableSortLabel: {
+      styleOverrides: {
+        root: {
+          padding: '0px 6px',
+          margin: '0px -6px',
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+            '.MuiTableSortLabel-icon': {
+              opacity: 1,
+            },
+          },
+          '&:focus': {
+            backgroundColor: tokens.colorActionFocus,
+          },
+        },
+        icon: {
+          opacity: 1,
+          transition: 'none',
         },
       },
     },
