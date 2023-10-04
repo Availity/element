@@ -15,6 +15,7 @@ export type MenuProps = Omit<
   | 'disableAutoFocusItem'
   | 'disableEnforceFocus'
   | 'disableEscapeKeyDown'
+  | 'elevation'
   | 'onBackdropClick'
   | 'PopoverClasses'
   | 'ref'
@@ -24,7 +25,7 @@ export type MenuProps = Omit<
 >;
 
 export const Menu = (props: MenuProps): JSX.Element => {
-  return <MuiMenu {...props} />;
+  return <MuiMenu {...props} elevation={8} />;
 };
 
 export type MenuItemProps = Omit<

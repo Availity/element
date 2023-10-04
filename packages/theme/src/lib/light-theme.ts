@@ -630,6 +630,9 @@ export const lightTheme = {
             '&:hover': {
               backgroundColor: tokens.colorPrimaryDark,
             },
+            '.MuiSvgIcon-root': {
+              color: tokens.colorTextInverse,
+            },
           },
           '&:hover': {
             backgroundColor: tokens.colorActionHover,
@@ -639,6 +642,7 @@ export const lightTheme = {
           },
           '.MuiSvgIcon-root': {
             marginRight: '8px',
+            color: tokens.colorSecondaryMain,
           },
         },
       },
