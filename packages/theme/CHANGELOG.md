@@ -2,13 +2,25 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.18.0](https://github.com/Availity/element/compare/@availity/theme@0.17.0...@availity/theme@0.18.0) (2023-09-26)
-
+## [0.19.0](https://github.com/Availity/element/compare/@availity/theme@0.18.1...@availity/theme@0.19.0) (2023-10-04)
 
 ### Features
 
-* **mui-button:** icon button styling ([43c424e](https://github.com/Availity/element/commit/43c424e2f33b0dcd9dca51ec253e54ea3309630b))
-* **mui-icon:** add xsmall fontsize ([aa8e28a](https://github.com/Availity/element/commit/aa8e28a5a7514247db0f65d9120da2847663445a))
+- **mui-checkbox:** add legacy theme ([36f5c3d](https://github.com/Availity/element/commit/36f5c3d58c5c1e7865dd571c95859a2eaa2a35ad))
+- **mui-checkbox:** init ([c7200a8](https://github.com/Availity/element/commit/c7200a84175174f43d502b47881dd7e57e02aa0e))
+
+## [0.18.1](https://github.com/Availity/element/compare/@availity/theme@0.18.0...@availity/theme@0.18.1) (2023-10-03)
+
+### Bug Fixes
+
+- **mui-button:** fix styling for pure icon button ([9d4a524](https://github.com/Availity/element/commit/9d4a524388d512ecc27e8e803b536036f6fedbc6))
+
+## [0.18.0](https://github.com/Availity/element/compare/@availity/theme@0.17.0...@availity/theme@0.18.0) (2023-09-26)
+
+### Features
+
+- **mui-button:** icon button styling ([43c424e](https://github.com/Availity/element/commit/43c424e2f33b0dcd9dca51ec253e54ea3309630b))
+- **mui-icon:** add xsmall fontsize ([aa8e28a](https://github.com/Availity/element/commit/aa8e28a5a7514247db0f65d9120da2847663445a))
 
 ## [0.17.0](https://github.com/Availity/element/compare/@availity/theme@0.16.0...@availity/theme@0.17.0) (2023-09-25)
 

@@ -1,21 +1,21 @@
 {
-  "name": "@availity/mui-typography",
-  "version": "0.1.1",
-  "description": "Availity MUI Typography Component - part of the @availity/element design system",
+  "name": "@availity/mui-layout",
+  "version": "0.1.0",
+  "description": "Availity MUI Layout Component - part of the @availity/element design system",
   "keywords": [
     "react",
     "typescript",
     "availity",
     "mui"
   ],
-  "homepage": "https://availity.github.io/element/?path=/docs/components-typography-introduction--docs",
+  "homepage": "https://availity.github.io/element/?path=/docs/components-layout-introduction--docs",
   "bugs": {
     "url": "https://github.com/Availity/element/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Availity/element.git",
-    "directory": "packages/typography"
+    "directory": "packages/layout"
   },
   "license": "MIT",
   "author": "Availity Developers <AVOSS@availity.com>",
@@ -33,7 +33,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
-    "@mui/material": "^5.14.12",
+    "@mui/material": "^5.11.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^5.12.7",
