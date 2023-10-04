@@ -721,7 +721,10 @@ export const legacyTheme = {
       },
     },
     MuiInputBase: {
-      StyleOverrides: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
         root: {
           'label + &': {
             marginTop: '.5rem',
@@ -848,6 +851,7 @@ export const legacyTheme = {
           backgroundColor: tokens.colorBackgroundCanvas,
         },
         text: {
+          marginLeft: '-1px',
           padding: '0.375rem',
           margin: '0px',
         },
@@ -916,6 +920,121 @@ export const legacyTheme = {
           '&:Mui-selected': {
             color: tokens.colorPrimaryMain,
           },
+        },
+      },
+    },
+    MuiTable: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          '&.striped': {
+            '.MuiTableBody-root .MuiTableRow-root:nth-of-type(odd)': {
+              backgroundColor: tokens.colorTertiaryMain,
+            },
+            '.MuiTableHead-root': {
+              backgroundColor: 'inherit',
+            },
+          },
+        },
+      },
+    },
+    MuiTableBody: {
+      styleOverrides: {
+        root: {
+          '&.striped .MuiTableRow-root:nth-of-type(odd), &.striped tr:nth-of-type(odd)': {
+            backgroundColor: tokens.colorTertiaryMain,
+          },
+        },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          borderTop: `1px solid ${tokens.colorGrey200}`,
+          borderBottom: '0px',
+          lineHeight: '1.5rem',
+        },
+        head: {
+          fontWeight: tokens.fontWeightsBold,
+        },
+        sizeMedium: {
+          padding: '.75rem',
+          '.MuiTableSortLabel-root': {
+            width: '100%',
+            height: '100%',
+            margin: '-.75rem',
+            padding: '.75rem',
+          },
+        },
+        sizeSmall: {
+          padding: '.25rem',
+          '.MuiTableSortLabel-root': {
+            width: '100%',
+            height: '100%',
+            margin: '-.25rem',
+            padding: '.25rem',
+          },
+        },
+      },
+    },
+    MuiTableHead: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorTertiaryMain,
+        },
+      },
+    },
+    MuiTablePagination: {
+      defaultProps: {
+        rowsPerPageOptions: [],
+        colSpan: 12,
+      },
+      styleOverrides: {
+        actions: {
+          order: 1,
+          marginRight: '.5rem',
+        },
+        displayedRows: {
+          order: 4,
+          marginRight: '.5rem',
+        },
+        input: {
+          order: 3,
+          marginRight: '.5rem',
+        },
+        selectLabel: {
+          order: 2,
+        },
+        spacer: {
+          order: 0,
+        },
+      },
+    },
+    MuiTableRow: {
+      styleOverrides: {
+        head: {},
+      },
+    },
+    MuiTableSortLabel: {
+      styleOverrides: {
+        root: {
+          padding: '0px 6px',
+          margin: '0px -6px',
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+            '.MuiTableSortLabel-icon': {
+              opacity: 1,
+            },
+          },
+          '&:focus': {
+            backgroundColor: tokens.colorActionFocus,
+          },
+        },
+        icon: {
+          opacity: 1,
+          transition: 'none',
         },
       },
     },

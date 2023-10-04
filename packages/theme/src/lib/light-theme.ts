@@ -630,6 +630,9 @@ export const lightTheme = {
           borderRadius: '4px',
           color: tokens.colorGrey400,
         },
+        inputSizeSmall: {
+          width: '100%',
+        },
         adornedEnd: {
           backgroundColor: 'white',
           paddingRight: '.75rem',
@@ -773,6 +776,89 @@ export const lightTheme = {
           '&:Mui-selected': {
             color: tokens.colorPrimaryMain,
           },
+        },
+      },
+    },
+    MuiTable: {
+      styleOverrides: {
+        root: {
+          border: `1px solid ${tokens.borderDecorative}`,
+          backgroundColor: tokens.colorBackgroundPaper,
+        },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          borderBottom: `1px solid ${tokens.borderDecorative}`,
+          // higher specificity needed for footer padding
+          '&.MuiTableCell-footer': {
+            borderBottom: 'none',
+            '&:first-child, &:only-child': {
+              paddingTop: '1.25rem',
+            },
+            '&:last-child, &:only-child': {
+              paddingBottom: '1.25rem',
+            },
+          },
+        },
+        head: {
+          fontWeight: tokens.fontWeightsBold,
+          borderTop: `1px solid ${tokens.borderDecorative}`,
+        },
+      },
+    },
+    MuiTablePagination: {
+      defaultProps: {
+        colSpan: 12,
+      },
+      styleOverrides: {
+        root: {
+          '.MuiTablePagination-toolbar': {
+            // overcome breakpoint padding presets
+            padding: '0 .5rem',
+          },
+        },
+        actions: {
+          '&:not(:last-child)': {
+            flexGrow: 1,
+            marginRight: '.25rem',
+          },
+          marginLeft: '.25rem',
+        },
+        displayedRows: {
+          flexGrow: 1,
+        },
+        input: {},
+        selectLabel: {},
+        spacer: {
+          display: 'none',
+        },
+        toolbar: {
+          flexWrap: 'wrap',
+          flexShrink: 1,
+        },
+      },
+    },
+    MuiTableSortLabel: {
+      styleOverrides: {
+        root: {
+          borderRadius: '.25rem',
+          padding: '0px 6px',
+          margin: '0px -6px',
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+            '.MuiTableSortLabel-icon': {
+              opacity: 1,
+            },
+          },
+          '&:focus': {
+            backgroundColor: tokens.colorActionFocus,
+          },
+        },
+        icon: {
+          opacity: 1,
+          transition: 'none',
         },
       },
     },

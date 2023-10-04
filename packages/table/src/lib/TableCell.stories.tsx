@@ -1,0 +1,19 @@
+// Each exported component in the package should have its own stories file
+
+import type { Meta, StoryObj } from '@storybook/react';
+import { TableCell, TableCellProps } from './TableCell';
+
+const meta: Meta<typeof TableCell> = {
+  title: 'Components/Table/TableCell',
+  component: TableCell,
+  tags: ['autodocs'],
+  args: {
+    children: 'Cell content',
+  },
+};
+
+export default meta;
+
+export const _TableCell: StoryObj<typeof TableCell> = {
+  render: (args: TableCellProps) => <TableCell {...args} />,
+};
