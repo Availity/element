@@ -35,8 +35,8 @@
     "@availity/mui-tooltip": "workspace:*",
     "@availity/mui-typography": "workspace:*",
     "@availity/theme-provider": "workspace:*",
-    "@mui/material": "^5.11.9",
-    "@mui/system": "^5.11.9"
+    "@mui/material": "^5.14.12",
+    "@mui/system": "^5.14.12"
   },
   "devDependencies": {
     "react": "18.2.0",
