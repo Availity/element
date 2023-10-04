@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react';
-import { AttachmentIcon, Badge, Chip } from '@availity/element';
 import {
-  Box,
+  AttachmentIcon,
+  Badge,
+  Chip,
   Table,
   TableHead,
   TableRow,
@@ -10,8 +11,8 @@ import {
   TableContainer,
   TableBody,
   Typography,
-  Paper,
-} from '@mui/material';
+} from '@availity/element';
+import { Box, Paper } from '@mui/material';
 import type { AlertColor } from '@mui/material';
 import { visuallyHidden } from '@mui/utils';
 import { datarows, Data } from './TableData';
