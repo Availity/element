@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.19.0](https://github.com/Availity/element/compare/@availity/theme@0.18.1...@availity/theme@0.19.0) (2023-10-04)
+
+
+### Features
+
+* **mui-checkbox:** add legacy theme ([36f5c3d](https://github.com/Availity/element/commit/36f5c3d58c5c1e7865dd571c95859a2eaa2a35ad))
+* **mui-checkbox:** init ([c7200a8](https://github.com/Availity/element/commit/c7200a84175174f43d502b47881dd7e57e02aa0e))
+
 ## [0.18.1](https://github.com/Availity/element/compare/@availity/theme@0.18.0...@availity/theme@0.18.1) (2023-10-03)
 
 
