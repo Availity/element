@@ -487,6 +487,9 @@ export const lightTheme = {
         root: {
           height: '328px',
           width: '310px',
+          '.MuiIconButton-root': {
+            border: '0',
+          },
         },
       },
     },
@@ -593,7 +596,7 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           '&.MuiInputBase-root': {
-            // padding: '0px 4px',
+            padding: '8px 12px',
             backgroundColor: 'white',
             '& > fieldset': {
               borderColor: tokens.colorGrey400,
@@ -610,16 +613,22 @@ export const lightTheme = {
             '&.Mui-disabled > fieldset': {
               borderColor: tokens.borderDisabled,
             },
-          },
-          '&.MuiButtonBase-root': {
-            padding: '0px 0px',
+            '.MuiInputBase-input': {
+              padding: '0px',
+            },
+            '.MuiIconButton-root': {
+              border: '0',
+              padding: '8px',
+            },
           },
         },
-        input: {
-          width: '196px',
-          height: '24px',
-          borderRadius: '4px',
-          color: tokens.colorGrey400,
+        input: ({ ownerState }: { ownerState: { size: 'small' | 'medium' } }) => {
+          return {
+            width: '196px',
+            height: ownerState.size === 'small' ? '24px' : '40px',
+            borderRadius: '4px',
+            color: tokens.colorGrey400,
+          };
         },
         adornedEnd: {
           backgroundColor: 'white',

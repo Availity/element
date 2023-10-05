@@ -33,6 +33,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
+    "@availity/mui-textfield": "workspace:*",
     "@mui/x-date-pickers": "^5.0.15",
     "dayjs": "^1.11.9"
   },

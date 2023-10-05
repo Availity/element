@@ -1,8 +1,11 @@
-import { TextField } from '@mui/material';
+import { TextField } from '@availity/mui-textfield';
 import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } from '@mui/x-date-pickers/DatePicker';
 import type { Dayjs } from 'dayjs';
 
-export type DatepickerProps = Omit<
+export type DatepickerProps = {
+  label?: React.ReactNode;
+  size?: 'small' | 'medium';
+} & Omit<
   MuiDatePickerProps<Dayjs, Dayjs>,
   | 'components'
   | 'componentsProps'
@@ -24,6 +27,22 @@ export type DatepickerProps = Omit<
   | 'TransitionComponent'
 >;
 
-export const Datepicker = (props: DatepickerProps): JSX.Element => {
-  return <MuiDatePicker {...props} renderInput={(params) => <TextField {...params} />} />;
+// FIXME: types are throwing an error
+
+export const Datepicker = ({ size, ...props }: DatepickerProps): JSX.Element => {
+  return (
+    <MuiDatePicker
+      {...props}
+      renderInput={({ InputProps, ...params }) => {
+        console.log('params:', params);
+        if (params.inputProps) {
+          params.inputProps.placeholder = 'MM/DD/YYYY';
+        }
+
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        return <TextField {...params} {...InputProps} size={size} />;
+      }}
+    />
+  );
 };

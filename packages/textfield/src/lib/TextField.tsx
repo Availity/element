@@ -9,19 +9,10 @@ export type TextFieldProps = {
   helperText?: string;
 } & Omit<
   InputProps,
-  | 'aria-describedby'
-  | 'classes'
-  | 'disableInjectingGlobalStyles'
-  | 'color'
-  | 'multiline'
-  | 'notched'
-  | 'fullWidth'
-  | 'inputProps'
+  'aria-describedby' | 'classes' | 'disableInjectingGlobalStyles' | 'color' | 'multiline' | 'notched' | 'fullWidth'
 >;
 
-const smallStyles = { sx: { padding: '8px 8px' } };
-const mediumStyles = { sx: { padding: '16px 8px' } };
-const iconStyles = { marginRight: '4px', paddingTop: '4px' };
+const iconStyles = { marginRight: '2px', paddingTop: '2px' };
 
 export const TextField = forwardRef(
   ({ error, helperText, id, label, startAdornment, endAdornment, required, size, ...rest }: TextFieldProps, ref) => {
@@ -40,7 +31,6 @@ export const TextField = forwardRef(
           id={id}
           aria-describedby={helperId}
           error={!!error}
-          // inputProps={size === 'medium' ? mediumStyles : smallStyles}
           startAdornment={
             startAdornment ? <InputAdornment position="start">{startAdornment}</InputAdornment> : undefined
           }

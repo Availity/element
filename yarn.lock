@@ -197,6 +197,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-datepicker@workspace:packages/datepicker"
   dependencies:
+    "@availity/mui-textfield": "workspace:*"
     "@mui/material": ^5.11.9
     "@mui/x-date-pickers": ^5.0.15
     dayjs: ^1.11.9
