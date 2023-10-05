@@ -508,6 +508,54 @@ export const legacyTheme = {
         maxHeight: '100px',
       },
     },
+    MuiCheckbox: {
+      defaultProps: {
+        disableRipple: true,
+      },
+      styleOverrides: {
+        root: {
+          '&.Mui-focusVisible': {
+            '.MuiSvgIcon-root': {
+              outline: `2px solid ${tokens.borderInputFocus}`,
+              borderRadius: '3px',
+            },
+          },
+          '&.MuiCheckbox-colorPrimary': {
+            color: tokens.colorGrey500,
+            '&:hover': {
+              color: tokens.colorGrey900,
+            },
+            '&.Mui-checked': {
+              color: tokens.colorPrimaryMain,
+              '&:hover': {
+                color: tokens.colorPrimaryDark,
+              },
+            },
+            '&.Mui-disabled': {
+              color: tokens.colorGrey300,
+            },
+          },
+          '&.MuiCheckbox-colorError': {
+            color: tokens.colorGrey500,
+            '&:hover': {
+              color: tokens.colorGrey900,
+            },
+            '&.Mui-checked': {
+              color: tokens.colorErrorMain,
+              '&:hover': {
+                color: tokens.colorErrorDark,
+              },
+            },
+            '&.Mui-disabled': {
+              color: tokens.colorGrey300,
+            },
+          },
+          '.MuiSvgIcon-root': {
+            fontSize: '1.25rem',
+          },
+        },
+      },
+    },
     MuiChip: {
       defaultProps: {
         color: 'default',
@@ -570,9 +618,6 @@ export const legacyTheme = {
       },
     },
     MuiFormLabel: {
-      defaultProps: {
-        shrink: false,
-      },
       styleOverrides: {
         root: {
           // move required asterisk before text
@@ -614,10 +659,10 @@ export const legacyTheme = {
           },
         },
         colorSecondary: {
-          border: `2px solid ${tokens.colorSecondaryLight}`,
+          border: tokens.colorSecondaryLight,
         },
         colorPrimary: {
-          border: `2px solid ${tokens.colorPrimaryMain}`,
+          border: tokens.colorPrimaryMain,
         },
         sizeSmall: {
           padding: '0.25rem 0.5rem',

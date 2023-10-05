@@ -410,6 +410,19 @@ export const lightTheme = {
         maxHeight: '100px',
       },
     },
+    MuiCheckbox: {
+      defaultProps: {
+        color: 'primary',
+      },
+      styleOverrides: {
+        root: {
+          padding: '8px',
+          '&:hover': {
+            backgroundColor: '#00000008',
+          },
+        },
+      },
+    },
     MuiChip: {
       defaultProps: {
         color: 'default',
@@ -525,6 +538,17 @@ export const lightTheme = {
         },
       },
     },
+    MuiFormGroup: {
+      styleOverrides: {
+        root: {
+          '&.MuiFormGroup-row': {
+            '.MuiBox-root:not(:last-of-type)': {
+              marginRight: '16px',
+            },
+          },
+        },
+      },
+    },
     MuiFormHelperText: {
       styleOverrides: {
         root: {
@@ -533,9 +557,6 @@ export const lightTheme = {
       },
     },
     MuiFormLabel: {
-      defaultProps: {
-        shrink: false,
-      },
       styleOverrides: {
         root: {
           // move required asterisk before text
@@ -565,7 +586,7 @@ export const lightTheme = {
       },
       styleOverrides: {
         colorSecondary: {
-          border: `1px solid ${tokens.borderSecondary}`,
+          borderColor: tokens.borderSecondary,
           '&:hover': {
             backgroundColor: tokens.colorActionHover,
           },
@@ -574,7 +595,7 @@ export const lightTheme = {
           },
         },
         colorPrimary: {
-          border: `1px solid ${tokens.borderPrimary}`,
+          borderColor: tokens.borderPrimary,
           '&:hover, &:focus': {
             backgroundColor: tokens.colorActionSelected,
           },

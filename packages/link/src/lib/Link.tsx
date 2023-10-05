@@ -1,6 +1,5 @@
 import { ReactNode, forwardRef } from 'react';
 import { Link as MuiLink, LinkProps as MuiLinkProps } from '@mui/material';
-import { SystemProps } from '@mui/system';
 import { OpenInNewIcon } from '@availity/mui-icon';
 
 // Scheme: https://tools.ietf.org/html/rfc3986#section-3.1
@@ -54,7 +53,7 @@ export type LinkProps = {
   onClick?: (event: React.MouseEvent, url: string) => void;
   children?: ReactNode;
   rel?: string;
-} & Omit<MuiLinkProps, 'underline' | 'noWrap' | 'variantMapping' | 'variant' | keyof SystemProps>;
+} & Omit<MuiLinkProps, 'underline' | 'noWrap' | 'variantMapping' | 'variant'>;
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
   const { href, target = '_self', children, onClick, loadApp = true, rel, ...rest } = props;

@@ -1,13 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { SystemPropsList } from '../../../../data/MuiSystemProperties';
 import { Link, LinkProps } from './Link';
 
 /**
  * Simple link component that renders an `<a>` tag with the href formatted to leverage loadApp so the link gets loaded inside the home page's iframe
+ *
+ * > Built on top of `Typography`, a CSS utility, the `Link` component also supports all [system properties](https://mui.com/system/properties/). They are omitted for brevity, but can be used as props directly on the component.
  */
 const meta: Meta<typeof Link> = {
   title: 'Components/Link/Link',
   component: Link,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      controls: {
+        exclude: SystemPropsList,
+      },
+    },
+    canvas: {
+      controls: {
+        exclude: SystemPropsList,
+      },
+    },
+  },
   args: {
     href: '#',
   },
