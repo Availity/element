@@ -1506,6 +1506,10 @@
       "value": 400,
       "type": "fontWeights"
     },
+    "semibold": {
+      "value": 500,
+      "type": "fontWeights"
+    },
     "bold": {
       "value": 700,
       "type": "fontWeights"
@@ -1519,15 +1523,15 @@
   },
   "fontSizes": {
     "base": {
-      "value": "100%",
+      "value": "1rem",
       "type": "fontSizes"
     },
     "d1": {
-      "value": "4.5rem",
+      "value": "5rem",
       "type": "fontSizes"
     },
     "d2": {
-      "value": "3.5rem",
+      "value": "4.5rem",
       "type": "fontSizes"
     },
     "h1": {
@@ -1571,11 +1575,11 @@
       "type": "fontSizes"
     },
     "blockquote": {
-      "value": "1.125rem",
+      "value": "1.25rem",
       "type": "fontSizes"
     },
     "caption": {
-      "value": "0.75rem",
+      "value": "0.875rem",
       "type": "fontSizes"
     },
     "overline": {
@@ -1585,63 +1589,63 @@
   },
   "lineHeights": {
     "base": {
-      "value": "100%",
+      "value": 1.5,
       "type": "lineHeights"
     },
     "d1": {
-      "value": "5.4rem",
+      "value": 1.2,
       "type": "lineHeights"
     },
     "d2": {
-      "value": "4.2rem",
+      "value": 1.2,
       "type": "lineHeights"
     },
     "h1": {
-      "value": "3rem",
+      "value": 1.2,
       "type": "lineHeights"
     },
     "h2": {
-      "value": "2.5rem",
+      "value": 1.2,
       "type": "lineHeights"
     },
     "h3": {
-      "value": "2rem",
+      "value": 1.2,
       "type": "lineHeights"
     },
     "h4": {
-      "value": "1.8rem",
+      "value": 1.2,
       "type": "lineHeights"
     },
     "h5": {
-      "value": "1.5rem",
+      "value": 1.2,
       "type": "lineHeights"
     },
     "h6": {
-      "value": "1.2rem",
+      "value": 1.2,
       "type": "lineHeights"
     },
     "subtitle1": {
-      "value": "1.75rem",
+      "value": 1.2,
       "type": "lineHeights"
     },
     "subtitle2": {
-      "value": "1.5rem",
+      "value": 1.2,
       "type": "lineHeights"
     },
     "body1": {
-      "value": "1.5rem",
+      "value": 1.5,
       "type": "lineHeights"
     },
     "body2": {
-      "value": "1.375rem",
+      "value": 1.5,
       "type": "lineHeights"
     },
     "blockquote": {
-      "value": "1.75rem",
+      "value": 1.5,
       "type": "lineHeights"
     },
     "caption": {
-      "value": "1.375rem",
+      "value": 1.5,
       "type": "lineHeights"
     },
     "overline": {
@@ -1658,7 +1662,33 @@
         "value": 300
       },
       "lineHeight": {
-        "value": "5.4rem"
+        "value": 1.2
+      },
+      "fontSize": {
+        "value": "5rem"
+      },
+      "letterSpacing": {
+        "value": "none"
+      },
+      "paragraphSpacing": {
+        "value": "none"
+      },
+      "textDecoration": {
+        "value": "none"
+      },
+      "textCase": {
+        "value": "none"
+      }
+    },
+    "d2": {
+      "fontFamily": {
+        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+      },
+      "fontWeight": {
+        "value": 300
+      },
+      "lineHeight": {
+        "value": 1.2
       },
       "fontSize": {
         "value": "4.5rem"
@@ -1676,41 +1706,15 @@
         "value": "none"
       }
     },
-    "d2": {
-      "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
-      },
-      "fontWeight": {
-        "value": 300
-      },
-      "lineHeight": {
-        "value": "4.2rem"
-      },
-      "fontSize": {
-        "value": "3.5rem"
-      },
-      "letterSpacing": {
-        "value": "none"
-      },
-      "paragraphSpacing": {
-        "value": "none"
-      },
-      "textDecoration": {
-        "value": "none"
-      },
-      "textCase": {
-        "value": "none"
-      }
-    },
     "h1": {
       "fontFamily": {
         "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
-        "value": 700
+        "value": 500
       },
       "lineHeight": {
-        "value": "3rem"
+        "value": 1.2
       },
       "fontSize": {
         "value": "2.5rem"
@@ -1733,10 +1737,10 @@
         "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
-        "value": 700
+        "value": 500
       },
       "lineHeight": {
-        "value": "2.5rem"
+        "value": 1.2
       },
       "fontSize": {
         "value": "2rem"
@@ -1759,10 +1763,10 @@
         "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
-        "value": 700
+        "value": 500
       },
       "lineHeight": {
-        "value": "2rem"
+        "value": 1.2
       },
       "fontSize": {
         "value": "1.75rem"
@@ -1785,10 +1789,10 @@
         "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
-        "value": 700
+        "value": 500
       },
       "lineHeight": {
-        "value": "1.8rem"
+        "value": 1.2
       },
       "fontSize": {
         "value": "1.5rem"
@@ -1811,10 +1815,10 @@
         "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
-        "value": 700
+        "value": 500
       },
       "lineHeight": {
-        "value": "1.5rem"
+        "value": 1.2
       },
       "fontSize": {
         "value": "1.25rem"
@@ -1837,10 +1841,10 @@
         "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
-        "value": 700
+        "value": 500
       },
       "lineHeight": {
-        "value": "1.2rem"
+        "value": 1.2
       },
       "fontSize": {
         "value": "1rem"
@@ -1866,7 +1870,7 @@
         "value": 400
       },
       "lineHeight": {
-        "value": "1.75rem"
+        "value": 1.2
       },
       "fontSize": {
         "value": "1rem"
@@ -1892,7 +1896,7 @@
         "value": 400
       },
       "lineHeight": {
-        "value": "1.5rem"
+        "value": 1.2
       },
       "fontSize": {
         "value": "0.875rem"
@@ -1918,7 +1922,7 @@
         "value": 400
       },
       "lineHeight": {
-        "value": "1.5rem"
+        "value": 1.5
       },
       "fontSize": {
         "value": "1rem"
@@ -1944,7 +1948,7 @@
         "value": 400
       },
       "lineHeight": {
-        "value": "1.375rem"
+        "value": 1.5
       },
       "fontSize": {
         "value": "0.875rem"
@@ -1970,10 +1974,10 @@
         "value": 400
       },
       "lineHeight": {
-        "value": 1.25
+        "value": 1.5
       },
       "fontSize": {
-        "value": "0.875rem"
+        "value": "1rem"
       },
       "letterSpacing": {
         "value": "none"
@@ -1996,10 +2000,10 @@
         "value": 400
       },
       "lineHeight": {
-        "value": "1.375rem"
+        "value": 1.5
       },
       "fontSize": {
-        "value": "0.75rem"
+        "value": "0.875rem"
       },
       "letterSpacing": {
         "value": "none"
