@@ -4,17 +4,15 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.23.0](https://github.com/Availity/element/compare/@availity/element@0.22.0...@availity/element@0.23.0) (2023-10-04)
 
-
 ### Features
 
-* **mui-checkbox:** init ([c7200a8](https://github.com/Availity/element/commit/c7200a84175174f43d502b47881dd7e57e02aa0e))
+- **mui-checkbox:** init ([c7200a8](https://github.com/Availity/element/commit/c7200a84175174f43d502b47881dd7e57e02aa0e))
 
 ## [0.22.0](https://github.com/Availity/element/compare/@availity/element@0.21.0...@availity/element@0.22.0) (2023-10-03)
 
-
 ### Features
 
-* **mui-layout:** add layout components ([a4bf88b](https://github.com/Availity/element/commit/a4bf88b457422c99bb142ab06ee1be4dff70996d))
+- **mui-layout:** add layout components ([a4bf88b](https://github.com/Availity/element/commit/a4bf88b457422c99bb142ab06ee1be4dff70996d))
 
 ## [0.21.0](https://github.com/Availity/element/compare/@availity/element@0.20.0...@availity/element@0.21.0) (2023-09-25)
 

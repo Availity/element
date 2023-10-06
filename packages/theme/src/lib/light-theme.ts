@@ -642,6 +642,32 @@ export const lightTheme = {
         },
       },
     },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorPrimaryMain,
+            color: tokens.colorTextInverse,
+            '&:hover': {
+              backgroundColor: tokens.colorPrimaryDark,
+            },
+            '.MuiSvgIcon-root': {
+              color: tokens.colorTextInverse,
+            },
+          },
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+          },
+          '&:active': {
+            backgroundColor: '#00000016',
+          },
+          '.MuiSvgIcon-root': {
+            marginRight: '8px',
+            color: tokens.colorSecondaryMain,
+          },
+        },
+      },
+    },
     MuiPagination: {
       defaultProps: {
         color: 'primary',

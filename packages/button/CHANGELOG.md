@@ -4,10 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-button@0.4.0...@availity/mui-button@0.4.1) (2023-10-03)
 
-
 ### Bug Fixes
 
-* **mui-button:** fix styling for pure icon button ([9d4a524](https://github.com/Availity/element/commit/9d4a524388d512ecc27e8e803b536036f6fedbc6))
+- **mui-button:** fix styling for pure icon button ([9d4a524](https://github.com/Availity/element/commit/9d4a524388d512ecc27e8e803b536036f6fedbc6))
 
 ## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-button@0.3.1...@availity/mui-button@0.4.0) (2023-09-26)
 
