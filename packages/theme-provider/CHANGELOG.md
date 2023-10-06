@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.1](https://github.com/Availity/element/compare/@availity/theme-provider@0.3.0...@availity/theme-provider@0.3.1) (2023-10-06)
+
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/theme-provider@0.2.4...@availity/theme-provider@0.3.0) (2023-08-28)
 
 
