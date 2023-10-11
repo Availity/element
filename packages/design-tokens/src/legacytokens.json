@@ -1315,7 +1315,7 @@
       },
       "text": {
         "primary": {
-          "value": "{color.grey.700}",
+          "value": "#212529",
           "type": "color"
         },
         "secondary": {

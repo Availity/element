@@ -472,40 +472,53 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorBackgroundPaper,
-          borderColor: tokens.colorGrey50,
-          maxWidth: '345px',
+          borderColor: tokens.colorGrey100,
         },
       },
     },
     MuiCardActions: {
       styleOverrides: {
         root: {
-          padding: '16px',
+          padding: '1.25rem',
+          backgroundColor: tokens.colorGrey100,
         },
       },
     },
     MuiCardContent: {
       styleOverrides: {
         root: {
-          fontSize: tokens.typographyBody2FontSize,
-          fontWeight: tokens.typographyBody2FontWeight,
-          fontFamily: tokens.typographyBody2FontFamily,
-          letterSpacing: tokens.typographyBody2LetterSpacing,
+          fontSize: tokens.typographyBody1FontSize,
+          fontWeight: tokens.typographyBody1FontWeight,
+          fontFamily: tokens.typographyBody1FontFamily,
+          letterSpacing: tokens.typographyBody1LetterSpacing,
           color: tokens.colorTextPrimary,
+          padding: '1.25rem',
+        },
+      },
+    },
+    MuiCardFooter: {
+      styleOverrides: {
+        root: {
+          padding: '1.25rem',
         },
       },
     },
     MuiCardHeader: {
       styleOverrides: {
         root: {
-          backgroundColor: tokens.colorGrey50,
+          backgroundColor: tokens.colorGrey100,
           color: tokens.colorTextPrimary,
+          padding: '1.25rem',
+          lineHeight: '24px',
+          '.MuiCardHeader-title, .MuiCardHeader-subheader': {
+            fontWeight: tokens.fontWeightsRegular,
+          },
         },
       },
     },
     MuiCardMedia: {
       styleOverrides: {
-        maxHeight: '100px',
+        padding: '1.25rem',
       },
     },
     MuiCheckbox: {
