@@ -31,7 +31,7 @@ export const _Menu: StoryObj<typeof Menu> = {
     };
 
     return (
-      <>
+      <div>
         <Button
           id="basic-button"
           aria-controls={open ? 'basic-menu' : undefined}
@@ -61,7 +61,7 @@ export const _Menu: StoryObj<typeof Menu> = {
           </MenuItem>
           <MenuItem onClick={handleClose}>Logout</MenuItem>
         </Menu>
-      </>
+      </div>
     );
   },
 };
@@ -84,7 +84,7 @@ export const _MenuWithIcons: StoryObj<typeof Menu> = {
     };
 
     return (
-      <>
+      <div>
         <Button
           id="basic-button"
           aria-controls={open ? 'basic-menu' : undefined}
@@ -122,7 +122,7 @@ export const _MenuWithIcons: StoryObj<typeof Menu> = {
             Logout
           </MenuItem>
         </Menu>
-      </>
+      </div>
     );
   },
 };
