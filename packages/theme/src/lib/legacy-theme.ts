@@ -711,12 +711,12 @@ export const legacyTheme = {
           width: 'auto',
           padding: '10px 12px',
           '&:focus': {
-            boxShadow: `0 0 0px 4px ${tokens.borderInputFocus}`,
+            boxShadow: `0 0 0px .2rem ${tokens.borderInputFocus}`,
           },
           '&.Mui-error': {
             borderColor: tokens.borderError,
             '&:focus': {
-              boxShadow: `0 0 0px 4px ${tokens.borderInputFocus}`,
+              boxShadow: `0 0 0px .2rem ${tokens.borderInputFocus}`,
             },
           },
         },
