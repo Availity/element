@@ -317,8 +317,8 @@ export const legacyTheme = {
           },
         },
         standardInfo: {
-          backgroundColor: tokens.colorPrimaryMain,
-          color: tokens.colorPrimaryContrast,
+          backgroundColor: tokens.colorInfoMain,
+          color: tokens.colorInfoContrast,
         },
         action: {
           margin: '-3px -3px -3px auto',
