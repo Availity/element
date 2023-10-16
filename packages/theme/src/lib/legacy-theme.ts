@@ -630,6 +630,9 @@ export const legacyTheme = {
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
           },
+          '&.Mui-focused': {
+            color: 'inherit',
+          },
         },
         asterisk: {
           color: tokens.colorTextError,
@@ -701,24 +704,12 @@ export const legacyTheme = {
           'label + &': {
             marginTop: '.5rem',
           },
-        },
-        input: {
           borderRadius: 4,
           position: 'relative',
-          border: '1px solid',
-          borderColor: tokens.borderInput,
-          fontSize: 16,
-          width: 'auto',
-          padding: '10px 12px',
-          '&:focus': {
-            boxShadow: `0 0 0px .2rem ${tokens.borderInputFocus}`,
-          },
-          '&.Mui-error': {
-            borderColor: tokens.borderError,
-            '&:focus': {
-              boxShadow: `0 0 0px .2rem ${tokens.borderInputFocus}`,
-            },
-          },
+          fontSize: '1rem',
+        },
+        inputSizeSmall: {
+          padding: '.375rem .75rem',
         },
       },
     },
@@ -754,6 +745,33 @@ export const legacyTheme = {
     MuiOutlinedInput: {
       defaultProps: {
         size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorCommonWhite,
+          '&.Mui-focused': {
+            '.MuiOutlinedInput-notchedOutline': {
+              borderColor: tokens.borderInputFocus,
+              borderWidth: '1px',
+              boxShadow: `0 0 0px .2rem ${tokens.borderInputFocus}`,
+            },
+            '&.Mui-error': {
+              '.MuiOutlinedInput-notchedOutline': {
+                boxShadow: `0 0 0px .2rem ${tokens.borderError}`,
+              },
+            },
+          },
+          '&.Mui-error, &.Mui-error.Mui-focused': {
+            '.MuiOutlinedInput-notchedOutline': {
+              borderColor: tokens.borderError,
+            },
+          },
+        },
+        notchedOutline: {
+          padding: 0,
+          border: '1px solid',
+          borderColor: tokens.borderInput,
+        },
       },
     },
     MuiPagination: {
