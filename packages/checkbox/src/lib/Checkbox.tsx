@@ -1,8 +1,18 @@
 import { forwardRef } from 'react';
 import { Checkbox as MuiCheckbox, CheckboxProps as MuiCheckboxProps } from '@mui/material';
 
-export interface CheckboxProps extends Omit<MuiCheckboxProps, 'size'> {
-  children?: React.ReactNode;
+export interface CheckboxProps
+  extends Omit<
+    MuiCheckboxProps,
+    | 'centerRipple'
+    | 'disableFocusRipple'
+    | 'disableRipple'
+    | 'disableTouchRipple'
+    | 'focusRipple'
+    | 'size'
+    | 'TouchRippleProps'
+    | 'touchRippleRef'
+  > {
   color?: 'primary' | 'error';
 }
 
