@@ -528,6 +528,12 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           marginLeft: '0px',
+          '&:not(&.Mui-error) .MuiSvgIcon-root': {
+            display: 'none',
+          },
+          '.MuiSvgIcon-root': {
+            verticalAlign: 'text-bottom',
+          },
         },
       },
     },
@@ -535,9 +541,9 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           // move required asterisk before text
-          display: 'flex',
-          flexDirection: 'row-reverse',
-          justifyContent: 'flex-end',
+          display: important('flex'),
+          flexDirection: important('row-reverse'),
+          justifyContent: important('flex-end'),
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
           },
@@ -552,6 +558,11 @@ export const lightTheme = {
           color: tokens.colorTextError,
           marginRight: '.25rem',
           marginLeft: '-.15rem',
+        },
+        children: {
+          '.MuiFormLabel-asterisk': {
+            display: 'none',
+          },
         },
       },
     },
@@ -592,7 +603,6 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           '&.MuiInputBase-root': {
-            padding: '0px 4px',
             backgroundColor: 'white',
             '& > fieldset': {
               borderColor: tokens.colorGrey400,
@@ -622,6 +632,10 @@ export const lightTheme = {
         },
         adornedEnd: {
           backgroundColor: 'white',
+          paddingRight: '.75rem',
+        },
+        adornedStart: {
+          paddingLeft: '.75rem',
         },
       },
     },
@@ -715,6 +729,18 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           borderColor: tokens.colorBackgroundBorder,
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        iconOpen: {
+          transform: 'scaleY(-1)',
+        },
+        select: {
+          '&.MuiInputBase-input': {
+            paddingRight: '2.5rem',
+          },
         },
       },
     },
