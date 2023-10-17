@@ -3,7 +3,7 @@ import { TextField } from './TextField';
 
 describe('TextField', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<TextField label="Test" />);
-    expect(getByText('Test')).toBeTruthy();
+    const { getByLabelText } = render(<TextField label="Test" />);
+    expect(getByLabelText('Test')).toBeTruthy();
   });
 });
