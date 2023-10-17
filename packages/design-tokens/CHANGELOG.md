@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.7.1...@availity/design-tokens@0.8.0) (2023-10-17)
+
+
+### Features
+
+* **mui-card:** add legacy theme ([ff7e238](https://github.com/Availity/element/commit/ff7e2381c686f27cfc6ada02b1a4c315a28c90a5))
+
 ## [0.7.1](https://github.com/Availity/element/compare/@availity/design-tokens@0.7.0...@availity/design-tokens@0.7.1) (2023-10-13)
 
 ## [0.7.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.6.2...@availity/design-tokens@0.7.0) (2023-10-06)
