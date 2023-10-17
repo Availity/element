@@ -4,10 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.19.4](https://github.com/Availity/element/compare/@availity/theme@0.19.3...@availity/theme@0.19.4) (2023-10-17)
 
-
 ### Bug Fixes
 
-* **mui-menu:** selected active state styling ([94a80df](https://github.com/Availity/element/commit/94a80dfbb87a73be2e4c2f02afd8bbd797f5e784))
+- **mui-menu:** selected active state styling ([94a80df](https://github.com/Availity/element/commit/94a80dfbb87a73be2e4c2f02afd8bbd797f5e784))
 
 ## [0.19.3](https://github.com/Availity/element/compare/@availity/theme@0.19.2...@availity/theme@0.19.3) (2023-10-17)
 

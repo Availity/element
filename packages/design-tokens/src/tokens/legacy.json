@@ -1252,7 +1252,7 @@
         "type": "color"
       },
       "contrast": {
-        "value": "#292B32",
+        "value": "#212529",
         "type": "color"
       }
     },
@@ -1330,7 +1330,7 @@
         "type": "color"
       },
       "contrast": {
-        "value": "#292B32",
+        "value": "#212529",
         "type": "color"
       }
     },
@@ -1362,7 +1362,7 @@
     },
     "text": {
       "primary": {
-        "value": "#292B32",
+        "value": "#212529",
         "type": "color"
       },
       "secondary": {
