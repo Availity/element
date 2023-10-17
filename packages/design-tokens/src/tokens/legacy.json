@@ -792,43 +792,43 @@
   "color": {
     "blue": {
       "50": {
-        "value": "#EBF3F9",
+        "value": "#f1f6f9",
         "type": "color"
       },
       "100": {
-        "value": "#BBD5EA",
+        "value": "#c5dae7",
         "type": "color"
       },
       "200": {
-        "value": "#94C4EB",
+        "value": "#9fcae5",
         "type": "color"
       },
       "300": {
-        "value": "#6CAFE7",
+        "value": "#78b7dd",
         "type": "color"
       },
       "400": {
-        "value": "#519EE6",
+        "value": "#6ba7d1",
         "type": "color"
       },
       "500": {
-        "value": "#0B64BB",
+        "value": "#357eb6",
         "type": "color"
       },
       "600": {
-        "value": "#1552BC",
+        "value": "#2261b4",
         "type": "color"
       },
       "700": {
-        "value": "#103E8E",
+        "value": "#1a5989",
         "type": "color"
       },
       "800": {
-        "value": "#0B2A60",
+        "value": "#133d5e",
         "type": "color"
       },
       "900": {
-        "value": "#061632",
+        "value": "#0a2133",
         "type": "color"
       }
     },
@@ -928,43 +928,43 @@
     },
     "green": {
       "50": {
-        "value": "#F2F8ED",
+        "value": "#fbfefd",
         "type": "color"
       },
       "100": {
-        "value": "#D8E9C9",
+        "value": "#d5f0eb",
         "type": "color"
       },
       "200": {
-        "value": "#BDDAA4",
+        "value": "#b0e3da",
         "type": "color"
       },
       "300": {
-        "value": "#83ac5f",
+        "value": "#64b9aa",
         "type": "color"
       },
       "400": {
-        "value": "#71a443",
+        "value": "#41b9a3",
         "type": "color"
       },
       "500": {
-        "value": "#5e9b25",
+        "value": "#23b396",
         "type": "color"
       },
       "600": {
-        "value": "#46731B",
+        "value": "#1a8973",
         "type": "color"
       },
       "700": {
-        "value": "#325313",
+        "value": "#136757",
         "type": "color"
       },
       "800": {
-        "value": "#263E0E",
+        "value": "#0f5243",
         "type": "color"
       },
       "900": {
-        "value": "#192A09",
+        "value": "#0a3d33",
         "type": "color"
       }
     },
@@ -1096,65 +1096,107 @@
     },
     "red": {
       "50": {
-        "value": "#FFB5B6",
+        "value": "#faa399",
         "type": "color"
       },
       "100": {
-        "value": "#FF9D9E",
+        "value": "#f9968b",
         "type": "color"
       },
       "200": {
-        "value": "#FF7C7E",
+        "value": "#f77364",
         "type": "color"
       },
       "300": {
-        "value": "#FF5053",
+        "value": "#f5503d",
         "type": "color"
       },
       "400": {
-        "value": "#E72C2F",
+        "value": "#d03625",
         "type": "color"
       },
       "500": {
-        "value": "#C70002",
+        "value": "#a01808",
         "type": "color"
       },
       "600": {
-        "value": "#981123",
+        "value": "#751515",
         "type": "color"
       },
       "700": {
-        "value": "#6A0C18",
+        "value": "#4a0d0d",
         "type": "color"
       },
       "800": {
-        "value": "#3B070E",
+        "value": "#1e0606",
         "type": "color"
       },
       "900": {
-        "value": "#240409",
+        "value": "#090202",
+        "type": "color"
+      }
+    },
+    "slate": {
+      "50": {
+        "value": "#e0e5e6",
+        "type": "color"
+      },
+      "100": {
+        "value": "#bec7ca",
+        "type": "color"
+      },
+      "200": {
+        "value": "#9bbbc5",
+        "type": "color"
+      },
+      "300": {
+        "value": "#7ba9b7",
+        "type": "color"
+      },
+      "400": {
+        "value": "#7497a4",
+        "type": "color"
+      },
+      "500": {
+        "value": "#4c6e7b",
+        "type": "color"
+      },
+      "600": {
+        "value": "#385f7a",
+        "type": "color"
+      },
+      "700": {
+        "value": "#284a57",
+        "type": "color"
+      },
+      "800": {
+        "value": "#182c34",
+        "type": "color"
+      },
+      "900": {
+        "value": "#080f11",
         "type": "color"
       }
     },
     "primary": {
       "main": {
-        "value": "#1552BC",
+        "value": "#2261b4",
         "type": "color"
       },
       "main-20": {
-        "value": "#1552BC20",
+        "value": "#2261b420",
         "type": "color"
       },
       "light": {
-        "value": "#0B64BB",
+        "value": "#357eb6",
         "type": "color"
       },
       "dark": {
-        "value": "#103E8E",
+        "value": "#1a5989",
         "type": "color"
       },
       "darker": {
-        "value": "#0B2A60",
+        "value": "#133d5e",
         "type": "color"
       },
       "contrast": {
@@ -1216,23 +1258,23 @@
     },
     "info": {
       "main": {
-        "value": "#1552BC",
+        "value": "#385f7a",
         "type": "color"
       },
       "main-20": {
-        "value": "#1552BC20",
+        "value": "#385f7a20",
         "type": "color"
       },
       "light": {
-        "value": "#0B64BB",
+        "value": "#4c6e7b",
         "type": "color"
       },
       "dark": {
-        "value": "#103E8E",
+        "value": "#284a57",
         "type": "color"
       },
       "darker": {
-        "value": "#0B2A60",
+        "value": "#182c34",
         "type": "color"
       },
       "contrast": {
@@ -1242,23 +1284,23 @@
     },
     "success": {
       "main": {
-        "value": "#325313",
+        "value": "#136757",
         "type": "color"
       },
       "main-20": {
-        "value": "#2B640C20",
+        "value": "#13675720",
         "type": "color"
       },
       "light": {
-        "value": "#46731B",
+        "value": "#1a8973",
         "type": "color"
       },
       "dark": {
-        "value": "#263E0E",
+        "value": "#0f5243",
         "type": "color"
       },
       "darker": {
-        "value": "#192A09",
+        "value": "#0a3d33",
         "type": "color"
       },
       "contrast": {
@@ -1272,7 +1314,7 @@
         "type": "color"
       },
       "main-20": {
-        "value": "#E6C40020",
+        "value": "#e6c40020",
         "type": "color"
       },
       "light": {
@@ -1294,23 +1336,23 @@
     },
     "error": {
       "main": {
-        "value": "#C70002",
+        "value": "#a01808",
         "type": "color"
       },
       "main-20": {
-        "value": "#C7000220",
+        "value": "#a0180820",
         "type": "color"
       },
       "light": {
-        "value": "#E72C2F",
+        "value": "#d03625",
         "type": "color"
       },
       "dark": {
-        "value": "#981123",
+        "value": "#751515",
         "type": "color"
       },
       "darker": {
-        "value": "#6A0C18",
+        "value": "#4a0d0d",
         "type": "color"
       },
       "contrast": {
@@ -1332,19 +1374,19 @@
         "type": "color"
       },
       "info": {
-        "value": "#1552BC",
+        "value": "#2261b4",
         "type": "color"
       },
       "error": {
-        "value": "#981123",
+        "value": "#751515",
         "type": "color"
       },
       "success": {
-        "value": "#46731B",
+        "value": "#1a8973",
         "type": "color"
       },
       "link": {
-        "value": "#0B64BB",
+        "value": "#357eb6",
         "type": "color"
       },
       "inverse": {
@@ -1517,7 +1559,7 @@
   },
   "fontFamilies": {
     "base": {
-      "value": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "value": "Helvetica Neue, Helvetica, Arial, sans-serif",
       "type": "fontFamilies"
     }
   },
@@ -1656,7 +1698,7 @@
   "typography": {
     "d1": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 300
@@ -1682,7 +1724,7 @@
     },
     "d2": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 300
@@ -1708,7 +1750,7 @@
     },
     "h1": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 500
@@ -1734,7 +1776,7 @@
     },
     "h2": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 500
@@ -1760,7 +1802,7 @@
     },
     "h3": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 500
@@ -1786,7 +1828,7 @@
     },
     "h4": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 500
@@ -1812,7 +1854,7 @@
     },
     "h5": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 500
@@ -1838,7 +1880,7 @@
     },
     "h6": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 500
@@ -1864,7 +1906,7 @@
     },
     "subtitle1": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 400
@@ -1890,7 +1932,7 @@
     },
     "subtitle2": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 400
@@ -1916,7 +1958,7 @@
     },
     "body1": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 400
@@ -1942,7 +1984,7 @@
     },
     "body2": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 400
@@ -1968,7 +2010,7 @@
     },
     "button": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 400
@@ -1994,7 +2036,7 @@
     },
     "caption": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 400
@@ -2020,7 +2062,7 @@
     },
     "overline": {
       "fontFamily": {
-        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+        "value": "Helvetica Neue, Helvetica, Arial, sans-serif"
       },
       "fontWeight": {
         "value": 400
@@ -2047,7 +2089,7 @@
   },
   "border": {
     "primary": {
-      "value": "#1552BC",
+      "value": "#2261b4",
       "type": "color"
     },
     "secondary": {
@@ -2055,7 +2097,7 @@
       "type": "color"
     },
     "error": {
-      "value": "#C70002",
+      "value": "#a01808",
       "type": "color"
     },
     "disabled": {
@@ -2075,7 +2117,7 @@
       "type": "color"
     },
     "inputFocus": {
-      "value": "#1552BC",
+      "value": "#2261b4",
       "type": "color"
     },
     "inverse": {

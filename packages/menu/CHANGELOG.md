@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.3](https://github.com/Availity/element/compare/@availity/mui-menu@0.1.2...@availity/mui-menu@0.1.3) (2023-10-12)
+
 ## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-menu@0.1.1...@availity/mui-menu@0.1.2) (2023-10-06)
 
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-menu@0.1.0...@availity/mui-menu@0.1.1) (2023-08-23)

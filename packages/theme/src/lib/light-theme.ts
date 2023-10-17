@@ -651,6 +651,9 @@ export const lightTheme = {
             '&:hover': {
               backgroundColor: tokens.colorPrimaryDark,
             },
+            '&:active': {
+              backgroundColor: tokens.colorPrimaryDarker,
+            },
             '.MuiSvgIcon-root': {
               color: tokens.colorTextInverse,
             },
