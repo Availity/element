@@ -4,8 +4,9 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { FormControlLabel } from '@availity/mui-form-utils';
 import { Typography } from '@availity/mui-typography';
-import { Box, FormGroup, FormControl, FormLabel } from '@mui/material';
+import { Box, FormGroup, FormControl, FormLabel, Container } from '@mui/material';
 import { HeartEmptyIcon, HeartIcon } from '@availity/mui-icon';
+import { PageHeader } from '@availity/mui-page-header';
 import { Checkbox, CheckboxProps } from './Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
@@ -26,15 +27,20 @@ export default meta;
 export const _Checkbox: StoryObj<typeof Checkbox> = {
   render: (args: CheckboxProps) => (
     <>
-      <Typography variant="h1">Examples</Typography>
-      <Typography variant="body1">Storybook controls do not apply to these</Typography>
-      <Checkbox defaultChecked inputProps={{ 'aria-label': 'Default Checked example' }} />
-      <Checkbox inputProps={{ 'aria-label': 'Default Unchecked example' }} />
-      <Checkbox inputProps={{ 'aria-label': 'Disabled example' }} disabled />
-      <Checkbox inputProps={{ 'aria-label': 'Disabled Checked example' }} disabled checked />
-      <Typography variant="h1">Playground</Typography>
-      <Typography variant="body1">Storybook controls apply to this component</Typography>
-      <Checkbox {...args} />
+      <PageHeader headerText="Checkboxes" breadcrumbs={{ active: 'This page' }} />
+      <Container>
+        <Typography variant="h2" marginTop="1rem">
+          Examples
+        </Typography>
+        <Typography variant="body1">Storybook controls do not apply to these</Typography>
+        <Checkbox defaultChecked inputProps={{ 'aria-label': 'Default Checked example' }} />
+        <Checkbox inputProps={{ 'aria-label': 'Default Unchecked example' }} />
+        <Checkbox inputProps={{ 'aria-label': 'Disabled example' }} disabled />
+        <Checkbox inputProps={{ 'aria-label': 'Disabled Checked example' }} disabled checked />
+        <Typography variant="h2">Playground</Typography>
+        <Typography variant="body1">Storybook controls apply to this component</Typography>
+        <Checkbox {...args} />
+      </Container>
     </>
   ),
   args: {
@@ -48,39 +54,44 @@ export const _Checkbox: StoryObj<typeof Checkbox> = {
 export const _CustomCheckbox: StoryObj<typeof Checkbox> = {
   render: (args: CheckboxProps) => (
     <>
-      <Typography variant="h1">Examples</Typography>
-      <Typography variant="body1">Storybook controls do not apply to these</Typography>
-      <Checkbox
-        defaultChecked
-        inputProps={{ 'aria-label': 'Default Checked example' }}
-        color="error"
-        icon={<HeartEmptyIcon />}
-        checkedIcon={<HeartIcon />}
-      />
-      <Checkbox
-        inputProps={{ 'aria-label': 'Default Unchecked example' }}
-        color="error"
-        icon={<HeartEmptyIcon />}
-        checkedIcon={<HeartIcon />}
-      />
-      <Checkbox
-        disabled
-        inputProps={{ 'aria-label': 'Disabled example' }}
-        color="error"
-        icon={<HeartEmptyIcon />}
-        checkedIcon={<HeartIcon />}
-      />
-      <Checkbox
-        disabled
-        checked
-        inputProps={{ 'aria-label': 'Disabled Checked example' }}
-        color="error"
-        icon={<HeartEmptyIcon />}
-        checkedIcon={<HeartIcon />}
-      />
-      <Typography variant="h1">Playground</Typography>
-      <Typography variant="body1">Storybook controls apply to this component</Typography>
-      <Checkbox {...args} />
+      <PageHeader headerText="Custom Checkboxes" breadcrumbs={{ active: 'This page' }} />
+      <Container>
+        <Typography variant="h2" marginTop="1rem">
+          Examples
+        </Typography>
+        <Typography variant="body1">Storybook controls do not apply to these</Typography>
+        <Checkbox
+          defaultChecked
+          inputProps={{ 'aria-label': 'Default Checked example' }}
+          color="error"
+          icon={<HeartEmptyIcon />}
+          checkedIcon={<HeartIcon />}
+        />
+        <Checkbox
+          inputProps={{ 'aria-label': 'Default Unchecked example' }}
+          color="error"
+          icon={<HeartEmptyIcon />}
+          checkedIcon={<HeartIcon />}
+        />
+        <Checkbox
+          disabled
+          inputProps={{ 'aria-label': 'Disabled example' }}
+          color="error"
+          icon={<HeartEmptyIcon />}
+          checkedIcon={<HeartIcon />}
+        />
+        <Checkbox
+          disabled
+          checked
+          inputProps={{ 'aria-label': 'Disabled Checked example' }}
+          color="error"
+          icon={<HeartEmptyIcon />}
+          checkedIcon={<HeartIcon />}
+        />
+        <Typography variant="h2">Playground</Typography>
+        <Typography variant="body1">Storybook controls apply to this component</Typography>
+        <Checkbox {...args} />
+      </Container>
     </>
   ),
   args: {
@@ -96,14 +107,19 @@ export const _CustomCheckbox: StoryObj<typeof Checkbox> = {
 export const _LabeledCheckbox: StoryObj<typeof Checkbox> = {
   render: (args: CheckboxProps) => (
     <>
-      <Typography variant="h1">Examples</Typography>
-      <Typography variant="body1">Storybook controls do not apply to these</Typography>
-      <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-      <FormControlLabel required control={<Checkbox />} label="Required" />
-      <FormControlLabel control={<Checkbox disabled />} label="Disabled" />
-      <Typography variant="h1">Playground</Typography>
-      <Typography variant="body1">Storybook controls apply to this component</Typography>
-      <FormControlLabel control={<Checkbox {...args} />} label="Label" />
+      <PageHeader headerText="Labeled Checkboxes" breadcrumbs={{ active: 'This page' }} />
+      <Container>
+        <Typography variant="h2" marginTop="1rem">
+          Examples
+        </Typography>
+        <Typography variant="body1">Storybook controls do not apply to these</Typography>
+        <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+        <FormControlLabel required control={<Checkbox />} label="Required" />
+        <FormControlLabel control={<Checkbox disabled />} label="Disabled" />
+        <Typography variant="h2">Playground</Typography>
+        <Typography variant="body1">Storybook controls apply to this component</Typography>
+        <FormControlLabel control={<Checkbox {...args} />} label="Label" />
+      </Container>
     </>
   ),
   args: {},
@@ -162,35 +178,40 @@ export const _IndeterminateCheckbox: StoryObj<typeof Checkbox> = {
 export const _FormGroupCheckbox: StoryObj<typeof Checkbox> = {
   render: (args: CheckboxProps) => (
     <>
-      <Typography variant="h1">Examples</Typography>
-      <Typography variant="body1">Storybook controls do not apply to these</Typography>
-      <FormControl sx={{ m: 3 }} component="fieldset" variant="standard" required>
-        <FormLabel component="legend">Vertical Checkboxes</FormLabel>
-        <FormGroup>
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-          <FormControlLabel control={<Checkbox />} label="Label 2" />
-          <FormControlLabel disabled control={<Checkbox />} label="Label 3" />
-        </FormGroup>
-      </FormControl>
+      <PageHeader headerText="Form Group Checkboxes" breadcrumbs={{ active: 'This page' }} />
+      <Container>
+        <Typography variant="h2" marginTop="1rem">
+          Examples
+        </Typography>
+        <Typography variant="body1">Storybook controls do not apply to these</Typography>
+        <FormControl sx={{ m: 3 }} component="fieldset" variant="standard" required>
+          <FormLabel component="legend">Vertical Checkboxes</FormLabel>
+          <FormGroup>
+            <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+            <FormControlLabel control={<Checkbox />} label="Label 2" />
+            <FormControlLabel disabled control={<Checkbox />} label="Label 3" />
+          </FormGroup>
+        </FormControl>
 
-      <FormControl sx={{ m: 3 }} component="fieldset" variant="standard" required>
-        <FormLabel component="legend">Horizontal Checkboxes</FormLabel>
-        <FormGroup row>
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-          <FormControlLabel control={<Checkbox />} label="Label 2" />
-          <FormControlLabel disabled control={<Checkbox />} label="Label 3" />
-        </FormGroup>
-      </FormControl>
+        <FormControl sx={{ m: 3 }} component="fieldset" variant="standard" required>
+          <FormLabel component="legend">Horizontal Checkboxes</FormLabel>
+          <FormGroup row>
+            <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+            <FormControlLabel control={<Checkbox />} label="Label 2" />
+            <FormControlLabel disabled control={<Checkbox />} label="Label 3" />
+          </FormGroup>
+        </FormControl>
 
-      <Typography variant="h1">Playground</Typography>
-      <Typography variant="body1">Storybook controls apply to this component</Typography>
+        <Typography variant="h2">Playground</Typography>
+        <Typography variant="body1">Storybook controls apply to this component</Typography>
 
-      <FormControl sx={{ m: 3 }} component="fieldset" variant="standard" required={args.required}>
-        <FormLabel component="legend">Horizontal Checkbox</FormLabel>
-        <FormGroup row>
-          <FormControlLabel control={<Checkbox {...args} />} label="Label" />
-        </FormGroup>
-      </FormControl>
+        <FormControl sx={{ m: 3 }} component="fieldset" variant="standard" required={args.required}>
+          <FormLabel component="legend">Horizontal Checkbox</FormLabel>
+          <FormGroup row>
+            <FormControlLabel control={<Checkbox {...args} />} label="Label" />
+          </FormGroup>
+        </FormControl>
+      </Container>
     </>
   ),
   args: {
