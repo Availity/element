@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.8.0...@availity/design-tokens@0.9.0) (2023-10-20)
+
+
+### Features
+
+* **design-tokens:** update legacy colors for button ([9f85f63](https://github.com/Availity/element/commit/9f85f630fd501aa682612b5b8074d311372f854e))
+
 ## [0.8.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.7.1...@availity/design-tokens@0.8.0) (2023-10-17)
 
 
