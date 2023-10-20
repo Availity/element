@@ -398,9 +398,10 @@ export const legacyTheme = {
       },
       styleOverrides: {
         root: {
-          lineHeight: 1.5,
+          lineHeight: '24px',
           boxShadow: 'none',
           textTransform: 'none',
+          fontWeight: '500',
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
