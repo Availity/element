@@ -1,4 +1,5 @@
-import { OutlinedInput as MuiInput, OutlinedInputProps as MuiInputProps } from '@mui/material';
+import MuiInput, { OutlinedInputProps as MuiInputProps } from '@mui/material/OutlinedInput';
+import InputAdornment, { InputAdornmentProps } from '@mui/material/InputAdornment';
 
 export type InputProps = Omit<
   MuiInputProps,
@@ -13,3 +14,6 @@ export const InputPropOverrides = {
 export const Input = (props: InputProps): JSX.Element => {
   return <MuiInput {...props} {...InputPropOverrides} />;
 };
+
+export { InputAdornment };
+export type { InputAdornmentProps };

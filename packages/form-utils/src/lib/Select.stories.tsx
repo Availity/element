@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box, FormControl, MenuItem, SelectChangeEvent } from '@mui/material';
+import { Box, FormControl, MenuItem } from '@mui/material';
 import { visuallyHidden } from '@mui/utils';
 import { Chip } from '@availity/mui-chip';
-import { FormLabel, Select, SelectProps } from '..';
+import { FormLabel, Select, SelectProps, SelectChangeEvent } from '..';
 
 const meta: Meta<typeof Select> = {
   title: 'Components/FormUtils/Select',

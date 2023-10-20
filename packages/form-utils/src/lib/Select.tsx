@@ -1,4 +1,6 @@
-import { Divider, Select as MuiSelect, SelectProps as MuiSelectProps, Stack, StackProps } from '@mui/material';
+import MuiSelect, { SelectProps as MuiSelectProps, SelectChangeEvent } from '@mui/material/Select';
+import Divider from '@mui/material/Divider';
+import Stack, { StackProps } from '@mui/material/Stack';
 import { ExpandIcon } from '@availity/mui-icon';
 import { InputPropOverrides } from './Input';
 
@@ -24,3 +26,5 @@ export const SelectPropOverrides = {
 export const Select = (props: SelectProps): JSX.Element => {
   return <MuiSelect {...props} {...SelectPropOverrides} />;
 };
+
+export type { SelectChangeEvent };
