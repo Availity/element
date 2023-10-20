@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-textfield@0.1.1...@availity/mui-textfield@0.2.0) (2023-10-20)
+
+
+### Features
+
+* **mui-textfield:** add select, wrap mui textfield ([c3329f9](https://github.com/Availity/element/commit/c3329f9ab6de35be3c07168f1d609c41fa29f79a))
+
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-textfield@0.1.0...@availity/mui-textfield@0.1.1) (2023-10-06)
 
 ## 0.1.0 (2023-09-25)
