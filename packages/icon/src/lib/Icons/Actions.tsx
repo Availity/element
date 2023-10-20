@@ -14,6 +14,7 @@ import { faBell } from '@fortawesome/free-solid-svg-icons/faBell';
 import { faChartColumn } from '@fortawesome/free-solid-svg-icons/faChartColumn';
 import { SvgIconProps } from '@mui/material';
 import { FaSvgIcon } from '../FaSvgIcon';
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 export const FilterIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFilter} {...props} />;
 
@@ -52,3 +53,7 @@ export const BellIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon 
 export const ChartColumnIcon = ({ ...props }: SvgIconProps): JSX.Element => (
   <FaSvgIcon icon={faChartColumn} {...props} />
 );
+
+export const ExpandIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faAngleDown} {...props} />;
+
+export const CollapseIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faAngleUp} {...props} />;

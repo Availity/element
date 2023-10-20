@@ -138,24 +138,24 @@ export const legacyTheme = {
       primary: tokens.colorTextPrimary,
       secondary: tokens.colorTextSecondary,
       disabled: tokens.colorTextDisabled,
-      error: tokens.colorErrorMain,
+      error: tokens.colorTextError,
       hint: 'rgba(0, 0, 0, 0.38)',
       divider: 'rgba(0, 0, 0, 0.12)',
       success: tokens.colorSuccessMain,
       info: tokens.colorTextPrimary,
-      link: tokens.colorTextPrimary,
+      link: tokens.colorTextLink,
       inverse: tokens.colorCommonWhite,
       inverseSecondary: '#ffffff24',
     },
     border: {
-      primary: tokens.colorPrimaryMain,
-      secondary: tokens.colorGrey400,
-      error: tokens.colorErrorMain,
-      disabled: tokens.colorGrey300,
-      decorative: tokens.colorGrey200,
-      input: tokens.colorGrey400,
-      inputHover: tokens.colorGrey600,
-      inputFocus: tokens.colorPrimaryMain,
+      primary: tokens.borderPrimary,
+      secondary: tokens.borderSecondary,
+      error: tokens.borderError,
+      disabled: tokens.borderDisabled,
+      decorative: tokens.borderDecorative,
+      input: tokens.borderInput,
+      inputHover: tokens.borderInputHover,
+      inputFocus: tokens.borderInputFocus,
       inverse: tokens.colorCommonWhite,
       inverseSecondary: '#ffffff24',
     },
@@ -578,6 +578,7 @@ export const legacyTheme = {
           height: 'auto',
           fontSize: '.75rem',
           lineHeight: '.75rem',
+          borderRadius: '.25rem',
           // Bug with state styles being overwritten when not defined in root https://github.com/mui/material-ui/issues/29703#issuecomment-1548356589
           '&.MuiChip-deletable': {
             '&:hover': {
@@ -620,13 +621,29 @@ export const legacyTheme = {
         sizeSmall: {
           fontWeight: tokens.fontWeightsBold,
           verticalAlign: 'text-bottom',
-          borderRadius: '.25rem',
           padding: '0.25rem 0.4rem',
         },
         sizeMedium: {
           fontWeight: tokens.fontWeightsRegular,
-          borderRadius: '10rem',
           padding: '0.25rem 0.6rem',
+        },
+      },
+    },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          marginLeft: '0px',
+          fontSize: '.875rem',
+          color: tokens.colorTextSecondary,
+          '&.Mui-error': {
+            color: tokens.colorTextError,
+          },
+          '&:not(&.Mui-error) .MuiSvgIcon-root': {
+            display: 'none',
+          },
+          '.MuiSvgIcon-root': {
+            verticalAlign: 'text-bottom',
+          },
         },
       },
     },
@@ -634,10 +651,10 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           // move required asterisk before text
-          display: 'flex',
-          flexDirection: 'row-reverse',
-          justifyContent: 'flex-end',
-          '&.Mui-error': {
+          display: important('flex'),
+          flexDirection: important('row-reverse'),
+          justifyContent: important('flex-end'),
+          '&.Mui-error, &.Mui-error.Mui-focused': {
             color: tokens.colorTextError,
           },
           '&.Mui-disabled': {
@@ -648,11 +665,16 @@ export const legacyTheme = {
           },
         },
         asterisk: {
-          color: tokens.colorTextError,
+          color: tokens.colorErrorMain,
           fontWeight: tokens.fontWeightsBold,
           marginRight: '.25rem',
           fontSize: '1.3rem',
           lineHeight: '100%',
+        },
+        children: {
+          '.MuiFormLabel-asterisk': {
+            display: 'none',
+          },
         },
       },
     },
@@ -694,20 +716,6 @@ export const legacyTheme = {
           padding: '0.5rem 1rem',
           fontSize: '1.25rem',
           borderRadius: '0.3rem',
-        },
-      },
-    },
-    MuiInputLabel: {
-      defaultProps: {
-        shrink: true,
-      },
-      styleOverrides: {
-        root: {
-          position: 'relative',
-          display: 'flex',
-          transform: 'none',
-          transition: 'none',
-          animation: 'none',
         },
       },
     },
@@ -778,6 +786,9 @@ export const legacyTheme = {
             '.MuiOutlinedInput-notchedOutline': {
               borderColor: tokens.borderError,
             },
+          },
+          '&.Mui-disabled': {
+            backgroundColor: tokens.colorActionDisabledBg,
           },
         },
         notchedOutline: {
@@ -851,6 +862,26 @@ export const legacyTheme = {
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          '&.Mui-error .MuiSelect-icon': {
+            color: tokens.borderError,
+          },
+        },
+        icon: {
+          color: tokens.borderInput,
+        },
+        iconOpen: {
+          transform: 'scaleY(-1)',
+        },
+        select: {
+          '&.MuiInputBase-input': {
+            paddingRight: '2.5rem',
+          },
+        },
+      },
+    },
     MuiSvgIcon: {
       defaultProps: {
         fontSize: 'inherit',
@@ -893,6 +924,11 @@ export const legacyTheme = {
           backgroundColor: tokens.colorBackgroundCanvas,
           height: '3rem',
         },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        fullWidth: true,
       },
     },
     MuiToggleButton: {
