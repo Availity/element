@@ -32,19 +32,16 @@ export type IconButtonProps = {
 >;
 
 // IconButtonVariants not planned until v6 :(
-const textStyles = {
-  border: 'none',
-};
-
 const outlinedStyles = {
   borderRadius: '.25rem',
+  border: 1,
 };
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
   const { title, variant = 'text', sx, ...rest } = props;
   const styles = {
     ...sx,
-    ...(variant === 'text' ? textStyles : outlinedStyles),
+    ...(variant === 'outlined' && outlinedStyles),
   };
   return (
     <Tooltip title={title}>

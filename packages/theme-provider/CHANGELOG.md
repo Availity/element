@@ -2,12 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.3.0](https://github.com/Availity/element/compare/@availity/theme-provider@0.2.4...@availity/theme-provider@0.3.0) (2023-08-28)
+## [0.3.1](https://github.com/Availity/element/compare/@availity/theme-provider@0.3.0...@availity/theme-provider@0.3.1) (2023-10-06)
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/theme-provider@0.2.4...@availity/theme-provider@0.3.0) (2023-08-28)
 
 ### Features
 
-* **theme-provider:** add predefined themes, remove custom theme ability ([b44d734](https://github.com/Availity/element/commit/b44d73424a344a3eb871bf27acd3dd53241b39a4))
+- **theme-provider:** add predefined themes, remove custom theme ability ([b44d734](https://github.com/Availity/element/commit/b44d73424a344a3eb871bf27acd3dd53241b39a4))
 
 ## [0.2.4](https://github.com/Availity/element/compare/@availity/theme-provider@0.2.3...@availity/theme-provider@0.2.4) (2023-08-23)
 

@@ -1,9 +1,9 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box, FormControl, FormHelperText, OutlinedInput } from '@mui/material';
+import { FormControl, OutlinedInput } from '@mui/material';
 import { visuallyHidden } from '@mui/utils';
-import { FormLabel, FormLabelProps } from './FormLabel';
+import { FormHelperText, FormLabel, FormLabelProps, Input } from '..';
 
 /** Label component for use with individual inputs, form controls,  and form groups. For labels to use with `checkbox`/`radio` see `FormControlLabel`. */
 const meta: Meta<typeof FormLabel> = {
@@ -44,7 +44,7 @@ export const _Controls: StoryObj<typeof FormLabel> = {
       <FormLabel htmlFor="field-1" helpTopicId="1234">
         Example
       </FormLabel>
-      <OutlinedInput id="field-1" defaultValue="default value" />
+      <Input id="field-1" defaultValue="default value" />
       <FormHelperText>Helper Text</FormHelperText>
     </FormControl>
   ),

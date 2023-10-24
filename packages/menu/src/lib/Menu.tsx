@@ -15,6 +15,7 @@ export type MenuProps = Omit<
   | 'disableAutoFocusItem'
   | 'disableEnforceFocus'
   | 'disableEscapeKeyDown'
+  | 'elevation'
   | 'onBackdropClick'
   | 'PopoverClasses'
   | 'ref'
@@ -24,13 +25,16 @@ export type MenuProps = Omit<
 >;
 
 export const Menu = (props: MenuProps): JSX.Element => {
-  return <MuiMenu {...props} />;
+  return <MuiMenu {...props} slotProps={{ paper: { variant: 'elevation' } }} />;
 };
 
-export type MenuItemProps = MuiMenuItemProps;
+export type MenuItemProps = Omit<
+  MuiMenuItemProps,
+  'centerRipple' | 'disableRipple' | 'disableTouchRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef'
+>;
 
 export const MenuItem = (props: MenuItemProps) => {
-  return <MuiMenuItem {...props} />;
+  return <MuiMenuItem {...props} disableRipple disableTouchRipple />;
 };
 
 export type MenuListProps = MuiMenuListProps;

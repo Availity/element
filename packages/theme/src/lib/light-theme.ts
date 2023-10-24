@@ -410,6 +410,19 @@ export const lightTheme = {
         maxHeight: '100px',
       },
     },
+    MuiCheckbox: {
+      defaultProps: {
+        color: 'primary',
+      },
+      styleOverrides: {
+        root: {
+          padding: '8px',
+          '&:hover': {
+            backgroundColor: '#00000008',
+          },
+        },
+      },
+    },
     MuiChip: {
       defaultProps: {
         color: 'default',
@@ -490,23 +503,37 @@ export const lightTheme = {
         },
       },
     },
+    MuiFormGroup: {
+      styleOverrides: {
+        root: {
+          '&.MuiFormGroup-row': {
+            '.MuiBox-root:not(:last-of-type)': {
+              marginRight: '16px',
+            },
+          },
+        },
+      },
+    },
     MuiFormHelperText: {
       styleOverrides: {
         root: {
           marginLeft: '0px',
+          '&:not(&.Mui-error) .MuiSvgIcon-root': {
+            display: 'none',
+          },
+          '.MuiSvgIcon-root': {
+            verticalAlign: 'text-bottom',
+          },
         },
       },
     },
     MuiFormLabel: {
-      defaultProps: {
-        shrink: false,
-      },
       styleOverrides: {
         root: {
           // move required asterisk before text
-          display: 'flex',
-          flexDirection: 'row-reverse',
-          justifyContent: 'flex-end',
+          display: important('flex'),
+          flexDirection: important('row-reverse'),
+          justifyContent: important('flex-end'),
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
           },
@@ -522,6 +549,11 @@ export const lightTheme = {
           marginRight: '.25rem',
           marginLeft: '-.15rem',
         },
+        children: {
+          '.MuiFormLabel-asterisk': {
+            display: 'none',
+          },
+        },
       },
     },
     MuiIconButton: {
@@ -530,7 +562,7 @@ export const lightTheme = {
       },
       styleOverrides: {
         colorSecondary: {
-          border: `1px solid ${tokens.borderSecondary}`,
+          borderColor: tokens.borderSecondary,
           '&:hover': {
             backgroundColor: tokens.colorActionHover,
           },
@@ -539,7 +571,7 @@ export const lightTheme = {
           },
         },
         colorPrimary: {
-          border: `1px solid ${tokens.borderPrimary}`,
+          borderColor: tokens.borderPrimary,
           '&:hover, &:focus': {
             backgroundColor: tokens.colorActionSelected,
           },
@@ -561,7 +593,6 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           '&.MuiInputBase-root': {
-            padding: '0px 4px',
             backgroundColor: 'white',
             '& > fieldset': {
               borderColor: tokens.colorGrey400,
@@ -591,6 +622,10 @@ export const lightTheme = {
         },
         adornedEnd: {
           backgroundColor: 'white',
+          paddingRight: '.75rem',
+        },
+        adornedStart: {
+          paddingLeft: '.75rem',
         },
       },
     },
@@ -607,6 +642,35 @@ export const lightTheme = {
           },
           '&:visited': {
             color: tokens.colorIndigo600,
+          },
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorPrimaryMain,
+            color: tokens.colorTextInverse,
+            '&:hover': {
+              backgroundColor: tokens.colorPrimaryDark,
+            },
+            '&:active': {
+              backgroundColor: tokens.colorPrimaryDarker,
+            },
+            '.MuiSvgIcon-root': {
+              color: tokens.colorTextInverse,
+            },
+          },
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+          },
+          '&:active': {
+            backgroundColor: '#00000016',
+          },
+          '.MuiSvgIcon-root': {
+            marginRight: '8px',
+            color: tokens.colorSecondaryMain,
           },
         },
       },
@@ -658,6 +722,18 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           borderColor: tokens.colorBackgroundBorder,
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        iconOpen: {
+          transform: 'scaleY(-1)',
+        },
+        select: {
+          '&.MuiInputBase-input': {
+            paddingRight: '2.5rem',
+          },
         },
       },
     },

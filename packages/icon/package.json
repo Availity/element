@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-icon",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Availity MUI Icon Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -37,7 +37,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.3.0"
   },
   "devDependencies": {
-    "@mui/material": "^5.11.9",
+    "@mui/material": "^5.14.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^5.12.7",
