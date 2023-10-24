@@ -1,5 +1,6 @@
 export * from '@availity/mui-alert';
 export * from '@availity/mui-avatar';
+export * from '@availity/mui-backdrop';
 export * from '@availity/mui-badge';
 export * from '@availity/mui-breadcrumbs';
 export * from '@availity/mui-button';
