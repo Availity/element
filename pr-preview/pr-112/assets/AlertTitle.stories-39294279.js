@@ -1,0 +1,21 @@
+import{j as s,a as A}from"./jsx-runtime-390e5fc8.js";import{r as T}from"./index-570b25c1.js";import{A as h}from"./Alert-59851597.js";import{b as x,_ as C}from"./createTheme-bcd1d157.js";import{c as v}from"./clsx-7dc4e18d.js";import{g as b,s as S,c as M}from"./styled-ba967c06.js";import{u as V}from"./useThemeProps-32d9d40f.js";import{g as w}from"./generateUtilityClasses-cabd787c.js";import{M as N}from"./Typography-45d8e817.js";import{C as R}from"./Collapse-4b113595.js";import"./_commonjsHelpers-042e6b4d.js";import"./index-742560bc.js";import"./Button-c8d0f982.js";import"./ButtonBase-0a435f0a.js";import"./emotion-react.browser.esm-474fda6d.js";import"./emotion-use-insertion-effect-with-fallbacks.browser.esm-16f43d9e.js";import"./useForkRef-153a0a89.js";import"./useIsFocusVisible-5e7b1ff1.js";import"./useEnhancedEffect-460150e6.js";import"./Tooltip-db1cd215.js";import"./useTheme-4854111c.js";import"./objectWithoutPropertiesLoose-830c72af.js";import"./ownerDocument-613eb639.js";import"./Grow-5e3a8791.js";import"./index-8a077077.js";import"./utils-57cc91c3.js";import"./useSlotProps-4e64ffeb.js";import"./useControlled-9b1271e0.js";import"./useId-6f4bfce0.js";import"./IconButton-7604743a.js";import"./LoadingButton-1865c5d0.js";import"./extends-90dea224.js";import"./index-df413f1e.js";import"./faCircleArrowRight-ecf82256.js";import"./faMagnifyingGlass-482fd726.js";import"./SvgIcon-e7295b43.js";import"./createSvgIcon-a2702ab1.js";import"./Close-88006d9f.js";import"./Paper-5389b241.js";import"./extendSxProp-9115426f.js";function U(e){return b("MuiAlertTitle",e)}w("MuiAlertTitle",["root"]);const j=["className"],q=e=>{const{classes:t}=e;return M({root:["root"]},U,t)},I=S(N,{name:"MuiAlertTitle",slot:"Root",overridesResolver:(e,t)=>t.root})(({theme:e})=>({fontWeight:e.typography.fontWeightMedium,marginTop:-2})),P=T.forwardRef(function(t,r){const i=V({props:t,name:"MuiAlertTitle"}),{className:y}=i,g=x(i,j),a=i,_=q(a);return s(I,C({gutterBottom:!0,component:"div",ownerState:a,ref:r,className:v(_.root,y)},g))}),W=P,o=({children:e,...t})=>s(W,{...t,children:e});try{o.displayName="AlertTitle",o.__docgenInfo={description:"",displayName:"AlertTitle",props:{children:{defaultValue:null,description:"The content of the component.",name:"children",required:!1,type:{name:"any"}},classes:{defaultValue:null,description:"Override or extend the styles applied to the component.",name:"classes",required:!1,type:{name:"Partial<AlertTitleClasses>"}},sx:{defaultValue:null,description:"The system prop that allows defining system overrides as well as additional CSS styles.",name:"sx",required:!1,type:{name:"SxProps<Theme>"}},ref:{defaultValue:null,description:"",name:"ref",required:!1,type:{name:"Ref<unknown>"}}}}}catch{}const ve={title:"Components/Alert/AlertTitle",component:o,tags:["autodocs"],args:{children:"This text is inside the AlertTitle"}},l={render:e=>A(h,{severity:"info",children:[s(o,{...e}),"This text is inside the Alert"]})},n={render:e=>{const[t,r]=T.useState(!0);return s(R,{in:t,children:A(h,{severity:"info",onClose:()=>{r(!1),setTimeout(()=>r(!0),1e3)},children:[s(o,{...e}),"This text is inside the Alert"]})})}};var p,m,c;l.parameters={...l.parameters,docs:{...(p=l.parameters)==null?void 0:p.docs,source:{originalSource:`{
+  render: args => <Alert severity="info">
+      <AlertTitle {...args} />
+      This text is inside the Alert
+    </Alert>
+}`,...(c=(m=l.parameters)==null?void 0:m.docs)==null?void 0:c.source}}};var d,u,f;n.parameters={...n.parameters,docs:{...(d=n.parameters)==null?void 0:d.docs,source:{originalSource:`{
+  render: args => {
+    const [visible, setVisible] = useState(true);
+    const onClose = () => {
+      setVisible(false);
+      setTimeout(() => setVisible(true), 1000);
+    };
+    return <Collapse in={visible}>
+        <Alert severity="info" onClose={onClose}>
+          <AlertTitle {...args} />
+          This text is inside the Alert
+        </Alert>
+      </Collapse>;
+  }
+}`,...(f=(u=n.parameters)==null?void 0:u.docs)==null?void 0:f.source}}};const be=["_AlertTitle","_InDismissableAlert"];export{l as _AlertTitle,n as _InDismissableAlert,be as __namedExportsOrder,ve as default};
+//# sourceMappingURL=AlertTitle.stories-39294279.js.map
