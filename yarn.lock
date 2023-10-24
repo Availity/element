@@ -383,22 +383,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-table@workspace:*, @availity/mui-table@workspace:packages/table":
-  version: 0.0.0-use.local
-  resolution: "@availity/mui-table@workspace:packages/table"
-  dependencies:
-    "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^5.11.9
-    react: 18.2.0
-    react-dom: 18.2.0
-    tsup: ^5.12.7
-    typescript: ^4.6.4
-  peerDependencies:
-    "@mui/material": ^5.11.9
-    react: ">=16.3.0"
-  languageName: unknown
-  linkType: soft
-
 "@availity/mui-tabs@workspace:*, @availity/mui-tabs@workspace:packages/tabs":
   version: 0.0.0-use.local
   resolution: "@availity/mui-tabs@workspace:packages/tabs"
