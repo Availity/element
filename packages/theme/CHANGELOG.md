@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.22.1](https://github.com/Availity/element/compare/@availity/theme@0.22.0...@availity/theme@0.22.1) (2023-10-25)
+
+
+### Bug Fixes
+
+* **mui-breadcrumbs:** home link target and separator tweaks ([4eb1b5f](https://github.com/Availity/element/commit/4eb1b5f172d072fe14ac9dc5b9d22707de7ca0b5))
+
 ## [0.22.0](https://github.com/Availity/element/compare/@availity/theme@0.21.0...@availity/theme@0.22.0) (2023-10-20)
 
 
