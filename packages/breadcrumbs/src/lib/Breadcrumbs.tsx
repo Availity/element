@@ -50,7 +50,7 @@ export const Breadcrumbs = ({
       slotProps={{ collapsedIcon: { className: 'breadcrumbs__collapsed-icon' } }}
       slots={{ CollapsedIcon: MoreHorizontalIcon }}
     >
-      <Link aria-label="Home" target="_top" href={homeUrl}>
+      <Link aria-label="Home" href={homeUrl} loadApp={false}>
         Home
       </Link>
       {crumbs && crumbs.length > 0 && crumbs.map((crumb) => renderBreadCrumb(crumb))}
