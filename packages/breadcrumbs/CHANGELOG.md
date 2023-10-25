@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.1.5...@availity/mui-breadcrumbs@0.1.6) (2023-10-25)
+
+
+### Bug Fixes
+
+* **mui-breadcrumbs:** home link should not use loadApp ([dfcb187](https://github.com/Availity/element/commit/dfcb18756888865e2ab25535993979ddc15b9747))
+* **mui-breadcrumbs:** remove target on home link ([81d553d](https://github.com/Availity/element/commit/81d553d2601a228259db84f3346fc3abba1c2a88))
+
 ## [0.1.5](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.1.4...@availity/mui-breadcrumbs@0.1.5) (2023-10-25)
 
 
