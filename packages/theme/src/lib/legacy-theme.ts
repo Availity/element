@@ -817,6 +817,11 @@ export const legacyTheme = {
         root: {
           borderRadius: '0',
           height: 'auto',
+          lineHeight: '1.25rem',
+          minWidth: 0,
+          '.MuiSvgIcon-root': {
+            fontSize: '.5rem',
+          },
           color: tokens.colorTextLink,
           textDecoration: 'underline',
           '&:focus': {
@@ -845,10 +850,12 @@ export const legacyTheme = {
         },
         outlined: {
           padding: '0.5rem 0.75rem',
-          lineHeight: '1.25rem',
           margin: '-1px',
           border: '1px solid #ccc',
           backgroundColor: tokens.colorBackgroundCanvas,
+          '&.Mui-selected:hover': {
+            backgroundColor: tokens.colorPrimaryDark,
+          },
         },
         text: {
           marginLeft: '-1px',
@@ -891,17 +898,19 @@ export const legacyTheme = {
       defaultProps: {
         fontSize: 'inherit',
       },
-      sizeXsmall: {
-        fontSize: '.875rem',
-      },
-      sizeSmall: {
-        fontSize: '.875rem',
-      },
-      sizeMedium: {
-        fontSize: '1rem',
-      },
-      sizeLarge: {
-        fontSize: '1.25rem',
+      styleOverrides: {
+        sizeXsmall: {
+          fontSize: '.875rem',
+        },
+        sizeSmall: {
+          fontSize: '.875rem',
+        },
+        sizeMedium: {
+          fontSize: '1rem',
+        },
+        sizeLarge: {
+          fontSize: '1.25rem',
+        },
       },
     },
     MuiTab: {
@@ -936,15 +945,6 @@ export const legacyTheme = {
             '.MuiTableHead-root': {
               backgroundColor: 'inherit',
             },
-          },
-        },
-      },
-    },
-    MuiTableBody: {
-      styleOverrides: {
-        root: {
-          '&.striped .MuiTableRow-root:nth-of-type(odd), &.striped tr:nth-of-type(odd)': {
-            backgroundColor: tokens.colorTertiaryMain,
           },
         },
       },
@@ -1002,7 +1002,22 @@ export const legacyTheme = {
         },
         input: {
           order: 3,
-          marginRight: '.5rem',
+          borderRadius: '3px',
+          border: `1px solid ${tokens.borderInput}`,
+          marginLeft: '.25rem',
+          marginRight: '.75rem',
+        },
+        select: {
+          '&.MuiTablePagination-select.MuiSelect-select': {
+            paddingBottom: '1px',
+            paddingTop: '1px',
+            paddingRight: '1.5rem',
+            borderRadius: '.25rem',
+            textAlignLast: 'center',
+          },
+        },
+        selectIcon: {
+          fontSize: '1.5rem',
         },
         selectLabel: {
           order: 2,
@@ -1033,6 +1048,7 @@ export const legacyTheme = {
           },
         },
         icon: {
+          fontSize: 'inherit',
           opacity: 1,
           transition: 'none',
         },

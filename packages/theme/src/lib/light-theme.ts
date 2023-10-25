@@ -829,8 +829,22 @@ export const lightTheme = {
         displayedRows: {
           flexGrow: 1,
         },
-        input: {},
+        input: {
+          borderRadius: '.25rem',
+          marginLeft: '.25rem',
+          marginRight: '.75rem',
+        },
+        select: {
+          '&.MuiTablePagination-select.MuiSelect-select': {
+            paddingBottom: '1px',
+            paddingRight: '1.5rem',
+            borderRadius: '.25rem',
+          },
+        },
         selectLabel: {},
+        selectIcon: {
+          fontSize: '1.5rem',
+        },
         spacer: {
           display: 'none',
         },
