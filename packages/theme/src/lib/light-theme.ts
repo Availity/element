@@ -328,6 +328,10 @@ export const lightTheme = {
             color: tokens.colorPrimaryMain,
           },
         },
+        separator: {
+          marginLeft: '.625rem',
+          marginRight: '.625rem',
+        },
       },
     },
     MuiButton: {
