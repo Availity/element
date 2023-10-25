@@ -24,6 +24,7 @@
       "@availity/element": ["packages/element/src/index.ts"],
       "@availity/mui-alert": ["packages/alert/src/index.ts"],
       "@availity/mui-avatar": ["packages/avatar/src/index.ts"],
+      "@availity/mui-backdrop": ["packages/backdrop/src/index.ts"],
       "@availity/mui-badge": ["packages/badge/src/index.ts"],
       "@availity/mui-breadcrumbs": ["packages/breadcrumbs/src/index.ts"],
       "@availity/mui-button": ["packages/button/src/index.ts"],
