@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.3](https://github.com/Availity/element/compare/@availity/mui-page-header@0.1.2...@availity/mui-page-header@0.1.3) (2023-10-25)
+
+
+### Bug Fixes
+
+* **mui-page-header:** add top and bottom margin ([12586f8](https://github.com/Availity/element/commit/12586f85c83b4527e28fc695f3598d805f8c9fe0))
+
 ## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-page-header@0.1.1...@availity/mui-page-header@0.1.2) (2023-10-06)
 
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-page-header@0.1.0...@availity/mui-page-header@0.1.1) (2023-09-07)
