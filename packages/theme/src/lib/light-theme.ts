@@ -328,6 +328,10 @@ export const lightTheme = {
             color: tokens.colorPrimaryMain,
           },
         },
+        separator: {
+          marginLeft: '.625rem',
+          marginRight: '.625rem',
+        },
       },
     },
     MuiButton: {
@@ -649,9 +653,6 @@ export const lightTheme = {
           color: tokens.colorTextLink,
           '&:active': {
             color: tokens.colorTextPrimary,
-          },
-          '&:visited': {
-            color: tokens.colorIndigo600,
           },
         },
       },
