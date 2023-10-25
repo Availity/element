@@ -654,9 +654,6 @@ export const lightTheme = {
           '&:active': {
             color: tokens.colorTextPrimary,
           },
-          '&:visited': {
-            color: tokens.colorIndigo600,
-          },
         },
       },
     },
