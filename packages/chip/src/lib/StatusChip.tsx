@@ -8,6 +8,7 @@ export type StatusChipProps = {
   size?: 'small' | 'medium';
 } & Omit<
   MuiChipProps,
+  | 'avatar'
   | 'children'
   | 'color'
   | 'variant'

@@ -444,7 +444,6 @@ export const lightTheme = {
           margin: '0',
           transition: 'fill 200ms',
           fill: tokens.colorGrey300,
-          marginRight: '4px',
           '&:hover': {
             fill: tokens.colorGrey700,
           },
