@@ -2,7 +2,17 @@ import { Modal as MuiModal, ModalProps as MuiModalProps } from '@mui/material';
 
 export type ModalProps = {
   children?: React.ReactNode;
-} & MuiModalProps;
+} & Omit<
+  MuiModalProps,
+  | 'BackdropComponent'
+  | 'BackdropProps'
+  | 'component'
+  | 'components'
+  | 'componentsProps'
+  | 'disableAutoFocus'
+  | 'disableEnforceFocus'
+  | 'onBackdropClick'
+>;
 
 export const Modal = ({ children, ...rest }: ModalProps): JSX.Element => {
   return <MuiModal {...rest}>{children}</MuiModal>;
