@@ -512,14 +512,8 @@ export const lightTheme = {
           fontSize: '1rem',
           margin: '0',
           transition: 'fill 200ms',
-          fill: tokens.colorGrey100,
-          marginRight: '4px',
-          '&:hover': {
-            fill: tokens.colorGrey300,
-          },
-        },
-        deleteIconColorDefault: {
           fill: tokens.colorGrey300,
+          marginRight: '4px',
           '&:hover': {
             fill: tokens.colorGrey700,
           },
@@ -531,6 +525,7 @@ export const lightTheme = {
         labelSmall: {
           padding: '0px 8px',
           fontSize: '.75rem',
+          lineHeight: '1.125rem',
         },
         colorDefault: {
           backgroundColor: tokens.colorBackgroundAccent,
