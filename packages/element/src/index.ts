@@ -12,6 +12,7 @@ export * from '@availity/mui-icon';
 export * from '@availity/mui-layout';
 export * from '@availity/mui-link';
 export * from '@availity/mui-menu';
+export * from '@availity/mui-modal';
 export * from '@availity/mui-page-header';
 export * from '@availity/mui-pagination';
 export * from '@availity/mui-paper';
