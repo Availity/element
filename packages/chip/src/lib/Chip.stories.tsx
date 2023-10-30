@@ -44,12 +44,3 @@ export const _RemovableChip: StoryObj<typeof Chip> = {
 export const _Avatar: StoryObj<typeof Chip> = {
   render: (args: ChipProps) => <Chip {...args} avatar={<Avatar>A</Avatar>} />,
 };
-
-/** Inline counter styling is achieved by using size `small`. For counters that affix to the corner of an element see `Badge`. */
-export const _InlineCounter: StoryObj<typeof Chip> = {
-  render: () => (
-    <div>
-      Items <Chip color="error" label="5" size="small" />
-    </div>
-  ),
-};
