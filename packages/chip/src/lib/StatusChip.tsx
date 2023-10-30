@@ -1,11 +1,9 @@
 import { Chip as MuiChip, ChipProps as MuiChipProps } from '@mui/material';
 
 export type StatusChipProps = {
-  /** The color of the component. Nondefault colors are only to be used with size `small`.
+  /** The color of the component.
    * @default default */
   color?: 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
-  /** The size of the component. Size `small` is for statuses and inline counters. */
-  size?: 'small' | 'medium';
 } & Omit<
   MuiChipProps,
   | 'avatar'

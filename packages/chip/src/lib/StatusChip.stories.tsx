@@ -7,7 +7,6 @@ const meta: Meta<typeof StatusChip> = {
   tags: ['autodocs'],
   args: {
     label: 'Chip',
-    size: 'medium',
     color: 'default',
   },
 };
@@ -22,19 +21,18 @@ export const _Chip: StoryObj<typeof StatusChip> = {
   },
 };
 
-/** Status styling is achieved by using size `small` */
 export const _Status: StoryObj<typeof StatusChip> = {
   render: () => (
     <>
-      Item 1 <StatusChip color="success" label="Approved" size="small" />
+      Item 1 <StatusChip color="success" label="Approved" />
       <br />
-      Item 2 <StatusChip color="info" label="Info" size="small" />
+      Item 2 <StatusChip color="info" label="Info" />
       <br />
-      Item 3 <StatusChip color="warning" label="Pending" size="small" />
+      Item 3 <StatusChip color="warning" label="Pending" />
       <br />
-      Item 4 <StatusChip color="error" label="Declined" size="small" />
+      Item 4 <StatusChip color="error" label="Declined" />
       <br />
-      Item 5 <StatusChip color="secondary" label="Neutral" size="small" />
+      Item 5 <StatusChip color="secondary" label="Neutral" />
       <br />
     </>
   ),
