@@ -442,7 +442,6 @@ export const lightTheme = {
         deleteIcon: {
           fontSize: '1rem',
           margin: '0',
-          transition: 'fill 200ms',
           fill: tokens.colorGrey300,
           '&:hover': {
             fill: tokens.colorGrey700,
