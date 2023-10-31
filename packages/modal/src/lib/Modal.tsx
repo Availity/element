@@ -11,9 +11,14 @@ export type ModalProps = {
   | 'componentsProps'
   | 'disableAutoFocus'
   | 'disableEnforceFocus'
+  | 'disablePortal'
   | 'onBackdropClick'
 >;
 
 export const Modal = ({ children, ...rest }: ModalProps): JSX.Element => {
-  return <MuiModal {...rest}>{children}</MuiModal>;
+  return (
+    <MuiModal {...rest} disablePortal>
+      {children}
+    </MuiModal>
+  );
 };
