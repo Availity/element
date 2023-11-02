@@ -96,7 +96,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-avatar@workspace:*, @availity/mui-avatar@workspace:packages/avatar":
+"@availity/mui-avatar@workspace:*, @availity/mui-avatar@workspace:^, @availity/mui-avatar@workspace:packages/avatar":
   version: 0.0.0-use.local
   resolution: "@availity/mui-avatar@workspace:packages/avatar"
   dependencies:
@@ -216,6 +216,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-chip@workspace:packages/chip"
   dependencies:
+    "@availity/mui-avatar": "workspace:^"
     "@mui/material": ^5.14.12
     react: 18.2.0
     react-dom: 18.2.0

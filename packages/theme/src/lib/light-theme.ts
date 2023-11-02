@@ -434,24 +434,6 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           height: 'auto',
-          // Bug with state styles being overwritten when not defined in root https://github.com/mui/material-ui/issues/29703#issuecomment-1548356589
-          '&.MuiChip-deletable': {
-            '&:hover': {
-              backgroundColor: tokens.colorActionFocus,
-              boxShadow: 'none',
-              '.MuiChip-deleteIcon': {
-                color: tokens.colorSecondaryLight,
-              },
-            },
-            '&.Mui-focusVisible': {
-              backgroundColor: tokens.colorActionFocus,
-              outline: '2px solid white',
-              boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
-              '.MuiChip-deleteIcon': {
-                color: tokens.colorSecondaryLight,
-              },
-            },
-          },
         },
         avatar: {
           margin: '0',
@@ -464,18 +446,27 @@ export const lightTheme = {
         deleteIcon: {
           fontSize: '1rem',
           margin: '0',
-          transition: 'color 300ms',
+          fill: tokens.colorGrey300,
+          '&:hover': {
+            fill: tokens.colorGrey700,
+          },
         },
         label: {
           fontSize: 'inherit',
           padding: '0px 6px',
         },
+        labelSmall: {
+          padding: '0px 8px',
+          fontSize: '.75rem',
+          lineHeight: '1.125rem',
+        },
         colorDefault: {
-          backgroundColor: tokens.colorGrey100,
+          backgroundColor: tokens.colorBackgroundAccent,
+          '&:focus': {
+            backgroundColor: tokens.colorActionFocus,
+          },
         },
         sizeSmall: {
-          fontWeight: tokens.fontWeightsBold,
-          fontSize: '.75rem',
           verticalAlign: 'text-bottom',
           borderRadius: '50px',
         },
