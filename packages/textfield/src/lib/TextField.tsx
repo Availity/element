@@ -38,7 +38,7 @@ export const TextField = forwardRef(
           size={size}
           {...rest}
         />
-        <FormHelperText id={helperId} error={error}>
+        <FormHelperText id={helperId} error={error} disabled={rest.disabled}>
           {error && <WarningTriangleIcon sx={iconStyles} />}
           {helperText}
         </FormHelperText>

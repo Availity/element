@@ -19,7 +19,7 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
     return (
       <Datepicker
         {...args}
-        label="Date Field"
+        label="Date"
         value={value}
         onChange={(value) => {
           setValue(value);
@@ -27,5 +27,9 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
       />
     );
   },
-  args: {},
+  args: {
+    InputProps: {
+      helperText: 'Help text for the field',
+    },
+  },
 };
