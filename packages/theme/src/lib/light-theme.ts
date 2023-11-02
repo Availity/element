@@ -350,11 +350,31 @@ export const lightTheme = {
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
         containedTertiary: {
-          ...containedButtonStyles('Tertiary'),
-          '&:focus': {
-            backgroundColor: tokens.colorTertiaryDark,
-            outline: '2px solid white',
-            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
+          '&.MuiButton-containedTertiary': {
+            ...containedButtonStyles('Tertiary'),
+            boxSizing: 'border-box',
+            border: `1px solid ${tokens.borderSecondary}`,
+            color: tokens.colorTertiaryDark,
+            '&:hover': {
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+              backgroundColor: tokens.colorTertiaryDark,
+            },
+            '&:active, &.Mui-focused:active, &:focus:active': {
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+              backgroundColor: tokens.colorSecondaryLight,
+            },
+            '&.Mui-focused, &:focus': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
+            '&.Mui-disabled, &:disabled': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
           },
         },
         containedSuccess: { ...containedButtonStyles('Success') },
@@ -364,11 +384,55 @@ export const lightTheme = {
         outlinedSecondary: { ...outlinedButtonStyles('Secondary') },
         outlinedTertiary: {
           color: tokens.colorSecondaryMain,
-          ...outlinedButtonStyles('Secondary'),
+          '&.MuiButton-outlinedTertiary': {
+            ...containedButtonStyles('Tertiary'),
+            color: tokens.colorTertiaryDark,
+            '&:hover': {
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+            },
+            '&:active, &.Mui-focused:active, &:focus:active': {
+              backgroundColor: tokens.colorSecondaryLight,
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+            },
+            '&.Mui-focused, &:focus': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
+            '&.Mui-disabled, &:disabled': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
+          },
         }, // intended
         outlinedSuccess: { ...outlinedButtonStyles('Success') },
         outlinedWarning: { ...outlinedButtonStyles('Warning') },
         outlinedError: { ...outlinedButtonStyles('Error') },
+        sizeSmall: {
+          height: '30px',
+          padding: '4px 10px',
+          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+            // any buttons with border need padding decreased to accommodate
+            padding: '3px 9px',
+          },
+        },
+        sizeMedium: {
+          height: '34px',
+          padding: '6px 16px',
+          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+            padding: '5px 15px',
+          },
+        },
+        sizeLarge: {
+          height: '40px',
+          padding: '8px 22px',
+          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+            padding: '7px 21px',
+          },
+        },
       },
     },
     MuiCard: {

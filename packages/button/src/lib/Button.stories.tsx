@@ -15,7 +15,6 @@ type Story = StoryObj<typeof Button>;
 export const _Button: Story = {
   render: ({ ...args }: ButtonProps) => <Button {...args}>Button</Button>,
   args: {
-    variant: 'contained',
     color: 'primary',
     size: 'medium',
   },
@@ -35,19 +34,6 @@ export const _Colors: Story = {
       </Grid>
       <Grid item xs={12}>
         <Button color="tertiary">Tertiary</Button>
-      </Grid>
-      <Grid item xs={12}>
-        <Button color="error">Error</Button>
-      </Grid>
-      <Grid item xs={12}>
-        <Button color="primary" variant="outlined">
-          Primary Outlined
-        </Button>
-      </Grid>
-      <Grid item xs={12}>
-        <Button color="secondary" variant="outlined">
-          Secondary Outlined
-        </Button>
       </Grid>
     </Grid>
   ),
