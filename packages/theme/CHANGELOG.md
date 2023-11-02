@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.23.0](https://github.com/Availity/element/compare/@availity/theme@0.22.1...@availity/theme@0.23.0) (2023-11-02)
+
+
+### Features
+
+* **mui-chip:** break out StatusChip into a separate component ([a1ac4db](https://github.com/Availity/element/commit/a1ac4dba9c944ae7ebe3cbbbd9b1b97a89abeb11))
+
 ## [0.22.1](https://github.com/Availity/element/compare/@availity/theme@0.22.0...@availity/theme@0.22.1) (2023-10-25)
 
 
