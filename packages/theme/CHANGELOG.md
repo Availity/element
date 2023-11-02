@@ -4,17 +4,15 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.23.0](https://github.com/Availity/element/compare/@availity/theme@0.22.1...@availity/theme@0.23.0) (2023-11-02)
 
-
 ### Features
 
-* **mui-chip:** break out StatusChip into a separate component ([a1ac4db](https://github.com/Availity/element/commit/a1ac4dba9c944ae7ebe3cbbbd9b1b97a89abeb11))
+- **mui-chip:** break out StatusChip into a separate component ([a1ac4db](https://github.com/Availity/element/commit/a1ac4dba9c944ae7ebe3cbbbd9b1b97a89abeb11))
 
 ## [0.22.1](https://github.com/Availity/element/compare/@availity/theme@0.22.0...@availity/theme@0.22.1) (2023-10-25)
 
-
 ### Bug Fixes
 
-* **mui-breadcrumbs:** home link target and separator tweaks ([4eb1b5f](https://github.com/Availity/element/commit/4eb1b5f172d072fe14ac9dc5b9d22707de7ca0b5))
+- **mui-breadcrumbs:** home link target and separator tweaks ([4eb1b5f](https://github.com/Availity/element/commit/4eb1b5f172d072fe14ac9dc5b9d22707de7ca0b5))
 
 ## [0.22.0](https://github.com/Availity/element/compare/@availity/theme@0.21.0...@availity/theme@0.22.0) (2023-10-20)
 
@@ -27,6 +25,39 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 ### Features
 
 - **mui-form-utils:** add FormHelperText and Select ([0ff9d8e](https://github.com/Availity/element/commit/0ff9d8e06d0baac263ce1869304d3b91fcb5cb15))
+
+## [0.20.0](https://github.com/Availity/element/compare/@availity/theme@0.19.4...@availity/theme@0.20.0) (2023-10-17)
+
+### Features
+
+- **mui-card:** add legacy theme ([ff7e238](https://github.com/Availity/element/commit/ff7e2381c686f27cfc6ada02b1a4c315a28c90a5))
+
+## [0.19.4](https://github.com/Availity/element/compare/@availity/theme@0.19.3...@availity/theme@0.19.4) (2023-10-17)
+
+### Bug Fixes
+
+- **mui-menu:** selected active state styling ([94a80df](https://github.com/Availity/element/commit/94a80dfbb87a73be2e4c2f02afd8bbd797f5e784))
+
+## [0.19.3](https://github.com/Availity/element/compare/@availity/theme@0.19.2...@availity/theme@0.19.3) (2023-10-17)
+
+## [0.19.2](https://github.com/Availity/element/compare/@availity/theme@0.19.1...@availity/theme@0.19.2) (2023-10-13)
+
+## [0.19.1](https://github.com/Availity/element/compare/@availity/theme@0.19.0...@availity/theme@0.19.1) (2023-10-06)
+
+## [0.19.0](https://github.com/Availity/element/compare/@availity/theme@0.18.1...@availity/theme@0.19.0) (2023-10-04)
+
+### Features
+
+- **mui-checkbox:** add legacy theme ([36f5c3d](https://github.com/Availity/element/commit/36f5c3d58c5c1e7865dd571c95859a2eaa2a35ad))
+- **mui-checkbox:** init ([c7200a8](https://github.com/Availity/element/commit/c7200a84175174f43d502b47881dd7e57e02aa0e))
+
+## [0.18.1](https://github.com/Availity/element/compare/@availity/theme@0.18.0...@availity/theme@0.18.1) (2023-10-03)
+
+### Bug Fixes
+
+- **mui-button:** fix styling for pure icon button ([9d4a524](https://github.com/Availity/element/commit/9d4a524388d512ecc27e8e803b536036f6fedbc6))
+
+## [0.18.0](https://github.com/Availity/element/compare/@availity/theme@0.17.0...@availity/theme@0.18.0) (2023-09-26)
 
 ### Features
 
