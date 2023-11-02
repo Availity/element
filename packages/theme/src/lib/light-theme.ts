@@ -548,15 +548,16 @@ export const lightTheme = {
       styleOverrides: {
         root: ({ ownerState }: { ownerState: { disabled: boolean } }) => {
           return {
-             marginLeft: '0px',
+            marginLeft: '0px',
             '&:not(&.Mui-error) .MuiSvgIcon-root': {
               display: 'none',
             },
             '.MuiSvgIcon-root': {
-             verticalAlign: 'text-bottom',
+              verticalAlign: 'text-bottom',
             },
             color: ownerState.disabled ? tokens.colorTextDisabled : tokens.colorTextPrimary,
           };
+        },
       },
     },
     MuiFormLabel: {

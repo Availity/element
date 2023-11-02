@@ -4,15 +4,15 @@ import type { Dayjs } from 'dayjs';
 
 export type DatepickerProps = {
   label?: React.ReactNode;
-  InputProps?: TextFieldProps;
   size?: 'small' | 'medium';
+  helperText?: string;
+  InputProps?: TextFieldProps;
 } & Omit<
   MuiDatePickerProps<Dayjs, Dayjs>,
   | 'components'
   | 'componentsProps'
   | 'desktopModeMediaQuery'
   | 'DialogProps'
-  | 'InputProps'
   | 'OpenPickerButtonProps'
   | 'openTo'
   | 'orientation'
@@ -29,20 +29,16 @@ export type DatepickerProps = {
   | 'TransitionComponent'
 >;
 
-// FIXME: types are throwing an error
-
 export const Datepicker = ({ size, ...props }: DatepickerProps): JSX.Element => {
   return (
     <MuiDatePicker
       {...props}
-      renderInput={({ InputProps, ...params }) => {
+      renderInput={(params) => {
         if (params.inputProps) {
           params.inputProps.placeholder = 'MM/DD/YYYY';
         }
 
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        return <TextField {...params} {...InputProps} size={size} />;
+        return <TextField helperText={props.helperText} {...params} size={size} />;
       }}
     />
   );

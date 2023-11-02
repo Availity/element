@@ -1,8 +1,8 @@
 // Each exported component in the package should have its own stories file
 import type { Meta, StoryObj } from '@storybook/react';
-import { Datepicker, DatepickerProps } from './Datepicker';
 import { useState } from 'react';
 import { Dayjs } from 'dayjs';
+import { Datepicker, DatepickerProps } from './Datepicker';
 
 const meta: Meta<typeof Datepicker> = {
   title: 'Components/Datepicker/Datepicker',
@@ -28,8 +28,6 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
     );
   },
   args: {
-    InputProps: {
-      helperText: 'Help text for the field',
-    },
+    helperText: 'Help text for the field',
   },
 };
