@@ -46,11 +46,11 @@ export const Breadcrumbs = ({
   return (
     <MuiBreadcrumbs
       {...rest}
-      separator={<NavigateNextIcon fontSize="small" />}
+      separator={<NavigateNextIcon fontSize="xsmall" />}
       slotProps={{ collapsedIcon: { className: 'breadcrumbs__collapsed-icon' } }}
       slots={{ CollapsedIcon: MoreHorizontalIcon }}
     >
-      <Link aria-label="Home" href={homeUrl}>
+      <Link aria-label="Home" href={homeUrl} loadApp={false}>
         Home
       </Link>
       {crumbs && crumbs.length > 0 && crumbs.map((crumb) => renderBreadCrumb(crumb))}

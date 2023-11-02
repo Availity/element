@@ -2,6 +2,26 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.8.0...@availity/design-tokens@0.9.0) (2023-10-20)
+
+### Features
+
+- **design-tokens:** update legacy colors for button ([9f85f63](https://github.com/Availity/element/commit/9f85f630fd501aa682612b5b8074d311372f854e))
+
+## [0.8.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.7.1...@availity/design-tokens@0.8.0) (2023-10-17)
+
+### Features
+
+- **mui-card:** add legacy theme ([ff7e238](https://github.com/Availity/element/commit/ff7e2381c686f27cfc6ada02b1a4c315a28c90a5))
+
+## [0.7.1](https://github.com/Availity/element/compare/@availity/design-tokens@0.7.0...@availity/design-tokens@0.7.1) (2023-10-13)
+
+## [0.7.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.6.2...@availity/design-tokens@0.7.0) (2023-10-06)
+
+### Features
+
+- **design-tokens:** tweak legacy typography tokens ([569fce4](https://github.com/Availity/element/commit/569fce46d00f7ed6cc1e7d4b91477de1f10ff57c))
+
 ## [0.6.2](https://github.com/Availity/element/compare/@availity/design-tokens@0.6.1...@availity/design-tokens@0.6.2) (2023-09-25)
 
 ## [0.6.1](https://github.com/Availity/element/compare/@availity/design-tokens@0.6.0...@availity/design-tokens@0.6.1) (2023-09-11)

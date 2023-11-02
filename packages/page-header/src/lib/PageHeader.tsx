@@ -18,7 +18,7 @@ export interface PageHeaderProps {
 
 export const PageHeader = ({ breadcrumbs, buttons, headerText, helpLink }: PageHeaderProps): JSX.Element => {
   return (
-    <Grid component={Container} container direction="column">
+    <Grid component={Container} container direction="column" marginTop="1rem" marginBottom="1.25rem">
       {breadcrumbs || helpLink ? (
         <Grid direction="row" item container justifyContent="space-between" marginBottom={4}>
           {breadcrumbs && (

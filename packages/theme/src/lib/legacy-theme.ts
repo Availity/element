@@ -138,24 +138,24 @@ export const legacyTheme = {
       primary: tokens.colorTextPrimary,
       secondary: tokens.colorTextSecondary,
       disabled: tokens.colorTextDisabled,
-      error: tokens.colorErrorMain,
+      error: tokens.colorTextError,
       hint: 'rgba(0, 0, 0, 0.38)',
       divider: 'rgba(0, 0, 0, 0.12)',
       success: tokens.colorSuccessMain,
       info: tokens.colorTextPrimary,
-      link: tokens.colorTextPrimary,
+      link: tokens.colorTextLink,
       inverse: tokens.colorCommonWhite,
       inverseSecondary: '#ffffff24',
     },
     border: {
-      primary: tokens.colorPrimaryMain,
-      secondary: tokens.colorGrey400,
-      error: tokens.colorErrorMain,
-      disabled: tokens.colorGrey300,
-      decorative: tokens.colorGrey200,
-      input: tokens.colorGrey400,
-      inputHover: tokens.colorGrey600,
-      inputFocus: tokens.colorPrimaryMain,
+      primary: tokens.borderPrimary,
+      secondary: tokens.borderSecondary,
+      error: tokens.borderError,
+      disabled: tokens.borderDisabled,
+      decorative: tokens.borderDecorative,
+      input: tokens.borderInput,
+      inputHover: tokens.borderInputHover,
+      inputFocus: tokens.borderInputFocus,
       inverse: tokens.colorCommonWhite,
       inverseSecondary: '#ffffff24',
     },
@@ -317,8 +317,8 @@ export const legacyTheme = {
           },
         },
         standardInfo: {
-          backgroundColor: tokens.colorPrimaryMain,
-          color: tokens.colorPrimaryContrast,
+          backgroundColor: tokens.colorInfoMain,
+          color: tokens.colorInfoContrast,
         },
         action: {
           margin: '-3px -3px -3px auto',
@@ -398,9 +398,10 @@ export const legacyTheme = {
       },
       styleOverrides: {
         root: {
-          lineHeight: 1.5,
+          lineHeight: '24px',
           boxShadow: 'none',
           textTransform: 'none',
+          fontWeight: '500',
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
@@ -472,40 +473,53 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorBackgroundPaper,
-          borderColor: tokens.colorGrey50,
-          maxWidth: '345px',
+          borderColor: tokens.colorGrey100,
         },
       },
     },
     MuiCardActions: {
       styleOverrides: {
         root: {
-          padding: '16px',
+          padding: '1.25rem',
+          backgroundColor: tokens.colorGrey100,
         },
       },
     },
     MuiCardContent: {
       styleOverrides: {
         root: {
-          fontSize: tokens.typographyBody2FontSize,
-          fontWeight: tokens.typographyBody2FontWeight,
-          fontFamily: tokens.typographyBody2FontFamily,
-          letterSpacing: tokens.typographyBody2LetterSpacing,
+          fontSize: tokens.typographyBody1FontSize,
+          fontWeight: tokens.typographyBody1FontWeight,
+          fontFamily: tokens.typographyBody1FontFamily,
+          letterSpacing: tokens.typographyBody1LetterSpacing,
           color: tokens.colorTextPrimary,
+          padding: '1.25rem',
+        },
+      },
+    },
+    MuiCardFooter: {
+      styleOverrides: {
+        root: {
+          padding: '1.25rem',
         },
       },
     },
     MuiCardHeader: {
       styleOverrides: {
         root: {
-          backgroundColor: tokens.colorGrey50,
+          backgroundColor: tokens.colorGrey100,
           color: tokens.colorTextPrimary,
+          padding: '1.25rem',
+          lineHeight: '24px',
+          '.MuiCardHeader-title, .MuiCardHeader-subheader': {
+            fontWeight: tokens.fontWeightsRegular,
+          },
         },
       },
     },
     MuiCardMedia: {
       styleOverrides: {
-        maxHeight: '100px',
+        padding: '1.25rem',
       },
     },
     MuiCheckbox: {
@@ -565,6 +579,7 @@ export const legacyTheme = {
           height: 'auto',
           fontSize: '.75rem',
           lineHeight: '.75rem',
+          borderRadius: '.25rem',
           // Bug with state styles being overwritten when not defined in root https://github.com/mui/material-ui/issues/29703#issuecomment-1548356589
           '&.MuiChip-deletable': {
             '&:hover': {
@@ -607,13 +622,29 @@ export const legacyTheme = {
         sizeSmall: {
           fontWeight: tokens.fontWeightsBold,
           verticalAlign: 'text-bottom',
-          borderRadius: '.25rem',
           padding: '0.25rem 0.4rem',
         },
         sizeMedium: {
           fontWeight: tokens.fontWeightsRegular,
-          borderRadius: '10rem',
           padding: '0.25rem 0.6rem',
+        },
+      },
+    },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          marginLeft: '0px',
+          fontSize: '.875rem',
+          color: tokens.colorTextSecondary,
+          '&.Mui-error': {
+            color: tokens.colorTextError,
+          },
+          '&:not(&.Mui-error) .MuiSvgIcon-root': {
+            display: 'none',
+          },
+          '.MuiSvgIcon-root': {
+            verticalAlign: 'text-bottom',
+          },
         },
       },
     },
@@ -621,22 +652,30 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           // move required asterisk before text
-          display: 'flex',
-          flexDirection: 'row-reverse',
-          justifyContent: 'flex-end',
-          '&.Mui-error': {
+          display: important('flex'),
+          flexDirection: important('row-reverse'),
+          justifyContent: important('flex-end'),
+          '&.Mui-error, &.Mui-error.Mui-focused': {
             color: tokens.colorTextError,
           },
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
           },
+          '&.Mui-focused': {
+            color: 'inherit',
+          },
         },
         asterisk: {
-          color: tokens.colorTextError,
+          color: tokens.colorErrorMain,
           fontWeight: tokens.fontWeightsBold,
           marginRight: '.25rem',
           fontSize: '1.3rem',
           lineHeight: '100%',
+        },
+        children: {
+          '.MuiFormLabel-asterisk': {
+            display: 'none',
+          },
         },
       },
     },
@@ -681,44 +720,18 @@ export const legacyTheme = {
         },
       },
     },
-    MuiInputLabel: {
-      defaultProps: {
-        shrink: true,
-      },
-      styleOverrides: {
-        root: {
-          position: 'relative',
-          display: 'flex',
-          transform: 'none',
-          transition: 'none',
-          animation: 'none',
-        },
-      },
-    },
     MuiInputBase: {
       StyleOverrides: {
         root: {
           'label + &': {
             marginTop: '.5rem',
           },
-        },
-        input: {
           borderRadius: 4,
           position: 'relative',
-          border: '1px solid',
-          borderColor: tokens.borderInput,
-          fontSize: 16,
-          width: 'auto',
-          padding: '10px 12px',
-          '&:focus': {
-            boxShadow: `0 0 0px 4px ${tokens.borderInputFocus}`,
-          },
-          '&.Mui-error': {
-            borderColor: tokens.borderError,
-            '&:focus': {
-              boxShadow: `0 0 0px 4px ${tokens.borderInputFocus}`,
-            },
-          },
+          fontSize: '1rem',
+        },
+        inputSizeSmall: {
+          padding: '.375rem .75rem',
         },
       },
     },
@@ -754,6 +767,36 @@ export const legacyTheme = {
     MuiOutlinedInput: {
       defaultProps: {
         size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorCommonWhite,
+          '&.Mui-focused': {
+            '.MuiOutlinedInput-notchedOutline': {
+              borderColor: tokens.borderInputFocus,
+              borderWidth: '1px',
+              boxShadow: `0 0 0px .2rem ${tokens.borderInputFocus}`,
+            },
+            '&.Mui-error': {
+              '.MuiOutlinedInput-notchedOutline': {
+                boxShadow: `0 0 0px .2rem ${tokens.borderError}`,
+              },
+            },
+          },
+          '&.Mui-error, &.Mui-error.Mui-focused': {
+            '.MuiOutlinedInput-notchedOutline': {
+              borderColor: tokens.borderError,
+            },
+          },
+          '&.Mui-disabled': {
+            backgroundColor: tokens.colorActionDisabledBg,
+          },
+        },
+        notchedOutline: {
+          padding: 0,
+          border: '1px solid',
+          borderColor: tokens.borderInput,
+        },
       },
     },
     MuiPagination: {
@@ -820,6 +863,26 @@ export const legacyTheme = {
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          '&.Mui-error .MuiSelect-icon': {
+            color: tokens.borderError,
+          },
+        },
+        icon: {
+          color: tokens.borderInput,
+        },
+        iconOpen: {
+          transform: 'scaleY(-1)',
+        },
+        select: {
+          '&.MuiInputBase-input': {
+            paddingRight: '2.5rem',
+          },
+        },
+      },
+    },
     MuiSvgIcon: {
       defaultProps: {
         fontSize: 'inherit',
@@ -862,6 +925,11 @@ export const legacyTheme = {
           backgroundColor: tokens.colorBackgroundCanvas,
           height: '3rem',
         },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        fullWidth: true,
       },
     },
     MuiToggleButton: {

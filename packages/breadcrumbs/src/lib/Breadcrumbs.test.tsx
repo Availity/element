@@ -21,10 +21,7 @@ describe('Breadcrumbs', () => {
 
       const homeBreadcrumb = breadcrumbs[0].getElementsByTagName('a')[0];
       expect(homeBreadcrumb).toHaveAttribute('aria-label', 'Home');
-      expect(homeBreadcrumb).toHaveAttribute(
-        'href',
-        '/public/apps/home/#!/loadApp?appUrl=%2Fpublic%2Fapps%2Fdashboard'
-      );
+      expect(homeBreadcrumb).toHaveAttribute('href', '/public/apps/dashboard');
       expect(homeBreadcrumb).toHaveTextContent('Home');
 
       const grandparentBreadcrumb = breadcrumbs[1].getElementsByTagName('a')[0];
@@ -54,10 +51,7 @@ describe('Breadcrumbs', () => {
 
       const homeBreadcrumb = breadcrumbs[0].getElementsByTagName('a')[0];
       expect(homeBreadcrumb).toHaveAttribute('aria-label', 'Home');
-      expect(homeBreadcrumb).toHaveAttribute(
-        'href',
-        '/public/apps/home/#!/loadApp?appUrl=%2Fpublic%2Fapps%2Fdashboard'
-      );
+      expect(homeBreadcrumb).toHaveAttribute('href', '/public/apps/dashboard');
       expect(homeBreadcrumb).toHaveTextContent('Home');
 
       const customBreadcrumb = breadcrumbs[1].getElementsByTagName('a')[0];
@@ -88,10 +82,7 @@ describe('Breadcrumbs', () => {
 
       const homeBreadcrumb = breadcrumbs[0].getElementsByTagName('a')[0];
       expect(homeBreadcrumb).toHaveAttribute('aria-label', 'Home');
-      expect(homeBreadcrumb).toHaveAttribute(
-        'href',
-        '/public/apps/home/#!/loadApp?appUrl=%2Fpublic%2Fapps%2Fdashboard'
-      );
+      expect(homeBreadcrumb).toHaveAttribute('href', '/public/apps/dashboard');
       expect(homeBreadcrumb).toHaveTextContent('Home');
 
       const grandparentBreadcrumb = breadcrumbs[1].getElementsByTagName('a')[0];

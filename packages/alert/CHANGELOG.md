@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.1](https://github.com/Availity/element/compare/@availity/mui-alert@0.5.0...@availity/mui-alert@0.5.1) (2023-10-06)
+
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-alert@0.4.1...@availity/mui-alert@0.5.0) (2023-09-26)
 
 ### Features

@@ -328,6 +328,10 @@ export const lightTheme = {
             color: tokens.colorPrimaryMain,
           },
         },
+        separator: {
+          marginLeft: '.625rem',
+          marginRight: '.625rem',
+        },
       },
     },
     MuiButton: {
@@ -430,24 +434,6 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           height: 'auto',
-          // Bug with state styles being overwritten when not defined in root https://github.com/mui/material-ui/issues/29703#issuecomment-1548356589
-          '&.MuiChip-deletable': {
-            '&:hover': {
-              backgroundColor: tokens.colorActionFocus,
-              boxShadow: 'none',
-              '.MuiChip-deleteIcon': {
-                color: tokens.colorSecondaryLight,
-              },
-            },
-            '&.Mui-focusVisible': {
-              backgroundColor: tokens.colorActionFocus,
-              outline: '2px solid white',
-              boxShadow: `0 0 0px 4px ${tokens.colorSecondaryLight}`,
-              '.MuiChip-deleteIcon': {
-                color: tokens.colorSecondaryLight,
-              },
-            },
-          },
         },
         avatar: {
           margin: '0',
@@ -460,18 +446,27 @@ export const lightTheme = {
         deleteIcon: {
           fontSize: '1rem',
           margin: '0',
-          transition: 'color 300ms',
+          fill: tokens.colorGrey300,
+          '&:hover': {
+            fill: tokens.colorGrey700,
+          },
         },
         label: {
           fontSize: 'inherit',
           padding: '0px 6px',
         },
+        labelSmall: {
+          padding: '0px 8px',
+          fontSize: '.75rem',
+          lineHeight: '1.125rem',
+        },
         colorDefault: {
-          backgroundColor: tokens.colorGrey100,
+          backgroundColor: tokens.colorBackgroundAccent,
+          '&:focus': {
+            backgroundColor: tokens.colorActionFocus,
+          },
         },
         sizeSmall: {
-          fontWeight: tokens.fontWeightsBold,
-          fontSize: '.75rem',
           verticalAlign: 'text-bottom',
           borderRadius: '50px',
         },
@@ -553,20 +548,24 @@ export const lightTheme = {
       styleOverrides: {
         root: ({ ownerState }: { ownerState: { disabled: boolean } }) => {
           return {
-            marginLeft: '0px',
-            marginTop: '3px',
+             marginLeft: '0px',
+            '&:not(&.Mui-error) .MuiSvgIcon-root': {
+              display: 'none',
+            },
+            '.MuiSvgIcon-root': {
+             verticalAlign: 'text-bottom',
+            },
             color: ownerState.disabled ? tokens.colorTextDisabled : tokens.colorTextPrimary,
           };
-        },
       },
     },
     MuiFormLabel: {
       styleOverrides: {
         root: {
           // move required asterisk before text
-          display: 'flex',
-          flexDirection: 'row-reverse',
-          justifyContent: 'flex-end',
+          display: important('flex'),
+          flexDirection: important('row-reverse'),
+          justifyContent: important('flex-end'),
           marginBottom: '3px',
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
@@ -582,6 +581,11 @@ export const lightTheme = {
           color: tokens.colorTextError,
           marginRight: '.25rem',
           marginLeft: '-.15rem',
+        },
+        children: {
+          '.MuiFormLabel-asterisk': {
+            display: 'none',
+          },
         },
       },
     },
@@ -673,6 +677,10 @@ export const lightTheme = {
         },
         adornedEnd: {
           backgroundColor: 'white',
+          paddingRight: '.75rem',
+        },
+        adornedStart: {
+          paddingLeft: '.75rem',
         },
       },
     },
@@ -687,8 +695,34 @@ export const lightTheme = {
           '&:active': {
             color: tokens.colorTextPrimary,
           },
-          '&:visited': {
-            color: tokens.colorIndigo600,
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorPrimaryMain,
+            color: tokens.colorTextInverse,
+            '&:hover': {
+              backgroundColor: tokens.colorPrimaryDark,
+            },
+            '&:active': {
+              backgroundColor: tokens.colorPrimaryDarker,
+            },
+            '.MuiSvgIcon-root': {
+              color: tokens.colorTextInverse,
+            },
+          },
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+          },
+          '&:active': {
+            backgroundColor: '#00000016',
+          },
+          '.MuiSvgIcon-root': {
+            marginRight: '8px',
+            color: tokens.colorSecondaryMain,
           },
         },
       },
@@ -740,6 +774,18 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           borderColor: tokens.colorBackgroundBorder,
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        iconOpen: {
+          transform: 'scaleY(-1)',
+        },
+        select: {
+          '&.MuiInputBase-input': {
+            paddingRight: '2.5rem',
+          },
         },
       },
     },

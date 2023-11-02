@@ -2,19 +2,28 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.23.0](https://github.com/Availity/element/compare/@availity/element@0.22.0...@availity/element@0.23.0) (2023-10-04)
+## [0.24.1](https://github.com/Availity/element/compare/@availity/element@0.24.0...@availity/element@0.24.1) (2023-10-25)
+
+## [0.24.0](https://github.com/Availity/element/compare/@availity/element@0.23.1...@availity/element@0.24.0) (2023-10-25)
 
 
 ### Features
 
-* **mui-checkbox:** init ([c7200a8](https://github.com/Availity/element/commit/c7200a84175174f43d502b47881dd7e57e02aa0e))
+* **mui-backdrop:** initial commit ([798e31a](https://github.com/Availity/element/commit/798e31afa312a64f25a5f99a0a8d58467d67fb44))
+
+## [0.23.1](https://github.com/Availity/element/compare/@availity/element@0.23.0...@availity/element@0.23.1) (2023-10-06)
+
+## [0.23.0](https://github.com/Availity/element/compare/@availity/element@0.22.0...@availity/element@0.23.0) (2023-10-04)
+
+### Features
+
+- **mui-checkbox:** init ([c7200a8](https://github.com/Availity/element/commit/c7200a84175174f43d502b47881dd7e57e02aa0e))
 
 ## [0.22.0](https://github.com/Availity/element/compare/@availity/element@0.21.0...@availity/element@0.22.0) (2023-10-03)
 
-
 ### Features
 
-* **mui-layout:** add layout components ([a4bf88b](https://github.com/Availity/element/commit/a4bf88b457422c99bb142ab06ee1be4dff70996d))
+- **mui-layout:** add layout components ([a4bf88b](https://github.com/Availity/element/commit/a4bf88b457422c99bb142ab06ee1be4dff70996d))
 
 ## [0.21.0](https://github.com/Availity/element/compare/@availity/element@0.20.0...@availity/element@0.21.0) (2023-09-25)
 

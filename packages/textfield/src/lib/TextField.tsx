@@ -1,20 +1,20 @@
 import { forwardRef } from 'react';
-import FormControl from '@mui/material/FormControl';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
-import { FormLabel, Input, InputProps } from '@availity/mui-form-utils';
-import { WarningTriangleIcon } from '@availity/mui-icon';
-
-export type TextFieldProps = {
-  helperText?: string;
-} & Omit<
+import MuiTextField, { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField';
+import {
+  FormHelperText,
+  FormHelperTextProps,
+  FormLabel,
+  FormLabelProps,
+  InputPropOverrides,
   InputProps,
-  'aria-describedby' | 'classes' | 'disableInjectingGlobalStyles' | 'color' | 'multiline' | 'notched' | 'fullWidth'
->;
+  SelectPropOverrides,
+  SelectProps,
+} from '@availity/mui-form-utils';
 
 const iconStyles = { marginRight: '2px', paddingTop: '2px' };
 
-export const TextField = forwardRef(
+/ *
+export const TextField = forwardRef<HTMLDivElement, TextFieldProps>(
   ({ error, helperText, id, label, startAdornment, endAdornment, required, size, ...rest }: TextFieldProps, ref) => {
     const labelId = `${id}-label`;
     const helperId = `${id}-helper-text`;
@@ -46,5 +46,27 @@ export const TextField = forwardRef(
     );
   }
 );
+*/
 
-TextField.displayName = 'TextField';
+
+export type TextFieldProps = {
+  FormHelperTextProps?: FormHelperTextProps;
+  InputLabelProps?: FormLabelProps;
+  InputProps?: InputProps;
+  SelectProps?: SelectProps;
+} & Pick<FormLabelProps, 'helpTopicId'> &
+  Omit<MuiTextFieldProps, 'variant'>;
+
+export const TextField = forwardRef<HTMLDivElement, TextFieldProps>((props, ref) => {
+  const { InputProps, helpTopicId, InputLabelProps, FormHelperTextProps, SelectProps, ...rest } = props;
+  return (
+    <MuiTextField
+      {...rest}
+      InputProps={{ ...InputProps, ...InputPropOverrides }}
+      InputLabelProps={{ component: FormLabel, helpTopicId: helpTopicId, shrink: true, ...InputLabelProps }}
+      FormHelperTextProps={{ component: FormHelperText, ...FormHelperTextProps }}
+      SelectProps={{ ...SelectProps, ...SelectPropOverrides }}
+      ref={ref}
+    />
+  );
+});
