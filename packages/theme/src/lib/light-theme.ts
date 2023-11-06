@@ -346,6 +346,8 @@ export const lightTheme = {
           boxShadow: 'none',
           fontWeight: tokens.fontWeightsBold,
           textTransform: 'none',
+          lineHeight: '1.375rem',
+          fontSize: '.875rem',
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
@@ -412,22 +414,21 @@ export const lightTheme = {
         outlinedWarning: { ...outlinedButtonStyles('Warning') },
         outlinedError: { ...outlinedButtonStyles('Error') },
         sizeSmall: {
-          height: '30px',
-          padding: '4px 10px',
+          padding: '4px 16px',
           '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
             // any buttons with border need padding decreased to accommodate
-            padding: '3px 9px',
+            padding: '3px 15px',
           },
         },
         sizeMedium: {
-          height: '34px',
-          padding: '6px 16px',
+          padding: '6px 18px',
           '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
-            padding: '5px 15px',
+            padding: '5px 17px',
           },
         },
         sizeLarge: {
-          height: '40px',
+          fontSize: '.9375rem',
+          lineHeight: '1.5rem',
           padding: '8px 22px',
           '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
             padding: '7px 21px',
