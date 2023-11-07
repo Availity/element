@@ -476,6 +476,13 @@ export const lightTheme = {
         },
       },
     },
+    MuiCircularProgress: {
+      styleOverrides: {
+        colorInherit: {
+          color: tokens.colorGrey100,
+        },
+      },
+    },
     MuiFormControl: {
       styleOverrides: {
         root: {
