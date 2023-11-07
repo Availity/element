@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.10](https://github.com/Availity/element/compare/@availity/mui-badge@0.1.9...@availity/mui-badge@0.1.10) (2023-11-07)
+
 ## [0.1.9](https://github.com/Availity/element/compare/@availity/mui-badge@0.1.8...@availity/mui-badge@0.1.9) (2023-10-06)
 
 ## [0.1.8](https://github.com/Availity/element/compare/@availity/mui-badge@0.1.7...@availity/mui-badge@0.1.8) (2023-08-23)
