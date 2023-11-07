@@ -29,5 +29,6 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
   },
   args: {
     helperText: 'Help text for the field',
+    helpTopicId: '1234',
   },
 };

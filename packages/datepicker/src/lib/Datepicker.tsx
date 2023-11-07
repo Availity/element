@@ -6,6 +6,7 @@ export type DatepickerProps = {
   label?: React.ReactNode;
   size?: 'small' | 'medium';
   helperText?: string;
+  helpTopicId?: string;
   InputProps?: TextFieldProps;
 } & Omit<
   MuiDatePickerProps<Dayjs, Dayjs>,
@@ -29,7 +30,7 @@ export type DatepickerProps = {
   | 'TransitionComponent'
 >;
 
-export const Datepicker = ({ size, ...props }: DatepickerProps): JSX.Element => {
+export const Datepicker = ({ size, helperText, helpTopicId, ...props }: DatepickerProps): JSX.Element => {
   return (
     <MuiDatePicker
       {...props}
@@ -38,7 +39,7 @@ export const Datepicker = ({ size, ...props }: DatepickerProps): JSX.Element => 
           params.inputProps.placeholder = 'MM/DD/YYYY';
         }
 
-        return <TextField helperText={props.helperText} {...params} size={size} />;
+        return <TextField helperText={helperText} helpTopicId={helpTopicId} {...params} size={size} />;
       }}
     />
   );

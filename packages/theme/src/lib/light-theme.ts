@@ -546,17 +546,14 @@ export const lightTheme = {
     },
     MuiFormHelperText: {
       styleOverrides: {
-        root: ({ ownerState }: { ownerState: { disabled: boolean } }) => {
-          return {
-            marginLeft: '0px',
-            '&:not(&.Mui-error) .MuiSvgIcon-root': {
-              display: 'none',
-            },
-            '.MuiSvgIcon-root': {
-              verticalAlign: 'text-bottom',
-            },
-            color: ownerState.disabled ? tokens.colorTextDisabled : tokens.colorTextPrimary,
-          };
+        root: {
+          marginLeft: '0px',
+          '&:not(&.Mui-error) .MuiSvgIcon-root': {
+            display: 'none',
+          },
+          '.MuiSvgIcon-root': {
+            verticalAlign: 'text-bottom',
+          },
         },
       },
     },
@@ -627,7 +624,6 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           '&.MuiInputBase-root': {
-            padding: '8px 12px',
             backgroundColor: 'white',
             '& > fieldset': {
               borderColor: tokens.colorGrey400,
@@ -646,7 +642,10 @@ export const lightTheme = {
               color: tokens.colorTextDisabled,
             },
             '.MuiInputBase-input': {
-              padding: '0px',
+              padding: '8px 12px',
+            },
+            '&.MuiInputBase-adornedEnd': {
+              paddingRight: '12px',
             },
             '&:hover': {
               '.MuiIconButton-root': {
