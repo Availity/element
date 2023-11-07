@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.7](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.1.6...@availity/mui-breadcrumbs@0.1.7) (2023-11-07)
+
 ## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.1.5...@availity/mui-breadcrumbs@0.1.6) (2023-10-25)
 
 
