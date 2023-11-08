@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.25.0](https://github.com/Availity/element/compare/@availity/theme@0.24.1...@availity/theme@0.25.0) (2023-11-08)
+
+### Dependency Updates
+
+* `design-tokens` updated to version `0.12.0`
+
+### Features
+
+* **theme:** update tertiary button styles ([242982a](https://github.com/Availity/element/commit/242982a9a853e6646281f2becf217c605f4a5213))
+
 ## [0.24.1](https://github.com/Availity/element/compare/@availity/theme@0.24.0...@availity/theme@0.24.1) (2023-11-08)
 
 ### Dependency Updates
