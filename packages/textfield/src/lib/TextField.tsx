@@ -19,8 +19,9 @@ export type TextFieldProps = {
 } & Pick<FormLabelProps, 'helpTopicId'> &
   Omit<MuiTextFieldProps, 'variant'>;
 
-export const TextField = forwardRef<HTMLDivElement, TextFieldProps>((props, ref) => {
+export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextFieldProps>((props, ref) => {
   const { InputProps, helpTopicId, InputLabelProps, FormHelperTextProps, SelectProps, ...rest } = props;
+
   return (
     <MuiTextField
       {...rest}

@@ -20,7 +20,7 @@
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.14.12",
     "@mui/x-date-pickers": "^5.0.15",
-    "date-fns": "^2.29.3"
+    "dayjs": "^1.11.9"
   },
   "devDependencies": {
     "react": "18.2.0",

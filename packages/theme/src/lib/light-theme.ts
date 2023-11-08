@@ -476,6 +476,31 @@ export const lightTheme = {
         },
       },
     },
+    MuiPickersCalendarHeader: {
+      styleOverrides: {
+        root: {
+          padding: '4px 16px 8px',
+        },
+      },
+    },
+    MuiDayPicker: {
+      styleOverrides: {
+        monthContainer: {
+          padding: '12px 8px 0px',
+        },
+      },
+    },
+    MuiCalendarPicker: {
+      styleOverrides: {
+        root: {
+          height: '328px',
+          width: '310px',
+          '.MuiIconButton-root': {
+            border: '0',
+          },
+        },
+      },
+    },
     MuiFormControl: {
       styleOverrides: {
         root: {
@@ -539,6 +564,7 @@ export const lightTheme = {
           display: important('flex'),
           flexDirection: important('row-reverse'),
           justifyContent: important('flex-end'),
+          marginBottom: '3px',
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
           },
@@ -613,17 +639,41 @@ export const lightTheme = {
             },
             '&.Mui-disabled > fieldset': {
               borderColor: tokens.borderDisabled,
+              color: tokens.colorTextDisabled,
+            },
+            '.MuiInputBase-input': {
+              padding: '8px 12px',
+            },
+            '&.MuiInputBase-adornedEnd': {
+              paddingRight: '12px',
+            },
+            '&:hover': {
+              '.MuiIconButton-root': {
+                color: tokens.colorGrey700,
+              },
+            },
+            '&.Mui-disabled': {
+              '.MuiIconButton-root': {
+                color: tokens.colorTextDisabled,
+              },
+            },
+            '.MuiIconButton-root': {
+              border: '0',
+              padding: '8px',
+              color: tokens.colorGrey400,
             },
           },
-          '&.MuiButtonBase-root': {
-            padding: '8px 8px',
-          },
         },
-        input: {
-          width: '196px',
-          height: '24px',
-          borderRadius: '4px',
-          color: tokens.colorGrey400,
+        input: ({ ownerState }: { ownerState: { size: 'small' | 'medium' } }) => {
+          return {
+            width: '196px',
+            height: ownerState.size === 'small' ? '24px' : '40px',
+            borderRadius: '4px',
+            color: tokens.colorGrey400,
+            '&:hover': {
+              color: tokens.colorGrey700,
+            },
+          };
         },
         adornedEnd: {
           backgroundColor: 'white',

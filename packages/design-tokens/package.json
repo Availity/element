@@ -16,7 +16,8 @@
     "clean:nm": "rm -rf node_modules",
     "format": "prettier ./src/ --write",
     "publish": "yarn npm publish --tolerate-republish --access public",
-    "publish:canary": "yarn npm publish --access public --tag canary"
+    "publish:canary": "yarn npm publish --access public --tag canary",
+    "format": "prettier ./src --write"
   },
   "devDependencies": {
     "prettier": "^3.0.3",

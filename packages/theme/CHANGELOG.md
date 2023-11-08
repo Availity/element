@@ -4,17 +4,15 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.23.0](https://github.com/Availity/element/compare/@availity/theme@0.22.1...@availity/theme@0.23.0) (2023-11-02)
 
-
 ### Features
 
-* **mui-chip:** break out StatusChip into a separate component ([a1ac4db](https://github.com/Availity/element/commit/a1ac4dba9c944ae7ebe3cbbbd9b1b97a89abeb11))
+- **mui-chip:** break out StatusChip into a separate component ([a1ac4db](https://github.com/Availity/element/commit/a1ac4dba9c944ae7ebe3cbbbd9b1b97a89abeb11))
 
 ## [0.22.1](https://github.com/Availity/element/compare/@availity/theme@0.22.0...@availity/theme@0.22.1) (2023-10-25)
 
-
 ### Bug Fixes
 
-* **mui-breadcrumbs:** home link target and separator tweaks ([4eb1b5f](https://github.com/Availity/element/commit/4eb1b5f172d072fe14ac9dc5b9d22707de7ca0b5))
+- **mui-breadcrumbs:** home link target and separator tweaks ([4eb1b5f](https://github.com/Availity/element/commit/4eb1b5f172d072fe14ac9dc5b9d22707de7ca0b5))
 
 ## [0.22.0](https://github.com/Availity/element/compare/@availity/theme@0.21.0...@availity/theme@0.22.0) (2023-10-20)
 
