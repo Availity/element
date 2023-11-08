@@ -1,6 +1,6 @@
 {
   "name": "@availity/design-tokens",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Design tokens for the Element design system",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
@@ -14,10 +14,9 @@
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "clean": "rm -rf dist && rm -rf src/tokens",
     "clean:nm": "rm -rf node_modules",
-    "format": "prettier ./src/ --write",
+    "format": "prettier ./src --write",
     "publish": "yarn npm publish --tolerate-republish --access public",
-    "publish:canary": "yarn npm publish --access public --tag canary",
-    "format": "prettier ./src --write"
+    "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
     "prettier": "^3.0.3",

@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.10.0...@availity/design-tokens@0.11.0) (2023-11-08)
+
+
+### Features
+
+* **mui-datepicker:** add datepicker component ([2efdbf5](https://github.com/Availity/element/commit/2efdbf5112583c4322d588823f0ce0b7227fde6f))
+
 ## [0.10.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.9.0...@availity/design-tokens@0.10.0) (2023-11-08)
 
 
