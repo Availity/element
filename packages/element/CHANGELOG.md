@@ -2,6 +2,33 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.26.1](https://github.com/Availity/element/compare/@availity/element@0.26.0...@availity/element@0.26.1) (2023-11-08)
+
+### Dependency Updates
+
+* `mui-alert` updated to version `0.5.3`
+* `mui-avatar` updated to version `0.1.7`
+* `mui-backdrop` updated to version `0.1.3`
+* `mui-badge` updated to version `0.1.11`
+* `mui-breadcrumbs` updated to version `0.1.8`
+* `mui-button` updated to version `0.4.5`
+* `mui-card` updated to version `0.2.3`
+* `mui-checkbox` updated to version `0.1.5`
+* `mui-chip` updated to version `0.2.2`
+* `mui-divider` updated to version `0.3.4`
+* `mui-form-utils` updated to version `0.5.2`
+* `mui-icon` updated to version `0.7.2`
+* `mui-layout` updated to version `0.1.2`
+* `mui-link` updated to version `0.2.3`
+* `mui-menu` updated to version `0.1.5`
+* `mui-page-header` updated to version `0.1.5`
+* `mui-pagination` updated to version `0.2.3`
+* `mui-paper` updated to version `0.1.5`
+* `mui-tabs` updated to version `0.1.6`
+* `mui-textfield` updated to version `0.3.1`
+* `mui-tooltip` updated to version `0.5.5`
+* `mui-typography` updated to version `0.1.4`
+* `theme-provider` updated to version `0.4.1`
 ## [0.26.0](https://github.com/Availity/element/compare/@availity/element@0.25.0...@availity/element@0.26.0) (2023-11-08)
 
 
