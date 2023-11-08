@@ -6,10 +6,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.4.1...@availity/mui-form-utils@0.5.0) (2023-10-20)
 
-
 ### Features
 
-* **mui-form-utils:** add FormHelperText and Select ([0ff9d8e](https://github.com/Availity/element/commit/0ff9d8e06d0baac263ce1869304d3b91fcb5cb15))
+- **mui-form-utils:** add FormHelperText and Select ([0ff9d8e](https://github.com/Availity/element/commit/0ff9d8e06d0baac263ce1869304d3b91fcb5cb15))
 
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.4.0...@availity/mui-form-utils@0.4.1) (2023-10-06)
 
