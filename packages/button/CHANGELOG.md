@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-button@0.4.5...@availity/mui-button@0.5.0) (2023-11-08)
+
+
+### Features
+
+* **mui-button:** remove outlined variant, remove error color ([61bc384](https://github.com/Availity/element/commit/61bc384fb5f1f0d61c100a348f1e8024ccb179c3))
+
 ## [0.4.5](https://github.com/Availity/element/compare/@availity/mui-button@0.4.4...@availity/mui-button@0.4.5) (2023-11-08)
 
 ### Dependency Updates
