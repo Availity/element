@@ -29,6 +29,7 @@
     "@availity/mui-layout": "workspace:*",
     "@availity/mui-link": "workspace:*",
     "@availity/mui-menu": "workspace:*",
+    "@availity/mui-modal": "workspace:*",
     "@availity/mui-page-header": "workspace:*",
     "@availity/mui-pagination": "workspace:*",
     "@availity/mui-paper": "workspace:*",
