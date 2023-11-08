@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.25.0](https://github.com/Availity/element/compare/@availity/element@0.24.1...@availity/element@0.25.0) (2023-11-08)
+
+
+### Features
+
+* **mui-modal:** create modal component ([7587076](https://github.com/Availity/element/commit/75870768799c5014161f173c8b61f0f245570952))
+
 ## [0.24.1](https://github.com/Availity/element/compare/@availity/element@0.24.0...@availity/element@0.24.1) (2023-10-25)
 
 ## [0.24.0](https://github.com/Availity/element/compare/@availity/element@0.23.1...@availity/element@0.24.0) (2023-10-25)
