@@ -346,15 +346,37 @@ export const lightTheme = {
           boxShadow: 'none',
           fontWeight: tokens.fontWeightsBold,
           textTransform: 'none',
+          lineHeight: '1.375rem',
+          fontSize: '.875rem',
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
         containedTertiary: {
-          ...containedButtonStyles('Tertiary'),
-          '&:focus': {
-            backgroundColor: tokens.colorTertiaryDark,
-            outline: '2px solid white',
-            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
+          '&.MuiButton-containedTertiary': {
+            ...containedButtonStyles('Tertiary'),
+            boxSizing: 'border-box',
+            border: `1px solid ${tokens.borderSecondary}`,
+            color: tokens.colorTertiaryDark,
+            '&:hover': {
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+              backgroundColor: tokens.colorTertiaryDark,
+            },
+            '&:active, &.Mui-focused:active, &:focus:active': {
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+              backgroundColor: tokens.colorSecondaryLight,
+            },
+            '&.Mui-focused, &:focus': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
+            '&.Mui-disabled, &:disabled': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
           },
         },
         containedSuccess: { ...containedButtonStyles('Success') },
@@ -364,11 +386,54 @@ export const lightTheme = {
         outlinedSecondary: { ...outlinedButtonStyles('Secondary') },
         outlinedTertiary: {
           color: tokens.colorSecondaryMain,
-          ...outlinedButtonStyles('Secondary'),
-        }, // intended
+          '&.MuiButton-outlinedTertiary': {
+            ...containedButtonStyles('Tertiary'),
+            color: tokens.colorTertiaryDark,
+            '&:hover': {
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+            },
+            '&:active, &.Mui-focused:active, &:focus:active': {
+              backgroundColor: tokens.colorSecondaryLight,
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+            },
+            '&.Mui-focused, &:focus': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
+            '&.Mui-disabled, &:disabled': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
+          },
+        },
         outlinedSuccess: { ...outlinedButtonStyles('Success') },
         outlinedWarning: { ...outlinedButtonStyles('Warning') },
         outlinedError: { ...outlinedButtonStyles('Error') },
+        sizeSmall: {
+          padding: '4px 16px',
+          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+            // any buttons with border need padding decreased to accommodate
+            padding: '3px 15px',
+          },
+        },
+        sizeMedium: {
+          padding: '6px 18px',
+          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+            padding: '5px 17px',
+          },
+        },
+        sizeLarge: {
+          fontSize: '.9375rem',
+          lineHeight: '1.5rem',
+          padding: '8px 22px',
+          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+            padding: '7px 21px',
+          },
+        },
       },
     },
     MuiCard: {
