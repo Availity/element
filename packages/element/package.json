@@ -34,6 +34,7 @@
     "@availity/mui-page-header": "workspace:*",
     "@availity/mui-pagination": "workspace:*",
     "@availity/mui-paper": "workspace:*",
+    "@availity/mui-popover": "workspace:*",
     "@availity/mui-tabs": "workspace:*",
     "@availity/mui-textfield": "workspace:*",
     "@availity/mui-toggle-button": "workspace:*",
