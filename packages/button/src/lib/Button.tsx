@@ -11,12 +11,7 @@ declare module '@mui/material/Button' {
 export type ButtonProps = {
   /** The color of the component.
    * @default secondary */
-  color?: 'primary' | 'secondary' | 'tertiary' | 'error';
-  /** The variant to use.
-   * @default contained */
-  variant?: 'outlined' | 'contained';
-  /** Internal prop used by IconButton for contained variant. */
-  iconOnly?: boolean;
+  color?: 'primary' | 'secondary' | 'tertiary';
 } & Omit<
   MUIButtonProps,
   | 'color'

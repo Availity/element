@@ -346,15 +346,37 @@ export const lightTheme = {
           boxShadow: 'none',
           fontWeight: tokens.fontWeightsBold,
           textTransform: 'none',
+          lineHeight: '1.375rem',
+          fontSize: '.875rem',
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
         containedTertiary: {
-          ...containedButtonStyles('Tertiary'),
-          '&:focus': {
-            backgroundColor: tokens.colorTertiaryDark,
-            outline: '2px solid white',
-            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
+          '&.MuiButton-containedTertiary': {
+            ...containedButtonStyles('Tertiary'),
+            boxSizing: 'border-box',
+            border: `1px solid ${tokens.borderSecondary}`,
+            color: tokens.colorTertiaryDark,
+            '&:hover': {
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+              backgroundColor: tokens.colorTertiaryDark,
+            },
+            '&:active, &.Mui-focused:active, &:focus:active': {
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+              backgroundColor: tokens.colorSecondaryLight,
+            },
+            '&.Mui-focused, &:focus': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
+            '&.Mui-disabled, &:disabled': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
           },
         },
         containedSuccess: { ...containedButtonStyles('Success') },
@@ -364,11 +386,54 @@ export const lightTheme = {
         outlinedSecondary: { ...outlinedButtonStyles('Secondary') },
         outlinedTertiary: {
           color: tokens.colorSecondaryMain,
-          ...outlinedButtonStyles('Secondary'),
-        }, // intended
+          '&.MuiButton-outlinedTertiary': {
+            ...containedButtonStyles('Tertiary'),
+            color: tokens.colorTertiaryDark,
+            '&:hover': {
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+            },
+            '&:active, &.Mui-focused:active, &:focus:active': {
+              backgroundColor: tokens.colorSecondaryLight,
+              color: tokens.colorCommonWhite,
+              border: '1px solid transparent',
+            },
+            '&.Mui-focused, &:focus': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
+            '&.Mui-disabled, &:disabled': {
+              border: `1px solid ${tokens.borderSecondary}`,
+              backgroundColor: tokens.colorTertiaryLight,
+              color: tokens.colorTertiaryDark,
+            },
+          },
+        },
         outlinedSuccess: { ...outlinedButtonStyles('Success') },
         outlinedWarning: { ...outlinedButtonStyles('Warning') },
         outlinedError: { ...outlinedButtonStyles('Error') },
+        sizeSmall: {
+          padding: '4px 16px',
+          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+            // any buttons with border need padding decreased to accommodate
+            padding: '3px 15px',
+          },
+        },
+        sizeMedium: {
+          padding: '6px 18px',
+          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+            padding: '5px 17px',
+          },
+        },
+        sizeLarge: {
+          fontSize: '.9375rem',
+          lineHeight: '1.5rem',
+          padding: '8px 22px',
+          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+            padding: '7px 21px',
+          },
+        },
       },
     },
     MuiCard: {
@@ -483,6 +548,31 @@ export const lightTheme = {
         },
       },
     },
+    MuiPickersCalendarHeader: {
+      styleOverrides: {
+        root: {
+          padding: '4px 16px 8px',
+        },
+      },
+    },
+    MuiDayPicker: {
+      styleOverrides: {
+        monthContainer: {
+          padding: '12px 8px 0px',
+        },
+      },
+    },
+    MuiCalendarPicker: {
+      styleOverrides: {
+        root: {
+          height: '328px',
+          width: '310px',
+          '.MuiIconButton-root': {
+            border: '0',
+          },
+        },
+      },
+    },
     MuiFormControl: {
       styleOverrides: {
         root: {
@@ -546,6 +636,7 @@ export const lightTheme = {
           display: important('flex'),
           flexDirection: important('row-reverse'),
           justifyContent: important('flex-end'),
+          marginBottom: '3px',
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
           },
@@ -620,17 +711,41 @@ export const lightTheme = {
             },
             '&.Mui-disabled > fieldset': {
               borderColor: tokens.borderDisabled,
+              color: tokens.colorTextDisabled,
+            },
+            '.MuiInputBase-input': {
+              padding: '8px 12px',
+            },
+            '&.MuiInputBase-adornedEnd': {
+              paddingRight: '12px',
+            },
+            '&:hover': {
+              '.MuiIconButton-root': {
+                color: tokens.colorGrey700,
+              },
+            },
+            '&.Mui-disabled': {
+              '.MuiIconButton-root': {
+                color: tokens.colorTextDisabled,
+              },
+            },
+            '.MuiIconButton-root': {
+              border: '0',
+              padding: '8px',
+              color: tokens.colorGrey400,
             },
           },
-          '&.MuiButtonBase-root': {
-            padding: '8px 8px',
-          },
         },
-        input: {
-          width: '196px',
-          height: '24px',
-          borderRadius: '4px',
-          color: tokens.colorGrey400,
+        input: ({ ownerState }: { ownerState: { size: 'small' | 'medium' } }) => {
+          return {
+            width: '196px',
+            height: ownerState.size === 'small' ? '24px' : '40px',
+            borderRadius: '4px',
+            color: tokens.colorGrey400,
+            '&:hover': {
+              color: tokens.colorGrey700,
+            },
+          };
         },
         adornedEnd: {
           backgroundColor: 'white',

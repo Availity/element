@@ -1190,7 +1190,7 @@
     },
     "tertiary": {
       "main": {
-        "value": "transparent",
+        "value": "#00000000",
         "type": "color"
       },
       "main20": {
