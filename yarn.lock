@@ -427,6 +427,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-progress@workspace:packages/progress"
   dependencies:
+    "@availity/mui-icon": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0
