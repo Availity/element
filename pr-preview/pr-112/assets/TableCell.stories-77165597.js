@@ -1,4 +1,0 @@
-import{j as s}from"./jsx-runtime-390e5fc8.js";import{T as a}from"./TableCell-b0873588.js";import"./index-570b25c1.js";import"./_commonjsHelpers-042e6b4d.js";import"./TableCell-37083325.js";import"./createTheme-bcd1d157.js";import"./clsx-7dc4e18d.js";import"./emotion-use-insertion-effect-with-fallbacks.browser.esm-16f43d9e.js";import"./useThemeProps-32d9d40f.js";import"./styled-ba967c06.js";import"./generateUtilityClasses-cabd787c.js";const _={title:"Components/Table/TableCell",component:a,tags:["autodocs"],args:{children:"Cell content"}},e={render:l=>s(a,{...l})};var r,o,t;e.parameters={...e.parameters,docs:{...(r=e.parameters)==null?void 0:r.docs,source:{originalSource:`{
-  render: (args: TableCellProps) => <TableCell {...args} />
-}`,...(t=(o=e.parameters)==null?void 0:o.docs)==null?void 0:t.source}}};const f=["_TableCell"];export{e as _TableCell,f as __namedExportsOrder,_ as default};
-//# sourceMappingURL=TableCell.stories-77165597.js.map
