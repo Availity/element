@@ -1,6 +1,6 @@
 {
   "name": "@availity/design-tokens",
-  "version": "0.9.0",
+  "version": "0.12.0",
   "description": "Design tokens for the Element design system",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
@@ -10,14 +10,16 @@
     "transform": "token-transformer src/tokens.json src/tokens/core.json",
     "transform-legacy": "token-transformer src/legacytokens.json src/tokens/legacy.json",
     "build:style-dict": "node ../../tools/scripts/style-dictionary.build.js",
-    "build": "yarn transform && yarn transform-legacy && yarn build:style-dict && tsup src/index.ts --format esm,cjs --dts",
+    "build": "yarn transform && yarn transform-legacy && yarn build:style-dict && tsup src/index.ts --format esm,cjs --dts && yarn format",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "clean": "rm -rf dist && rm -rf src/tokens",
     "clean:nm": "rm -rf node_modules",
+    "format": "prettier ./src --write",
     "publish": "yarn npm publish --tolerate-republish --access public",
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
+    "prettier": "^3.0.3",
     "style-dictionary": "^3.1.1",
     "token-transformer": "^0.0.14",
     "tsup": "^5.12.7",

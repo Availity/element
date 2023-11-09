@@ -2,12 +2,28 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.4.1...@availity/mui-form-utils@0.5.0) (2023-10-20)
+## [0.5.3](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.5.2...@availity/mui-form-utils@0.5.3) (2023-11-08)
 
+### Dependency Updates
+
+- `mui-button` updated to version `0.5.0`
+- `mui-chip` updated to version `0.2.3`
+
+## [0.5.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.5.1...@availity/mui-form-utils@0.5.2) (2023-11-08)
+
+### Dependency Updates
+
+- `mui-button` updated to version `0.4.5`
+- `mui-icon` updated to version `0.7.2`
+- `mui-chip` updated to version `0.2.2`
+
+## [0.5.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.5.0...@availity/mui-form-utils@0.5.1) (2023-11-07)
+
+## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.4.1...@availity/mui-form-utils@0.5.0) (2023-10-20)
 
 ### Features
 
-* **mui-form-utils:** add FormHelperText and Select ([0ff9d8e](https://github.com/Availity/element/commit/0ff9d8e06d0baac263ce1869304d3b91fcb5cb15))
+- **mui-form-utils:** add FormHelperText and Select ([0ff9d8e](https://github.com/Availity/element/commit/0ff9d8e06d0baac263ce1869304d3b91fcb5cb15))
 
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.4.0...@availity/mui-form-utils@0.4.1) (2023-10-06)
 

@@ -2,6 +2,26 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.2...@availity/mui-chip@0.2.3) (2023-11-08)
+
+### Dependency Updates
+
+- `mui-avatar` updated to version `0.1.8`
+
+## [0.2.2](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.1...@availity/mui-chip@0.2.2) (2023-11-08)
+
+### Dependency Updates
+
+- `mui-avatar` updated to version `0.1.7`
+
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.0...@availity/mui-chip@0.2.1) (2023-11-07)
+
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-chip@0.1.2...@availity/mui-chip@0.2.0) (2023-11-02)
+
+### Features
+
+- **mui-chip:** break out StatusChip into a separate component ([a1ac4db](https://github.com/Availity/element/commit/a1ac4dba9c944ae7ebe3cbbbd9b1b97a89abeb11))
+
 ## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-chip@0.1.1...@availity/mui-chip@0.1.2) (2023-10-06)
 
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-chip@0.1.0...@availity/mui-chip@0.1.1) (2023-08-23)

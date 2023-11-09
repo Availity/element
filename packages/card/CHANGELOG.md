@@ -2,14 +2,28 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-card@0.2.3...@availity/mui-card@0.2.4) (2023-11-08)
+
+### Dependency Updates
+
+- `mui-button` updated to version `0.5.0`
+
+## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-card@0.2.2...@availity/mui-card@0.2.3) (2023-11-08)
+
+### Dependency Updates
+
+- `mui-button` updated to version `0.4.5`
+- `mui-icon` updated to version `0.7.2`
+
+## [0.2.2](https://github.com/Availity/element/compare/@availity/mui-card@0.2.1...@availity/mui-card@0.2.2) (2023-11-07)
+
 ## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-card@0.2.0...@availity/mui-card@0.2.1) (2023-10-06)
 
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-card@0.1.4...@availity/mui-card@0.2.0) (2023-08-28)
 
-
 ### Features
 
-* **mui-card:** move default elevation props to theme (legacy compatibility) ([d68dcf8](https://github.com/Availity/element/commit/d68dcf8ac16091a7d2d37cebbe19b4645708a28b))
+- **mui-card:** move default elevation props to theme (legacy compatibility) ([d68dcf8](https://github.com/Availity/element/commit/d68dcf8ac16091a7d2d37cebbe19b4645708a28b))
 
 ## [0.1.4](https://github.com/Availity/element/compare/@availity/mui-card@0.1.3...@availity/mui-card@0.1.4) (2023-08-23)
 

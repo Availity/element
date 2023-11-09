@@ -2,12 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.7.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.6.1...@availity/mui-icon@0.7.0) (2023-10-20)
+## [0.7.2](https://github.com/Availity/element/compare/@availity/mui-icon@0.7.1...@availity/mui-icon@0.7.2) (2023-11-08)
 
+## [0.7.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.7.0...@availity/mui-icon@0.7.1) (2023-11-07)
+
+## [0.7.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.6.1...@availity/mui-icon@0.7.0) (2023-10-20)
 
 ### Features
 
-* **mui-icon:** add expand/collapse icons ([0a88920](https://github.com/Availity/element/commit/0a889203e15785beca2834d79d6d2bfc3425bfcd))
+- **mui-icon:** add expand/collapse icons ([0a88920](https://github.com/Availity/element/commit/0a889203e15785beca2834d79d6d2bfc3425bfcd))
 
 ## [0.6.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.6.0...@availity/mui-icon@0.6.1) (2023-10-06)
 
