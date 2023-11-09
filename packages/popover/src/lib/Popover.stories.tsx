@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { Typography } from '@availity/mui-typography';
 import { Popover, PopoverProps } from './Popover';
-import { Typography } from '@mui/material';
 
 const meta: Meta<typeof Popover> = {
   title: 'Components/Popover/Popover',
