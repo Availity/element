@@ -58,6 +58,7 @@ __metadata:
     "@availity/mui-page-header": "workspace:*"
     "@availity/mui-pagination": "workspace:*"
     "@availity/mui-paper": "workspace:*"
+    "@availity/mui-popover": "workspace:*"
     "@availity/mui-progress": "workspace:*"
     "@availity/mui-tabs": "workspace:*"
     "@availity/mui-textfield": "workspace:*"
@@ -413,6 +414,22 @@ __metadata:
   resolution: "@availity/mui-paper@workspace:packages/paper"
   dependencies:
     "@mui/material": ^5.14.12
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-popover@workspace:*, @availity/mui-popover@workspace:packages/popover":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-popover@workspace:packages/popover"
+  dependencies:
+    "@availity/mui-typography": "workspace:^"
+    "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7

@@ -43,6 +43,7 @@
       "@availity/mui-pagination": ["packages/pagination/src/index.ts"],
       "@availity/mui-paper": ["packages/paper/src/index.ts"],
       "@availity/mui-progress": ["packages/progress/src/index.ts"],
+      "@availity/mui-popover": ["packages/popover/src/index.ts"],
       "@availity/mui-tabs": ["packages/tabs/src/index.ts"],
       "@availity/mui-textfield": ["packages/textfield/src/index.ts"],
       "@availity/mui-toggle-button": ["packages/toggle-button/src/index.ts"],
