@@ -427,10 +427,20 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-table@workspace:packages/table"
   dependencies:
+    "@availity/mui-button": "workspace:*"
+    "@availity/mui-chip": "workspace:*"
+    "@availity/mui-form-utils": "workspace:*"
     "@availity/mui-icon": "workspace:*"
+    "@availity/mui-layout": "workspace:*"
+    "@availity/mui-link": "workspace:*"
+    "@availity/mui-menu": "workspace:*"
+    "@availity/mui-paper": "workspace:*"
+    "@availity/mui-textfield": "workspace:*"
+    "@availity/mui-typography": "workspace:*"
     "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0
+    react-hook-form: ^7.48.2
     tsup: ^5.12.7
     typescript: ^4.6.4
   peerDependencies:
@@ -7488,6 +7498,7 @@ __metadata:
     lint-staged: ^13.2.2
     nx: 15.6.2
     prettier: ^2.6.2
+    react-hook-form: ^7.48.2
     react-test-renderer: 18.2.0
     remark-gfm: ^3.0.1
     ts-jest: 28.0.5
@@ -15516,6 +15527,15 @@ __metadata:
     react: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
     react-dom: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
   checksum: c3907cc4c1d3e9ecc8ca7727058ebcba6ec89848d9e07bfd2c77ee8f28f1ad99bf55e38359dec8a1125de83d41ac09a2874f53c41415edc86ffa9840fa1b7856
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.48.2":
+  version: 7.48.2
+  resolution: "react-hook-form@npm:7.48.2"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 39652d08f78f16e5234049ceeb794d8bcd4d146772aca99c6db8c5aea8926cd4a230d02098886a441074deefbc24ffcb5ed57bc7cb0009d950115f5b3e627f12
   languageName: node
   linkType: hard
 

@@ -36,9 +36,20 @@
     "@availity/mui-icon": "workspace:*"
   },
   "devDependencies": {
+    "@availity/mui-button": "workspace:*",
+    "@availity/mui-chip": "workspace:*",
+    "@availity/mui-form-utils": "workspace:*",
+    "@availity/mui-icon": "workspace:*",
+    "@availity/mui-layout": "workspace:*",
+    "@availity/mui-link": "workspace:*",
+    "@availity/mui-menu": "workspace:*",
+    "@availity/mui-paper": "workspace:*",
+    "@availity/mui-textfield": "workspace:*",
+    "@availity/mui-typography": "workspace:*",
     "@mui/material": "^5.11.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.48.2",
     "tsup": "^5.12.7",
     "typescript": "^4.6.4"
   },
