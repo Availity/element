@@ -6,31 +6,30 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `design-tokens` updated to version `0.12.0`
+- `design-tokens` updated to version `0.12.0`
 
 ### Features
 
-* **theme:** update tertiary button styles ([242982a](https://github.com/Availity/element/commit/242982a9a853e6646281f2becf217c605f4a5213))
+- **theme:** update tertiary button styles ([242982a](https://github.com/Availity/element/commit/242982a9a853e6646281f2becf217c605f4a5213))
 
 ## [0.24.1](https://github.com/Availity/element/compare/@availity/theme@0.24.0...@availity/theme@0.24.1) (2023-11-08)
 
 ### Dependency Updates
 
-* `design-tokens` updated to version `0.11.1`
-## [0.24.0](https://github.com/Availity/element/compare/@availity/theme@0.23.0...@availity/theme@0.24.0) (2023-11-08)
+- `design-tokens` updated to version `0.11.1`
 
+## [0.24.0](https://github.com/Availity/element/compare/@availity/theme@0.23.0...@availity/theme@0.24.0) (2023-11-08)
 
 ### Features
 
-* **mui-datepicker:** add datepicker component ([2efdbf5](https://github.com/Availity/element/commit/2efdbf5112583c4322d588823f0ce0b7227fde6f))
-* **mui-datepicker:** update styles for datepicker ([b250d38](https://github.com/Availity/element/commit/b250d382691a83bfc12c066a2d4eeb9af147689f))
-
+- **mui-datepicker:** add datepicker component ([2efdbf5](https://github.com/Availity/element/commit/2efdbf5112583c4322d588823f0ce0b7227fde6f))
+- **mui-datepicker:** update styles for datepicker ([b250d38](https://github.com/Availity/element/commit/b250d382691a83bfc12c066a2d4eeb9af147689f))
 
 ### Bug Fixes
 
-* **mui-datepicker:** update padding and add help topic ([efd3487](https://github.com/Availity/element/commit/efd3487fbc6c01b9fe48187da238b8137fde1c2e))
-* **mui-datepicker:** update styles ([1c0aa8a](https://github.com/Availity/element/commit/1c0aa8a3a2ce13df6655561236ebfaacdaceb28e))
-* **mui-datepicker:** use updated TextField ([23caa3a](https://github.com/Availity/element/commit/23caa3a0852f0249afb9ca0ef411db106c7049df))
+- **mui-datepicker:** update padding and add help topic ([efd3487](https://github.com/Availity/element/commit/efd3487fbc6c01b9fe48187da238b8137fde1c2e))
+- **mui-datepicker:** update styles ([1c0aa8a](https://github.com/Availity/element/commit/1c0aa8a3a2ce13df6655561236ebfaacdaceb28e))
+- **mui-datepicker:** use updated TextField ([23caa3a](https://github.com/Availity/element/commit/23caa3a0852f0249afb9ca0ef411db106c7049df))
 
 ## [0.23.0](https://github.com/Availity/element/compare/@availity/theme@0.22.1...@availity/theme@0.23.0) (2023-11-02)
 

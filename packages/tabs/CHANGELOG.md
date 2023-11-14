@@ -6,7 +6,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-divider` updated to version `0.3.4`
+- `mui-divider` updated to version `0.3.4`
+
 ## [0.1.5](https://github.com/Availity/element/compare/@availity/mui-tabs@0.1.4...@availity/mui-tabs@0.1.5) (2023-11-07)
 
 ## [0.1.4](https://github.com/Availity/element/compare/@availity/mui-tabs@0.1.3...@availity/mui-tabs@0.1.4) (2023-10-06)

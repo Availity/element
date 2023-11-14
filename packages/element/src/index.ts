@@ -18,6 +18,7 @@ export * from '@availity/mui-modal';
 export * from '@availity/mui-page-header';
 export * from '@availity/mui-pagination';
 export * from '@availity/mui-paper';
+export * from '@availity/mui-progress';
 export * from '@availity/mui-popover';
 export * from '@availity/mui-tabs';
 export * from '@availity/mui-textfield';

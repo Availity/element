@@ -6,13 +6,15 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-button` updated to version `0.5.0`
+- `mui-button` updated to version `0.5.0`
+
 ## [0.5.3](https://github.com/Availity/element/compare/@availity/mui-alert@0.5.2...@availity/mui-alert@0.5.3) (2023-11-08)
 
 ### Dependency Updates
 
-* `mui-button` updated to version `0.4.5`
-* `mui-icon` updated to version `0.7.2`
+- `mui-button` updated to version `0.4.5`
+- `mui-icon` updated to version `0.7.2`
+
 ## [0.5.2](https://github.com/Availity/element/compare/@availity/mui-alert@0.5.1...@availity/mui-alert@0.5.2) (2023-11-07)
 
 ## [0.5.1](https://github.com/Availity/element/compare/@availity/mui-alert@0.5.0...@availity/mui-alert@0.5.1) (2023-10-06)
