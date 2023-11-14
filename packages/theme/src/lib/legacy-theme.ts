@@ -959,8 +959,17 @@ export const legacyTheme = {
         head: {
           fontWeight: tokens.fontWeightsBold,
         },
+        header: {
+          borderTop: '0px',
+          paddingBottom: '.5rem',
+          width: '100%',
+          display: 'block',
+        },
         sizeMedium: {
           padding: '.75rem',
+          '&.MuiTableCell-header': {
+            paddingBottom: '1.5rem',
+          },
           '.MuiTableSortLabel-root': {
             width: '100%',
             height: '100%',
@@ -970,6 +979,9 @@ export const legacyTheme = {
         },
         sizeSmall: {
           padding: '.25rem',
+          '&.MuiTableCell-header': {
+            paddingBottom: '.5rem',
+          },
           '.MuiTableSortLabel-root': {
             width: '100%',
             height: '100%',

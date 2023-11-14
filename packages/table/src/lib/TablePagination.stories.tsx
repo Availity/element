@@ -53,7 +53,3 @@ export const _ShowAll: StoryObj<typeof TablePagination> = {
     rowsPerPageOptions: [-1],
   },
 };
-
-export const _BaseMui: StoryObj<typeof TablePagination> = {
-  render: (args: TablePaginationProps) => <MuiTablePagination {...args} />,
-};

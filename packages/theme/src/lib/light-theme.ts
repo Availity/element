@@ -889,7 +889,7 @@ export const lightTheme = {
     MuiTable: {
       styleOverrides: {
         root: {
-          border: `1px solid ${tokens.borderDecorative}`,
+          border: `0px solid ${tokens.borderDecorative}`,
           backgroundColor: tokens.colorBackgroundPaper,
         },
       },
@@ -901,17 +901,26 @@ export const lightTheme = {
           // higher specificity needed for footer padding
           '&.MuiTableCell-footer': {
             borderBottom: 'none',
-            '&:first-child, &:only-child': {
+            '&:first-of-type, &:only-child': {
               paddingTop: '1.25rem',
             },
-            '&:last-child, &:only-child': {
+            '&:last-of-type, &:only-child': {
               paddingBottom: '1.25rem',
             },
           },
         },
         head: {
           fontWeight: tokens.fontWeightsBold,
-          borderTop: `1px solid ${tokens.borderDecorative}`,
+          borderBottomWidth: `2px`,
+        },
+        header: {
+          borderBottom: '0px',
+          padding: '1.25rem 1rem',
+          width: '100%',
+          display: 'block',
+        },
+        sizeMedium: {
+          lineHeight: '1.25rem',
         },
       },
     },
@@ -943,7 +952,6 @@ export const lightTheme = {
         },
         select: {
           '&.MuiTablePagination-select.MuiSelect-select': {
-            paddingBottom: '1px',
             paddingRight: '1.5rem',
             borderRadius: '.25rem',
           },

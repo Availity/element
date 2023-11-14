@@ -23,18 +23,18 @@ export type TablePaginationProps = {
   | 'showLastButton'
 >;
 
-interface TablePaginationActionsProps {
+type TablePaginationActionsProps = {
   count: number | 'Infinity';
   page: number;
   rowsPerPage: number;
   onPageChange: (event: React.MouseEvent<HTMLButtonElement>, newPage: number) => void;
-}
+} & Pick<MuiTablePaginationProps, 'backIconButtonProps' | 'nextIconButtonProps'>;
 
 export const TablePagination = forwardRef<unknown, TablePaginationProps>((props, ref) => {
   const { Actions, paginationProps, ...rest } = props;
 
   const ActionsPagination = (props: TablePaginationActionsProps): JSX.Element => {
-    const { count, page, rowsPerPage, onPageChange, ...rest } = props;
+    const { count, page, rowsPerPage, onPageChange, backIconButtonProps, nextIconButtonProps, ...rest } = props;
 
     return (
       <>
@@ -60,12 +60,5 @@ export const TablePagination = forwardRef<unknown, TablePaginationProps>((props,
     );
   };
 
-  return (
-    <MuiTablePagination
-      // colSpan={undefined}
-      ActionsComponent={ActionsPagination}
-      {...rest}
-      ref={ref}
-    />
-  );
+  return <MuiTablePagination ActionsComponent={ActionsPagination} {...rest} ref={ref} />;
 });
