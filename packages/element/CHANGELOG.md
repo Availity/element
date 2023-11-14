@@ -2,6 +2,27 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.28.0](https://github.com/Availity/element/compare/@availity/element@0.27.0...@availity/element@0.28.0) (2023-11-14)
+
+### Dependency Updates
+
+- `mui-progress` updated to version `0.1.0`
+- `theme-provider` updated to version `0.4.3`
+
+### Features
+
+- **mui-progress:** initial commit ([0012911](https://github.com/Availity/element/commit/00129117d2107d4bdf97a3767119d30ae2edb418))
+
+## [0.27.0](https://github.com/Availity/element/compare/@availity/element@0.26.2...@availity/element@0.27.0) (2023-11-09)
+
+### Dependency Updates
+
+- `mui-popover` updated to version `0.1.0`
+
+### Features
+
+- **mui-popover:** initial commit ([f36b454](https://github.com/Availity/element/commit/f36b45416551d24c2c840b1fd65489399b388835))
+
 ## [0.26.2](https://github.com/Availity/element/compare/@availity/element@0.26.1...@availity/element@0.26.2) (2023-11-08)
 
 ### Dependency Updates

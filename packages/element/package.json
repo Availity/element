@@ -1,6 +1,6 @@
 {
   "name": "@availity/element",
-  "version": "0.26.2",
+  "version": "0.28.0",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -34,6 +34,8 @@
     "@availity/mui-page-header": "workspace:*",
     "@availity/mui-pagination": "workspace:*",
     "@availity/mui-paper": "workspace:*",
+    "@availity/mui-popover": "workspace:*",
+    "@availity/mui-progress": "workspace:*",
     "@availity/mui-table": "workspace:*",
     "@availity/mui-tabs": "workspace:*",
     "@availity/mui-textfield": "workspace:*",
