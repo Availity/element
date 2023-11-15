@@ -76,7 +76,12 @@ export const CircularProgress = ({
   return (
     <Stack width="fit-content" alignItems="center">
       {status === 'loading' ? (
-        <MuiCircularProgress {...props} size={size === 'small' ? 24 : 40} variant="indeterminate" />
+        <MuiCircularProgress
+          aria-label="Loading"
+          {...props}
+          size={size === 'small' ? 24 : 40}
+          variant="indeterminate"
+        />
       ) : (
         <StatusIcon status={status} size={size} />
       )}
