@@ -31,8 +31,10 @@ const SmileButton = ({ Icon, label, value, ...props }: SmileButtonProps) => (
 );
 
 export const FeedbackForm = (): JSX.Element => {
-  const { handleSubmit, control, setValue } = useForm<Inputs>();
+  const { handleSubmit, control, setValue, watch } = useForm<Inputs>();
+
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+
   const options = [
     {
       Icon: FaceSmileIcon,
@@ -81,7 +83,7 @@ export const FeedbackForm = (): JSX.Element => {
           </Button>
         </Grid>
         <Grid item xs={6}>
-          <Button fullWidth type="submit">
+          <Button fullWidth type="submit" disabled={!watch('smileField')}>
             Send Feedback
           </Button>
         </Grid>

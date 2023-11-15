@@ -270,6 +270,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-feedback@workspace:packages/feedback"
   dependencies:
+    "@availity/mui-button": "workspace:^"
+    "@availity/mui-icon": "workspace:^"
+    "@availity/mui-popover": "workspace:^"
+    "@availity/mui-textfield": "workspace:^"
+    "@availity/mui-toggle-button": "workspace:^"
+    "@availity/mui-tooltip": "workspace:^"
     "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0
@@ -440,7 +446,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-popover@workspace:*, @availity/mui-popover@workspace:packages/popover":
+"@availity/mui-popover@workspace:*, @availity/mui-popover@workspace:^, @availity/mui-popover@workspace:packages/popover":
   version: 0.0.0-use.local
   resolution: "@availity/mui-popover@workspace:packages/popover"
   dependencies:
@@ -473,7 +479,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-textfield@workspace:*, @availity/mui-textfield@workspace:packages/textfield":
+"@availity/mui-textfield@workspace:*, @availity/mui-textfield@workspace:^, @availity/mui-textfield@workspace:packages/textfield":
   version: 0.0.0-use.local
   resolution: "@availity/mui-textfield@workspace:packages/textfield"
   dependencies:
@@ -490,7 +496,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-toggle-button@workspace:*, @availity/mui-toggle-button@workspace:packages/toggle-button":
+"@availity/mui-toggle-button@workspace:*, @availity/mui-toggle-button@workspace:^, @availity/mui-toggle-button@workspace:packages/toggle-button":
   version: 0.0.0-use.local
   resolution: "@availity/mui-toggle-button@workspace:packages/toggle-button"
   dependencies:
@@ -506,7 +512,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-tooltip@workspace:*, @availity/mui-tooltip@workspace:packages/tooltip":
+"@availity/mui-tooltip@workspace:*, @availity/mui-tooltip@workspace:^, @availity/mui-tooltip@workspace:packages/tooltip":
   version: 0.0.0-use.local
   resolution: "@availity/mui-tooltip@workspace:packages/tooltip"
   dependencies:

@@ -12,7 +12,7 @@ export interface FeedbackProps {
 
 const FeedbackContainer = styled(Container, { name: 'FeedbackContainer', slot: 'root' })({});
 
-export const Feedback = ({ appName, variant = 'popover' }: FeedbackProps): JSX.Element => {
+export const Feedback = ({ appName }: FeedbackProps): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
