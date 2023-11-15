@@ -258,6 +258,14 @@ export const lightTheme = {
     },
   },
   components: {
+    FeedbackContainer: {
+      styleOverrides: {
+        root: {
+          maxWidth: important('490px'),
+          padding: '16px',
+        },
+      },
+    },
     MuiAlert: {
       styleOverrides: {
         standardSuccess: {
@@ -962,6 +970,43 @@ export const lightTheme = {
         },
         arrow: {
           color: tokens.colorSecondaryMain,
+        },
+      },
+    },
+    SmileButtons: {
+      styleOverrides: {
+        root: {
+          marginBottom: '8px',
+          '.MuiToggleButton-root': {
+            margin: '8px',
+            '&:focus': {
+              backgroundColor: tokens.colorActionFocus,
+              color: tokens.colorTextPrimary,
+              boxShadow: 'none',
+            },
+            '&:hover': {
+              backgroundColor: tokens.colorActionHover,
+              color: tokens.colorTextPrimary,
+              borderColor: tokens.colorGrey400,
+            },
+            '&.Mui-selected': {
+              backgroundColor: tokens.colorPrimaryMain,
+              '&:active': {
+                backgroundColor: tokens.colorPrimaryDarker,
+              },
+              '&:focus': {
+                boxShadow: 'none',
+              },
+              '&:focus, &:hover': {
+                backgroundColor: tokens.colorPrimaryDark,
+                color: tokens.colorCommonWhite,
+              },
+            },
+            '&.MuiToggleButton-sizeMedium': {
+              padding: '12px',
+              height: 'auto',
+            },
+          },
         },
       },
     },

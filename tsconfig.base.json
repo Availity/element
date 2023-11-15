@@ -33,6 +33,7 @@
       "@availity/mui-chip": ["packages/chip/src/index.ts"],
       "@availity/mui-datepicker": ["packages/datepicker/src/index.ts"],
       "@availity/mui-divider": ["packages/divider/src/index.ts"],
+      "@availity/mui-feedback": ["packages/feedback/src/index.ts"],
       "@availity/mui-form-utils": ["packages/form-utils/src/index.ts"],
       "@availity/mui-icon": ["packages/icon/src/index.ts"],
       "@availity/mui-layout": ["packages/layout/src/index.ts"],
