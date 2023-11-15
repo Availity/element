@@ -549,6 +549,13 @@ export const lightTheme = {
         },
       },
     },
+    MuiCircularProgress: {
+      styleOverrides: {
+        colorInherit: {
+          color: tokens.colorGrey100,
+        },
+      },
+    },
     MuiPickersCalendarHeader: {
       styleOverrides: {
         root: {

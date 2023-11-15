@@ -2,80 +2,105 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.29.1](https://github.com/Availity/element/compare/@availity/element@0.29.0...@availity/element@0.29.1) (2023-11-15)
+
+### Dependency Updates
+
+* `mui-progress` updated to version `0.1.1`
+## [0.29.0](https://github.com/Availity/element/compare/@availity/element@0.28.0...@availity/element@0.29.0) (2023-11-15)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `0.1.0`
+
+### Features
+
+* **mui-autocomplete:** add autocomplete package ([772c989](https://github.com/Availity/element/commit/772c98978f2c8e3edc01d8deb38dfc5cc2339298))
+
+## [0.28.0](https://github.com/Availity/element/compare/@availity/element@0.27.0...@availity/element@0.28.0) (2023-11-14)
+
+### Dependency Updates
+
+* `mui-progress` updated to version `0.1.0`
+* `theme-provider` updated to version `0.4.3`
+
+### Features
+
+* **mui-progress:** initial commit ([0012911](https://github.com/Availity/element/commit/00129117d2107d4bdf97a3767119d30ae2edb418))
+
 ## [0.27.0](https://github.com/Availity/element/compare/@availity/element@0.26.2...@availity/element@0.27.0) (2023-11-09)
 
 ### Dependency Updates
 
-* `mui-popover` updated to version `0.1.0`
+- `mui-popover` updated to version `0.1.0`
 
 ### Features
 
-* **mui-popover:** initial commit ([f36b454](https://github.com/Availity/element/commit/f36b45416551d24c2c840b1fd65489399b388835))
+- **mui-popover:** initial commit ([f36b454](https://github.com/Availity/element/commit/f36b45416551d24c2c840b1fd65489399b388835))
 
 ## [0.26.2](https://github.com/Availity/element/compare/@availity/element@0.26.1...@availity/element@0.26.2) (2023-11-08)
 
 ### Dependency Updates
 
-* `mui-alert` updated to version `0.5.4`
-* `mui-avatar` updated to version `0.1.8`
-* `mui-button` updated to version `0.5.0`
-* `mui-card` updated to version `0.2.4`
-* `mui-checkbox` updated to version `0.1.6`
-* `mui-chip` updated to version `0.2.3`
-* `mui-form-utils` updated to version `0.5.3`
-* `mui-menu` updated to version `0.1.6`
-* `mui-page-header` updated to version `0.1.6`
-* `mui-textfield` updated to version `0.3.2`
-* `theme-provider` updated to version `0.4.2`
+- `mui-alert` updated to version `0.5.4`
+- `mui-avatar` updated to version `0.1.8`
+- `mui-button` updated to version `0.5.0`
+- `mui-card` updated to version `0.2.4`
+- `mui-checkbox` updated to version `0.1.6`
+- `mui-chip` updated to version `0.2.3`
+- `mui-form-utils` updated to version `0.5.3`
+- `mui-menu` updated to version `0.1.6`
+- `mui-page-header` updated to version `0.1.6`
+- `mui-textfield` updated to version `0.3.2`
+- `theme-provider` updated to version `0.4.2`
+
 ## [0.26.1](https://github.com/Availity/element/compare/@availity/element@0.26.0...@availity/element@0.26.1) (2023-11-08)
 
 ### Dependency Updates
 
-* `mui-alert` updated to version `0.5.3`
-* `mui-avatar` updated to version `0.1.7`
-* `mui-backdrop` updated to version `0.1.3`
-* `mui-badge` updated to version `0.1.11`
-* `mui-breadcrumbs` updated to version `0.1.8`
-* `mui-button` updated to version `0.4.5`
-* `mui-card` updated to version `0.2.3`
-* `mui-checkbox` updated to version `0.1.5`
-* `mui-chip` updated to version `0.2.2`
-* `mui-divider` updated to version `0.3.4`
-* `mui-form-utils` updated to version `0.5.2`
-* `mui-icon` updated to version `0.7.2`
-* `mui-layout` updated to version `0.1.2`
-* `mui-link` updated to version `0.2.3`
-* `mui-menu` updated to version `0.1.5`
-* `mui-page-header` updated to version `0.1.5`
-* `mui-pagination` updated to version `0.2.3`
-* `mui-paper` updated to version `0.1.5`
-* `mui-tabs` updated to version `0.1.6`
-* `mui-textfield` updated to version `0.3.1`
-* `mui-tooltip` updated to version `0.5.5`
-* `mui-typography` updated to version `0.1.4`
-* `theme-provider` updated to version `0.4.1`
-## [0.26.0](https://github.com/Availity/element/compare/@availity/element@0.25.0...@availity/element@0.26.0) (2023-11-08)
+- `mui-alert` updated to version `0.5.3`
+- `mui-avatar` updated to version `0.1.7`
+- `mui-backdrop` updated to version `0.1.3`
+- `mui-badge` updated to version `0.1.11`
+- `mui-breadcrumbs` updated to version `0.1.8`
+- `mui-button` updated to version `0.4.5`
+- `mui-card` updated to version `0.2.3`
+- `mui-checkbox` updated to version `0.1.5`
+- `mui-chip` updated to version `0.2.2`
+- `mui-divider` updated to version `0.3.4`
+- `mui-form-utils` updated to version `0.5.2`
+- `mui-icon` updated to version `0.7.2`
+- `mui-layout` updated to version `0.1.2`
+- `mui-link` updated to version `0.2.3`
+- `mui-menu` updated to version `0.1.5`
+- `mui-page-header` updated to version `0.1.5`
+- `mui-pagination` updated to version `0.2.3`
+- `mui-paper` updated to version `0.1.5`
+- `mui-tabs` updated to version `0.1.6`
+- `mui-textfield` updated to version `0.3.1`
+- `mui-tooltip` updated to version `0.5.5`
+- `mui-typography` updated to version `0.1.4`
+- `theme-provider` updated to version `0.4.1`
 
+## [0.26.0](https://github.com/Availity/element/compare/@availity/element@0.25.0...@availity/element@0.26.0) (2023-11-08)
 
 ### Features
 
-* **mui-datepicker:** add datepicker component ([2efdbf5](https://github.com/Availity/element/commit/2efdbf5112583c4322d588823f0ce0b7227fde6f))
+- **mui-datepicker:** add datepicker component ([2efdbf5](https://github.com/Availity/element/commit/2efdbf5112583c4322d588823f0ce0b7227fde6f))
 
 ## [0.25.0](https://github.com/Availity/element/compare/@availity/element@0.24.1...@availity/element@0.25.0) (2023-11-08)
 
-
 ### Features
 
-* **mui-modal:** create modal component ([7587076](https://github.com/Availity/element/commit/75870768799c5014161f173c8b61f0f245570952))
+- **mui-modal:** create modal component ([7587076](https://github.com/Availity/element/commit/75870768799c5014161f173c8b61f0f245570952))
 
 ## [0.24.1](https://github.com/Availity/element/compare/@availity/element@0.24.0...@availity/element@0.24.1) (2023-10-25)
 
 ## [0.24.0](https://github.com/Availity/element/compare/@availity/element@0.23.1...@availity/element@0.24.0) (2023-10-25)
 
-
 ### Features
 
-* **mui-backdrop:** initial commit ([798e31a](https://github.com/Availity/element/commit/798e31afa312a64f25a5f99a0a8d58467d67fb44))
+- **mui-backdrop:** initial commit ([798e31a](https://github.com/Availity/element/commit/798e31afa312a64f25a5f99a0a8d58467d67fb44))
 
 ## [0.23.1](https://github.com/Availity/element/compare/@availity/element@0.23.0...@availity/element@0.23.1) (2023-10-06)
 

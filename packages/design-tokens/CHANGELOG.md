@@ -4,26 +4,23 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.12.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.11.1...@availity/design-tokens@0.12.0) (2023-11-08)
 
-
 ### Features
 
-* **design-tokens:** replace transparent values with hex ([4d3fb6d](https://github.com/Availity/element/commit/4d3fb6ded412ff30dbc76fbc054b356ad6e31245))
+- **design-tokens:** replace transparent values with hex ([4d3fb6d](https://github.com/Availity/element/commit/4d3fb6ded412ff30dbc76fbc054b356ad6e31245))
 
 ## [0.11.1](https://github.com/Availity/element/compare/@availity/design-tokens@0.11.0...@availity/design-tokens@0.11.1) (2023-11-08)
 
 ## [0.11.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.10.0...@availity/design-tokens@0.11.0) (2023-11-08)
 
-
 ### Features
 
-* **mui-datepicker:** add datepicker component ([2efdbf5](https://github.com/Availity/element/commit/2efdbf5112583c4322d588823f0ce0b7227fde6f))
+- **mui-datepicker:** add datepicker component ([2efdbf5](https://github.com/Availity/element/commit/2efdbf5112583c4322d588823f0ce0b7227fde6f))
 
 ## [0.10.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.9.0...@availity/design-tokens@0.10.0) (2023-11-08)
 
-
 ### Features
 
-* **mui-modal:** create modal component ([7587076](https://github.com/Availity/element/commit/75870768799c5014161f173c8b61f0f245570952))
+- **mui-modal:** create modal component ([7587076](https://github.com/Availity/element/commit/75870768799c5014161f173c8b61f0f245570952))
 
 ## [0.9.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.8.0...@availity/design-tokens@0.9.0) (2023-10-20)
 

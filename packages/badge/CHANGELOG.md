@@ -6,7 +6,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-icon` updated to version `0.7.2`
+- `mui-icon` updated to version `0.7.2`
+
 ## [0.1.10](https://github.com/Availity/element/compare/@availity/mui-badge@0.1.9...@availity/mui-badge@0.1.10) (2023-11-07)
 
 ## [0.1.9](https://github.com/Availity/element/compare/@availity/mui-badge@0.1.8...@availity/mui-badge@0.1.9) (2023-10-06)

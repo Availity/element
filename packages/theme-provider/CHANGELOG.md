@@ -2,22 +2,28 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.3](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.2...@availity/theme-provider@0.4.3) (2023-11-14)
+
+### Dependency Updates
+
+* `theme` updated to version `0.25.1`
 ## [0.4.2](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.1...@availity/theme-provider@0.4.2) (2023-11-08)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.25.0`
+- `theme` updated to version `0.25.0`
+
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.0...@availity/theme-provider@0.4.1) (2023-11-08)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.24.1`
-## [0.4.0](https://github.com/Availity/element/compare/@availity/theme-provider@0.3.1...@availity/theme-provider@0.4.0) (2023-11-08)
+- `theme` updated to version `0.24.1`
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/theme-provider@0.3.1...@availity/theme-provider@0.4.0) (2023-11-08)
 
 ### Features
 
-* **mui-datepicker:** add datepicker component ([2efdbf5](https://github.com/Availity/element/commit/2efdbf5112583c4322d588823f0ce0b7227fde6f))
+- **mui-datepicker:** add datepicker component ([2efdbf5](https://github.com/Availity/element/commit/2efdbf5112583c4322d588823f0ce0b7227fde6f))
 
 ## [0.3.1](https://github.com/Availity/element/compare/@availity/theme-provider@0.3.0...@availity/theme-provider@0.3.1) (2023-10-06)
 

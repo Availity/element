@@ -6,8 +6,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-typography` updated to version `0.1.4`
+- `mui-typography` updated to version `0.1.4`
 
 ### Features
 
-* **mui-popover:** initial commit ([f36b454](https://github.com/Availity/element/commit/f36b45416551d24c2c840b1fd65489399b388835))
+- **mui-popover:** initial commit ([f36b454](https://github.com/Availity/element/commit/f36b45416551d24c2c840b1fd65489399b388835))
