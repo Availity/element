@@ -1,4 +1,5 @@
 export * from '@availity/mui-alert';
+export * from '@availity/mui-autocomplete';
 export * from '@availity/mui-avatar';
 export * from '@availity/mui-backdrop';
 export * from '@availity/mui-badge';
