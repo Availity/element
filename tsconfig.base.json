@@ -23,6 +23,7 @@
       "@availity/design-tokens": ["packages/design-tokens/src/index.ts"],
       "@availity/element": ["packages/element/src/index.ts"],
       "@availity/mui-alert": ["packages/alert/src/index.ts"],
+      "@availity/mui-autocomplete": ["packages/autocomplete/src/index.ts"],
       "@availity/mui-avatar": ["packages/avatar/src/index.ts"],
       "@availity/mui-backdrop": ["packages/backdrop/src/index.ts"],
       "@availity/mui-badge": ["packages/badge/src/index.ts"],

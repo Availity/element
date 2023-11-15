@@ -39,6 +39,7 @@ __metadata:
   resolution: "@availity/element@workspace:packages/element"
   dependencies:
     "@availity/mui-alert": "workspace:*"
+    "@availity/mui-autocomplete": "workspace:*"
     "@availity/mui-avatar": "workspace:*"
     "@availity/mui-backdrop": "workspace:*"
     "@availity/mui-badge": "workspace:*"
@@ -91,6 +92,22 @@ __metadata:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.14.12
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-autocomplete@workspace:*, @availity/mui-autocomplete@workspace:packages/autocomplete":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-autocomplete@workspace:packages/autocomplete"
+  dependencies:
+    "@availity/mui-textfield": "workspace:*"
+    "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
