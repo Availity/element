@@ -33,6 +33,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
+    "@availity/mui-form-utils": "workspace:*",
     "@availity/mui-textfield": "workspace:*"
   },
   "devDependencies": {
