@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.29.0](https://github.com/Availity/element/compare/@availity/element@0.28.0...@availity/element@0.29.0) (2023-11-15)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `0.1.0`
+
+### Features
+
+* **mui-autocomplete:** add autocomplete package ([772c989](https://github.com/Availity/element/commit/772c98978f2c8e3edc01d8deb38dfc5cc2339298))
+
 ## [0.28.0](https://github.com/Availity/element/compare/@availity/element@0.27.0...@availity/element@0.28.0) (2023-11-14)
 
 ### Dependency Updates
