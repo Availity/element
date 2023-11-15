@@ -8,7 +8,7 @@ import { FeedbackHeader } from './FeedbackHeader';
 
 export interface FeedbackProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  analytics: { info: (entries: any) => any };
+  analytics?: { info: (entries: any) => any };
   appName: string;
 }
 
