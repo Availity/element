@@ -29,7 +29,7 @@ export const Autocomplete = <
 }: AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>): JSX.Element => {
   return (
     <MuiAutocomplete
-      renderInput={(params: AutocompleteRenderInputParams) => <TextField {...params} {...FieldProps} />}
+      renderInput={(params: AutocompleteRenderInputParams) => <TextField {...FieldProps} {...params} />}
       popupIcon={<SelectPropOverrides.IconComponent />}
       {...props}
     />
