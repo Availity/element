@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.29.1](https://github.com/Availity/element/compare/@availity/element@0.29.0...@availity/element@0.29.1) (2023-11-15)
+
+### Dependency Updates
+
+* `mui-progress` updated to version `0.1.1`
 ## [0.29.0](https://github.com/Availity/element/compare/@availity/element@0.28.0...@availity/element@0.29.0) (2023-11-15)
 
 ### Dependency Updates
