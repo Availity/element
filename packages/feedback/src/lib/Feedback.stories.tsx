@@ -14,6 +14,6 @@ export default meta;
 export const _Feedback: StoryObj<typeof Feedback> = {
   render: (args: FeedbackProps) => <Feedback {...args} />,
   args: {
-    children: 'This text is a child of Feedback',
+    appName: 'This App',
   },
 };

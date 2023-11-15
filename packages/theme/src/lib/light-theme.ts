@@ -1008,6 +1008,9 @@ export const lightTheme = {
                 backgroundColor: tokens.colorPrimaryDark,
                 color: tokens.colorCommonWhite,
               },
+              '&.Mui-disabled': {
+                backgroundColor: tokens.colorPrimaryMain20,
+              },
             },
             '&.MuiToggleButton-sizeMedium': {
               padding: '12px',

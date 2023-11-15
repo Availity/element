@@ -22,6 +22,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@availity/api-axios@npm:^8.0.3":
+  version: 8.0.3
+  resolution: "@availity/api-axios@npm:8.0.3"
+  dependencies:
+    "@availity/resolve-url": 2.0.4
+    lodash: ^4.17.21
+    qs: ^6.11.2
+  peerDependencies:
+    axios: ^1.4.0
+  checksum: 6a87f6d617b62f5d3a492057e6b23bfffad9f122897d58cd2cebef22e66d569883f2af07a39360f07fc55417c379a89828af57a94e1d4852382cd653d20ddb5b
+  languageName: node
+  linkType: hard
+
 "@availity/design-tokens@workspace:*, @availity/design-tokens@workspace:^, @availity/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@availity/design-tokens@workspace:packages/design-tokens"
@@ -289,6 +302,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-feedback@workspace:packages/feedback"
   dependencies:
+    "@availity/api-axios": ^8.0.3
     "@availity/mui-button": "workspace:^"
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-popover": "workspace:^"
@@ -583,6 +597,13 @@ __metadata:
   resolution: "@availity/nx-generator@workspace:packages/nx-generator"
   languageName: unknown
   linkType: soft
+
+"@availity/resolve-url@npm:2.0.4":
+  version: 2.0.4
+  resolution: "@availity/resolve-url@npm:2.0.4"
+  checksum: 284a440482d5ef0e28a34e8787f021568d9954d67565645f7d89434dcd414f20b6a174c9bec0142f0a6db230a09eed1bdcb6849809c0e9f3d2379629905d3dae
+  languageName: node
+  linkType: hard
 
 "@availity/theme-provider@workspace:*, @availity/theme-provider@workspace:packages/theme-provider":
   version: 0.0.0-use.local
@@ -15457,7 +15478,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.10.0":
+"qs@npm:^6.10.0, qs@npm:^6.11.2":
   version: 6.11.2
   resolution: "qs@npm:6.11.2"
   dependencies:
