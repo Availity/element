@@ -1,0 +1,2 @@
+import{j as e}from"./jsx-runtime-390e5fc8.js";import{M as m}from"./Badge-bc679f25.js";import{r as s}from"./index-570b25c1.js";import{C as t}from"./Checkbox-a667ba1f.js";var x=({children:r,color:o="error",...a})=>e(m,{color:o,...a,children:r}),i=s.forwardRef((r,o)=>e(t,{...r,ref:o,size:"medium"}));i.__docgenInfo={description:"",methods:[],displayName:"Checkbox"};export{x as B};
+//# sourceMappingURL=index-156ff72e.js.map
