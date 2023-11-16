@@ -1,2 +1,0 @@
-import{D as c,d as l}from"./chunk-PCJTTTQV-3cc21fd4.js";import"./iframe-8f8aff5c.js";import"../sb-preview/runtime.js";import"./index-570b25c1.js";import"./_commonjsHelpers-042e6b4d.js";import"./react-18-b9b6ed02.js";import"./index-8a077077.js";import"./index-7409841f.js";import"./index-d475d2ea.js";import"./emotion-use-insertion-effect-with-fallbacks.browser.esm-16f43d9e.js";import"./index-f8236e9a.js";import"./index-356e4a49.js";export{c as DocsRenderer,l as defaultComponents};
-//# sourceMappingURL=DocsRenderer-EYKKDMVH-c38b4d51.js.map
