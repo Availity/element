@@ -53,6 +53,7 @@ export const Feedback = ({ analytics = avLogMessagesApi, appName }: FeedbackProp
             appName={appName}
             handleClose={handlePopoverClose}
             loading={loading}
+            sent={sent}
             setLoading={setLoading}
             setSent={setSent}
           />

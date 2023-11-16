@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { TextField } from '@availity/mui-textfield';
 import { LoadingButton, Button } from '@availity/mui-button';
 import { ToggleButtonGroup, ToggleButton } from '@availity/mui-toggle-button';
@@ -26,6 +26,7 @@ interface FeedbackFormProps {
   appName: string;
   handleClose: () => void;
   loading: boolean;
+  sent: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   setSent: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -47,6 +48,7 @@ export const FeedbackForm = ({
   appName,
   handleClose,
   loading,
+  sent,
   setLoading,
   setSent,
 }: FeedbackFormProps): JSX.Element => {
@@ -67,16 +69,21 @@ export const FeedbackForm = ({
         submitTime: new Date(),
         ...values, // Spread the form values onto the logger
       });
-      setTimeout(() => {
-        setSent(true);
-        setLoading(false);
-        handleClose();
-      }, 2000);
+      setSent(true);
+      setLoading(false);
     } catch {
       setSent(false);
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (sent) {
+      setTimeout(() => {
+        handleClose();
+      }, 2000);
+    }
+  }, [sent]);
 
   const options = [
     {
@@ -126,6 +133,7 @@ export const FeedbackForm = ({
             disabled={loading}
           />
         )}
+        rules={{ maxLength: 200, required: true }}
       />
       <Grid container direction="row" marginTop="8px" spacing={1}>
         <Grid item xs={6}>
