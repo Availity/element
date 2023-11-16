@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-pagination@0.2.3...@availity/mui-pagination@0.2.4) (2023-11-16)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.7.3`
 ## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-pagination@0.2.2...@availity/mui-pagination@0.2.3) (2023-11-08)
 
 ### Dependency Updates
