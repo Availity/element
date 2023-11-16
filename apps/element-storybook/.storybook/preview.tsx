@@ -79,7 +79,7 @@ if (typeof global.process === 'undefined') {
       process.env.NODE_ENV === 'development'
         ? undefined
         : {
-            serviceWorker: { url: '/element/storybook/mockServiceWorker.js' },
+            serviceWorker: { url: '/element/mockServiceWorker.js' },
           };
 
     worker.start(config);
