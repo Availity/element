@@ -12,7 +12,7 @@ export interface FeedbackProps {
   appName: string;
 }
 
-const FeedbackContainer = styled(Container, { name: 'FeedbackContainer', slot: 'root' })({});
+const FeedbackContainer = styled(Container, { name: 'AvFeedbackContainer', slot: 'root' })({});
 
 export const Feedback = ({ analytics = avLogMessagesApi, appName }: FeedbackProps): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);

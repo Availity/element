@@ -258,7 +258,7 @@ export const lightTheme = {
     },
   },
   components: {
-    FeedbackContainer: {
+    AvFeedbackContainer: {
       styleOverrides: {
         root: {
           maxWidth: important('490px'),
