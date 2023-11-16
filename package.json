@@ -92,5 +92,8 @@
   "resolutions": {
     "markdown-to-jsx": "7.1.9"
   },
-  "packageManager": "yarn@3.3.1"
+  "packageManager": "yarn@3.3.1",
+  "msw": {
+    "workerDirectory": "static"
+  }
 }

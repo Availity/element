@@ -49,4 +49,19 @@ const preview: Preview = {
   },
 };
 
+// Make sure we are in the browser before starting
+if (typeof global.process === 'undefined') {
+  // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+  import('../../../packages/mock/src/lib/browser').then(({ worker }) => {
+    const config =
+      process.env.NODE_ENV === 'development'
+        ? undefined
+        : {
+            serviceWorker: { url: '/element/storybook/mockServiceWorker.js' },
+          };
+
+    worker.start(config);
+  });
+}
+
 export default preview;

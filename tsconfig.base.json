@@ -22,6 +22,7 @@
     "paths": {
       "@availity/design-tokens": ["packages/design-tokens/src/index.ts"],
       "@availity/element": ["packages/element/src/index.ts"],
+      "@availity/mock": ["packages/mock"],
       "@availity/mui-alert": ["packages/alert/src/index.ts"],
       "@availity/mui-autocomplete": ["packages/autocomplete/src/index.ts"],
       "@availity/mui-avatar": ["packages/avatar/src/index.ts"],
