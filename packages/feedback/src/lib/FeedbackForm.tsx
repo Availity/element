@@ -31,7 +31,7 @@ interface FeedbackFormProps {
   setSent: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SmileButtons = styled(ToggleButtonGroup, { name: 'SmileButtons', slot: 'root' })({});
+const SmileButtons = styled(ToggleButtonGroup, { name: 'AvFeedbackContainer', slot: 'SmileButtons' })({});
 
 const SmileButton = ({ disabled, Icon, label, value, ...props }: SmileButtonProps) => (
   <Tooltip title={label}>
