@@ -1,11 +1,10 @@
-import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 // import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubHeader from '@mui/material/ListSubheader';
-import Divider from '@mui/material/Divider';
+import { Box, Divider } from '@availity/element';
 
 type SidebarItemProps = {
   text: string;

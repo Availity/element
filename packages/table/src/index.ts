@@ -1,0 +1,10 @@
+export * from './lib/Table';
+export * from './lib/TableBody';
+export * from './lib/TableCell';
+export * from './lib/TableContainer';
+export * from './lib/TableFooter';
+export * from './lib/TableHead';
+export * from './lib/TablePagination';
+export * from './lib/TableRow';
+export * from './lib/TableSortLabel';
+// export * from './lib/LegacyTablePagination';

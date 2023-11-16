@@ -1,5 +1,5 @@
 import type { StoryObj } from '@storybook/react';
-import { Grid } from '@mui/material';
+import { Grid } from '@availity/mui-layout';
 import { SearchIcon } from '@availity/mui-icon';
 import { IconButton, IconButtonProps } from './IconButton';
 import React from 'react';
@@ -25,18 +25,14 @@ export const _IconButton: StoryObj<typeof IconButton> = {
 export const _Variants: StoryObj<typeof IconButton> = {
   render: () => (
     <Grid container spacing={1}>
-      <Grid item xs={3}>
-        Text
-      </Grid>
-      <Grid item xs={9}>
+      <Grid xs={3}>Text</Grid>
+      <Grid xs={9}>
         <IconButton title="search" variant="text">
           <SearchIcon />
         </IconButton>
       </Grid>
-      <Grid item xs={3}>
-        Outlined
-      </Grid>
-      <Grid item xs={9}>
+      <Grid xs={3}>Outlined</Grid>
+      <Grid xs={9}>
         <IconButton title="search" variant="outlined">
           <SearchIcon />
         </IconButton>
@@ -48,28 +44,24 @@ export const _Variants: StoryObj<typeof IconButton> = {
 export const _Colors: StoryObj<typeof IconButton> = {
   render: () => (
     <Grid container spacing={1}>
-      <Grid item xs={2}>
-        Primary
-      </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>Primary</Grid>
+      <Grid xs={2}>
         <IconButton title="search" variant="text" color="primary">
           <SearchIcon />
         </IconButton>
       </Grid>
-      <Grid item xs={8}>
+      <Grid xs={8}>
         <IconButton title="search" variant="outlined" color="primary">
           <SearchIcon />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
-        Secondary
-      </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>Secondary</Grid>
+      <Grid xs={2}>
         <IconButton title="search" variant="text" color="secondary">
           <SearchIcon />
         </IconButton>
       </Grid>
-      <Grid item xs={8}>
+      <Grid xs={8}>
         <IconButton title="search" variant="outlined" color="secondary">
           <SearchIcon />
         </IconButton>
@@ -82,88 +74,84 @@ export const _Colors: StoryObj<typeof IconButton> = {
 export const _Sizes: StoryObj<typeof IconButton> = {
   render: () => (
     <Grid container spacing={1}>
-      <Grid item xs={4}>
-        Small
-      </Grid>
-      <Grid item xs={8}>
-        Medium
-      </Grid>
-      <Grid item xs={2}>
+      <Grid xs={4}>Small</Grid>
+      <Grid xs={8}>Medium</Grid>
+      <Grid xs={2}>
         <IconButton title="search" size="small">
           <SearchIcon fontSize="xsmall" />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>
         <IconButton title="search" size="small" variant="outlined">
           <SearchIcon fontSize="xsmall" />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>
         <IconButton title="search" size="medium">
           <SearchIcon fontSize="xsmall" />
         </IconButton>
       </Grid>
-      <Grid item xs={6}>
+      <Grid xs={6}>
         <IconButton title="search" size="medium" variant="outlined">
           <SearchIcon fontSize="xsmall" />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>
         <IconButton title="search" size="small">
           <SearchIcon fontSize="small" />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>
         <IconButton title="search" size="small" variant="outlined">
           <SearchIcon fontSize="small" />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>
         <IconButton title="search" size="medium">
           <SearchIcon fontSize="small" />
         </IconButton>
       </Grid>
-      <Grid item xs={6}>
+      <Grid xs={6}>
         <IconButton title="search" size="medium" variant="outlined">
           <SearchIcon fontSize="small" />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>
         <IconButton title="search" size="small">
           <SearchIcon fontSize="medium" />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>
         <IconButton title="search" size="small" variant="outlined">
           <SearchIcon fontSize="medium" />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>
         <IconButton title="search" size="medium">
           <SearchIcon fontSize="medium" />
         </IconButton>
       </Grid>
-      <Grid item xs={6}>
+      <Grid xs={6}>
         <IconButton title="search" size="medium" variant="outlined">
           <SearchIcon fontSize="medium" />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>
         <IconButton title="search" size="small">
           <SearchIcon fontSize="large" />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>
         <IconButton title="search" size="small" variant="outlined">
           <SearchIcon fontSize="large" />
         </IconButton>
       </Grid>
-      <Grid item xs={2}>
+      <Grid xs={2}>
         <IconButton title="search" size="medium">
           <SearchIcon fontSize="large" />
         </IconButton>
       </Grid>
-      <Grid item xs={6}>
+      <Grid xs={6}>
         <IconButton title="search" size="medium" variant="outlined">
           <SearchIcon fontSize="large" />
         </IconButton>

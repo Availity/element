@@ -97,6 +97,18 @@ const SystemProperties: SystemPropsObject = {
   lineHeight: undefined,
   textAlign: undefined,
   textTransform: undefined,
+  marginInline: undefined,
+  marginInlineStart: undefined,
+  marginInlineEnd: undefined,
+  marginBlock: undefined,
+  marginBlockStart: undefined,
+  marginBlockEnd: undefined,
+  paddingInline: undefined,
+  paddingInlineStart: undefined,
+  paddingInlineEnd: undefined,
+  paddingBlock: undefined,
+  paddingBlockStart: undefined,
+  paddingBlockEnd: undefined,
 };
 
 export const SystemPropsList = Object.keys(SystemProperties) as (keyof SystemProps)[];

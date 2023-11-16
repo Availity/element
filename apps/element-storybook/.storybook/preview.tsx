@@ -1,5 +1,6 @@
 import { themes } from '@storybook/theming';
 import { Preview } from '@storybook/react';
+import { Title, Subtitle, Description, Primary, Controls, Stories, useOf } from '@storybook/blocks';
 import type { StoryContext } from '@storybook/types';
 import { ThemeProvider } from '@availity/theme-provider';
 
@@ -36,6 +37,27 @@ const preview: Preview = {
       theme: themes.light,
       source: {
         excludeDecorators: true,
+      },
+      page: () => {
+        // https://github.com/storybookjs/storybook/blob/next/code/ui/blocks/src/blocks/DocsPage.tsx
+        // Adjusting autodocs when no component passed
+        const resolvedOf = useOf('meta', ['meta']);
+        const { stories, meta } = resolvedOf.csfFile;
+        const isSingleStory = Object.keys(stories).length === 1;
+
+        return (
+          <>
+            <Title />
+            <Subtitle />
+            <Description of="meta" />
+            {isSingleStory ? <Description of="story" /> : null}
+            {meta?.component ? <Primary /> : null}
+            {meta?.component ? <Controls /> : null}
+            {isSingleStory ? null : (
+              <Stories title={meta?.component ? 'Stories' : ''} includePrimary={!meta?.component} />
+            )}
+          </>
+        );
       },
     },
     controls: {
