@@ -402,6 +402,11 @@ export const legacyTheme = {
           boxShadow: 'none',
           textTransform: 'none',
           fontWeight: '500',
+          '.MuiButton-startIcon, .MuiButton-endIcon': {
+            '.MuiSvgIcon-fontSizeInherit': {
+              fontSize: 'inherit',
+            },
+          },
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
@@ -940,10 +945,7 @@ export const legacyTheme = {
         root: {
           '&.striped': {
             '.MuiTableBody-root .MuiTableRow-root:nth-of-type(odd)': {
-              backgroundColor: tokens.colorTertiaryMain,
-            },
-            '.MuiTableHead-root': {
-              backgroundColor: 'inherit',
+              backgroundColor: tokens.colorTertiaryLight,
             },
           },
         },
@@ -988,13 +990,6 @@ export const legacyTheme = {
             margin: '-.25rem',
             padding: '.25rem',
           },
-        },
-      },
-    },
-    MuiTableHead: {
-      styleOverrides: {
-        root: {
-          backgroundColor: tokens.colorTertiaryMain,
         },
       },
     },
@@ -1058,10 +1053,13 @@ export const legacyTheme = {
           '&:focus': {
             backgroundColor: tokens.colorActionFocus,
           },
+          '&.Mui-active .MuiTableSortLabel-icon': {
+            opacity: 1,
+          },
         },
         icon: {
           fontSize: 'inherit',
-          opacity: 1,
+          opacity: 0.4,
           transition: 'none',
         },
       },
@@ -1123,6 +1121,23 @@ export const legacyTheme = {
           fontSize: '.785rem',
           fontStyle: 'normal',
           padding: '2px 8px',
+        },
+      },
+    },
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          h1: 'h1',
+          h2: 'h2',
+          h3: 'h3',
+          h4: 'h4',
+          h5: 'h5',
+          h6: 'h6',
+          subtitle1: 'div',
+          subtitle2: 'div',
+          body1: 'p',
+          body2: 'p',
+          inherit: 'p',
         },
       },
     },

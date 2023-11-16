@@ -575,8 +575,11 @@ export const lightTheme = {
     },
     MuiFormControl: {
       styleOverrides: {
-        root: {
-          marginBottom: '.5rem',
+        marginDense: {
+          margin: '0 0 1rem',
+        },
+        marginNormal: {
+          margin: '0 0 1.5rem',
         },
       },
     },
@@ -980,8 +983,8 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           borderRadius: '.25rem',
-          padding: '0px 6px',
-          margin: '0px -6px',
+          padding: '.25rem',
+          margin: '-.25rem',
           '&:hover': {
             backgroundColor: tokens.colorActionHover,
             '.MuiTableSortLabel-icon': {
@@ -995,6 +998,9 @@ export const lightTheme = {
         icon: {
           opacity: 1,
           transition: 'none',
+          fontSize: '16px',
+          color: tokens.colorTextSecondary,
+          marginRight: '0px',
         },
       },
     },
@@ -1077,6 +1083,23 @@ export const lightTheme = {
         },
         arrow: {
           color: tokens.colorSecondaryMain,
+        },
+      },
+    },
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          h1: 'h1',
+          h2: 'h2',
+          h3: 'h3',
+          h4: 'h4',
+          h5: 'h5',
+          h6: 'h6',
+          subtitle1: 'div',
+          subtitle2: 'div',
+          body1: 'p',
+          body2: 'p',
+          inherit: 'p',
         },
       },
     },

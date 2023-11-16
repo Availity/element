@@ -226,14 +226,14 @@ export const _HeaderWithSearchAndFilter: StoryObj = {
 
     return (
       <TableCell component="div" variant="header" size={theme === 'light' ? 'medium' : 'small'}>
-        <Typography component="h3" variant="h5" gutterBottom>
+        <Typography component="h3" variant="h6" marginBottom={3}>
           Table Title
         </Typography>
         <Box component="form" id="search-form" onSubmit={handleSubmit(onSearchSubmit)} sx={{ paddingBottom: 2 }}>
           <FormLabel htmlFor="searchbyValue" id="searchbyValueLabel">
             Search By
           </FormLabel>
-          <Grid container spacing={2} flexWrap="wrap" width="100%">
+          <Grid container spacing={1} flexWrap="wrap" width="100%">
             <Grid>
               <Controller
                 name="searchbyValue"
@@ -303,12 +303,14 @@ export const _HeaderWithSearchAndFilter: StoryObj = {
               <Button
                 type="button"
                 color="secondary"
-                startIcon={<FilterIcon />}
                 aria-controls={filterPopoverId || ''}
                 id="filter-button"
                 onClick={handleFilterButtonClick}
                 size="large"
               >
+                <InputAdornment position="start" sx={{ color: 'inherit' }}>
+                  <FilterIcon />
+                </InputAdornment>
                 Filter
               </Button>
             </Grid>
