@@ -6,7 +6,7 @@ import { InputPropOverrides } from './Input';
 
 export type SelectProps = Omit<
   MuiSelectProps,
-  'components' | 'componentsProps' | 'SelectComponent' | 'notched' | 'slots' | 'slotProps' | 'sx' | 'variant'
+  'components' | 'componentsProps' | 'SelectComponent' | 'notched' | 'slots' | 'slotProps' | 'variant'
 >;
 
 // IconComponent is absolutely positioned, combining divider and icon to position together

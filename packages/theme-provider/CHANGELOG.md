@@ -6,7 +6,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `theme` updated to version `0.25.1`
+- `theme` updated to version `0.25.1`
+
 ## [0.4.2](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.1...@availity/theme-provider@0.4.2) (2023-11-08)
 
 ### Dependency Updates

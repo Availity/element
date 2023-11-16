@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
-import { Container, Grid } from '@mui/material';
+import { Container, Grid } from '@availity/element';
 import { HeaderSection } from './HeaderSection';
 import { SearchSection } from './SearchSection';
 import { SidebarNav } from './SidebarNav';
@@ -28,19 +28,19 @@ export const _SidebarLayout: StoryObj = {
         <Container fixed>
           <HeaderSection />
           <Grid container spacing={2}>
-            <Grid item xs={12} sm="auto">
+            <Grid xs={12} sm="auto">
               <SidebarNav activeTab={activeTab} onItemClick={setActiveTab} />
             </Grid>
-            <Grid item xs>
+            <Grid xs>
               <div role="tabpanel">
                 <Grid container spacing={2}>
-                  <Grid item xs={12}>
+                  <Grid xs={12}>
                     <SearchSection />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid xs={12}>
                     <TablesSection />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid xs={12}>
                     <DataGridSection />
                   </Grid>
                 </Grid>

@@ -1,14 +1,24 @@
 import { useState } from 'react';
-import { Paper, Autocomplete, TextField, Input, InputAdornment, IconButton, Grid, Badge } from '@mui/material';
-import { SearchIcon, CloseIcon, BellIcon, ChartColumnIcon } from '@availity/mui-icon';
+import { Autocomplete, InputAdornment, TextField } from '@mui/material';
+import {
+  Paper,
+  Input,
+  IconButton,
+  Grid,
+  Badge,
+  SearchIcon,
+  CloseIcon,
+  BellIcon,
+  ChartColumnIcon,
+} from '@availity/element';
 
 export const SearchSection = (): JSX.Element => {
   const [searchValue, setSearchValue] = useState('');
   return (
     <Paper variant="elevation" elevation={0}>
       <Grid container sx={{ padding: '1rem' }} alignItems={'center'}>
-        <Grid item container xs={6}>
-          <Grid item xs={6} sx={{ paddingRight: '.5rem' }}>
+        <Grid container xs={6}>
+          <Grid xs={6} sx={{ paddingRight: '.5rem' }}>
             <Autocomplete
               disablePortal
               id="payer-filter"
@@ -23,7 +33,7 @@ export const SearchSection = (): JSX.Element => {
               )}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid xs={6}>
             <Autocomplete
               disablePortal
               id="status-filter"
@@ -39,7 +49,7 @@ export const SearchSection = (): JSX.Element => {
             />
           </Grid>
         </Grid>
-        <Grid item container xs={6} justifyContent={'flex-end'} wrap="nowrap">
+        <Grid container xs={6} justifyContent={'flex-end'} wrap="nowrap">
           <Input
             sx={{ bgcolor: 'background.canvas', padding: '0 .5rem', borderRadius: '1.5rem', marginLeft: '.5rem' }}
             disableUnderline

@@ -575,8 +575,11 @@ export const lightTheme = {
     },
     MuiFormControl: {
       styleOverrides: {
-        root: {
-          marginBottom: '.5rem',
+        marginDense: {
+          margin: '0 0 1rem',
+        },
+        marginNormal: {
+          margin: '0 0 1.5rem',
         },
       },
     },
@@ -747,6 +750,9 @@ export const lightTheme = {
             },
           };
         },
+        inputSizeSmall: {
+          width: '100%',
+        },
         adornedEnd: {
           backgroundColor: 'white',
           paddingRight: '.75rem',
@@ -890,6 +896,114 @@ export const lightTheme = {
         },
       },
     },
+    MuiTable: {
+      styleOverrides: {
+        root: {
+          border: `0px solid ${tokens.borderDecorative}`,
+          backgroundColor: tokens.colorBackgroundPaper,
+        },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          borderBottom: `1px solid ${tokens.borderDecorative}`,
+          // higher specificity needed for footer padding
+          '&.MuiTableCell-footer': {
+            borderBottom: 'none',
+            '&:first-of-type, &:only-child': {
+              paddingTop: '1.25rem',
+            },
+            '&:last-of-type, &:only-child': {
+              paddingBottom: '1.25rem',
+            },
+          },
+        },
+        head: {
+          fontWeight: tokens.fontWeightsBold,
+          borderBottomWidth: `2px`,
+        },
+        header: {
+          borderBottom: '0px',
+          padding: '1.25rem 1rem',
+          width: '100%',
+          display: 'block',
+        },
+        sizeMedium: {
+          lineHeight: '1.25rem',
+        },
+      },
+    },
+    MuiTablePagination: {
+      defaultProps: {
+        colSpan: 12,
+      },
+      styleOverrides: {
+        root: {
+          '.MuiTablePagination-toolbar': {
+            // overcome breakpoint padding presets
+            padding: '0 .5rem',
+          },
+        },
+        actions: {
+          '&:not(:last-child)': {
+            flexGrow: 1,
+            marginRight: '.25rem',
+          },
+          marginLeft: '.25rem',
+        },
+        displayedRows: {
+          flexGrow: 1,
+        },
+        input: {
+          borderRadius: '.25rem',
+          marginLeft: '.25rem',
+          marginRight: '.75rem',
+        },
+        select: {
+          '&.MuiTablePagination-select.MuiSelect-select': {
+            paddingRight: '1.5rem',
+            borderRadius: '.25rem',
+          },
+        },
+        selectLabel: {},
+        selectIcon: {
+          fontSize: '1.5rem',
+        },
+        spacer: {
+          display: 'none',
+        },
+        toolbar: {
+          flexWrap: 'wrap',
+          flexShrink: 1,
+        },
+      },
+    },
+    MuiTableSortLabel: {
+      styleOverrides: {
+        root: {
+          borderRadius: '.25rem',
+          padding: '.25rem',
+          margin: '-.25rem',
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+            '.MuiTableSortLabel-icon': {
+              opacity: 1,
+            },
+          },
+          '&:focus': {
+            backgroundColor: tokens.colorActionFocus,
+          },
+        },
+        icon: {
+          opacity: 1,
+          transition: 'none',
+          fontSize: '16px',
+          color: tokens.colorTextSecondary,
+          marginRight: '0px',
+        },
+      },
+    },
     MuiTabs: {
       styleOverrides: {
         root: {
@@ -969,6 +1083,23 @@ export const lightTheme = {
         },
         arrow: {
           color: tokens.colorSecondaryMain,
+        },
+      },
+    },
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          h1: 'h1',
+          h2: 'h2',
+          h3: 'h3',
+          h4: 'h4',
+          h5: 'h5',
+          h6: 'h6',
+          subtitle1: 'div',
+          subtitle2: 'div',
+          body1: 'p',
+          body2: 'p',
+          inherit: 'p',
         },
       },
     },

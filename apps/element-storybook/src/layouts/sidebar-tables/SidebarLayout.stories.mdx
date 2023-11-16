@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta, Source, Unstyled } from '@storybook/blocks';
-import { Box, Container, Grid, Typography } from '@mui/material';
-import { ThemeProvider } from '@availity/element';
+import { Box, Container, Grid, Typography, ThemeProvider } from '@availity/element';
 import { HeaderSection } from './HeaderSection';
 import { SearchSection } from './SearchSection';
 import { SidebarNav } from './SidebarNav';
@@ -23,19 +22,19 @@ _Work In Progress_
       <Container fixed>
         <HeaderSection />
         <Grid container spacing={2}>
-          <Grid item xs={12} sm="auto">
+          <Grid xs={12} sm="auto">
             <SidebarNav />
           </Grid>
-          <Grid item xs>
+          <Grid xs>
             <div role="tabpanel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid xs={12}>
                   <SearchSection />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid xs={12}>
                   <TablesSection />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid xs={12}>
                   <DataGridSection />
                 </Grid>
               </Grid>
@@ -59,19 +58,19 @@ _Work In Progress_
     <Container fixed>
       <HeaderSection/>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm='auto'>
+        <Grid xs={12} sm='auto'>
           <SideNavSection/>
         </Grid>
-        <Grid item xs>
+        <Grid xs>
           <div role="tabpanel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid xs={12}>
                   <SearchSection/>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid xs={12}>
                   <TablesSection/>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid xs={12}>
                   <DataGridSection />
                 </Grid>
               </Grid>

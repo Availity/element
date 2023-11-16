@@ -8,9 +8,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-icon` updated to version `0.7.2`
-* `mui-typography` updated to version `0.1.4`
+- `mui-icon` updated to version `0.7.2`
+- `mui-typography` updated to version `0.1.4`
 
 ### Features
 
-* **mui-progress:** initial commit ([0012911](https://github.com/Availity/element/commit/00129117d2107d4bdf97a3767119d30ae2edb418))
+- **mui-progress:** initial commit ([0012911](https://github.com/Availity/element/commit/00129117d2107d4bdf97a3767119d30ae2edb418))

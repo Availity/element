@@ -402,6 +402,11 @@ export const legacyTheme = {
           boxShadow: 'none',
           textTransform: 'none',
           fontWeight: '500',
+          '.MuiButton-startIcon, .MuiButton-endIcon': {
+            '.MuiSvgIcon-fontSizeInherit': {
+              fontSize: 'inherit',
+            },
+          },
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
@@ -721,7 +726,10 @@ export const legacyTheme = {
       },
     },
     MuiInputBase: {
-      StyleOverrides: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
         root: {
           'label + &': {
             marginTop: '.5rem',
@@ -814,6 +822,11 @@ export const legacyTheme = {
         root: {
           borderRadius: '0',
           height: 'auto',
+          lineHeight: '1.25rem',
+          minWidth: 0,
+          '.MuiSvgIcon-root': {
+            fontSize: '.5rem',
+          },
           color: tokens.colorTextLink,
           textDecoration: 'underline',
           '&:focus': {
@@ -842,12 +855,15 @@ export const legacyTheme = {
         },
         outlined: {
           padding: '0.5rem 0.75rem',
-          lineHeight: '1.25rem',
           margin: '-1px',
           border: '1px solid #ccc',
           backgroundColor: tokens.colorBackgroundCanvas,
+          '&.Mui-selected:hover': {
+            backgroundColor: tokens.colorPrimaryDark,
+          },
         },
         text: {
+          marginLeft: '-1px',
           padding: '0.375rem',
           margin: '0px',
         },
@@ -887,17 +903,19 @@ export const legacyTheme = {
       defaultProps: {
         fontSize: 'inherit',
       },
-      sizeXsmall: {
-        fontSize: '.875rem',
-      },
-      sizeSmall: {
-        fontSize: '.875rem',
-      },
-      sizeMedium: {
-        fontSize: '1rem',
-      },
-      sizeLarge: {
-        fontSize: '1.25rem',
+      styleOverrides: {
+        sizeXsmall: {
+          fontSize: '.875rem',
+        },
+        sizeSmall: {
+          fontSize: '.875rem',
+        },
+        sizeMedium: {
+          fontSize: '1rem',
+        },
+        sizeLarge: {
+          fontSize: '1.25rem',
+        },
       },
     },
     MuiTab: {
@@ -916,6 +934,133 @@ export const legacyTheme = {
           '&:Mui-selected': {
             color: tokens.colorPrimaryMain,
           },
+        },
+      },
+    },
+    MuiTable: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          '&.striped': {
+            '.MuiTableBody-root .MuiTableRow-root:nth-of-type(odd)': {
+              backgroundColor: tokens.colorTertiaryLight,
+            },
+          },
+        },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          borderTop: `1px solid ${tokens.colorGrey200}`,
+          borderBottom: '0px',
+          lineHeight: '1.5rem',
+        },
+        head: {
+          fontWeight: tokens.fontWeightsBold,
+        },
+        header: {
+          borderTop: '0px',
+          paddingBottom: '.5rem',
+          width: '100%',
+          display: 'block',
+        },
+        sizeMedium: {
+          padding: '.75rem',
+          '&.MuiTableCell-header': {
+            paddingBottom: '1.5rem',
+          },
+          '.MuiTableSortLabel-root': {
+            width: '100%',
+            height: '100%',
+            margin: '-.75rem',
+            padding: '.75rem',
+          },
+        },
+        sizeSmall: {
+          padding: '.25rem',
+          '&.MuiTableCell-header': {
+            paddingBottom: '.5rem',
+          },
+          '.MuiTableSortLabel-root': {
+            width: '100%',
+            height: '100%',
+            margin: '-.25rem',
+            padding: '.25rem',
+          },
+        },
+      },
+    },
+    MuiTablePagination: {
+      defaultProps: {
+        rowsPerPageOptions: [],
+        colSpan: 12,
+      },
+      styleOverrides: {
+        actions: {
+          order: 1,
+          marginRight: '.5rem',
+        },
+        displayedRows: {
+          order: 4,
+          marginRight: '.5rem',
+        },
+        input: {
+          order: 3,
+          borderRadius: '3px',
+          border: `1px solid ${tokens.borderInput}`,
+          marginLeft: '.25rem',
+          marginRight: '.75rem',
+        },
+        select: {
+          '&.MuiTablePagination-select.MuiSelect-select': {
+            paddingBottom: '1px',
+            paddingTop: '1px',
+            paddingRight: '1.5rem',
+            borderRadius: '.25rem',
+            textAlignLast: 'center',
+          },
+        },
+        selectIcon: {
+          fontSize: '1.5rem',
+        },
+        selectLabel: {
+          order: 2,
+        },
+        spacer: {
+          order: 0,
+        },
+      },
+    },
+    MuiTableRow: {
+      styleOverrides: {
+        head: {},
+      },
+    },
+    MuiTableSortLabel: {
+      styleOverrides: {
+        root: {
+          padding: '0px 6px',
+          margin: '0px -6px',
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+            '.MuiTableSortLabel-icon': {
+              opacity: 1,
+            },
+          },
+          '&:focus': {
+            backgroundColor: tokens.colorActionFocus,
+          },
+          '&.Mui-active .MuiTableSortLabel-icon': {
+            opacity: 1,
+          },
+        },
+        icon: {
+          fontSize: 'inherit',
+          opacity: 0.4,
+          transition: 'none',
         },
       },
     },
@@ -976,6 +1121,23 @@ export const legacyTheme = {
           fontSize: '.785rem',
           fontStyle: 'normal',
           padding: '2px 8px',
+        },
+      },
+    },
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          h1: 'h1',
+          h2: 'h2',
+          h3: 'h3',
+          h4: 'h4',
+          h5: 'h5',
+          h6: 'h6',
+          subtitle1: 'div',
+          subtitle2: 'div',
+          body1: 'p',
+          body2: 'p',
+          inherit: 'p',
         },
       },
     },
