@@ -31,13 +31,16 @@ export const Feedback = ({ analytics = avLogMessagesApi, appName }: FeedbackProp
 
   return (
     <>
-      <Button onClick={handlePopoverOpen}>Give Feedback</Button>
+      <Button onClick={handlePopoverOpen} color="secondary">
+        Give Feedback
+      </Button>
       <Popover
         anchorEl={anchorEl}
         anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'right',
         }}
+        sx={{ marginTop: '4px' }}
         disableRestoreFocus
         onClose={handlePopoverClose}
         open={open}
