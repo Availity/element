@@ -25,7 +25,7 @@ export const FeedbackHeader = ({ appName, handleClose, loading, sent }: Feedback
           {sent ? 'Thank you for your feedback.' : `Tell us what you think about ${appName}`}
         </Typography>
       </Grid>
-      <Grid item>
+      <Grid item marginRight="-8px">
         <IconButton disabled={loading} title="Close" onClick={handleClose}>
           <CloseIcon />
         </IconButton>
