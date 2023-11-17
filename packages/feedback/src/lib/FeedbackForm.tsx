@@ -34,13 +34,11 @@ interface FeedbackFormProps {
 const SmileButtons = styled(ToggleButtonGroup, { name: 'AvFeedbackContainer', slot: 'SmileButtons' })({});
 
 const SmileButton = ({ disabled, Icon, label, value, ...props }: SmileButtonProps) => (
-  <Tooltip title={label}>
-    <div>
-      <ToggleButton value={value} {...props} disabled={disabled}>
-        <Icon fontSize="large" />
-      </ToggleButton>
-    </div>
-  </Tooltip>
+  <div>
+    <ToggleButton title={label} value={value} {...props} disabled={disabled}>
+      <Icon fontSize="large" />
+    </ToggleButton>
+  </div>
 );
 
 export const FeedbackForm = ({
