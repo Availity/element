@@ -51,7 +51,7 @@ export const FeedbackForm = ({
   sent,
   setLoading,
   setSent,
-}: FeedbackFormProps): JSX.Element => {
+}: FeedbackFormProps): JSX.Element | null => {
   const { control, handleSubmit, setValue, watch } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async ({ smileField, ...values }) => {
@@ -98,55 +98,65 @@ export const FeedbackForm = ({
     },
     { Icon: FaceFrownIcon, label: "What don't you like?", value: 'frown' },
   ];
-  return (
-    <Grid component="form" container justifyContent="center" onSubmit={handleSubmit(onSubmit)}>
-      <Controller
-        control={control}
-        name="smileField"
-        render={({ field }) => {
-          return (
-            <SmileButtons
-              children={options.map((props) => (
-                <SmileButton disabled={loading} key={props.value} {...props} />
-              ))}
+  if (!sent) {
+    return (
+      <Grid component="form" container justifyContent="center" onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          control={control}
+          name="smileField"
+          render={({ field }) => {
+            return (
+              <SmileButtons
+                children={options.map((props) => (
+                  <SmileButton disabled={loading} key={props.value} {...props} />
+                ))}
+                {...field}
+                onChange={(event: React.MouseEvent<HTMLElement>, value: string) => {
+                  setValue(field.name, value);
+                }}
+                size="medium"
+                exclusive
+              />
+            );
+          }}
+        />
+        <Controller
+          control={control}
+          name="feedback"
+          render={({ field }) => (
+            <TextField
               {...field}
-              onChange={(event: React.MouseEvent<HTMLElement>, value: string) => {
-                setValue(field.name, value);
-              }}
-              size="medium"
-              exclusive
+              fullWidth
+              multiline
+              minRows={3}
+              maxRows={3}
+              label="What would you improve?"
+              disabled={loading}
             />
-          );
-        }}
-      />
-      <Controller
-        control={control}
-        name="feedback"
-        render={({ field }) => (
-          <TextField
-            {...field}
-            fullWidth
-            multiline
-            minRows={3}
-            maxRows={3}
-            label="What would you improve?"
-            disabled={loading}
-          />
-        )}
-        rules={{ maxLength: 200, required: true }}
-      />
-      <Grid container direction="row" marginTop="8px" spacing={1}>
-        <Grid item xs={6}>
-          <Button color="secondary" disabled={loading} fullWidth>
-            Cancel
-          </Button>
-        </Grid>
-        <Grid item xs={6}>
-          <LoadingButton disabled={!watch('smileField')} fullWidth loading={loading} type="submit" variant="contained">
-            Send Feedback
-          </LoadingButton>
+          )}
+          rules={{ maxLength: 200, required: true }}
+        />
+        <Grid container direction="row" marginTop="8px" spacing={1}>
+          <Grid item xs={6}>
+            <Button color="secondary" disabled={loading} fullWidth>
+              Cancel
+            </Button>
+          </Grid>
+          <Grid item xs={6}>
+            <LoadingButton
+              disabled={!watch('smileField')}
+              fullWidth
+              loading={loading}
+              type="submit"
+              variant="contained"
+            >
+              Send Feedback
+            </LoadingButton>
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
-  );
+    );
+  } else {
+    return null;
+  }
 };

@@ -16,7 +16,7 @@ export const FeedbackHeader = ({ appName, handleClose, loading, sent }: Feedback
       alignItems="center"
       container
       direction="row"
-      marginBottom="8px"
+      marginBottom={!sent ? '8px' : '0px'}
       justifyContent="space-between"
       whiteSpace="nowrap"
     >
