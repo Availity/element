@@ -15,9 +15,10 @@ export const handlers = [
   }),
 
   // Region
-  http.get(routes.REGIONS, async ({ request }) => {
+  http.get(routes.REGIONS, async (whatup) => {
+    const { request } = whatup;
     // Check if the request wants one region or a list
-    const { currentlySelected } = parse(request.url, { ignoreQueryPrefix: true });
+    const { currentlySelected } = parse(request.url.split('?')[1], { ignoreQueryPrefix: true });
 
     await delay(defaultDelay);
 
