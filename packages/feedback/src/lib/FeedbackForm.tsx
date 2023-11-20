@@ -143,7 +143,7 @@ export const FeedbackForm = ({
           )}
           rules={{ maxLength: 200, required: true }}
         />
-        <Grid container direction="row" marginTop="8px" spacing={1}>
+        <Grid container direction="row" marginTop="16px" spacing={1}>
           <Grid item xs={6}>
             <Button color="secondary" disabled={loading} fullWidth>
               Cancel

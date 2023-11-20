@@ -265,7 +265,7 @@ export const lightTheme = {
           padding: '16px',
         },
         smileButtons: {
-          marginBottom: '8px',
+          marginBottom: '16px',
           '.MuiToggleButton-root': {
             margin: '8px',
             '&:focus': {
