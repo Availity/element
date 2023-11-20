@@ -21,7 +21,7 @@ export const FeedbackHeader = ({ appName, handleClose, loading, sent }: Feedback
       whiteSpace="nowrap"
     >
       <Grid item width="">
-        <Typography variant="h5">
+        <Typography component="h2" variant="h5">
           {sent ? 'Thank you for your feedback.' : `Tell us what you think about ${appName}`}
         </Typography>
       </Grid>
