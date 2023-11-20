@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { TextField } from '@availity/mui-textfield';
 import { LoadingButton, Button } from '@availity/mui-button';
 import { ToggleButtonGroup, ToggleButton } from '@availity/mui-toggle-button';
-import { Tooltip } from '@availity/mui-tooltip';
 import { Grid, SvgIconProps, ToggleButtonProps, styled } from '@mui/material';
 import { FaceFrownIcon, FaceNeutralIcon, FaceSmileIcon } from '@availity/mui-icon';
 import { avRegionsApi } from '@availity/api-axios';

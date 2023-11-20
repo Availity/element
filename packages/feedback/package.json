@@ -52,7 +52,6 @@
     "@availity/mui-popover": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
     "@availity/mui-toggle-button": "workspace:^",
-    "@availity/mui-tooltip": "workspace:^",
     "react-hook-form": "^7.48.2"
   }
 }
