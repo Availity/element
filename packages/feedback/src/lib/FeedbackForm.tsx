@@ -32,9 +32,10 @@ interface FeedbackFormProps {
 
 const SmileButtons = styled(ToggleButtonGroup, { name: 'AvFeedbackContainer', slot: 'SmileButtons' })({});
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SmileButton = ({ disabled, Icon, label, value, ...props }: SmileButtonProps) => (
   <div>
-    <ToggleButton title={label} value={value} {...props} disabled={disabled}>
+    <ToggleButton aria-label={value} value={value} {...props} disabled={disabled}>
       <Icon fontSize="large" />
     </ToggleButton>
   </div>
@@ -95,6 +96,15 @@ export const FeedbackForm = ({
     },
     { Icon: FaceFrownIcon, label: "What don't you like?", value: 'frown' },
   ];
+
+  const getFeedbackLabel = () => {
+    const smile = watch('smileField');
+
+    const option = options.find((option) => option.value === smile);
+
+    return option?.label || 'What would you improve?';
+  };
+
   if (!sent) {
     return (
       <Grid component="form" container justifyContent="center" onSubmit={handleSubmit(onSubmit)}>
@@ -127,7 +137,7 @@ export const FeedbackForm = ({
               multiline
               minRows={3}
               maxRows={3}
-              label="What would you improve?"
+              label={getFeedbackLabel()}
               disabled={loading}
             />
           )}
