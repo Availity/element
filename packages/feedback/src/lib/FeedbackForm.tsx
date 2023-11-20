@@ -21,7 +21,7 @@ interface SmileButtonProps extends ToggleButtonProps {
 
 interface FeedbackFormProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  analytics: { info: (entries: any) => any };
+  analytics: { info: (entries: Record<string, unknown>) => any };
   appName: string;
   handleClose: () => void;
   loading: boolean;
