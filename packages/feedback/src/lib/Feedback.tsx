@@ -31,7 +31,7 @@ export const Feedback = ({ analytics = avLogMessagesApi, appName }: FeedbackProp
 
   return (
     <>
-      <Button onClick={handlePopoverOpen} color="secondary">
+      <Button onClick={handlePopoverOpen} color="secondary" size="large">
         Give Feedback
       </Button>
       <Popover

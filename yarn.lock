@@ -309,7 +309,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-feedback@workspace:*, @availity/mui-feedback@workspace:packages/feedback":
+"@availity/mui-feedback@workspace:*, @availity/mui-feedback@workspace:^, @availity/mui-feedback@workspace:packages/feedback":
   version: 0.0.0-use.local
   resolution: "@availity/mui-feedback@workspace:packages/feedback"
   dependencies:
@@ -439,6 +439,7 @@ __metadata:
     "@availity/mui-breadcrumbs": "workspace:^"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-divider": "workspace:^"
+    "@availity/mui-feedback": "workspace:^"
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.14.12
