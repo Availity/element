@@ -13,7 +13,9 @@ const containedButtonStyles = (color: string) => ({
   '&:focus': {
     backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
     outline: '2px solid white',
-    boxShadow: `0 0 0px 4px ${tokens[`color${color}Dark` as keyof typeof tokens]}`,
+    boxShadow: `0 0 0px 4px ${
+      color === 'Tertiary' ? tokens.colorSecondaryDark : tokens[`color${color}Dark` as keyof typeof tokens]
+    }`,
     color: color === 'Warning' && tokens.colorTextInverse,
   },
   '&:active': {
@@ -30,7 +32,9 @@ const outlinedButtonStyles = (color: string) => ({
   },
   '&:focus': {
     outline: '2px solid white',
-    boxShadow: `0 0 0px 4px ${tokens[`color${color}Main` as keyof typeof tokens]}`,
+    boxShadow: `0 0 0px 4px ${
+      color === 'Tertiary' ? tokens.colorSecondaryMain : tokens[`color${color}Main` as keyof typeof tokens]
+    }`,
     backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}21`,
   },
   '&:active': {
@@ -404,6 +408,56 @@ export const legacyTheme = {
         },
       },
     },
+    MuiAutocomplete: {
+      styleOverrides: {
+        root: {
+          '&.Mui-error .MuiAutocomplete-popupIndicator': {
+            color: tokens.borderError,
+          },
+          '&.MuiAutocomplete-hasPopupIcon': {
+            '.MuiAutocomplete-endAdornment': {
+              right: '0px',
+            },
+          },
+        },
+        endAdornment: {
+          top: 'unset',
+          right: '4px',
+          height: 'calc(100% - 16px)',
+          display: 'inline-flex',
+          alignItems: 'center',
+          '.MuiIconButton-root': {
+            display: 'flex',
+            marginRight: '0',
+            width: '2.25rem',
+            height: '2.25rem',
+            '.MuiSelect-avExpandIcon': {
+              top: 'unset',
+              transform: 'unset',
+            },
+          },
+        },
+        popupIndicator: {
+          color: tokens.borderInput,
+        },
+        popupIndicatorOpen: {
+          transform: 'scaleY(-1)',
+        },
+        clearIndicator: {
+          color: tokens.borderInput,
+          marginTop: '-8px',
+          marginBottom: '-8px',
+        },
+        hasClearIcon: {
+          '.MuiInputBase-input': {
+            paddingRight: '6.5rem',
+          },
+        },
+        tag: {
+          margin: '2px',
+        },
+      },
+    },
     MuiAvatar: {
       styleOverrides: {
         colorDefault: {
@@ -454,14 +508,7 @@ export const legacyTheme = {
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
-        containedTertiary: {
-          ...containedButtonStyles('Tertiary'),
-          '&:focus': {
-            backgroundColor: tokens.colorTertiaryDark,
-            outline: '2px solid white',
-            boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
-          },
-        },
+        containedTertiary: { ...containedButtonStyles('Tertiary') },
         containedSuccess: { ...containedButtonStyles('Success') },
         containedWarning: { ...containedButtonStyles('Warning') },
         containedError: { ...containedButtonStyles('Error') },
@@ -679,6 +726,12 @@ export const legacyTheme = {
         },
       },
     },
+    MuiFormControl: {
+      defaultProps: {
+        size: 'small',
+        fullWidth: true,
+      },
+    },
     MuiFormHelperText: {
       styleOverrides: {
         root: {
@@ -700,10 +753,7 @@ export const legacyTheme = {
     MuiFormLabel: {
       styleOverrides: {
         root: {
-          // move required asterisk before text
-          display: important('flex'),
-          flexDirection: important('row-reverse'),
-          justifyContent: important('flex-end'),
+          marginBottom: '.1rem',
           '&.Mui-error, &.Mui-error.Mui-focused': {
             color: tokens.colorTextError,
           },
@@ -713,6 +763,10 @@ export const legacyTheme = {
           '&.Mui-focused': {
             color: 'inherit',
           },
+          // move required asterisk before text
+          display: important('flex'),
+          flexDirection: important('row-reverse'),
+          justifyContent: important('flex-end'),
         },
         asterisk: {
           color: tokens.colorErrorMain,
@@ -721,9 +775,12 @@ export const legacyTheme = {
           fontSize: '1.3rem',
           lineHeight: '100%',
         },
-        children: {
-          '.MuiFormLabel-asterisk': {
-            display: 'none',
+        wrapper: {
+          marginBottom: '.1rem',
+          display: 'flex',
+          flexDirection: 'row',
+          '.MuiFormLabel-root': {
+            marginBottom: '.1rem',
           },
         },
       },
@@ -781,9 +838,20 @@ export const legacyTheme = {
           borderRadius: 4,
           position: 'relative',
           fontSize: '1rem',
-        },
-        inputSizeSmall: {
-          padding: '.375rem .75rem',
+          '.MuiOutlinedInput-input': {
+            '&.MuiInputBase-inputSizeSmall': {
+              padding: '.375rem .75rem',
+              lineHeight: '24px',
+            },
+          },
+          '.MuiSelect-avEndAdornmentDivider': {
+            borderColor: tokens.colorBackgroundBorder,
+          },
+          '.MuiChip-root': {
+            lineHeight: '1.125rem',
+            fontSize: '.875rem',
+            padding: '3px 6px',
+          },
         },
       },
     },
@@ -930,8 +998,27 @@ export const legacyTheme = {
             color: tokens.borderError,
           },
         },
+        avExpandIcon: {
+          position: 'relative',
+          top: '50%',
+          transform: 'translateY(-50%)',
+        },
         icon: {
           color: tokens.borderInput,
+          '&.MuiSvgIcon-root:not(.MuiTablePagination-selectIcon)': {
+            width: '2rem',
+            height: '2rem',
+            top: 'unset',
+          },
+          '&.MuiStack-root': {
+            right: '4px',
+            height: '100%',
+            padding: '8px 0px',
+            '.MuiSvgIcon-root': {
+              width: '2rem',
+              paddingLeft: '4px',
+            },
+          },
         },
         iconOpen: {
           transform: 'scaleY(-1)',
@@ -1114,11 +1201,6 @@ export const legacyTheme = {
           backgroundColor: tokens.colorBackgroundCanvas,
           height: '3rem',
         },
-      },
-    },
-    MuiTextField: {
-      defaultProps: {
-        fullWidth: true,
       },
     },
     MuiToggleButton: {
