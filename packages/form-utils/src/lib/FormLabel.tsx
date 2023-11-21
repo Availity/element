@@ -7,12 +7,11 @@ export type FormLabelProps = {
   helpTopicId?: string;
 } & MuiFormLabelProps;
 
-// Original asterisk added as sibling to Children. Any additional asterisks inside Children will be `display: none`.
-// Needed in components where FormLabel is a subcomponent, i.e. TextField.
-const Children = styled('span', {
+// Form Label styles moved up to wrapper to include field level help
+const Wrapper = styled(Box, {
   name: 'MuiFormLabel',
-  slot: 'Children',
-  overridesResolver: (props, styles) => styles.children,
+  slot: 'Wrapper',
+  overridesResolver: (props, styles) => styles.wrapper,
 })({});
 
 // As long as field help is available on label, should not have any transforms/animations
@@ -25,16 +24,14 @@ const StyleOverrides = {
 };
 
 export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>((props, ref) => {
-  const { children, helpTopicId, id, sx, ...rest } = props;
+  const { helpTopicId, id, sx, ...rest } = props;
 
   const labelId = id || (rest.htmlFor ? `${rest.htmlFor}-label` : undefined);
 
   return (
-    <Box display="flex" flexDirection="row" sx={sx}>
-      <MuiFormLabel id={labelId} sx={{ ...StyleOverrides }} {...rest} ref={ref}>
-        <Children className="MuiFormLabel-children">{children}</Children>
-      </MuiFormLabel>
+    <Wrapper className="MuiFormLabel-wrapper" sx={sx}>
+      <MuiFormLabel id={labelId} sx={{ ...StyleOverrides }} {...rest} ref={ref} />
       {helpTopicId ? <FieldHelpIcon helpTopicId={helpTopicId} labelId={labelId} sx={{ px: 0.5 }} /> : null}
-    </Box>
+    </Wrapper>
   );
 });

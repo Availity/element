@@ -11,6 +11,9 @@ const meta: Meta<typeof Select> = {
   title: 'Components/FormUtils/Select',
   component: Select,
   tags: ['autodocs'],
+  args: {
+    size: 'small',
+  },
 };
 
 export default meta;
