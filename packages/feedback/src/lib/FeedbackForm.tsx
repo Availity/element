@@ -4,6 +4,7 @@ import { LoadingButton, Button } from '@availity/mui-button';
 import { ToggleButtonGroup, ToggleButton } from '@availity/mui-toggle-button';
 import { Grid, SvgIconProps, ToggleButtonProps, styled } from '@mui/material';
 import { FaceFrownIcon, FaceNeutralIcon, FaceSmileIcon } from '@availity/mui-icon';
+import { FormLabel } from '@availity/mui-form-utils';
 import { avRegionsApi } from '@availity/api-axios';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 
@@ -50,7 +51,14 @@ export const FeedbackForm = ({
   setLoading,
   setSent,
 }: FeedbackFormProps): JSX.Element | null => {
-  const { control, handleSubmit, setValue, watch } = useForm<Inputs>();
+  const {
+    control,
+    formState: { errors },
+    handleSubmit,
+    register,
+    setValue,
+    watch,
+  } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async ({ smileField, ...values }) => {
     setLoading(true);
@@ -135,21 +143,24 @@ export const FeedbackForm = ({
             );
           }}
         />
-        <Controller
-          control={control}
-          name="feedback"
-          render={({ field }) => (
-            <TextField
-              {...field}
-              fullWidth
-              multiline
-              minRows={3}
-              maxRows={3}
-              label={getFeedbackLabel()}
-              disabled={loading}
-            />
-          )}
-          rules={{ maxLength: 200, required: true }}
+        <TextField
+          {...register('feedback', {
+            required: 'This field is required',
+            maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
+          })}
+          fullWidth
+          multiline
+          minRows={3}
+          maxRows={3}
+          label={getFeedbackLabel()}
+          inputProps={{ 'aria-required': 'true' }}
+          InputLabelProps={{
+            component: FormLabel,
+            required: true,
+          }}
+          helperText={errors.feedback?.message || 'Max 200 characters'}
+          error={!!errors.feedback}
+          disabled={loading}
         />
         <Grid container direction="row" marginTop="16px" spacing={1}>
           <Grid item xs={6}>

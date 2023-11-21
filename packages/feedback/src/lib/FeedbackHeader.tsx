@@ -19,6 +19,7 @@ export const FeedbackHeader = ({ appName, handleClose, loading, sent }: Feedback
       marginBottom={!sent ? '8px' : '0px'}
       justifyContent="space-between"
       flexWrap="nowrap"
+      id="feedback-form-header"
     >
       <Grid item whiteSpace="normal">
         <Typography component="h2" variant="h5">
