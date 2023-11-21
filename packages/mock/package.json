@@ -1,0 +1,37 @@
+{
+  "name": "@availity/mock",
+  "version": "0.0.0",
+  "description": "Availity MUI Mock Component - part of the @availity/element design system",
+  "private": true,
+  "keywords": [
+    "react",
+    "typescript",
+    "availity",
+    "mui"
+  ],
+  "homepage": "https://availity.github.io/element/?path=/docs/components-mock-introduction--docs",
+  "bugs": {
+    "url": "https://github.com/Availity/element/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Availity/element.git",
+    "directory": "packages/mock"
+  },
+  "license": "MIT",
+  "author": "Availity Developers <AVOSS@availity.com>",
+  "browser": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "msw": "^2.0.7",
+    "qs": "^6.11.2"
+  }
+}

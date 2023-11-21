@@ -4,10 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-paper@0.1.5...@availity/mui-paper@0.1.6) (2023-11-16)
 
-
 ### Bug Fixes
 
-* **mui-paper:** add back sx prop ([71495e1](https://github.com/Availity/element/commit/71495e1855ddfcc5f7c5c7f4bb2c98fbe37d5252))
+- **mui-paper:** add back sx prop ([71495e1](https://github.com/Availity/element/commit/71495e1855ddfcc5f7c5c7f4bb2c98fbe37d5252))
 
 ## [0.1.5](https://github.com/Availity/element/compare/@availity/mui-paper@0.1.4...@availity/mui-paper@0.1.5) (2023-11-08)
 

@@ -6,10 +6,11 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.5.4`
-* `mui-icon` updated to version `0.7.3`
-* `mui-typography` updated to version `0.1.5`
-* `mui-page-header` updated to version `0.1.7`
+- `mui-form-utils` updated to version `0.5.4`
+- `mui-icon` updated to version `0.7.3`
+- `mui-typography` updated to version `0.1.5`
+- `mui-page-header` updated to version `0.1.7`
+
 ## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.5...@availity/mui-checkbox@0.1.6) (2023-11-08)
 
 ### Dependency Updates

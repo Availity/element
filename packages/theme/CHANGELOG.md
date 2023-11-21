@@ -4,10 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.26.0](https://github.com/Availity/element/compare/@availity/theme@0.25.1...@availity/theme@0.26.0) (2023-11-16)
 
-
 ### Features
 
-* **mui-table:** add table components ([53dfe7e](https://github.com/Availity/element/commit/53dfe7e7d6282cb36a12b7114597d1b230d1ccdb))
+- **mui-table:** add table components ([53dfe7e](https://github.com/Availity/element/commit/53dfe7e7d6282cb36a12b7114597d1b230d1ccdb))
 
 ## [0.25.1](https://github.com/Availity/element/compare/@availity/theme@0.25.0...@availity/theme@0.25.1) (2023-11-14)
 

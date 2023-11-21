@@ -6,7 +6,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-typography` updated to version `0.1.5`
+- `mui-typography` updated to version `0.1.5`
+
 ## 0.1.0 (2023-11-09)
 
 ### Dependency Updates

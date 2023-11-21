@@ -6,7 +6,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-paper` updated to version `0.1.6`
+- `mui-paper` updated to version `0.1.6`
+
 ## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-layout@0.1.1...@availity/mui-layout@0.1.2) (2023-11-08)
 
 ### Dependency Updates

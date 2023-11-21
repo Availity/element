@@ -6,13 +6,13 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-button` updated to version `0.5.1`
-* `mui-icon` updated to version `0.7.3`
-* `mui-chip` updated to version `0.2.4`
+- `mui-button` updated to version `0.5.1`
+- `mui-icon` updated to version `0.7.3`
+- `mui-chip` updated to version `0.2.4`
 
 ### Bug Fixes
 
-* **mui-form-utils:** add back sx props ([39f5cb2](https://github.com/Availity/element/commit/39f5cb208d835750aa83f40e685841ff244485d8))
+- **mui-form-utils:** add back sx props ([39f5cb2](https://github.com/Availity/element/commit/39f5cb208d835750aa83f40e685841ff244485d8))
 
 ## [0.5.3](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.5.2...@availity/mui-form-utils@0.5.3) (2023-11-08)
 

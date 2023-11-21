@@ -299,6 +299,50 @@ export const legacyTheme = {
     },
   },
   components: {
+    AvFeedbackContainer: {
+      styleOverrides: {
+        root: {
+          maxWidth: important('490px'),
+          padding: '16px',
+        },
+        smileButtons: {
+          marginBottom: '8px',
+          '.MuiToggleButton-root': {
+            margin: '8px',
+            '&:focus': {
+              backgroundColor: tokens.colorActionFocus,
+              color: tokens.colorTextPrimary,
+              boxShadow: 'none',
+            },
+            '&:hover': {
+              backgroundColor: tokens.colorActionHover,
+              color: tokens.colorTextPrimary,
+              borderColor: tokens.colorGrey400,
+            },
+            '&.Mui-selected': {
+              backgroundColor: tokens.colorPrimaryMain,
+              '&:active': {
+                backgroundColor: tokens.colorPrimaryDarker,
+              },
+              '&:focus': {
+                boxShadow: 'none',
+              },
+              '&:focus, &:hover': {
+                backgroundColor: tokens.colorPrimaryDark,
+                color: tokens.colorCommonWhite,
+              },
+              '&.Mui-disabled': {
+                backgroundColor: tokens.colorPrimaryMain20,
+              },
+            },
+            '&.MuiToggleButton-sizeMedium': {
+              padding: '12px',
+              height: 'auto',
+            },
+          },
+        },
+      },
+    },
     MuiAlert: {
       styleOverrides: {
         standardSuccess: {
