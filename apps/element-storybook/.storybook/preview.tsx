@@ -80,6 +80,7 @@ if (typeof global.process === 'undefined') {
         ? undefined
         : {
             serviceWorker: { url: '/element/mockServiceWorker.js' },
+            quiet: true,
           };
 
     worker.start(config);
