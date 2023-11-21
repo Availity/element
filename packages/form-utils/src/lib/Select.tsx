@@ -1,7 +1,7 @@
 import MuiSelect, { SelectProps as MuiSelectProps, SelectChangeEvent } from '@mui/material/Select';
 import Divider from '@mui/material/Divider';
 import Stack, { StackProps } from '@mui/material/Stack';
-import styled from '@mui/material/styles/styled';
+import { styled } from '@mui/material/styles';
 import { ExpandIcon } from '@availity/mui-icon';
 import { InputPropOverrides } from './Input';
 
