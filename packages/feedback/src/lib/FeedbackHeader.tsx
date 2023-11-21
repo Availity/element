@@ -20,7 +20,7 @@ export const FeedbackHeader = ({ appName, handleClose, loading, sent }: Feedback
       justifyContent="space-between"
       flexWrap="nowrap"
     >
-      <Grid item width="" whiteSpace="normal">
+      <Grid item whiteSpace="normal">
         <Typography component="h2" variant="h5">
           {sent ? 'Thank you for your feedback.' : `Tell us what you think about ${appName}`}
         </Typography>

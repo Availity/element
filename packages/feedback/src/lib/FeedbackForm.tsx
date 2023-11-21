@@ -107,7 +107,14 @@ export const FeedbackForm = ({
 
   if (!sent) {
     return (
-      <Grid component="form" container justifyContent="center" onSubmit={handleSubmit(onSubmit)}>
+      <Grid
+        component="form"
+        container
+        justifyContent="center"
+        onSubmit={handleSubmit(onSubmit)}
+        aria-label="Feedback Form"
+        aria-describedby="feedback-form-header"
+      >
         <Controller
           control={control}
           name="smileField"
@@ -118,6 +125,7 @@ export const FeedbackForm = ({
                   <SmileButton disabled={loading} key={props.value} {...props} />
                 ))}
                 {...field}
+                aria-labelledby="feedback-form-header"
                 onChange={(event: React.MouseEvent<HTMLElement>, value: string) => {
                   setValue(field.name, value);
                 }}
@@ -145,7 +153,7 @@ export const FeedbackForm = ({
         />
         <Grid container direction="row" marginTop="16px" spacing={1}>
           <Grid item xs={6}>
-            <Button color="secondary" disabled={loading} fullWidth>
+            <Button color="secondary" disabled={loading} fullWidth onClick={handleClose}>
               Cancel
             </Button>
           </Grid>
