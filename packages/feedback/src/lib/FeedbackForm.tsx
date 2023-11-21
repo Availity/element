@@ -129,8 +129,8 @@ export const FeedbackForm = ({
           render={({ field }) => {
             return (
               <SmileButtons
-                children={options.map((props) => (
-                  <SmileButton disabled={loading} key={props.value} {...props} />
+                children={options.map((props, index) => (
+                  <SmileButton autoFocus={index === 0} disabled={loading} key={props.value} {...props} />
                 ))}
                 {...field}
                 aria-labelledby="feedback-form-header"
