@@ -48,10 +48,12 @@
   "dependencies": {
     "@availity/api-axios": "^8.0.3",
     "@availity/mui-button": "workspace:^",
+    "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-icon": "workspace:^",
     "@availity/mui-popover": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
     "@availity/mui-toggle-button": "workspace:^",
+    "@availity/mui-typography": "workspace:^",
     "react-hook-form": "^7.48.2"
   }
 }
