@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.31.1](https://github.com/Availity/element/compare/@availity/element@0.31.0...@availity/element@0.31.1) (2023-11-21)
+
+### Dependency Updates
+
+* `mui-checkbox` updated to version `0.1.9`
+* `mui-feedback` updated to version `0.1.1`
+* `mui-page-header` updated to version `0.2.1`
 ## [0.31.0](https://github.com/Availity/element/compare/@availity/element@0.30.0...@availity/element@0.31.0) (2023-11-21)
 
 ### Dependency Updates
