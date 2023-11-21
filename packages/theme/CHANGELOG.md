@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.27.0](https://github.com/Availity/element/compare/@availity/theme@0.26.0...@availity/theme@0.27.0) (2023-11-21)
+
+
+### Features
+
+* **mui-feedback:** initial commit ([2362d7f](https://github.com/Availity/element/commit/2362d7f892274f6260d4814fd8b19b85d8e4fe70))
+
 ## [0.26.0](https://github.com/Availity/element/compare/@availity/theme@0.25.1...@availity/theme@0.26.0) (2023-11-16)
 
 ### Features
