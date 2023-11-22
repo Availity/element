@@ -26,7 +26,7 @@ export const _TablePagination: StoryObj<typeof TablePagination> = {
 
 export const _AsPartOfTable: StoryObj<typeof TablePagination> = {
   render: (args: TablePaginationProps) => (
-    <Table>
+    <Table role="presentation">
       <TableFooter>
         <TableRow>
           <TablePagination {...args} />
