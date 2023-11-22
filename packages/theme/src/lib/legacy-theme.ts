@@ -178,11 +178,13 @@ export const legacyTheme = {
       hover: tokens.colorActionHover,
       hoverOpacity: 0.04,
       selected: tokens.colorActionSelected,
+      // selected: 'rgb(50, 98, 175)',
       selectedOpacity: 0.08,
       disabled: tokens.colorActionDisabled,
       disabledBackground: tokens.colorActionDisabledBg,
       disabledOpacity: 0.38,
       focus: tokens.colorActionFocus,
+      // focus: 'rgb(184, 212, 251)',
       focusOpacity: 0.12,
       activatedOpacity: 0.12,
     },
@@ -451,6 +453,19 @@ export const legacyTheme = {
         hasClearIcon: {
           '.MuiInputBase-input': {
             paddingRight: '6.5rem',
+          },
+        },
+        option: {
+          '&.MuiAutocomplete-option': {
+            "&[aria-selected='true'], &[aria-selected='true'].Mui-focused": {
+              color: tokens.colorCommonWhite,
+              backgroundColor: 'rgba(50, 98, 175, 1)',
+              fontWeight: 500,
+            },
+            '&.Mui-focused': {
+              color: tokens.colorTextPrimary,
+              backgroundColor: 'rgba(184, 212, 251,1)',
+            },
           },
         },
         tag: {
