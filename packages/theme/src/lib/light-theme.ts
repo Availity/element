@@ -354,6 +354,60 @@ export const lightTheme = {
         },
       },
     },
+    MuiAutocomplete: {
+      defaultProps: {
+        clearOnEscape: true,
+      },
+      styleOverrides: {
+        root: {
+          '&.Mui-error .MuiAutocomplete-popupIndicator': {
+            color: tokens.borderError,
+          },
+          '&.MuiAutocomplete-hasPopupIcon': {
+            '.MuiAutocomplete-endAdornment': {
+              right: '4px',
+            },
+          },
+        },
+        endAdornment: {
+          top: 'unset',
+          right: '4px',
+          height: 'calc(100% - 16px)',
+          display: 'inline-flex',
+          alignItems: 'center',
+          '.MuiIconButton-root': {
+            display: 'flex',
+            marginRight: '0',
+            width: '2.25rem',
+            height: '2.25rem',
+          },
+        },
+        popupIndicator: {
+          color: tokens.borderInput,
+        },
+        popupIndicatorOpen: {
+          transform: 'scaleY(-1)',
+        },
+        clearIndicator: {
+          color: tokens.borderInput,
+          marginTop: '-8px',
+          marginBottom: '-8px',
+        },
+        hasClearIcon: {
+          '.MuiInputBase-input': {
+            paddingRight: '6.5rem',
+          },
+        },
+        option: {
+          '&.MuiAutocomplete-option': {
+            "&[aria-selected='true'], &[aria-selected='true'].Mui-focused": {
+              color: tokens.colorCommonWhite,
+              backgroundColor: tokens.colorPrimaryMain,
+            },
+          },
+        },
+      },
+    },
     MuiAvatar: {
       styleOverrides: {
         colorDefault: {
@@ -618,6 +672,10 @@ export const lightTheme = {
       },
     },
     MuiFormControl: {
+      defaultProps: {
+        size: 'small',
+        fullWidth: true,
+      },
       styleOverrides: {
         marginDense: {
           margin: '0 0 1rem',
@@ -679,10 +737,6 @@ export const lightTheme = {
     MuiFormLabel: {
       styleOverrides: {
         root: {
-          // move required asterisk before text
-          display: important('flex'),
-          flexDirection: important('row-reverse'),
-          justifyContent: important('flex-end'),
           marginBottom: '3px',
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
@@ -693,11 +747,23 @@ export const lightTheme = {
           '&.Mui-focused': {
             color: tokens.colorTextPrimary,
           },
+          // move required asterisk before text
+          display: important('flex'),
+          flexDirection: important('row-reverse'),
+          justifyContent: important('flex-end'),
         },
         asterisk: {
           color: tokens.colorTextError,
           marginRight: '.25rem',
           marginLeft: '-.15rem',
+        },
+        wrapper: {
+          marginBottom: '3px',
+          display: 'flex',
+          flexDirection: 'row',
+          '.MuiFormLabel-root': {
+            marginBottom: '0px',
+          },
         },
       },
     },
@@ -732,13 +798,11 @@ export const lightTheme = {
       },
     },
     MuiInputBase: {
-      defaultProps: {
-        size: 'small',
-      },
       styleOverrides: {
         root: {
           '&.MuiInputBase-root': {
             backgroundColor: 'white',
+            padding: '0px',
             '& > fieldset': {
               borderColor: tokens.colorGrey400,
             },
@@ -757,9 +821,23 @@ export const lightTheme = {
             },
             '.MuiInputBase-input': {
               padding: '8px 12px',
+              lineHeight: '1.5rem',
+            },
+            '.MuiInputBase-inputAdornedEnd': {
+              paddingRight: '0',
+            },
+            '.MuiInputBase-inputAdornedStart': {
+              paddingLeft: '0',
+            },
+            '&.MuiInputBase-adornedStart': {
+              paddingLeft: '12px',
             },
             '&.MuiInputBase-adornedEnd': {
               paddingRight: '12px',
+            },
+            '.MuiSelect-avEndAdornmentDivider': {
+              borderColor: tokens.colorBackgroundBorder,
+              margin: '0 4px',
             },
             '&:hover': {
               '.MuiIconButton-root': {
@@ -776,6 +854,10 @@ export const lightTheme = {
               padding: '8px',
               color: tokens.colorGrey400,
             },
+            '.MuiChip-label': {
+              lineHeight: '1.125rem',
+              fontSize: '.75rem',
+            },
           },
         },
         input: ({ ownerState }: { ownerState: { size: 'small' | 'medium' } }) => {
@@ -788,9 +870,6 @@ export const lightTheme = {
               color: tokens.colorGrey700,
             },
           };
-        },
-        inputSizeSmall: {
-          width: '100%',
         },
         adornedEnd: {
           backgroundColor: 'white',
@@ -896,12 +975,34 @@ export const lightTheme = {
     },
     MuiSelect: {
       styleOverrides: {
+        avExpandIcon: {
+          position: 'relative',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          fontSize: '1rem',
+        },
+        icon: {
+          '&.MuiSvgIcon-root:not(.MuiTablePagination-selectIcon)': {
+            width: '2rem',
+            height: '2rem',
+            top: 'unset',
+          },
+          '&.MuiStack-root': {
+            right: '8px',
+            height: '100%',
+            padding: '8px 0px',
+            '.MuiSvgIcon-root': {
+              width: '2rem',
+              paddingLeft: '4px',
+            },
+          },
+        },
         iconOpen: {
           transform: 'scaleY(-1)',
         },
         select: {
-          '&.MuiInputBase-input': {
-            paddingRight: '2.5rem',
+          '&.MuiInputBase-input.MuiSelect-select.MuiOutlinedInput-input': {
+            paddingRight: '4rem',
           },
         },
       },
@@ -998,11 +1099,13 @@ export const lightTheme = {
           borderRadius: '.25rem',
           marginLeft: '.25rem',
           marginRight: '.75rem',
+          width: 'auto',
         },
         select: {
           '&.MuiTablePagination-select.MuiSelect-select': {
             paddingRight: '1.5rem',
             borderRadius: '.25rem',
+            width: 'auto',
           },
         },
         selectLabel: {},
