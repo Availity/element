@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.1.0...@availity/mui-autocomplete@0.2.0) (2023-11-22)
+
+
+### Features
+
+* **mui-autocomplete:** use new select slots and styling ([37cac37](https://github.com/Availity/element/commit/37cac37f2670d669b7b6c38cbc52fd1453e3e4e4))
+
 ## 0.1.0 (2023-11-15)
 
 
