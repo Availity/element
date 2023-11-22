@@ -411,6 +411,9 @@ export const legacyTheme = {
       },
     },
     MuiAutocomplete: {
+      defaultProps: {
+        clearOnEscape: true,
+      },
       styleOverrides: {
         root: {
           '&.Mui-error .MuiAutocomplete-popupIndicator': {
@@ -457,6 +460,7 @@ export const legacyTheme = {
         },
         option: {
           '&.MuiAutocomplete-option': {
+            minHeight: 'unset',
             "&[aria-selected='true'], &[aria-selected='true'].Mui-focused": {
               color: tokens.colorCommonWhite,
               backgroundColor: 'rgba(50, 98, 175, 1)',

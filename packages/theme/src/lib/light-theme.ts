@@ -400,6 +400,7 @@ export const lightTheme = {
         },
         option: {
           '&.MuiAutocomplete-option': {
+            minHeight: 'unset',
             "&[aria-selected='true'], &[aria-selected='true'].Mui-focused": {
               color: tokens.colorCommonWhite,
               backgroundColor: tokens.colorPrimaryMain,
