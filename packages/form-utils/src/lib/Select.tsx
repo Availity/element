@@ -1,6 +1,7 @@
 import MuiSelect, { SelectProps as MuiSelectProps, SelectChangeEvent } from '@mui/material/Select';
 import Divider from '@mui/material/Divider';
 import Stack, { StackProps } from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
 import { ExpandIcon } from '@availity/mui-icon';
 import { InputPropOverrides } from './Input';
 
@@ -9,11 +10,23 @@ export type SelectProps = Omit<
   'components' | 'componentsProps' | 'SelectComponent' | 'notched' | 'slots' | 'slotProps' | 'variant'
 >;
 
+export const SelectDivider = styled(Divider, {
+  name: 'MuiSelect',
+  slot: 'AvEndAdornmentDivider',
+  overridesResolver: (props, styles) => styles.avEndAdornmentDivider,
+})({});
+
+export const SelectExpandIcon = styled(ExpandIcon, {
+  name: 'MuiSelect',
+  slot: 'AvExpandIcon',
+  overridesResolver: (props, styles) => styles.avExpandIcon,
+})({});
+
 // IconComponent is absolutely positioned, combining divider and icon to position together
 const InnerEndAdornment = (args: StackProps) => (
-  <Stack {...args} direction="row" spacing={1} height="100%" paddingY=".5rem" top="unset!important">
-    <Divider orientation="vertical" />
-    <ExpandIcon sx={{ position: 'relative', top: 'calc(50% - .5rem)' }} />
+  <Stack {...args} direction="row" height="100%" top="unset!important">
+    <SelectDivider orientation="vertical" className="MuiSelect-avEndAdornmentDivider" />
+    <SelectExpandIcon className="MuiSelect-avExpandIcon" />
   </Stack>
 );
 

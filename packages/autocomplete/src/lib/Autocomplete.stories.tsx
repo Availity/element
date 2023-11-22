@@ -1,20 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { Autocomplete, AutocompleteProps } from './Autocomplete';
-import {
-  Box,
-  Chip,
-  MenuItem,
-  Autocomplete as MuiAutocomplete,
-  AutocompleteProps as MuiAutocompleteProps,
-  TextField as MuiTextField,
-  SelectChangeEvent,
-  Typography,
-} from '@mui/material';
-import { TextField } from '@availity/mui-textfield';
-import { Select, SelectPropOverrides } from '@availity/mui-form-utils';
-import { useState } from 'react';
+import { Autocomplete } from './Autocomplete';
 
 const meta: Meta<typeof Autocomplete> = {
   title: 'Components/Autocomplete/Autocomplete',
@@ -41,4 +28,9 @@ export const _Variants: StoryObj<typeof Autocomplete> = {
       <Autocomplete {...args} FieldProps={{ label: 'Multi Select', margin: 'normal' }} multiple />
     </>
   ),
+  parameters: {
+    controls: {
+      exclude: ['FieldProps'],
+    },
+  },
 };

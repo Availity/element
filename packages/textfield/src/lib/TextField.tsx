@@ -20,13 +20,13 @@ export type TextFieldProps = {
   Omit<MuiTextFieldProps, 'variant'>;
 
 export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextFieldProps>((props, ref) => {
-  const { InputProps, helpTopicId, InputLabelProps, FormHelperTextProps, SelectProps, ...rest } = props;
+  const { InputProps, helpTopicId, InputLabelProps, FormHelperTextProps, required, SelectProps, ...rest } = props;
 
   return (
     <MuiTextField
       {...rest}
-      InputProps={{ ...InputProps, ...InputPropOverrides }}
-      InputLabelProps={{ component: FormLabel, helpTopicId: helpTopicId, shrink: true, ...InputLabelProps }}
+      InputProps={{ 'aria-required': required, ...InputProps, ...InputPropOverrides }}
+      InputLabelProps={{ component: FormLabel, helpTopicId: helpTopicId, required, shrink: true, ...InputLabelProps }}
       FormHelperTextProps={{ component: FormHelperText, ...FormHelperTextProps }}
       SelectProps={{ ...SelectProps, ...SelectPropOverrides }}
       ref={ref}
