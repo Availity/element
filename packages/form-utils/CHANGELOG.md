@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.6.0...@availity/mui-form-utils@0.6.1) (2023-11-27)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.2.5`
 ## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.5.4...@availity/mui-form-utils@0.6.0) (2023-11-22)
 
 
