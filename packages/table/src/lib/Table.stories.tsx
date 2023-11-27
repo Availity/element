@@ -3,6 +3,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useMemo, useState } from 'react';
 import { Checkbox } from '@mui/material';
+import { visuallyHidden } from '@mui/utils';
 import type { AlertColor } from '@mui/material';
 import { Chip } from '@availity/mui-chip';
 import Patients from '../../../../data/patients.json';
@@ -19,6 +20,7 @@ import {
   TablePagination,
   TableFooter,
 } from '../index';
+import { Typography } from '@availity/mui-typography';
 
 const meta: Meta<typeof Table> = {
   title: 'Components/Table/Table',
@@ -45,7 +47,10 @@ export const _Table: StoryObj<typeof Table> = {
   render: (args: TableProps) => {
     return (
       <TableContainer>
-        <Table aria-labelledby="tableTitle" {...args}>
+        <Typography id="table-title" sx={visuallyHidden}>
+          Table
+        </Typography>
+        <Table aria-labelledby="table-title" {...args}>
           <TableHead>
             <TableRow>
               <TableCell>Payer</TableCell>
@@ -178,7 +183,10 @@ export const _SortableTable: StoryObj<typeof Table> = {
 
     return (
       <TableContainer>
-        <Table aria-labelledby="tableTitle" {...args}>
+        <Typography id="sortable-table-title" sx={visuallyHidden}>
+          Sortable Table
+        </Typography>
+        <Table aria-labelledby="sortable-table-title" {...args}>
           <EnhancedTableHead order={order} orderBy={orderBy} onRequestSort={handleRequestSort} />
           <TableBody>
             {sortedRows.map((row, index) => {
@@ -241,14 +249,14 @@ export const _SelectableTable: StoryObj<typeof Table> = {
       return (
         <TableHead>
           <TableRow>
-            <TableCell padding="checkbox">
+            <TableCell padding="checkbox" aria-label="Select Row">
               <Checkbox
                 color="primary"
                 indeterminate={numSelected > 0 && numSelected < rowCount}
                 checked={rowCount > 0 && numSelected === rowCount}
                 onChange={onSelectAllClick}
                 inputProps={{
-                  'aria-label': 'select all',
+                  'aria-label': 'select all rows',
                 }}
               />
             </TableCell>
@@ -296,7 +304,10 @@ export const _SelectableTable: StoryObj<typeof Table> = {
 
     return (
       <TableContainer>
-        <Table aria-labelledby="tableTitle" {...args}>
+        <Typography id="selectable-table-title" sx={visuallyHidden}>
+          Selectable Table
+        </Typography>
+        <Table aria-labelledby="selectable-table-title" {...args}>
           <EnhancedTableHead
             numSelected={selected.length}
             onSelectAllClick={handleSelectAllClick}
@@ -311,12 +322,10 @@ export const _SelectableTable: StoryObj<typeof Table> = {
                 <TableRow
                   hover
                   onClick={(event) => handleClick(event, row.birthDate)}
-                  role="checkbox"
-                  aria-checked={isItemSelected}
-                  tabIndex={-1}
                   key={`SelectableTable-${index}`}
                   selected={isItemSelected}
                   sx={{ cursor: 'pointer' }}
+                  id={labelId}
                 >
                   <TableCell padding="checkbox">
                     <Checkbox
@@ -398,7 +407,10 @@ export const _PaginatedTable: StoryObj<typeof Table> = {
 
     return (
       <TableContainer>
-        <Table aria-labelledby="tableTitle" {...args}>
+        <Typography id="paginated-table-title" sx={visuallyHidden}>
+          Paginated Table
+        </Typography>
+        <Table aria-labelledby="paginated-table-title" {...args}>
           <TableHead>
             <TableRow>
               {headCells.map((headCell) => (

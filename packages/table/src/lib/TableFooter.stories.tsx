@@ -16,7 +16,7 @@ export default meta;
 
 export const _TableFooter: StoryObj<typeof TableFooter> = {
   render: (args: TableFooterProps) => (
-    <Table>
+    <Table role="presentation">
       <TableFooter {...args}>
         <TableRow>
           <TableCell>Footer</TableCell>
