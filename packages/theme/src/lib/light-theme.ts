@@ -141,26 +141,26 @@ export const lightTheme = {
       primary: tokens.colorTextPrimary,
       secondary: tokens.colorTextSecondary,
       disabled: tokens.colorTextDisabled,
-      error: tokens.colorErrorMain,
+      error: tokens.colorTextError,
       hint: 'rgba(0, 0, 0, 0.38)',
       divider: 'rgba(0, 0, 0, 0.12)',
-      success: tokens.colorSuccessMain,
-      info: tokens.colorTextPrimary,
-      link: tokens.colorTextPrimary,
-      inverse: tokens.colorCommonWhite,
-      inverseSecondary: '#ffffff24',
+      success: tokens.colorTextSuccess,
+      info: tokens.colorTextInfo,
+      link: tokens.colorTextLink,
+      inverse: tokens.colorTextInverse,
+      inverseSecondary: tokens.colorTextInverseSecondary,
     },
     border: {
-      primary: tokens.colorPrimaryMain,
-      secondary: tokens.colorGrey400,
-      error: tokens.colorErrorMain,
-      disabled: tokens.colorGrey300,
-      decorative: tokens.colorGrey200,
-      input: tokens.colorGrey400,
-      inputHover: tokens.colorGrey600,
-      inputFocus: tokens.colorPrimaryMain,
-      inverse: tokens.colorCommonWhite,
-      inverseSecondary: '#ffffff24',
+      primary: tokens.borderPrimary,
+      secondary: tokens.borderSecondary,
+      error: tokens.borderError,
+      disabled: tokens.borderDisabled,
+      decorative: tokens.borderDecorative,
+      input: tokens.borderInput,
+      inputHover: tokens.borderInputHover,
+      inputFocus: tokens.borderInputFocus,
+      inverse: tokens.borderInverse,
+      inverseSecondary: tokens.borderInverseSecondary,
     },
     background: {
       canvas: tokens.colorBackgroundCanvas,
@@ -356,7 +356,12 @@ export const lightTheme = {
     },
     MuiAutocomplete: {
       defaultProps: {
+        size: 'small',
+        fullWidth: true,
         clearOnEscape: true,
+        ChipProps: {
+          size: 'medium',
+        },
       },
       styleOverrides: {
         root: {
@@ -366,6 +371,14 @@ export const lightTheme = {
           '&.MuiAutocomplete-hasPopupIcon': {
             '.MuiAutocomplete-endAdornment': {
               right: '4px',
+            },
+            '.MuiInputBase-root.MuiInputBase-adornedEnd': {
+              paddingRight: '3rem',
+            },
+            '&.MuiAutocomplete-hasClearIcon': {
+              '.MuiInputBase-root.MuiInputBase-adornedEnd': {
+                paddingRight: '5rem',
+              },
             },
           },
         },
@@ -392,11 +405,6 @@ export const lightTheme = {
           color: tokens.borderInput,
           marginTop: '-8px',
           marginBottom: '-8px',
-        },
-        hasClearIcon: {
-          '.MuiInputBase-input': {
-            paddingRight: '6.5rem',
-          },
         },
         option: {
           '&.MuiAutocomplete-option': {
@@ -800,77 +808,80 @@ export const lightTheme = {
     },
     MuiInputBase: {
       styleOverrides: {
-        root: {
-          '&.MuiInputBase-root': {
-            backgroundColor: 'white',
-            padding: '0px',
-            '& > fieldset': {
-              borderColor: tokens.colorGrey400,
+        root: ({ ownerState }: { ownerState: { size: 'small' | 'medium'; fullWidth: boolean | undefined } }) => {
+          return {
+            boxSizing: 'border-box',
+            '&.MuiInputBase-root, &.MuiInputBase-root.MuiAutocomplete-inputRoot': {
+              width: ownerState.fullWidth ? '100%' : '220px',
+              minHeight: ownerState.size === 'medium' ? '56px' : '40px',
             },
-            '&:hover > fieldset': {
-              borderColor: tokens.borderInputHover,
-            },
-            '&.Mui-focused > fieldset': {
-              borderColor: tokens.borderInputFocus,
-            },
-            '&.Mui-error > fieldset': {
-              borderColor: tokens.colorErrorMain,
-            },
-            '&.Mui-disabled > fieldset': {
-              borderColor: tokens.borderDisabled,
-              color: tokens.colorTextDisabled,
-            },
-            '.MuiInputBase-input': {
-              padding: '8px 12px',
-              lineHeight: '1.5rem',
-            },
-            '.MuiInputBase-inputAdornedEnd': {
-              paddingRight: '0',
-            },
-            '.MuiInputBase-inputAdornedStart': {
-              paddingLeft: '0',
-            },
-            '&.MuiInputBase-adornedStart': {
-              paddingLeft: '12px',
-            },
-            '&.MuiInputBase-adornedEnd': {
-              paddingRight: '12px',
-            },
-            '.MuiSelect-avEndAdornmentDivider': {
-              borderColor: tokens.colorBackgroundBorder,
-              margin: '0 4px',
-            },
-            '&:hover': {
-              '.MuiIconButton-root': {
-                color: tokens.colorGrey700,
+            '&.MuiInputBase-root': {
+              backgroundColor: 'white',
+              padding: '0px',
+              '& > fieldset': {
+                borderColor: tokens.colorGrey400,
               },
-            },
-            '&.Mui-disabled': {
-              '.MuiIconButton-root': {
+              '&:hover > fieldset': {
+                borderColor: tokens.borderInputHover,
+              },
+              '&.Mui-focused > fieldset': {
+                borderColor: tokens.borderInputFocus,
+              },
+              '&.Mui-error > fieldset': {
+                borderColor: tokens.colorErrorMain,
+              },
+              '&.Mui-disabled > fieldset': {
+                borderColor: tokens.borderDisabled,
                 color: tokens.colorTextDisabled,
               },
-            },
-            '.MuiIconButton-root': {
-              border: '0',
-              padding: '8px',
-              color: tokens.colorGrey400,
-            },
-            '.MuiChip-label': {
-              lineHeight: '1.125rem',
-              fontSize: '.75rem',
-            },
-          },
-        },
-        input: ({ ownerState }: { ownerState: { size: 'small' | 'medium' } }) => {
-          return {
-            width: '196px',
-            height: ownerState.size === 'small' ? '24px' : '40px',
-            borderRadius: '4px',
-            color: tokens.colorGrey400,
-            '&:hover': {
-              color: tokens.colorGrey700,
+              '.MuiInputBase-input': {
+                padding: '8px 12px',
+                lineHeight: '1.5rem',
+              },
+              '.MuiInputBase-inputAdornedEnd': {
+                paddingRight: '0',
+              },
+              '.MuiInputBase-inputAdornedStart': {
+                paddingLeft: '0',
+              },
+              '&.MuiInputBase-adornedStart': {
+                paddingLeft: '12px',
+              },
+              '&.MuiInputBase-adornedEnd': {
+                paddingRight: '12px',
+              },
+              '.MuiSelect-avEndAdornmentDivider': {
+                borderColor: tokens.colorBackgroundBorder,
+                margin: '0 4px',
+              },
+              '&:hover': {
+                '.MuiIconButton-root': {
+                  color: tokens.colorGrey700,
+                },
+              },
+              '&.Mui-disabled': {
+                '.MuiIconButton-root': {
+                  color: tokens.colorTextDisabled,
+                },
+              },
+              '.MuiIconButton-root': {
+                border: '0',
+                padding: '8px',
+                color: tokens.colorGrey400,
+              },
+              '.MuiChip-label': {
+                lineHeight: '1.125rem',
+                fontSize: '.75rem',
+              },
             },
           };
+        },
+        input: {
+          borderRadius: '4px',
+          color: tokens.colorGrey400,
+          '&:hover': {
+            color: tokens.colorGrey700,
+          },
         },
         adornedEnd: {
           backgroundColor: 'white',
@@ -1100,13 +1111,14 @@ export const lightTheme = {
           borderRadius: '.25rem',
           marginLeft: '.25rem',
           marginRight: '.75rem',
-          width: 'auto',
+          '&.MuiInputBase-root': {
+            width: 'auto',
+          },
         },
         select: {
           '&.MuiTablePagination-select.MuiSelect-select': {
             paddingRight: '1.5rem',
             borderRadius: '.25rem',
-            width: 'auto',
           },
         },
         selectLabel: {},
@@ -1153,6 +1165,12 @@ export const lightTheme = {
           backgroundColor: tokens.colorBackgroundCanvas,
           height: '3rem',
         },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        size: 'small',
+        fullWidth: true,
       },
     },
     MuiToggleButton: {
