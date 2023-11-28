@@ -3,10 +3,12 @@ import {
   Autocomplete as MuiAutocomplete,
   AutocompleteProps as MuiAutocompleteProps,
   AutocompleteRenderInputParams,
+  AutocompletePropsSizeOverrides,
   IconButton as MuiIconButton,
   IconButtonProps as MuiIconButtonProps,
   ChipTypeMap,
 } from '@mui/material';
+import { OverridableStringUnion } from '@mui/types';
 import { TextField, TextFieldProps } from '@availity/mui-textfield';
 import { SelectDivider, SelectExpandIcon } from '@availity/mui-form-utils';
 
@@ -18,8 +20,26 @@ export interface AutocompleteProps<
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']
 > extends Omit<
     MuiAutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>,
-    'renderInput' | 'slotProps'
+    | 'clearIcon'
+    | 'clearText'
+    | 'closeText'
+    | 'componentsProps'
+    | 'disabledItemsFocusable'
+    | 'forcePopupIcon'
+    | 'fullWidth'
+    | 'handleHomeEndKeys'
+    | 'includeInputInList'
+    | 'openOnFocus'
+    | 'openText'
+    | 'PaperComponent'
+    | 'PopperComponent'
+    | 'popupIcon'
+    | 'selectOnFocus'
+    | 'size'
+    | 'renderInput'
+    | 'slotProps'
   > {
+  /** Props applied to the `TextField` component */
   FieldProps?: TextFieldProps;
 }
 
@@ -40,6 +60,13 @@ export const Autocomplete = <
   FieldProps,
   ...props
 }: AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>): JSX.Element => {
+  // Availity desired default props are not making it into component context through theme defaultProps.
+  // Can be overridden by props passed to TextField through `FieldProps`.
+  const defaultProps = {
+    fullWidth: true,
+    size: 'small' as OverridableStringUnion<'small' | 'medium', AutocompletePropsSizeOverrides>,
+  };
+
   const resolvedProps = (params: AutocompleteRenderInputParams) => ({
     InputProps: {
       ...FieldProps?.InputProps,
@@ -50,14 +77,16 @@ export const Autocomplete = <
       ...params?.inputProps,
     },
   });
+
   return (
     <MuiAutocomplete
       renderInput={(params: AutocompleteRenderInputParams) => (
-        <TextField {...FieldProps} {...params} {...resolvedProps(params)} />
+        <TextField {...params} {...resolvedProps(params)} {...FieldProps} />
       )}
       popupIcon={<SelectExpandIcon className="MuiSelect-avExpandIcon" />}
       slotProps={{ popupIndicator: { component: PopupIndicatorWrapper } }}
       {...props}
+      {...defaultProps}
     />
   );
 };

@@ -34,7 +34,8 @@
   },
   "dependencies": {
     "@availity/mui-form-utils": "workspace:*",
-    "@availity/mui-textfield": "workspace:*"
+    "@availity/mui-textfield": "workspace:*",
+    "@mui/types": "^7.2.5"
   },
   "devDependencies": {
     "@mui/material": "^5.11.9",
