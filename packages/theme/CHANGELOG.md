@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.29.0](https://github.com/Availity/element/compare/@availity/theme@0.28.1...@availity/theme@0.29.0) (2023-11-28)
+
+
+### Features
+
+* **theme:** light theme autocomplete styles ([66d9645](https://github.com/Availity/element/commit/66d9645673d7054d77dbaabbbc9ba77b78aa5a52))
+
 ## [0.28.1](https://github.com/Availity/element/compare/@availity/theme@0.28.0...@availity/theme@0.28.1) (2023-11-27)
 
 ### Dependency Updates
