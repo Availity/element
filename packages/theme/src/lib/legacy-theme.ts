@@ -1177,6 +1177,9 @@ export const legacyTheme = {
           border: `1px solid ${tokens.borderInput}`,
           marginLeft: '.25rem',
           marginRight: '.75rem',
+          '&.MuiInputBase-root': {
+            width: 'auto',
+          },
         },
         select: {
           '&.MuiTablePagination-select.MuiSelect-select': {
