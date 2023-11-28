@@ -6,7 +6,7 @@ describe('Datepicker', () => {
   test('should render successfully', () => {
     const { getAllByText } = render(
       <ThemeProvider>
-        <Datepicker label="Test" onChange={jest.fn()} value={null} />
+        <Datepicker FieldProps={{ label: 'Test' }} onChange={jest.fn()} value={null} />
       </ThemeProvider>
     );
     expect(getAllByText('Test')).toBeTruthy();
