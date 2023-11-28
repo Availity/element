@@ -13,6 +13,7 @@ const meta: Meta<typeof TextField> = {
   tags: ['autodocs'],
   args: {
     helperText: 'Helper Text',
+    fullWidth: false,
   },
   argTypes: {
     helperText: {
@@ -46,11 +47,24 @@ export const _States: StoryObj<typeof TextField> = {
   },
 };
 
+export const _Sizes: StoryObj<typeof TextField> = {
+  render: (args: TextFieldProps) => (
+    <Stack direction="row" spacing={1}>
+      <TextField label="Small" id="small" size="small" {...args} />
+      <TextField label="Medium" id="medium" size="medium" {...args} />
+    </Stack>
+  ),
+  args: {
+    margin: 'normal',
+  },
+};
+
 export const _WithIcon: StoryObj<typeof TextField> = {
   render: () => (
     <TextField
       label="With Icon"
       id="search"
+      fullWidth={false}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
@@ -71,6 +85,7 @@ export const _PasswordField: StoryObj<typeof TextField> = {
         type={showPassword ? 'text' : 'password'}
         label="Password"
         id="password"
+        fullWidth={false}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
