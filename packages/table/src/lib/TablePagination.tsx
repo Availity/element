@@ -3,8 +3,6 @@ import {
   TablePagination as MuiTablePagination,
   TablePaginationProps as MuiTablePaginationProps,
   TableCellBaseProps,
-  Toolbar as MuiToolbar,
-  styled,
 } from '@mui/material';
 import { Pagination, PaginationProps } from '@availity/mui-pagination';
 
@@ -16,6 +14,8 @@ export type TablePaginationProps = {
 } & Omit<
   MuiTablePaginationProps,
   | 'ActionsComponent'
+  | 'backIconButtonProps'
+  | 'nextIconButtonProps'
   | 'getItemArialabel'
   | 'labelDisplayedRows'
   | 'labelRowsPerPage'
