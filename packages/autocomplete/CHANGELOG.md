@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.2.0...@availity/mui-autocomplete@0.2.1) (2023-11-28)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** move default props from theme to component ([fa6a02d](https://github.com/Availity/element/commit/fa6a02d44114444ac2c5a15ff1f647c5dcd3d025))
+
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.1.0...@availity/mui-autocomplete@0.2.0) (2023-11-22)
 
 
