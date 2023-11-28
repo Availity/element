@@ -16,8 +16,10 @@ export type TextFieldProps = {
   InputLabelProps?: FormLabelProps;
   InputProps?: InputProps;
   SelectProps?: SelectProps;
+  /** If `true`, the input will take up the full width of its container. @default true */
+  fullWidth?: boolean;
 } & Pick<FormLabelProps, 'helpTopicId'> &
-  Omit<MuiTextFieldProps, 'variant'>;
+  Omit<MuiTextFieldProps, 'fullWidth' | 'variant'>;
 
 export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextFieldProps>((props, ref) => {
   const { InputProps, helpTopicId, InputLabelProps, FormHelperTextProps, required, SelectProps, ...rest } = props;

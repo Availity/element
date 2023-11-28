@@ -134,6 +134,7 @@ __metadata:
     "@availity/mui-form-utils": "workspace:*"
     "@availity/mui-textfield": "workspace:*"
     "@mui/material": ^5.11.9
+    "@mui/types": ^7.2.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7

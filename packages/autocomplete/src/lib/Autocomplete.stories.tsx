@@ -10,6 +10,13 @@ const meta: Meta<typeof Autocomplete> = {
   args: {
     options: ['1', '2', '3', '4', '5'],
   },
+  argTypes: {
+    multiple: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export default meta;
@@ -17,20 +24,21 @@ export default meta;
 export const _Autocomplete: StoryObj<typeof Autocomplete> = {
   render: (args) => <Autocomplete {...args} />,
   args: {
-    FieldProps: { label: 'AvTextField' },
+    FieldProps: { label: 'Autocomplete', helperText: 'Helper Text', fullWidth: false },
   },
 };
 
-export const _Variants: StoryObj<typeof Autocomplete> = {
-  render: (args) => (
-    <>
-      <Autocomplete {...args} FieldProps={{ label: 'Single Select', margin: 'normal' }} />
-      <Autocomplete {...args} FieldProps={{ label: 'Multi Select', margin: 'normal' }} multiple />
-    </>
-  ),
-  parameters: {
-    controls: {
-      exclude: ['FieldProps'],
-    },
+export const _Single: StoryObj<typeof Autocomplete> = {
+  render: (args) => <Autocomplete {...args} />,
+  args: {
+    FieldProps: { label: 'Single Select', helperText: 'Helper Text', fullWidth: false },
+  },
+};
+
+export const _Multi: StoryObj<typeof Autocomplete> = {
+  render: (args) => <Autocomplete {...args} />,
+  args: {
+    FieldProps: { label: 'Multi Select', helperText: 'Helper Text', fullWidth: false },
+    multiple: true,
   },
 };

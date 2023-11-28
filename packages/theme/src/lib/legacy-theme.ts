@@ -411,6 +411,14 @@ export const legacyTheme = {
       },
     },
     MuiAutocomplete: {
+      defaultProps: {
+        size: 'small',
+        fullWidth: true,
+        clearOnEscape: true,
+        ChipProps: {
+          size: 'medium',
+        },
+      },
       styleOverrides: {
         root: {
           '&.Mui-error .MuiAutocomplete-popupIndicator': {
@@ -419,6 +427,14 @@ export const legacyTheme = {
           '&.MuiAutocomplete-hasPopupIcon': {
             '.MuiAutocomplete-endAdornment': {
               right: '0px',
+            },
+            '.MuiInputBase-root.MuiInputBase-adornedEnd': {
+              paddingRight: '2.5rem',
+            },
+            '&.MuiAutocomplete-hasClearIcon': {
+              '.MuiInputBase-root.MuiInputBase-adornedEnd': {
+                paddingRight: '4rem',
+              },
             },
           },
         },
@@ -450,13 +466,9 @@ export const legacyTheme = {
           marginTop: '-8px',
           marginBottom: '-8px',
         },
-        hasClearIcon: {
-          '.MuiInputBase-input': {
-            paddingRight: '6.5rem',
-          },
-        },
         option: {
           '&.MuiAutocomplete-option': {
+            minHeight: 'unset',
             "&[aria-selected='true'], &[aria-selected='true'].Mui-focused": {
               color: tokens.colorCommonWhite,
               backgroundColor: 'rgba(50, 98, 175, 1)',
@@ -846,27 +858,33 @@ export const legacyTheme = {
         size: 'small',
       },
       styleOverrides: {
-        root: {
-          'label + &': {
-            marginTop: '.5rem',
-          },
-          borderRadius: 4,
-          position: 'relative',
-          fontSize: '1rem',
-          '.MuiOutlinedInput-input': {
-            '&.MuiInputBase-inputSizeSmall': {
-              padding: '.375rem .75rem',
-              lineHeight: '24px',
+        root: ({ ownerState }: { ownerState: { fullWidth: boolean | undefined } }) => {
+          return {
+            boxSizing: 'border-box',
+            '&.MuiInputBase-root, &.MuiInputBase-root.MuiAutocomplete-inputRoot': {
+              width: ownerState.fullWidth ? '100%' : '220px',
             },
-          },
-          '.MuiSelect-avEndAdornmentDivider': {
-            borderColor: tokens.colorBackgroundBorder,
-          },
-          '.MuiChip-root': {
-            lineHeight: '1.125rem',
-            fontSize: '.875rem',
-            padding: '3px 6px',
-          },
+            'label + &': {
+              marginTop: '.5rem',
+            },
+            borderRadius: 4,
+            position: 'relative',
+            fontSize: '1rem',
+            '.MuiOutlinedInput-input': {
+              '&.MuiInputBase-inputSizeSmall': {
+                padding: '.375rem .75rem',
+                lineHeight: '24px',
+              },
+            },
+            '.MuiSelect-avEndAdornmentDivider': {
+              borderColor: tokens.colorBackgroundBorder,
+            },
+            '.MuiChip-root': {
+              lineHeight: '1.125rem',
+              fontSize: '.875rem',
+              padding: '3px 6px',
+            },
+          };
         },
       },
     },
@@ -1159,6 +1177,9 @@ export const legacyTheme = {
           border: `1px solid ${tokens.borderInput}`,
           marginLeft: '.25rem',
           marginRight: '.75rem',
+          '&.MuiInputBase-root': {
+            width: 'auto',
+          },
         },
         select: {
           '&.MuiTablePagination-select.MuiSelect-select': {
