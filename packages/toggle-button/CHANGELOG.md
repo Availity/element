@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.7](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.6...@availity/mui-toggle-button@0.1.7) (2023-11-21)
+
 ## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.5...@availity/mui-toggle-button@0.1.6) (2023-11-07)
 
 ## [0.1.5](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.4...@availity/mui-toggle-button@0.1.5) (2023-10-06)

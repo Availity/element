@@ -1,11 +1,18 @@
 import { forwardRef } from 'react';
-import { Box, FormLabel as MuiFormLabel, FormLabelProps as MuiFormLabelProps } from '@mui/material';
+import { Box, FormLabel as MuiFormLabel, FormLabelProps as MuiFormLabelProps, styled } from '@mui/material';
 import { FieldHelpIcon } from './FieldHelpIcon';
 
 export type FormLabelProps = {
   /** Adds `FieldHelpIcon` next to the label (should not be within label for accessibility) */
   helpTopicId?: string;
 } & MuiFormLabelProps;
+
+// Form Label styles moved up to wrapper to include field level help
+const Wrapper = styled(Box, {
+  name: 'MuiFormLabel',
+  slot: 'Wrapper',
+  overridesResolver: (props, styles) => styles.wrapper,
+})({});
 
 // As long as field help is available on label, should not have any transforms/animations
 // InputLabel styles take precedence in theme when used in textfield with identical classes
@@ -22,9 +29,9 @@ export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>((props, re
   const labelId = id || (rest.htmlFor ? `${rest.htmlFor}-label` : undefined);
 
   return (
-    <Box display="flex" flexDirection="row" sx={sx}>
+    <Wrapper className="MuiFormLabel-wrapper" sx={sx}>
       <MuiFormLabel id={labelId} sx={{ ...StyleOverrides }} {...rest} ref={ref} />
       {helpTopicId ? <FieldHelpIcon helpTopicId={helpTopicId} labelId={labelId} sx={{ px: 0.5 }} /> : null}
-    </Box>
+    </Wrapper>
   );
 });

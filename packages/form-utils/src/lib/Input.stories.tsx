@@ -7,11 +7,14 @@ const meta: Meta<typeof Input> = {
   title: 'Components/FormUtils/Input',
   component: Input,
   tags: ['autodocs'],
+  args: {
+    size: 'small',
+  },
 };
 
 export default meta;
 
 export const _Input: StoryObj<typeof Input> = {
-  render: (args: InputProps) => <Input {...args} />,
+  render: (args: InputProps) => <Input aria-label="Example Input" {...args} />,
   args: {},
 };

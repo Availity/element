@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.12.1](https://github.com/Availity/element/compare/@availity/design-tokens@0.12.0...@availity/design-tokens@0.12.1) (2023-11-27)
+
+### Bug Fixes
+
+- **design-tokens:** fix legacy link color ([2515f3d](https://github.com/Availity/element/commit/2515f3d342977e97a79250d412f4e3c4e459f137))
+
 ## [0.12.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.11.1...@availity/design-tokens@0.12.0) (2023-11-08)
 
 ### Features

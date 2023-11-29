@@ -1,16 +1,11 @@
-import { forwardRef } from 'react';
 import { TextField, TextFieldProps } from '@availity/mui-textfield';
 import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } from '@mui/x-date-pickers/DatePicker';
 import type { Dayjs } from 'dayjs';
 
 export type DatepickerProps = {
   value: Dayjs | string | null;
-  name?: string;
-  label?: React.ReactNode;
-  size?: 'small' | 'medium';
-  helperText?: string;
-  helpTopicId?: string;
-  InputProps?: TextFieldProps;
+  /** Props applied to the `TextField` component */
+  FieldProps?: TextFieldProps;
 } & Omit<
   MuiDatePickerProps<Dayjs, Dayjs>,
   | 'components'
@@ -34,20 +29,17 @@ export type DatepickerProps = {
   | 'value'
 >;
 
-export const Datepicker = forwardRef<HTMLDivElement, DatepickerProps>(
-  ({ size, helperText, helpTopicId, ...props }, ref): JSX.Element => {
-    return (
-      <MuiDatePicker
-        ref={ref}
-        {...props}
-        renderInput={(params) => {
-          if (params.inputProps) {
-            params.inputProps.placeholder = 'MM/DD/YYYY';
-          }
+export const Datepicker = ({ FieldProps, ...props }: DatepickerProps): JSX.Element => {
+  return (
+    <MuiDatePicker
+      {...props}
+      renderInput={(params) => {
+        if (params.inputProps) {
+          params.inputProps.placeholder = 'MM/DD/YYYY';
+        }
 
-          return <TextField helperText={helperText} helpTopicId={helpTopicId} {...params} size={size} />;
-        }}
-      />
-    );
-  }
-);
+        return <TextField {...params} {...FieldProps} />;
+      }}
+    />
+  );
+};

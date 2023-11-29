@@ -4,6 +4,7 @@ import { Typography } from '@availity/mui-typography';
 import { Breadcrumbs, BreadcrumbsProps } from '@availity/mui-breadcrumbs';
 import { Link } from '@availity/mui-link';
 import { Button, ButtonProps } from '@availity/mui-button';
+import { Feedback } from '@availity/mui-feedback';
 
 export interface ButtonsProps extends Omit<ButtonProps, 'size' | 'height' | 'color'> {
   key: string;
@@ -12,11 +13,18 @@ export interface ButtonsProps extends Omit<ButtonProps, 'size' | 'height' | 'col
 export interface PageHeaderProps {
   breadcrumbs: BreadcrumbsProps;
   buttons?: ButtonsProps[];
+  feedback?: boolean;
   headerText: string;
   helpLink?: string;
 }
 
-export const PageHeader = ({ breadcrumbs, buttons, headerText, helpLink }: PageHeaderProps): JSX.Element => {
+export const PageHeader = ({
+  breadcrumbs,
+  buttons,
+  feedback = false,
+  headerText,
+  helpLink,
+}: PageHeaderProps): JSX.Element => {
   return (
     <Grid component={Container} container direction="column" marginTop="1rem" marginBottom="1.25rem">
       {breadcrumbs || helpLink ? (
@@ -40,15 +48,20 @@ export const PageHeader = ({ breadcrumbs, buttons, headerText, helpLink }: PageH
         <Grid item>
           <Typography variant="h1" children={headerText} />
         </Grid>
-        {buttons && buttons.length > 0 && (
-          <Grid item container width="auto">
-            {buttons?.map((buttonProps) => (
+        <Grid item container width="auto">
+          {buttons &&
+            buttons.length > 0 &&
+            buttons?.map((buttonProps) => (
               <Grid item marginLeft={2} height="100%">
                 <Button {...buttonProps} size="large" color="secondary" />
               </Grid>
             ))}
-          </Grid>
-        )}
+          {feedback ? (
+            <Grid item marginLeft={2} height="100%">
+              <Feedback appName={headerText} />
+            </Grid>
+          ) : null}
+        </Grid>
       </Grid>
       <Divider />
     </Grid>

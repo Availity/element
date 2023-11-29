@@ -6,8 +6,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-layout` updated to version `0.1.3`
-* `mui-icon` updated to version `0.7.3`
+- `mui-layout` updated to version `0.1.3`
+- `mui-icon` updated to version `0.7.3`
+
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-button@0.4.5...@availity/mui-button@0.5.0) (2023-11-08)
 
 ### Features

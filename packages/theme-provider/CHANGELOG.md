@@ -2,11 +2,36 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.8](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.7...@availity/theme-provider@0.4.8) (2023-11-28)
+
+### Dependency Updates
+
+- `theme` updated to version `0.29.0`
+
+## [0.4.7](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.6...@availity/theme-provider@0.4.7) (2023-11-27)
+
+### Dependency Updates
+
+- `theme` updated to version `0.28.1`
+
+## [0.4.6](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.5...@availity/theme-provider@0.4.6) (2023-11-22)
+
+### Dependency Updates
+
+- `theme` updated to version `0.28.0`
+
+## [0.4.5](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.4...@availity/theme-provider@0.4.5) (2023-11-21)
+
+### Dependency Updates
+
+- `theme` updated to version `0.27.0`
+
 ## [0.4.4](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.3...@availity/theme-provider@0.4.4) (2023-11-16)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.26.0`
+- `theme` updated to version `0.26.0`
+
 ## [0.4.3](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.2...@availity/theme-provider@0.4.3) (2023-11-14)
 
 ### Dependency Updates

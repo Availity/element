@@ -1,8 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box, Button, TablePagination as MuiTablePagination } from '@mui/material';
-import { Table, TableFooter, TableRow, TablePagination, TablePaginationProps, TableCell } from '..';
+import { Table, TableFooter, TableRow, TablePagination, TablePaginationProps } from '..';
 
 const meta: Meta<typeof TablePagination> = {
   title: 'Components/Table/TablePagination',
@@ -16,6 +15,12 @@ const meta: Meta<typeof TablePagination> = {
     rowsPerPageOptions: [5, 10, 25, { value: -1, label: 'all' }],
     onPageChange: () => null,
   },
+  parameters: {
+    controls: {
+      // storybook picks up addition props from TableCell base component
+      exclude: ['align', 'padding', 'sortDirection', 'scope', 'size', 'variant'],
+    },
+  },
 };
 
 export default meta;
@@ -26,7 +31,7 @@ export const _TablePagination: StoryObj<typeof TablePagination> = {
 
 export const _AsPartOfTable: StoryObj<typeof TablePagination> = {
   render: (args: TablePaginationProps) => (
-    <Table>
+    <Table role="presentation">
       <TableFooter>
         <TableRow>
           <TablePagination {...args} />

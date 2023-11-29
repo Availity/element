@@ -6,7 +6,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-icon` updated to version `0.7.3`
+- `mui-icon` updated to version `0.7.3`
+
 ## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-pagination@0.2.2...@availity/mui-pagination@0.2.3) (2023-11-08)
 
 ### Dependency Updates

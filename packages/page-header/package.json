@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-page-header",
-  "version": "0.1.7",
+  "version": "0.2.5",
   "description": "Availity MUI PageHeader Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -54,5 +54,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@availity/mui-feedback": "workspace:^"
   }
 }

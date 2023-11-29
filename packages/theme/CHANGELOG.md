@@ -2,12 +2,35 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.26.0](https://github.com/Availity/element/compare/@availity/theme@0.25.1...@availity/theme@0.26.0) (2023-11-16)
-
+## [0.29.0](https://github.com/Availity/element/compare/@availity/theme@0.28.1...@availity/theme@0.29.0) (2023-11-28)
 
 ### Features
 
-* **mui-table:** add table components ([53dfe7e](https://github.com/Availity/element/commit/53dfe7e7d6282cb36a12b7114597d1b230d1ccdb))
+- **theme:** light theme autocomplete styles ([66d9645](https://github.com/Availity/element/commit/66d9645673d7054d77dbaabbbc9ba77b78aa5a52))
+
+## [0.28.1](https://github.com/Availity/element/compare/@availity/theme@0.28.0...@availity/theme@0.28.1) (2023-11-27)
+
+### Dependency Updates
+
+- `design-tokens` updated to version `0.12.1`
+
+## [0.28.0](https://github.com/Availity/element/compare/@availity/theme@0.27.0...@availity/theme@0.28.0) (2023-11-22)
+
+### Features
+
+- **theme:** legacy autocomplete styles ([afce32e](https://github.com/Availity/element/commit/afce32e8f0c3d620bbc94ec788499e53af5c68bd))
+
+## [0.27.0](https://github.com/Availity/element/compare/@availity/theme@0.26.0...@availity/theme@0.27.0) (2023-11-21)
+
+### Features
+
+- **mui-feedback:** initial commit ([2362d7f](https://github.com/Availity/element/commit/2362d7f892274f6260d4814fd8b19b85d8e4fe70))
+
+## [0.26.0](https://github.com/Availity/element/compare/@availity/theme@0.25.1...@availity/theme@0.26.0) (2023-11-16)
+
+### Features
+
+- **mui-table:** add table components ([53dfe7e](https://github.com/Availity/element/commit/53dfe7e7d6282cb36a12b7114597d1b230d1ccdb))
 
 ## [0.25.1](https://github.com/Availity/element/compare/@availity/theme@0.25.0...@availity/theme@0.25.1) (2023-11-14)
 

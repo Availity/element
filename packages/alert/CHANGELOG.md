@@ -6,8 +6,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-button` updated to version `0.5.1`
-* `mui-icon` updated to version `0.7.3`
+- `mui-button` updated to version `0.5.1`
+- `mui-icon` updated to version `0.7.3`
+
 ## [0.5.4](https://github.com/Availity/element/compare/@availity/mui-alert@0.5.3...@availity/mui-alert@0.5.4) (2023-11-08)
 
 ### Dependency Updates
