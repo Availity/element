@@ -655,11 +655,6 @@ export const lightTheme = {
           marginRight: '.25rem',
           marginLeft: '-.15rem',
         },
-        children: {
-          '.MuiFormLabel-asterisk': {
-            display: 'none',
-          },
-        },
       },
     },
     MuiIconButton: {

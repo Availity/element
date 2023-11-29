@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import {
   Autocomplete as MuiAutocomplete,
   AutocompleteProps as MuiAutocompleteProps,
@@ -15,23 +16,29 @@ export interface AutocompleteProps<
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']
 > extends Omit<MuiAutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'renderInput'> {
   FieldProps?: TextFieldProps;
+  name?: string;
 }
 
-export const Autocomplete = <
-  T,
-  Multiple extends boolean | undefined = false,
-  DisableClearable extends boolean | undefined = false,
-  FreeSolo extends boolean | undefined = false,
-  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']
->({
-  FieldProps,
-  ...props
-}: AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>): JSX.Element => {
-  return (
-    <MuiAutocomplete
-      renderInput={(params: AutocompleteRenderInputParams) => <TextField {...FieldProps} {...params} />}
-      popupIcon={<SelectPropOverrides.IconComponent />}
-      {...props}
-    />
-  );
-};
+export const Autocomplete = forwardRef(
+  <
+    T,
+    Multiple extends boolean | undefined = false,
+    DisableClearable extends boolean | undefined = false,
+    FreeSolo extends boolean | undefined = false,
+    ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']
+  >(
+    { FieldProps, ...props }: AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>,
+    ref: React.Ref<unknown>
+  ): JSX.Element => {
+    return (
+      <MuiAutocomplete
+        ref={ref}
+        renderInput={(params: AutocompleteRenderInputParams) => (
+          <TextField {...FieldProps} {...params} name={props.name} />
+        )}
+        popupIcon={<SelectPropOverrides.IconComponent />}
+        {...props}
+      />
+    );
+  }
+);
