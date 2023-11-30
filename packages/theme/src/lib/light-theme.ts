@@ -1094,7 +1094,7 @@ export const lightTheme = {
         root: {
           '.MuiTablePagination-toolbar': {
             // overcome breakpoint padding presets
-            padding: '0 .5rem',
+            padding: '0 .5rem 0 1rem',
           },
         },
         actions: {
@@ -1153,7 +1153,7 @@ export const lightTheme = {
         icon: {
           opacity: 1,
           transition: 'none',
-          fontSize: '16px',
+          fontSize: '14px',
           color: tokens.colorTextSecondary,
           marginRight: '0px',
         },
