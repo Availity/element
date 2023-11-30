@@ -455,6 +455,11 @@ export const lightTheme = {
           textTransform: 'none',
           lineHeight: '1.375rem',
           fontSize: '.875rem',
+          '.MuiButton-startIcon, .MuiButton-endIcon': {
+            '.MuiSvgIcon-fontSizeInherit': {
+              fontSize: 'inherit',
+            },
+          },
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
