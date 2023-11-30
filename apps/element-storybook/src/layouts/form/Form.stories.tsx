@@ -338,7 +338,7 @@ export const _SectionedForm: StoryObj = {
                   <SectionText marginBottom="1.25rem" />
                   <AsteriskMessage marginBottom="1.25rem" />
                 </Grid>
-                <Grid lg={4} marginBottom="1.25rem">
+                <Grid lg={4} paddingRight=".5rem" marginBottom="1.25rem">
                   <Controller
                     control={control}
                     name="dropdown1"
