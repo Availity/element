@@ -447,6 +447,7 @@ export const lightTheme = {
         disableRipple: true, // No more ripple, on the whole application 💣!
         disableElevation: true,
         variant: 'contained',
+        size: 'large',
       },
       styleOverrides: {
         root: {
@@ -455,6 +456,11 @@ export const lightTheme = {
           textTransform: 'none',
           lineHeight: '1.375rem',
           fontSize: '.875rem',
+          '.MuiButton-startIcon, .MuiButton-endIcon': {
+            '.MuiSvgIcon-fontSizeInherit': {
+              fontSize: 'inherit',
+            },
+          },
         },
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
