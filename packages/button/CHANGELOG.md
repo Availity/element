@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-button@0.5.1...@availity/mui-button@0.6.0) (2023-12-04)
+
+
+### Features
+
+* **mui-button:** set the default size to large ([dd37957](https://github.com/Availity/element/commit/dd379571d15e43be3b37e00d00553f9f5b6b5b3a))
+
 ## [0.5.1](https://github.com/Availity/element/compare/@availity/mui-button@0.5.0...@availity/mui-button@0.5.1) (2023-11-16)
 
 ### Dependency Updates
