@@ -12,6 +12,9 @@ export type ButtonProps = {
   /** The color of the component.
    * @default secondary */
   color?: 'primary' | 'secondary' | 'tertiary';
+  /** The size of the component.
+   * @default large */
+  size?: 'small' | 'medium' | 'large';
 } & Omit<
   MUIButtonProps,
   | 'color'
@@ -23,6 +26,7 @@ export type ButtonProps = {
   | 'centerRipple'
   | 'disableRipple'
   | 'focusRipple'
+  | 'size'
   | 'TouchRippleProps'
   | 'touchRippleRef'
 >;

@@ -447,6 +447,7 @@ export const lightTheme = {
         disableRipple: true, // No more ripple, on the whole application 💣!
         disableElevation: true,
         variant: 'contained',
+        size: 'large',
       },
       styleOverrides: {
         root: {
