@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.30.0](https://github.com/Availity/element/compare/@availity/theme@0.29.1...@availity/theme@0.30.0) (2023-12-04)
+
+
+### Features
+
+* **mui-button:** set the default size to large ([dd37957](https://github.com/Availity/element/commit/dd379571d15e43be3b37e00d00553f9f5b6b5b3a))
+* **theme:** icon inherit button font size in button ([1aa6b34](https://github.com/Availity/element/commit/1aa6b346bae836fa059623b58729a05ac6a493bb))
+
 ## [0.29.1](https://github.com/Availity/element/compare/@availity/theme@0.29.0...@availity/theme@0.29.1) (2023-11-30)
 
 ## [0.29.0](https://github.com/Availity/element/compare/@availity/theme@0.28.1...@availity/theme@0.29.0) (2023-11-28)
