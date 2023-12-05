@@ -7,13 +7,15 @@ import { TextField } from '@availity/mui-textfield';
 import { Autocomplete } from '@availity/mui-autocomplete';
 import { Datepicker } from '@availity/mui-datepicker';
 import { FormControlLabel, FormLabel } from '@availity/mui-form-utils';
-import { Button } from '@availity/mui-button';
+import { Button, IconButton } from '@availity/mui-button';
+import { CloseIcon } from '@availity/mui-icon';
 import { PageHeader } from '@availity/mui-page-header';
 import { Paper } from '@availity/mui-paper';
 import { Typography } from '@availity/mui-typography';
 import { Grid, Container } from '@availity/mui-layout';
 import { SearchIcon } from '@availity/mui-icon';
 import { Divider } from '@availity/mui-divider';
+import { Stack } from '@availity/mui-layout';
 import dayjs from 'dayjs';
 
 const meta: Meta = {
@@ -71,10 +73,14 @@ export const _SimpleForm: StoryObj = {
             <Typography component="h1" variant="h2" sx={{ marginBottom: '.5rem' }}>
               Simple Form
             </Typography>
-            <SectionText marginBottom="1.5rem" />
+            <Grid container>
+              <Grid xs={12} sm={6}>
+                <SectionText marginBottom="1.5rem" />
+              </Grid>
+            </Grid>
             <AsteriskMessage marginBottom="1.5rem" />
             <Grid container marginBottom="1.5rem">
-              <Grid xs={9}>
+              <Grid xs={12} sm={6}>
                 <TextField
                   label="Example"
                   fullWidth
@@ -90,7 +96,7 @@ export const _SimpleForm: StoryObj = {
               </Grid>
             </Grid>
             <Grid container marginBottom="1.5rem">
-              <Grid xs={9}>
+              <Grid xs={12} sm={6}>
                 <Controller
                   control={control}
                   name="dropdown"
@@ -174,9 +180,14 @@ export const _CompactForm: StoryObj = {
         <Grid container justifyContent="center">
           <Paper sx={{ padding: '1rem', maxWidth: '400px' }}>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <Typography component="h1" variant="h2" sx={{ marginBottom: '1rem' }}>
-                Filters
-              </Typography>
+              <Stack direction="row" alignItems="center" justifyContent="space-between" marginBottom="1rem">
+                <Typography component="h1" variant="h5">
+                  Filters
+                </Typography>
+                <IconButton title="close" size="small">
+                  <CloseIcon />
+                </IconButton>
+              </Stack>
               <Grid container marginBottom="1rem">
                 <Grid xs={12}>
                   <Controller
@@ -205,7 +216,7 @@ export const _CompactForm: StoryObj = {
                   />
                 </Grid>
               </Grid>
-              <Grid container spacing={1} marginBottom="1rem">
+              <Grid container spacing={2} marginBottom="1rem">
                 <Grid xs={6}>
                   <Controller
                     control={control}
@@ -239,7 +250,7 @@ export const _CompactForm: StoryObj = {
                   />
                 </Grid>
               </Grid>
-              <Grid container marginBottom="1rem">
+              <Grid container marginBottom="2rem">
                 <Grid xs={12}>
                   <Controller
                     control={control}
@@ -338,37 +349,40 @@ export const _SectionedForm: StoryObj = {
                   <SectionText marginBottom="1.25rem" />
                   <AsteriskMessage marginBottom="1.25rem" />
                 </Grid>
-                <Grid lg={4} paddingRight=".5rem" marginBottom="1.25rem">
-                  <Controller
-                    control={control}
-                    name="dropdown1"
-                    rules={{ required: 'This field is required' }}
-                    render={({ field: { onChange, value, onBlur } }) => {
-                      return (
-                        <Autocomplete
-                          onChange={(event, value, reason) => {
-                            if (reason === 'clear') {
-                              onChange(null);
-                            }
-                            onChange(value);
-                          }}
-                          onBlur={onBlur}
-                          FieldProps={{
-                            label: 'Dropdown',
-                            placeholder: 'Value',
-                            required: true,
-                            error: !!errors.dropdown1?.message,
-                            helperText: errors.dropdown1?.message,
-                          }}
-                          options={dropdownOptions}
-                          value={value || null}
-                        />
-                      );
-                    }}
-                  />
+                <Grid container spacing={{ md: 1.5 }}>
+                  <Grid xs={12} md={4}>
+                    <Controller
+                      control={control}
+                      name="dropdown1"
+                      rules={{ required: 'This field is required' }}
+                      render={({ field: { onChange, value, onBlur } }) => {
+                        return (
+                          <Autocomplete
+                            onChange={(event, value, reason) => {
+                              if (reason === 'clear') {
+                                onChange(null);
+                              }
+                              onChange(value);
+                            }}
+                            onBlur={onBlur}
+                            FieldProps={{
+                              label: 'Dropdown',
+                              placeholder: 'Value',
+                              required: true,
+                              error: !!errors.dropdown1?.message,
+                              helperText: errors.dropdown1?.message,
+                            }}
+                            options={dropdownOptions}
+                            value={value || null}
+                            sx={{ marginBottom: '1.25rem', minHeight: '0px' }}
+                          />
+                        );
+                      }}
+                    />
+                  </Grid>
                 </Grid>
                 <Grid container spacing={1.5} marginBottom="1.25rem">
-                  <Grid lg={4}>
+                  <Grid xs={12} sm={6} md={4} lg={4}>
                     <TextField
                       label="Text Field"
                       fullWidth
@@ -379,7 +393,7 @@ export const _SectionedForm: StoryObj = {
                       placeholder="Value"
                     />
                   </Grid>
-                  <Grid lg={8}>
+                  <Grid xs={12} sm={6} md={8} lg={8}>
                     <Controller
                       control={control}
                       name="dropdown2"
@@ -403,14 +417,14 @@ export const _SectionedForm: StoryObj = {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Typography marginY="1.25rem" variant="h3">
+                <Typography marginY="1.25rem" variant="h4">
                   Subsection Header
                 </Typography>
                 <Grid container spacing={1.5} marginBottom="1.25rem">
-                  <Grid lg={4}>
+                  <Grid xs={12} sm={4}>
                     <TextField label="Text Field" fullWidth {...register('field2')} placeholder="Value" />
                   </Grid>
-                  <Grid lg={4}>
+                  <Grid xs={12} sm={4}>
                     <Controller
                       control={control}
                       name="dropdown3"
@@ -432,7 +446,7 @@ export const _SectionedForm: StoryObj = {
                       }}
                     />
                   </Grid>
-                  <Grid lg={4}>
+                  <Grid xs={12} sm={4}>
                     <Controller
                       control={control}
                       name="dropdown4"
@@ -455,8 +469,8 @@ export const _SectionedForm: StoryObj = {
                     />
                   </Grid>
                 </Grid>
-                <Grid container spacing={2} marginBottom="1.25rem">
-                  <Grid lg={4}>
+                <Grid container spacing={2} marginBottom="2rem">
+                  <Grid xs={12} sm={4}>
                     <Controller
                       control={control}
                       name="dropdown5"
@@ -479,6 +493,9 @@ export const _SectionedForm: StoryObj = {
                     />
                   </Grid>
                 </Grid>
+                <Grid container>
+                  <Button color="secondary">Secondary Action Button</Button>
+                </Grid>
               </Grid>
             </Paper>
             <Paper sx={{ padding: '1.5rem' }}>
@@ -491,7 +508,7 @@ export const _SectionedForm: StoryObj = {
                   <AsteriskMessage marginBottom="1.25rem" />
                 </Grid>
                 <Grid container>
-                  <Grid lg={12} marginBottom="1.25rem">
+                  <Grid xs={12} marginBottom="1.25rem">
                     <TextField
                       label="Text Field"
                       fullWidth
@@ -525,7 +542,7 @@ export const _SectionedForm: StoryObj = {
                   </Grid>
                 </Grid>
                 <Grid container spacing={1.5} marginBottom="1.25rem">
-                  <Grid lg={6}>
+                  <Grid xs={12} sm={6}>
                     <TextField
                       label="Text Field"
                       fullWidth
@@ -536,7 +553,7 @@ export const _SectionedForm: StoryObj = {
                       placeholder="Value"
                     />
                   </Grid>
-                  <Grid lg={6}>
+                  <Grid xs={12} sm={6}>
                     <Controller
                       control={control}
                       name="dropdown6"
