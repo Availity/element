@@ -1026,9 +1026,9 @@ export const legacyTheme = {
     },
     MuiPopover: {
       defaultProps: {
-        elevation: 0,
+        // elevation: 0,
         PaperProps: {
-          variant: 'elevation',
+          variant: 'outlined',
         },
       },
     },
