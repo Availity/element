@@ -33,7 +33,7 @@ import { Button, ThemeProvider } from '@availity/element';
 Make sure all of the components you use are inside the `ThemeProvider` component. We recommend placing it in your root `index.{js|tsx}` file.
 
 ```jsx
-import { ThemePovider } from '@availity/element';
+import { ThemeProvider } from '@availity/element';
 
 const App = () => {
   return <ThemeProvider>{/* Application code. Most likely a router. */}</ThemeProvider>;
