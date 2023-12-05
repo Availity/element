@@ -74,13 +74,13 @@ export const _SimpleForm: StoryObj = {
               Simple Form
             </Typography>
             <Grid container>
-              <Grid xs={12} sm={6}>
+              <Grid xs={12} md={6}>
                 <SectionText marginBottom="1.5rem" />
               </Grid>
+              <AsteriskMessage marginBottom="1.5rem" />
             </Grid>
-            <AsteriskMessage marginBottom="1.5rem" />
-            <Grid container marginBottom="1.5rem">
-              <Grid xs={12} sm={6}>
+            <Grid container marginBottom="1rem">
+              <Grid xs={12} md={6}>
                 <TextField
                   label="Example"
                   fullWidth
@@ -95,8 +95,8 @@ export const _SimpleForm: StoryObj = {
                 />
               </Grid>
             </Grid>
-            <Grid container marginBottom="1.5rem">
-              <Grid xs={12} sm={6}>
+            <Grid container marginBottom="2rem">
+              <Grid xs={12} md={6}>
                 <Controller
                   control={control}
                   name="dropdown"
@@ -216,7 +216,7 @@ export const _CompactForm: StoryObj = {
                   />
                 </Grid>
               </Grid>
-              <Grid container spacing={2} marginBottom="1rem">
+              <Grid container columnSpacing={2} marginBottom="1rem">
                 <Grid xs={6}>
                   <Controller
                     control={control}
