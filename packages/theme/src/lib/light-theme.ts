@@ -991,6 +991,13 @@ export const lightTheme = {
         },
       },
     },
+    MuiPopover: {
+      defaultProps: {
+        PaperProps: {
+          variant: 'elevation',
+        },
+      },
+    },
     MuiSelect: {
       styleOverrides: {
         avExpandIcon: {

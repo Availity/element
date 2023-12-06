@@ -1024,6 +1024,13 @@ export const legacyTheme = {
         },
       },
     },
+    MuiPopover: {
+      defaultProps: {
+        PaperProps: {
+          variant: 'outlined',
+        },
+      },
+    },
     MuiSelect: {
       styleOverrides: {
         root: {
