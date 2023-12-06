@@ -878,6 +878,7 @@ export const legacyTheme = {
             },
             '.MuiSelect-avEndAdornmentDivider': {
               borderColor: tokens.colorBackgroundBorder,
+              width: 'auto'
             },
             '.MuiChip-root': {
               lineHeight: '1.125rem',
