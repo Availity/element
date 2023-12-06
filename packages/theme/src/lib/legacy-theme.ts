@@ -171,7 +171,7 @@ export const legacyTheme = {
       sidenav: tokens.colorBackgroundSidenav,
       accent: tokens.colorBackgroundAccent,
       border: tokens.colorBackgroundBorder,
-      default: tokens.colorGrey100,
+      default: tokens.colorGrey50,
     },
     action: {
       active: tokens.colorActionActive,
