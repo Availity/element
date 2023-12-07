@@ -75,9 +75,9 @@ export const _SimpleForm: StoryObj = {
             </Typography>
             <Grid container>
               <Grid xs={12} md={6}>
-                <SectionText marginBottom="1.5rem" />
+                <SectionText marginBottom="1rem" />
+                <AsteriskMessage marginBottom="1rem" />
               </Grid>
-              <AsteriskMessage marginBottom="1.5rem" />
             </Grid>
             <Grid container marginBottom="1rem">
               <Grid xs={12} md={6}>
@@ -345,11 +345,11 @@ export const _SectionedForm: StoryObj = {
                 <Typography variant="h2" marginBottom=".5rem">
                   Section Header
                 </Typography>
-                <Grid lg={6}>
-                  <SectionText marginBottom="1.25rem" />
-                  <AsteriskMessage marginBottom="1.25rem" />
+                <Grid md={6}>
+                  <SectionText marginBottom="1rem" />
+                  <AsteriskMessage marginBottom="1rem" />
                 </Grid>
-                <Grid container spacing={{ md: 1.5 }}>
+                <Grid container spacing={{ md: 3 }}>
                   <Grid xs={12} md={4}>
                     <Controller
                       control={control}
@@ -381,7 +381,7 @@ export const _SectionedForm: StoryObj = {
                     />
                   </Grid>
                 </Grid>
-                <Grid container spacing={1.5} marginBottom="1.25rem">
+                <Grid container spacing={{ sm: 2, md: 3 }}>
                   <Grid xs={12} sm={6} md={4} lg={4}>
                     <TextField
                       label="Text Field"
@@ -391,6 +391,7 @@ export const _SectionedForm: StoryObj = {
                       error={!!errors.field1?.message}
                       helperText={errors.field1?.message || 'Help text'}
                       placeholder="Value"
+                      sx={{ marginBottom: '1.25rem' }}
                     />
                   </Grid>
                   <Grid xs={12} sm={6} md={8} lg={8}>
@@ -407,7 +408,7 @@ export const _SectionedForm: StoryObj = {
                               onChange(value);
                             }}
                             onBlur={onBlur}
-                            FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
+                            FieldProps={{ label: 'Dropdown', placeholder: 'Value', sx: { marginBottom: '1.25rem' } }}
                             options={dropdownOptions}
                             value={value || null}
                           />
@@ -420,11 +421,17 @@ export const _SectionedForm: StoryObj = {
                 <Typography marginY="1.25rem" variant="h4">
                   Subsection Header
                 </Typography>
-                <Grid container spacing={1.5} marginBottom="1.25rem">
-                  <Grid xs={12} sm={4}>
-                    <TextField label="Text Field" fullWidth {...register('field2')} placeholder="Value" />
+                <Grid container columnSpacing={{ sm: 2, md: 3 }}>
+                  <Grid xs={12} sm={6} md={4}>
+                    <TextField
+                      label="Text Field"
+                      fullWidth
+                      {...register('field2')}
+                      placeholder="Value"
+                      sx={{ marginBottom: '1.25rem' }}
+                    />
                   </Grid>
-                  <Grid xs={12} sm={4}>
+                  <Grid xs={12} sm={6} md={4}>
                     <Controller
                       control={control}
                       name="dropdown3"
@@ -438,7 +445,7 @@ export const _SectionedForm: StoryObj = {
                               onChange(value);
                             }}
                             onBlur={onBlur}
-                            FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
+                            FieldProps={{ label: 'Dropdown', placeholder: 'Value', sx: { marginBottom: '1.25rem' } }}
                             options={dropdownOptions}
                             value={value || null}
                           />
@@ -446,7 +453,7 @@ export const _SectionedForm: StoryObj = {
                       }}
                     />
                   </Grid>
-                  <Grid xs={12} sm={4}>
+                  <Grid xs={12} sm={6} md={4}>
                     <Controller
                       control={control}
                       name="dropdown4"
@@ -460,7 +467,7 @@ export const _SectionedForm: StoryObj = {
                               onChange(value);
                             }}
                             onBlur={onBlur}
-                            FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
+                            FieldProps={{ label: 'Dropdown', placeholder: 'Value', sx: { marginBottom: '1.25rem' } }}
                             options={dropdownOptions}
                             value={value || null}
                           />
@@ -468,9 +475,7 @@ export const _SectionedForm: StoryObj = {
                       }}
                     />
                   </Grid>
-                </Grid>
-                <Grid container spacing={2} marginBottom="2rem">
-                  <Grid xs={12} sm={4}>
+                  <Grid xs={12} sm={6} md={4}>
                     <Controller
                       control={control}
                       name="dropdown5"
@@ -484,7 +489,7 @@ export const _SectionedForm: StoryObj = {
                               onChange(value);
                             }}
                             onBlur={onBlur}
-                            FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
+                            FieldProps={{ label: 'Dropdown', placeholder: 'Value', sx: { marginBottom: '1.25rem' } }}
                             options={dropdownOptions}
                             value={value || null}
                           />
@@ -494,7 +499,9 @@ export const _SectionedForm: StoryObj = {
                   </Grid>
                 </Grid>
                 <Grid container>
-                  <Button color="secondary">Secondary Action Button</Button>
+                  <Button color="secondary" sx={{ marginTop: '.75rem' }}>
+                    Secondary Action Button
+                  </Button>
                 </Grid>
               </Grid>
             </Paper>
@@ -504,8 +511,8 @@ export const _SectionedForm: StoryObj = {
                   Section Header
                 </Typography>
                 <Grid lg={6}>
-                  <SectionText marginBottom="1.25rem" />
-                  <AsteriskMessage marginBottom="1.25rem" />
+                  <SectionText marginBottom="1rem" />
+                  <AsteriskMessage marginBottom="1rem" />
                 </Grid>
                 <Grid container>
                   <Grid xs={12} marginBottom="1.25rem">
@@ -527,21 +534,25 @@ export const _SectionedForm: StoryObj = {
                     />
                   </Grid>
                 </Grid>
-                <Grid container spacing={1.5} marginBottom="1.25rem">
+                <Grid container marginBottom="1rem">
                   <Grid lg={12}>
                     <FormControl error={!!errors.radio}>
                       <FormLabel id="radio-group">Radio Group</FormLabel>
                       <RadioGroup aria-labelledby="radio-group" defaultValue="3" {...register('radio')}>
                         <Grid container direction="row">
-                          <FormControlLabel control={<Radio />} value="1" label="Option 1" />
+                          <FormControlLabel
+                            control={<Radio />}
+                            value="1"
+                            label="Option 1"
+                            sx={{ marginRight: '16px' }}
+                          />
                           <FormControlLabel control={<Radio />} value="2" label="Option 2" />
-                          <FormControlLabel control={<Radio />} value="3" label="Option 3" />
                         </Grid>
                       </RadioGroup>
                     </FormControl>
                   </Grid>
                 </Grid>
-                <Grid container spacing={1.5} marginBottom="1.25rem">
+                <Grid container spacing={1.5} marginBottom="1.25rem" columnSpacing={{ sm: 2, md: 3 }}>
                   <Grid xs={12} sm={6}>
                     <TextField
                       label="Text Field"
