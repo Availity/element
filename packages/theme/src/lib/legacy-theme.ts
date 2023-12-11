@@ -628,11 +628,19 @@ export const legacyTheme = {
       },
     },
     MuiCardHeader: {
+      defaultProps: {
+        titleTypographyProps: {
+          variant: 'h5',
+        },
+        subtitleTypographyProps: {
+          variant: 'subtitle2',
+        },
+      },
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorGrey100,
           color: tokens.colorTextPrimary,
-          padding: '1.25rem',
+          padding: '.75rem 1.25rem',
           lineHeight: '24px',
           '.MuiCardHeader-title, .MuiCardHeader-subheader': {
             fontWeight: tokens.fontWeightsRegular,
@@ -878,7 +886,7 @@ export const legacyTheme = {
             },
             '.MuiSelect-avEndAdornmentDivider': {
               borderColor: tokens.colorBackgroundBorder,
-              width: 'auto'
+              width: 'auto',
             },
             '.MuiChip-root': {
               lineHeight: '1.125rem',
