@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.32.0](https://github.com/Availity/element/compare/@availity/element@0.31.11...@availity/element@0.32.0) (2023-12-12)
+
+### Dependency Updates
+
+* `mui-popper` updated to version `0.1.0`
+
+### Features
+
+* **mui-popper:** initial commit ([b70ee38](https://github.com/Availity/element/commit/b70ee382304605f43480c48dee5855aada32f267))
+
 ## [0.31.11](https://github.com/Availity/element/compare/@availity/element@0.31.10...@availity/element@0.31.11) (2023-12-07)
 
 ### Dependency Updates
