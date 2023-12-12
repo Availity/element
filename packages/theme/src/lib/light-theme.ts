@@ -584,9 +584,6 @@ export const lightTheme = {
         titleTypographyProps: {
           variant: 'h6',
         },
-        subtitleTypographyProps: {
-          variant: 'subtitle2',
-        },
       },
       styleOverrides: {
         root: {

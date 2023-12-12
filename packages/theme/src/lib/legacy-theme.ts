@@ -632,9 +632,6 @@ export const legacyTheme = {
         titleTypographyProps: {
           variant: 'h5',
         },
-        subtitleTypographyProps: {
-          variant: 'subtitle2',
-        },
       },
       styleOverrides: {
         root: {
