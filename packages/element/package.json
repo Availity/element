@@ -37,6 +37,7 @@
     "@availity/mui-pagination": "workspace:*",
     "@availity/mui-paper": "workspace:*",
     "@availity/mui-popover": "workspace:*",
+    "@availity/mui-popper": "workspace:*",
     "@availity/mui-progress": "workspace:*",
     "@availity/mui-table": "workspace:*",
     "@availity/mui-tabs": "workspace:*",
