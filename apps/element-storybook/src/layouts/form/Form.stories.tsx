@@ -220,20 +220,20 @@ export const _CompactForm: StoryObj = {
                 <Grid xs={6}>
                   <Controller
                     control={control}
-                    name="toDate"
+                    name="fromDate"
                     defaultValue={today}
                     render={({ field: { onChange, value, ref } }) => (
-                      <Datepicker label="To Date" value={value} onChange={onChange} ref={ref} />
+                      <Datepicker label="From Date" value={value} onChange={onChange} ref={ref} />
                     )}
                   />
                 </Grid>
                 <Grid xs={6}>
                   <Controller
                     control={control}
-                    name="fromDate"
+                    name="toDate"
                     defaultValue={today}
                     render={({ field: { onChange, value, ref } }) => (
-                      <Datepicker label="From Date" value={value} onChange={onChange} ref={ref} />
+                      <Datepicker label="To Date" value={value} onChange={onChange} ref={ref} />
                     )}
                   />
                 </Grid>
