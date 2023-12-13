@@ -21,6 +21,7 @@ export const Feedback = ({ analytics = avLogMessagesApi, appName }: FeedbackProp
 
   const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
+    setSent(false);
   };
 
   const handlePopoverClose = () => {
