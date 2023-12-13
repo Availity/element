@@ -261,8 +261,12 @@ export const lightTheme = {
     AvFeedbackContainer: {
       styleOverrides: {
         root: {
-          maxWidth: important('490px'),
+          maxWidth: '490px',
           padding: '16px',
+          '@media (min-width: 600px)': {
+            maxWidth: '490px',
+            padding: '16px',
+          },
         },
         smileButtons: {
           marginBottom: '16px',
