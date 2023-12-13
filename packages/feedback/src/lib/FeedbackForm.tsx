@@ -105,10 +105,10 @@ export const FeedbackForm = ({
     { Icon: FaceFrownIcon, label: "What don't you like?", value: 'frown' },
   ];
 
-  const getFeedbackLabel = () => {
-    const smile = watch('smileField');
+  const smileFieldValue = watch('smileField');
 
-    const option = options.find((option) => option.value === smile);
+  const getFeedbackLabel = () => {
+    const option = options.find((option) => option.value === smileFieldValue);
 
     return option?.label || 'What would you improve?';
   };
@@ -143,7 +143,7 @@ export const FeedbackForm = ({
             );
           }}
         />
-        {watch('smileField') && (
+        {smileFieldValue && (
           <TextField
             {...register('feedback', {
               required: 'This field is required',
@@ -171,13 +171,7 @@ export const FeedbackForm = ({
             </Button>
           </Grid>
           <Grid item xs={6}>
-            <LoadingButton
-              disabled={!watch('smileField')}
-              fullWidth
-              loading={loading}
-              type="submit"
-              variant="contained"
-            >
+            <LoadingButton disabled={!smileFieldValue} fullWidth loading={loading} type="submit" variant="contained">
               Send Feedback
             </LoadingButton>
           </Grid>
