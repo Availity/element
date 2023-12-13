@@ -143,25 +143,27 @@ export const FeedbackForm = ({
             );
           }}
         />
-        <TextField
-          {...register('feedback', {
-            required: 'This field is required',
-            maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
-          })}
-          fullWidth
-          multiline
-          minRows={3}
-          maxRows={3}
-          label={getFeedbackLabel()}
-          inputProps={{ 'aria-required': 'true' }}
-          InputLabelProps={{
-            component: FormLabel,
-            required: true,
-          }}
-          helperText={errors.feedback?.message || 'Max 200 characters'}
-          error={!!errors.feedback}
-          disabled={loading}
-        />
+        {watch('smileField') && (
+          <TextField
+            {...register('feedback', {
+              required: 'This field is required',
+              maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
+            })}
+            fullWidth
+            multiline
+            minRows={3}
+            maxRows={3}
+            label={getFeedbackLabel()}
+            inputProps={{ 'aria-required': 'true' }}
+            InputLabelProps={{
+              component: FormLabel,
+              required: true,
+            }}
+            helperText={errors.feedback?.message || 'Max 200 characters'}
+            error={!!errors.feedback}
+            disabled={loading}
+          />
+        )}
         <Grid container direction="row" marginTop="16px" spacing={1}>
           <Grid item xs={6}>
             <Button color="secondary" disabled={loading} fullWidth onClick={handleClose}>
