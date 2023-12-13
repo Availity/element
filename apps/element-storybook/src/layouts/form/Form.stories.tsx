@@ -331,9 +331,15 @@ export const _SectionedForm: StoryObj = {
       formState: { errors },
       control,
       reset,
+      getValues,
     } = useForm<SectionedFormInputs>();
 
-    const onSubmit: SubmitHandler<SectionedFormInputs> = (data) => console.log('Submit', data);
+    const [submitted, setSubmitted] = useState(false);
+
+    const onSubmit: SubmitHandler<SectionedFormInputs> = (data) => {
+      console.log('Submit', data);
+      setSubmitted(true);
+    };
 
     return (
       <>
@@ -418,7 +424,7 @@ export const _SectionedForm: StoryObj = {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Typography marginY="1.25rem" variant="h4">
+                <Typography marginY="1.25rem" variant="h4" component="h3">
                   Subsection Header
                 </Typography>
                 <Grid container columnSpacing={{ sm: 2, md: 3 }}>
@@ -595,6 +601,7 @@ export const _SectionedForm: StoryObj = {
                 color="secondary"
                 onClick={() => {
                   reset();
+                  setSubmitted(false);
                 }}
                 sx={{ marginRight: '.5rem' }}
               >
@@ -603,6 +610,12 @@ export const _SectionedForm: StoryObj = {
               <Button type="submit">Submit</Button>
             </Grid>
           </form>
+          {submitted && (
+            <Paper sx={{ padding: '1.5rem', marginTop: '1.5rem' }}>
+              <Typography variant="h2">Submitted Values</Typography>
+              <pre>{JSON.stringify(getValues(), null, 2)}</pre>
+            </Paper>
+          )}
         </Container>
       </>
     );
