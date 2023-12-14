@@ -14,16 +14,17 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.6.1`
+- `mui-form-utils` updated to version `0.6.1`
+
 ## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-textfield@0.3.3...@availity/mui-textfield@0.4.0) (2023-11-22)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.6.0`
+- `mui-form-utils` updated to version `0.6.0`
 
 ### Features
 
-* **mui-textfield:** swap required for aria-required ([0e3ced6](https://github.com/Availity/element/commit/0e3ced6c55b69edc2bfa5f27cb7aeb9abe616b6d))
+- **mui-textfield:** swap required for aria-required ([0e3ced6](https://github.com/Availity/element/commit/0e3ced6c55b69edc2bfa5f27cb7aeb9abe616b6d))
 
 ## [0.3.3](https://github.com/Availity/element/compare/@availity/mui-textfield@0.3.2...@availity/mui-textfield@0.3.3) (2023-11-16)
 

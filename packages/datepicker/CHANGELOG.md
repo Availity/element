@@ -4,10 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.1.0...@availity/mui-datepicker@0.2.0) (2023-11-28)
 
-
 ### Features
 
-* **mui-datepicker:** make props match autocomplete pattern ([93696f3](https://github.com/Availity/element/commit/93696f3a24828ed2ea3a313a3531b8c7bf195599))
+- **mui-datepicker:** make props match autocomplete pattern ([93696f3](https://github.com/Availity/element/commit/93696f3a24828ed2ea3a313a3531b8c7bf195599))
 
 ## 0.1.0 (2023-11-08)
 

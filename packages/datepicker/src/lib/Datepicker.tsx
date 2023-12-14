@@ -3,6 +3,7 @@ import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } fr
 import type { Dayjs } from 'dayjs';
 
 export type DatepickerProps = {
+  value: Dayjs | string | null;
   /** Props applied to the `TextField` component */
   FieldProps?: TextFieldProps;
 } & Omit<
@@ -25,6 +26,7 @@ export type DatepickerProps = {
   | 'toolbarPlaceholder'
   | 'toolbarTitle'
   | 'TransitionComponent'
+  | 'value'
 >;
 
 export const Datepicker = ({ FieldProps, ...props }: DatepickerProps): JSX.Element => {

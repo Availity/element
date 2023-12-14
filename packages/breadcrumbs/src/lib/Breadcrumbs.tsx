@@ -26,6 +26,15 @@ export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator' 
   homeUrl?: string;
 }
 
+const Breadcrumb = ({ name, url }: Crumb) => {
+  const props = {
+    'aria-label': name,
+    children: name,
+  };
+
+  return url ? <Link {...props} href={url} /> : <Typography {...props} />;
+};
+
 export const Breadcrumbs = ({
   active,
   children,
@@ -34,15 +43,6 @@ export const Breadcrumbs = ({
   homeUrl = '/public/apps/dashboard',
   ...rest
 }: BreadcrumbsProps): JSX.Element => {
-  const renderBreadCrumb = ({ name = emptyState, url }: Crumb) => {
-    const props = {
-      'aria-label': name,
-      children: name,
-    };
-
-    return url ? <Link {...props} href={url} /> : <Typography {...props} />;
-  };
-
   return (
     <MuiBreadcrumbs
       {...rest}
@@ -53,9 +53,11 @@ export const Breadcrumbs = ({
       <Link aria-label="Home" href={homeUrl} loadApp={false}>
         Home
       </Link>
-      {crumbs && crumbs.length > 0 && crumbs.map((crumb) => renderBreadCrumb(crumb))}
+      {crumbs &&
+        crumbs.length > 0 &&
+        crumbs.map(({ name = emptyState, url }) => <Breadcrumb name={name} url={url} key={name} />)}
       {children}
-      {<Typography>{active || emptyState}</Typography>}
+      <Typography>{active || emptyState}</Typography>
     </MuiBreadcrumbs>
   );
 };
