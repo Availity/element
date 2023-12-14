@@ -874,7 +874,7 @@ export const legacyTheme = {
               color: tokens.colorTextPrimary,
               '&::placeholder': {
                 opacity: 1,
-                color: tokens.colorSecondaryDark,
+                color: tokens.colorTextDisabled,
               },
               '&.MuiInputBase-inputSizeSmall': {
                 padding: '.375rem .75rem',
