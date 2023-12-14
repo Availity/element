@@ -758,6 +758,26 @@ export const legacyTheme = {
         },
       },
     },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          paddingLeft: '15px',
+          paddingRight: '15px',
+          '@media (min-width: 1200px)': {
+            maxWidth: '1140px',
+          },
+          '@media (min-width: 992px)': {
+            maxWidth: '960px',
+          },
+          '@media (min-width: 768px)': {
+            maxWidth: '720px',
+          },
+          '@media (min-width: 576px)': {
+            maxWidth: '540px',
+          },
+        },
+      },
+    },
     MuiFormControl: {
       defaultProps: {
         size: 'small',
