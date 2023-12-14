@@ -847,6 +847,11 @@ export const lightTheme = {
               '.MuiInputBase-input': {
                 padding: '8px 12px',
                 lineHeight: '1.5rem',
+                color: tokens.colorTextPrimary,
+                '&::placeholder': {
+                  opacity: 1,
+                  color: tokens.colorGrey400,
+                },
               },
               '.MuiInputBase-inputAdornedEnd': {
                 paddingRight: '0',

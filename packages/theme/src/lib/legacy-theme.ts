@@ -871,6 +871,11 @@ export const legacyTheme = {
             position: 'relative',
             fontSize: '1rem',
             '.MuiOutlinedInput-input': {
+              color: tokens.colorTextPrimary,
+              '&::placeholder': {
+                opacity: 1,
+                color: tokens.colorSecondaryDark,
+              },
               '&.MuiInputBase-inputSizeSmall': {
                 padding: '.375rem .75rem',
                 lineHeight: '24px',
@@ -878,7 +883,7 @@ export const legacyTheme = {
             },
             '.MuiSelect-avEndAdornmentDivider': {
               borderColor: tokens.colorBackgroundBorder,
-              width: 'auto'
+              width: 'auto',
             },
             '.MuiChip-root': {
               lineHeight: '1.125rem',
