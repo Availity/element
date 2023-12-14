@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.32.0](https://github.com/Availity/element/compare/@availity/theme@0.31.2...@availity/theme@0.32.0) (2023-12-14)
+
+
+### Features
+
+* **theme:** placeholder colors ([830b876](https://github.com/Availity/element/commit/830b8767e985aadac2b84d561e8945edbd245561))
+
 ## [0.31.2](https://github.com/Availity/element/compare/@availity/theme@0.31.1...@availity/theme@0.31.2) (2023-12-14)
 
 
