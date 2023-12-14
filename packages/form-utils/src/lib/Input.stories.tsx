@@ -15,6 +15,6 @@ const meta: Meta<typeof Input> = {
 export default meta;
 
 export const _Input: StoryObj<typeof Input> = {
-  render: (args: InputProps) => <Input aria-label="Example Input" {...args} />,
+  render: (args: InputProps) => <Input inputProps={{ 'aria-label': 'Example Input' }} {...args} />,
   args: {},
 };
