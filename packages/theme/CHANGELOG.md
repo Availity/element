@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.31.2](https://github.com/Availity/element/compare/@availity/theme@0.31.1...@availity/theme@0.31.2) (2023-12-14)
+
+
+### Bug Fixes
+
+* **theme:** legacy container maxWidth ([669fec5](https://github.com/Availity/element/commit/669fec5f81cb161423b649bc705248aa0700985b))
+
 ## [0.31.1](https://github.com/Availity/element/compare/@availity/theme@0.31.0...@availity/theme@0.31.1) (2023-12-14)
 
 ## [0.31.0](https://github.com/Availity/element/compare/@availity/theme@0.30.4...@availity/theme@0.31.0) (2023-12-14)
