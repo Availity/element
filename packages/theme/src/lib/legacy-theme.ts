@@ -759,10 +759,17 @@ export const legacyTheme = {
       },
     },
     MuiContainer: {
+      defaultProps: {
+        maxWidth: 'xl',
+      },
       styleOverrides: {
         root: {
           paddingLeft: '15px',
           paddingRight: '15px',
+          '@media (min-width: 600px)': {
+            paddingLeft: '15px',
+            paddingRight: '15px',
+          },
           '&.MuiContainer-maxWidthXl, &.MuiContainer-maxWidthLg, &.MuiContainer-maxWidthMd, &.MuiContainer-maxWidthSm':
             {
               '@media (min-width: 1200px)': {
