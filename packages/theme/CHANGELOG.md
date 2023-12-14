@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.33.0](https://github.com/Availity/element/compare/@availity/theme@0.32.0...@availity/theme@0.33.0) (2023-12-14)
+
+
+### Features
+
+* **theme:** multiline row ranges, new helpertext spacing ([a9bfc42](https://github.com/Availity/element/commit/a9bfc42e4fc403e9d313bd1c0556ea4d435831a8))
+
 ## [0.32.0](https://github.com/Availity/element/compare/@availity/theme@0.31.2...@availity/theme@0.32.0) (2023-12-14)
 
 
