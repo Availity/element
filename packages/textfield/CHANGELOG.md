@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-textfield@0.4.3...@availity/mui-textfield@0.5.0) (2023-12-14)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.7.0`
+
+### Features
+
+* add form story ([11d1f6c](https://github.com/Availity/element/commit/11d1f6c6191540bf02ff42d4056ac553eecc8c73))
+* **mui-textfield:** pass aria-required to inputProps ([3c7e497](https://github.com/Availity/element/commit/3c7e4976348ac8649b1accbff7e6f9a9f3c01bd8))
+
 ## [0.4.3](https://github.com/Availity/element/compare/@availity/mui-textfield@0.4.2...@availity/mui-textfield@0.4.3) (2023-12-04)
 
 ### Dependency Updates
