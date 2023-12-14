@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.2.1...@availity/mui-autocomplete@0.3.0) (2023-12-14)
+
+
+### Features
+
+* add form story ([11d1f6c](https://github.com/Availity/element/commit/11d1f6c6191540bf02ff42d4056ac553eecc8c73))
+
 ## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.2.0...@availity/mui-autocomplete@0.2.1) (2023-11-28)
 
 ### Bug Fixes
