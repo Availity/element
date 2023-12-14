@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.16](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.15...@availity/mui-checkbox@0.1.16) (2023-12-14)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.7.0`
+* `mui-page-header` updated to version `0.2.8`
 ## [0.1.15](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.14...@availity/mui-checkbox@0.1.15) (2023-12-13)
 
 ### Dependency Updates
