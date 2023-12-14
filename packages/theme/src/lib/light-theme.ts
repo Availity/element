@@ -697,10 +697,10 @@ export const lightTheme = {
       },
       styleOverrides: {
         marginDense: {
-          margin: '0 0 1rem',
+          margin: '0 0 .5rem',
         },
         marginNormal: {
-          margin: '0 0 1.5rem',
+          margin: '0 0 1rem',
         },
       },
     },
@@ -741,9 +741,14 @@ export const lightTheme = {
       },
     },
     MuiFormHelperText: {
+      defaultProps: {
+        children: ' ',
+      },
       styleOverrides: {
         root: {
           marginLeft: '0px',
+          minHeight: '1.25rem',
+          lineHeight: '1.25rem',
           '&:not(&.Mui-error) .MuiSvgIcon-root': {
             display: 'none',
           },
@@ -817,6 +822,10 @@ export const lightTheme = {
       },
     },
     MuiInputBase: {
+      defaultProps: {
+        minRows: 2,
+        maxRows: 3,
+      },
       styleOverrides: {
         root: ({ ownerState }: { ownerState: { size: 'small' | 'medium'; fullWidth: boolean | undefined } }) => {
           return {
@@ -1188,6 +1197,7 @@ export const lightTheme = {
       defaultProps: {
         size: 'small',
         fullWidth: true,
+        helperText: ' ',
       },
     },
     MuiToggleButton: {

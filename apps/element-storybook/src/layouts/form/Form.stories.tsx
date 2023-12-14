@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { Radio, RadioGroup, FormControl, InputAdornment } from '@mui/material';
+import { Radio, RadioGroup, FormControl, InputAdornment, styled } from '@mui/material';
 import { TextField } from '@availity/mui-textfield';
 import { Autocomplete } from '@availity/mui-autocomplete';
 import { Datepicker } from '@availity/mui-datepicker';
@@ -18,6 +18,12 @@ import { Divider } from '@availity/mui-divider';
 import { Stack } from '@availity/mui-layout';
 import dayjs from 'dayjs';
 
+/** Some form examples with proper layouts and spacings. As `Grid` is already used to handle layout it is easiest to also use it for form spacing.
+ *
+ * There are two spacing variations: `normal` and `dense` (See Zeroheight documentation for when to use each). Normal spacing will use `rowSpacing={2}` & `columnSpacing={3}` while dense spacing will use `rowSpacing={1}` & `columnSpacing={2}` on the wrapping `Grid container`.
+ *
+ * While `Grid` will be the most common way to handle spacing, the form components have their own `margin` prop that can be used en lieu of `rowSpacing` in the case where all form components have the same width, removing the need for a `Grid`.
+ */
 const meta: Meta = {
   title: 'Layouts/Form',
   tags: ['autodocs'],
@@ -25,21 +31,26 @@ const meta: Meta = {
 
 export default meta;
 
-const SectionText = ({ marginBottom }: { marginBottom: string }) => (
-  <Typography paragraph sx={{ marginBottom }}>
+const SectionText = () => (
+  <Typography>
     This is introduction or helper text that helps the user understand the data that needs to be entered or selections
     that need to be made in this section.
   </Typography>
 );
 
-const AsteriskMessage = ({ marginBottom }: { marginBottom: string }) => (
-  <Typography paragraph sx={{ marginBottom }}>
-    <Typography component="span" color="error.main" variant="inherit">
-      *
-    </Typography>{' '}
-    is a required field.
-  </Typography>
-);
+const AsteriskMessage = () => {
+  const Asterisk = styled(Typography, {
+    name: 'MuiFormLabel',
+    slot: 'Asterisk',
+    overridesResolver: (props, styles) => styles.asterisk,
+  })({ marginLeft: '0!important', marginRight: '0!important' });
+
+  return (
+    <Typography>
+      <Asterisk component="span">*</Asterisk> is a required field.
+    </Typography>
+  );
+};
 
 type SimpleFormInputs = {
   text: string;
@@ -73,13 +84,16 @@ export const _SimpleForm: StoryObj = {
             <Typography component="h1" variant="h2" sx={{ marginBottom: '.5rem' }}>
               Simple Form
             </Typography>
-            <Grid container>
+            <Grid container rowSpacing={2}>
               <Grid xs={12} md={6}>
-                <SectionText marginBottom="1rem" />
-                <AsteriskMessage marginBottom="1rem" />
+                <SectionText />
               </Grid>
-            </Grid>
-            <Grid container marginBottom="1rem">
+              <Grid xs={0} md={6} padding={0} />
+              <Grid xs={12} md={6}>
+                <AsteriskMessage />
+              </Grid>
+              <Grid xs={0} md={6} padding={0} />
+              <Grid xs={12} />
               <Grid xs={12} md={6}>
                 <TextField
                   label="Example"
@@ -94,8 +108,7 @@ export const _SimpleForm: StoryObj = {
                   required
                 />
               </Grid>
-            </Grid>
-            <Grid container marginBottom="2rem">
+              <Grid xs={0} md={6} padding={0} />
               <Grid xs={12} md={6}>
                 <Controller
                   control={control}
@@ -118,20 +131,22 @@ export const _SimpleForm: StoryObj = {
                   }}
                 />
               </Grid>
-            </Grid>
-            <Grid container justifyContent="flex-end">
-              <Button
-                type="reset"
-                color="secondary"
-                onClick={() => {
-                  reset();
-                  setSubmitted(false);
-                }}
-                sx={{ marginRight: '.5rem' }}
-              >
-                Cancel
-              </Button>
-              <Button type="submit">Submit</Button>
+              <Grid xs={0} md={6} padding={0} />
+              <Grid xs={12} />
+              <Grid xs={12} justifyContent="end" display="flex" paddingTop={2.5}>
+                <Button
+                  type="reset"
+                  color="secondary"
+                  onClick={() => {
+                    reset();
+                    setSubmitted(false);
+                  }}
+                  sx={{ marginRight: '.5rem' }}
+                >
+                  Cancel
+                </Button>
+                <Button type="submit">Submit</Button>
+              </Grid>
             </Grid>
           </form>
         </Paper>
@@ -188,7 +203,7 @@ export const _CompactForm: StoryObj = {
                   <CloseIcon />
                 </IconButton>
               </Stack>
-              <Grid container marginBottom="1rem">
+              <Grid container rowSpacing={1} columnSpacing={2}>
                 <Grid xs={12}>
                   <Controller
                     control={control}
@@ -215,8 +230,6 @@ export const _CompactForm: StoryObj = {
                     )}
                   />
                 </Grid>
-              </Grid>
-              <Grid container columnSpacing={2} marginBottom="1rem">
                 <Grid xs={6}>
                   <Controller
                     control={control}
@@ -237,8 +250,6 @@ export const _CompactForm: StoryObj = {
                     )}
                   />
                 </Grid>
-              </Grid>
-              <Grid container marginBottom="1rem">
                 <Grid xs={12}>
                   <TextField
                     label="Customer Name"
@@ -249,8 +260,6 @@ export const _CompactForm: StoryObj = {
                     placeholder="Value"
                   />
                 </Grid>
-              </Grid>
-              <Grid container marginBottom="2rem">
                 <Grid xs={12}>
                   <Controller
                     control={control}
@@ -271,8 +280,7 @@ export const _CompactForm: StoryObj = {
                     )}
                   />
                 </Grid>
-              </Grid>
-              <Grid container spacing={1}>
+                <Grid xs={12} paddingY={1} />
                 <Grid xs={6}>
                   <Button
                     onClick={() => {
@@ -347,255 +355,247 @@ export const _SectionedForm: StoryObj = {
         <Container>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Paper sx={{ padding: '1.5rem', marginBottom: '1.25rem' }}>
-              <Grid container direction="column">
-                <Typography variant="h2" marginBottom=".5rem">
-                  Section Header
-                </Typography>
-                <Grid md={6}>
-                  <SectionText marginBottom="1rem" />
-                  <AsteriskMessage marginBottom="1rem" />
+              <Grid container rowSpacing={{ xs: 1, md: 2 }} columnSpacing={{ xs: 2, md: 3 }}>
+                <Grid xs={12}>
+                  <Typography variant="h2">Section Header</Typography>
                 </Grid>
-                <Grid container spacing={{ md: 3 }}>
-                  <Grid xs={12} md={4}>
-                    <Controller
-                      control={control}
-                      name="dropdown1"
-                      rules={{ required: 'This field is required' }}
-                      render={({ field: { onChange, value, onBlur } }) => {
-                        return (
-                          <Autocomplete
-                            onChange={(event, value, reason) => {
-                              if (reason === 'clear') {
-                                onChange(null);
-                              }
-                              onChange(value);
-                            }}
-                            onBlur={onBlur}
-                            FieldProps={{
-                              label: 'Dropdown',
-                              placeholder: 'Value',
-                              required: true,
-                              error: !!errors.dropdown1?.message,
-                              helperText: errors.dropdown1?.message,
-                            }}
-                            options={dropdownOptions}
-                            value={value || null}
-                            sx={{ marginBottom: '1.25rem', minHeight: '0px' }}
-                          />
-                        );
-                      }}
-                    />
-                  </Grid>
+                <Grid xs={12} md={6}>
+                  <SectionText />
                 </Grid>
-                <Grid container spacing={{ sm: 2, md: 3 }}>
-                  <Grid xs={12} sm={6} md={4} lg={4}>
-                    <TextField
-                      label="Text Field"
-                      fullWidth
-                      required
-                      {...register('field1', { required: 'This field is required' })}
-                      error={!!errors.field1?.message}
-                      helperText={errors.field1?.message || 'Help text'}
-                      placeholder="Value"
-                      sx={{ marginBottom: '1.25rem' }}
-                    />
-                  </Grid>
-                  <Grid xs={12} sm={6} md={8} lg={8}>
-                    <Controller
-                      control={control}
-                      name="dropdown2"
-                      render={({ field: { onChange, value, onBlur } }) => {
-                        return (
-                          <Autocomplete
-                            onChange={(event, value, reason) => {
-                              if (reason === 'clear') {
-                                onChange(null);
-                              }
-                              onChange(value);
-                            }}
-                            onBlur={onBlur}
-                            FieldProps={{ label: 'Dropdown', placeholder: 'Value', sx: { marginBottom: '1.25rem' } }}
-                            options={dropdownOptions}
-                            value={value || null}
-                          />
-                        );
-                      }}
-                    />
-                  </Grid>
+                <Grid xs={0} md={6} padding={0} />
+                <Grid xs={12} md={6}>
+                  <AsteriskMessage />
                 </Grid>
-                <Divider />
-                <Typography marginY="1.25rem" variant="h4" component="h3">
-                  Subsection Header
-                </Typography>
-                <Grid container columnSpacing={{ sm: 2, md: 3 }}>
-                  <Grid xs={12} sm={6} md={4}>
-                    <TextField
-                      label="Text Field"
-                      fullWidth
-                      {...register('field2')}
-                      placeholder="Value"
-                      sx={{ marginBottom: '1.25rem' }}
-                    />
-                  </Grid>
-                  <Grid xs={12} sm={6} md={4}>
-                    <Controller
-                      control={control}
-                      name="dropdown3"
-                      render={({ field: { onChange, value, onBlur } }) => {
-                        return (
-                          <Autocomplete
-                            onChange={(event, value, reason) => {
-                              if (reason === 'clear') {
-                                onChange(null);
-                              }
-                              onChange(value);
-                            }}
-                            onBlur={onBlur}
-                            FieldProps={{ label: 'Dropdown', placeholder: 'Value', sx: { marginBottom: '1.25rem' } }}
-                            options={dropdownOptions}
-                            value={value || null}
-                          />
-                        );
-                      }}
-                    />
-                  </Grid>
-                  <Grid xs={12} sm={6} md={4}>
-                    <Controller
-                      control={control}
-                      name="dropdown4"
-                      render={({ field: { onChange, value, onBlur } }) => {
-                        return (
-                          <Autocomplete
-                            onChange={(event, value, reason) => {
-                              if (reason === 'clear') {
-                                onChange(null);
-                              }
-                              onChange(value);
-                            }}
-                            onBlur={onBlur}
-                            FieldProps={{ label: 'Dropdown', placeholder: 'Value', sx: { marginBottom: '1.25rem' } }}
-                            options={dropdownOptions}
-                            value={value || null}
-                          />
-                        );
-                      }}
-                    />
-                  </Grid>
-                  <Grid xs={12} sm={6} md={4}>
-                    <Controller
-                      control={control}
-                      name="dropdown5"
-                      render={({ field: { onChange, value, onBlur } }) => {
-                        return (
-                          <Autocomplete
-                            onChange={(event, value, reason) => {
-                              if (reason === 'clear') {
-                                onChange(null);
-                              }
-                              onChange(value);
-                            }}
-                            onBlur={onBlur}
-                            FieldProps={{ label: 'Dropdown', placeholder: 'Value', sx: { marginBottom: '1.25rem' } }}
-                            options={dropdownOptions}
-                            value={value || null}
-                          />
-                        );
-                      }}
-                    />
-                  </Grid>
+                <Grid xs={0} md={6} padding={0} />
+                <Grid xs={12} />
+                <Grid xs={12} md={4}>
+                  <Controller
+                    control={control}
+                    name="dropdown1"
+                    rules={{ required: 'This field is required' }}
+                    render={({ field: { onChange, value, onBlur } }) => {
+                      return (
+                        <Autocomplete
+                          onChange={(event, value, reason) => {
+                            if (reason === 'clear') {
+                              onChange(null);
+                            }
+                            onChange(value);
+                          }}
+                          onBlur={onBlur}
+                          FieldProps={{
+                            label: 'Dropdown',
+                            placeholder: 'Value',
+                            required: true,
+                            error: !!errors.dropdown1?.message,
+                            helperText: errors.dropdown1?.message,
+                          }}
+                          options={dropdownOptions}
+                          value={value || null}
+                        />
+                      );
+                    }}
+                  />
                 </Grid>
-                <Grid container>
-                  <Button color="secondary" sx={{ marginTop: '.75rem' }}>
-                    Secondary Action Button
-                  </Button>
+                <Grid xs={0} md={8} padding={0} />
+                <Grid xs={12} sm={6} md={4}>
+                  <TextField
+                    label="Text Field"
+                    fullWidth
+                    required
+                    {...register('field1', { required: 'This field is required' })}
+                    error={!!errors.field1?.message}
+                    helperText={errors.field1?.message || 'Help text'}
+                    placeholder="Value"
+                  />
+                </Grid>
+                <Grid xs={12} sm={6} md={8}>
+                  <Controller
+                    control={control}
+                    name="dropdown2"
+                    render={({ field: { onChange, value, onBlur } }) => {
+                      return (
+                        <Autocomplete
+                          onChange={(event, value, reason) => {
+                            if (reason === 'clear') {
+                              onChange(null);
+                            }
+                            onChange(value);
+                          }}
+                          onBlur={onBlur}
+                          FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
+                          options={dropdownOptions}
+                          value={value || null}
+                        />
+                      );
+                    }}
+                  />
+                </Grid>
+                <Grid xs={12} />
+                <Grid xs={12}>
+                  <Divider />
+                </Grid>
+                <Grid xs={12} />
+                <Grid xs={12}>
+                  <Typography variant="h4" component="h3">
+                    Subsection Header
+                  </Typography>
+                </Grid>
+                <Grid xs={12} />
+                <Grid xs={12} sm={6} md={4}>
+                  <TextField label="Text Field" fullWidth {...register('field2')} placeholder="Value" />
+                </Grid>
+                <Grid xs={12} sm={6} md={4}>
+                  <Controller
+                    control={control}
+                    name="dropdown3"
+                    render={({ field: { onChange, value, onBlur } }) => {
+                      return (
+                        <Autocomplete
+                          onChange={(event, value, reason) => {
+                            if (reason === 'clear') {
+                              onChange(null);
+                            }
+                            onChange(value);
+                          }}
+                          onBlur={onBlur}
+                          FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
+                          options={dropdownOptions}
+                          value={value || null}
+                        />
+                      );
+                    }}
+                  />
+                </Grid>
+                <Grid xs={12} sm={6} md={4}>
+                  <Controller
+                    control={control}
+                    name="dropdown4"
+                    render={({ field: { onChange, value, onBlur } }) => {
+                      return (
+                        <Autocomplete
+                          onChange={(event, value, reason) => {
+                            if (reason === 'clear') {
+                              onChange(null);
+                            }
+                            onChange(value);
+                          }}
+                          onBlur={onBlur}
+                          FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
+                          options={dropdownOptions}
+                          value={value || null}
+                        />
+                      );
+                    }}
+                  />
+                </Grid>
+                <Grid xs={12} sm={6} md={4}>
+                  <Controller
+                    control={control}
+                    name="dropdown5"
+                    render={({ field: { onChange, value, onBlur } }) => {
+                      return (
+                        <Autocomplete
+                          onChange={(event, value, reason) => {
+                            if (reason === 'clear') {
+                              onChange(null);
+                            }
+                            onChange(value);
+                          }}
+                          onBlur={onBlur}
+                          FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
+                          options={dropdownOptions}
+                          value={value || null}
+                        />
+                      );
+                    }}
+                  />
+                </Grid>
+                <Grid xs={12} />
+                <Grid xs={12}>
+                  <Button color="secondary">Secondary Action Button</Button>
                 </Grid>
               </Grid>
             </Paper>
             <Paper sx={{ padding: '1.5rem' }}>
-              <Grid container direction="column">
-                <Typography variant="h2" marginBottom=".5rem">
-                  Section Header
-                </Typography>
-                <Grid lg={6}>
-                  <SectionText marginBottom="1rem" />
-                  <AsteriskMessage marginBottom="1rem" />
+              <Grid container rowSpacing={{ xs: 1, md: 2 }} columnSpacing={{ xs: 2, md: 3 }}>
+                <Grid xs={12}>
+                  <Typography variant="h2">Section Header</Typography>
                 </Grid>
-                <Grid container>
-                  <Grid xs={12} marginBottom="1.25rem">
-                    <TextField
-                      label="Text Field"
-                      fullWidth
-                      {...register('field3', { required: 'This field is required' })}
-                      required
-                      error={!!errors.field3}
-                      helperText={errors.field3?.message}
-                      placeholder="Search"
-                      InputProps={{
-                        startAdornment: (
-                          <InputAdornment position="start">
-                            <SearchIcon />
-                          </InputAdornment>
-                        ),
-                      }}
-                    />
-                  </Grid>
+                <Grid xs={12} lg={6}>
+                  <SectionText />
                 </Grid>
-                <Grid container marginBottom="1rem">
-                  <Grid lg={12}>
-                    <FormControl error={!!errors.radio}>
-                      <FormLabel id="radio-group">Radio Group</FormLabel>
-                      <RadioGroup aria-labelledby="radio-group" defaultValue="3" {...register('radio')}>
-                        <Grid container direction="row">
-                          <FormControlLabel
-                            control={<Radio />}
-                            value="1"
-                            label="Option 1"
-                            sx={{ marginRight: '16px' }}
-                          />
-                          <FormControlLabel control={<Radio />} value="2" label="Option 2" />
-                        </Grid>
-                      </RadioGroup>
-                    </FormControl>
-                  </Grid>
+                <Grid xs={0} lg={6} padding={0} />
+                <Grid xs={12} lg={6}>
+                  <AsteriskMessage />
                 </Grid>
-                <Grid container spacing={1.5} marginBottom="1.25rem" columnSpacing={{ sm: 2, md: 3 }}>
-                  <Grid xs={12} sm={6}>
-                    <TextField
-                      label="Text Field"
-                      fullWidth
-                      {...register('field4', { required: 'This field is required' })}
-                      required
-                      error={!!errors.field4}
-                      helperText={errors.field4?.message}
-                      placeholder="Value"
-                    />
-                  </Grid>
-                  <Grid xs={12} sm={6}>
-                    <Controller
-                      control={control}
-                      name="dropdown6"
-                      render={({ field: { onChange, value, onBlur } }) => {
-                        return (
-                          <Autocomplete
-                            onChange={(event, value, reason) => {
-                              if (reason === 'clear') {
-                                onChange(null);
-                              }
-                              onChange(value);
-                            }}
-                            onBlur={onBlur}
-                            FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
-                            options={dropdownOptions}
-                            value={value || null}
-                          />
-                        );
-                      }}
-                    />
-                  </Grid>
+                <Grid xs={0} lg={6} padding={0} />
+                <Grid xs={12} />
+                <Grid xs={12}>
+                  <TextField
+                    fullWidth
+                    {...register('field3')}
+                    required
+                    error={!!errors.field3}
+                    helperText={errors.field3?.message}
+                    placeholder="Search"
+                    inputProps={{ 'aria-label': 'Search' }}
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <SearchIcon />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </Grid>
+                <Grid xs={12}>
+                  <FormControl error={!!errors.radio}>
+                    <FormLabel id="radio-group">Radio Group</FormLabel>
+                    <RadioGroup aria-labelledby="radio-group" defaultValue="3" {...register('radio')}>
+                      <Grid container direction="row">
+                        <FormControlLabel control={<Radio />} value="1" label="Option 1" sx={{ marginRight: '16px' }} />
+                        <FormControlLabel control={<Radio />} value="2" label="Option 2" />
+                      </Grid>
+                    </RadioGroup>
+                  </FormControl>
+                </Grid>
+                <Grid xs={12} sm={6}>
+                  <TextField
+                    label="Text Field"
+                    fullWidth
+                    {...register('field4', { required: 'This field is required' })}
+                    required
+                    error={!!errors.field4}
+                    helperText={errors.field4?.message}
+                    placeholder="Value"
+                  />
+                </Grid>
+                <Grid xs={12} sm={6}>
+                  <Controller
+                    control={control}
+                    name="dropdown6"
+                    render={({ field: { onChange, value, onBlur } }) => {
+                      return (
+                        <Autocomplete
+                          onChange={(event, value, reason) => {
+                            if (reason === 'clear') {
+                              onChange(null);
+                            }
+                            onChange(value);
+                          }}
+                          onBlur={onBlur}
+                          FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
+                          options={dropdownOptions}
+                          value={value || null}
+                        />
+                      );
+                    }}
+                  />
                 </Grid>
               </Grid>
             </Paper>
-            <Grid container justifyContent="flex-end" marginTop="1.25rem">
+            <Grid container justifyContent="flex-end" marginTop={2}>
               <Button
                 type="reset"
                 color="secondary"
@@ -603,7 +603,7 @@ export const _SectionedForm: StoryObj = {
                   reset();
                   setSubmitted(false);
                 }}
-                sx={{ marginRight: '.5rem' }}
+                sx={{ marginRight: 1 }}
               >
                 Cancel
               </Button>

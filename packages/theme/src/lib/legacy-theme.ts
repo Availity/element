@@ -455,6 +455,12 @@ export const legacyTheme = {
             },
           },
         },
+        inputRoot: {
+          '.MuiOutlinedInput-input.MuiAutocomplete-input': {
+            minHeight: '24px',
+            padding: '0px 6px',
+          },
+        },
         popupIndicator: {
           color: tokens.borderInput,
         },
@@ -855,6 +861,8 @@ export const legacyTheme = {
     },
     MuiInputBase: {
       defaultProps: {
+        minRows: 2,
+        maxRows: 3,
         size: 'small',
       },
       styleOverrides: {
@@ -874,11 +882,12 @@ export const legacyTheme = {
               '&.MuiInputBase-inputSizeSmall': {
                 padding: '.375rem .75rem',
                 lineHeight: '24px',
+                minHeight: '24px',
               },
             },
             '.MuiSelect-avEndAdornmentDivider': {
               borderColor: tokens.colorBackgroundBorder,
-              width: 'auto'
+              width: 'auto',
             },
             '.MuiChip-root': {
               lineHeight: '1.125rem',
@@ -886,6 +895,9 @@ export const legacyTheme = {
               padding: '3px 6px',
             },
           };
+        },
+        multiline: {
+          padding: 0,
         },
       },
     },
@@ -1245,6 +1257,11 @@ export const legacyTheme = {
           backgroundColor: tokens.colorBackgroundCanvas,
           height: '3rem',
         },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        fullWidth: true,
       },
     },
     MuiToggleButton: {
