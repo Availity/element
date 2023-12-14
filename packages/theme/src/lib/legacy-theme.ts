@@ -628,11 +628,16 @@ export const legacyTheme = {
       },
     },
     MuiCardHeader: {
+      defaultProps: {
+        titleTypographyProps: {
+          variant: 'h5',
+        },
+      },
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorGrey100,
           color: tokens.colorTextPrimary,
-          padding: '1.25rem',
+          padding: '.75rem 1.25rem',
           lineHeight: '24px',
           '.MuiCardHeader-title, .MuiCardHeader-subheader': {
             fontWeight: tokens.fontWeightsRegular,
@@ -750,6 +755,33 @@ export const legacyTheme = {
         sizeMedium: {
           fontWeight: tokens.fontWeightsRegular,
           padding: '0.25rem 0.6rem',
+        },
+      },
+    },
+    MuiContainer: {
+      defaultProps: {
+        maxWidth: 'xl',
+      },
+      styleOverrides: {
+        root: {
+          paddingLeft: '15px',
+          paddingRight: '15px',
+          '@media (min-width: 600px)': {
+            paddingLeft: '15px',
+            paddingRight: '15px',
+          },
+          '@media (min-width: 576px)': {
+            maxWidth: '540px',
+          },
+          '@media (min-width: 768px)': {
+            maxWidth: '720px',
+          },
+          '@media (min-width: 992px)': {
+            maxWidth: '960px',
+          },
+          '@media (min-width: 1200px)': {
+            maxWidth: '1140px',
+          },
         },
       },
     },
@@ -871,6 +903,11 @@ export const legacyTheme = {
             position: 'relative',
             fontSize: '1rem',
             '.MuiOutlinedInput-input': {
+              color: tokens.colorTextPrimary,
+              '&::placeholder': {
+                opacity: 1,
+                color: tokens.colorTextDisabled,
+              },
               '&.MuiInputBase-inputSizeSmall': {
                 padding: '.375rem .75rem',
                 lineHeight: '24px',
@@ -878,7 +915,7 @@ export const legacyTheme = {
             },
             '.MuiSelect-avEndAdornmentDivider': {
               borderColor: tokens.colorBackgroundBorder,
-              width: 'auto'
+              width: 'auto',
             },
             '.MuiChip-root': {
               lineHeight: '1.125rem',

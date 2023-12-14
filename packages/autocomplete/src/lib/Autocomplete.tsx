@@ -41,6 +41,7 @@ export interface AutocompleteProps<
   > {
   /** Props applied to the `TextField` component */
   FieldProps?: TextFieldProps;
+  name?: string;
 }
 
 const PopupIndicatorWrapper = forwardRef<HTMLButtonElement, MuiIconButtonProps>((props, ref) => (

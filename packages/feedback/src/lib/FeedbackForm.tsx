@@ -105,10 +105,10 @@ export const FeedbackForm = ({
     { Icon: FaceFrownIcon, label: "What don't you like?", value: 'frown' },
   ];
 
-  const getFeedbackLabel = () => {
-    const smile = watch('smileField');
+  const smileFieldValue = watch('smileField');
 
-    const option = options.find((option) => option.value === smile);
+  const getFeedbackLabel = () => {
+    const option = options.find((option) => option.value === smileFieldValue);
 
     return option?.label || 'What would you improve?';
   };
@@ -143,25 +143,27 @@ export const FeedbackForm = ({
             );
           }}
         />
-        <TextField
-          {...register('feedback', {
-            required: 'This field is required',
-            maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
-          })}
-          fullWidth
-          multiline
-          minRows={3}
-          maxRows={3}
-          label={getFeedbackLabel()}
-          inputProps={{ 'aria-required': 'true' }}
-          InputLabelProps={{
-            component: FormLabel,
-            required: true,
-          }}
-          helperText={errors.feedback?.message || 'Max 200 characters'}
-          error={!!errors.feedback}
-          disabled={loading}
-        />
+        {smileFieldValue && (
+          <TextField
+            {...register('feedback', {
+              required: 'This field is required',
+              maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
+            })}
+            fullWidth
+            multiline
+            minRows={3}
+            maxRows={3}
+            label={getFeedbackLabel()}
+            inputProps={{ 'aria-required': 'true' }}
+            InputLabelProps={{
+              component: FormLabel,
+              required: true,
+            }}
+            helperText={errors.feedback?.message || 'Max 200 characters'}
+            error={!!errors.feedback}
+            disabled={loading}
+          />
+        )}
         <Grid container direction="row" marginTop="16px" spacing={1}>
           <Grid item xs={6}>
             <Button color="secondary" disabled={loading} fullWidth onClick={handleClose}>
@@ -169,13 +171,7 @@ export const FeedbackForm = ({
             </Button>
           </Grid>
           <Grid item xs={6}>
-            <LoadingButton
-              disabled={!watch('smileField')}
-              fullWidth
-              loading={loading}
-              type="submit"
-              variant="contained"
-            >
+            <LoadingButton disabled={!smileFieldValue} fullWidth loading={loading} type="submit" variant="contained">
               Send Feedback
             </LoadingButton>
           </Grid>

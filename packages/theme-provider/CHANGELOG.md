@@ -2,6 +2,26 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.17](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.16...@availity/theme-provider@0.4.17) (2023-12-14)
+
+### Dependency Updates
+
+* `theme` updated to version `0.31.2`
+## [0.4.16](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.15...@availity/theme-provider@0.4.16) (2023-12-14)
+
+### Dependency Updates
+
+* `theme` updated to version `0.31.1`
+## [0.4.15](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.14...@availity/theme-provider@0.4.15) (2023-12-14)
+
+### Dependency Updates
+
+* `theme` updated to version `0.31.0`
+## [0.4.14](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.13...@availity/theme-provider@0.4.14) (2023-12-13)
+
+### Dependency Updates
+
+* `theme` updated to version `0.30.4`
 ## [0.4.13](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.12...@availity/theme-provider@0.4.13) (2023-12-07)
 
 ### Dependency Updates
@@ -31,22 +51,26 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `theme` updated to version `0.29.0`
+- `theme` updated to version `0.29.0`
+
 ## [0.4.7](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.6...@availity/theme-provider@0.4.7) (2023-11-27)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.28.1`
+- `theme` updated to version `0.28.1`
+
 ## [0.4.6](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.5...@availity/theme-provider@0.4.6) (2023-11-22)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.28.0`
+- `theme` updated to version `0.28.0`
+
 ## [0.4.5](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.4...@availity/theme-provider@0.4.5) (2023-11-21)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.27.0`
+- `theme` updated to version `0.27.0`
+
 ## [0.4.4](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.3...@availity/theme-provider@0.4.4) (2023-11-16)
 
 ### Dependency Updates

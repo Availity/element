@@ -1,21 +1,21 @@
 {
-  "name": "@availity/mui-checkbox",
-  "version": "0.1.16",
-  "description": "Availity MUI Checkbox Component - part of the @availity/element design system",
+  "name": "@availity/mui-popper",
+  "version": "0.1.0",
+  "description": "Availity MUI Popper Component - part of the @availity/element design system",
   "keywords": [
     "react",
     "typescript",
     "availity",
     "mui"
   ],
-  "homepage": "https://availity.github.io/element/?path=/docs/components-checkbox-introduction--docs",
+  "homepage": "https://availity.github.io/element/?path=/docs/components-popper-introduction--docs",
   "bugs": {
     "url": "https://github.com/Availity/element/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Availity/element.git",
-    "directory": "packages/checkbox"
+    "directory": "packages/popper"
   },
   "license": "MIT",
   "author": "Availity Developers <AVOSS@availity.com>",
@@ -32,9 +32,6 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
-    "@availity/mui-form-utils": "workspace:^",
-    "@availity/mui-icon": "workspace:^",
-    "@availity/mui-typography": "workspace:^",
     "@mui/material": "^5.11.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",

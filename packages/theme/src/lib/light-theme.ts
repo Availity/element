@@ -261,8 +261,12 @@ export const lightTheme = {
     AvFeedbackContainer: {
       styleOverrides: {
         root: {
-          maxWidth: important('490px'),
+          maxWidth: '490px',
           padding: '16px',
+          '@media (min-width: 600px)': {
+            maxWidth: '490px',
+            padding: '16px',
+          },
         },
         smileButtons: {
           marginBottom: '16px',
@@ -580,6 +584,11 @@ export const lightTheme = {
       },
     },
     MuiCardHeader: {
+      defaultProps: {
+        titleTypographyProps: {
+          variant: 'h6',
+        },
+      },
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorBackgroundCanvas,
@@ -843,6 +852,11 @@ export const lightTheme = {
               '.MuiInputBase-input': {
                 padding: '8px 12px',
                 lineHeight: '1.5rem',
+                color: tokens.colorTextPrimary,
+                '&::placeholder': {
+                  opacity: 1,
+                  color: tokens.colorGrey400,
+                },
               },
               '.MuiInputBase-inputAdornedEnd': {
                 paddingRight: '0',
@@ -861,6 +875,9 @@ export const lightTheme = {
                 margin: '0 4px',
               },
               '&:hover': {
+                '.MuiInputBase-input::placeholder': {
+                  color: tokens.colorTextPrimary,
+                },
                 '.MuiIconButton-root': {
                   color: tokens.colorGrey700,
                 },

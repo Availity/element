@@ -47,6 +47,7 @@
       "@availity/mui-pagination": ["packages/pagination/src/index.ts"],
       "@availity/mui-paper": ["packages/paper/src/index.ts"],
       "@availity/mui-popover": ["packages/popover/src/index.ts"],
+      "@availity/mui-popper": ["packages/popper/src/index.ts"],
       "@availity/mui-progress": ["packages/progress/src/index.ts"],
       "@availity/mui-table": ["packages/table/src/index.ts"],
       "@availity/mui-tabs": ["packages/tabs/src/index.ts"],

@@ -6,7 +6,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-avatar` updated to version `0.1.10`
+- `mui-avatar` updated to version `0.1.10`
+
 ## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.3...@availity/mui-chip@0.2.4) (2023-11-16)
 
 ### Dependency Updates

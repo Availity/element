@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.6.2...@availity/mui-form-utils@0.7.0) (2023-12-14)
+
+
+### Features
+
+* add form story ([11d1f6c](https://github.com/Availity/element/commit/11d1f6c6191540bf02ff42d4056ac553eecc8c73))
+
 ## [0.6.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.6.1...@availity/mui-form-utils@0.6.2) (2023-12-04)
 
 ### Dependency Updates
@@ -11,13 +18,13 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-chip` updated to version `0.2.5`
-## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.5.4...@availity/mui-form-utils@0.6.0) (2023-11-22)
+- `mui-chip` updated to version `0.2.5`
 
+## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.5.4...@availity/mui-form-utils@0.6.0) (2023-11-22)
 
 ### Features
 
-* **mui-form-utils:** new slots and handling of required ([332f1e8](https://github.com/Availity/element/commit/332f1e8fa18d9c2d5492fd6b9e315e3ccc5fa7e9))
+- **mui-form-utils:** new slots and handling of required ([332f1e8](https://github.com/Availity/element/commit/332f1e8fa18d9c2d5492fd6b9e315e3ccc5fa7e9))
 
 ## [0.5.4](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.5.3...@availity/mui-form-utils@0.5.4) (2023-11-16)
 
