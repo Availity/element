@@ -584,6 +584,11 @@ export const lightTheme = {
       },
     },
     MuiCardHeader: {
+      defaultProps: {
+        titleTypographyProps: {
+          variant: 'h6',
+        },
+      },
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorBackgroundCanvas,
