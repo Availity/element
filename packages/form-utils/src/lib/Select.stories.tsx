@@ -14,6 +14,13 @@ const meta: Meta<typeof Select> = {
   args: {
     size: 'small',
   },
+  parameters: {
+    docs: {
+      controls: {
+        exclude: ['placeholder'],
+      },
+    },
+  },
 };
 
 export default meta;
