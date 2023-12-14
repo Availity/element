@@ -870,6 +870,9 @@ export const lightTheme = {
                 margin: '0 4px',
               },
               '&:hover': {
+                '.MuiInputBase-input::placeholder': {
+                  color: tokens.colorTextPrimary,
+                },
                 '.MuiIconButton-root': {
                   color: tokens.colorGrey700,
                 },
