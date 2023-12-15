@@ -305,6 +305,17 @@ export const legacyTheme = {
     },
   },
   components: {
+    AvEmptyState: {
+      defaultProps: {
+        spacing: 2,
+      },
+      styleOverrides: {
+        image: {
+          width: '112px',
+          height: '112px',
+        },
+      },
+    },
     AvFeedbackContainer: {
       styleOverrides: {
         root: {
