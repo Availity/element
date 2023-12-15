@@ -31,12 +31,9 @@
     "publish": "yarn npm publish --tolerate-republish --access public",
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
-  "dependencies": {
-    "@availity/block-ui": "^1.1.2",
-    "@availity/mui-backdrop": "workspace:*",
-    "@availity/mui-progress": "workspace:*"
-  },
   "devDependencies": {
+    "@availity/mui-button": "workspace:*",
+    "@availity/mui-paper": "workspace:*",
     "@mui/material": "^5.11.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
