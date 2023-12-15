@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { Radio, RadioGroup, FormControl, InputAdornment, styled } from '@mui/material';
+import { Radio, RadioGroup, FormControl, InputAdornment } from '@mui/material';
 import { TextField } from '@availity/mui-textfield';
 import { Autocomplete } from '@availity/mui-autocomplete';
 import { Datepicker } from '@availity/mui-datepicker';
-import { FormControlLabel, FormLabel } from '@availity/mui-form-utils';
+import { FormControlLabel, FormLabel, RequiredKey } from '@availity/mui-form-utils';
 import { Button, IconButton } from '@availity/mui-button';
 import { CloseIcon } from '@availity/mui-icon';
 import { PageHeader } from '@availity/mui-page-header';
@@ -37,20 +37,6 @@ const SectionText = () => (
     that need to be made in this section.
   </Typography>
 );
-
-const AsteriskMessage = () => {
-  const Asterisk = styled(Typography, {
-    name: 'MuiFormLabel',
-    slot: 'Asterisk',
-    overridesResolver: (props, styles) => styles.asterisk,
-  })({ marginLeft: '0!important', marginRight: '0!important' });
-
-  return (
-    <Typography>
-      <Asterisk component="span">*</Asterisk> is a required field.
-    </Typography>
-  );
-};
 
 type SimpleFormInputs = {
   text: string;
@@ -90,7 +76,7 @@ export const _SimpleForm: StoryObj = {
               </Grid>
               <Grid xs={0} md={6} padding={0} />
               <Grid xs={12} md={6}>
-                <AsteriskMessage />
+                <RequiredKey />
               </Grid>
               <Grid xs={0} md={6} padding={0} />
               <Grid xs={12} />
@@ -364,7 +350,7 @@ export const _SectionedForm: StoryObj = {
                 </Grid>
                 <Grid xs={0} md={6} padding={0} />
                 <Grid xs={12} md={6}>
-                  <AsteriskMessage />
+                  <RequiredKey />
                 </Grid>
                 <Grid xs={0} md={6} padding={0} />
                 <Grid xs={12} />
@@ -527,7 +513,7 @@ export const _SectionedForm: StoryObj = {
                 </Grid>
                 <Grid xs={0} lg={6} padding={0} />
                 <Grid xs={12} lg={6}>
-                  <AsteriskMessage />
+                  <RequiredKey />
                 </Grid>
                 <Grid xs={0} lg={6} padding={0} />
                 <Grid xs={12} />
