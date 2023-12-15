@@ -35,15 +35,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/block-ui@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@availity/block-ui@npm:1.1.2"
-  peerDependencies:
-    react: ">=16.8.0"
-  checksum: 7528ae6aebaa3f3152ddb616b7d7586cdf3056ef8e545bf5e03652916e51469dff1189a501bcf36ea6901b37f16d9df83927a10e8d8e9dec3ddb3c3e1a3cc418
-  languageName: node
-  linkType: hard
-
 "@availity/design-tokens@workspace:*, @availity/design-tokens@workspace:^, @availity/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@availity/design-tokens@workspace:packages/design-tokens"
@@ -208,9 +199,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-block-ui@workspace:packages/block-ui"
   dependencies:
-    "@availity/block-ui": ^1.1.2
-    "@availity/mui-backdrop": "workspace:*"
-    "@availity/mui-progress": "workspace:*"
+    "@availity/mui-button": "workspace:*"
+    "@availity/mui-paper": "workspace:*"
     "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0
