@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.7.2...@availity/mui-form-utils@0.8.0) (2023-12-15)
+
+
+### Features
+
+* **mui-form-utils:** add RequiredKey component ([164f0fa](https://github.com/Availity/element/commit/164f0fa9b4359ce0e1cd6a62389e8d60a94e6e62))
+
 ## [0.7.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.7.1...@availity/mui-form-utils@0.7.2) (2023-12-14)
 
 
