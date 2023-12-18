@@ -258,6 +258,20 @@ export const lightTheme = {
     },
   },
   components: {
+    AvEmptyState: {
+      defaultProps: {
+        spacing: 2,
+      },
+      styleOverrides: {
+        root: {
+          ...typographyStyles('Body2'),
+        },
+        image: {
+          width: '112px',
+          height: '112px',
+        },
+      },
+    },
     AvFeedbackContainer: {
       styleOverrides: {
         root: {
