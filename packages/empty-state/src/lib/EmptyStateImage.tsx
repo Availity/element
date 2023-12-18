@@ -1,11 +1,11 @@
 import { forwardRef } from 'react';
 import { styled } from '@mui/material';
+import { Box, BoxProps } from '@availity/mui-layout';
 import PageNotFound from '../assets/404-Page-Not-Found_Gray.svg';
 import ContentLoading from '../assets/Content-Loading_Gray.svg';
 import Error from '../assets/Error_Gray.svg';
 import NoData from '../assets/No-Data_Gray.svg';
 import NoSearchFound from '../assets/No-Search-Found_Gray.svg';
-import { Box, BoxProps } from '@availity/mui-layout';
 
 const EmptyStateImages: Record<string, { src: string; alt: string }> = {
   PageNotFound: { src: PageNotFound, alt: 'Page Not Found' },
