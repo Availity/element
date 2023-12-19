@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.33.0](https://github.com/Availity/element/compare/@availity/element@0.32.8...@availity/element@0.33.0) (2023-12-19)
+
+### Dependency Updates
+
+* `mui-empty-state` updated to version `0.1.0`
+* `theme-provider` updated to version `0.4.20`
+
+### Features
+
+* **mui-empty-state:** add EmptyState package ([59e8641](https://github.com/Availity/element/commit/59e86418686355fe11a97e63b8e16501d1f01a6c))
+
 ## [0.32.8](https://github.com/Availity/element/compare/@availity/element@0.32.7...@availity/element@0.32.8) (2023-12-15)
 
 ### Dependency Updates
