@@ -2,51 +2,78 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.20](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.19...@availity/theme-provider@0.4.20) (2023-12-19)
+
+### Dependency Updates
+
+- `theme` updated to version `0.34.0`
+
+## [0.4.19](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.18...@availity/theme-provider@0.4.19) (2023-12-14)
+
+### Dependency Updates
+
+- `theme` updated to version `0.33.0`
+
+## [0.4.18](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.17...@availity/theme-provider@0.4.18) (2023-12-14)
+
+### Dependency Updates
+
+- `theme` updated to version `0.32.0`
+
 ## [0.4.17](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.16...@availity/theme-provider@0.4.17) (2023-12-14)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.31.2`
+- `theme` updated to version `0.31.2`
+
 ## [0.4.16](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.15...@availity/theme-provider@0.4.16) (2023-12-14)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.31.1`
+- `theme` updated to version `0.31.1`
+
 ## [0.4.15](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.14...@availity/theme-provider@0.4.15) (2023-12-14)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.31.0`
+- `theme` updated to version `0.31.0`
+
 ## [0.4.14](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.13...@availity/theme-provider@0.4.14) (2023-12-13)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.30.4`
+- `theme` updated to version `0.30.4`
+
 ## [0.4.13](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.12...@availity/theme-provider@0.4.13) (2023-12-07)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.30.3`
+- `theme` updated to version `0.30.3`
+
 ## [0.4.12](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.11...@availity/theme-provider@0.4.12) (2023-12-06)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.30.2`
+- `theme` updated to version `0.30.2`
+
 ## [0.4.11](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.10...@availity/theme-provider@0.4.11) (2023-12-06)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.30.1`
+- `theme` updated to version `0.30.1`
+
 ## [0.4.10](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.9...@availity/theme-provider@0.4.10) (2023-12-04)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.30.0`
+- `theme` updated to version `0.30.0`
+
 ## [0.4.9](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.8...@availity/theme-provider@0.4.9) (2023-11-30)
 
 ### Dependency Updates
 
-* `theme` updated to version `0.29.1`
+- `theme` updated to version `0.29.1`
+
 ## [0.4.8](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.7...@availity/theme-provider@0.4.8) (2023-11-28)
 
 ### Dependency Updates

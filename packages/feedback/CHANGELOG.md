@@ -2,21 +2,44 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.11](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.10...@availity/mui-feedback@0.1.11) (2023-12-15)
+
+### Dependency Updates
+
+- `mui-form-utils` updated to version `0.8.0`
+- `mui-textfield` updated to version `0.5.3`
+
+## [0.1.10](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.9...@availity/mui-feedback@0.1.10) (2023-12-14)
+
+### Dependency Updates
+
+- `mui-form-utils` updated to version `0.7.2`
+- `mui-textfield` updated to version `0.5.2`
+
+## [0.1.9](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.8...@availity/mui-feedback@0.1.9) (2023-12-14)
+
+### Dependency Updates
+
+- `mui-form-utils` updated to version `0.7.1`
+- `mui-textfield` updated to version `0.5.1`
+
 ## [0.1.8](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.7...@availity/mui-feedback@0.1.8) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.7.0`
-* `mui-textfield` updated to version `0.5.0`
+- `mui-form-utils` updated to version `0.7.0`
+- `mui-textfield` updated to version `0.5.0`
+
 ## [0.1.7](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.6...@availity/mui-feedback@0.1.7) (2023-12-13)
 
 ## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.5...@availity/mui-feedback@0.1.6) (2023-12-04)
 
 ### Dependency Updates
 
-* `mui-button` updated to version `0.6.0`
-* `mui-form-utils` updated to version `0.6.2`
-* `mui-textfield` updated to version `0.4.3`
+- `mui-button` updated to version `0.6.0`
+- `mui-form-utils` updated to version `0.6.2`
+- `mui-textfield` updated to version `0.4.3`
+
 ## [0.1.5](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.4...@availity/mui-feedback@0.1.5) (2023-11-28)
 
 ### Dependency Updates

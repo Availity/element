@@ -1,6 +1,6 @@
 {
   "name": "@availity/element",
-  "version": "0.32.5",
+  "version": "0.33.0",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -27,6 +27,7 @@
     "@availity/mui-chip": "workspace:*",
     "@availity/mui-datepicker": "workspace:*",
     "@availity/mui-divider": "workspace:*",
+    "@availity/mui-empty-state": "workspace:*",
     "@availity/mui-feedback": "workspace:*",
     "@availity/mui-form-utils": "workspace:*",
     "@availity/mui-icon": "workspace:*",

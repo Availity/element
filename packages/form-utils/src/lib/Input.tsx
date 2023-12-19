@@ -12,8 +12,14 @@ export const InputPropOverrides = {
 };
 
 export const Input = (props: InputProps): JSX.Element => {
-  const { required, ...rest } = props;
-  return <MuiInput {...rest} {...InputPropOverrides} aria-required={required || undefined} />;
+  const { required, inputProps, ...rest } = props;
+  return (
+    <MuiInput
+      {...rest}
+      {...InputPropOverrides}
+      inputProps={{ 'aria-required': required || undefined, ...inputProps }}
+    />
+  );
 };
 
 export { InputAdornment };

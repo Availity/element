@@ -64,6 +64,7 @@ __metadata:
     "@availity/mui-chip": "workspace:*"
     "@availity/mui-datepicker": "workspace:*"
     "@availity/mui-divider": "workspace:*"
+    "@availity/mui-empty-state": "workspace:*"
     "@availity/mui-feedback": "workspace:*"
     "@availity/mui-form-utils": "workspace:*"
     "@availity/mui-icon": "workspace:*"
@@ -319,6 +320,22 @@ __metadata:
   resolution: "@availity/mui-divider@workspace:packages/divider"
   dependencies:
     "@mui/material": ^5.14.12
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^5.12.7
+    typescript: ^4.6.4
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-empty-state@workspace:*, @availity/mui-empty-state@workspace:packages/empty-state":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-empty-state@workspace:packages/empty-state"
+  dependencies:
+    "@availity/mui-layout": "workspace:*"
+    "@mui/material": ^5.11.9
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
