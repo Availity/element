@@ -42,6 +42,14 @@ const outlinedButtonStyles = (color: string) => ({
   },
 });
 
+const typographyStyles = (type: string) => ({
+  fontSize: `${tokens[`typography${type}FontSize` as keyof typeof tokens]}`,
+  fontWeight: `${tokens[`typography${type}FontWeight` as keyof typeof tokens]}`,
+  fontFamily: `${tokens[`typography${type}FontFamily` as keyof typeof tokens]}`,
+  letterSpacing: `${tokens[`typography${type}LetterSpacing` as keyof typeof tokens]}`,
+  lineHeight: `${tokens[`lineHeights${type}` as keyof typeof tokens]}`,
+});
+
 export const legacyTheme = {
   mode: 'light',
   palette: {
@@ -198,89 +206,51 @@ export const legacyTheme = {
     fontWeightMedium: 500,
     fontWeightBold: 700,
     d1: {
-      fontSize: tokens.typographyD1FontSize,
-      fontWeight: tokens.typographyD1FontWeight,
-      fontFamily: tokens.typographyD1FontFamily,
-      letterSpacing: tokens.typographyD1LetterSpacing,
+      ...typographyStyles('D1'),
       color: tokens.colorTextPrimary,
     },
     d2: {
-      fontSize: tokens.typographyD2FontSize,
-      fontWeight: tokens.typographyD2FontWeight,
-      fontFamily: tokens.typographyD2FontFamily,
-      letterSpacing: tokens.typographyD2LetterSpacing,
+      ...typographyStyles('D2'),
       color: tokens.colorTextPrimary,
     },
     h1: {
-      fontSize: tokens.typographyH1FontSize,
-      fontWeight: tokens.typographyH1FontWeight,
-      fontFamily: tokens.typographyH1FontFamily,
-      letterSpacing: tokens.typographyH1LetterSpacing,
+      ...typographyStyles('H1'),
       color: tokens.colorTextPrimary,
     },
     h2: {
-      fontSize: tokens.typographyH2FontSize,
-      fontWeight: tokens.typographyH2FontWeight,
-      fontFamily: tokens.typographyH2FontFamily,
-      letterSpacing: tokens.typographyH2LetterSpacing,
+      ...typographyStyles('H2'),
       color: tokens.colorTextPrimary,
     },
     h3: {
-      fontSize: tokens.typographyH3FontSize,
-      fontWeight: tokens.typographyH3FontWeight,
-      fontFamily: tokens.typographyH3FontFamily,
-      letterSpacing: tokens.typographyH3LetterSpacing,
+      ...typographyStyles('H3'),
       color: tokens.colorTextPrimary,
     },
     h4: {
-      fontSize: tokens.typographyH4FontSize,
-      fontWeight: tokens.typographyH4FontWeight,
-      fontFamily: tokens.typographyH4FontFamily,
-      letterSpacing: tokens.typographyH4LetterSpacing,
+      ...typographyStyles('H4'),
       color: tokens.colorTextPrimary,
     },
     h5: {
-      fontSize: tokens.typographyH5FontSize,
-      fontWeight: tokens.typographyH5FontWeight,
-      fontFamily: tokens.typographyH5FontFamily,
-      letterSpacing: tokens.typographyH5LetterSpacing,
+      ...typographyStyles('H5'),
       color: tokens.colorTextPrimary,
     },
     h6: {
-      fontSize: tokens.typographyH6FontSize,
-      fontWeight: tokens.typographyH6FontWeight,
-      fontFamily: tokens.typographyH6FontFamily,
-      letterSpacing: tokens.typographyH6LetterSpacing,
+      ...typographyStyles('H6'),
       color: tokens.colorTextPrimary,
-      lineHeight: tokens.lineHeightsH6,
     },
     subtitle1: {
-      fontSize: tokens.typographySubtitle1FontSize,
-      fontWeight: tokens.typographySubtitle1FontWeight,
-      fontFamily: tokens.typographySubtitle1FontFamily,
-      letterSpacing: tokens.typographySubtitle1LetterSpacing,
+      ...typographyStyles('Subtitle1'),
       color: tokens.colorTextPrimary,
     },
     subtitle2: {
-      fontSize: tokens.typographySubtitle2FontSize,
-      fontWeight: tokens.typographySubtitle2FontWeight,
-      fontFamily: tokens.typographySubtitle2FontFamily,
-      letterSpacing: tokens.typographySubtitle2LetterSpacing,
+      ...typographyStyles('Subtitle2'),
       color: tokens.colorTextPrimary,
-      lineHeight: tokens.lineHeightsSubtitle2,
     },
     body1: {
-      fontSize: tokens.typographyBody1FontSize,
-      fontWeight: tokens.typographyBody1FontWeight,
-      fontFamily: tokens.typographyBody1FontFamily,
-      letterSpacing: tokens.typographyBody1LetterSpacing,
+      ...typographyStyles('Body1'),
       color: tokens.colorTextPrimary,
     },
     body2: {
-      fontSize: tokens.typographyBody2FontSize,
-      fontWeight: tokens.typographyBody2FontWeight,
-      fontFamily: tokens.typographyBody2FontFamily,
-      letterSpacing: tokens.typographyBody2LetterSpacing,
+      ...typographyStyles('Body2'),
       color: tokens.colorTextPrimary,
     },
     button: {
@@ -290,17 +260,11 @@ export const legacyTheme = {
       letterSpacing: 0.2,
     },
     caption: {
-      fontSize: tokens.typographyCaptionFontSize,
-      fontWeight: tokens.typographyCaptionFontWeight,
-      fontFamily: tokens.typographyCaptionFontFamily,
-      letterSpacing: tokens.typographyCaptionLetterSpacing,
+      ...typographyStyles('Caption'),
       color: tokens.colorTextPrimary,
     },
     overline: {
-      fontSize: tokens.typographyOverlineFontSize,
-      fontWeight: tokens.typographyOverlineFontWeight,
-      fontFamily: tokens.typographyOverlineFontFamily,
-      letterSpacing: tokens.typographyOverlineLetterSpacing,
+      ...typographyStyles('Overline'),
       color: tokens.colorTextPrimary,
     },
   },
@@ -310,6 +274,9 @@ export const legacyTheme = {
         spacing: 2,
       },
       styleOverrides: {
+        root: {
+          ...typographyStyles('Body2'),
+        },
         image: {
           width: '112px',
           height: '112px',

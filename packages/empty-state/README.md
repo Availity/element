@@ -1,6 +1,6 @@
 # @availity/mui-empty-state
 
-> Availity MUI EmptyState component to be used with @availity/element design system.
+> Availity EmptyState component to be used with @availity/element design system.
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-empty-state.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-empty-state)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-empty-state.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-empty-state)
@@ -8,7 +8,7 @@
 
 ## Documentation
 
-This package extends the MUI EmptyState component: [MUI EmptyState Docs](https://mui.com/components/empty-state/)
+This package extends the MUI Stack component: [MUI EmptyState Docs](https://mui.com/components/stack/)
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-empty-state-introduction--docs)
 
