@@ -81,7 +81,6 @@ The migration theme is accessible by passing `theme='legacyBS'` to the `ThemePro
 #### Recommended Early Component Swaps
 
 - layout (`Box`, `Grid`, `Container`)
-- button
 - table
 - menu
 - list (excluding list-group)
@@ -103,6 +102,7 @@ There are many bootstrap elements and other design guidelines that will not be m
 - list-group
   - does not exist in Mui. UX to provide new design guidelines for how to change this component.
 
-## Automated Testing
+#### Required Pattern changes
 
-We recommend using `id`s on the components you want to target with automated testing.
+- button
+  - some props have changed. See the [button README](/docs/components-button-introduction--docs).
