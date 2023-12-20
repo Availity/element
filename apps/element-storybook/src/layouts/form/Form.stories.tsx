@@ -76,7 +76,7 @@ export const _SimpleForm: StoryObj = {
 
     return (
       <Container>
-        <BlockUi blocking={loading}>
+        <BlockUi blocking={loading} message="Loading">
           <Paper sx={{ padding: '1.5rem' }}>
             <form onSubmit={handleSubmit(onSubmit)}>
               <Typography component="h1" variant="h2" sx={{ marginBottom: '.5rem' }}>
