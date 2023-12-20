@@ -1664,16 +1664,16 @@
         "value": "4.5rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "d2": {
@@ -1690,16 +1690,16 @@
         "value": "3.5rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "h1": {
@@ -1716,16 +1716,16 @@
         "value": "2.5rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "h2": {
@@ -1742,16 +1742,16 @@
         "value": "2rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "h3": {
@@ -1768,16 +1768,16 @@
         "value": "1.75rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "h4": {
@@ -1794,16 +1794,16 @@
         "value": "1.5rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "h5": {
@@ -1820,16 +1820,16 @@
         "value": "1.25rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "h6": {
@@ -1846,16 +1846,16 @@
         "value": "1rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "subtitle1": {
@@ -1872,16 +1872,16 @@
         "value": "1rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "subtitle2": {
@@ -1898,16 +1898,16 @@
         "value": "0.875rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "body1": {
@@ -1924,16 +1924,16 @@
         "value": "1rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "body2": {
@@ -1950,16 +1950,16 @@
         "value": "0.875rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "button": {
@@ -1976,16 +1976,16 @@
         "value": "0.875rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "caption": {
@@ -2002,16 +2002,16 @@
         "value": "0.75rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     },
     "overline": {
@@ -2028,16 +2028,16 @@
         "value": "0.75rem"
       },
       "letterSpacing": {
-        "value": "none"
+        "value": 0
       },
       "paragraphSpacing": {
-        "value": "none"
+        "value": 0
       },
       "textDecoration": {
-        "value": "none"
+        "value": 0
       },
       "textCase": {
-        "value": "none"
+        "value": 0
       }
     }
   },
