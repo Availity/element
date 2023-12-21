@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.12.2](https://github.com/Availity/element/compare/@availity/design-tokens@0.12.1...@availity/design-tokens@0.12.2) (2023-12-21)
+
+
+### Bug Fixes
+
+* **design-tokens:** change none to 0 ([00362a9](https://github.com/Availity/element/commit/00362a9cfc7dd1a3b6b9d29fa92f849de2f566ee))
+
 ## [0.12.1](https://github.com/Availity/element/compare/@availity/design-tokens@0.12.0...@availity/design-tokens@0.12.1) (2023-11-27)
 
 ### Bug Fixes
