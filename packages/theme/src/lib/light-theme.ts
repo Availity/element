@@ -820,9 +820,6 @@ export const lightTheme = {
           '&:hover': {
             backgroundColor: tokens.colorActionHover,
           },
-          '&:focus': {
-            backgroundColor: tokens.colorActionFocus,
-          },
         },
         colorPrimary: {
           borderColor: tokens.borderPrimary,
