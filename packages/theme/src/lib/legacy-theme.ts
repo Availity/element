@@ -291,25 +291,25 @@ export const legacyTheme = {
         },
         smileButtons: {
           marginBottom: '8px',
-          '.MuiToggleButton-root': {
+          width: '100%',
+          div: {
+            width: '100%',
             margin: '8px',
+          },
+          '.MuiToggleButton-root': {
+            width: '100%',
             '&:focus': {
               backgroundColor: tokens.colorActionFocus,
               color: tokens.colorTextPrimary,
-              boxShadow: 'none',
             },
             '&:hover': {
               backgroundColor: tokens.colorActionHover,
               color: tokens.colorTextPrimary,
-              borderColor: tokens.colorGrey400,
             },
             '&.Mui-selected': {
               backgroundColor: tokens.colorPrimaryMain,
               '&:active': {
                 backgroundColor: tokens.colorPrimaryDarker,
-              },
-              '&:focus': {
-                boxShadow: 'none',
               },
               '&:focus, &:hover': {
                 backgroundColor: tokens.colorPrimaryDark,
@@ -322,6 +322,9 @@ export const legacyTheme = {
             '&.MuiToggleButton-sizeMedium': {
               padding: '12px',
               height: 'auto',
+              '.MuiSvgIcon-root': {
+                fontSize: '2em',
+              },
             },
           },
         },
