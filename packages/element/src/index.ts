@@ -3,6 +3,7 @@ export * from '@availity/mui-autocomplete';
 export * from '@availity/mui-avatar';
 export * from '@availity/mui-backdrop';
 export * from '@availity/mui-badge';
+export * from '@availity/mui-block-ui';
 export * from '@availity/mui-breadcrumbs';
 export * from '@availity/mui-button';
 export * from '@availity/mui-card';

@@ -12,37 +12,43 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.8.0`
-* `mui-page-header` updated to version `0.2.11`
+- `mui-form-utils` updated to version `0.8.0`
+- `mui-page-header` updated to version `0.2.11`
+
 ## [0.1.18](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.17...@availity/mui-checkbox@0.1.18) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.7.2`
-* `mui-page-header` updated to version `0.2.10`
+- `mui-form-utils` updated to version `0.7.2`
+- `mui-page-header` updated to version `0.2.10`
+
 ## [0.1.17](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.16...@availity/mui-checkbox@0.1.17) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.7.1`
-* `mui-page-header` updated to version `0.2.9`
+- `mui-form-utils` updated to version `0.7.1`
+- `mui-page-header` updated to version `0.2.9`
+
 ## [0.1.16](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.15...@availity/mui-checkbox@0.1.16) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.7.0`
-* `mui-page-header` updated to version `0.2.8`
+- `mui-form-utils` updated to version `0.7.0`
+- `mui-page-header` updated to version `0.2.8`
+
 ## [0.1.15](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.14...@availity/mui-checkbox@0.1.15) (2023-12-13)
 
 ### Dependency Updates
 
-* `mui-page-header` updated to version `0.2.7`
+- `mui-page-header` updated to version `0.2.7`
+
 ## [0.1.14](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.13...@availity/mui-checkbox@0.1.14) (2023-12-04)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.6.2`
-* `mui-page-header` updated to version `0.2.6`
+- `mui-form-utils` updated to version `0.6.2`
+- `mui-page-header` updated to version `0.2.6`
+
 ## [0.1.13](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.12...@availity/mui-checkbox@0.1.13) (2023-11-28)
 
 ### Dependency Updates

@@ -28,122 +28,135 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-empty-state` updated to version `0.1.0`
-* `theme-provider` updated to version `0.4.20`
+- `mui-empty-state` updated to version `0.1.0`
+- `theme-provider` updated to version `0.4.20`
 
 ### Features
 
-* **mui-empty-state:** add EmptyState package ([59e8641](https://github.com/Availity/element/commit/59e86418686355fe11a97e63b8e16501d1f01a6c))
+- **mui-empty-state:** add EmptyState package ([59e8641](https://github.com/Availity/element/commit/59e86418686355fe11a97e63b8e16501d1f01a6c))
 
 ## [0.32.8](https://github.com/Availity/element/compare/@availity/element@0.32.7...@availity/element@0.32.8) (2023-12-15)
 
 ### Dependency Updates
 
-* `mui-checkbox` updated to version `0.1.19`
-* `mui-feedback` updated to version `0.1.11`
-* `mui-form-utils` updated to version `0.8.0`
-* `mui-page-header` updated to version `0.2.11`
-* `mui-textfield` updated to version `0.5.3`
+- `mui-checkbox` updated to version `0.1.19`
+- `mui-feedback` updated to version `0.1.11`
+- `mui-form-utils` updated to version `0.8.0`
+- `mui-page-header` updated to version `0.2.11`
+- `mui-textfield` updated to version `0.5.3`
+
 ## [0.32.7](https://github.com/Availity/element/compare/@availity/element@0.32.6...@availity/element@0.32.7) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-checkbox` updated to version `0.1.18`
-* `mui-feedback` updated to version `0.1.10`
-* `mui-form-utils` updated to version `0.7.2`
-* `mui-page-header` updated to version `0.2.10`
-* `mui-textfield` updated to version `0.5.2`
-* `theme-provider` updated to version `0.4.19`
+- `mui-checkbox` updated to version `0.1.18`
+- `mui-feedback` updated to version `0.1.10`
+- `mui-form-utils` updated to version `0.7.2`
+- `mui-page-header` updated to version `0.2.10`
+- `mui-textfield` updated to version `0.5.2`
+- `theme-provider` updated to version `0.4.19`
+
 ## [0.32.6](https://github.com/Availity/element/compare/@availity/element@0.32.5...@availity/element@0.32.6) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-checkbox` updated to version `0.1.17`
-* `mui-feedback` updated to version `0.1.9`
-* `mui-form-utils` updated to version `0.7.1`
-* `mui-page-header` updated to version `0.2.9`
-* `mui-textfield` updated to version `0.5.1`
-* `theme-provider` updated to version `0.4.18`
+- `mui-checkbox` updated to version `0.1.17`
+- `mui-feedback` updated to version `0.1.9`
+- `mui-form-utils` updated to version `0.7.1`
+- `mui-page-header` updated to version `0.2.9`
+- `mui-textfield` updated to version `0.5.1`
+- `theme-provider` updated to version `0.4.18`
+
 ## [0.32.5](https://github.com/Availity/element/compare/@availity/element@0.32.4...@availity/element@0.32.5) (2023-12-14)
 
 ### Dependency Updates
 
-* `theme-provider` updated to version `0.4.17`
+- `theme-provider` updated to version `0.4.17`
+
 ## [0.32.4](https://github.com/Availity/element/compare/@availity/element@0.32.3...@availity/element@0.32.4) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-card` updated to version `0.2.7`
-* `theme-provider` updated to version `0.4.16`
+- `mui-card` updated to version `0.2.7`
+- `theme-provider` updated to version `0.4.16`
+
 ## [0.32.3](https://github.com/Availity/element/compare/@availity/element@0.32.2...@availity/element@0.32.3) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-autocomplete` updated to version `0.3.0`
-* `mui-breadcrumbs` updated to version `0.2.0`
-* `mui-checkbox` updated to version `0.1.16`
-* `mui-datepicker` updated to version `0.3.0`
-* `mui-feedback` updated to version `0.1.8`
-* `mui-form-utils` updated to version `0.7.0`
-* `mui-page-header` updated to version `0.2.8`
-* `mui-textfield` updated to version `0.5.0`
-* `theme-provider` updated to version `0.4.15`
+- `mui-autocomplete` updated to version `0.3.0`
+- `mui-breadcrumbs` updated to version `0.2.0`
+- `mui-checkbox` updated to version `0.1.16`
+- `mui-datepicker` updated to version `0.3.0`
+- `mui-feedback` updated to version `0.1.8`
+- `mui-form-utils` updated to version `0.7.0`
+- `mui-page-header` updated to version `0.2.8`
+- `mui-textfield` updated to version `0.5.0`
+- `theme-provider` updated to version `0.4.15`
+
 ## [0.32.2](https://github.com/Availity/element/compare/@availity/element@0.32.1...@availity/element@0.32.2) (2023-12-13)
 
 ### Dependency Updates
 
-* `theme-provider` updated to version `0.4.14`
+- `theme-provider` updated to version `0.4.14`
+
 ## [0.32.1](https://github.com/Availity/element/compare/@availity/element@0.32.0...@availity/element@0.32.1) (2023-12-13)
 
 ### Dependency Updates
 
-* `mui-checkbox` updated to version `0.1.15`
-* `mui-feedback` updated to version `0.1.7`
-* `mui-page-header` updated to version `0.2.7`
+- `mui-checkbox` updated to version `0.1.15`
+- `mui-feedback` updated to version `0.1.7`
+- `mui-page-header` updated to version `0.2.7`
+
 ## [0.32.0](https://github.com/Availity/element/compare/@availity/element@0.31.11...@availity/element@0.32.0) (2023-12-12)
 
 ### Dependency Updates
 
-* `mui-popper` updated to version `0.1.0`
+- `mui-popper` updated to version `0.1.0`
 
 ### Features
 
-* **mui-popper:** initial commit ([b70ee38](https://github.com/Availity/element/commit/b70ee382304605f43480c48dee5855aada32f267))
+- **mui-popper:** initial commit ([b70ee38](https://github.com/Availity/element/commit/b70ee382304605f43480c48dee5855aada32f267))
 
 ## [0.31.11](https://github.com/Availity/element/compare/@availity/element@0.31.10...@availity/element@0.31.11) (2023-12-07)
 
 ### Dependency Updates
 
-* `theme-provider` updated to version `0.4.13`
+- `theme-provider` updated to version `0.4.13`
+
 ## [0.31.10](https://github.com/Availity/element/compare/@availity/element@0.31.9...@availity/element@0.31.10) (2023-12-06)
 
 ### Dependency Updates
 
-* `theme-provider` updated to version `0.4.12`
+- `theme-provider` updated to version `0.4.12`
+
 ## [0.31.9](https://github.com/Availity/element/compare/@availity/element@0.31.8...@availity/element@0.31.9) (2023-12-06)
 
 ### Dependency Updates
 
-* `theme-provider` updated to version `0.4.11`
+- `theme-provider` updated to version `0.4.11`
+
 ## [0.31.8](https://github.com/Availity/element/compare/@availity/element@0.31.7...@availity/element@0.31.8) (2023-12-04)
 
 ### Dependency Updates
 
-* `mui-alert` updated to version `0.5.6`
-* `mui-button` updated to version `0.6.0`
-* `mui-card` updated to version `0.2.6`
-* `mui-checkbox` updated to version `0.1.14`
-* `mui-feedback` updated to version `0.1.6`
-* `mui-form-utils` updated to version `0.6.2`
-* `mui-menu` updated to version `0.1.8`
-* `mui-page-header` updated to version `0.2.6`
-* `mui-textfield` updated to version `0.4.3`
-* `theme-provider` updated to version `0.4.10`
+- `mui-alert` updated to version `0.5.6`
+- `mui-button` updated to version `0.6.0`
+- `mui-card` updated to version `0.2.6`
+- `mui-checkbox` updated to version `0.1.14`
+- `mui-feedback` updated to version `0.1.6`
+- `mui-form-utils` updated to version `0.6.2`
+- `mui-menu` updated to version `0.1.8`
+- `mui-page-header` updated to version `0.2.6`
+- `mui-textfield` updated to version `0.4.3`
+- `theme-provider` updated to version `0.4.10`
+
 ## [0.31.7](https://github.com/Availity/element/compare/@availity/element@0.31.6...@availity/element@0.31.7) (2023-11-30)
 
 ### Dependency Updates
 
-* `theme-provider` updated to version `0.4.9`
+- `theme-provider` updated to version `0.4.9`
+
 ## [0.31.6](https://github.com/Availity/element/compare/@availity/element@0.31.5...@availity/element@0.31.6) (2023-11-28)
 
 ### Dependency Updates

@@ -13,41 +13,36 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 * `design-tokens` updated to version `0.12.2`
 ## [0.34.0](https://github.com/Availity/element/compare/@availity/theme@0.33.0...@availity/theme@0.34.0) (2023-12-19)
 
-
 ### Features
 
-* **mui-empty-state:** add EmptyState package ([59e8641](https://github.com/Availity/element/commit/59e86418686355fe11a97e63b8e16501d1f01a6c))
-* **theme:** legacy emptystates body2 styling ([be34381](https://github.com/Availity/element/commit/be343812a6cb054e55a098d0601d34ea91bce3c4))
+- **mui-empty-state:** add EmptyState package ([59e8641](https://github.com/Availity/element/commit/59e86418686355fe11a97e63b8e16501d1f01a6c))
+- **theme:** legacy emptystates body2 styling ([be34381](https://github.com/Availity/element/commit/be343812a6cb054e55a098d0601d34ea91bce3c4))
 
 ## [0.33.0](https://github.com/Availity/element/compare/@availity/theme@0.32.0...@availity/theme@0.33.0) (2023-12-14)
 
-
 ### Features
 
-* **theme:** multiline row ranges, new helpertext spacing ([a9bfc42](https://github.com/Availity/element/commit/a9bfc42e4fc403e9d313bd1c0556ea4d435831a8))
+- **theme:** multiline row ranges, new helpertext spacing ([a9bfc42](https://github.com/Availity/element/commit/a9bfc42e4fc403e9d313bd1c0556ea4d435831a8))
 
 ## [0.32.0](https://github.com/Availity/element/compare/@availity/theme@0.31.2...@availity/theme@0.32.0) (2023-12-14)
 
-
 ### Features
 
-* **theme:** placeholder colors ([830b876](https://github.com/Availity/element/commit/830b8767e985aadac2b84d561e8945edbd245561))
+- **theme:** placeholder colors ([830b876](https://github.com/Availity/element/commit/830b8767e985aadac2b84d561e8945edbd245561))
 
 ## [0.31.2](https://github.com/Availity/element/compare/@availity/theme@0.31.1...@availity/theme@0.31.2) (2023-12-14)
 
-
 ### Bug Fixes
 
-* **theme:** legacy container maxWidth ([669fec5](https://github.com/Availity/element/commit/669fec5f81cb161423b649bc705248aa0700985b))
+- **theme:** legacy container maxWidth ([669fec5](https://github.com/Availity/element/commit/669fec5f81cb161423b649bc705248aa0700985b))
 
 ## [0.31.1](https://github.com/Availity/element/compare/@availity/theme@0.31.0...@availity/theme@0.31.1) (2023-12-14)
 
 ## [0.31.0](https://github.com/Availity/element/compare/@availity/theme@0.30.4...@availity/theme@0.31.0) (2023-12-14)
 
-
 ### Features
 
-* add form story ([11d1f6c](https://github.com/Availity/element/commit/11d1f6c6191540bf02ff42d4056ac553eecc8c73))
+- add form story ([11d1f6c](https://github.com/Availity/element/commit/11d1f6c6191540bf02ff42d4056ac553eecc8c73))
 
 ## [0.30.4](https://github.com/Availity/element/compare/@availity/theme@0.30.3...@availity/theme@0.30.4) (2023-12-13)
 
@@ -59,11 +54,10 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.30.0](https://github.com/Availity/element/compare/@availity/theme@0.29.1...@availity/theme@0.30.0) (2023-12-04)
 
-
 ### Features
 
-* **mui-button:** set the default size to large ([dd37957](https://github.com/Availity/element/commit/dd379571d15e43be3b37e00d00553f9f5b6b5b3a))
-* **theme:** icon inherit button font size in button ([1aa6b34](https://github.com/Availity/element/commit/1aa6b346bae836fa059623b58729a05ac6a493bb))
+- **mui-button:** set the default size to large ([dd37957](https://github.com/Availity/element/commit/dd379571d15e43be3b37e00d00553f9f5b6b5b3a))
+- **theme:** icon inherit button font size in button ([1aa6b34](https://github.com/Availity/element/commit/1aa6b346bae836fa059623b58729a05ac6a493bb))
 
 ## [0.29.1](https://github.com/Availity/element/compare/@availity/theme@0.29.0...@availity/theme@0.29.1) (2023-11-30)
 

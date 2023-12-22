@@ -11,34 +11,40 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-feedback` updated to version `0.1.11`
+- `mui-feedback` updated to version `0.1.11`
+
 ## [0.2.10](https://github.com/Availity/element/compare/@availity/mui-page-header@0.2.9...@availity/mui-page-header@0.2.10) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-feedback` updated to version `0.1.10`
+- `mui-feedback` updated to version `0.1.10`
+
 ## [0.2.9](https://github.com/Availity/element/compare/@availity/mui-page-header@0.2.8...@availity/mui-page-header@0.2.9) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-feedback` updated to version `0.1.9`
+- `mui-feedback` updated to version `0.1.9`
+
 ## [0.2.8](https://github.com/Availity/element/compare/@availity/mui-page-header@0.2.7...@availity/mui-page-header@0.2.8) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-feedback` updated to version `0.1.8`
-* `mui-breadcrumbs` updated to version `0.2.0`
+- `mui-feedback` updated to version `0.1.8`
+- `mui-breadcrumbs` updated to version `0.2.0`
+
 ## [0.2.7](https://github.com/Availity/element/compare/@availity/mui-page-header@0.2.6...@availity/mui-page-header@0.2.7) (2023-12-13)
 
 ### Dependency Updates
 
-* `mui-feedback` updated to version `0.1.7`
+- `mui-feedback` updated to version `0.1.7`
+
 ## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-page-header@0.2.5...@availity/mui-page-header@0.2.6) (2023-12-04)
 
 ### Dependency Updates
 
-* `mui-feedback` updated to version `0.1.6`
-* `mui-button` updated to version `0.6.0`
+- `mui-feedback` updated to version `0.1.6`
+- `mui-button` updated to version `0.6.0`
+
 ## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-page-header@0.2.4...@availity/mui-page-header@0.2.5) (2023-11-28)
 
 ### Dependency Updates

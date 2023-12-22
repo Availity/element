@@ -9,32 +9,30 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 * `mui-chip` updated to version `0.2.6`
 ## [0.8.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.7.2...@availity/mui-form-utils@0.8.0) (2023-12-15)
 
-
 ### Features
 
-* **mui-form-utils:** add RequiredKey component ([164f0fa](https://github.com/Availity/element/commit/164f0fa9b4359ce0e1cd6a62389e8d60a94e6e62))
+- **mui-form-utils:** add RequiredKey component ([164f0fa](https://github.com/Availity/element/commit/164f0fa9b4359ce0e1cd6a62389e8d60a94e6e62))
 
 ## [0.7.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.7.1...@availity/mui-form-utils@0.7.2) (2023-12-14)
 
-
 ### Bug Fixes
 
-* **mui-form-utils:** move aria-required from root to input ([defb057](https://github.com/Availity/element/commit/defb05720df7c6e13cbf7d5a23c554c66cce969e))
+- **mui-form-utils:** move aria-required from root to input ([defb057](https://github.com/Availity/element/commit/defb05720df7c6e13cbf7d5a23c554c66cce969e))
 
 ## [0.7.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.7.0...@availity/mui-form-utils@0.7.1) (2023-12-14)
 
 ## [0.7.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.6.2...@availity/mui-form-utils@0.7.0) (2023-12-14)
 
-
 ### Features
 
-* add form story ([11d1f6c](https://github.com/Availity/element/commit/11d1f6c6191540bf02ff42d4056ac553eecc8c73))
+- add form story ([11d1f6c](https://github.com/Availity/element/commit/11d1f6c6191540bf02ff42d4056ac553eecc8c73))
 
 ## [0.6.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.6.1...@availity/mui-form-utils@0.6.2) (2023-12-04)
 
 ### Dependency Updates
 
-* `mui-button` updated to version `0.6.0`
+- `mui-button` updated to version `0.6.0`
+
 ## [0.6.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.6.0...@availity/mui-form-utils@0.6.1) (2023-11-27)
 
 ### Dependency Updates

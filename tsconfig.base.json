@@ -28,6 +28,7 @@
       "@availity/mui-avatar": ["packages/avatar/src/index.ts"],
       "@availity/mui-backdrop": ["packages/backdrop/src/index.ts"],
       "@availity/mui-badge": ["packages/badge/src/index.ts"],
+      "@availity/mui-block-ui": ["packages/block-ui/src/index.ts"],
       "@availity/mui-breadcrumbs": ["packages/breadcrumbs/src/index.ts"],
       "@availity/mui-button": ["packages/button/src/index.ts"],
       "@availity/mui-card": ["packages/card/src/index.ts"],

@@ -11,34 +11,38 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.8.0`
+- `mui-form-utils` updated to version `0.8.0`
+
 ## [0.5.2](https://github.com/Availity/element/compare/@availity/mui-textfield@0.5.1...@availity/mui-textfield@0.5.2) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.7.2`
+- `mui-form-utils` updated to version `0.7.2`
+
 ## [0.5.1](https://github.com/Availity/element/compare/@availity/mui-textfield@0.5.0...@availity/mui-textfield@0.5.1) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.7.1`
+- `mui-form-utils` updated to version `0.7.1`
+
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-textfield@0.4.3...@availity/mui-textfield@0.5.0) (2023-12-14)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.7.0`
+- `mui-form-utils` updated to version `0.7.0`
 
 ### Features
 
-* add form story ([11d1f6c](https://github.com/Availity/element/commit/11d1f6c6191540bf02ff42d4056ac553eecc8c73))
-* **mui-textfield:** pass aria-required to inputProps ([3c7e497](https://github.com/Availity/element/commit/3c7e4976348ac8649b1accbff7e6f9a9f3c01bd8))
+- add form story ([11d1f6c](https://github.com/Availity/element/commit/11d1f6c6191540bf02ff42d4056ac553eecc8c73))
+- **mui-textfield:** pass aria-required to inputProps ([3c7e497](https://github.com/Availity/element/commit/3c7e4976348ac8649b1accbff7e6f9a9f3c01bd8))
 
 ## [0.4.3](https://github.com/Availity/element/compare/@availity/mui-textfield@0.4.2...@availity/mui-textfield@0.4.3) (2023-12-04)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.6.2`
-* `mui-button` updated to version `0.6.0`
+- `mui-form-utils` updated to version `0.6.2`
+- `mui-button` updated to version `0.6.0`
+
 ## [0.4.2](https://github.com/Availity/element/compare/@availity/mui-textfield@0.4.1...@availity/mui-textfield@0.4.2) (2023-11-28)
 
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-textfield@0.4.0...@availity/mui-textfield@0.4.1) (2023-11-27)
