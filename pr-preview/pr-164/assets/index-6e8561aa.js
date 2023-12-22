@@ -1,2 +1,0 @@
-import{a as o}from"./jsx-runtime-a3bcee63.js";import{B as t}from"./Box-51bd3ea0.js";import{C as i}from"./Container-3c3a93d6.js";import{M as m}from"./Grid2-2ceca868.js";import{S as s}from"./Stack-3fcb8940.js";var v=({children:r,...a})=>o(t,{...a,children:r}),x=({children:r,...a})=>o(i,{...a,children:r}),B=r=>o(m,{...r}),C=({children:r,...a})=>o(s,{...a,children:r});export{v as B,x as C,B as G,C as S};
-//# sourceMappingURL=index-6e8561aa.js.map
