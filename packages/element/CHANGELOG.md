@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.34.0](https://github.com/Availity/element/compare/@availity/element@0.33.3...@availity/element@0.34.0) (2023-12-22)
+
+### Dependency Updates
+
+* `mui-block-ui` updated to version `0.1.0`
+
+### Features
+
+* **mui-block-ui:** add BlockUi component ([91f6103](https://github.com/Availity/element/commit/91f61039e74e4a2120988e4d2e72f0c27e82f686))
+
+
+### Bug Fixes
+
+* **mui-block-ui:** merge main branch ([8ec0ca6](https://github.com/Availity/element/commit/8ec0ca617a5b279f3657122e2c7c6b20281e3ebc))
+
 ## [0.33.3](https://github.com/Availity/element/compare/@availity/element@0.33.2...@availity/element@0.33.3) (2023-12-22)
 
 ### Dependency Updates
