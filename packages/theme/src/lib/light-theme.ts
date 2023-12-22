@@ -456,6 +456,7 @@ export const lightTheme = {
         separator: {
           marginLeft: '.625rem',
           marginRight: '.625rem',
+          color: tokens.colorGrey300,
         },
       },
     },
