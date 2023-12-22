@@ -30,7 +30,90 @@ yarn add react-hook-form
 ## Usage
 
 At the moment, @availity/element does not export a `<Form />` component.
-Instead, use the native `<form>` element. You can then use `react-hook-form`'s
-`useForm` hook to manage your form.
+Instead, use the native `<form>` element. You can then use
+`react-hook-form`'s `useForm` hook to manage your form. Below is the same
+form implemented in `formik` and rewritten in react-hook-form.
 
-You can find some examples [here](/docs/layouts-form--docs).
+```jsx Example: Feedback Form component with formik
+import React, { useRef } from 'react';
+import { Form, Field } from '@availity/form';
+import { Button } from 'reactstrap';
+
+export const FeedbackForm = () => {
+  const ref = useRef();
+  return (
+    <Form
+      innerRef={ref}
+      aria-label="Feedback Form"
+      role="form"
+      onKeyDown={({ key }) => key === 'Escape' && onClose()}
+      initialValues={{
+        feedback: undefined,
+      }}
+      validationSchema={yup.object().shape({
+        feedback: yup.string().max(200, 'Feedback cannot exceed 200 characters.').required('This field is required.'),
+      })}
+      {...formProps}
+      onSubmit={(values) => sendFeedback(values)}
+    >
+      <Field type="textarea" name="feedback" label="Feedback" />
+      <Button
+        onKeyDown={({ key, shiftKey }) => {
+          if (key === 'Enter') {
+            ref.current.submitForm();
+          }
+          if (key === 'Tab' && !shiftKey && !modal) {
+            onClose();
+          }
+        }}
+        type="submit"
+      >
+        Send Feedback
+      </Button>
+    </Form>
+  );
+};
+```
+
+```jsx Example: Feedback form component with react-hook-form
+
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { TextField } from '@availity/mui-text-field
+import { LoadingButton } from '@availity/mui-button';
+
+
+export const FeedbackForm = () => {
+
+  const {
+    formState: { errors },
+    handleSubmit,
+    register,
+  } = useForm({
+    defaultValues: {feedback: ""}
+  });
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <TextField
+        {...register('feedback', {
+          required: 'This field is required',
+          maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
+        })}
+        label="Feedback"
+        inputProps={{ 'aria-required': 'true' }}
+        InputLabelProps={{
+          component: FormLabel,
+          required: true,
+        }}
+        helperText={errors.feedback?.message || 'Max 200 characters'}
+        error={!!errors.feedback}
+      />
+      <LoadingButton loading={loading} type="submit" variant="contained">
+        Send Feedback
+      </LoadingButton>
+    </form>
+  )
+}
+```
+
+You can find more working examples of react-hook-form [here](/docs/layouts-form--docs).
