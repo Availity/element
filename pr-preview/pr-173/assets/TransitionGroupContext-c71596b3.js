@@ -1,2 +1,0 @@
-import{a as p}from"./index-570b25c1.js";function a(t,e){if(t==null)return{};var i={},r=Object.keys(t),o,n;for(n=0;n<r.length;n++)o=r[n],!(e.indexOf(o)>=0)&&(i[o]=t[o]);return i}function c(t,e){return c=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(r,o){return r.__proto__=o,r},c(t,e)}function y(t,e){t.prototype=Object.create(e.prototype),t.prototype.constructor=t,c(t,e)}const u=p.createContext(null);export{u as T,y as _,a};
-//# sourceMappingURL=TransitionGroupContext-c71596b3.js.map
