@@ -34,50 +34,50 @@ Instead, use the native `<form>` element. You can then use
 `react-hook-form`'s `useForm` hook to manage your form. Below is the same
 form implemented in `formik` and rewritten in react-hook-form.
 
-### Example: Feedback Form component with `formik` and `@availity/react`
+### Example: Form component with `formik` and `@availity/react`
 
 ```jsx
 import React, { useRef } from 'react';
 import { Form, Field } from '@availity/form';
 import { Button } from 'reactstrap';
 
-export const FeedbackForm = () => {
+export const Form = () => {
   const ref = useRef();
   return (
     <Form
       innerRef={ref}
-      aria-label="Feedback Form"
+      aria-label="Form"
       role="form"
       onKeyDown={({ key }) => key === 'Escape' && onClose()}
       initialValues={{
-        feedback: undefined,
+        textField1: undefined,
       }}
       validationSchema={yup.object().shape({
-        feedback: yup.string().max(200, 'Feedback cannot exceed 200 characters.').required('This field is required.'),
+        textField1: yup
+          .string()
+          .max(200, 'Text Field cannot exceed 200 characters.')
+          .required('This field is required.'),
       })}
       {...formProps}
-      onSubmit={(values) => sendFeedback(values)}
+      onSubmit={(values) => sendValues(values)}
     >
-      <Field type="textarea" name="feedback" label="Feedback" />
+      <Field type="textarea" name="textField1" label="Text Field" />
       <Button
         onKeyDown={({ key, shiftKey }) => {
           if (key === 'Enter') {
             ref.current.submitForm();
           }
-          if (key === 'Tab' && !shiftKey && !modal) {
-            onClose();
-          }
         }}
         type="submit"
       >
-        Send Feedback
+        Submit
       </Button>
     </Form>
   );
 };
 ```
 
-### Example: Feedback form component with `react-hook-form` and `@availity/element`
+### Example: form component with `react-hook-form` and `@availity/element`
 
 ```jsx
 
@@ -86,34 +86,30 @@ import { TextField } from '@availity/mui-text-field
 import { LoadingButton } from '@availity/mui-button';
 
 
-export const FeedbackForm = () => {
+export const Form = () => {
 
   const {
     formState: { errors },
     handleSubmit,
     register,
   } = useForm({
-    defaultValues: {feedback: ""}
+    defaultValues: { textField1: "" }
   });
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <TextField
-        {...register('feedback', {
+        {...register('textField1', {
           required: 'This field is required',
           maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
         })}
-        label="Feedback"
-        inputProps={{ 'aria-required': 'true' }}
-        InputLabelProps={{
-          component: FormLabel,
-          required: true,
-        }}
-        helperText={errors.feedback?.message || 'Max 200 characters'}
-        error={!!errors.feedback}
+        label="Text Field"
+        required
+        helperText={errors.textField1?.message || 'Max 200 characters'}
+        error={!!errors.textField1}
       />
       <LoadingButton loading={loading} type="submit" variant="contained">
-        Send Feedback
+        Submit
       </LoadingButton>
     </form>
   )
