@@ -34,7 +34,9 @@ Instead, use the native `<form>` element. You can then use
 `react-hook-form`'s `useForm` hook to manage your form. Below is the same
 form implemented in `formik` and rewritten in react-hook-form.
 
-```jsx Example: Feedback Form component with formik
+### Example: Feedback Form component with `formik` and `@availity/react`
+
+```jsx
 import React, { useRef } from 'react';
 import { Form, Field } from '@availity/form';
 import { Button } from 'reactstrap';
@@ -75,7 +77,9 @@ export const FeedbackForm = () => {
 };
 ```
 
-```jsx Example: Feedback form component with react-hook-form
+### Example: Feedback form component with `react-hook-form` and `@availity/element`
+
+```jsx
 
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { TextField } from '@availity/mui-text-field
