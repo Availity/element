@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.25](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.24...@availity/theme-provider@0.4.25) (2023-12-27)
+
+### Dependency Updates
+
+* `theme` updated to version `0.35.0`
 ## [0.4.24](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.23...@availity/theme-provider@0.4.24) (2023-12-27)
 
 ### Dependency Updates
