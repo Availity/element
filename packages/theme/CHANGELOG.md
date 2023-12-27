@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.35.0](https://github.com/Availity/element/compare/@availity/theme@0.34.4...@availity/theme@0.35.0) (2023-12-27)
+
+### Dependency Updates
+
+* `design-tokens` updated to version `0.13.0`
+
+### Features
+
+* **mui-form-utils:** add radio and radiogroup ([cbc9c46](https://github.com/Availity/element/commit/cbc9c462497be6dda4dd2af48d6b6743db6f2278))
+
 ## [0.34.4](https://github.com/Availity/element/compare/@availity/theme@0.34.3...@availity/theme@0.34.4) (2023-12-27)
 
 
