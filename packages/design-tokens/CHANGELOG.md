@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.13.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.12.2...@availity/design-tokens@0.13.0) (2023-12-27)
+
+
+### Features
+
+* **design-tokens:** legacy error text ([4162042](https://github.com/Availity/element/commit/416204278761f03356391c02f5301d9f598d5686))
+
 ## [0.12.2](https://github.com/Availity/element/compare/@availity/design-tokens@0.12.1...@availity/design-tokens@0.12.2) (2023-12-21)
 
 
