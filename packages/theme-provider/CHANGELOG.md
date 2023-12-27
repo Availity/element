@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.24](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.23...@availity/theme-provider@0.4.24) (2023-12-27)
+
+### Dependency Updates
+
+* `theme` updated to version `0.34.4`
+
+### Bug Fixes
+
+* **mui-block-ui:** merge main branch ([8ec0ca6](https://github.com/Availity/element/commit/8ec0ca617a5b279f3657122e2c7c6b20281e3ebc))
+
 ## [0.4.23](https://github.com/Availity/element/compare/@availity/theme-provider@0.4.22...@availity/theme-provider@0.4.23) (2023-12-22)
 
 ### Dependency Updates
