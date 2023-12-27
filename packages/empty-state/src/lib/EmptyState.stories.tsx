@@ -1,12 +1,33 @@
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj, Decorator } from '@storybook/react';
 import { Box, Button, List, ListItem, Typography } from '@mui/material';
+import { visuallyHidden } from '@mui/utils';
 import { Link } from '@availity/mui-link';
 import { EmptyState, EmptyStateProps } from './EmptyState';
 import { SystemPropsList } from '../../../../data/MuiSystemProperties';
 
-/** Built on top of the `Stack` component, `EmptyState` will add the desired spacing to every direct descendant. */
+/** Remove 508 warning of Heading Level Jump while leaving Story heading levels realistic */
+const HeadingLevelDecorator: Decorator = (Story, context) => (
+  <>
+    {context.viewMode !== 'docs' ? (
+      <>
+        <Typography variant="h1" sx={visuallyHidden}>
+          Component: Empty State
+        </Typography>
+        <Typography variant="h2" sx={visuallyHidden}>
+          Story: {context.name}
+        </Typography>
+      </>
+    ) : null}
+    <Story />
+  </>
+);
+
+/** Built on top of the `Stack` component, `EmptyState` will add the desired spacing to every direct descendant.
+ *
+ * _Accessibility Note: Check the appropriate heading level needed for your usage to not create a heading jump._
+ */
 export default {
   title: 'Components/EmptyState/EmptyState',
   component: EmptyState,
@@ -14,6 +35,7 @@ export default {
   args: {
     variant: 'NoSearchFound',
   },
+  decorators: [HeadingLevelDecorator],
   parameters: {
     docs: {
       controls: {
