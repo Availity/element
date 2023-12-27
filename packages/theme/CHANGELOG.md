@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.34.4](https://github.com/Availity/element/compare/@availity/theme@0.34.3...@availity/theme@0.34.4) (2023-12-27)
+
+
+### Bug Fixes
+
+* **mui-block-ui:** merge main branch ([8ec0ca6](https://github.com/Availity/element/commit/8ec0ca617a5b279f3657122e2c7c6b20281e3ebc))
+* **theme:** remove focus on datepicker icon button ([14cbea5](https://github.com/Availity/element/commit/14cbea5c4152717e1e3b65489677dab15a0058c8))
+
 ## [0.34.3](https://github.com/Availity/element/compare/@availity/theme@0.34.2...@availity/theme@0.34.3) (2023-12-22)
 
 ## [0.34.2](https://github.com/Availity/element/compare/@availity/theme@0.34.1...@availity/theme@0.34.2) (2023-12-21)
