@@ -10,8 +10,8 @@ export type FormLabelProps = {
 // Form Label styles moved up to wrapper to include field level help
 const Wrapper = styled(Box, {
   name: 'MuiFormLabel',
-  slot: 'Wrapper',
-  overridesResolver: (props, styles) => styles.wrapper,
+  slot: 'AvWrapper',
+  overridesResolver: (props, styles) => styles.avWrapper,
 })({});
 
 // As long as field help is available on label, should not have any transforms/animations
@@ -29,7 +29,7 @@ export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>((props, re
   const labelId = id || (rest.htmlFor ? `${rest.htmlFor}-label` : undefined);
 
   return (
-    <Wrapper className="MuiFormLabel-wrapper" sx={sx}>
+    <Wrapper className="MuiFormLabel-avWrapper" sx={sx}>
       <MuiFormLabel id={labelId} sx={{ ...StyleOverrides }} {...rest} ref={ref} />
       {helpTopicId ? <FieldHelpIcon helpTopicId={helpTopicId} labelId={labelId} sx={{ px: 0.5 }} /> : null}
     </Wrapper>

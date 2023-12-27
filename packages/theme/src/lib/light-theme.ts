@@ -801,7 +801,7 @@ export const lightTheme = {
           marginRight: '.25rem',
           marginLeft: '-.15rem',
         },
-        wrapper: {
+        avWrapper: {
           marginBottom: '3px',
           display: 'flex',
           flexDirection: 'row',

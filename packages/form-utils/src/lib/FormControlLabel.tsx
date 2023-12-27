@@ -3,6 +3,7 @@ import {
   Box,
   FormControlLabel as MuiFormControlLabel,
   FormControlLabelProps as MuiFormControlLabelProps,
+  styled,
 } from '@mui/material';
 import { FieldHelpIcon } from './FieldHelpIcon';
 
@@ -13,13 +14,20 @@ export type FormControlLabelProps = {
   required?: boolean;
 } & Omit<MuiFormControlLabelProps, 'componentsProps' | 'labelPlacement' | 'required'>;
 
-export const FormControlLabel = forwardRef(({ helpTopicId, id, ...rest }: FormControlLabelProps, ref) => {
+// Form Label styles moved up to wrapper to include field level help
+const Wrapper = styled(Box, {
+  name: 'MuiFormControlLabel',
+  slot: 'AvWrapper',
+  overridesResolver: (props, styles) => styles.avWrapper,
+})({});
+
+export const FormControlLabel = forwardRef(({ helpTopicId, id, sx, ...rest }: FormControlLabelProps, ref) => {
   const labelId = id || (rest.htmlFor ? `${rest.htmlFor}-label` : undefined);
 
   return (
-    <Box>
+    <Wrapper className="MuiFormControlLabel-avWrapper" sx={sx}>
       <MuiFormControlLabel id={labelId} {...rest} ref={ref} />
       {helpTopicId ? <FieldHelpIcon helpTopicId="12345" labelId={labelId} /> : null}
-    </Box>
+    </Wrapper>
   );
 });

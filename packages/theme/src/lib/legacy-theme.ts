@@ -643,6 +643,7 @@ export const legacyTheme = {
       },
       styleOverrides: {
         root: {
+          padding: '4px',
           '&.Mui-focusVisible': {
             '.MuiSvgIcon-root': {
               outline: `2px solid ${tokens.borderInputFocus}`,
@@ -778,6 +779,27 @@ export const legacyTheme = {
         fullWidth: true,
       },
     },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          marginLeft: '-4px',
+          marginRight: '12px',
+          '&.Mui-error': {
+            '.MuiFormControlLabel-label': {
+              color: tokens.colorTextError,
+            },
+          },
+        },
+        avWrapper: {
+          marginLeft: '-4px',
+          marginRight: '12px',
+          height: '1.5rem',
+          '.MuiFormControlLabel-root': {
+            margin: '0',
+          },
+        },
+      },
+    },
     MuiFormHelperText: {
       styleOverrides: {
         root: {
@@ -821,12 +843,12 @@ export const legacyTheme = {
           fontSize: '1.3rem',
           lineHeight: '100%',
         },
-        wrapper: {
+        avWrapper: {
           marginBottom: '.1rem',
           display: 'flex',
           flexDirection: 'row',
           '.MuiFormLabel-root': {
-            marginBottom: '.1rem',
+            marginBottom: '0',
           },
         },
       },
@@ -1059,6 +1081,23 @@ export const legacyTheme = {
       defaultProps: {
         PaperProps: {
           variant: 'outlined',
+        },
+      },
+    },
+    MuiRadio: {
+      defaultProps: {
+        disableRipple: true,
+      },
+      styleOverrides: {
+        root: {
+          padding: '4px',
+          '.MuiSvgIcon-root': {
+            fontSize: '1rem',
+          },
+          '&.Mui-focusVisible .MuiSvgIcon-root:first-of-type': {
+            boxShadow: `0 0 0px 2px ${tokens.colorPrimaryMain}`,
+            borderRadius: '50%',
+          },
         },
       },
     },
