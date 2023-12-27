@@ -377,8 +377,15 @@ export const lightTheme = {
         size: 'small',
         fullWidth: true,
         clearOnEscape: true,
+        filterSelectedOptions: true,
         ChipProps: {
           size: 'medium',
+        },
+        slotProps: {
+          paper: {
+            variant: 'elevation',
+            elevation: 8,
+          },
         },
       },
       styleOverrides: {
@@ -1040,6 +1047,16 @@ export const lightTheme = {
       },
     },
     MuiSelect: {
+      defaultProps: {
+        MenuProps: {
+          slotProps: {
+            paper: {
+              variant: 'elevation',
+              elevation: 8,
+            },
+          },
+        },
+      },
       styleOverrides: {
         avExpandIcon: {
           position: 'relative',
