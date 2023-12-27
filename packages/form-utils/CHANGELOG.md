@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.8.1...@availity/mui-form-utils@0.9.0) (2023-12-27)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.2.7`
+
+### Features
+
+* **mui-form-utils:** add radio and radiogroup ([cbc9c46](https://github.com/Availity/element/commit/cbc9c462497be6dda4dd2af48d6b6743db6f2278))
+
+
+### Bug Fixes
+
+* **mui-block-ui:** merge main branch ([8ec0ca6](https://github.com/Availity/element/commit/8ec0ca617a5b279f3657122e2c7c6b20281e3ebc))
+
 ## [0.8.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.8.0...@availity/mui-form-utils@0.8.1) (2023-12-21)
 
 ### Dependency Updates
