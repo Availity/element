@@ -233,7 +233,7 @@ export const _HeaderWithSearchAndFilter: StoryObj = {
           <FormLabel htmlFor="searchbyValue" id="searchbyValueLabel">
             Search By
           </FormLabel>
-          <Grid container spacing={1} flexWrap="wrap" width="100%">
+          <Grid container spacing={1} flexWrap="wrap">
             <Grid>
               <Controller
                 name="searchbyValue"
