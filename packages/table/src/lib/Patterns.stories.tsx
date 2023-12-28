@@ -234,7 +234,7 @@ export const _HeaderWithSearchAndFilter: StoryObj = {
             Search By
           </FormLabel>
           <Grid container spacing={1} flexWrap="wrap">
-            <Grid>
+            <Grid paddingLeft={0}>
               <Controller
                 name="searchbyValue"
                 control={control}
@@ -299,7 +299,7 @@ export const _HeaderWithSearchAndFilter: StoryObj = {
                 Search
               </Button>
             </Grid>
-            <Grid>
+            <Grid paddingRight={0}>
               <Button
                 type="button"
                 color="secondary"
