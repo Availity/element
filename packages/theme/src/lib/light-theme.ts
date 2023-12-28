@@ -816,9 +816,6 @@ export const lightTheme = {
         color: 'secondary',
       },
       styleOverrides: {
-        root: {
-          padding: '.75rem',
-        },
         colorSecondary: {
           borderColor: tokens.borderSecondary,
           '&:hover': {
@@ -833,6 +830,12 @@ export const lightTheme = {
           '&:hover, &:focus': {
             backgroundColor: tokens.colorActionSelected,
           },
+        },
+        sizeSmall: {
+          padding: '.25rem',
+        },
+        sizeMedium: {
+          padding: '.75rem',
         },
       },
     },
