@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.36.0](https://github.com/Availity/element/compare/@availity/theme@0.35.0...@availity/theme@0.36.0) (2023-12-28)
+
+
+### Features
+
+* **theme:** dropdown elevation and multiselect filtering ([8554b69](https://github.com/Availity/element/commit/8554b69264a48f8484c6be707ff74c2e1c3532d4))
+
 ## [0.35.0](https://github.com/Availity/element/compare/@availity/theme@0.34.4...@availity/theme@0.35.0) (2023-12-27)
 
 ### Dependency Updates
