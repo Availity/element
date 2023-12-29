@@ -1,0 +1,118 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="BS4 Migration/Form Migration" />
+
+# Form Migration
+
+For the `@availity/element` components, we have chosen to move away from
+`formik` in favor of `react-hook-form`. For exiting forms utilizing
+`@availity/react` and `formik`, some refactor is required.
+
+## Why `react-hook-form`?
+
+After a successful internal implementation of an extremely long and
+complicated form using `react-hook-form`, we decided to move forward with
+it. `react-hook-form` is very lightweight and flexible. It also boasts a
+large community and is actively and regularly supported.
+
+## Installation
+
+```sh
+npm install react-hook-form
+```
+
+OR
+
+```sh
+yarn add react-hook-form
+```
+
+## Usage
+
+At the moment, @availity/element does not export a `<Form />` component.
+Instead, use the native `<form>` element. You can then use
+`react-hook-form`'s `useForm` hook to manage your form. Below is the same
+form implemented in `formik` and rewritten in react-hook-form.
+
+### Example: Form component with `formik` and `@availity/react`
+
+```jsx
+import React, { useRef } from 'react';
+import { Form, Field } from '@availity/form';
+import { Button } from 'reactstrap';
+
+export const Form = () => {
+  const ref = useRef();
+  return (
+    <Form
+      innerRef={ref}
+      aria-label="Form"
+      role="form"
+      onKeyDown={({ key }) => key === 'Escape' && onClose()}
+      initialValues={{
+        textField1: undefined,
+      }}
+      validationSchema={yup.object().shape({
+        textField1: yup
+          .string()
+          .max(200, 'Text Field cannot exceed 200 characters.')
+          .required('This field is required.'),
+      })}
+      {...formProps}
+      onSubmit={(values) => sendValues(values)}
+    >
+      <Field type="textarea" name="textField1" label="Text Field" />
+      <Button
+        onKeyDown={({ key, shiftKey }) => {
+          if (key === 'Enter') {
+            ref.current.submitForm();
+          }
+        }}
+        type="submit"
+      >
+        Submit
+      </Button>
+    </Form>
+  );
+};
+```
+
+### Example: form component with `react-hook-form` and `@availity/element`
+
+```jsx
+
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { TextField, LoadingButton } from '@availity/element;
+
+
+export const Form = () => {
+
+  const {
+    formState: { errors },
+    handleSubmit,
+    register,
+  } = useForm({
+    defaultValues: { textField1: "" }
+  });
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <TextField
+        {...register('textField1', {
+          required: 'This field is required',
+          maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
+        })}
+        label="Text Field"
+        required
+        helperText={errors.textField1?.message || 'Max 200 characters'}
+        error={!!errors.textField1}
+      />
+      <LoadingButton loading={loading} type="submit" variant="contained">
+        Submit
+      </LoadingButton>
+    </form>
+  )
+}
+```
+
+You can find more working examples of react-hook-form [here](/docs/layouts-form--docs).
