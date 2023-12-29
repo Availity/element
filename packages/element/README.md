@@ -43,3 +43,7 @@ const App = () => {
   return <ThemeProvider>{/* Application code. Most likely a router. */}</ThemeProvider>;
 };
 ```
+
+## Automated Testing
+
+We recommend using `id`s on the components you want to target with automated testing.
