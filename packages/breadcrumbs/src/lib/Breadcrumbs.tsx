@@ -34,10 +34,9 @@ const Breadcrumb = ({ name, url, target = '_top' }: Crumb) => {
   const props = {
     'aria-label': name,
     children: name,
-    target,
   };
 
-  return url ? <Link {...props} href={url} /> : <Typography {...props} />;
+  return url ? <Link {...props} href={url} target={target} /> : <Typography {...props} />;
 };
 
 export const Breadcrumbs = ({
