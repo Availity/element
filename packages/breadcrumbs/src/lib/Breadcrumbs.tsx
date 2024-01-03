@@ -7,6 +7,10 @@ interface Crumb {
   name: string;
   /** The url for navigating to the ancestor page. */
   url: string;
+  /** The target on the Link component
+   * @default _top
+   */
+  target?: string;
 }
 
 export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator' | 'slotProps' | 'slots'> {
@@ -26,13 +30,13 @@ export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator' 
   homeUrl?: string;
 }
 
-const Breadcrumb = ({ name, url }: Crumb) => {
+const Breadcrumb = ({ name, url, target = '_top' }: Crumb) => {
   const props = {
     'aria-label': name,
     children: name,
   };
 
-  return url ? <Link {...props} href={url} /> : <Typography {...props} />;
+  return url ? <Link {...props} href={url} target={target} /> : <Typography {...props} />;
 };
 
 export const Breadcrumbs = ({
@@ -55,7 +59,9 @@ export const Breadcrumbs = ({
       </Link>
       {crumbs &&
         crumbs.length > 0 &&
-        crumbs.map(({ name = emptyState, url }) => <Breadcrumb name={name} url={url} key={name} />)}
+        crumbs.map(({ name = emptyState, url, target }) => (
+          <Breadcrumb name={name} url={url} target={target} key={name} />
+        ))}
       {children}
       <Typography>{active || emptyState}</Typography>
     </MuiBreadcrumbs>

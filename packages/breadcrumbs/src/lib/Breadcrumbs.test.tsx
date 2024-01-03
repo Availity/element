@@ -104,5 +104,39 @@ describe('Breadcrumbs', () => {
       expect(currentPageBreadcrumb).not.toHaveAttribute('href');
       expect(currentPageBreadcrumb).toHaveTextContent('...');
     });
+
+    test('crumb should have default target of _top', () => {
+      const { getByTestId } = render(
+        <Breadcrumbs
+          data-testid="testBreadcrumbs"
+          crumbs={[
+            { name: 'Grand Parent', url: '/grandparent' },
+            { name: 'Parent', url: '/grandparent/parent' },
+          ]}
+        />
+      );
+
+      const breadcrumbs = getByTestId('testBreadcrumbs').getElementsByClassName('MuiBreadcrumbs-li');
+      const grandparentBreadcrumb = breadcrumbs[1].getElementsByTagName('a')[0];
+
+      expect(grandparentBreadcrumb).toHaveAttribute('target', '_top');
+    });
+
+    test('crumb should set target to what is passed in config', () => {
+      const { getByTestId } = render(
+        <Breadcrumbs
+          data-testid="testBreadcrumbs"
+          crumbs={[
+            { name: 'Grand Parent', url: '/grandparent', target: '_self' },
+            { name: 'Parent', url: '/grandparent/parent' },
+          ]}
+        />
+      );
+
+      const breadcrumbs = getByTestId('testBreadcrumbs').getElementsByClassName('MuiBreadcrumbs-li');
+      const grandparentBreadcrumb = breadcrumbs[1].getElementsByTagName('a')[0];
+
+      expect(grandparentBreadcrumb).toHaveAttribute('target', '_self');
+    });
   });
 });
