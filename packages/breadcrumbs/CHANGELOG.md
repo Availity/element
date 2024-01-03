@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.2.0...@availity/mui-breadcrumbs@0.2.1) (2024-01-03)
+
+
+### Bug Fixes
+
+* **mui-breadcrumbs:** change how target is passed ([ac9b41c](https://github.com/Availity/element/commit/ac9b41c74a31aeb3a08cae67751d34c6fb98f9df))
+* **mui-breadcrumbs:** set default target on link to _top ([087d5d1](https://github.com/Availity/element/commit/087d5d15a05c59d15fc68284d7b362b14276a4cf))
+
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.1.9...@availity/mui-breadcrumbs@0.2.0) (2023-12-14)
 
 
