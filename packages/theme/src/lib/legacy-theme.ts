@@ -491,11 +491,13 @@ export const legacyTheme = {
           },
         },
         separator: {
+          marginLeft: '.25rem',
+          marginRight: '.25rem',
           '.MuiSvgIcon-root': {
-            width: '1rem',
-            height: '1rem',
-            marginX: '.5rem',
-            fontSize: '1rem',
+            width: '.8rem',
+            height: '.8rem',
+            marginBottom: '-2px',
+            color: tokens.colorGrey400,
           },
         },
       },
