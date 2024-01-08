@@ -949,11 +949,8 @@ export const legacyTheme = {
         root: {
           color: tokens.colorTextLink,
           fontWeight: tokens.fontWeightsBold,
-          '&:active': {
-            color: tokens.colorTextPrimary,
-          },
-          '&:visited': {
-            color: tokens.colorIndigo600,
+          '&:hover': {
+            color: tokens.colorCommonBlack,
           },
         },
       },
