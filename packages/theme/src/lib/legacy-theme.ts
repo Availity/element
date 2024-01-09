@@ -792,6 +792,10 @@ export const legacyTheme = {
             },
           },
         },
+        asterisk: {
+          // required indicators shown on the group level
+          display: 'none',
+        },
         avWrapper: {
           marginLeft: '-4px',
           marginRight: '12px',

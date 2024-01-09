@@ -8,6 +8,22 @@ const meta: Meta<typeof Radio> = {
   title: 'Components/FormUtils/Radio',
   component: Radio,
   tags: ['autodocs'],
+  parameters: {
+    controls: {
+      exclude: [
+        'action',
+        'autoFocus',
+        'className',
+        'component',
+        'onChange',
+        'onFocusVisible',
+        'readOnly',
+        'ref',
+        'style',
+        'tabIndex',
+      ],
+    },
+  },
 };
 
 export default meta;
