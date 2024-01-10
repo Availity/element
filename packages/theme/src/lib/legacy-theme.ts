@@ -490,6 +490,11 @@ export const legacyTheme = {
             color: tokens.colorPrimaryMain,
           },
         },
+        li: {
+          '.MuiLink-root:hover': {
+            color: tokens.colorTextLink,
+          },
+        },
         separator: {
           marginLeft: '.25rem',
           marginRight: '.25rem',
