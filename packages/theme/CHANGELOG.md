@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.37.1](https://github.com/Availity/element/compare/@availity/theme@0.37.0...@availity/theme@0.37.1) (2024-01-10)
+
+
+### Bug Fixes
+
+* **theme:** legacy breadcrumb hover ([8253426](https://github.com/Availity/element/commit/8253426c6952d2b96032b54208b8d140a7c39e78))
+
 ## [0.37.0](https://github.com/Availity/element/compare/@availity/theme@0.36.1...@availity/theme@0.37.0) (2024-01-09)
 
 
