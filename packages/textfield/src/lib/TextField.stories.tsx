@@ -89,13 +89,8 @@ export const _PasswordField: StoryObj<typeof TextField> = {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton
-                title="password visibility"
-                onClick={() => setShowPassword((prev) => !prev)}
-                edge="end"
-                size="small"
-              >
-                {showPassword ? <EyeIcon /> : <EyeSlashIcon />}
+              <IconButton title="password visibility" onClick={() => setShowPassword((prev) => !prev)} edge="end">
+                {showPassword ? <EyeIcon fontSize="small" /> : <EyeSlashIcon fontSize="small" />}
               </IconButton>
             </InputAdornment>
           ),

@@ -17,7 +17,6 @@ export type IconButtonProps = {
    * @default 'secondary'
    */
   color?: 'primary' | 'secondary';
-  size?: 'small' | 'medium';
 } & Omit<
   MUIIconButtonProps,
   | 'aria-label'
@@ -27,6 +26,7 @@ export type IconButtonProps = {
   | 'disableTouchRipple'
   | 'focusRipple'
   | 'disableFocusRipple'
+  | 'size'
   | 'TouchRippleProps'
   | 'touchRippleRef'
 >;
@@ -45,7 +45,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
   };
   return (
     <Tooltip title={title}>
-      <MuiIconButton aria-label={title} sx={{ ...styles }} {...rest} ref={ref} />
+      <MuiIconButton aria-label={title} sx={{ ...styles }} {...rest} ref={ref} size="medium" />
     </Tooltip>
   );
 });

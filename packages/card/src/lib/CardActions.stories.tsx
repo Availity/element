@@ -31,8 +31,8 @@ export const _CardActionsIconButtons: StoryObj<typeof CardActions> = {
   render: (args: CardActionsProps) => (
     <Card>
       <CardActions {...args}>
-        <IconButton size="small" color="primary" title="search">
-          <SearchIcon />
+        <IconButton color="primary" title="search">
+          <SearchIcon fontSize="small" />
         </IconButton>
       </CardActions>
     </Card>
