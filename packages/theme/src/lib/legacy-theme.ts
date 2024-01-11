@@ -971,6 +971,33 @@ export const legacyTheme = {
           vertical: 'top',
           horizontal: 'left',
         },
+        slotProps: {
+          paper: {
+            variant: 'outlined',
+          },
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorActionSelected,
+            '&:hover': {
+              backgroundColor: tokens.colorActionSelected,
+            },
+          },
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+          },
+          '&:active': {
+            backgroundColor: tokens.colorActionSelected,
+          },
+          '.MuiSvgIcon-root': {
+            marginRight: '8px',
+            color: tokens.colorSecondaryMain,
+          },
+        },
       },
     },
     MuiOutlinedInput: {
