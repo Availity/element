@@ -983,6 +983,10 @@ export const legacyTheme = {
         root: {
           '&.Mui-selected': {
             backgroundColor: tokens.colorActionSelected,
+            color: tokens.colorTextInverse,
+            '.MuiSvgIcon-root': {
+              color: tokens.colorTextInverse,
+            },
             '&:hover': {
               backgroundColor: tokens.colorActionSelected,
             },
