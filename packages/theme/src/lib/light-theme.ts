@@ -716,6 +716,15 @@ export const lightTheme = {
         },
       },
     },
+    MuiPickersDay: {
+      styleOverrides: {
+        root: {
+          '&.MuiPickersDay-today': {
+            borderColor: tokens.colorBackgroundBorder,
+          },
+        },
+      },
+    },
     MuiFormControl: {
       defaultProps: {
         size: 'small',
