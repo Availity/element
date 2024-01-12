@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-menu@0.1.8...@availity/mui-menu@0.2.0) (2024-01-12)
+
+
+### Features
+
+* **mui-menu:** add legacy theme ([20bccf5](https://github.com/Availity/element/commit/20bccf543b091540140cdab66e4fcace4fe13c15))
+
 ## [0.1.8](https://github.com/Availity/element/compare/@availity/mui-menu@0.1.7...@availity/mui-menu@0.1.8) (2023-12-04)
 
 ### Dependency Updates
