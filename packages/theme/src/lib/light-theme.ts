@@ -701,18 +701,26 @@ export const lightTheme = {
     },
     MuiDayPicker: {
       styleOverrides: {
-        monthContainer: {
-          padding: '12px 8px 0px',
+        header: {
+          paddingBottom: '12px',
         },
       },
     },
     MuiCalendarPicker: {
       styleOverrides: {
         root: {
-          height: '328px',
           width: '310px',
           '.MuiIconButton-root': {
             border: '0',
+          },
+        },
+      },
+    },
+    MuiPickersDay: {
+      styleOverrides: {
+        root: {
+          '&.MuiPickersDay-today': {
+            borderColor: tokens.colorBackgroundBorder,
           },
         },
       },

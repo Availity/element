@@ -6,6 +6,10 @@ export type DatepickerProps = {
   value: Dayjs | string | null;
   /** Props applied to the `TextField` component */
   FieldProps?: TextFieldProps;
+  /** Determines where the Calendar will be placed when opened.
+   * @default bottom-start
+   */
+  placement?: 'bottom-start' | 'bottom' | 'bottom-end';
 } & Omit<
   MuiDatePickerProps<Dayjs, Dayjs>,
   | 'components'
@@ -29,10 +33,14 @@ export type DatepickerProps = {
   | 'value'
 >;
 
-export const Datepicker = ({ FieldProps, ...props }: DatepickerProps): JSX.Element => {
+const paperProps = { elevation: 8, variant: 'elevation', sx: { marginTop: '4px' } } as const;
+
+export const Datepicker = ({ FieldProps, placement = 'bottom-start', ...props }: DatepickerProps): JSX.Element => {
   return (
     <MuiDatePicker
       {...props}
+      PaperProps={paperProps}
+      PopperProps={{ placement }}
       renderInput={(params) => {
         if (params.inputProps) {
           params.inputProps.placeholder = 'MM/DD/YYYY';
