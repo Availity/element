@@ -965,6 +965,15 @@ export const lightTheme = {
         },
       },
     },
+    MuiMenu: {
+      defaultProps: {
+        slotProps: {
+          paper: {
+            variant: 'elevation',
+          },
+        },
+      },
+    },
     MuiMenuItem: {
       styleOverrides: {
         root: {
