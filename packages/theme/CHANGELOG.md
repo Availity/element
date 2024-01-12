@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.38.0](https://github.com/Availity/element/compare/@availity/theme@0.37.1...@availity/theme@0.38.0) (2024-01-12)
+
+### Dependency Updates
+
+* `design-tokens` updated to version `0.13.1`
+
+### Features
+
+* **mui-menu:** add legacy theme ([20bccf5](https://github.com/Availity/element/commit/20bccf543b091540140cdab66e4fcace4fe13c15))
+
+
+### Bug Fixes
+
+* set today border color ([46c3aab](https://github.com/Availity/element/commit/46c3aab83a2db64664b5e2b4a1a4653d147fccda))
+* update datepicker styles ([43eae9a](https://github.com/Availity/element/commit/43eae9a4ab1b70d6a3a295bf8e54a3423ef6638a))
+
 ## [0.37.1](https://github.com/Availity/element/compare/@availity/theme@0.37.0...@availity/theme@0.37.1) (2024-01-10)
 
 
