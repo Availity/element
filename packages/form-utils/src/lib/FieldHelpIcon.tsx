@@ -41,7 +41,8 @@ export const FieldHelpIcon = ({ helpTopicId, labelId, sx, ...rest }: FieldHelpIc
       role="link"
       onClick={() => triggerFieldHelp(helpTopicId)}
       aria-describedby={labelId}
-      sx={{ ...sx, padding: 0.5, fontSize: 'inherit', marginTop: '-2px', opacity: 1 }}
+      size="small"
+      sx={{ ...sx, fontSize: 'inherit', marginTop: '-2px', opacity: 1 }}
     >
       <HelpCircleIcon aria-hidden titleAccess={undefined} />
     </IconButton>

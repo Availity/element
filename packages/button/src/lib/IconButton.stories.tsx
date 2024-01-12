@@ -1,18 +1,27 @@
-import type { StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Grid } from '@availity/mui-layout';
 import { SearchIcon } from '@availity/mui-icon';
 import { IconButton, IconButtonProps } from './IconButton';
 import React from 'react';
 
-/** Icon only button with built-in tooltip */
-export default {
+const meta: Meta<typeof IconButton> = {
   title: 'Components/Button/IconButton',
   component: IconButton,
   tags: ['autodocs'],
   args: {
     title: 'title text',
   },
+  argTypes: {
+    size: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
+
+/** Icon only button with built-in tooltip */
+export default meta;
 
 export const _IconButton: StoryObj<typeof IconButton> = {
   render: ({ ...args }: IconButtonProps) => (

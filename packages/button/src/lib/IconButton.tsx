@@ -17,6 +17,7 @@ export type IconButtonProps = {
    * @default 'secondary'
    */
   color?: 'primary' | 'secondary';
+  size?: 'small' | 'medium';
 } & Omit<
   MUIIconButtonProps,
   | 'aria-label'
@@ -26,7 +27,6 @@ export type IconButtonProps = {
   | 'disableTouchRipple'
   | 'focusRipple'
   | 'disableFocusRipple'
-  | 'size'
   | 'TouchRippleProps'
   | 'touchRippleRef'
 >;
@@ -38,14 +38,14 @@ const outlinedStyles = {
 };
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
-  const { title, variant = 'text', sx, ...rest } = props;
+  const { title, variant = 'text', sx, size = 'medium', ...rest } = props;
   const styles = {
     ...sx,
     ...(variant === 'outlined' && outlinedStyles),
   };
   return (
     <Tooltip title={title}>
-      <MuiIconButton aria-label={title} sx={{ ...styles }} {...rest} ref={ref} size="medium" />
+      <MuiIconButton aria-label={title} sx={{ ...styles }} {...rest} ref={ref} size={size} />
     </Tooltip>
   );
 });

@@ -205,8 +205,8 @@ export const _CompactForm: StoryObj = {
                   <Typography component="h1" variant="h5">
                     Filters
                   </Typography>
-                  <IconButton title="close">
-                    <CloseIcon fontSize="small" />
+                  <IconButton title="close" size="small">
+                    <CloseIcon />
                   </IconButton>
                 </Stack>
                 <Grid container rowSpacing={1} columnSpacing={2}>
