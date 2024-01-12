@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-popper@0.1.0...@availity/mui-popper@0.1.1) (2024-01-12)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.6.1`
 ## 0.1.0 (2023-12-12)
 
 ### Dependency Updates
