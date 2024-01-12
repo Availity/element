@@ -21,6 +21,7 @@ export const Alert = ({ ...args }: AlertProps): JSX.Element => (
     iconMapping={iconMapping}
     closeText="dismiss alert"
     slots={{ closeButton: IconButton }}
+    slotProps={{ closeButton: { sx: { padding: '.25rem' } } }}
     {...args}
   />
 );
