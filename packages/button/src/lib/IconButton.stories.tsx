@@ -1,18 +1,27 @@
-import type { StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Grid } from '@availity/mui-layout';
 import { SearchIcon } from '@availity/mui-icon';
 import { IconButton, IconButtonProps } from './IconButton';
 import React from 'react';
 
-/** Icon only button with built-in tooltip */
-export default {
+const meta: Meta<typeof IconButton> = {
   title: 'Components/Button/IconButton',
   component: IconButton,
   tags: ['autodocs'],
   args: {
     title: 'title text',
   },
+  argTypes: {
+    size: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
+
+/** Icon only button with built-in tooltip */
+export default meta;
 
 export const _IconButton: StoryObj<typeof IconButton> = {
   render: ({ ...args }: IconButtonProps) => (
@@ -74,85 +83,47 @@ export const _Colors: StoryObj<typeof IconButton> = {
 export const _Sizes: StoryObj<typeof IconButton> = {
   render: () => (
     <Grid container spacing={1}>
-      <Grid xs={4}>Small</Grid>
-      <Grid xs={8}>Medium</Grid>
+      <Grid xs={2}>xsmall icon</Grid>
       <Grid xs={2}>
-        <IconButton title="search" size="small">
+        <IconButton title="search">
           <SearchIcon fontSize="xsmall" />
         </IconButton>
       </Grid>
-      <Grid xs={2}>
-        <IconButton title="search" size="small" variant="outlined">
+      <Grid xs={8}>
+        <IconButton title="search" variant="outlined">
           <SearchIcon fontSize="xsmall" />
         </IconButton>
       </Grid>
+      <Grid xs={2}>small icon</Grid>
       <Grid xs={2}>
-        <IconButton title="search" size="medium">
-          <SearchIcon fontSize="xsmall" />
-        </IconButton>
-      </Grid>
-      <Grid xs={6}>
-        <IconButton title="search" size="medium" variant="outlined">
-          <SearchIcon fontSize="xsmall" />
-        </IconButton>
-      </Grid>
-      <Grid xs={2}>
-        <IconButton title="search" size="small">
+        <IconButton title="search">
           <SearchIcon fontSize="small" />
         </IconButton>
       </Grid>
-      <Grid xs={2}>
-        <IconButton title="search" size="small" variant="outlined">
+      <Grid xs={8}>
+        <IconButton title="search" variant="outlined">
           <SearchIcon fontSize="small" />
         </IconButton>
       </Grid>
+      <Grid xs={2}>medium icon</Grid>
       <Grid xs={2}>
-        <IconButton title="search" size="medium">
-          <SearchIcon fontSize="small" />
-        </IconButton>
-      </Grid>
-      <Grid xs={6}>
-        <IconButton title="search" size="medium" variant="outlined">
-          <SearchIcon fontSize="small" />
-        </IconButton>
-      </Grid>
-      <Grid xs={2}>
-        <IconButton title="search" size="small">
+        <IconButton title="search">
           <SearchIcon fontSize="medium" />
         </IconButton>
       </Grid>
-      <Grid xs={2}>
-        <IconButton title="search" size="small" variant="outlined">
+      <Grid xs={8}>
+        <IconButton title="search" variant="outlined">
           <SearchIcon fontSize="medium" />
         </IconButton>
       </Grid>
+      <Grid xs={2}>large icon</Grid>
       <Grid xs={2}>
-        <IconButton title="search" size="medium">
-          <SearchIcon fontSize="medium" />
-        </IconButton>
-      </Grid>
-      <Grid xs={6}>
-        <IconButton title="search" size="medium" variant="outlined">
-          <SearchIcon fontSize="medium" />
-        </IconButton>
-      </Grid>
-      <Grid xs={2}>
-        <IconButton title="search" size="small">
+        <IconButton title="search">
           <SearchIcon fontSize="large" />
         </IconButton>
       </Grid>
-      <Grid xs={2}>
-        <IconButton title="search" size="small" variant="outlined">
-          <SearchIcon fontSize="large" />
-        </IconButton>
-      </Grid>
-      <Grid xs={2}>
-        <IconButton title="search" size="medium">
-          <SearchIcon fontSize="large" />
-        </IconButton>
-      </Grid>
-      <Grid xs={6}>
-        <IconButton title="search" size="medium" variant="outlined">
+      <Grid xs={8}>
+        <IconButton title="search" variant="outlined">
           <SearchIcon fontSize="large" />
         </IconButton>
       </Grid>
