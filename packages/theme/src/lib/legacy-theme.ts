@@ -705,12 +705,9 @@ export const legacyTheme = {
           borderRadius: '.25rem',
           // Bug with state styles being overwritten when not defined in root https://github.com/mui/material-ui/issues/29703#issuecomment-1548356589
           '&.MuiChip-deletable': {
+            flexDirection: 'row-reverse',
             '&:hover': {
-              backgroundColor: tokens.colorActionFocus,
               boxShadow: 'none',
-              '.MuiChip-deleteIcon': {
-                color: tokens.colorSecondaryLight,
-              },
             },
             '&.Mui-focusVisible': {
               backgroundColor: tokens.colorActionFocus,
@@ -732,7 +729,7 @@ export const legacyTheme = {
         },
         deleteIcon: {
           fontSize: '1rem',
-          margin: '0 -.2rem 0 .2rem',
+          margin: '0 5px 0 -6px',
           transition: 'color 300ms',
         },
         label: {
@@ -748,7 +745,7 @@ export const legacyTheme = {
           padding: '0.25rem 0.4rem',
         },
         sizeMedium: {
-          fontWeight: tokens.fontWeightsRegular,
+          fontWeight: tokens.fontWeightsBold,
           padding: '0.25rem 0.6rem',
         },
       },
