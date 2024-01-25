@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.4](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.9.3...@availity/mui-form-utils@0.9.4) (2024-01-25)
+
+
+### Bug Fixes
+
+* **mui-form-utils:** add radio exports ([356dc50](https://github.com/Availity/element/commit/356dc50ff1d75122f42813e6c84f566793d4da09))
+
 ## [0.9.3](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.9.2...@availity/mui-form-utils@0.9.3) (2024-01-12)
 
 ### Dependency Updates
