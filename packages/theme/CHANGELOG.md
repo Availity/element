@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.39.0](https://github.com/Availity/element/compare/@availity/theme@0.38.1...@availity/theme@0.39.0) (2024-01-25)
+
+
+### Features
+
+* **theme:** legacy radio updates ([e99fbcb](https://github.com/Availity/element/commit/e99fbcbeeeba0f3b161eb23c554aac878b90a0e5))
+
 ## [0.38.1](https://github.com/Availity/element/compare/@availity/theme@0.38.0...@availity/theme@0.38.1) (2024-01-24)
 
 ## [0.38.0](https://github.com/Availity/element/compare/@availity/theme@0.37.1...@availity/theme@0.38.0) (2024-01-12)
