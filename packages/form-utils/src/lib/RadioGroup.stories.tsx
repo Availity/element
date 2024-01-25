@@ -16,7 +16,9 @@ export default meta;
 export const _RadioGroup: StoryObj<typeof RadioGroup> = {
   render: (args: RadioGroupProps) => (
     <FormControl>
-      <FormLabel id="radio-buttons-group-label">Radio Group</FormLabel>
+      <FormLabel component="legend" id="radio-buttons-group-label">
+        Radio Group
+      </FormLabel>
       <RadioGroup aria-labelledby="radio-buttons-group-label" defaultValue="one" name="radio-buttons-group" {...args}>
         <FormControlLabel value="one" control={<Radio />} label="Radio One" />
         <FormControlLabel value="two" control={<Radio />} label="Radio Two" helpTopicId="1234" />
@@ -58,6 +60,28 @@ export const _States: StoryObj<typeof RadioGroup> = {
         <FormHelperText id="error-radio-buttons-group-helpertext">Error Message</FormHelperText>
       </FormControl>
     </>
+  ),
+  args: {},
+};
+
+/** Legacy styling for the group label can be achieved with the `"legend"` class on the `FormLabel`. */
+export const _Legacy: StoryObj<typeof RadioGroup> = {
+  render: (args: RadioGroupProps) => (
+    <FormControl>
+      <FormLabel className="legend" id="radio-buttons-group-legend-label">
+        Radio Group
+      </FormLabel>
+      <RadioGroup
+        aria-labelledby="radio-buttons-group-legend-label"
+        defaultValue="one"
+        name="radio-buttons-group"
+        {...args}
+      >
+        <FormControlLabel value="one" control={<Radio />} label="Radio One" />
+        <FormControlLabel value="two" control={<Radio />} label="Radio Two" helpTopicId="1234" />
+        <FormControlLabel value="three" control={<Radio />} label="Radio Three" />
+      </RadioGroup>
+    </FormControl>
   ),
   args: {},
 };

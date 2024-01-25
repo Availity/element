@@ -520,7 +520,6 @@ export const legacyTheme = {
           lineHeight: '24px',
           boxShadow: 'none',
           textTransform: 'none',
-          fontWeight: '500',
           '.MuiButton-startIcon, .MuiButton-endIcon': {
             '.MuiSvgIcon-fontSizeInherit': {
               fontSize: 'inherit',
@@ -857,6 +856,9 @@ export const legacyTheme = {
           flexDirection: 'row',
           '.MuiFormLabel-root': {
             marginBottom: '0',
+          },
+          '&:has(legend), &:has(.legend), legend, .legend': {
+            fontSize: '1.5rem',
           },
         },
       },
@@ -1283,6 +1285,8 @@ export const legacyTheme = {
         displayedRows: {
           order: 4,
           marginRight: '.5rem',
+          marginTop: 'auto',
+          marginBottom: 'auto',
         },
         input: {
           order: 3,
@@ -1301,6 +1305,8 @@ export const legacyTheme = {
             paddingRight: '1.5rem',
             borderRadius: '.25rem',
             textAlignLast: 'center',
+            marginTop: 'auto',
+            marginBottom: 'auto',
           },
         },
         selectIcon: {
@@ -1308,6 +1314,8 @@ export const legacyTheme = {
         },
         selectLabel: {
           order: 2,
+          marginTop: 'auto',
+          marginBottom: 'auto',
         },
         spacer: {
           order: 0,
