@@ -318,6 +318,15 @@ export const lightTheme = {
             },
           },
         },
+        formActions: {
+          marginTop: '16px',
+          '.MuiGrid-item': {
+            flexBasis: '50%',
+          },
+          '.MuiButton-root': {
+            width: '100%',
+          },
+        },
       },
     },
     MuiAlert: {

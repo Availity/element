@@ -1,7 +1,7 @@
 import { IconButton } from '@availity/mui-button';
 import { CloseIcon } from '@availity/mui-icon';
 import { Typography } from '@availity/mui-typography';
-import { Grid } from '@mui/material';
+import { Grid, styled } from '@mui/material';
 
 interface FeedbackHeaderProps {
   appName: string;
@@ -10,9 +10,11 @@ interface FeedbackHeaderProps {
   sent: boolean;
 }
 
+const FeedbackHeaderContainer = styled(Grid, { name: 'AvFeedbackContainer', slot: 'FeedbackHeaderContainer' })({});
+
 export const FeedbackHeader = ({ appName, handleClose, loading, sent }: FeedbackHeaderProps): JSX.Element => {
   return (
-    <Grid
+    <FeedbackHeaderContainer
       alignItems="center"
       container
       direction="row"
@@ -31,6 +33,6 @@ export const FeedbackHeader = ({ appName, handleClose, loading, sent }: Feedback
           <CloseIcon />
         </IconButton>
       </Grid>
-    </Grid>
+    </FeedbackHeaderContainer>
   );
 };
