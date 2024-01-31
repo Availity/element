@@ -752,6 +752,12 @@ export const lightTheme = {
             '.MuiButtonBase-root, .MuiSvgIcon-root': {
               color: tokens.colorTextError,
             },
+            '.MuiRadio-root': {
+              color: tokens.colorErrorMain,
+              '&:hover, &.Mui-checked:hover': {
+                backgroundColor: tokens.colorErrorMain20,
+              },
+            },
           },
         },
         asterisk: {
@@ -781,6 +787,7 @@ export const lightTheme = {
       },
       styleOverrides: {
         root: {
+          marginTop: '6px',
           marginLeft: '0px',
           minHeight: '1.25rem',
           lineHeight: '1.25rem',
@@ -796,7 +803,7 @@ export const lightTheme = {
     MuiFormLabel: {
       styleOverrides: {
         root: {
-          marginBottom: '3px',
+          marginBottom: '6px',
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
           },
@@ -817,7 +824,7 @@ export const lightTheme = {
           marginLeft: '-.15rem',
         },
         avWrapper: {
-          marginBottom: '3px',
+          marginBottom: '6px',
           display: 'flex',
           flexDirection: 'row',
           '.MuiFormLabel-root': {
@@ -1100,6 +1107,27 @@ export const lightTheme = {
         select: {
           '&.MuiInputBase-input.MuiSelect-select.MuiOutlinedInput-input': {
             paddingRight: '4rem',
+          },
+        },
+      },
+    },
+    MuiRadio: {
+      styleOverrides: {
+        root: {
+          padding: '6px',
+          '&.MuiButtonBase-root': {
+            '&:hover': {
+              backgroundColor: tokens.colorActionHover,
+              '&.Mui-checked': {
+                backgroundColor: tokens.colorActionSelected,
+              },
+            },
+            '&.Mui-focused': {
+              backgroundColor: tokens.colorActionSelected,
+            },
+            '.MuiTouchRipple-child': {
+              backgroundColor: tokens.colorActionSelected,
+            },
           },
         },
       },

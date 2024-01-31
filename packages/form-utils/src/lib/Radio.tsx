@@ -9,10 +9,11 @@ export type RadioProps = Omit<
   | 'disableTouchRipple'
   | 'focusRipple'
   | 'focusVisibleClassName'
+  | 'size'
   | 'TouchRippleProps'
   | 'touchRippleRef'
 >;
 
 export const Radio = (args: RadioProps): JSX.Element => {
-  return <MuiRadio {...args} />;
+  return <MuiRadio {...args} size="small" />;
 };
