@@ -329,6 +329,11 @@ export const lightTheme = {
         },
       },
     },
+    AvGiveFeedbackButton: {
+      defaultProps: {
+        size: 'large',
+      },
+    },
     MuiAlert: {
       styleOverrides: {
         standardSuccess: {

@@ -299,7 +299,7 @@ export const legacyTheme = {
           padding: '15px 1.5rem',
         },
         smileButtons: {
-          marginBottom: '8px',
+          marginBottom: '1.25rem',
           paddingTop: '1.5rem',
           paddingLeft: '1.5rem',
           paddingRight: '1.5rem',
@@ -348,6 +348,11 @@ export const legacyTheme = {
           padding: '15px 1.5rem',
           justifyContent: 'flex-end',
         },
+      },
+    },
+    AvGiveFeedbackButton: {
+      defaultProps: {
+        size: 'medium',
       },
     },
     MuiAlert: {
