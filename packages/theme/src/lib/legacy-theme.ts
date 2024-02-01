@@ -1405,10 +1405,13 @@ export const legacyTheme = {
       },
       styleOverrides: {
         tooltip: {
-          backgroundColor: tokens.colorGrey400,
-          fontSize: '.785rem',
+          backgroundColor: tokens.colorGrey700,
+          fontSize: '.875rem',
           fontStyle: 'normal',
-          padding: '2px 8px',
+          padding: '5px',
+        },
+        arrow: {
+          color: tokens.colorGrey700,
         },
       },
     },
