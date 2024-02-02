@@ -3,7 +3,7 @@ import { Dialog } from './Dialog';
 
 describe('Dialog', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<Dialog>Test</Dialog>);
+    const { getByText } = render(<Dialog open>Test</Dialog>);
     expect(getByText('Test')).toBeTruthy();
   });
 });
