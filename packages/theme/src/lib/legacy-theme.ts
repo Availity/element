@@ -776,6 +776,28 @@ export const legacyTheme = {
         },
       },
     },
+    MuiDialogTitle: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorGrey100,
+          marginBottom: '24px',
+        },
+      },
+    },
+    MuiDialogContent: {
+      styleOverrides: {
+        root: {
+          padding: '24px',
+        },
+      },
+    },
+    MuiDialogActions: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorGrey100,
+        },
+      },
+    },
     MuiFormControl: {
       defaultProps: {
         size: 'small',
