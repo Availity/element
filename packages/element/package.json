@@ -26,6 +26,7 @@
     "@availity/mui-checkbox": "workspace:*",
     "@availity/mui-chip": "workspace:*",
     "@availity/mui-datepicker": "workspace:*",
+    "@availity/mui-dialog": "workspace:*",
     "@availity/mui-divider": "workspace:*",
     "@availity/mui-empty-state": "workspace:*",
     "@availity/mui-feedback": "workspace:*",
