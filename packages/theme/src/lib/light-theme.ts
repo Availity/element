@@ -787,7 +787,6 @@ export const lightTheme = {
       },
       styleOverrides: {
         root: {
-          marginTop: '6px',
           marginLeft: '0px',
           minHeight: '1.25rem',
           lineHeight: '1.25rem',
@@ -803,7 +802,7 @@ export const lightTheme = {
     MuiFormLabel: {
       styleOverrides: {
         root: {
-          marginBottom: '6px',
+          marginBottom: '3px',
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
           },
@@ -824,7 +823,7 @@ export const lightTheme = {
           marginLeft: '-.15rem',
         },
         avWrapper: {
-          marginBottom: '6px',
+          marginBottom: '3px',
           display: 'flex',
           flexDirection: 'row',
           '.MuiFormLabel-root': {
@@ -1128,6 +1127,9 @@ export const lightTheme = {
             '.MuiTouchRipple-child': {
               backgroundColor: tokens.colorActionSelected,
             },
+          },
+          '+ .MuiFormControlLabel-label': {
+            marginLeft: '6px',
           },
         },
       },
