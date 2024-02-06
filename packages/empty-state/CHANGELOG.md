@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.1.1...@availity/mui-empty-state@0.1.2) (2024-02-06)
+
+
+### Bug Fixes
+
+* **mui-empty-state:** inline svgs instead of img tags ([a681db2](https://github.com/Availity/element/commit/a681db2b5f54c936cfe97f2d18cc1954222f06b7))
+
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.1.0...@availity/mui-empty-state@0.1.1) (2023-12-27)
 
 
