@@ -1113,7 +1113,8 @@ export const lightTheme = {
     MuiRadio: {
       styleOverrides: {
         root: {
-          padding: '6px',
+          marginLeft: '-10px',
+          padding: '10px',
           '&.MuiButtonBase-root': {
             '&:hover': {
               backgroundColor: tokens.colorActionHover,
@@ -1127,9 +1128,6 @@ export const lightTheme = {
             '.MuiTouchRipple-child': {
               backgroundColor: tokens.colorActionSelected,
             },
-          },
-          '+ .MuiFormControlLabel-label': {
-            marginLeft: '6px',
           },
         },
       },
