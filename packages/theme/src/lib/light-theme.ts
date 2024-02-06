@@ -748,6 +748,9 @@ export const lightTheme = {
           '&.Mui-error': {
             '.MuiFormControlLabel-label': {
               color: tokens.colorTextError,
+              '&.Mui-disabled': {
+                color: tokens.colorErrorMain20,
+              },
             },
             '.MuiButtonBase-root, .MuiSvgIcon-root': {
               color: tokens.colorTextError,
@@ -756,6 +759,11 @@ export const lightTheme = {
               color: tokens.colorErrorMain,
               '&:hover, &.Mui-checked:hover': {
                 backgroundColor: tokens.colorErrorMain20,
+              },
+            },
+            '&.Mui-disabled': {
+              '.MuiRadio-root .MuiSvgIcon-root': {
+                color: tokens.colorErrorMain20,
               },
             },
           },
