@@ -14,6 +14,8 @@ export interface FeedbackProps {
 
 const FeedbackContainer = styled(Container, { name: 'AvFeedbackContainer', slot: 'root' })({});
 
+const GiveFeedbackButton = styled(Button, { name: 'AvGiveFeedbackButton', slot: 'root' })({});
+
 export const Feedback = ({ analytics = avLogMessagesApi, appName }: FeedbackProps): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [sent, setSent] = useState<boolean>(false);
@@ -32,9 +34,9 @@ export const Feedback = ({ analytics = avLogMessagesApi, appName }: FeedbackProp
 
   return (
     <>
-      <Button onClick={handlePopoverOpen} color="secondary" size="large">
+      <GiveFeedbackButton onClick={handlePopoverOpen} color="secondary">
         Give Feedback
-      </Button>
+      </GiveFeedbackButton>
       <Popover
         anchorEl={anchorEl}
         anchorOrigin={{

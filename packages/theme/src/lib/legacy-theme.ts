@@ -286,18 +286,32 @@ export const legacyTheme = {
     AvFeedbackContainer: {
       styleOverrides: {
         root: {
-          maxWidth: important('490px'),
-          padding: '16px',
+          padding: important('0'),
+          maxWidth: important('550px'),
+          '.MuiFormControl-root': {
+            paddingLeft: '1.5rem',
+            paddingRight: '1.5rem',
+            paddingBottom: '1.5rem',
+          },
+        },
+        feedbackHeaderContainer: {
+          backgroundColor: tokens.colorGrey100,
+          padding: '15px 1.5rem',
         },
         smileButtons: {
-          marginBottom: '8px',
+          marginBottom: '1.25rem',
+          paddingTop: '1.5rem',
+          paddingLeft: '1.5rem',
+          paddingRight: '1.5rem',
           width: '100%',
           div: {
             width: '100%',
-            margin: '8px',
+            marginLeft: '8px',
+            marginRight: '8px',
           },
           '.MuiToggleButton-root': {
             width: '100%',
+            border: 0,
             '&:focus': {
               backgroundColor: tokens.colorActionFocus,
               color: tokens.colorTextPrimary,
@@ -320,7 +334,7 @@ export const legacyTheme = {
               },
             },
             '&.MuiToggleButton-sizeMedium': {
-              padding: '12px',
+              padding: '.375rem .75rem',
               height: 'auto',
               '.MuiSvgIcon-root': {
                 fontSize: '2em',
@@ -328,6 +342,17 @@ export const legacyTheme = {
             },
           },
         },
+        formActions: {
+          marginTop: '16px',
+          backgroundColor: tokens.colorGrey100,
+          padding: '15px 1.5rem',
+          justifyContent: 'flex-end',
+        },
+      },
+    },
+    AvGiveFeedbackButton: {
+      defaultProps: {
+        size: 'medium',
       },
     },
     MuiAlert: {

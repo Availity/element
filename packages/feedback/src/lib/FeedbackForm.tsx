@@ -33,6 +33,8 @@ interface FeedbackFormProps {
 
 const SmileButtons = styled(ToggleButtonGroup, { name: 'AvFeedbackContainer', slot: 'SmileButtons' })({});
 
+const FormActions = styled(Grid, { name: 'AvFeedbackContainer', slot: 'FormActions' })({});
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SmileButton = ({ disabled, Icon, label, value, ...props }: SmileButtonProps) => (
   <div>
@@ -164,18 +166,18 @@ export const FeedbackForm = ({
             disabled={loading}
           />
         )}
-        <Grid container direction="row" marginTop="16px" spacing={1}>
-          <Grid item xs={6}>
-            <Button color="secondary" disabled={loading} fullWidth onClick={handleClose}>
+        <FormActions container direction="row" spacing={1}>
+          <Grid item>
+            <Button color="secondary" disabled={loading} onClick={handleClose}>
               Cancel
             </Button>
           </Grid>
-          <Grid item xs={6}>
-            <LoadingButton disabled={!smileFieldValue} fullWidth loading={loading} type="submit" variant="contained">
+          <Grid item>
+            <LoadingButton disabled={!smileFieldValue} loading={loading} type="submit" variant="contained">
               Send Feedback
             </LoadingButton>
           </Grid>
-        </Grid>
+        </FormActions>
       </Grid>
     );
   } else {
