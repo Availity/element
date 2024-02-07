@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { SvgIcon, SvgIconProps, SvgIconPropsSizeOverrides } from '@mui/material';
+import SvgIcon, { SvgIconProps, SvgIconPropsSizeOverrides } from '@mui/material/SvgIcon';
 
 declare module '@mui/material/SvgIcon' {
   interface SvgIconPropsSizeOverrides {
