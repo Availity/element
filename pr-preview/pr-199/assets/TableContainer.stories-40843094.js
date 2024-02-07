@@ -1,0 +1,4 @@
+import{j as s}from"./jsx-runtime-390e5fc8.js";import{T as a}from"./TableContainer-5070eec1.js";import"./index-570b25c1.js";import"./_commonjsHelpers-042e6b4d.js";import"./TableContainer-92632412.js";import"./createTheme-3fee607a.js";import"./clsx-b831246b.js";import"./emotion-use-insertion-effect-with-fallbacks.browser.esm-16f43d9e.js";import"./useThemeProps-98dc6282.js";import"./styled-523cb007.js";import"./generateUtilityClasses-b58f947a.js";const _={title:"Components/Table/TableContainer",component:a,tags:["autodocs"],args:{}},r={render:n=>s(a,{...n})};var o,e,t;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  render: (args: TableContainerProps) => <TableContainer {...args} />
+}`,...(t=(e=r.parameters)==null?void 0:e.docs)==null?void 0:t.source}}};const f=["_TableContainer"];export{r as _TableContainer,f as __namedExportsOrder,_ as default};
+//# sourceMappingURL=TableContainer.stories-40843094.js.map
