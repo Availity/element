@@ -31,9 +31,6 @@ const config: StorybookConfig = {
       },
     },
   },
-  features: {
-    storyStoreV7: false, // 👈 Opt out of on-demand story loading
-  },
   typescript: {
     reactDocgenTypescriptOptions: {
       propFilter: (prop) =>
