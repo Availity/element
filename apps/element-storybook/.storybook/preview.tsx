@@ -3,8 +3,11 @@ import { Preview } from '@storybook/react';
 import { Title, Subtitle, Description, Primary, Controls, Stories, useOf } from '@storybook/blocks';
 import type { StoryContext } from '@storybook/types';
 import { ThemeProvider } from '@availity/theme-provider';
-import '@fortawesome/free-regular-svg-icons';
-import '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+library.add(far, fas);
 
 const withThemeProvider = (Story: () => JSX.Element, context: StoryContext) => {
   return (
@@ -79,7 +82,15 @@ if (typeof global.process === 'undefined') {
   import('../../../packages/mock/src/lib/browser').then(({ worker }) => {
     const config =
       process.env.NODE_ENV === 'development'
-        ? undefined
+        ? {
+            onUnhandledRequest: (request, print) => {
+              // font awesome gets noisy
+              if (request.url.includes('node_modules')) {
+                return;
+              }
+              print.warning();
+            },
+          }
         : {
             serviceWorker: { url: '/element/mockServiceWorker.js' },
             onUnhandledRequest: 'bypass',
