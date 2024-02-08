@@ -810,6 +810,28 @@ export const legacyTheme = {
         },
       },
     },
+    MuiDialogTitle: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorGrey100,
+          marginBottom: '24px',
+        },
+      },
+    },
+    MuiDialogContent: {
+      styleOverrides: {
+        root: {
+          padding: '24px',
+        },
+      },
+    },
+    MuiDialogActions: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorGrey100,
+        },
+      },
+    },
     // v5 Datepicker, MuiDayCalendar in v6
     MuiDayPicker: {
       styleOverrides: {
@@ -1254,6 +1276,7 @@ export const legacyTheme = {
     },
     MuiPopover: {
       defaultProps: {
+        elevation: 0,
         PaperProps: {
           variant: 'outlined',
         },
