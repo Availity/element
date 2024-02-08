@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.40.2](https://github.com/Availity/element/compare/@availity/theme@0.40.1...@availity/theme@0.40.2) (2024-02-08)
+
+
+### Bug Fixes
+
+* **theme:** missing legacy datepicker outline ([8de8a1a](https://github.com/Availity/element/commit/8de8a1ac240f263b697b8d928f935b2436c27256))
+
 ## [0.40.1](https://github.com/Availity/element/compare/@availity/theme@0.40.0...@availity/theme@0.40.1) (2024-02-08)
 
 
