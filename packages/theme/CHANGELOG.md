@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.40.1](https://github.com/Availity/element/compare/@availity/theme@0.40.0...@availity/theme@0.40.1) (2024-02-08)
+
+
+### Bug Fixes
+
+* **mui-form-utils:** update label spacing and remove styling that conflicted with TextField ([c7e052e](https://github.com/Availity/element/commit/c7e052edbde221b5d755b1460431262ff7c4a0c0))
+
 ## [0.40.0](https://github.com/Availity/element/compare/@availity/theme@0.39.3...@availity/theme@0.40.0) (2024-02-08)
 
 
