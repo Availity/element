@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.35.0](https://github.com/Availity/element/compare/@availity/element@0.34.21...@availity/element@0.35.0) (2024-02-08)
+
+### Dependency Updates
+
+* `mui-dialog` updated to version `0.1.0`
+* `theme-provider` updated to version `0.4.39`
+
+### Features
+
+* add dialog component ([ff151f0](https://github.com/Availity/element/commit/ff151f02d90114615f9beb635bea69989aa9a117))
+
 ## [0.34.21](https://github.com/Availity/element/compare/@availity/element@0.34.20...@availity/element@0.34.21) (2024-02-08)
 
 ### Dependency Updates
