@@ -1248,7 +1248,7 @@ export const legacyTheme = {
       styleOverrides: {
         paper: {
           boxShadow: 'none',
-          borderColor: tokens.colorBackgroundBorder,
+          border: `1px solid ${tokens.colorBackgroundBorder}`,
         },
       },
     },
