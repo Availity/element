@@ -50,6 +50,8 @@ const typographyStyles = (type: string) => ({
   lineHeight: `${tokens[`lineHeights${type}` as keyof typeof tokens]}`,
 });
 
+const dayOfWeekFormatter = (day: string) => day.charAt(0).toUpperCase() + day.charAt(1);
+
 export const legacyTheme = {
   mode: 'light',
   palette: {
@@ -607,6 +609,13 @@ export const legacyTheme = {
         },
       },
     },
+    // v5 datepicker, move to MuiDatePicker in v6+
+    MuiCalendarPicker: {
+      defaultProps: {
+        disableHighlightToday: true,
+        dayOfWeekFormatter: dayOfWeekFormatter,
+      },
+    },
     MuiCard: {
       defaultProps: {
         variant: 'outlined',
@@ -797,6 +806,28 @@ export const legacyTheme = {
           },
           '@media (min-width: 1200px)': {
             maxWidth: '1140px',
+          },
+        },
+      },
+    },
+    // v5 Datepicker, MuiDayCalendar in v6
+    MuiDayPicker: {
+      styleOverrides: {
+        weekDayLabel: {
+          fontSize: '.75rem',
+          width: '39px',
+          height: '38px',
+          border: `1px solid transparent`,
+          margin: '0px -1px 0px 0px',
+          color: tokens.colorSecondaryMain,
+        },
+        header: {
+          margin: '0px 1px 1px 0px',
+        },
+        weekContainer: {
+          margin: '0px 1px 0px 0px',
+          '&:last-of-type': {
+            marginBottom: '1px',
           },
         },
       },
@@ -1140,6 +1171,87 @@ export const legacyTheme = {
         },
       },
     },
+    MuiPickersArrowSwitcher: {
+      styleOverrides: {
+        button: {
+          width: '39px',
+          height: '38px',
+          margin: '0px 0px 0px -1px',
+          padding: '0px',
+          borderRadius: 0,
+          border: `1px solid ${tokens.colorGrey100}`,
+          fontSize: '1.5rem',
+          '&.Mui-focused, &:focus': {
+            outline: `none`,
+            boxShadow: `0 0 0px 2px ${tokens.colorPrimaryDark} inset`,
+          },
+        },
+        spacer: {
+          width: 0,
+        },
+      },
+    },
+    MuiPickersCalendarHeader: {
+      styleOverrides: {
+        root: {
+          paddingLeft: '24px',
+          paddingRight: '24px',
+        },
+        labelContainer: {
+          borderRadius: '4px',
+          border: `1px solid ${tokens.borderInput}`,
+          ':has(.Mui-focused), :focus-within': {
+            outline: `2px solid ${tokens.colorPrimaryDark}`,
+            boxShadow: 'none',
+          },
+        },
+        label: {
+          marginRight: '.25rem',
+          marginLeft: '.25rem',
+        },
+        switchViewButton: {
+          fontSize: '1.5rem',
+          padding: '.25rem',
+          '.Mui-focused, :focus': {
+            outline: `none`,
+            boxShadow: `none`,
+          },
+        },
+      },
+    },
+    MuiPickersDay: {
+      defaultProps: {
+        disableRipple: true,
+      },
+      styleOverrides: {
+        root: {
+          width: '39px',
+          height: '38px',
+          margin: '0px -1px -1px 0px',
+          borderRadius: 0,
+          border: `1px solid ${tokens.colorGrey100}`,
+          '.Mui-focused, :focus': {
+            outline: `none`,
+            boxShadow: `0 0 0px 2px ${tokens.colorPrimaryDark} inset`,
+          },
+          ':hover': {
+            backgroundColor: tokens.colorGrey100,
+          },
+        },
+        today: {
+          border: `1px solid ${tokens.colorGrey100}`,
+        },
+      },
+    },
+    // v5 DatePicker, pass paper props to MuiDatePicker in v6+
+    MuiPickersPopper: {
+      styleOverrides: {
+        paper: {
+          boxShadow: 'none',
+          borderColor: tokens.colorBackgroundBorder,
+        },
+      },
+    },
     MuiPopover: {
       defaultProps: {
         PaperProps: {
@@ -1454,6 +1566,28 @@ export const legacyTheme = {
           body1: 'p',
           body2: 'p',
           inherit: 'p',
+        },
+      },
+    },
+    // v5 datepicker
+    PrivatePickersMonth: {
+      styleOverrides: {
+        root: {
+          borderRadius: '4px',
+          ':hover, :focus:not(.Mui-selected)': {
+            backgroundColor: tokens.colorGrey100,
+          },
+        },
+      },
+    },
+    PrivatePickersYear: {
+      styleOverrides: {
+        root: {},
+        button: {
+          borderRadius: '4px',
+          ':hover, :focus:not(.Mui-selected)': {
+            backgroundColor: tokens.colorGrey100,
+          },
         },
       },
     },
