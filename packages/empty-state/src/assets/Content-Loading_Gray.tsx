@@ -1,9 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 28.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 144 144" style="enable-background:new 0 0 144 144;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;stroke:#BBD6EB;stroke-miterlimit:10;}
+export const ContentLoading = () => {
+  return (
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 144 144"
+      xmlSpace="preserve"
+      aria-label="Content Loading"
+      aria-hidden="true"
+    >
+      <style type="text/css">
+        {`.st0{fill:#FFFFFF;stroke:#BBD6EB;stroke-miterlimit:10;}
 	.st1{fill:#FFFFFF;stroke:#BBD6EB;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st2{fill:#FFFFFF;}
 	.st3{fill:#BBD6EB;}
@@ -79,16 +89,24 @@
 	.st73{fill:#FFFFFF;stroke:#1A74CC;stroke-miterlimit:10;}
 	.st74{fill:#E5E5E5;}
 	.st75{fill:#BBD6EB;stroke:#BBD6EB;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st76{fill:#FFFFFF;stroke:#EEEFF2;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:8,5;}
-</style>
-<g>
-	<path class="st4" d="M118.7,52c0.5-2.3,0.8-4.7,0.8-7.1c0-17.6-14.3-31.9-31.9-31.9c-13,0-24.2,7.8-29.1,18.9
+	.st76{fill:#FFFFFF;stroke:#EEEFF2;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:8,5;}`}
+      </style>
+      <g>
+        <path
+          className="st4"
+          d="M118.7,52c0.5-2.3,0.8-4.7,0.8-7.1c0-17.6-14.3-31.9-31.9-31.9c-13,0-24.2,7.8-29.1,18.9
 		c-3.7-2.1-7.9-3.3-12.4-3.3c-13.8,0-24.9,11.2-24.9,24.9c0,0,0,0.1,0,0.1C11.3,56.7,4,65.9,4,76.8C4,90.2,14.9,101,28.2,101h87.1
-		c13.6,0,24.6-11,24.6-24.6C140,64,130.7,53.7,118.7,52z"/>
-	<g>
-		<circle class="st71" cx="72" cy="101" r="30"/>
-	</g>
-	<path class="st51" d="M86.9,100.3c-1.4-1.4-3.7-1.4-5.1,0l-6.2,6.2V81.7h-7.2v24.8l-6.2-6.2c-1.4-1.4-3.7-1.4-5.1,0
-		c-1.4,1.4-1.4,3.7,0,5.1l15,15l15-15C88.3,104,88.3,101.7,86.9,100.3z"/>
-</g>
-</svg>
+		c13.6,0,24.6-11,24.6-24.6C140,64,130.7,53.7,118.7,52z"
+        />
+        <g>
+          <circle className="st71" cx="72" cy="101" r="30" />
+        </g>
+        <path
+          className="st51"
+          d="M86.9,100.3c-1.4-1.4-3.7-1.4-5.1,0l-6.2,6.2V81.7h-7.2v24.8l-6.2-6.2c-1.4-1.4-3.7-1.4-5.1,0
+		c-1.4,1.4-1.4,3.7,0,5.1l15,15l15-15C88.3,104,88.3,101.7,86.9,100.3z"
+        />
+      </g>
+    </svg>
+  );
+};

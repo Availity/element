@@ -2,14 +2,35 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.40.2](https://github.com/Availity/element/compare/@availity/theme@0.40.1...@availity/theme@0.40.2) (2024-02-08)
+
+### Bug Fixes
+
+- **theme:** missing legacy datepicker outline ([8de8a1a](https://github.com/Availity/element/commit/8de8a1ac240f263b697b8d928f935b2436c27256))
+
+## [0.40.1](https://github.com/Availity/element/compare/@availity/theme@0.40.0...@availity/theme@0.40.1) (2024-02-08)
+
+### Bug Fixes
+
+- **mui-form-utils:** update label spacing and remove styling that conflicted with TextField ([c7e052e](https://github.com/Availity/element/commit/c7e052edbde221b5d755b1460431262ff7c4a0c0))
+
+## [0.40.0](https://github.com/Availity/element/compare/@availity/theme@0.39.3...@availity/theme@0.40.0) (2024-02-08)
+
+### Features
+
+- **theme:** legacy datepicker ([44c334d](https://github.com/Availity/element/commit/44c334db86701314dbbcc34adb5ed8b863056a01))
+
+## [0.39.3](https://github.com/Availity/element/compare/@availity/theme@0.39.2...@availity/theme@0.39.3) (2024-02-06)
+
+## [0.39.2](https://github.com/Availity/element/compare/@availity/theme@0.39.1...@availity/theme@0.39.2) (2024-02-06)
+
 ## [0.39.1](https://github.com/Availity/element/compare/@availity/theme@0.39.0...@availity/theme@0.39.1) (2024-01-31)
 
 ## [0.39.0](https://github.com/Availity/element/compare/@availity/theme@0.38.1...@availity/theme@0.39.0) (2024-01-25)
 
-
 ### Features
 
-* **theme:** legacy radio updates ([e99fbcb](https://github.com/Availity/element/commit/e99fbcbeeeba0f3b161eb23c554aac878b90a0e5))
+- **theme:** legacy radio updates ([e99fbcb](https://github.com/Availity/element/commit/e99fbcbeeeba0f3b161eb23c554aac878b90a0e5))
 
 ## [0.38.1](https://github.com/Availity/element/compare/@availity/theme@0.38.0...@availity/theme@0.38.1) (2024-01-24)
 
@@ -17,58 +38,53 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `design-tokens` updated to version `0.13.1`
+- `design-tokens` updated to version `0.13.1`
 
 ### Features
 
-* **mui-menu:** add legacy theme ([20bccf5](https://github.com/Availity/element/commit/20bccf543b091540140cdab66e4fcace4fe13c15))
-
+- **mui-menu:** add legacy theme ([20bccf5](https://github.com/Availity/element/commit/20bccf543b091540140cdab66e4fcace4fe13c15))
 
 ### Bug Fixes
 
-* set today border color ([46c3aab](https://github.com/Availity/element/commit/46c3aab83a2db64664b5e2b4a1a4653d147fccda))
-* update datepicker styles ([43eae9a](https://github.com/Availity/element/commit/43eae9a4ab1b70d6a3a295bf8e54a3423ef6638a))
+- set today border color ([46c3aab](https://github.com/Availity/element/commit/46c3aab83a2db64664b5e2b4a1a4653d147fccda))
+- update datepicker styles ([43eae9a](https://github.com/Availity/element/commit/43eae9a4ab1b70d6a3a295bf8e54a3423ef6638a))
 
 ## [0.37.1](https://github.com/Availity/element/compare/@availity/theme@0.37.0...@availity/theme@0.37.1) (2024-01-10)
 
-
 ### Bug Fixes
 
-* **theme:** legacy breadcrumb hover ([8253426](https://github.com/Availity/element/commit/8253426c6952d2b96032b54208b8d140a7c39e78))
+- **theme:** legacy breadcrumb hover ([8253426](https://github.com/Availity/element/commit/8253426c6952d2b96032b54208b8d140a7c39e78))
 
 ## [0.37.0](https://github.com/Availity/element/compare/@availity/theme@0.36.1...@availity/theme@0.37.0) (2024-01-09)
 
-
 ### Features
 
-* **theme:** legacy breadcrumb styles ([b42350e](https://github.com/Availity/element/commit/b42350e110e75ea0bcfd7de2bb78f9a4f931de0f))
+- **theme:** legacy breadcrumb styles ([b42350e](https://github.com/Availity/element/commit/b42350e110e75ea0bcfd7de2bb78f9a4f931de0f))
 
 ## [0.36.1](https://github.com/Availity/element/compare/@availity/theme@0.36.0...@availity/theme@0.36.1) (2024-01-09)
 
 ## [0.36.0](https://github.com/Availity/element/compare/@availity/theme@0.35.0...@availity/theme@0.36.0) (2023-12-28)
 
-
 ### Features
 
-* **theme:** dropdown elevation and multiselect filtering ([8554b69](https://github.com/Availity/element/commit/8554b69264a48f8484c6be707ff74c2e1c3532d4))
+- **theme:** dropdown elevation and multiselect filtering ([8554b69](https://github.com/Availity/element/commit/8554b69264a48f8484c6be707ff74c2e1c3532d4))
 
 ## [0.35.0](https://github.com/Availity/element/compare/@availity/theme@0.34.4...@availity/theme@0.35.0) (2023-12-27)
 
 ### Dependency Updates
 
-* `design-tokens` updated to version `0.13.0`
+- `design-tokens` updated to version `0.13.0`
 
 ### Features
 
-* **mui-form-utils:** add radio and radiogroup ([cbc9c46](https://github.com/Availity/element/commit/cbc9c462497be6dda4dd2af48d6b6743db6f2278))
+- **mui-form-utils:** add radio and radiogroup ([cbc9c46](https://github.com/Availity/element/commit/cbc9c462497be6dda4dd2af48d6b6743db6f2278))
 
 ## [0.34.4](https://github.com/Availity/element/compare/@availity/theme@0.34.3...@availity/theme@0.34.4) (2023-12-27)
 
-
 ### Bug Fixes
 
-* **mui-block-ui:** merge main branch ([8ec0ca6](https://github.com/Availity/element/commit/8ec0ca617a5b279f3657122e2c7c6b20281e3ebc))
-* **theme:** remove focus on datepicker icon button ([14cbea5](https://github.com/Availity/element/commit/14cbea5c4152717e1e3b65489677dab15a0058c8))
+- **mui-block-ui:** merge main branch ([8ec0ca6](https://github.com/Availity/element/commit/8ec0ca617a5b279f3657122e2c7c6b20281e3ebc))
+- **theme:** remove focus on datepicker icon button ([14cbea5](https://github.com/Availity/element/commit/14cbea5c4152717e1e3b65489677dab15a0058c8))
 
 ## [0.34.3](https://github.com/Availity/element/compare/@availity/theme@0.34.2...@availity/theme@0.34.3) (2023-12-22)
 
@@ -78,7 +94,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `design-tokens` updated to version `0.12.2`
+- `design-tokens` updated to version `0.12.2`
+
 ## [0.34.0](https://github.com/Availity/element/compare/@availity/theme@0.33.0...@availity/theme@0.34.0) (2023-12-19)
 
 ### Features

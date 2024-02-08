@@ -318,6 +318,20 @@ export const lightTheme = {
             },
           },
         },
+        formActions: {
+          marginTop: '16px',
+          '.MuiGrid-item': {
+            flexBasis: '50%',
+          },
+          '.MuiButton-root': {
+            width: '100%',
+          },
+        },
+      },
+    },
+    AvGiveFeedbackButton: {
+      defaultProps: {
+        size: 'large',
       },
     },
     MuiAlert: {
@@ -748,6 +762,9 @@ export const lightTheme = {
           '&.Mui-error': {
             '.MuiFormControlLabel-label': {
               color: tokens.colorTextError,
+              '&.Mui-disabled': {
+                color: tokens.colorErrorMain20,
+              },
             },
             '.MuiButtonBase-root, .MuiSvgIcon-root': {
               color: tokens.colorTextError,
@@ -756,6 +773,11 @@ export const lightTheme = {
               color: tokens.colorErrorMain,
               '&:hover, &.Mui-checked:hover': {
                 backgroundColor: tokens.colorErrorMain20,
+              },
+            },
+            '&.Mui-disabled': {
+              '.MuiRadio-root .MuiSvgIcon-root': {
+                color: tokens.colorErrorMain20,
               },
             },
           },
@@ -787,7 +809,6 @@ export const lightTheme = {
       },
       styleOverrides: {
         root: {
-          marginTop: '6px',
           marginLeft: '0px',
           minHeight: '1.25rem',
           lineHeight: '1.25rem',
@@ -803,7 +824,7 @@ export const lightTheme = {
     MuiFormLabel: {
       styleOverrides: {
         root: {
-          marginBottom: '6px',
+          marginBottom: '3px',
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
           },
@@ -824,7 +845,7 @@ export const lightTheme = {
           marginLeft: '-.15rem',
         },
         avWrapper: {
-          marginBottom: '6px',
+          marginBottom: '3px',
           display: 'flex',
           flexDirection: 'row',
           '.MuiFormLabel-root': {
@@ -1114,7 +1135,8 @@ export const lightTheme = {
     MuiRadio: {
       styleOverrides: {
         root: {
-          padding: '6px',
+          marginLeft: '-10px',
+          padding: '10px',
           '&.MuiButtonBase-root': {
             '&:hover': {
               backgroundColor: tokens.colorActionHover,

@@ -2,58 +2,71 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.28](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.27...@availity/mui-checkbox@0.1.28) (2024-02-06)
+
+### Dependency Updates
+
+- `mui-page-header` updated to version `0.2.20`
+
 ## [0.1.27](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.26...@availity/mui-checkbox@0.1.27) (2024-01-31)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.9.5`
-* `mui-page-header` updated to version `0.2.19`
+- `mui-form-utils` updated to version `0.9.5`
+- `mui-page-header` updated to version `0.2.19`
+
 ## [0.1.26](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.25...@availity/mui-checkbox@0.1.26) (2024-01-25)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.9.4`
-* `mui-page-header` updated to version `0.2.18`
+- `mui-form-utils` updated to version `0.9.4`
+- `mui-page-header` updated to version `0.2.18`
+
 ## [0.1.25](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.24...@availity/mui-checkbox@0.1.25) (2024-01-12)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.9.3`
-* `mui-page-header` updated to version `0.2.17`
+- `mui-form-utils` updated to version `0.9.3`
+- `mui-page-header` updated to version `0.2.17`
+
 ## [0.1.24](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.23...@availity/mui-checkbox@0.1.24) (2024-01-12)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.9.2`
-* `mui-page-header` updated to version `0.2.16`
+- `mui-form-utils` updated to version `0.9.2`
+- `mui-page-header` updated to version `0.2.16`
+
 ## [0.1.23](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.22...@availity/mui-checkbox@0.1.23) (2024-01-09)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.9.1`
-* `mui-page-header` updated to version `0.2.15`
+- `mui-form-utils` updated to version `0.9.1`
+- `mui-page-header` updated to version `0.2.15`
+
 ## [0.1.22](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.21...@availity/mui-checkbox@0.1.22) (2024-01-03)
 
 ### Dependency Updates
 
-* `mui-page-header` updated to version `0.2.14`
+- `mui-page-header` updated to version `0.2.14`
+
 ## [0.1.21](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.20...@availity/mui-checkbox@0.1.21) (2023-12-27)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.9.0`
-* `mui-page-header` updated to version `0.2.13`
+- `mui-form-utils` updated to version `0.9.0`
+- `mui-page-header` updated to version `0.2.13`
 
 ### Bug Fixes
 
-* **mui-block-ui:** merge main branch ([8ec0ca6](https://github.com/Availity/element/commit/8ec0ca617a5b279f3657122e2c7c6b20281e3ebc))
+- **mui-block-ui:** merge main branch ([8ec0ca6](https://github.com/Availity/element/commit/8ec0ca617a5b279f3657122e2c7c6b20281e3ebc))
 
 ## [0.1.20](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.19...@availity/mui-checkbox@0.1.20) (2023-12-21)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.8.1`
-* `mui-page-header` updated to version `0.2.12`
+- `mui-form-utils` updated to version `0.8.1`
+- `mui-page-header` updated to version `0.2.12`
+
 ## [0.1.19](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.18...@availity/mui-checkbox@0.1.19) (2023-12-15)
 
 ### Dependency Updates

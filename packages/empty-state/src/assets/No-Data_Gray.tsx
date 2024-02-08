@@ -1,9 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 28.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 144 144" style="enable-background:new 0 0 144 144;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;stroke:#BBD6EB;stroke-miterlimit:10;}
+export const NoData = () => {
+  return (
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 144 144"
+      xmlSpace="preserve"
+      aria-label="No Data"
+      aria-hidden="true"
+    >
+      <style type="text/css">
+        {`.st0{fill:#FFFFFF;stroke:#BBD6EB;stroke-miterlimit:10;}
 	.st1{fill:#FFFFFF;stroke:#BBD6EB;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st2{fill:#FFFFFF;}
 	.st3{fill:#BBD6EB;}
@@ -79,11 +89,13 @@
 	.st73{fill:#FFFFFF;stroke:#1A74CC;stroke-miterlimit:10;}
 	.st74{fill:#E5E5E5;}
 	.st75{fill:#BBD6EB;stroke:#BBD6EB;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st76{fill:#FFFFFF;stroke:#EEEFF2;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:8,5;}
-</style>
-<g>
-	<path class="st2" d="M124,12.9H20c-2.8,0-5.1,2-5.1,4.4v82.2h114.1V17.3C129.1,14.9,126.8,12.9,124,12.9z"/>
-	<path class="st4" d="M111,12.9h-8c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h8c0.6,0,1-0.4,1-1C112,13.4,111.5,12.9,111,12.9L111,12.9z
+	.st76{fill:#FFFFFF;stroke:#EEEFF2;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:8,5;}`}
+      </style>
+      <g>
+        <path className="st2" d="M124,12.9H20c-2.8,0-5.1,2-5.1,4.4v82.2h114.1V17.3C129.1,14.9,126.8,12.9,124,12.9z" />
+        <path
+          className="st4"
+          d="M111,12.9h-8c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h8c0.6,0,1-0.4,1-1C112,13.4,111.5,12.9,111,12.9L111,12.9z
 		 M98,12.9h-8c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h8c0.6,0,1-0.4,1-1C99,13.4,98.5,12.9,98,12.9L98,12.9z M85,12.9h-8
 		c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h8c0.6,0,1-0.4,1-1C86,13.4,85.5,12.9,85,12.9L85,12.9z M72,12.9h-8c-0.6,0-1,0.4-1,1
 		c0,0.6,0.4,1,1,1h8c0.6,0,1-0.4,1-1C73,13.4,72.5,12.9,72,12.9L72,12.9z M59,12.9h-8c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h8
@@ -203,13 +215,22 @@
 		C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9
 		C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9
 		C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9
-		C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9L124,12.9z"/>
-</g>
-<path class="st4" d="M80.8,30.1L66,44.9H9c-3,0-5.3,2.6-4.8,5.6l8.5,58c0.2,1.3,1.3,2.3,2.7,2.3h111.3c1.4,0,2.5-1,2.7-2.3
-	l10.6-72.9c0.4-3-1.9-5.6-4.8-5.6H80.8z"/>
-<g>
-	<circle class="st71" cx="107.4" cy="99.4" r="30.5"/>
-	<polygon class="st51" points="124.8,88 118.7,81.9 107.3,93.3 95.8,81.9 89.7,88 101.2,99.5 89.7,110.9 95.8,117 107.3,105.6
-		118.7,117 124.8,110.9 113.4,99.5 	"/>
-</g>
-</svg>
+		C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9C124,12.9,124,12.9,124,12.9L124,12.9z"
+        />
+      </g>
+      <path
+        className="st4"
+        d="M80.8,30.1L66,44.9H9c-3,0-5.3,2.6-4.8,5.6l8.5,58c0.2,1.3,1.3,2.3,2.7,2.3h111.3c1.4,0,2.5-1,2.7-2.3
+	l10.6-72.9c0.4-3-1.9-5.6-4.8-5.6H80.8z"
+      />
+      <g>
+        <circle className="st71" cx="107.4" cy="99.4" r="30.5" />
+        <polygon
+          className="st51"
+          points="124.8,88 118.7,81.9 107.3,93.3 95.8,81.9 89.7,88 101.2,99.5 89.7,110.9 95.8,117 107.3,105.6
+		118.7,117 124.8,110.9 113.4,99.5 	"
+        />
+      </g>
+    </svg>
+  );
+};

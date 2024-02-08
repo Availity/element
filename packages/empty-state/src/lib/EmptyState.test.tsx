@@ -7,7 +7,7 @@ describe('EmptyState', () => {
     expect(getByText('Test')).toBeTruthy();
   });
   test('should render EmptyStateImage when variant passed', () => {
-    const { getByRole } = render(<EmptyState variant="NoSearchFound">Test</EmptyState>);
-    expect(getByRole('img', { hidden: true })).toBeTruthy();
+    const { getByLabelText } = render(<EmptyState variant="NoSearchFound">Test</EmptyState>);
+    expect(getByLabelText('No Search Found')).toBeTruthy();
   });
 });
