@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.41.0](https://github.com/Availity/element/compare/@availity/theme@0.40.2...@availity/theme@0.41.0) (2024-02-08)
+
+
+### Features
+
+* **theme:** add legacy modal styles ([7beb0c7](https://github.com/Availity/element/commit/7beb0c733ab97edb6abb77cb5f4d84de60b29518))
+
 ## [0.40.2](https://github.com/Availity/element/compare/@availity/theme@0.40.1...@availity/theme@0.40.2) (2024-02-08)
 
 ### Bug Fixes
