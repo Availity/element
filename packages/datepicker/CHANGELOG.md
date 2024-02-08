@@ -4,24 +4,21 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.3.1...@availity/mui-datepicker@0.4.0) (2024-02-08)
 
-
 ### Features
 
-* **theme:** legacy datepicker ([44c334d](https://github.com/Availity/element/commit/44c334db86701314dbbcc34adb5ed8b863056a01))
+- **theme:** legacy datepicker ([44c334d](https://github.com/Availity/element/commit/44c334db86701314dbbcc34adb5ed8b863056a01))
 
 ## [0.3.1](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.3.0...@availity/mui-datepicker@0.3.1) (2024-01-12)
 
-
 ### Bug Fixes
 
-* update datepicker styles ([43eae9a](https://github.com/Availity/element/commit/43eae9a4ab1b70d6a3a295bf8e54a3423ef6638a))
+- update datepicker styles ([43eae9a](https://github.com/Availity/element/commit/43eae9a4ab1b70d6a3a295bf8e54a3423ef6638a))
 
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.2.0...@availity/mui-datepicker@0.3.0) (2023-12-14)
 
-
 ### Features
 
-* add form story ([11d1f6c](https://github.com/Availity/element/commit/11d1f6c6191540bf02ff42d4056ac553eecc8c73))
+- add form story ([11d1f6c](https://github.com/Availity/element/commit/11d1f6c6191540bf02ff42d4056ac553eecc8c73))
 
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.1.0...@availity/mui-datepicker@0.2.0) (2023-11-28)
 

@@ -8,50 +8,56 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.9.5`
-* `mui-textfield` updated to version `0.5.10`
+- `mui-form-utils` updated to version `0.9.5`
+- `mui-textfield` updated to version `0.5.10`
+
 ## [0.1.17](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.16...@availity/mui-feedback@0.1.17) (2024-01-25)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.9.4`
-* `mui-textfield` updated to version `0.5.9`
+- `mui-form-utils` updated to version `0.9.4`
+- `mui-textfield` updated to version `0.5.9`
+
 ## [0.1.16](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.15...@availity/mui-feedback@0.1.16) (2024-01-12)
 
 ### Dependency Updates
 
-* `mui-button` updated to version `0.6.1`
-* `mui-form-utils` updated to version `0.9.3`
-* `mui-textfield` updated to version `0.5.8`
+- `mui-button` updated to version `0.6.1`
+- `mui-form-utils` updated to version `0.9.3`
+- `mui-textfield` updated to version `0.5.8`
+
 ## [0.1.15](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.14...@availity/mui-feedback@0.1.15) (2024-01-12)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.9.2`
-* `mui-textfield` updated to version `0.5.7`
+- `mui-form-utils` updated to version `0.9.2`
+- `mui-textfield` updated to version `0.5.7`
+
 ## [0.1.14](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.13...@availity/mui-feedback@0.1.14) (2024-01-09)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.9.1`
-* `mui-textfield` updated to version `0.5.6`
+- `mui-form-utils` updated to version `0.9.1`
+- `mui-textfield` updated to version `0.5.6`
+
 ## [0.1.13](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.12...@availity/mui-feedback@0.1.13) (2023-12-27)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.9.0`
-* `mui-textfield` updated to version `0.5.5`
+- `mui-form-utils` updated to version `0.9.0`
+- `mui-textfield` updated to version `0.5.5`
 
 ### Bug Fixes
 
-* **mui-block-ui:** merge main branch ([8ec0ca6](https://github.com/Availity/element/commit/8ec0ca617a5b279f3657122e2c7c6b20281e3ebc))
+- **mui-block-ui:** merge main branch ([8ec0ca6](https://github.com/Availity/element/commit/8ec0ca617a5b279f3657122e2c7c6b20281e3ebc))
 
 ## [0.1.12](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.11...@availity/mui-feedback@0.1.12) (2023-12-21)
 
 ### Dependency Updates
 
-* `mui-form-utils` updated to version `0.8.1`
-* `mui-textfield` updated to version `0.5.4`
+- `mui-form-utils` updated to version `0.8.1`
+- `mui-textfield` updated to version `0.5.4`
+
 ## [0.1.11](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.10...@availity/mui-feedback@0.1.11) (2023-12-15)
 
 ### Dependency Updates
