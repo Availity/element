@@ -11,10 +11,22 @@ export interface ButtonsProps extends Omit<ButtonProps, 'size' | 'height' | 'col
 }
 
 export interface PageHeaderProps {
+  /** Render breadcrumbs above the header */
   breadcrumbs: BreadcrumbsProps;
+  /** Renders buttons in the right side of the header */
   buttons?: ButtonsProps[];
+  /** If true, the Give Feedback button displays
+   * @default false
+   */
   feedback?: boolean;
+  /** The text that displays in the header  */
   headerText: string;
+  /** The name that displays in the help text
+   * @example "This App"
+   * @returns Need Help? Watch a demo for This App
+   */
+  helpAppName?: string;
+  /** The URL to the Help Demo */
   helpLink?: string;
 }
 
@@ -23,6 +35,7 @@ export const PageHeader = ({
   buttons,
   feedback = false,
   headerText,
+  helpAppName,
   helpLink,
 }: PageHeaderProps): JSX.Element => {
   return (
@@ -37,7 +50,8 @@ export const PageHeader = ({
           {helpLink && (
             <Grid item marginLeft={2}>
               <Typography variant="body1">
-                Need help? <Link href={helpLink} target="_blank" children="Watch a demo" />
+                Need help? <Link href={helpLink} target="_blank" children="Watch a demo" />{' '}
+                {helpAppName ? `for ${helpAppName}` : null}
               </Typography>
             </Grid>
           )}
