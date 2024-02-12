@@ -65,7 +65,15 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Element', 'Contributing', 'BS4 Migration', ['Getting Started'], 'Design System', 'Components'],
+        order: [
+          'Element',
+          'Contributing',
+          'Introduction',
+          'BS4 Migration',
+          ['Getting Started'],
+          'Design System',
+          'Components',
+        ],
       },
     },
   },
