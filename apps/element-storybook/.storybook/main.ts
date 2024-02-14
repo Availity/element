@@ -1,5 +1,7 @@
 import remarkGfm from 'remark-gfm';
 import { StorybookConfig } from '@storybook/react-vite';
+import '@fortawesome/free-solid-svg-icons';
+import '@fortawesome/free-regular-svg-icons';
 
 const config: StorybookConfig = {
   stories: [
