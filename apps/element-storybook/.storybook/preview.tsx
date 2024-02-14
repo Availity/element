@@ -3,9 +3,6 @@ import { Preview } from '@storybook/react';
 import { Title, Subtitle, Description, Primary, Controls, Stories, useOf } from '@storybook/blocks';
 import type { StoryContext } from '@storybook/types';
 import { ThemeProvider } from '@availity/theme-provider';
-import { HomeIcon } from '@availity/mui-icon';
-import { faFontAwesome } from '@fortawesome/free-regular-svg-icons';
-import { faFontAwesomeFlag } from '@fortawesome/free-solid-svg-icons';
 
 const withThemeProvider = (Story: () => JSX.Element, context: StoryContext) => {
   return (
@@ -72,6 +69,13 @@ const preview: Preview = {
       },
     },
   },
+  loaders: [
+    async () =>
+      await Promise.all([
+        import('@fortawesome/free-solid-svg-icons/faFontAwesome'),
+        import('@fortawesome/free-regular-svg-icons/faFontAwesome'),
+      ]),
+  ],
 };
 
 // Make sure we are in the browser before starting
