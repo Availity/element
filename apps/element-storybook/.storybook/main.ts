@@ -2,6 +2,7 @@ import remarkGfm from 'remark-gfm';
 import { StorybookConfig } from '@storybook/react-vite';
 import '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/free-regular-svg-icons';
+import { mergeConfig } from 'vite';
 
 const config: StorybookConfig = {
   stories: [
@@ -32,6 +33,18 @@ const config: StorybookConfig = {
         viteConfigPath: '',
       },
     },
+  },
+  core: {
+    builder: '@storybook/builder-vite',
+  },
+  async viteFinal(config) {
+    // Merge custom configuration into the default config
+    return mergeConfig(config, {
+      // Add dependencies to pre-optimization
+      optimizeDeps: {
+        include: ['@fortawesome/free-solid-svg-icons', '@fortawesome/free-regular-svg-icons'],
+      },
+    });
   },
   typescript: {
     reactDocgenTypescriptOptions: {
