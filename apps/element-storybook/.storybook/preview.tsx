@@ -3,6 +3,7 @@ import { Preview } from '@storybook/react';
 import { Title, Subtitle, Description, Primary, Controls, Stories, useOf } from '@storybook/blocks';
 import type { StoryContext } from '@storybook/types';
 import { ThemeProvider } from '@availity/theme-provider';
+import '@availity/mui-icon';
 
 const withThemeProvider = (Story: () => JSX.Element, context: StoryContext) => {
   return (
@@ -71,10 +72,7 @@ const preview: Preview = {
   },
   loaders: [
     async () =>
-      await Promise.all([
-        import('@fortawesome/free-solid-svg-icons/faFontAwesome'),
-        import('@fortawesome/free-regular-svg-icons/faFontAwesome'),
-      ]),
+      await Promise.all([import('@fortawesome/free-solid-svg-icons'), import('@fortawesome/free-regular-svg-icons')]),
   ],
 };
 
