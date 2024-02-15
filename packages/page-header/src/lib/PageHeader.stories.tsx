@@ -7,6 +7,12 @@ const meta: Meta<typeof PageHeader> = {
   title: 'Components/PageHeader/PageHeader',
   component: PageHeader,
   tags: ['autodocs'],
+  argTypes: {
+    helpAppName: {
+      if: { global: 'theme', eq: 'legacyBS' },
+    },
+  },
+  args: { helpAppName: 'This App' },
 };
 
 export default meta;
