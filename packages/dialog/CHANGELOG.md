@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-dialog@0.1.0...@availity/mui-dialog@0.1.1) (2024-02-16)
+
+
+### Bug Fixes
+
+* **mui-dialog:** pass props to Dialog ([5aded05](https://github.com/Availity/element/commit/5aded0581cd7b25e759e3e1f92e79521d95b9e28))
+
 ## 0.1.0 (2024-02-08)
 
 ### Dependency Updates
