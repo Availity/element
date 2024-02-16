@@ -40,6 +40,7 @@ const config: StorybookConfig = {
     },
   },
   staticDirs: ['../../../static'],
+  features: { storyStoreV7: false, legacyMdx1: true },
 };
 
 export default config;

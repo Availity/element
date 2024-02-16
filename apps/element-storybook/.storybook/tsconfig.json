@@ -15,15 +15,16 @@
     "*.js",
     "*.ts",
     "*.tsx",
-    "../src/*.mdx",
     "../src/*.stories.ts",
     "../src/*.stories.js",
     "../src/*.stories.jsx",
     "../src/*.stories.tsx",
-    "../../../packages/*.mdx",
+    "../src/*.stories.mdx",
+    "../../../packages/*.stories.mdx",
     "../../../packages/*/src/lib/*.stories.js",
     "../../../packages/*/src/lib/*.stories.jsx",
     "../../../packages/*/src/lib/*.stories.ts",
-    "../../../packages/*/src/lib/*.stories.tsx"
+    "../../../packages/*/src/lib/*.stories.tsx",
+    "../../../packages/*/src/lib/*.stories.mdx"
   ]
 }

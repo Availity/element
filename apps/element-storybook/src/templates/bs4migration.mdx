@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta, Source } from '@storybook/blocks';
 
 <Meta title="BS4 Migration/Component" />
 *Copy file into package*
@@ -25,9 +25,9 @@ This migration guide is just an overview. For more in depth component informatio
 
 `reactstrap`/`availity-react` Example:
 
-```tsx
-import { Button } from 'reactstrap';
-
+<Source
+  code={`
+import { Button } from 'reactstrap';\n
 const ReactstrapButton = () => (
   <Button
     color="primary"
@@ -38,13 +38,13 @@ const ReactstrapButton = () => (
     I'm a Button
   </Button>
 );
-```
+`}/>
 
 `@availity/element` Example:
 
-```tsx
-import { Button } from '@availity/element';
-
+<Source
+  code={`
+import { Button } from '@availity/element';\n
 const MUIButton = () => (
   <Button
     color="primary"
@@ -55,4 +55,4 @@ const MUIButton = () => (
     I'm a Button
   </Button>
 );
-```
+`}/>
