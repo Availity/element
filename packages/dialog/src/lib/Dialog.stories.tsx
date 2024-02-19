@@ -36,8 +36,10 @@ export const _Dialog: StoryObj<typeof Dialog> = {
     return (
       <>
         <Button onClick={handleOpen}>Open Dialog</Button>
-        <Dialog {...args} open={open} onClose={handleClose}>
-          <DialogTitle id="alert-dialog-title">Availity Dialog</DialogTitle>
+        <Dialog {...args} open={open} onClose={handleClose} aria-labelledby="alert-dialog-title">
+          <DialogTitle id="alert-dialog-title" component="h1">
+            Availity Dialog
+          </DialogTitle>
           <DialogContent>
             <DialogContentText>{args.children}</DialogContentText>
           </DialogContent>
