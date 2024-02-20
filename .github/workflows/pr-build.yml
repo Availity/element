@@ -17,6 +17,8 @@ jobs:
   #   * run the linter
   build:
     runs-on: ${{ matrix.os }}
+    env:
+      NODE_OPTIONS: "--max-old-space-size=6144"
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
