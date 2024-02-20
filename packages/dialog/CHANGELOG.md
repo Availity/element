@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-dialog@0.1.1...@availity/mui-dialog@0.1.2) (2024-02-20)
+
+
+### Bug Fixes
+
+* **mui-dialog:** fix accessibility issues in story ([af90247](https://github.com/Availity/element/commit/af902479cd831bd90d8b528ee2edbc5c20e81b46))
+
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-dialog@0.1.0...@availity/mui-dialog@0.1.1) (2024-02-16)
 
 
