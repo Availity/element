@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta, Source } from '@storybook/blocks';
 import { Badge, Chip, MailIcon, ThemeProvider } from '@availity/element';
 
 <Meta title="BS4 Migration/Getting Started" />
@@ -7,15 +7,19 @@ import { Badge, Chip, MailIcon, ThemeProvider } from '@availity/element';
 
 To install the library in your project, you can use either NPM or Yarn:
 
-```sh
+<Source
+  language="sh"
+  code={`
 npm install @availity/element
-```
+`}/>
 
 OR
 
-```sh
+<Source
+  language="sh"
+  code={`
 yarn add @availity/element
-```
+`}/>
 
 ## Usage
 
@@ -23,19 +27,20 @@ The [@availity/element](https://availity.github.io/element/?path=/docs/element--
 
 To use the components in your project, you will need to import them first:
 
-```tsx
+<Source
+  code={`
 import { Button, ThemeProvider } from '@availity/element';
-```
+`}/>
 
 Make sure all of the components you use are inside the `ThemeProvider` component. We recommend placing it in your root `index.{js|tsx}` file.
 
-```jsx
-import { ThemeProvider } from '@availity/element';
-
+<Source
+  code={`
+import { ThemeProvider } from '@availity/element';\n
 const App = () => {
   return <ThemeProvider>{/* Application code. Most likely a router. */}</ThemeProvider>;
 };
-```
+`}/>
 
 ## Pattern Differences
 

@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta, Source } from '@storybook/blocks';
 
 <Meta title="BS4 Migration/Form Migration" />
 
@@ -17,15 +17,19 @@ large community and is actively and regularly supported.
 
 ## Installation
 
-```sh
+<Source
+  language="sh"
+  code={`
 npm install react-hook-form
-```
+`}/>
 
 OR
 
-```sh
+<Source
+  language="sh"
+  code={`
 yarn add react-hook-form
-```
+`}/>
 
 ## Usage
 
@@ -36,11 +40,11 @@ form implemented in `formik` and rewritten in react-hook-form.
 
 ### Example: Form component with `formik` and `@availity/react`
 
-```jsx
+<Source
+  code={`
 import React, { useRef } from 'react';
 import { Form, Field } from '@availity/form';
-import { Button } from 'reactstrap';
-
+import { Button } from 'reactstrap';\n
 export const Form = () => {
   const ref = useRef();
   return (
@@ -75,18 +79,15 @@ export const Form = () => {
     </Form>
   );
 };
-```
+`}/>
 
 ### Example: form component with `react-hook-form` and `@availity/element`
 
-```jsx
-
+<Source
+  code={`
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { TextField, LoadingButton } from '@availity/element;
-
-
+import { TextField, LoadingButton } from '@availity/element;\n
 export const Form = () => {
-
   const {
     formState: { errors },
     handleSubmit,
@@ -94,7 +95,6 @@ export const Form = () => {
   } = useForm({
     defaultValues: { textField1: "" }
   });
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <TextField
@@ -113,6 +113,6 @@ export const Form = () => {
     </form>
   )
 }
-```
+`}/>
 
 You can find more working examples of react-hook-form [here](/docs/layouts-form--docs).
