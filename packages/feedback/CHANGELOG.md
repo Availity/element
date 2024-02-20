@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.20](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.19...@availity/mui-feedback@0.1.20) (2024-02-20)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.6.2`
+* `mui-form-utils` updated to version `0.9.6`
+* `mui-icon` updated to version `0.7.4`
+* `mui-popover` updated to version `0.1.2`
+* `mui-textfield` updated to version `0.5.11`
+* `mui-toggle-button` updated to version `0.1.8`
+* `mui-typography` updated to version `0.1.6`
 ## [0.1.19](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.18...@availity/mui-feedback@0.1.19) (2024-02-06)
 
 ## [0.1.18](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.17...@availity/mui-feedback@0.1.18) (2024-01-31)
