@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.7](https://github.com/Availity/element/compare/@availity/mui-tabs@0.1.6...@availity/mui-tabs@0.1.7) (2024-02-20)
+
+### Dependency Updates
+
+* `mui-divider` updated to version `0.3.5`
 ## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-tabs@0.1.5...@availity/mui-tabs@0.1.6) (2023-11-08)
 
 ### Dependency Updates
