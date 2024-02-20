@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.0...@availity/mui-datepicker@0.4.1) (2024-02-20)
+
 ## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.3.1...@availity/mui-datepicker@0.4.0) (2024-02-08)
 
 ### Features
