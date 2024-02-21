@@ -47,6 +47,7 @@
     "@availity/mui-textfield": "workspace:*",
     "@availity/mui-toggle-button": "workspace:*",
     "@availity/mui-tooltip": "workspace:*",
+    "@availity/mui-transitions": "workspace:*",
     "@availity/mui-typography": "workspace:*",
     "@availity/theme-provider": "workspace:*",
     "@mui/material": "^5.14.12",
