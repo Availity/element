@@ -2,6 +2,37 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.36.0](https://github.com/Availity/element/compare/@availity/element@0.35.5...@availity/element@0.36.0) (2024-02-22)
+
+### Dependency Updates
+
+* `mui-alert` updated to version `0.5.9`
+* `mui-avatar` updated to version `0.1.15`
+* `mui-badge` updated to version `0.1.14`
+* `mui-block-ui` updated to version `0.1.3`
+* `mui-breadcrumbs` updated to version `0.2.3`
+* `mui-button` updated to version `0.6.3`
+* `mui-card` updated to version `0.2.10`
+* `mui-checkbox` updated to version `0.1.31`
+* `mui-chip` updated to version `0.2.10`
+* `mui-dialog` updated to version `0.1.4`
+* `mui-empty-state` updated to version `0.1.4`
+* `mui-feedback` updated to version `0.1.21`
+* `mui-form-utils` updated to version `0.9.7`
+* `mui-icon` updated to version `0.7.5`
+* `mui-link` updated to version `0.2.6`
+* `mui-menu` updated to version `0.2.3`
+* `mui-page-header` updated to version `0.2.23`
+* `mui-pagination` updated to version `0.2.6`
+* `mui-popper` updated to version `0.1.3`
+* `mui-progress` updated to version `0.1.4`
+* `mui-textfield` updated to version `0.5.12`
+* `mui-transitions` updated to version `0.1.0`
+
+### Features
+
+* **mui-transitions:** add collapse ([b368bf7](https://github.com/Availity/element/commit/b368bf73810b50e710f1dc6698932c9ee1cc5ffc))
+
 ## [0.35.5](https://github.com/Availity/element/compare/@availity/element@0.35.4...@availity/element@0.35.5) (2024-02-20)
 
 ### Dependency Updates
