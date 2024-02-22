@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.5](https://github.com/Availity/element/compare/@availity/mui-icon@0.7.4...@availity/mui-icon@0.7.5) (2024-02-22)
+
 ## [0.7.4](https://github.com/Availity/element/compare/@availity/mui-icon@0.7.3...@availity/mui-icon@0.7.4) (2024-02-20)
 
 ### Dependency Updates
