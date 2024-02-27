@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { legacytokens as tokens } from '@availity/design-tokens';
 
 const important = (style: string) => `${style} !important`;
@@ -780,6 +781,30 @@ export const legacyTheme = {
         sizeMedium: {
           fontWeight: tokens.fontWeightsBold,
           padding: '0.25rem 0.6rem',
+        },
+      },
+    },
+    MuiCircularProgress: {
+      styleOverrides: {
+        indeterminate: ({ ownerState }: { ownerState: any }) => {
+          const fontSizeInPx = typeof ownerState.size === 'number' ? Math.round(ownerState.size / 2) : 16;
+          const color = ownerState.color === 'inherit' ? 'currentColor' : '%2302a17c';
+          return {
+            '&.MuiCircularProgress-root.MuiCircularProgress-indeterminate': {
+              display: 'inline-block',
+              fontSize: `${fontSizeInPx}px`,
+              height: important('1em'),
+              width: important('calc(2.3em + 20px)'),
+              marginRight: '-20px',
+              animation: 'none',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '100% 100%',
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1em 1em' font-size='${fontSizeInPx}px' overflow='visible'%3E%3Ctext dominant-baseline='central' fill='${color}' font-size='2em' y='.25em' x='0'%3E &%238226; %3Canimate attributeName='opacity' dur='3s' repeatCount='indefinite' values='0;1;1;0;0' keyTimes='0;0.3;0.6;0.8;1'/%3E%3CanimateTransform attributeName='transform' type='translate' values='20 0;0 0;0 0' keyTimes='0;0.3;1' dur='3s' repeatCount='indefinite' /%3E%3C/text%3E%3Ctext dominant-baseline='central' fill='${color}' font-size='2em' y='.25em' x='.4em'%3E &%238226; %3Canimate attributeName='opacity' dur='3s' repeatCount='indefinite' values='0;0;1;1;0;0' keyTimes='0;0.1;0.4;0.6;0.8;1'/%3E%3CanimateTransform attributeName='transform' type='translate' values='0 0;20 0;0 0;0 0' keyTimes='0;0.1;0.4;1' dur='3s' repeatCount='indefinite' /%3E%3C/text%3E%3Ctext dominant-baseline='central' fill='${color}' font-size='2em' y='.25em' x='.8em'%3E &%238226; %3Canimate attributeName='opacity' dur='3s' repeatCount='indefinite' values='0;0;1;1;0;0' keyTimes='0;0.2;0.5;0.6;0.8;1'/%3E%3CanimateTransform attributeName='transform' type='translate' values='0 0;20 0;0 0;0 0' keyTimes='0;0.2;0.5;1' dur='3s' repeatCount='indefinite' /%3E%3C/text%3E%3C/svg%3E%0A")`,
+            },
+          };
+        },
+        circleIndeterminate: {
+          display: 'none',
         },
       },
     },
