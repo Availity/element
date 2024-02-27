@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.42.0](https://github.com/Availity/element/compare/@availity/theme@0.41.2...@availity/theme@0.42.0) (2024-02-27)
+
+
+### Features
+
+* **theme:** legacy loader styles ([9d2197a](https://github.com/Availity/element/commit/9d2197a4323e1571bc10ef3b82fe69335ee228f2))
+
 ## [0.41.2](https://github.com/Availity/element/compare/@availity/theme@0.41.1...@availity/theme@0.41.2) (2024-02-20)
 
 ## [0.41.1](https://github.com/Availity/element/compare/@availity/theme@0.41.0...@availity/theme@0.41.1) (2024-02-09)
