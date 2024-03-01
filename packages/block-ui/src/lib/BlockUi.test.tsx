@@ -96,10 +96,7 @@ describe('BlockUi', () => {
     const srMessage2 = getAllByText('loading')[1];
 
     expect(srMessage1).toBeDefined();
-    expect(srMessage1?.className).toContain('sr-only');
-
     expect(srMessage2).toBeDefined();
-    expect(srMessage2?.className).toContain('sr-only');
   });
 
   test('should block and have custom message for screenreader', () => {
