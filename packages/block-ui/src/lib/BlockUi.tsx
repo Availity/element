@@ -1,12 +1,65 @@
 import React, { useCallback, useEffect, useRef, useState, isValidElement } from 'react';
-import type { ElementType, KeyboardEvent, KeyboardEventHandler, ReactNode } from 'react';
-import { CircularProgress } from '@mui/material';
-
-import './BlockUi.css';
+import type { KeyboardEvent, KeyboardEventHandler, ReactNode } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
+import { styled } from '@mui/material/styles';
 
 const Loader = () => {
   return <CircularProgress aria-label="Loading" variant="indeterminate" />;
 };
+
+const Block = styled('div')({
+  position: 'relative',
+});
+
+const BlockUiContainer = styled('div')({
+  position: 'absolute',
+  zIndex: 1010,
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  height: '100%',
+  minHeight: '4.5em',
+  cursor: 'wait',
+  overflow: 'hidden',
+  ':focus': {
+    outline: 'none',
+  },
+});
+
+const BlockUiOverlay = styled('div')({
+  width: '100%',
+  height: '100%',
+  backgroundColor: 'rgb(0, 0, 0, 0.55)',
+});
+
+const BlockUiMessageContainer = styled('div')<{ top?: string | number }>(({ top = '50%' }) => ({
+  top,
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  textAlign: 'center',
+  transform: 'translateY(-50%)',
+  zIndex: 10001,
+}));
+
+const BlockUiMessage = styled('div')({
+  color: 'white',
+  background: 'none',
+  zIndex: '1011',
+});
+
+const ScreenReaderOnly = styled('div')({
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  borderWidth: 0,
+});
 
 export type BlockUiProps = {
   /** Set whether the component should block its children */
@@ -23,8 +76,6 @@ export type BlockUiProps = {
   message?: string | ReactNode;
   /** Control if the children are shown when the component is being blocked */
   renderChildren?: boolean;
-  /** tag to render as container element */
-  tag?: ElementType;
 };
 
 export function BlockUi({
@@ -35,7 +86,6 @@ export function BlockUi({
   loader = <Loader />,
   message,
   renderChildren = true,
-  tag: Tag = 'div',
   ...rest
 }: BlockUiProps): JSX.Element {
   const [top, setTop] = useState<string | number>('50%');
@@ -124,34 +174,24 @@ export function BlockUi({
   const shouldRenderChildren = !blocking || renderChildren;
 
   return (
-    <Tag className={blocking ? `block-ui ${className}` : className} aria-busy={blocking} {...rest}>
+    <Block aria-busy={blocking} {...rest}>
       {blocking ? (
-        <div tabIndex={0} onKeyUp={tabbedUpTop} onKeyDown={tabbedDownTop} ref={topFocusRef} className="sr-only">
+        <ScreenReaderOnly tabIndex={0} onKeyUp={tabbedUpTop} onKeyDown={tabbedDownTop} ref={topFocusRef}>
           {message || 'loading'}
-        </div>
+        </ScreenReaderOnly>
       ) : null}
       {shouldRenderChildren ? children : null}
       {blocking ? (
-        <div
-          className="block-ui-container"
-          tabIndex={0}
-          ref={blockerRef}
-          onKeyUp={tabbedUpBottom}
-          onKeyDown={tabbedDownBottom}
-        >
-          <div className="block-ui-overlay" ref={containerRef} />
-          <div
-            className="block-ui-message-container"
-            ref={messageContainerRef}
-            style={{ top: keepInView ? top : undefined }}
-          >
-            <div className="block-ui-message">
+        <BlockUiContainer tabIndex={0} ref={blockerRef} onKeyUp={tabbedUpBottom} onKeyDown={tabbedDownBottom}>
+          <BlockUiOverlay ref={containerRef} />
+          <BlockUiMessageContainer ref={messageContainerRef} top={keepInView ? top : undefined}>
+            <BlockUiMessage>
               {isValidElement(loader) ? <div aria-hidden>{loader}</div> : null}
-              {message || <div className="sr-only">loading</div>}
-            </div>
-          </div>
-        </div>
+              {message || <ScreenReaderOnly>loading</ScreenReaderOnly>}
+            </BlockUiMessage>
+          </BlockUiMessageContainer>
+        </BlockUiContainer>
       ) : null}
-    </Tag>
+    </Block>
   );
 }
