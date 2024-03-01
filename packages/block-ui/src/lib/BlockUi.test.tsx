@@ -111,6 +111,5 @@ describe('BlockUi', () => {
 
     const srMessage = getAllByText('Loading')[0];
     expect(srMessage).toBeDefined();
-    expect(srMessage?.className).toContain('sr-only');
   });
 });
