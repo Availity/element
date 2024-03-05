@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.4](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.3...@availity/mui-block-ui@0.1.4) (2024-03-05)
+
+
+### Bug Fixes
+
+* **mui-block-ui:** update unit test ([cfd54d4](https://github.com/Availity/element/commit/cfd54d454e131a12d765d364fc3638b0acb61501))
+* **mui-block-ui:** update unit test ([fbddccc](https://github.com/Availity/element/commit/fbddcccd3dce983d175e6939c951a77d54137ab0))
+* **mui-block-ui:** use src instead of dist ([035b418](https://github.com/Availity/element/commit/035b418b84d89c43c78fcd2405eadf2a3df6b0d5))
+
 ## [0.1.3](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.2...@availity/mui-block-ui@0.1.3) (2024-02-22)
 
 ### Dependency Updates
