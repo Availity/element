@@ -1,0 +1,51 @@
+{
+  "name": "@availity/mui-accordion",
+  "version": "0.0.0",
+  "description": "Availity MUI Accordion Component - part of the @availity/element design system",
+  "keywords": [
+    "react",
+    "typescript",
+    "availity",
+    "mui"
+  ],
+  "homepage": "https://availity.github.io/element/?path=/docs/components-accordion-introduction--docs",
+  "bugs": {
+    "url": "https://github.com/Availity/element/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Availity/element.git",
+    "directory": "packages/accordion"
+  },
+  "license": "MIT",
+  "author": "Availity Developers <AVOSS@availity.com>",
+  "browser": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "clean": "rm -rf dist",
+    "clean:nm": "rm -rf node_modules",
+    "publish": "yarn npm publish --tolerate-republish --access public",
+    "publish:canary": "yarn npm publish --access public --tag canary"
+  },
+  "dependencies": {
+    "@availity/mui-icon": "workspace:*"
+  },
+  "devDependencies": {
+    "@mui/material": "^5.11.9",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tsup": "^5.12.7",
+    "typescript": "^4.6.4"
+  },
+  "peerDependencies": {
+    "@mui/material": "^5.11.9",
+    "react": ">=16.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -334,6 +334,75 @@ export const lightTheme = {
         size: 'large',
       },
     },
+    MuiAccordion: {
+      defaultProps: {
+        disableGutters: false,
+        variant: 'elevation',
+      },
+      styleOverrides: {
+        root: {
+          '&:before': {
+            content: 'none',
+          },
+          borderColor: tokens.colorBackgroundCanvas,
+        },
+      },
+    },
+    MuiAccordionActions: {
+      styleOverrides: {
+        root: {
+          padding: '1.25rem',
+        },
+      },
+    },
+    MuiAccordionDetails: {
+      styleOverrides: {
+        root: {
+          minHeight: '1px',
+          padding: '1.25rem',
+          '.MuiAccordionSummary-root:not(.Mui-focusVisible, :hover, :active)': {
+            backgroundColor: 'inherit',
+          },
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorBackgroundCanvas,
+          padding: '0px 20px',
+          borderRadius: 'inherit',
+          '&.Mui-expanded': {
+            borderBottomLeftRadius: '0px',
+            borderBottomRightRadius: '0px',
+            minHeight: '0px',
+            '&.MuiAccordionSummary-gutters .MuiAccordionSummary-content.Mui-expanded': {
+              margin: '12px 0px',
+            },
+          },
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+          },
+          '&:active': {
+            backgroundColor: tokens.colorActionActive,
+          },
+          '&.Mui-focusVisible': {
+            color: tokens.colorTextInverse,
+            backgroundColor: tokens.colorActionActive,
+          },
+        },
+        content: {
+          order: 2,
+          fontWeight: tokens.fontWeightsBold,
+          margin: '12px 0px',
+        },
+        expandIconWrapper: {
+          order: 1,
+          marginRight: '8px',
+          color: 'inherit',
+        },
+      },
+    },
     MuiAlert: {
       styleOverrides: {
         standardSuccess: {

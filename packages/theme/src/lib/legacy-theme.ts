@@ -358,6 +358,62 @@ export const legacyTheme = {
         size: 'medium',
       },
     },
+    MuiAccordion: {
+      defaultProps: {
+        disableGutters: true,
+      },
+      styleOverrides: {
+        root: {
+          borderColor: tokens.colorGrey100,
+          borderRadius: '4px',
+          '&:before': {
+            content: 'none',
+          },
+        },
+      },
+    },
+    MuiAccordionActions: {
+      styleOverrides: {
+        root: {
+          padding: '1.25rem',
+        },
+      },
+    },
+    MuiAccordionDetails: {
+      styleOverrides: {
+        root: {
+          minHeight: '1px',
+          padding: '1.25rem',
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: {
+          paddingY: '12px',
+          paddingX: '20px',
+          backgroundColor: tokens.colorGrey100,
+          '&.Mui-focusVisible': {
+            borderRadius: '4px',
+            boxShadow: `inset 0 0 0px 2px ${tokens.colorSecondaryMain}, inset 0 0 0px 4px ${tokens.colorCommonWhite}`,
+          },
+        },
+        content: {
+          order: 2,
+          fontWeight: tokens.fontWeightsBold,
+        },
+        expandIconWrapper: {
+          order: 1,
+          marginRight: '8px',
+          padding: '2px',
+          color: tokens.colorSecondaryMain,
+          transform: 'rotate(-90deg)',
+          '&.Mui-expanded': {
+            transform: 'rotate(0deg)',
+          },
+        },
+      },
+    },
     MuiAlert: {
       styleOverrides: {
         standardSuccess: {
