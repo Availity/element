@@ -933,7 +933,7 @@ export const legacyTheme = {
         root: {
           marginBottom: '.1rem',
           '&.Mui-error, &.Mui-error.Mui-focused': {
-            color: tokens.colorTextError,
+            color: tokens.colorTextPrimary,
           },
           '&.Mui-disabled': {
             color: tokens.colorTextDisabled,
@@ -957,11 +957,15 @@ export const legacyTheme = {
           marginBottom: '.1rem',
           display: 'flex',
           flexDirection: 'row',
+          lineHeight: '1.5rem',
+          minHeight: '1.5rem',
           '.MuiFormLabel-root': {
             marginBottom: '0',
           },
           '&:has(legend), &:has(.legend), legend, .legend': {
             fontSize: '1.5rem',
+            lineHeight: '2.25rem',
+            marginBottom: '.5rem',
           },
         },
       },
