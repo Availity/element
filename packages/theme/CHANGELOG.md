@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.44.0](https://github.com/Availity/element/compare/@availity/theme@0.43.0...@availity/theme@0.44.0) (2024-03-15)
+
+
+### Features
+
+* **mui-accordion:** add accordion package ([83e6bfd](https://github.com/Availity/element/commit/83e6bfd5f8c07750e59d44edaccbd4a713cc6fc8))
+
 ## [0.43.0](https://github.com/Availity/element/compare/@availity/theme@0.42.0...@availity/theme@0.43.0) (2024-03-15)
 
 
