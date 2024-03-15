@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.7.5...@availity/mui-icon@0.8.0) (2024-03-15)
+
+
+### Features
+
+* **mui-icon:** add accordion icons ([d9b34c4](https://github.com/Availity/element/commit/d9b34c4d6cef8ff736fada962e3b87cf94fcfac5))
+
 ## [0.7.5](https://github.com/Availity/element/compare/@availity/mui-icon@0.7.4...@availity/mui-icon@0.7.5) (2024-02-22)
 
 ## [0.7.4](https://github.com/Availity/element/compare/@availity/mui-icon@0.7.3...@availity/mui-icon@0.7.4) (2024-02-20)
