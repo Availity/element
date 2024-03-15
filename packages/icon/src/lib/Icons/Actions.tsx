@@ -12,9 +12,12 @@ import { faSortDown } from '@fortawesome/free-solid-svg-icons/faSortDown';
 import { faClose } from '@fortawesome/free-solid-svg-icons/faClose';
 import { faBell } from '@fortawesome/free-solid-svg-icons/faBell';
 import { faChartColumn } from '@fortawesome/free-solid-svg-icons/faChartColumn';
-import { SvgIconProps } from '@mui/material';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons/faAngleDown';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons/faAngleUp';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp';
+import { SvgIconProps } from '@mui/material/SvgIcon';
 import { FaSvgIcon } from '../FaSvgIcon';
-import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 export const FilterIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFilter} {...props} />;
 
@@ -57,3 +60,11 @@ export const ChartColumnIcon = ({ ...props }: SvgIconProps): JSX.Element => (
 export const ExpandIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faAngleDown} {...props} />;
 
 export const CollapseIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faAngleUp} {...props} />;
+
+export const TriangleExpandIcon = ({ ...props }: SvgIconProps): JSX.Element => (
+  <FaSvgIcon icon={faCaretDown} {...props} />
+);
+
+export const TriangleCollapseIcon = ({ ...props }: SvgIconProps): JSX.Element => (
+  <FaSvgIcon icon={faCaretUp} {...props} />
+);
