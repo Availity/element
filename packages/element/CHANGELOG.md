@@ -2,6 +2,38 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.37.0](https://github.com/Availity/element/compare/@availity/element@0.36.3...@availity/element@0.37.0) (2024-03-15)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `0.1.0`
+* `mui-alert` updated to version `0.5.10`
+* `mui-avatar` updated to version `0.1.16`
+* `mui-badge` updated to version `0.1.15`
+* `mui-block-ui` updated to version `0.1.5`
+* `mui-breadcrumbs` updated to version `0.2.4`
+* `mui-button` updated to version `0.6.4`
+* `mui-card` updated to version `0.2.11`
+* `mui-checkbox` updated to version `0.1.32`
+* `mui-chip` updated to version `0.2.11`
+* `mui-dialog` updated to version `0.1.5`
+* `mui-empty-state` updated to version `0.1.5`
+* `mui-feedback` updated to version `0.1.22`
+* `mui-form-utils` updated to version `0.9.8`
+* `mui-icon` updated to version `0.8.0`
+* `mui-link` updated to version `0.2.7`
+* `mui-menu` updated to version `0.2.4`
+* `mui-page-header` updated to version `0.2.24`
+* `mui-pagination` updated to version `0.2.7`
+* `mui-popper` updated to version `0.1.4`
+* `mui-progress` updated to version `0.1.5`
+* `mui-textfield` updated to version `0.5.13`
+* `theme-provider` updated to version `0.4.44`
+
+### Features
+
+* **mui-accordion:** add accordion package ([83e6bfd](https://github.com/Availity/element/commit/83e6bfd5f8c07750e59d44edaccbd4a713cc6fc8))
+
 ## [0.36.3](https://github.com/Availity/element/compare/@availity/element@0.36.2...@availity/element@0.36.3) (2024-03-15)
 
 ### Dependency Updates
