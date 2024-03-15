@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.43.0](https://github.com/Availity/element/compare/@availity/theme@0.42.0...@availity/theme@0.43.0) (2024-03-15)
+
+
+### Features
+
+* **theme:** legacy formlabel ([b250933](https://github.com/Availity/element/commit/b2509334b0c8647bea7dc9d2b1122bbb41b15a54))
+
 ## [0.42.0](https://github.com/Availity/element/compare/@availity/theme@0.41.2...@availity/theme@0.42.0) (2024-02-27)
 
 
