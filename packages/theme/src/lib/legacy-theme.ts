@@ -1451,12 +1451,19 @@ export const legacyTheme = {
           fontFamily: tokens.typographyBody1FontFamily,
           letterSpacing: tokens.typographyBody1LetterSpacing,
           color: tokens.colorTextPrimary,
-          padding: '11px 8px',
+          padding: '.75em 1em',
+          borderTopLeftRadius: '.25rem',
+          borderTopRightRadius: '.25rem',
+          border: '1px solid',
+          borderColor: 'transparent',
+          marginBottom: '-1px',
           '&:hover': {
-            backgroundColor: tokens.colorBackgroundBorder,
+            borderColor: '#e9ecef #e9ecef #dee2e6',
           },
-          '&:Mui-selected': {
-            color: tokens.colorPrimaryMain,
+          '&.Mui-selected': {
+            borderColor: '#dee2e6',
+            borderBottomColor: tokens.colorBackgroundPaper,
+            color: tokens.colorTextPrimary,
           },
         },
       },
@@ -1600,8 +1607,13 @@ export const legacyTheme = {
     MuiTabs: {
       styleOverrides: {
         root: {
-          backgroundColor: tokens.colorBackgroundCanvas,
-          height: '3rem',
+          backgroundColor: tokens.colorBackgroundPaper,
+        },
+        flexContainer: {
+          borderBottom: '1px solid #dee2e6',
+        },
+        indicator: {
+          display: 'none',
         },
       },
     },
