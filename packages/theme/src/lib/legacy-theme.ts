@@ -1457,7 +1457,7 @@ export const legacyTheme = {
           border: '1px solid',
           borderColor: 'transparent',
           marginBottom: '-1px',
-          '&:hover': {
+          '&:hover, &:focus, &:focus-visible': {
             borderColor: '#e9ecef #e9ecef #dee2e6',
           },
           '&.Mui-selected': {
