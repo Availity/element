@@ -1460,7 +1460,7 @@ export const legacyTheme = {
           '&:hover': {
             borderColor: tokens.colorActionHover,
           },
-          '&:focus&:focus-visible': {
+          '&.Mui-focusVisible': {
             outline: `2px solid ${tokens.colorPrimaryMain}`,
             outlineOffset: '-2px',
             borderRadius: '.25rem',
