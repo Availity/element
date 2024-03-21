@@ -1457,11 +1457,16 @@ export const legacyTheme = {
           border: '1px solid',
           borderColor: 'transparent',
           marginBottom: '-1px',
-          '&:hover, &:focus, &:focus-visible': {
-            borderColor: '#e9ecef #e9ecef #dee2e6',
+          '&:hover': {
+            borderColor: tokens.colorActionHover,
+          },
+          '&:focus&:focus-visible': {
+            outline: `2px solid ${tokens.colorPrimaryMain}`,
+            outlineOffset: '-2px',
+            borderRadius: '.25rem',
           },
           '&.Mui-selected': {
-            borderColor: '#dee2e6',
+            borderColor: tokens.colorBackgroundBorder,
             borderBottomColor: tokens.colorBackgroundPaper,
             color: tokens.colorTextPrimary,
           },
