@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.45.0](https://github.com/Availity/element/compare/@availity/theme@0.44.0...@availity/theme@0.45.0) (2024-03-21)
+
+
+### Features
+
+* **theme:** add legacy tab styling ([fdca685](https://github.com/Availity/element/commit/fdca6850e7363fb099180768c972f56190628d35))
+
 ## [0.44.0](https://github.com/Availity/element/compare/@availity/theme@0.43.0...@availity/theme@0.44.0) (2024-03-15)
 
 
