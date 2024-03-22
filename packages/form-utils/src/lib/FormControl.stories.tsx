@@ -20,8 +20,8 @@ export default {
 export const _FormControl: StoryObj<typeof FormControl> = {
   render: (props: FormControlProps) => (
     <FormControl {...props}>
-      <FormLabel>Label</FormLabel>
-      <Input />
+      <FormLabel htmlFor="input">Label</FormLabel>
+      <Input inputProps={{ id: 'input' }} />
       <FormHelperText>Helper Text</FormHelperText>
     </FormControl>
   ),
@@ -37,8 +37,8 @@ export const _Select: StoryObj<typeof FormControl> = {
 
     return (
       <FormControl {...props}>
-        <FormLabel>Count</FormLabel>
-        <Select value={count} onChange={handleChange} id="count">
+        <FormLabel id="count-label">Count</FormLabel>
+        <Select value={count} onChange={handleChange} labelId="count-label">
           <MenuItem value={10}>10</MenuItem>
           <MenuItem value={20}>20</MenuItem>
           <MenuItem value={30}>30</MenuItem>
@@ -69,9 +69,9 @@ export const _MultiSelect: StoryObj<typeof FormControl> = {
 
     return (
       <FormControl {...props}>
-        <FormLabel>Counts</FormLabel>
+        <FormLabel id="multiple-chip-label">Counts</FormLabel>
         <Select
-          id="multiple-chip"
+          labelId="multiple-chip-label"
           multiple
           value={multiValue}
           onChange={handleChange}
