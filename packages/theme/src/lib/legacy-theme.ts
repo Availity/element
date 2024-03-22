@@ -365,7 +365,6 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           borderColor: tokens.colorGrey100,
-          borderRadius: '4px',
           '&:before': {
             content: 'none',
           },

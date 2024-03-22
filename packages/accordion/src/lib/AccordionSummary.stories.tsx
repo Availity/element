@@ -12,9 +12,5 @@ const meta: Meta<typeof AccordionSummary> = {
 export default meta;
 
 export const _AccordionSummary: StoryObj<typeof AccordionSummary> = {
-  render: (args: AccordionSummaryProps) => (
-    <AccordionSummary aria-controls="panel1-content" id="panel1-header" {...args}>
-      Accordion 1
-    </AccordionSummary>
-  ),
+  render: (args: AccordionSummaryProps) => <AccordionSummary {...args}>Accordion 1</AccordionSummary>,
 };
