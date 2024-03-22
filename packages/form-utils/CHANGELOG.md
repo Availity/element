@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.10.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.9.8...@availity/mui-form-utils@0.10.0) (2024-03-22)
+
+
+### Features
+
+* **mui-form-utils:** add formcontrollabel legacy styles ([8e80a38](https://github.com/Availity/element/commit/8e80a38e7b38ae12b7ddda6dc49ea70fead886a6))
+
 ## [0.9.8](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.9.7...@availity/mui-form-utils@0.9.8) (2024-03-15)
 
 ### Dependency Updates
