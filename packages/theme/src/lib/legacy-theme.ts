@@ -740,7 +740,7 @@ export const legacyTheme = {
       },
       styleOverrides: {
         root: {
-          padding: '4px',
+          padding: '2px 4px',
           '&.Mui-focusVisible': {
             '.MuiSvgIcon-root': {
               outline: `2px solid ${tokens.borderInputFocus}`,
@@ -778,7 +778,7 @@ export const legacyTheme = {
             },
           },
           '.MuiSvgIcon-root': {
-            fontSize: '1.25rem',
+            fontSize: '1rem',
           },
         },
       },
@@ -959,10 +959,16 @@ export const legacyTheme = {
         avWrapper: {
           marginLeft: '-4px',
           marginRight: '12px',
-          height: '1.5rem',
+          lineHeight: '1rem',
+          // keep field help icon from wrapping
+          textWrap: 'nowrap',
           '.MuiFormControlLabel-root': {
             margin: '0',
           },
+        },
+        label: {
+          textWrap: 'wrap',
+          overflowWrap: 'anywhere',
         },
       },
     },

@@ -42,22 +42,22 @@ export const _States: StoryObj<typeof FormControlLabel> = {
 export const _Groups: StoryObj<typeof FormControlLabel> = {
   render: () => (
     <Box display="flex" flexDirection="column">
-      <FormControl component="fieldset" aria-labelledby="checkbox-group">
+      <FormControl component="fieldset" aria-labelledby="checkbox-group" margin="normal">
         <MuiFormLabel component="legend" id="checkbox-group">
           Checkbox Group
         </MuiFormLabel>
         <FormGroup row>
-          <FormControlLabel control={<Checkbox />} label="Check 1" />
+          <FormControlLabel control={<Checkbox />} label="Check 1 with Extra Long Label" />
           <FormControlLabel control={<Checkbox />} label="Check 2" helpTopicId="2" />
           <FormControlLabel control={<Checkbox />} label="Check 3" />
         </FormGroup>
       </FormControl>
-      <FormControl required error>
+      <FormControl required error margin="normal">
         <FormLabel id="radio-group" helpTopicId="12">
           Radio Group
         </FormLabel>
         <RadioGroup aria-labelledby="radio-group" name="radio-group" defaultValue="3">
-          <FormControlLabel control={<Radio />} value="1" label="Radio 1" />
+          <FormControlLabel control={<Radio />} value="1" label="Radio 1 with Extra Long Label" />
           <FormControlLabel control={<Radio />} value="2" label="Radio 2" />
           <FormControlLabel control={<Radio />} value="3" label="Radio 3" />
         </RadioGroup>

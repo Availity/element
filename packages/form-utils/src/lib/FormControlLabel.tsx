@@ -1,10 +1,7 @@
 import { forwardRef } from 'react';
-import {
-  Box,
-  FormControlLabel as MuiFormControlLabel,
-  FormControlLabelProps as MuiFormControlLabelProps,
-  styled,
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import MuiFormControlLabel, { FormControlLabelProps as MuiFormControlLabelProps } from '@mui/material/FormControlLabel';
+import { styled } from '@mui/material/styles';
 import { FieldHelpIcon } from './FieldHelpIcon';
 
 export type FormControlLabelProps = {
@@ -25,8 +22,8 @@ export const FormControlLabel = forwardRef(({ helpTopicId, id, sx, ...rest }: Fo
   const labelId = id || (rest.htmlFor ? `${rest.htmlFor}-label` : undefined);
 
   return (
-    <Wrapper className="MuiFormControlLabel-avWrapper" sx={sx}>
-      <MuiFormControlLabel id={labelId} {...rest} ref={ref} />
+    <Wrapper className="MuiFormControlLabel-avWrapper" sx={sx} ref={ref}>
+      <MuiFormControlLabel id={labelId} {...rest} />
       {helpTopicId ? <FieldHelpIcon helpTopicId="12345" labelId={labelId} /> : null}
     </Wrapper>
   );

@@ -2,11 +2,18 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { Radio, RadioGroup, FormControl, InputAdornment } from '@mui/material';
 import { TextField } from '@availity/mui-textfield';
 import { Autocomplete } from '@availity/mui-autocomplete';
 import { Datepicker } from '@availity/mui-datepicker';
-import { FormControlLabel, FormLabel, RequiredKey } from '@availity/mui-form-utils';
+import {
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  InputAdornment,
+  Radio,
+  RadioGroup,
+  RequiredKey,
+} from '@availity/mui-form-utils';
 import { Button, IconButton } from '@availity/mui-button';
 import { CloseIcon } from '@availity/mui-icon';
 import { PageHeader } from '@availity/mui-page-header';
@@ -565,18 +572,20 @@ export const _SectionedForm: StoryObj = {
                   </Grid>
                   <Grid xs={12}>
                     <FormControl error={!!errors.radio}>
-                      <FormLabel id="radio-group">Radio Group</FormLabel>
-                      <RadioGroup aria-labelledby="radio-group" defaultValue="3" {...register('radio')}>
-                        <Grid container direction="row">
-                          <FormControlLabel
-                            control={<Radio />}
-                            value="1"
-                            label="Option 1"
-                            sx={{ marginRight: '16px' }}
-                          />
-                          <FormControlLabel control={<Radio />} value="2" label="Option 2" />
-                        </Grid>
-                      </RadioGroup>
+                      <FormLabel id="radio-group" component="div">
+                        Radio Group
+                      </FormLabel>
+                      <Controller
+                        control={control}
+                        name="radio"
+                        defaultValue="3"
+                        render={({ field }) => (
+                          <RadioGroup aria-labelledby="radio-group" row {...field}>
+                            <FormControlLabel control={<Radio />} value="1" label="Option 1" />
+                            <FormControlLabel control={<Radio />} value="2" label="Option 2" />
+                          </RadioGroup>
+                        )}
+                      />
                     </FormControl>
                   </Grid>
                   <Grid xs={12} sm={6}>
