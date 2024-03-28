@@ -2,7 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { AccordionActions, AccordionActionsProps } from '..';
-import Button from '@mui/material/Button/Button';
+import { Button } from '@availity/mui-button';
 
 const meta: Meta<typeof AccordionActions> = {
   title: 'Components/Accordion/AccordionActions',
