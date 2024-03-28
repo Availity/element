@@ -1,13 +1,12 @@
 import { forwardRef } from 'react';
 import {
-  Autocomplete as MuiAutocomplete,
+  default as MuiAutocomplete,
   AutocompleteProps as MuiAutocompleteProps,
   AutocompleteRenderInputParams,
   AutocompletePropsSizeOverrides,
-  IconButton as MuiIconButton,
-  IconButtonProps as MuiIconButtonProps,
-  ChipTypeMap,
-} from '@mui/material';
+} from '@mui/material/Autocomplete';
+import { default as MuiIconButton, IconButtonProps as MuiIconButtonProps } from '@mui/material/IconButton';
+import { ChipTypeMap } from '@mui/material/Chip';
 import { OverridableStringUnion } from '@mui/types';
 import { TextField, TextFieldProps } from '@availity/mui-textfield';
 import { SelectDivider, SelectExpandIcon } from '@availity/mui-form-utils';
