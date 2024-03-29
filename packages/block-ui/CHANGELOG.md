@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.5...@availity/mui-block-ui@0.1.6) (2024-03-29)
+
+
+### Bug Fixes
+
+* **mui-block-ui:** pass className ([93da27e](https://github.com/Availity/element/commit/93da27ea90ec7605d384c6b1c25940d04be4a421))
+
 ## [0.1.5](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.4...@availity/mui-block-ui@0.1.5) (2024-03-15)
 
 ### Dependency Updates
