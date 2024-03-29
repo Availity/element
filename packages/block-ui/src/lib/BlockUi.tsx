@@ -81,7 +81,6 @@ export type BlockUiProps = {
 export function BlockUi({
   blocking,
   children,
-  className = '',
   keepInView,
   loader = <Loader />,
   message,
