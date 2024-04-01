@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-accordion@0.1.1...@availity/mui-accordion@0.1.2) (2024-04-01)
+
+
+### Performance Improvements
+
+* **mui-accordion:** move elemend deps to peerDeps and avoid mui deps in stories ([6190f8c](https://github.com/Availity/element/commit/6190f8c99260ae0179dc6bd226823926b3c0e695))
+
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-accordion@0.1.0...@availity/mui-accordion@0.1.1) (2024-03-27)
 
 ## 0.1.0 (2024-03-15)
