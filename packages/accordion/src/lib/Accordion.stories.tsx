@@ -2,9 +2,9 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Accordion, AccordionActions, AccordionDetails, AccordionSummary, AccordionProps } from '..';
-import Grid from '@mui/material/Unstable_Grid2';
-import Button from '@mui/material/Button';
-import { Typography } from '@mui/material';
+import { Grid } from '@availity/mui-layout';
+import { Button } from '@availity/mui-button';
+import { Typography } from '@availity/mui-typography';
 
 const meta: Meta<typeof Accordion> = {
   title: 'Components/Accordion/Accordion',
