@@ -433,7 +433,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-icon@workspace:packages/icon"
   dependencies:
-    "@fortawesome/free-regular-svg-icons": ^6.3.0
+    "@fortawesome/free-regular-svg-icons": ^6.5.1
     "@fortawesome/free-solid-svg-icons": ^6.3.0
     "@mui/material": ^5.14.12
     react: 18.2.0
@@ -3440,12 +3440,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/free-regular-svg-icons@npm:^6.3.0":
-  version: 6.4.0
-  resolution: "@fortawesome/free-regular-svg-icons@npm:6.4.0"
+"@fortawesome/fontawesome-common-types@npm:6.5.1":
+  version: 6.5.1
+  resolution: "@fortawesome/fontawesome-common-types@npm:6.5.1"
+  checksum: c597062de8903aae591b652aa03b9b7aaa66e8c71e5950dc34a8b2812851a7f4ad743fba7396bab87d787c5359bb121496769a165bd3399d039dc214434f6f0c
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-regular-svg-icons@npm:^6.5.1":
+  version: 6.5.1
+  resolution: "@fortawesome/free-regular-svg-icons@npm:6.5.1"
   dependencies:
-    "@fortawesome/fontawesome-common-types": 6.4.0
-  checksum: a52689349b858a73b179532a207f98d9ee0f28b31e22eaffa6ce23cf3bfec8cc52bcd35770a0943a2dd1328bafbfdea6809231abee7a8601796bc0fb9759d25f
+    "@fortawesome/fontawesome-common-types": 6.5.1
+  checksum: c1809fae5f3bffff2f06d414f552e38acf385f79bb1b1a8e34b6b9c1138e9e6be7f8ed1503da0f72e225079138b8377f95f279d0079bb04ba8d3bfb3025ec512
   languageName: node
   linkType: hard
 
