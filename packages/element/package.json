@@ -51,7 +51,7 @@
     "@availity/mui-transitions": "workspace:*",
     "@availity/mui-typography": "workspace:*",
     "@availity/theme-provider": "workspace:*",
-    "@mui/material": "^5.14.12",
+    "@mui/material": "^5.15.14",
     "@mui/system": "^5.14.12"
   },
   "devDependencies": {
