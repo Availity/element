@@ -1,4 +1,4 @@
-import { ToggleButton as MuiToggleButton, ToggleButtonProps as MuiToggleButtonProps } from '@mui/material';
+import { default as MuiToggleButton, ToggleButtonProps as MuiToggleButtonProps } from '@mui/material/ToggleButton';
 
 export interface ToggleButtonProps
   extends Omit<
