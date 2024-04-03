@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import { Tabs } from './Tabs';
 import { Tab, TabProps } from './Tab';
 

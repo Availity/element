@@ -1,4 +1,4 @@
-import { TabList as MuiTabList, TabListProps as MuiTabListProps } from '@mui/lab';
+import { default as MuiTabList, TabListProps as MuiTabListProps } from '@mui/lab/TabList';
 
 export interface TabListProps
   extends Omit<

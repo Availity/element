@@ -1,4 +1,4 @@
-import { Tabs as MuiTabs, TabsProps as MuiTabsProps } from '@mui/material';
+import { default as MuiTabs, TabsProps as MuiTabsProps } from '@mui/material/Tabs';
 
 export interface TabsProps
   extends Omit<

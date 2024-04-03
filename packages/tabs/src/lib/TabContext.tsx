@@ -1,4 +1,4 @@
-import { TabContext as MuiTabContext, TabContextProps as MuiTabContextProps } from '@mui/lab';
+import { default as MuiTabContext, TabContextProps as MuiTabContextProps } from '@mui/lab/TabContext';
 
 export interface TabContextProps extends MuiTabContextProps {
   children?: React.ReactNode;

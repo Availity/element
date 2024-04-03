@@ -1,4 +1,4 @@
-import { TabPanel as MuiTabPanel, TabPanelProps as MuiTabPanelProps } from '@mui/lab';
+import { default as MuiTabPanel, TabPanelProps as MuiTabPanelProps } from '@mui/lab/TabPanel';
 
 export interface TabPanelProps extends MuiTabPanelProps {
   children?: React.ReactNode;
