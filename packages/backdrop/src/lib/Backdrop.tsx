@@ -1,4 +1,4 @@
-import { Backdrop as MuiBackdrop, BackdropProps as MuiBackdropProps } from '@mui/material';
+import { default as MuiBackdrop, BackdropProps as MuiBackdropProps } from '@mui/material/Backdrop';
 
 export interface BackdropProps extends MuiBackdropProps {
   children?: React.ReactNode;
