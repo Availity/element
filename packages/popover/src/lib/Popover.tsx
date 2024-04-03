@@ -1,4 +1,4 @@
-import { Popover as MuiPopover, PopoverProps as MuiPopoverProps } from '@mui/material';
+import { default as MuiPopover, PopoverProps as MuiPopoverProps } from '@mui/material/Popover';
 
 export type PopoverProps = MuiPopoverProps;
 
