@@ -1,4 +1,4 @@
-import { CardMedia as MuiCardMedia, CardMediaProps as MuiCardMediaProps } from '@mui/material';
+import { default as MuiCardMedia, CardMediaProps as MuiCardMediaProps } from '@mui/material/CardMedia';
 
 export interface CardMediaProps extends MuiCardMediaProps {
   children?: React.ReactNode;

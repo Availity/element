@@ -1,4 +1,7 @@
-import { CardActionArea as MuiCardActionArea, CardActionAreaProps as MuiCardActionAreaProps } from '@mui/material';
+import {
+  default as MuiCardActionArea,
+  CardActionAreaProps as MuiCardActionAreaProps,
+} from '@mui/material/CardActionArea';
 
 export interface CardActionAreaProps
   extends Omit<
