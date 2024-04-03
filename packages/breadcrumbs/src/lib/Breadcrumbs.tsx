@@ -1,4 +1,5 @@
-import { Breadcrumbs as MuiBreadcrumbs, BreadcrumbsProps as MuiBreadcrumbsProps, Typography } from '@mui/material';
+import { default as MuiBreadcrumbs, BreadcrumbsProps as MuiBreadcrumbsProps } from '@mui/material/Breadcrumbs';
+import Typography from '@mui/material/Typography';
 import { NavigateNextIcon, MoreHorizontalIcon } from '@availity/mui-icon';
 import { Link } from '@availity/mui-link';
 
