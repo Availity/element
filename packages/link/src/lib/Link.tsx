@@ -1,5 +1,5 @@
 import { ReactNode, forwardRef } from 'react';
-import { Link as MuiLink, LinkProps as MuiLinkProps } from '@mui/material';
+import { default as MuiLink, LinkProps as MuiLinkProps } from '@mui/material/Link';
 import { OpenInNewIcon } from '@availity/mui-icon';
 
 // Scheme: https://tools.ietf.org/html/rfc3986#section-3.1
