@@ -1,4 +1,5 @@
-import { Container, Grid } from '@mui/material';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import { Divider } from '@availity/mui-divider';
 import { Typography } from '@availity/mui-typography';
 import { Breadcrumbs, BreadcrumbsProps } from '@availity/mui-breadcrumbs';
