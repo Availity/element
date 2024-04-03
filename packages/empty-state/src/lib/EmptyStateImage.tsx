@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { styled } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import { Box, BoxProps } from '@availity/mui-layout';
 import { PageNotFound } from '../assets/404-Page-Not-Found_Gray';
 import { ContentLoading } from '../assets/Content-Loading_Gray';

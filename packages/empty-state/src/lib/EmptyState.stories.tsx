@@ -1,7 +1,11 @@
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj, Decorator } from '@storybook/react';
-import { Box, Button, List, ListItem, Typography } from '@mui/material';
+import type { StoryObj, Decorator } from '@storybook/react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Typography from '@mui/material/Typography';
 import { visuallyHidden } from '@mui/utils';
 import { Link } from '@availity/mui-link';
 import { EmptyState, EmptyStateProps } from './EmptyState';

@@ -1,7 +1,7 @@
 // FontAwesomeSvgIcon example from mui docs https://github.com/mui/material-ui/blob/master/docs/data/material/components/icons/FontAwesomeSvgIconDemo.js
 
 import * as React from 'react';
-import { styled } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import { Stack, StackProps } from '@availity/mui-layout';
 import { EmptyStateImage, EmptyStateImageProps } from './EmptyStateImage';
 
