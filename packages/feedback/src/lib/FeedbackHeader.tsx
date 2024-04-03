@@ -1,7 +1,8 @@
 import { IconButton } from '@availity/mui-button';
 import { CloseIcon } from '@availity/mui-icon';
 import { Typography } from '@availity/mui-typography';
-import { Grid, styled } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
 
 interface FeedbackHeaderProps {
   appName: string;
