@@ -6,7 +6,9 @@ import { YearPicker } from '@mui/x-date-pickers/YearPicker';
 import { useState } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 import { Datepicker, DatepickerProps } from './Datepicker';
-import { Unstable_Grid2 as Grid, Paper, Typography } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 
 const meta: Meta<typeof Datepicker> = {
   title: 'Components/Datepicker/Datepicker',
