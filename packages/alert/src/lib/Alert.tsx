@@ -1,6 +1,5 @@
 import React from 'react';
-import { Alert as MUIAlert } from '@mui/material';
-import type { AlertProps as MUIAlertProps } from '@mui/material';
+import { default as MUIAlert, AlertProps as MUIAlertProps } from '@mui/material/Alert';
 import { IconButton } from '@availity/mui-button';
 import { InfoCircleIcon, WarningCircleIcon, SuccessCircleIcon } from '@availity/mui-icon';
 
