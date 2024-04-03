@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import { IconButton as MuiIconButton, Tooltip } from '@mui/material';
-import type { IconButtonProps as MUIIconButtonProps } from '@mui/material';
+import { default as MuiIconButton, IconButtonProps as MUIIconButtonProps } from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 
 export type IconButtonProps = {
   /**
