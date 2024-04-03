@@ -1,9 +1,8 @@
 import {
-  TableCell as MuiTableCell,
+  default as MuiTableCell,
   TableCellProps as MuiTableCellProps,
   TableCellBaseProps,
-  TableCellPropsVariantOverrides,
-} from '@mui/material';
+} from '@mui/material/TableCell';
 import { ElementType } from 'react';
 
 declare module '@mui/material/TableCell' {

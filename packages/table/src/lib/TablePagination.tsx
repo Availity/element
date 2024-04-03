@@ -1,9 +1,9 @@
 import { ElementType, forwardRef } from 'react';
 import {
-  TablePagination as MuiTablePagination,
+  default as MuiTablePagination,
   TablePaginationProps as MuiTablePaginationProps,
-  TableCellBaseProps,
-} from '@mui/material';
+} from '@mui/material/TablePagination';
+import { TableCellBaseProps } from '@mui/material/TableCell';
 import { Pagination, PaginationProps } from '@availity/mui-pagination';
 
 export type TablePaginationProps = {

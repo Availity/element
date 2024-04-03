@@ -1,4 +1,5 @@
-import { TableBody as MuiTableBody, TableBodyProps as MuiTableBodyProps, TableCellBaseProps } from '@mui/material';
+import { default as MuiTableBody, TableBodyProps as MuiTableBodyProps } from '@mui/material/TableBody';
+import { TableCellBaseProps } from '@mui/material/TableCell';
 import { ElementType } from 'react';
 
 export type TableBodyProps = {

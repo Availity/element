@@ -2,8 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { TableFooter, TableFooterProps } from './TableFooter';
-import { Table, TableCell, TablePagination, TablePaginationProps, TableRow } from '..';
-import { Box, Button } from '@mui/material';
+import { Table, TableCell, TablePagination, TableRow } from '..';
 
 const meta: Meta<typeof TableFooter> = {
   title: 'Components/Table/TableFooter',

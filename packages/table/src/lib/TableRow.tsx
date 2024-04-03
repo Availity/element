@@ -1,4 +1,5 @@
-import { TableRow as MuiTableRow, TableRowProps as MuiTableRowProps, TableCellBaseProps } from '@mui/material';
+import { default as MuiTableRow, TableRowProps as MuiTableRowProps } from '@mui/material/TableRow';
+import { TableCellBaseProps } from '@mui/material/TableCell';
 import { ElementType } from 'react';
 
 export type TableRowProps = {
