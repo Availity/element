@@ -1,6 +1,5 @@
 import React from 'react';
-import { Badge as MUIBadge } from '@mui/material';
-import type { BadgeProps as MUIBadgeProps } from '@mui/material';
+import { default as MUIBadge, BadgeProps as MUIBadgeProps } from '@mui/material/Badge';
 
 export interface BadgeProps extends MUIBadgeProps {
   badgeContent?: number;
