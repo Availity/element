@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box, FormControl, MenuItem } from '@mui/material';
+import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
+import MenuItem from '@mui/material/MenuItem';
 import { visuallyHidden } from '@mui/utils';
 import { Chip } from '@availity/mui-chip';
 import { FormLabel, Select, SelectProps, SelectChangeEvent } from '..';

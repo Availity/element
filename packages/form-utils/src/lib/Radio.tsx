@@ -1,4 +1,4 @@
-import { Radio as MuiRadio, RadioProps as MuiRadioProps } from '@mui/material';
+import { default as MuiRadio, RadioProps as MuiRadioProps } from '@mui/material/Radio';
 
 export type RadioProps = Omit<
   MuiRadioProps,

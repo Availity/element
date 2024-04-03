@@ -1,9 +1,9 @@
 // Each exported component in the package should have its own stories file
 
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { Box, MenuItem } from '@mui/material';
-import { visuallyHidden } from '@mui/utils';
+import type { StoryObj } from '@storybook/react';
+import Box from '@mui/material/Box';
+import MenuItem from '@mui/material/MenuItem';
 import { Chip } from '@availity/mui-chip';
 import { FormControl, FormControlProps, FormLabel, FormHelperText, Input, Select, SelectChangeEvent } from '..';
 

@@ -1,7 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { FormControl } from '@mui/material';
+import FormControl from '@mui/material/FormControl';
 import { FormHelperText, FormHelperTextProps, FormLabel, Input } from '..';
 
 /** Label component for use with individual inputs, form controls,  and form groups. For labels to use with `checkbox`/`radio` see `FormControlLabel`. */

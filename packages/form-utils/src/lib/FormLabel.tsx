@@ -1,5 +1,7 @@
 import { forwardRef } from 'react';
-import { Box, FormLabel as MuiFormLabel, FormLabelProps as MuiFormLabelProps, styled } from '@mui/material';
+import Box from '@mui/material/Box';
+import { default as MuiFormLabel, FormLabelProps as MuiFormLabelProps } from '@mui/material/FormLabel';
+import { styled } from '@mui/material/styles';
 import { FieldHelpIcon } from './FieldHelpIcon';
 
 export type FormLabelProps = {
