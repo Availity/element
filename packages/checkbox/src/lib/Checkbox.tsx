@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { Checkbox as MuiCheckbox, CheckboxProps as MuiCheckboxProps } from '@mui/material';
+import { default as MuiCheckbox, CheckboxProps as MuiCheckboxProps } from '@mui/material/Checkbox';
 
 export interface CheckboxProps
   extends Omit<
