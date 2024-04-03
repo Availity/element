@@ -1,7 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { Grid } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import { Pagination, PaginationProps } from './Pagination';
 
 const meta: Meta<typeof Pagination> = {
