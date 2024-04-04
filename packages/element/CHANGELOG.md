@@ -2,6 +2,45 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.37.7](https://github.com/Availity/element/compare/@availity/element@0.37.6...@availity/element@0.37.7) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `0.1.3`
+* `mui-alert` updated to version `0.5.11`
+* `mui-avatar` updated to version `0.1.17`
+* `mui-backdrop` updated to version `0.1.5`
+* `mui-badge` updated to version `0.1.16`
+* `mui-block-ui` updated to version `0.1.7`
+* `mui-breadcrumbs` updated to version `0.2.5`
+* `mui-button` updated to version `0.6.5`
+* `mui-card` updated to version `0.2.12`
+* `mui-checkbox` updated to version `0.1.34`
+* `mui-chip` updated to version `0.2.12`
+* `mui-datepicker` updated to version `0.4.2`
+* `mui-dialog` updated to version `0.1.6`
+* `mui-divider` updated to version `0.3.6`
+* `mui-empty-state` updated to version `0.1.6`
+* `mui-feedback` updated to version `0.1.24`
+* `mui-form-utils` updated to version `0.10.1`
+* `mui-icon` updated to version `0.8.1`
+* `mui-layout` updated to version `0.1.5`
+* `mui-link` updated to version `0.2.8`
+* `mui-menu` updated to version `0.2.5`
+* `mui-modal` updated to version `0.1.2`
+* `mui-page-header` updated to version `0.2.26`
+* `mui-pagination` updated to version `0.2.8`
+* `mui-paper` updated to version `0.1.8`
+* `mui-popover` updated to version `0.1.3`
+* `mui-popper` updated to version `0.1.5`
+* `mui-progress` updated to version `0.1.6`
+* `mui-table` updated to version `0.1.5`
+* `mui-tabs` updated to version `0.1.8`
+* `mui-textfield` updated to version `0.5.15`
+* `mui-toggle-button` updated to version `0.1.9`
+* `mui-tooltip` updated to version `0.5.7`
+* `mui-transitions` updated to version `0.1.1`
+* `mui-typography` updated to version `0.1.7`
 ## [0.37.6](https://github.com/Availity/element/compare/@availity/element@0.37.5...@availity/element@0.37.6) (2024-04-01)
 
 ### Dependency Updates
