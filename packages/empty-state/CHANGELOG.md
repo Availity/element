@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.1.5...@availity/mui-empty-state@0.1.6) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-layout` updated to version `0.1.5`
+* `mui-link` updated to version `0.2.8`
+
+### Performance Improvements
+
+* **mui-empty-state:** use path imports for material deps ([2e0bfb7](https://github.com/Availity/element/commit/2e0bfb78262aa57b27af1a133411f89875fd8de7))
+
 ## [0.1.5](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.1.4...@availity/mui-empty-state@0.1.5) (2024-03-15)
 
 ### Dependency Updates
