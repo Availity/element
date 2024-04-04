@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.17](https://github.com/Availity/element/compare/@availity/mui-avatar@0.1.16...@availity/mui-avatar@0.1.17) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.8.1`
+
+### Performance Improvements
+
+* **mui-avatar:** use path imports for material deps ([b73a531](https://github.com/Availity/element/commit/b73a53146678ce7aa61247878d3573999496cbee))
+
 ## [0.1.16](https://github.com/Availity/element/compare/@availity/mui-avatar@0.1.15...@availity/mui-avatar@0.1.16) (2024-03-15)
 
 ### Dependency Updates
