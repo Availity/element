@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.15](https://github.com/Availity/element/compare/@availity/mui-textfield@0.5.14...@availity/mui-textfield@0.5.15) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.10.1`
+* `mui-icon` updated to version `0.8.1`
+* `mui-button` updated to version `0.6.5`
+
+### Performance Improvements
+
+* **mui-textfield:** use path imports for material deps ([7b3bd82](https://github.com/Availity/element/commit/7b3bd82bf703cc7f6cc422bfa085980a42229207))
+
 ## [0.5.14](https://github.com/Availity/element/compare/@availity/mui-textfield@0.5.13...@availity/mui-textfield@0.5.14) (2024-03-22)
 
 ### Dependency Updates
