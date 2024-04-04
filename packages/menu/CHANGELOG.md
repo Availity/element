@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-menu@0.2.4...@availity/mui-menu@0.2.5) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.8.1`
+* `mui-button` updated to version `0.6.5`
+
+### Performance Improvements
+
+* **mui-menu:** use path imports for material deps ([5aa6657](https://github.com/Availity/element/commit/5aa665701d8b74acf94cb83a22b986ff37217170))
+
 ## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-menu@0.2.3...@availity/mui-menu@0.2.4) (2024-03-15)
 
 ### Dependency Updates
