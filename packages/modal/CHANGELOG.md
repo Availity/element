@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-modal@0.1.1...@availity/mui-modal@0.1.2) (2024-04-04)
+
+
+### Performance Improvements
+
+* **mui-modal:** use path imports for material deps ([f6359ae](https://github.com/Availity/element/commit/f6359aee202dfa75d6cc1a6294c49016f6ab9627))
+
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-modal@0.1.0...@availity/mui-modal@0.1.1) (2024-02-20)
 
 ## 0.1.0 (2023-11-08)
