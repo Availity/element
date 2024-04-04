@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.2](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.1...@availity/mui-datepicker@0.4.2) (2024-04-04)
+
+
+### Performance Improvements
+
+* **mui-datepicker:** use path imports for material deps ([01c0840](https://github.com/Availity/element/commit/01c08407a74cd70c78d5c487ca812be10e1009f1))
+
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.0...@availity/mui-datepicker@0.4.1) (2024-02-20)
 
 ## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.3.1...@availity/mui-datepicker@0.4.0) (2024-02-08)
