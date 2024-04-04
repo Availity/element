@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.7](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.5.6...@availity/mui-tooltip@0.5.7) (2024-04-04)
+
+
+### Performance Improvements
+
+* **mui-tooltip:** use path imports for material deps ([06a55eb](https://github.com/Availity/element/commit/06a55eb08d7fde2f0cbfaa757e42d075437cbc3b))
+
 ## [0.5.6](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.5.5...@availity/mui-tooltip@0.5.6) (2024-02-20)
 
 ## [0.5.5](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.5.4...@availity/mui-tooltip@0.5.5) (2023-11-08)
