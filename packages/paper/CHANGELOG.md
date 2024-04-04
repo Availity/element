@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.8](https://github.com/Availity/element/compare/@availity/mui-paper@0.1.7...@availity/mui-paper@0.1.8) (2024-04-04)
+
+
+### Performance Improvements
+
+* **mui-paper:** use path imports for material deps ([fa4bcf2](https://github.com/Availity/element/commit/fa4bcf27a1f0946593f71634fe2ba0408c5729cb))
+
 ## [0.1.7](https://github.com/Availity/element/compare/@availity/mui-paper@0.1.6...@availity/mui-paper@0.1.7) (2024-02-20)
 
 ## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-paper@0.1.5...@availity/mui-paper@0.1.6) (2023-11-16)
