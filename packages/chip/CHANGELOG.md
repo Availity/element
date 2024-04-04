@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.12](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.11...@availity/mui-chip@0.2.12) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-avatar` updated to version `0.1.17`
+
+### Performance Improvements
+
+* **mui-chip:** use path imports for material deps ([f650ff0](https://github.com/Availity/element/commit/f650ff0b1ae98e64290c1e31922956b31bbc3b56))
+
 ## [0.2.11](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.10...@availity/mui-chip@0.2.11) (2024-03-15)
 
 ### Dependency Updates
