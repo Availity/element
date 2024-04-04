@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.9](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.8...@availity/mui-toggle-button@0.1.9) (2024-04-04)
+
+
+### Performance Improvements
+
+* **mui-toggle-button:** use path imports for material deps ([1e9bf41](https://github.com/Availity/element/commit/1e9bf418541859cd6162950b22a0b22a1dff6b9a))
+
 ## [0.1.8](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.7...@availity/mui-toggle-button@0.1.8) (2024-02-20)
 
 ## [0.1.7](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.6...@availity/mui-toggle-button@0.1.7) (2023-11-21)
