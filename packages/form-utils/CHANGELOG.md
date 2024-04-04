@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.10.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.10.0...@availity/mui-form-utils@0.10.1) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.6.5`
+* `mui-icon` updated to version `0.8.1`
+* `mui-chip` updated to version `0.2.12`
+* `mui-typography` updated to version `0.1.7`
+
+### Performance Improvements
+
+* **mui-form-utils:** use path imports for material deps ([3023610](https://github.com/Availity/element/commit/302361021d93de0d8829d9adc0a9a3b6df92a762))
+
 ## [0.10.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.9.8...@availity/mui-form-utils@0.10.0) (2024-03-22)
 
 
