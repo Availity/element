@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.6](https://github.com/Availity/element/compare/@availity/mui-divider@0.3.5...@availity/mui-divider@0.3.6) (2024-04-04)
+
+
+### Performance Improvements
+
+* **mui-divider:** use path imports for material deps ([03a4d5b](https://github.com/Availity/element/commit/03a4d5b96ca7bac2e0fdcb91a549a78cd7a0845f))
+
 ## [0.3.5](https://github.com/Availity/element/compare/@availity/mui-divider@0.3.4...@availity/mui-divider@0.3.5) (2024-02-20)
 
 ## [0.3.4](https://github.com/Availity/element/compare/@availity/mui-divider@0.3.3...@availity/mui-divider@0.3.4) (2023-11-08)
