@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.34](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.33...@availity/mui-checkbox@0.1.34) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.10.1`
+* `mui-icon` updated to version `0.8.1`
+* `mui-typography` updated to version `0.1.7`
+* `mui-page-header` updated to version `0.2.26`
+
+### Performance Improvements
+
+* **mui-checkbox:** use path imports for material deps ([88be582](https://github.com/Availity/element/commit/88be582849f1a19ef13fc5a2307371feb5dcc434))
+
 ## [0.1.33](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.32...@availity/mui-checkbox@0.1.33) (2024-03-22)
 
 ### Dependency Updates
