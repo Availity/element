@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.7](https://github.com/Availity/element/compare/@availity/mui-typography@0.1.6...@availity/mui-typography@0.1.7) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-layout` updated to version `0.1.5`
+
+### Performance Improvements
+
+* **mui-typography:** use path imports for material deps ([bae0e80](https://github.com/Availity/element/commit/bae0e80f13064783b5cf1a291cf64bf3b92a92ee))
+
 ## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-typography@0.1.5...@availity/mui-typography@0.1.6) (2024-02-20)
 
 ### Dependency Updates
