@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.8](https://github.com/Availity/element/compare/@availity/mui-link@0.2.7...@availity/mui-link@0.2.8) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.8.1`
+
+### Performance Improvements
+
+* **mui-link:** use path imports for material deps ([13fba92](https://github.com/Availity/element/commit/13fba92f1e081d679e6a1de4bd2fa6cd15e53824))
+
 ## [0.2.7](https://github.com/Availity/element/compare/@availity/mui-link@0.2.6...@availity/mui-link@0.2.7) (2024-03-15)
 
 ### Dependency Updates
