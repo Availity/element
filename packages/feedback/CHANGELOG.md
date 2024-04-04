@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.24](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.23...@availity/mui-feedback@0.1.24) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.6.5`
+* `mui-form-utils` updated to version `0.10.1`
+* `mui-icon` updated to version `0.8.1`
+* `mui-popover` updated to version `0.1.3`
+* `mui-textfield` updated to version `0.5.15`
+* `mui-toggle-button` updated to version `0.1.9`
+* `mui-typography` updated to version `0.1.7`
+
+### Performance Improvements
+
+* **mui-feedback:** use path imports for material deps ([3a98658](https://github.com/Availity/element/commit/3a98658b0086a22d466e9c3e1ee60abbd2ca830c))
+
 ## [0.1.23](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.22...@availity/mui-feedback@0.1.23) (2024-03-22)
 
 ### Dependency Updates
