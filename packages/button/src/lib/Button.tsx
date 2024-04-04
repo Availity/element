@@ -1,6 +1,5 @@
 import { forwardRef } from 'react';
-import { Button as MUIButton, ButtonPropsColorOverrides } from '@mui/material';
-import type { ButtonProps as MUIButtonProps } from '@mui/material';
+import { default as MUIButton, ButtonProps as MUIButtonProps } from '@mui/material/Button';
 
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {

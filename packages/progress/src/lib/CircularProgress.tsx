@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import {
-  CircularProgress as MuiCircularProgress,
+  default as MuiCircularProgress,
   CircularProgressProps as MuiCircularProgressProps,
-  Stack,
-} from '@mui/material';
+} from '@mui/material/CircularProgress';
+import Stack from '@mui/material/Stack';
 import { SuccessCircleIcon, WarningCircleIcon } from '@availity/mui-icon';
 import { Typography } from '@availity/mui-typography';
 

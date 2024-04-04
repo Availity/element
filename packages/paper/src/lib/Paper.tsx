@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { Paper as MuiPaper, PaperProps as MuiPaperProps } from '@mui/material';
+import { default as MuiPaper, PaperProps as MuiPaperProps } from '@mui/material/Paper';
 
 export type PaperProps = Omit<MuiPaperProps, 'classes' | 'style' | 'className' | 'variant'> & {
   /**

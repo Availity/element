@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconGallery, IconItem } from '@storybook/blocks';
 import { Meta } from '@storybook/addon-docs';
-import { SvgIcon } from '@mui/material';
+import SvgIcon from '@mui/material/SvgIcon';
 import { AvIcons } from './Icons/LegacyUIKitFonts';
 import * as Actions from './Icons/Actions';
 import * as Common from './Icons/Common';
@@ -19,9 +19,9 @@ Component names append `Icon` to the names below. For instance, the `Home` icon 
 ## Common
 
 <IconGallery>
-  {Object.values(Common).map(icon => (
+  {Object.values(Common).map((icon) => (
     <IconItem key={icon.displayName} name={icon.displayName?.substring(0, icon.displayName?.length - 4)}>
-      {icon({'aria-hidden': false})}
+      {icon({ 'aria-hidden': false })}
     </IconItem>
   ))}
 </IconGallery>
@@ -29,9 +29,9 @@ Component names append `Icon` to the names below. For instance, the `Home` icon 
 ## Actions
 
 <IconGallery>
-  {Object.values(Actions).map(icon => (
+  {Object.values(Actions).map((icon) => (
     <IconItem key={icon.displayName} name={icon.displayName?.substring(0, icon.displayName?.length - 4)}>
-      {icon({'aria-hidden': false})}
+      {icon({ 'aria-hidden': false })}
     </IconItem>
   ))}
 </IconGallery>
@@ -39,9 +39,9 @@ Component names append `Icon` to the names below. For instance, the `Home` icon 
 ## Files
 
 <IconGallery>
-  {Object.values(Files).map(icon => (
+  {Object.values(Files).map((icon) => (
     <IconItem key={icon.displayName} name={icon.displayName?.substring(0, icon.displayName?.length - 4)}>
-      {icon({'aria-hidden': false})}
+      {icon({ 'aria-hidden': false })}
     </IconItem>
   ))}
 </IconGallery>
@@ -49,9 +49,9 @@ Component names append `Icon` to the names below. For instance, the `Home` icon 
 ## Form
 
 <IconGallery>
-  {Object.values(Form).map(icon => (
+  {Object.values(Form).map((icon) => (
     <IconItem key={icon.displayName} name={icon.displayName?.substring(0, icon.displayName?.length - 4)}>
-      {icon({'aria-hidden': false})}
+      {icon({ 'aria-hidden': false })}
     </IconItem>
   ))}
 </IconGallery>
@@ -59,9 +59,9 @@ Component names append `Icon` to the names below. For instance, the `Home` icon 
 ## Navigation
 
 <IconGallery>
-  {Object.values(Navigation).map(icon => (
+  {Object.values(Navigation).map((icon) => (
     <IconItem key={icon.displayName} name={icon.displayName?.substring(0, icon.displayName?.length - 4)}>
-      {icon({'aria-hidden': false})}
+      {icon({ 'aria-hidden': false })}
     </IconItem>
   ))}
 </IconGallery>
@@ -69,9 +69,9 @@ Component names append `Icon` to the names below. For instance, the `Home` icon 
 ## Payment
 
 <IconGallery>
-  {Object.values(Payment).map(icon => (
+  {Object.values(Payment).map((icon) => (
     <IconItem key={icon.displayName} name={icon.displayName?.substring(0, icon.displayName?.length - 4)}>
-      {icon({'aria-hidden': false})}
+      {icon({ 'aria-hidden': false })}
     </IconItem>
   ))}
 </IconGallery>

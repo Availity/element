@@ -1,5 +1,4 @@
-import { forwardRef } from 'react';
-import { FormControl, FormControlProps } from '@mui/material';
+import { default as FormControl, FormControlProps } from '@mui/material/FormControl';
 
 export { FormControl };
 export type { FormControlProps };

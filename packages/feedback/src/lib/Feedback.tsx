@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Popover } from '@availity/mui-popover';
 import { Button } from '@availity/mui-button';
-import { Container, styled } from '@mui/material';
+import Container from '@mui/material/Container';
+import { styled } from '@mui/material/styles';
 import { avLogMessagesApi } from '@availity/api-axios';
 import { FeedbackForm } from './FeedbackForm';
 import { FeedbackHeader } from './FeedbackHeader';

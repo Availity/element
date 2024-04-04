@@ -1,7 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { CircularProgress } from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
 import { Backdrop, BackdropProps } from './Backdrop';
 
 const meta: Meta<typeof Backdrop> = {

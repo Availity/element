@@ -4,7 +4,9 @@ import type { StoryObj } from '@storybook/react';
 import { Tooltip, TooltipProps } from './Tooltip';
 
 // TODO: use our components when forwardRef is being applied correctly
-import { Button, TextField, Link } from '@mui/material';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
 
 const positions = [
   'bottom-end',

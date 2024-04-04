@@ -1,8 +1,8 @@
 import {
-  TableContainer as MuiTableContainer,
+  default as MuiTableContainer,
   TableContainerProps as MuiTableContainerProps,
-  TableCellBaseProps,
-} from '@mui/material';
+} from '@mui/material/TableContainer';
+import { TableCellBaseProps } from '@mui/material/TableCell';
 import { ElementType } from 'react';
 
 export type TableContainerProps = {

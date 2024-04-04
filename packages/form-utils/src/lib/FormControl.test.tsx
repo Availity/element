@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-import Checkbox from '@mui/material/Checkbox';
 import { FormControl } from './FormControl';
 
 describe('FormLabel', () => {

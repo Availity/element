@@ -1,4 +1,5 @@
-import { TableHead as MuiTableHead, TableHeadProps as MuiTableHeadProps, TableCellBaseProps } from '@mui/material';
+import { default as MuiTableHead, TableHeadProps as MuiTableHeadProps } from '@mui/material/TableHead';
+import { TableCellBaseProps } from '@mui/material/TableCell';
 import { ElementType } from 'react';
 
 export type TableHeadProps = {

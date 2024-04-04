@@ -1,4 +1,4 @@
-import { Avatar as MuiAvatar, AvatarProps as MuiAvatarProps } from '@mui/material';
+import { default as MuiAvatar, AvatarProps as MuiAvatarProps } from '@mui/material/Avatar';
 import React from 'react';
 import { tokens } from '@availity/design-tokens';
 

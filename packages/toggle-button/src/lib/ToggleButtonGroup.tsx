@@ -1,8 +1,8 @@
 import { forwardRef } from 'react';
 import {
-  ToggleButtonGroup as MuiToggleButtonGroup,
+  default as MuiToggleButtonGroup,
   ToggleButtonGroupProps as MuiToggleButtonGroupProps,
-} from '@mui/material';
+} from '@mui/material/ToggleButtonGroup';
 
 export interface ToggleButtonGroupProps extends Omit<MuiToggleButtonGroupProps, 'orientation'> {
   children?: React.ReactNode;

@@ -1,4 +1,4 @@
-import { Tab as MuiTab, TabProps as MuiTabProps } from '@mui/material';
+import { default as MuiTab, TabProps as MuiTabProps } from '@mui/material/Tab';
 
 export type TabProps = Omit<
   MuiTabProps,

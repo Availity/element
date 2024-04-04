@@ -2,9 +2,9 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { useMemo, useState } from 'react';
-import { Checkbox } from '@mui/material';
+import Checkbox from '@mui/material/Checkbox';
 import { visuallyHidden } from '@mui/utils';
-import type { AlertColor } from '@mui/material';
+import type { AlertColor } from '@mui/material/Alert';
 import { Chip } from '@availity/mui-chip';
 import Patients from '../../../../data/patients.json';
 import { Patient } from '../../../../data/patient';

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Box } from '@availity/mui-layout';
 import { Button } from '@availity/mui-button';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Popper, PopperProps } from './Popper';
+import { Popper } from './Popper';
 
 const meta: Meta<typeof Popper> = {
   title: 'Components/Popper/Popper',

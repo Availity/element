@@ -1,4 +1,7 @@
-import { PaginationItem as MuiPaginationItem, PaginationItemProps as MuiPaginationItemProps } from '@mui/material';
+import {
+  default as MuiPaginationItem,
+  PaginationItemProps as MuiPaginationItemProps,
+} from '@mui/material/PaginationItem';
 import { NavigateNextIcon, NavigatePreviousIcon } from '@availity/mui-icon';
 
 export type PaginationItemProps = Omit<MuiPaginationItemProps, 'components' | 'color' | 'shape' | 'size'>;

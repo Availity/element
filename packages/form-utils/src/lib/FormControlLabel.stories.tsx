@@ -1,7 +1,13 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box, Checkbox, FormControl, FormLabel as MuiFormLabel, FormGroup, Radio, RadioGroup } from '@mui/material';
+import Box from '@mui/material/Box';
+import Checkbox from '@mui/material/Checkbox';
+import FormControl from '@mui/material/FormControl';
+import { default as MuiFormLabel } from '@mui/material/FormLabel';
+import FormGroup from '@mui/material/FormGroup';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 import { FormLabel } from './FormLabel';
 import { FormControlLabel, FormControlLabelProps } from './FormControlLabel';
 

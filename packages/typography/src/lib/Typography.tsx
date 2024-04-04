@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { Typography as MuiTypography, TypographyProps as MuiTypographyProps } from '@mui/material';
+import { default as MuiTypography, TypographyProps as MuiTypographyProps } from '@mui/material/Typography';
 
 export interface TypographyProps extends MuiTypographyProps {
   children?: React.ReactNode;

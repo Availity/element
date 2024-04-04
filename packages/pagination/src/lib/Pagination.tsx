@@ -1,4 +1,4 @@
-import { Pagination as MuiPagination, PaginationProps as MuiPaginationProps } from '@mui/material';
+import { default as MuiPagination, PaginationProps as MuiPaginationProps } from '@mui/material/Pagination';
 import { PaginationItem } from './PaginationItem';
 
 export type PaginationProps = {

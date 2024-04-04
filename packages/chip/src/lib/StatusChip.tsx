@@ -1,4 +1,4 @@
-import { Chip as MuiChip, ChipProps as MuiChipProps } from '@mui/material';
+import { default as MuiChip, ChipProps as MuiChipProps } from '@mui/material/Chip';
 
 export type StatusChipProps = {
   /** The color of the component.

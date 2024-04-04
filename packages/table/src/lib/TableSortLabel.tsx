@@ -1,4 +1,8 @@
-import { Box, TableSortLabel as MuiTableSortLabel, TableSortLabelProps as MuiTableSortLabelProps } from '@mui/material';
+import {
+  default as MuiTableSortLabel,
+  TableSortLabelProps as MuiTableSortLabelProps,
+} from '@mui/material/TableSortLabel';
+import Box from '@mui/material/Box';
 import visuallyHidden from '@mui/utils/visuallyHidden';
 import { SortDownIcon, SortIcon } from '@availity/mui-icon';
 

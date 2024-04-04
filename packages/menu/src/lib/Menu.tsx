@@ -1,11 +1,6 @@
-import {
-  Menu as MuiMenu,
-  MenuProps as MuiMenuProps,
-  MenuItem as MuiMenuItem,
-  MenuItemProps as MuiMenuItemProps,
-  MenuList as MuiMenuList,
-  MenuListProps as MuiMenuListProps,
-} from '@mui/material';
+import { default as MuiMenu, MenuProps as MuiMenuProps } from '@mui/material/Menu';
+import { default as MuiMenuItem, MenuItemProps as MuiMenuItemProps } from '@mui/material/MenuItem';
+import { default as MuiMenuList, MenuListProps as MuiMenuListProps } from '@mui/material/MenuList';
 
 export type MenuProps = Omit<
   MuiMenuProps,

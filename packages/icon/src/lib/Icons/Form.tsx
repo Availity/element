@@ -10,7 +10,7 @@ import { faThumbsDown } from '@fortawesome/free-solid-svg-icons/faThumbsDown';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons/faThumbsUp';
 import { faEye } from '@fortawesome/free-solid-svg-icons/faEye';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons/faEyeSlash';
-import { SvgIconProps } from '@mui/material';
+import { SvgIconProps } from '@mui/material/SvgIcon';
 import { FaSvgIcon } from '../FaSvgIcon';
 
 export const HelpCircleIcon = (props: SvgIconProps): JSX.Element => (

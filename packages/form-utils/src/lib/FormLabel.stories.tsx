@@ -1,7 +1,8 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { FormControl, OutlinedInput } from '@mui/material';
+import FormControl from '@mui/material/FormControl';
+import OutlinedInput from '@mui/material/OutlinedInput';
 import { visuallyHidden } from '@mui/utils';
 import { FormHelperText, FormLabel, FormLabelProps, Input } from '..';
 

@@ -1,5 +1,5 @@
 import { useTheme } from '@mui/material/styles';
-import { CardHeader as MuiCardHeader, CardHeaderProps as MuiCardHeaderProps } from '@mui/material';
+import { default as MuiCardHeader, CardHeaderProps as MuiCardHeaderProps } from '@mui/material/CardHeader';
 
 export interface CardHeaderProps extends Omit<MuiCardHeaderProps, 'avatar'> {
   children?: React.ReactNode;

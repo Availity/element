@@ -1,4 +1,4 @@
-import { Modal as MuiModal, ModalProps as MuiModalProps } from '@mui/material';
+import { default as MuiModal, ModalProps as MuiModalProps } from '@mui/material/Modal';
 
 export type ModalProps = {
   children?: React.ReactNode;

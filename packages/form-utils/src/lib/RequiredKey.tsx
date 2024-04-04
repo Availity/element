@@ -1,5 +1,5 @@
 import { Typography } from '@availity/mui-typography';
-import { styled } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 export const RequiredKey = () => {
   const Asterisk = styled(Typography, {

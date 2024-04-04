@@ -1,7 +1,12 @@
 // Each exported component in the package should have its own stories file
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box, Chip, InputAdornment, MenuItem, SelectChangeEvent, Stack } from '@mui/material';
+import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
+import InputAdornment from '@mui/material/InputAdornment';
+import MenuItem from '@mui/material/MenuItem';
+import { SelectChangeEvent } from '@mui/material/Select';
+import Stack from '@mui/material/Stack';
 import { EyeIcon, EyeSlashIcon, SearchIcon } from '@availity/mui-icon';
 import { IconButton } from '@availity/mui-button';
 
