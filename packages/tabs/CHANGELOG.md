@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.8](https://github.com/Availity/element/compare/@availity/mui-tabs@0.1.7...@availity/mui-tabs@0.1.8) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-divider` updated to version `0.3.6`
+
+### Performance Improvements
+
+* **mui-tabs:** use path imports for material deps ([708de9f](https://github.com/Availity/element/commit/708de9f03b089bb3e4a4d4a5c66ab63a3304e399))
+
 ## [0.1.7](https://github.com/Availity/element/compare/@availity/mui-tabs@0.1.6...@availity/mui-tabs@0.1.7) (2024-02-20)
 
 ### Dependency Updates
