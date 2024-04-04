@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.8](https://github.com/Availity/element/compare/@availity/mui-pagination@0.2.7...@availity/mui-pagination@0.2.8) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.8.1`
+
+### Performance Improvements
+
+* **mui-pagination:** use path imports for material deps ([2fbc09c](https://github.com/Availity/element/commit/2fbc09c6cd5efd5a89d2bfcb6b5ca85574f5c78f))
+
 ## [0.2.7](https://github.com/Availity/element/compare/@availity/mui-pagination@0.2.6...@availity/mui-pagination@0.2.7) (2024-03-15)
 
 ### Dependency Updates
