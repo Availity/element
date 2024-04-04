@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.26](https://github.com/Availity/element/compare/@availity/mui-page-header@0.2.25...@availity/mui-page-header@0.2.26) (2024-04-04)
+
+### Dependency Updates
+
+* `mui-feedback` updated to version `0.1.24`
+* `mui-breadcrumbs` updated to version `0.2.5`
+* `mui-button` updated to version `0.6.5`
+* `mui-divider` updated to version `0.3.6`
+* `mui-link` updated to version `0.2.8`
+* `mui-typography` updated to version `0.1.7`
+
+### Performance Improvements
+
+* **mui-page-header:** use path imports for material deps ([11f9c9e](https://github.com/Availity/element/commit/11f9c9e0e573e4cf81b8e70064066580ef41056f))
+
 ## [0.2.25](https://github.com/Availity/element/compare/@availity/mui-page-header@0.2.24...@availity/mui-page-header@0.2.25) (2024-03-22)
 
 ### Dependency Updates
