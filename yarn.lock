@@ -22,16 +22,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/api-axios@npm:^8.0.3":
-  version: 8.0.3
-  resolution: "@availity/api-axios@npm:8.0.3"
+"@availity/api-axios@npm:^8.0.6":
+  version: 8.0.6
+  resolution: "@availity/api-axios@npm:8.0.6"
   dependencies:
-    "@availity/resolve-url": 2.0.4
+    "@availity/resolve-url": 2.0.5
     lodash: ^4.17.21
     qs: ^6.11.2
   peerDependencies:
     axios: ^1.4.0
-  checksum: 6a87f6d617b62f5d3a492057e6b23bfffad9f122897d58cd2cebef22e66d569883f2af07a39360f07fc55417c379a89828af57a94e1d4852382cd653d20ddb5b
+  checksum: 8248d890078ef0667686b228ab933b325c8f75079128290e75ebdbed82d7aef1bae1ca0375770e5675d18f3c45d174458b3562a7271a293832d65a7446195813
   languageName: node
   linkType: hard
 
@@ -389,7 +389,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-feedback@workspace:packages/feedback"
   dependencies:
-    "@availity/api-axios": ^8.0.3
+    "@availity/api-axios": ^8.0.6
     "@availity/mui-button": "workspace:^"
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-icon": "workspace:^"
@@ -743,10 +743,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/resolve-url@npm:2.0.4":
-  version: 2.0.4
-  resolution: "@availity/resolve-url@npm:2.0.4"
-  checksum: 284a440482d5ef0e28a34e8787f021568d9954d67565645f7d89434dcd414f20b6a174c9bec0142f0a6db230a09eed1bdcb6849809c0e9f3d2379629905d3dae
+"@availity/resolve-url@npm:2.0.5":
+  version: 2.0.5
+  resolution: "@availity/resolve-url@npm:2.0.5"
+  checksum: 59980fbd26173a91872c435d7e8617e45049de50d3f67710a1dc845b7740908309dd8b324189f4479d99a18deae013abc7c0e9b87f7bac8d7080123693bfd396
   languageName: node
   linkType: hard
 
