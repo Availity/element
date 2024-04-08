@@ -33,7 +33,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@mui/lab": "^5.0.0-alpha.147"
+    "@mui/lab": "^5.0.0-alpha.170"
   },
   "devDependencies": {
     "@mui/material": "^5.14.12",
