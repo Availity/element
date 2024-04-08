@@ -35,14 +35,14 @@
     "@availity/mui-layout": "workspace:*"
   },
   "devDependencies": {
-    "@mui/material": "^5.11.9",
+    "@mui/material": "^5.15.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^5.12.7",
     "typescript": "^4.6.4"
   },
   "peerDependencies": {
-    "@mui/material": "^5.11.9",
+    "@mui/material": "^5.15.15",
     "react": ">=16.3.0"
   },
   "publishConfig": {
