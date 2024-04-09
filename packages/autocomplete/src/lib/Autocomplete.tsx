@@ -5,6 +5,7 @@ import {
   AutocompleteRenderInputParams,
   AutocompletePropsSizeOverrides,
 } from '@mui/material/Autocomplete';
+import CircularProgress from '@mui/material/CircularProgress';
 import { default as MuiIconButton, IconButtonProps as MuiIconButtonProps } from '@mui/material/IconButton';
 import { ChipTypeMap } from '@mui/material/Chip';
 import { OverridableStringUnion } from '@mui/types';
@@ -50,6 +51,10 @@ const PopupIndicatorWrapper = forwardRef<HTMLButtonElement, MuiIconButtonProps>(
   </>
 ));
 
+const progressSx = { marginRight: '.5rem' };
+
+const LoadingIndicator = () => <CircularProgress size={20} sx={progressSx} />;
+
 export const Autocomplete = <
   T,
   Multiple extends boolean | undefined = false,
@@ -71,6 +76,14 @@ export const Autocomplete = <
     InputProps: {
       ...FieldProps?.InputProps,
       ...params?.InputProps,
+      endAdornment: props.loading ? (
+        <>
+          {params?.InputProps.endAdornment || null}
+          <LoadingIndicator />
+        </>
+      ) : (
+        params?.InputProps.endAdornment || null
+      ),
     },
     inputProps: {
       ...FieldProps?.inputProps,
