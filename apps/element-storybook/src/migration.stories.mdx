@@ -1,87 +1,19 @@
 import { Meta, Source } from '@storybook/blocks';
-import { Badge, Chip, MailIcon, ThemeProvider } from '@availity/element';
+import { Badge, Chip, IconButton, MailIcon, ThemeProvider } from '@availity/element';
 
-<Meta title="BS4 Migration/Getting Started" />
+<Meta title="BS4 Migration/Getting Started Ext" />
 
-## Installation
+# Getting Started
 
-To install the library in your project, you can use either NPM or Yarn:
+## Planning and Strategy
 
-<Source
-  language="sh"
-  code={`
-npm install @availity/element
-`}/>
-
-OR
-
-<Source
-  language="sh"
-  code={`
-yarn add @availity/element
-`}/>
-
-## Usage
-
-The [@availity/element](https://availity.github.io/element/?path=/docs/element--docs) package contains all of the components and hooks for the design system. We recommend using this package when you want to use multiple components.
-
-To use the components in your project, you will need to import them first:
-
-<Source
-  code={`
-import { Button, ThemeProvider } from '@availity/element';
-`}/>
-
-Make sure all of the components you use are inside the `ThemeProvider` component. We recommend placing it in your root `index.{js|tsx}` file.
-
-<Source
-  code={`
-import { ThemeProvider } from '@availity/element';\n
-const App = () => {
-  return <ThemeProvider>{/* Application code. Most likely a router. */}</ThemeProvider>;
-};
-`}/>
-
-## Pattern Differences
-
-### Composition and Custom Components
-
-There are a few gotchas when creating components. This is a brief overview taken from the [Mui Composition Docs](https://mui.com/material-ui/guides/composition). Visit the Mui docs for more details and code examples.
-
-- Refs (most common issue so far)
-  - When using a custom component for `children` or `component` make sure it can take a ref. This means for function components to wrap it in a `forwardRef`.
-- Wrapping Components that have `muiName` property
-  - If you're wrapping a component that has the `muiName` property, be sure to also assign it to the wrapped component.
-- Using the `component` property to replace the root element
-  - avoid inline functions and pass a static component instead
-  - be aware of prop name collisions when prop forwarding
-  - with Typescript: the type of the props should be used with type arguments
-
-### Common Props
-
-- `tag`: While Reactstrap uses `tag` to change the root element, Mui uses `component`. See [Composition](#composition-and-custom-components) notes above.
-- `pill`/`outline`/etc: Different styling variations are now contained within the `variant` prop.
-
-### Component Equivalents
-
-Not all classes/components from Bootstrap/Reactstrap have a similar name or 1:1 equivalent in MUI. Listed below are some notable changes
-
-| Bootstrap           | MUI     | Description                          | Example Use |                                                          Sample                                                           |
-| ------------------- | ------- | ------------------------------------ | ----------- | :-----------------------------------------------------------------------------------------------------------------------: |
-| `Badge`<sup>1</sup> | `Badge` | Small corner overlay of base element | Counters    | <ThemeProvider><Badge color="primary" badgeContent='5' variant="dot"><MailIcon fontSize="large"/></Badge></ThemeProvider> |
-| `Badge`<sup>2</sup> | `Chip`  | Inline colored label/descriptor      | Status      |                   <ThemeProvider><Chip color="warning" label="Pending" size="small" /></ThemeProvider>                    |
-| `Column`/`Row`      | `Grid`  | Horizontal and Vertical layout       |             |
-
-## Migration Strategy
+_Our guide is written assuming you're planning migration one component swap at a time. However, if you're doing whole sections at a time pay extra attention to the [Components Without a Drop-in Option](#components-without-a-drop-in-option) section to plan accordingly._
 
 ### Drop-in Components and the Migration Theme
 
 To help break up the work needed for migration, we have created a bootstrap migration theme. The migration theme should allow you to slowly start replacing components without disrupting your design until you are ready to upgrade to the new theme.
 
 The migration theme is accessible by passing `theme='legacyBS'` to the `ThemeProvider`
-
-> **NOTE**
-> Be careful not to deviate from the provided Mui migration styles. Otherwise it may cause issues once you have finished migration and switch to the new Mui theme.
 
 #### Recommended Early Component Swaps
 
@@ -105,8 +37,126 @@ There are many bootstrap elements and other design guidelines that will not be m
 #### Required UX changes
 
 - button
-  - some props have changed. See the [button README](/docs/components-button-introduction--docs).
+  - button patterns, placement, and allowed colors have changed. Will need to follow new patterns even for v0.
+- buttongroup
+  - Element is moving away from a typical buttongroup in favor of a collection of non-connected buttons. (buttons can still be placed within a form group or component with aria role of _group_, but there will not be visually attached buttons when grouped.)
 - icon
   - icon sizing is more logical in MUI, but very different. If using large icons, it may be easier to go straight to v1.
 - list-group
   - does not exist in Mui. UX to provide new design guidelines for how to change this component.
+- jumbotron
+  - bootstrap got rid of this in bootstrap 5 and there are no plans on making an equivalent in Mui.
+
+<br />
+
+## Element Installation
+
+To install the library in your project, you can use either NPM or Yarn:
+
+<Source
+  language="sh"
+  code={`
+npm install @availity/element
+`}/>
+
+OR
+
+<Source
+  language="sh"
+  code={`
+yarn add @availity/element
+`}/>
+
+<br />
+
+## Element Usage
+
+The [@availity/element](https://availity.github.io/element/?path=/docs/element--docs) package contains all of the components and hooks for the design system. We recommend using this package when you want to use multiple components.
+
+To use the components in your project, you will need to import them first:
+
+<Source
+  code={`
+import { Button, ThemeProvider } from '@availity/element';
+`}/>
+
+Make sure all of the components you use are inside the `ThemeProvider` component. We recommend placing it in your root `index.{js|tsx}` file.
+
+<Source
+  code={`
+import { ThemeProvider } from '@availity/element';\n
+const App = () => {
+  return <ThemeProvider>{/* Application code. Most likely a router. */}</ThemeProvider>;
+};
+`}/>
+
+<br />
+
+## Pattern Differences: MUI vs Reactstrap/Bootstrap
+
+### Composition and Custom Components
+
+There are a few gotchas when creating components. This is a brief overview taken from the [Mui Composition Docs](https://mui.com/material-ui/guides/composition). Visit the Mui docs for more details and code examples.
+
+- Refs (most common issue so far)
+  - When using a custom component for `children` or `component` make sure it can take a ref. This means for function components to wrap it in a `forwardRef`.
+- Wrapping Components that have `muiName` property
+  - If you're wrapping a component that has the `muiName` property, be sure to also assign it to the wrapped component.
+- Using the `component` property to replace the root element
+  - avoid inline functions and pass a static component instead
+  - be aware of prop name collisions when prop forwarding
+  - with Typescript: the type of the props should be used with type arguments
+
+### Common Props
+
+- `tag`: While Reactstrap uses `tag` to change the root element, Mui uses `component`. See [Composition](#composition-and-custom-components) notes above.
+- `pill`/`outline`/etc: Different styling variations are now contained within the `variant` prop.
+
+### Styling: Bootstrap Utility Classes -> Mui System Properties
+
+> **NOTE**
+> Avoid overwriting theme styles when possible as this may cause issues or rework when switching off the legacy theme. Always first try using the default styling for a component vs immediately migrating the bootstrap styles of the component that's being replaced.
+
+Instead of the utility classes used by Bootstrap, MUI uses the [System Properties](https://mui.com/system/properties/) prop.
+
+`<div class='margin-left-1'>...` becomes `<Box sx={{marginLeft: '4px'}}>...`
+
+While there's the css properties that you'd expect, MUI also uses similar shorthand notations to bootstrap
+
+| Bootstrap Class | MUI Sx Value |
+| :-- | :-- |
+| `margin-left-1` | `marginLeft: '4px'` |
+| `ml-1` | `ml: .5` |
+| `ml-2` | `ml: 1` |
+| `ml-3` | `ml: 2` |
+| `mx-1` | `mx: .5` |
+| `m-1` | `m: .5` |
+| `d-flex` | `display: 'flex'` |
+| `text-primary` | `color: 'text.link'` |
+
+Many system properties can access styles from the theme, like colors and spacings. i.e. `bgColor: background.canvas` or `bgColor: action.hover`.
+
+### Native HTML Replacements
+
+Without the bootstrap utility classes, it's important to know which MUI components can be used to take advantage of MUI styling
+
+| Usage | HTML | MUI |
+| ----- | ---- | --- |
+| layout | `div`, `span` | <tr><td>`Box`</td><td>unstyled element, most versatile. The go-to when styling any element, i.e. pass `form` to `component` to add styles to your form.</td></tr><tr></tr><tr><td>`Container`</td><td>fixed width based on screensize, generally used on top level of app</td></tr><tr></tr><tr><td>`Grid`</td><td>two dimensional layouts</td></tr><tr></tr><tr><td>`Stack`</td><td>one dimensional layouts</td></tr> |<tr></tr>
+| semantic/structure | headers(`h1`, `h2`, etc), `body`, `caption`, etc | <tr><td>`Typography`</td><td>`variant` prop sets tag and styling, tag can be overwritten with `component` to keep the styling of a different variant. i.e. an `h2` with the styling of an `h5`</td></tr> |<tr></tr>
+| tables | `table`, `thead`, `tr`, `th`, `td`, etc | Semantic replacements (`Table`, `TableHead`, `TableRow`, `TableCell`, etc) along with additional common components (`TablePagination`, `TableSortLabel`, etc) |
+
+### Component Equivalents
+
+Not all classes/components from Bootstrap/Reactstrap have a similar name or 1:1 equivalent in MUI. Listed below are some notable changes
+
+| Bootstrap           | MUI        | Description                                |        Sample        |
+| ------------------- | ---------- | ------------------------------------------ | :------------------: |
+| `Badge`<sup>1</sup> | `Badge`    | Small corner overlay of base element       | <BadgeExample/> |
+| `Badge`<sup>2</sup> | `Chip`     | Inline colored label/descriptor            | <ChipExample/> |
+| `Column`/`Row`      | `Grid`     | Horizontal and Vertical layout             | <GridExample/> |
+| `Dropdown`          | `Menu`     | Display a list on temporary surface        | <MenuExample/>
+| `Modal`             | `Dialog`   | Popover Dialog (Blocking and Non-Blocking) | <DialogExample/> |
+| `Nav`               | `Tab`      | Tab Navigation                             | <TabExample/>  |
+| `Navbar`            | `AppBar`   | Navigation Header                          |   |
+| `Toast`             | `Snackbar` | Brief Notifications                        |   |

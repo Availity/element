@@ -4,18 +4,29 @@ import { Meta, Source } from '@storybook/blocks';
 
 # Form Migration
 
-For the `@availity/element` components, we have chosen to move away from
-`formik` in favor of `react-hook-form`. For exiting forms utilizing
-`@availity/react` and `formik`, some refactor is required.
+For the `@availity/element` components we have chosen to move away from any
+built-in form management. While there's flexibility to use your library of
+choice, internally we have moved away from `formik` in favor of
+`react-hook-form`. For existing forms utilizing `@availity/react` and
+`formik`, some refactor is required.
 
-## Why `react-hook-form`?
+## Why the change?
 
-After a successful internal implementation of an extremely long and
-complicated form using `react-hook-form`, we decided to move forward with
-it. `react-hook-form` is very lightweight and flexible. It also boasts a
+The future of `formik` is looking questionable - Releases came to an abrupt
+stop 3 years ago with only a handful of patches picking up in the past year.
+We were faced with the question of what to replace it with, but also if it
+_should_ be replaced at all.
+
+We have chosen the middle ground. Our form components are no longer tied to
+one library for validation and state management. However, after a successful
+internal implementation of an extremely long and complicated form using
+`react-hook-form`, we decided to move forward with it for any internal form
+components, like the feedback component, and recommend it for use with `@availity/element`.
+
+`react-hook-form` is very lightweight and flexible. It also boasts a
 large community and is actively and regularly supported.
 
-## Installation
+## react-hook-form Installation
 
 <Source
   language="sh"
@@ -31,47 +42,63 @@ OR
 yarn add react-hook-form
 `}/>
 
-## Usage
+## Form Examples
 
 At the moment, @availity/element does not export a `<Form />` component.
 Instead, use the native `<form>` element. You can then use
-`react-hook-form`'s `useForm` hook to manage your form. Below is the same
-form implemented in `formik` and rewritten in react-hook-form.
+`react-hook-form`'s `useForm` hook to manage your form.
 
-### Example: Form component with `formik` and `@availity/react`
+### Form with `@availity/react`, `formik`, and `yup`
 
 <Source
   code={`
-import React, { useRef } from 'react';
-import { Form, Field } from '@availity/form';
+import React from 'react';
+import { Form, Field, Radio, RadioGroup, SelectField } from '@availity/form';
 import { Button } from 'reactstrap';\n
 export const Form = () => {
   const ref = useRef();
   return (
     <Form
-      innerRef={ref}
-      aria-label="Form"
-      role="form"
       onKeyDown={({ key }) => key === 'Escape' && onClose()}
       initialValues={{
-        textField1: undefined,
+        textField: "",
+        selectField: undefined,
+        radio: "",
       }}
       validationSchema={yup.object().shape({
-        textField1: yup
+        textField: yup
           .string()
           .max(200, 'Text Field cannot exceed 200 characters.')
           .required('This field is required.'),
+        selectField: yup
+          .string()
+          .required('This Field is required.')
+          .nullable,
+        radio: yup
+          .string()
+          .required('A selection is required'),
       })}
       {...formProps}
       onSubmit={(values) => sendValues(values)}
     >
-      <Field type="textarea" name="textField1" label="Text Field" />
+      <RequiredKey/>
+      <Field type="textarea" name="textField" label="Text Field" required/>
+      <SelectField
+        label="Select Field"
+        name="selectField"
+        required
+        options={[{label: "Option 1", value: "1"}, {label: "Option 2", value: "2"}]}
+      />
+      <RadioGroup
+        name="radio"
+        label="Radio Group"
+        inline
+        required
+      >
+        <Radio label="Radio 1" value="1" />
+        <Radio label="Radio 2" value="2" />
+      </RadioGroup>
       <Button
-        onKeyDown={({ key, shiftKey }) => {
-          if (key === 'Enter') {
-            ref.current.submitForm();
-          }
-        }}
         type="submit"
       >
         Submit
@@ -81,32 +108,86 @@ export const Form = () => {
 };
 `}/>
 
-### Example: form component with `react-hook-form` and `@availity/element`
+### Form with `@availity/element`, `react-hook-form`, and `react-hook-form` Internal Rules
+
+This example utilizes the internal rules engine for `react-hook-form`,
+but keep in mind libraries like `yup`, `zod`, and `joi` can be used
+as long as you install the corresponding resolver package. See the
+[react-hook-form docs](https://react-hook-form.com/get-started#SchemaValidation)
+for more.
 
 <Source
   code={`
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { TextField, LoadingButton } from '@availity/element;\n
+import { Autocomplete, Button, FormControl, FormControlLabel, FormHelperText, FormLabel, Paper, Radio, RadioGroup, RequiredKey, TextField } from '@availity/element';\n
 export const Form = () => {
   const {
-    formState: { errors },
-    handleSubmit,
-    register,
-  } = useForm({
-    defaultValues: { textField1: "" }
-  });
+      register,
+      handleSubmit,
+      formState: { errors },
+      control,
+      reset,
+      getValues,
+    } = useForm({defaultValues: { textField: "", dropdown: "", radio: ""}});
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <RequiredKey />
       <TextField
-        {...register('textField1', {
+        label="Textfield"
+        margin="normal"
+        fullWidth
+        {...register('textField', {
           required: 'This field is required',
-          maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
-        })}
-        label="Text Field"
+          maxLength: { value: 200, message: 'This field must not exceed 200 characters'}})}
         required
-        helperText={errors.textField1?.message || 'Max 200 characters'}
-        error={!!errors.textField1}
+        error={!!errors.textField}
+        helperText={errors.textField?.message || 'Max 200 characters'}
       />
+      <Controller
+        control={control}
+        name="dropdown"
+        rules={{ required: 'This field is required' }}
+        render={({ field: { onChange, value, onBlur } }) => {
+          return (
+            <Autocomplete
+              onChange={(event, value, reason) => {
+                if (reason === 'clear') {
+                  onChange(null);
+                }
+                onChange(value);
+              }}
+              onBlur={onBlur}
+              FieldProps={{
+                margin:"normal",
+                label: 'Dropdown',
+                placeholder: 'Value',
+                required: true,
+                error: !!errors.dropdown?.message,
+                helperText: errors.dropdown?.message,
+              }}
+              options={dropdownOptions}
+              value={value || null}
+            />
+          );
+        }}
+      />
+      <FormControl margin="normal" error={!!errors.radio} required>
+        <FormLabel id="radio-label" component="div">
+          Radio Group
+        </FormLabel>
+        <Controller
+          control={control}
+          name="radio"
+          rules={{ required: 'This field is required' }}
+          render={({ field }) => (
+            <RadioGroup aria-labelledby="radio-label" row {...field} aria-required>
+              <FormControlLabel control={<Radio />} value="1" label="Option 1" />
+              <FormControlLabel control={<Radio />} value="2" label="Option 2" />
+            </RadioGroup>
+          )}
+        />
+        {errors.radio ? <FormHelperText id="radio-helper-text">{errors.radio?.message}</FormHelperText> : null }
+      </FormControl>
       <LoadingButton loading={loading} type="submit" variant="contained">
         Submit
       </LoadingButton>
@@ -116,3 +197,113 @@ export const Form = () => {
 `}/>
 
 You can find more working examples of react-hook-form [here](/docs/layouts-form--docs).
+
+### Form with `@availity/element`, `formik`, and `yup` (Not Recommended)
+
+It does not save much time reformatting to keep `formik` versus switching
+over to `react-hook-form`, therefore we don't recommend this approach to migrate.
+
+<Source
+  code={`
+import React from 'react';
+import * as yup from 'yup';
+import { useFormikContext, Form, Formik, useFormik } from 'formik';
+import {
+  Box,
+  Button,
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+  RequiredKey,
+  TextField,
+  Autocomplete} from '@availity/element';\n
+export const Form = () => (
+  <Formik
+    initialValues={{
+      textField: "",
+      selectField: undefined,
+      radio: "",
+    }}
+    validationSchema={yup.object().shape({
+      textField: yup
+        .string()
+        .max(200, 'Text Field cannot exceed 200 characters.')
+        .required('This field is required.'),
+      selectField: yup
+        .string()
+        .required('This Field is required.'),
+      radio: yup
+        .string()
+        .required('A selection is required'),
+    })}
+    onSubmit={(values) => console.log(values)}
+  >
+    {formik => (
+      <Box component={Form}>
+        <RequiredKey/>
+        <TextField
+          name="textField"
+          label="Textfield"
+          multiline
+          helperText={formik.touched.textField && formik.errors.textField ? formik.errors.textField : null}
+          required
+          value={formik.values.textField}
+          error={formik.touched.textField && Boolean(formik.errors.textField)}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          margin="normal"
+        />
+        <Autocomplete
+          name="selectField"
+          onChange={(e, value) => {
+            formik.setFieldValue("selectField", value !== null ? value.value : formik.initialValues.selectField)
+          }}
+          onBlur={formik.handleBlur}
+          FieldProps={{
+            margin:"normal",
+            label: 'Select Field',
+            placeholder: 'Value',
+            required: true,
+            error: formik.touched.selectField && Boolean(formik.errors.selectField),
+            helperText: formik.touched.selectField && formik.errors.selectField,
+          }}
+          options={[{label:"Option 1", value: "1"}, {label:"Option 2", value: "2"}]}
+          value={formik.values.selectField}
+        />
+        <FormControl
+          required
+          margin="normal"
+          sx={{mt: 2}}
+          error={formik.touched.radio && Boolean(formik.errors.radio)}
+        >
+          <FormLabel id="radio-label" component="div">Radio 1</FormLabel>
+          <RadioGroup
+            name="radio"
+            aria-labelledby="radio-label"
+            row
+            value={formik.values.radio}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          >
+            <FormControlLabel control={<Radio/>} label="Radio 1" value="1" />
+            <FormControlLabel control={<Radio/>} label="Radio 2" value="2" />
+          </RadioGroup>
+          {formik.touched.radio && Boolean(formik.errors.radio) ?
+            <FormHelperText id="radio-helperText">{formik.errors.radio}</FormHelperText>
+            : null
+          }
+        </FormControl>
+        <Button
+          type="submit"
+        >
+          Submit
+        </Button>
+        <Results/>
+      </Box>
+    )}
+  </Formik>
+);
+`}/>

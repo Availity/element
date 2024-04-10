@@ -1,0 +1,55 @@
+import { Meta, Source } from '@storybook/blocks';
+
+<Meta title="BS4 Migration/Button" />
+
+# Component Migration
+
+This migration guide is just an overview. For more in depth component information, visit:
+- [Availity Usage Guide](https://zeroheight.com/2e36e50c7/p/54f663-button)
+- [MUI Documentation](https://mui.com/material-ui/react-button/)
+
+
+## Key Differences (not exhaustive list)
+
+- Changed
+  - Per UX, the available colors for a button have changed, notably the removal of success and error colors.
+- Removed
+  - `outline` while mui moves this option into the `variant` prop, per UX this variant has also been removed going forward.
+- Other
+  - UX has updated the guidelines for when to use which color. Refer to zeroheight docs for more information.
+
+## Code Examples
+
+`reactstrap`/`availity-react` Example:
+
+<Source
+  code={`
+import { Button } from 'reactstrap';\n
+const ReactstrapButton = () => (
+  <Button
+    color="primary"
+    size="lg"
+    outline
+    block
+  >
+    I'm a Button
+  </Button>
+);
+`}/>
+
+`@availity/element` Example:
+
+<Source
+  code={`
+import { Button } from '@availity/element';\n
+const MUIButton = () => (
+  <Button
+    color="primary"
+    size="large"
+    variant="outlined"
+    fullWidth
+  >
+    I'm a Button
+  </Button>
+);
+`}/>
