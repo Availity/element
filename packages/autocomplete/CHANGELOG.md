@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.3.2...@availity/mui-autocomplete@0.4.0) (2024-04-11)
+
+
+### Features
+
+* **mui-autocomplete:** add AsyncAutocomplete component ([2318b3f](https://github.com/Availity/element/commit/2318b3fd70055322c5e0ea2f28514a6886c29a98))
+
 ## [0.3.2](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.3.1...@availity/mui-autocomplete@0.3.2) (2024-04-01)
 
 
