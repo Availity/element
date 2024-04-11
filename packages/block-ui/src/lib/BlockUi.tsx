@@ -30,7 +30,9 @@ const BlockUiContainer = styled('div')({
 const BlockUiOverlay = styled('div')({
   width: '100%',
   height: '100%',
-  backgroundColor: 'rgb(0, 0, 0, 0.55)',
+  opacity: '0.5',
+  filter: 'alpha(opacity=50)',
+  backgroundColor: 'white',
 });
 
 const BlockUiMessageContainer = styled('div')<{ top?: string | number }>(({ top = '50%' }) => ({
@@ -44,7 +46,7 @@ const BlockUiMessageContainer = styled('div')<{ top?: string | number }>(({ top 
 }));
 
 const BlockUiMessage = styled('div')({
-  color: 'white',
+  color: '#333',
   background: 'none',
   zIndex: '1011',
 });
