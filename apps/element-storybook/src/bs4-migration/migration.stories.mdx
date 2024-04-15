@@ -1,11 +1,14 @@
+import { Markdown } from '@storybook/blocks';
 import { Meta, Source } from '@storybook/blocks';
 import { BadgeExample, ChipExample, DialogExample, GridExample, MenuExample, TabExample } from './MigrationExamples';
 
-<Meta title="BS4 Migration/Getting Started" />
+<Meta title='BS4 Migration/Getting Started' />
 
-# Getting Started
+<Markdown># Getting Started</Markdown>
 
-## Planning and Strategy
+<br />
+
+<Markdown>## Planning and Strategy</Markdown>
 
 _Our guide is written assuming you're planning migration one component swap at a time. However, if you're doing whole sections at a time pay extra attention to the [Components Without a Drop-in Option](#components-without-a-drop-in-option) section to plan accordingly._
 
@@ -18,21 +21,23 @@ The migration theme is accessible by passing `theme='legacyBS'` to the `ThemePro
 #### Recommended Early Component Swaps
 
 - layout (`Box`, `Grid`, `Container`)
-- table
-- menu
-- list (excluding list-group)
-- alert
-- card
+- `Typography` (semantic html swaps, see Native HTML Replacements section)
+- `BlockUI`
+- `Menu`
+- `Alert`
+- `Card`
 
 ### Form
 
 Where you're coming from will determine your strategy for form migration. We have moved away from `formik` (used by `@availity/form`) in favor of `react-hook-form`. We have also provided the base components to utilize with your own logic/libraries.
 
-See the [Form migration](./form-migration.mdx) docs for more information.
+See the [Form migration](/?path=/docs/bs4-migration-form-migration) docs for more information.
 
-### Components Without a Drop-in Option
+<Markdown>### Components Without a Drop-in Option</Markdown>
 
-There are many bootstrap elements and other design guidelines that will not be making it into the new Mui theme. These components we recommend saving for last so the changes will be introduced as you are switching to the new theme.
+There are many bootstrap elements and other design guidelines that will not be making it into the new Element Design System. These components we recommend saving for last so the changes will be introduced as you are switching to the new theme.
+
+For all Design Patterns and UX Guidelines, visit the [Zeroheight Docs](https://zeroheight.com/2e36e50c7/n/53a73e)
 
 #### Required UX changes
 
@@ -40,12 +45,14 @@ There are many bootstrap elements and other design guidelines that will not be m
   - button patterns, placement, and allowed colors have changed. Will need to follow new patterns even for v0.
 - buttongroup
   - Element is moving away from a typical buttongroup in favor of a collection of non-connected buttons. (buttons can still be placed within a form group or component with aria role of _group_, but there will not be visually attached buttons when grouped.)
+- chip (previously badge)
+  - Colors for chips are now reserved exclusively for statuses, otherwise the Chip must be grey.
 - icon
-  - icon sizing is more logical in MUI, but very different. If using large icons, it may be easier to go straight to v1.
+  - icon sizing is more logical in MUI, but very different. If using large icons, it may be easier to go straight to phase 1 patterns.
 - list-group
   - does not exist in Mui. UX to provide new design guidelines for how to change this component.
 - jumbotron
-  - bootstrap got rid of this in bootstrap 5 and there are no plans on making an equivalent in Mui.
+  - bootstrap got rid of this in bootstrap 5 and there are no plans on making an equivalent in Element.
 
 <br />
 
@@ -54,7 +61,7 @@ There are many bootstrap elements and other design guidelines that will not be m
 To install the library in your project, you can use either NPM or Yarn:
 
 <Source
-  language="sh"
+  language='sh'
   code={`
 npm install @availity/element
 `}/>
@@ -62,7 +69,7 @@ npm install @availity/element
 OR
 
 <Source
-  language="sh"
+  language='sh'
   code={`
 yarn add @availity/element
 `}/>
@@ -134,7 +141,7 @@ While there's the css properties that you'd expect, MUI also uses similar shorth
 | `d-flex` | `display: 'flex'` |
 | `text-primary` | `color: 'text.link'` |
 
-Many system properties can access styles from the theme, like colors and spacings. i.e. `bgColor: background.canvas` or `bgColor: action.hover`.
+Many system properties can access styles from the theme, like colors and spacings. i.e. `bgColor: 'background.canvas'` or `bgColor: 'action.hover'`.
 
 ### Native HTML Replacements
 
