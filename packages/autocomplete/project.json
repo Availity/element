@@ -6,10 +6,9 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/autocomplete/**/*.{js,ts}"],
         "silent": false,
         "fix": false,
         "cache": true,
@@ -22,11 +21,10 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/autocomplete"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/autocomplete"],
       "options": {
-        "jestConfig": "packages/autocomplete/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "packages/autocomplete/jest.config.js"
       }
     },
     "version": {

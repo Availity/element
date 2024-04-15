@@ -2,6 +2,7 @@
 
 import type { StoryObj } from '@storybook/react';
 import { EmptyStateImage, EmptyStateImageProps } from './EmptyStateImage';
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import { SystemPropsList } from '../../../../data/MuiSystemProperties';
 import { Box, Stack } from '@availity/mui-layout';
 

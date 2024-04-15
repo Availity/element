@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import { visuallyHidden } from '@mui/utils';
 import { Link } from '@availity/mui-link';
 import { EmptyState, EmptyStateProps } from './EmptyState';
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import { SystemPropsList } from '../../../../data/MuiSystemProperties';
 
 /** Remove 508 warning of Heading Level Jump while leaving Story heading levels realistic */

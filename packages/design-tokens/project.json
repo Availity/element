@@ -6,10 +6,9 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/design-tokens/**/*.{js,ts}"],
         "silent": false,
         "fix": false,
         "cache": true,
@@ -22,11 +21,10 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/design-tokens"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/design-tokens"],
       "options": {
-        "jestConfig": "packages/design-tokens/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "packages/design-tokens/jest.config.js"
       }
     },
     "version": {

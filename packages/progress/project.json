@@ -6,10 +6,9 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/progress/**/*.{js,ts}"],
         "silent": false,
         "fix": false,
         "cache": true,
@@ -22,11 +21,10 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/progress"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/progress"],
       "options": {
-        "jestConfig": "packages/progress/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "packages/progress/jest.config.js"
       }
     },
     "version": {

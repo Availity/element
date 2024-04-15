@@ -6,10 +6,9 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/chip/**/*.{js,ts}"],
         "silent": false,
         "fix": false,
         "cache": true,
@@ -22,11 +21,10 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/chip"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/chip"],
       "options": {
-        "jestConfig": "packages/chip/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "packages/chip/jest.config.js"
       }
     },
     "version": {

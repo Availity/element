@@ -3,13 +3,13 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/datepicker/src",
   "projectType": "library",
+  "trackDeps": true,
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/datepicker/**/*.{js,ts}"],
         "silent": false,
         "fix": false,
         "cache": true,
@@ -22,11 +22,10 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/datepicker"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/datepicker"],
       "options": {
-        "jestConfig": "packages/datepicker/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "packages/datepicker/jest.config.js"
       }
     },
     "version": {
@@ -37,6 +36,5 @@
         "tagPrefix": "@availity/${projectName}@"
       }
     }
-  },
-  "trackDeps": true
+  }
 }

@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:eslint",
       "options": {
         "eslintConfig": ".eslintrc.json",
         "lintFilePatterns": ["packages/<%= fileName %>/**/*.{js,ts}"],
@@ -22,7 +22,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["coverage/<%= fileName %>"],
       "options": {
         "jestConfig": "packages/<%= fileName %>/jest.config.js",

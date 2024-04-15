@@ -1,3 +1,4 @@
+/* eslint-disable @nx/enforce-module-boundaries */
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';

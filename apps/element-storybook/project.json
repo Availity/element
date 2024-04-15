@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
         "port": 4400,
         "configDir": "apps/element-storybook/.storybook"
@@ -19,8 +19,8 @@
       "dependsOn": ["^build"]
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputDir}"],
+      "executor": "@nx/storybook:build",
+      "outputs": ["{workspaceRoot}/dist/storybook"],
       "options": {
         "outputDir": "dist/storybook",
         "configDir": "apps/element-storybook/.storybook"

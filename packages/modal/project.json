@@ -3,13 +3,13 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/modal/src",
   "projectType": "library",
+  "trackDeps": true,
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/modal/**/*.{js,ts}"],
         "silent": false,
         "fix": false,
         "cache": true,
@@ -22,11 +22,10 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/modal"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/modal"],
       "options": {
-        "jestConfig": "packages/modal/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "packages/modal/jest.config.js"
       }
     },
     "version": {
@@ -37,6 +36,5 @@
         "tagPrefix": "@availity/${projectName}@"
       }
     }
-  },
-  "trackDeps": true
+  }
 }

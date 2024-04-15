@@ -6,10 +6,9 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/block-ui/**/*.{js,ts}"],
         "silent": false,
         "fix": false,
         "cache": true,
@@ -22,11 +21,10 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/block-ui"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/block-ui"],
       "options": {
-        "jestConfig": "packages/block-ui/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "packages/block-ui/jest.config.js"
       }
     },
     "version": {

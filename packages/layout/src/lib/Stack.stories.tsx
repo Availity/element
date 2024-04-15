@@ -1,6 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import { SystemPropsList } from '../../../../data/MuiSystemProperties';
 import { Stack, StackProps } from './Stack';
 import { Paper } from '@availity/mui-paper';

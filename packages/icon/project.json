@@ -6,10 +6,9 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/icon/**/*.{js,ts}"],
         "silent": false,
         "fix": false,
         "cache": true,
@@ -22,11 +21,10 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/icon"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/icon"],
       "options": {
-        "jestConfig": "packages/icon/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "packages/icon/jest.config.js"
       }
     },
     "version": {

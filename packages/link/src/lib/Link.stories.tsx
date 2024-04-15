@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SystemPropsList } from '../../../../data/MuiSystemProperties';
+// import { SystemPropsList } from '../../../../data/MuiSystemProperties';
 import { Link, LinkProps } from './Link';
 
 /**
@@ -14,12 +14,12 @@ const meta: Meta<typeof Link> = {
   parameters: {
     docs: {
       controls: {
-        exclude: SystemPropsList,
+        // exclude: SystemPropsList,
       },
     },
     canvas: {
       controls: {
-        exclude: SystemPropsList,
+        // exclude: SystemPropsList,
       },
     },
   },
