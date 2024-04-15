@@ -61,7 +61,7 @@
     "@testing-library/user-event": "^13.0.0",
     "@types/jest": "28.1.1",
     "@types/node": "16.11.7",
-    "@types/react": "18.0.25",
+    "@types/react": "18.2.78",
     "@types/react-dom": "18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
