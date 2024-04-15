@@ -4,4 +4,49 @@ import ReadMe from './README.md?raw';
 
 <Meta title="Element" />
 
+## What is `@availity/element`?
+
+The vision behind `@availity/element` is to build a wholistic design system
+rather than simply a collection of components. The components are built in
+collaboration with the UX team and based on larger patterns. This helps
+create a cohesive experience across applications and frees up developers to
+focus on rapid innovation.
+
+## Why MUI?
+
+The official decision process for where Availity would go after Bootstrap 4 started
+in 2020. It was decided early on to not upgrade to Bootstrap 5 and instead leave
+Bootstrap behind. When determining where to go next the primary contenders were
+Material and TailwindCSS. Material is a set of design guidelines started by Google
+with an accompanying React component library. TailwindCSS is a "utility-first
+CSS framework", with pre-defined classes similar to Bootstrap but going all in
+with utility vs the component styles of Bootstrap.
+
+We did POCs for both frameworks in 2021/2022, with Material ultimately coming out
+on top for a few reasons:
+
+- MUI integrates with Figma enabling UX to quickly produce designs that
+  closely match the actual components.
+- MUI's components allow for greater flexibility and less abstraction.
+  This enables developers to focus on business logic and innovation rather
+  than component limitations.
+- MUI handles a lot of baseline accessibility logic for simple components, as
+  well as complex accessibility patterns, like keyboard interactions for tabs.
+- MUI's theming engine makes it easy to implement global and targeted updates to the
+  look and feel.
+
+## Current State
+
+The goals of the current version of `@availity/element` include building a
+cohesive design system with an eye on easing the migration process. The
+initial release will provide a solid path towards 508 compliance and
+baseline component-level telemetry.
+
+## Future Plans
+
+- Internationalization (Material already supports this on the component level)
+- Consolidation across Availity Platforms in future themes
+
+## README
+
 <Markdown>{ReadMe}</Markdown>
