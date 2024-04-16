@@ -5,9 +5,9 @@ import { StorybookConfig } from '@storybook/react-vite';
 const config: StorybookConfig = {
   stories: [
     '../src/*.mdx',
-    '../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
+    '../src/**/*.@(stories.@(js|jsx|ts|tsx))',
     '../../../packages/*/*.mdx',
-    '../../../packages/*/src/lib/*.@(mdx|stories.@(js|jsx|ts|tsx))'
+    '../../../packages/*/src/lib/*.@(stories.@(js|jsx|ts|tsx))'
   ],
 
   addons: [
@@ -49,10 +49,6 @@ const config: StorybookConfig = {
 
   staticDirs: ['../../../static'],
   features: { storyStoreV7: false },
-
-  docs: {
-    autodocs: true
-  }
 };
 
 export default config;
