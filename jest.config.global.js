@@ -6,15 +6,12 @@ module.exports = {
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
   globalSetup: '../../jest.setup.global.js',
   transform: {
-    '^.+\\.(ts|tsx|js|html)$': 'ts-jest',
+    '^.+\\.(ts|tsx|js|html)$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
   moduleFileExtensions: ['ts', 'js', 'tsx'],
   preset: '../../jest.preset.js',
   testEnvironment: 'jest-environment-jsdom-global',
   globals: {
-    'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
-    },
     jsdom: true,
   },
   coverageReporters: ['json'],

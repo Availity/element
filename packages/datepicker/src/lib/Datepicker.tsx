@@ -46,6 +46,8 @@ export const Datepicker = ({ FieldProps, placement = 'bottom-start', ...props }:
         popper: {
           placement,
         },
+      }}
+      slots={{
         textField: (params) => {
           if (params.inputProps) {
             params.inputProps.placeholder = 'MM/DD/YYYY';
