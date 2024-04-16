@@ -39,7 +39,7 @@
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@commitlint/config-nx-scopes": "^17.6.4",
-    "@jscutlery/semver": "^2.29.3",
+    "@jscutlery/semver": "^5.2.2",
     "@mui/lab": "^5.0.0-alpha.147",
     "@mui/x-data-grid": "^7.2.0",
     "@nx/devkit": "18.2.4",
