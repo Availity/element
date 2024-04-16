@@ -33,10 +33,10 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@mui/types": "^7.2.5"
+    "@mui/types": "^7.2.14"
   },
   "devDependencies": {
-    "@mui/material": "^5.11.9",
+    "@mui/material": "^5.15.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^5.12.7",

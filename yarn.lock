@@ -95,8 +95,8 @@ __metadata:
     "@availity/mui-transitions": "workspace:*"
     "@availity/mui-typography": "workspace:*"
     "@availity/theme-provider": "workspace:*"
-    "@mui/material": ^5.14.12
-    "@mui/system": ^5.14.12
+    "@mui/material": ^5.15.15
+    "@mui/system": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -130,7 +130,7 @@ __metadata:
     "@availity/mui-button": "workspace:^"
     "@availity/mui-layout": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -148,7 +148,7 @@ __metadata:
   dependencies:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -163,8 +163,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-autocomplete@workspace:packages/autocomplete"
   dependencies:
-    "@mui/material": ^5.11.9
-    "@mui/types": ^7.2.5
+    "@mui/material": ^5.15.15
+    "@mui/types": ^7.2.14
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -183,7 +183,7 @@ __metadata:
   dependencies:
     "@availity/design-tokens": "workspace:^"
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -198,7 +198,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-backdrop@workspace:packages/backdrop"
   dependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -214,7 +214,7 @@ __metadata:
   resolution: "@availity/mui-badge@workspace:packages/badge"
   dependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -231,7 +231,7 @@ __metadata:
   dependencies:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-paper": "workspace:*"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -248,7 +248,7 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-link": "workspace:^"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -264,7 +264,7 @@ __metadata:
   resolution: "@availity/mui-button@workspace:packages/button"
   dependencies:
     "@mui/lab": ^5.0.0-alpha.147
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -281,7 +281,7 @@ __metadata:
   dependencies:
     "@availity/mui-button": "workspace:^"
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -299,7 +299,7 @@ __metadata:
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -315,7 +315,7 @@ __metadata:
   resolution: "@availity/mui-chip@workspace:packages/chip"
   dependencies:
     "@availity/mui-avatar": "workspace:^"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -331,9 +331,9 @@ __metadata:
   resolution: "@availity/mui-datepicker@workspace:packages/datepicker"
   dependencies:
     "@availity/mui-textfield": "workspace:*"
-    "@mui/material": ^5.11.9
-    "@mui/x-date-pickers": ^5.0.15
-    dayjs: ^1.11.9
+    "@mui/material": ^5.15.15
+    "@mui/x-date-pickers": ^7.2.0
+    dayjs: ^1.11.10
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -350,7 +350,7 @@ __metadata:
   dependencies:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-layout": "workspace:*"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -365,7 +365,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-divider@workspace:packages/divider"
   dependencies:
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -381,7 +381,7 @@ __metadata:
   resolution: "@availity/mui-empty-state@workspace:packages/empty-state"
   dependencies:
     "@availity/mui-layout": "workspace:*"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -404,7 +404,7 @@ __metadata:
     "@availity/mui-textfield": "workspace:^"
     "@availity/mui-toggle-button": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     react-hook-form: ^7.48.2
@@ -423,7 +423,7 @@ __metadata:
     "@availity/message-core": ^6.1.2
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -440,9 +440,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-icon@workspace:packages/icon"
   dependencies:
-    "@fortawesome/free-regular-svg-icons": ^6.3.0
-    "@fortawesome/free-solid-svg-icons": ^6.3.0
-    "@mui/material": ^5.14.12
+    "@fortawesome/free-regular-svg-icons": ^6.5.2
+    "@fortawesome/free-solid-svg-icons": ^6.5.2
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -457,7 +457,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-layout@workspace:packages/layout"
   dependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -473,7 +473,7 @@ __metadata:
   resolution: "@availity/mui-link@workspace:packages/link"
   dependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -489,7 +489,7 @@ __metadata:
   resolution: "@availity/mui-menu@workspace:packages/menu"
   dependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -507,7 +507,7 @@ __metadata:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-card": "workspace:*"
     "@availity/mui-typography": "workspace:*"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -528,7 +528,7 @@ __metadata:
     "@availity/mui-feedback": "workspace:^"
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -549,7 +549,7 @@ __metadata:
   resolution: "@availity/mui-pagination@workspace:packages/pagination"
   dependencies:
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -565,7 +565,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-paper@workspace:packages/paper"
   dependencies:
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -581,7 +581,7 @@ __metadata:
   resolution: "@availity/mui-popover@workspace:packages/popover"
   dependencies:
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -596,7 +596,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-popper@workspace:packages/popper"
   dependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -613,7 +613,7 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -638,7 +638,7 @@ __metadata:
     "@availity/mui-paper": "workspace:*"
     "@availity/mui-textfield": "workspace:*"
     "@availity/mui-typography": "workspace:*"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     react-hook-form: ^7.48.2
@@ -656,7 +656,7 @@ __metadata:
   dependencies:
     "@availity/mui-divider": "workspace:^"
     "@mui/lab": ^5.0.0-alpha.147
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -673,7 +673,7 @@ __metadata:
   dependencies:
     "@availity/mui-form-utils": "workspace:*"
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -689,7 +689,7 @@ __metadata:
   resolution: "@availity/mui-toggle-button@workspace:packages/toggle-button"
   dependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -704,7 +704,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-tooltip@workspace:packages/tooltip"
   dependencies:
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -719,7 +719,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-transitions@workspace:packages/transitions"
   dependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -734,7 +734,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-typography@workspace:packages/typography"
   dependencies:
-    "@mui/material": ^5.14.12
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -765,9 +765,9 @@ __metadata:
     "@availity/theme": "workspace:*"
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
-    "@mui/material": ^5.14.12
-    "@mui/x-date-pickers": ^5.0.15
-    dayjs: ^1.11.9
+    "@mui/material": ^5.15.15
+    "@mui/x-date-pickers": ^7.2.0
+    dayjs: ^1.11.10
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^5.12.7
@@ -2266,7 +2266,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.22.6, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.9, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.22.6, @babel/runtime@npm:^7.23.9, @babel/runtime@npm:^7.24.0, @babel/runtime@npm:^7.24.4, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.24.4
   resolution: "@babel/runtime@npm:7.24.4"
   dependencies:
@@ -2582,69 +2582,6 @@ __metadata:
   dependencies:
     "@jridgewell/trace-mapping": 0.3.9
   checksum: 5718f267085ed8edb3e7ef210137241775e607ee18b77d95aa5bd7514f47f5019aa2d82d96b3bf342ef7aa890a346fa1044532ff7cc3009e7d24fce3ce6200fa
-  languageName: node
-  linkType: hard
-
-"@date-io/core@npm:^2.15.0, @date-io/core@npm:^2.17.0":
-  version: 2.17.0
-  resolution: "@date-io/core@npm:2.17.0"
-  checksum: 008dfc79eb54256805113d76feca82fe0b08a245ecbfb2d53809e6a129dc201f9dbd053c8ad63512203ab1a13ff7f76de0edc31829588ef507d53307974c29a8
-  languageName: node
-  linkType: hard
-
-"@date-io/date-fns@npm:^2.15.0":
-  version: 2.17.0
-  resolution: "@date-io/date-fns@npm:2.17.0"
-  dependencies:
-    "@date-io/core": ^2.17.0
-  peerDependencies:
-    date-fns: ^2.0.0
-  peerDependenciesMeta:
-    date-fns:
-      optional: true
-  checksum: bfab634c985a98dd44fdfc5f982b0348da2886c9ad79a8d71fd7bfa05b740af7f5cf340508cd7ce51d67c141fb8766998c8efdf50653252c68ec078471cd76e6
-  languageName: node
-  linkType: hard
-
-"@date-io/dayjs@npm:^2.15.0":
-  version: 2.17.0
-  resolution: "@date-io/dayjs@npm:2.17.0"
-  dependencies:
-    "@date-io/core": ^2.17.0
-  peerDependencies:
-    dayjs: ^1.8.17
-  peerDependenciesMeta:
-    dayjs:
-      optional: true
-  checksum: daf2b690362ba37d53dab9db01a554364bf90c2be177e1a4a0cb631ef1763e41459a18f99bc8ac2a2f3015aeaa9c016a3905829fa55593270b2ed83c2c4741f1
-  languageName: node
-  linkType: hard
-
-"@date-io/luxon@npm:^2.15.0":
-  version: 2.17.0
-  resolution: "@date-io/luxon@npm:2.17.0"
-  dependencies:
-    "@date-io/core": ^2.17.0
-  peerDependencies:
-    luxon: ^1.21.3 || ^2.x || ^3.x
-  peerDependenciesMeta:
-    luxon:
-      optional: true
-  checksum: 26a23640a15f0628f4d020a9ee78d3b73b774226b9d68afd5022a1e8ee041475dde86b13051aca8d290ad264bcbdefb811d0e68054d8153aa15fd0cd70ab77d4
-  languageName: node
-  linkType: hard
-
-"@date-io/moment@npm:^2.15.0":
-  version: 2.17.0
-  resolution: "@date-io/moment@npm:2.17.0"
-  dependencies:
-    "@date-io/core": ^2.17.0
-  peerDependencies:
-    moment: ^2.24.0
-  peerDependenciesMeta:
-    moment:
-      optional: true
-  checksum: 3009825c5c5fe78f2939b9de52a55272767c824e442afa3fd1897336636593cd5147b59263d778c0dad860d869f9abdfd51a25ccbd47e6f551c922b5cc4593ef
   languageName: node
   linkType: hard
 
@@ -3217,7 +3154,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/free-regular-svg-icons@npm:^6.3.0":
+"@fortawesome/free-regular-svg-icons@npm:^6.5.2":
   version: 6.5.2
   resolution: "@fortawesome/free-regular-svg-icons@npm:6.5.2"
   dependencies:
@@ -3226,7 +3163,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/free-solid-svg-icons@npm:^6.3.0":
+"@fortawesome/free-solid-svg-icons@npm:^6.5.2":
   version: 6.5.2
   resolution: "@fortawesome/free-solid-svg-icons@npm:6.5.2"
   dependencies:
@@ -3724,6 +3661,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mui/base@npm:^5.0.0-beta.40":
+  version: 5.0.0-beta.42
+  resolution: "@mui/base@npm:5.0.0-beta.42"
+  dependencies:
+    "@babel/runtime": ^7.24.4
+    "@floating-ui/react-dom": ^2.0.8
+    "@mui/types": ^7.2.14
+    "@mui/utils": ^6.0.0-alpha.1
+    "@popperjs/core": ^2.11.8
+    clsx: ^2.1.0
+    prop-types: ^15.8.1
+  peerDependencies:
+    "@types/react": ^17.0.0 || ^18.0.0
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: f7af6e6003a4a8502062607b7861490eb6dc3a1f617532c92521981329ae077535444d65e378718bbf59ce8b7a52fc32275dc794969c73bdb389e5d69155fc69
+  languageName: node
+  linkType: hard
+
 "@mui/core-downloads-tracker@npm:^5.15.15":
   version: 5.15.15
   resolution: "@mui/core-downloads-tracker@npm:5.15.15"
@@ -3760,7 +3719,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material@npm:^5.11.9, @mui/material@npm:^5.14.12":
+"@mui/material@npm:^5.15.15":
   version: 5.15.15
   resolution: "@mui/material@npm:5.15.15"
   dependencies:
@@ -3831,7 +3790,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/system@npm:^5.14.12, @mui/system@npm:^5.15.15":
+"@mui/system@npm:^5.15.14, @mui/system@npm:^5.15.15":
   version: 5.15.15
   resolution: "@mui/system@npm:5.15.15"
   dependencies:
@@ -3859,7 +3818,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/types@npm:^7.2.14, @mui/types@npm:^7.2.5":
+"@mui/types@npm:^7.2.14":
   version: 7.2.14
   resolution: "@mui/types@npm:7.2.14"
   peerDependencies:
@@ -3871,7 +3830,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/utils@npm:^5.10.3, @mui/utils@npm:^5.14.16, @mui/utils@npm:^5.15.14":
+"@mui/utils@npm:^5.15.14":
   version: 5.15.14
   resolution: "@mui/utils@npm:5.15.14"
   dependencies:
@@ -3889,51 +3848,67 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/x-data-grid@npm:^6.10.1":
-  version: 6.19.10
-  resolution: "@mui/x-data-grid@npm:6.19.10"
+"@mui/utils@npm:^6.0.0-alpha.1":
+  version: 6.0.0-alpha.1
+  resolution: "@mui/utils@npm:6.0.0-alpha.1"
   dependencies:
-    "@babel/runtime": ^7.23.2
-    "@mui/utils": ^5.14.16
-    clsx: ^2.0.0
+    "@babel/runtime": ^7.24.4
+    "@types/prop-types": ^15.7.12
     prop-types: ^15.8.1
-    reselect: ^4.1.8
+    react-is: ^18.2.0
   peerDependencies:
-    "@mui/material": ^5.4.1
-    "@mui/system": ^5.4.1
+    "@types/react": ^17.0.0 || ^18.0.0
     react: ^17.0.0 || ^18.0.0
-    react-dom: ^17.0.0 || ^18.0.0
-  checksum: 394dcbd36e2817762d7f51dd992a234a65bcf68debe10a69396a3de4bc0ad8279e07828e4bb2488d449602a570685d6296b38f176b05e267112899a7fecdc8dc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 864ba88979448f8a7ee76d38402ceb45aed440daf89f50bc810085f87dad072d9efe9959b450fca4b8cfc09ff21f49f780e9acb2dc668e235510096aae6c7a03
   languageName: node
   linkType: hard
 
-"@mui/x-date-pickers@npm:^5.0.15":
-  version: 5.0.20
-  resolution: "@mui/x-date-pickers@npm:5.0.20"
+"@mui/x-data-grid@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "@mui/x-data-grid@npm:7.2.0"
   dependencies:
-    "@babel/runtime": ^7.18.9
-    "@date-io/core": ^2.15.0
-    "@date-io/date-fns": ^2.15.0
-    "@date-io/dayjs": ^2.15.0
-    "@date-io/luxon": ^2.15.0
-    "@date-io/moment": ^2.15.0
-    "@mui/utils": ^5.10.3
-    "@types/react-transition-group": ^4.4.5
-    clsx: ^1.2.1
-    prop-types: ^15.7.2
+    "@babel/runtime": ^7.24.0
+    "@mui/system": ^5.15.14
+    "@mui/utils": ^5.15.14
+    clsx: ^2.1.0
+    prop-types: ^15.8.1
+    reselect: ^4.1.8
+  peerDependencies:
+    "@mui/material": ^5.15.14
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+  checksum: 6a7d5a323b25fe3e324d851abe502244992d32a90da9b19bcbc75fc3280e55e7cea0f4dfd6ef20faea1d7a61c295664836aaf5cd327eb6e8b142e3a278a947e5
+  languageName: node
+  linkType: hard
+
+"@mui/x-date-pickers@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "@mui/x-date-pickers@npm:7.2.0"
+  dependencies:
+    "@babel/runtime": ^7.24.0
+    "@mui/base": ^5.0.0-beta.40
+    "@mui/system": ^5.15.14
+    "@mui/utils": ^5.15.14
+    "@types/react-transition-group": ^4.4.10
+    clsx: ^2.1.0
+    prop-types: ^15.8.1
     react-transition-group: ^4.4.5
-    rifm: ^0.12.1
   peerDependencies:
     "@emotion/react": ^11.9.0
     "@emotion/styled": ^11.8.1
-    "@mui/material": ^5.4.1
-    "@mui/system": ^5.4.1
-    date-fns: ^2.25.0
+    "@mui/material": ^5.15.14
+    date-fns: ^2.25.0 || ^3.2.0
+    date-fns-jalali: ^2.13.0-0
     dayjs: ^1.10.7
-    luxon: ^1.28.0 || ^2.0.0 || ^3.0.0
-    moment: ^2.29.1
-    react: ^17.0.2 || ^18.0.0
-    react-dom: ^17.0.2 || ^18.0.0
+    luxon: ^3.0.2
+    moment: ^2.29.4
+    moment-hijri: ^2.1.2
+    moment-jalaali: ^0.7.4 || ^0.8.0 || ^0.9.0 || ^0.10.0
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
   peerDependenciesMeta:
     "@emotion/react":
       optional: true
@@ -3941,13 +3916,19 @@ __metadata:
       optional: true
     date-fns:
       optional: true
+    date-fns-jalali:
+      optional: true
     dayjs:
       optional: true
     luxon:
       optional: true
     moment:
       optional: true
-  checksum: c8537e6c0cee2659494c9f7250eb0ad35fb84bcd09f9cc0ae5c0ba2d4faaa3a87c598c97f0aa065aadb540384e4d7ac0cf1107f8ca94d7bf7a2d7f393adfd011
+    moment-hijri:
+      optional: true
+    moment-jalaali:
+      optional: true
+  checksum: b19723ec6c1bc18e9e099904a0054c97f681104f0ca7f48d3e3a91f936c01bf5f88f70bea97ecbfd3d43eeb9b6595a0d9ac2b459d9a5bd1cd64bce73e4ea481b
   languageName: node
   linkType: hard
 
@@ -6502,7 +6483,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:*, @types/prop-types@npm:^15.7.11":
+"@types/prop-types@npm:*, @types/prop-types@npm:^15.7.11, @types/prop-types@npm:^15.7.12":
   version: 15.7.12
   resolution: "@types/prop-types@npm:15.7.12"
   checksum: ac16cc3d0a84431ffa5cfdf89579ad1e2269549f32ce0c769321fdd078f84db4fbe1b461ed5a1a496caf09e637c0e367d600c541435716a55b1d9713f5035dfe
@@ -6541,7 +6522,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-transition-group@npm:^4.4.10, @types/react-transition-group@npm:^4.4.5":
+"@types/react-transition-group@npm:^4.4.10":
   version: 4.4.10
   resolution: "@types/react-transition-group@npm:4.4.10"
   dependencies:
@@ -7429,7 +7410,7 @@ __metadata:
     "@commitlint/config-nx-scopes": ^17.6.4
     "@jscutlery/semver": ^2.29.3
     "@mui/lab": ^5.0.0-alpha.147
-    "@mui/x-data-grid": ^6.10.1
+    "@mui/x-data-grid": ^7.2.0
     "@nx/devkit": 18.2.4
     "@nx/eslint": 18.2.4
     "@nx/eslint-plugin": 18.2.4
@@ -8256,14 +8237,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "clsx@npm:1.2.1"
-  checksum: 30befca8019b2eb7dbad38cff6266cf543091dae2825c856a62a8ccf2c3ab9c2907c4d12b288b73101196767f66812365400a227581484a05f968b0307cfaf12
-  languageName: node
-  linkType: hard
-
-"clsx@npm:^2.0.0, clsx@npm:^2.1.0":
+"clsx@npm:^2.1.0":
   version: 2.1.0
   resolution: "clsx@npm:2.1.0"
   checksum: 43fefc29b6b49c9476fbce4f8b1cc75c27b67747738e598e6651dd40d63692135dc60b18fa1c5b78a2a9ba8ae6fd2055a068924b94e20b42039bd53b78b98e1d
@@ -9011,7 +8985,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.11.9":
+"dayjs@npm:^1.11.10":
   version: 1.11.10
   resolution: "dayjs@npm:1.11.10"
   checksum: a6b5a3813b8884f5cd557e2e6b7fa569f4c5d0c97aca9558e38534af4f2d60daafd3ff8c2000fed3435cfcec9e805bcebd99f90130c6d1c5ef524084ced588c4
@@ -15841,15 +15815,6 @@ __metadata:
   version: 1.3.1
   resolution: "rfdc@npm:1.3.1"
   checksum: d5d1e930aeac7e0e0a485f97db1356e388bdbeff34906d206fe524dd5ada76e95f186944d2e68307183fdc39a54928d4426bbb6734851692cfe9195efba58b79
-  languageName: node
-  linkType: hard
-
-"rifm@npm:^0.12.1":
-  version: 0.12.1
-  resolution: "rifm@npm:0.12.1"
-  peerDependencies:
-    react: ">=16.8"
-  checksum: 7f11621b6a14885bdee0b49c21174627272a5f683f74aaf8444570dae319f86de38d2af55c17e08af1ebb837bf956894971cceadeaca890e4c9cd1d46f02a385
   languageName: node
   linkType: hard
 

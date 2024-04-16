@@ -1,8 +1,8 @@
 // Each exported component in the package should have its own stories file
 import type { Meta, StoryObj } from '@storybook/react';
-import { CalendarPicker } from '@mui/x-date-pickers/CalendarPicker';
-import { MonthPicker } from '@mui/x-date-pickers/MonthPicker';
-import { YearPicker } from '@mui/x-date-pickers/YearPicker';
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+import { MonthCalendar } from '@mui/x-date-pickers/MonthCalendar';
+import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
 import { useState } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 import { Datepicker, DatepickerProps } from './Datepicker';
@@ -55,7 +55,7 @@ export const _PickerViews: StoryObj<typeof Datepicker> = {
             Day View
           </Typography>
           <Paper sx={{ width: 'min-content' }}>
-            <CalendarPicker date={date} onChange={(newDate) => setDate(newDate)} />
+            <DateCalendar value={date} onChange={(newDate) => setDate(newDate)} />
           </Paper>
         </Grid>
         <Grid xs="auto">
@@ -63,7 +63,7 @@ export const _PickerViews: StoryObj<typeof Datepicker> = {
             Month View
           </Typography>
           <Paper sx={{ width: 'min-content' }}>
-            <MonthPicker date={date} minDate={minDate} maxDate={maxDate} onChange={(newDate) => setDate(newDate)} />
+            <MonthCalendar value={date} minDate={minDate} maxDate={maxDate} onChange={(newDate) => setDate(newDate)} />
           </Paper>
         </Grid>
         <Grid xs="auto">
@@ -71,7 +71,7 @@ export const _PickerViews: StoryObj<typeof Datepicker> = {
             Year View
           </Typography>
           <Paper sx={{ width: '320px' }}>
-            <YearPicker date={date} minDate={minDate} maxDate={maxDate} onChange={(newDate) => setDate(newDate)} />
+            <YearCalendar value={date} minDate={minDate} maxDate={maxDate} onChange={(newDate) => setDate(newDate)} />
           </Paper>
         </Grid>
       </Grid>

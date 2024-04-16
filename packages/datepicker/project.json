@@ -5,6 +5,11 @@
   "projectType": "library",
   "trackDeps": true,
   "tags": [],
+  "build": {
+    "options": {
+      "cache": false
+    }
+  },
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint",

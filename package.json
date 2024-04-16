@@ -41,7 +41,7 @@
     "@commitlint/config-nx-scopes": "^17.6.4",
     "@jscutlery/semver": "^2.29.3",
     "@mui/lab": "^5.0.0-alpha.147",
-    "@mui/x-data-grid": "^6.10.1",
+    "@mui/x-data-grid": "^7.2.0",
     "@nx/devkit": "18.2.4",
     "@nx/eslint": "18.2.4",
     "@nx/eslint-plugin": "18.2.4",
