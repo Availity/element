@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.9](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.8...@availity/mui-block-ui@0.1.9) (2024-04-16)
+
+
+### Bug Fixes
+
+* **mui-block-ui:** update color ([fdf5197](https://github.com/Availity/element/commit/fdf51971de9e1858cd306b0970fac129bcf13db4))
+
 ## [0.1.8](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.7...@availity/mui-block-ui@0.1.8) (2024-04-15)
 
 ### Dependency Updates
