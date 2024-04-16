@@ -29,7 +29,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/api-axios@npm:^8.0.6":
+"@availity/api-axios@npm:^8.0.7":
   version: 8.0.7
   resolution: "@availity/api-axios@npm:8.0.7"
   dependencies:
@@ -106,7 +106,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/message-core@npm:^6.1.0":
+"@availity/message-core@npm:^6.1.2":
   version: 6.1.2
   resolution: "@availity/message-core@npm:6.1.2"
   checksum: 1fd135ff1dc8db99442a5b1691f017e61377b88334e62eae1f3a6509706b3285d99d20f161275b3cfe0dac0870034be3d1bf8e0d573d151ded7447056edee4b3
@@ -396,7 +396,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-feedback@workspace:packages/feedback"
   dependencies:
-    "@availity/api-axios": ^8.0.6
+    "@availity/api-axios": ^8.0.7
     "@availity/mui-button": "workspace:^"
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-icon": "workspace:^"
@@ -420,7 +420,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-form-utils@workspace:packages/form-utils"
   dependencies:
-    "@availity/message-core": ^6.1.0
+    "@availity/message-core": ^6.1.2
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.14.12
