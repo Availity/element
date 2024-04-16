@@ -46,8 +46,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/design-tokens@workspace:packages/design-tokens"
   dependencies:
-    prettier: ^3.0.3
-    style-dictionary: ^3.1.1
+    prettier: ^3.2.5
+    style-dictionary: ^3.9.2
     token-transformer: ^0.0.14
     tsup: ^5.12.7
     typescript: ~4.8.2
@@ -118,7 +118,7 @@ __metadata:
   resolution: "@availity/mock@workspace:packages/mock"
   dependencies:
     msw: ^2.0.7
-    qs: ^6.11.2
+    qs: ^6.12.1
     typescript: ^4.6.4
   languageName: unknown
   linkType: soft
@@ -407,7 +407,7 @@ __metadata:
     "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
-    react-hook-form: ^7.48.2
+    react-hook-form: ^7.51.3
     tsup: ^5.12.7
     typescript: ^4.6.4
   peerDependencies:
@@ -641,7 +641,7 @@ __metadata:
     "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
-    react-hook-form: ^7.48.2
+    react-hook-form: ^7.51.3
     tsup: ^5.12.7
     typescript: ^4.6.4
   peerDependencies:
@@ -763,8 +763,8 @@ __metadata:
   resolution: "@availity/theme-provider@workspace:packages/theme-provider"
   dependencies:
     "@availity/theme": "workspace:*"
-    "@emotion/react": ^11.10.5
-    "@emotion/styled": ^11.10.5
+    "@emotion/react": ^11.11.4
+    "@emotion/styled": ^11.11.5
     "@mui/material": ^5.15.15
     "@mui/x-date-pickers": ^7.2.0
     dayjs: ^1.11.10
@@ -815,7 +815,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.14.5, @babel/core@npm:^7.18.9, @babel/core@npm:^7.20.12, @babel/core@npm:^7.21.3, @babel/core@npm:^7.23.2, @babel/core@npm:^7.23.9":
+"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.18.9, @babel/core@npm:^7.20.12, @babel/core@npm:^7.21.3, @babel/core@npm:^7.23.2, @babel/core@npm:^7.23.9, @babel/core@npm:^7.24.4":
   version: 7.24.4
   resolution: "@babel/core@npm:7.24.4"
   dependencies:
@@ -2228,7 +2228,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-react@npm:^7.18.6":
+"@babel/preset-react@npm:^7.18.6, @babel/preset-react@npm:^7.24.1":
   version: 7.24.1
   resolution: "@babel/preset-react@npm:7.24.1"
   dependencies:
@@ -2347,16 +2347,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chromatic-com/storybook@npm:^1":
-  version: 1.3.2
-  resolution: "@chromatic-com/storybook@npm:1.3.2"
+"@chromatic-com/storybook@npm:^1.3.3":
+  version: 1.3.3
+  resolution: "@chromatic-com/storybook@npm:1.3.3"
   dependencies:
     chromatic: ^11.3.0
     filesize: ^10.0.12
     jsonfile: ^6.1.0
     react-confetti: ^6.1.0
     strip-ansi: ^7.1.0
-  checksum: 975f562f5f5ea7073601143329b42c7cf9500ffd58ec827a505abef1a55a528be4252817a3208c686f6b3ecba728dc367945e92bef771ac9260bf4050a456070
+  checksum: c61819e318642c4530b4a1edc02b428798e70b83d827ab433bff4dd62a05bc947dce4e7ba5b09213216f1f5fcd0fdb54ad306ffe885a2affb23da6648f5219ac
   languageName: node
   linkType: hard
 
@@ -2647,7 +2647,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.10.5":
+"@emotion/react@npm:^11.11.4":
   version: 11.11.4
   resolution: "@emotion/react@npm:11.11.4"
   dependencies:
@@ -2688,7 +2688,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:^11.10.5":
+"@emotion/styled@npm:^11.11.5":
   version: 11.11.5
   resolution: "@emotion/styled@npm:11.11.5"
   dependencies:
@@ -7402,9 +7402,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "availity-element-monorepo@workspace:."
   dependencies:
-    "@babel/core": ^7.14.5
-    "@babel/preset-react": ^7.18.6
-    "@chromatic-com/storybook": ^1
+    "@babel/core": ^7.24.4
+    "@babel/preset-react": ^7.24.1
+    "@chromatic-com/storybook": ^1.3.3
     "@commitlint/cli": ^17.7.1
     "@commitlint/config-conventional": ^17.7.0
     "@commitlint/config-nx-scopes": ^17.6.4
@@ -7448,15 +7448,15 @@ __metadata:
     jest-environment-jsdom: 29.4.3
     jest-environment-jsdom-global: ^4.0.0
     jsdom: 22.1.0
-    jsonc-eslint-parser: ^2.1.0
+    jsonc-eslint-parser: ^2.4.0
     lint-staged: ^13.2.2
     nx: 18.2.4
     prettier: ^2.6.2
-    react-hook-form: ^7.48.2
+    react-hook-form: ^7.51.3
     remark-gfm: ^3.0.1
     ts-jest: 29.1.2
     ts-node: 10.9.1
-    tslib: ^2.3.0
+    tslib: ^2.6.2
     typescript: 5.4.5
     vite: 5.2.8
   languageName: unknown
@@ -12789,7 +12789,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsonc-eslint-parser@npm:^2.1.0":
+"jsonc-eslint-parser@npm:^2.1.0, jsonc-eslint-parser@npm:^2.4.0":
   version: 2.4.0
   resolution: "jsonc-eslint-parser@npm:2.4.0"
   dependencies:
@@ -15050,7 +15050,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.0.3":
+"prettier@npm:^3.2.5":
   version: 3.2.5
   resolution: "prettier@npm:3.2.5"
   bin:
@@ -15194,7 +15194,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.10.0, qs@npm:^6.11.2, qs@npm:^6.4.0":
+"qs@npm:^6.10.0, qs@npm:^6.11.2, qs@npm:^6.12.1, qs@npm:^6.4.0":
   version: 6.12.1
   resolution: "qs@npm:6.12.1"
   dependencies:
@@ -15324,7 +15324,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.48.2":
+"react-hook-form@npm:^7.51.3":
   version: 7.51.3
   resolution: "react-hook-form@npm:7.51.3"
   peerDependencies:
@@ -16637,7 +16637,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"style-dictionary@npm:^3.1.1":
+"style-dictionary@npm:^3.9.2":
   version: 3.9.2
   resolution: "style-dictionary@npm:3.9.2"
   dependencies:
@@ -17158,7 +17158,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.4.0":
+"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.4.0, tslib@npm:^2.6.2":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
