@@ -1,4 +1,3 @@
-export const tokenSetOrder0: string;
 export const shadows0: string;
 export const shadows1: string;
 export const shadows2: string;
@@ -382,3 +381,4 @@ export const borderInputHover: string;
 export const borderInputFocus: string;
 export const borderInverse: string;
 export const borderInverseSecondary: string;
+export const tokenSetOrder0: string;

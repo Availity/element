@@ -22,7 +22,7 @@
     "prettier": "^3.2.5",
     "style-dictionary": "^3.9.2",
     "token-transformer": "^0.0.33",
-    "tsup": "^5.12.7",
+    "tsup": "^8.0.2",
     "typescript": "~5.4.5"
   }
 }
