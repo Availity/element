@@ -752,9 +752,9 @@ export const legacyTheme = {
               color: tokens.colorGrey900,
             },
             '&.Mui-checked': {
-              color: tokens.colorPrimaryMain,
+              color: '#0075ff',
               '&:hover': {
-                color: tokens.colorPrimaryDark,
+                color: tokens.colorPrimaryMain,
               },
             },
             '&.Mui-disabled': {
@@ -777,6 +777,7 @@ export const legacyTheme = {
             },
           },
           '.MuiSvgIcon-root': {
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1em 1em' overflow='visible'%3E%3Crect x='16%' y='16%' rx='1' ry='1' width='68%' height='68%' stroke='transparent' fill='white' stroke-width='1' %3E%3C/rect%3E%3C/svg%3E")`,
             fontSize: '1rem',
           },
         },
@@ -1380,11 +1381,27 @@ export const legacyTheme = {
         root: {
           padding: '4px',
           '.MuiSvgIcon-root': {
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1em 1em' overflow='visible'%3E%3Ccircle cx='50%' cy='50%' r='34%' stroke='transparent' fill='white' stroke-width='1' %3E%3C/circle%3E%3C/svg%3E")`,
             fontSize: '1rem',
           },
           '&.Mui-focusVisible .MuiSvgIcon-root:first-of-type': {
             boxShadow: `0 0 0px 2px ${tokens.colorPrimaryMain}`,
             borderRadius: '50%',
+          },
+          '&.MuiRadio-colorPrimary': {
+            color: tokens.colorGrey500,
+            '&:hover': {
+              color: tokens.colorGrey900,
+            },
+            '&.Mui-checked': {
+              color: '#0075ff',
+              '&:hover': {
+                color: tokens.colorPrimaryMain,
+              },
+            },
+            '&.Mui-disabled': {
+              color: tokens.colorGrey300,
+            },
           },
         },
       },
