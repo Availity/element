@@ -48,7 +48,7 @@ __metadata:
   dependencies:
     prettier: ^3.2.5
     style-dictionary: ^3.9.2
-    token-transformer: ^0.0.14
+    token-transformer: ^0.0.33
     tsup: ^5.12.7
     typescript: ~5.4.5
   languageName: unknown
@@ -117,7 +117,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mock@workspace:packages/mock"
   dependencies:
-    msw: ^2.2.13
+    msw: ^2.2.14
     qs: ^6.12.1
     typescript: ^5.4.5
   languageName: unknown
@@ -14355,9 +14355,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"msw@npm:^2.2.13":
-  version: 2.2.13
-  resolution: "msw@npm:2.2.13"
+"msw@npm:^2.2.14":
+  version: 2.2.14
+  resolution: "msw@npm:2.2.14"
   dependencies:
     "@bundled-es-modules/cookie": ^2.0.0
     "@bundled-es-modules/statuses": ^1.0.1
@@ -14383,7 +14383,7 @@ __metadata:
       optional: true
   bin:
     msw: cli/index.js
-  checksum: d8ffe4d08c7d5014f41d8d2d07da00fe075a89104b8080fd535bf712733f25f62e259ef5c4ca0d9d44bcc30cd935a8d3768a80f62e7267b765fcdb5e36373329
+  checksum: a958b38314f42b733f67ac176e753680f28da862212ab671aa40607b017a577797dcc323e997a3d6c0b2d3f13cc2a3458d4941574e08c916a6b8beeb91d8501a
   languageName: node
   linkType: hard
 
@@ -17144,12 +17144,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"token-transformer@npm:^0.0.14":
-  version: 0.0.14
-  resolution: "token-transformer@npm:0.0.14"
+"token-transformer@npm:^0.0.33":
+  version: 0.0.33
+  resolution: "token-transformer@npm:0.0.33"
+  dependencies:
+    yargs: ^17.6.2
   bin:
-    token-transformer: index.js
-  checksum: 88801b43f2daa11d4a0445936d9ac4c9e03c0b651b8ee83037abf655e658fd467a62f64ddce7716b7ca15847f56502d0e7a56a8c9e1f42f3721681ac3490100c
+    token-transformer: cli.js
+  checksum: f91c2b45163ff13cc6ebf14150182186be3ca0515dc3c69af8b50500e171aee6f92076c81efa27129440bccf5821c171c4aa3614d9780c918b0a0ba5eb932f3b
   languageName: node
   linkType: hard
 
