@@ -9,7 +9,10 @@ export interface AsyncAutocompleteProps<
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']
-> extends Omit<AutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'options'> {
+> extends Omit<
+    AutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>,
+    'options' | 'disableListWrap'
+  > {
   /** Function that returns a promise with options and hasMore */
   loadOptions: (page: number, limit: number) => Promise<{ options: Option[]; hasMore: boolean }>;
   /** The number of options to request from the api
@@ -26,6 +29,7 @@ export const AsyncAutocomplete = <
 >({
   loadOptions,
   limit = 50,
+  ListboxProps,
   ...rest
 }: AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
   const [page, setPage] = useState(0);
@@ -54,6 +58,7 @@ export const AsyncAutocomplete = <
       loading={loading}
       options={options}
       ListboxProps={{
+        ...ListboxProps,
         onScroll: async (event: React.SyntheticEvent) => {
           const listboxNode = event.currentTarget;
           const difference = listboxNode.scrollHeight - (listboxNode.scrollTop + listboxNode.clientHeight);
