@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.46.2](https://github.com/Availity/element/compare/@availity/theme@0.46.1...@availity/theme@0.46.2) (2024-04-17)
+
+
+### Bug Fixes
+
+* **theme:** legacy checkbox and radio colors ([4c26159](https://github.com/Availity/element/commit/4c2615916fd3d715b65d27dacbe6d21cd3534eb2))
+
 ## [0.46.1](https://github.com/Availity/element/compare/@availity/theme@0.46.0...@availity/theme@0.46.1) (2024-03-27)
 
 ## [0.46.0](https://github.com/Availity/element/compare/@availity/theme@0.45.0...@availity/theme@0.46.0) (2024-03-22)
