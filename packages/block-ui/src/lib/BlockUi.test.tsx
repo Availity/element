@@ -43,24 +43,24 @@ describe('BlockUi', () => {
     const after = getAllByRole('button')[2];
 
     before.focus();
-    userEvent.tab();
+    await userEvent.tab();
 
     expect(child).toBeDefined();
     expect(child).not.toHaveFocus();
     expect(document.activeElement?.innerHTML).toContain('loading');
 
-    userEvent.tab();
+    await userEvent.tab();
 
     expect(after).toHaveFocus();
 
     // shift tab to traverse backwards
-    userEvent.tab({ shift: true });
+    await userEvent.tab({ shift: true });
 
     expect(child).toBeDefined();
     expect(child).not.toHaveFocus();
     expect(document.activeElement?.innerHTML).toContain('loading');
 
-    userEvent.tab({ shift: true });
+    await userEvent.tab({ shift: true });
 
     expect(before).toHaveFocus();
   });

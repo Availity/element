@@ -3,7 +3,7 @@ const { pathsToModuleNameMapper } = require('ts-jest');
 const { compilerOptions } = require('./tsconfig.base.json');
 
 module.exports = {
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom'],
   globalSetup: '../../jest.setup.global.js',
   transform: {
     '^.+\\.(ts|tsx|js|html)$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],

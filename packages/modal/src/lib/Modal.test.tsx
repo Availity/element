@@ -32,10 +32,10 @@ const TestModal = () => {
 };
 
 describe('Modal', () => {
-  test('should render successfully', () => {
+  test('should render successfully', async () => {
     render(<TestModal />);
 
-    userEvent.click(screen.getByTestId('modal-button'));
+    await userEvent.click(screen.getByTestId('modal-button'));
 
     expect(screen.getByText('Text in a modal')).toBeTruthy();
   });
