@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.4.0...@availity/mui-autocomplete@0.4.1) (2024-04-17)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** remove disableListWrap and spread ListboxProps ([e782424](https://github.com/Availity/element/commit/e782424d738018c8ba2e8397d534f537d1962435))
+
 ## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.3.2...@availity/mui-autocomplete@0.4.0) (2024-04-11)
 
 
