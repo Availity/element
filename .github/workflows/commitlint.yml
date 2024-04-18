@@ -19,4 +19,3 @@ jobs:
       - uses: wagoid/commitlint-github-action@v5
         env:
           NODE_PATH: ${{ github.workspace }}/node_modules
-          NX_NON_NATIVE_HASHER: true
