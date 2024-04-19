@@ -9,6 +9,7 @@ const meta: Meta<typeof Autocomplete> = {
   tags: ['autodocs'],
   args: {
     options: ['1', '2', '3', '4', '5'],
+    id: 'example',
   },
   argTypes: {
     multiple: {
