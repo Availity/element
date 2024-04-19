@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.3](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.2...@availity/mui-datepicker@0.4.3) (2024-04-19)
+
+### Dependency Updates
+
+* `mui-textfield` updated to version `0.4.2`
+* `theme-provider` updated to version `0.4.2`
+
+### Bug Fixes
+
+* **mui-datepicker:** render textField correctly ([7f9c894](https://github.com/Availity/element/commit/7f9c89475fc76294de0edfaf7d954674335f7091))
+
 ## [0.4.2](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.1...@availity/mui-datepicker@0.4.2) (2024-04-04)
 
 
