@@ -18,10 +18,11 @@
     window.LOGLEVEL = 'info';
     window.FRAMEWORK_OPTIONS = {"builder":{"viteConfigPath":""}};
     window.CHANNEL_OPTIONS = {};
-    window.FEATURES = {"warnOnLegacyHierarchySeparator":true,"buildStoriesJson":false,"storyStoreV7":false,"argTypeTargetsV7":true,"legacyDecoratorFileOrder":false,"legacyMdx1":true};
-    window.STORIES = [{"titlePrefix":"","directory":"./apps/element-storybook/src","files":"*.mdx","importPathMatcher":"^\\.[\\\\/](?:apps\\/element-storybook\\/src\\/(?!\\.)(?=.)[^/]*?\\.mdx)$"},{"titlePrefix":"","directory":"./apps/element-storybook/src","files":"**/*.stories.@(js|jsx|ts|tsx|mdx)","importPathMatcher":"^\\.[\\\\/](?:apps\\/element-storybook\\/src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx|mdx))$"},{"titlePrefix":"","directory":"./packages","files":"*/*.mdx","importPathMatcher":"^\\.[\\\\/](?:packages\\/(?!\\.)(?=.)[^/]*?\\/(?!\\.)(?=.)[^/]*?\\.mdx)$"},{"titlePrefix":"","directory":"./packages","files":"*/src/lib/*.stories.@(js|jsx|ts|tsx|mdx)","importPathMatcher":"^\\.[\\\\/](?:packages\\/(?!\\.)(?=.)[^/]*?\\/src\\/lib\\/(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx|mdx))$"}];
+    window.FEATURES = {"warnOnLegacyHierarchySeparator":true,"buildStoriesJson":false,"storyStoreV7":false,"argTypeTargetsV7":true,"legacyDecoratorFileOrder":false,"disallowImplicitActionsInRenderV8":false,"legacyMdx1":true};
+    window.STORIES = [{"titlePrefix":"","directory":"./apps/element-storybook/src","files":"*.mdx","importPathMatcher":"^\\.[\\\\/](?:apps\\/element-storybook\\/src\\/(?!\\.)(?=.)[^/]*?\\.mdx)$"},{"titlePrefix":"","directory":"./apps/element-storybook/src","files":"**/*.@(stories.@(js|jsx|ts|tsx|mdx))","importPathMatcher":"^\\.[\\\\/](?:apps\\/element-storybook\\/src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.(stories\\.(js|jsx|ts|tsx|mdx)))$"},{"titlePrefix":"","directory":"./packages","files":"*/*.mdx","importPathMatcher":"^\\.[\\\\/](?:packages\\/(?!\\.)(?=.)[^/]*?\\/(?!\\.)(?=.)[^/]*?\\.mdx)$"},{"titlePrefix":"","directory":"./packages","files":"*/src/lib/*.@(stories.@(js|jsx|ts|tsx|mdx))","importPathMatcher":"^\\.[\\\\/](?:packages\\/(?!\\.)(?=.)[^/]*?\\/src\\/lib\\/(?!\\.)(?=.)[^/]*?\\.(stories\\.(js|jsx|ts|tsx|mdx)))$"}];
     window.DOCS_OPTIONS = {"defaultName":"Docs","autodocs":"tag"};
-    window.SERVER_CHANNEL_URL = undefined;
+
+    
 
     // We do this so that "module && module.hot" etc. in Storybook source code
     // doesn't fail (it will simply be disabled)
@@ -358,7 +359,7 @@
   }
 </script>
 
-  <script type="module" crossorigin src="./assets/iframe-83910a01.js"></script>
+  <script type="module" crossorigin src="./assets/iframe-DnSUtXRK.js"></script>
 </head>
 
 <body>
@@ -452,8 +453,6 @@
 
   <div id="storybook-root"></div>
   <div id="storybook-docs"></div>
-  
-  
 </body>
 
 </html>
