@@ -2,6 +2,47 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.37.15](https://github.com/Availity/element/compare/@availity/element@0.37.14...@availity/element@0.37.15) (2024-04-19)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `0.37.14`
+* `mui-alert` updated to version `0.37.14`
+* `mui-autocomplete` updated to version `0.37.14`
+* `mui-avatar` updated to version `0.37.14`
+* `mui-backdrop` updated to version `0.37.14`
+* `mui-badge` updated to version `0.37.14`
+* `mui-block-ui` updated to version `0.37.14`
+* `mui-breadcrumbs` updated to version `0.37.14`
+* `mui-button` updated to version `0.37.14`
+* `mui-card` updated to version `0.37.14`
+* `mui-checkbox` updated to version `0.37.14`
+* `mui-chip` updated to version `0.37.14`
+* `mui-datepicker` updated to version `0.37.14`
+* `mui-dialog` updated to version `0.37.14`
+* `mui-divider` updated to version `0.37.14`
+* `mui-empty-state` updated to version `0.37.14`
+* `mui-feedback` updated to version `0.37.14`
+* `mui-form-utils` updated to version `0.37.14`
+* `mui-icon` updated to version `0.37.14`
+* `mui-layout` updated to version `0.37.14`
+* `mui-link` updated to version `0.37.14`
+* `mui-menu` updated to version `0.37.14`
+* `mui-modal` updated to version `0.37.14`
+* `mui-page-header` updated to version `0.37.14`
+* `mui-pagination` updated to version `0.37.14`
+* `mui-paper` updated to version `0.37.14`
+* `mui-popover` updated to version `0.37.14`
+* `mui-popper` updated to version `0.37.14`
+* `mui-progress` updated to version `0.37.14`
+* `mui-table` updated to version `0.37.14`
+* `mui-tabs` updated to version `0.37.14`
+* `mui-textfield` updated to version `0.37.14`
+* `mui-toggle-button` updated to version `0.37.14`
+* `mui-tooltip` updated to version `0.37.14`
+* `mui-transitions` updated to version `0.37.14`
+* `mui-typography` updated to version `0.37.14`
+* `theme-provider` updated to version `0.37.14`
 ## [0.37.14](https://github.com/Availity/element/compare/@availity/element@0.37.13...@availity/element@0.37.14) (2024-04-17)
 
 ### Dependency Updates
