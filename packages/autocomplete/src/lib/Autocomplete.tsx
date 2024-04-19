@@ -17,7 +17,7 @@ export interface AutocompleteProps<
   Multiple extends boolean | undefined,
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
-  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
 > extends Omit<
     MuiAutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>,
     | 'clearIcon'
@@ -60,7 +60,7 @@ export const Autocomplete = <
   Multiple extends boolean | undefined = false,
   DisableClearable extends boolean | undefined = false,
   FreeSolo extends boolean | undefined = false,
-  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
 >({
   FieldProps,
   ...props
