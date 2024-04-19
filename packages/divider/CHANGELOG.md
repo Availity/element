@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.7](https://github.com/Availity/element/compare/@availity/mui-divider@0.3.6...@availity/mui-divider@0.3.7) (2024-04-19)
+
 ## [0.3.6](https://github.com/Availity/element/compare/@availity/mui-divider@0.3.5...@availity/mui-divider@0.3.6) (2024-04-04)
 
 
