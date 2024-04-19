@@ -25,13 +25,13 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "devDependencies": {
-    "typescript": "^4.6.4"
+    "typescript": "^5.4.5"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "msw": "^2.0.7",
-    "qs": "^6.11.2"
+    "msw": "^2.2.14",
+    "qs": "^6.12.1"
   }
 }

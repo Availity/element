@@ -1,4 +1,3 @@
-export const tokenSetOrder0 = 'core';
 export const shadows0 = '0px 0px 0px 0px #00000000';
 export const shadows1 = '0px 2px 1px -1px #00000033,0px 1px 1px 0px #00000024,0px 1px 3px 0px #0000001f';
 export const shadows2 = '0px 3px 1px -2px #00000033,0px 2px 2px 0px #00000024,0px 1px 5px 0px #0000001f';
@@ -382,3 +381,4 @@ export const borderInputHover = '#292B32';
 export const borderInputFocus = '#2261b4';
 export const borderInverse = '#ffffff';
 export const borderInverseSecondary = '#ffffff16';
+export const tokenSetOrder0 = 'core';

@@ -3,13 +3,18 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/datepicker/src",
   "projectType": "library",
+  "trackDeps": true,
   "tags": [],
+  "build": {
+    "options": {
+      "cache": false
+    }
+  },
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/datepicker/**/*.{js,ts}"],
         "silent": false,
         "fix": false,
         "cache": true,
@@ -22,21 +27,21 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/datepicker"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/datepicker"],
       "options": {
-        "jestConfig": "packages/datepicker/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "packages/datepicker/jest.config.js"
       }
     },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
-        "tagPrefix": "@availity/${projectName}@"
+        "commitMessageFormat": "chore({projectName}): release version ${version} [skip ci]",
+        "tagPrefix": "@availity/{projectName}@",
+        "trackDeps": true,
+        "skipCommitTypes": ["docs"]
       }
     }
-  },
-  "trackDeps": true
+  }
 }

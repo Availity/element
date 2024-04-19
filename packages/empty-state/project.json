@@ -6,10 +6,9 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/empty-state/**/*.{js,ts}"],
         "silent": false,
         "fix": false,
         "cache": true,
@@ -22,20 +21,20 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/empty-state"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/empty-state"],
       "options": {
-        "jestConfig": "packages/empty-state/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "packages/empty-state/jest.config.js"
       }
     },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
-        "tagPrefix": "@availity/${projectName}@",
-        "trackDeps": true
+        "commitMessageFormat": "chore({projectName}): release version ${version} [skip ci]",
+        "tagPrefix": "@availity/{projectName}@",
+        "trackDeps": true,
+        "skipCommitTypes": ["docs"]
       }
     }
   }

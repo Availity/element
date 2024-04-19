@@ -16,17 +16,17 @@
   },
   "dependencies": {
     "@availity/theme": "workspace:*",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.14.12",
-    "@mui/x-date-pickers": "^5.0.15",
-    "dayjs": "^1.11.9"
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.15",
+    "@mui/x-date-pickers": "^7.2.0",
+    "dayjs": "^1.11.10"
   },
   "devDependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsup": "^5.12.7",
-    "typescript": "~4.8.2"
+    "tsup": "^8.0.2",
+    "typescript": "~5.4.5"
   },
   "peerDependencies": {
     "react": ">=16.8.0"

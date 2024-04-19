@@ -1,9 +1,10 @@
 import { TextField, TextFieldProps } from '@availity/mui-textfield';
 import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } from '@mui/x-date-pickers/DatePicker';
 import type { Dayjs } from 'dayjs';
+import type {} from '@mui/x-date-pickers/AdapterDayjs';
 
 export type DatepickerProps = {
-  value: Dayjs | string | null;
+  value: Dayjs | null | undefined;
   /** Props applied to the `TextField` component */
   FieldProps?: TextFieldProps;
   /** Determines where the Calendar will be placed when opened.
@@ -11,7 +12,7 @@ export type DatepickerProps = {
    */
   placement?: 'bottom-start' | 'bottom' | 'bottom-end';
 } & Omit<
-  MuiDatePickerProps<Dayjs, Dayjs>,
+  MuiDatePickerProps<Dayjs, false>,
   | 'components'
   | 'componentsProps'
   | 'desktopModeMediaQuery'
@@ -39,14 +40,21 @@ export const Datepicker = ({ FieldProps, placement = 'bottom-start', ...props }:
   return (
     <MuiDatePicker
       {...props}
-      PaperProps={paperProps}
-      PopperProps={{ placement }}
-      renderInput={(params) => {
-        if (params.inputProps) {
-          params.inputProps.placeholder = 'MM/DD/YYYY';
-        }
+      slotProps={{
+        desktopPaper: paperProps,
+        mobilePaper: paperProps,
+        popper: {
+          placement,
+        },
+      }}
+      slots={{
+        textField: (params) => {
+          if (params.inputProps) {
+            params.inputProps.placeholder = 'MM/DD/YYYY';
+          }
 
-        return <TextField {...params} {...FieldProps} />;
+          return <TextField {...params} {...FieldProps} />;
+        },
       }}
     />
   );

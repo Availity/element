@@ -9,7 +9,7 @@ import {
   offsetFromRoot,
   Tree,
   updateJson,
-} from '@nrwl/devkit';
+} from '@nx/devkit';
 import { join } from 'path';
 import { NxGeneratorGeneratorSchema } from './schema';
 

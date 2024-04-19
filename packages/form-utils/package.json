@@ -32,16 +32,16 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/message-core": "^6.1.0"
+    "@availity/message-core": "^6.1.2"
   },
   "devDependencies": {
     "@availity/mui-button": "workspace:*",
     "@availity/mui-icon": "workspace:*",
-    "@mui/material": "^5.14.12",
+    "@mui/material": "^5.15.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsup": "^5.12.7",
-    "typescript": "^4.6.4"
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "@availity/mui-button": "workspace:*",
