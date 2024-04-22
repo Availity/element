@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.3](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.4.2...@availity/mui-autocomplete@0.4.3) (2024-04-22)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** remove loading prop for AsyncAutocomplete ([6ec7994](https://github.com/Availity/element/commit/6ec799406089c894f4ac2d0d31df6e8638c17509))
+
 ## [0.4.2](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.4.1...@availity/mui-autocomplete@0.4.2) (2024-04-19)
 
 ### Dependency Updates
