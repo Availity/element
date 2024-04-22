@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.4](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.3...@availity/mui-datepicker@0.4.4) (2024-04-22)
+
+
+### Bug Fixes
+
+* **mui-datepicker:** pass FieldProps to TextField correctly ([aba22ea](https://github.com/Availity/element/commit/aba22eae0e4d94a563cf42b9a233631ca8954905))
+
 ## [0.4.3](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.2...@availity/mui-datepicker@0.4.3) (2024-04-19)
 
 ### Dependency Updates
