@@ -144,6 +144,11 @@ export const _Async: StoryObj<typeof AsyncAutocomplete> = {
   render: (args) => {
     return <AsyncAutocomplete {...args} />;
   },
+  parameters: {
+    controls: {
+      exclude: /loading(?!Text)/,
+    },
+  },
   args: {
     FieldProps: { label: 'Async Select', helperText: 'Helper Text', fullWidth: false },
     getOptionLabel: (val: Org) => val.name,

@@ -8,10 +8,10 @@ export interface AsyncAutocompleteProps<
   Multiple extends boolean | undefined,
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
-  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
 > extends Omit<
     AutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>,
-    'options' | 'disableListWrap'
+    'options' | 'disableListWrap' | 'loading'
   > {
   /** Function that returns a promise with options and hasMore */
   loadOptions: (page: number, limit: number) => Promise<{ options: Option[]; hasMore: boolean }>;
@@ -25,7 +25,7 @@ export const AsyncAutocomplete = <
   Multiple extends boolean | undefined = false,
   DisableClearable extends boolean | undefined = false,
   FreeSolo extends boolean | undefined = false,
-  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
 >({
   loadOptions,
   limit = 50,
