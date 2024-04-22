@@ -36,6 +36,14 @@ export type DatepickerProps = {
 
 const paperProps = { elevation: 8, variant: 'elevation', sx: { marginTop: '4px' } } as const;
 
+const PickerTextField = (params: TextFieldProps) => {
+  if (params.inputProps) {
+    params.inputProps.placeholder = 'MM/DD/YYYY';
+  }
+
+  return <TextField {...params} />;
+};
+
 export const Datepicker = ({ FieldProps, placement = 'bottom-start', ...props }: DatepickerProps): JSX.Element => {
   return (
     <MuiDatePicker
@@ -43,18 +51,13 @@ export const Datepicker = ({ FieldProps, placement = 'bottom-start', ...props }:
       slotProps={{
         desktopPaper: paperProps,
         mobilePaper: paperProps,
+        textField: FieldProps,
         popper: {
           placement,
         },
       }}
       slots={{
-        textField: (params) => {
-          if (params.inputProps) {
-            params.inputProps.placeholder = 'MM/DD/YYYY';
-          }
-
-          return <TextField {...params} {...FieldProps} />;
-        },
+        textField: PickerTextField,
       }}
     />
   );
