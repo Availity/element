@@ -146,7 +146,7 @@ export const _Async: StoryObj<typeof AsyncAutocomplete> = {
   },
   parameters: {
     controls: {
-      exclude: /loading(?!Text)/,
+      exclude: /loading(?!Text)|options/,
     },
   },
   args: {
