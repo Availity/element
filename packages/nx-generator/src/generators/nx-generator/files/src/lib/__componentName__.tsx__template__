@@ -1,4 +1,5 @@
-import { Card as MuiCard, CardProps as MuiCardProps } from '@mui/material';
+// For bundling purposes, always use the direct import for an mui component, i.e. '@mui/material/xxx'
+import MuiCard, { CardProps as MuiCardProps } from '@mui/material/Card';
 
 export interface <%= componentName %>Props extends MuiCardProps {
   children?: React.ReactNode;

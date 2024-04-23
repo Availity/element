@@ -748,6 +748,9 @@ __metadata:
 "@availity/nx-generator@workspace:packages/nx-generator":
   version: 0.0.0-use.local
   resolution: "@availity/nx-generator@workspace:packages/nx-generator"
+  dependencies:
+    "@nx/devkit": 18.2.4
+    tslib: ^2.3.0
   languageName: unknown
   linkType: soft
 
