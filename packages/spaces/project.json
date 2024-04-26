@@ -1,0 +1,41 @@
+{
+  "name": "mui-spaces",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/spaces/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "eslintConfig": ".eslintrc.json",
+        "silent": false,
+        "fix": false,
+        "cache": true,
+        "cacheLocation": "./node_modules/.cache/spaces/.eslintcache",
+        "maxWarnings": -1,
+        "quiet": false,
+        "noEslintrc": false,
+        "hasTypeAwareRules": true,
+        "cacheStrategy": "metadata"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/spaces"],
+      "options": {
+        "jestConfig": "packages/spaces/jest.config.js"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "commitMessageFormat": "chore({projectName}): release version ${version} [skip ci]",
+        "tagPrefix": "@availity/{projectName}@",
+        "trackDeps": true,
+        "skipCommitTypes": ["docs"]
+      }
+    }
+  }
+}

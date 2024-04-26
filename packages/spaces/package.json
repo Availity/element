@@ -1,0 +1,59 @@
+{
+  "name": "@availity/mui-spaces",
+  "version": "0.0.0",
+  "description": "Availity MUI Spaces Component - part of the @availity/element design system",
+  "keywords": [
+    "react",
+    "typescript",
+    "availity",
+    "mui"
+  ],
+  "homepage": "https://availity.github.io/element/?path=/docs/components-spaces-introduction--docs",
+  "bugs": {
+    "url": "https://github.com/Availity/element/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Availity/element.git",
+    "directory": "packages/spaces"
+  },
+  "license": "MIT",
+  "author": "Availity Developers <AVOSS@availity.com>",
+  "browser": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "clean": "rm -rf dist",
+    "clean:nm": "rm -rf node_modules",
+    "publish": "yarn npm publish --tolerate-republish --access public",
+    "publish:canary": "yarn npm publish --access public --tag canary"
+  },
+  "devDependencies": {
+    "@mui/material": "^5.15.15",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@mui/material": "^5.11.9",
+    "react": ">=16.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@availity/api-axios": "^8.0.7",
+    "@availity/message-core": "^6.1.2",
+    "@availity/mui-button": "workspace:^",
+    "@availity/mui-modal": "workspace:^",
+    "@availity/mui-typography": "workspace:^",
+    "@tanstack/react-query": "^5.32.0",
+    "dayjs": "^1.11.10",
+    "qs": "^6.12.1",
+    "react-markdown": "^9.0.1"
+  }
+}
