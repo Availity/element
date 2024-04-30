@@ -2,6 +2,7 @@ import { http, HttpResponse, delay } from 'msw';
 import { parse } from 'qs';
 
 import * as routes from './routes';
+import axiUserPermissions from './data/axi-user-permissions.json';
 import region from './data/region.json';
 import regions from './data/regions.json';
 
@@ -27,5 +28,22 @@ export const handlers = [
   http.post(routes.REGIONS, async () => {
     await delay(defaultDelay);
     return HttpResponse.json(regions, { status: 200 });
+  }),
+
+  // AXI User Permissions
+  http.get(routes.AXI_USER_PERMISSIONS, async (whatup) => {
+    const { request } = whatup;
+    const params = parse(request.url.split('?')[1], { ignoreQueryPrefix: true });
+    const permissionIds = Array.isArray(params.permissionId) ? params.permissionId : [params.permissionId];
+    // Only include permissions that were requested
+    const response = {
+      axiUserPermissions:
+        !params.region || params.region === 'FL'
+          ? axiUserPermissions.axiUserPermissions.filter(({ id }) => permissionIds.includes(id))
+          : [],
+    };
+
+    // return permissions based on the request
+    return HttpResponse.json(response, { status: 200 });
   }),
 ];
