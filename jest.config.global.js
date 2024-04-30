@@ -3,6 +3,7 @@ const { pathsToModuleNameMapper } = require('ts-jest');
 const { compilerOptions } = require('./tsconfig.base.json');
 
 module.exports = {
+  setupFiles: ['../../jest.polyfills.global.js'],
   setupFilesAfterEnv: ['@testing-library/jest-dom'],
   globalSetup: '../../jest.setup.global.js',
   transform: {
@@ -19,4 +20,7 @@ module.exports = {
     ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/../../' }),
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
+  testEnvironmentOptions: {
+    customExportConditions: [''],
+  }
 };

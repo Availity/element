@@ -7760,6 +7760,7 @@ __metadata:
     ts-node: 10.9.1
     tslib: ^2.6.2
     typescript: 5.4.5
+    undici: ^6.14.1
     vite: 5.2.8
   languageName: unknown
   linkType: soft
@@ -17847,6 +17848,13 @@ __metadata:
   version: 5.26.5
   resolution: "undici-types@npm:5.26.5"
   checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
+  languageName: node
+  linkType: hard
+
+"undici@npm:^6.14.1":
+  version: 6.14.1
+  resolution: "undici@npm:6.14.1"
+  checksum: 46c49e9a274e6bf469d5185341bf658b5c5487344d71d952d2ec46656f4e721566fe48e22bc457cc9061229623aa7ee71820787c7d7ff4f7c9839aeda227fdc7
   languageName: node
   linkType: hard
 
