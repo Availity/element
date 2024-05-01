@@ -1123,14 +1123,26 @@ export const legacyTheme = {
     MuiLink: {
       defaultProps: {
         underline: 'hover',
+        variant: 'body1',
       },
       styleOverrides: {
         root: {
           color: tokens.colorTextLink,
-          fontWeight: tokens.fontWeightsBold,
-          '&:hover': {
-            color: tokens.colorCommonBlack,
+          '&:active, &:hover': {
+            color: tokens.colorTextPrimary,
           },
+          '&:not(.MuiTypography-inherit)': {
+            fontWeight: tokens.fontWeightsBold,
+          },
+          '&.MuiTypography-inherit': {
+            textDecoration: 'underline'
+          },
+          '&.MuiTypography-gutterBottom': {
+            marginBottom: '.5rem'
+          },
+          '.MuiSvgIcon-root': {
+            fontSize: 'smaller',
+          }
         },
       },
     },

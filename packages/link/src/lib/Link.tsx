@@ -53,7 +53,7 @@ export type LinkProps = {
   onClick?: (event: React.MouseEvent, url: string) => void;
   children?: ReactNode;
   rel?: string;
-} & Omit<MuiLinkProps, 'underline' | 'noWrap' | 'variantMapping' | 'variant'>;
+} & Omit<MuiLinkProps, 'underline' | 'noWrap' | 'variantMapping' >;
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
   const { href, target = '_self', children, onClick, loadApp = true, rel, ...rest } = props;
@@ -68,12 +68,11 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
       target={target}
       onClick={(event: React.MouseEvent) => onClick && onClick(event, url)}
       rel={rel || setRel(url, target, absolute)}
-      underline="hover"
       {...rest}
       ref={ref}
     >
       <span>
-        {children} {NewWindowIcon}
+        {NewWindowIcon}  {children}
       </span>
     </MuiLink>
   );
