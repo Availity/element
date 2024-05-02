@@ -1051,14 +1051,26 @@ export const lightTheme = {
     MuiLink: {
       defaultProps: {
         underline: 'hover',
+        variant: 'body1',
       },
       styleOverrides: {
         root: {
-          fontWeight: tokens.fontWeightsBold,
           color: tokens.colorTextLink,
           '&:active': {
             color: tokens.colorTextPrimary,
           },
+          '&:not(.MuiTypography-inherit)': {
+            fontWeight: tokens.fontWeightsBold,
+          },
+          '&.MuiTypography-inherit': {
+            textDecoration: 'underline'
+          },
+          '&.MuiTypography-gutterBottom': {
+            marginBottom: '.5rem'
+          },
+          '.MuiSvgIcon-root': {
+            fontSize: 'smaller',
+          }
         },
       },
     },
