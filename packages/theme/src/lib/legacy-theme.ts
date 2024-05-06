@@ -503,6 +503,7 @@ export const legacyTheme = {
           },
         },
         endAdornment: {
+          transform: 'none',
           top: 'unset',
           right: '4px',
           height: 'calc(100% - 16px)',
