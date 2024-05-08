@@ -503,6 +503,7 @@ export const legacyTheme = {
           },
         },
         endAdornment: {
+          transform: 'none',
           top: 'unset',
           right: '4px',
           height: 'calc(100% - 16px)',
@@ -520,10 +521,33 @@ export const legacyTheme = {
           },
         },
         inputRoot: {
+          paddingTop: '4px',
+          paddingBottom: '4px',
           '.MuiOutlinedInput-input.MuiAutocomplete-input': {
             minHeight: '24px',
-            padding: '0px 6px',
+            padding: '2px 6px',
           },
+          '.MuiCircularProgress-root.MuiCircularProgress-indeterminate': {
+            color: 'inherit',
+            fontSize: '.5rem',
+            marginRight: '-.5rem',
+          },
+          '.MuiChip-root.MuiChip-deletable': {
+            flexDirection: 'row',
+            backgroundColor: 'rgb(230, 230, 230)',
+            '.MuiChip-label': {
+              fontWeight: tokens.fontWeightsRegular,
+            },
+            '.MuiSvgIcon-root.MuiChip-deleteIcon': {
+              margin:'0 -1px 0 5px',
+              background: `radial-gradient(${tokens.colorTextPrimary}, ${tokens.colorTextPrimary}, rgb(230, 230, 230), rgb(230, 230, 230), rgb(230, 230, 230))`,
+              color: 'rgb(230, 230, 230)',
+              '&:hover': {
+                background: `radial-gradient(${tokens.colorTextError}, ${tokens.colorTextError}, rgb(230, 230, 230), rgb(230, 230, 230), rgb(230, 230, 230))`,
+                color: '#ffc0cb',
+              }
+            },
+          }
         },
         popupIndicator: {
           color: tokens.borderInput,
