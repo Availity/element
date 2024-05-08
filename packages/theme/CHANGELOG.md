@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.48.0](https://github.com/Availity/element/compare/@availity/theme@0.47.0...@availity/theme@0.48.0) (2024-05-08)
+
+
+### Features
+
+* **theme:** legacy autocomplete ([a2d1383](https://github.com/Availity/element/commit/a2d1383558ed7968be6d00a7e613351910d31905))
+
+
+### Bug Fixes
+
+* **theme:** autocomplete end adornment alignment ([66f0045](https://github.com/Availity/element/commit/66f0045029a05b35b5e1a927410c290cb452cc7b))
+
 ## [0.47.0](https://github.com/Availity/element/compare/@availity/theme@0.46.3...@availity/theme@0.47.0) (2024-05-02)
 
 
