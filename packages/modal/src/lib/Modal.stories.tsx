@@ -7,6 +7,7 @@ import { Card } from '@availity/mui-card';
 
 import { Modal, ModalProps } from './Modal';
 
+/** If you are creating a modal dialog, you probably want to use the `Dialog` component rather than directly using `Modal`. `Modal` is a lower-level construct that is leveraged by components like `Dialog` and `Menu`. */
 const meta: Meta<typeof Modal> = {
   title: 'Components/Modal/Modal',
   component: Modal,
