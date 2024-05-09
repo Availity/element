@@ -426,13 +426,10 @@ export const legacyTheme = {
         standardWarning: {
           backgroundColor: tokens.colorWarningMain,
           color: tokens.colorWarningContrast,
-          '.MuiAlert-icon .MuiSvgIcon-root': {
-            fill: tokens.colorWarningContrast,
-          },
         },
         standardInfo: {
-          backgroundColor: tokens.colorInfoMain,
-          color: tokens.colorInfoContrast,
+          backgroundColor: tokens.colorPrimaryMain,
+          color: tokens.colorPrimaryContrast,
         },
         action: {
           margin: '-3px -3px -3px auto',
@@ -441,12 +438,7 @@ export const legacyTheme = {
           color: 'inherit',
         },
         icon: {
-          padding: '0',
-          alignItems: 'center',
-          '.MuiSvgIcon-root': {
-            fill: tokens.colorPrimaryContrast,
-            color: tokens.colorPrimaryContrast,
-          },
+          display: 'none'
         },
         message: {
           color: 'inherit',
