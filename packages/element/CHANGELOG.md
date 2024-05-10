@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.38.0](https://github.com/Availity/element/compare/@availity/element@0.37.19...@availity/element@0.38.0) (2024-05-10)
+
+### Dependency Updates
+
+* `mui-authorize` updated to version `0.37.19`
+* `mui-datepicker` updated to version `0.37.19`
+* `theme-provider` updated to version `0.37.19`
+
+### Features
+
+* **mui-authorize:** add authorize package ([ff64501](https://github.com/Availity/element/commit/ff6450141021d74657e53e85213ce00b638a6465))
+
 ## [0.37.19](https://github.com/Availity/element/compare/@availity/element@0.37.18...@availity/element@0.37.19) (2024-05-08)
 
 ### Dependency Updates
