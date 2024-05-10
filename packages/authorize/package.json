@@ -1,21 +1,21 @@
 {
-  "name": "@availity/mui-table",
-  "version": "0.1.7",
-  "description": "Availity MUI Table Component - part of the @availity/element design system",
+  "name": "@availity/mui-authorize",
+  "version": "0.1.0",
+  "description": "Availity Authorize Component - part of the @availity/element design system",
   "keywords": [
     "react",
     "typescript",
     "availity",
     "mui"
   ],
-  "homepage": "https://availity.github.io/element/?path=/docs/components-table-introduction--docs",
+  "homepage": "https://availity.github.io/element/?path=/docs/components-authorize-introduction--docs",
   "bugs": {
     "url": "https://github.com/Availity/element/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Availity/element.git",
-    "directory": "packages/table"
+    "directory": "packages/authorize"
   },
   "license": "MIT",
   "author": "Availity Developers <AVOSS@availity.com>",
@@ -28,28 +28,18 @@
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "clean": "rm -rf dist",
     "clean:nm": "rm -rf node_modules",
-    "bundlesize": "bundlesize",
     "publish": "yarn npm publish --tolerate-republish --access public",
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/mui-icon": "workspace:*"
+    "@availity/authorize": "^4.1.0",
+    "@availity/mui-block-ui": "workspace:^",
+    "@tanstack/react-query": "^4.36.1"
   },
   "devDependencies": {
-    "@availity/mui-button": "workspace:*",
-    "@availity/mui-chip": "workspace:*",
-    "@availity/mui-form-utils": "workspace:*",
-    "@availity/mui-icon": "workspace:*",
-    "@availity/mui-layout": "workspace:*",
-    "@availity/mui-link": "workspace:*",
-    "@availity/mui-menu": "workspace:*",
-    "@availity/mui-paper": "workspace:*",
-    "@availity/mui-textfield": "workspace:*",
-    "@availity/mui-typography": "workspace:*",
     "@mui/material": "^5.15.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.51.3",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   },

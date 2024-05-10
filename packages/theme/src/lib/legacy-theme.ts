@@ -426,13 +426,10 @@ export const legacyTheme = {
         standardWarning: {
           backgroundColor: tokens.colorWarningMain,
           color: tokens.colorWarningContrast,
-          '.MuiAlert-icon .MuiSvgIcon-root': {
-            fill: tokens.colorWarningContrast,
-          },
         },
         standardInfo: {
-          backgroundColor: tokens.colorInfoMain,
-          color: tokens.colorInfoContrast,
+          backgroundColor: tokens.colorPrimaryMain,
+          color: tokens.colorPrimaryContrast,
         },
         action: {
           margin: '-3px -3px -3px auto',
@@ -441,12 +438,7 @@ export const legacyTheme = {
           color: 'inherit',
         },
         icon: {
-          padding: '0',
-          alignItems: 'center',
-          '.MuiSvgIcon-root': {
-            fill: tokens.colorPrimaryContrast,
-            color: tokens.colorPrimaryContrast,
-          },
+          display: 'none'
         },
         message: {
           color: 'inherit',
@@ -503,6 +495,7 @@ export const legacyTheme = {
           },
         },
         endAdornment: {
+          transform: 'none',
           top: 'unset',
           right: '4px',
           height: 'calc(100% - 16px)',
@@ -520,10 +513,33 @@ export const legacyTheme = {
           },
         },
         inputRoot: {
+          paddingTop: '4px',
+          paddingBottom: '4px',
           '.MuiOutlinedInput-input.MuiAutocomplete-input': {
             minHeight: '24px',
-            padding: '0px 6px',
+            padding: '2px 6px',
           },
+          '.MuiCircularProgress-root.MuiCircularProgress-indeterminate': {
+            color: 'inherit',
+            fontSize: '.5rem',
+            marginRight: '-.5rem',
+          },
+          '.MuiChip-root.MuiChip-deletable': {
+            flexDirection: 'row',
+            backgroundColor: 'rgb(230, 230, 230)',
+            '.MuiChip-label': {
+              fontWeight: tokens.fontWeightsRegular,
+            },
+            '.MuiSvgIcon-root.MuiChip-deleteIcon': {
+              margin:'0 -1px 0 5px',
+              background: `radial-gradient(${tokens.colorTextPrimary}, ${tokens.colorTextPrimary}, rgb(230, 230, 230), rgb(230, 230, 230), rgb(230, 230, 230))`,
+              color: 'rgb(230, 230, 230)',
+              '&:hover': {
+                background: `radial-gradient(${tokens.colorTextError}, ${tokens.colorTextError}, rgb(230, 230, 230), rgb(230, 230, 230), rgb(230, 230, 230))`,
+                color: '#ffc0cb',
+              }
+            },
+          }
         },
         popupIndicator: {
           color: tokens.borderInput,
@@ -1123,14 +1139,26 @@ export const legacyTheme = {
     MuiLink: {
       defaultProps: {
         underline: 'hover',
+        variant: 'body1',
       },
       styleOverrides: {
         root: {
           color: tokens.colorTextLink,
-          fontWeight: tokens.fontWeightsBold,
-          '&:hover': {
-            color: tokens.colorCommonBlack,
+          '&:active, &:hover': {
+            color: tokens.colorTextPrimary,
           },
+          '&:not(.MuiTypography-inherit)': {
+            fontWeight: tokens.fontWeightsBold,
+          },
+          '&.MuiTypography-inherit': {
+            textDecoration: 'underline'
+          },
+          '&.MuiTypography-gutterBottom': {
+            marginBottom: '.5rem'
+          },
+          '.MuiSvgIcon-root': {
+            fontSize: 'smaller',
+          }
         },
       },
     },

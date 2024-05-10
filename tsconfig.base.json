@@ -25,6 +25,7 @@
       "@availity/mock": ["packages/mock"],
       "@availity/mui-accordion": ["packages/accordion/src/index.ts"],
       "@availity/mui-alert": ["packages/alert/src/index.ts"],
+      "@availity/mui-authorize": ["packages/authorize/src/index.ts"],
       "@availity/mui-autocomplete": ["packages/autocomplete/src/index.ts"],
       "@availity/mui-avatar": ["packages/avatar/src/index.ts"],
       "@availity/mui-backdrop": ["packages/backdrop/src/index.ts"],

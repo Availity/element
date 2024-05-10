@@ -2,6 +2,32 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.48.1](https://github.com/Availity/element/compare/@availity/theme@0.48.0...@availity/theme@0.48.1) (2024-05-10)
+
+
+### Bug Fixes
+
+* **theme:** legacy alert ([7cc743a](https://github.com/Availity/element/commit/7cc743a65592d2b6076f7a71eb62d8eaffab9eb1))
+
+## [0.48.0](https://github.com/Availity/element/compare/@availity/theme@0.47.0...@availity/theme@0.48.0) (2024-05-08)
+
+
+### Features
+
+* **theme:** legacy autocomplete ([a2d1383](https://github.com/Availity/element/commit/a2d1383558ed7968be6d00a7e613351910d31905))
+
+
+### Bug Fixes
+
+* **theme:** autocomplete end adornment alignment ([66f0045](https://github.com/Availity/element/commit/66f0045029a05b35b5e1a927410c290cb452cc7b))
+
+## [0.47.0](https://github.com/Availity/element/compare/@availity/theme@0.46.3...@availity/theme@0.47.0) (2024-05-02)
+
+
+### Features
+
+* **mui-link:** inline link styles ([7ee4587](https://github.com/Availity/element/commit/7ee458780be5cbb5ca97595aa7bf8bb7e3c36423))
+
 ## [0.46.3](https://github.com/Availity/element/compare/@availity/theme@0.46.2...@availity/theme@0.46.3) (2024-04-19)
 
 ### Dependency Updates
