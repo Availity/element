@@ -1,7 +1,5 @@
 import qs from 'qs';
 
-export const isFunction = (obj: unknown) => typeof obj === 'function';
-
 export const updateUrl = (url: string, key: string, value: string) => {
   const [uri, queryString] = url.split('?');
   const currentParams = qs.parse(queryString);

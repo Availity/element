@@ -1,0 +1,11 @@
+{
+  "data": {
+    "configurationPagination": {
+      "pageInfo": {
+        "currentPage": 1,
+        "hasNextPage": false
+      },
+      "items": [{"id": "2", "configurationId": "2", "type": "space", "name": "Space 2"}]
+    }
+  }
+}

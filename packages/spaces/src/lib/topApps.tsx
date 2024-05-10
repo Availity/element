@@ -1,5 +1,6 @@
 import avMessage from '@availity/message-core';
 import dayjs from 'dayjs';
+import { Space } from './spaces-types';
 
 const TOP_APPS = {
   ALLOWED_TYPES: ['APPLICATION', 'RESOURCE', 'NAVIGATION'],
@@ -18,7 +19,7 @@ const getItemLocalStorage = (key: string) => {
       return null;
     }
 
-    return JSON.stringify(value);
+    return JSON.parse(value);
   } catch {
     return null;
   }
@@ -52,7 +53,7 @@ export const updateTopApps = async (space: Space, akaname: string) => {
         : 0;
 
     topApps[space.configurationId] = {
-      ...topApps[space.configurationId],
+      ...topApps?.[space.configurationId],
       count: currentCount + 1,
       lastUse: today.format(),
     };

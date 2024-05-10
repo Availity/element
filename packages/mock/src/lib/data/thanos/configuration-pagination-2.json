@@ -1,0 +1,11 @@
+{
+  "data": {
+    "configurationPagination": {
+      "pageInfo": {
+        "currentPage": 2,
+        "hasNextPage": false
+      },
+      "items": [{"id": "6", "configurationId": "6", "type": "space", "name": "Space 6"}, {"id": "7", "configurationId": "7", "type": "space", "name": "Space 7"}, {"id": "8", "configurationId": "8", "type": "space", "name": "Space 8"}, {"id": "9", "configurationId": "9", "type": "space", "name": "Space 9"}, {"id": "10", "configurationId": "10", "type": "space", "name": "Space 10"}]
+    }
+  }
+}
