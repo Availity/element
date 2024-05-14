@@ -1500,6 +1500,76 @@ export const legacyTheme = {
         },
       },
     },
+    MuiSwitch: {
+      defaultProps: {
+        size: 'small',
+        disableRipple: true,
+        disableFocusRipple: true,
+        disableTouchRipple: true,
+      },
+      styleOverrides: {
+        root: {
+          height: '1.5em',
+          width: '2.5em',
+          padding: '.25em',
+          '.MuiSwitch-switchBase': {
+            opacity: 1,
+            padding: '0px',
+            top: '.37em',
+            left: '.37em',
+            '.MuiSwitch-thumb': {
+              color: tokens.borderInput,
+              width: '.75em',
+              height: '.75em',
+            },
+            '&.Mui-disabled': {
+              opacity: .5,
+              '+.MuiSwitch-track': {
+                opacity: .5
+              },
+              '&.Mui-checked': {
+                opacity: 1,
+                '+.MuiSwitch-track': {
+                  opacity: .5
+                }
+              }
+            },
+            '&.Mui-focusVisible+.MuiSwitch-track': {
+              outline: '2px solid white',
+              boxShadow: `0 0 0px 4px ${tokens.borderInput}`,
+            },
+            '&.Mui-checked': {
+              transform: 'translateX(1em)',
+              '.MuiSwitch-thumb': {
+                color: tokens.colorCommonWhite,
+                opacity: 1
+              },
+              '+ .MuiSwitch-track': {
+                border: 'none',
+                backgroundColor: '#0075ff',
+                opacity: 'inherit'
+              },
+              '&.Mui-focusVisible+.MuiSwitch-track': {
+                backgroundColor: tokens.colorPrimaryMain,
+                boxShadow: `0 0 0px 4px ${tokens.colorPrimaryMain}`
+              },
+            },
+          },
+        },
+        track: {
+          backgroundColor: 'transparent',
+          border: `1px solid ${tokens.borderInput}`,
+          borderRadius: '.5em',
+          opacity: 1
+        },
+        sizeSmall: {
+          fontSize: '1rem'
+        },
+        sizeMedium: {
+          fontSize: '1.5rem'
+        },
+      },
+    },
     MuiTab: {
       styleOverrides: {
         root: {
