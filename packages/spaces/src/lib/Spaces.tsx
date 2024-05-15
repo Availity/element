@@ -74,8 +74,8 @@ export const Spaces = ({
   const payerIdVars = { ...variables, payerIds: [...payerIdsToQuery.keys()] };
 
   const [
-    { data: spacesBySpaceIds, isLoading: isLoadingBySpaceIds, error: errorBySpaceIds },
-    { data: spacesByPayerIds, isLoading: isLoadingByPayerIds, error: errorByPayerIds },
+    { data: spacesBySpaceIds, isFetching: isLoadingBySpaceIds, error: errorBySpaceIds },
+    { data: spacesByPayerIds, isFetching: isLoadingByPayerIds, error: errorByPayerIds },
   ] = useQueries({
     queries: [
       {
@@ -91,13 +91,15 @@ export const Spaces = ({
     ],
   });
 
-  if (errorByPayerIds || errorBySpaceIds) {
-    dispatch({
-      type: 'ERROR',
-      error: errorByPayerIds?.message || errorBySpaceIds?.message,
-      loading: false,
-    });
-  }
+  useEffect(() => {
+    if (errorByPayerIds || errorBySpaceIds) {
+      dispatch({
+        type: 'ERROR',
+        error: errorByPayerIds?.message || errorBySpaceIds?.message,
+        loading: false,
+      });
+    }
+  }, [errorByPayerIds, errorBySpaceIds]);
 
   useEffect(() => {
     dispatch({
@@ -174,7 +176,7 @@ export const Spaces = ({
         spaces: spacesMap,
         spacesByConfig: configIdsMap,
         spacesByPayer: payerIdsMap,
-        loading,
+        loading: loading || isLoadingByPayerIds || isLoadingBySpaceIds,
         error,
       }}
     />
@@ -182,7 +184,7 @@ export const Spaces = ({
 };
 
 export const useSpaces = (...ids: string[]) => {
-  const { spaces, spacesByConfig, spacesByPayer } = useContext(SpacesContext);
+  const { spaces, spacesByConfig, spacesByPayer } = useSpacesContext();
 
   const idsIsEmpty = !ids || ids.length === 0;
   const callerIsExpectingFirstSpace = ids?.length === 1 && ids[0] === undefined;
