@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.49.0](https://github.com/Availity/element/compare/@availity/theme@0.48.1...@availity/theme@0.49.0) (2024-05-15)
+
+
+### Features
+
+* **mui-form-utils:** add switch ([9b34c19](https://github.com/Availity/element/commit/9b34c1900050f9f30b36f5725c988a138a881419))
+
 ## [0.48.1](https://github.com/Availity/element/compare/@availity/theme@0.48.0...@availity/theme@0.48.1) (2024-05-10)
 
 
