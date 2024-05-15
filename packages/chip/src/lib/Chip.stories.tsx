@@ -10,8 +10,6 @@ const meta: Meta<typeof Chip> = {
   tags: ['autodocs'],
   args: {
     label: 'Chip',
-    size: 'medium',
-    color: 'default',
   },
 };
 
