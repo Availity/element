@@ -16,16 +16,22 @@ const meta: Meta<typeof FormControlLabel> = {
   title: 'Components/FormUtils/FormControlLabel',
   component: FormControlLabel,
   tags: ['autodocs'],
+  parameters: {
+    controls: {
+      exclude: [
+        'labelPlacement'
+      ],
+    },
+  },
 };
 
 export default meta;
 
 export const _FormLabel: StoryObj<typeof FormControlLabel> = {
-  render: (args: FormControlLabelProps) => <FormControlLabel {...args} />,
+  render: (args: FormControlLabelProps) => <FormControlLabel {...args} control={<Checkbox />} />,
   args: {
     label: 'Label',
     required: true,
-    control: <Checkbox />,
   },
 };
 
