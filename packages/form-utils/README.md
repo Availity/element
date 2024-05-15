@@ -10,7 +10,7 @@
 
 This package extends many of the MUI form components: [MUI Field Docs](https://mui.com/material-ui/react-text-field/)
 
-Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-form-utils-introduction--docs)
+Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/form-components-form-utils-introduction--docs)
 
 Availity standards for design and usage can be found in the [Availity Design Guide](https://zeroheight.com/2e36e50c7)
 

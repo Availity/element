@@ -14,7 +14,7 @@ import { PageHeader } from '@availity/mui-page-header';
 import { Checkbox, CheckboxProps } from './Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Components/Checkbox/Checkbox',
+  title: 'Form Components/Checkbox/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
   argTypes: {

@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { RequiredKey } from './RequiredKey';
 
 const meta: Meta<typeof RequiredKey> = {
-  title: 'Components/FormUtils/RequiredKey',
+  title: 'Form Components/FormUtils/RequiredKey',
   component: RequiredKey,
   tags: ['autodocs'],
 };

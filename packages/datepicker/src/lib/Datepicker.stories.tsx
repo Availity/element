@@ -11,7 +11,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 const meta: Meta<typeof Datepicker> = {
-  title: 'Components/Datepicker/Datepicker',
+  title: 'Form Components/Datepicker/Datepicker',
   component: Datepicker,
   tags: ['autodocs'],
 };

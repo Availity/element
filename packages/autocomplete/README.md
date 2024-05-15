@@ -10,7 +10,7 @@
 
 This package extends the MUI Autocomplete component: [MUI Autocomplete Docs](https://mui.com/components/autocomplete/)
 
-Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-autocomplete-introduction--docs)
+Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/form-components-autocomplete-introduction--docs)
 
 Availity standards for design and usage can be found in the [Availity Design Guide](https://zeroheight.com/2e36e50c7)
 

@@ -4,7 +4,7 @@ import { Autocomplete } from './Autocomplete';
 import { AsyncAutocomplete } from './AsyncAutocomplete';
 
 const meta: Meta<typeof Autocomplete> = {
-  title: 'Components/Autocomplete/Autocomplete',
+  title: 'Form Components/Autocomplete/Autocomplete',
   component: Autocomplete,
   tags: ['autodocs'],
   args: {

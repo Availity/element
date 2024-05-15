@@ -9,7 +9,7 @@ import { FormControl, FormControlProps, FormLabel, FormHelperText, Input, Select
 
 /** Form input context. Controls styling (`size`, etc) and state (`error`, `disabled`, etc) across input components, like `FormLabel`, `Input`, `FormHelperText`. */
 export default {
-  title: 'Components/FormUtils/FormControl',
+  title: 'Form Components/FormUtils/FormControl',
   component: FormControl,
   tags: ['autodocs'],
   args: {
