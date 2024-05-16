@@ -33,7 +33,7 @@ import dayjs from 'dayjs';
  * While `Grid` will be the most common way to handle spacing, the form components have their own `margin` prop that can be used en lieu of `rowSpacing` in the case where all form components have the same width, removing the need for a `Grid`.
  */
 const meta: Meta = {
-  title: 'Layouts/Form',
+  title: 'Sample Layouts/Form',
   tags: ['autodocs'],
 };
 

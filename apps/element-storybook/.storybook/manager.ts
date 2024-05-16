@@ -9,7 +9,7 @@ addons.setConfig({
   sidebar: {
     collapsedRoots: [
       'bs4-migration',
-      'layouts',
+      'sample-layouts',
       'design-system',
     ],
     filters: {
