@@ -124,7 +124,7 @@ __metadata:
     "@mui/material": ^5.15.15
     "@mui/system": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ~5.4.5
   peerDependencies:
@@ -158,7 +158,7 @@ __metadata:
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -176,7 +176,7 @@ __metadata:
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -194,7 +194,7 @@ __metadata:
     "@mui/material": ^5.15.15
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -210,7 +210,7 @@ __metadata:
     "@mui/material": ^5.15.15
     "@mui/types": ^7.2.14
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -229,7 +229,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -244,7 +244,7 @@ __metadata:
   dependencies:
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -260,7 +260,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -277,7 +277,7 @@ __metadata:
     "@availity/mui-paper": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -294,7 +294,7 @@ __metadata:
     "@availity/mui-link": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -310,7 +310,7 @@ __metadata:
     "@mui/lab": ^5.0.0-alpha.147
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -327,7 +327,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -345,7 +345,7 @@ __metadata:
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -361,7 +361,7 @@ __metadata:
     "@availity/mui-avatar": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -379,7 +379,7 @@ __metadata:
     "@mui/x-date-pickers": ^7.2.0
     dayjs: ^1.11.10
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -396,7 +396,7 @@ __metadata:
     "@availity/mui-layout": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -411,7 +411,7 @@ __metadata:
   dependencies:
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -427,7 +427,7 @@ __metadata:
     "@availity/mui-layout": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -450,7 +450,7 @@ __metadata:
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     react-hook-form: ^7.51.3
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -469,7 +469,7 @@ __metadata:
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -488,7 +488,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.5.2
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -503,7 +503,7 @@ __metadata:
   dependencies:
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -519,7 +519,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -535,7 +535,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -553,7 +553,7 @@ __metadata:
     "@availity/mui-typography": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -574,7 +574,7 @@ __metadata:
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -595,7 +595,7 @@ __metadata:
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -611,7 +611,7 @@ __metadata:
   dependencies:
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -627,7 +627,7 @@ __metadata:
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -642,7 +642,7 @@ __metadata:
   dependencies:
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -659,7 +659,7 @@ __metadata:
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -682,7 +682,7 @@ __metadata:
     dayjs: ^1.11.10
     qs: ^6.12.1
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     react-markdown: ^9.0.1
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -708,7 +708,7 @@ __metadata:
     "@availity/mui-typography": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     react-hook-form: ^7.51.3
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -726,7 +726,7 @@ __metadata:
     "@mui/lab": ^5.0.0-alpha.147
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -743,7 +743,7 @@ __metadata:
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -759,7 +759,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -774,7 +774,7 @@ __metadata:
   dependencies:
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -789,7 +789,7 @@ __metadata:
   dependencies:
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -804,7 +804,7 @@ __metadata:
   dependencies:
     "@mui/material": ^5.15.15
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
@@ -840,7 +840,7 @@ __metadata:
     "@mui/x-date-pickers": ^7.2.0
     dayjs: ^1.11.10
     react: 18.2.0
-    react-dom: 18.2.0
+    react-dom: 18.3.1
     tsup: ^8.0.2
     typescript: ~5.4.5
   peerDependencies:
@@ -6946,12 +6946,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.2.9":
-  version: 18.2.9
-  resolution: "@types/react-dom@npm:18.2.9"
+"@types/react-dom@npm:18.3.0":
+  version: 18.3.0
+  resolution: "@types/react-dom@npm:18.3.0"
   dependencies:
     "@types/react": "*"
-  checksum: d64e58b24549e5b3bb8c792f937061fa80e35a96f0d1757707de5b1377ebce3cf4932f0869bd54cbdf4d321edc7742ae3af03d543306d0f5efb58065b3a0917e
+  checksum: a0cd9b1b815a6abd2a367a9eabdd8df8dd8f13f95897b2f9e1359ea3ac6619f957c1432ece004af7d95e2a7caddbba19faa045f831f32d6263483fc5404a7596
   languageName: node
   linkType: hard
 
@@ -7871,7 +7871,7 @@ __metadata:
     "@types/jest": 29.4.4
     "@types/node": 18.19.31
     "@types/react": 18.2.24
-    "@types/react-dom": 18.2.9
+    "@types/react-dom": 18.3.0
     "@typescript-eslint/eslint-plugin": 7.6.0
     "@typescript-eslint/parser": 7.6.0
     babel-jest: 29.4.3
@@ -16005,15 +16005,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:18.2.0":
-  version: 18.2.0
-  resolution: "react-dom@npm:18.2.0"
+"react-dom@npm:18.3.1":
+  version: 18.3.1
+  resolution: "react-dom@npm:18.3.1"
   dependencies:
     loose-envify: ^1.1.0
-    scheduler: ^0.23.0
+    scheduler: ^0.23.2
   peerDependencies:
-    react: ^18.2.0
-  checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
+    react: ^18.3.1
+  checksum: 298954ecd8f78288dcaece05e88b570014d8f6dce5db6f66e6ee91448debeb59dcd31561dddb354eee47e6c1bb234669459060deb238ed0213497146e555a0b9
   languageName: node
   linkType: hard
 
@@ -16807,12 +16807,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.23.0":
-  version: 0.23.0
-  resolution: "scheduler@npm:0.23.0"
+"scheduler@npm:^0.23.2":
+  version: 0.23.2
+  resolution: "scheduler@npm:0.23.2"
   dependencies:
     loose-envify: ^1.1.0
-  checksum: d79192eeaa12abef860c195ea45d37cbf2bbf5f66e3c4dcd16f54a7da53b17788a70d109ee3d3dde1a0fd50e6a8fc171f4300356c5aee4fc0171de526bf35f8a
+  checksum: 3e82d1f419e240ef6219d794ff29c7ee415fbdc19e038f680a10c067108e06284f1847450a210b29bbaf97b9d8a97ced5f624c31c681248ac84c80d56ad5a2c4
   languageName: node
   linkType: hard
 
