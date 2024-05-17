@@ -74,8 +74,8 @@ export const Spaces = ({
   const payerIdVars = { ...variables, payerIds: [...payerIdsToQuery.keys()] };
 
   const [
-    { data: spacesBySpaceIds, isFetching: isLoadingBySpaceIds, error: errorBySpaceIds },
-    { data: spacesByPayerIds, isFetching: isLoadingByPayerIds, error: errorByPayerIds },
+    { data: spacesBySpaceIds, isFetching: isLoadingBySpaceIds, isError: isErrorBySpaceIds },
+    { data: spacesByPayerIds, isFetching: isLoadingByPayerIds, isError: isErrorByPayerIds },
   ] = useQueries({
     queries: [
       {
@@ -92,14 +92,14 @@ export const Spaces = ({
   });
 
   useEffect(() => {
-    if (errorByPayerIds || errorBySpaceIds) {
+    if (isErrorByPayerIds || isErrorBySpaceIds) {
       dispatch({
         type: 'ERROR',
-        error: errorByPayerIds?.message || errorBySpaceIds?.message,
+        error: 'Error fetching spaces.',
         loading: false,
       });
     }
-  }, [errorByPayerIds, errorBySpaceIds]);
+  }, [isErrorByPayerIds, isErrorBySpaceIds]);
 
   useEffect(() => {
     dispatch({
