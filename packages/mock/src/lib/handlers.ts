@@ -1,10 +1,32 @@
-import { http, HttpResponse, delay } from 'msw';
+import { graphql, http, HttpResponse, delay } from 'msw';
 import { parse } from 'qs';
 
 import * as routes from './routes';
 import axiUserPermissions from './data/axi-user-permissions.json';
 import region from './data/region.json';
 import regions from './data/regions.json';
+import configurationPagination1 from './data/thanos/configuration-pagination-1.json';
+import configurationPagination2 from './data/thanos/configuration-pagination-2.json';
+import configurationId1 from './data/thanos/configuration-id-1.json';
+import configurationId2 from './data/thanos/configuration-id-2.json';
+import configurationId3 from './data/thanos/configuration-id-3.json';
+import configurationId112233 from './data/thanos/configuration-id-112233.json';
+
+type ConfigurationFindMany = {
+  data: {
+    configurationPagination: {
+      pageInfo: {
+        currentPage: number;
+        hasNextPage: boolean;
+      };
+      items: {
+        id: string;
+        configurationId: string;
+        payerIDs?: string[];
+      }[];
+    };
+  };
+}
 
 const defaultDelay = 500; // .5 sec
 
@@ -45,5 +67,27 @@ export const handlers = [
 
     // return permissions based on the request
     return HttpResponse.json(response, { status: 200 });
+  }),
+
+  // Thanos
+  graphql.query('configurationFindMany', ({ variables: { payerIds, page, ids } }) => {
+    let response: ConfigurationFindMany = configurationPagination1;
+
+    if (payerIds) {
+      response = configurationId112233
+    } else if (page === 2) {
+      response = configurationPagination2
+    } else if (ids && ids[0] === '1') {
+      response = configurationId1
+    } else if (ids && ids[0] === '2') {
+      response = configurationId2
+    } else if (ids && ids[0] === '3') {
+      response = configurationId3
+    } else if ((ids && ids[0] === '1' && ids[1] === '2' && ids[2] === '3')
+      || (ids && ids[0] === '11' && ids[1] === '22' && ids[2] === '33')) {
+      response = configurationId112233
+    }
+
+    return HttpResponse.json(response, { status: 200 })
   }),
 ];

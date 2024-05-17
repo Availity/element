@@ -1,0 +1,16 @@
+{
+  "data": {
+    "configurationPagination": {
+      "pageInfo": {
+        "currentPage": 1,
+        "hasNextPage": false
+      },
+      "items": [
+        { "id": "1", "configurationId": "11", "payerIDs": ["a", "b", "c"] },
+        { "id": "2", "configurationId": "22", "payerIDs": ["b", "c"] },
+        { "id": "3", "configurationId": "33", "payerIDs": ["d", "c"] }
+      ]
+    }
+  }
+}
+
