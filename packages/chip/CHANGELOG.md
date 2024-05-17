@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.14](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.13...@availity/mui-chip@0.2.14) (2024-05-17)
+
+
+### Bug Fixes
+
+* **mui-chip:** export statuschip ([7c1ee4c](https://github.com/Availity/element/commit/7c1ee4cc58577f029da336d039236e94c6d2f447))
+
 ## [0.2.13](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.12...@availity/mui-chip@0.2.13) (2024-04-19)
 
 ### Dependency Updates
