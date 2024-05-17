@@ -7894,7 +7894,7 @@ __metadata:
     react-hook-form: ^7.51.3
     remark-gfm: ^4.0.0
     ts-jest: 29.1.2
-    ts-node: 10.9.1
+    ts-node: 10.9.2
     tslib: ^2.6.2
     typescript: 5.4.5
     undici: ^5.28.4
@@ -17960,7 +17960,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^10.8.1":
+"ts-node@npm:10.9.2, ts-node@npm:^10.8.1":
   version: 10.9.2
   resolution: "ts-node@npm:10.9.2"
   dependencies:
