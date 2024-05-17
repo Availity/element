@@ -75,21 +75,3 @@ Component names append `Icon` to the names below. For instance, the `Home` icon 
     </IconItem>
   ))}
 </IconGallery>
-
-## Legacy Glyphicons
-
-`availity-uikit` glyphs previously approved by UX.
-
-<IconGallery>
-  {AvIcons.map((icon) => (
-    <IconItem key={icon.uid} name={icon.css}>
-      {icon.svg ? (
-        <SvgIcon viewBox={`0 0 ${icon.svg?.width || '1000'} 1000`}>
-          <path d={`${icon.svg?.path}`} />
-        </SvgIcon>
-      ) : (
-        <div>NO SVG</div>
-      )}
-    </IconItem>
-  ))}
-</IconGallery>

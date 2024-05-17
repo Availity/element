@@ -7,13 +7,16 @@ import { SidebarNav } from './SidebarNav';
 import { TablesSection } from './TablesSection';
 import { DataGridSection } from './DataGridSection';
 
+// Hidden in sidebar but still available with url
+// http://localhost:4400/?path=/docs/sample-layouts-sidebar--docs
+
 /**
  * *Work In Progress*
  *
  * Sidebar layout that includes header, sidenav, search section, & tables. */
 const meta: Meta = {
-  title: 'Layouts/Sidebar',
-  tags: ['autodocs'],
+  title: 'Sample Layouts/Sidebar',
+  tags: ['autodocs', 'hideInSidebar'],
 };
 
 /**  */

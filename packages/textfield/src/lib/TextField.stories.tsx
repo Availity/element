@@ -13,7 +13,7 @@ import { IconButton } from '@availity/mui-button';
 import { TextField, TextFieldProps } from './TextField';
 
 const meta: Meta<typeof TextField> = {
-  title: 'Components/TextField/TextField',
+  title: 'Form Components/TextField/TextField',
   component: TextField,
   tags: ['autodocs'],
   args: {

@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { FormControlLabel, Switch, SwitchProps } from '..';
 
 const meta: Meta<typeof Switch> = {
-  title: 'Components/FormUtils/Switch',
+  title: 'Form Components/FormUtils/Switch',
   component: Switch,
   tags: ['autodocs'],
   parameters: {

@@ -5,7 +5,7 @@ import { FieldHelpIcon, FieldHelpIconProps } from './FieldHelpIcon';
 
 /** Help Wrapper for Oxygen Learning Docs on the Portal (This component will only work in the Availity Portal). */
 const meta: Meta<typeof FieldHelpIcon> = {
-  title: 'Components/FormUtils/FieldHelpIcon',
+  title: 'Form Components/FormUtils/FieldHelpIcon',
   component: FieldHelpIcon,
   tags: ['autodocs'],
 };

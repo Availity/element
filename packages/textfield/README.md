@@ -10,7 +10,7 @@
 
 This package extends the MUI Textfield component: [MUI Textfield Docs](https://mui.com/components/textfield/)
 
-Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-textfield-introduction--docs)
+Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/form-components-textfield-introduction--docs)
 
 Availity standards for design and usage can be found in the [Availity Design Guide](https://zeroheight.com/2e36e50c7)
 

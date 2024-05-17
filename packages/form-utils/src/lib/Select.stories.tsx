@@ -10,7 +10,7 @@ import { Chip } from '@availity/mui-chip';
 import { FormLabel, Select, SelectProps, SelectChangeEvent } from '..';
 
 const meta: Meta<typeof Select> = {
-  title: 'Components/FormUtils/Select',
+  title: 'Form Components/FormUtils/Select',
   component: Select,
   tags: ['autodocs'],
   args: {

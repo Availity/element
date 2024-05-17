@@ -10,7 +10,7 @@
 
 This package extends the MUI Checkbox component: [MUI Checkbox Docs](https://mui.com/components/checkbox/)
 
-Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-checkbox-introduction--docs)
+Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/form-components-checkbox-introduction--docs)
 
 Availity standards for design and usage can be found in the [Availity Design Guide](https://zeroheight.com/2e36e50c7)
 
