@@ -82,7 +82,7 @@
     "jsdom": "22.1.0",
     "jsonc-eslint-parser": "^2.4.0",
     "lint-staged": "^15.2.2",
-    "nx": "18.2.4",
+    "nx": "19.0.4",
     "prettier": "^3.2.5",
     "react-hook-form": "^7.51.3",
     "remark-gfm": "^4.0.0",
