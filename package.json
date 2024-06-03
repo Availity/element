@@ -44,7 +44,7 @@
     "@mui/x-data-grid": "^7.2.0",
     "@nx/devkit": "18.2.4",
     "@nx/eslint": "18.2.4",
-    "@nx/eslint-plugin": "18.2.4",
+    "@nx/eslint-plugin": "19.1.1",
     "@nx/jest": "18.2.4",
     "@nx/js": "18.2.4",
     "@nx/plugin": "18.2.4",
