@@ -1,15 +1,5 @@
 import { avWebQLApi } from '@availity/api-axios';
-import {
-  Space,
-  NameValuePair,
-  NormalizedSpace,
-  NormalizedPairField,
-  PairFields,
-  FetchSpacesProps,
-  FetchAllSpacesProps,
-  SpacesContextType,
-  SpacesReducerAction,
-} from './spaces-types';
+import { Space, FetchSpacesProps, FetchAllSpacesProps, SpacesContextType, SpacesReducerAction } from './spaces-types';
 
 export const actions = {
   SPACES: (
@@ -36,36 +26,6 @@ export const actions = {
 export const spacesReducer = (state: SpacesContextType, action: SpacesReducerAction): SpacesContextType => {
   const { type } = action;
   return actions[type](state, action);
-};
-
-export const normalizeSpaces = (spaces: (Space | Space[] | undefined)[]): NormalizedSpace[] => {
-  // if spaces coming in is array of an array of spaces objects,
-  // then we matched by payerId and should unravel that first level of array
-  let spacesToReduce = spaces;
-  if (Array.isArray(spaces[0])) {
-    spacesToReduce = spaces[0];
-  }
-  // Normalize space pairs ( [{ name: 'foo'', value: 'bar' }] => { foo: 'bar' } )
-  const pairFields: PairFields = ['images', 'metadata', 'colors', 'icons', 'mapping'];
-  return spacesToReduce.reduce((accum: NormalizedSpace[], spc: Space): NormalizedSpace[] => {
-    if (!spc) return accum;
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { images, metadata, colors, icons, mapping, ...rest } = spc;
-    const normalizedSpace: NormalizedSpace = { ...rest };
-
-    for (const field of pairFields) {
-      if (spc[field] && Array.isArray(spc[field])) {
-        normalizedSpace[field] = spc[field]?.reduce((_accum: NormalizedPairField, { name, value }: NameValuePair) => {
-          _accum[name] = value;
-          return _accum;
-        }, {});
-      }
-    }
-
-    accum.push(normalizedSpace);
-    return accum;
-  }, []);
 };
 
 export const fetchSpaces = async ({ query, clientId, variables }: FetchSpacesProps) => {

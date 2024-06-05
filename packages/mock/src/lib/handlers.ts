@@ -11,6 +11,7 @@ import configurationId1 from './data/thanos/configuration-id-1.json';
 import configurationId2 from './data/thanos/configuration-id-2.json';
 import configurationId3 from './data/thanos/configuration-id-3.json';
 import configurationId112233 from './data/thanos/configuration-id-112233.json';
+import ghostedConfiguration from './data/thanos/ghosted-configuration.json';
 
 type ConfigurationFindMany = {
   data: {
@@ -77,12 +78,14 @@ export const handlers = [
       response = configurationId112233
     } else if (page === 2) {
       response = configurationPagination2
-    } else if (ids && ids[0] === '1') {
+    } else if (ids && ids.length === 1 && ids[0] === '1') {
       response = configurationId1
-    } else if (ids && ids[0] === '2') {
+    } else if (ids && ids.length === 1 && ids[0] === '2') {
       response = configurationId2
-    } else if (ids && ids[0] === '3') {
+    } else if (ids && ids.length === 1 && ids[0] === '3') {
       response = configurationId3
+    } else if (ids && ids[0] === 'ghosted') {
+      response = ghostedConfiguration
     } else if ((ids && ids[0] === '1' && ids[1] === '2' && ids[2] === '3')
       || (ids && ids[0] === '11' && ids[1] === '22' && ids[2] === '33')) {
       response = configurationId112233

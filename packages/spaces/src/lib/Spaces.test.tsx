@@ -6,7 +6,6 @@ import { Spaces, useSpaces, useSpacesContext } from '..';
 
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '../../../mock/src/lib/server';
-import { NormalizedSpace } from './spaces-types';
 
 beforeAll(() => {
   // Start the interception.
