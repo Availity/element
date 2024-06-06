@@ -256,6 +256,12 @@ export const lightTheme = {
       ...typographyStyles('Overline'),
       color: tokens.colorTextPrimary,
     },
+    agreement: {
+      maxHeight: '300px',
+      overflowY: 'auto',
+      overflowX: 'hidden',
+      padding: '.2rem'
+    }
   },
   components: {
     AvEmptyState: {
@@ -1479,6 +1485,7 @@ export const lightTheme = {
           body1: 'p',
           body2: 'p',
           inherit: 'p',
+          agreement: 'div'
         },
       },
     },
