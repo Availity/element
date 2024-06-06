@@ -44,6 +44,8 @@ export type Space = {
     /** Specifies where to open the linked URL. */
     target: string;
   };
+  /** The description of the configuration. */
+  description?: string;
 };
 
 export type FetchSpacesProps = {
