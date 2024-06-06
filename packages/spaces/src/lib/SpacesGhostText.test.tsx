@@ -2,7 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, waitFor } from '@testing-library/react';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '../../../mock/src/lib/server';
-import SpacesGhostText from './SpacesGhostText';
+import { SpacesGhostText } from './SpacesGhostText';
 import { Spaces } from './Spaces';
 
 beforeAll(() => {

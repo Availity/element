@@ -30,9 +30,9 @@ export type Space = {
   /** Key-value data for a configuration. */
   metadataPairs?: NameValuePair[];
   /** The feature box colors associated with the Payer Space. */
-  colors?: NameValuePair[];
+  colors?: { [key: string]: any };
   /** Contains URL fragments that point to icons. */
-  icons?: NameValuePair[];
+  icons?: { [key: string]: any };
   /** The key-value mapping pairs. */
   mapping?: { [key: string]: any };
   mappingPairs?: NameValuePair[];

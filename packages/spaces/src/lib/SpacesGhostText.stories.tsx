@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Spaces } from './Spaces';
-import SpacesGhostText, { SpacesGhostTextProps } from './SpacesGhostText';
+import { SpacesGhostText, SpacesGhostTextProps } from './SpacesGhostText';
 
 const meta: Meta<typeof SpacesGhostText> = {
   title: 'Components/Spaces/SpacesGhostText',

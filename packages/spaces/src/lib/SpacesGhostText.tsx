@@ -6,7 +6,7 @@ export type SpacesGhostTextProps = {
   [key: string]: any;
 };
 
-const SpacesGhostText = ({ spaceId, id, ...props }: SpacesGhostTextProps) => {
+export const SpacesGhostText = ({ spaceId, id, ...props }: SpacesGhostTextProps) => {
   const spaces = useSpaces(spaceId);
 
   const space = spaces?.[0];
@@ -21,5 +21,3 @@ const SpacesGhostText = ({ spaceId, id, ...props }: SpacesGhostTextProps) => {
 
   return null;
 };
-
-export default SpacesGhostText;
