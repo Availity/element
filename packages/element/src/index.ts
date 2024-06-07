@@ -13,6 +13,7 @@ export * from '@availity/mui-checkbox';
 export * from '@availity/mui-chip';
 export * from '@availity/mui-datepicker';
 export * from '@availity/mui-dialog';
+export * from '@availity/mui-disclaimer';
 export * from '@availity/mui-divider';
 export * from '@availity/mui-empty-state';
 export * from '@availity/mui-feedback';

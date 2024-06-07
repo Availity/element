@@ -258,6 +258,19 @@ export const lightTheme = {
     },
   },
   components: {
+    AvDisclaimer: {
+      styleOverrides: {
+        root: {
+          padding: '16px',
+        },
+        accent: {
+          borderLeft: `8px solid ${tokens.colorWarningMain}`,
+        },
+        condensed: {
+          padding: '12px 16px'
+        }
+      }
+    },
     AvEmptyState: {
       defaultProps: {
         spacing: 2,
