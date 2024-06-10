@@ -13,9 +13,9 @@ describe('Disclaimer', () => {
     expect(getByText('a link')).toBeTruthy();
   });
 
-  test('should render condensed successfully', () => {
+  test('should render dense successfully', () => {
     const { getByText } = render(
-      <Disclaimer condensed headerText="header" description="test" link={{ href: '#', children: 'a link' }} />
+      <Disclaimer dense headerText="header" description="test" link={{ href: '#', children: 'a link' }} />
     );
     expect(getByText('test')).toBeTruthy();
     expect(getByText('test').classList.contains('MuiTypography-body2')).toBeTruthy();

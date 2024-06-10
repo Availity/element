@@ -4,52 +4,53 @@ import { Link, LinkProps } from '@availity/mui-link';
 import { styled } from '@mui/material/styles';
 
 type AvDisclaimerProps = {
+  /** If true, the warning accent display on the left  */
   accent?: boolean;
-  condensed?: boolean;
+  /** If true, the Disclaimer displays with less padding  */
+  dense?: boolean;
 };
 
 export interface DisclaimerProps extends AvDisclaimerProps {
+  /** The text to display in the header */
   headerText?: string;
+  /** The text to display in the body */
   description: string;
+  /** The link to display */
   link?: LinkProps;
 }
 
 interface AvDisclaimerHeaderProps extends TypographyProps {
-  ownerState: { condensed: boolean };
+  ownerState: { dense: boolean };
 }
 
 interface AvDisclaimerLinkProps extends LinkProps {
-  ownerState: { condensed: boolean };
+  ownerState: { dense: boolean };
 }
 
 const AvDisclaimer = styled('div', {
   name: 'AvDisclaimer',
   slot: 'root',
-  overridesResolver: (props, styles) => [
-    styles.root,
-    props.accent && styles.accent,
-    props.condensed && styles.condensed,
-  ],
+  overridesResolver: (props, styles) => [styles.root, props.accent && styles.accent, props.dense && styles.dense],
 })<AvDisclaimerProps>({});
 
 const AvDisclaimerHeader = styled(Typography, {
   name: 'AvDisclaimer',
   slot: 'header',
-})<AvDisclaimerHeaderProps>(({ ownerState }: { ownerState: { condensed: boolean } }) => ({
-  marginBottom: ownerState.condensed ? '4px' : '8px',
+})<AvDisclaimerHeaderProps>(({ ownerState }: { ownerState: { dense: boolean } }) => ({
+  marginBottom: ownerState.dense ? '4px' : '8px',
 }));
 
 const AvDisclaimerLink = styled(Link, {
   name: 'AvDisclaimer',
   slot: 'link',
-})<AvDisclaimerLinkProps>(({ ownerState }: { ownerState: { condensed: boolean } }) => ({
-  marginTop: ownerState.condensed ? '8px' : '16px',
+})<AvDisclaimerLinkProps>(({ ownerState }: { ownerState: { dense: boolean } }) => ({
+  marginTop: ownerState.dense ? '8px' : '16px',
   display: 'block',
 }));
 
 export const Disclaimer = ({
   accent = true,
-  condensed = false,
+  dense = false,
   description,
   headerText,
   link,
@@ -58,15 +59,15 @@ export const Disclaimer = ({
   let bodyVariant: 'body1' | 'body2' = 'body1';
   let headerVariant: 'h5' | 'h6' = 'h5';
 
-  if (condensed) {
+  if (dense) {
     bodyVariant = 'body2';
     headerVariant = 'h6';
   }
 
-  const ownerState = { condensed };
+  const ownerState = { dense };
 
   return (
-    <AvDisclaimer accent={accent} condensed={condensed} {...rest}>
+    <AvDisclaimer accent={accent} dense={dense} {...rest}>
       {headerText && (
         <AvDisclaimerHeader variant={headerVariant} ownerState={ownerState} color="text.secondary">
           {headerText}

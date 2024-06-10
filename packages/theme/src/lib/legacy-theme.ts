@@ -280,7 +280,7 @@ export const legacyTheme = {
         accent: {
           borderLeft: `5px solid ${tokens.colorWarningMain}`,
         },
-        condensed: {
+        dense: {
           padding: '12px 16px'
         }
       }
