@@ -8,6 +8,42 @@ describe('Link', () => {
     expect(getByText('Test')).toBeTruthy();
   });
 
+  test('should render icon on left if no iconPosition passed', () => {
+    const { container } = render(
+      <Link target="_blank" href="#">
+        Test
+      </Link>
+    );
+
+    const spanChildren = container.getElementsByTagName('span')[0].children;
+
+    expect(spanChildren[0].tagName).toBe('svg');
+  });
+
+  test('should render icon on left if iconPosition is set to `start` passed', () => {
+    const { container } = render(
+      <Link target="_blank" href="#" iconPosition="start">
+        Test
+      </Link>
+    );
+
+    const spanChildren = container.getElementsByTagName('span')[0].children;
+
+    expect(spanChildren[0].tagName).toBe('svg');
+  });
+
+  test('should render icon on right if iconPosition is set to `end` passed', () => {
+    const { container } = render(
+      <Link target="_blank" href="#" iconPosition="end">
+        Test
+      </Link>
+    );
+
+    const spanChildren = container.getElementsByTagName('span')[0].children;
+
+    expect(spanChildren[spanChildren.length - 1].tagName).toBe('svg');
+  });
+
   test('should render absolute url', () => {
     const { getByRole } = render(<Link href="https://github.com/Availity">Test</Link>);
 
