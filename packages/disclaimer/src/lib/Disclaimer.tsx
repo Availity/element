@@ -76,7 +76,7 @@ export const Disclaimer = ({
       <Typography variant={bodyVariant} color="text.secondary">
         {description}
       </Typography>
-      {link && <AvDisclaimerLink ownerState={ownerState} {...link} />}
+      {link && <AvDisclaimerLink ownerState={ownerState} {...link} iconPosition="end" />}
     </AvDisclaimer>
   );
 };
