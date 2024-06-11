@@ -12,6 +12,14 @@ export type NameValuePair = {
   value: string;
 };
 
+export type SpacesImages = {
+  billboard?: string;
+  logo?: string;
+  promotional?: string;
+  promotionalHover?: string;
+  tile?: string;
+};
+
 export type Space = {
   /** The name of the content or configuration. */
   name: string;
@@ -24,7 +32,7 @@ export type Space = {
   /** A list of payerIds for the configuration or content. */
   payerIDs?: string[];
   /** The images associated with the configuration. */
-  images?: NameValuePair[];
+  images?: SpacesImages;
   //** Metadata for a configuration */
   meta?: { [key: string]: any };
   /** Key-value data for a configuration. */
@@ -46,6 +54,7 @@ export type Space = {
   };
   /** The description of the configuration. */
   description?: string;
+  url?: string;
 };
 
 export type FetchSpacesProps = {

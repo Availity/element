@@ -1,9 +1,17 @@
 import { CircularProgress } from '@availity/mui-progress';
+import { Img } from 'react-image';
 import { useSpaces, useSpacesContext } from './Spaces';
 
 type BaseSpacesImageProps = {
-  imageType?: 'url' | 'logo' | 'icon';
+  imageType?:
+    | 'url'
+    | 'images.logo'
+    | 'images.tile'
+    | 'images.billboard'
+    | 'images.promotional'
+    | 'images.promotionalHover';
   fallback?: string;
+  id?: string;
 };
 
 interface SpacesImageSpaceId extends BaseSpacesImageProps {
@@ -30,7 +38,17 @@ export const SpacesImage = ({ spaceId, payerId, imageType = 'url', fallback, ...
   const { loading } = useSpacesContext();
 
   const id = spaceId || payerId || spaces?.[0].id || spaces?.[0].configurationId;
-  let url = spaces?.[0]?.[imageType];
+
+  const imageMap = {
+    'images.logo': spaces?.[0]?.images?.logo,
+    'images.tile': spaces?.[0]?.images?.tile,
+    'images.billboard': spaces?.[0]?.images?.billboard,
+    'images.promotional': spaces?.[0]?.images?.promotional,
+    'images.promotionalHover': spaces?.[0]?.images?.promotionalHover,
+    url: spaces?.[0]?.url,
+  };
+
+  let url = imageMap[imageType];
 
   if (!url && loading) {
     return <CircularProgress id={`app-${id}-loading`} />;
@@ -51,13 +69,4 @@ export const SpacesImage = ({ spaceId, payerId, imageType = 'url', fallback, ...
       {...props}
     />
   );
-};
-
-const ucFirst = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-
-SpacesImage.create = (defaults) => {
-  const SpecificSpacesImage = (props) => <SpacesImage {...defaults} {...props} />;
-
-  SpecificSpacesImage.displayName = `Spaces${ucFirst(defaults.imageType)}`;
-  return SpecificSpacesImage;
 };

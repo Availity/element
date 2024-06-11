@@ -40,7 +40,9 @@
   },
   "peerDependencies": {
     "@mui/material": "^5.11.9",
-    "react": ">=16.3.0"
+    "react": ">=16.3.0",
+    "react-image": "^4.1.0",
+    "react-markdown": "^9.0.1"
   },
   "publishConfig": {
     "access": "public"
@@ -53,7 +55,6 @@
     "@availity/mui-typography": "workspace:^",
     "@tanstack/react-query": "^4.36.1",
     "dayjs": "^1.11.10",
-    "qs": "^6.12.1",
-    "react-markdown": "^9.0.1"
+    "qs": "^6.12.1"
   }
 }
