@@ -588,6 +588,7 @@ __metadata:
     "@availity/mui-button": "workspace:^"
     "@availity/mui-divider": "workspace:^"
     "@availity/mui-feedback": "workspace:^"
+    "@availity/mui-layout": "workspace:^"
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
@@ -599,6 +600,7 @@ __metadata:
     "@availity/mui-breadcrumbs": "workspace:^"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-divider": "workspace:^"
+    "@availity/mui-layout": "workspace:^"
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.11.9

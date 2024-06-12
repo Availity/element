@@ -1,11 +1,10 @@
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
 import { Divider } from '@availity/mui-divider';
 import { Typography } from '@availity/mui-typography';
 import { Breadcrumbs, BreadcrumbsProps } from '@availity/mui-breadcrumbs';
 import { Link } from '@availity/mui-link';
 import { Button, ButtonProps } from '@availity/mui-button';
 import { Feedback } from '@availity/mui-feedback';
+import { Box, Grid } from '@availity/mui-layout';
 
 export interface ButtonsProps extends Omit<ButtonProps, 'size' | 'height' | 'color'> {
   key: string;
@@ -40,16 +39,24 @@ export const PageHeader = ({
   helpLink,
 }: PageHeaderProps): JSX.Element => {
   return (
-    <Grid component={Container} container direction="column" marginTop="1rem" marginBottom="1.25rem">
+    <Grid
+      component={Box}
+      container
+      direction="column"
+      marginTop="1rem"
+      marginBottom="1.25rem"
+      paddingLeft={3}
+      paddingRight={3}
+    >
       {breadcrumbs || helpLink ? (
-        <Grid direction="row" item container justifyContent="space-between" marginBottom={4}>
+        <Grid direction="row" container justifyContent="space-between" marginBottom={4}>
           {breadcrumbs && (
-            <Grid item>
+            <Grid>
               <Breadcrumbs {...breadcrumbs} />
             </Grid>
           )}
           {helpLink && (
-            <Grid item marginLeft={2}>
+            <Grid marginLeft={2}>
               <Typography variant="body1">
                 Need help? <Link href={helpLink} target="_blank" children="Watch a demo" />{' '}
                 {helpAppName ? `for ${helpAppName}` : null}
@@ -59,20 +66,20 @@ export const PageHeader = ({
         </Grid>
       ) : null}
 
-      <Grid direction="row" item container marginBottom={2} alignItems="center" justifyContent="space-between">
-        <Grid item>
+      <Grid direction="row" container marginBottom={2} alignItems="center" justifyContent="space-between">
+        <Grid>
           <Typography variant="h1" children={headerText} />
         </Grid>
-        <Grid item container width="auto">
+        <Grid container width="auto">
           {buttons &&
             buttons.length > 0 &&
             buttons?.map((buttonProps) => (
-              <Grid item marginLeft={2} height="100%">
+              <Grid marginLeft={2} height="100%">
                 <Button {...buttonProps} size="large" color="secondary" />
               </Grid>
             ))}
           {feedback ? (
-            <Grid item marginLeft={2} height="100%">
+            <Grid marginLeft={2} height="100%">
               <Feedback appName={headerText} />
             </Grid>
           ) : null}
