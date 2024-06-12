@@ -97,6 +97,7 @@ __metadata:
     "@availity/mui-chip": "workspace:*"
     "@availity/mui-datepicker": "workspace:*"
     "@availity/mui-dialog": "workspace:*"
+    "@availity/mui-disclaimer": "workspace:*"
     "@availity/mui-divider": "workspace:*"
     "@availity/mui-empty-state": "workspace:*"
     "@availity/mui-feedback": "workspace:*"
@@ -405,6 +406,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@availity/mui-disclaimer@workspace:*, @availity/mui-disclaimer@workspace:packages/disclaimer":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-disclaimer@workspace:packages/disclaimer"
+  dependencies:
+    "@availity/mui-link": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
+    "@mui/material": ^5.15.15
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^8.0.2
+    typescript: ^5.4.5
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
 "@availity/mui-divider@workspace:*, @availity/mui-divider@workspace:^, @availity/mui-divider@workspace:packages/divider":
   version: 0.0.0-use.local
   resolution: "@availity/mui-divider@workspace:packages/divider"
@@ -570,6 +588,7 @@ __metadata:
     "@availity/mui-button": "workspace:^"
     "@availity/mui-divider": "workspace:^"
     "@availity/mui-feedback": "workspace:^"
+    "@availity/mui-layout": "workspace:^"
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
@@ -581,6 +600,7 @@ __metadata:
     "@availity/mui-breadcrumbs": "workspace:^"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-divider": "workspace:^"
+    "@availity/mui-layout": "workspace:^"
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.11.9

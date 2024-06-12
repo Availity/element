@@ -53,14 +53,20 @@ export type LinkProps = {
   onClick?: (event: React.MouseEvent, url: string) => void;
   children?: ReactNode;
   rel?: string;
-} & Omit<MuiLinkProps, 'underline' | 'noWrap' | 'variantMapping' >;
+  /** The position of the icon relative to the text when target is `_blank`
+   *
+   * @default 'start' */
+  iconPosition?: 'start' | 'end';
+} & Omit<MuiLinkProps, 'underline' | 'noWrap' | 'variantMapping'>;
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
-  const { href, target = '_self', children, onClick, loadApp = true, rel, ...rest } = props;
+  const { href, target = '_self', children, onClick, loadApp = true, rel, iconPosition = 'start', ...rest } = props;
   const absolute = isAbsoluteUrl(href);
   const encode = !(absolute || !loadApp);
   const url = encode ? getUrl(href) : href;
   const NewWindowIcon = target === '_blank' ? <OpenInNewIcon /> : null;
+  const startIcon = iconPosition === 'start';
+  const endIcon = iconPosition === 'end';
 
   return (
     <MuiLink
@@ -72,7 +78,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
       ref={ref}
     >
       <span>
-        {NewWindowIcon}  {children}
+        {startIcon && NewWindowIcon} {children} {endIcon && NewWindowIcon}
       </span>
     </MuiLink>
   );

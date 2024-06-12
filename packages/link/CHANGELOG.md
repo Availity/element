@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-link@0.3.0...@availity/mui-link@0.4.0) (2024-06-10)
+
+
+### Features
+
+* **mui-link:** allow link icon to display at the end ([f101b52](https://github.com/Availity/element/commit/f101b52edb293f16ee32fa942ec8e71675ee28c1))
+
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-link@0.2.9...@availity/mui-link@0.3.0) (2024-05-02)
 
 

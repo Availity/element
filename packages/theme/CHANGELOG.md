@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.50.0](https://github.com/Availity/element/compare/@availity/theme@0.49.0...@availity/theme@0.50.0) (2024-06-12)
+
+
+### Features
+
+* **mui-disclaimer:** add disclaimer component ([841e989](https://github.com/Availity/element/commit/841e98900adc535171fc82865a931d802ddab96c))
+
 ## [0.49.0](https://github.com/Availity/element/compare/@availity/theme@0.48.1...@availity/theme@0.49.0) (2024-05-15)
 
 
