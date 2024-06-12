@@ -272,6 +272,19 @@ export const legacyTheme = {
     },
   },
   components: {
+    AvDisclaimer: {
+      styleOverrides: {
+        root: {
+          padding: '16px',
+        },
+        accent: {
+          borderLeft: `5px solid ${tokens.colorWarningMain}`,
+        },
+        dense: {
+          padding: '12px 16px'
+        }
+      }
+    },
     AvEmptyState: {
       defaultProps: {
         spacing: 2,
