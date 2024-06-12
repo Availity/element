@@ -264,7 +264,7 @@ export const lightTheme = {
           padding: '16px',
         },
         accent: {
-          borderLeft: `8px solid ${tokens.colorWarningMain}`,
+          borderLeft: `8px solid ${tokens.colorWarningDark}`,
         },
         dense: {
           padding: '12px 16px'

@@ -56,11 +56,11 @@ export const Disclaimer = ({
   link,
   ...rest
 }: DisclaimerProps): JSX.Element => {
-  let bodyVariant: 'body1' | 'body2' = 'body1';
+  let textVariant: 'body1' | 'body2' = 'body1';
   let headerVariant: 'h5' | 'h6' = 'h5';
 
   if (dense) {
-    bodyVariant = 'body2';
+    textVariant = 'body2';
     headerVariant = 'h6';
   }
 
@@ -73,10 +73,10 @@ export const Disclaimer = ({
           {headerText}
         </AvDisclaimerHeader>
       )}
-      <Typography variant={bodyVariant} color="text.secondary">
+      <Typography variant={textVariant} color="text.secondary">
         {description}
       </Typography>
-      {link && <AvDisclaimerLink ownerState={ownerState} {...link} iconPosition="end" />}
+      {link && <AvDisclaimerLink ownerState={ownerState} {...link} iconPosition="end" variant={textVariant} />}
     </AvDisclaimer>
   );
 };
