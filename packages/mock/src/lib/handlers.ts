@@ -12,7 +12,8 @@ import configurationId2 from './data/thanos/configuration-id-2.json';
 import configurationId3 from './data/thanos/configuration-id-3.json';
 import configurationId112233 from './data/thanos/configuration-id-112233.json';
 import ghostedConfiguration from './data/thanos/ghosted-configuration.json';
-import agreementConfiguration from './data/thanos/agreement-configurations.json'
+import agreementConfiguration from './data/thanos/agreement-configurations.json';
+import disclaimerConfiguration from './data/thanos/disclaimer-configurations.json';
 
 type ConfigurationFindMany = {
   data: {
@@ -89,7 +90,9 @@ export const handlers = [
       response = ghostedConfiguration
     } else if (ids && ids[0] === 'agreement' || ids && ids[0] === 'agreementMarkdown') {
       response = agreementConfiguration
-    }else if ((ids && ids[0] === '1' && ids[1] === '2' && ids[2] === '3')
+    } else if (ids && ids[0] === 'disclaimer' || ids && ids[0] === 'disclaimerMarkdown') {
+      response = disclaimerConfiguration
+    } else if ((ids && ids[0] === '1' && ids[1] === '2' && ids[2] === '3')
       || (ids && ids[0] === '11' && ids[1] === '22' && ids[2] === '33')) {
       response = configurationId112233
     }

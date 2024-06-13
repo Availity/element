@@ -406,7 +406,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-disclaimer@workspace:*, @availity/mui-disclaimer@workspace:packages/disclaimer":
+"@availity/mui-disclaimer@workspace:*, @availity/mui-disclaimer@workspace:^, @availity/mui-disclaimer@workspace:packages/disclaimer":
   version: 0.0.0-use.local
   resolution: "@availity/mui-disclaimer@workspace:packages/disclaimer"
   dependencies:
@@ -695,6 +695,7 @@ __metadata:
     "@availity/api-axios": ^8.0.7
     "@availity/message-core": ^6.1.2
     "@availity/mui-button": "workspace:^"
+    "@availity/mui-disclaimer": "workspace:^"
     "@availity/mui-modal": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
@@ -708,6 +709,10 @@ __metadata:
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
+    "@availity/mui-button": "workspace:^"
+    "@availity/mui-disclaimer": "workspace:^"
+    "@availity/mui-modal": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.11.9
     react: ">=16.3.0"
     react-image: ^4.1.0
