@@ -1,4 +1,5 @@
 // For bundling purposes, always use the direct import for an mui component, i.e. '@mui/material/xxx'
+import type { ReactNode } from 'react';
 import { Typography, TypographyProps } from '@availity/mui-typography';
 import { Link, LinkProps } from '@availity/mui-link';
 import { styled } from '@mui/material/styles';
@@ -8,13 +9,15 @@ type AvDisclaimerProps = {
   accent?: boolean;
   /** If true, the Disclaimer displays with less padding  */
   dense?: boolean;
+  /** The id of the element */
+  id?: string;
 };
 
 export interface DisclaimerProps extends AvDisclaimerProps {
   /** The text to display in the header */
   headerText?: string;
   /** The text to display in the body */
-  description: string;
+  description: string | ReactNode;
   /** The link to display */
   link?: LinkProps;
 }
