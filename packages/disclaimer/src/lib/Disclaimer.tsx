@@ -17,7 +17,7 @@ export interface DisclaimerProps extends AvDisclaimerProps {
   /** The text to display in the header */
   headerText?: string;
   /** The text to display in the body */
-  description: string | ReactNode;
+  description: ReactNode;
   /** The link to display */
   link?: LinkProps;
 }
