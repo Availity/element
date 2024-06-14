@@ -140,7 +140,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/mock@workspace:packages/mock":
+"@availity/mock@workspace:^, @availity/mock@workspace:packages/mock":
   version: 0.0.0-use.local
   resolution: "@availity/mock@workspace:packages/mock"
   dependencies:
@@ -406,7 +406,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-disclaimer@workspace:*, @availity/mui-disclaimer@workspace:packages/disclaimer":
+"@availity/mui-disclaimer@workspace:*, @availity/mui-disclaimer@workspace:^, @availity/mui-disclaimer@workspace:packages/disclaimer":
   version: 0.0.0-use.local
   resolution: "@availity/mui-disclaimer@workspace:packages/disclaimer"
   dependencies:
@@ -694,7 +694,9 @@ __metadata:
   dependencies:
     "@availity/api-axios": ^8.0.7
     "@availity/message-core": ^6.1.2
+    "@availity/mock": "workspace:^"
     "@availity/mui-button": "workspace:^"
+    "@availity/mui-disclaimer": "workspace:^"
     "@availity/mui-modal": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
@@ -703,12 +705,19 @@ __metadata:
     qs: ^6.12.1
     react: 18.2.0
     react-dom: 18.2.0
+    react-image: ^4.1.0
     react-markdown: ^9.0.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
+    "@availity/mui-button": "workspace:^"
+    "@availity/mui-disclaimer": "workspace:^"
+    "@availity/mui-modal": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.11.9
     react: ">=16.3.0"
+    react-image: ^4.1.0
+    react-markdown: ^9.0.1
   languageName: unknown
   linkType: soft
 
@@ -14135,8 +14144,8 @@ __metadata:
   linkType: hard
 
 "mdast-util-to-hast@npm:^13.0.0":
-  version: 13.1.0
-  resolution: "mdast-util-to-hast@npm:13.1.0"
+  version: 13.2.0
+  resolution: "mdast-util-to-hast@npm:13.2.0"
   dependencies:
     "@types/hast": ^3.0.0
     "@types/mdast": ^4.0.0
@@ -14147,7 +14156,7 @@ __metadata:
     unist-util-position: ^5.0.0
     unist-util-visit: ^5.0.0
     vfile: ^6.0.0
-  checksum: 640bc897286af8fe760cd477fb04bbf544a5a897cdc2220ce36fe2f892f067b483334610387aeb969511bd78a2d841a54851079cd676ac513d6a5ff75852514e
+  checksum: 7e5231ff3d4e35e1421908437577fd5098141f64918ff5cc8a0f7a8a76c5407f7a3ee88d75f7a1f7afb763989c9f357475fa0ba8296c00aaff1e940098fe86a6
   languageName: node
   linkType: hard
 
@@ -16039,6 +16048,17 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
   checksum: 4ac71033b66ae0b7b9d75a1bc2053a6747fb37f68c6895ee85a72cabb890168d82990c8ca7bddd271e80fdbf58f471d14d6a0e0714400d017590d4f56b3d241f
+  languageName: node
+  linkType: hard
+
+"react-image@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "react-image@npm:4.1.0"
+  peerDependencies:
+    "@babel/runtime": ">=7"
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: a5303a728f0ccc4b340a2758d5e82881d1b931ee2837173dca2a8e9fc1b8bfcc4fcb9e2144e6a80602f52dd2827d29b12782884fcf61772c839f620f46ce3037
   languageName: node
   linkType: hard
 

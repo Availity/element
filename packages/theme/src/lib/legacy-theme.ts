@@ -270,6 +270,12 @@ export const legacyTheme = {
       ...typographyStyles('Overline'),
       color: tokens.colorTextPrimary,
     },
+    agreement: {
+      maxHeight: '300px',
+      overflowY: 'auto',
+      overflowX: 'hidden',
+      padding: '.2rem'
+    }
   },
   components: {
     AvDisclaimer: {
@@ -1824,6 +1830,7 @@ export const legacyTheme = {
           body1: 'p',
           body2: 'p',
           inherit: 'p',
+          agreement: 'div'
         },
       },
     },

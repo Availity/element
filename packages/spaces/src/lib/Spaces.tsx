@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
 import { useQueries } from '@tanstack/react-query';
-import { normalizeSpaces, spacesReducer, fetchAllSpaces } from './spaces-data';
+import { spacesReducer, fetchAllSpaces } from './spaces-data';
 import { Space, SpacesProps, SpacesContextType } from './spaces-types';
 import configurationFindMany from './configurationFindMany';
 
@@ -192,11 +192,22 @@ export const useSpaces = (...ids: string[]) => {
 
   if (shouldReturnAllSpaces) {
     console.warn(`You did not pass in an ID to find a space, returning all spaces.`);
-    return spaces && normalizeSpaces([...spaces.values()]);
+    return spaces && [...spaces.values()];
   }
 
-  const matchedSpaces = ids.map((id) => spaces?.get(id) || spacesByConfig?.get(id) || spacesByPayer?.get(id));
-  const normalized = normalizeSpaces(matchedSpaces);
+  return ids.reduce((acc: Space[], id) => {
+    const matchedSpace = spaces?.get(id) || spacesByConfig?.get(id);
 
-  return normalized;
+    if (matchedSpace) {
+      acc.push(matchedSpace);
+      return acc;
+    }
+
+    const matchedSpacesByPayer = spacesByPayer?.get(id);
+
+    if (matchedSpacesByPayer) {
+      acc.push(...matchedSpacesByPayer);
+      return acc;
+    }
+  }, []);
 };
