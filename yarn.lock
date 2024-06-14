@@ -29,6 +29,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@availity/api-axios@npm:8.0.8":
+  version: 8.0.8
+  resolution: "@availity/api-axios@npm:8.0.8"
+  dependencies:
+    "@availity/resolve-url": 2.0.5
+    lodash: ^4.17.21
+    qs: ^6.11.2
+  peerDependencies:
+    axios: ^1.4.0
+  checksum: c02fc126d9542e034ac015df767810ac169777749cc51d1531672ae73f754a57c44f642ace842b348c608dcc9e9c619547c2102e2d7a34342c33086361184ccf
+  languageName: node
+  linkType: hard
+
 "@availity/api-axios@npm:^8.0.7":
   version: 8.0.7
   resolution: "@availity/api-axios@npm:8.0.7"
@@ -132,6 +145,20 @@ __metadata:
     react: ">=16.8.0"
   languageName: unknown
   linkType: soft
+
+"@availity/hooks@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "@availity/hooks@npm:5.0.2"
+  dependencies:
+    "@tanstack/react-query": ^4.36.1
+    prop-types: ^15.8.1
+  peerDependencies:
+    "@availity/api-axios": ^8.0.0
+    axios: ^1.0.0
+    react: ">=16.8.0"
+  checksum: 6951bfb42ab5d400a6192dd573c9f50aad646fa76f0b63308b6d4776ce7ecf2499a9486fa8a49fee3f329f74a1729fc69908ae120a4a1e35d64d954e7562a9be
+  languageName: node
+  linkType: hard
 
 "@availity/message-core@npm:^6.1.2":
   version: 6.1.2
@@ -693,10 +720,14 @@ __metadata:
   resolution: "@availity/mui-spaces@workspace:packages/spaces"
   dependencies:
     "@availity/api-axios": ^8.0.7
+    "@availity/hooks": ^5.0.2
     "@availity/message-core": ^6.1.2
     "@availity/mui-button": "workspace:^"
+    "@availity/mui-icon": "workspace:^"
     "@availity/mui-modal": "workspace:^"
     "@availity/mui-typography": "workspace:^"
+    "@availity/native-form": ^5.0.6
+    "@availity/resolve-url": ^2.0.6
     "@mui/material": ^5.15.15
     "@tanstack/react-query": ^4.36.1
     dayjs: ^1.11.10
@@ -707,6 +738,9 @@ __metadata:
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
+    "@availity/hooks": ^5.0.2
+    "@availity/native-form": ^5.0.6
+    "@availity/resolve-url": ^2.0.6
     "@mui/material": ^5.11.9
     react: ">=16.3.0"
   languageName: unknown
@@ -833,6 +867,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@availity/native-form@npm:^5.0.6":
+  version: 5.0.6
+  resolution: "@availity/native-form@npm:5.0.6"
+  dependencies:
+    "@availity/api-axios": 8.0.8
+  checksum: ab583c6080b642293ed898d70ca61d68e2ffcecd1909a6153732000394da4909aa44acb3dad97d019091436d15fd80936242a1dcffa059bfe133bc44850b9cf7
+  languageName: node
+  linkType: hard
+
 "@availity/nx-generator@workspace:packages/nx-generator":
   version: 0.0.0-use.local
   resolution: "@availity/nx-generator@workspace:packages/nx-generator"
@@ -846,6 +889,13 @@ __metadata:
   version: 2.0.5
   resolution: "@availity/resolve-url@npm:2.0.5"
   checksum: 59980fbd26173a91872c435d7e8617e45049de50d3f67710a1dc845b7740908309dd8b324189f4479d99a18deae013abc7c0e9b87f7bac8d7080123693bfd396
+  languageName: node
+  linkType: hard
+
+"@availity/resolve-url@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "@availity/resolve-url@npm:2.0.6"
+  checksum: 3fa0348428316386404a618e31388757cc5be62f80efef8ec8390612d907f37a70579825d4b6bd1de7b5a5ac8410a14e36e74dc617cc3bccacb04c1e1bbe5a20
   languageName: node
   linkType: hard
 

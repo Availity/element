@@ -13,3 +13,18 @@ export const getUrl = (url = '', loadApp: boolean, absolute: boolean) => {
 
   return `/public/apps/home/#!/loadApp?appUrl=${encodeURIComponent(url)}`;
 };
+
+export const getTarget = (target: string) => {
+  // should start with _, otherwise it is specifying a specific frame name
+  // _blank = new tab/window, _self = same frame, _parent = parent frame (use for home page from modals), _top = document body, framename = specific frame
+  if (target && !target.startsWith('_')) {
+    if (target === 'BODY') {
+      return '_self';
+    }
+    if (target === 'TAB') {
+      return '_blank';
+    }
+  }
+
+  return target || '_self';
+};

@@ -32,6 +32,10 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
+    "@availity/hooks": "^5.0.2",
+    "@availity/mui-icon": "workspace:^",
+    "@availity/native-form": "^5.0.6",
+    "@availity/resolve-url": "^2.0.6",
     "@mui/material": "^5.15.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -39,6 +43,10 @@
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
+    "@availity/hooks": "^5.0.2",
+    "@availity/mui-icon": "workspace:^",
+    "@availity/native-form": "^5.0.6",
+    "@availity/resolve-url": "^2.0.6",
     "@mui/material": "^5.11.9",
     "react": ">=16.3.0"
   },
