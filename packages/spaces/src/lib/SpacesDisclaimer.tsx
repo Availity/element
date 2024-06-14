@@ -3,12 +3,12 @@ import ReactMarkdown from 'react-markdown';
 
 import { useSpaces } from './Spaces';
 
-export interface SpacesDisclaimerProps {
+export type SpacesDisclaimerProps = {
   accent?: boolean;
   spaceId: string;
   markdown?: boolean;
   id?: string;
-}
+};
 
 export const SpacesDisclaimer = ({
   accent = true,

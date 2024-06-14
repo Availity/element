@@ -33,16 +33,16 @@ export type Space = {
   payerIDs?: string[];
   /** The images associated with the configuration. */
   images?: SpacesImages;
-  //** Metadata for a configuration */
-  meta?: { [key: string]: any };
+  /** Metadata for a configuration */
+  meta?: Record<string, unknown>;
   /** Key-value data for a configuration. */
   metadataPairs?: NameValuePair[];
   /** The feature box colors associated with the Payer Space. */
-  colors?: { [key: string]: any };
+  colors?: Record<string, unknown>;
   /** Contains URL fragments that point to icons. */
-  icons?: { [key: string]: any };
+  icons?: Record<string, unknown>;
   /** The key-value mapping pairs. */
-  mapping?: { [key: string]: any };
+  mapping?: Record<string, unknown>;
   mappingPairs?: NameValuePair[];
   /** Whether or not the space is ghosted */
   isGhost?: boolean;

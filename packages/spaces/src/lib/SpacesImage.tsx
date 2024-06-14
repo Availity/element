@@ -14,15 +14,15 @@ type BaseSpacesImageProps = {
   id?: string;
 };
 
-interface SpacesImageSpaceId extends BaseSpacesImageProps {
+type SpacesImageSpaceId = {
   spaceId: string;
   payerId?: string;
-}
+} & BaseSpacesImageProps;
 
-interface SpacesImagePayerId extends BaseSpacesImageProps {
+type SpacesImagePayerId = {
   spaceId?: string;
   payerId: string;
-}
+} & BaseSpacesImageProps;
 
 export type SpacesImageProps = SpacesImageSpaceId | SpacesImagePayerId;
 

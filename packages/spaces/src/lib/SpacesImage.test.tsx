@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, waitForElementToBeRemoved } from '@testing-library/react';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { server } from '../../../mock/src/lib/server';
+import { server } from '@availity/mock/src/lib/server';
 import { SpacesImage } from './SpacesImage';
 import { Spaces } from './Spaces';
 

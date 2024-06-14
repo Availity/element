@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, waitFor } from '@testing-library/react';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { server } from '../../../mock/src/lib/server';
+import { server } from '@availity/mock/src/lib/server';
 import { SpacesDisclaimer } from './SpacesDisclaimer';
 import { Spaces } from './Spaces';
 

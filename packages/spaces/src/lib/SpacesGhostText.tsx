@@ -3,8 +3,7 @@ import { useSpaces } from './Spaces';
 export type SpacesGhostTextProps = {
   spaceId: string;
   id?: string;
-  [key: string]: any;
-};
+} & React.HTMLAttributes<HTMLElement>;
 
 export const SpacesGhostText = ({ spaceId, id, ...props }: SpacesGhostTextProps) => {
   const spaces = useSpaces(spaceId);

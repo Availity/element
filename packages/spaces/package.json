@@ -32,6 +32,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
+    "@availity/mock": "workspace:^",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-disclaimer": "workspace:^",
     "@availity/mui-modal": "workspace:^",
