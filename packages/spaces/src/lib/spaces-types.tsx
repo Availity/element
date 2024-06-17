@@ -55,6 +55,7 @@ export type Space = {
   /** The description of the configuration. */
   description?: string;
   url?: string;
+  parents?: Space[];
 };
 
 export type FetchSpacesProps = {

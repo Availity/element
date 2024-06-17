@@ -1,4 +1,6 @@
-const configurations = [
+import type { Space } from "@availity/mui-spaces";
+
+const configurations: Space[] = [
   {
     "id": "agreement",
     "configurationId": "agreement",
@@ -77,25 +79,31 @@ const configurations = [
   {
     "id": "11",
     "configurationId": "11",
+    "name": "Space 11",
+    "type": "space",
     "payerIDs": ["a", "b", "c"],
     "images": {
-      "logo": "/element/spaces/test_logo.png"
+      "logo": "/spaces/test_logo.png"
     }
   },
   {
     "id": "22",
     "configurationId": "22",
+    "name": "Space 22",
+    "type": "space",
     "payerIDs": ["b", "c"],
     "images": {
-      "tile": "/element/spaces/tile.jpg",
-      "billboard": "/element/spaces/icon.png"
+      "tile": "/spaces/tile.jpg",
+      "billboard": "/spaces/icon.png"
     }
   },
   {
     "id": "33",
     "configurationId": "33",
+    "name": "Space 33",
+    "type": "space",
     "payerIDs": ["d", "c"],
-    "url": "/element/spaces/tile.jpg"
+    "url": "/spaces/tile.jpg"
   },
   {
     "id": "disclaimer",
@@ -124,7 +132,27 @@ const configurations = [
   }
 ];
 
-export const getConfigs = ({ payerIds, ids }: { payerIds?: string[]; ids?: string[] }) => {
+const buildLinkUrl = (configuration: Space, isLocal: boolean) => {
+  if (configuration.url) {
+    configuration.url = !isLocal ? `/element${configuration.url}` : configuration.url;
+  }
+
+  if (configuration.images?.tile) {
+    configuration.images.tile = !isLocal ? `/element${configuration.images.tile}` : configuration.images.tile;
+  }
+
+  if (configuration.images?.billboard) {
+    configuration.images.billboard = !isLocal ? `/element${configuration.images.billboard}` : configuration.images.billboard;
+  }
+
+  if (configuration.images?.logo) {
+    configuration.images.logo = !isLocal ? `/element${configuration.images.logo}` : configuration.images.logo;
+  }
+
+  return configuration;
+}
+
+export const getConfigs = ({ payerIds, ids, isLocal }: { payerIds?: string[]; ids?: string[]; isLocal: boolean }) => {
   let configs = [...configurations];
   if (payerIds) {
     configs = configs.filter((c) => c.payerIDs?.some((id) => payerIds.includes(id)));
@@ -132,5 +160,5 @@ export const getConfigs = ({ payerIds, ids }: { payerIds?: string[]; ids?: strin
   if (ids) {
     configs = configs.filter((c) => ids.includes(c.id));
   }
-  return configs;
+  return configs.map(config => buildLinkUrl(config, isLocal));
 };

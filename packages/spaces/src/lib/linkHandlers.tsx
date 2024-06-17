@@ -20,7 +20,7 @@ export const openLink = async (space: Space, { akaname, payerSpaceId }) => {
 };
 
 export const openLinkWithSso = async (space: Space, { akaname, clientId, payerSpaceId, ssoParams }) => {
-  if (space.metadata && space.metadata.ssoId) {
+  if (space.meta && space.meta.ssoId) {
     const options = space.link?.target ? { target: getTarget(space.link.target) } : undefined;
 
     const attributes = {
@@ -32,7 +32,7 @@ export const openLinkWithSso = async (space: Space, { akaname, clientId, payerSp
 
     try {
       await updateTopApps(space, akaname);
-      await nativeForm(space.metadata.ssoId, attributes, options, space.type);
+      await nativeForm(space.meta.ssoId, attributes, options, space.type);
     } catch {
       console.warn('Something went wrong');
     }
