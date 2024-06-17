@@ -6,9 +6,9 @@
         "hasNextPage": false
       },
       "items": [
-        { "id": "1", "configurationId": "11", "payerIDs": ["a", "b", "c"] },
-        { "id": "2", "configurationId": "22", "payerIDs": ["b", "c"] },
-        { "id": "3", "configurationId": "33", "payerIDs": ["d", "c"] }
+        { "id": "1", "configurationId": "11", "payerIDs": ["a", "b", "c"], "images": { "logo": "/element/spaces/test_logo.png" } },
+        { "id": "2", "configurationId": "22", "payerIDs": ["b", "c"], "images": { "tile": "/element/spaces/tile.jpg", "billboard": "/element/spaces/icon.png" } },
+        { "id": "3", "configurationId": "33", "payerIDs": ["d", "c"], "url": "/element/spaces/tile.jpg" }
       ]
     }
   }

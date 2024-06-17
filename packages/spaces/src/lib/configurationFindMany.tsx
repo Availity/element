@@ -15,6 +15,7 @@ export default `query configurationFindMany($ids: [String!], $payerIDs: [ID!], $
         description
         payerIDs
         parentIDs
+        meta
         metadataPairs {
           name
           value

@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.51.0](https://github.com/Availity/element/compare/@availity/theme@0.50.0...@availity/theme@0.51.0) (2024-06-14)
+
+
+### Features
+
+* **mui-typography:** add agreement variant ([6ffb7a7](https://github.com/Availity/element/commit/6ffb7a7589b622295833609f8599e220107001da))
+
 ## [0.50.0](https://github.com/Availity/element/compare/@availity/theme@0.49.0...@availity/theme@0.50.0) (2024-06-12)
 
 
