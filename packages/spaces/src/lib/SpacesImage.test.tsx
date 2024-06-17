@@ -40,6 +40,6 @@ describe('SpacesImage', () => {
     await waitForElementToBeRemoved(getByRole('progressbar'));
 
     // Ensure the correct src was selected.
-    expect(mockImage.mock.calls[0][0].src).toEqual('/spaces/tile.jpg');
+    expect(mockImage.mock.calls[0][0].src).toEqual('/element/spaces/tile.jpg');
   });
 });
