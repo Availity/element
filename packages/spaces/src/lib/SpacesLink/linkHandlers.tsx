@@ -1,10 +1,10 @@
-import { getUrl, getTarget, updateUrl } from './helpers';
+import { getUrl, getTarget, updateUrl } from '../helpers';
 import nativeForm from '@availity/native-form';
 import { isAbsoluteUrl } from '@availity/resolve-url';
-import { updateTopApps } from './topApps';
-import { Space } from './spaces-types';
+import { updateTopApps } from '../topApps';
+import { Space } from '../spaces-types';
 
-export const openLink = async (space: Space, { akaname, payerSpaceId }) => {
+export const openLink = async (space: Space | undefined, { akaname, payerSpaceId }) => {
   if (!space?.link?.url) {
     return;
   }

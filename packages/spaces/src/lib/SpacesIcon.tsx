@@ -1,6 +1,6 @@
 import { Icon } from '@availity/mui-icon';
 import { useSpacesContext } from './Spaces';
-import { useLink } from './useLink';
+import { useLink } from './SpacesLink/useLink';
 import { CircularProgress } from '@availity/mui-progress';
 
 const SpacesIcon = ({ spaceId, loading: propsLoading, space: propsSpace, clientId, style, className, ...rest }) => {

@@ -10,8 +10,8 @@ import { Link } from '../spaces-types';
 
 export const MODAL_INITIAL_STATE = {
   isOpen: false,
-  modalOptions: {},
-  modalState: {},
+  modalOptions: undefined,
+  modalState: undefined,
   selectedModal: {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     buttonProps: () => {},
@@ -36,10 +36,19 @@ type MultiPayerOnSubmitProps = {
   name: string;
 };
 
+type MultiPayerButtonProps = {
+  selectedOption: {
+    id: string;
+    name: string;
+  };
+};
+
+type ModalTypes = 'DISCLAIMER_MODAL' | 'MULTI_PAYER_MODAL';
+
 export const MODAL_TYPES = {
   DISCLAIMER: {
     body: DisclaimerModal,
-    buttonProps: (): ButtonProps => ({
+    buttonProps: () => ({
       children: 'Accept',
     }),
     onSubmit: ({ link, id: spaceId }: DisclaimerOnSubmitProps) => {
@@ -48,11 +57,15 @@ export const MODAL_TYPES = {
   },
   MULTI_PAYER: {
     body: MultiPayerModal,
-    buttonProps: ({ selectedOption }): ButtonProps => ({
+    buttonProps: ({ selectedOption }: MultiPayerButtonProps) => ({
       children: 'Continue',
       disabled: selectedOption === undefined,
     }),
-    onSubmit: ({ metadata, link, id: spaceId, name }: MultiPayerOnSubmitProps, modalState, dispatch) => {
+    onSubmit: (
+      { metadata, link, id: spaceId, name }: MultiPayerOnSubmitProps,
+      modalState: MultiPayerButtonProps,
+      dispatch: React.Dispatch<{ [x: string]: any; type: any }>
+    ) => {
       if (metadata?.disclaimerId) {
         dispatch({ type: 'OPEN_DISCLAIMER_MODAL', disclaimerId: metadata.disclaimerId, link, id: spaceId, name });
         return;
@@ -62,7 +75,7 @@ export const MODAL_TYPES = {
 
       window.open(
         !isAbsoluteUrl(link.url)
-          ? getUrl(updateUrl(link.url, 'spaceId', modalState.selectedOption.id), false, false, target)
+          ? getUrl(updateUrl(link.url, 'spaceId', modalState.selectedOption.id), false, false)
           : link.url,
         target
       );
@@ -70,15 +83,32 @@ export const MODAL_TYPES = {
   },
 };
 
+type ModalOptions = {
+  id: string;
+  name: string;
+  user: any;
+  spaceType: string;
+  title: string;
+};
+
+type ModalState = {
+  isOpen: boolean;
+  modalOptions: ModalOptions;
+  modalState: {};
+  selectedModal?: {
+    buttonProps: () => void;
+  };
+};
+
 export const modalActions = {
   RESET: () => MODAL_INITIAL_STATE,
-  OPEN_DISCLAIMER_MODAL: (state, modalOptions) => ({
+  OPEN_DISCLAIMER_MODAL: (state: ModalState, modalOptions: ModalOptions) => ({
     ...state,
     isOpen: true,
     selectedModal: MODAL_TYPES.DISCLAIMER,
     modalOptions: { ...modalOptions, type: modalOptions.spaceType },
   }),
-  OPEN_MULTI_PAYER_MODAL: (state, modalOptions) => ({
+  OPEN_MULTI_PAYER_MODAL: (state: ModalState, modalOptions: ModalOptions) => ({
     ...state,
     isOpen: true,
     selectedModal: MODAL_TYPES.MULTI_PAYER,
@@ -87,10 +117,13 @@ export const modalActions = {
       type: modalOptions.spaceType,
     },
   }),
-  UPDATE_MODAL_STATE: (state, modalState) => ({ ...state, modalState }),
+  UPDATE_MODAL_STATE: (state: ModalState, modalState) => ({ ...state, modalState }),
 };
 
-export const modalReducer = (state, { type, ...action }) => modalActions[type](state, action);
+type ModalActions = 'RESET' | 'OPEN_DISCLAIMER_MODAL' | 'OPEN_MULTI_PAYER_MODAL' | 'UPDATE_MODAL_STATE';
+
+export const modalReducer = (state: ModalState, { type, ...action }: { type: ModalActions }) =>
+  modalActions[type](state, action);
 
 export const ModalProvider = ({ children }) => {
   const [
@@ -107,9 +140,11 @@ export const ModalProvider = ({ children }) => {
 
   return (
     <ModalContext.Provider
-      value={(modalType, modalOptions) => dispatch({ type: `OPEN_${modalType}`, ...modalOptions })}
+      value={(modalType: ModalTypes, modalOptions: ModalOptions) =>
+        dispatch({ type: `OPEN_${modalType}`, ...modalOptions })
+      }
     >
-      <Dialog isOpen={isOpen}>
+      <Dialog open={isOpen}>
         <DialogTitle id="disclaimer-header">{title}</DialogTitle>
         {Body && (
           <Body
