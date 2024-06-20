@@ -14,6 +14,7 @@ import configurationId112233 from './data/thanos/configuration-id-112233.json';
 import ghostedConfiguration from './data/thanos/ghosted-configuration.json';
 import agreementConfiguration from './data/thanos/agreement-configurations.json';
 import disclaimerConfiguration from './data/thanos/disclaimer-configurations.json';
+import settings from './data/settings.json';
 
 type ConfigurationFindMany = {
   data: {
@@ -70,6 +71,16 @@ export const handlers = [
 
     // return permissions based on the request
     return HttpResponse.json(response, { status: 200 });
+  }),
+
+  http.get(routes.SETTINGS, async (context) => {
+    const { request } = context;
+    const params = parse(request.url.split('?')[1], { ignoreQueryPrefix: true });
+
+    if (params.applicationId === 'Gateway-AvNavigation') {
+      await delay(defaultDelay);
+      return HttpResponse.json(settings, { status: 200 });
+    }
   }),
 
   // Thanos
