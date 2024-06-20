@@ -1,28 +1,75 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import AvApi, { ApiConfig } from '@availity/api-axios';
+/* eslint-disable @nx/enforce-module-boundaries */
+import { server } from '@availity/mock/src/lib/server';
+
 import { AsyncAutocomplete } from './AsyncAutocomplete';
 
+const api = new AvApi({ name: 'example' } as ApiConfig);
+
+type Option = {
+  label: string;
+  value: number;
+};
+
+type ExampleResponse = {
+  totalCount: number;
+  options: Option[];
+  count: number;
+};
+
+const getResults = async (page: number, limit: number) => {
+  const offset = page * limit;
+  try {
+    const resp = await api.post<ExampleResponse>({ offset, limit }, { params: {} });
+
+    return {
+      totalCount: resp.data.totalCount,
+      offset,
+      limit,
+      options: resp.data.options,
+      count: resp.data.count,
+    };
+  } catch {
+    return {
+      totalCount: 0,
+      offset,
+      limit,
+      options: [],
+      count: 0,
+    };
+  }
+};
+
+const loadOptions = async (page: number, limit: number) => {
+  const { options, totalCount, offset } = await getResults(page, limit);
+
+  return {
+    options,
+    hasMore: offset + limit < totalCount,
+  };
+};
+
 describe('AsyncAutocomplete', () => {
+  beforeAll(() => {
+    // Start the interception.
+    server.listen();
+  });
+
+  afterEach(() => {
+    // Remove any handlers you may have added
+    // in individual tests (runtime handlers).
+    server.resetHandlers();
+    jest.restoreAllMocks();
+  });
+
   test('should render successfully', () => {
-    const { getByLabelText } = render(
-      <AsyncAutocomplete
-        FieldProps={{ label: 'Test' }}
-        loadOptions={async () => ({
-          options: ['1', '2', '3'],
-          hasMore: false,
-        })}
-      />
-    );
+    const { getByLabelText } = render(<AsyncAutocomplete FieldProps={{ label: 'Test' }} loadOptions={loadOptions} />);
+
     expect(getByLabelText('Test')).toBeTruthy();
   });
 
   test('options should be available', async () => {
-    const loadOptions = () =>
-      Promise.resolve({
-        options: [{ label: 'Option 1' }],
-        getOptionLabel: (option: { label: string }) => option.label,
-        hasMore: false,
-      });
-
     render(<AsyncAutocomplete loadOptions={loadOptions} FieldProps={{ label: 'Test' }} />);
 
     const input = screen.getByRole('combobox');
@@ -41,19 +88,7 @@ describe('AsyncAutocomplete', () => {
   });
 
   test('should call loadOptions when scroll to the bottom', async () => {
-    const loadOptions = jest.fn();
-    loadOptions.mockResolvedValueOnce({
-      options: [
-        { label: 'Option 1' },
-        { label: 'Option 2' },
-        { label: 'Option 3' },
-        { label: 'Option 4' },
-        { label: 'Option 5' },
-        { label: 'Option 6' },
-      ],
-      hasMore: true,
-    });
-    render(<AsyncAutocomplete loadOptions={loadOptions} FieldProps={{ label: 'Test' }} />);
+    render(<AsyncAutocomplete loadOptions={loadOptions} limit={10} FieldProps={{ label: 'Test' }} />);
 
     const input = screen.getByRole('combobox');
     fireEvent.click(input);
@@ -63,24 +98,14 @@ describe('AsyncAutocomplete', () => {
       expect(screen.getByText('Option 1')).toBeDefined();
     });
 
-    expect(loadOptions).toHaveBeenCalled();
-    expect(loadOptions).toHaveBeenCalledTimes(1);
-    expect(loadOptions).toHaveBeenCalledWith(0, 50);
-
-    loadOptions.mockResolvedValueOnce({
-      options: [{ label: 'Option 7' }],
-      hasMore: false,
-    });
-
     await act(async () => {
       const options = await screen.findByRole('listbox');
       fireEvent.scroll(options, { target: { scrollTop: options.scrollHeight } });
     });
 
     await waitFor(() => {
-      expect(loadOptions).toHaveBeenCalled();
-      expect(loadOptions).toHaveBeenCalledTimes(2);
-      expect(loadOptions).toHaveBeenLastCalledWith(1, 50);
+      expect(screen.getByText('Option 10')).toBeDefined();
+      expect(() => screen.getByText('Option 20')).toThrowError();
     });
   });
 });
