@@ -13,7 +13,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
-import Alert from '@mui/material/Alert';
+import { Alert } from '@availity/mui-alert';
 
 /** Expand from the start edge of the child element. */
 const meta: Meta<typeof Collapse> = {

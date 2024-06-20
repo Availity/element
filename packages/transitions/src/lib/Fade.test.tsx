@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Typography from '@mui/material/Typography';
+import { Typography } from '@availity/mui-typography';
 import { Fade } from './Fade';
 
 describe('Fade', () => {

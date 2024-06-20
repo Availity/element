@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import Alert from '@mui/material/Alert';
+import { Alert } from '@availity/mui-alert';
 import { Fade, FadeProps } from './Fade';
 
 /** Expand from the start edge of the child element. */
@@ -25,7 +25,9 @@ export const _Fade: StoryObj<typeof Fade> = {
 
     return (
       <Fade in={visible} {...args}>
-        <Alert onClose={onClose}>Dismissable Alert</Alert>
+        <div>
+          <Alert onClose={onClose}>Dismissable Alert</Alert>
+        </div>
       </Fade>
     );
   },
