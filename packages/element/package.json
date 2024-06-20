@@ -32,6 +32,7 @@
     "@availity/mui-disclaimer": "workspace:*",
     "@availity/mui-divider": "workspace:*",
     "@availity/mui-empty-state": "workspace:*",
+    "@availity/mui-favorites": "workspace:*",
     "@availity/mui-feedback": "workspace:*",
     "@availity/mui-form-utils": "workspace:*",
     "@availity/mui-icon": "workspace:*",
