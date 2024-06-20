@@ -126,6 +126,8 @@ export const handlers = [
       parsedParams[key] = parsers[key]?.(value) ?? value;
     }
 
+    await delay(defaultDelay);
+
     if (typeof parsedParams.offset !== 'number' || typeof parsedParams.limit !== 'number') {
       throw new Error('offset and limit not provided');
     }
