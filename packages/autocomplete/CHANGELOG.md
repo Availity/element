@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.4.6...@availity/mui-autocomplete@0.5.0) (2024-06-20)
+
+
+### Features
+
+* **mui-autocomplete:** add OrganizationAutocomplete component ([9f3ea07](https://github.com/Availity/element/commit/9f3ea0753e0147d7e1aeaf73230716046caba01e))
+
 ## [0.4.6](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.4.5...@availity/mui-autocomplete@0.4.6) (2024-06-14)
 
 ### Dependency Updates
