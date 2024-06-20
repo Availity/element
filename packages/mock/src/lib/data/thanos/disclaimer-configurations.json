@@ -1,0 +1,27 @@
+{
+  "data": {
+    "configurationPagination": {
+      "pageInfo": {
+        "currentPage": 1,
+        "hasNextPage": false
+      },
+      "items": [
+        { 
+          "id": "disclaimer",
+          "configurationId": "disclaimer",
+          "type": "space",
+          "name": "Disclaimer Configuration",
+          "description": "This is a disclaimer."
+        },
+        {
+          "id": "disclaimerMarkdown",
+          "configurationId":
+          "disclaimerMarkdown",
+          "type": "space",
+          "name": "Disclaimer Markdown Configuration",
+          "description": "# This is a disclaimer."
+        }
+      ]
+    }
+  }
+}

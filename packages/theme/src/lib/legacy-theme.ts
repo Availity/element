@@ -270,8 +270,27 @@ export const legacyTheme = {
       ...typographyStyles('Overline'),
       color: tokens.colorTextPrimary,
     },
+    agreement: {
+      maxHeight: '300px',
+      overflowY: 'auto',
+      overflowX: 'hidden',
+      padding: '.2rem'
+    }
   },
   components: {
+    AvDisclaimer: {
+      styleOverrides: {
+        root: {
+          padding: '16px',
+        },
+        accent: {
+          borderLeft: `5px solid ${tokens.colorWarningMain}`,
+        },
+        dense: {
+          padding: '12px 16px'
+        }
+      }
+    },
     AvEmptyState: {
       defaultProps: {
         spacing: 2,
@@ -1811,6 +1830,7 @@ export const legacyTheme = {
           body1: 'p',
           body2: 'p',
           inherit: 'p',
+          agreement: 'div'
         },
       },
     },

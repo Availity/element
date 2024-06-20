@@ -12,7 +12,13 @@ export type NameValuePair = {
   value: string;
 };
 
-export type PairFields = ('images' | 'metadata' | 'colors' | 'icons' | 'mapping')[];
+export type SpacesImages = {
+  billboard?: string;
+  logo?: string;
+  promotional?: string;
+  promotionalHover?: string;
+  tile?: string;
+};
 
 export type Space = {
   /** The name of the content or configuration. */
@@ -26,38 +32,30 @@ export type Space = {
   /** A list of payerIds for the configuration or content. */
   payerIDs?: string[];
   /** The images associated with the configuration. */
-  images?: NameValuePair[];
+  images?: SpacesImages;
+  /** Metadata for a configuration */
+  meta?: Record<string, string>;
   /** Key-value data for a configuration. */
-  metadata?: NameValuePair[];
+  metadataPairs?: NameValuePair[];
   /** The feature box colors associated with the Payer Space. */
-  colors?: NameValuePair[];
+  colors?: Record<string, string>;
   /** Contains URL fragments that point to icons. */
-  icons?: NameValuePair[];
+  icons?: Record<string, string>;
   /** The key-value mapping pairs. */
-  mapping?: NameValuePair[];
-};
-
-export type NormalizedPairField = { [key: string]: string };
-
-export interface NormalizedSpace extends Omit<Space, 'images' | 'metadata' | 'colors' | 'icons' | 'mapping'> {
-  /** The images associated with the configuration. */
-  images?: NormalizedPairField;
-  /** The feature box colors associated with the Payer Space. */
-  colors?: NormalizedPairField;
-  /** Contains URL fragments that point to icons. */
-  icons?: NormalizedPairField;
-  /** Key-value data for a configuration. */
-  metadata?: NormalizedPairField;
-  /** The key-value mapping pairs. */
-  mapping?: NormalizedPairField;
-  /** URL metadata for the configuration. */
+  mapping?: Record<string, string>;
+  mappingPairs?: NameValuePair[];
+  /** Whether or not the space is ghosted */
+  isGhost?: boolean;
   link?: {
     /** Contains a URL or URL Fragment that the hyperlink points to. */
     url: string;
     /** Specifies where to open the linked URL. */
     target: string;
   };
-}
+  /** The description of the configuration. */
+  description?: string;
+  url?: string;
+};
 
 export type FetchSpacesProps = {
   /** The query sent to the avWebQL endpoint. */
@@ -109,7 +107,7 @@ export interface SpacesReducerAction extends SpacesContextType {
 
 export type ChildrenProps = {
   /** Array of spaces to be passed into the Spaces provider. */
-  spaces: NormalizedSpace[];
+  spaces: Space[];
 };
 
 export type SpacesProps = {

@@ -256,8 +256,27 @@ export const lightTheme = {
       ...typographyStyles('Overline'),
       color: tokens.colorTextPrimary,
     },
+    agreement: {
+      maxHeight: '300px',
+      overflowY: 'auto',
+      overflowX: 'hidden',
+      padding: '.2rem'
+    }
   },
   components: {
+    AvDisclaimer: {
+      styleOverrides: {
+        root: {
+          padding: '16px',
+        },
+        accent: {
+          borderLeft: `8px solid ${tokens.colorWarningDark}`,
+        },
+        dense: {
+          padding: '12px 16px'
+        }
+      }
+    },
     AvEmptyState: {
       defaultProps: {
         spacing: 2,
@@ -1479,6 +1498,7 @@ export const lightTheme = {
           body1: 'p',
           body2: 'p',
           inherit: 'p',
+          agreement: 'div'
         },
       },
     },

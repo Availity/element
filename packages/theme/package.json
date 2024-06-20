@@ -1,6 +1,6 @@
 {
   "name": "@availity/theme",
-  "version": "0.49.0",
+  "version": "0.51.0",
   "description": "Theme for the Element design system",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",

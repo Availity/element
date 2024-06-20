@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-page-header",
-  "version": "0.2.33",
+  "version": "0.2.35",
   "description": "Availity MUI PageHeader Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -35,6 +35,7 @@
     "@availity/mui-breadcrumbs": "workspace:^",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-divider": "workspace:^",
+    "@availity/mui-layout": "workspace:^",
     "@availity/mui-link": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "@mui/material": "^5.15.15",
@@ -47,6 +48,7 @@
     "@availity/mui-breadcrumbs": "workspace:^",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-divider": "workspace:^",
+    "@availity/mui-layout": "workspace:^",
     "@availity/mui-link": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "@mui/material": "^5.11.9",

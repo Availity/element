@@ -97,6 +97,7 @@ __metadata:
     "@availity/mui-chip": "workspace:*"
     "@availity/mui-datepicker": "workspace:*"
     "@availity/mui-dialog": "workspace:*"
+    "@availity/mui-disclaimer": "workspace:*"
     "@availity/mui-divider": "workspace:*"
     "@availity/mui-empty-state": "workspace:*"
     "@availity/mui-feedback": "workspace:*"
@@ -139,11 +140,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/mock@workspace:packages/mock":
+"@availity/mock@workspace:^, @availity/mock@workspace:packages/mock":
   version: 0.0.0-use.local
   resolution: "@availity/mock@workspace:packages/mock"
   dependencies:
-    msw: ^2.3.0
+    msw: ^2.3.1
     qs: ^6.12.1
     typescript: ^5.4.5
   languageName: unknown
@@ -405,6 +406,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@availity/mui-disclaimer@workspace:*, @availity/mui-disclaimer@workspace:^, @availity/mui-disclaimer@workspace:packages/disclaimer":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-disclaimer@workspace:packages/disclaimer"
+  dependencies:
+    "@availity/mui-link": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
+    "@mui/material": ^5.15.15
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^8.0.2
+    typescript: ^5.4.5
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
 "@availity/mui-divider@workspace:*, @availity/mui-divider@workspace:^, @availity/mui-divider@workspace:packages/divider":
   version: 0.0.0-use.local
   resolution: "@availity/mui-divider@workspace:packages/divider"
@@ -570,6 +588,7 @@ __metadata:
     "@availity/mui-button": "workspace:^"
     "@availity/mui-divider": "workspace:^"
     "@availity/mui-feedback": "workspace:^"
+    "@availity/mui-layout": "workspace:^"
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
@@ -581,6 +600,7 @@ __metadata:
     "@availity/mui-breadcrumbs": "workspace:^"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-divider": "workspace:^"
+    "@availity/mui-layout": "workspace:^"
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.11.9
@@ -674,7 +694,9 @@ __metadata:
   dependencies:
     "@availity/api-axios": ^8.0.7
     "@availity/message-core": ^6.1.2
+    "@availity/mock": "workspace:^"
     "@availity/mui-button": "workspace:^"
+    "@availity/mui-disclaimer": "workspace:^"
     "@availity/mui-modal": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
@@ -683,12 +705,19 @@ __metadata:
     qs: ^6.12.1
     react: 18.2.0
     react-dom: 18.2.0
+    react-image: ^4.1.0
     react-markdown: ^9.0.1
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
+    "@availity/mui-button": "workspace:^"
+    "@availity/mui-disclaimer": "workspace:^"
+    "@availity/mui-modal": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.11.9
     react: ">=16.3.0"
+    react-image: ^4.1.0
+    react-markdown: ^9.0.1
   languageName: unknown
   linkType: soft
 
@@ -8239,11 +8268,11 @@ __metadata:
   linkType: hard
 
 "braces@npm:^3.0.2, braces@npm:~3.0.2":
-  version: 3.0.2
-  resolution: "braces@npm:3.0.2"
+  version: 3.0.3
+  resolution: "braces@npm:3.0.3"
   dependencies:
-    fill-range: ^7.0.1
-  checksum: e2a8e769a863f3d4ee887b5fe21f63193a891c68b612ddb4b68d82d1b5f3ff9073af066c343e9867a393fe4c2555dcb33e89b937195feb9c1613d259edfcd459
+    fill-range: ^7.1.1
+  checksum: b95aa0b3bd909f6cd1720ffcf031aeaf46154dd88b4da01f9a1d3f7ea866a79eba76a6d01cbc3c422b2ee5cdc39a4f02491058d5df0d7bf6e6a162a832df1f69
   languageName: node
   linkType: hard
 
@@ -10968,12 +10997,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fill-range@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "fill-range@npm:7.0.1"
+"fill-range@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "fill-range@npm:7.1.1"
   dependencies:
     to-regex-range: ^5.0.1
-  checksum: cc283f4e65b504259e64fd969bcf4def4eb08d85565e906b7d36516e87819db52029a76b6363d0f02d0d532f0033c9603b9e2d943d56ee3b0d4f7ad3328ff917
+  checksum: b4abfbca3839a3d55e4ae5ec62e131e2e356bf4859ce8480c64c4876100f4df292a63e5bb1618e1d7460282ca2b305653064f01654474aa35c68000980f17798
   languageName: node
   linkType: hard
 
@@ -14115,8 +14144,8 @@ __metadata:
   linkType: hard
 
 "mdast-util-to-hast@npm:^13.0.0":
-  version: 13.1.0
-  resolution: "mdast-util-to-hast@npm:13.1.0"
+  version: 13.2.0
+  resolution: "mdast-util-to-hast@npm:13.2.0"
   dependencies:
     "@types/hast": ^3.0.0
     "@types/mdast": ^4.0.0
@@ -14127,7 +14156,7 @@ __metadata:
     unist-util-position: ^5.0.0
     unist-util-visit: ^5.0.0
     vfile: ^6.0.0
-  checksum: 640bc897286af8fe760cd477fb04bbf544a5a897cdc2220ce36fe2f892f067b483334610387aeb969511bd78a2d841a54851079cd676ac513d6a5ff75852514e
+  checksum: 7e5231ff3d4e35e1421908437577fd5098141f64918ff5cc8a0f7a8a76c5407f7a3ee88d75f7a1f7afb763989c9f357475fa0ba8296c00aaff1e940098fe86a6
   languageName: node
   linkType: hard
 
@@ -14818,9 +14847,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"msw@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "msw@npm:2.3.0"
+"msw@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "msw@npm:2.3.1"
   dependencies:
     "@bundled-es-modules/cookie": ^2.0.0
     "@bundled-es-modules/statuses": ^1.0.1
@@ -14846,7 +14875,7 @@ __metadata:
       optional: true
   bin:
     msw: cli/index.js
-  checksum: 1b6e9e94f3c3f32f1c5bbdb619dac1c46adc7012e1c3131ab3936817cc7734b6b3cae5cca8947422a84f7b9e6393b5fe44dd174fd2d52d1fc0a0e1fc616a356b
+  checksum: bae72567488822889cc5c18318206c847b85d1df4c7bff0eac62e3fa902b95dd2e36710e3679829eaceb9c4f5066f9ed441afd919b304fba111fe2dacf82cefb
   languageName: node
   linkType: hard
 
@@ -16019,6 +16048,17 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
   checksum: 4ac71033b66ae0b7b9d75a1bc2053a6747fb37f68c6895ee85a72cabb890168d82990c8ca7bddd271e80fdbf58f471d14d6a0e0714400d017590d4f56b3d241f
+  languageName: node
+  linkType: hard
+
+"react-image@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "react-image@npm:4.1.0"
+  peerDependencies:
+    "@babel/runtime": ">=7"
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: a5303a728f0ccc4b340a2758d5e82881d1b931ee2837173dca2a8e9fc1b8bfcc4fcb9e2144e6a80602f52dd2827d29b12782884fcf61772c839f620f46ce3037
   languageName: node
   linkType: hard
 
@@ -19063,8 +19103,8 @@ __metadata:
   linkType: hard
 
 "ws@npm:^8.11.0, ws@npm:^8.13.0, ws@npm:^8.2.3":
-  version: 8.16.0
-  resolution: "ws@npm:8.16.0"
+  version: 8.17.1
+  resolution: "ws@npm:8.17.1"
   peerDependencies:
     bufferutil: ^4.0.1
     utf-8-validate: ">=5.0.2"
@@ -19073,7 +19113,7 @@ __metadata:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: feb3eecd2bae82fa8a8beef800290ce437d8b8063bdc69712725f21aef77c49cb2ff45c6e5e7fce622248f9c7abaee506bae0a9064067ffd6935460c7357321b
+  checksum: 442badcce1f1178ec87a0b5372ae2e9771e07c4929a3180321901f226127f252441e8689d765aa5cfba5f50ac60dd830954afc5aeae81609aefa11d3ddf5cecf
   languageName: node
   linkType: hard
 

@@ -1,4 +1,4 @@
-import { normalizeSpaces, fetchAllSpaces } from './spaces-data';
+import { fetchAllSpaces } from './spaces-data';
 import configurationFindMany from './configurationFindMany';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '../../../mock/src/lib/server';
@@ -32,26 +32,5 @@ describe('getAllSpaces', () => {
     expect(spaces.length).toBe(10);
     expect(spaces[0].id).toBe('1');
     expect(spaces[spaces.length - 1].id).toBe('10');
-  });
-});
-
-describe('normalizeSpaces', () => {
-  it('normalizes space pairs', async () => {
-    const spaces = [
-      {
-        id: '1',
-        configurationId: '1',
-        type: 'space',
-        name: 'Space 1',
-        metadata: [
-          { name: 'a', value: '1' },
-          { name: 'b', value: '2' },
-        ],
-      },
-    ];
-
-    const sanitized = normalizeSpaces(spaces);
-
-    expect(sanitized[0].metadata).toEqual({ a: '1', b: '2' });
   });
 });

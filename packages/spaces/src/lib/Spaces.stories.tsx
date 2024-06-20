@@ -3,7 +3,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Paper } from '@availity/mui-paper';
 import { Typography } from '@availity/mui-typography';
-import { Divider } from '@availity/mui-divider';
 import { Stack } from '@availity/mui-layout';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Spaces, useSpaces, useSpacesContext } from './Spaces';

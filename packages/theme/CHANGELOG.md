@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.51.0](https://github.com/Availity/element/compare/@availity/theme@0.50.0...@availity/theme@0.51.0) (2024-06-14)
+
+
+### Features
+
+* **mui-typography:** add agreement variant ([6ffb7a7](https://github.com/Availity/element/commit/6ffb7a7589b622295833609f8599e220107001da))
+
+## [0.50.0](https://github.com/Availity/element/compare/@availity/theme@0.49.0...@availity/theme@0.50.0) (2024-06-12)
+
+
+### Features
+
+* **mui-disclaimer:** add disclaimer component ([841e989](https://github.com/Availity/element/commit/841e98900adc535171fc82865a931d802ddab96c))
+
 ## [0.49.0](https://github.com/Availity/element/compare/@availity/theme@0.48.1...@availity/theme@0.49.0) (2024-05-15)
 
 

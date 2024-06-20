@@ -13,6 +13,9 @@ import configurationId1 from './data/thanos/configuration-id-1.json';
 import configurationId2 from './data/thanos/configuration-id-2.json';
 import configurationId3 from './data/thanos/configuration-id-3.json';
 import configurationId112233 from './data/thanos/configuration-id-112233.json';
+import ghostedConfiguration from './data/thanos/ghosted-configuration.json';
+import agreementConfiguration from './data/thanos/agreement-configurations.json';
+import disclaimerConfiguration from './data/thanos/disclaimer-configurations.json';
 
 type ConfigurationFindMany = {
   data: {
