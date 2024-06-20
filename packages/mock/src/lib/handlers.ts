@@ -88,12 +88,18 @@ export const handlers = [
       response = configurationId112233;
     } else if (page === 2) {
       response = configurationPagination2;
-    } else if (ids && ids[0] === '1') {
+    } else if (ids && ids.length === 1 && ids[0] === '1') {
       response = configurationId1;
-    } else if (ids && ids[0] === '2') {
+    } else if (ids && ids.length === 1 && ids[0] === '2') {
       response = configurationId2;
-    } else if (ids && ids[0] === '3') {
+    } else if (ids && ids.length === 1 && ids[0] === '3') {
       response = configurationId3;
+    } else if (ids && ids[0] === 'ghosted') {
+      response = ghostedConfiguration;
+    } else if ((ids && ids[0] === 'agreement') || (ids && ids[0] === 'agreementMarkdown')) {
+      response = agreementConfiguration;
+    } else if ((ids && ids[0] === 'disclaimer') || (ids && ids[0] === 'disclaimerMarkdown')) {
+      response = disclaimerConfiguration;
     } else if (
       (ids && ids[0] === '1' && ids[1] === '2' && ids[2] === '3') ||
       (ids && ids[0] === '11' && ids[1] === '22' && ids[2] === '33')
