@@ -2,6 +2,28 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.40.7](https://github.com/Availity/element/compare/@availity/element@0.40.6...@availity/element@0.40.7) (2024-06-21)
+
+### Dependency Updates
+
+* `mui-transitions` updated to version `0.40.6`
+## [0.40.6](https://github.com/Availity/element/compare/@availity/element@0.40.5...@availity/element@0.40.6) (2024-06-21)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `0.40.5`
+## [0.40.5](https://github.com/Availity/element/compare/@availity/element@0.40.4...@availity/element@0.40.5) (2024-06-21)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `0.40.4`
+* `mui-spaces` updated to version `0.40.4`
+## [0.40.4](https://github.com/Availity/element/compare/@availity/element@0.40.3...@availity/element@0.40.4) (2024-06-20)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `0.40.3`
+* `mui-spaces` updated to version `0.40.3`
 ## [0.40.3](https://github.com/Availity/element/compare/@availity/element@0.40.2...@availity/element@0.40.3) (2024-06-17)
 
 ### Dependency Updates

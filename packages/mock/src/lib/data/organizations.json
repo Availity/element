@@ -1,0 +1,91 @@
+{
+  "totalCount": 15,
+  "count": 15,
+  "offset": 0,
+  "limit": 50,
+  "links": {
+    "self": {
+      "href": "https://apps.availity.com/api/sdk/platform/v1/organizations"
+    },
+    "user": {
+      "href": "https://apps.availity.com/api/sdk/platform/v1/users/aka123456789"
+    }
+  },
+  "organizations": [
+    {
+      "id": "11111",
+      "customerId": "11111",
+      "name": "Organization 1"
+    },
+    {
+      "id": "22222",
+      "customerId": "22222",
+      "name": "Organization 2"
+    },
+    {
+      "id": "33333",
+      "customerId": "33333",
+      "name": "Organization 3"
+    },
+    {
+      "id": "44444",
+      "customerId": "44444",
+      "name": "Organization 4"
+    },
+    {
+      "id": "55555",
+      "customerId": "55555",
+      "name": "Organization 5"
+    },
+    {
+      "id": "66666",
+      "customerId": "66666",
+      "name": "Organization 6"
+    },
+    {
+      "id": "77777",
+      "customerId": "77777",
+      "name": "Organization 7"
+    },
+    {
+      "id": "88888",
+      "customerId": "88888",
+      "name": "Organization 8"
+    },
+    {
+      "id": "99999",
+      "customerId": "99999",
+      "name": "Organization 9"
+    },
+    {
+      "id": "101010",
+      "customerId": "101010",
+      "name": "Organization 10"
+    },
+    {
+      "id": "111111",
+      "customerId": "111111",
+      "name": "Organization 11"
+    },
+    {
+      "id": "121212",
+      "customerId": "121212",
+      "name": "Organization 12"
+    },
+    {
+      "id": "131313",
+      "customerId": "131313",
+      "name": "Organization 13"
+    },
+    {
+      "id": "141414",
+      "customerId": "141414",
+      "name": "Organization 14"
+    },
+    {
+      "id": "151515",
+      "customerId": "151515",
+      "name": "Organization 15"
+    }
+  ]
+}

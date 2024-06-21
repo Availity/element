@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.1](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.5.0...@availity/mui-autocomplete@0.5.1) (2024-06-21)
+
+
+### Bug Fixes
+
+* add deps ([520c3c2](https://github.com/Availity/element/commit/520c3c2549af82006fc563bc453b010ed6aadb73))
+* add export and delay ([20d6792](https://github.com/Availity/element/commit/20d6792e7a995afa0f12e597fbd9fc4c16c92df2))
+
+## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.4.6...@availity/mui-autocomplete@0.5.0) (2024-06-20)
+
+
+### Features
+
+* **mui-autocomplete:** add OrganizationAutocomplete component ([9f3ea07](https://github.com/Availity/element/commit/9f3ea0753e0147d7e1aeaf73230716046caba01e))
+
 ## [0.4.6](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.4.5...@availity/mui-autocomplete@0.4.6) (2024-06-14)
 
 ### Dependency Updates
