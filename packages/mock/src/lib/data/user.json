@@ -1,0 +1,12 @@
+{
+  "id": "aka123456789",
+  "userId": "user123",
+  "akaname": "aka123456789",
+  "lastName": "Last",
+  "firstName": "First",
+  "email": "foo.bar@baz.com",
+  "phoneTypeCd": 0,
+  "currentRegion": "FL",
+  "createDate": "2018-07-30T15:22:18.000+00:00",
+  "lastUpdateDate": "2024-05-14T13:27:14.000+00:00"
+}

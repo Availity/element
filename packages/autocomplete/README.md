@@ -54,7 +54,7 @@ The `Autcomplete` component can be used standalone or with a form state library 
 
 `Autocomplete` uses the `TextField` component to render the input. You must pass your field related props: `label`, `helperText`, `error`, etc. to the the `FieldProps` prop.
 
-```tsx
+```jsx
 import { Autocomplete } from '@availity/element';
 
 const MyAutocomplete = () => {
@@ -74,13 +74,13 @@ const MyAutocomplete = () => {
 
 #### Direct import
 
-```tsx
+```jsx
 import { Autocomplete } from '@availity/mui-autocomplete';
 ```
 
 #### Usage with `react-hook-form`
 
-```tsx
+```jsx
 import { useForm, Controller } from 'react-hook-form';
 import { Autocomplete, Button } from '@availity/element';
 
@@ -123,7 +123,7 @@ const Form = () => {
 
 An `AsyncAutocomplete` component is exported for use cases that require fetching paginated results from an api. You will need to use the `loadOptions` prop. The `loadOptions` function will be called when the user scrolls to the bottom of the dropdown. It will be passed the current page and limit. The `limit` prop controls what is passed to `loadOptions` and is defaulted to `50`. The `loadOptions` function must return an object that has an array of `options` and a `hasMore` property. `hasMore` tells the `AsyncAutocomplete` component whether or not it should call `loadOptions` again. The returned `options` will be concatenated to the existing options array.
 
-```tsx
+```jsx
 import { Autocomplete } from '@availity/element';
 
 const Example = () => {
@@ -137,5 +137,19 @@ const Example = () => {
   };
 
   return <Autocomplete FieldProps={{ label: 'Async Dropdown' }} loadOptions={loadOptions} />;
+};
+```
+
+#### `OrganizationAutocomplete` Usage
+
+The `OrganizationAutocomplete` component is an extension of the `AsyncAutocomplete` component which calls our Organizations endpoint. The props are the same as `AsyncAutocomplete` except you do not need to pass a function to `loadOptions`. This has already been done for you. The component uses the `name` from the returned organizations as the label for the option. Pass in your own `getOptionLabel` function if you would like to change the label.
+
+If you need to add params, headers, or other data to the api call then the `apiConfig` prop is available. This allows for passing in the same options you would to the `getOrganizations`. For example, `permissionIds` or `resourceIds`.
+
+```jsx
+import { OrganizationAutocomplete } from '@availity/element';
+
+const Example = () => {
+  return <OrganizationAutocomplete FieldProps={{ label: 'Organization Select', placeholder: 'Select...' }} />;
 };
 ```
