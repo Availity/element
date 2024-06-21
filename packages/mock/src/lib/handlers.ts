@@ -39,12 +39,18 @@ const parsers: Record<string, (value: unknown) => string | number | boolean> = {
   offset: (value: unknown) => Number(value),
 };
 
-const defaultDelay = 500; // .5 sec
+const defaultDelay = process.env.NODE_ENV === 'test' ? 0 : 1000; // 1 sec
+
+const delayRequest = async () => {
+  if (defaultDelay) {
+    return delay(defaultDelay);
+  }
+};
 
 export const handlers = [
   // Logging
   http.post(routes.LOG, async () => {
-    await delay(defaultDelay);
+    await delayRequest();
     return new HttpResponse(null, { status: 201 });
   }),
 
@@ -54,12 +60,12 @@ export const handlers = [
     // Check if the request wants one region or a list
     const { currentlySelected } = parse(request.url.split('?')[1], { ignoreQueryPrefix: true });
 
-    await delay(defaultDelay);
+    await delayRequest();
 
     return HttpResponse.json(currentlySelected === 'true' ? region : regions, { status: 200 });
   }),
   http.post(routes.REGIONS, async () => {
-    await delay(defaultDelay);
+    await delayRequest();
     return HttpResponse.json(regions, { status: 200 });
   }),
 
@@ -126,7 +132,7 @@ export const handlers = [
       parsedParams[key] = parsers[key]?.(value) ?? value;
     }
 
-    await delay(defaultDelay);
+    await delayRequest();
 
     if (typeof parsedParams.offset !== 'number' || typeof parsedParams.limit !== 'number') {
       throw new Error('offset and limit not provided');
@@ -143,7 +149,7 @@ export const handlers = [
 
   // Example
   http.post(routes.EXAMPLE, async ({ request }) => {
-    await delay(defaultDelay);
+    await delayRequest();
 
     const data = (await request.json()) as { offset: number; limit: number };
 
