@@ -1,6 +1,8 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "rootDir": "../../",
+    "composite": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "outDir": ""
@@ -18,8 +20,9 @@
     "src/*.stories.ts",
     "src/*.stories.js",
     "src/*.stories.jsx",
-    "src/*.stories.tsx",
+    "src/**/*.stories.tsx",
     "src/*.stories.mdx",
+    "../../packages/*/src/*.ts",
     "../../packages/*.stories.mdx",
     "../../packages/*/src/lib/*.stories.js",
     "../../packages/*/src/lib/*.stories.jsx",

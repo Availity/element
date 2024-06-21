@@ -27,15 +27,15 @@ const fetchOrgs = async (config: ApiConfig): Promise<{ options: Organization[]; 
   }
 };
 
-export type OrgAutocompleteProps<
+export interface OrgAutocompleteProps<
   Option = Organization,
   Multiple extends boolean | undefined = false,
   DisableClearable extends boolean | undefined = false,
   FreeSolo extends boolean | undefined = false,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
-> = {
+> extends Omit<AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'loadOptions'> {
   apiConfig?: ApiConfig;
-} & Omit<AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'loadOptions'>;
+}
 
 export const OrganizationAutocomplete = ({ apiConfig = {}, ...rest }: OrgAutocompleteProps) => {
   const handleLoadOptions = async (page: number, limit: number) => {
