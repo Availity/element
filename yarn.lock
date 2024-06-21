@@ -169,7 +169,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-alert@workspace:*, @availity/mui-alert@workspace:packages/alert":
+"@availity/mui-alert@workspace:*, @availity/mui-alert@workspace:^, @availity/mui-alert@workspace:packages/alert":
   version: 0.0.0-use.local
   resolution: "@availity/mui-alert@workspace:packages/alert"
   dependencies:
@@ -820,6 +820,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-transitions@workspace:packages/transitions"
   dependencies:
+    "@availity/mui-alert": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
