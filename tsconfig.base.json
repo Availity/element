@@ -46,6 +46,7 @@
       "@availity/mui-icon": ["packages/icon/src/index.ts"],
       "@availity/mui-layout": ["packages/layout/src/index.ts"],
       "@availity/mui-link": ["packages/link/src/index.ts"],
+      "@availity/mui-list": ["packages/list/src/index.ts"],
       "@availity/mui-menu": ["packages/menu/src/index.ts"],
       "@availity/mui-modal": ["packages/modal/src/index.ts"],
       "@availity/mui-page-header": ["packages/page-header/src/index.ts"],

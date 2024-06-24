@@ -105,6 +105,7 @@ __metadata:
     "@availity/mui-icon": "workspace:*"
     "@availity/mui-layout": "workspace:*"
     "@availity/mui-link": "workspace:*"
+    "@availity/mui-list": "workspace:*"
     "@availity/mui-menu": "workspace:*"
     "@availity/mui-modal": "workspace:*"
     "@availity/mui-page-header": "workspace:*"
@@ -535,6 +536,22 @@ __metadata:
   resolution: "@availity/mui-link@workspace:packages/link"
   dependencies:
     "@availity/mui-icon": "workspace:^"
+    "@mui/material": ^5.15.15
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^8.0.2
+    typescript: ^5.4.5
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-list@workspace:*, @availity/mui-list@workspace:packages/list":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-list@workspace:packages/list"
+  dependencies:
+    "@availity/mui-chip": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0

@@ -37,6 +37,7 @@
     "@availity/mui-icon": "workspace:*",
     "@availity/mui-layout": "workspace:*",
     "@availity/mui-link": "workspace:*",
+    "@availity/mui-list": "workspace:*",
     "@availity/mui-menu": "workspace:*",
     "@availity/mui-modal": "workspace:*",
     "@availity/mui-page-header": "workspace:*",

@@ -1,6 +1,6 @@
 import { Markdown } from '@storybook/blocks';
 import { Meta, Source } from '@storybook/blocks';
-import { BadgeExample, ChipExample, DialogExample, GridExample, MenuExample, TabExample } from './MigrationExamples';
+import { BadgeExample, ChipExample, DialogExample, GridExample, ListItemExample, MenuExample, TabExample } from './MigrationExamples';
 
 <Meta title='BS4 Migration/Getting Started' />
 
@@ -49,8 +49,6 @@ For all Design Patterns and UX Guidelines, visit the [Zeroheight Docs](https://z
   - Colors for chips are now reserved exclusively for statuses, otherwise the Chip must be grey.
 - icon
   - icon sizing is more logical in MUI, but very different. If using large icons, it may be easier to go straight to phase 1 patterns.
-- list-group
-  - does not exist in Mui. UX to provide new design guidelines for how to change this component.
 - jumbotron
   - bootstrap got rid of this in bootstrap 5 and there are no plans on making an equivalent in Element.
 
@@ -157,13 +155,14 @@ Without the bootstrap utility classes, it's important to know which MUI componen
 
 Not all classes/components from Bootstrap/Reactstrap have a similar name or 1:1 equivalent in MUI. Listed below are some notable changes
 
-| Bootstrap           | MUI        | Description                                |        Sample        |
-| ------------------- | ---------- | ------------------------------------------ | :------------------: |
-| `Badge`<sup>1</sup> | `Badge`    | Small corner overlay of base element       | <BadgeExample/> |
-| `Badge`<sup>2</sup> | `Chip`     | Inline colored label/descriptor            | <ChipExample/> |
-| `Column`/`Row`      | `Grid`     | Horizontal and Vertical layout             | <GridExample/> |
-| `Dropdown`          | `Menu`     | Display a list on temporary surface        | <MenuExample/>
-| `Modal`             | `Dialog`   | Popover Dialog (Blocking and Non-Blocking) | <DialogExample/> |
-| `Nav`               | `Tab`      | Tab Navigation                             | <TabExample/>  |
-| `Navbar`            | `AppBar`   | Navigation Header                          |   |
-| `Toast`             | `Snackbar` | Brief Notifications                        |   |
+| Bootstrap           | MUI        | Description                                                 |        Sample        |
+| ------------------- | ---------- | -------------------------------------------------- | :------------------: |
+| `Badge`<sup>1</sup> | `Badge`    | Small corner overlay of base element               | <BadgeExample/> |
+| `Badge`<sup>2</sup> | `Chip`     | Inline colored label/descriptor                    | <ChipExample/> |
+| `Column`/`Row`      | `Grid`     | Horizontal and Vertical layout                     | <GridExample/> |
+| `Dropdown`          | `Menu`     | Display a list on temporary surface                | <MenuExample/> |
+| `Modal`             | `Dialog`   | Popover Dialog (Blocking and Non-Blocking)         | <DialogExample/> |
+| `Nav`               | `Tab`      | Tab Navigation                                     | <TabExample/>  |
+| `ListGroup`         | `List`     | List Item, Availity `ListItemStatusCard` available | <ListItemExample/>  |
+| `Navbar`            | `AppBar`   | Navigation Header                                  |   |
+| `Toast`             | `Snackbar` | Brief Notifications                                |   |
