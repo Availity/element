@@ -6,12 +6,12 @@ import { styled } from '@mui/material/styles';
 import { useFavorites } from './Favorites';
 
 const icons = {
-  spinner: <CircularProgress aria-hidden size="small" />,
-  unknownDisabledHeart: <HeartIcon aria-hidden fontSize="small" color="disabled" />,
-  favoritedDisabledHeart: <HeartIcon aria-hidden fontSize="small" color="error" />,
-  unfavoritedDisabledHeart: <HeartEmptyIcon aria-hidden fontSize="small" color="error" opacity="0.6" />,
-  favoritedHeart: <HeartIcon aria-hidden fontSize="small" color="error" />,
-  unfavoritedHeart: <HeartEmptyIcon aria-hidden fontSize="small" />,
+  spinner: <CircularProgress aria-hidden size="small" loadingCaption={false} />,
+  unknownDisabledHeart: <HeartIcon aria-hidden color="disabled" />,
+  favoritedDisabledHeart: <HeartIcon aria-hidden color="error" opacity="0.6" />,
+  unfavoritedDisabledHeart: <HeartEmptyIcon aria-hidden color="disabled" opacity="0.6" />,
+  favoritedHeart: <HeartIcon aria-hidden color="error" />,
+  unfavoritedHeart: <HeartEmptyIcon aria-hidden color="secondary" />,
 };
 
 const FavoriteHeartContainer = styled('div', { name: 'AvFavoriteHeart', slot: 'root' })({});
@@ -19,7 +19,11 @@ const FavoriteInput = styled('input', {
   name: 'AvFavoriteHeart',
   slot: 'input',
 })({});
-const FavoriteIcon = styled('div', { name: 'AvFavoriteHeart', slot: 'icon' })({});
+
+const FavoriteIcon = styled('div', {
+  name: 'AvFavoriteHeart',
+  slot: 'icon',
+})({});
 
 export const FavoriteHeart = ({
   id,
@@ -27,7 +31,6 @@ export const FavoriteHeart = ({
   onChange,
   onMouseDown,
   disabled = false,
-  size,
 }: {
   id: string;
   name: string;
@@ -37,7 +40,6 @@ export const FavoriteHeart = ({
   ) => void;
   onMouseDown?: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
   disabled?: boolean;
-  size?: string;
 }): JSX.Element => {
   const { isFavorited, isLastClickedFavorite, status, toggleFavorite } = useFavorites(id);
 
@@ -74,6 +76,18 @@ export const FavoriteHeart = ({
 
   const tooltipContent = `${isFavorited ? 'Remove from' : 'Add to'} My Favorites`;
 
+  const favoriteInputProps = {
+    onKeyUp: handleKeyPress,
+    type: 'checkbox',
+    'aria-label': `Favorite ${name}`,
+    id: `av-favorite-heart-${id}`,
+    disabled,
+    checked: isFavorited,
+    onChange: handleChange,
+    onMouseDown,
+    style: { cursor },
+  };
+
   return (
     <FavoriteHeartContainer>
       <FavoriteIcon>{icons[iconKey]}</FavoriteIcon>
@@ -98,18 +112,13 @@ export const FavoriteHeart = ({
             : ''}
       </span>
 
-      <Tooltip title={tooltipContent}>
-        <FavoriteInput
-          onKeyUp={handleKeyPress}
-          type="checkbox"
-          aria-label={`Favorite ${name}`}
-          id={`av-favorite-heart-${id}`}
-          disabled={disabled}
-          checked={isFavorited}
-          onChange={handleChange}
-          onMouseDown={onMouseDown}
-        />
-      </Tooltip>
+      {disabled ? (
+        <FavoriteInput {...favoriteInputProps} />
+      ) : (
+        <Tooltip title={tooltipContent} placement="top">
+          <FavoriteInput {...favoriteInputProps} />
+        </Tooltip>
+      )}
     </FavoriteHeartContainer>
   );
 };

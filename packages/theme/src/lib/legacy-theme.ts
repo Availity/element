@@ -308,24 +308,21 @@ export const legacyTheme = {
     AvFavoriteHeart: {
       styleOverrides: {
         root: {
-          height: '1.5rem',
-          width: '1.5rem',
-          minHeight: '1.5rem',
-          minWidth: '1.5rem',
           position: 'relative',
           '&:hover input': {
-            backgroundColor: tokens.colorActionHover
+            backgroundColor: tokens.colorActionHover,
+            '&[disabled]': {
+              backgroundColor: 'transparent',
+              cursor: 'initial'
+            }
           },
-          '&.Mui-disabled input': {
-            backgroundColor: 'transparent'
-          }
         },
         icon: {
           position: 'absolute',
           top: 0,
           left: 0,
-          height: '100%',
-          width: '100%',
+          right: 0,
+          bottom: 0,
           pointerEvents: 'none',
           display: 'flex',
           alignItems: 'center',
@@ -339,8 +336,8 @@ export const legacyTheme = {
           width: '1.5rem',
           minHeight: '1.5rem',
           minWidth: '1.5rem',
-          display: 'block',
           borderRadius: '0.25rem',
+          display: 'block',
         }
       }
     },

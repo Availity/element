@@ -9,6 +9,12 @@ export default {
   component: FavoriteHeart,
 };
 
+const storyFavorites = [
+  { id: '123', pos: 0, name: 'App #1' },
+  { id: '456', pos: 0, name: 'A retired app' },
+  { id: '789', pos: 0, name: 'Another retired app' },
+];
+
 export const _FavoriteHeart: StoryObj = {
   render: () => {
     return (
@@ -25,7 +31,7 @@ export const _FavoriteHeart: StoryObj = {
       >
         <FavoritesProvider>
           {storyFavorites.map((fav) => (
-            <div style={{ display: 'flex', gap: '1rem' }} key={fav.id}>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }} key={fav.id}>
               <FavoriteHeart id={fav.id} name={fav.name} disabled={fav.name.includes('retired')} />
               <div>{fav.name}</div>
             </div>
