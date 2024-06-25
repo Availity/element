@@ -1,7 +1,7 @@
 import avMessages from '@availity/message-core';
 import { avSettingsApi } from '@availity/api-axios';
 import { useMutation, useQuery, useQueryClient, UseQueryResult } from '@tanstack/react-query';
-import { AV_INTERNAL_GLOBALS, NAV_APP_ID, MAX_FAVORITES} from './constants';
+import { AV_INTERNAL_GLOBALS, NAV_APP_ID } from './constants';
 
 export type Favorite = {
   id: string;
@@ -58,4 +58,4 @@ export const sendUpdateMessage = (favorites: Favorite[]): void => {
   avMessages.send({ favorites, event: AV_INTERNAL_GLOBALS.FAVORITES_UPDATE });
 };
 
-export const openMaxModal = (): void => avMessages.send(MAX_FAVORITES);
+export const openMaxModal = (): void => avMessages.send(AV_INTERNAL_GLOBALS.MAX_FAVORITES);

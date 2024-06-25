@@ -2,16 +2,24 @@ import React from 'react';
 import { Tooltip } from '@availity/mui-tooltip';
 import { HeartIcon, HeartEmptyIcon } from '@availity/mui-icon';
 import { CircularProgress } from '@availity/mui-progress';
+import { styled } from '@mui/material/styles';
 import { useFavorites } from './Favorites';
 
 const icons = {
-  spinner: <CircularProgress aria-hidden />,
-  unknownDisabledHeart: <HeartIcon aria-hidden />,
-  favoritedDisabledHeart: <HeartIcon aria-hidden />,
-  unfavoritedDisabledHeart: <HeartEmptyIcon aria-hidden />,
-  favoritedHeart: <HeartIcon aria-hidden />,
-  unfavoritedHeart: <HeartEmptyIcon aria-hidden />,
+  spinner: <CircularProgress aria-hidden size="small" />,
+  unknownDisabledHeart: <HeartIcon aria-hidden fontSize="small" color="disabled" />,
+  favoritedDisabledHeart: <HeartIcon aria-hidden fontSize="small" color="error" />,
+  unfavoritedDisabledHeart: <HeartEmptyIcon aria-hidden fontSize="small" color="error" opacity="0.6" />,
+  favoritedHeart: <HeartIcon aria-hidden fontSize="small" color="error" />,
+  unfavoritedHeart: <HeartEmptyIcon aria-hidden fontSize="small" />,
 };
+
+const FavoriteHeartContainer = styled('div', { name: 'AvFavoriteHeart', slot: 'root' })({});
+const FavoriteInput = styled('input', {
+  name: 'AvFavoriteHeart',
+  slot: 'input',
+})({});
+const FavoriteIcon = styled('div', { name: 'AvFavoriteHeart', slot: 'icon' })({});
 
 export const FavoriteHeart = ({
   id,
@@ -67,9 +75,22 @@ export const FavoriteHeart = ({
   const tooltipContent = `${isFavorited ? 'Remove from' : 'Add to'} My Favorites`;
 
   return (
-    <div>
-      <div>{icons[iconKey]}</div>
-      <span aria-live={isLastClickedFavorite && (status === 'reloading' || status === 'error') ? 'polite' : 'off'}>
+    <FavoriteHeartContainer>
+      <FavoriteIcon>{icons[iconKey]}</FavoriteIcon>
+      <span
+        style={{
+          position: 'absolute',
+          width: '1px',
+          height: '1px',
+          padding: 0,
+          margin: '-1px',
+          overflow: 'hidden',
+          clip: 'rect(0,0,0,0)',
+          whiteSpace: 'nowrap',
+          border: 0,
+        }}
+        aria-live={isLastClickedFavorite && (status === 'reloading' || status === 'error') ? 'polite' : 'off'}
+      >
         {isLastClickedFavorite && status === 'reloading'
           ? 'Loading...'
           : isLastClickedFavorite && status === 'error'
@@ -78,7 +99,7 @@ export const FavoriteHeart = ({
       </span>
 
       <Tooltip title={tooltipContent}>
-        <input
+        <FavoriteInput
           onKeyUp={handleKeyPress}
           type="checkbox"
           aria-label={`Favorite ${name}`}
@@ -89,6 +110,6 @@ export const FavoriteHeart = ({
           onMouseDown={onMouseDown}
         />
       </Tooltip>
-    </div>
+    </FavoriteHeartContainer>
   );
 };

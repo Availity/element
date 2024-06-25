@@ -42,6 +42,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@availity/api-axios@npm:^8.0.8":
+  version: 8.0.8
+  resolution: "@availity/api-axios@npm:8.0.8"
+  dependencies:
+    "@availity/resolve-url": 2.0.5
+    lodash: ^4.17.21
+    qs: ^6.11.2
+  peerDependencies:
+    axios: ^1.4.0
+  checksum: c02fc126d9542e034ac015df767810ac169777749cc51d1531672ae73f754a57c44f642ace842b348c608dcc9e9c619547c2102e2d7a34342c33086361184ccf
+  languageName: node
+  linkType: hard
+
 "@availity/authorize@npm:^4.1.0":
   version: 4.1.0
   resolution: "@availity/authorize@npm:4.1.0"
@@ -138,6 +151,13 @@ __metadata:
   version: 6.1.2
   resolution: "@availity/message-core@npm:6.1.2"
   checksum: 1fd135ff1dc8db99442a5b1691f017e61377b88334e62eae1f3a6509706b3285d99d20f161275b3cfe0dac0870034be3d1bf8e0d573d151ded7447056edee4b3
+  languageName: node
+  linkType: hard
+
+"@availity/message-core@npm:^6.1.3":
+  version: 6.1.3
+  resolution: "@availity/message-core@npm:6.1.3"
+  checksum: 46ca06275f19d9c07d44a2810bfbc76601088436d002ec142109a61abac6e091e72a564427ec1524d427bea33f25e3a8253143e913562d0b72344b015503889f
   languageName: node
   linkType: hard
 
@@ -463,7 +483,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-favorites@workspace:packages/favorites"
   dependencies:
+    "@availity/api-axios": ^8.0.8
+    "@availity/message-core": ^6.1.3
+    "@availity/mui-icon": "workspace:^"
+    "@availity/mui-progress": "workspace:^"
+    "@availity/mui-tooltip": "workspace:^"
     "@mui/material": ^5.15.15
+    "@tanstack/react-query": ^4.36.1
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.0.2
@@ -691,7 +717,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-progress@workspace:*, @availity/mui-progress@workspace:packages/progress":
+"@availity/mui-progress@workspace:*, @availity/mui-progress@workspace:^, @availity/mui-progress@workspace:packages/progress":
   version: 0.0.0-use.local
   resolution: "@availity/mui-progress@workspace:packages/progress"
   dependencies:
@@ -817,7 +843,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-tooltip@workspace:*, @availity/mui-tooltip@workspace:packages/tooltip":
+"@availity/mui-tooltip@workspace:*, @availity/mui-tooltip@workspace:^, @availity/mui-tooltip@workspace:packages/tooltip":
   version: 0.0.0-use.local
   resolution: "@availity/mui-tooltip@workspace:packages/tooltip"
   dependencies:
