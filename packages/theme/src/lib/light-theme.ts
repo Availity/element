@@ -41,6 +41,31 @@ const typographyStyles = (type: string) => ({
   lineHeight: `${tokens[`lineHeights${type}` as keyof typeof tokens]}`,
 });
 
+const statusAccentStyles = {
+  borderLeft: `10px solid ${tokens.borderDecorative}`,
+  '&:has(.MuiChip-colorSuccess)': {
+    borderLeftColor: tokens.colorSuccessMain
+  },
+  '&:has(.MuiChip-colorError)': {
+    borderLeftColor: tokens.colorErrorMain
+  },
+  '&:has(.MuiChip-colorWarning)': {
+    borderLeftColor: tokens.colorWarningMain
+  },
+  '&:has(.MuiChip-colorInfo)': {
+    borderLeftColor: tokens.colorInfoMain
+  },
+  '&:has(.MuiChip-colorDefault)': {
+    borderLeftColor: tokens.colorBackgroundAccent
+  },
+  '&:has(.MuiChip-colorPrimary)': {
+    borderLeftColor: tokens.colorPrimaryMain
+  },
+  '&:has(.MuiChip-colorSecondary)': {
+    borderLeftColor: tokens.colorSecondaryMain
+  }
+};
+
 export const lightTheme = {
   mode: 'light',
   palette: {
@@ -352,6 +377,60 @@ export const lightTheme = {
       defaultProps: {
         size: 'large',
       },
+    },
+    AvListItemStatusCard: {
+      styleOverrides: {
+        root: {
+          border: `1px solid ${tokens.borderDecorative}`,
+          borderRadius: '4px',
+          marginBottom: '4px',
+          ...statusAccentStyles,
+          '.MuiListItemButton-root': {
+            borderRadius: '0 4px 4px 0',
+            '&.Mui-focusVisible': {
+              border: `2px solid ${tokens.colorPrimaryMain}`,
+              marginRight: '-2px',
+              borderLeftWidth: 0,
+              boxShadow: 'none',
+              '&:not(:hover):not(:active)': {
+                backgroundColor: 'transparent'
+              }
+            },
+            '&.Mui-selected': {
+              backgroundColor: 'transparent',
+              color: tokens.colorTextPrimary,
+              boxShadow: tokens.shadows4,
+              '~ .MuiListItemSecondaryAction-root .MuiIconButton-root' : {
+                color: tokens.colorTextPrimary
+              },
+              '&:hover': {
+                backgroundColor: tokens.colorActionHover
+              },
+            }
+          },
+          '@supports (selector(:has(a, b)))': {
+            ':has(.MuiListItemButton-root.Mui-selected)': {
+              boxShadow: tokens.shadows4,
+              borderTopColor: tokens.borderSecondary,
+              borderRightColor: tokens.borderSecondary,
+              borderBottomColor: tokens.borderSecondary,
+            },
+            ':has(.MuiListItemButton-root.Mui-focusVisible)': {
+              boxShadow: `0 0 0px 2px ${tokens.colorPrimaryMain}`,
+              borderTopColor: tokens.colorPrimaryMain,
+              borderRightColor: tokens.colorPrimaryMain,
+              borderBottomColor: tokens.colorPrimaryMain,
+              '.MuiListItemButton-root.Mui-focusVisible': {
+                border: '0px',
+                boxShadow: 'none'
+              }
+            },
+            ':has(.MuiListItemButton-root.Mui-focusVisible.Mui-selected)': {
+              boxShadow: `${tokens.shadows4}, 0 0 0px 2px ${tokens.colorPrimaryMain}`,
+            },
+          }
+        }
+      }
     },
     MuiAccordion: {
       defaultProps: {
@@ -1091,6 +1170,162 @@ export const lightTheme = {
           '.MuiSvgIcon-root': {
             fontSize: 'smaller',
           }
+        },
+      },
+    },
+    MuiListItem: {
+      defaultProps: {
+        divider: true,
+      },
+      styleOverrides: {
+        root: {
+          '.MuiListItemButton-root.Mui-selected': {
+            '~ .MuiListItemSecondaryAction-root .MuiIconButton-root' : {
+              color: tokens.colorCommonWhite
+            }
+          }
+        },
+        alignItemsFlexStart: {
+          '.MuiListItemButton-root': {
+            alignItems: 'flex-start',
+            '> .MuiChip-root': {
+              marginTop: '1.25rem',
+              transform: 'translateY(-50%)'
+            },
+          },
+          // no padding primarily used with ListItemButton
+          '> .MuiIconButton-root, > .MuiChip-root': {
+            transform: 'translateY(-50%)',
+            marginTop: '1.75rem',
+          },
+          '.MuiListItemSecondaryAction-root': {
+            top: '1.75rem'
+          },
+          '&.MuiListItem-padding > .MuiIconButton-root, > .MuiChip-root': {
+            marginTop: '1.25rem',
+          },
+          '&.MuiListItem-dense': {
+            '.MuiListItemButton-root > .MuiChip-root': {
+              marginTop: '1.125rem',
+            },
+            '> .MuiIconButton-root, > .MuiChip-root': {
+              marginTop: '1.5rem',
+            },
+            '.MuiListItemSecondaryAction-root': {
+              top: '1.5rem'
+            },
+            '&.MuiListItem-padding': {
+              '> .MuiIconButton-root, > .MuiChip-root': {
+                marginTop: '1.25rem',
+              },
+            }
+          }
+        },
+        dense: {
+          '.MuiAvatar-root': {
+            width: '1.5rem',
+            height: '1.5rem',
+            '.MuiSvgIcon-root': {
+              fontSize: '.75rem'
+            }
+          }
+        },
+      }
+    },
+    MuiListItemButton: {
+      styleOverrides: {
+        root: {
+          '@supports (selector(:has(a, b)))': {
+            ':has(~ .MuiListItemSecondaryAction-root .MuiIconButton-root:nth-of-type(1))': {
+              paddingRight: 'calc(1rem + 1 * (1.5rem) + 0.125rem)'
+            },
+            ':has(~ .MuiListItemSecondaryAction-root .MuiIconButton-root:nth-of-type(2))': {
+              paddingRight: 'calc(1rem + 2 * (1.5rem) + 0.125rem)'
+            },
+            ':has(~ .MuiListItemSecondaryAction-root .MuiIconButton-root:nth-of-type(3))': {
+              paddingRight: 'calc(1rem + 3 * (1.5rem) + 0.125rem)'
+            },
+            ':has(~ .MuiListItemSecondaryAction-root .MuiIconButton-root:nth-of-type(4))': {
+              paddingRight: 'calc(1rem + 4 * (1.5rem) + 0.125rem)'
+            },
+            ':has(~ .MuiListItemSecondaryAction-root .MuiIconButton-root.MuiIconButton-sizeMedium:nth-of-type(1))': {
+              paddingRight: 'calc(1rem + 1 * (2.5rem) + .375rem)'
+            },
+            ':has(~ .MuiListItemSecondaryAction-root .MuiIconButton-root.MuiIconButton-sizeMedium:nth-of-type(2))': {
+              paddingRight: 'calc(1rem + 2 * (2.5rem) + .375rem)'
+            },
+            ':has(~ .MuiListItemSecondaryAction-root .MuiIconButton-root.MuiIconButton-sizeMedium:nth-of-type(3))': {
+              paddingRight: 'calc(1rem + 3 * (2.5rem) + .375rem)'
+            },
+            ':has(~ .MuiListItemSecondaryAction-root .MuiIconButton-root.MuiIconButton-sizeMedium:nth-of-type(4))': {
+              paddingRight: 'calc(1rem + 4 * (2.5rem) + .375rem)'
+            },
+          },
+          '@supports not (selector(:has(a, b)))': {
+            '~ .MuiListItemSecondaryAction-root': {
+              width: '3rem',
+              right: '0px',
+              flexWrap: 'wrap',
+              '.MuiIconButton-root:not(:only-child)': {
+                padding: '.25rem',
+                '.MuiSvgIcon-root': {
+                  fontSize: '1rem'
+                }
+              }
+            },
+          },
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorPrimaryMain,
+            color: tokens.colorTextInverse,
+            '.MuiListItemText-root, .MuiListItemText-root *, .MuiListItemSubheader-root, .MuiListItemSubheader-root *, .MuiListItemIcon-root, .MuiListItemIcon-root *, .MuiListItemSecondaryAction-root, .MuiIconButton-root': {
+              color: 'inherit'
+            },
+            '&.Mui-focusVisible': {
+              backgroundColor: tokens.colorPrimaryDark,
+              boxShadow: `inset 0 0 0px 1px ${tokens.colorPrimaryDark}, inset 0 0 0px 2px ${tokens.colorCommonWhite}`,
+            },
+            '&:hover': {
+              backgroundColor: tokens.colorPrimaryDark,
+            },
+            '&:active': {
+              backgroundColor: tokens.colorPrimaryDarker,
+            },
+            '.MuiSvgIcon-root': {
+              color: tokens.colorTextInverse,
+            },
+          },
+          '&.Mui-focusVisible': {
+            boxShadow: `inset 0 0 0px 1px ${tokens.colorActionFocus}, inset 0 0 0px 2px ${tokens.colorCommonWhite}`,
+          },
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+          },
+          '&:active': {
+            backgroundColor: tokens.colorActionActive,
+          },
+        },
+      },
+    },
+    MuiListItemIcon: {
+      styleOverrides: {
+        root: {
+          fontSize: '1.5rem',
+          minWidth: '3rem',
+          '+ .MuiListItemText-inset': {
+            paddingLeft: '3rem'
+          }
+        }
+      }
+    },
+    MuiListItemText: {
+      defaultProps: {
+        primaryTypographyProps: {
+          variant: 'body1',
+          component: 'div'
+        },
+        secondaryTypographyProps: {
+          variant: 'body2',
+          component: 'div'
         },
       },
     },
