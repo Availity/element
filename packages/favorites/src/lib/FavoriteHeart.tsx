@@ -77,7 +77,7 @@ export const FavoriteHeart = ({
   const tooltipContent = `${isFavorited ? 'Remove from' : 'Add to'} My Favorites`;
 
   const favoriteInputProps = {
-    onKeyUp: handleKeyPress,
+    onKeyDown: handleKeyPress,
     type: 'checkbox',
     'aria-label': `Favorite ${name}`,
     id: `av-favorite-heart-${id}`,
