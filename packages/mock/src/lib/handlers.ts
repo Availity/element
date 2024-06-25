@@ -87,6 +87,7 @@ export const handlers = [
     return HttpResponse.json(response, { status: 200 });
   }),
 
+  // Settings API
   http.get(routes.SETTINGS, async (context) => {
     const { request } = context;
     const params = parse(request.url.split('?')[1], { ignoreQueryPrefix: true });
@@ -95,6 +96,13 @@ export const handlers = [
       await delay(defaultDelay);
       return HttpResponse.json(settings, { status: 200 });
     }
+  }),
+  http.put(routes.SETTINGS, async (context) => {
+
+    const body = await context.request.json();
+
+    await delay(defaultDelay);
+    return HttpResponse.json(body, { status: 201 });
   }),
 
   // Thanos
