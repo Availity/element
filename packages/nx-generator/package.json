@@ -2,7 +2,7 @@
   "name": "@availity/nx-generator",
   "version": "0.0.1",
   "dependencies": {
-    "@nx/devkit": "18.2.4",
+    "@nx/devkit": "19.3.1",
     "tslib": "^2.3.0"
   },
   "type": "commonjs",
