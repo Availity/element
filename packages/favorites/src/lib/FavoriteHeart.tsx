@@ -25,22 +25,31 @@ const FavoriteIcon = styled('div', {
   slot: 'icon',
 })({});
 
+type FavoriteHeartProps = {
+  /** The configuration's id */
+  id: string;
+  /** The name of the configuration */
+  name: string;
+  /** What to do on Favorite Toggle */
+  onChange?: (
+    isFavorited: boolean,
+    event: React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent<HTMLInputElement>
+  ) => void;
+  /** What to do on click */
+  onMouseDown?: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
+  /** Whether or not the Favorite is disabled
+   * @default false
+   */
+  disabled?: boolean;
+};
+
 export const FavoriteHeart = ({
   id,
   name,
   onChange,
   onMouseDown,
   disabled = false,
-}: {
-  id: string;
-  name: string;
-  onChange?: (
-    isFavorited: boolean,
-    event: React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent<HTMLInputElement>
-  ) => void;
-  onMouseDown?: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
-  disabled?: boolean;
-}): JSX.Element => {
+}: FavoriteHeartProps): JSX.Element => {
   const { isFavorited, isLastClickedFavorite, status, toggleFavorite } = useFavorites(id);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

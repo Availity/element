@@ -51,11 +51,11 @@ yarn add @availity/mui-favorites
 #### Import through @availity/element
 
 ```tsx
-import { Favorites } from '@availity/element';
+import { FavoritesProvider, FavoriteHeart } from '@availity/element';
 ```
 
 #### Direct import
 
 ```tsx
-import { Favorites } from '@availity/mui-favorites';
+import { FavoritesProvider, FavoriteHeart } from '@availity/mui-favorites';
 ```
