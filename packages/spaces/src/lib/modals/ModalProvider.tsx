@@ -94,7 +94,7 @@ type ModalOptions = {
 type ModalState = {
   isOpen: boolean;
   modalOptions: ModalOptions;
-  modalState: {};
+  modalState: object;
   selectedModal?: {
     buttonProps: () => void;
   };
