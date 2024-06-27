@@ -8,8 +8,6 @@
 
 ## Documentation
 
-This package extends the MUI Favorites component: [MUI Favorites Docs](https://mui.com/components/favorites/)
-
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-favorites-introduction--docs)
 
 Availity standards for design and usage can be found in the [Availity Design Guide](https://zeroheight.com/2e36e50c7)
@@ -51,11 +49,11 @@ yarn add @availity/mui-favorites
 #### Import through @availity/element
 
 ```tsx
-import { FavoritesProvider, FavoriteHeart } from '@availity/element';
+import { FavoritesProvider, FavoriteHeart, useFavorites } from '@availity/element';
 ```
 
 #### Direct import
 
 ```tsx
-import { FavoritesProvider, FavoriteHeart } from '@availity/mui-favorites';
+import { FavoritesProvider, FavoriteHeart, useFavorites } from '@availity/mui-favorites';
 ```
