@@ -319,6 +319,7 @@ export const lightTheme = {
     AvFavoriteHeart: {
       styleOverrides: {
         root: {
+          display:'inline-block',
           position: 'relative',
           '&:hover input': {
             backgroundColor: tokens.colorActionHover,
