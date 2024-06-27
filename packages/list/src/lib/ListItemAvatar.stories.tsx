@@ -2,10 +2,11 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import Avatar from '@mui/material/Avatar';
-import { MailIcon, UserIcon } from '@availity/mui-icon';
-import { List, ListItem, ListItemAvatar, ListItemText, ListItemAvatarProps, ListItemButton, ListSubheader } from '..';
-import { Box } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
+import Typography from '@mui/material/Typography';
 import { IconButton } from '@availity/mui-button';
+import { MailIcon, UserIcon } from '@availity/mui-icon';
+import { List, ListItem, ListItemAvatar, ListItemText, ListItemAvatarProps, ListItemButton } from '..';
 
 const meta: Meta<typeof ListItemAvatar> = {
   title: 'Components/List/ListItemAvatar',
@@ -26,45 +27,49 @@ export const _ListItemAvatar: StoryObj<typeof ListItemAvatar> = {
 
 export const _UserList: StoryObj<typeof List> = {
   render: () => (
-    <Box display="inline-flex" width='100%' gap={8}>
-      <List component="nav" aria-label="Normal users" sx={{ width: '50%', maxWidth: 360 }}>
-        <ListSubheader>Default Spacing</ListSubheader>
-        {[0, 1, 2, 3].map((value) => (
-          <ListItem
-            key={value}
-            disablePadding
-            secondaryAction={<IconButton title="message"><MailIcon/></IconButton>}
-          >
-          <ListItemButton>
-            <ListItemAvatar>
-              <Avatar>
-                <UserIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="List item" secondary="Secondary"/>
-          </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <List component="nav" aria-label="Dense users" dense  sx={{ width: '50%', maxWidth: 360 }}>
-        <ListSubheader>Dense Spacing</ListSubheader>
-        {[4, 5, 6, 7].map((value) => (
-          <ListItem
-            key={value}
-            disablePadding
-            secondaryAction={<IconButton title="message"><MailIcon/></IconButton>}
-          >
-          <ListItemButton>
-            <ListItemAvatar>
-              <Avatar>
-                <UserIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="List item" secondary="Secondary"/>
-          </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
+    <Grid container spacing={8}>
+      <Grid xs={12} sm={6}>
+        <Typography variant="h6" component="div" id='users-default-spacing-header'>Default Spacing</Typography>
+        <List aria-labelledby='users-default-spacing-header'>
+          {[0, 1, 2, 3].map((value) => (
+            <ListItem
+              key={value}
+              disablePadding
+              secondaryAction={<IconButton title="message"><MailIcon/></IconButton>}
+            >
+              <ListItemButton>
+                <ListItemAvatar>
+                  <Avatar>
+                    <UserIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="List item" secondary="Secondary"/>
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Grid>
+      <Grid xs={12} sm={6}>
+        <Typography variant="h6" component="div" id='users-dense-spacing-header'>Dense Spacing</Typography>
+        <List dense aria-labelledby='users-dense-spacing-header'>
+          {[4, 5, 6, 7].map((value) => (
+            <ListItem
+              key={value}
+              disablePadding
+              secondaryAction={<IconButton title="message"><MailIcon/></IconButton>}
+            >
+            <ListItemButton>
+                <ListItemAvatar>
+                  <Avatar>
+                    <UserIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="List item" secondary="Secondary"/>
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Grid>
+    </Grid>
   )
 };

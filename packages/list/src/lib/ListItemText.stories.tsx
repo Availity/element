@@ -29,7 +29,7 @@ export const _FolderList: StoryObj<typeof List> = {
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Photos" secondary="Jan 9, 2014" />
+        <ListItemText primary="Primary" secondary="Secondary" />
       </ListItem>
       <ListItem>
         <ListItemAvatar>
@@ -37,7 +37,7 @@ export const _FolderList: StoryObj<typeof List> = {
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Work" secondary="Jan 7, 2014" />
+        <ListItemText primary="Primary" secondary="Secondary" />
       </ListItem>
       <ListItem>
         <ListItemAvatar>
@@ -45,7 +45,7 @@ export const _FolderList: StoryObj<typeof List> = {
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+        <ListItemText primary="Primary" secondary="Secondary" />
       </ListItem>
     </List>
   )
