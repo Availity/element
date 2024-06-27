@@ -1438,6 +1438,13 @@ export const legacyTheme = {
         },
       },
     },
+    MuiListSubheader: {
+      styleOverrides: {
+        root: {
+          fontWeight: tokens.fontWeightsBold
+        }
+      }
+    },
     MuiMenu: {
       defaultProps: {
         anchorOrigin: {

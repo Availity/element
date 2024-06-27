@@ -1329,6 +1329,13 @@ export const lightTheme = {
         },
       },
     },
+    MuiListSubheader: {
+      styleOverrides: {
+        root: {
+          fontWeight: tokens.fontWeightsBold
+        }
+      }
+    },
     MuiMenu: {
       defaultProps: {
         slotProps: {
