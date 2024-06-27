@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.3](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.11.2...@availity/mui-form-utils@0.11.3) (2024-06-27)
+
 ## [0.11.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.11.1...@availity/mui-form-utils@0.11.2) (2024-06-14)
 
 ### Dependency Updates
