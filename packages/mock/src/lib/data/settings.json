@@ -1,0 +1,15 @@
+{
+  "totalCount" : 1,
+  "count" : 1,
+  "offset" : 0,
+  "limit" : 1,
+  "settings" : [ {
+    "favorites" : [ {
+      "id" : "123",
+      "pos" : 0
+    }, {
+      "id" : "456",
+      "pos" : 1
+    } ]
+  } ]
+}

@@ -37,6 +37,7 @@ const preview: Preview = {
       theme: themes.light,
       source: {
         excludeDecorators: true,
+        type: 'code'
       },
       page: () => {
         // https://github.com/storybookjs/storybook/blob/next/code/ui/blocks/src/blocks/DocsPage.tsx

@@ -2,6 +2,60 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.42.0](https://github.com/Availity/element/compare/@availity/element@0.41.0...@availity/element@0.42.0) (2024-06-27)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `0.41.0`
+* `mui-checkbox` updated to version `0.41.0`
+* `mui-datepicker` updated to version `0.41.0`
+* `mui-favorites` updated to version `0.41.0`
+* `mui-feedback` updated to version `0.41.0`
+* `mui-form-utils` updated to version `0.41.0`
+* `mui-page-header` updated to version `0.41.0`
+* `mui-spaces` updated to version `0.41.0`
+* `mui-table` updated to version `0.41.0`
+* `mui-textfield` updated to version `0.41.0`
+* `theme-provider` updated to version `0.41.0`
+
+### Features
+
+* **mui-favorites:** init commit ([9cab4fa](https://github.com/Availity/element/commit/9cab4fab7f8611407d12042f6ad60a4b247dcad9))
+
+## [0.41.0](https://github.com/Availity/element/compare/@availity/element@0.40.7...@availity/element@0.41.0) (2024-06-25)
+
+### Dependency Updates
+
+* `mui-datepicker` updated to version `0.40.7`
+* `mui-list` updated to version `0.40.7`
+* `theme-provider` updated to version `0.40.7`
+
+### Features
+
+* **mui-list:** add list package ([51445f9](https://github.com/Availity/element/commit/51445f9fa4f281844b774e681d849a997987c17d))
+
+## [0.40.7](https://github.com/Availity/element/compare/@availity/element@0.40.6...@availity/element@0.40.7) (2024-06-21)
+
+### Dependency Updates
+
+* `mui-transitions` updated to version `0.40.6`
+## [0.40.6](https://github.com/Availity/element/compare/@availity/element@0.40.5...@availity/element@0.40.6) (2024-06-21)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `0.40.5`
+## [0.40.5](https://github.com/Availity/element/compare/@availity/element@0.40.4...@availity/element@0.40.5) (2024-06-21)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `0.40.4`
+* `mui-spaces` updated to version `0.40.4`
+## [0.40.4](https://github.com/Availity/element/compare/@availity/element@0.40.3...@availity/element@0.40.4) (2024-06-20)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `0.40.3`
+* `mui-spaces` updated to version `0.40.3`
 ## [0.40.3](https://github.com/Availity/element/compare/@availity/element@0.40.2...@availity/element@0.40.3) (2024-06-17)
 
 ### Dependency Updates

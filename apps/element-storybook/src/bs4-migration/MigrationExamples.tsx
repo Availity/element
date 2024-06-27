@@ -10,17 +10,22 @@ import {
   DialogTitle,
   Grid,
   IconButton,
+  List,
+  ListItem,
+  ListItemStatusCard,
+  ListItemText,
   MailIcon,
   Menu,
   MenuItem,
   MoreVerticalIcon,
+  StatusChip,
   Tab,
   Tabs,
   ThemeProvider,
 } from '@availity/element';
 
 export const BadgeExample = () => (
-  <ThemeProvider>
+  <ThemeProvider theme="legacyBS">
     <Badge color="primary" badgeContent={5} variant="dot">
       <MailIcon fontSize="large" />
     </Badge>
@@ -28,7 +33,7 @@ export const BadgeExample = () => (
 );
 
 export const ChipExample = () => (
-  <ThemeProvider>
+  <ThemeProvider theme="legacyBS">
     <Chip label="New" />
   </ThemeProvider>
 );
@@ -53,7 +58,7 @@ export const MenuExample = () => {
   };
 
   return (
-    <ThemeProvider>
+    <ThemeProvider theme="legacyBS">
       <IconButton
         title="Actions"
         id="long-button"
@@ -93,7 +98,7 @@ export const DialogExample = () => {
   };
 
   return (
-    <ThemeProvider>
+    <ThemeProvider theme="legacyBS">
       <Button onClick={handleOpen}>Open Dialog</Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="alert-dialog-title">
         <DialogTitle id="alert-dialog-title" component="h1">
@@ -123,7 +128,7 @@ export const TabExample = () => {
   };
 
   return (
-    <ThemeProvider>
+    <ThemeProvider theme="legacyBS">
       <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
         <Tab label="Item One" />
         <Tab label="Item Two" />
@@ -132,3 +137,19 @@ export const TabExample = () => {
     </ThemeProvider>
   );
 };
+
+export const ListItemExample = () => (
+  <ThemeProvider theme="legacyBS">
+    <List>
+      <ListItem>
+        ListItem
+      </ListItem>
+      <ListItemStatusCard>
+        <ListItemText
+          primary="ListItemStatusCard"
+          secondary={<StatusChip color="success" label='Approved'/>}
+        />
+      </ListItemStatusCard>
+    </List>
+  </ThemeProvider>
+);

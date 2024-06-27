@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.52.1](https://github.com/Availity/element/compare/@availity/theme@0.52.0...@availity/theme@0.52.1) (2024-06-27)
+
+## [0.52.0](https://github.com/Availity/element/compare/@availity/theme@0.51.0...@availity/theme@0.52.0) (2024-06-25)
+
+
+### Features
+
+* **mui-list:** add list package ([51445f9](https://github.com/Availity/element/commit/51445f9fa4f281844b774e681d849a997987c17d))
+
 ## [0.51.0](https://github.com/Availity/element/compare/@availity/theme@0.50.0...@availity/theme@0.51.0) (2024-06-14)
 
 
