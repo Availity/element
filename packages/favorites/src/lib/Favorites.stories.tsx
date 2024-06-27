@@ -5,7 +5,7 @@ import { FavoritesProvider } from './Favorites';
 import { FavoriteHeart } from './FavoriteHeart';
 
 export default {
-  title: 'Components/Favorites',
+  title: 'Components/Favorites/Favorites',
   component: FavoriteHeart,
 };
 
