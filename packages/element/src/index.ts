@@ -16,6 +16,7 @@ export * from '@availity/mui-dialog';
 export * from '@availity/mui-disclaimer';
 export * from '@availity/mui-divider';
 export * from '@availity/mui-empty-state';
+export * from '@availity/mui-favorites';
 export * from '@availity/mui-feedback';
 export * from '@availity/mui-form-utils';
 export * from '@availity/mui-icon';

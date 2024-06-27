@@ -46,7 +46,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^8.0.7",
+    "@availity/api-axios": "^8.0.8",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-icon": "workspace:^",

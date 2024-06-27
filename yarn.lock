@@ -29,16 +29,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/api-axios@npm:^8.0.7":
-  version: 8.0.7
-  resolution: "@availity/api-axios@npm:8.0.7"
+"@availity/api-axios@npm:^8.0.8":
+  version: 8.0.8
+  resolution: "@availity/api-axios@npm:8.0.8"
   dependencies:
     "@availity/resolve-url": 2.0.5
     lodash: ^4.17.21
     qs: ^6.11.2
   peerDependencies:
     axios: ^1.4.0
-  checksum: 288398b5356d5f00047e7b2b8bc7e8f27c6de6a5a0e4a80e214f239a1753c8a73cbc58e68e7e27fec933ac8e67f0eee564b1baac29293fcfb6fcb8e815ed7152
+  checksum: c02fc126d9542e034ac015df767810ac169777749cc51d1531672ae73f754a57c44f642ace842b348c608dcc9e9c619547c2102e2d7a34342c33086361184ccf
   languageName: node
   linkType: hard
 
@@ -100,6 +100,7 @@ __metadata:
     "@availity/mui-disclaimer": "workspace:*"
     "@availity/mui-divider": "workspace:*"
     "@availity/mui-empty-state": "workspace:*"
+    "@availity/mui-favorites": "workspace:*"
     "@availity/mui-feedback": "workspace:*"
     "@availity/mui-form-utils": "workspace:*"
     "@availity/mui-icon": "workspace:*"
@@ -134,10 +135,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/message-core@npm:^6.1.2":
-  version: 6.1.2
-  resolution: "@availity/message-core@npm:6.1.2"
-  checksum: 1fd135ff1dc8db99442a5b1691f017e61377b88334e62eae1f3a6509706b3285d99d20f161275b3cfe0dac0870034be3d1bf8e0d573d151ded7447056edee4b3
+"@availity/message-core@npm:^6.1.3":
+  version: 6.1.3
+  resolution: "@availity/message-core@npm:6.1.3"
+  checksum: 46ca06275f19d9c07d44a2810bfbc76601088436d002ec142109a61abac6e091e72a564427ec1524d427bea33f25e3a8253143e913562d0b72344b015503889f
   languageName: node
   linkType: hard
 
@@ -209,7 +210,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-autocomplete@workspace:packages/autocomplete"
   dependencies:
-    "@availity/api-axios": ^8.0.7
+    "@availity/api-axios": ^8.0.8
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-textfield": "workspace:^"
     "@mui/material": ^5.15.15
@@ -459,11 +460,35 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@availity/mui-favorites@workspace:*, @availity/mui-favorites@workspace:packages/favorites":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-favorites@workspace:packages/favorites"
+  dependencies:
+    "@availity/api-axios": ^8.0.8
+    "@availity/message-core": ^6.1.3
+    "@availity/mui-icon": "workspace:^"
+    "@availity/mui-progress": "workspace:^"
+    "@availity/mui-tooltip": "workspace:^"
+    "@mui/material": ^5.15.15
+    "@tanstack/react-query": ^4.36.1
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^8.0.2
+    typescript: ^5.4.5
+  peerDependencies:
+    "@availity/mui-icon": "workspace:^"
+    "@availity/mui-progress": "workspace:^"
+    "@availity/mui-tooltip": "workspace:^"
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
 "@availity/mui-feedback@workspace:*, @availity/mui-feedback@workspace:^, @availity/mui-feedback@workspace:packages/feedback":
   version: 0.0.0-use.local
   resolution: "@availity/mui-feedback@workspace:packages/feedback"
   dependencies:
-    "@availity/api-axios": ^8.0.7
+    "@availity/api-axios": ^8.0.8
     "@availity/mui-button": "workspace:^"
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-icon": "workspace:^"
@@ -487,7 +512,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-form-utils@workspace:packages/form-utils"
   dependencies:
-    "@availity/message-core": ^6.1.2
+    "@availity/message-core": ^6.1.3
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.15.15
@@ -692,7 +717,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-progress@workspace:*, @availity/mui-progress@workspace:packages/progress":
+"@availity/mui-progress@workspace:*, @availity/mui-progress@workspace:^, @availity/mui-progress@workspace:packages/progress":
   version: 0.0.0-use.local
   resolution: "@availity/mui-progress@workspace:packages/progress"
   dependencies:
@@ -713,8 +738,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-spaces@workspace:packages/spaces"
   dependencies:
-    "@availity/api-axios": ^8.0.7
-    "@availity/message-core": ^6.1.2
+    "@availity/api-axios": ^8.0.8
+    "@availity/message-core": ^6.1.3
     "@availity/mock": "workspace:^"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-disclaimer": "workspace:^"
@@ -818,7 +843,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-tooltip@workspace:*, @availity/mui-tooltip@workspace:packages/tooltip":
+"@availity/mui-tooltip@workspace:*, @availity/mui-tooltip@workspace:^, @availity/mui-tooltip@workspace:packages/tooltip":
   version: 0.0.0-use.local
   resolution: "@availity/mui-tooltip@workspace:packages/tooltip"
   dependencies:

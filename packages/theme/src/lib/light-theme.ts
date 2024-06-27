@@ -316,6 +316,46 @@ export const lightTheme = {
         },
       },
     },
+    AvFavoriteHeart: {
+      styleOverrides: {
+        root: {
+          position: 'relative',
+          '&:hover input': {
+            backgroundColor: tokens.colorActionHover,
+            '&[disabled]': {
+              backgroundColor: 'transparent',
+              cursor: 'initial'
+            }
+          },
+        },
+        icon: {
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          pointerEvents: 'none',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '1.5rem',
+          '.MuiStack-root': {
+            height: '24px'
+          }
+        },
+        input: {
+          appearance: 'none',
+          cursor: 'pointer',
+          margin: 0,
+          height: '2.5rem',
+          width: '2.5rem',
+          minHeight: '2.5rem',
+          minWidth: '2.5rem',
+          borderRadius: '50%',
+          display: 'block',
+        }
+      }
+    },
     AvFeedbackContainer: {
       styleOverrides: {
         root: {
