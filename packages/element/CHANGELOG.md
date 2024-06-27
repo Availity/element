@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.42.1](https://github.com/Availity/element/compare/@availity/element@0.42.0...@availity/element@0.42.1) (2024-06-27)
+
+### Dependency Updates
+
+* `mui-datepicker` updated to version `0.42.0`
+* `theme-provider` updated to version `0.42.0`
 ## [0.42.0](https://github.com/Availity/element/compare/@availity/element@0.41.0...@availity/element@0.42.0) (2024-06-27)
 
 ### Dependency Updates
