@@ -8,7 +8,7 @@ import { useMemo, useCallback, cloneElement } from 'react';
 import { Chip } from '@availity/mui-chip';
 import { CircularProgress } from '@availity/mui-progress';
 import { Link } from '@availity/mui-link';
-import { CardMedia } from '@mui/material';
+import { FavoriteHeart } from '@availity/mui-favorites';
 import { Grid } from '@availity/mui-layout';
 
 const getDisplayDate = (date) => dayjs(date).format('MM/DD/YYYY');
@@ -124,7 +124,7 @@ const SpacesLink = ({
       configurationId &&
       favorite && (
         <span className={classNames('d-table-cell align-middle', { 'pr-2': !showAppIcon })}>
-          <FavoriteHeart id={`${idPrefix}${configurationid}`} name={name} onChange={(_, e) => e.stopPropagation()} />
+          <FavoriteHeart id={`${idPrefix}${configurationId}`} name={name} onChange={(_, e) => e.stopPropagation()} />
         </span>
       ),
     [favorite, configurationId, name, showAppIcon, idPrefix]
