@@ -3,21 +3,23 @@ import { Card, CardContent, CardHeader } from '@availity/mui-card';
 import { Typography } from '@availity/mui-typography';
 import { useSpacesContext } from '../Spaces';
 import { useLink } from './useLink';
-import { NavigateBottomIcon, NavigateTopIcon } from '@availity/mui-icon';
-import { useMemo, useCallback, cloneElement } from 'react';
-import { Chip } from '@availity/mui-chip';
+import { NavigateTopIcon } from '@availity/mui-icon';
+import { useMemo, cloneElement } from 'react';
+import { StatusChip, Chip } from '@availity/mui-chip';
 import { CircularProgress } from '@availity/mui-progress';
 import { Link } from '@availity/mui-link';
 import { FavoriteHeart } from '@availity/mui-favorites';
 import { Grid } from '@availity/mui-layout';
+import { ListItem, ListItemText } from '@availity/mui-list';
+import { SpacesLinkProps } from './spaces-link-types';
 
-const getDisplayDate = (date) => dayjs(date).format('MM/DD/YYYY');
+const getDisplayDate = (date: string | null | undefined) => dayjs(date).format('MM/DD/YYYY');
 
-const getContainerTag = (propTag = 'div', linkStyle) => ({ card: Card, list: ListGroupItem })[linkStyle] || propTag;
+const getContainerTag = (propTag = 'div', linkStyle: string) => ({ card: Card, list: ListItem })[linkStyle] || propTag;
 
-const getBodyTag = (propTag = 'div', linkStyle) => ({ card: CardContent, list: 'div' })[linkStyle] || propTag;
+const getBodyTag = (propTag = 'div', linkStyle: string) => ({ card: CardContent, list: 'div' })[linkStyle] || propTag;
 
-const getTitleTag = (propTag, linkStyle) =>
+const getTitleTag = (propTag: string, linkStyle: string) =>
   propTag ||
   {
     card: CardHeader,
@@ -25,15 +27,14 @@ const getTitleTag = (propTag, linkStyle) =>
   }[linkStyle] ||
   'div';
 
-const getTextTag = (propTag = 'div', linkStyle) =>
-  ({ card: Typography, list: ListGroupItemText })[linkStyle] || propTag;
+const getTextTag = (propTag = 'div', linkStyle: string) =>
+  ({ card: Typography, list: ListItemText })[linkStyle] || propTag;
 
-const SpacesLink = ({
+export const SpacesLink = ({
   spaceId,
   space: propSpace,
   className,
   children,
-  appIcon: showAppIcon,
   favorite,
   icon,
   showName,
@@ -48,7 +49,6 @@ const SpacesLink = ({
   textTag: TextTag,
   titleClassName,
   linkStyle,
-  size,
   loading: propsLoading,
   clientId: propsClientId,
   maxDescriptionLength, // TODO: remove and replace with text-truncate
@@ -60,7 +60,7 @@ const SpacesLink = ({
   customBadgeColor,
   idPrefix,
   ...rest
-}) => {
+}: SpacesLinkProps) => {
   const { loading } = useSpacesContext();
   const isLoading = loading || propsLoading;
 
@@ -69,7 +69,6 @@ const SpacesLink = ({
     name,
     shortName,
     type,
-    meta,
     description,
     activeDate,
     isNew,
@@ -84,50 +83,15 @@ const SpacesLink = ({
 
   const showUrl = !isGhosted && link.url;
 
-  const getIconTitle = useCallback(() => {
-    if (shortName) return shortName;
-
-    // We have to pass `name` as `className` bc of how its stored in spaces
-    if (icons.navigation)
-      return <NavigateBottomIcon id={`${idPrefix}app-${icons.navigation}-icon-${configurationId}`} />;
-
-    return <DesktopIcon id={`${idPrefix}app-desktop-icon-${configurationId}`} />;
-  }, [icons.navigation, shortName, configurationId, idPrefix]);
-
-  const appIcon = useMemo(() => {
-    if (!showAppIcon) return null;
-
-    return (
-      <AppIcon
-        className={classNames('d-table-cell align-middle mx-2', icons.navigation)}
-        style={{ top: showDescription && description && !stacked ? -5 : 0 }}
-        size={size === undefined && stacked ? 'lg' : size}
-        id={`${idPrefix}app-appIcon-${configurationId}`}
-      >
-        {getIconTitle()}
-      </AppIcon>
-    );
-  }, [
-    description,
-    getIconTitle,
-    icons.navigation,
-    showAppIcon,
-    showDescription,
-    size,
-    stacked,
-    configurationId,
-    idPrefix,
-  ]);
-
   const favoriteIcon = useMemo(
     () =>
       configurationId &&
       favorite && (
-        <span className={classNames('d-table-cell align-middle', { 'pr-2': !showAppIcon })}>
+        <span className="d-table-cell align-middle">
           <FavoriteHeart id={`${idPrefix}${configurationId}`} name={name} onChange={(_, e) => e.stopPropagation()} />
         </span>
       ),
-    [favorite, configurationId, name, showAppIcon, idPrefix]
+    [favorite, configurationId, name, idPrefix]
   );
 
   const dateInfo = useMemo(
@@ -135,9 +99,11 @@ const SpacesLink = ({
       (showNew || showDate) && (
         <div className={classNames({ 'text-center': stacked, 'media media-right': !stacked })}>
           {showNew && isNew && (
-            <Chip className={classNames({ 'mr-2': showDate })} id={`${idPrefix}app-new-badge-${configurationId}`}>
-              New!
-            </Chip>
+            <Chip
+              className={classNames({ 'mr-2': showDate })}
+              id={`${idPrefix}app-new-badge-${configurationId}`}
+              label="New !"
+            />
           )}
           {showDate && (
             <Typography id={`${idPrefix}app-date-badge-${configurationId}`} variant="caption" color="textSecondary">
@@ -159,12 +125,11 @@ const SpacesLink = ({
             'mr-2': linkStyle !== 'card' && (showDate || (showNew && isNew)),
           })}
         >
-          <Chip
-            variant={customBadgeColor || 'info'}
+          <StatusChip
+            color={customBadgeColor || 'info'}
             id={`${idPrefix}app-custom-badge-${configurationId}-${customBadgeText}`}
-          >
-            {customBadgeText}
-          </Chip>
+            label={customBadgeText}
+          />
         </div>
       ),
     [customBadgeColor, customBadgeText, showDate, showNew, stacked, linkStyle, isNew, idPrefix, configurationId]
@@ -222,7 +187,6 @@ const SpacesLink = ({
         })}
       >
         {!stacked && favoriteIcon}
-        {appIcon}
         {icon && type?.toUpperCase() === 'FILE' ? (
           <Link target="_blank" href={restLink.url}>
             <NavigateTopIcon />
