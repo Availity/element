@@ -142,7 +142,7 @@ export const ListItemExample = () => (
   <ThemeProvider theme="legacyBS">
     <List>
       <ListItem>
-        ListItem
+        <ListItemText>ListItem</ListItemText>
       </ListItem>
       <ListItemStatusCard>
         <ListItemText
