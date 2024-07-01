@@ -1,6 +1,7 @@
 // Each exported component in the package should have its own stories file
 import type { Meta, StoryObj } from '@storybook/react';
 import AvApi, { ApiConfig } from '@availity/api-axios';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { AsyncAutocomplete } from './AsyncAutocomplete';
 
@@ -35,42 +36,46 @@ type ExampleResponse = {
   count: number;
 };
 
-const getResults = async (page: number, limit: number) => {
-  const offset = page * limit;
-  try {
-    const resp = await api.post<ExampleResponse>({ offset, limit }, { params: {} });
+const getResults = async (offset: number, limit: number) => {
+  // const offset = page * limit;
+  const resp = await api.post<ExampleResponse>({ offset, limit }, { params: {} });
 
-    return {
-      totalCount: resp.data.totalCount,
-      offset,
-      limit,
-      options: resp.data.options,
-      count: resp.data.count,
-    };
-  } catch {
-    return {
-      totalCount: 0,
-      offset,
-      limit,
-      options: [],
-      count: 0,
-    };
-  }
+  return {
+    totalCount: resp.data.totalCount,
+    offset,
+    limit,
+    options: resp.data.options,
+    count: resp.data.count,
+  };
 };
 
-const loadOptions = async (page: number, limit: number) => {
-  const { options, totalCount, offset } = await getResults(page, limit);
+const loadOptions = async (offset: number, limit: number) => {
+  const { options, totalCount } = await getResults(offset, limit);
 
   return {
     options,
     hasMore: offset + limit < totalCount,
+    offset,
   };
 };
 
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
 export const _Async: StoryObj<typeof AsyncAutocomplete> = {
   render: (args) => {
-    return <AsyncAutocomplete {...args} />;
+    return (
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete {...args} />
+      </QueryClientProvider>
+    );
   },
+  decorators: [],
   parameters: {
     controls: {
       exclude: /loading(?!Text)|options/,
@@ -81,5 +86,6 @@ export const _Async: StoryObj<typeof AsyncAutocomplete> = {
     getOptionLabel: (val: Option) => val.label,
     loadOptions,
     limit: 10,
+    queryKey: 'example',
   },
 };

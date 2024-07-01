@@ -166,6 +166,35 @@ export const handlers = [
     return HttpResponse.json({ organizations: orgs, count: orgs.length, totalCount: total });
   }),
 
+  // Providers
+  http.get(routes.PROVIDERS, async ({ request }) => {
+    await delayRequest();
+
+    const params = new URLSearchParams(request.url.split('?')[1]);
+    const parsedParams: Record<string, unknown> = {};
+    for (const [key, value] of params.entries()) {
+      parsedParams[key] = parsers[key]?.(value) ?? value;
+    }
+
+    if (typeof parsedParams.offset !== 'number' || typeof parsedParams.limit !== 'number') {
+      throw new Error('offset and limit not provided');
+    }
+
+    const total = 50;
+    const options: { id: string; uiDisplayName: string }[] = [];
+
+    for (let i = parsedParams.offset; i < parsedParams.offset + parsedParams.limit; i++) {
+      if (i >= total) break;
+      options.push({ id: `${i}`, uiDisplayName: `Provider ${i}` });
+    }
+
+    return HttpResponse.json({
+      providers: options,
+      count: options.length,
+      totalCount: total,
+    });
+  }),
+
   // Example
   http.post(routes.EXAMPLE, async ({ request }) => {
     await delayRequest();

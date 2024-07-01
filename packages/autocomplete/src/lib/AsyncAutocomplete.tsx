@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
 import type { ChipTypeMap } from '@mui/material/Chip';
+import { useInfiniteQuery, UseInfiniteQueryOptions } from '@tanstack/react-query';
 
 import { Autocomplete, AutocompleteProps } from './Autocomplete';
 
@@ -13,11 +13,15 @@ export interface AsyncAutocompleteProps<
     AutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>,
     'options' | 'disableListWrap' | 'loading'
   > {
-  /** Function that returns a promise with options and hasMore */
-  loadOptions: (page: number, limit: number) => Promise<{ options: Option[]; hasMore: boolean }>;
+  /** Function that is called to fetch the options for the list. Returns a promise with options, hasMore, and offset */
+  loadOptions: (offset: number, limit: number) => Promise<{ options: Option[]; hasMore: boolean; offset: number }>;
+  /** The key used by @tanstack/react-query to cache the response */
+  queryKey: string;
   /** The number of options to request from the api
    * @default 50 */
   limit?: number;
+  /** Config options for the useInfiniteQuery hook */
+  queryOptions?: UseInfiniteQueryOptions<{ options: Option[]; hasMore: boolean; offset: number }>;
 }
 
 export const AsyncAutocomplete = <
@@ -29,33 +33,25 @@ export const AsyncAutocomplete = <
 >({
   loadOptions,
   limit = 50,
+  queryKey,
   ListboxProps,
+  queryOptions,
   ...rest
 }: AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
-  const [page, setPage] = useState(0);
-  const [options, setOptions] = useState<Option[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
+  const { isLoading, isFetching, data, hasNextPage, fetchNextPage } = useInfiniteQuery({
+    queryKey: [queryKey, limit],
+    queryFn: async ({ pageParam = 0 }) => loadOptions(pageParam, limit),
+    staleTime: 10000,
+    getNextPageParam: (lastPage) => (lastPage.hasMore ? lastPage.offset + limit : false),
+    ...queryOptions,
+  });
 
-  useEffect(() => {
-    const getInitialOptions = async () => {
-      setLoading(true);
-      const result = await loadOptions(page, limit);
-      setOptions(result.options);
-      setHasMore(result.hasMore);
-      setPage((prev) => prev + 1);
-      setLoading(false);
-    };
-
-    if (!loading && hasMore && page === 0) {
-      getInitialOptions();
-    }
-  }, [page, loading, loadOptions]);
+  const options = data?.pages ? data.pages.map((page) => page.options).flat() : [];
 
   return (
     <Autocomplete
       {...rest}
-      loading={loading}
+      loading={isFetching}
       options={options}
       ListboxProps={{
         ...ListboxProps,
@@ -64,13 +60,8 @@ export const AsyncAutocomplete = <
           const difference = listboxNode.scrollHeight - (listboxNode.scrollTop + listboxNode.clientHeight);
 
           // Only fetch if we are near the bottom, not already fetching, and there are more results
-          if (difference <= 5 && !loading && hasMore) {
-            setLoading(true);
-            const result = await loadOptions(page, limit);
-            setOptions([...options, ...result.options]);
-            setHasMore(result.hasMore);
-            setPage((prev) => prev + 1);
-            setLoading(false);
+          if (difference <= 5 && !isLoading && !isFetching && hasNextPage) {
+            fetchNextPage();
           }
         },
       }}

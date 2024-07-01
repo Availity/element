@@ -4,6 +4,7 @@ export const LOG = '/api/v1/log-messages';
 export const REGIONS = '/api/sdk/platform/v1/regions';
 export const SETTINGS = '/api/utils/v1/settings';
 export const ORGANIZATIONS = '/api/sdk/platform/v1/organizations';
+export const PROVIDERS = '/api/internal/v1/providers';
 export const USERS = '/api/sdk/platform/v1/users/me';
 
 // Misc

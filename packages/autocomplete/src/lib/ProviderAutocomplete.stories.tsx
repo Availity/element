@@ -2,11 +2,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { OrganizationAutocomplete } from './OrganizationAutocomplete';
+import { ProviderAutocomplete } from './ProviderAutocomplete';
 
-const meta: Meta<typeof OrganizationAutocomplete> = {
-  title: 'Form Components/Autocomplete/OrganizationAutocomplete',
-  component: OrganizationAutocomplete,
+const meta: Meta<typeof ProviderAutocomplete> = {
+  title: 'Form Components/Autocomplete/ProviderAutocomplete',
+  component: ProviderAutocomplete,
   tags: ['autodocs'],
   args: {
     id: 'example',
@@ -30,21 +30,22 @@ const client = new QueryClient({
   },
 });
 
-export const _OrganizationAutocomplete: StoryObj<typeof OrganizationAutocomplete> = {
+export const _ProviderAutocomplete: StoryObj<typeof ProviderAutocomplete> = {
   render: (args) => {
     return (
       <QueryClientProvider client={client}>
-        <OrganizationAutocomplete {...args} />
+        <ProviderAutocomplete {...args} />
       </QueryClientProvider>
     );
   },
   args: {
     FieldProps: {
-      label: 'Organization Select',
-      helperText: 'Select an Organization from the list',
+      label: 'Provider Select',
+      helperText: 'Select a Provider from the list',
       placeholder: 'Select...',
       fullWidth: false,
     },
-    limit: 15,
+    limit: 10,
+    customerId: '1234',
   },
 };
