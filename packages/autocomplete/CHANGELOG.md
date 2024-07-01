@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.5.2...@availity/mui-autocomplete@0.6.0) (2024-07-01)
+
+
+### Features
+
+* **mui-autocomplete:** add ProviderAutocomplete component ([5ed1450](https://github.com/Availity/element/commit/5ed1450a6daca47231a030b516b5bf950c190f08))
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** fix unit test ([50e2b52](https://github.com/Availity/element/commit/50e2b52f2a0b7799fe63d4d140259255d905a96f))
+
 ## [0.5.2](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.5.1...@availity/mui-autocomplete@0.5.2) (2024-06-27)
 
 ### Dependency Updates
