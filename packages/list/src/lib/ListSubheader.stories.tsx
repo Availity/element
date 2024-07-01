@@ -1,9 +1,9 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
+import { Avatar } from '@availity/mui-avatar';
 import { FolderIcon } from '@availity/mui-icon';
+import { Typography } from '@availity/mui-typography';
 import { List, ListItem, ListItemAvatar, ListItemText, ListSubheader, ListSubheaderProps } from '..';
 
 const meta: Meta<typeof ListSubheader> = {
@@ -29,7 +29,7 @@ export const _FolderList: StoryObj<typeof List> = {
         <ListSubheader>Subheader 1</ListSubheader>
         <ListItem>
           <ListItemAvatar>
-            <Avatar>
+            <Avatar size="m">
               <FolderIcon />
             </Avatar>
           </ListItemAvatar>
@@ -37,7 +37,7 @@ export const _FolderList: StoryObj<typeof List> = {
         </ListItem>
         <ListItem>
           <ListItemAvatar>
-            <Avatar>
+            <Avatar size="m">
               <FolderIcon />
             </Avatar>
           </ListItemAvatar>
@@ -46,7 +46,7 @@ export const _FolderList: StoryObj<typeof List> = {
         <ListSubheader>Subheader 2</ListSubheader>
         <ListItem>
           <ListItemAvatar>
-            <Avatar>
+            <Avatar size="m">
               <FolderIcon />
             </Avatar>
           </ListItemAvatar>

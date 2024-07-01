@@ -1,9 +1,9 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import Grid from '@mui/material/Unstable_Grid2';
-import Typography from '@mui/material/Typography';
 import { HeartEmptyIcon } from '@availity/mui-icon';
+import { Grid } from '@availity/mui-layout';
+import { Typography } from '@availity/mui-typography';
 import { List, ListItem, ListItemText, ListItemIcon, ListItemIconProps, ListItemButton } from '..';
 
 const meta: Meta<typeof ListItemIcon> = {

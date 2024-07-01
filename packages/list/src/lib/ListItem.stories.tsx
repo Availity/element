@@ -1,10 +1,10 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import Avatar from '@mui/material/Avatar';
-import Grid from '@mui/material/Unstable_Grid2';
-import Typography from '@mui/material/Typography';
+import { Avatar } from '@availity/mui-avatar';
 import { FolderIcon, MailIcon, UserIcon } from '@availity/mui-icon';
+import { Grid } from '@availity/mui-layout';
+import { Typography } from '@availity/mui-typography';
 import { List, ListItem, ListItemAvatar, ListItemText, ListItemProps, ListItemIcon } from '..';
 
 const meta: Meta<typeof ListItem> = {
@@ -147,7 +147,7 @@ export const _AvatarWithText: StoryObj<typeof List> = {
         <List aria-labelledby='avatar-text-default-spacing-header'>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>
@@ -155,7 +155,7 @@ export const _AvatarWithText: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>
@@ -163,7 +163,7 @@ export const _AvatarWithText: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>
@@ -176,7 +176,7 @@ export const _AvatarWithText: StoryObj<typeof List> = {
         <List dense aria-labelledby='avatar-text-dense-spacing-header'>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>
@@ -184,7 +184,7 @@ export const _AvatarWithText: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>
@@ -192,7 +192,7 @@ export const _AvatarWithText: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>
@@ -212,7 +212,7 @@ export const _AvatarWithTextAndIcon: StoryObj<typeof List> = {
         <List aria-labelledby='avatar-icon-text-default-spacing-header'>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <UserIcon />
               </Avatar>
             </ListItemAvatar>
@@ -221,7 +221,7 @@ export const _AvatarWithTextAndIcon: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <UserIcon />
               </Avatar>
             </ListItemAvatar>
@@ -230,7 +230,7 @@ export const _AvatarWithTextAndIcon: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <UserIcon />
               </Avatar>
             </ListItemAvatar>
@@ -244,7 +244,7 @@ export const _AvatarWithTextAndIcon: StoryObj<typeof List> = {
         <List dense aria-labelledby='avatar-icon-text-dense-spacing-header'>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <UserIcon />
               </Avatar>
             </ListItemAvatar>
@@ -253,7 +253,7 @@ export const _AvatarWithTextAndIcon: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <UserIcon />
               </Avatar>
             </ListItemAvatar>
@@ -262,7 +262,7 @@ export const _AvatarWithTextAndIcon: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <UserIcon />
               </Avatar>
             </ListItemAvatar>
@@ -283,7 +283,7 @@ export const _FolderList: StoryObj<typeof List> = {
         <List aria-labelledby='folders-default-spacing-header'>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>
@@ -291,7 +291,7 @@ export const _FolderList: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>
@@ -299,7 +299,7 @@ export const _FolderList: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>
@@ -312,7 +312,7 @@ export const _FolderList: StoryObj<typeof List> = {
         <List dense aria-labelledby='folders-dense-spacing-header'>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>
@@ -320,7 +320,7 @@ export const _FolderList: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>
@@ -328,7 +328,7 @@ export const _FolderList: StoryObj<typeof List> = {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar>
+              <Avatar size="m">
                 <FolderIcon />
               </Avatar>
             </ListItemAvatar>

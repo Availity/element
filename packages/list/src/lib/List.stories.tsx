@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import Avatar from '@mui/material/Avatar';
-import Collapse from '@mui/material/Collapse';
+import { Avatar } from '@availity/mui-avatar';
+import { Collapse } from '@availity/mui-transitions';
 import { FolderIcon, FolderOpenIcon, FolderTreeIcon } from '@availity/mui-icon';
 import { List, ListItem, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, ListProps, ListSubheader } from '..';
 
@@ -128,7 +128,7 @@ export const _FolderList: StoryObj<typeof List> = {
     <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
+          <Avatar size="m">
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
@@ -136,7 +136,7 @@ export const _FolderList: StoryObj<typeof List> = {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
+          <Avatar size="m">
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
@@ -144,7 +144,7 @@ export const _FolderList: StoryObj<typeof List> = {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
+          <Avatar size="m">
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>

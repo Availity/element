@@ -1,11 +1,11 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import Avatar from '@mui/material/Avatar';
-import Grid from '@mui/material/Unstable_Grid2';
-import Typography from '@mui/material/Typography';
 import { IconButton } from '@availity/mui-button';
+import { Avatar } from '@availity/mui-avatar';
 import { MailIcon, UserIcon } from '@availity/mui-icon';
+import { Grid } from '@availity/mui-layout';
+import { Typography } from '@availity/mui-typography';
 import { List, ListItem, ListItemAvatar, ListItemText, ListItemAvatarProps, ListItemButton } from '..';
 
 const meta: Meta<typeof ListItemAvatar> = {
@@ -22,7 +22,7 @@ const meta: Meta<typeof ListItemAvatar> = {
 export default meta;
 
 export const _ListItemAvatar: StoryObj<typeof ListItemAvatar> = {
-  render: (args: ListItemAvatarProps) => <ListItemAvatar {...args}><Avatar><UserIcon /></Avatar></ListItemAvatar>,
+  render: (args: ListItemAvatarProps) => <ListItemAvatar {...args}><Avatar size="m"><UserIcon /></Avatar></ListItemAvatar>,
 };
 
 export const _UserList: StoryObj<typeof List> = {
@@ -39,7 +39,7 @@ export const _UserList: StoryObj<typeof List> = {
             >
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar>
+                  <Avatar size="m">
                     <UserIcon />
                   </Avatar>
                 </ListItemAvatar>
@@ -60,7 +60,7 @@ export const _UserList: StoryObj<typeof List> = {
             >
             <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar>
+                  <Avatar size="m">
                     <UserIcon />
                   </Avatar>
                 </ListItemAvatar>
