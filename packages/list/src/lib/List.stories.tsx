@@ -4,7 +4,7 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from '@availity/mui-avatar';
 import { Collapse } from '@availity/mui-transitions';
-import { FolderIcon, FolderOpenIcon, FolderTreeIcon } from '@availity/mui-icon';
+import { FolderIcon, FolderTreeIcon, TriangleCollapseIcon, TriangleExpandIcon } from '@availity/mui-icon';
 import { List, ListItem, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, ListProps, ListSubheader } from '..';
 
 const meta: Meta<typeof List> = {
@@ -106,7 +106,7 @@ export const _NestedList: StoryObj<typeof List> = {
             <FolderIcon />
           </ListItemIcon>
           <ListItemText primary="Inbox" />
-          {open ? <FolderOpenIcon /> : <FolderIcon />}
+          {open ? <TriangleCollapseIcon /> : <TriangleExpandIcon />}
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>

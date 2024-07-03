@@ -627,7 +627,7 @@ export const lightTheme = {
     MuiAvatar: {
       styleOverrides: {
         colorDefault: {
-          backgroundColor: tokens.colorGrey300,
+          backgroundColor: tokens.colorBackgroundBorder,
           color: tokens.colorTextSecondary,
         },
       },
@@ -1173,6 +1173,15 @@ export const lightTheme = {
         },
       },
     },
+    MuiList: {
+      styleOverrides: {
+        root: {
+            ".MuiListItem-divider:last-of-type": {
+                borderBottom: 0,
+            },
+        }
+      }
+    },
     MuiListItem: {
       defaultProps: {
         divider: true,
@@ -1222,11 +1231,20 @@ export const lightTheme = {
           }
         },
         dense: {
-          '.MuiAvatar-root': {
-            width: '1.5rem',
-            height: '1.5rem',
-            '.MuiSvgIcon-root': {
-              fontSize: '.75rem'
+          '.MuiListItemAvatar-root': {
+            minWidth: '3rem',
+            '.MuiAvatar-root': {
+              width: '1.5rem',
+              height: '1.5rem',
+              '.MuiSvgIcon-root': {
+                fontSize: '.75rem'
+              }
+            }
+          },
+          '.MuiListItemIcon-root': {
+            minWidth: '3rem',
+            '+ .MuiListItemText-inset': {
+              paddingLeft: '3rem'
             }
           }
         },
@@ -1310,9 +1328,9 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           fontSize: '1.5rem',
-          minWidth: '3rem',
+          minWidth: '3.5rem',
           '+ .MuiListItemText-inset': {
-            paddingLeft: '3rem'
+            paddingLeft: '3.5rem'
           }
         }
       }

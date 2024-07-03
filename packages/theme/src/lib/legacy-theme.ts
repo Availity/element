@@ -678,7 +678,7 @@ export const legacyTheme = {
     MuiAvatar: {
       styleOverrides: {
         colorDefault: {
-          backgroundColor: tokens.colorGrey300,
+          backgroundColor: tokens.colorBackgroundBorder,
           color: tokens.colorTextSecondary,
         },
       },
@@ -860,6 +860,12 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           padding: '2px 4px',
+          '&.PrivateSwitchBase-edgeStart': {
+            marginLeft: '-4px'
+          },
+          '&.PrivateSwitchBase-edgeEnd': {
+            marginRight: '-4px'
+          },
           '&.Mui-focusVisible': {
             '.MuiSvgIcon-root': {
               outline: `2px solid ${tokens.borderInputFocus}`,
@@ -1266,6 +1272,15 @@ export const legacyTheme = {
         },
       },
     },
+    MuiList: {
+      styleOverrides: {
+        root: {
+            ".MuiListItem-divider:last-of-type": {
+                borderBottom: 0,
+            },
+        }
+      }
+    },
     MuiListItem: {
       defaultProps: {
         divider: true,
@@ -1313,6 +1328,21 @@ export const legacyTheme = {
               },
             }
           }
+        },
+        dense: {
+          '.MuiListItemText-inset': {
+            paddingLeft: '2.5rem'
+          },
+          '.MuiListItemAvatar-root, .MuiListItemIcon-root': {
+            minWidth: '2.5rem',
+            '.MuiAvatar-root': {
+              width: '1.5rem',
+              height: '1.5rem',
+              '.MuiSvgIcon-root': {
+                fontSize: '.75rem'
+              }
+            }
+          },
         },
         padding: {
           paddingTop: '.75rem',
@@ -1419,10 +1449,6 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           fontSize: '1.5rem',
-          minWidth: '3rem',
-          '+ .MuiListItemText-inset': {
-            paddingLeft: '3rem'
-          }
         }
       }
     },
