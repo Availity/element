@@ -10,6 +10,9 @@ describe('updateUrl', () => {
 
     updatedUrl = updateUrl('http://www.example.com?foo=bar', 'fakeKey', 'fakeValue');
     expect(updatedUrl).toBe('http://www.example.com?fakeKey=fakeValue&foo=bar');
+
+    updatedUrl = updateUrl('http://www.example.com?foo=bar');
+    expect(updatedUrl).toBe('http://www.example.com?foo=bar');
   });
 });
 
