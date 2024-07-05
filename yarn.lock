@@ -126,7 +126,7 @@ __metadata:
     "@availity/theme-provider": "workspace:*"
     "@mui/material": ^5.15.15
     "@mui/system": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ~5.4.5
@@ -160,7 +160,7 @@ __metadata:
     "@availity/mui-layout": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -178,7 +178,7 @@ __metadata:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -196,7 +196,7 @@ __metadata:
     "@availity/mui-block-ui": "workspace:^"
     "@mui/material": ^5.15.15
     "@tanstack/react-query": ^4.36.1
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -216,7 +216,7 @@ __metadata:
     "@mui/material": ^5.15.15
     "@mui/types": ^7.2.14
     "@tanstack/react-query": ^4.36.1
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -237,7 +237,7 @@ __metadata:
     "@availity/design-tokens": "workspace:^"
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -252,7 +252,7 @@ __metadata:
   resolution: "@availity/mui-backdrop@workspace:packages/backdrop"
   dependencies:
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -268,7 +268,7 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -285,7 +285,7 @@ __metadata:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-paper": "workspace:*"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -302,7 +302,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-link": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -318,7 +318,7 @@ __metadata:
   dependencies:
     "@mui/lab": ^5.0.0-alpha.147
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -335,7 +335,7 @@ __metadata:
     "@availity/mui-button": "workspace:^"
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -353,7 +353,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -369,7 +369,7 @@ __metadata:
   dependencies:
     "@availity/mui-avatar": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -387,7 +387,7 @@ __metadata:
     "@mui/material": ^5.15.15
     "@mui/x-date-pickers": ^7.2.0
     dayjs: ^1.11.10
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -404,7 +404,7 @@ __metadata:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-layout": "workspace:*"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -421,7 +421,7 @@ __metadata:
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -436,7 +436,7 @@ __metadata:
   resolution: "@availity/mui-divider@workspace:packages/divider"
   dependencies:
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -452,7 +452,7 @@ __metadata:
   dependencies:
     "@availity/mui-layout": "workspace:*"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -473,7 +473,7 @@ __metadata:
     "@availity/mui-tooltip": "workspace:^"
     "@mui/material": ^5.15.15
     "@tanstack/react-query": ^4.36.1
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -499,7 +499,7 @@ __metadata:
     "@availity/mui-toggle-button": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     react-hook-form: ^7.51.3
     tsup: ^8.0.2
@@ -518,7 +518,7 @@ __metadata:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -537,7 +537,7 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": ^6.5.2
     "@fortawesome/free-solid-svg-icons": ^6.5.2
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -552,7 +552,7 @@ __metadata:
   resolution: "@availity/mui-layout@workspace:packages/layout"
   dependencies:
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -568,7 +568,7 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -584,7 +584,7 @@ __metadata:
   dependencies:
     "@availity/mui-chip": "workspace:*"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -600,7 +600,7 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -618,7 +618,7 @@ __metadata:
     "@availity/mui-card": "workspace:*"
     "@availity/mui-typography": "workspace:*"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -640,7 +640,7 @@ __metadata:
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -662,7 +662,7 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -678,7 +678,7 @@ __metadata:
   resolution: "@availity/mui-paper@workspace:packages/paper"
   dependencies:
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -694,7 +694,7 @@ __metadata:
   dependencies:
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -709,7 +709,7 @@ __metadata:
   resolution: "@availity/mui-popper@workspace:packages/popper"
   dependencies:
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -726,7 +726,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -751,7 +751,7 @@ __metadata:
     "@tanstack/react-query": ^4.36.1
     dayjs: ^1.11.10
     qs: ^6.12.1
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     react-image: ^4.1.0
     react-markdown: ^9.0.1
@@ -784,7 +784,7 @@ __metadata:
     "@availity/mui-textfield": "workspace:*"
     "@availity/mui-typography": "workspace:*"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     react-hook-form: ^7.51.3
     tsup: ^8.0.2
@@ -802,7 +802,7 @@ __metadata:
     "@availity/mui-divider": "workspace:^"
     "@mui/lab": ^5.0.0-alpha.147
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -819,7 +819,7 @@ __metadata:
     "@availity/mui-form-utils": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -835,7 +835,7 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -850,7 +850,7 @@ __metadata:
   resolution: "@availity/mui-tooltip@workspace:packages/tooltip"
   dependencies:
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -867,7 +867,7 @@ __metadata:
     "@availity/mui-alert": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -882,7 +882,7 @@ __metadata:
   resolution: "@availity/mui-typography@workspace:packages/typography"
   dependencies:
     "@mui/material": ^5.15.15
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ^5.4.5
@@ -918,7 +918,7 @@ __metadata:
     "@mui/material": ^5.15.15
     "@mui/x-date-pickers": ^7.2.0
     dayjs: ^1.11.10
-    react: 18.2.0
+    react: 18.3.1
     react-dom: 18.2.0
     tsup: ^8.0.2
     typescript: ~5.4.5
@@ -7018,23 +7018,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16":
+"@types/react@npm:*, @types/react@npm:18.3.3, @types/react@npm:>=16":
   version: 18.3.3
   resolution: "@types/react@npm:18.3.3"
   dependencies:
     "@types/prop-types": "*"
     csstype: ^3.0.2
   checksum: c63d6a78163244e2022b01ef79b0baec4fe4da3475dc4a90bb8accefad35ef0c43560fd0312e5974f92a0f1108aa4d669ac72d73d66396aa060ea03b5d2e3873
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:18.3.1":
-  version: 18.3.1
-  resolution: "@types/react@npm:18.3.1"
-  dependencies:
-    "@types/prop-types": "*"
-    csstype: ^3.0.2
-  checksum: 9224ef319a0c2b7f66e7e7f06012aa5eb638a6c76c9742843eab1a5d243f2bed5ff829ddbb41efd60d33a266420528adfcb84cb93f238b00e905f98c3a355768
   languageName: node
   linkType: hard
 
@@ -7898,7 +7888,7 @@ __metadata:
     "@testing-library/user-event": ^14.5.2
     "@types/jest": 29.4.4
     "@types/node": 18.19.31
-    "@types/react": 18.3.1
+    "@types/react": 18.3.3
     "@types/react-dom": 18.3.0
     "@typescript-eslint/eslint-plugin": 7.6.0
     "@typescript-eslint/parser": 7.6.0
@@ -16115,12 +16105,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:18.2.0":
-  version: 18.2.0
-  resolution: "react@npm:18.2.0"
+"react@npm:18.3.1":
+  version: 18.3.1
+  resolution: "react@npm:18.3.1"
   dependencies:
     loose-envify: ^1.1.0
-  checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
+  checksum: a27bcfa8ff7c15a1e50244ad0d0c1cb2ad4375eeffefd266a64889beea6f6b64c4966c9b37d14ee32d6c9fcd5aa6ba183b6988167ab4d127d13e7cb5b386a376
   languageName: node
   linkType: hard
 
