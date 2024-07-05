@@ -1,25 +1,21 @@
 import { DialogContent } from '@availity/mui-dialog';
-import { Grid } from '@availity/mui-layout';
+import { Grid, Box } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
-import { Space } from '../spaces-types';
+import { SpacesImage } from '../SpacesImage';
+import { ModalProps } from './modal-types';
 
-export type MultiPayerModalProps = {
-  parentPayerSpaces: Space[];
-  name: string;
-  state: any;
-  setState: any;
-};
-
-export const MultiPayerModal = ({
-  parentPayerSpaces,
-  name,
-  state: { selectedOptions },
-  setState,
-}: MultiPayerModalProps) => (
+export const MultiPayerModal = ({ parentPayerSpaces, name, state: { selectedOption }, setState }: ModalProps) => (
   <DialogContent>
     <Typography>
-      Open {name} as: {selectedOptions ? selectedOptions.name || selectedOptions.id : ''}
+      Open {name} as: {selectedOption ? selectedOption.name || selectedOption.id : ''}
     </Typography>
-    <Grid direction="row">{parentPayerSpaces && parentPayerSpaces.map((payerSpace) => <SpacesImage />)}</Grid>
+    <Grid direction="row">
+      {parentPayerSpaces &&
+        parentPayerSpaces.map((payerSpace) => (
+          <Box onClick={() => setState({ selectedOption: payerSpace })}>
+            <SpacesImage spaceId={payerSpace.configurationId} imageType="images.tile" />
+          </Box>
+        ))}
+    </Grid>
   </DialogContent>
 );

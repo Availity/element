@@ -3,10 +3,7 @@ import { avWebQLApi } from '@availity/api-axios';
 import ReactMarkdown from 'react-markdown';
 import { CircularProgress } from '@availity/mui-progress';
 import { DialogContent } from '@availity/mui-dialog';
-
-export type DisclaimerModalProps = {
-  disclaimerId: string;
-};
+import type { ModalProps } from './modal-types';
 
 const disclaimerQuery = `query configurationFindOne($id: ID!) {
   configurationFindOne(id: $id) {
@@ -16,7 +13,7 @@ const disclaimerQuery = `query configurationFindOne($id: ID!) {
   }
 }`;
 
-export const DisclaimerModal = ({ disclaimerId }: DisclaimerModalProps) => {
+export const DisclaimerModal = ({ disclaimerId }: ModalProps) => {
   const [disclaimer, setDisclaimer] = useState('');
 
   useEffect(() => {

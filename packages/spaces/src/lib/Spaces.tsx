@@ -3,6 +3,7 @@ import { useQueries } from '@tanstack/react-query';
 import { spacesReducer, fetchAllSpaces } from './spaces-data';
 import { Space, SpacesProps, SpacesContextType } from './spaces-types';
 import configurationFindMany from './configurationFindMany';
+import { SsoTypeSpace } from './SpacesLink/spaces-link-types';
 
 export const INITIAL_STATE = {
   loading: true,
@@ -195,7 +196,7 @@ export const useSpaces = (...ids: string[]) => {
     return spaces && [...spaces.values()];
   }
 
-  return ids.reduce((acc: Space[], id) => {
+  return ids.reduce((acc: (Space | SsoTypeSpace)[], id) => {
     const matchedSpace = spaces?.get(id) || spacesByConfig?.get(id);
 
     if (matchedSpace) {

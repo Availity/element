@@ -1,9 +1,10 @@
 import qs from 'qs';
 
-export const updateUrl = (url: string, key: string, value: string) => {
+export const updateUrl = (url: string, key?: string, value?: string) => {
   const [uri, queryString] = url.split('?');
   const currentParams = qs.parse(queryString);
-  const newParams = qs.stringify({ ...currentParams, [key]: value }, { sort: (a, b) => a.localeCompare(b) });
+  const additionalParams = key && value ? { [key]: value } : {};
+  const newParams = qs.stringify({ ...currentParams, additionalParams }, { sort: (a, b) => a.localeCompare(b) });
 
   return `${uri}?${newParams}`;
 };

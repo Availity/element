@@ -1,49 +1,37 @@
 import { createContext, useContext, useReducer } from 'react';
 import { isAbsoluteUrl } from '@availity/resolve-url';
 import { Dialog, DialogTitle, DialogActions } from '@availity/mui-dialog';
-import { Button, ButtonProps } from '@availity/mui-button';
+import { Button } from '@availity/mui-button';
 import { getUrl, getTarget, updateUrl } from '../helpers';
 import { updateTopApps } from '../topApps';
 import { DisclaimerModal } from './DisclaimerModal';
 import { MultiPayerModal } from './MultiPayerModal';
-import { Link } from '../spaces-types';
+import type {
+  ModalProviderState,
+  ModalState,
+  DisclaimerOnSubmitProps,
+  MultiPayerOnSubmitProps,
+  ModalOptions,
+  ModalTypes,
+  ModalContextType,
+  ModalReducerType,
+} from './modal-types';
+import { isModalOptions, isModalState } from './modal-types';
 
 export const MODAL_INITIAL_STATE = {
   isOpen: false,
   modalOptions: undefined,
-  modalState: undefined,
-  selectedModal: {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    buttonProps: () => {},
-  },
+  modalState: { selectedOption: { id: '', name: '' } },
+  selectedModal: {},
 };
 
-export const ModalContext = createContext(MODAL_INITIAL_STATE);
+export const ModalContext = createContext<ModalContextType | null>(null);
 
-export const useModal = () => useContext(ModalContext);
-
-type DisclaimerOnSubmitProps = {
-  link: Link;
-  id: string;
+export const useModal = () => {
+  const ctx = useContext(ModalContext);
+  if (!ctx) throw new Error('ModalContext be used inside a Provider');
+  return ctx;
 };
-
-type MultiPayerOnSubmitProps = {
-  metadata: {
-    disclaimerId: string;
-  };
-  link: Link;
-  id: string;
-  name: string;
-};
-
-type MultiPayerButtonProps = {
-  selectedOption: {
-    id: string;
-    name: string;
-  };
-};
-
-type ModalTypes = 'DISCLAIMER_MODAL' | 'MULTI_PAYER_MODAL';
 
 export const MODAL_TYPES = {
   DISCLAIMER: {
@@ -57,13 +45,13 @@ export const MODAL_TYPES = {
   },
   MULTI_PAYER: {
     body: MultiPayerModal,
-    buttonProps: ({ selectedOption }: MultiPayerButtonProps) => ({
+    buttonProps: ({ selectedOption }: ModalState) => ({
       children: 'Continue',
       disabled: selectedOption === undefined,
     }),
     onSubmit: (
       { metadata, link, id: spaceId, name }: MultiPayerOnSubmitProps,
-      modalState: MultiPayerButtonProps,
+      modalState: ModalState,
       dispatch: React.Dispatch<{ [x: string]: any; type: any }>
     ) => {
       if (metadata?.disclaimerId) {
@@ -83,32 +71,15 @@ export const MODAL_TYPES = {
   },
 };
 
-type ModalOptions = {
-  id: string;
-  name: string;
-  user: any;
-  spaceType: string;
-  title: string;
-};
-
-type ModalState = {
-  isOpen: boolean;
-  modalOptions: ModalOptions;
-  modalState: object;
-  selectedModal?: {
-    buttonProps: () => void;
-  };
-};
-
 export const modalActions = {
-  RESET: () => MODAL_INITIAL_STATE,
-  OPEN_DISCLAIMER_MODAL: (state: ModalState, modalOptions: ModalOptions) => ({
+  RESET: (): ModalProviderState => MODAL_INITIAL_STATE,
+  OPEN_DISCLAIMER_MODAL: (state: ModalProviderState, modalOptions: ModalOptions): ModalProviderState => ({
     ...state,
     isOpen: true,
     selectedModal: MODAL_TYPES.DISCLAIMER,
     modalOptions: { ...modalOptions, type: modalOptions.spaceType },
   }),
-  OPEN_MULTI_PAYER_MODAL: (state: ModalState, modalOptions: ModalOptions) => ({
+  OPEN_MULTI_PAYER_MODAL: (state: ModalProviderState, modalOptions: ModalOptions): ModalProviderState => ({
     ...state,
     isOpen: true,
     selectedModal: MODAL_TYPES.MULTI_PAYER,
@@ -117,26 +88,31 @@ export const modalActions = {
       type: modalOptions.spaceType,
     },
   }),
-  UPDATE_MODAL_STATE: (state: ModalState, modalState) => ({ ...state, modalState }),
+  UPDATE_MODAL_STATE: (state: ModalProviderState, modalState: ModalState): ModalProviderState => ({
+    ...state,
+    modalState,
+  }),
 };
 
-type ModalActions = 'RESET' | 'OPEN_DISCLAIMER_MODAL' | 'OPEN_MULTI_PAYER_MODAL' | 'UPDATE_MODAL_STATE';
+export const modalReducer: ModalReducerType = (state, { type, ...action }) => {
+  if (type === 'RESET') return modalActions.RESET();
+  if (isModalOptions(action)) {
+    if (type === 'OPEN_MULTI_PAYER_MODAL') return modalActions.OPEN_MULTI_PAYER_MODAL(state, action);
+    else if (type === 'OPEN_DISCLAIMER_MODAL') return modalActions.OPEN_DISCLAIMER_MODAL(state, action);
+  } else if (isModalState(action)) {
+    if (type === 'UPDATE_MODAL_STATE') return modalActions.UPDATE_MODAL_STATE(state, action);
+  }
+  return state;
+};
 
-export const modalReducer = (state: ModalState, { type, ...action }: { type: ModalActions }) =>
-  modalActions[type](state, action);
-
-export const ModalProvider = ({ children }) => {
-  const [
-    {
-      selectedModal: { body: Body, onSubmit, buttonProps } = {},
-      modalOptions: { title, ...modalOptions },
-      modalState,
-      isOpen,
-    },
-    dispatch,
-  ] = useReducer(modalReducer, MODAL_INITIAL_STATE);
+export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
+  const [{ selectedModal, modalOptions, modalState, isOpen }, dispatch] = useReducer(modalReducer, MODAL_INITIAL_STATE);
 
   const toggle = () => dispatch({ type: 'RESET' });
+
+  const buttonProps = selectedModal?.buttonProps && selectedModal?.buttonProps({ ...modalState, modalOptions });
+
+  const Body = selectedModal?.body;
 
   return (
     <ModalContext.Provider
@@ -145,11 +121,11 @@ export const ModalProvider = ({ children }) => {
       }
     >
       <Dialog open={isOpen}>
-        <DialogTitle id="disclaimer-header">{title}</DialogTitle>
+        <DialogTitle id="disclaimer-header">{modalOptions?.title}</DialogTitle>
         {Body && (
           <Body
             {...modalOptions}
-            setState={(newState) => dispatch({ type: 'UPDATE_MODAL_STATE', ...newState })}
+            setState={(newState: ModalState) => dispatch({ type: 'UPDATE_MODAL_STATE', ...newState })}
             state={modalState}
           />
         )}
@@ -157,18 +133,22 @@ export const ModalProvider = ({ children }) => {
           <Button onClick={toggle}>Cancel</Button>
           <Button
             color="primary"
-            {...buttonProps({ ...modalState, modalOptions })}
+            {...buttonProps}
             onClick={() => {
-              onSubmit(modalOptions, modalState, dispatch);
-              updateTopApps(
-                {
-                  configurationId: modalOptions.id,
-                  type: modalOptions.type,
-                  name: modalOptions.name,
-                  id: modalOptions.id,
-                },
-                modalOptions.user
-              );
+              selectedModal?.onSubmit &&
+                modalOptions &&
+                modalState &&
+                selectedModal.onSubmit(modalOptions, modalState, dispatch);
+              modalOptions &&
+                updateTopApps(
+                  {
+                    configurationId: modalOptions.id,
+                    type: modalOptions.type,
+                    name: modalOptions.name,
+                    id: modalOptions.id,
+                  },
+                  modalOptions.user
+                );
               toggle();
             }}
           />

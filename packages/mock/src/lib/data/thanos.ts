@@ -125,7 +125,7 @@ const configurations: Space[] = [
     "configurationId": "ghosted",
     "type": "space",
     "name": "Ghosted Configuration",
-    "isGhost": true,
+    "isGhosted": true,
     "meta": {
       "ghostText": "This is some ghost text"
     }

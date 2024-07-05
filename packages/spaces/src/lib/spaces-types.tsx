@@ -1,3 +1,5 @@
+import { SsoTypeSpace } from './SpacesLink/spaces-link-types';
+
 export type Link = {
   /** Contains a URL or URL Fragment that the hyperlink points to. */
   url: string;
@@ -45,7 +47,7 @@ export type Space = {
   mapping?: Record<string, string>;
   mappingPairs?: NameValuePair[];
   /** Whether or not the space is ghosted */
-  isGhost?: boolean;
+  isGhosted?: boolean;
   link?: {
     /** Contains a URL or URL Fragment that the hyperlink points to. */
     url: string;
@@ -56,6 +58,9 @@ export type Space = {
   description?: string;
   url?: string;
   parents?: Space[];
+  shortName?: string;
+  activeDate?: string;
+  isNew?: boolean;
 };
 
 export type FetchSpacesProps = {
@@ -82,7 +87,7 @@ export type FetchAllSpacesProps = {
 
 export type SpacesContextType = {
   /** Array of spaces to be passed into the Spaces provider. */
-  spaces?: Map<string, Space>;
+  spaces?: Map<string, Space | SsoTypeSpace>;
   /** Array of spaces from previous page load. */
   previousSpacesMap?: Map<string, Space>;
   /** Array of spaces organized by configurationId. */

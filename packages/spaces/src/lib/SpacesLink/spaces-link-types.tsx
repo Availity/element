@@ -1,5 +1,7 @@
-import { ChipProps, StatusChipProps } from '@availity/mui-chip';
-import { Space } from '../spaces-types';
+import type { StatusChipProps } from '@availity/mui-chip';
+import type { Space } from '../spaces-types';
+
+export type LinkStyle = 'card' | 'list' | 'default' | undefined;
 
 export type SpacesLinkProps = {
   /** If no spaceId is provided, the first space in the spaces array is used.
@@ -37,7 +39,7 @@ export type SpacesLinkProps = {
   /** When passed in, provides predefined styles for the component.
    * @default 'default'
    */
-  linkStyle?: 'card' | 'list' | 'default';
+  linkStyle?: LinkStyle;
   /** When true, renders the FavoriteHeart component to the left of the Component.
    * Note, this does require you to have wrapped your component somewhere in the Favorites Provider.
    * This also requires the peerDependency @tanstack/react-query.
@@ -83,4 +85,43 @@ export type SpacesLinkProps = {
    * @default ''
    */
   idPrefix?: string;
+};
+
+export type MediaProps = {
+  role: string;
+  onClick?: (event: React.MouseEvent) => void;
+  onKeyPress?: (event: React.KeyboardEvent) => void;
+};
+
+export interface SsoTypeSpace extends Space {
+  type: 'saml' | 'openid';
+}
+
+export type UseLink = {
+  (
+    spaceOrSpaceId: Space | SsoTypeSpace | string,
+    options: { clientId: string; linkAttributes?: Record<string, any> }
+  ): [Space | undefined, MediaProps | undefined];
+};
+
+export type OpenLink = {
+  (
+    space: Space,
+    params: {
+      akaname: string;
+      payerSpaceId?: string;
+    }
+  ): Promise<void>;
+};
+
+export type OpenLinkWithSso = {
+  (
+    space: SsoTypeSpace,
+    params: {
+      akaname: string;
+      clientId: string;
+      payerSpaceId: string;
+      ssoParams: Record<string, string>;
+    }
+  ): Promise<boolean>;
 };
