@@ -1,34 +1,40 @@
 import dayjs from 'dayjs';
 import { Card, CardContent, CardHeader } from '@availity/mui-card';
 import { Typography } from '@availity/mui-typography';
-import { useSpacesContext } from '../Spaces';
-import { useLink } from './useLink';
 import { NavigateTopIcon } from '@availity/mui-icon';
 import { useMemo, cloneElement } from 'react';
 import { StatusChip, Chip } from '@availity/mui-chip';
 import { CircularProgress } from '@availity/mui-progress';
 import { Link } from '@availity/mui-link';
 import { FavoriteHeart } from '@availity/mui-favorites';
-import { Grid } from '@availity/mui-layout';
+import { Grid, Box } from '@availity/mui-layout';
 import { ListItem, ListItemText } from '@availity/mui-list';
-import { SpacesLinkProps } from './spaces-link-types';
+import ReactMarkdown from 'react-markdown';
+import { useSpacesContext } from '../Spaces';
+import { useLink } from './useLink';
+import type { SpacesLinkWithSpace, SpacesLinkWithSpaceId, SpacesLinkVariants } from './spaces-link-types';
 
 const getDisplayDate = (date: string | null | undefined) => dayjs(date).format('MM/DD/YYYY');
 
-const getContainerTag = (propTag = 'div', linkStyle: string) => ({ card: Card, list: ListItem })[linkStyle] || propTag;
+const getContainerTag = (propTag: string | undefined, variant: SpacesLinkVariants) => {
+  if (variant && variant !== 'default') return { card: Card, list: ListItem }[variant];
+  return propTag || 'div';
+};
 
-const getBodyTag = (propTag = 'div', linkStyle: string) => ({ card: CardContent, list: 'div' })[linkStyle] || propTag;
+const getBodyTag = (propTag: string | undefined, variant: SpacesLinkVariants) => {
+  if (variant && variant !== 'default') return { card: CardContent, list: 'div' }[variant];
+  return propTag || 'div';
+};
 
-const getTitleTag = (propTag: string, linkStyle: string) =>
-  propTag ||
-  {
-    card: CardHeader,
-    list: ListGroupItemHeading,
-  }[linkStyle] ||
-  'div';
+const getTitleTag = (propTag: string | undefined, variant: SpacesLinkVariants) => {
+  if (variant && variant !== 'default') return { card: CardHeader, list: Typography }[variant];
+  return propTag || 'div';
+};
 
-const getTextTag = (propTag = 'div', linkStyle: string) =>
-  ({ card: Typography, list: ListItemText })[linkStyle] || propTag;
+const getTextTag = (propTag: string | undefined, variant: SpacesLinkVariants) => {
+  if (variant && variant !== 'default') return { card: Typography, list: ListItemText }[variant];
+  return propTag || 'div';
+};
 
 export const SpacesLink = ({
   spaceId,
@@ -43,15 +49,15 @@ export const SpacesLink = ({
   stacked,
   body,
   description: showDescription,
-  tag: Tag,
-  bodyTag: BodyTag,
-  titleTag: TitleTag,
-  textTag: TextTag,
+  tag,
+  bodyTag,
+  titleTag,
+  textTag,
   titleClassName,
-  linkStyle,
+  variant,
   loading: propsLoading,
   clientId: propsClientId,
-  maxDescriptionLength, // TODO: remove and replace with text-truncate
+  maxDescriptionWidth,
   style,
   linkAttributes,
   role,
@@ -60,186 +66,157 @@ export const SpacesLink = ({
   customBadgeColor,
   idPrefix,
   ...rest
-}: SpacesLinkProps) => {
+}: SpacesLinkWithSpace | SpacesLinkWithSpaceId) => {
   const { loading } = useSpacesContext();
   const isLoading = loading || propsLoading;
 
-  const [
-    id,
-    name,
-    shortName,
-    type,
-    description,
-    activeDate,
-    isNew,
-    icons = {},
-    images = {},
-    colors = {},
-    link,
-    configurationId,
-    isGhosted,
-    ...restLink
-  ] = useLink(propSpace || spaceId, { clientId: propsClientId, linkAttributes });
+  const [linkSpace, props] = useLink(propSpace || spaceId, { clientId: propsClientId, linkAttributes });
 
-  const showUrl = !isGhosted && link.url;
+  const showUrl = !linkSpace?.isGhosted && linkSpace?.link?.url;
 
   const favoriteIcon = useMemo(
     () =>
-      configurationId &&
+      linkSpace?.configurationId &&
       favorite && (
-        <span className="d-table-cell align-middle">
-          <FavoriteHeart id={`${idPrefix}${configurationId}`} name={name} onChange={(_, e) => e.stopPropagation()} />
-        </span>
+        <FavoriteHeart
+          id={`${idPrefix}${linkSpace?.configurationId}`}
+          name={linkSpace?.name}
+          onChange={(_, e) => e.stopPropagation()}
+        />
       ),
-    [favorite, configurationId, name, idPrefix]
+    [favorite, linkSpace?.configurationId, linkSpace?.name, idPrefix]
   );
 
   const dateInfo = useMemo(
     () =>
       (showNew || showDate) && (
-        <div className={classNames({ 'text-center': stacked, 'media media-right': !stacked })}>
-          {showNew && isNew && (
-            <Chip
-              className={classNames({ 'mr-2': showDate })}
-              id={`${idPrefix}app-new-badge-${configurationId}`}
-              label="New !"
-            />
+        <Grid textAlign={stacked ? 'center' : 'inherit'}>
+          {showNew && linkSpace?.isNew && (
+            <Chip id={`${idPrefix}app-new-badge-${linkSpace?.configurationId}`} label="New !" />
           )}
           {showDate && (
-            <Typography id={`${idPrefix}app-date-badge-${configurationId}`} variant="caption" color="textSecondary">
-              {getDisplayDate(activeDate)}
+            <Typography
+              id={`${idPrefix}app-date-badge-${linkSpace?.configurationId}`}
+              variant="caption"
+              color="textSecondary"
+            >
+              {getDisplayDate(linkSpace?.activeDate)}
             </Typography>
           )}
-        </div>
+        </Grid>
       ),
-    [activeDate, isNew, showDate, showNew, stacked, configurationId, idPrefix]
+    [linkSpace?.activeDate, linkSpace?.isNew, showDate, showNew, stacked, linkSpace?.configurationId, idPrefix]
   );
 
   const customBadgeDisplay = useMemo(
     () =>
       customBadgeText && (
-        <div
-          className={classNames({
-            'text-center': stacked,
-            'media media-right': !stacked,
-            'mr-2': linkStyle !== 'card' && (showDate || (showNew && isNew)),
-          })}
+        <Box
+          textAlign={stacked ? 'center' : 'inherit'}
+          marginRight={variant !== 'card' && (showDate || (showNew && linkSpace?.isNew)) ? 2 : undefined}
         >
           <StatusChip
             color={customBadgeColor || 'info'}
-            id={`${idPrefix}app-custom-badge-${configurationId}-${customBadgeText}`}
+            id={`${idPrefix}app-custom-badge-${linkSpace?.configurationId}-${customBadgeText}`}
             label={customBadgeText}
           />
-        </div>
+        </Box>
       ),
-    [customBadgeColor, customBadgeText, showDate, showNew, stacked, linkStyle, isNew, idPrefix, configurationId]
+    [
+      customBadgeColor,
+      customBadgeText,
+      showDate,
+      showNew,
+      stacked,
+      variant,
+      linkSpace?.isNew,
+      idPrefix,
+      linkSpace?.configurationId,
+    ]
   );
 
   if (isLoading) {
-    return <CircularProgress id={`${idPrefix}app-${configurationId}-loading`} {...rest} />;
+    return <CircularProgress id={`${idPrefix}app-${linkSpace?.configurationId}-loading`} {...rest} />;
   }
 
-  Tag = getContainerTag(Tag, linkStyle);
-  BodyTag = getBodyTag(BodyTag, linkStyle);
-  TitleTag = getTitleTag(TitleTag, linkStyle);
-  TextTag = getTextTag(TextTag, linkStyle);
+  const Tag = getContainerTag(tag, variant);
+  const BodyTag = getBodyTag(bodyTag, variant);
+  const TitleTag = getTitleTag(titleTag, variant);
+  const TextTag = getTextTag(textTag, variant);
 
   const renderChildren = () =>
-    isFunction(children)
-      ? (() =>
-          children({
-            id,
-            name,
-            shortName,
-            type,
-            metadata,
-            description,
-            isNew,
-            activeDate,
-            icons,
-            images,
-            colors,
-            ...analytics,
-            ...restLink,
-            ...props,
-          }))()
-      : cloneElement(children, {
-          role: 'link',
-          tabIndex: 0,
-          style: { cursor: showUrl ? 'pointer' : 'not-allowed' },
-          'aria-label': name,
-          ...analytics,
-          ...props,
-        });
+    children &&
+    cloneElement(children, {
+      role: 'link',
+      tabIndex: 0,
+      style: { cursor: showUrl ? 'pointer' : 'not-allowed' },
+      'aria-label': linkSpace?.name,
+      ...analytics,
+      ...props,
+    });
   return (
     <Tag
-      title={name}
-      className={className('spaces-hook-link', className, `spaces-${linkStyle}-link`, {
-        'p-2': linkStyle === 'default',
-      })}
+      title={linkSpace?.name}
+      className={className}
       {...rest}
       style={{ ...style }}
-      role={linkStyle === 'list' ? 'listitem' : role}
+      role={variant === 'list' ? 'listitem' : role}
     >
-      <BodyTag
-        className={classNames('d-flex', `align-items-${!showDescription || stacked ? 'center' : 'start'}`, {
-          'flex-column': stacked,
-        })}
-      >
-        {!stacked && favoriteIcon}
-        {icon && type?.toUpperCase() === 'FILE' ? (
-          <Link target="_blank" href={restLink.url}>
+      <BodyTag>
+        <Grid alignItems={!showDescription || stacked ? 'center' : 'start'} direction={stacked ? 'column' : 'row'}>
+          {!stacked && favoriteIcon}
+          {icon && linkSpace?.url && linkSpace?.type?.toUpperCase() === 'FILE' ? (
+            <Link target="_blank" href={linkSpace?.url}>
+              <NavigateTopIcon />
+            </Link>
+          ) : (
             <NavigateTopIcon />
-          </Link>
-        ) : (
-          <NavigateTopIcon />
-        )}
-        {children
-          ? renderChildren()
-          : body && (
-              <Grid id={`${idPrefix}${type}-${configurationId}`}>
-                <TitleTag
-                  id={`${idPrefix}app-title-${configurationId}`}
-                  className={classNames(
-                    {
-                      'mb-0': !customBadgeDisplay && (!showDescription || !description),
-                      'pt-3': stacked,
-                      'text-center': stacked,
-                    },
-                    titleClassName
-                  )}
-                  tabIndex={0}
-                  style={{
-                    cursor: showUrl ? 'pointer' : 'not-allowed',
-                  }}
-                  {...analytics}
-                  {...props}
-                  role={showUrl ? 'link' : role}
-                  aria-label={name}
-                  aria-describedby={showNew && isNew ? `${idPrefix}app-new-badge-${configurationId}` : undefined}
-                >
-                  {showName ? name : null}
-                </TitleTag>
-                {stacked && dateInfo}
-                {showDescription && description && (
-                  <TextTag
-                    tag="div"
-                    className={classNames('mt-1', { 'text-center': stacked })}
-                    id={`${idPrefix}app-description-${configurationId}`}
+          )}
+          {children
+            ? renderChildren()
+            : body && (
+                <Grid id={`${idPrefix}${linkSpace?.type}-${linkSpace?.configurationId}`}>
+                  <TitleTag
+                    id={`${idPrefix}app-title-${linkSpace?.configurationId}`}
+                    marginBottom={!customBadgeDisplay && (!showDescription || !linkSpace?.description) ? 0 : undefined}
+                    paddingTop={stacked ? 3 : undefined}
+                    textAlign={stacked ? 'center' : undefined}
+                    className={titleClassName}
+                    tabIndex={0}
+                    style={{
+                      cursor: showUrl ? 'pointer' : 'not-allowed',
+                    }}
+                    {...analytics}
+                    {...props}
+                    role={showUrl ? 'link' : role}
+                    aria-label={linkSpace?.name}
+                    aria-describedby={
+                      showNew && linkSpace?.isNew ? `${idPrefix}app-new-badge-${linkSpace?.configurationId}` : undefined
+                    }
+                    variant={variant === 'list' ? 'h5' : 'inherit'}
                   >
-                    {/* TODO: just rendering text, do we need markdown component? */}
-                    <ReactMarkdown className="Card-text">
-                      {maxDescription && description.length > maxDescriptionLength
-                        ? truncate(description, { length: maxDescriptionLength, separator: ' ' })
-                        : description}
-                    </ReactMarkdown>
-                  </TextTag>
-                )}
-                {linkStyle === 'card' && customBadgeDisplay}
-              </Grid>
-            )}
-        {linkStyle !== 'card' && customBadgeDisplay}
-        {!stacked && dateInfo}
+                    {showName ? linkSpace?.name : null}
+                  </TitleTag>
+                  {stacked && dateInfo}
+                  {showDescription && linkSpace?.description && (
+                    <TextTag
+                      marginTop={1}
+                      textAlign={stacked ? 'center' : undefined}
+                      overflow="hidden"
+                      whiteSpace={maxDescriptionWidth ? 'nowrap' : undefined}
+                      width={maxDescriptionWidth}
+                      textOverflow="ellipsis"
+                      id={`${idPrefix}app-description-${linkSpace?.configurationId}`}
+                    >
+                      <ReactMarkdown className="Card-text">linkSpace?.description</ReactMarkdown>
+                    </TextTag>
+                  )}
+                  {variant === 'card' && customBadgeDisplay}
+                </Grid>
+              )}
+          {variant !== 'card' && customBadgeDisplay}
+          {!stacked && dateInfo}
+        </Grid>
       </BodyTag>
     </Tag>
   );

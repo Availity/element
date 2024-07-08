@@ -1,9 +1,9 @@
 import type { StatusChipProps } from '@availity/mui-chip';
 import type { Space } from '../spaces-types';
 
-export type LinkStyle = 'card' | 'list' | 'default' | undefined;
+export type SpacesLinkVariants = 'card' | 'list' | 'default' | undefined;
 
-export type SpacesLinkProps = {
+export type SpacesLinkWithSpace = {
   /** If no spaceId is provided, the first space in the spaces array is used.
    * Note: This is only to be used when the Spaces provider should only ever contain a single space.
    */
@@ -12,21 +12,36 @@ export type SpacesLinkProps = {
    * This component does not have to be a child of SpacesProvider.
    * Note: If you are wanting to take advantage of the sso links you will additionally need to pass the clientId in.
    */
-  space?: Space;
+  space: Space | SsoTypeSpace;
+} & SpacesLinkProps;
+
+export type SpacesLinkWithSpaceId = {
+  /** If no spaceId is provided, the first space in the spaces array is used.
+   * Note: This is only to be used when the Spaces provider should only ever contain a single space.
+   */
+  spaceId: string;
+  /** Use to directly pass a space to the component rather than have it fetched from the spaces API.
+   * This component does not have to be a child of SpacesProvider.
+   * Note: If you are wanting to take advantage of the sso links you will additionally need to pass the clientId in.
+   */
+  space?: Space | SsoTypeSpace;
+} & SpacesLinkProps;
+
+export type SpacesLinkProps = {
   /** Children can be a react child or render prop. */
-  children?: React.ReactNode | JSX.Element;
+  children?: JSX.Element;
   /** Tag to overwrite the root component rendered. */
   tag?: string;
   /** Tag to overwrite the body component that renders the title, description and data values.
-   * It defaults to CardBody or div depending on the value of the linkStyle prop.
+   * It defaults to CardBody or div depending on the value of the variant prop.
    */
   bodyTag?: string;
-  /** Tag to overwrite the title component. If linkStyle prop is set to "card", defaults to CardTitle.
-   * If linkStyle is set to "list", defaults to ListItemHeading. Overwise, defaults to div.
+  /** Tag to overwrite the title component. If variant prop is set to "card", defaults to CardTitle.
+   * If variant is set to "list", defaults to ListItemHeading. Overwise, defaults to div.
    */
   titleTag?: string;
-  /** Tag to overwrite the text component. If linkStyle prop is set to "card", defaults to Card Text.
-   * If linkStyle is set to "list", defaults to ListItemText. Otherwise, defaults to div.
+  /** Tag to overwrite the text component. If variant prop is set to "card", defaults to Card Text.
+   * If variant is set to "list", defaults to ListItemText. Otherwise, defaults to div.
    */
   textTag?: string;
   titleClassName?: string;
@@ -39,7 +54,7 @@ export type SpacesLinkProps = {
   /** When passed in, provides predefined styles for the component.
    * @default 'default'
    */
-  linkStyle?: LinkStyle;
+  variant?: SpacesLinkVariants;
   /** When true, renders the FavoriteHeart component to the left of the Component.
    * Note, this does require you to have wrapped your component somewhere in the Favorites Provider.
    * This also requires the peerDependency @tanstack/react-query.
@@ -66,13 +81,13 @@ export type SpacesLinkProps = {
   style?: object;
   className?: string;
   /** Allows the description length to be truncated. */
-  maxDescriptionLength?: number;
+  maxDescriptionWidth?: string;
   /** Additional attributes you may want to tack onto the native-form when submitting a SAML sso.
    * i.e. spaceId or sourceApplicationId
    */
   linkAttributes?: object;
   /** Allows the role of the root component to be overwritten.
-   * If linkStyle prop is set to "list", defaults to "listitem".
+   * If variant prop is set to "list", defaults to "listitem".
    */
   role?: string;
   /** When Analytics props are passed inside the analytics props, they will be passed down to the click item.
@@ -99,8 +114,8 @@ export interface SsoTypeSpace extends Space {
 
 export type UseLink = {
   (
-    spaceOrSpaceId: Space | SsoTypeSpace | string,
-    options: { clientId: string; linkAttributes?: Record<string, any> }
+    spaceId?: Space | SsoTypeSpace | string,
+    options?: { clientId?: string; linkAttributes?: Record<string, any> }
   ): [Space | undefined, MediaProps | undefined];
 };
 

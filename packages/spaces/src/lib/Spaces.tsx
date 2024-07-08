@@ -1,9 +1,9 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
 import { useQueries } from '@tanstack/react-query';
 import { spacesReducer, fetchAllSpaces } from './spaces-data';
-import { Space, SpacesProps, SpacesContextType } from './spaces-types';
 import configurationFindMany from './configurationFindMany';
-import { SsoTypeSpace } from './SpacesLink/spaces-link-types';
+import type { Space, SpacesProps, SpacesContextType, UseSpaces } from './spaces-types';
+import type { SsoTypeSpace } from './SpacesLink/spaces-link-types';
 
 export const INITIAL_STATE = {
   loading: true,
@@ -184,7 +184,7 @@ export const Spaces = ({
   );
 };
 
-export const useSpaces = (...ids: string[]) => {
+export const useSpaces: UseSpaces = (...ids) => {
   const { spaces, spacesByConfig, spacesByPayer } = useSpacesContext();
 
   const idsIsEmpty = !ids || ids.length === 0;

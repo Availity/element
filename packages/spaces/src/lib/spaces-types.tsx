@@ -138,3 +138,5 @@ export type SpacesProps = {
    * Useful for if you already have the spaces in your app and don't want the spaces provider to have to fetch them again. */
   spaces?: Space[];
 };
+
+export type UseSpaces = (...ids: string[]) => (Space | SsoTypeSpace)[] | undefined;
