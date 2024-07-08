@@ -1,6 +1,4 @@
-import type { Space } from "@availity/mui-spaces";
-
-const configurations: Space[] = [
+const configurations: any[] = [
   {
     "id": "agreement",
     "configurationId": "agreement",
@@ -132,7 +130,7 @@ const configurations: Space[] = [
   }
 ];
 
-const buildLinkUrl = (configuration: Space, isLocal: boolean) => {
+const buildLinkUrl = (configuration: any, isLocal: boolean) => {
   if (configuration.url) {
     configuration.url = !isLocal ? `/element${configuration.url}` : configuration.url;
   }
@@ -155,7 +153,7 @@ const buildLinkUrl = (configuration: Space, isLocal: boolean) => {
 export const getConfigs = ({ payerIds, ids, isLocal }: { payerIds?: string[]; ids?: string[]; isLocal: boolean }) => {
   let configs = [...configurations];
   if (payerIds) {
-    configs = configs.filter((c) => c.payerIDs?.some((id) => payerIds.includes(id)));
+    configs = configs.filter((c) => c.payerIDs?.some((id: string) => payerIds.includes(id)));
   }
   if (ids) {
     configs = configs.filter((c) => ids.includes(c.id));

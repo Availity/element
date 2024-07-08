@@ -156,7 +156,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/mock@workspace:^, @availity/mock@workspace:packages/mock":
+"@availity/mock@workspace:packages/mock":
   version: 0.0.0-use.local
   resolution: "@availity/mock@workspace:packages/mock"
   dependencies:
@@ -755,7 +755,6 @@ __metadata:
     "@availity/api-axios": ^8.0.8
     "@availity/hooks": ^5.0.2
     "@availity/message-core": ^6.1.3
-    "@availity/mock": "workspace:^"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-dialog": "workspace:^"
     "@availity/mui-disclaimer": "workspace:^"
