@@ -76,7 +76,7 @@ export type FetchAllSpacesProps = {
   /** The Client ID obtained from APIConnect. Must be subscribed to the thanos API. */
   clientId: string;
   /** The variables sent to the avWebQL endpoint. */
-  variables?: object;
+  variables?: Record<string, any>;
   /** Array of spaces to be passed into the Spaces provider. */
   _spaces?: Space[];
 };

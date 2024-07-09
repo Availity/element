@@ -6,9 +6,7 @@ import { ModalProps } from './modal-types';
 
 export const MultiPayerModal = ({ parentPayerSpaces, name, state: { selectedOption }, setState }: ModalProps) => (
   <DialogContent>
-    <Typography>
-      Open {name} as: {selectedOption ? selectedOption.name || selectedOption.id : ''}
-    </Typography>
+    <Typography>{`Open ${name} as: ${selectedOption ? selectedOption.name || selectedOption.id : ''}`}</Typography>
     <Grid direction="row">
       {parentPayerSpaces &&
         parentPayerSpaces.map((payerSpace) => (

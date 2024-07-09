@@ -40,7 +40,7 @@ export const MODAL_TYPES = {
       children: 'Accept',
     }),
     onSubmit: ({ link, id: spaceId }: DisclaimerOnSubmitProps) => {
-      window.open(link.url[0] === '/' ? updateUrl(link.url, 'spaceId', spaceId) : link.url, link.target);
+      window.open(link.url?.[0] === '/' ? updateUrl(link.url, 'spaceId', spaceId) : link.url, link.target);
     },
   },
   MULTI_PAYER: {
@@ -61,12 +61,13 @@ export const MODAL_TYPES = {
 
       const target = getTarget(link.target);
 
-      window.open(
-        !isAbsoluteUrl(link.url)
-          ? getUrl(updateUrl(link.url, 'spaceId', modalState.selectedOption.id), false, false)
-          : link.url,
-        target
-      );
+      link.url &&
+        window.open(
+          !isAbsoluteUrl(link.url)
+            ? getUrl(updateUrl(link.url, 'spaceId', modalState.selectedOption.id), false, false)
+            : link.url,
+          target
+        );
     },
   },
 };

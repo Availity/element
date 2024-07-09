@@ -5,7 +5,7 @@ import { CircularProgress } from '@availity/mui-progress';
 import { DialogContent } from '@availity/mui-dialog';
 import type { ModalProps } from './modal-types';
 
-const disclaimerQuery = `query configurationFindOne($id: ID!) {
+const disclaimerQuery = `query disclaimerFindOne($id: ID!) {
   configurationFindOne(id: $id) {
     ... on Text {
       description
@@ -21,7 +21,7 @@ export const DisclaimerModal = ({ disclaimerId }: ModalProps) => {
       if (disclaimerId) {
         const result = await avWebQLApi.create({ query: disclaimerQuery, variables: { id: disclaimerId } });
 
-        setDisclaimer(result.data.configurationFindOne.description);
+        setDisclaimer(result.data.data.configurationFindOne.description);
       }
     };
 

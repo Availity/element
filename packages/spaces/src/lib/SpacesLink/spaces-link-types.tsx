@@ -122,9 +122,9 @@ export type UseLink = {
 
 export type OpenLink = {
   (
-    space: Space,
-    params: {
-      akaname: string;
+    space?: Space,
+    params?: {
+      akaname?: string;
       payerSpaceId?: string;
     }
   ): Promise<void>;

@@ -6,7 +6,7 @@ import type { UseLink, MediaProps, SsoTypeSpace } from './spaces-link-types';
 import { Space } from '../spaces-types';
 
 const isSsoSpace = (space: Space | SsoTypeSpace | undefined): space is SsoTypeSpace =>
-  space?.type === 'sso' || space?.type === 'openid';
+  space?.type === 'saml' || space?.type === 'openid';
 
 export const useLink: UseLink = (spaceOrSpaceId, options) => {
   const spaceFromSpacesProvider = useSpaces(
@@ -24,7 +24,7 @@ export const useLink: UseLink = (spaceOrSpaceId, options) => {
   );
 
   const legacySso = () => {
-    if (space && space.meta?.disclaimer && space.link) {
+    if (space && space.meta?.disclaimerId && space.link) {
       openModal('DISCLAIMER_MODAL', {
         disclaimerId: space.meta.disclaimerId,
         name: space.name,

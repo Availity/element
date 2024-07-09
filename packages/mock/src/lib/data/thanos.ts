@@ -127,6 +127,27 @@ const configurations: any[] = [
     "meta": {
       "ghostText": "This is some ghost text"
     }
+  },
+  {
+    "id": "disclaimerModal",
+    "configurationId": "disclaimerModal",
+    "name": "Some Application",
+    "type": "space",
+    "meta":
+      {
+        "disclaimer": "1234",
+      },
+    "link": {
+      "url": "/some-url",
+      "target": "newBody",
+    },
+  },
+  {
+    "id": '1234',
+    "configurationId": 'space1234',
+    "name": 'Some disclaimer',
+    "type": 'space',
+    "description": 'hello world',
   }
 ];
 

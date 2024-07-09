@@ -4,15 +4,15 @@ import { isAbsoluteUrl } from '@availity/resolve-url';
 import { updateTopApps } from '../topApps';
 import { OpenLink, OpenLinkWithSso } from './spaces-link-types';
 
-export const openLink: OpenLink = async (space, { akaname, payerSpaceId }) => {
+export const openLink: OpenLink = async (space, params) => {
   if (!space?.link?.url) {
     return;
   }
 
-  await updateTopApps(space, akaname);
+  if (params?.akaname) await updateTopApps(space, params.akaname);
 
   const url = !isAbsoluteUrl(space.link.url)
-    ? getUrl(updateUrl(space.link.url, 'spaceId', payerSpaceId || space.parents?.[0]?.id), false, false)
+    ? getUrl(updateUrl(space.link.url, 'spaceId', params?.payerSpaceId || space.parents?.[0]?.id), false, false)
     : space.link.url;
 
   const target = getTarget(space.link.target);

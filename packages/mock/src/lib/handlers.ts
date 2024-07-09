@@ -135,6 +135,18 @@ export const handlers = [
     }, { status: 200 });
   }),
 
+  graphql.query('disclaimerFindOne', ({ variables: {  id }, request }) => {
+    const isLocal = request.url.includes('localhost');
+    const config = getConfigs({ids: [id], isLocal });
+
+
+      return HttpResponse.json({
+        data: {
+          configurationFindOne: config[0],
+        },
+      }, { status: 200 });
+  }),
+
   // User
   http.get(routes.USERS, () => {
     return HttpResponse.json(user);
