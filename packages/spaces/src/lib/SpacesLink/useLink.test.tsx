@@ -9,16 +9,6 @@ import type { SsoTypeSpace } from './spaces-link-types';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '@availity/mock/src/lib/server';
 
-// avWebQLApi.create.mockResolvedValue({
-//   data: {
-//     data: {
-//       configurationFindOne: {
-//         description: 'This is a disclaimer.',
-//       },
-//     },
-//   },
-// });
-
 jest.mock('@availity/native-form');
 
 const buildSpacesLink = (space: Space | SsoTypeSpace, linkAttributes: Record<any, any>) => {

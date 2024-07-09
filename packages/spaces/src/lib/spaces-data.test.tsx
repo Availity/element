@@ -33,7 +33,7 @@ describe('getAllSpaces', () => {
       },
     });
     // Check correct spaces get returned
-    expect(spaces.length).toBe(18);
+    expect(spaces.length).toBe(20);
 
     // Check that it took 2 calls to return all 18
     expect(apiCalls).toBe(2);
