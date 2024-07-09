@@ -56,7 +56,7 @@ export const useLink: UseLink = (spaceOrSpaceId, options) => {
     role: 'link',
   };
 
-  if (isSsoSpace(space) && space?.meta?.ssoId && user) {
+  if (isSsoSpace(space) && space?.meta?.ssoId) {
     if (!options?.clientId) {
       throw new Error('clientId is required for SSO spaces');
     }
@@ -67,19 +67,19 @@ export const useLink: UseLink = (spaceOrSpaceId, options) => {
       event.preventDefault();
       if (options.clientId && options.linkAttributes) {
         openLinkWithSso(space, {
-          akaname: user.akaname,
+          akaname: user?.akaname,
           clientId: options.clientId,
           payerSpaceId: options.linkAttributes.spaceId,
           ssoParams: options.linkAttributes,
         });
       }
     };
-    mediaProps.onKeyPress = (event) => {
-      if (event.key === '13') {
+    mediaProps.onKeyDown = (event) => {
+      if (event.key === 'Enter') {
         event.preventDefault();
         if (options.clientId && options.linkAttributes) {
           openLinkWithSso(space, {
-            akaname: user.akaname,
+            akaname: user?.akaname,
             clientId: options.clientId,
             payerSpaceId: options.linkAttributes.spaceId,
             ssoParams: options.linkAttributes,
@@ -89,18 +89,17 @@ export const useLink: UseLink = (spaceOrSpaceId, options) => {
     };
   } else if (space?.meta?.disclaimerId) {
     mediaProps.onClick = legacySso;
-    mediaProps.onKeyPress = (e) => e.key === '13' && legacySso();
+    mediaProps.onKeyDown = (event) => event.key === 'Enter' && legacySso();
   } else if (parentPayerSpaces && parentPayerSpaces.length > 1 && !options?.linkAttributes?.spaceId) {
     mediaProps.onClick = openMultiPayerModal;
-    mediaProps.onKeyPress = (e) => e.key === '13' && openMultiPayerModal();
+    mediaProps.onKeyDown = (event) => event.key === 'Enter' && openMultiPayerModal();
   } else {
     mediaProps.onClick = () =>
-      space && user && openLink(space, { akaname: user.akaname, payerSpaceId: options?.linkAttributes?.spaceId });
-    mediaProps.onKeyPress = (e) =>
-      e.key === '13' &&
+      space && openLink(space, { akaname: user?.akaname, payerSpaceId: options?.linkAttributes?.spaceId });
+    mediaProps.onKeyDown = (event) =>
+      event.key === 'Enter' &&
       space &&
-      user &&
-      openLink(space, { akaname: user.akaname, payerSpaceId: options?.linkAttributes?.spaceId });
+      openLink(space, { akaname: user?.akaname, payerSpaceId: options?.linkAttributes?.spaceId });
   }
 
   return [space, mediaProps];

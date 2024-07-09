@@ -106,7 +106,7 @@ export type SpacesLinkProps = {
 export type MediaProps = {
   role: string;
   onClick?: (event: React.MouseEvent) => void;
-  onKeyPress?: (event: React.KeyboardEvent) => void;
+  onKeyDown?: (event: React.KeyboardEvent) => void;
 };
 
 export interface SsoTypeSpace extends Space {
@@ -134,7 +134,7 @@ export type OpenLinkWithSso = {
   (
     space: SsoTypeSpace,
     params: {
-      akaname: string;
+      akaname?: string;
       clientId: string;
       payerSpaceId: string;
       ssoParams: Record<string, string>;

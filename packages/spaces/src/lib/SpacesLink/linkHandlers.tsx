@@ -32,7 +32,7 @@ export const openLinkWithSso: OpenLinkWithSso = async (space, { akaname, clientI
     };
 
     try {
-      await updateTopApps(space, akaname);
+      if (akaname) await updateTopApps(space, akaname);
       await nativeForm(space.meta.ssoId, attributes, options, space.type);
     } catch {
       console.warn('Something went wrong');
