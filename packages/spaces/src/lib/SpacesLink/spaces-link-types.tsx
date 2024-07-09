@@ -29,7 +29,7 @@ export type SpacesLinkWithSpaceId = {
 
 export type SpacesLinkProps = {
   /** Children can be a react child or render prop. */
-  children?: JSX.Element;
+  children?: JSX.Element | ((props: any | undefined) => JSX.Element);
   /** Tag to overwrite the root component rendered. */
   tag?: string;
   /** Tag to overwrite the body component that renders the title, description and data values.
@@ -100,6 +100,7 @@ export type SpacesLinkProps = {
    * @default ''
    */
   idPrefix?: string;
+  [key: string]: any;
 };
 
 export type MediaProps = {

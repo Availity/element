@@ -15,7 +15,7 @@ export const getUrl = (url = '', loadApp: boolean, absolute: boolean) => {
   return `/public/apps/home/#!/loadApp?appUrl=${encodeURIComponent(url)}`;
 };
 
-export const getTarget = (target: string) => {
+export const getTarget = (target?: string) => {
   // should start with _, otherwise it is specifying a specific frame name
   // _blank = new tab/window, _self = same frame, _parent = parent frame (use for home page from modals), _top = document body, framename = specific frame
   if (target && !target.startsWith('_')) {
@@ -29,3 +29,7 @@ export const getTarget = (target: string) => {
 
   return target || '_self';
 };
+
+export const isFunction = (
+  children: JSX.Element | ((props: any | undefined) => JSX.Element)
+): children is (props: any | undefined) => JSX.Element => typeof children === 'function';

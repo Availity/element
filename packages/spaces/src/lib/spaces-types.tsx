@@ -2,9 +2,10 @@ import { SsoTypeSpace } from './SpacesLink/spaces-link-types';
 
 export type Link = {
   /** Contains a URL or URL Fragment that the hyperlink points to. */
-  url: string;
+  url?: string;
   /** Specifies where to open the linked URL. */
-  target: string;
+  target?: string;
+  text?: string;
 };
 
 export type NameValuePair = {
@@ -48,12 +49,7 @@ export type Space = {
   mappingPairs?: NameValuePair[];
   /** Whether or not the space is ghosted */
   isGhosted?: boolean;
-  link?: {
-    /** Contains a URL or URL Fragment that the hyperlink points to. */
-    url: string;
-    /** Specifies where to open the linked URL. */
-    target: string;
-  };
+  link?: Link;
   /** The description of the configuration. */
   description?: string;
   url?: string;

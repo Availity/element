@@ -2,6 +2,7 @@ import { createContext, useContext, useReducer, useEffect } from 'react';
 import { useQueries } from '@tanstack/react-query';
 import { spacesReducer, fetchAllSpaces } from './spaces-data';
 import configurationFindMany from './configurationFindMany';
+import { ModalProvider, useModal } from './modals/ModalProvider';
 import type { Space, SpacesProps, SpacesContextType, UseSpaces } from './spaces-types';
 import type { SsoTypeSpace } from './SpacesLink/spaces-link-types';
 
@@ -172,7 +173,7 @@ export const Spaces = ({
   // const hasParentModalProvider = useModal() !== undefined;
   return (
     <SpacesContext.Provider
-      children={children}
+      children={<ModalProvider>{children}</ModalProvider>}
       value={{
         spaces: spacesMap,
         spacesByConfig: configIdsMap,
