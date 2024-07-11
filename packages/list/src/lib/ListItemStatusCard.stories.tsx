@@ -32,7 +32,7 @@ export const _ListItem: StoryObj<typeof ListItemStatusCard> = {
       <ListItemStatusCard {...args}>
         <ListItemText
           primary="ListItemText"
-          secondary={<StatusChip color="default" label='Status'/>}
+          secondary={<StatusChip color={args.color} label='Status'/>}
         />
       </ListItemStatusCard>
     </List>
@@ -45,21 +45,21 @@ export const _StatusCards: StoryObj<typeof List> = {
       <Grid xs={12} sm={6}>
         <Typography variant="h6" component="div" id='users-default-spacing-header'>Default Spacing</Typography>
         <List aria-labelledby='users-default-spacing-header'>
-          <ListItemStatusCard>
+          <ListItemStatusCard color="warning">
             <ListItemText primary="Item 1" />
             <StatusChip color="warning" label="Pending"/>
             <IconButton title="More Actions">
               <MoreVerticalIcon fontSize='xsmall'/>
             </IconButton>
           </ListItemStatusCard>
-          <ListItemStatusCard>
+          <ListItemStatusCard color="success">
             <ListItemText primary="Item 2" secondary="Look, it's approved!"/>
             <StatusChip color="success" label="Approved"/>
             <IconButton title="More Actions">
               <MoreVerticalIcon fontSize='xsmall'/>
             </IconButton>
           </ListItemStatusCard>
-          <ListItemStatusCard>
+          <ListItemStatusCard color="error">
             <ListItemText primary="Item 3 with very very very very very very very very very very very very very very very very very very very very very long text" secondary="Wow! that is long"/>
             <StatusChip color="error" label="Denied" />
             <IconButton title="More Actions">
@@ -71,21 +71,21 @@ export const _StatusCards: StoryObj<typeof List> = {
       <Grid xs={12} sm={6}>
         <Typography variant="h6" component="div" id='selectable-dense-spacing-header'>Dense Spacing</Typography>
         <List dense aria-labelledby='selectable-dense-spacing-header'>
-          <ListItemStatusCard dense >
+          <ListItemStatusCard dense color="warning" >
             <ListItemText primary="Item 1" />
             <StatusChip color="warning" label="Pending"/>
             <IconButton title="More Actions">
               <MoreVerticalIcon fontSize='xsmall'/>
             </IconButton>
           </ListItemStatusCard>
-          <ListItemStatusCard dense>
+          <ListItemStatusCard dense color="success">
             <ListItemText primary="Item 2" secondary="Look, it's approved!"/>
             <StatusChip color="success" label="Approved"/>
             <IconButton title="More Actions">
               <MoreVerticalIcon fontSize='xsmall'/>
             </IconButton>
           </ListItemStatusCard>
-          <ListItemStatusCard dense>
+          <ListItemStatusCard dense color="error">
             <ListItemText primary="Item 3 with very very very very very very very very very very very very very very very very very very very very very long text" secondary="Wow! that is long"/>
             <StatusChip color="error" label="Denied" />
             <IconButton title="More Actions">
@@ -100,9 +100,10 @@ export const _StatusCards: StoryObj<typeof List> = {
 
 export const _InteractiveStatusCards: StoryObj<typeof List> = {
   render: () => (
-    <List aria-label="list" sx={{ width: '100%', bgcolor: 'background.paper' }}>
+    <List aria-label="list" sx={{ width: '100%' }}>
       <ListItemStatusCard
         disablePadding
+        color="warning"
         secondaryAction={
           <>
             <IconButton title="Attachments" size="medium">
@@ -121,6 +122,7 @@ export const _InteractiveStatusCards: StoryObj<typeof List> = {
       </ListItemStatusCard>
       <ListItemStatusCard
         disablePadding
+        color="error"
         secondaryAction={
           <>
             <IconButton title="Attachments" size="medium">
@@ -139,6 +141,7 @@ export const _InteractiveStatusCards: StoryObj<typeof List> = {
       </ListItemStatusCard>
       <ListItemStatusCard
         disablePadding
+        color="success"
         secondaryAction={
           <IconButton title="More Actions" size="medium">
             <MoreVerticalIcon fontSize='xsmall'/>
@@ -152,6 +155,7 @@ export const _InteractiveStatusCards: StoryObj<typeof List> = {
       </ListItemStatusCard>
       <ListItemStatusCard
         disablePadding
+        color="success"
         secondaryAction={
           <IconButton title="More Actions">
             <MoreVerticalIcon fontSize='xsmall'/>

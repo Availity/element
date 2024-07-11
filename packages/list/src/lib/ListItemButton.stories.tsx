@@ -168,7 +168,6 @@ export const _Selectable: StoryObj<typeof List> = {
                         edge="start"
                         checked={checked.indexOf(value) !== -1}
                         tabIndex={-1}
-                        disableRipple
                         inputProps={{ 'aria-labelledby': labelId }}
                       />
                     </ListItemIcon>
@@ -201,7 +200,6 @@ export const _Selectable: StoryObj<typeof List> = {
                         edge="start"
                         checked={checked.indexOf(value) !== -1}
                         tabIndex={-1}
-                        disableRipple
                         inputProps={{ 'aria-labelledby': labelId }}
                       />
                     </ListItemIcon>
@@ -222,6 +220,7 @@ export const _InteractiveStatusCards: StoryObj<typeof List> = {
       <List aria-label="list">
         <ListItemStatusCard
           disablePadding
+          color="success"
           secondaryAction={
             <IconButton title="More Actions">
               <MoreVerticalIcon fontSize='xsmall'/>
@@ -235,6 +234,7 @@ export const _InteractiveStatusCards: StoryObj<typeof List> = {
         </ListItemStatusCard>
         <ListItemStatusCard
           disablePadding
+          color="warning"
           secondaryAction={
             <IconButton title="More Actions">
               <MoreVerticalIcon fontSize='xsmall'/>
@@ -248,6 +248,7 @@ export const _InteractiveStatusCards: StoryObj<typeof List> = {
         </ListItemStatusCard>
         <ListItemStatusCard
           disablePadding
+          color="error"
           secondaryAction={
             <IconButton title="More Actions">
               <MoreVerticalIcon fontSize='xsmall'/>
@@ -261,6 +262,7 @@ export const _InteractiveStatusCards: StoryObj<typeof List> = {
         </ListItemStatusCard>
         <ListItemStatusCard
           disablePadding
+          color="success"
           secondaryAction={
             <IconButton title="More Actions">
               <MoreVerticalIcon fontSize='xsmall'/>

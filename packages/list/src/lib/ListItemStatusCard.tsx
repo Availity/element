@@ -6,7 +6,7 @@ import { StatusChipProps } from '@availity/mui-chip';
 import { ListItemProps } from '..';
 
 export type ListItemStatusCardProps = {
-  /** Overrides color of status accent. By default will match color of child `StatusChip`. */
+  /** Color of status accent. Should match child `StatusChip`. */
   color?: StatusChipProps['color'];
 } & Omit<ListItemProps, 'divider'>
 
@@ -15,16 +15,50 @@ const ListItemStatusCardSlot = styled(MuiListItem, {
   slot: 'root',
   overridesResolver: (props, styles) => [styles.root, props.color && styles.color],
 })<{ ownerState: ListItemStatusCardProps }>(({ theme, ownerState }) => ({
+  backgroundColor: theme.palette.background.paper,
+  border: `1px solid ${theme.palette.divider}`,
+  borderRadius: '4px',
+  marginBottom: '4px',
+  paddingLeft: '8px',
+  '&.MuiListItem-padding.MuiListItem-gutters': {
+    paddingLeft: 'calc(16px + 8px)',
+  },
   ...ownerState.color && ownerState.color !== 'default' && {
-    borderLeftColor: `${theme.palette[ownerState.color].main} !important`
+    '.AvListItemStatusCard-statusAccent': {
+      backgroundColor: `${theme.palette[ownerState.color].main}`
+    }
   },
 }));
 
-/** A list item with card styling and status accent. Needs child `StatusChip` for proper accent color. Renders as an `<li>` by default. */
+const StatusAccent = styled('div', {
+  name: 'AvListItemStatusCard',
+  slot: 'statusAccent',
+  overridesResolver: (props, styles) => [styles.statusAccent, props.color && styles.color],
+})(({theme}) => ({
+  position: 'absolute',
+  left: 0,
+  top: 0,
+  height: '100%',
+  width: '8px',
+  backgroundColor: theme.palette.divider,
+  backgroundClip: 'border-box',
+  borderTopLeftRadius: '3px',
+  borderBottomLeftRadius: '3px',
+  content: "''",
+}));
+
+/** A list item with card styling and status accent. Should always be used with corresponding child `StatusChip` to explain status without relying on color for accessibility.
+ *
+ * Renders as an `<li>` by default. */
 export const ListItemStatusCard = forwardRef<HTMLLIElement, ListItemStatusCardProps>((props, ref) => {
-  const { alignItems = "flex-start", color, ...rest } = props;
+  const { alignItems = "flex-start", children, color, ...rest } = props;
   const themeProps = useThemeProps({ props: props, name: 'AvListItemStatusCard' });
   const ownerState = { ...themeProps, color };
-  return <ListItemStatusCardSlot alignItems={alignItems} divider={false} ownerState={ownerState} {...rest} ref={ref}/>;
+  return (
+    <ListItemStatusCardSlot alignItems={alignItems} divider={false} ownerState={ownerState} {...rest} ref={ref}>
+      <StatusAccent className="AvListItemStatusCard-statusAccent"/>
+      {children}
+    </ListItemStatusCardSlot>
+  );
 });
 
