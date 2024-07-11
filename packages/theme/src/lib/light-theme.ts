@@ -41,31 +41,6 @@ const typographyStyles = (type: string) => ({
   lineHeight: `${tokens[`lineHeights${type}` as keyof typeof tokens]}`,
 });
 
-const statusAccentStyles = {
-  borderLeft: `10px solid ${tokens.borderDecorative}`,
-  '&:has(.MuiChip-colorSuccess)': {
-    borderLeftColor: tokens.colorSuccessMain
-  },
-  '&:has(.MuiChip-colorError)': {
-    borderLeftColor: tokens.colorErrorMain
-  },
-  '&:has(.MuiChip-colorWarning)': {
-    borderLeftColor: tokens.colorWarningMain
-  },
-  '&:has(.MuiChip-colorInfo)': {
-    borderLeftColor: tokens.colorInfoMain
-  },
-  '&:has(.MuiChip-colorDefault)': {
-    borderLeftColor: tokens.colorBackgroundAccent
-  },
-  '&:has(.MuiChip-colorPrimary)': {
-    borderLeftColor: tokens.colorPrimaryMain
-  },
-  '&:has(.MuiChip-colorSecondary)': {
-    borderLeftColor: tokens.colorSecondaryMain
-  }
-};
-
 export const lightTheme = {
   mode: 'light',
   palette: {
@@ -380,16 +355,15 @@ export const lightTheme = {
     },
     AvListItemStatusCard: {
       styleOverrides: {
+        statusAccent: {
+          backgroundColor: tokens.colorBackgroundBorder,
+        },
         root: {
-          border: `1px solid ${tokens.borderDecorative}`,
-          borderRadius: '4px',
-          marginBottom: '4px',
-          ...statusAccentStyles,
+          borderColor: tokens.borderDecorative,
           '.MuiListItemButton-root': {
             borderRadius: '0 4px 4px 0',
             '&.Mui-focusVisible': {
               border: `2px solid ${tokens.colorPrimaryMain}`,
-              marginRight: '-2px',
               borderLeftWidth: 0,
               boxShadow: 'none',
               '&:not(:hover):not(:active)': {
@@ -411,22 +385,19 @@ export const lightTheme = {
           '@supports (selector(:has(a, b)))': {
             ':has(.MuiListItemButton-root.Mui-selected)': {
               boxShadow: tokens.shadows4,
-              borderTopColor: tokens.borderSecondary,
-              borderRightColor: tokens.borderSecondary,
-              borderBottomColor: tokens.borderSecondary,
+              borderColor: tokens.borderSecondary,
             },
             ':has(.MuiListItemButton-root.Mui-focusVisible)': {
-              boxShadow: `0 0 0px 2px ${tokens.colorPrimaryMain}`,
-              borderTopColor: tokens.colorPrimaryMain,
-              borderRightColor: tokens.colorPrimaryMain,
-              borderBottomColor: tokens.colorPrimaryMain,
+              borderColor: tokens.colorPrimaryMain,
+              boxShadow: `0 0 0px 1px ${tokens.colorPrimaryMain}`,
               '.MuiListItemButton-root.Mui-focusVisible': {
                 border: '0px',
                 boxShadow: 'none'
               }
             },
             ':has(.MuiListItemButton-root.Mui-focusVisible.Mui-selected)': {
-              boxShadow: `${tokens.shadows4}, 0 0 0px 2px ${tokens.colorPrimaryMain}`,
+              boxShadow: `${tokens.shadows4}, 0 0 0px 1px ${tokens.colorPrimaryMain}`,
+              borderColor: tokens.colorPrimaryMain
             },
           }
         }
@@ -1199,6 +1170,7 @@ export const lightTheme = {
             alignItems: 'flex-start',
             '> .MuiChip-root': {
               marginTop: '1.25rem',
+              marginBottom: '-1.25rem',
               transform: 'translateY(-50%)'
             },
           },
@@ -1206,26 +1178,35 @@ export const lightTheme = {
           '> .MuiIconButton-root, > .MuiChip-root': {
             transform: 'translateY(-50%)',
             marginTop: '1.75rem',
+            marginBottom: '-1.75rem',
           },
           '.MuiListItemSecondaryAction-root': {
             top: '1.75rem'
           },
-          '&.MuiListItem-padding > .MuiIconButton-root, > .MuiChip-root': {
-            marginTop: '1.25rem',
+          '&.MuiListItem-padding:not(.MuiListItem-dense), &:not(.MuiListItem-padding):not(.MuiListItem-dense) .MuiListItemButton-root:not(.MuiListItemButton-dense)': {
+            paddingTop: '.75rem',
+            paddingBottom: '.75rem',
+            '> .MuiIconButton-root, > .MuiChip-root': {
+              marginTop: '1rem',
+              marginBottom: '-1rem'
+            }
           },
           '&.MuiListItem-dense': {
             '.MuiListItemButton-root > .MuiChip-root': {
-              marginTop: '1.125rem',
+              marginTop: '1rem',
+              marginBottom: '-1rem',
             },
             '> .MuiIconButton-root, > .MuiChip-root': {
               marginTop: '1.5rem',
+              marginBottom: '-1.5rem',
             },
             '.MuiListItemSecondaryAction-root': {
-              top: '1.5rem'
+              top: '1.25rem'
             },
             '&.MuiListItem-padding': {
               '> .MuiIconButton-root, > .MuiChip-root': {
                 marginTop: '1.25rem',
+                marginBottom: '-1.25rem',
               },
             }
           }
