@@ -33,3 +33,7 @@ export const getTarget = (target?: string) => {
 export const isFunction = (
   children: JSX.Element | ((props: any | undefined) => JSX.Element)
 ): children is (props: any | undefined) => JSX.Element => typeof children === 'function';
+
+export const isReactNodeFunction = (
+  children: React.ReactNode | ((props: any | undefined) => React.ReactNode)
+): children is (props: any | undefined) => React.ReactNode => typeof children === 'function';

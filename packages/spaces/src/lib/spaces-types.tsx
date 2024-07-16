@@ -121,7 +121,7 @@ export type SpacesProps = {
   /** The Client ID obtained from APIConnect. Must be subscribed to the thanos API. */
   clientId: string;
   /** Children can be a react child or render prop. */
-  children?: React.ReactNode;
+  children?: React.ReactNode | ((props: any | undefined) => React.ReactNode);
   /** Array of payerIds the Spaces provider should fetch the spaces for.
    * Any payerIds already included in spaces will not be fetched again.
    * Note: If a payerId is associated with more than one payer space, the order in which they are returned should not be relied upon.

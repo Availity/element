@@ -2,9 +2,10 @@ import { createContext, useContext, useReducer, useEffect } from 'react';
 import { useQueries } from '@tanstack/react-query';
 import { spacesReducer, fetchAllSpaces } from './spaces-data';
 import configurationFindMany from './configurationFindMany';
-import { ModalProvider, useModal } from './modals/ModalProvider';
+import { ModalProvider } from './modals/ModalProvider';
 import type { Space, SpacesProps, SpacesContextType, UseSpaces } from './spaces-types';
 import type { SsoTypeSpace } from './SpacesLink/spaces-link-types';
+import { isReactNodeFunction } from './helpers';
 
 export const INITIAL_STATE = {
   loading: true,
@@ -170,10 +171,16 @@ export const Spaces = ({
     });
   }, [spacesBySpaceIds, spacesByPayerIds, payerIds, spaceIds]);
 
-  // const hasParentModalProvider = useModal() !== undefined;
+  const spacesChildren = () => {
+    if (children) {
+      return isReactNodeFunction(children)
+        ? (() => children({ spaces: [spacesMap.values()], loading, error }))()
+        : children;
+    }
+  };
+
   return (
     <SpacesContext.Provider
-      children={<ModalProvider>{children}</ModalProvider>}
       value={{
         spaces: spacesMap,
         spacesByConfig: configIdsMap,
@@ -181,7 +188,9 @@ export const Spaces = ({
         loading: loading || isLoadingByPayerIds || isLoadingBySpaceIds,
         error,
       }}
-    />
+    >
+      <ModalProvider>{spacesChildren()}</ModalProvider>
+    </SpacesContext.Provider>
   );
 };
 

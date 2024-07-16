@@ -89,17 +89,22 @@ export const useLink: UseLink = (spaceOrSpaceId, options) => {
     };
   } else if (space?.meta?.disclaimerId) {
     mediaProps.onClick = legacySso;
-    mediaProps.onKeyDown = (event) => event.key === 'Enter' && legacySso();
+    mediaProps.onKeyDown = (event) => {
+      if (event.key === 'Enter') return legacySso();
+    };
   } else if (parentPayerSpaces && parentPayerSpaces.length > 1 && !options?.linkAttributes?.spaceId) {
     mediaProps.onClick = openMultiPayerModal;
-    mediaProps.onKeyDown = (event) => event.key === 'Enter' && openMultiPayerModal();
+    mediaProps.onKeyDown = (event) => {
+      if (event.key === 'Enter') return openMultiPayerModal();
+    };
   } else {
-    mediaProps.onClick = () =>
-      space && openLink(space, { akaname: user?.akaname, payerSpaceId: options?.linkAttributes?.spaceId });
-    mediaProps.onKeyDown = (event) =>
-      event.key === 'Enter' &&
-      space &&
-      openLink(space, { akaname: user?.akaname, payerSpaceId: options?.linkAttributes?.spaceId });
+    mediaProps.onClick = () => {
+      if (space) return openLink(space, { akaname: user?.akaname, payerSpaceId: options?.linkAttributes?.spaceId });
+    };
+    mediaProps.onKeyDown = (event) => {
+      if (event.key === 'Enter' && space)
+        return openLink(space, { akaname: user?.akaname, payerSpaceId: options?.linkAttributes?.spaceId });
+    };
   }
 
   return [space, mediaProps];

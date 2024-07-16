@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 import { isAbsoluteUrl } from '@availity/resolve-url';
 import { Dialog, DialogTitle, DialogActions } from '@availity/mui-dialog';
 import { Button } from '@availity/mui-button';
@@ -61,13 +61,14 @@ export const MODAL_TYPES = {
 
       const target = getTarget(link.target);
 
-      link.url &&
+      if (link.url) {
         window.open(
           !isAbsoluteUrl(link.url)
             ? getUrl(updateUrl(link.url, 'spaceId', modalState.selectedOption.id), false, false)
             : link.url,
           target
         );
+      }
     },
   },
 };
@@ -106,7 +107,7 @@ export const modalReducer: ModalReducerType = (state, { type, ...action }) => {
   return state;
 };
 
-export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
+export const ModalProvider = ({ children }: { children?: React.ReactNode }) => {
   const [{ selectedModal, modalOptions, modalState, isOpen }, dispatch] = useReducer(modalReducer, MODAL_INITIAL_STATE);
 
   const toggle = () => dispatch({ type: 'RESET' });
@@ -136,11 +137,10 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
             color="primary"
             {...buttonProps}
             onClick={() => {
-              selectedModal?.onSubmit &&
-                modalOptions &&
-                modalState &&
+              if (selectedModal?.onSubmit && modalOptions && modalState) {
                 selectedModal.onSubmit(modalOptions, modalState, dispatch);
-              modalOptions &&
+              }
+              if (modalOptions) {
                 updateTopApps(
                   {
                     configurationId: modalOptions.id,
@@ -150,6 +150,7 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
                   },
                   modalOptions.user
                 );
+              }
               toggle();
             }}
           />

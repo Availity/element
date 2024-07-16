@@ -1,5 +1,5 @@
 export * from './lib/Spaces';
-// export * from './lib/SpacesLink/SpacesLink';
+export * from './lib/SpacesLink/SpacesLink';
 export * from './lib/SpacesAgreement';
 export * from './lib/SpacesDisclaimer';
 export * from './lib/SpacesGhostText';
