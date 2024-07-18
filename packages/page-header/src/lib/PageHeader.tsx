@@ -57,10 +57,13 @@ export const PageHeader = ({
           )}
           {helpLink && (
             <Grid marginLeft={2}>
-              <Typography variant="body1">
-                Need help? <Link href={helpLink} target="_blank" children="Watch a demo" />{' '}
-                {helpAppName ? `for ${helpAppName}` : null}
-              </Typography>
+            <Typography variant="body1">
+              Need help?{' '}
+              <Link href={helpLink} target="_blank">
+                {helpAppName ? "Watch a demo" : "Learn More"}
+              </Link>{' '}
+              {helpAppName ? ` for ${helpAppName}` : null}
+            </Typography>
             </Grid>
           )}
         </Grid>
