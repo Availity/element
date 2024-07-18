@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.43.0](https://github.com/Availity/element/compare/@availity/element@0.42.5...@availity/element@0.43.0) (2024-07-18)
+
+### Dependency Updates
+
+* `mui-event-tracker` updated to version `0.42.5`
+
+### Features
+
+* **mui-event-tracker:** add event tracker component ([5be1273](https://github.com/Availity/element/commit/5be12734a09a53f786579192fd54da4936855086))
+
 ## [0.42.5](https://github.com/Availity/element/compare/@availity/element@0.42.4...@availity/element@0.42.5) (2024-07-11)
 
 ### Dependency Updates
