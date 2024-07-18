@@ -48,8 +48,6 @@ yarn add @availity/mui-autocomplete
 
 ### Usage
 
-#### Import through @availity/element
-
 The `Autcomplete` component can be used standalone or with a form state library like [react-hook-form](https://react-hook-form.com/).
 
 `Autocomplete` uses the `TextField` component to render the input. You must pass your field related props: `label`, `helperText`, `error`, etc. to the the `FieldProps` prop.
@@ -121,18 +119,24 @@ const Form = () => {
 
 #### `AsyncAutocomplete` Usage
 
-An `AsyncAutocomplete` component is exported for use cases that require fetching paginated results from an api. You will need to use the `loadOptions` prop. The `loadOptions` function will be called when the user scrolls to the bottom of the dropdown. It will be passed the current page and limit. The `limit` prop controls what is passed to `loadOptions` and is defaulted to `50`. The `loadOptions` function must return an object that has an array of `options` and a `hasMore` property. `hasMore` tells the `AsyncAutocomplete` component whether or not it should call `loadOptions` again. The returned `options` will be concatenated to the existing options array.
+An `AsyncAutocomplete` component is exported for use cases that require fetching paginated results from an api. It uses the `useInfiniteQuery` from [@tanstack/react-query](https://tanstack.com/query/v4/docs/framework/react/guides/infinite-queries). The component requires two props to work properly: `loadOptions` and `queryKey`. The `loadOptions` prop is the function that is called to fetch the options. The `queryKey` is used as the key to cache the results. You can use this key to interact with the data in the query client.
+
+The `loadOptions` function will be called when the user scrolls to the bottom of the dropdown. It will be passed the current offset and limit. The `limit` prop controls what is passed to `loadOptions` and is defaulted to `50`. The `loadOptions` function must return an object that has an array of `options`, a boolean `hasMore` property, and the `offset`. The returned `options` will be concatenated to the existing options array. `hasMore` tells the `AsyncAutocomplete` component whether or not it should call `loadOptions` again. Finally, the returned `offset` will be passed in the subsequent call to get the next set of options.
+
+The `queryOptions` prop is available for passing in options to the `useInfiniteQuery` hook. One example of how this can be used is by using the `enabled` property. This can be used in cases where you would like to render the autocomplete, but are waiting on fetching the options. For example, if you need the user to fill out a section of the form before fetching the options for the autocomplete.
 
 ```jsx
 import { Autocomplete } from '@availity/element';
+import { callApi } from '../api';
 
 const Example = () => {
-  const loadOptions = async (page: number) => {
-    const response = await callApi(page);
+  const loadOptions = async (offset: number, limit: number) => {
+    const response = await callApi(offset, limit);
 
     return {
       options: repsonse.data,
-      hasMore: response.totalCount > response.count,
+      hasMore: response.data.totalCount > response.data.count,
+      offset,
     };
   };
 
@@ -146,10 +150,28 @@ The `OrganizationAutocomplete` component is an extension of the `AsyncAutocomple
 
 If you need to add params, headers, or other data to the api call then the `apiConfig` prop is available. This allows for passing in the same options you would to the `getOrganizations`. For example, `permissionIds` or `resourceIds`.
 
+The `queryKey` by default is `org-autocomplete`.
+
 ```jsx
 import { OrganizationAutocomplete } from '@availity/element';
 
 const Example = () => {
   return <OrganizationAutocomplete FieldProps={{ label: 'Organization Select', placeholder: 'Select...' }} />;
+};
+```
+
+#### `ProviderAutocomplete` Usage
+
+The `ProviderAutocomplete` component is an extension of the `AsyncAutocomplete` component which calls our Providers endpoint. The props are the same except you do not need to pass a function to `loadOptions`. This has already been done for you. The component uses the `uiDisplayName` as the default label for the options. This can be changed through the `getOptionLabel` function.
+
+`ProviderAutocomplete` requires a `customerId` to call the api. You can pass it in as prop that the component will then use in the api call. There is also an `apiConfig` prop available for further customizing the call.
+
+The `queryKey` by default is `prov-autocomplete`.
+
+```jsx
+import { ProviderAutocomplete } from '@availity/element';
+
+const Example = () => {
+  return <ProviderAutocomplete customerId="1234" FieldProps={{ label: 'Provider Select', placeholder: 'Select...' }} />;
 };
 ```

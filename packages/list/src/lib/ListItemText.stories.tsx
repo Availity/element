@@ -1,7 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import Avatar from '@mui/material/Avatar';
+import { Avatar } from '@availity/mui-avatar';
 import { FolderIcon } from '@availity/mui-icon';
 import { List, ListItem, ListItemAvatar, ListItemText, ListItemTextProps } from '..';
 
@@ -25,27 +25,27 @@ export const _FolderList: StoryObj<typeof List> = {
     <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
+          <Avatar size="m">
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Photos" secondary="Jan 9, 2014" />
+        <ListItemText primary="Primary" secondary="Secondary" />
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
+          <Avatar size="m">
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Work" secondary="Jan 7, 2014" />
+        <ListItemText primary="Primary" secondary="Secondary" />
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
+          <Avatar size="m">
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+        <ListItemText primary="Primary" secondary="Secondary" />
       </ListItem>
     </List>
   )

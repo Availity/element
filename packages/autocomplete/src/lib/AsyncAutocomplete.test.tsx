@@ -2,10 +2,13 @@ import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import AvApi, { ApiConfig } from '@availity/api-axios';
 /* eslint-disable @nx/enforce-module-boundaries */
 import { server } from '@availity/mock/src/lib/server';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { AsyncAutocomplete } from './AsyncAutocomplete';
 
 const api = new AvApi({ name: 'example' } as ApiConfig);
+
+const client = new QueryClient();
 
 type Option = {
   label: string;
@@ -18,8 +21,7 @@ type ExampleResponse = {
   count: number;
 };
 
-const getResults = async (page: number, limit: number) => {
-  const offset = page * limit;
+const getResults = async (offset: number, limit: number) => {
   try {
     const resp = await api.post<ExampleResponse>({ offset, limit }, { params: {} });
 
@@ -41,12 +43,13 @@ const getResults = async (page: number, limit: number) => {
   }
 };
 
-const loadOptions = async (page: number, limit: number) => {
-  const { options, totalCount, offset } = await getResults(page, limit);
+const loadOptions = async (offset: number, limit: number) => {
+  const { options, totalCount } = await getResults(offset, limit);
 
   return {
     options,
     hasMore: offset + limit < totalCount,
+    offset,
   };
 };
 
@@ -64,13 +67,21 @@ describe('AsyncAutocomplete', () => {
   });
 
   test('should render successfully', () => {
-    const { getByLabelText } = render(<AsyncAutocomplete FieldProps={{ label: 'Test' }} loadOptions={loadOptions} />);
+    const { getByLabelText } = render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete queryKey="test" FieldProps={{ label: 'Test' }} loadOptions={loadOptions} />
+      </QueryClientProvider>
+    );
 
     expect(getByLabelText('Test')).toBeTruthy();
   });
 
   test('options should be available', async () => {
-    render(<AsyncAutocomplete loadOptions={loadOptions} FieldProps={{ label: 'Test' }} />);
+    render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete queryKey="test1" loadOptions={loadOptions} FieldProps={{ label: 'Test' }} />
+      </QueryClientProvider>
+    );
 
     const input = screen.getByRole('combobox');
     fireEvent.click(input);
@@ -88,7 +99,11 @@ describe('AsyncAutocomplete', () => {
   });
 
   test('should call loadOptions when scroll to the bottom', async () => {
-    render(<AsyncAutocomplete loadOptions={loadOptions} limit={10} FieldProps={{ label: 'Test' }} />);
+    render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete queryKey="test2" loadOptions={loadOptions} limit={10} FieldProps={{ label: 'Test' }} />
+      </QueryClientProvider>
+    );
 
     const input = screen.getByRole('combobox');
     fireEvent.click(input);

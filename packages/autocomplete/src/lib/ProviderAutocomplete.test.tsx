@@ -3,11 +3,11 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { server } from '@availity/mock/src/lib/server';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { OrganizationAutocomplete } from './OrganizationAutocomplete';
+import { ProviderAutocomplete } from './ProviderAutocomplete';
 
 const client = new QueryClient();
 
-describe('OrganizationAutocomplete', () => {
+describe('ProviderAutocomplete', () => {
   beforeAll(() => {
     // Start the interception.
     server.listen();
@@ -21,10 +21,10 @@ describe('OrganizationAutocomplete', () => {
     client.clear();
   });
 
-  test('organizations are fetched and displayed by name', async () => {
+  test('providers are fetched and displayed by name', async () => {
     render(
       <QueryClientProvider client={client}>
-        <OrganizationAutocomplete FieldProps={{ label: 'Test' }} />
+        <ProviderAutocomplete customerId="123" FieldProps={{ label: 'Test' }} />
       </QueryClientProvider>
     );
 
@@ -33,7 +33,23 @@ describe('OrganizationAutocomplete', () => {
     fireEvent.keyDown(input, { key: 'ArrowDown' });
 
     await waitFor(() => {
-      expect(screen.getByText('Organization 1')).toBeDefined();
+      expect(screen.getByText('Provider 1')).toBeDefined();
+    });
+  });
+
+  test('providers are not fetched when customerId is not present', async () => {
+    render(
+      <QueryClientProvider client={client}>
+        <ProviderAutocomplete customerId="" FieldProps={{ label: 'Test' }} />
+      </QueryClientProvider>
+    );
+
+    const input = screen.getByRole('combobox');
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(screen.getByText('No options')).toBeDefined();
     });
   });
 });

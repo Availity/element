@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.52.4](https://github.com/Availity/element/compare/@availity/theme@0.52.3...@availity/theme@0.52.4) (2024-07-11)
+
+
+### Bug Fixes
+
+* **mui-list:** ux listitemstatuscard tweaks ([0cb89bf](https://github.com/Availity/element/commit/0cb89bf6e417ff4487b79a3bdc90444b25e2e857))
+* **theme:** ux list tweaks ([a0f303e](https://github.com/Availity/element/commit/a0f303e46e32b08f92c9f933e3dde1bf62b836bc))
+
+## [0.52.3](https://github.com/Availity/element/compare/@availity/theme@0.52.2...@availity/theme@0.52.3) (2024-07-01)
+
+
+### Bug Fixes
+
+* **theme:** listsubheader weight ([81bb4e3](https://github.com/Availity/element/commit/81bb4e3162d780fa74bbeeb0fbcd5dfa5227e6c3))
+
 ## [0.52.2](https://github.com/Availity/element/compare/@availity/theme@0.52.1...@availity/theme@0.52.2) (2024-06-27)
 
 ## [0.52.1](https://github.com/Availity/element/compare/@availity/theme@0.52.0...@availity/theme@0.52.1) (2024-06-27)

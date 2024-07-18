@@ -1,25 +1,27 @@
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
-import Avatar from '@mui/material/Avatar';
-import { FolderIcon, FolderOpenIcon, FolderTreeIcon } from '@availity/mui-icon';
-import { List, ListItem, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, ListProps, ListSubheader } from '..';
-import { Collapse } from '@mui/material';
 import { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Avatar } from '@availity/mui-avatar';
+import { Collapse } from '@availity/mui-transitions';
+import { FolderIcon, FolderTreeIcon, TriangleCollapseIcon, TriangleExpandIcon } from '@availity/mui-icon';
+import { List, ListItem, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, ListProps, ListSubheader } from '..';
 
 const meta: Meta<typeof List> = {
   title: 'Components/List/List',
   component: List,
   tags: ['autodocs'],
+  argTypes: {
+    children: {
+      control: false
+    }
+  }
 };
 
 export default meta;
 
 export const _List: StoryObj<typeof List> = {
-  render: (args: ListProps) => <List {...args} />,
-  args: {
-    children: 'This text is a child of List',
-  },
+  render: (args: ListProps) => <List {...args}><ListItem><ListItemText>Child List Item</ListItemText></ListItem></List>,
 };
 
 export const _OrderedList: StoryObj<typeof List> = {
@@ -104,7 +106,7 @@ export const _NestedList: StoryObj<typeof List> = {
             <FolderIcon />
           </ListItemIcon>
           <ListItemText primary="Inbox" />
-          {open ? <FolderOpenIcon /> : <FolderIcon />}
+          {open ? <TriangleCollapseIcon /> : <TriangleExpandIcon />}
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
@@ -126,7 +128,7 @@ export const _FolderList: StoryObj<typeof List> = {
     <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
+          <Avatar size="m">
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
@@ -134,7 +136,7 @@ export const _FolderList: StoryObj<typeof List> = {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
+          <Avatar size="m">
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
@@ -142,7 +144,7 @@ export const _FolderList: StoryObj<typeof List> = {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
+          <Avatar size="m">
             <FolderIcon />
           </Avatar>
         </ListItemAvatar>
