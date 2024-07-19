@@ -1,6 +1,7 @@
 const global = require('../../jest.config.global');
 
 const esModules = [
+  '@availity/hooks',
   'bail',
   'character-entities',
   'comma-separated-tokens',

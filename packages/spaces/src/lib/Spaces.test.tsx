@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Spaces, useSpaces, useSpacesContext } from '..';
+import type { Space } from './spaces-types';
 
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '../../../mock/src/lib/server';
@@ -179,10 +180,10 @@ describe('useSpaces', () => {
     );
 
     // Check that all spaces get returned when no configurationIds get passed to useSpaces hook
-    await waitFor(() => getByText('Id: 1 Id: 2 Id: 3'));
+    await waitFor(() => getByText('Id: 11 Id: 22 Id: 33'));
 
     // Check that spaces for configurationIds get returned when configurationIds passed to useSpaces hook
-    await waitFor(() => getByText('Id: 2 Id: 3'));
+    await waitFor(() => getByText('Id: 22 Id: 33'));
   });
 
   it('returns all matching spaces when searching by payerId', async () => {
@@ -197,8 +198,8 @@ describe('useSpaces', () => {
     );
 
     // Check that spaces for payer ids get returned when ids passed to useSpaces hook
-    await waitFor(() => getByText('Id: 1 Id: 2'));
-    await waitFor(() => getByText('Id: 1 Id: 2 Id: 3'));
+    await waitFor(() => getByText('Id: 11 Id: 22'));
+    await waitFor(() => getByText('Id: 11 Id: 22 Id: 33'));
   });
 
   it('renders with warning when returning all spaces because no ids were passed in', async () => {

@@ -10,7 +10,7 @@ export const SpacesGhostText = ({ spaceId, id, ...props }: SpacesGhostTextProps)
 
   const space = spaces?.[0];
 
-  if (space?.isGhost) {
+  if (space?.isGhosted) {
     return (
       <small id={id || `app-ghost-text-${spaceId}`} {...props}>
         <em>{space?.meta?.ghostText}</em>

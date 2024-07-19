@@ -32,37 +32,43 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
-    "@availity/mock": "workspace:^",
     "@availity/mui-button": "workspace:^",
+    "@availity/mui-dialog": "workspace:^",
     "@availity/mui-disclaimer": "workspace:^",
+    "@availity/mui-icon": "workspace:^",
+    "@availity/mui-layout": "workspace:^",
     "@availity/mui-modal": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "@mui/material": "^5.15.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-image": "^4.1.0",
-    "react-markdown": "^9.0.1",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "@availity/mui-button": "workspace:^",
+    "@availity/mui-dialog": "workspace:^",
     "@availity/mui-disclaimer": "workspace:^",
+    "@availity/mui-icon": "workspace:^",
+    "@availity/mui-layout": "workspace:^",
     "@availity/mui-modal": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "@mui/material": "^5.11.9",
-    "react": ">=16.3.0",
-    "react-image": "^4.1.0",
-    "react-markdown": "^9.0.1"
+    "react": ">=16.3.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "@availity/api-axios": "^8.0.8",
+    "@availity/hooks": "^5.0.2",
     "@availity/message-core": "^6.1.3",
+    "@availity/native-form": "^5.0.6",
+    "@availity/resolve-url": "^2.0.6",
     "@tanstack/react-query": "^4.36.1",
     "dayjs": "^1.11.10",
-    "qs": "^6.12.1"
+    "qs": "^6.12.1",
+    "react-image": "^4.1.0",
+    "react-markdown": "^9.0.1"
   }
 }

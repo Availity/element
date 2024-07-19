@@ -1,8 +1,11 @@
+import { SsoTypeSpace } from './SpacesLink/spaces-link-types';
+
 export type Link = {
   /** Contains a URL or URL Fragment that the hyperlink points to. */
-  url: string;
+  url?: string;
   /** Specifies where to open the linked URL. */
-  target: string;
+  target?: string;
+  text?: string;
 };
 
 export type NameValuePair = {
@@ -45,16 +48,15 @@ export type Space = {
   mapping?: Record<string, string>;
   mappingPairs?: NameValuePair[];
   /** Whether or not the space is ghosted */
-  isGhost?: boolean;
-  link?: {
-    /** Contains a URL or URL Fragment that the hyperlink points to. */
-    url: string;
-    /** Specifies where to open the linked URL. */
-    target: string;
-  };
+  isGhosted?: boolean;
+  link?: Link;
   /** The description of the configuration. */
   description?: string;
   url?: string;
+  parents?: Space[];
+  shortName?: string;
+  activeDate?: string;
+  isNew?: boolean;
 };
 
 export type FetchSpacesProps = {
@@ -74,14 +76,14 @@ export type FetchAllSpacesProps = {
   /** The Client ID obtained from APIConnect. Must be subscribed to the thanos API. */
   clientId: string;
   /** The variables sent to the avWebQL endpoint. */
-  variables?: object;
+  variables?: Record<string, any>;
   /** Array of spaces to be passed into the Spaces provider. */
   _spaces?: Space[];
 };
 
 export type SpacesContextType = {
   /** Array of spaces to be passed into the Spaces provider. */
-  spaces?: Map<string, Space>;
+  spaces?: Map<string, Space | SsoTypeSpace>;
   /** Array of spaces from previous page load. */
   previousSpacesMap?: Map<string, Space>;
   /** Array of spaces organized by configurationId. */
@@ -119,7 +121,7 @@ export type SpacesProps = {
   /** The Client ID obtained from APIConnect. Must be subscribed to the thanos API. */
   clientId: string;
   /** Children can be a react child or render prop. */
-  children?: React.ReactNode;
+  children?: React.ReactNode | ((props: any | undefined) => React.ReactNode);
   /** Array of payerIds the Spaces provider should fetch the spaces for.
    * Any payerIds already included in spaces will not be fetched again.
    * Note: If a payerId is associated with more than one payer space, the order in which they are returned should not be relied upon.
@@ -132,3 +134,5 @@ export type SpacesProps = {
    * Useful for if you already have the spaces in your app and don't want the spaces provider to have to fetch them again. */
   spaces?: Space[];
 };
+
+export type UseSpaces = (...ids: string[]) => (Space | SsoTypeSpace)[] | undefined;

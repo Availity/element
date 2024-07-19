@@ -21,16 +21,21 @@ afterAll(() => {
 
 describe('getAllSpaces', () => {
   it('gets all spaces', async () => {
+    let apiCalls = 0;
+    server.events.on('request:start', () => (apiCalls += 1));
+
     const spaces = await fetchAllSpaces({
       query: configurationFindMany,
       clientId: 'clientId',
       variables: {
         types: ['space'],
+        perPage: 10,
       },
     });
     // Check correct spaces get returned
-    expect(spaces.length).toBe(10);
-    expect(spaces[0].id).toBe('1');
-    expect(spaces[spaces.length - 1].id).toBe('10');
+    expect(spaces.length).toBe(20);
+
+    // Check that it took 2 calls to return all 18
+    expect(apiCalls).toBe(2);
   });
 });
