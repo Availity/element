@@ -3,7 +3,7 @@ import InputAdornment, { InputAdornmentProps } from '@mui/material/InputAdornmen
 
 export type InputProps = Omit<
   MuiInputProps,
-  'children' | 'components' | 'componentsProps' | 'inputComponent' | 'notched' | 'slots' | 'slotProps'
+  'children' | 'components' | 'componentsProps' | 'notched' | 'slots' | 'slotProps'
 >;
 
 /** Availity predefined overrides for input component */

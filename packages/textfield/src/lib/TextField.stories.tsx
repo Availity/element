@@ -1,14 +1,15 @@
 // Each exported component in the package should have its own stories file
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import Box from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
-import InputAdornment from '@mui/material/InputAdornment';
-import MenuItem from '@mui/material/MenuItem';
-import { SelectChangeEvent } from '@mui/material/Select';
-import Stack from '@mui/material/Stack';
-import { EyeIcon, EyeSlashIcon, SearchIcon } from '@availity/mui-icon';
+import { AsYouType } from 'libphonenumber-js';
+import { IMaskInput } from 'react-imask';
+import { NumericFormat, NumericFormatProps } from 'react-number-format';
 import { IconButton } from '@availity/mui-button';
+import { Chip } from '@availity/mui-chip';
+import { FormControl, FormLabel, Input, InputAdornment, SelectChangeEvent } from '@availity/mui-form-utils';
+import { EyeIcon, EyeSlashIcon, SearchIcon } from '@availity/mui-icon';
+import { Box, Grid, Stack } from '@availity/mui-layout';
+import { MenuItem } from '@availity/mui-menu';
 
 import { TextField, TextFieldProps } from './TextField';
 
@@ -40,7 +41,7 @@ export const _TextField: StoryObj<typeof TextField> = {
 
 export const _States: StoryObj<typeof TextField> = {
   render: (args: TextFieldProps) => (
-    <Stack direction="row" spacing={1}>
+    <Stack direction="row" spacing={1} flexWrap="wrap">
       <TextField label="Default" id="default" {...args} />
       <TextField label="Focused" id="Focused" focused {...args} />
       <TextField label="Error" id="error" error {...args} />
@@ -103,6 +104,201 @@ export const _PasswordField: StoryObj<typeof TextField> = {
       />
     );
   },
+};
+
+/** Formatted value using `libphonenumber-js`. _Formatting occurs `onBlur` for accessibility._ */
+export const _PhoneWithExt: StoryObj<typeof TextField> = {
+  render: () => {
+    const [phone, setPhone] = useState('')
+
+    const asYouFormat = (phoneString: string) => {
+      // partial parsePhoneNumber always return country code :(
+      const asYouType = new AsYouType('US');
+
+      return asYouType.input(phoneString);
+    };
+
+    const formatPhoneOnBlur = () => {
+      setPhone(asYouFormat(phone));
+    };
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setPhone(event.target.value);
+    };
+
+    return (
+      <Grid container rowSpacing={3} columnSpacing={2} maxWidth='360px'>
+        <Grid xs>
+          <TextField
+            type='tel'
+            label="Phone"
+            id="phone"
+            value={phone}
+            onBlur={formatPhoneOnBlur}
+            onChange={handleChange}
+            fullWidth={true}
+          />
+        </Grid>
+        <Grid xs={2} minWidth='5rem'>
+          <TextField
+            type='tel'
+            label="Ext"
+            id="phoneextension"
+            fullWidth={true}
+          />
+        </Grid>
+      </Grid>
+    );
+  },
+};
+
+interface CustomProps {
+  onChange: (event: { target: { name: string; value: string } }) => void;
+  name: string;
+}
+
+const TextMaskCustom = forwardRef<HTMLInputElement, CustomProps>(
+  function TextMaskCustom(props, ref) {
+    const { onChange, ...other } = props;
+    return (
+      <IMaskInput
+        {...other}
+        mask="(#00) 000-0000"
+        definitions={{
+          '#': /[1-9]/,
+        }}
+        inputRef={ref}
+        onAccept={(value: any) => onChange({ target: { name: props.name, value } })}
+        overwrite
+      />
+    );
+  },
+);
+
+const NumericFormatCustom = forwardRef<NumericFormatProps, CustomProps>(
+  function NumericFormatCustom(props, ref) {
+    const { onChange, ...other } = props;
+
+    return (
+      <NumericFormat
+        {...other}
+        getInputRef={ref}
+        onValueChange={(values) => {
+          onChange({
+            target: {
+              name: props.name,
+              value: values.value,
+            },
+          });
+        }}
+        thousandSeparator
+        valueIsNumericString
+        prefix="$"
+      />
+    );
+  },
+);
+
+/** _There are accessibility concerns with masking to consider as it is making live changes to values that may not be communicated via assistive technologies._
+ *
+ * > You can use third-party libraries to format an input. You have to provide a custom implementation of the `<input>` element with the `inputComponent` property.
+ * >
+ * > The following demo uses the `react-imask` and `react-number-format` libraries. The same concept could be applied to, for example `react-stripe-element`.
+ * >
+ * > -- <cite>[Integration with 3rd party input libraries](https://mui.com/material-ui/react-text-field/#integration-with-3rd-party-input-libraries)</cite>
+*/
+export const _InputMasking: StoryObj<typeof TextField> = {
+  render: () => {
+    // COMMENTED CODE IS OUTSIDE OF FUNCTION
+
+    // interface CustomProps {
+    //   onChange: (event: { target: { name: string; value: string } }) => void;
+    //   name: string;
+    // }
+
+    // const TextMaskCustom = forwardRef<HTMLInputElement, CustomProps>(
+    //   function TextMaskCustom(props, ref) {
+    //     const { onChange, ...other } = props;
+    //     return (
+    //       <IMaskInput
+    //         {...other}
+    //         mask="(#00) 000-0000"
+    //         definitions={{
+    //           '#': /[1-9]/,
+    //         }}
+    //         inputRef={ref}
+    //         onAccept={(value: any) => onChange({ target: { name: props.name, value } })}
+    //         overwrite
+    //       />
+    //     );
+    //   },
+    // );
+
+    // const NumericFormatCustom = forwardRef<NumericFormatProps, CustomProps>(
+    //   function NumericFormatCustom(props, ref) {
+    //     const { onChange, ...other } = props;
+
+    //     return (
+    //       <NumericFormat
+    //         {...other}
+    //         getInputRef={ref}
+    //         onValueChange={(values) => {
+    //           onChange({
+    //             target: {
+    //               name: props.name,
+    //               value: values.value,
+    //             },
+    //           });
+    //         }}
+    //         thousandSeparator
+    //         valueIsNumericString
+    //         prefix="$"
+    //       />
+    //     );
+    //   },
+    // );
+
+    // ---------------------------------------
+
+    const [values, setValues] = useState({
+      textmask: '(100) 000-0000',
+      numberformat: '1320',
+    });
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setValues({
+        ...values,
+        [event.target.name]: event.target.value,
+      });
+    };
+
+    return (
+      <>
+        <FormControl variant="standard" margin="normal">
+          <FormLabel htmlFor="formatted-text-mask-input">react-imask</FormLabel>
+          <Input
+            value={values.textmask}
+            onChange={handleChange}
+            name="textmask"
+            id="formatted-text-mask-input"
+            inputComponent={TextMaskCustom as any}
+          />
+        </FormControl>
+        <TextField
+          label="react-number-format"
+          value={values.numberformat}
+          onChange={handleChange}
+          name="numberformat"
+          id="formatted-numberformat-input"
+          InputProps={{
+            inputComponent: NumericFormatCustom as any,
+          }}
+          fullWidth={false}
+          margin="normal"
+        />
+      </>
+    );
+  }
 };
 
 export const _Select: StoryObj<typeof TextField> = {
