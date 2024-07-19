@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-spaces@0.2.6...@availity/mui-spaces@0.3.0) (2024-07-19)
+
+### Dependency Updates
+
+* `@availity/mock` updated to version `0.2.6`
+* `mui-list` updated to version `0.2.6`
+
+### Features
+
+* **mui-spaces:** init commit for SpacesLink ([0c225ff](https://github.com/Availity/element/commit/0c225ff1e51061b63bc0237b1ecdb9e868d31d8c))
+
+
+### Bug Fixes
+
+* **mui-spaces:** updateUrl additionalParams ([8043679](https://github.com/Availity/element/commit/8043679cdf33e0970765c1ae1587c2981bab76bb))
+
 ## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-spaces@0.2.5...@availity/mui-spaces@0.2.6) (2024-07-01)
 
 ### Dependency Updates
