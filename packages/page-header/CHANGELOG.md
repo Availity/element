@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-page-header@0.2.37...@availity/mui-page-header@0.3.0) (2024-07-19)
+
+
+### Features
+
+* **mui-page-header:** traininglink text alternative ([ca990c6](https://github.com/Availity/element/commit/ca990c64730043e64d57126e2068cf6c17374971))
+
 ## [0.2.37](https://github.com/Availity/element/compare/@availity/mui-page-header@0.2.36...@availity/mui-page-header@0.2.37) (2024-07-19)
 
 ### Dependency Updates
