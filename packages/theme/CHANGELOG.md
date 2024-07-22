@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.53.0](https://github.com/Availity/element/compare/@availity/theme@0.52.4...@availity/theme@0.53.0) (2024-07-22)
+
+
+### Features
+
+* **mui-stepper:** add Stepper component ([04e21e8](https://github.com/Availity/element/commit/04e21e8f5117c79f0e110308482ed1277a9a16e7))
+
 ## [0.52.4](https://github.com/Availity/element/compare/@availity/theme@0.52.3...@availity/theme@0.52.4) (2024-07-11)
 
 
