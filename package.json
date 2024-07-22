@@ -25,6 +25,7 @@
     "postinstall": "is-ci || husky install",
     "publish:affected": "nx affected --target=publish",
     "publish:affected:canary": "nx affected --target=publish:canary",
+    "start": "yarn start:storybook",
     "start:storybook": "nx storybook element-storybook",
     "test": "nx run-many --target=test --all",
     "test:affected": "nx affected --target=test",
