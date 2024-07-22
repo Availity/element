@@ -47,6 +47,8 @@ export const handlers = [
     return new HttpResponse(null, { status: 201 });
   }),
 
+  http.post(routes.LOGV2, () => new HttpResponse(null, { status: 201 })),
+
   // Region
   http.get(routes.REGIONS, async (whatup) => {
     const { request } = whatup;
@@ -90,7 +92,6 @@ export const handlers = [
     }
   }),
   http.put(routes.SETTINGS, async (context) => {
-
     const body = await context.request.json();
 
     await delay(defaultDelay);
@@ -104,17 +105,20 @@ export const handlers = [
     const totalCount = configs.length;
 
     if (!perPage) {
-      return HttpResponse.json({
-        data: {
-          configurationPagination: {
-            pageInfo: {
-              currentPage: 1,
-              hasNextPage: false,
+      return HttpResponse.json(
+        {
+          data: {
+            configurationPagination: {
+              pageInfo: {
+                currentPage: 1,
+                hasNextPage: false,
+              },
+              items: configs,
             },
-            items: configs,
           },
         },
-      }, { status: 200 });
+        { status: 200 }
+      );
     }
 
     const startIndex = (page - 1) * perPage;
@@ -122,29 +126,34 @@ export const handlers = [
     const items = configs.slice(startIndex, endIndex);
     const hasNextPage = endIndex < totalCount;
 
-    return HttpResponse.json({
-      data: {
-        configurationPagination: {
-          pageInfo: {
-            currentPage: page,
-            hasNextPage,
+    return HttpResponse.json(
+      {
+        data: {
+          configurationPagination: {
+            pageInfo: {
+              currentPage: page,
+              hasNextPage,
+            },
+            items,
           },
-          items,
         },
       },
-    }, { status: 200 });
+      { status: 200 }
+    );
   }),
 
-  graphql.query('disclaimerFindOne', ({ variables: {  id }, request }) => {
+  graphql.query('disclaimerFindOne', ({ variables: { id }, request }) => {
     const isLocal = request.url.includes('localhost');
-    const config = getConfigs({ids: [id], isLocal });
+    const config = getConfigs({ ids: [id], isLocal });
 
-
-      return HttpResponse.json({
+    return HttpResponse.json(
+      {
         data: {
           configurationFindOne: config[0],
         },
-      }, { status: 200 });
+      },
+      { status: 200 }
+    );
   }),
 
   // User
