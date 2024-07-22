@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-textfield@0.5.21...@availity/mui-textfield@0.6.0) (2024-07-19)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.5.21`
+
+### Features
+
+* **mui-form-utils:** input masking ([243ca34](https://github.com/Availity/element/commit/243ca3447d9da7ac49de20b26f5cd9a595879f9b))
+
 ## [0.5.21](https://github.com/Availity/element/compare/@availity/mui-textfield@0.5.20...@availity/mui-textfield@0.5.21) (2024-06-27)
 
 ### Dependency Updates

@@ -1,8 +1,11 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
 import { useQueries } from '@tanstack/react-query';
 import { spacesReducer, fetchAllSpaces } from './spaces-data';
-import { Space, SpacesProps, SpacesContextType } from './spaces-types';
 import configurationFindMany from './configurationFindMany';
+import { ModalProvider } from './modals/ModalProvider';
+import type { Space, SpacesProps, SpacesContextType, UseSpaces } from './spaces-types';
+import type { SsoTypeSpace } from './SpacesLink/spaces-link-types';
+import { isReactNodeFunction } from './helpers';
 
 export const INITIAL_STATE = {
   loading: true,
@@ -168,10 +171,16 @@ export const Spaces = ({
     });
   }, [spacesBySpaceIds, spacesByPayerIds, payerIds, spaceIds]);
 
-  // const hasParentModalProvider = useModal() !== undefined;
+  const spacesChildren = () => {
+    if (children) {
+      return isReactNodeFunction(children)
+        ? (() => children({ spaces: [spacesMap.values()], loading, error }))()
+        : children;
+    }
+  };
+
   return (
     <SpacesContext.Provider
-      children={children}
       value={{
         spaces: spacesMap,
         spacesByConfig: configIdsMap,
@@ -179,11 +188,13 @@ export const Spaces = ({
         loading: loading || isLoadingByPayerIds || isLoadingBySpaceIds,
         error,
       }}
-    />
+    >
+      <ModalProvider>{spacesChildren()}</ModalProvider>
+    </SpacesContext.Provider>
   );
 };
 
-export const useSpaces = (...ids: string[]) => {
+export const useSpaces: UseSpaces = (...ids) => {
   const { spaces, spacesByConfig, spacesByPayer } = useSpacesContext();
 
   const idsIsEmpty = !ids || ids.length === 0;
@@ -195,7 +206,7 @@ export const useSpaces = (...ids: string[]) => {
     return spaces && [...spaces.values()];
   }
 
-  return ids.reduce((acc: Space[], id) => {
+  return ids.reduce((acc: (Space | SsoTypeSpace)[], id) => {
     const matchedSpace = spaces?.get(id) || spacesByConfig?.get(id);
 
     if (matchedSpace) {

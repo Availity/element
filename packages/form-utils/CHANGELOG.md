@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.12.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.11.3...@availity/mui-form-utils@0.12.0) (2024-07-19)
+
+
+### Features
+
+* **mui-form-utils:** input masking ([243ca34](https://github.com/Availity/element/commit/243ca3447d9da7ac49de20b26f5cd9a595879f9b))
+
 ## [0.11.3](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.11.2...@availity/mui-form-utils@0.11.3) (2024-06-27)
 
 ## [0.11.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.11.1...@availity/mui-form-utils@0.11.2) (2024-06-14)

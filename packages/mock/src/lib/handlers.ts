@@ -5,17 +5,9 @@ import * as routes from './routes';
 import axiUserPermissions from './data/axi-user-permissions.json';
 import region from './data/region.json';
 import regions from './data/regions.json';
+import { getConfigs } from './data/thanos';
 import organizations from './data/organizations.json';
 import user from './data/user.json';
-import configurationPagination1 from './data/thanos/configuration-pagination-1.json';
-import configurationPagination2 from './data/thanos/configuration-pagination-2.json';
-import configurationId1 from './data/thanos/configuration-id-1.json';
-import configurationId2 from './data/thanos/configuration-id-2.json';
-import configurationId3 from './data/thanos/configuration-id-3.json';
-import configurationId112233 from './data/thanos/configuration-id-112233.json';
-import ghostedConfiguration from './data/thanos/ghosted-configuration.json';
-import agreementConfiguration from './data/thanos/agreement-configurations.json';
-import disclaimerConfiguration from './data/thanos/disclaimer-configurations.json';
 import settings from './data/settings.json';
 
 type ConfigurationFindMany = {
@@ -106,33 +98,53 @@ export const handlers = [
   }),
 
   // Thanos
-  graphql.query('configurationFindMany', ({ variables: { payerIds, page, ids } }) => {
-    let response: ConfigurationFindMany = configurationPagination1;
+  graphql.query('configurationFindMany', ({ variables: { payerIds, page = 1, perPage, ids }, request }) => {
+    const isLocal = request.url.includes('localhost');
+    const configs = getConfigs({ payerIds, ids, isLocal });
+    const totalCount = configs.length;
 
-    if (payerIds) {
-      response = configurationId112233;
-    } else if (page === 2) {
-      response = configurationPagination2;
-    } else if (ids && ids.length === 1 && ids[0] === '1') {
-      response = configurationId1;
-    } else if (ids && ids.length === 1 && ids[0] === '2') {
-      response = configurationId2;
-    } else if (ids && ids.length === 1 && ids[0] === '3') {
-      response = configurationId3;
-    } else if (ids && ids[0] === 'ghosted') {
-      response = ghostedConfiguration;
-    } else if ((ids && ids[0] === 'agreement') || (ids && ids[0] === 'agreementMarkdown')) {
-      response = agreementConfiguration;
-    } else if ((ids && ids[0] === 'disclaimer') || (ids && ids[0] === 'disclaimerMarkdown')) {
-      response = disclaimerConfiguration;
-    } else if (
-      (ids && ids[0] === '1' && ids[1] === '2' && ids[2] === '3') ||
-      (ids && ids[0] === '11' && ids[1] === '22' && ids[2] === '33')
-    ) {
-      response = configurationId112233;
+    if (!perPage) {
+      return HttpResponse.json({
+        data: {
+          configurationPagination: {
+            pageInfo: {
+              currentPage: 1,
+              hasNextPage: false,
+            },
+            items: configs,
+          },
+        },
+      }, { status: 200 });
     }
 
-    return HttpResponse.json(response, { status: 200 });
+    const startIndex = (page - 1) * perPage;
+    const endIndex = startIndex + perPage;
+    const items = configs.slice(startIndex, endIndex);
+    const hasNextPage = endIndex < totalCount;
+
+    return HttpResponse.json({
+      data: {
+        configurationPagination: {
+          pageInfo: {
+            currentPage: page,
+            hasNextPage,
+          },
+          items,
+        },
+      },
+    }, { status: 200 });
+  }),
+
+  graphql.query('disclaimerFindOne', ({ variables: {  id }, request }) => {
+    const isLocal = request.url.includes('localhost');
+    const config = getConfigs({ids: [id], isLocal });
+
+
+      return HttpResponse.json({
+        data: {
+          configurationFindOne: config[0],
+        },
+      }, { status: 200 });
   }),
 
   // User

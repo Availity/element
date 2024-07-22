@@ -2,6 +2,55 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.43.3](https://github.com/Availity/element/compare/@availity/element@0.43.2...@availity/element@0.43.3) (2024-07-19)
+
+### Dependency Updates
+
+* `mui-checkbox` updated to version `0.43.2`
+* `mui-list` updated to version `0.43.2`
+* `mui-page-header` updated to version `0.43.2`
+* `mui-spaces` updated to version `0.43.2`
+## [0.43.2](https://github.com/Availity/element/compare/@availity/element@0.43.1...@availity/element@0.43.2) (2024-07-19)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `0.43.1`
+## [0.43.1](https://github.com/Availity/element/compare/@availity/element@0.43.0...@availity/element@0.43.1) (2024-07-19)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `0.43.0`
+* `mui-checkbox` updated to version `0.43.0`
+* `mui-datepicker` updated to version `0.43.0`
+* `mui-event-tracker` updated to version `0.43.0`
+* `mui-feedback` updated to version `0.43.0`
+* `mui-form-utils` updated to version `0.43.0`
+* `mui-list` updated to version `0.43.0`
+* `mui-page-header` updated to version `0.43.0`
+* `mui-table` updated to version `0.43.0`
+* `mui-textfield` updated to version `0.43.0`
+## [0.43.0](https://github.com/Availity/element/compare/@availity/element@0.42.5...@availity/element@0.43.0) (2024-07-18)
+
+### Dependency Updates
+
+* `mui-event-tracker` updated to version `0.42.5`
+
+### Features
+
+* **mui-event-tracker:** add event tracker component ([5be1273](https://github.com/Availity/element/commit/5be12734a09a53f786579192fd54da4936855086))
+
+## [0.42.5](https://github.com/Availity/element/compare/@availity/element@0.42.4...@availity/element@0.42.5) (2024-07-11)
+
+### Dependency Updates
+
+* `mui-datepicker` updated to version `0.42.4`
+* `mui-list` updated to version `0.42.4`
+* `theme-provider` updated to version `0.42.4`
+## [0.42.4](https://github.com/Availity/element/compare/@availity/element@0.42.3...@availity/element@0.42.4) (2024-07-05)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `0.42.3`
 ## [0.42.3](https://github.com/Availity/element/compare/@availity/element@0.42.2...@availity/element@0.42.3) (2024-07-01)
 
 ### Dependency Updates

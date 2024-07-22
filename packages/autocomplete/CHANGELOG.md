@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.2](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.6.1...@availity/mui-autocomplete@0.6.2) (2024-07-19)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.6.1`
+* `mui-textfield` updated to version `0.6.1`
+## [0.6.1](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.6.0...@availity/mui-autocomplete@0.6.1) (2024-07-05)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** and provider export ([a5e6703](https://github.com/Availity/element/commit/a5e6703fb5544f4e2058c2128b3c8bca2a1b01b9))
+
 ## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.5.2...@availity/mui-autocomplete@0.6.0) (2024-07-01)
 
 
