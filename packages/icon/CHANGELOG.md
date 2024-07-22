@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.8.2...@availity/mui-icon@0.9.0) (2024-07-22)
+
+
+### Features
+
+* **mui-stepper:** add Stepper component ([04e21e8](https://github.com/Availity/element/commit/04e21e8f5117c79f0e110308482ed1277a9a16e7))
+
 ## [0.8.2](https://github.com/Availity/element/compare/@availity/mui-icon@0.8.1...@availity/mui-icon@0.8.2) (2024-04-19)
 
 ### Dependency Updates
