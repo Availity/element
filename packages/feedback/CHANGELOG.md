@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.32...@availity/mui-feedback@0.2.0) (2024-07-22)
+
+
+### Features
+
+* **mui-feedback:** use avLogMessagesApiV2 for logging ([b549b87](https://github.com/Availity/element/commit/b549b87d0c8887dfcff8d57e8c5c4a0bdceab8a4))
+
 ## [0.1.32](https://github.com/Availity/element/compare/@availity/mui-feedback@0.1.31...@availity/mui-feedback@0.1.32) (2024-07-19)
 
 ### Dependency Updates
