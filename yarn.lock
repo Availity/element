@@ -127,6 +127,7 @@ __metadata:
     "@availity/mui-popper": "workspace:*"
     "@availity/mui-progress": "workspace:*"
     "@availity/mui-spaces": "workspace:*"
+    "@availity/mui-stepper": "workspace:*"
     "@availity/mui-table": "workspace:*"
     "@availity/mui-tabs": "workspace:*"
     "@availity/mui-textfield": "workspace:*"
@@ -817,6 +818,25 @@ __metadata:
     "@availity/mui-layout": "workspace:^"
     "@availity/mui-modal": "workspace:^"
     "@availity/mui-typography": "workspace:^"
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-stepper@workspace:*, @availity/mui-stepper@workspace:packages/stepper":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-stepper@workspace:packages/stepper"
+  dependencies:
+    "@availity/mui-button": "workspace:^"
+    "@availity/mui-icon": "workspace:^"
+    "@availity/mui-layout": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
+    "@mui/material": ^5.15.15
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^8.0.2
+    typescript: ^5.4.5
+  peerDependencies:
     "@mui/material": ^5.11.9
     react: ">=16.3.0"
   languageName: unknown

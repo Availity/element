@@ -5,6 +5,7 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
 import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
 import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons/faXmarkCircle';
 import { faSort } from '@fortawesome/free-solid-svg-icons/faSort';
 import { faSortUp } from '@fortawesome/free-solid-svg-icons/faSortUp';
@@ -33,6 +34,10 @@ export const PlusCircleIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSv
 
 export const CancelCircleIcon = ({ ...props }: SvgIconProps): JSX.Element => (
   <FaSvgIcon icon={faXmarkCircle} {...props} />
+);
+
+export const CheckCircleIcon = ({ ...props }: SvgIconProps): JSX.Element => (
+  <FaSvgIcon icon={faCheckCircle} {...props} />
 );
 
 export const SortIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faSort} {...props} />;
