@@ -3,13 +3,12 @@ import { Popover } from '@availity/mui-popover';
 import { Button } from '@availity/mui-button';
 import Container from '@mui/material/Container';
 import { styled } from '@mui/material/styles';
-import { avLogMessagesApi } from '@availity/api-axios';
+import { avLogMessagesApiV2 } from '@availity/api-axios';
 import { FeedbackForm } from './FeedbackForm';
 import { FeedbackHeader } from './FeedbackHeader';
 
 export interface FeedbackProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  analytics?: { info: (entries: any) => any };
+  analytics?: { info: (entries: Record<string, unknown>) => void };
   appName: string;
 }
 
@@ -17,7 +16,7 @@ const FeedbackContainer = styled(Container, { name: 'AvFeedbackContainer', slot:
 
 const GiveFeedbackButton = styled(Button, { name: 'AvGiveFeedbackButton', slot: 'root' })({});
 
-export const Feedback = ({ analytics = avLogMessagesApi, appName }: FeedbackProps): JSX.Element => {
+export const Feedback = ({ analytics = avLogMessagesApiV2, appName }: FeedbackProps): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [sent, setSent] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);

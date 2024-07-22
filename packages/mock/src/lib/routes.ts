@@ -7,5 +7,8 @@ export const ORGANIZATIONS = '/api/sdk/platform/v1/organizations';
 export const PROVIDERS = '/api/internal/v1/providers';
 export const USERS = '/api/sdk/platform/v1/users/me';
 
+// Aries 2
+export const LOGV2 = '/ms/api/availity/internal/spc/analytics/log';
+
 // Misc
 export const EXAMPLE = '/api/v1/example';
