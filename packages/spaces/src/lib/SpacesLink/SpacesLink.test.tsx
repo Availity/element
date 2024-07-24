@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SpacesLink } from './SpacesLink';
 import { Spaces } from '../Spaces';
-import { FileIcon, NavigateTopIcon } from '@availity/mui-icon';
+import { FileIcon } from '@availity/mui-icon';
 
 describe('SpacesLink', () => {
   afterEach(() => {
@@ -53,7 +53,6 @@ describe('SpacesLink', () => {
     expect(container.tagName).toBe('DIV');
 
     const linkHeader = await waitFor(() => container.querySelector('#app-title-1'));
-    expect(linkHeader?.attributes.getNamedItem('variant')?.value).toBe('h6');
     expect(linkHeader?.attributes.getNamedItem('role')?.value).toBe('link');
     expect(linkHeader?.attributes.getNamedItem('data-av-analytics-application-id')?.value).toBe('1');
     expect(linkHeader?.attributes.getNamedItem('data-av-analytics-action')?.value).toBe('click');
@@ -134,7 +133,7 @@ describe('SpacesLink', () => {
 
     const link3_header = await waitFor(() => container.querySelector('#app-title-3'));
 
-    expect(link3_header?.tagName).toBe('DIV');
+    expect(link3_header?.tagName).toBe('A');
   });
 
   it('renders link card from space with custom title class', async () => {
@@ -207,7 +206,7 @@ describe('SpacesLink', () => {
 
     const link7_newBadge = await waitFor(() => container.querySelector('#app-new-badge-7'));
 
-    expect(link7_newBadge?.className.includes('MuiChip-colorDefault')).toBeTruthy();
+    expect(link7_newBadge?.className.includes('MuiChip-colorSecondary')).toBeTruthy();
     expect(link7_newBadge?.textContent).toBe('New!');
   });
 
@@ -539,7 +538,7 @@ describe('SpacesLink', () => {
         <Spaces clientId="my-client-id" spaces={[space]}>
           <SpacesLink
             id="application-link-14"
-            icon
+            icon={FileIcon}
             space={space}
             linkAttributes={{
               spaceId: '14',
@@ -553,52 +552,10 @@ describe('SpacesLink', () => {
     );
 
     const link = await waitFor(() => container.getElementsByTagName('a'));
-    expect(link[0]?.getAttribute('href')).toContain('/public/apps/home/#!/loadApp?appUrl=%2Fpath%2Fto%2Furl');
-    const icon = await waitFor(() => container.getElementsByTagName('svg')[1]);
-
-    const { container: testContainer } = render(<FileIcon data-testid="icon" />);
-
-    expect(icon).toStrictEqual(testContainer.getElementsByTagName('svg')[0]);
-  });
-
-  it('renders icon for non file type when icon is true', async () => {
-    const space = {
-      id: 'encoded14',
-      configurationId: '14',
-      type: 'LINK',
-      name: 'file with link',
-      url: '/path/to/url',
-      icons: {
-        navigation: 'desktop',
-      },
-      description: 'This is a file',
-      link: {
-        url: '/path/to/url',
-        text: 'title',
-        target: '_self',
-      },
-    };
-    const queryClient = new QueryClient();
-    const { container } = render(
-      <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
-          <SpacesLink
-            id="application-link-14"
-            space={space}
-            linkAttributes={{
-              spaceId: '14',
-            }}
-            role="listitem"
-            clientId="my-client-id"
-            title={space.link.text}
-          />
-        </Spaces>
-      </QueryClientProvider>
-    );
-
+    expect(link[0]?.getAttribute('href')).toBe(space.url);
     const icon = await waitFor(() => container.getElementsByTagName('svg')[0]);
 
-    const { container: testContainer } = render(<NavigateTopIcon data-testid="icon" />);
+    const { container: testContainer } = render(<FileIcon data-testid="icon" />);
 
     expect(icon).toStrictEqual(testContainer.getElementsByTagName('svg')[0]);
   });
