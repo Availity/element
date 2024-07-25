@@ -354,7 +354,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-card@workspace:*, @availity/mui-card@workspace:packages/card":
+"@availity/mui-card@workspace:*, @availity/mui-card@workspace:^, @availity/mui-card@workspace:packages/card":
   version: 0.0.0-use.local
   resolution: "@availity/mui-card@workspace:packages/card"
   dependencies:
@@ -389,7 +389,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-chip@workspace:*, @availity/mui-chip@workspace:packages/chip":
+"@availity/mui-chip@workspace:*, @availity/mui-chip@workspace:^, @availity/mui-chip@workspace:packages/chip":
   version: 0.0.0-use.local
   resolution: "@availity/mui-chip@workspace:packages/chip"
   dependencies:
@@ -510,7 +510,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-favorites@workspace:*, @availity/mui-favorites@workspace:packages/favorites":
+"@availity/mui-favorites@workspace:*, @availity/mui-favorites@workspace:^, @availity/mui-favorites@workspace:packages/favorites":
   version: 0.0.0-use.local
   resolution: "@availity/mui-favorites@workspace:packages/favorites"
   dependencies:
@@ -626,7 +626,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-list@workspace:*, @availity/mui-list@workspace:packages/list":
+"@availity/mui-list@workspace:*, @availity/mui-list@workspace:^, @availity/mui-list@workspace:packages/list":
   version: 0.0.0-use.local
   resolution: "@availity/mui-list@workspace:packages/list"
   dependencies:
@@ -721,7 +721,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-paper@workspace:*, @availity/mui-paper@workspace:packages/paper":
+"@availity/mui-paper@workspace:*, @availity/mui-paper@workspace:^, @availity/mui-paper@workspace:packages/paper":
   version: 0.0.0-use.local
   resolution: "@availity/mui-paper@workspace:packages/paper"
   dependencies:
@@ -792,11 +792,17 @@ __metadata:
     "@availity/hooks": ^5.0.2
     "@availity/message-core": ^6.1.3
     "@availity/mui-button": "workspace:^"
+    "@availity/mui-card": "workspace:^"
+    "@availity/mui-chip": "workspace:^"
     "@availity/mui-dialog": "workspace:^"
     "@availity/mui-disclaimer": "workspace:^"
+    "@availity/mui-favorites": "workspace:^"
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-layout": "workspace:^"
+    "@availity/mui-list": "workspace:^"
     "@availity/mui-modal": "workspace:^"
+    "@availity/mui-paper": "workspace:^"
+    "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@availity/native-form": ^5.0.6
     "@availity/resolve-url": ^2.0.6
@@ -812,11 +818,16 @@ __metadata:
     typescript: ^5.4.5
   peerDependencies:
     "@availity/mui-button": "workspace:^"
+    "@availity/mui-card": "workspace:^"
+    "@availity/mui-chip": "workspace:^"
     "@availity/mui-dialog": "workspace:^"
     "@availity/mui-disclaimer": "workspace:^"
+    "@availity/mui-favorites": "workspace:^"
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-layout": "workspace:^"
+    "@availity/mui-list": "workspace:^"
     "@availity/mui-modal": "workspace:^"
+    "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.11.9
     react: ">=16.3.0"
