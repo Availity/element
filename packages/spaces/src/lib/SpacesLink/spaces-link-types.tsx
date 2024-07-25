@@ -50,7 +50,7 @@ export type SpacesLinkProps = {
   /** When true, utilizes the Card component for styling. */
   card?: boolean;
   /** When true, renders an @availity/mui-icon next to the title if present on the Space. */
-  icon?: ({ ...props }: SvgIconProps) => JSX.Element;
+  icon?: (props: SvgIconProps) => JSX.Element;
   /** When true, renders the Spaces description beneath the title. */
   description?: boolean;
   /** When passed in, provides predefined styles for the component.
