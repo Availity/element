@@ -478,6 +478,40 @@ export const legacyTheme = {
         }
       }
     },
+    AvSpacesLink: {
+      styleOverrides: {
+        root: {
+          width: '100%',
+          "[role='link']": {
+            color: tokens.colorTextLink,
+            textDecoration: 'none',
+            backgroundColor: 'transparent',
+            '&:hover': {
+              textDecoration: 'underline'
+            }
+          },
+          'p': {
+            marginBlockStart: 0,
+            marginBlockEnd: 0
+          }
+        },
+        avDateInfo: {
+          '.MuiChip-root': {
+            marginRight: '.25rem'
+          }
+        },
+        avFavoriteHeart: {
+          marginRight: '.25rem',
+          marginLeft: '-.25rem',
+          minWidth: 'auto'
+        },
+        iconLink: {
+          marginRight: '.25rem',
+          borderRadius: '50%',
+          position: 'relative',
+        }
+      }
+    },
     MuiAccordion: {
       defaultProps: {
         disableGutters: true,

@@ -22,7 +22,7 @@ const buildSpacesLink = (space: Space | SsoTypeSpace, linkAttributes: Record<any
           space={space}
           linkAttributes={linkAttributes}
           clientId="my-client-id"
-          linkStyle="card"
+          variant="card"
           title={space.link?.text}
         />
       </Spaces>

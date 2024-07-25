@@ -444,6 +444,56 @@ export const lightTheme = {
         },
       },
     },
+    AvSpacesLink: {
+      styleOverrides: {
+        root: {
+          width: '100%',
+          "[role='link']": {
+            color: tokens.colorTextLink,
+            textDecoration: 'none',
+            backgroundColor: 'transparent',
+            '&:hover': {
+              textDecoration: 'underline'
+            }
+          },
+          'p': {
+            marginBlockStart: 0,
+            marginBlockEnd: 0
+          }
+        },
+        avDateInfo: {
+          '.MuiChip-root': {
+            marginRight: '.25rem'
+          }
+        },
+        avFavoriteHeart: {
+          marginTop: '-.5rem',
+          marginRight: '.5rem',
+          marginLeft: '-.5rem',
+          minWidth: 'auto'
+        },
+        iconLink: {
+          height: '2.5rem',
+          width: '2.5rem',
+          fontSize: '1.5rem',
+          marginTop: '-.5rem',
+          marginRight: '.5rem',
+          minWidth: '2.5rem',
+          borderRadius: '50%',
+          position: 'relative',
+          '.MuiSvgIcon-root': {
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            color: tokens.colorTextSecondary,
+          },
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover
+          }
+        }
+      }
+    },
     MuiAccordion: {
       defaultProps: {
         disableGutters: false,

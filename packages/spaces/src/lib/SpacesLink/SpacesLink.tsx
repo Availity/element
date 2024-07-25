@@ -1,38 +1,56 @@
+import { ElementType } from 'react';
 import dayjs from 'dayjs';
-import { Card, CardContent, CardHeader } from '@availity/mui-card';
+import { Card, CardContent } from '@availity/mui-card';
 import { Typography } from '@availity/mui-typography';
-import { NavigateTopIcon, FileIcon } from '@availity/mui-icon';
 import { useMemo, cloneElement } from 'react';
-import { StatusChip, Chip } from '@availity/mui-chip';
+import { StatusChip } from '@availity/mui-chip';
 import { CircularProgress } from '@availity/mui-progress';
-import { Link } from '@availity/mui-link';
+import Link from '@mui/material/Link';
 import { FavoriteHeart } from '@availity/mui-favorites';
 import { Grid, Box } from '@availity/mui-layout';
 import { ListItem, ListItemText } from '@availity/mui-list';
 import ReactMarkdown from 'react-markdown';
+import { styled } from '@mui/material/styles';
 import { useSpacesContext } from '../Spaces';
 import { useLink } from './useLink';
 import type { SpacesLinkWithSpace, SpacesLinkWithSpaceId, SpacesLinkVariants } from './spaces-link-types';
 import { isFunction } from '../helpers';
 
+const SpacesLinkContainer = styled(Box, { name: 'AvSpacesLink', slot: 'root' })({});
+const DateInfo = styled(Grid, { name: 'AvSpacesLink', slot: 'AvDateInfo' })({});
+const SpacesLinkFavoriteHeart = styled(Grid, { name: 'AvSpacesLink', slot: 'AvFavoriteHeart' })({});
+const IconLink = styled(Link, { name: 'AvSpacesLink', slot: 'IconLink' })({});
+
 const getDisplayDate = (date: string | null | undefined) => dayjs(date).format('MM/DD/YYYY');
 
-const getContainerTag = (propTag: string | undefined, variant: SpacesLinkVariants) => {
+const getContainerTag = (
+  propTag: ElementType<any, keyof JSX.IntrinsicElements> | undefined,
+  variant: SpacesLinkVariants
+) => {
   if (variant && variant !== 'default') return { card: Card, list: ListItem }[variant];
   return propTag || 'div';
 };
 
-const getBodyTag = (propTag: string | undefined, variant: SpacesLinkVariants) => {
+const getBodyTag = (
+  propTag: ElementType<any, keyof JSX.IntrinsicElements> | undefined,
+  variant: SpacesLinkVariants
+) => {
   if (variant && variant !== 'default') return { card: CardContent, list: 'div' }[variant];
   return propTag || 'div';
 };
 
-const getTitleTag = (propTag: string | undefined, variant: SpacesLinkVariants) => {
-  if (variant && variant !== 'default') return { card: CardHeader, list: Typography }[variant];
-  return propTag || 'div';
+const getTitleTag = (
+  propTag: ElementType<any, keyof JSX.IntrinsicElements> | undefined,
+  variant: SpacesLinkVariants
+) => {
+  if (variant && variant !== 'default') return Link;
+  return propTag || Link;
 };
 
-const getTextTag = (propTag: string | undefined, variant: SpacesLinkVariants) => {
+const getTextTag = (
+  propTag: ElementType<any, keyof JSX.IntrinsicElements> | undefined,
+  variant: SpacesLinkVariants
+) => {
   if (variant && variant !== 'default') return { card: Typography, list: ListItemText }[variant];
   return propTag || 'div';
 };
@@ -43,7 +61,7 @@ export const SpacesLink = ({
   className,
   children,
   favorite,
-  icon,
+  icon: FileIcon,
   showName = true,
   showNew,
   showDate,
@@ -79,11 +97,13 @@ export const SpacesLink = ({
     () =>
       linkSpace?.configurationId &&
       favorite && (
-        <FavoriteHeart
-          id={`${idPrefix}${linkSpace?.configurationId}`}
-          name={linkSpace?.name}
-          onChange={(_, e) => e.stopPropagation()}
-        />
+        <SpacesLinkFavoriteHeart>
+          <FavoriteHeart
+            id={`${idPrefix}${linkSpace?.configurationId}`}
+            name={linkSpace?.name}
+            onChange={(_, e) => e.stopPropagation()}
+          />
+        </SpacesLinkFavoriteHeart>
       ),
     [favorite, linkSpace?.configurationId, linkSpace?.name, idPrefix]
   );
@@ -91,9 +111,9 @@ export const SpacesLink = ({
   const dateInfo = useMemo(
     () =>
       (showNew || showDate) && (
-        <Grid textAlign={stacked ? 'center' : 'inherit'}>
+        <DateInfo textAlign={stacked ? 'center' : 'right'}>
           {showNew && linkSpace?.isNew && (
-            <Chip id={`${idPrefix}app-new-badge-${linkSpace?.configurationId}`} label="New!" />
+            <StatusChip id={`${idPrefix}app-new-badge-${linkSpace?.configurationId}`} label="New!" color="secondary" />
           )}
           {showDate && (
             <Typography
@@ -104,7 +124,7 @@ export const SpacesLink = ({
               {getDisplayDate(linkSpace?.activeDate)}
             </Typography>
           )}
-        </Grid>
+        </DateInfo>
       ),
     [linkSpace?.activeDate, linkSpace?.isNew, showDate, showNew, stacked, linkSpace?.configurationId, idPrefix]
   );
@@ -114,7 +134,7 @@ export const SpacesLink = ({
       customBadgeText && (
         <Box
           textAlign={stacked ? 'center' : 'inherit'}
-          marginRight={variant !== 'card' && (showDate || (showNew && linkSpace?.isNew)) ? 2 : undefined}
+          marginRight={variant !== 'card' && (showDate || (showNew && linkSpace?.isNew)) ? 1 : undefined}
         >
           <StatusChip
             color={customBadgeColor || 'info'}
@@ -165,27 +185,36 @@ export const SpacesLink = ({
     }
   };
   return (
-    <Tag
+    <SpacesLinkContainer
+      component={Tag}
       title={linkSpace?.name}
       className={className}
       {...rest}
       style={{ ...style }}
       role={variant === 'list' ? 'listitem' : role}
     >
-      <BodyTag>
-        <Grid alignItems={!showDescription || stacked ? 'center' : 'start'} direction={stacked ? 'column' : 'row'}>
+      <BodyTag style={{ width: '100%' }}>
+        <Grid
+          alignItems={!showDescription || stacked ? 'center' : 'start'}
+          direction={stacked ? 'column' : 'row'}
+          container
+          flexWrap="nowrap"
+        >
           {!stacked && favoriteIcon}
-          {icon && linkSpace?.url && linkSpace?.type?.toUpperCase() === 'FILE' ? (
-            <Link target="_blank" href={linkSpace?.url}>
+          {FileIcon && linkSpace?.url && linkSpace?.type?.toUpperCase() === 'FILE' ? (
+            <IconLink
+              target="_blank"
+              href={linkSpace?.url}
+              role="link"
+              aria-labelledby={`${idPrefix}app-title-${linkSpace?.configurationId}`}
+            >
               <FileIcon data-testid="icon" />
-            </Link>
-          ) : (
-            <NavigateTopIcon data-testid="icon" />
-          )}
+            </IconLink>
+          ) : null}
           {children
             ? renderChildren()
             : body && (
-                <Grid id={`${idPrefix}${linkSpace?.type}-${linkSpace?.configurationId}`}>
+                <Grid id={`${idPrefix}${linkSpace?.type}-${linkSpace?.configurationId}`} flexGrow={1}>
                   <Box
                     marginBottom={!customBadgeDisplay && (!showDescription || !linkSpace?.description) ? 0 : undefined}
                     paddingTop={stacked ? 3 : undefined}
@@ -216,15 +245,18 @@ export const SpacesLink = ({
                   {stacked && dateInfo}
                   {showDescription && linkSpace?.description && (
                     <TextTag
-                      marginTop={1}
-                      textAlign={stacked ? 'center' : undefined}
-                      overflow="hidden"
-                      whiteSpace={maxDescriptionWidth ? 'nowrap' : undefined}
-                      width={maxDescriptionWidth}
-                      textOverflow="ellipsis"
+                      component={'div'}
+                      style={{
+                        marginTop: '.5rem',
+                        textAlign: stacked ? 'center' : undefined,
+                        overflow: 'hidden',
+                        whiteSpace: maxDescriptionWidth ? 'nowrap' : undefined,
+                        width: maxDescriptionWidth,
+                        textOverflow: 'ellipsis',
+                      }}
                       id={`${idPrefix}app-description-${linkSpace?.configurationId}`}
                     >
-                      <ReactMarkdown className="Card-text">{linkSpace?.description}</ReactMarkdown>
+                      <ReactMarkdown>{linkSpace?.description}</ReactMarkdown>
                     </TextTag>
                   )}
                   {variant === 'card' && customBadgeDisplay}
@@ -234,6 +266,6 @@ export const SpacesLink = ({
           {!stacked && dateInfo}
         </Grid>
       </BodyTag>
-    </Tag>
+    </SpacesLinkContainer>
   );
 };
