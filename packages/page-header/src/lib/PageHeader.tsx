@@ -21,7 +21,7 @@ export interface PageHeaderProps {
   feedback?: boolean;
   /** The text that displays in the header  */
   headerText: string;
-  /** The name that displays in the help text
+  /** The name that displays in the help text. Should be used when the help is a demo video.
    * @example "This App"
    * @returns Need Help? Watch a demo for This App
    */
@@ -59,7 +59,7 @@ export const PageHeader = ({
             <Grid marginLeft={2}>
             <Typography variant="body1">
               Need help?{' '}
-              <Link href={helpLink} target="_blank">
+              <Link href={helpLink} target="_blank" loadApp={false} >
                 {helpAppName ? "Watch a demo" : "Learn More"}
               </Link>{' '}
               {helpAppName ? ` for ${helpAppName}` : null}

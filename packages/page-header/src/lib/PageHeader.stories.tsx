@@ -25,18 +25,18 @@ export const _PageHeaderHelp: StoryObj<typeof PageHeader> = {
     headerText: 'This text is a child of PageHeader',
     breadcrumbs: { active: 'This Page' },
     helpLink: 'https://www.availity.com',
-    helpAppName: 'This App'
+    helpAppName: undefined
   },
 };
 
-/** Alternative training link text when no `helpAppName` given. */
-export const _PageHeaderAltHelp: StoryObj<typeof PageHeader> = {
+/** `helpAppName` should be used when the help link leads to a demo video. */
+export const _PageHeaderHelpDemo: StoryObj<typeof PageHeader> = {
   render: (args: PageHeaderProps) => <PageHeader {...args} />,
   args: {
     headerText: 'This text is a child of PageHeader',
     breadcrumbs: { active: 'This Page' },
     helpLink: 'https://www.availity.com',
-    helpAppName: undefined
+    helpAppName: 'This App'
   },
 };
 
