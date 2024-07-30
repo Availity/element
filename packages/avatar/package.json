@@ -40,6 +40,7 @@
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
+    "@availity/mui-icon": "workspace:^",
     "@mui/material": "^5.11.9",
     "react": ">=16.3.0"
   },
@@ -47,6 +48,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@availity/api-axios": "^9.0.0",
     "@availity/design-tokens": "workspace:^"
   }
 }

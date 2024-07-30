@@ -71,7 +71,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^8.0.8",
+    "@availity/api-axios": "^9.0.0",
     "@availity/hooks": "^5.0.2",
     "@availity/message-core": "^6.1.3",
     "@availity/native-form": "^5.0.6",
