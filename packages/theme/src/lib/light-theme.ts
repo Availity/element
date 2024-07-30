@@ -692,6 +692,22 @@ export const lightTheme = {
           backgroundColor: tokens.colorBackgroundBorder,
           color: tokens.colorTextSecondary,
         },
+        root: ({ ownerState }: { ownerState: any }) => {
+          switch (ownerState.size) {
+            case 'xs':
+              return { width: 18, height: 18, fontSize: tokens.fontSizesCaption };
+            case 's':
+              return { width: 24, height: 24, fontSize: tokens.fontSizesCaption };
+            case 'm':
+              return { width: 40, height: 40, fontSize: tokens.fontSizesH5, fontWeight: tokens.fontWeightsBold };
+            case 'l':
+              return { width: 80, height: 80, fontSize: tokens.fontSizesH3, fontWeight: tokens.fontWeightsBold };
+            case 'xl':
+              return { width: 140, height: 140, fontSize: tokens.fontSizesH1, fontWeight: tokens.fontWeightsBold };
+            default:
+              return {};
+          }
+        },
       },
     },
     MuiBreadcrumbs: {

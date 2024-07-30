@@ -9,6 +9,7 @@ import { getConfigs } from './data/thanos';
 import organizations from './data/organizations.json';
 import user from './data/user.json';
 import settings from './data/settings.json';
+import avatarSettings from './data/avatarSettings.json';
 
 type ConfigurationFindMany = {
   data: {
@@ -89,6 +90,9 @@ export const handlers = [
     if (params.applicationId === 'Gateway-AvNavigation') {
       await delay(defaultDelay);
       return HttpResponse.json(settings, { status: 200 });
+    } else if (params.applicationId === 'AVATAR') {
+      await delay(defaultDelay);
+      return HttpResponse.json(avatarSettings, { status: 200 });
     }
   }),
   http.put(routes.SETTINGS, async (context) => {
