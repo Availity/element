@@ -8,7 +8,29 @@ export type Provider = {
   id: string;
   businessName: string;
   uiDisplayName: string;
-  aytypical: boolean;
+  lastName?: string;
+  firstName?: string;
+  payerAssignedIdentifiers?: { payerId: string; identifier: string }[];
+  atypical: boolean;
+  npi: string;
+  customerIds: string[];
+  roles: { code: string; value: string }[];
+  primaryPhone: { internationalCellularCode: string; areaCode: string; phoneNumber: string };
+  primaryFax: { internationalCellularCode: string; areaCode: string; phoneNumber: string };
+  taxId?: string;
+  ssn?: string;
+  primaryAddress: {
+    line1: string;
+    line2: string;
+    city: string;
+    state: string;
+    stateCode: string;
+    zip: { code: string; addon: string };
+  };
+  primarySpecialty?: {
+    code: string;
+    value: string;
+  };
 };
 
 const fetchProviders = async (
@@ -34,7 +56,9 @@ export interface ProviderAutocompleteProps<
     Optional<AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'queryKey'>,
     'loadOptions'
   > {
+  /** Customer ID of the Organization you are requesting the providers for */
   customerId: string;
+  /** Config passed to the AvProvidersApi.getProviders function */
   apiConfig?: ApiConfig;
 }
 
@@ -44,8 +68,11 @@ export const ProviderAutocomplete = ({
   queryKey = 'prov-autocomplete',
   ...rest
 }: ProviderAutocompleteProps) => {
-  const handleLoadOptions = async (offset: number, limit: number) => {
-    const resp = await fetchProviders(customerId, { ...apiConfig, params: { ...apiConfig.params, offset, limit } });
+  const handleLoadOptions = async (offset: number, limit: number, inputValue: string) => {
+    const resp = await fetchProviders(customerId, {
+      ...apiConfig,
+      params: { ...apiConfig.params, offset, limit, q: inputValue },
+    });
 
     return resp;
   };
@@ -57,6 +84,7 @@ export const ProviderAutocomplete = ({
       getOptionLabel={handleGetOptionLabel}
       queryOptions={{ enabled: !!customerId }}
       queryKey={queryKey}
+      watchParams={{ customerId }}
       {...rest}
       loadOptions={handleLoadOptions}
     />

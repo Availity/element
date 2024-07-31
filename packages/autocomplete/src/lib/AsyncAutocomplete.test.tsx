@@ -123,4 +123,76 @@ describe('AsyncAutocomplete', () => {
       expect(() => screen.getByText('Option 20')).toThrowError();
     });
   });
+
+  test('should search with input value', async () => {
+    const mockLoadOptions = jest.fn(async () => ({ options: [], hasMore: false, offset: 50 }));
+
+    render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete queryKey="test1" loadOptions={mockLoadOptions} FieldProps={{ label: 'Test' }} />
+      </QueryClientProvider>
+    );
+
+    await waitFor(() => expect(mockLoadOptions).toHaveBeenLastCalledWith(0, 50, ''));
+
+    const input = screen.getByRole('combobox');
+    fireEvent.click(input);
+
+    fireEvent.change(input, { target: { value: 'test' } });
+
+    await waitFor(() => expect(mockLoadOptions).toHaveBeenLastCalledWith(0, 50, 'test'));
+  });
+
+  test('should make call when watchParams changes', async () => {
+    const mockLoadOptions = jest.fn(async () => ({ options: [{ label: 'Option 1' }], hasMore: false, offset: 50 }));
+
+    const watchParams = { foo: 'bar' };
+
+    const { rerender } = render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete
+          queryKey="test1"
+          loadOptions={mockLoadOptions}
+          FieldProps={{ label: 'Test' }}
+          watchParams={watchParams}
+        />
+      </QueryClientProvider>
+    );
+
+    const input = screen.getByRole('combobox');
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(screen.getByText('Option 1')).toBeDefined();
+      // Check that api was called
+      expect(mockLoadOptions).toHaveBeenNthCalledWith(1, 0, 50, '');
+      // Make sure data is in the query client with given watchParams
+      expect(client.getQueryData(['test1', 50, '', watchParams])).toBeDefined();
+    });
+
+    watchParams.foo = 'test';
+
+    rerender(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete
+          queryKey="test1"
+          loadOptions={mockLoadOptions}
+          FieldProps={{ label: 'Test' }}
+          watchParams={watchParams}
+        />
+      </QueryClientProvider>
+    );
+
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(screen.getByText('Option 1')).toBeDefined();
+      // Check that options were fetched
+      expect(mockLoadOptions).toHaveBeenNthCalledWith(2, 0, 50, '');
+      // Make sure call was made with new watchParams
+      expect(client.getQueryData(['test1', 50, '', watchParams])).toBeDefined();
+    });
+  });
 });

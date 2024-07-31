@@ -10,21 +10,21 @@ import organizations from './data/organizations.json';
 import user from './data/user.json';
 import settings from './data/settings.json';
 
-type ConfigurationFindMany = {
-  data: {
-    configurationPagination: {
-      pageInfo: {
-        currentPage: number;
-        hasNextPage: boolean;
-      };
-      items: {
-        id: string;
-        configurationId: string;
-        payerIDs?: string[];
-      }[];
-    };
-  };
-};
+// type ConfigurationFindMany = {
+//   data: {
+//     configurationPagination: {
+//       pageInfo: {
+//         currentPage: number;
+//         hasNextPage: boolean;
+//       };
+//       items: {
+//         id: string;
+//         configurationId: string;
+//         payerIDs?: string[];
+//       }[];
+//     };
+//   };
+// };
 
 const parsers: Record<string, (value: unknown) => string | number | boolean> = {
   dropdown: (value: unknown) => value === 'true',
@@ -182,7 +182,7 @@ export const handlers = [
     const orgs: { id: string; customerId: string; name: string }[] = [];
     for (let i = parsedParams.offset; i < parsedParams.offset + parsedParams.limit; i++) {
       if (i >= total) break;
-      orgs.push({ id: `${i}`, customerId: `${i}`, name: `Organization ${i}` });
+      orgs.push({ id: crypto.randomUUID(), customerId: `${i}`, name: `Organization ${i}` });
     }
     return HttpResponse.json({ organizations: orgs, count: orgs.length, totalCount: total });
   }),
@@ -206,7 +206,7 @@ export const handlers = [
 
     for (let i = parsedParams.offset; i < parsedParams.offset + parsedParams.limit; i++) {
       if (i >= total) break;
-      options.push({ id: `${i}`, uiDisplayName: `Provider ${i}` });
+      options.push({ id: crypto.randomUUID(), uiDisplayName: `Provider ${i}` });
     }
 
     return HttpResponse.json({
@@ -224,10 +224,10 @@ export const handlers = [
 
     if (!data) return HttpResponse.json({ message: 'Bad request' }, { status: 400 });
 
-    const options: { label: string; value: number }[] = [];
+    const options: { label: string; value: number; id: string }[] = [];
     for (let i = data.offset; i < data.offset + data.limit; i++) {
       if (i >= 50) break;
-      options.push({ label: `Option ${i}`, value: i });
+      options.push({ label: `Option ${i}`, value: i, id: crypto.randomUUID() });
     }
 
     return HttpResponse.json({

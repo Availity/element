@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import type { ChipTypeMap } from '@mui/material/Chip';
 import { useInfiniteQuery, UseInfiniteQueryOptions } from '@tanstack/react-query';
 
 import { Autocomplete, AutocompleteProps } from './Autocomplete';
+import { useDebounce } from './util';
 
 export interface AsyncAutocompleteProps<
   Option,
@@ -14,7 +16,11 @@ export interface AsyncAutocompleteProps<
     'options' | 'disableListWrap' | 'loading'
   > {
   /** Function that is called to fetch the options for the list. Returns a promise with options, hasMore, and offset */
-  loadOptions: (offset: number, limit: number) => Promise<{ options: Option[]; hasMore: boolean; offset: number }>;
+  loadOptions: (
+    offset: number,
+    limit: number,
+    inputValue?: string
+  ) => Promise<{ options: Option[]; hasMore: boolean; offset: number }>;
   /** The key used by @tanstack/react-query to cache the response */
   queryKey: string;
   /** The number of options to request from the api
@@ -22,6 +28,10 @@ export interface AsyncAutocompleteProps<
   limit?: number;
   /** Config options for the useInfiniteQuery hook */
   queryOptions?: UseInfiniteQueryOptions<{ options: Option[]; hasMore: boolean; offset: number }>;
+  /** Object of parameters used for the cacheKey. Options are re-reftched when a value in the object changes  */
+  watchParams?: Record<string, unknown>;
+  /** Time to wait before searching with the input value typed into the component */
+  debounceTimeout?: number;
 }
 
 export const AsyncAutocomplete = <
@@ -36,11 +46,24 @@ export const AsyncAutocomplete = <
   queryKey,
   ListboxProps,
   queryOptions,
+  watchParams,
+  debounceTimeout = 350,
+  FieldProps,
   ...rest
 }: AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+    // Call passed in onChange if present
+    if (FieldProps?.InputProps?.onChange) FieldProps.InputProps.onChange(event);
+  };
+
+  const debouncedInput = useDebounce(inputValue, debounceTimeout);
+
   const { isLoading, isFetching, data, hasNextPage, fetchNextPage } = useInfiniteQuery({
-    queryKey: [queryKey, limit],
-    queryFn: async ({ pageParam = 0 }) => loadOptions(pageParam, limit),
+    queryKey: [queryKey, limit, debouncedInput, watchParams],
+    queryFn: async ({ pageParam = 0 }) => loadOptions(pageParam, limit, debouncedInput),
     staleTime: 10000,
     getNextPageParam: (lastPage) => (lastPage.hasMore ? lastPage.offset + limit : false),
     ...queryOptions,
@@ -51,6 +74,13 @@ export const AsyncAutocomplete = <
   return (
     <Autocomplete
       {...rest}
+      FieldProps={{
+        ...FieldProps,
+        InputProps: {
+          ...FieldProps?.InputProps,
+          onChange: handleInputChange,
+        },
+      }}
       loading={isFetching}
       options={options}
       ListboxProps={{
