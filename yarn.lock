@@ -126,7 +126,7 @@ __metadata:
     "@availity/mui-popover": "workspace:*"
     "@availity/mui-popper": "workspace:*"
     "@availity/mui-progress": "workspace:*"
-    "@availity/mui-spaces": 0.3.7-alpha.0
+    "@availity/mui-spaces": 0.3.7-alpha.1
     "@availity/mui-stepper": "workspace:*"
     "@availity/mui-table": "workspace:*"
     "@availity/mui-tabs": "workspace:*"
@@ -784,7 +784,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-spaces@0.3.7-alpha.0, @availity/mui-spaces@workspace:packages/spaces":
+"@availity/mui-spaces@0.3.7-alpha.1, @availity/mui-spaces@workspace:packages/spaces":
   version: 0.0.0-use.local
   resolution: "@availity/mui-spaces@workspace:packages/spaces"
   dependencies:
