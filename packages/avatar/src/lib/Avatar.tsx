@@ -54,7 +54,15 @@ export const Avatar = ({ children, size = 'xl', src, sx, ...rest }: AvatarProps)
   }, [src]);
 
   return (
-    <MuiAvatar {...rest} variant="circular" src={children ? undefined : avatar}>
+    <MuiAvatar
+      {...rest}
+      variant="circular"
+      src={children ? undefined : avatar}
+      sx={{
+        ...sx,
+        ...(sizeStyling[size] || sizeStyling.xl),
+      }}
+    >
       {children ? formatChildren(children, size) : <UserIcon />}
     </MuiAvatar>
   );
