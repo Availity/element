@@ -48,7 +48,7 @@
     "@availity/mui-popover": "workspace:*",
     "@availity/mui-popper": "workspace:*",
     "@availity/mui-progress": "workspace:*",
-    "@availity/mui-spaces": "workspace:*",
+    "@availity/mui-spaces": "0.3.7-alpha.0",
     "@availity/mui-stepper": "workspace:*",
     "@availity/mui-table": "workspace:*",
     "@availity/mui-tabs": "workspace:*",
