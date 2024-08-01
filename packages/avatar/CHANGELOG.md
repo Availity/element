@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-avatar@0.1.19...@availity/mui-avatar@0.2.0) (2024-08-01)
+
+
+### Features
+
+* **mui-avatar:** get the user's avatar by default ([3a3e2e7](https://github.com/Availity/element/commit/3a3e2e7da6912d2e9e7d69f676a3e16a8838bfc7))
+
 ## [0.1.19](https://github.com/Availity/element/compare/@availity/mui-avatar@0.1.18...@availity/mui-avatar@0.1.19) (2024-07-22)
 
 ### Dependency Updates
