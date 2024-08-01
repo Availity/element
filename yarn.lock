@@ -39,7 +39,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/api-axios@npm:8.0.8, @availity/api-axios@npm:^8.0.8":
+"@availity/api-axios@npm:8.0.8":
   version: 8.0.8
   resolution: "@availity/api-axios@npm:8.0.8"
   dependencies:
@@ -49,6 +49,19 @@ __metadata:
   peerDependencies:
     axios: ^1.4.0
   checksum: c02fc126d9542e034ac015df767810ac169777749cc51d1531672ae73f754a57c44f642ace842b348c608dcc9e9c619547c2102e2d7a34342c33086361184ccf
+  languageName: node
+  linkType: hard
+
+"@availity/api-axios@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@availity/api-axios@npm:9.0.0"
+  dependencies:
+    "@availity/resolve-url": 3.0.0
+    lodash: ^4.17.21
+    qs: ^6.12.3
+  peerDependencies:
+    axios: ^1.4.0
+  checksum: bcafd76d418e7bfa00d6d0f7062296ffc374d032e56781ef0fbca61e05d073786a388f180ad569c5b31f17181a4178bd6c23d9a50a96b955e3a02f8ab08827c8
   languageName: node
   linkType: hard
 
@@ -236,7 +249,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-autocomplete@workspace:packages/autocomplete"
   dependencies:
-    "@availity/api-axios": ^8.0.8
+    "@availity/api-axios": ^9.0.0
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-textfield": "workspace:^"
     "@mui/material": ^5.15.15
@@ -260,6 +273,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-avatar@workspace:packages/avatar"
   dependencies:
+    "@availity/api-axios": ^9.0.0
     "@availity/design-tokens": "workspace:^"
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
@@ -268,6 +282,7 @@ __metadata:
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
+    "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.11.9
     react: ">=16.3.0"
   languageName: unknown
@@ -514,7 +529,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-favorites@workspace:packages/favorites"
   dependencies:
-    "@availity/api-axios": ^8.0.8
+    "@availity/api-axios": ^9.0.0
     "@availity/message-core": ^6.1.3
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-progress": "workspace:^"
@@ -538,7 +553,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-feedback@workspace:packages/feedback"
   dependencies:
-    "@availity/api-axios": ^8.0.8
+    "@availity/api-axios": ^9.0.0
     "@availity/mui-button": "workspace:^"
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-icon": "workspace:^"
@@ -788,7 +803,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-spaces@workspace:packages/spaces"
   dependencies:
-    "@availity/api-axios": ^8.0.8
+    "@availity/api-axios": ^9.0.0
     "@availity/hooks": ^5.0.2
     "@availity/message-core": ^6.1.3
     "@availity/mui-button": "workspace:^"
@@ -998,6 +1013,13 @@ __metadata:
   version: 2.0.5
   resolution: "@availity/resolve-url@npm:2.0.5"
   checksum: 59980fbd26173a91872c435d7e8617e45049de50d3f67710a1dc845b7740908309dd8b324189f4479d99a18deae013abc7c0e9b87f7bac8d7080123693bfd396
+  languageName: node
+  linkType: hard
+
+"@availity/resolve-url@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@availity/resolve-url@npm:3.0.0"
+  checksum: 5dac7fa0368dc1c18a38b02f96462ae3bfd85953ccc0605bbd2e008a3dd6d904aa73b3deb2318bb1e3ba4feb989acb774712d206b7bffd7e793123e4716789d4
   languageName: node
   linkType: hard
 
@@ -15848,6 +15870,15 @@ __metadata:
   dependencies:
     side-channel: ^1.0.6
   checksum: aa761d99e65b6936ba2dd2187f2d9976afbcda38deb3ff1b3fe331d09b0c578ed79ca2abdde1271164b5be619c521ec7db9b34c23f49a074e5921372d16242d5
+  languageName: node
+  linkType: hard
+
+"qs@npm:^6.12.3":
+  version: 6.12.3
+  resolution: "qs@npm:6.12.3"
+  dependencies:
+    side-channel: ^1.0.6
+  checksum: 9a9228a623bc36d41648237667d7342fb8d64d1cfeb29e474b0c44591ba06ac507e2d726f60eca5af8dc420e5dd23370af408ef8c28e0405675c7187b736a693
   languageName: node
   linkType: hard
 

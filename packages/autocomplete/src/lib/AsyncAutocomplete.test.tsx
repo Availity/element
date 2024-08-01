@@ -8,8 +8,6 @@ import { AsyncAutocomplete } from './AsyncAutocomplete';
 
 const api = new AvApi({ name: 'example' } as ApiConfig);
 
-const client = new QueryClient();
-
 type Option = {
   label: string;
   value: number;
@@ -67,6 +65,8 @@ describe('AsyncAutocomplete', () => {
   });
 
   test('should render successfully', () => {
+    const client = new QueryClient();
+
     const { getByLabelText } = render(
       <QueryClientProvider client={client}>
         <AsyncAutocomplete queryKey="test" FieldProps={{ label: 'Test' }} loadOptions={loadOptions} />
@@ -77,6 +77,8 @@ describe('AsyncAutocomplete', () => {
   });
 
   test('options should be available', async () => {
+    const client = new QueryClient();
+
     render(
       <QueryClientProvider client={client}>
         <AsyncAutocomplete queryKey="test1" loadOptions={loadOptions} FieldProps={{ label: 'Test' }} />
@@ -99,6 +101,8 @@ describe('AsyncAutocomplete', () => {
   });
 
   test('should call loadOptions when scroll to the bottom', async () => {
+    const client = new QueryClient();
+
     render(
       <QueryClientProvider client={client}>
         <AsyncAutocomplete queryKey="test2" loadOptions={loadOptions} limit={10} FieldProps={{ label: 'Test' }} />
@@ -121,6 +125,84 @@ describe('AsyncAutocomplete', () => {
     await waitFor(() => {
       expect(screen.getByText('Option 10')).toBeDefined();
       expect(() => screen.getByText('Option 20')).toThrowError();
+    });
+  });
+
+  test('should search with input value', async () => {
+    const mockLoadOptions = jest.fn(async () => ({ options: [{ label: 'Option 1' }], hasMore: false, offset: 50 }));
+    const client = new QueryClient();
+
+    render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete queryKey="test1" loadOptions={mockLoadOptions} FieldProps={{ label: 'Test' }} />
+      </QueryClientProvider>
+    );
+
+    const input = screen.getByRole('combobox');
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(screen.getByText('Option 1')).toBeDefined();
+      expect(mockLoadOptions).toHaveBeenNthCalledWith(1, 0, 50, '');
+    });
+
+    fireEvent.change(input, { target: { value: 'test' } });
+
+    await waitFor(() => expect(mockLoadOptions).toHaveBeenNthCalledWith(2, 0, 50, 'test'));
+  });
+
+  test('should make call when watchParams changes', async () => {
+    const mockLoadOptions = jest.fn(async () => ({ options: [{ label: 'Option 1' }], hasMore: false, offset: 50 }));
+    const client = new QueryClient();
+
+    const watchParams = { foo: 'bar' };
+
+    const { rerender } = render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete
+          queryKey="test1"
+          loadOptions={mockLoadOptions}
+          FieldProps={{ label: 'Test' }}
+          watchParams={watchParams}
+        />
+      </QueryClientProvider>
+    );
+
+    const input = screen.getByRole('combobox');
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(screen.getByText('Option 1')).toBeDefined();
+      // Check that api was called
+      expect(mockLoadOptions).toHaveBeenNthCalledWith(1, 0, 50, '');
+      // Make sure data is in the query client with given watchParams
+      expect(client.getQueryData(['test1', 50, '', watchParams])).toBeDefined();
+    });
+
+    watchParams.foo = 'test';
+
+    rerender(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete
+          queryKey="test1"
+          loadOptions={mockLoadOptions}
+          FieldProps={{ label: 'Test' }}
+          watchParams={watchParams}
+        />
+      </QueryClientProvider>
+    );
+
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(screen.getByText('Option 1')).toBeDefined();
+      // Check that options were fetched
+      expect(mockLoadOptions).toHaveBeenNthCalledWith(2, 0, 50, '');
+      // Make sure call was made with new watchParams
+      expect(client.getQueryData(['test1', 50, '', watchParams])).toBeDefined();
     });
   });
 });

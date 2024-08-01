@@ -6,6 +6,25 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.44.4-alpha.0](https://github.com/Availity/element/compare/@availity/element@0.44.3...@availity/element@0.44.4-alpha.0) (2024-07-31)
 
+## [0.44.4](https://github.com/Availity/element/compare/@availity/element@0.44.3...@availity/element@0.44.4) (2024-08-01)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `0.44.3`
+* `mui-avatar` updated to version `0.44.3`
+* `mui-checkbox` updated to version `0.44.3`
+* `mui-chip` updated to version `0.44.3`
+* `mui-datepicker` updated to version `0.44.3`
+* `mui-event-tracker` updated to version `0.44.3`
+* `mui-favorites` updated to version `0.44.3`
+* `mui-feedback` updated to version `0.44.3`
+* `mui-form-utils` updated to version `0.44.3`
+* `mui-list` updated to version `0.44.3`
+* `mui-page-header` updated to version `0.44.3`
+* `mui-spaces` updated to version `0.44.3`
+* `mui-table` updated to version `0.44.3`
+* `mui-textfield` updated to version `0.44.3`
+* `theme-provider` updated to version `0.44.3`
 ## [0.44.3](https://github.com/Availity/element/compare/@availity/element@0.44.2...@availity/element@0.44.3) (2024-07-29)
 
 ### Dependency Updates

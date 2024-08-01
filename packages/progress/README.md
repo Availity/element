@@ -51,11 +51,11 @@ yarn add @availity/mui-progress
 #### Import through @availity/element
 
 ```tsx
-import { Progress } from '@availity/element';
+import { CircularProgress } from '@availity/element';
 ```
 
 #### Direct import
 
 ```tsx
-import { Progress } from '@availity/mui-progress';
+import { CircularProgress } from '@availity/mui-progress';
 ```

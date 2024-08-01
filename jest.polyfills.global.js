@@ -15,21 +15,21 @@
  * https://github.com/mswjs/jest-fixed-jsdom#readme
  */
 
-const { TextDecoder, TextEncoder } = require('node:util')
+const { TextDecoder, TextEncoder } = require('node:util');
 
 Object.defineProperties(globalThis, {
   TextDecoder: { value: TextDecoder },
   TextEncoder: { value: TextEncoder },
-})
+});
 
-const { ReadableStream } =  require('node:stream/web')
+const { ReadableStream } = require('node:stream/web');
 
 Object.defineProperties(globalThis, {
-  ReadableStream: { value: ReadableStream }
-})
+  ReadableStream: { value: ReadableStream },
+});
 
-const { Blob, File } = require('node:buffer')
-const { fetch, Headers, FormData, Request, Response } = require('undici')
+const { Blob, File } = require('node:buffer');
+const { fetch, Headers, FormData, Request, Response } = require('undici');
 
 Object.defineProperties(globalThis, {
   fetch: { value: fetch, writable: true },
@@ -39,4 +39,12 @@ Object.defineProperties(globalThis, {
   FormData: { value: FormData },
   Request: { value: Request },
   Response: { value: Response },
-})
+});
+
+const crypto = require('crypto');
+
+Object.defineProperty(globalThis, 'crypto', {
+  value: {
+    randomUUID: () => crypto.randomUUID(),
+  },
+});

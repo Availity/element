@@ -7,7 +7,7 @@ const meta: Meta<typeof Autocomplete> = {
   component: Autocomplete,
   tags: ['autodocs'],
   args: {
-    options: ['1', '2', '3', '4', '5'],
+    options: ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5'],
     id: 'example',
   },
   argTypes: {
