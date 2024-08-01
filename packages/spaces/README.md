@@ -34,7 +34,7 @@ yarn add @availity/element
 
 #### NPM
 
-_This package has a few peer dependencies. Add `@mui/material` & `@emotion/react` to your project if not already installed._
+_This package has a few peer dependencies. See the [Peer Dependencies](#peer-dependencies) section for more information._
 
 ```bash
 npm install @availity/mui-spaces
@@ -45,6 +45,25 @@ npm install @availity/mui-spaces
 ```bash
 yarn add @availity/mui-spaces
 ```
+
+#### Peer Dependencies
+
+Ensure the following dependencies are installed in your project.
+
+- `@availity/mui-button`
+- `@availity/mui-card`
+- `@availity/mui-chip`
+- `@availity/mui-dialog`
+- `@availity/mui-disclaimer`
+- `@availity/mui-favorites`
+- `@availity/mui-icon`
+- `@availity/mui-layout`
+- `@availity/mui-list`
+- `@availity/mui-modal`
+- `@availity/mui-progress`
+- `@availity/mui-typography`
+- `@mui/material`
+- `react`
 
 ### Usage
 

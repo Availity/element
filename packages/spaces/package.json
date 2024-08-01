@@ -80,6 +80,6 @@
     "dayjs": "^1.11.10",
     "qs": "^6.12.1",
     "react-image": "^4.1.0",
-    "react-markdown": "^9.0.1"
+    "react-markdown": "^6.0.3"
   }
 }
