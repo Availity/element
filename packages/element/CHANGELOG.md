@@ -2,10 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.44.4-alpha.1](https://github.com/Availity/element/compare/@availity/element@0.44.4-alpha.0...@availity/element@0.44.4-alpha.1) (2024-07-31)
+## [0.44.5](https://github.com/Availity/element/compare/@availity/element@0.44.4...@availity/element@0.44.5) (2024-08-01)
 
-## [0.44.4-alpha.0](https://github.com/Availity/element/compare/@availity/element@0.44.3...@availity/element@0.44.4-alpha.0) (2024-07-31)
+### Dependency Updates
 
+* `mui-autocomplete` updated to version `0.44.4`
+* `mui-favorites` updated to version `0.44.4`
+* `mui-progress` updated to version `0.44.4`
+* `mui-spaces` updated to version `0.44.4`
 ## [0.44.4](https://github.com/Availity/element/compare/@availity/element@0.44.3...@availity/element@0.44.4) (2024-08-01)
 
 ### Dependency Updates
@@ -25,6 +29,10 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 * `mui-table` updated to version `0.44.3`
 * `mui-textfield` updated to version `0.44.3`
 * `theme-provider` updated to version `0.44.3`
+## [0.44.4-alpha.1](https://github.com/Availity/element/compare/@availity/element@0.44.4-alpha.0...@availity/element@0.44.4-alpha.1) (2024-07-31)
+
+## [0.44.4-alpha.0](https://github.com/Availity/element/compare/@availity/element@0.44.3...@availity/element@0.44.4-alpha.0) (2024-07-31)
+
 ## [0.44.3](https://github.com/Availity/element/compare/@availity/element@0.44.2...@availity/element@0.44.3) (2024-07-29)
 
 ### Dependency Updates

@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.6.4...@availity/mui-autocomplete@0.7.0) (2024-08-01)
+
+
+### Features
+
+* **mui-autocomplete:** add watchParams and inputValue ([1479d65](https://github.com/Availity/element/commit/1479d65830e2878207283639948423cf04fc5bd3))
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** fix unit test ([b8f73ea](https://github.com/Availity/element/commit/b8f73eaf38fad08049dd384fc7f13985b999dd8b))
+
 ## [0.6.4](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.6.3...@availity/mui-autocomplete@0.6.4) (2024-08-01)
 
 ### Dependency Updates
