@@ -65,10 +65,6 @@ Ensure the following dependencies are installed in your project.
 - `@mui/material`
 - `react`
 
-##### Optional Peer Dependencies
-
-There are a few specific components that require `react-markdown` to be installed in your project. If you are using any of the SpacesLink, SpacesAgreement, or SpacesDisclaimer components or the useLink hook, `react-markdown` is a required dependency.
-
 ### Usage
 
 #### Import through @availity/element
