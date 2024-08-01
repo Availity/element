@@ -93,9 +93,9 @@ export const Autocomplete = <
 
   return (
     <MuiAutocomplete
-      renderInput={(params: AutocompleteRenderInputParams) => (
-        <TextField {...params} {...resolvedProps(params)} {...FieldProps} />
-      )}
+      renderInput={(params: AutocompleteRenderInputParams) => {
+        return <TextField {...params} {...FieldProps} {...resolvedProps(params)} />;
+      }}
       popupIcon={<SelectExpandIcon className="MuiSelect-avExpandIcon" />}
       slotProps={{ popupIndicator: { component: PopupIndicatorWrapper } }}
       {...props}
