@@ -1,6 +1,8 @@
 import { default as MuiAvatar, AvatarProps as MuiAvatarProps } from '@mui/material/Avatar';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { tokens } from '@availity/design-tokens';
+import { avSettingsApi } from '@availity/api-axios';
+import { UserIcon } from '@availity/mui-icon';
 
 export interface AvatarProps extends Omit<MuiAvatarProps, 'variant'> {
   /** The size of the component.
@@ -32,17 +34,36 @@ const formatChildren = (children: React.ReactNode, size: 'xs' | 's' | 'm' | 'l' 
   return children;
 };
 
-export const Avatar = ({ children, size = 'xl', sx, ...rest }: AvatarProps): JSX.Element => {
+export const Avatar = ({ children, size = 'xl', src, sx, ...rest }: AvatarProps): JSX.Element => {
+  const [avatar, setAvatar] = React.useState<string>();
+
+  useEffect(() => {
+    const fetchAvatar = async () => {
+      if (src) {
+        setAvatar(src);
+      } else {
+        const resp = await avSettingsApi.getApplication('AVATAR');
+
+        const avi = resp.data.settings[0].avatar;
+
+        setAvatar(avi);
+      }
+    };
+
+    fetchAvatar();
+  }, [src]);
+
   return (
     <MuiAvatar
       {...rest}
       variant="circular"
+      src={children ? undefined : avatar}
       sx={{
         ...sx,
         ...(sizeStyling[size] || sizeStyling.xl),
       }}
     >
-      {formatChildren(children, size)}
+      {children ? formatChildren(children, size) : <UserIcon />}
     </MuiAvatar>
   );
 };

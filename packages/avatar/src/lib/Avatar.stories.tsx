@@ -20,12 +20,16 @@ export default meta;
 
 export const _Avatar: StoryObj<typeof Avatar> = {
   render: (args: AvatarProps) => <Avatar {...args} />,
+};
+
+export const _TextAvatar: StoryObj<typeof Avatar> = {
+  render: (args: AvatarProps) => <Avatar {...args} />,
   args: {
     children: 'John Doe',
   },
 };
 
-export const _ImageAvatar: StoryObj<typeof Avatar> = {
+export const _CustomSrcAvatar: StoryObj<typeof Avatar> = {
   render: (args: AvatarProps) => <Avatar {...args} />,
   args: {
     src: 'https://avatars.githubusercontent.com/u/329985?s=100',
