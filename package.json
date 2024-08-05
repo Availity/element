@@ -84,7 +84,7 @@
     "jsonc-eslint-parser": "^2.4.0",
     "libphonenumber-js": "1.11.4",
     "lint-staged": "^15.2.2",
-    "nx": "19.3.1",
+    "nx": "19.5.6",
     "prettier": "^3.2.5",
     "react-hook-form": "^7.51.3",
     "react-imask": "7.6.1",
