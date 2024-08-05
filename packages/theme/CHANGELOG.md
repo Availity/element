@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.54.0](https://github.com/Availity/element/compare/@availity/theme@0.53.2...@availity/theme@0.54.0) (2024-08-05)
+
+
+### Features
+
+* **mui-icon:** add sizes and base uikit icons ([96e633b](https://github.com/Availity/element/commit/96e633b251c00e6b05057780910105c441fdc059))
+
 ## [0.53.2](https://github.com/Availity/element/compare/@availity/theme@0.53.1...@availity/theme@0.53.2) (2024-08-01)
 
 ## [0.53.1](https://github.com/Availity/element/compare/@availity/theme@0.53.0...@availity/theme@0.53.1) (2024-07-25)
