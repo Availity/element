@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-stepper@0.1.0...@availity/mui-stepper@0.1.1) (2024-08-05)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.0`
+* `mui-icon` updated to version `0.1.0`
 ## 0.1.0 (2024-07-22)
 
 ### Dependency Updates
