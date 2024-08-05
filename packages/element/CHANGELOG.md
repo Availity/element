@@ -2,6 +2,46 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.44.8](https://github.com/Availity/element/compare/@availity/element@0.44.7...@availity/element@0.44.8) (2024-08-05)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `0.44.7`
+* `mui-alert` updated to version `0.44.7`
+* `mui-authorize` updated to version `0.44.7`
+* `mui-autocomplete` updated to version `0.44.7`
+* `mui-avatar` updated to version `0.44.7`
+* `mui-badge` updated to version `0.44.7`
+* `mui-block-ui` updated to version `0.44.7`
+* `mui-breadcrumbs` updated to version `0.44.7`
+* `mui-button` updated to version `0.44.7`
+* `mui-card` updated to version `0.44.7`
+* `mui-checkbox` updated to version `0.44.7`
+* `mui-chip` updated to version `0.44.7`
+* `mui-datepicker` updated to version `0.44.7`
+* `mui-dialog` updated to version `0.44.7`
+* `mui-disclaimer` updated to version `0.44.7`
+* `mui-empty-state` updated to version `0.44.7`
+* `mui-event-tracker` updated to version `0.44.7`
+* `mui-favorites` updated to version `0.44.7`
+* `mui-feedback` updated to version `0.44.7`
+* `mui-form-utils` updated to version `0.44.7`
+* `mui-icon` updated to version `0.44.7`
+* `mui-link` updated to version `0.44.7`
+* `mui-list` updated to version `0.44.7`
+* `mui-menu` updated to version `0.44.7`
+* `mui-modal` updated to version `0.44.7`
+* `mui-page-header` updated to version `0.44.7`
+* `mui-pagination` updated to version `0.44.7`
+* `mui-popper` updated to version `0.44.7`
+* `mui-progress` updated to version `0.44.7`
+* `mui-spaces` updated to version `0.44.7`
+* `mui-stepper` updated to version `0.44.7`
+* `mui-table` updated to version `0.44.7`
+* `mui-textfield` updated to version `0.44.7`
+* `mui-toggle-button` updated to version `0.44.7`
+* `mui-transitions` updated to version `0.44.7`
+* `theme-provider` updated to version `0.44.7`
 ## [0.44.7](https://github.com/Availity/element/compare/@availity/element@0.44.6...@availity/element@0.44.7) (2024-08-02)
 
 ### Dependency Updates
