@@ -23,46 +23,46 @@ import { faFolderOpen as faFolderOpenEmpty } from '@fortawesome/free-regular-svg
 import { SvgIconProps } from '@mui/material/SvgIcon';
 import { FaSvgIcon } from '../FaSvgIcon';
 
-export const FolderIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFolder} {...props} />;
+export const FolderIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFolder} {...props} />;
 
-export const FolderOpenIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFolderOpen} {...props} />;
+export const FolderOpenIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFolderOpen} {...props} />;
 
-export const FolderOpenEmptyIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFolderOpenEmpty} {...props} />;
+export const FolderOpenEmptyIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFolderOpenEmpty} {...props} />;
 
-export const FolderEmptyIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFolderEmpty} {...props} />;
+export const FolderEmptyIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFolderEmpty} {...props} />;
 
-export const FolderTreeIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFolderTree} {...props} />;
+export const FolderTreeIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFolderTree} {...props} />;
 
-export const BoxIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faBoxArchive} {...props} />;
+export const BoxIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faBoxArchive} {...props} />;
 
-export const AttachmentIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPaperclip} {...props} />;
+export const AttachmentIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPaperclip} {...props} />;
 
-export const PictureIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faImage} {...props} />;
+export const PictureIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faImage} {...props} />;
 
-export const FileIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFile} {...props} />;
+export const FileIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFile} {...props} />;
 
-export const FileEmptyIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileEmpty} {...props} />;
+export const FileEmptyIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileEmpty} {...props} />;
 
-export const FileVideoIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileVideo} {...props} />;
+export const FileVideoIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileVideo} {...props} />;
 
-export const FileImageIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileImage} {...props} />;
+export const FileImageIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileImage} {...props} />;
 
-export const FileExcelIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileExcel} {...props} />;
+export const FileExcelIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileExcel} {...props} />;
 
-export const FileWordIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileWord} {...props} />;
+export const FileWordIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileWord} {...props} />;
 
-export const FilePdfIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFilePdf} {...props} />;
+export const FilePdfIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFilePdf} {...props} />;
 
-export const FileArchiveIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileZipper} {...props} />;
+export const FileArchiveIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileZipper} {...props} />;
 
-export const FileCodeIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileCode} {...props} />;
+export const FileCodeIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileCode} {...props} />;
 
-export const FileAudioIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileAudio} {...props} />;
+export const FileAudioIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileAudio} {...props} />;
 
-export const FilePowerpointIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFilePowerpoint} {...props} />;
+export const FilePowerpointIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFilePowerpoint} {...props} />;
 
-export const FileCsvIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileCsv} {...props} />;
+export const FileCsvIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileCsv} {...props} />;
 
-export const FileLinesIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileLines} {...props} />;
+export const FileLinesIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileLines} {...props} />;
 
-export const FileCircleCheckIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileCircleCheck} {...props} />;
+export const FileCircleCheckIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileCircleCheck} {...props} />;

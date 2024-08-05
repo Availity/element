@@ -31,62 +31,62 @@ import { faMessage as faMessageEmpty } from '@fortawesome/free-regular-svg-icons
 import { SvgIconProps } from '@mui/material/SvgIcon';
 import { FaSvgIcon } from '../FaSvgIcon';
 
-export const HeartIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faHeart} {...props} />;
+export const HeartIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faHeart} {...props} />;
 
-export const HeartEmptyIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faHeartEmpty} {...props} />;
+export const HeartEmptyIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faHeartEmpty} {...props} />;
 
-export const MinusCircleIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faMinusCircle} {...props} />;
+export const MinusCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faMinusCircle} {...props} />;
 
-export const PlusCircleIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPlusCircle} {...props} />;
+export const PlusCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPlusCircle} {...props} />;
 
-export const CancelCircleIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faXmarkCircle} {...props} />;
+export const CancelCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faXmarkCircle} {...props} />;
 
-export const CheckCircleIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCheckCircle} {...props} />;
+export const CheckCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCheckCircle} {...props} />;
 
-export const CloseIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faClose} {...props} />;
+export const CloseIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faClose} {...props} />;
 
-export const ExpandIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faAngleDown} {...props} />;
+export const ExpandIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faAngleDown} {...props} />;
 
-export const CollapseIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faAngleUp} {...props} />;
+export const CollapseIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faAngleUp} {...props} />;
 
-export const TriangleExpandIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCaretDown} {...props} />;
+export const TriangleExpandIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCaretDown} {...props} />;
 
-export const TriangleCollapseIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCaretUp} {...props} />;
+export const TriangleCollapseIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCaretUp} {...props} />;
 
-export const DeleteIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faTrashCan} {...props} />;
+export const DeleteIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faTrashCan} {...props} />;
 
-export const CommentsIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faComments} {...props} />;
+export const CommentsIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faComments} {...props} />;
 
-export const EditIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPenToSquare} {...props} />;
+export const EditIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPenToSquare} {...props} />;
 
-export const MinusIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faMinus} {...props} />;
+export const MinusIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faMinus} {...props} />;
 
-export const PlusIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPlus} {...props} />;
+export const PlusIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPlus} {...props} />;
 
-export const LinkIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faLink} {...props} />;
+export const LinkIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faLink} {...props} />;
 
-export const LinkSlashIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faLinkSlash} {...props} />;
+export const LinkSlashIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faLinkSlash} {...props} />;
 
-export const ThumbtackIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faThumbtack} {...props} />;
+export const ThumbtackIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faThumbtack} {...props} />;
 
-export const TagIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faTag} {...props} />;
+export const TagIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faTag} {...props} />;
 
-export const TagsIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faTags} {...props} />;
+export const TagsIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faTags} {...props} />;
 
-export const PenIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPen} {...props} />;
+export const PenIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPen} {...props} />;
 
-export const PencilIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPencil} {...props} />;
+export const PencilIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPencil} {...props} />;
 
-export const MessageIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faMessage} {...props} />;
+export const MessageIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faMessage} {...props} />;
 
-export const MessageEmptyIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faMessageEmpty} {...props} />;
+export const MessageEmptyIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faMessageEmpty} {...props} />;
 
-export const ArrowsRotateIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faArrowsRotate} {...props} />;
+export const ArrowsRotateIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faArrowsRotate} {...props} />;
 
-export const PasteIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPaste} {...props} />;
+export const PasteIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPaste} {...props} />;
 
-export const PlayIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPlay} {...props} />;
+export const PlayIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPlay} {...props} />;
 
-export const PauseIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPause} {...props} />;
+export const PauseIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPause} {...props} />;
 
-export const GearsIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faGears} {...props} />;
+export const GearsIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faGears} {...props} />;

@@ -11,20 +11,20 @@ import { faMoneyBill } from '@fortawesome/free-solid-svg-icons/faMoneyBill';
 import { SvgIconProps } from '@mui/material/SvgIcon';
 import { FaSvgIcon } from '../FaSvgIcon';
 
-export const CreditCardIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCreditCard} {...props} />;
+export const CreditCardIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCreditCard} {...props} />;
 
-export const CreditCardAmexIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcAmex as IconDefinition} {...props} />;
+export const CreditCardAmexIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcAmex as IconDefinition} {...props} />;
 
-export const CreditCardDiscoverIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcDiscover as IconDefinition} {...props} />;
+export const CreditCardDiscoverIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcDiscover as IconDefinition} {...props} />;
 
-export const CreditCardMastercardIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcMastercard as IconDefinition} {...props} />;
+export const CreditCardMastercardIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcMastercard as IconDefinition} {...props} />;
 
-export const CreditCardPaypalIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcPaypal as IconDefinition} {...props} />;
+export const CreditCardPaypalIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcPaypal as IconDefinition} {...props} />;
 
-export const CreditCardStripeIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcStripe as IconDefinition} {...props} />;
+export const CreditCardStripeIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcStripe as IconDefinition} {...props} />;
 
-export const CreditCardVisaIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcVisa as IconDefinition} {...props} />;
+export const CreditCardVisaIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCcVisa as IconDefinition} {...props} />;
 
-export const MoneyBillIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faMoneyBill} {...props} />;
+export const MoneyBillIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faMoneyBill} {...props} />;
 
-export const CartShoppingIcon = ({ ...props }: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCartShopping} {...props} />;
+export const CartShoppingIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCartShopping} {...props} />;
