@@ -1851,18 +1851,24 @@ export const legacyTheme = {
         fontSize: 'inherit',
       },
       styleOverrides: {
-        sizeXsmall: {
+        fontSizeXxsmall: {
           fontSize: '.875rem',
         },
-        sizeSmall: {
-          fontSize: '.875rem',
-        },
-        sizeMedium: {
+        fontSizeXsmall: {
           fontSize: '1rem',
         },
-        sizeLarge: {
-          fontSize: '1.25rem',
+        fontSizeSmall: {
+          fontSize: '1.33rem',
         },
+        fontSizeMedium: {
+          fontSize: '1.66rem',
+        },
+        fontSizeLarge: {
+          fontSize: '2rem',
+        },
+        fontSizeXlarge: {
+          fontSize: '3rem',
+        }
       },
     },
     MuiSwitch: {

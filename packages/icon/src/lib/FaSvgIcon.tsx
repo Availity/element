@@ -6,7 +6,9 @@ import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 
 declare module '@mui/material/SvgIcon' {
   interface SvgIconPropsSizeOverrides {
+    xxsmall: true;
     xsmall: true;
+    xlarge: true;
   }
 }
 
@@ -14,7 +16,7 @@ export interface FaSvgIconProps extends SvgIconProps {
   /** Font Awesome Svg */
   icon: IconDefinition;
   /** The fontSize applied to the icon. @default 'inherit' */
-  fontSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'inherit';
+  fontSize?: 'xxsmall' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'inherit';
 }
 
 export const FaSvgIcon = React.forwardRef<SVGSVGElement, FaSvgIconProps>((props, ref) => {

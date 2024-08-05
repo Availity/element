@@ -29,6 +29,10 @@ export const _Sizes: StoryObj<typeof HomeIcon> = {
       <Grid xs={10}>
         <HomeIcon fontSize="inherit" />
       </Grid>
+      <Grid xs={2}>XXSmall</Grid>
+      <Grid xs={10}>
+        <HomeIcon fontSize="xxsmall" />
+      </Grid>
       <Grid xs={2}>XSmall</Grid>
       <Grid xs={10}>
         <HomeIcon fontSize="xsmall" />
@@ -44,6 +48,10 @@ export const _Sizes: StoryObj<typeof HomeIcon> = {
       <Grid xs={2}>Large</Grid>
       <Grid xs={10}>
         <HomeIcon fontSize="large" />
+      </Grid>
+      <Grid xs={2}>XLarge</Grid>
+      <Grid xs={10}>
+        <HomeIcon fontSize="xlarge" />
       </Grid>
     </Grid>
   ),

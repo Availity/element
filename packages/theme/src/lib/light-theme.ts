@@ -1662,9 +1662,15 @@ export const lightTheme = {
         fontSize: 'inherit',
       },
       styleOverrides: {
+        fontSizeXxsmall: {
+          fontSize: '.75rem',
+        },
         fontSizeXsmall: {
           fontSize: '1rem',
         },
+        fontSizeXlarge: {
+          fontSize: '2.5rem',
+        }
       },
     },
     MuiTab: {

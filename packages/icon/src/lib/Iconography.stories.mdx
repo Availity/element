@@ -5,6 +5,7 @@ import SvgIcon from '@mui/material/SvgIcon';
 import { AvIcons } from './Icons/LegacyUIKitFonts';
 import * as Actions from './Icons/Actions';
 import * as Common from './Icons/Common';
+import * as Data from './Icons/Data';
 import * as Files from './Icons/Files';
 import * as Form from './Icons/Form';
 import * as Navigation from './Icons/Navigation';
@@ -30,6 +31,16 @@ Component names append `Icon` to the names below. For instance, the `Home` icon 
 
 <IconGallery>
   {Object.values(Actions).map((icon) => (
+    <IconItem key={icon.displayName} name={icon.displayName?.substring(0, icon.displayName?.length - 4)}>
+      {icon({ 'aria-hidden': false })}
+    </IconItem>
+  ))}
+</IconGallery>
+
+## Data
+
+<IconGallery>
+  {Object.values(Data).map((icon) => (
     <IconItem key={icon.displayName} name={icon.displayName?.substring(0, icon.displayName?.length - 4)}>
       {icon({ 'aria-hidden': false })}
     </IconItem>
