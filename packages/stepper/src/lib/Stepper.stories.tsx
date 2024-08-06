@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@availity/mui-button';
 import { Typography } from '@availity/mui-typography';
 import { Box } from '@availity/mui-layout';
+import { Paper } from '@availity/mui-paper';
 
 import { Stepper, StepperProps } from './Stepper';
 import { Step } from './Step';
@@ -81,63 +82,65 @@ export const _Stepper: StoryObj<typeof Stepper> = {
 
     return (
       <Box maxWidth="75vw" marginX="auto">
-        <Stepper activeStep={activeStep} {...args}>
-          {steps.map((label, index) => {
-            const stepProps: { completed?: boolean } = {};
-            const labelProps: { optional?: React.ReactNode; error?: boolean; warning?: boolean } = {};
+        <Paper sx={{ padding: '2rem' }}>
+          <Stepper activeStep={activeStep} {...args}>
+            {steps.map((label, index) => {
+              const stepProps: { completed?: boolean } = {};
+              const labelProps: { optional?: React.ReactNode; error?: boolean; warning?: boolean } = {};
 
-            if (isStepOptional(index)) {
-              labelProps.optional = <Typography variant="caption">Optional</Typography>;
-            }
+              if (isStepOptional(index)) {
+                labelProps.optional = <Typography variant="caption">Optional</Typography>;
+              }
 
-            if (isStepSkipped(index)) {
-              stepProps.completed = false;
-            }
+              if (isStepSkipped(index)) {
+                stepProps.completed = false;
+              }
 
-            if (isStepError(index)) {
-              labelProps.error = true;
-            }
+              if (isStepError(index)) {
+                labelProps.error = true;
+              }
 
-            if (isStepWarning(index)) {
-              labelProps.warning = true;
-            }
+              if (isStepWarning(index)) {
+                labelProps.warning = true;
+              }
 
-            return (
-              <Step key={label} {...stepProps}>
-                <StepLabel {...labelProps}>{label}</StepLabel>
-              </Step>
-            );
-          })}
-        </Stepper>
-        {activeStep === steps.length ? (
-          <>
-            <Typography sx={{ mt: 2, mb: 1 }}>All steps completed - you&apos;re finished</Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-              <Box sx={{ flex: '1 1 auto' }} />
-              <Button color="tertiary" onClick={handleReset}>
-                Reset
-              </Button>
-            </Box>
-          </>
-        ) : (
-          <>
-            <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-              <Button color="secondary" disabled={activeStep === 0} onClick={handleBack} sx={{ mr: 1 }}>
-                Back
-              </Button>
-              <Box sx={{ flex: '1 1 auto' }} />
-              {isStepOptional(activeStep) && (
-                <Button color="secondary" onClick={handleSkip} sx={{ mr: 1 }}>
-                  Skip
+              return (
+                <Step key={label} {...stepProps}>
+                  <StepLabel {...labelProps}>{label}</StepLabel>
+                </Step>
+              );
+            })}
+          </Stepper>
+          {activeStep === steps.length ? (
+            <>
+              <Typography sx={{ mt: 2, mb: 1 }}>All steps completed - you&apos;re finished</Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+                <Box sx={{ flex: '1 1 auto' }} />
+                <Button color="tertiary" onClick={handleReset}>
+                  Reset
                 </Button>
-              )}
-              <Button color={activeStep === steps.length - 1 ? 'primary' : 'secondary'} onClick={handleNext}>
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-              </Button>
-            </Box>
-          </>
-        )}
+              </Box>
+            </>
+          ) : (
+            <>
+              <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+                <Button color="secondary" disabled={activeStep === 0} onClick={handleBack} sx={{ mr: 1 }}>
+                  Back
+                </Button>
+                <Box sx={{ flex: '1 1 auto' }} />
+                {isStepOptional(activeStep) && (
+                  <Button color="secondary" onClick={handleSkip} sx={{ mr: 1 }}>
+                    Skip
+                  </Button>
+                )}
+                <Button color={activeStep === steps.length - 1 ? 'primary' : 'secondary'} onClick={handleNext}>
+                  {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                </Button>
+              </Box>
+            </>
+          )}
+        </Paper>
       </Box>
     );
   },
@@ -153,10 +156,14 @@ export const _StepLabel: StoryObj<typeof StepLabel> = {
 
 export const _Step: StoryObj<typeof Step> = {
   render: (args) => (
-    <Stepper>
-      <Step {...args}>
-        <StepLabel>Label</StepLabel>
-      </Step>
-    </Stepper>
+    <Box>
+      <Paper sx={{ padding: '2rem' }}>
+        <Stepper>
+          <Step {...args}>
+            <StepLabel>Label</StepLabel>
+          </Step>
+        </Stepper>
+      </Paper>
+    </Box>
   ),
 };

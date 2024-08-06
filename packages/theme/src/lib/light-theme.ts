@@ -438,7 +438,7 @@ export const lightTheme = {
             },
             ':has(.MuiListItemButton-root.Mui-focusVisible.Mui-selected)': {
               boxShadow: `${tokens.shadows4}, 0 0 0px 1px ${tokens.colorPrimaryMain}`,
-              borderColor: tokens.colorPrimaryMain
+              borderColor: tokens.colorPrimaryMain,
             },
           },
         },
@@ -453,24 +453,24 @@ export const lightTheme = {
             textDecoration: 'none',
             backgroundColor: 'transparent',
             '&:hover': {
-              textDecoration: 'underline'
-            }
+              textDecoration: 'underline',
+            },
           },
-          'p': {
+          p: {
             marginBlockStart: 0,
-            marginBlockEnd: 0
-          }
+            marginBlockEnd: 0,
+          },
         },
         avDateInfo: {
           '.MuiChip-root': {
-            marginRight: '.25rem'
-          }
+            marginRight: '.25rem',
+          },
         },
         avFavoriteHeart: {
           marginTop: '-.5rem',
           marginRight: '.5rem',
           marginLeft: '-.5rem',
-          minWidth: 'auto'
+          minWidth: 'auto',
         },
         iconLink: {
           height: '2.5rem',
@@ -489,10 +489,10 @@ export const lightTheme = {
             color: tokens.colorTextSecondary,
           },
           '&:hover': {
-            backgroundColor: tokens.colorActionHover
-          }
-        }
-      }
+            backgroundColor: tokens.colorActionHover,
+          },
+        },
+      },
     },
     MuiAccordion: {
       defaultProps: {
@@ -1238,11 +1238,11 @@ export const lightTheme = {
     MuiList: {
       styleOverrides: {
         root: {
-            ".MuiListItem-divider:last-of-type": {
-                borderBottom: 0,
-            },
-        }
-      }
+          '.MuiListItem-divider:last-of-type': {
+            borderBottom: 0,
+          },
+        },
+      },
     },
     MuiListItem: {
       defaultProps: {
@@ -1262,7 +1262,7 @@ export const lightTheme = {
             '> .MuiChip-root': {
               marginTop: '1.25rem',
               marginBottom: '-1.25rem',
-              transform: 'translateY(-50%)'
+              transform: 'translateY(-50%)',
             },
           },
           // no padding primarily used with ListItemButton
@@ -1274,14 +1274,15 @@ export const lightTheme = {
           '.MuiListItemSecondaryAction-root': {
             top: '1.75rem',
           },
-          '&.MuiListItem-padding:not(.MuiListItem-dense), &:not(.MuiListItem-padding):not(.MuiListItem-dense) .MuiListItemButton-root:not(.MuiListItemButton-dense)': {
-            paddingTop: '.75rem',
-            paddingBottom: '.75rem',
-            '> .MuiIconButton-root, > .MuiChip-root': {
-              marginTop: '1rem',
-              marginBottom: '-1rem'
-            }
-          },
+          '&.MuiListItem-padding:not(.MuiListItem-dense), &:not(.MuiListItem-padding):not(.MuiListItem-dense) .MuiListItemButton-root:not(.MuiListItemButton-dense)':
+            {
+              paddingTop: '.75rem',
+              paddingBottom: '.75rem',
+              '> .MuiIconButton-root, > .MuiChip-root': {
+                marginTop: '1rem',
+                marginBottom: '-1rem',
+              },
+            },
           '&.MuiListItem-dense': {
             '.MuiListItemButton-root > .MuiChip-root': {
               marginTop: '1rem',
@@ -1292,7 +1293,7 @@ export const lightTheme = {
               marginBottom: '-1.5rem',
             },
             '.MuiListItemSecondaryAction-root': {
-              top: '1.25rem'
+              top: '1.25rem',
             },
             '&.MuiListItem-padding': {
               '> .MuiIconButton-root, > .MuiChip-root': {
@@ -1309,16 +1310,16 @@ export const lightTheme = {
               width: '1.5rem',
               height: '1.5rem',
               '.MuiSvgIcon-root': {
-                fontSize: '.75rem'
-              }
-            }
+                fontSize: '.75rem',
+              },
+            },
           },
           '.MuiListItemIcon-root': {
             minWidth: '3rem',
             '+ .MuiListItemText-inset': {
-              paddingLeft: '3rem'
-            }
-          }
+              paddingLeft: '3rem',
+            },
+          },
         },
       },
     },
@@ -1403,10 +1404,10 @@ export const lightTheme = {
           fontSize: '1.5rem',
           minWidth: '3.5rem',
           '+ .MuiListItemText-inset': {
-            paddingLeft: '3.5rem'
-          }
-        }
-      }
+            paddingLeft: '3.5rem',
+          },
+        },
+      },
     },
     MuiListItemText: {
       defaultProps: {
@@ -1522,12 +1523,6 @@ export const lightTheme = {
         },
       },
     },
-    MuiStepper: {},
-    MuiStep: {
-      styleOverrides: {
-        root: {},
-      },
-    },
     MuiStepIcon: {
       styleOverrides: {
         root: {
@@ -1556,6 +1551,7 @@ export const lightTheme = {
         },
         text: {
           fill: tokens.colorTextSuccess,
+          // fontSize: '18px',
         },
       },
     },

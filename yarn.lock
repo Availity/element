@@ -856,6 +856,7 @@ __metadata:
     "@availity/mui-button": "workspace:^"
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-layout": "workspace:^"
+    "@availity/mui-paper": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
