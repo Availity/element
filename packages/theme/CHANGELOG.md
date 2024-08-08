@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.54.1](https://github.com/Availity/element/compare/@availity/theme@0.54.0...@availity/theme@0.54.1) (2024-08-08)
+
+
+### Bug Fixes
+
+* **theme:** fix icon colors and sizes ([300ee4b](https://github.com/Availity/element/commit/300ee4baa1876b5be9da919ee27d660e9e3ed437))
+
 ## [0.54.0](https://github.com/Availity/element/compare/@availity/theme@0.53.2...@availity/theme@0.54.0) (2024-08-05)
 
 
