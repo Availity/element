@@ -10,6 +10,14 @@ const meta: Meta<typeof HomeIcon> = {
   title: 'Components/Icon/Named Icons',
   component: HomeIcon,
   tags: ['autodocs'],
+  argTypes: {
+    color: {
+      control: 'text',
+    },
+    fontSize: {
+      control: 'text',
+    },
+  },
 };
 
 export default meta;

@@ -1851,6 +1851,15 @@ export const legacyTheme = {
         fontSize: 'inherit',
       },
       styleOverrides: {
+        colorInfo: {
+          color: tokens.colorPrimaryMain,
+        },
+        colorPrimary: {
+          color: tokens.colorTextPrimary,
+        },
+        colorWarning: {
+          color: tokens.colorWarningDark,
+        },
         fontSizeXxsmall: {
           fontSize: '.875rem',
         },

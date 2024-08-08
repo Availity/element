@@ -142,6 +142,7 @@ export const lightTheme = {
       secondary: tokens.colorTextSecondary,
       disabled: tokens.colorTextDisabled,
       error: tokens.colorTextError,
+      warning: tokens.colorWarningDark,
       hint: 'rgba(0, 0, 0, 0.38)',
       divider: 'rgba(0, 0, 0, 0.12)',
       success: tokens.colorTextSuccess,
@@ -1662,14 +1663,23 @@ export const lightTheme = {
         fontSize: 'inherit',
       },
       styleOverrides: {
+        colorPrimary: {
+          color: tokens.colorTextPrimary,
+        },
+        colorWarning: {
+          color: tokens.colorWarningDark,
+        },
         fontSizeXxsmall: {
           fontSize: '.75rem',
         },
         fontSizeXsmall: {
           fontSize: '1rem',
         },
+        fontSizeLarge: {
+          fontSize: '2rem',
+        },
         fontSizeXlarge: {
-          fontSize: '2.5rem',
+          fontSize: '2.25rem',
         }
       },
     },
