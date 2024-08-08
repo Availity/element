@@ -27,15 +27,15 @@ import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
 import { SvgIconProps } from '@mui/material/SvgIcon';
 import { FaSvgIcon } from '../FaSvgIcon';
 
-export const HelpCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faQuestionCircle} titleAccess="help" {...props} />;
+export const HelpCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faQuestionCircle} {...props} />;
 
 export const SuccessCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCheckCircle} {...props} />;
 
-export const InfoCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faInfoCircle} titleAccess="information" {...props} />;
+export const InfoCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faInfoCircle} {...props} />;
 
-export const WarningCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faExclamationCircle} titleAccess="warning" {...props} />;
+export const WarningCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faExclamationCircle} {...props} />;
 
-export const WarningTriangleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faExclamationTriangle} titleAccess="error" {...props} />;
+export const WarningTriangleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faExclamationTriangle} {...props} />;
 
 export const FaceSmileIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFaceSmile} {...props} />;
 

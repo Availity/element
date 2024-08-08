@@ -8,10 +8,10 @@ export type AlertProps = Omit<MUIAlertProps, 'variant' | 'color'> & {
 };
 
 const iconMapping = {
-  error: <WarningCircleIcon aria-hidden={false} titleAccess="error" />,
-  info: <InfoCircleIcon aria-hidden={false} />,
-  success: <SuccessCircleIcon aria-hidden={false} />,
-  warning: <WarningCircleIcon aria-hidden={false} sx={{ color: 'warning.dark' }} />,
+  error: <WarningCircleIcon />,
+  info: <InfoCircleIcon />,
+  success: <SuccessCircleIcon />,
+  warning: <WarningCircleIcon sx={{ color: 'warning.dark' }} />,
 };
 
 export const Alert = ({ ...args }: AlertProps): JSX.Element => (
