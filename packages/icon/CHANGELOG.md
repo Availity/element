@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.10.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.10.0...@availity/mui-icon@0.10.1) (2024-08-08)
+
+
+### Bug Fixes
+
+* **mui-icon:** deprecate duplicate checkcircleicon ([5f744a9](https://github.com/Availity/element/commit/5f744a90014b7507511f012075cceeded54001e5))
+* **mui-icon:** remove default title ([40c2541](https://github.com/Availity/element/commit/40c2541765cb6448db2bf3839fec08d974f0a5c1))
+
 ## [0.10.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.9.0...@availity/mui-icon@0.10.0) (2024-08-05)
 
 
