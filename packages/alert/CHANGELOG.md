@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.16](https://github.com/Availity/element/compare/@availity/mui-alert@0.5.15...@availity/mui-alert@0.5.16) (2024-08-08)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.5.15`
+* `mui-icon` updated to version `0.5.15`
+
+### Bug Fixes
+
+* **mui-icon:** remove default title ([40c2541](https://github.com/Availity/element/commit/40c2541765cb6448db2bf3839fec08d974f0a5c1))
+
 ## [0.5.15](https://github.com/Availity/element/compare/@availity/mui-alert@0.5.14...@availity/mui-alert@0.5.15) (2024-08-05)
 
 ### Dependency Updates
