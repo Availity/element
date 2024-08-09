@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { TextField } from '@availity/mui-textfield';
-import { LoadingButton, Button } from '@availity/mui-button';
+import { LoadingButton, Button, IconButton } from '@availity/mui-button';
 import { ToggleButtonGroup, ToggleButton } from '@availity/mui-toggle-button';
 import Grid from '@mui/material/Grid';
 import { SvgIconProps } from '@mui/material/SvgIcon';
@@ -41,7 +41,16 @@ const FormActions = styled(Grid, { name: 'AvFeedbackContainer', slot: 'FormActio
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SmileButton = ({ disabled, Icon, label, value, ...props }: SmileButtonProps) => (
   <div>
-    <ToggleButton aria-label={value} value={value} {...props} disabled={disabled} size="large">
+    <ToggleButton
+      component={IconButton}
+      disableRipple
+      title={label}
+      aria-label={value}
+      value={value}
+      {...props}
+      disabled={disabled}
+      size="large"
+    >
       <Icon />
     </ToggleButton>
   </div>

@@ -346,14 +346,14 @@ export const lightTheme = {
           }
         },
         feedbackHeaderContainer: {
-          marginTop: '16px',
+          marginTop: '14px',
           marginLeft: '16px',
           marginRight: '16px',
           marginBottom: '6px',
           width: 'auto',
           '.MuiButtonBase-root': {
             marginRight: '-10px',
-            marginTop: '-6px'
+            marginTop: '-8px'
           }
         },
         smileButtons: {
