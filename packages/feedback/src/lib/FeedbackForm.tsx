@@ -41,8 +41,8 @@ const FormActions = styled(Grid, { name: 'AvFeedbackContainer', slot: 'FormActio
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SmileButton = ({ disabled, Icon, label, value, ...props }: SmileButtonProps) => (
   <div>
-    <ToggleButton aria-label={value} value={value} {...props} disabled={disabled}>
-      <Icon fontSize="large" />
+    <ToggleButton aria-label={value} value={value} {...props} disabled={disabled} size="large">
+      <Icon />
     </ToggleButton>
   </div>
 );
@@ -148,28 +148,26 @@ export const FeedbackForm = ({
             );
           }}
         />
-        {smileFieldValue && (
-          <TextField
-            {...register('feedback', {
-              required: 'This field is required',
-              maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
-            })}
-            fullWidth
-            multiline
-            minRows={3}
-            maxRows={3}
-            label={getFeedbackLabel()}
-            inputProps={{ 'aria-required': 'true' }}
-            InputLabelProps={{
-              component: FormLabel,
-              required: true,
-            }}
-            helperText={errors.feedback?.message || 'Max 200 characters'}
-            error={!!errors.feedback}
-            disabled={loading}
-          />
-        )}
-        <FormActions container direction="row" spacing={1}>
+        <TextField
+          {...register('feedback', {
+            required: 'This field is required',
+            maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
+          })}
+          fullWidth
+          multiline
+          minRows={3}
+          maxRows={3}
+          label={getFeedbackLabel()}
+          inputProps={{ 'aria-required': 'true' }}
+          InputLabelProps={{
+            component: FormLabel,
+            required: true,
+          }}
+          helperText={errors.feedback?.message || 'Max 200 characters'}
+          error={!!errors.feedback}
+          disabled={loading || !smileFieldValue}
+        />
+        <FormActions container direction="row">
           <Grid item>
             <Button color="secondary" disabled={loading} onClick={handleClose}>
               Cancel

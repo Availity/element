@@ -356,12 +356,12 @@ export const legacyTheme = {
         feedbackHeaderContainer: {
           backgroundColor: tokens.colorGrey100,
           padding: '15px 1.5rem',
+          '.MuiButtonBase-root': {
+            paddingRight: 0
+          }
         },
         smileButtons: {
-          marginBottom: '1.25rem',
-          paddingTop: '1.5rem',
-          paddingLeft: '1.5rem',
-          paddingRight: '1.5rem',
+          padding: '2rem 1.5rem',
           width: '100%',
           div: {
             width: '100%',
@@ -371,6 +371,7 @@ export const legacyTheme = {
           '.MuiToggleButton-root': {
             width: '100%',
             border: 0,
+            borderRadius: tokens.borderRadiusMd,
             '&:focus': {
               backgroundColor: tokens.colorActionFocus,
               color: tokens.colorTextPrimary,
@@ -392,7 +393,7 @@ export const legacyTheme = {
                 backgroundColor: tokens.colorPrimaryMain20,
               },
             },
-            '&.MuiToggleButton-sizeMedium': {
+            '&.MuiToggleButton-sizeLarge': {
               padding: '.375rem .75rem',
               height: 'auto',
               '.MuiSvgIcon-root': {
@@ -402,10 +403,14 @@ export const legacyTheme = {
           },
         },
         formActions: {
-          marginTop: '16px',
           backgroundColor: tokens.colorGrey100,
           padding: '15px 1.5rem',
           justifyContent: 'flex-end',
+          '.MuiGrid-item': {
+            '&:first-of-type': {
+              paddingRight: '8px',
+            },
+          },
         },
       },
     },
