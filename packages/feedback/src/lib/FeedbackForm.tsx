@@ -177,13 +177,19 @@ export const FeedbackForm = ({
           disabled={loading || !smileFieldValue}
         />
         <FormActions container direction="row">
-          <Grid item>
+          <Grid item flex={1} minWidth="147px">
             <Button color="secondary" disabled={loading} onClick={handleClose}>
-              Cancel
+              Close
             </Button>
           </Grid>
-          <Grid item>
-            <LoadingButton disabled={!smileFieldValue} loading={loading} type="submit" variant="contained">
+          <Grid item flex={1}>
+            <LoadingButton
+              disabled={!smileFieldValue}
+              loading={loading}
+              type="submit"
+              variant="contained"
+              sx={{ paddingLeft: 0, paddingRight: 0 }}
+            >
               Send Feedback
             </LoadingButton>
           </Grid>

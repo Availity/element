@@ -406,18 +406,13 @@ export const lightTheme = {
           },
         },
         formActions: {
-          margin: '14px 16px 16px',
+          margin: '14px 12px 8px',
           '.MuiGrid-item': {
-            flexBasis: '50%',
-            '&:first-of-type': {
-              paddingRight: '8px',
-            },
-            '&:last-of-type': {
-              paddingLeft: '8px',
-            }
+            padding: '0px 4px 8px',
           },
           '.MuiButton-root': {
-            width: '100%'
+            width: '100%',
+            whiteSpace: 'nowrap'
           },
         },
       },
