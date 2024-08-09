@@ -16,7 +16,7 @@ const FeedbackHeaderContainer = styled(Grid, { name: 'AvFeedbackContainer', slot
 export const FeedbackHeader = ({ appName, handleClose, loading, sent }: FeedbackHeaderProps): JSX.Element => {
   return (
     <FeedbackHeaderContainer
-      alignItems="center"
+      alignItems="flex-start"
       container
       direction="row"
       justifyContent="space-between"
@@ -30,7 +30,7 @@ export const FeedbackHeader = ({ appName, handleClose, loading, sent }: Feedback
       </Grid>
       <Grid item>
         <IconButton disabled={loading} title="Close" onClick={handleClose} size="medium">
-          <CloseIcon fontSize="small" />
+          <CloseIcon fontSize="xsmall" />
         </IconButton>
       </Grid>
     </FeedbackHeaderContainer>
