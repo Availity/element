@@ -337,55 +337,83 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           maxWidth: '490px',
-          padding: '16px',
+          padding: 0,
           '@media (min-width: 600px)': {
             maxWidth: '490px',
-            padding: '16px',
+            padding: 0,
           },
+          'form .MuiFormControl-root': {
+            margin: '0px 16px',
+          }
+        },
+        feedbackHeaderContainer: {
+          marginTop: '14px',
+          marginLeft: '16px',
+          marginRight: '16px',
+          marginBottom: '6px',
+          width: 'auto',
+          '.MuiButtonBase-root': {
+            marginRight: '-10px',
+            marginTop: '-8px'
+          }
         },
         smileButtons: {
-          marginBottom: '16px',
+          marginTop:'2px',
+          marginBottom: '8px',
           '.MuiToggleButton-root': {
-            margin: '8px',
-            '&:focus': {
-              backgroundColor: tokens.colorActionFocus,
-              color: tokens.colorTextPrimary,
-              boxShadow: 'none',
+            borderColor: tokens.colorSecondaryMain,
+            borderRadius: tokens.borderRadiusMd,
+            color: tokens.colorSecondaryMain,
+            margin: '14px 12px',
+            fontSize: '2rem',
+            '&:active': {
+              backgroundColor: '#00000020',
+            },
+            '&:hover, &:focus': {
+              backgroundColor: '#00000008',
+              color: tokens.colorSecondaryMain,
+            },
+            '&:hover:focus': {
+              borderColor: tokens.colorPrimaryContrast,
             },
             '&:hover': {
-              backgroundColor: tokens.colorActionHover,
-              color: tokens.colorTextPrimary,
-              borderColor: tokens.colorGrey400,
+              borderColor: tokens.colorSecondaryMain,
+            },
+            '&:focus': {
+              borderColor: tokens.colorPrimaryContrast,
+              boxShadow: `0px 0px 0px 2px ${tokens.borderSecondary}`,
             },
             '&.Mui-selected': {
               backgroundColor: tokens.colorPrimaryMain,
-              '&:active': {
-                backgroundColor: tokens.colorPrimaryDarker,
+              borderColor: tokens.colorPrimaryMain,
+              '&:active, &:hover': {
+                backgroundColor: tokens.colorPrimaryDark,
               },
               '&:focus': {
-                boxShadow: 'none',
-              },
-              '&:focus, &:hover': {
-                backgroundColor: tokens.colorPrimaryDark,
-                color: tokens.colorCommonWhite,
+                backgroundColor: tokens.colorPrimaryMain,
+                borderColor: tokens.colorPrimaryContrast,
+                boxShadow: `0px 0px 0px 2px ${tokens.colorPrimaryMain}`,
+                color: tokens.colorPrimaryContrast,
               },
               '&.Mui-disabled': {
-                backgroundColor: tokens.colorPrimaryMain20,
+                color: tokens.colorActionDisabled,
+                borderColor: tokens.borderDisabled
               },
             },
-            '&.MuiToggleButton-sizeMedium': {
+            '&.MuiToggleButton-sizeLarge': {
               padding: '12px',
-              height: 'auto',
+              width: '56px'
             },
           },
         },
         formActions: {
-          marginTop: '16px',
+          margin: '14px 12px 8px',
           '.MuiGrid-item': {
-            flexBasis: '50%',
+            padding: '0px 4px 8px',
           },
           '.MuiButton-root': {
             width: '100%',
+            whiteSpace: 'nowrap'
           },
         },
       },

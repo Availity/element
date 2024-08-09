@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { TextField } from '@availity/mui-textfield';
-import { LoadingButton, Button } from '@availity/mui-button';
+import { LoadingButton, Button, IconButton } from '@availity/mui-button';
 import { ToggleButtonGroup, ToggleButton } from '@availity/mui-toggle-button';
 import Grid from '@mui/material/Grid';
 import { SvgIconProps } from '@mui/material/SvgIcon';
@@ -41,8 +41,17 @@ const FormActions = styled(Grid, { name: 'AvFeedbackContainer', slot: 'FormActio
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SmileButton = ({ disabled, Icon, label, value, ...props }: SmileButtonProps) => (
   <div>
-    <ToggleButton aria-label={value} value={value} {...props} disabled={disabled}>
-      <Icon fontSize="large" />
+    <ToggleButton
+      component={IconButton}
+      disableRipple
+      title={label}
+      aria-label={value}
+      value={value}
+      {...props}
+      disabled={disabled}
+      size="large"
+    >
+      <Icon />
     </ToggleButton>
   </div>
 );
@@ -148,35 +157,39 @@ export const FeedbackForm = ({
             );
           }}
         />
-        {smileFieldValue && (
-          <TextField
-            {...register('feedback', {
-              required: 'This field is required',
-              maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
-            })}
-            fullWidth
-            multiline
-            minRows={3}
-            maxRows={3}
-            label={getFeedbackLabel()}
-            inputProps={{ 'aria-required': 'true' }}
-            InputLabelProps={{
-              component: FormLabel,
-              required: true,
-            }}
-            helperText={errors.feedback?.message || 'Max 200 characters'}
-            error={!!errors.feedback}
-            disabled={loading}
-          />
-        )}
-        <FormActions container direction="row" spacing={1}>
-          <Grid item>
+        <TextField
+          {...register('feedback', {
+            required: 'This field is required',
+            maxLength: { value: 200, message: 'This field must not exceed 200 characters' },
+          })}
+          fullWidth
+          multiline
+          minRows={3}
+          maxRows={3}
+          label={getFeedbackLabel()}
+          inputProps={{ 'aria-required': 'true' }}
+          InputLabelProps={{
+            component: FormLabel,
+            required: true,
+          }}
+          helperText={errors.feedback?.message || 'Max 200 characters'}
+          error={!!errors.feedback}
+          disabled={loading || !smileFieldValue}
+        />
+        <FormActions container direction="row">
+          <Grid item flex={1} minWidth="147px">
             <Button color="secondary" disabled={loading} onClick={handleClose}>
-              Cancel
+              Close
             </Button>
           </Grid>
-          <Grid item>
-            <LoadingButton disabled={!smileFieldValue} loading={loading} type="submit" variant="contained">
+          <Grid item flex={1}>
+            <LoadingButton
+              disabled={!smileFieldValue}
+              loading={loading}
+              type="submit"
+              variant="contained"
+              sx={{ paddingLeft: 0, paddingRight: 0 }}
+            >
               Send Feedback
             </LoadingButton>
           </Grid>

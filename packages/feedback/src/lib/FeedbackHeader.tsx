@@ -16,10 +16,9 @@ const FeedbackHeaderContainer = styled(Grid, { name: 'AvFeedbackContainer', slot
 export const FeedbackHeader = ({ appName, handleClose, loading, sent }: FeedbackHeaderProps): JSX.Element => {
   return (
     <FeedbackHeaderContainer
-      alignItems="center"
+      alignItems="flex-start"
       container
       direction="row"
-      marginBottom={!sent ? '8px' : '0px'}
       justifyContent="space-between"
       flexWrap="nowrap"
       id="feedback-form-header"
@@ -29,9 +28,9 @@ export const FeedbackHeader = ({ appName, handleClose, loading, sent }: Feedback
           {sent ? 'Thank you for your feedback.' : `Tell us what you think about ${appName}`}
         </Typography>
       </Grid>
-      <Grid item marginRight="-8px">
-        <IconButton disabled={loading} title="Close" onClick={handleClose}>
-          <CloseIcon />
+      <Grid item>
+        <IconButton disabled={loading} title="Close" onClick={handleClose} size="medium">
+          <CloseIcon fontSize="xsmall" />
         </IconButton>
       </Grid>
     </FeedbackHeaderContainer>

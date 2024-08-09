@@ -6,17 +6,23 @@ import { styled } from '@mui/material/styles';
 import { avLogMessagesApiV2 } from '@availity/api-axios';
 import { FeedbackForm } from './FeedbackForm';
 import { FeedbackHeader } from './FeedbackHeader';
+import { CommentsIcon } from '@availity/mui-icon';
 
 export interface FeedbackProps {
   analytics?: { info: (entries: Record<string, unknown>) => void };
   appName: string;
+  buttonVariant?: 'secondary' | 'tertiary';
 }
 
 const FeedbackContainer = styled(Container, { name: 'AvFeedbackContainer', slot: 'root' })({});
 
 const GiveFeedbackButton = styled(Button, { name: 'AvGiveFeedbackButton', slot: 'root' })({});
 
-export const Feedback = ({ analytics = avLogMessagesApiV2, appName }: FeedbackProps): JSX.Element => {
+export const Feedback = ({
+  analytics = avLogMessagesApiV2,
+  appName,
+  buttonVariant = 'secondary',
+}: FeedbackProps): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [sent, setSent] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -34,7 +40,7 @@ export const Feedback = ({ analytics = avLogMessagesApiV2, appName }: FeedbackPr
 
   return (
     <>
-      <GiveFeedbackButton onClick={handlePopoverOpen} color="secondary">
+      <GiveFeedbackButton onClick={handlePopoverOpen} color={buttonVariant} startIcon={<CommentsIcon />}>
         Give Feedback
       </GiveFeedbackButton>
       <Popover
