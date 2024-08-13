@@ -10,6 +10,7 @@ import organizations from './data/organizations.json';
 import user from './data/user.json';
 import settings from './data/settings.json';
 import avatarSettings from './data/avatarSettings.json';
+import codes from './data/codes.json';
 
 // type ConfigurationFindMany = {
 //   data: {
@@ -100,6 +101,12 @@ export const handlers = [
 
     await delay(defaultDelay);
     return HttpResponse.json(body, { status: 201 });
+  }),
+
+  // Codes
+  http.get(routes.CODES, async () => {
+    await delayRequest();
+    return HttpResponse.json(codes, { status: 200 });
   }),
 
   // Thanos

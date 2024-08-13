@@ -1,5 +1,6 @@
 // Aries 1
 export const AXI_USER_PERMISSIONS = '/api/internal/v1/axi-user-permissions';
+export const CODES = '/api/v1/codes';
 export const LOG = '/api/v1/log-messages';
 export const REGIONS = '/api/sdk/platform/v1/regions';
 export const SETTINGS = '/api/utils/v1/settings';

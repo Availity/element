@@ -1,0 +1,10 @@
+###
+
+GET http://localhost:5050/api/v1/codes?list=GENALLPRV03&offset=50
+Content-Type: application/json
+
+{
+  "offset": 50,
+  "limit": 50,
+  "list": "GENALLPRV03"
+}
