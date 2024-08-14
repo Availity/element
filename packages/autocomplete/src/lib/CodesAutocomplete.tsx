@@ -11,12 +11,11 @@ type Code = {
 
 const fetchCodes = async (config: ApiConfig) => {
   const resp = await avCodesApi.query(config);
-  console.log('resp:', resp);
 
   return {
     options: resp.data.codes as Code[],
-    hasMore: false,
-    offset: 0,
+    hasMore: config.params.offset + config.params.limit < resp.data.totalCount,
+    offset: config.params.offset,
   };
 };
 
