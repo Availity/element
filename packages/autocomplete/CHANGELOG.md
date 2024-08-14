@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.7.2...@availity/mui-autocomplete@0.8.0) (2024-08-14)
+
+
+### Features
+
+* **mui-autocomplete:** add CodesAutocomplete component ([b7da2bc](https://github.com/Availity/element/commit/b7da2bc716920a64c31b09482d8c9e8668b338e4))
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** remove console.log and add paging logic ([a0bd9dd](https://github.com/Availity/element/commit/a0bd9dd0a4191d29bb004edcf3958f183e71a188))
+
 ## [0.7.2](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.7.1...@availity/mui-autocomplete@0.7.2) (2024-08-08)
 
 ### Dependency Updates
