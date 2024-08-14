@@ -123,8 +123,6 @@ An `AsyncAutocomplete` component is exported for use cases that require fetching
 
 The `loadOptions` function will be called when the user scrolls to the bottom of the dropdown. It will be passed the current offset and limit. The `limit` prop controls what is passed to `loadOptions` and is defaulted to `50`. The `loadOptions` function must return an object that has an array of `options`, a boolean `hasMore` property, and the `offset`. The returned `options` will be concatenated to the existing options array. `hasMore` tells the `AsyncAutocomplete` component whether or not it should call `loadOptions` again. Finally, the returned `offset` will be passed in the subsequent call to get the next set of options.
 
-The `queryOptions` prop is available for passing in options to the `useInfiniteQuery` hook. One example of how this can be used is by using the `enabled` property. This can be used in cases where you would like to render the autocomplete, but are waiting on fetching the options. For example, if you need the user to fill out a section of the form before fetching the options for the autocomplete.
-
 ```jsx
 import { Autocomplete } from '@availity/element';
 import { callApi } from '../api';
@@ -139,8 +137,44 @@ const Example = () => {
       offset,
     };
   };
+    return <Autocomplete FieldProps={{ label: 'Async Dropdown' }} loadOptions={loadOptions} />;
+};
+```
 
-  return <Autocomplete FieldProps={{ label: 'Async Dropdown' }} loadOptions={loadOptions} />;
+The `queryOptions` prop is available for passing in options to the `useInfiniteQuery` hook. One example of how this can be used is by using the `enabled` property. This can be used in cases where you would like to render the autocomplete, but are waiting on fetching the options. For example, if you need the user to fill out a section of the form before fetching the options for the autocomplete.
+
+`AsyncAutocomplete` uses `react-query` which means we can take advantage of the `queryKey` to fetch new options as needed. This functionality is exposed via the `watchParams` prop. This prop accepts an object. Whenever a value in the object is changed then page is reset to 0 and the api is called again.
+
+```jsx
+import { useState } from 'react';
+import { Autocomplete, Button } from '@availity/element';
+
+import { callApi } from '../api';
+
+const Example = () => {
+  const [id, setId] = useState('');
+
+  const loadOptions = async (offset: number, limit: number) => {
+    const response = await callApi(id, offset, limit);
+
+    return {
+      options: repsonse.data,
+      hasMore: response.data.totalCount > response.data.count,
+      offset,
+    };
+  };
+
+  return (
+    <>
+      <Button onClick={() => setId('123')}>Set ID</Button>
+      <Autocomplete
+        FieldProps={{ label: 'Async Dropdown' }}
+        loadOptions={loadOptions}
+        queryOptions={{ enabled: !!id }}
+        watchParams={{ id }}
+      />
+    </>
+  );
 };
 ```
 
@@ -171,7 +205,13 @@ The `queryKey` by default is `prov-autocomplete`.
 ```jsx
 import { ProviderAutocomplete } from '@availity/element';
 
-const Example = () => {
-  return <ProviderAutocomplete customerId="1234" FieldProps={{ label: 'Provider Select', placeholder: 'Select...' }} />;
+const Example = ({ customerId }: { customerId: string }) => {
+  return (
+    <ProviderAutocomplete
+      customerId={customerId}
+      FieldProps={{ label: 'Provider Select', placeholder: 'Select...' }}
+      watchParams={{ customerId }}
+    />
+  );
 };
 ```
