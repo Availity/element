@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@availity/api-axios": "^9.0.0",
-    "@availity/message-core": "^6.1.3",
+    "@availity/message-core": "^7.0.1",
     "@tanstack/react-query": "^4.36.1"
   },
   "devDependencies": {
