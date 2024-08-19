@@ -636,6 +636,10 @@ export const legacyTheme = {
       },
       styleOverrides: {
         root: {
+          '.MuiOutlinedInput-root.MuiInputBase-sizeSmall': {
+            paddingTop: '4px',
+            paddingBottom: '4px'
+          },
           '&.Mui-error .MuiAutocomplete-popupIndicator': {
             color: tokens.borderError,
           },
@@ -676,7 +680,7 @@ export const legacyTheme = {
           paddingBottom: '4px',
           '.MuiOutlinedInput-input.MuiAutocomplete-input': {
             minHeight: '24px',
-            padding: '2px 6px',
+            paddingLeft: '2px 6px',
           },
           '.MuiCircularProgress-root.MuiCircularProgress-indeterminate': {
             color: 'inherit',
