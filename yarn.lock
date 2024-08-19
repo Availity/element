@@ -174,10 +174,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/message-core@npm:^6.1.3":
-  version: 6.1.3
-  resolution: "@availity/message-core@npm:6.1.3"
-  checksum: 46ca06275f19d9c07d44a2810bfbc76601088436d002ec142109a61abac6e091e72a564427ec1524d427bea33f25e3a8253143e913562d0b72344b015503889f
+"@availity/message-core@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@availity/message-core@npm:7.0.1"
+  checksum: e18835f8c5bdb2630d6af54ace963666288e4530f5a3ea722761f89a3ff050cdac04347d96c6be033629b6e5414a0e8cef242c76bf4dec50068ae00a91ef26f9
   languageName: node
   linkType: hard
 
@@ -530,7 +530,7 @@ __metadata:
   resolution: "@availity/mui-favorites@workspace:packages/favorites"
   dependencies:
     "@availity/api-axios": ^9.0.0
-    "@availity/message-core": ^6.1.3
+    "@availity/message-core": ^7.0.1
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-tooltip": "workspace:^"
@@ -577,7 +577,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-form-utils@workspace:packages/form-utils"
   dependencies:
-    "@availity/message-core": ^6.1.3
+    "@availity/message-core": ^7.0.1
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.15.15
@@ -806,7 +806,7 @@ __metadata:
   dependencies:
     "@availity/api-axios": ^9.0.0
     "@availity/hooks": ^5.0.2
-    "@availity/message-core": ^6.1.3
+    "@availity/message-core": ^7.0.1
     "@availity/mui-button": "workspace:^"
     "@availity/mui-card": "workspace:^"
     "@availity/mui-chip": "workspace:^"
