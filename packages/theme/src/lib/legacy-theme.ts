@@ -680,7 +680,7 @@ export const legacyTheme = {
           paddingBottom: '4px',
           '.MuiOutlinedInput-input.MuiAutocomplete-input': {
             minHeight: '24px',
-            paddingLeft: '2px 6px',
+            padding: '2px 6px',
           },
           '.MuiCircularProgress-root.MuiCircularProgress-indeterminate': {
             color: 'inherit',
