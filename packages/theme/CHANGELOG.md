@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.54.4](https://github.com/Availity/element/compare/@availity/theme@0.54.3...@availity/theme@0.54.4) (2024-08-20)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** expand icon positioning ([5a2f1de](https://github.com/Availity/element/commit/5a2f1de48afe64b7c5c1b20d06fe9444d2761cad))
+
 ## [0.54.3](https://github.com/Availity/element/compare/@availity/theme@0.54.2...@availity/theme@0.54.3) (2024-08-09)
 
 ## [0.54.2](https://github.com/Availity/element/compare/@availity/theme@0.54.1...@availity/theme@0.54.2) (2024-08-08)
