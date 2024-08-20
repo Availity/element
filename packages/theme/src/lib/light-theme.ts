@@ -1630,9 +1630,9 @@ export const lightTheme = {
       styleOverrides: {
         avExpandIcon: {
           position: 'relative',
-          top: '50%',
+          top: 'calc(50% - 2px)',
           transform: 'translateY(-50%)',
-          fontSize: '1rem',
+          fontSize: '1rem'
         },
         icon: {
           '&.MuiSvgIcon-root:not(.MuiTablePagination-selectIcon)': {
