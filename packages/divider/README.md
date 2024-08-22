@@ -6,9 +6,6 @@
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-divider.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-divider)
 [![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-divider?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-divider/package.json)
 
-- ⚠️ _needs component theme added to @availity/theme_
-- ⚠️ _needs UI Team Verification (must conform to [Availity's Figma Design Standards](https://www.figma.com/file/bf6l79hehcKdRjb5Kzq1De/Element--MUI-%F0%9F%9A%A7?node-id=4662%3A14&t=QMqHeT6daeqXbjBR-1) - private link)_
-
 ## Documentation
 
 This package extends the MUI Divider component: [MUI Divider Docs](https://mui.com/components/divider/)
