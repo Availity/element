@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.7](https://github.com/Availity/element/compare/@availity/mui-feedback@0.2.6...@availity/mui-feedback@0.2.7) (2024-08-22)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.2.6`
+* `mui-textfield` updated to version `0.2.6`
 ## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-feedback@0.2.5...@availity/mui-feedback@0.2.6) (2024-08-16)
 
 ### Dependency Updates
