@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.54.5](https://github.com/Availity/element/compare/@availity/theme@0.54.4...@availity/theme@0.54.5) (2024-08-22)
+
+### Dependency Updates
+
+* `design-tokens` updated to version `0.54.4`
+
+### Bug Fixes
+
+* **theme:** update borderdecorative tokens ([1c70e61](https://github.com/Availity/element/commit/1c70e61cd3bd986da842733358274fc4dd46dcc5))
+
 ## [0.54.4](https://github.com/Availity/element/compare/@availity/theme@0.54.3...@availity/theme@0.54.4) (2024-08-20)
 
 
