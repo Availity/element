@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.13.3](https://github.com/Availity/element/compare/@availity/design-tokens@0.13.2...@availity/design-tokens@0.13.3) (2024-08-22)
+
+
+### Bug Fixes
+
+* **design-tokens:** fix borderdecorative color ([0bd22b3](https://github.com/Availity/element/commit/0bd22b31efa52116e22bc22359bd31b504f47b78))
+
 ## [0.13.2](https://github.com/Availity/element/compare/@availity/design-tokens@0.13.1...@availity/design-tokens@0.13.2) (2024-04-19)
 
 ## [0.13.1](https://github.com/Availity/element/compare/@availity/design-tokens@0.13.0...@availity/design-tokens@0.13.1) (2024-01-12)
