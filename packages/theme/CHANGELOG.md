@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.54.6](https://github.com/Availity/element/compare/@availity/theme@0.54.5...@availity/theme@0.54.6) (2024-08-22)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** autocomplete padding ([e54abdf](https://github.com/Availity/element/commit/e54abdf10dbe4739c60d0c2fa467757aeba6c95b))
+* **mui-autocomplete:** autocomplete sizing matches TextField now ([dc2a3ac](https://github.com/Availity/element/commit/dc2a3acef8290a5c830519b8e7c199b34ae491d4))
+
 ## [0.54.5](https://github.com/Availity/element/compare/@availity/theme@0.54.4...@availity/theme@0.54.5) (2024-08-22)
 
 ### Dependency Updates
