@@ -452,6 +452,40 @@ export const _SectionedForm: StoryObj = {
                       }}
                     />
                   </Grid>
+                  <Grid xs={12} sm={6} md={4}>
+                    <TextField
+                      label="Text Field"
+                      fullWidth
+                      required
+                      {...register('field2', { required: 'This field is required' })}
+                      error={!!errors.field1?.message}
+                      helperText={errors.field1?.message || 'Help text'}
+                      placeholder="Value"
+                      size="medium"
+                    />
+                  </Grid>
+                  <Grid xs={12} sm={6} md={8}>
+                    <Controller
+                      control={control}
+                      name="dropdown3"
+                      render={({ field: { onChange, value, onBlur } }) => {
+                        return (
+                          <Autocomplete
+                            onChange={(event, value, reason) => {
+                              if (reason === 'clear') {
+                                onChange(null);
+                              }
+                              onChange(value);
+                            }}
+                            onBlur={onBlur}
+                            FieldProps={{ label: 'Dropdown', placeholder: 'Value', size: 'medium' }}
+                            options={dropdownOptions}
+                            value={value || null}
+                          />
+                        );
+                      }}
+                    />
+                  </Grid>
                   <Grid xs={12} />
                   <Grid xs={12}>
                     <Divider />

@@ -636,6 +636,10 @@ export const legacyTheme = {
       },
       styleOverrides: {
         root: {
+          '.MuiOutlinedInput-root.MuiInputBase-sizeSmall': {
+            paddingTop: '4px',
+            paddingBottom: '4px'
+          },
           '&.Mui-error .MuiAutocomplete-popupIndicator': {
             color: tokens.borderError,
           },
