@@ -1286,7 +1286,7 @@ export const legacyTheme = {
               },
             },
             '.MuiSelect-avEndAdornmentDivider': {
-              borderColor: tokens.colorBackgroundBorder,
+              borderColor: tokens.borderDecorative,
               width: 'auto',
             },
             '.MuiChip-root': {
@@ -1686,7 +1686,7 @@ export const legacyTheme = {
       },
       styleOverrides: {
         root: {
-          borderColor: tokens.colorBackgroundBorder,
+          borderColor: tokens.borderDecorative,
         },
       },
     },
@@ -1767,7 +1767,7 @@ export const legacyTheme = {
       styleOverrides: {
         paper: {
           boxShadow: 'none',
-          border: `1px solid ${tokens.colorBackgroundBorder}`,
+          border: `1px solid ${tokens.borderDecorative}`,
         },
       },
     },
@@ -1979,7 +1979,7 @@ export const legacyTheme = {
             borderRadius: '.25rem',
           },
           '&.Mui-selected': {
-            borderColor: tokens.colorBackgroundBorder,
+            borderColor: tokens.borderDecorative,
             borderBottomColor: tokens.colorBackgroundPaper,
             color: tokens.colorTextPrimary,
           },
