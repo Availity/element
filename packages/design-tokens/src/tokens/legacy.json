@@ -1528,7 +1528,7 @@
         "type": "color"
       },
       "border": {
-        "value": "#D7DAE0",
+        "value": "#E8EBEB",
         "type": "color"
       }
     }
@@ -2219,7 +2219,7 @@
       "type": "color"
     },
     "decorative": {
-      "value": "#D7DAE0",
+      "value": "#E8EBEB",
       "type": "color"
     },
     "input": {
