@@ -691,6 +691,9 @@ export const lightTheme = {
             marginRight: '0',
             width: '2.25rem',
             height: '2.25rem',
+            '.MuiSelect-avExpandIcon': {
+              top: 'calc(50% - 2px)'
+            }
           },
         },
         popupIndicator: {
@@ -1630,7 +1633,7 @@ export const lightTheme = {
       styleOverrides: {
         avExpandIcon: {
           position: 'relative',
-          top: 'calc(50% - 2px)',
+          top: '50%',
           transform: 'translateY(-50%)',
           fontSize: '1rem'
         },
