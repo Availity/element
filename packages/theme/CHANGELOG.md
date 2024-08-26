@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.54.8](https://github.com/Availity/element/compare/@availity/theme@0.54.7...@availity/theme@0.54.8) (2024-08-26)
+
+
+### Bug Fixes
+
+* **mui-stepper:** increase text size ([b8663c4](https://github.com/Availity/element/commit/b8663c43ad5b84fe095855ff40291f9a9ba9c06b))
+
 ## [0.54.7](https://github.com/Availity/element/compare/@availity/theme@0.54.6...@availity/theme@0.54.7) (2024-08-23)
 
 ## [0.54.6](https://github.com/Availity/element/compare/@availity/theme@0.54.5...@availity/theme@0.54.6) (2024-08-22)
