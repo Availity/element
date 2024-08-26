@@ -344,7 +344,7 @@ export const lightTheme = {
           },
           'form .MuiFormControl-root': {
             margin: '0px 16px',
-          }
+          },
         },
         feedbackHeaderContainer: {
           marginTop: '14px',
@@ -354,11 +354,11 @@ export const lightTheme = {
           width: 'auto',
           '.MuiButtonBase-root': {
             marginRight: '-10px',
-            marginTop: '-8px'
-          }
+            marginTop: '-8px',
+          },
         },
         smileButtons: {
-          marginTop:'2px',
+          marginTop: '2px',
           marginBottom: '8px',
           '.MuiToggleButton-root': {
             borderColor: tokens.colorSecondaryMain,
@@ -397,12 +397,12 @@ export const lightTheme = {
               },
               '&.Mui-disabled': {
                 color: tokens.colorActionDisabled,
-                borderColor: tokens.borderDisabled
+                borderColor: tokens.borderDisabled,
               },
             },
             '&.MuiToggleButton-sizeLarge': {
               padding: '12px',
-              width: '56px'
+              width: '56px',
             },
           },
         },
@@ -413,7 +413,7 @@ export const lightTheme = {
           },
           '.MuiButton-root': {
             width: '100%',
-            whiteSpace: 'nowrap'
+            whiteSpace: 'nowrap',
           },
         },
       },
@@ -1583,7 +1583,7 @@ export const lightTheme = {
         },
         text: {
           fill: tokens.colorTextSuccess,
-          // fontSize: '18px',
+          fontSize: '18px',
         },
       },
     },
@@ -1707,7 +1707,7 @@ export const lightTheme = {
         },
         fontSizeXlarge: {
           fontSize: '2.25rem',
-        }
+        },
       },
     },
     MuiTab: {
