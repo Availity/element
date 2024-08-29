@@ -48,14 +48,16 @@ yarn add @availity/mui-progress
 
 ### Usage
 
+The two progress components we have are `CircularProgress` and `LinearProgress`.
+
 #### Import through @availity/element
 
 ```tsx
-import { CircularProgress } from '@availity/element';
+import { CircularProgress, LinearProgress } from '@availity/element';
 ```
 
 #### Direct import
 
 ```tsx
-import { CircularProgress } from '@availity/mui-progress';
+import { CircularProgress, LinearProgress } from '@availity/mui-progress';
 ```
