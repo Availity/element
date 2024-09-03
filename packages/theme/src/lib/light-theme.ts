@@ -692,8 +692,8 @@ export const lightTheme = {
             width: '2.25rem',
             height: '2.25rem',
             '.MuiSelect-avExpandIcon': {
-              top: 'calc(50% - 2px)'
-            }
+              top: 'calc(50% - 2px)',
+            },
           },
         },
         popupIndicator: {
@@ -1555,6 +1555,13 @@ export const lightTheme = {
         },
       },
     },
+    MuiLinearProgress: {
+      styleOverrides: {
+        barColorSuccess: {
+          backgroundColor: tokens.colorSuccessLight,
+        },
+      },
+    },
     MuiStepIcon: {
       styleOverrides: {
         root: {
@@ -1635,7 +1642,7 @@ export const lightTheme = {
           position: 'relative',
           top: '50%',
           transform: 'translateY(-50%)',
-          fontSize: '1rem'
+          fontSize: '1rem',
         },
         icon: {
           '&.MuiSvgIcon-root:not(.MuiTablePagination-selectIcon)': {

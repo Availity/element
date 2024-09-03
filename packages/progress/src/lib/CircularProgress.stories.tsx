@@ -4,14 +4,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CircularProgress, CircularProgressProps } from './CircularProgress';
 
 const meta: Meta<typeof CircularProgress> = {
-  title: 'Components/Progress/Progress',
+  title: 'Components/Progress/CircularProgress',
   component: CircularProgress,
   tags: ['autodocs'],
 };
 
 export default meta;
 
-export const _Progress: StoryObj<typeof CircularProgress> = {
+export const _CircularProgress: StoryObj<typeof CircularProgress> = {
   render: (args: CircularProgressProps) => <CircularProgress {...args} />,
   args: {},
 };
