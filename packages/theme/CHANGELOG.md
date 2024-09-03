@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.55.0](https://github.com/Availity/element/compare/@availity/theme@0.54.8...@availity/theme@0.55.0) (2024-09-03)
+
+
+### Features
+
+* **mui-progress:** add LinearProgress component ([1f82d8f](https://github.com/Availity/element/commit/1f82d8f0691e1dc5d6b5f86993dfc2a0e2e1aeb8))
+
 ## [0.54.8](https://github.com/Availity/element/compare/@availity/theme@0.54.7...@availity/theme@0.54.8) (2024-08-26)
 
 
