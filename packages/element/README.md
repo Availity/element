@@ -8,7 +8,7 @@
 
 This is a collection of reusable React components intended to be used across multiple projects. These components use [@availity/design-tokens](https://github.com/Availity/element/tree/main/packages/design-tokens#readme) for styling and [Material UI](https://mui.com/) as the base.
 
-Visit our [documentation site](https://zeroheight.com/07045d232/v/latest/p/753cd8-element) and [Storybook](https://availity.github.io/element/?path=/docs/element--docs) for more information on how to use the components.
+Visit our [documentation site](https://zeroheight.com/2e36e50c7/p/77f9e0-components) and [Storybook](https://availity.github.io/element/?path=/docs/element--docs) for more information on how to use the components.
 
 ## Installation
 
