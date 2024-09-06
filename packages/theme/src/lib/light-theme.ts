@@ -44,6 +44,59 @@ const typographyStyles = (type: string) => ({
 export const lightTheme = {
   mode: 'light',
   palette: {
+    contrastThreshold: 4.5,
+    contrastText: '#fff',
+    tonalOffset: 0.2,
+    divider: tokens.borderDecorative,
+    text: {
+      primary: tokens.colorTextPrimary,
+      secondary: tokens.colorTextSecondary,
+      disabled: tokens.colorTextDisabled,
+      error: tokens.colorTextError,
+      warning: tokens.colorWarningDark,
+      hint: 'rgba(0, 0, 0, 0.38)',
+      divider: 'rgba(0, 0, 0, 0.12)',
+      success: tokens.colorTextSuccess,
+      info: tokens.colorTextInfo,
+      link: tokens.colorTextLink,
+      inverse: tokens.colorTextInverse,
+      inverseSecondary: tokens.colorTextInverseSecondary,
+    },
+    border: {
+      primary: tokens.borderPrimary,
+      secondary: tokens.borderSecondary,
+      error: tokens.borderError,
+      disabled: tokens.borderDisabled,
+      decorative: tokens.borderDecorative,
+      input: tokens.borderInput,
+      inputHover: tokens.borderInputHover,
+      inputFocus: tokens.borderInputFocus,
+      inverse: tokens.borderInverse,
+      inverseSecondary: tokens.borderInverseSecondary,
+    },
+    background: {
+      canvas: tokens.colorBackgroundCanvas,
+      paper: tokens.colorBackgroundPaper,
+      header: tokens.colorBackgroundHeader,
+      subnav: tokens.colorBackgroundSubnav,
+      sidenav: tokens.colorBackgroundSidenav,
+      accent: tokens.colorBackgroundAccent,
+      border: tokens.colorBackgroundBorder,
+      default: tokens.colorGrey100,
+    },
+    action: {
+      active: tokens.colorActionActive,
+      hover: tokens.colorActionHover,
+      hoverOpacity: 0.04,
+      selected: tokens.colorActionSelected,
+      selectedOpacity: 0.08,
+      disabled: tokens.colorActionDisabled,
+      disabledBackground: tokens.colorActionDisabledBg,
+      disabledOpacity: 0.38,
+      focus: tokens.colorActionFocus,
+      focusOpacity: 0.12,
+      activatedOpacity: 0.12,
+    },
     primary: {
       main: tokens.colorPrimaryMain,
       light: tokens.colorPrimaryLight,
@@ -133,58 +186,6 @@ export const lightTheme = {
       700: tokens.colorBlue700,
       800: tokens.colorBlue800,
       900: tokens.colorBlue900,
-    },
-    contrastThreshold: 4.5,
-    contrastText: '#fff',
-    tonalOffset: 0.2,
-    text: {
-      primary: tokens.colorTextPrimary,
-      secondary: tokens.colorTextSecondary,
-      disabled: tokens.colorTextDisabled,
-      error: tokens.colorTextError,
-      warning: tokens.colorWarningDark,
-      hint: 'rgba(0, 0, 0, 0.38)',
-      divider: 'rgba(0, 0, 0, 0.12)',
-      success: tokens.colorTextSuccess,
-      info: tokens.colorTextInfo,
-      link: tokens.colorTextLink,
-      inverse: tokens.colorTextInverse,
-      inverseSecondary: tokens.colorTextInverseSecondary,
-    },
-    border: {
-      primary: tokens.borderPrimary,
-      secondary: tokens.borderSecondary,
-      error: tokens.borderError,
-      disabled: tokens.borderDisabled,
-      decorative: tokens.borderDecorative,
-      input: tokens.borderInput,
-      inputHover: tokens.borderInputHover,
-      inputFocus: tokens.borderInputFocus,
-      inverse: tokens.borderInverse,
-      inverseSecondary: tokens.borderInverseSecondary,
-    },
-    background: {
-      canvas: tokens.colorBackgroundCanvas,
-      paper: tokens.colorBackgroundPaper,
-      header: tokens.colorBackgroundHeader,
-      subnav: tokens.colorBackgroundSubnav,
-      sidenav: tokens.colorBackgroundSidenav,
-      accent: tokens.colorBackgroundAccent,
-      border: tokens.colorBackgroundBorder,
-      default: tokens.colorGrey100,
-    },
-    action: {
-      active: tokens.colorActionActive,
-      hover: tokens.colorActionHover,
-      hoverOpacity: 0.04,
-      selected: tokens.colorActionSelected,
-      selectedOpacity: 0.08,
-      disabled: tokens.colorActionDisabled,
-      disabledBackground: tokens.colorActionDisabledBg,
-      disabledOpacity: 0.38,
-      focus: tokens.colorActionFocus,
-      focusOpacity: 0.12,
-      activatedOpacity: 0.12,
     },
   },
   typography: {
@@ -526,14 +527,20 @@ export const lightTheme = {
     MuiAccordion: {
       defaultProps: {
         disableGutters: false,
-        variant: 'elevation',
       },
       styleOverrides: {
         root: {
           '&:before': {
             content: 'none',
           },
-          borderColor: tokens.colorBackgroundCanvas,
+          '&:not(.Av-disableNested) .MuiAccordionDetails-root': {
+            '.MuiAccordion-root': {
+              border: 'none',
+            },
+            '.MuiAccordionSummary-root:not(.Mui-focusVisible, :hover, :active)': {
+              backgroundColor: 'inherit',
+            },
+          }
         },
       },
     },
@@ -548,10 +555,7 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           minHeight: '1px',
-          padding: '1.25rem',
-          '.MuiAccordionSummary-root:not(.Mui-focusVisible, :hover, :active)': {
-            backgroundColor: 'inherit',
-          },
+          padding: '1.25rem'
         },
       },
     },
@@ -559,7 +563,6 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorBackgroundCanvas,
-          padding: '0px 20px',
           borderRadius: 'inherit',
           '&.Mui-expanded': {
             borderBottomLeftRadius: '0px',
@@ -573,17 +576,18 @@ export const lightTheme = {
             backgroundColor: tokens.colorActionHover,
           },
           '&:active': {
-            backgroundColor: tokens.colorActionActive,
+            backgroundColor: tokens.colorActionSelected,
           },
           '&.Mui-focusVisible': {
-            color: tokens.colorTextInverse,
-            backgroundColor: tokens.colorActionActive,
+            backgroundColor: tokens.colorGrey100,
+            boxShadow: `inset 0 0 0px 2px ${tokens.colorSecondaryMain}`,
           },
         },
         content: {
           order: 2,
           fontWeight: tokens.fontWeightsBold,
           margin: '12px 0px',
+          gap: 1
         },
         expandIconWrapper: {
           order: 1,
@@ -954,6 +958,7 @@ export const lightTheme = {
         sizeSmall: {
           verticalAlign: 'text-bottom',
           borderRadius: '50px',
+          height: 'min-content'
         },
         sizeMedium: {
           fontWeight: tokens.fontWeightsRegular,
