@@ -1679,7 +1679,8 @@ export const lightTheme = {
         },
         content: {
           borderRadius: 0,
-          padding: '4px 16px',
+          padding: '8px 16px',
+          alignItems: 'start',
           '&:hover': {
             backgroundColor: tokens.colorActionHover
           },
@@ -1709,11 +1710,13 @@ export const lightTheme = {
           },
         },
         iconContainer: {
+          color: tokens.colorSecondaryMain,
+          paddingTop: '4px',
           'svg': {
             fontSize: 'inherit',
             marginRight: '4px'
           }
-        }
+        },
       }
     },
     MuiRadio: {
