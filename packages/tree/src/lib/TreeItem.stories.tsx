@@ -21,6 +21,7 @@ export const _Tree: StoryObj<typeof TreeItem> = {
     </TreeView>
   ),
   args: {
+    truncate: true,
     itemId: 'Tree Item Label',
     label: 'Tree Item Label',
     children: <TreeItem itemId="This text is a child of TreeItem" label="This text is a child of TreeItem" />,
