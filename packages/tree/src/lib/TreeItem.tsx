@@ -1,7 +1,9 @@
 import { TreeItem2, TreeItem2Props as MuiTreeItem2Props } from '@mui/x-tree-view/TreeItem2';
 import { TriangleRightIcon, TriangleExpandIcon } from '@availity/mui-icon';
 
-export const TreeItem = ({ children, slots, slotProps, ...rest }: MuiTreeItem2Props): JSX.Element => {
+export type TreeItemProps = MuiTreeItem2Props;
+
+export const TreeItem = ({ children, slots, slotProps, ...rest }: TreeItemProps): JSX.Element => {
   return (
     <TreeItem2
       {...rest}

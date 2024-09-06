@@ -1,9 +1,8 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { RichTreeViewProps } from '@mui/x-tree-view/RichTreeView';
 import type { TreeViewBaseItem } from '@mui/x-tree-view/models';
-import { DynamicTreeView } from './DynamicTreeView';
+import { DynamicTreeView, DynamicTreeViewProps } from './DynamicTreeView';
 
 /**
  * The `DynamicTreeView` receives its items via an `items` prop, making it easier
@@ -50,13 +49,13 @@ const items: TreeViewBaseItem[] = [
 ];
 
 export const _DynamicTreeView: StoryObj<typeof DynamicTreeView> = {
-  render: (args: RichTreeViewProps<TreeViewBaseItem, true>) => <DynamicTreeView {...args} />,
+  render: (args: DynamicTreeViewProps) => <DynamicTreeView {...args} />,
   args: {
     items,
   },
 };
 export const _DynamicTreeViewCheckbox: StoryObj<typeof DynamicTreeView> = {
-  render: (args: RichTreeViewProps<TreeViewBaseItem, true>) => <DynamicTreeView {...args} />,
+  render: (args: DynamicTreeViewProps) => <DynamicTreeView {...args} />,
   args: {
     items,
     checkboxSelection: true,
@@ -64,7 +63,7 @@ export const _DynamicTreeViewCheckbox: StoryObj<typeof DynamicTreeView> = {
 };
 
 export const _DynamicTreeViewEditable: StoryObj<typeof DynamicTreeView> = {
-  render: (args: RichTreeViewProps<TreeViewBaseItem, true>) => <DynamicTreeView {...args} />,
+  render: (args: DynamicTreeViewProps) => <DynamicTreeView {...args} />,
   args: {
     items,
     isItemEditable: true,

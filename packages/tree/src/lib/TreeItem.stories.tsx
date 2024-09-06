@@ -1,8 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { TreeItem2Props } from '@mui/x-tree-view/TreeItem2';
-import { TreeItem } from './TreeItem';
+import { TreeItem, TreeItemProps } from './TreeItem';
 import { TreeView } from './TreeView';
 import { FolderIcon } from '@availity/mui-icon';
 import { Grid } from '@availity/mui-layout';
@@ -16,7 +15,7 @@ const meta: Meta<typeof TreeItem> = {
 export default meta;
 
 export const _Tree: StoryObj<typeof TreeItem> = {
-  render: (args: TreeItem2Props) => (
+  render: (args: TreeItemProps) => (
     <TreeView>
       <TreeItem {...args} />
     </TreeView>
@@ -29,7 +28,7 @@ export const _Tree: StoryObj<typeof TreeItem> = {
 };
 
 export const _TreeCheckboxSelection: StoryObj<typeof TreeItem> = {
-  render: (args: TreeItem2Props) => (
+  render: (args: TreeItemProps) => (
     <TreeView checkboxSelection>
       <TreeItem {...args} />
     </TreeView>
@@ -42,7 +41,7 @@ export const _TreeCheckboxSelection: StoryObj<typeof TreeItem> = {
 };
 
 export const _TreeIcon: StoryObj<typeof TreeItem> = {
-  render: (args: TreeItem2Props) => (
+  render: (args: TreeItemProps) => (
     <TreeView checkboxSelection>
       <TreeItem {...args} />
     </TreeView>
