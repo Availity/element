@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.56.0](https://github.com/Availity/element/compare/@availity/theme@0.55.0...@availity/theme@0.56.0) (2024-09-06)
+
+
+### Features
+
+* **mui-accordion:** add outlined variant ([1fe88a8](https://github.com/Availity/element/commit/1fe88a8b05a88b453c5d56a18c0fdefa4f368c79))
+
 ## [0.55.0](https://github.com/Availity/element/compare/@availity/theme@0.54.8...@availity/theme@0.55.0) (2024-09-03)
 
 
