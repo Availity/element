@@ -234,7 +234,7 @@ __metadata:
     "@availity/authorize": ^4.1.0
     "@availity/mui-block-ui": "workspace:^"
     "@mui/material": ^5.15.15
-    "@tanstack/react-query": ^4.36.1
+    "@tanstack/react-query": ^5.55.0
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.0.2
@@ -254,7 +254,7 @@ __metadata:
     "@availity/mui-textfield": "workspace:^"
     "@mui/material": ^5.15.15
     "@mui/types": ^7.2.14
-    "@tanstack/react-query": ^4.36.1
+    "@tanstack/react-query": ^5.55.0
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.0.2
@@ -264,7 +264,7 @@ __metadata:
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-textfield": "workspace:^"
     "@mui/material": ^5.11.9
-    "@tanstack/react-query": ^4.36.1
+    "@tanstack/react-query": ^5.55.0
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -535,7 +535,7 @@ __metadata:
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-tooltip": "workspace:^"
     "@mui/material": ^5.15.15
-    "@tanstack/react-query": ^4.36.1
+    "@tanstack/react-query": ^5.55.0
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.0.2
@@ -823,7 +823,7 @@ __metadata:
     "@availity/native-form": ^5.0.6
     "@availity/resolve-url": ^2.0.6
     "@mui/material": ^5.15.15
-    "@tanstack/react-query": ^4.36.1
+    "@tanstack/react-query": ^5.55.0
     dayjs: ^1.11.10
     qs: ^6.12.1
     react: 18.2.0
@@ -6603,6 +6603,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/query-core@npm:5.54.1":
+  version: 5.54.1
+  resolution: "@tanstack/query-core@npm:5.54.1"
+  checksum: 2d097ae20a2e499f1966689e6084cc26da194a56eaa59345af41d3b68e70bff1edd73e8205b7d7cf1da58f74d8f23a1867d67593aae3408f28d9253328d3217e
+  languageName: node
+  linkType: hard
+
 "@tanstack/react-query@npm:^4.36.1":
   version: 4.36.1
   resolution: "@tanstack/react-query@npm:4.36.1"
@@ -6619,6 +6626,17 @@ __metadata:
     react-native:
       optional: true
   checksum: 1aff0a476859386f8d32253fa0d0bde7b81769a6d4d4d9cbd78778f0f955459a3bdb7ee27a0d2ee7373090f12998b45df80db0b5b313bd0a7a39d36c6e8e51c5
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query@npm:^5.55.0":
+  version: 5.55.0
+  resolution: "@tanstack/react-query@npm:5.55.0"
+  dependencies:
+    "@tanstack/query-core": 5.54.1
+  peerDependencies:
+    react: ^18 || ^19
+  checksum: 91179d1cc81a1d1802bac52e756b6ca964a27f788dfdf2c35625549496b90c0f21d16954a1e9eb1c7138f4cdfbc0ff99336bba9db6a207ebf8c18b2f730263e8
   languageName: node
   linkType: hard
 
