@@ -992,6 +992,7 @@ __metadata:
     tsup: ^8.0.2
     typescript: ^5.4.5
   peerDependencies:
+    "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.11.9
     react: ">=16.3.0"
   languageName: unknown

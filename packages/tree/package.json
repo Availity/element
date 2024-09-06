@@ -32,6 +32,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
+    "@availity/mui-icon": "workspace:^",
     "@availity/mui-layout": "workspace:^",
     "@mui/material": "^5.15.15",
     "react": "18.2.0",
@@ -40,6 +41,7 @@
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
+    "@availity/mui-icon": "workspace:^",
     "@mui/material": "^5.11.9",
     "react": ">=16.3.0"
   },
@@ -47,7 +49,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/mui-icon": "workspace:^",
     "@mui/x-tree-view": "^7.15.0"
   }
 }
