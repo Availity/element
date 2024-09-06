@@ -5,6 +5,12 @@ import { RichTreeViewProps } from '@mui/x-tree-view/RichTreeView';
 import type { TreeViewBaseItem } from '@mui/x-tree-view/models';
 import { DynamicTreeView } from './DynamicTreeView';
 
+/**
+ * The `DynamicTreeView` receives its items via an `items` prop, making it easier
+ * to dynamically load them from an external source. Furthermore,
+ * `DynamicTreeView` includes the ability to make the `TreeItem`'s editable.
+ */
+
 const meta: Meta<typeof DynamicTreeView> = {
   title: 'Components/TreeView/DynamicTreeView',
   component: DynamicTreeView,

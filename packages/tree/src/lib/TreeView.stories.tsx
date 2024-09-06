@@ -5,6 +5,11 @@ import { SimpleTreeViewProps } from '@mui/x-tree-view/SimpleTreeView';
 import { TreeView } from './TreeView';
 import { TreeItem } from './TreeItem';
 
+/**
+ * The `TreeView` component receives its items as JSX Children. This makes it
+ * a good option for hardcoded items.
+ */
+
 const meta: Meta<typeof TreeView> = {
   title: 'Components/TreeView/TreeView',
   component: TreeView,
