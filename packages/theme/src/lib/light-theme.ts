@@ -1675,6 +1675,58 @@ export const lightTheme = {
         },
       },
     },
+    MuiTreeItem2: {
+      styleOverrides: {
+        checkbox: {
+          '&.Mui-checked': {
+            color: tokens.colorTextInverse
+          }
+        },
+        content: {
+          borderRadius: 0,
+          padding: '8px 16px',
+          alignItems: 'start',
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover
+          },
+          '&:active': {
+            backgroundColor: `${tokens.colorSecondaryDark}26`
+          },
+          '&.Mui-focused': {
+            outlineWidth: tokens.borderWidthXs,
+            outlineColor: tokens.colorTextInverse,
+            outlineStyle: 'solid',
+            boxShadow: `0 0 0px 4px ${tokens.borderPrimary}`,
+          },
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorPrimaryMain,
+            '.MuiTreeItem-iconContainer': {
+              color: tokens.colorTextInverse,
+            },
+            '.MuiTreeItem-label': {
+              color: tokens.colorTextInverse,
+            },
+            '&:hover': {
+              backgroundColor: tokens.colorPrimaryDark,
+            },
+            '&:active': {
+              backgroundColor: tokens.colorPrimaryDarker,
+            }
+          },
+        },
+        groupTransition: {
+          paddingLeft: '0px'
+        },
+        iconContainer: {
+          color: tokens.colorSecondaryMain,
+          paddingTop: '4px',
+          'svg': {
+            fontSize: 'inherit',
+            marginRight: '4px'
+          }
+        },
+      }
+    },
     MuiRadio: {
       styleOverrides: {
         root: {
