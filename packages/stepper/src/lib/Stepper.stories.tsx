@@ -1,5 +1,5 @@
 // Each exported component in the package should have its own stories file
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@availity/mui-button';
 import { Typography } from '@availity/mui-typography';
@@ -23,12 +23,38 @@ const meta: Meta<typeof Stepper> = {
 
 export default meta;
 
+// credit: https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
 const steps = ['Select', 'Another Step', 'Form Data', 'Create a new one'];
 
 export const _Stepper: StoryObj<typeof Stepper> = {
   render: (args: StepperProps) => {
     const [activeStep, setActiveStep] = useState(0);
     const [skipped, setSkipped] = useState(new Set<number>());
+
+    const { width } = useWindowDimensions();
 
     const isStepOptional = (step: number) => {
       return step > 1;
@@ -83,7 +109,7 @@ export const _Stepper: StoryObj<typeof Stepper> = {
     return (
       <Box maxWidth="75vw" marginX="auto">
         <Paper sx={{ padding: '2rem' }}>
-          <Stepper activeStep={activeStep} {...args}>
+          <Stepper activeStep={activeStep} {...args} orientation={width < 600 ? 'vertical' : args.orientation}>
             {steps.map((label, index) => {
               const stepProps: { completed?: boolean } = {};
               const labelProps: { optional?: React.ReactNode; error?: boolean; warning?: boolean } = {};

@@ -13,5 +13,6 @@ export const _LinearProgress: StoryObj<typeof LinearProgress> = {
   render: (args: LinearProgressProps) => <LinearProgress {...args} />,
   args: {
     value: 50,
+    'aria-label': 'example-progress-bar',
   },
 };
