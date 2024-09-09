@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.1](https://github.com/Availity/element/compare/@availity/mui-progress@0.3.0...@availity/mui-progress@0.3.1) (2024-09-09)
+
+
+### Bug Fixes
+
+* resolve accessibility issues in stories ([7e22419](https://github.com/Availity/element/commit/7e2241913f8ad10f467493b605fc0234e6eab5e2))
+
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-progress@0.2.2...@availity/mui-progress@0.3.0) (2024-09-03)
 
 
