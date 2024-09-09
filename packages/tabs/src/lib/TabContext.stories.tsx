@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 // Each exported component in the package should have its own stories file
 
-import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { TabContext, TabContextProps } from './TabContext';
 import { Divider } from '@availity/mui-divider';
@@ -18,14 +18,9 @@ export default meta;
 
 export const _TabContext: StoryObj<typeof TabContext> = {
   render: (args: TabContextProps) => {
-    const [value, setValue] = useState('1');
-
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-      setValue(newValue);
-    };
     return (
-      <TabContext {...args} value={value}>
-        <TabList onChange={handleChange} aria-label="lab API tabs example">
+      <TabContext {...args}>
+        <TabList onChange={() => {}} aria-label="lab API tabs example">
           <Tab label="Item One" value="1" />
           <Tab label="Item Two" value="2" />
           <Tab label="Item Three" value="3" />
@@ -37,5 +32,7 @@ export const _TabContext: StoryObj<typeof TabContext> = {
       </TabContext>
     );
   },
-  args: {},
+  args: {
+    value: '1',
+  },
 };
