@@ -39,7 +39,7 @@
     "@availity/api-axios": "^9.0.0",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^6.0.2",
     "@tanstack/react-query": "^4.36.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
