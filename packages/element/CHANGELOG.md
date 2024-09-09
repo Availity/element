@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.44.21](https://github.com/Availity/element/compare/@availity/element@0.44.20...@availity/element@0.44.21) (2024-09-09)
+
+### Dependency Updates
+
+* `mui-favorites` updated to version `0.44.20`
+* `mui-progress` updated to version `0.44.20`
+* `mui-spaces` updated to version `0.44.20`
+* `mui-stepper` updated to version `0.44.20`
 ## [0.44.20](https://github.com/Availity/element/compare/@availity/element@0.44.19...@availity/element@0.44.20) (2024-09-06)
 
 ### Dependency Updates
