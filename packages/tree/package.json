@@ -34,6 +34,7 @@
   "devDependencies": {
     "@availity/mui-icon": "workspace:^",
     "@availity/mui-layout": "workspace:^",
+    "@availity/mui-typography": "workspace:^",
     "@mui/material": "^5.15.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -49,6 +50,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@mui/x-tree-view": "^7.15.0"
+    "@mui/x-tree-view": "^7.16.0"
   }
 }

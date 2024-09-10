@@ -1,6 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
+import { Typography } from '@availity/mui-typography';
 import { TreeView, TreeViewProps } from './TreeView';
 import { TreeItem } from './TreeItem';
 
@@ -38,15 +39,27 @@ const items = (
 );
 
 export const _TreeView: StoryObj<typeof TreeView> = {
-  render: (args: TreeViewProps) => <TreeView {...args} />,
+  render: (args: TreeViewProps) => (
+    <>
+      <Typography variant="h1" children="Tree View" id="tree-view" />
+      <TreeView {...args} />
+    </>
+  ),
   args: {
     children: items,
+    'aria-labelledby': 'tree-view',
   },
 };
 
 export const _TreeViewCheckbox: StoryObj<typeof TreeView> = {
-  render: (args: TreeViewProps) => <TreeView checkboxSelection {...args} />,
+  render: (args: TreeViewProps) => (
+    <>
+      <Typography variant="h1" children="Selectable Tree View" id="tree-view-selectable" />
+      <TreeView checkboxSelection {...args} />
+    </>
+  ),
   args: {
     children: items,
+    'aria-labelledby': 'tree-view-selectable',
   },
 };
