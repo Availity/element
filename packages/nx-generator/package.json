@@ -2,8 +2,8 @@
   "name": "@availity/nx-generator",
   "version": "0.0.1",
   "dependencies": {
-    "@nx/devkit": "19.3.1",
-    "tslib": "^2.3.0"
+    "@nx/devkit": "19.7.0",
+    "tslib": "^2.7.0"
   },
   "type": "commonjs",
   "main": "./src/index.js",
