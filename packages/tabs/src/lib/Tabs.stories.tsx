@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 // Each exported component in the package should have its own stories file
 
-import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -29,11 +29,6 @@ export const _Tabs: StoryObj<typeof Tabs> = {
       index: number;
       value: number;
     }
-    const [value, setValue] = useState(0);
-
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-      setValue(newValue);
-    };
     function CustomTabPanel(props: TabPanelProps) {
       const { value, index, ...other } = props;
 
@@ -55,15 +50,18 @@ export const _Tabs: StoryObj<typeof Tabs> = {
     }
     return (
       <>
-        <Tabs value={value} onChange={handleChange} {...args}>
+        <Tabs value={args.value} onChange={() => {}} {...args}>
           <Tab label="Item One" {...a11yProps(0)} />
           <Tab label="Item Two" {...a11yProps(1)} />
           <Tab label="Item Three" {...a11yProps(2)} disabled />
         </Tabs>
-        <CustomTabPanel value={value} index={0} />
-        <CustomTabPanel value={value} index={1} />
-        <CustomTabPanel value={value} index={2} />
+        <CustomTabPanel value={args.value} index={0} />
+        <CustomTabPanel value={args.value} index={1} />
+        <CustomTabPanel value={args.value} index={2} />
       </>
     );
+  },
+  args: {
+    value: 0,
   },
 };

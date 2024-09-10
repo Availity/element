@@ -7,9 +7,9 @@ import Typography from '@mui/material/Typography';
 import { Tabs } from './Tabs';
 import { Tab, TabProps } from './Tab';
 
-const meta: Meta<typeof Tabs> = {
+const meta: Meta<typeof Tab> = {
   title: 'Components/Tabs/Tab',
-  component: Tabs,
+  component: Tab,
   tags: ['autodocs'],
 };
 
