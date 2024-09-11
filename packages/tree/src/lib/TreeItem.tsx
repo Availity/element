@@ -25,7 +25,7 @@ export const TreeItem = ({ children, label, slots, slotProps, truncate, ...rest 
         checkbox: {
           // @ts-expect-error TreeItem2SlotProps.checkbox types are incorrect
           inputProps: {
-            'aria-label': `${label} Checkbox`,
+            'aria-hidden': true,
           },
         },
       }}
