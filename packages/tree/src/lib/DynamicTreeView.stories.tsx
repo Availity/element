@@ -2,6 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import type { TreeViewBaseItem } from '@mui/x-tree-view/models';
+import { Typography } from '@availity/mui-typography';
 import { DynamicTreeView, DynamicTreeViewProps } from './DynamicTreeView';
 
 /**
@@ -49,24 +50,42 @@ const items: TreeViewBaseItem[] = [
 ];
 
 export const _DynamicTreeView: StoryObj<typeof DynamicTreeView> = {
-  render: (args: DynamicTreeViewProps) => <DynamicTreeView {...args} />,
+  render: (args: DynamicTreeViewProps) => (
+    <>
+      <Typography variant="h1" children="Selectable Dynamic Tree" id="dynamic-tree" />
+      <DynamicTreeView {...args} />
+    </>
+  ),
   args: {
     items,
+    'aria-labelledby': 'dynamic-tree',
   },
 };
 export const _DynamicTreeViewCheckbox: StoryObj<typeof DynamicTreeView> = {
-  render: (args: DynamicTreeViewProps) => <DynamicTreeView {...args} />,
+  render: (args: DynamicTreeViewProps) => (
+    <>
+      <Typography variant="h1" children="Selectable Dynamic Tree" id="dynamic-tree-selectable" />
+      <DynamicTreeView {...args} />
+    </>
+  ),
   args: {
     items,
     checkboxSelection: true,
+    'aria-labelledby': 'dynamic-tree-selectable',
   },
 };
 
 export const _DynamicTreeViewEditable: StoryObj<typeof DynamicTreeView> = {
-  render: (args: DynamicTreeViewProps) => <DynamicTreeView {...args} />,
+  render: (args: DynamicTreeViewProps) => (
+    <>
+      <Typography variant="h1" children="Editable Dynamic Tree" id="dynamic-tree-editable" />
+      <DynamicTreeView {...args} />
+    </>
+  ),
   args: {
     items,
     isItemEditable: true,
     experimentalFeatures: { labelEditing: true },
+    'aria-labelledby': 'dynamic-tree-editable',
   },
 };

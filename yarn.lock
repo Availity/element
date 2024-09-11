@@ -985,8 +985,9 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-layout": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
-    "@mui/x-tree-view": ^7.15.0
+    "@mui/x-tree-view": ^7.16.0
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.0.2
@@ -2643,7 +2644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.25.4":
+"@babel/runtime@npm:^7.25.6":
   version: 7.25.6
   resolution: "@babel/runtime@npm:7.25.6"
   dependencies:
@@ -4572,25 +4573,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/x-internals@npm:7.15.0":
-  version: 7.15.0
-  resolution: "@mui/x-internals@npm:7.15.0"
+"@mui/x-internals@npm:7.16.0":
+  version: 7.16.0
+  resolution: "@mui/x-internals@npm:7.16.0"
   dependencies:
-    "@babel/runtime": ^7.25.4
+    "@babel/runtime": ^7.25.6
     "@mui/utils": ^5.16.6
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
-  checksum: 6db0ad1dc138ae13fc1b84a9674f9076ee9a1a59a943ddb8fbddc3d2087024164b5d8fd581671ace7da107890979aa9a5c825b3be0ad5cebf996ad2f2b6e0399
+  checksum: 9173a486d471414a73f93517cb3d7e75637d4280bfacf825229fff6e34746537583c6ab2f00b75dc376f10b55f5675c7e42fa5c8a328cbad1471f6b12a08021f
   languageName: node
   linkType: hard
 
-"@mui/x-tree-view@npm:^7.15.0":
-  version: 7.15.0
-  resolution: "@mui/x-tree-view@npm:7.15.0"
+"@mui/x-tree-view@npm:^7.16.0":
+  version: 7.16.0
+  resolution: "@mui/x-tree-view@npm:7.16.0"
   dependencies:
-    "@babel/runtime": ^7.25.4
+    "@babel/runtime": ^7.25.6
     "@mui/utils": ^5.16.6
-    "@mui/x-internals": 7.15.0
+    "@mui/x-internals": 7.16.0
     "@types/react-transition-group": ^4.4.11
     clsx: ^2.1.1
     prop-types: ^15.8.1
@@ -4607,7 +4608,7 @@ __metadata:
       optional: true
     "@emotion/styled":
       optional: true
-  checksum: 362d507b94ad830e27eed2c22c18afb761608c246f6b438f07117cfa3a69db2eaf02ea02dfd676e1a1341882e0f6c6f5e5e913947dd4e2465aec94778d1bf97c
+  checksum: 0344b7b2fac00b1dcecd12f00e4dc800398f23e56ad7aa9115b4eb0282291aead95abf15c5c5b6b517f79158c6c02d15854b96ca10594c02d5e84afa9ed9722a
   languageName: node
   linkType: hard
 
