@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-tree@0.1.0...@availity/mui-tree@0.1.1) (2024-09-11)
+
+
+### Bug Fixes
+
+* **mui-tree:** add aria-label to checkbox input ([aa277db](https://github.com/Availity/element/commit/aa277db7440f6db77623735a579370f74e8692c7))
+
 ## 0.1.0 (2024-09-09)
 
 ### Dependency Updates
