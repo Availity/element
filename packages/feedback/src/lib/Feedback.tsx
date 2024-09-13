@@ -16,7 +16,7 @@ export interface FeedbackProps {
 
 const FeedbackContainer = styled(Container, { name: 'AvFeedbackContainer', slot: 'root' })({});
 
-const GiveFeedbackButton = styled(Button, { name: 'AvGiveFeedbackButton', slot: 'root' })({});
+const FeedbackButton = styled(Button, { name: 'AvFeedbackButton', slot: 'root' })({});
 
 export const Feedback = ({
   analytics = avLogMessagesApiV2,
@@ -40,9 +40,9 @@ export const Feedback = ({
 
   return (
     <>
-      <GiveFeedbackButton onClick={handlePopoverOpen} color={buttonVariant} startIcon={<CommentsIcon />}>
-        Give Feedback
-      </GiveFeedbackButton>
+      <FeedbackButton onClick={handlePopoverOpen} color={buttonVariant} startIcon={<CommentsIcon />}>
+        Feedback
+      </FeedbackButton>
       <Popover
         anchorEl={anchorEl}
         anchorOrigin={{

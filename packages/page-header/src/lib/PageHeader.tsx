@@ -15,7 +15,7 @@ export interface PageHeaderProps {
   breadcrumbs: BreadcrumbsProps;
   /** Renders buttons in the right side of the header */
   buttons?: ButtonsProps[];
-  /** If true, the Give Feedback button displays
+  /** If true, the Feedback button displays
    * @default false
    */
   feedback?: boolean;
@@ -57,13 +57,13 @@ export const PageHeader = ({
           )}
           {helpLink && (
             <Grid marginLeft={2}>
-            <Typography variant="body1">
-              Need help?{' '}
-              <Link href={helpLink} target="_blank" loadApp={false} >
-                {helpAppName ? "Watch a demo" : "Learn More"}
-              </Link>{' '}
-              {helpAppName ? ` for ${helpAppName}` : null}
-            </Typography>
+              <Typography variant="body1">
+                Need help?{' '}
+                <Link href={helpLink} target="_blank" loadApp={false}>
+                  {helpAppName ? 'Watch a demo' : 'Learn More'}
+                </Link>{' '}
+                {helpAppName ? ` for ${helpAppName}` : null}
+              </Typography>
             </Grid>
           )}
         </Grid>
