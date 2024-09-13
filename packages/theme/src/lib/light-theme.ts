@@ -419,7 +419,7 @@ export const lightTheme = {
         },
       },
     },
-    AvGiveFeedbackButton: {
+    AvFeedbackButton: {
       defaultProps: {
         size: 'large',
       },

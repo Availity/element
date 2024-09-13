@@ -4,7 +4,7 @@ import { Feedback } from './Feedback';
 describe('Feedback', () => {
   test('should render successfully', () => {
     const { getByText } = render(<Feedback appName="This App" />);
-    const button = getByText('Give Feedback');
+    const button = getByText('Feedback');
 
     expect(button).toBeTruthy();
 

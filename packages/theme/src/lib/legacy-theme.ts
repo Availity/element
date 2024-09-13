@@ -415,7 +415,7 @@ export const legacyTheme = {
         },
       },
     },
-    AvGiveFeedbackButton: {
+    AvFeedbackButton: {
       defaultProps: {
         size: 'medium',
       },
