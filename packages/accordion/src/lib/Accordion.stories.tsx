@@ -2,7 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Accordion, AccordionActions, AccordionDetails, AccordionSummary, AccordionProps } from '..';
-import { Grid } from '@availity/mui-layout';
+import { Box, Grid } from '@availity/mui-layout';
 import { Button } from '@availity/mui-button';
 import { StatusChip } from '@availity/mui-chip';
 import { Typography } from '@availity/mui-typography';
@@ -38,7 +38,7 @@ export const _Accordion: StoryObj<typeof Accordion> = {
   ),
 };
 
-export const _Variants: StoryObj<typeof AccordionSummary> = {
+export const _Variants: StoryObj<typeof Accordion> = {
   render: (args: AccordionProps) => (
     <Grid container spacing={1}>
       <Grid xs={12}>
@@ -49,15 +49,17 @@ export const _Variants: StoryObj<typeof AccordionSummary> = {
           <AccordionDetails>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
             leo lobortis eget.
-            <Accordion>
-              <AccordionSummary aria-controls="filled-nested-content" id="filled-nested-header">
-                Nested Accordion
-              </AccordionSummary>
-              <AccordionDetails>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                blandit leo lobortis eget.
-              </AccordionDetails>
-            </Accordion>
+            <Box mt={2}>
+              <Accordion>
+                <AccordionSummary aria-controls="filled-nested-content" id="filled-nested-header">
+                  Nested Accordion
+                </AccordionSummary>
+                <AccordionDetails>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                  blandit leo lobortis eget.
+                </AccordionDetails>
+              </Accordion>
+            </Box>
           </AccordionDetails>
         </Accordion>
       </Grid>
@@ -69,15 +71,17 @@ export const _Variants: StoryObj<typeof AccordionSummary> = {
           <AccordionDetails>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
             leo lobortis eget.
-            <Accordion>
-              <AccordionSummary aria-controls="outlined-nested-content" id="outlined-nested-header">
-                Nested Accordion
-              </AccordionSummary>
-              <AccordionDetails>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                blandit leo lobortis eget.
-              </AccordionDetails>
-            </Accordion>
+            <Box mt={2}>
+              <Accordion variant="outlined">
+                <AccordionSummary aria-controls="outlined-nested-content" id="outlined-nested-header">
+                  Nested Accordion
+                </AccordionSummary>
+                <AccordionDetails>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                  blandit leo lobortis eget.
+                </AccordionDetails>
+              </Accordion>
+            </Box>
           </AccordionDetails>
         </Accordion>
       </Grid>
@@ -85,96 +89,14 @@ export const _Variants: StoryObj<typeof AccordionSummary> = {
   ),
 };
 
-export const _Status: StoryObj<typeof AccordionSummary> = {
-  render: (args: AccordionProps) => (
-    <Accordion {...args}>
-      <AccordionSummary aria-controls="status-summary-content" id="status-summary-header" secondary={<>Secondary<StatusChip color="success" label="Approved" sx={{marginLeft: 2}}/></>}>
-        Accordion with Status
-      </AccordionSummary>
-      <AccordionDetails>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
-        leo lobortis eget.
-        <Accordion>
-          <AccordionSummary aria-controls="status-nested-content" id="status-nested-header">
-            Nested Accordion
-          </AccordionSummary>
-          <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-            blandit leo lobortis eget.
-          </AccordionDetails>
-        </Accordion>
-      </AccordionDetails>
-    </Accordion>
-  ),
-};
-
-export const _States: StoryObj<typeof Accordion> = {
-  render: (args: AccordionProps) => (
-    <Grid container spacing={1}>
-      <Grid xs={12}>
-        <Accordion {...args} defaultExpanded>
-          <AccordionSummary aria-controls="defaultexpanded-content" id="defaultexpanded-header">
-            Filled Expanded
-          </AccordionSummary>
-          <AccordionDetails>
-            <Accordion>
-              <AccordionSummary aria-controls="defaultexpanded-nested-content" id="defaultexpanded-nested-header">
-                Nested Accordion
-              </AccordionSummary>
-              <AccordionDetails>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                blandit leo lobortis eget.
-              </AccordionDetails>
-            </Accordion>
-          </AccordionDetails>
-        </Accordion>
-      </Grid>
-      <Grid xs={12}>
-        <Accordion {...args} variant="outlined" defaultExpanded>
-          <AccordionSummary aria-controls="outlinedexpanded-content" id="outlinedexpanded-header">
-            Outlined Expanded
-          </AccordionSummary>
-          <AccordionDetails>
-            <Accordion>
-              <AccordionSummary aria-controls="outlinedexpanded-nested-content" id="outlinedexpanded-nested-header">
-                Nested Accordion
-              </AccordionSummary>
-              <AccordionDetails>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                blandit leo lobortis eget.
-              </AccordionDetails>
-            </Accordion>
-          </AccordionDetails>
-        </Accordion>
-      </Grid>
-      <Grid xs={12}>
-        <Accordion {...args}>
-          <AccordionSummary aria-controls="focused-content" id="focused-header" className="Mui-focusVisible">
-            Focused
-          </AccordionSummary>
-          <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
-            leo lobortis eget.
-          </AccordionDetails>
-        </Accordion>
-      </Grid>
-      <Grid xs={12}>
-        <Accordion {...args} disabled>
-          <AccordionSummary aria-controls="disabled-content" id="disabled-header">
-            Disabled
-          </AccordionSummary>
-          <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
-            leo lobortis eget.
-          </AccordionDetails>
-        </Accordion>
-      </Grid>
-    </Grid>
-  ),
-};
-
-/** By default, Material will style sibling `Accordion` components into a linked accordion group (similar to button group styling). A common way to avoid this is separating the `Accordion` within a `Grid`.  */
-export const _AccordionGroup: StoryObj<typeof Accordion> = {
+/**
+ * By default, Material will style sibling `Accordion` components into a linked accordion group (similar to button group styling).
+ * A common way to avoid this is separating the `Accordion` within a `Grid`.
+ *
+ * The `Accordion` will also need to be wrapped to add any top/bottom margins -
+ * this is due to Material's default gutter behavior when expanded along with how they overwrite the behavior when disabling the gutters.
+*/
+export const _Spacing: StoryObj<typeof Accordion> = {
   render: () => (
     <div>
       <Typography variant="h5" component="h2">
@@ -256,5 +178,95 @@ export const _AccordionGroup: StoryObj<typeof Accordion> = {
         </Grid>
       </Grid>
     </div>
+  ),
+};
+
+export const _States: StoryObj<typeof Accordion> = {
+  render: (args: AccordionProps) => (
+    <Grid container spacing={1}>
+      <Grid xs={12}>
+        <Accordion {...args} defaultExpanded>
+          <AccordionSummary aria-controls="defaultexpanded-content" id="defaultexpanded-header">
+            Filled Expanded
+          </AccordionSummary>
+          <AccordionDetails>
+            <Accordion>
+              <AccordionSummary aria-controls="defaultexpanded-nested-content" id="defaultexpanded-nested-header">
+                Nested Accordion
+              </AccordionSummary>
+              <AccordionDetails>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                blandit leo lobortis eget.
+              </AccordionDetails>
+            </Accordion>
+          </AccordionDetails>
+        </Accordion>
+      </Grid>
+      <Grid xs={12}>
+        <Accordion {...args} variant="outlined" defaultExpanded>
+          <AccordionSummary aria-controls="outlinedexpanded-content" id="outlinedexpanded-header">
+            Outlined Expanded
+          </AccordionSummary>
+          <AccordionDetails>
+            <Accordion>
+              <AccordionSummary aria-controls="outlinedexpanded-nested-content" id="outlinedexpanded-nested-header">
+                Nested Accordion
+              </AccordionSummary>
+              <AccordionDetails>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                blandit leo lobortis eget.
+              </AccordionDetails>
+            </Accordion>
+          </AccordionDetails>
+        </Accordion>
+      </Grid>
+      <Grid xs={12}>
+        <Accordion {...args}>
+          <AccordionSummary aria-controls="focused-content" id="focused-header" className="Mui-focusVisible">
+            Focused
+          </AccordionSummary>
+          <AccordionDetails>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
+            leo lobortis eget.
+          </AccordionDetails>
+        </Accordion>
+      </Grid>
+      <Grid xs={12}>
+        <Accordion {...args} disabled>
+          <AccordionSummary aria-controls="disabled-content" id="disabled-header">
+            Disabled
+          </AccordionSummary>
+          <AccordionDetails>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
+            leo lobortis eget.
+          </AccordionDetails>
+        </Accordion>
+      </Grid>
+    </Grid>
+  ),
+};
+
+export const _Status: StoryObj<typeof Accordion> = {
+  render: (args: AccordionProps) => (
+    <Accordion {...args}>
+      <AccordionSummary aria-controls="status-summary-content" id="status-summary-header" secondary={<>Secondary<StatusChip color="success" label="Approved" sx={{marginLeft: 2}}/></>}>
+        Accordion with Status
+      </AccordionSummary>
+      <AccordionDetails>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
+        leo lobortis eget.
+        <Box mt={2}>
+          <Accordion>
+            <AccordionSummary aria-controls="status-nested-content" id="status-nested-header">
+              Nested Accordion
+            </AccordionSummary>
+            <AccordionDetails>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+              blandit leo lobortis eget.
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+      </AccordionDetails>
+    </Accordion>
   ),
 };

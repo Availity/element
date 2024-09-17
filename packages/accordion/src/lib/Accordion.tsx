@@ -39,7 +39,7 @@ const OutlinedAccordion = styled(MuiAccordion, {
   '> .MuiAccordionSummary-root:not(.Mui-focusVisible, :hover, :active)': {
     backgroundColor: theme.palette.background.paper,
   },
-  '.MuiAccordionDetails-root:first-of-type': {
+  '> .MuiCollapse-root > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > .MuiAccordion-region > .MuiAccordionDetails-root:first-of-type': {
     borderTop: `1px solid ${theme.palette.divider}`,
   }
 }));
@@ -47,7 +47,7 @@ const OutlinedAccordion = styled(MuiAccordion, {
 export const Accordion = forwardRef<HTMLDivElement, AccordionProps>((allProps, ref) => {
   const { variant = "filled", disableNestedStyling = false, className, ...props } = allProps;
 
-  const classnames = `${variant === "filled" ? "MuiAccordion-avFilled" : "MuiAccordion-avOutlined"}${disableNestedStyling && " Av-disableNested"} ${className || ''}`
+  const classnames = `${variant === "filled" ? "MuiAccordion-avFilled" : "MuiAccordion-avOutlined"}${disableNestedStyling ? " Av-disableNested" : ""} ${className || ''}`
 
   return variant === "filled" ?
     <FilledAccordion className={classnames} {...props} ref={ref}/>
