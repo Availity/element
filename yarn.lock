@@ -197,6 +197,7 @@ __metadata:
   resolution: "@availity/mui-accordion@workspace:packages/accordion"
   dependencies:
     "@availity/mui-button": "workspace:^"
+    "@availity/mui-chip": "workspace:^"
     "@availity/mui-layout": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15

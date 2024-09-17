@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@availity/mui-button": "workspace:^",
+    "@availity/mui-chip": "workspace:^",
     "@availity/mui-layout": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "@mui/material": "^5.15.15",

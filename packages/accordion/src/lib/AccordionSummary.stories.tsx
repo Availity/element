@@ -1,8 +1,8 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { Accordion, AccordionActions, AccordionDetails, AccordionSummary, AccordionProps, AccordionSummaryProps } from '..';
-import { Grid } from '@availity/mui-layout';
+import { Accordion, AccordionDetails, AccordionSummary, AccordionProps, AccordionSummaryProps } from '..';
+import { Box, Grid } from '@availity/mui-layout';
 import { StatusChip } from '@availity/mui-chip';
 
 const meta: Meta<typeof AccordionSummary> = {
@@ -22,7 +22,7 @@ export const _AccordionSummary: StoryObj<typeof AccordionSummary> = {
 };
 
 export const _Status: StoryObj<typeof AccordionSummary> = {
-  render: (args: AccordionProps) => (
+  render: (args: AccordionSummaryProps) => (
     <Grid container spacing={1}>
       <Grid xs={12}>
         <Accordion {...args}>
@@ -32,15 +32,17 @@ export const _Status: StoryObj<typeof AccordionSummary> = {
           <AccordionDetails>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
             leo lobortis eget.
-            <Accordion>
-              <AccordionSummary aria-controls="defaultexpanded-nested-content" id="defaultexpanded-nested-header">
-                Nested Accordion
-              </AccordionSummary>
-              <AccordionDetails>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                blandit leo lobortis eget.
-              </AccordionDetails>
-            </Accordion>
+            <Box mt={2}>
+              <Accordion>
+                <AccordionSummary aria-controls="defaultexpanded-nested-content" id="defaultexpanded-nested-header">
+                  Nested Accordion
+                </AccordionSummary>
+                <AccordionDetails>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                  blandit leo lobortis eget.
+                </AccordionDetails>
+              </Accordion>
+            </Box>
           </AccordionDetails>
         </Accordion>
       </Grid>
@@ -52,15 +54,17 @@ export const _Status: StoryObj<typeof AccordionSummary> = {
           <AccordionDetails>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
             leo lobortis eget.
-            <Accordion>
-              <AccordionSummary aria-controls="outlinedexpanded-nested-content" id="outlinedexpanded-nested-header">
-                Nested Accordion
-              </AccordionSummary>
-              <AccordionDetails>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                blandit leo lobortis eget.
-              </AccordionDetails>
-            </Accordion>
+            <Box mt={2}>
+              <Accordion>
+                <AccordionSummary aria-controls="outlinedexpanded-nested-content" id="outlinedexpanded-nested-header">
+                  Nested Accordion
+                </AccordionSummary>
+                <AccordionDetails>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                  blandit leo lobortis eget.
+                </AccordionDetails>
+              </Accordion>
+            </Box>
           </AccordionDetails>
         </Accordion>
       </Grid>

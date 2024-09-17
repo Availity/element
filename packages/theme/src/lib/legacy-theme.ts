@@ -535,7 +535,11 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           padding: '1.25rem',
+          flexWrap: 'wrap'
         },
+        spacing: {
+          rowGap: tokens.spacingBase
+        }
       },
     },
     MuiAccordionDetails: {

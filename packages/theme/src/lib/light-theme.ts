@@ -526,7 +526,7 @@ export const lightTheme = {
     },
     MuiAccordion: {
       defaultProps: {
-        disableGutters: false,
+        disableGutters: true,
       },
       styleOverrides: {
         root: {
@@ -534,11 +534,14 @@ export const lightTheme = {
             content: 'none',
           },
           '&:not(.Av-disableNested) .MuiAccordionDetails-root': {
-            '.MuiAccordion-root': {
+            '.MuiAccordion-root:not(.Av-disableNested)': {
               border: 'none',
-            },
-            '.MuiAccordionSummary-root:not(.Mui-focusVisible, :hover, :active)': {
-              backgroundColor: 'inherit',
+              '.MuiAccordionSummary-root:not(.Mui-focusVisible, :hover, :active)': {
+                backgroundColor: 'inherit',
+              },
+              '> .MuiCollapse-root > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > .MuiAccordion-region > .MuiAccordionDetails-root:first-of-type': {
+                borderTop: 'none'
+              }
             },
           }
         },
@@ -548,7 +551,11 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           padding: '1.25rem',
+          flexWrap: 'wrap'
         },
+        spacing: {
+          rowGap: tokens.spacingBase
+        }
       },
     },
     MuiAccordionDetails: {
@@ -592,7 +599,7 @@ export const lightTheme = {
         expandIconWrapper: {
           order: 1,
           marginRight: '8px',
-          color: 'inherit',
+          color: tokens.colorSecondaryMain,
         },
       },
     },
