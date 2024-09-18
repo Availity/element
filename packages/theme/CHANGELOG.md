@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.58.0](https://github.com/Availity/element/compare/@availity/theme@0.57.2...@availity/theme@0.58.0) (2024-09-18)
+
+
+### Features
+
+* **mui-tree:** add JsonViewer component ([b17a9c8](https://github.com/Availity/element/commit/b17a9c82f4348fd51da10bd26a5944f32405db0c))
+
 ## [0.57.2](https://github.com/Availity/element/compare/@availity/theme@0.57.1...@availity/theme@0.57.2) (2024-09-17)
 
 
