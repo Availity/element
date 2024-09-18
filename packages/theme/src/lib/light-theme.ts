@@ -1721,9 +1721,6 @@ export const lightTheme = {
             }
           },
         },
-        groupTransition: {
-          paddingLeft: '0px'
-        },
         iconContainer: {
           color: tokens.colorSecondaryMain,
           paddingTop: '4px',

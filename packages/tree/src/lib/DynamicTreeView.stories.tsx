@@ -24,7 +24,7 @@ const items: TreeViewBaseItem[] = [
     id: 'tree-1',
     label: 'Tree 1',
     children: [
-      { id: 'sub-tree-1.1', label: 'Sub Tree 1.1' },
+      { id: 'sub-tree-1.1', label: 'Sub Tree 1.1', children: [{ id: 'sub-tree-1.1.1', label: 'Sub Tree 1.1.1' }] },
       { id: 'sub-tree-1.2', label: 'Sub Tree 1.2' },
       { id: 'sub-tree-1.3', label: 'Sub Tree 1.3' },
     ],
