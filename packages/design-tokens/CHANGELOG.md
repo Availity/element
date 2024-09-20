@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.14.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.13.3...@availity/design-tokens@0.14.0) (2024-09-20)
+
+
+### Features
+
+* **design-tokens:**  update border decorative color ([210d608](https://github.com/Availity/element/commit/210d608ce0c0e816800b52d82d513165e941839b))
+* **design-tokens:** update background/decorative token ([7c3808b](https://github.com/Availity/element/commit/7c3808bec9cf47f25f27678d5947134c2859ece6))
+
 ## [0.13.3](https://github.com/Availity/element/compare/@availity/design-tokens@0.13.2...@availity/design-tokens@0.13.3) (2024-08-22)
 
 
