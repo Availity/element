@@ -427,10 +427,9 @@ export const lightTheme = {
     AvListItemStatusCard: {
       styleOverrides: {
         statusAccent: {
-          backgroundColor: tokens.colorBackgroundBorder,
+          backgroundColor: tokens.colorBackgroundAccent,
         },
         root: {
-          borderColor: tokens.borderDecorative,
           '.MuiListItemButton-root': {
             borderRadius: '0 4px 4px 0',
             '&.Mui-focusVisible': {
@@ -1008,7 +1007,7 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           '&.MuiPickersDay-today': {
-            borderColor: tokens.colorBackgroundBorder,
+            borderColor: tokens.borderDecorative,
           },
         },
       },
@@ -1209,7 +1208,6 @@ export const lightTheme = {
                 paddingRight: '12px',
               },
               '.MuiSelect-avEndAdornmentDivider': {
-                borderColor: tokens.colorBackgroundBorder,
                 margin: '0 4px',
               },
               '&:hover': {
@@ -1554,11 +1552,6 @@ export const lightTheme = {
       defaultProps: {
         variant: 'outlined',
       },
-      styleOverrides: {
-        root: {
-          borderColor: tokens.colorBackgroundBorder,
-        },
-      },
     },
     MuiPopover: {
       defaultProps: {
@@ -1789,7 +1782,7 @@ export const lightTheme = {
           color: tokens.colorTextPrimary,
           padding: '11px 8px',
           '&:hover': {
-            backgroundColor: tokens.colorBackgroundBorder,
+            backgroundColor: tokens.colorActionHover,
           },
           '&:Mui-selected': {
             color: tokens.colorPrimaryMain,
