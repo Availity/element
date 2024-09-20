@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.20](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.19...@availity/mui-chip@0.2.20) (2024-09-20)
+
+### Dependency Updates
+
+* `mui-avatar` updated to version `0.2.19`
 ## [0.2.19](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.18...@availity/mui-chip@0.2.19) (2024-08-22)
 
 ### Dependency Updates
