@@ -52,7 +52,7 @@ export const _Variants: StoryObj<typeof Accordion> = {
             <Box mt={2}>
               <Accordion>
                 <AccordionSummary aria-controls="filled-nested-content" id="filled-nested-header">
-                  Nested Accordion
+                  Filled Nested Accordion
                 </AccordionSummary>
                 <AccordionDetails>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
@@ -74,7 +74,7 @@ export const _Variants: StoryObj<typeof Accordion> = {
             <Box mt={2}>
               <Accordion variant="outlined">
                 <AccordionSummary aria-controls="outlined-nested-content" id="outlined-nested-header">
-                  Nested Accordion
+                  Outlined Nested Accordion
                 </AccordionSummary>
                 <AccordionDetails>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
@@ -123,7 +123,7 @@ export const _Spacing: StoryObj<typeof Accordion> = {
         </Accordion>
         <Accordion>
           <AccordionSummary aria-controls="grouped-panel3-content" id="grouped-panel3-header">
-            Accordion Actions
+            Accordion 3 with Actions
           </AccordionSummary>
           <AccordionDetails>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
@@ -142,7 +142,7 @@ export const _Spacing: StoryObj<typeof Accordion> = {
         <Grid xs={12}>
           <Accordion>
             <AccordionSummary aria-controls="panel1-content" id="panel1-header">
-              Accordion 1
+              Accordion 4
             </AccordionSummary>
             <AccordionDetails>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
@@ -153,7 +153,7 @@ export const _Spacing: StoryObj<typeof Accordion> = {
         <Grid xs={12}>
           <Accordion>
             <AccordionSummary aria-controls="panel2-content" id="panel2-header">
-              Accordion 2
+              Accordion 5
             </AccordionSummary>
             <AccordionDetails>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
@@ -164,7 +164,7 @@ export const _Spacing: StoryObj<typeof Accordion> = {
         <Grid xs={12}>
           <Accordion>
             <AccordionSummary aria-controls="panel3-content" id="panel3-header">
-              Accordion Actions
+              Accordion 6 with Actions
             </AccordionSummary>
             <AccordionDetails>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
@@ -192,7 +192,7 @@ export const _States: StoryObj<typeof Accordion> = {
           <AccordionDetails>
             <Accordion>
               <AccordionSummary aria-controls="defaultexpanded-nested-content" id="defaultexpanded-nested-header">
-                Nested Accordion
+                Filled Nested Accordion
               </AccordionSummary>
               <AccordionDetails>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
@@ -210,7 +210,7 @@ export const _States: StoryObj<typeof Accordion> = {
           <AccordionDetails>
             <Accordion>
               <AccordionSummary aria-controls="outlinedexpanded-nested-content" id="outlinedexpanded-nested-header">
-                Nested Accordion
+                Outlined Nested Accordion
               </AccordionSummary>
               <AccordionDetails>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet

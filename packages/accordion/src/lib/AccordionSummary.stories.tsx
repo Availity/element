@@ -35,7 +35,7 @@ export const _Status: StoryObj<typeof AccordionSummary> = {
             <Box mt={2}>
               <Accordion>
                 <AccordionSummary aria-controls="defaultexpanded-nested-content" id="defaultexpanded-nested-header">
-                  Nested Accordion
+                  Filled Nested Accordion
                 </AccordionSummary>
                 <AccordionDetails>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
@@ -57,7 +57,7 @@ export const _Status: StoryObj<typeof AccordionSummary> = {
             <Box mt={2}>
               <Accordion>
                 <AccordionSummary aria-controls="outlinedexpanded-nested-content" id="outlinedexpanded-nested-header">
-                  Nested Accordion
+                  Outlined Nested Accordion
                 </AccordionSummary>
                 <AccordionDetails>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
