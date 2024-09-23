@@ -1313,6 +1313,17 @@ export const legacyTheme = {
         },
       },
     },
+    MuiLinearProgress: {
+      styleOverrides: {
+        root: {
+          height: '10px',
+          borderRadius: '.25rem'
+        },
+        bar: {
+          borderRadius: '.25rem'
+        }
+      }
+    },
     MuiLink: {
       defaultProps: {
         underline: 'hover',
