@@ -62,8 +62,8 @@ export type Space = {
 export type FetchSpacesProps = {
   /** The query sent to the avWebQL endpoint. */
   query: string;
-  /** The Client ID obtained from APIConnect. Must be subscribed to the thanos API. */
-  clientId: string;
+  /** The Client ID obtained from APIConnect. */
+  clientId?: string;
   /** The variables sent to the avWebQL endpoint. */
   variables?: object;
   /** The page sent to the avWebQL endpoint. */
@@ -73,8 +73,8 @@ export type FetchSpacesProps = {
 export type FetchAllSpacesProps = {
   /** The query sent to the avWebQL endpoint. */
   query: string;
-  /** The Client ID obtained from APIConnect. Must be subscribed to the thanos API. */
-  clientId: string;
+  /** The Client ID obtained from APIConnect. */
+  clientId?: string;
   /** The variables sent to the avWebQL endpoint. */
   variables?: Record<string, any>;
   /** Array of spaces to be passed into the Spaces provider. */
@@ -118,8 +118,8 @@ export type SpacesProps = {
   /** Override the default variables used in the thanos query. Default: { types: [PAYERSPACE] }.
    * If the spaces provider should contain configurations of a type other than PAYERSPACE, you must override this prop */
   variables?: object;
-  /** The Client ID obtained from APIConnect. Must be subscribed to the thanos API. */
-  clientId: string;
+  /** The Client ID obtained from APIConnect. */
+  clientId?: string;
   /** Children can be a react child or render prop. */
   children?: React.ReactNode | ((props: any | undefined) => React.ReactNode);
   /** Array of payerIds the Spaces provider should fetch the spaces for.

@@ -24,7 +24,7 @@ const queryClient = new QueryClient();
 export const _SpacesDisclaimer: StoryObj<typeof SpacesDisclaimer> = {
   render: (args: SpacesDisclaimerProps) => (
     <QueryClientProvider client={queryClient}>
-      <Spaces clientId="clientId" spaceIds={['disclaimer']}>
+      <Spaces spaceIds={['disclaimer']}>
         <SpacesDisclaimer {...args} />
       </Spaces>
     </QueryClientProvider>
@@ -37,7 +37,7 @@ export const _SpacesDisclaimer: StoryObj<typeof SpacesDisclaimer> = {
 export const _SpacesDisclaimerMarkdown: StoryObj<typeof SpacesDisclaimer> = {
   render: (args: SpacesDisclaimerProps) => (
     <QueryClientProvider client={queryClient}>
-      <Spaces clientId="clientId" spaceIds={['disclaimerMarkdown']}>
+      <Spaces spaceIds={['disclaimerMarkdown']}>
         <SpacesDisclaimer {...args} />
       </Spaces>
     </QueryClientProvider>

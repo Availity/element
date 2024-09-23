@@ -24,12 +24,15 @@ export const openLinkWithSso: OpenLinkWithSso = async (space, { akaname, clientI
   if (space.meta && space.meta.ssoId) {
     const options = space.link?.target ? { target: getTarget(space.link.target) } : undefined;
 
-    const attributes = {
-      X_Client_ID: clientId,
+    const attributes: Record<string, string> = {
       X_XSRF_TOKEN: document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*=\s*([^;]*).*$)|^.*$/, '$1'),
       spaceId: payerSpaceId,
       ...ssoParams,
     };
+
+    if (clientId) {
+      attributes.X_Client_ID = clientId;
+    }
 
     try {
       if (akaname) await updateTopApps(space, akaname);

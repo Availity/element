@@ -66,7 +66,6 @@ export const _Spaces: StoryObj<typeof Spaces> = {
     );
   },
   args: {
-    clientId: 'my-client-id',
     spaces: [{ id: '1', configurationId: '1', type: 'space', name: 'Space 1' }],
     spaceIds: ['2'],
     payerIds: ['a'],

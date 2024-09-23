@@ -24,7 +24,7 @@ const queryClient = new QueryClient();
 export const _SpacesImage: StoryObj<typeof SpacesImage> = {
   render: (args: SpacesImageProps) => (
     <QueryClientProvider client={queryClient}>
-      <Spaces clientId="clientId" spaceIds={['11', '22', '33']}>
+      <Spaces spaceIds={['11', '22', '33']}>
         <SpacesImage {...args} />
       </Spaces>
     </QueryClientProvider>
@@ -37,7 +37,7 @@ export const _SpacesImage: StoryObj<typeof SpacesImage> = {
 export const _SpacesLogo: StoryObj<typeof SpacesImage> = {
   render: (args: SpacesImageProps) => (
     <QueryClientProvider client={queryClient}>
-      <Spaces clientId="clientId" spaceIds={['11', '22', '33']}>
+      <Spaces spaceIds={['11', '22', '33']}>
         <SpacesImage {...args} />
       </Spaces>
     </QueryClientProvider>
@@ -51,7 +51,7 @@ export const _SpacesLogo: StoryObj<typeof SpacesImage> = {
 export const _SpacesTile: StoryObj<typeof SpacesImage> = {
   render: (args: SpacesImageProps) => (
     <QueryClientProvider client={queryClient}>
-      <Spaces clientId="clientId" spaceIds={['11', '22', '33']}>
+      <Spaces spaceIds={['11', '22', '33']}>
         <SpacesImage {...args} />
       </Spaces>
     </QueryClientProvider>
@@ -65,7 +65,7 @@ export const _SpacesTile: StoryObj<typeof SpacesImage> = {
 export const _SpacesBillboard: StoryObj<typeof SpacesImage> = {
   render: (args: SpacesImageProps) => (
     <QueryClientProvider client={queryClient}>
-      <Spaces clientId="clientId" spaceIds={['11', '22', '33']}>
+      <Spaces spaceIds={['11', '22', '33']}>
         <SpacesImage {...args} />
       </Spaces>
     </QueryClientProvider>

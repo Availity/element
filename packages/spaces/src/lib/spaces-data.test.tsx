@@ -26,7 +26,6 @@ describe('getAllSpaces', () => {
 
     const spaces = await fetchAllSpaces({
       query: configurationFindMany,
-      clientId: 'clientId',
       variables: {
         types: ['space'],
         perPage: 10,
