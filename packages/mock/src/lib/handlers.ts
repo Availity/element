@@ -173,7 +173,29 @@ export const handlers = [
   }),
 
   // Organizations
-  http.post(routes.ORGANIZATIONS, () => {
+  http.post(routes.ORGANIZATIONS, ({request}) => {
+    const params = new URLSearchParams(request.url.split('?')[1]);
+    const parsedParams: Record<string, string> = {};
+    for (const [key, value] of params.entries()) {
+      parsedParams[key] =  value;
+    }
+    if (parsedParams) {
+      const orgs = organizations.organizations.slice(Number(parsedParams.offset), Number(parsedParams.limit) + Number(parsedParams.offset))
+      return HttpResponse.json({
+        totalCount: organizations.totalCount,
+        count: orgs.length,
+        limit: parsedParams.limit,
+        links: {
+          self: {
+            href: "https://apps.availity.com/api/sdk/platform/v1/organizations"
+          },
+          user: {
+            href: "https://apps.availity.com/api/sdk/platform/v1/users/aka123456789"
+          }
+        },
+        organizations: orgs
+      })
+    }
     return HttpResponse.json(organizations);
   }),
   http.get(routes.ORGANIZATIONS, async ({ request }) => {
