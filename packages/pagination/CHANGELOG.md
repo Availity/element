@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-pagination@0.2.12...@availity/mui-pagination@0.3.0) (2024-09-24)
+
+### Dependency Updates
+
+* `mui-list` updated to version `0.2.12`
+* `@availity/mock` updated to version `0.2.12`
+
+### Features
+
+* **mui-pagination:** create useResourcePagination hook ([be908a2](https://github.com/Availity/element/commit/be908a26c621ffbfaeab9f543803b28c299a19da))
+
 ## [0.2.12](https://github.com/Availity/element/compare/@availity/mui-pagination@0.2.11...@availity/mui-pagination@0.2.12) (2024-08-08)
 
 ### Dependency Updates
