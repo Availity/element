@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.59.0](https://github.com/Availity/element/compare/@availity/theme@0.58.1...@availity/theme@0.59.0) (2024-09-24)
+
+
+### Features
+
+* **mui-progress:** add legacy styling ([daad5cd](https://github.com/Availity/element/commit/daad5cd3124d35c35dfe6d7628094b22ef3c7eb9))
+
 ## [0.58.1](https://github.com/Availity/element/compare/@availity/theme@0.58.0...@availity/theme@0.58.1) (2024-09-20)
 
 ### Dependency Updates
