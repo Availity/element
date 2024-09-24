@@ -24,7 +24,7 @@ const queryClient = new QueryClient();
 export const _SpacesGhostText: StoryObj<typeof SpacesGhostText> = {
   render: (args: SpacesGhostTextProps) => (
     <QueryClientProvider client={queryClient}>
-      <Spaces clientId="clientId" spaceIds={['ghosted']}>
+      <Spaces spaceIds={['ghosted']}>
         <SpacesGhostText {...args} />
       </Spaces>
     </QueryClientProvider>

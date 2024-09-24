@@ -29,6 +29,11 @@ export const spacesReducer = (state: SpacesContextType, action: SpacesReducerAct
 };
 
 export const fetchSpaces = async ({ query, clientId, variables }: FetchSpacesProps) => {
+  const headers: Record<string, string> = {};
+
+  if (clientId) {
+    headers['X-Client-ID'] = clientId;
+  }
   // eslint-disable-next-line no-useless-catch
   const {
     data: {
@@ -39,7 +44,7 @@ export const fetchSpaces = async ({ query, clientId, variables }: FetchSpacesPro
       query,
       variables: { ...variables },
     },
-    { headers: { 'X-Client-ID': clientId } }
+    { headers: { ...headers } }
   );
 
   const {

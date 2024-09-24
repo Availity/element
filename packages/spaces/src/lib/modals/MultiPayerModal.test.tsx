@@ -39,8 +39,8 @@ const MultiPayerModal = () => {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      <Spaces spaces={[space, parentSpace2, parentSpace3]} clientId="my-client-id">
-        <SpacesLink spaceId="multipayermodal" clientId="my-client-id" />
+      <Spaces spaces={[space, parentSpace2, parentSpace3]}>
+        <SpacesLink spaceId="multipayermodal" />
       </Spaces>
     </QueryClientProvider>
   );

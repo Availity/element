@@ -22,7 +22,7 @@ describe('SpacesDisclaimer', () => {
 
     const { getByText } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces spaceIds={['disclaimer']} clientId="clientId">
+        <Spaces spaceIds={['disclaimer']}>
           <SpacesDisclaimer spaceId="disclaimer" />
         </Spaces>
       </QueryClientProvider>
@@ -39,7 +39,7 @@ describe('SpacesDisclaimer', () => {
 
     const { getByText } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces spaceIds={['disclaimerMarkdown']} clientId="clientId">
+        <Spaces spaceIds={['disclaimerMarkdown']}>
           <SpacesDisclaimer spaceId="disclaimerMarkdown" markdown />
         </Spaces>
       </QueryClientProvider>

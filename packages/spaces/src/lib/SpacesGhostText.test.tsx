@@ -22,7 +22,7 @@ describe('SpacesGhostText', () => {
 
     const { getByText } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces spaceIds={['ghosted']} clientId="clientId">
+        <Spaces spaceIds={['ghosted']}>
           <SpacesGhostText spaceId="ghosted" />
         </Spaces>
       </QueryClientProvider>

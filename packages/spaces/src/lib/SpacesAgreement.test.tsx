@@ -22,7 +22,7 @@ describe('SpacesAgreement', () => {
 
     const { getByText } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces spaceIds={['agreement']} clientId="clientId">
+        <Spaces spaceIds={['agreement']}>
           <SpacesAgreement spaceId="agreement" />
         </Spaces>
       </QueryClientProvider>
@@ -39,7 +39,7 @@ describe('SpacesAgreement', () => {
 
     const { getByText } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces spaceIds={['agreementMarkdown']} clientId="clientId">
+        <Spaces spaceIds={['agreementMarkdown']}>
           <SpacesAgreement spaceId="agreementMarkdown" markdown />
         </Spaces>
       </QueryClientProvider>

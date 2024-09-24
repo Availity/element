@@ -24,7 +24,7 @@ const queryClient = new QueryClient();
 export const _SpacesAgreement: StoryObj<typeof SpacesAgreement> = {
   render: (args: SpacesAgreementProps) => (
     <QueryClientProvider client={queryClient}>
-      <Spaces clientId="clientId" spaceIds={['agreement']}>
+      <Spaces spaceIds={['agreement']}>
         <SpacesAgreement {...args} />
       </Spaces>
     </QueryClientProvider>
@@ -37,7 +37,7 @@ export const _SpacesAgreement: StoryObj<typeof SpacesAgreement> = {
 export const _SpacesAgreementMarkdown: StoryObj<typeof SpacesAgreement> = {
   render: (args: SpacesAgreementProps) => (
     <QueryClientProvider client={queryClient}>
-      <Spaces clientId="clientId" spaceIds={['agreementMarkdown']}>
+      <Spaces spaceIds={['agreementMarkdown']}>
         <SpacesAgreement {...args} />
       </Spaces>
     </QueryClientProvider>

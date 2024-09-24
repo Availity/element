@@ -30,7 +30,7 @@ describe('SpacesImage', () => {
 
     const { getByRole } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces spaceIds={['11', '22', '33']} clientId="clientId">
+        <Spaces spaceIds={['11', '22', '33']}>
           <SpacesImage spaceId="33" />
         </Spaces>
       </QueryClientProvider>

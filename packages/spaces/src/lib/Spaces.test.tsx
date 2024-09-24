@@ -43,11 +43,7 @@ describe('Spaces', () => {
       const [spaceIds, setSpaceIds] = useState(['1', '3']);
       return (
         <QueryClientProvider client={queryClient}>
-          <Spaces
-            spaceIds={spaceIds}
-            spaces={[{ id: '3', configurationId: '3', type: 'space', name: 'Space 3' }]}
-            clientId="my-client-id"
-          >
+          <Spaces spaceIds={spaceIds} spaces={[{ id: '3', configurationId: '3', type: 'space', name: 'Space 3' }]}>
             <SpaceComponent spaceId="1" />
             <SpaceComponent spaceId="2" />
             <SpaceComponent spaceId="3" />
@@ -109,7 +105,7 @@ it('toggles whether the spaces provider is loading', async () => {
 
     return (
       <QueryClientProvider client={queryClient}>
-        <Spaces spaceIds={spaceId} clientId="my-client-id">
+        <Spaces spaceIds={spaceId}>
           <SpaceComponent spaceId={spaceId[0]} />
 
           <button type="button" id="add-spaceid-btn" onClick={() => setSpaceId(['2'])}>
@@ -152,7 +148,7 @@ describe('useSpaces', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces spaceIds={['1', '2', '3']} clientId="test-client-id">
+        <Spaces spaceIds={['1', '2', '3']}>
           <SpacesComponent />
           <SpacesComponent ids={['2', '3']} />
         </Spaces>
@@ -172,7 +168,7 @@ describe('useSpaces', () => {
     const queryClient = new QueryClient();
     const { getByText } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces spaceIds={['11', '22', '33']} clientId="test-client-id">
+        <Spaces spaceIds={['11', '22', '33']}>
           <SpacesComponent />
           <SpacesComponent ids={['22', '33']} />
         </Spaces>
@@ -190,7 +186,7 @@ describe('useSpaces', () => {
     const queryClient = new QueryClient();
     const { getByText } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces payerIds={['a', 'b', 'c']} clientId="test-client-id">
+        <Spaces payerIds={['a', 'b', 'c']}>
           <SpacesComponent ids={['b']} />
           <SpacesComponent ids={['c']} />
         </Spaces>
@@ -220,7 +216,7 @@ describe('useSpaces', () => {
 
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces spaceIds={['1', '2']} clientId="test-client-id">
+        <Spaces spaceIds={['1', '2']}>
           <SpacesComponent />
         </Spaces>
       </QueryClientProvider>
@@ -251,7 +247,7 @@ it('returns first payer space with when no spaceId passed', async () => {
 
   const { container, getByText } = render(
     <QueryClientProvider client={queryClient}>
-      <Spaces spaceIds={['1']} clientId="my-client-id">
+      <Spaces spaceIds={['1']}>
         <SpaceComponent />
       </Spaces>
     </QueryClientProvider>

@@ -27,7 +27,7 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="application-link-1"
             titleTag="h5"
@@ -35,7 +35,6 @@ describe('SpacesLink', () => {
             linkAttributes={{
               spaceId: '1',
             }}
-            clientId="my-client-id"
             variant="card"
             title={space.link.text}
             description
@@ -80,7 +79,7 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="application-link-2"
             titleTag="h5"
@@ -89,7 +88,6 @@ describe('SpacesLink', () => {
             linkAttributes={{
               spaceId: '2',
             }}
-            clientId="my-client-id"
             title={space.link.text}
           />
         </Spaces>
@@ -117,14 +115,13 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="application-link-3"
             space={space}
             linkAttributes={{
               spaceId: '3',
             }}
-            clientId="my-client-id"
             title={space.link.text}
           />
         </Spaces>
@@ -152,7 +149,7 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="application-link-3"
             titleClassName="custom_class"
@@ -160,7 +157,6 @@ describe('SpacesLink', () => {
             linkAttributes={{
               spaceId: '3',
             }}
-            clientId="my-client-id"
             title={space.link.text}
           />
         </Spaces>
@@ -189,14 +185,13 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="navigation-link-7"
             space={space}
             linkAttributes={{
               spaceId: '7',
             }}
-            clientId="my-client-id"
             title={space.link.text}
             showNew
           />
@@ -227,14 +222,13 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="navigation-link-8"
             space={space}
             linkAttributes={{
               spaceId: '8',
             }}
-            clientId="my-client-id"
             title={space.link.text}
             showDate
           />
@@ -265,14 +259,13 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="navigation-link-9"
             space={space}
             linkAttributes={{
               spaceId: '9',
             }}
-            clientId="my-client-id"
             title={space.link.text}
             analytics={{
               'data-av-analytics-application-id': space.configurationId,
@@ -314,14 +307,13 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="navigation-link-10"
             space={space}
             linkAttributes={{
               spaceId: '10',
             }}
-            clientId="my-client-id"
             title={space.link.text}
           >
             {children}
@@ -352,7 +344,7 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="application-link-11"
             space={space}
@@ -360,7 +352,6 @@ describe('SpacesLink', () => {
               spaceId: '11',
             }}
             role="listitem"
-            clientId="my-client-id"
             title={space.link.text}
           />
         </Spaces>
@@ -387,7 +378,7 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="application-link-12"
             space={space}
@@ -395,7 +386,6 @@ describe('SpacesLink', () => {
               spaceId: '12',
             }}
             role="listitem"
-            clientId="my-client-id"
             title={space.link.text}
           />
         </Spaces>
@@ -424,7 +414,7 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="application-link-13"
             space={space}
@@ -432,7 +422,6 @@ describe('SpacesLink', () => {
               spaceId: '13',
             }}
             role="listitem"
-            clientId="my-client-id"
             title={space.link.text}
           />
         </Spaces>
@@ -461,7 +450,7 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="application-link-14"
             space={space}
@@ -469,7 +458,6 @@ describe('SpacesLink', () => {
               spaceId: '14',
             }}
             role="listitem"
-            clientId="my-client-id"
             title={space.link.text}
           />
         </Spaces>
@@ -497,7 +485,7 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="application-link-14"
             space={space}
@@ -505,7 +493,6 @@ describe('SpacesLink', () => {
               spaceId: '14',
             }}
             role="listitem"
-            clientId="my-client-id"
             title={space.link.text}
           />
         </Spaces>
@@ -535,7 +522,7 @@ describe('SpacesLink', () => {
     const queryClient = new QueryClient();
     const { container } = render(
       <QueryClientProvider client={queryClient}>
-        <Spaces clientId="my-client-id" spaces={[space]}>
+        <Spaces spaces={[space]}>
           <SpacesLink
             id="application-link-14"
             icon={FileIcon}
@@ -544,7 +531,6 @@ describe('SpacesLink', () => {
               spaceId: '14',
             }}
             role="listitem"
-            clientId="my-client-id"
             title={space.link.text}
           />
         </Spaces>
