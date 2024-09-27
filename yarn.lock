@@ -388,11 +388,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-checkbox@workspace:*, @availity/mui-checkbox@workspace:packages/checkbox":
+"@availity/mui-checkbox@workspace:*, @availity/mui-checkbox@workspace:^, @availity/mui-checkbox@workspace:packages/checkbox":
   version: 0.0.0-use.local
   resolution: "@availity/mui-checkbox@workspace:packages/checkbox"
   dependencies:
-    "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^5.15.15
@@ -581,6 +580,7 @@ __metadata:
   dependencies:
     "@availity/message-core": ^7.0.1
     "@availity/mui-button": "workspace:*"
+    "@availity/mui-checkbox": "workspace:^"
     "@availity/mui-icon": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0

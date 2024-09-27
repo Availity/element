@@ -1,6 +1,7 @@
 export * from './lib/FieldHelpIcon';
 export * from './lib/FormControl';
 export * from './lib/FormControlLabel';
+export * from './lib/FormGroup';
 export * from './lib/FormHelperText';
 export * from './lib/FormLabel';
 export * from './lib/Input';
