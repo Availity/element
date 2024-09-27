@@ -6,20 +6,29 @@ import { Typography } from '@availity/mui-typography';
 import { Box } from '@availity/mui-layout';
 import { Paper } from '@availity/mui-paper';
 
-import { Stepper, StepperProps, Step, StepLabel, StepButton } from '..';
+import { Stepper, Step, StepLabel, StepButton } from '..';
 
-const meta: Meta<typeof Stepper> = {
-  title: 'Components/Stepper/Stepper',
-  component: Stepper,
+const meta: Meta<typeof StepButton> = {
+  title: 'Components/Stepper/StepButton',
+  component: StepButton,
   tags: ['autodocs'],
-  argTypes: {
-    orientation: {
-      options: ['horizontal', 'vertical'],
-    },
-  },
 };
 
 export default meta;
+
+export const _StepButton: StoryObj<typeof StepButton> = {
+  render: (args) => (
+    <Box>
+      <Paper sx={{ padding: '2rem' }}>
+        <Stepper>
+          <Step>
+            <StepButton {...args}/>
+          </Step>
+        </Stepper>
+      </Paper>
+    </Box>
+  ),
+};
 
 // credit: https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs
 function getWindowDimensions() {
@@ -45,10 +54,10 @@ function useWindowDimensions() {
   return windowDimensions;
 }
 
-const steps = ['Select', 'Another Step', 'Form Data', 'Create a new one'];
+const steps = ['First', 'Second', 'Third', 'Final'];
 
-export const _Stepper: StoryObj<typeof Stepper> = {
-  render: (args: StepperProps) => {
+export const _Stepper: StoryObj<typeof StepButton> = {
+  render: (args) => {
     const [activeStep, setActiveStep] = useState(0);
     const [skipped, setSkipped] = useState(new Set<number>());
 
@@ -70,10 +79,6 @@ export const _Stepper: StoryObj<typeof Stepper> = {
       return step === 3 && activeStep < 3;
     };
 
-    const handleStep = (step: number) => () => {
-      setActiveStep(step);
-    };
-
     const handleNext = () => {
       let newSkipped = skipped;
       if (isStepSkipped(activeStep)) {
@@ -87,6 +92,10 @@ export const _Stepper: StoryObj<typeof Stepper> = {
 
     const handleBack = () => {
       setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
+
+    const handleStep = (step: number) => () => {
+      setActiveStep(step);
     };
 
     const handleSkip = () => {
@@ -111,7 +120,7 @@ export const _Stepper: StoryObj<typeof Stepper> = {
     return (
       <Box maxWidth="75vw" marginX="auto">
         <Paper sx={{ padding: '2rem' }}>
-          <Stepper activeStep={activeStep} {...args} orientation={width < 600 ? 'vertical' : args.orientation}>
+          <Stepper activeStep={activeStep} orientation={width < 600 ? 'vertical' : 'horizontal'}>
             {steps.map((label, index) => {
               const stepProps: { completed?: boolean } = {};
               const labelProps: { optional?: React.ReactNode; error?: boolean; warning?: boolean } = {};
@@ -134,7 +143,7 @@ export const _Stepper: StoryObj<typeof Stepper> = {
 
               return (
                 <Step key={label} {...stepProps}>
-                  <StepButton color="inherit" onClick={handleStep(index)}>
+                  <StepButton color="inherit" onClick={handleStep(index)} {...args}>
                     <StepLabel {...labelProps}>{label}</StepLabel>
                   </StepButton>
                 </Step>
@@ -175,25 +184,4 @@ export const _Stepper: StoryObj<typeof Stepper> = {
     );
   },
   args: {},
-};
-
-export const _StepLabel: StoryObj<typeof StepLabel> = {
-  render: (args) => <StepLabel {...args} />,
-  args: {
-    children: 'Step Label',
-  },
-};
-
-export const _Step: StoryObj<typeof Step> = {
-  render: (args) => (
-    <Box>
-      <Paper sx={{ padding: '2rem' }}>
-        <Stepper>
-          <Step {...args}>
-            <StepLabel>Label</StepLabel>
-          </Step>
-        </Stepper>
-      </Paper>
-    </Box>
-  ),
 };
