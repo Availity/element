@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.57...@availity/mui-checkbox@0.2.0) (2024-10-01)
+
+
+### Features
+
+* **mui-form-utils:** export FormGroup ([d874415](https://github.com/Availity/element/commit/d874415699f324430bdf593d48d4265a7ba92c8c))
+
 ## [0.1.57](https://github.com/Availity/element/compare/@availity/mui-checkbox@0.1.56...@availity/mui-checkbox@0.1.57) (2024-09-20)
 
 ### Dependency Updates
