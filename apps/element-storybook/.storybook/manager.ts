@@ -2,10 +2,10 @@
 
 import { addons } from '@storybook/manager-api';
 import {API_PreparedIndexEntry, API_StatusObject} from "@storybook/types";
-import { themes } from '@storybook/theming';
+import elementTheme from './ElementTheme';
 
 addons.setConfig({
-  theme: themes.light,
+  theme: elementTheme,
   sidebar: {
     collapsedRoots: [
       'bs4-migration',
