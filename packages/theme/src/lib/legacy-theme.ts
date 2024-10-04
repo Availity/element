@@ -11,7 +11,7 @@ const containedButtonStyles = (color: string) => ({
     boxShadow: 'none',
     color: color === 'Warning' && tokens.colorTextInverse,
   },
-  '&:focus': {
+  '&.Mui-focusVisible': {
     backgroundColor: tokens[`color${color}Dark` as keyof typeof tokens],
     outline: '2px solid white',
     boxShadow: `0 0 0px 4px ${
@@ -29,17 +29,17 @@ const containedButtonStyles = (color: string) => ({
 
 const outlinedButtonStyles = (color: string) => ({
   '&:hover': {
-    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}21`,
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}${color === 'Tertiary' ? '' : '21'}`,
   },
-  '&:focus': {
+  '&.Mui-focusVisible': {
     outline: '2px solid white',
     boxShadow: `0 0 0px 4px ${
       color === 'Tertiary' ? tokens.colorSecondaryMain : tokens[`color${color}Main` as keyof typeof tokens]
     }`,
-    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}21`,
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}${color === 'Tertiary' ? '' : '21'}`,
   },
   '&:active': {
-    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}42`,
+    backgroundColor: `${tokens[`color${color}Main` as keyof typeof tokens]}${color === 'Tertiary' ? '' : '42'}`,
   },
 });
 
@@ -1871,6 +1871,155 @@ export const legacyTheme = {
           '&.MuiInputBase-input': {
             paddingRight: '2.5rem',
           },
+        },
+      },
+    },
+    MuiStep: {
+      styleOverrides: {
+        vertical: {
+          '+ .MuiStep-root': {
+            // adding connector spacing when no connector present for legacy no bar styling
+            marginTop: '16px'
+          }
+        }
+      }
+    },
+    MuiStepButton: {
+      defaultProps: {
+        disableRipple: true
+      },
+      styleOverrides: {
+        root: {
+          padding: '8px',
+          margin: '-8px',
+          '&:not(.Mui-disabled)': {
+            ...outlinedButtonStyles('Tertiary'),
+          },
+        }
+      }
+    },
+    MuiStepConnector: {
+      styleOverrides: {
+        root: {
+          zIndex: 1,
+          color: tokens.colorGrey300,
+          '&.Mui-completed': {
+            color: tokens.colorSuccessMain,
+          },
+          '&.Mui-active': {
+            color: tokens.colorSuccessMain,
+          },
+        },
+        line: {
+          borderColor: 'inherit',
+          borderWidth: '10px',
+        },
+        horizontal: {
+          top: '10px',
+          '&.MuiStepConnector-alternativeLabel': {
+            left: 'calc(-50% + 10px)',
+            right: 'calc(50% + 10px)'
+          }
+        },
+        vertical: {
+          '.MuiStepConnector-line': {
+            // min-height 16px and negative 2px negative margin
+            minHeight: '18px',
+            borderWidth: '10px'
+          },
+          marginLeft: '10px',
+          marginTop: '-1px',
+          marginBottom: '-1px',
+          '+ .MuiStep-vertical:not(:first-of-type) .MuiStepLabel-vertical:before': {
+            content: '""',
+            height: 'calc(50% - 14px)',
+            width: '10px',
+            left: '10px',
+            top: '0px',
+            backgroundColor: tokens.colorGrey300,
+            zIndex: '-1',
+            position: 'absolute'
+          },
+          '+ .MuiStep-vertical:not(:last-of-type) .MuiStepLabel-vertical:after': {
+            content: '""',
+            height: 'calc(50% - 14px)',
+            width: '10px',
+            left: '10px',
+            bottom: '0px',
+            backgroundColor: tokens.colorGrey300,
+            zIndex: '-1',
+            position: 'absolute'
+          },
+          '&.Mui-completed': {
+            '+ .MuiStep-vertical:not(:first-of-type) .MuiStepLabel-vertical:before, + .MuiStep-vertical:not(:last-of-type) .MuiStepLabel-vertical:after': {
+              backgroundColor: tokens.colorSuccessMain
+            }
+          },
+          '&.Mui-active': {
+            '+ .MuiStep-vertical:not(:first-of-type) .MuiStepLabel-vertical:before': {
+              backgroundColor: tokens.colorSuccessMain
+            }
+          },
+        }
+      },
+    },
+    MuiStepIcon: {
+      styleOverrides: {
+        root: {
+          color: tokens.colorCommonWhite,
+          border: `2px solid ${tokens.colorSuccessMain}`,
+          borderRadius: '50%',
+          height: '30px',
+          width: '30px',
+          boxSizing: 'border-box',
+          '&.Mui-active .MuiStepIcon-text': {
+            fill: tokens.colorCommonWhite,
+          },
+          '&.Mui-active, &.Mui-completed': {
+            color: tokens.colorSuccessMain,
+          },
+          '&.Mui-active, &.Mui-completed, &.Mui-error, &.MuiSvgIcon-colorWarning': {
+            // keep borders to make icons smaller and maintain general size
+            borderColor: 'currentColor',
+            background: 'radial-gradient(transparent, transparent 65%, currentColor 65%)'
+          },
+        },
+        text: {
+          fill: tokens.colorTextPrimary,
+          fontSize: '12px',
+        },
+      },
+    },
+    MuiStepLabel: {
+      styleOverrides: {
+        root: {
+          display: 'flex',
+          alignSelf: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+          zIndex: 2
+        },
+        iconContainer: {
+          '.MuiSvgIcon-colorWarning': {
+            color: tokens.colorWarningDark,
+          },
+        },
+        vertical: {
+          padding: '0px'
+        },
+        label: {
+          fontSize: '1rem',
+          lineHeight: '1.5rem',
+          '&.MuiStepLabel-label.MuiStepLabel-alternativeLabel': {
+            marginTop: '0px',
+          },
+          '&.Mui-active': {
+            fontWeight: tokens.fontWeightsBold,
+            color: tokens.colorSuccessMain
+          },
+          '&.Mui-completed:not(.Mui-active)': {
+            fontWeight: tokens.fontWeightsRegular
+          }
         },
       },
     },

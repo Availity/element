@@ -19,6 +19,9 @@ import {
   MenuItem,
   MoreVerticalIcon,
   StatusChip,
+  Step,
+  StepButton,
+  Stepper,
   Tab,
   Tabs,
   ThemeProvider,
@@ -121,7 +124,7 @@ export const DialogExample = () => {
 };
 
 export const TabExample = () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -153,3 +156,25 @@ export const ListItemExample = () => (
     </List>
   </ThemeProvider>
 );
+
+export const StepperExample = () => {
+  const [activeStep, setActiveStep] = useState(1);
+
+  const handleStep = (step: number) => () => {
+    setActiveStep(step);
+  };
+
+  return (
+    <ThemeProvider theme="legacyBS">
+      <Stepper nonLinear activeStep={activeStep} connector={null}>
+        {["First", "Second", "Third"].map((label, index) => (
+          <Step key={label} completed={index < activeStep}>
+            <StepButton color="inherit" onClick={handleStep(index)}>
+              {label}
+            </StepButton>
+          </Step>
+        ))}
+      </Stepper>
+    </ThemeProvider>
+  );
+};

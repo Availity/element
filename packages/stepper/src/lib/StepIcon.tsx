@@ -11,7 +11,10 @@ declare module '@mui/material/StepIcon' {
   }
 }
 
-export type StepIconProps = { warning?: boolean } & MuiStepIconProps;
+export type StepIconProps = {
+  /** If `true`, the step will have a warning icon. */
+  warning?: boolean
+} & MuiStepIconProps;
 
 export const StepIcon = ({ error, completed, warning, ...rest }: StepIconProps): JSX.Element => {
   let tag: Tag = null;
