@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.23](https://github.com/Availity/element/compare/@availity/mui-table@0.1.22...@availity/mui-table@0.1.23) (2024-10-04)
+
+
+### Bug Fixes
+
+* **mui-table:** remove pagination overrides ([dca84d1](https://github.com/Availity/element/commit/dca84d1e8190ae910e331ba966fadae16f600396))
+
 ## [0.1.22](https://github.com/Availity/element/compare/@availity/mui-table@0.1.21...@availity/mui-table@0.1.22) (2024-10-01)
 
 ### Dependency Updates
