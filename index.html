@@ -49,7 +49,31 @@
     <link href="./sb-addons/chromatic-com-storybook-9/manager-bundle.js" rel="modulepreload" />
     
     <link href="./sb-addons/apps-element-storybook-storybook-10/manager-bundle.js" rel="modulepreload" />
-       
+      <style>
+  #storybook-explorer-tree {
+    & > div > div > .sidebar-item {
+      margin-left: 8px;
+    }
+    .sidebar-subheading > button {
+      color: #FFE5CC;
+    }
+    button[data-nodetype="component"], button[data-nodetype="group"] {
+      svg, svg use {
+        color: #ffffff;
+      }
+    }
+    button[data-nodetype="group"] svg {
+      display: none;
+    }
+    div, button, a {
+      color: #ffffff;
+    }
+  }
+  #storybook-explorer-searchfield:not(:focus, :focus-visible) {
+    border-color: #ffffff;
+  }
+</style>
+ 
 
     <style>
       #storybook-root[hidden] {
