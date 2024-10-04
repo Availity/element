@@ -19,8 +19,11 @@ export type TablePaginationProps = {
   | 'getItemArialabel'
   | 'labelDisplayedRows'
   | 'labelRowsPerPage'
+  | 'SelectProps'
   | 'showFirstButton'
   | 'showLastButton'
+  | 'slotProps'
+  | 'slots'
 >;
 
 type TablePaginationActionsProps = {
@@ -47,12 +50,6 @@ export const TablePagination = forwardRef<unknown, TablePaginationProps>((props,
             onChange={(event: React.MouseEvent<HTMLButtonElement>, newPage) => {
               onPageChange(event, newPage - 1);
             }}
-            boundaryCount={0}
-            siblingCount={1}
-            hidePrevButton
-            hideNextButton
-            showFirstButton
-            showLastButton
           />
         ) : null}
         {Actions || null}
