@@ -581,6 +581,9 @@ export const legacyTheme = {
       },
     },
     MuiAlert: {
+      defaultProps: {
+        icon: false,
+      },
       styleOverrides: {
         standardSuccess: {
           backgroundColor: tokens.colorSuccessMain,
@@ -603,9 +606,6 @@ export const legacyTheme = {
           padding: '0 0 0 8px',
           alignItems: 'center',
           color: 'inherit',
-        },
-        icon: {
-          display: 'none'
         },
         message: {
           color: 'inherit',

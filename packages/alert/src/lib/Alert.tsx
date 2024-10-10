@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { default as MUIAlert, AlertProps as MUIAlertProps } from '@mui/material/Alert';
 import { IconButton } from '@availity/mui-button';
-import { InfoCircleIcon, WarningCircleIcon, SuccessCircleIcon } from '@availity/mui-icon';
+import type { IconButtonProps } from '@availity/mui-button';
+import { InfoCircleIcon, WarningCircleIcon, SuccessCircleIcon, CloseIcon } from '@availity/mui-icon';
 
-export type AlertProps = Omit<MUIAlertProps, 'variant' | 'color'> & {
+export type AlertProps = Omit<MUIAlertProps, 'variant' | 'color' | 'components' | 'componentProps' | 'slots'> & {
   severity?: 'success' | 'info' | 'warning' | 'error';
 };
 
@@ -14,13 +15,31 @@ const iconMapping = {
   warning: <WarningCircleIcon sx={{ color: 'warning.dark' }} />,
 };
 
-export const Alert = ({ ...args }: AlertProps): JSX.Element => (
-  <MUIAlert
-    variant="standard"
-    iconMapping={iconMapping}
-    closeText="dismiss alert"
-    slots={{ closeButton: IconButton }}
-    slotProps={{ closeButton: { size: 'small' } }}
-    {...args}
-  />
+export const Alert = forwardRef<HTMLDivElement, AlertProps>((allProps, ref) => {
+  const { action, onClose, closeText = "dismiss alert", ...args } = allProps;
+
+const ComboActionClose = (args: IconButtonProps) => (
+  <>
+    {action}
+    <IconButton size="small" {...args}/>
+  </>
 );
+
+const slots = {
+  closeButton: action ? ComboActionClose : IconButton,
+  closeIcon: CloseIcon
+};
+
+  return (
+    <MUIAlert
+      variant="standard"
+      action={onClose ? undefined : action}
+      onClose={onClose}
+      closeText={closeText}
+      iconMapping={iconMapping}
+      slots={slots}
+      ref={ref}
+      {...args}
+    />
+  )
+});

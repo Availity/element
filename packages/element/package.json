@@ -48,6 +48,7 @@
     "@availity/mui-popover": "workspace:*",
     "@availity/mui-popper": "workspace:*",
     "@availity/mui-progress": "workspace:*",
+    "@availity/mui-snackbar": "workspace:*",
     "@availity/mui-spaces": "workspace:*",
     "@availity/mui-stepper": "workspace:*",
     "@availity/mui-table": "workspace:*",
