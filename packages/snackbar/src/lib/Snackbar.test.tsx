@@ -3,7 +3,7 @@ import { Snackbar } from './Snackbar';
 
 describe('Snackbar', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<Snackbar><div>Test</div></Snackbar>);
+    const { getByText } = render(<Snackbar open><div>Test</div></Snackbar>);
     expect(getByText('Test')).toBeTruthy();
   });
 });
