@@ -867,6 +867,16 @@ export const lightTheme = {
         },
       },
     },
+    MuiCalendarPicker: {
+      styleOverrides: {
+        root: {
+          width: '310px',
+          '.MuiIconButton-root': {
+            border: '0',
+          },
+        },
+      },
+    },
     MuiCard: {
       defaultProps: {
         variant: 'elevation',
@@ -985,36 +995,10 @@ export const lightTheme = {
         },
       },
     },
-    MuiPickersCalendarHeader: {
-      styleOverrides: {
-        root: {
-          padding: '4px 16px 8px',
-        },
-      },
-    },
     MuiDayPicker: {
       styleOverrides: {
         header: {
           paddingBottom: '12px',
-        },
-      },
-    },
-    MuiCalendarPicker: {
-      styleOverrides: {
-        root: {
-          width: '310px',
-          '.MuiIconButton-root': {
-            border: '0',
-          },
-        },
-      },
-    },
-    MuiPickersDay: {
-      styleOverrides: {
-        root: {
-          '&.MuiPickersDay-today': {
-            borderColor: tokens.borderDecorative,
-          },
         },
       },
     },
@@ -1254,6 +1238,13 @@ export const lightTheme = {
         },
         adornedStart: {
           paddingLeft: '.75rem',
+        },
+      },
+    },
+    MuiLinearProgress: {
+      styleOverrides: {
+        barColorSuccess: {
+          backgroundColor: tokens.colorSuccessLight,
         },
       },
     },
@@ -1559,6 +1550,22 @@ export const lightTheme = {
         variant: 'outlined',
       },
     },
+    MuiPickersCalendarHeader: {
+      styleOverrides: {
+        root: {
+          padding: '4px 16px 8px',
+        },
+      },
+    },
+    MuiPickersDay: {
+      styleOverrides: {
+        root: {
+          '&.MuiPickersDay-today': {
+            borderColor: tokens.borderDecorative,
+          },
+        },
+      },
+    },
     MuiPopover: {
       defaultProps: {
         PaperProps: {
@@ -1566,74 +1573,25 @@ export const lightTheme = {
         },
       },
     },
-    MuiLinearProgress: {
-      styleOverrides: {
-        barColorSuccess: {
-          backgroundColor: tokens.colorSuccessLight,
-        },
-      },
-    },
-    MuiStepIcon: {
+    MuiRadio: {
       styleOverrides: {
         root: {
-          color: tokens.colorCommonWhite,
-          border: `solid ${tokens.colorSuccessMain}`,
-          borderRadius: '50%',
-          height: '24px',
-          width: '24px',
-          '&.Mui-active': {
-            color: tokens.colorSuccessMain,
-            border: 'none',
-            '.MuiStepIcon-text': {
-              fill: tokens.colorCommonWhite,
+          marginLeft: '-10px',
+          padding: '10px',
+          '&.MuiButtonBase-root': {
+            '&:hover': {
+              backgroundColor: tokens.colorActionHover,
+              '&.Mui-checked': {
+                backgroundColor: tokens.colorActionSelected,
+              },
+            },
+            '&.Mui-focused': {
+              backgroundColor: tokens.colorActionSelected,
+            },
+            '.MuiTouchRipple-child': {
+              backgroundColor: tokens.colorActionSelected,
             },
           },
-          '&.Mui-completed': {
-            color: tokens.colorSuccessMain,
-            border: 'none',
-          },
-          '&.Mui-error': {
-            border: 'none',
-          },
-          '&.MuiSvgIcon-colorWarning': {
-            border: 'none',
-          },
-        },
-        text: {
-          fill: tokens.colorTextSuccess,
-          fontSize: '18px',
-        },
-      },
-    },
-    MuiStepLabel: {
-      styleOverrides: {
-        root: {
-          display: 'flex',
-          alignSelf: 'center',
-          justifyContent: 'center',
-        },
-        iconContainer: {
-          '.MuiSvgIcon-colorWarning': {
-            color: tokens.colorWarningDark,
-          },
-        },
-      },
-    },
-    MuiStepConnector: {
-      styleOverrides: {
-        root: {
-          top: '8px',
-          color: tokens.colorGrey200,
-          '&.Mui-completed': {
-            color: tokens.colorSuccessMain,
-          },
-          '&.Mui-active': {
-            color: tokens.colorSuccessMain,
-          },
-        },
-        line: {
-          borderColor: 'inherit',
-          borderWidth: '4px',
         },
       },
     },
@@ -1739,74 +1697,67 @@ export const lightTheme = {
         }
       }
     },
-    MuiTreeItem2: {
-      styleOverrides: {
-        checkbox: {
-          '&.Mui-checked': {
-            color: tokens.colorTextInverse
-          }
-        },
-        content: {
-          borderRadius: 0,
-          padding: '8px 16px',
-          alignItems: 'start',
-          '&:hover': {
-            backgroundColor: tokens.colorActionHover
-          },
-          '&:active': {
-            backgroundColor: `${tokens.colorSecondaryDark}26`
-          },
-          '&.Mui-focused': {
-            outlineWidth: tokens.borderWidthXs,
-            outlineColor: tokens.colorTextInverse,
-            outlineStyle: 'solid',
-            boxShadow: `0 0 0px 4px ${tokens.borderPrimary}`,
-          },
-          '&.Mui-selected': {
-            backgroundColor: tokens.colorPrimaryMain,
-            '.MuiTreeItem-iconContainer': {
-              color: tokens.colorTextInverse,
-            },
-            '.MuiTreeItem-label': {
-              color: tokens.colorTextInverse,
-            },
-            '&:hover': {
-              backgroundColor: tokens.colorPrimaryDark,
-            },
-            '&:active': {
-              backgroundColor: tokens.colorPrimaryDarker,
-            }
-          },
-        },
-        iconContainer: {
-          color: tokens.colorSecondaryMain,
-          paddingTop: '4px',
-          'svg': {
-            fontSize: 'inherit',
-            marginRight: '4px'
-          }
-        },
-      }
-    },
-    MuiRadio: {
+    MuiStepIcon: {
       styleOverrides: {
         root: {
-          marginLeft: '-10px',
-          padding: '10px',
-          '&.MuiButtonBase-root': {
-            '&:hover': {
-              backgroundColor: tokens.colorActionHover,
-              '&.Mui-checked': {
-                backgroundColor: tokens.colorActionSelected,
-              },
-            },
-            '&.Mui-focused': {
-              backgroundColor: tokens.colorActionSelected,
-            },
-            '.MuiTouchRipple-child': {
-              backgroundColor: tokens.colorActionSelected,
+          color: tokens.colorCommonWhite,
+          border: `solid ${tokens.colorSuccessMain}`,
+          borderRadius: '50%',
+          height: '24px',
+          width: '24px',
+          '&.Mui-active': {
+            color: tokens.colorSuccessMain,
+            border: 'none',
+            '.MuiStepIcon-text': {
+              fill: tokens.colorCommonWhite,
             },
           },
+          '&.Mui-completed': {
+            color: tokens.colorSuccessMain,
+            border: 'none',
+          },
+          '&.Mui-error': {
+            border: 'none',
+          },
+          '&.MuiSvgIcon-colorWarning': {
+            border: 'none',
+          },
+        },
+        text: {
+          fill: tokens.colorTextSuccess,
+          fontSize: '18px',
+        },
+      },
+    },
+    MuiStepLabel: {
+      styleOverrides: {
+        root: {
+          display: 'flex',
+          alignSelf: 'center',
+          justifyContent: 'center',
+        },
+        iconContainer: {
+          '.MuiSvgIcon-colorWarning': {
+            color: tokens.colorWarningDark,
+          },
+        },
+      },
+    },
+    MuiStepConnector: {
+      styleOverrides: {
+        root: {
+          top: '8px',
+          color: tokens.colorGrey200,
+          '&.Mui-completed': {
+            color: tokens.colorSuccessMain,
+          },
+          '&.Mui-active': {
+            color: tokens.colorSuccessMain,
+          },
+        },
+        line: {
+          borderColor: 'inherit',
+          borderWidth: '4px',
         },
       },
     },
@@ -2053,6 +2004,58 @@ export const lightTheme = {
           color: tokens.colorSecondaryMain,
         },
       },
+    },
+    MuiTreeItem2: {
+      styleOverrides: {
+        checkbox: {
+          '&.Mui-checked': {
+            color: tokens.colorTextInverse
+          }
+        },
+        content: {
+          borderRadius: 0,
+          padding: '8px 16px',
+          alignItems: 'start',
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover
+          },
+          '&:active': {
+            backgroundColor: `${tokens.colorSecondaryDark}26`
+          },
+          '&.Mui-focused': {
+            outlineWidth: tokens.borderWidthXs,
+            outlineColor: tokens.colorTextInverse,
+            outlineStyle: 'solid',
+            boxShadow: `0 0 0px 4px ${tokens.borderPrimary}`,
+          },
+          '&.Mui-selected': {
+            backgroundColor: tokens.colorPrimaryMain,
+            '.MuiTreeItem-iconContainer': {
+              color: tokens.colorTextInverse,
+            },
+            '.MuiTreeItem-label': {
+              color: tokens.colorTextInverse,
+            },
+            '&:hover': {
+              backgroundColor: tokens.colorPrimaryDark,
+            },
+            '&:active': {
+              backgroundColor: tokens.colorPrimaryDarker,
+            }
+          },
+        },
+        groupTransition: {
+          paddingLeft: '0px'
+        },
+        iconContainer: {
+          color: tokens.colorSecondaryMain,
+          paddingTop: '4px',
+          'svg': {
+            fontSize: 'inherit',
+            marginRight: '4px'
+          }
+        },
+      }
     },
     MuiTypography: {
       defaultProps: {
