@@ -1,4 +1,5 @@
 import { tokens } from '@availity/design-tokens';
+import type { Theme } from '@mui/material/styles';
 
 const important = (style: string) => `${style} !important`;
 
@@ -617,15 +618,20 @@ export const lightTheme = {
           backgroundColor: tokens.colorBlue50,
         },
         action: {
-          margin: '-3px -3px -3px auto',
+          '.MuiButton-root, .MuiLink-root': {
+            padding: '2px 4px',
+            margin: '0px -4px',
+          },
+          margin: '-2px 0px -2px auto',
           padding: '0 0 0 8px',
+          gap: '8px'
         },
         icon: ({ ownerState }: { ownerState: any }) => ({
           ...(ownerState.severity === 'success' && {
             color: important(tokens.colorGreen600),
           }),
           opacity: 1,
-          padding: '4px',
+          padding: '4px 8px 4px 0px',
           margin: 0,
           fontSize: tokens.fontSizesBody1,
         }),
@@ -637,7 +643,7 @@ export const lightTheme = {
           border: 'none',
           fontSize: tokens.fontSizesBody1,
           lineHeight: tokens.lineHeightsBody1,
-          padding: '8px',
+          padding: '8px 8px 8px 16px',
         },
       },
     },
@@ -1674,6 +1680,64 @@ export const lightTheme = {
           },
         },
       },
+    },
+    MuiSnackbar: {
+      styleOverrides: {
+        root: ({ theme } : { theme: Theme} ) => ({
+          [theme.breakpoints.down('sm')]: {
+              // full width
+              left: '24px',
+              right: '24px',
+            '&.MuiSnackbar-anchorOriginBottomCenter, &.MuiSnackbar-anchorOriginBottomLeft, &.MuiSnackbar-anchorOriginBottomRight': {
+              bottom: '24px',
+            },
+            '&.MuiSnackbar-anchorOriginTopCenter, &.MuiSnackbar-anchorOriginTopLeft, &.MuiSnackbar-anchorOriginTopRight': {
+              top: '24px',
+            },
+          },
+          [theme.breakpoints.up('sm')]: {
+            maxWidth: '528px',
+            minWidth: '352px',
+          },
+          '.MuiAlert-root': {
+            width: '100%',
+          },
+          '.MuiAlert-root, .MuiSnackbarContent-root': {
+            boxShadow: tokens.shadows24,
+          }
+        }),
+        anchorOriginBottomCenter: {
+          bottom: '40px',
+        },
+        anchorOriginBottomLeft: {
+          bottom: '40px',
+          left: '40px',
+        },
+        anchorOriginBottomRight: {
+          bottom: '40px',
+          right: '40px',
+        },
+        anchorOriginTopCenter: {
+          top: '40px',
+        },
+        anchorOriginTopLeft: {
+          top: '40px',
+          left: '40px',
+        },
+        anchorOriginTopRight: {
+          top: '40px',
+          right: '40px',
+        },
+      },
+    },
+    MuiSnackbarContent: {
+      styleOverrides: {
+        root: {
+          // info alert styling
+          backgroundColor: tokens.colorBlue50,
+          color: tokens.colorTextPrimary
+        }
+      }
     },
     MuiTreeItem2: {
       styleOverrides: {
