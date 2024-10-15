@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-alert@0.5.16...@availity/mui-alert@0.6.0) (2024-10-15)
+
+
+### Features
+
+* **mui-alert:** allow both action and close ([d22211c](https://github.com/Availity/element/commit/d22211c98574a58851a3be9d20d1a0f092d5f1ba))
+
 ## [0.5.16](https://github.com/Availity/element/compare/@availity/mui-alert@0.5.15...@availity/mui-alert@0.5.16) (2024-08-08)
 
 ### Dependency Updates
