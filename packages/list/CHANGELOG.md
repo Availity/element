@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.17](https://github.com/Availity/element/compare/@availity/mui-list@0.1.16...@availity/mui-list@0.1.17) (2024-10-15)
+
+### Dependency Updates
+
+* `mui-transitions` updated to version `0.1.16`
 ## [0.1.16](https://github.com/Availity/element/compare/@availity/mui-list@0.1.15...@availity/mui-list@0.1.16) (2024-10-01)
 
 ### Dependency Updates
