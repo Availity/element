@@ -57,6 +57,7 @@
       "@availity/mui-popover": ["packages/popover/src/index.ts"],
       "@availity/mui-popper": ["packages/popper/src/index.ts"],
       "@availity/mui-progress": ["packages/progress/src/index.ts"],
+      "@availity/mui-snackbar": ["packages/snackbar/src/index.ts"],
       "@availity/mui-spaces": ["packages/spaces/src/index.ts"],
       "@availity/mui-stepper": ["packages/stepper/src/index.ts"],
       "@availity/mui-table": ["packages/table/src/index.ts"],
