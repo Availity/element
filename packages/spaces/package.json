@@ -71,14 +71,14 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^9.0.0",
-    "@availity/hooks": "^5.0.2",
+    "@availity/api-axios": "^9.0.2",
+    "@availity/hooks": "^5.1.1",
     "@availity/message-core": "^7.0.1",
     "@availity/native-form": "^5.0.6",
     "@availity/resolve-url": "^2.0.6",
     "@tanstack/react-query": "^4.36.1",
-    "dayjs": "^1.11.10",
-    "qs": "^6.12.1",
+    "dayjs": "^1.11.13",
+    "qs": "^6.13.0",
     "react-image": "^4.1.0",
     "react-markdown": "^6.0.3"
   }
