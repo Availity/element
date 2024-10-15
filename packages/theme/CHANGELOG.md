@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.61.0](https://github.com/Availity/element/compare/@availity/theme@0.60.0...@availity/theme@0.61.0) (2024-10-15)
+
+
+### Features
+
+* **mui-snackbar:** add snackbar component ([a8e5e8f](https://github.com/Availity/element/commit/a8e5e8f64c0b810ecbd3e2099d8a6354e3c005bc))
+
 ## [0.60.0](https://github.com/Availity/element/compare/@availity/theme@0.59.0...@availity/theme@0.60.0) (2024-10-04)
 
 
