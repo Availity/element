@@ -119,6 +119,7 @@ __metadata:
     "@availity/mui-popover": "workspace:*"
     "@availity/mui-popper": "workspace:*"
     "@availity/mui-progress": "workspace:*"
+    "@availity/mui-snackbar": "workspace:*"
     "@availity/mui-spaces": "workspace:*"
     "@availity/mui-stepper": "workspace:*"
     "@availity/mui-table": "workspace:*"
@@ -775,6 +776,25 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^6.1.4
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^8.0.2
+    typescript: ^5.4.5
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-snackbar@workspace:*, @availity/mui-snackbar@workspace:packages/snackbar":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-snackbar@workspace:packages/snackbar"
+  dependencies:
+    "@availity/mui-alert": "workspace:*"
+    "@availity/mui-button": "workspace:*"
+    "@availity/mui-layout": "workspace:*"
+    "@availity/mui-transitions": "workspace:*"
+    "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.0.2

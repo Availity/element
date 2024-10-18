@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.46.0](https://github.com/Availity/element/compare/@availity/element@0.45.11...@availity/element@0.46.0) (2024-10-15)
+
+### Dependency Updates
+
+* `mui-alert` updated to version `0.45.11`
+* `mui-datepicker` updated to version `0.45.11`
+* `mui-list` updated to version `0.45.11`
+* `mui-pagination` updated to version `0.45.11`
+* `mui-snackbar` updated to version `0.45.11`
+* `mui-spaces` updated to version `0.45.11`
+* `mui-table` updated to version `0.45.11`
+* `mui-transitions` updated to version `0.45.11`
+* `theme-provider` updated to version `0.45.11`
+
+### Features
+
+* **mui-snackbar:** add snackbar component ([a8e5e8f](https://github.com/Availity/element/commit/a8e5e8f64c0b810ecbd3e2099d8a6354e3c005bc))
+
 ## [0.45.11](https://github.com/Availity/element/compare/@availity/element@0.45.10...@availity/element@0.45.11) (2024-10-04)
 
 ### Dependency Updates
