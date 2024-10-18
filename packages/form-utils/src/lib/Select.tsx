@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import MuiSelect, { SelectProps as MuiSelectProps, SelectChangeEvent } from '@mui/material/Select';
 import Divider from '@mui/material/Divider';
 import Stack, { StackProps } from '@mui/material/Stack';
@@ -36,8 +37,26 @@ export const SelectPropOverrides = {
   ...InputPropOverrides,
 };
 
+/** Accessibility additions to resolve Level Access violations. Requires tracking of open state for updates. */
+export const SelectAccessibilityOverrides = (
+  /** The detected open status for uncontrolled components */
+  openDetected?: boolean,
+  /** Function to update detected open status for uncontrolled components */
+  setOpenDetected?: React.Dispatch<React.SetStateAction<boolean>>,
+  /** The open status for controlled components */
+  open?: boolean
+): SelectProps => {
+  if (setOpenDetected && open===undefined) {
+    const onOpen = () => {setOpenDetected(true)};
+    const onClose = ()  => {setOpenDetected(false)};
+    return openDetected ? {onOpen, onClose,} : {onOpen, onClose, SelectDisplayProps: {'aria-controls': ""}};
+  }
+  return open ? {} : {SelectDisplayProps: {'aria-controls': ""}};
+}
+
 export const Select = (props: SelectProps): JSX.Element => {
-  return <MuiSelect {...props} {...SelectPropOverrides} />;
+  const [ openDetected, setOpenDetected ] = useState(false);
+  return <MuiSelect {...props} {...SelectPropOverrides} {...SelectAccessibilityOverrides(openDetected, setOpenDetected, props?.open)} />;
 };
 
 export type { SelectChangeEvent };

@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, useState } from 'react';
 import MuiTextField, { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField';
 import {
   FormHelperText,
@@ -7,6 +7,7 @@ import {
   FormLabelProps,
   InputPropOverrides,
   InputProps,
+  SelectAccessibilityOverrides,
   SelectPropOverrides,
   SelectProps,
 } from '@availity/mui-form-utils';
@@ -24,6 +25,7 @@ export type TextFieldProps = {
 export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextFieldProps>((props, ref) => {
   const { InputProps, helpTopicId, InputLabelProps, FormHelperTextProps, required, SelectProps, inputProps, ...rest } =
     props;
+  const [ openDetected, setOpenDetected ] = useState(false);
 
   return (
     <MuiTextField
@@ -32,7 +34,7 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
       InputProps={{ ...InputProps, ...InputPropOverrides }}
       InputLabelProps={{ component: FormLabel, helpTopicId: helpTopicId, required, shrink: true, ...InputLabelProps }}
       FormHelperTextProps={{ component: FormHelperText, ...FormHelperTextProps }}
-      SelectProps={{ ...SelectProps, ...SelectPropOverrides }}
+      SelectProps={{ ...SelectProps, ...SelectPropOverrides, ...SelectAccessibilityOverrides(openDetected, setOpenDetected, SelectProps?.open) }}
       ref={ref}
     />
   );

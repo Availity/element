@@ -903,6 +903,7 @@ __metadata:
     "@availity/mui-layout": "workspace:*"
     "@availity/mui-link": "workspace:*"
     "@availity/mui-menu": "workspace:*"
+    "@availity/mui-pagination": "workspace:*"
     "@availity/mui-paper": "workspace:*"
     "@availity/mui-textfield": "workspace:*"
     "@availity/mui-typography": "workspace:*"
