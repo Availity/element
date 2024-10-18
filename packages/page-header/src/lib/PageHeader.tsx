@@ -43,20 +43,22 @@ export const PageHeader = ({
       component={Box}
       container
       direction="column"
-      marginTop="1rem"
-      marginBottom="1.25rem"
-      paddingLeft={3}
-      paddingRight={3}
+      sx={{
+        marginTop: '1rem',
+        marginBottom: '1.25rem',
+        paddingLeft: 3,
+        paddingRight: 3,
+      }}
     >
       {breadcrumbs || helpLink ? (
-        <Grid direction="row" container justifyContent="space-between" marginBottom={4}>
+        <Grid direction="row" container sx={{ justifyContent: 'space-between', marginBottom: 4 }}>
           {breadcrumbs && (
             <Grid>
               <Breadcrumbs {...breadcrumbs} />
             </Grid>
           )}
           {helpLink && (
-            <Grid marginLeft={2}>
+            <Grid sx={{ marginLeft: 2 }}>
               <Typography variant="body1">
                 Need help?{' '}
                 <Link href={helpLink} target="_blank" loadApp={false}>
@@ -69,20 +71,20 @@ export const PageHeader = ({
         </Grid>
       ) : null}
 
-      <Grid direction="row" container marginBottom={2} alignItems="center" justifyContent="space-between">
+      <Grid direction="row" container sx={{ marginBottom: 2, alignItems: 'center', justifyContent: 'space-between' }}>
         <Grid>
           <Typography variant="h1" children={headerText} />
         </Grid>
-        <Grid container width="auto">
+        <Grid container sx={{ width: 'auto' }}>
           {buttons &&
             buttons.length > 0 &&
             buttons?.map((buttonProps) => (
-              <Grid marginLeft={2} height="100%">
+              <Grid sx={{ marginLeft: 2, height: '100%' }}>
                 <Button {...buttonProps} size="large" color="secondary" />
               </Grid>
             ))}
           {feedback ? (
-            <Grid marginLeft={2} height="100%">
+            <Grid sx={{ marginLeft: 2, height: '100%' }}>
               <Feedback appName={headerText} />
             </Grid>
           ) : null}

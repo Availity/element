@@ -28,11 +28,13 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
   return (
     <MuiTextField
       {...rest}
-      inputProps={{ 'aria-required': required, ...inputProps }}
-      InputProps={{ ...InputProps, ...InputPropOverrides }}
-      InputLabelProps={{ component: FormLabel, helpTopicId: helpTopicId, required, shrink: true, ...InputLabelProps }}
-      FormHelperTextProps={{ component: FormHelperText, ...FormHelperTextProps }}
-      SelectProps={{ ...SelectProps, ...SelectPropOverrides }}
+      slotProps={{
+        input: { ...InputProps, ...InputPropOverrides },
+        htmlInput: { 'aria-required': required, ...inputProps },
+        select: { ...SelectProps, ...SelectPropOverrides },
+        inputLabel: { component: FormLabel, helpTopicId: helpTopicId, required, shrink: true, ...InputLabelProps },
+        formHelperText: { component: FormHelperText, ...FormHelperTextProps },
+      }}
       ref={ref}
     />
   );

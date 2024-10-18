@@ -6,7 +6,7 @@ import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
 import { useState } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 import { Datepicker, DatepickerProps } from './Datepicker';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid2';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
@@ -23,13 +23,39 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
     const [value, setValue] = useState<Dayjs | null>(null);
 
     return (
-      <Datepicker
-        {...args}
-        value={value}
-        onChange={(value) => {
-          setValue(value);
-        }}
-      />
+      <>
+        <Datepicker
+          {...args}
+          value={value}
+          onChange={(value) => {
+            setValue(value);
+          }}
+        />
+        <Datepicker
+          {...args}
+          value={value}
+          onChange={(value) => {
+            setValue(value);
+          }}
+          FieldProps={{ placeholder: 'Test' }}
+        />
+        <Datepicker
+          {...args}
+          value={value}
+          onChange={(value) => {
+            setValue(value);
+          }}
+          FieldProps={{ InputProps: { placeholder: 'InputProps' } }}
+        />
+        <Datepicker
+          {...args}
+          value={value}
+          onChange={(value) => {
+            setValue(value);
+          }}
+          slotProps={{ textField: { placeholder: 'slotProps textField' } }}
+        />
+      </>
     );
   },
   args: {
@@ -50,7 +76,7 @@ export const _PickerViews: StoryObj<typeof Datepicker> = {
 
     return (
       <Grid container spacing={3}>
-        <Grid xs="auto">
+        <Grid size={{ xs: 'auto' }}>
           <Typography variant="h3" component="span">
             Day View
           </Typography>
@@ -58,7 +84,7 @@ export const _PickerViews: StoryObj<typeof Datepicker> = {
             <DateCalendar value={date} onChange={(newDate) => setDate(newDate)} />
           </Paper>
         </Grid>
-        <Grid xs="auto">
+        <Grid size={{ xs: 'auto' }}>
           <Typography variant="h3" component="span">
             Month View
           </Typography>
@@ -66,7 +92,7 @@ export const _PickerViews: StoryObj<typeof Datepicker> = {
             <MonthCalendar value={date} minDate={minDate} maxDate={maxDate} onChange={(newDate) => setDate(newDate)} />
           </Paper>
         </Grid>
-        <Grid xs="auto">
+        <Grid size={{ xs: 'auto' }}>
           <Typography variant="h3" component="span">
             Year View
           </Typography>

@@ -32,7 +32,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^6.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^8.0.2",
@@ -46,10 +46,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^9.0.0",
+    "@availity/api-axios": "^9.0.3",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-icon": "workspace:^",
+    "@availity/mui-layout": "workspace:^",
     "@availity/mui-popover": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
     "@availity/mui-toggle-button": "workspace:^",

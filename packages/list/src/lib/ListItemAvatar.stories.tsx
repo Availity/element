@@ -14,28 +14,40 @@ const meta: Meta<typeof ListItemAvatar> = {
   tags: ['autodocs'],
   argTypes: {
     children: {
-      control: false
-    }
-  }
+      control: false,
+    },
+  },
 };
 
 export default meta;
 
 export const _ListItemAvatar: StoryObj<typeof ListItemAvatar> = {
-  render: (args: ListItemAvatarProps) => <ListItemAvatar {...args}><Avatar size="m"><UserIcon /></Avatar></ListItemAvatar>,
+  render: (args: ListItemAvatarProps) => (
+    <ListItemAvatar {...args}>
+      <Avatar size="m">
+        <UserIcon />
+      </Avatar>
+    </ListItemAvatar>
+  ),
 };
 
 export const _UserList: StoryObj<typeof List> = {
   render: () => (
     <Grid container spacing={8}>
-      <Grid xs={12} sm={6}>
-        <Typography variant="h6" component="div" id='users-default-spacing-header'>Default Spacing</Typography>
-        <List aria-labelledby='users-default-spacing-header'>
+      <Grid size={{ xs: 12, sm: 6 }}>
+        <Typography variant="h6" component="div" id="users-default-spacing-header">
+          Default Spacing
+        </Typography>
+        <List aria-labelledby="users-default-spacing-header">
           {[0, 1, 2, 3].map((value) => (
             <ListItem
               key={value}
               disablePadding
-              secondaryAction={<IconButton title="message"><MailIcon/></IconButton>}
+              secondaryAction={
+                <IconButton title="message">
+                  <MailIcon />
+                </IconButton>
+              }
             >
               <ListItemButton>
                 <ListItemAvatar>
@@ -43,33 +55,39 @@ export const _UserList: StoryObj<typeof List> = {
                     <UserIcon />
                   </Avatar>
                 </ListItemAvatar>
-                <ListItemText primary="List item" secondary="Secondary"/>
+                <ListItemText primary="List item" secondary="Secondary" />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
       </Grid>
-      <Grid xs={12} sm={6}>
-        <Typography variant="h6" component="div" id='users-dense-spacing-header'>Dense Spacing</Typography>
-        <List dense aria-labelledby='users-dense-spacing-header'>
+      <Grid size={{ xs: 12, sm: 6 }}>
+        <Typography variant="h6" component="div" id="users-dense-spacing-header">
+          Dense Spacing
+        </Typography>
+        <List dense aria-labelledby="users-dense-spacing-header">
           {[4, 5, 6, 7].map((value) => (
             <ListItem
               key={value}
               disablePadding
-              secondaryAction={<IconButton title="message"><MailIcon/></IconButton>}
+              secondaryAction={
+                <IconButton title="message">
+                  <MailIcon />
+                </IconButton>
+              }
             >
-            <ListItemButton>
+              <ListItemButton>
                 <ListItemAvatar>
                   <Avatar size="m">
                     <UserIcon />
                   </Avatar>
                 </ListItemAvatar>
-                <ListItemText primary="List item" secondary="Secondary"/>
+                <ListItemText primary="List item" secondary="Secondary" />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
       </Grid>
     </Grid>
-  )
+  ),
 };

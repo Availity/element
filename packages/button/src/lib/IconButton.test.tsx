@@ -1,4 +1,4 @@
-import { fireEvent, waitFor, render } from '@testing-library/react';
+import { fireEvent, waitFor, render, act } from '@testing-library/react';
 import { HomeIcon } from '@availity/mui-icon';
 import { IconButton } from './IconButton';
 
@@ -45,7 +45,7 @@ describe('Button', () => {
     );
     const button = getByRole('button');
 
-    fireEvent.focus(button);
+    await act(async () => fireEvent.mouseOver(button));
 
     await waitFor(() => getByRole('tooltip'));
     expect(getByRole('tooltip')).toBeTruthy();

@@ -34,14 +34,14 @@ export const _IconButton: StoryObj<typeof IconButton> = {
 export const _Variants: StoryObj<typeof IconButton> = {
   render: () => (
     <Grid container spacing={1}>
-      <Grid xs={3}>Text</Grid>
-      <Grid xs={9}>
+      <Grid size={{ xs: 3 }}>Text</Grid>
+      <Grid size={{ xs: 9 }}>
         <IconButton title="search" variant="text">
           <SearchIcon />
         </IconButton>
       </Grid>
-      <Grid xs={3}>Outlined</Grid>
-      <Grid xs={9}>
+      <Grid size={{ xs: 3 }}>Outlined</Grid>
+      <Grid size={{ xs: 9 }}>
         <IconButton title="search" variant="outlined">
           <SearchIcon />
         </IconButton>
@@ -53,24 +53,24 @@ export const _Variants: StoryObj<typeof IconButton> = {
 export const _Colors: StoryObj<typeof IconButton> = {
   render: () => (
     <Grid container spacing={1}>
-      <Grid xs={2}>Primary</Grid>
-      <Grid xs={2}>
+      <Grid size={{ xs: 2 }}>Primary</Grid>
+      <Grid size={{ xs: 2 }}>
         <IconButton title="search" variant="text" color="primary">
           <SearchIcon />
         </IconButton>
       </Grid>
-      <Grid xs={8}>
+      <Grid size={{ xs: 8 }}>
         <IconButton title="search" variant="outlined" color="primary">
           <SearchIcon />
         </IconButton>
       </Grid>
-      <Grid xs={2}>Secondary</Grid>
-      <Grid xs={2}>
+      <Grid size={{ xs: 2 }}>Secondary</Grid>
+      <Grid size={{ xs: 2 }}>
         <IconButton title="search" variant="text" color="secondary">
           <SearchIcon />
         </IconButton>
       </Grid>
-      <Grid xs={8}>
+      <Grid size={{ xs: 8 }}>
         <IconButton title="search" variant="outlined" color="secondary">
           <SearchIcon />
         </IconButton>
@@ -83,46 +83,46 @@ export const _Colors: StoryObj<typeof IconButton> = {
 export const _Sizes: StoryObj<typeof IconButton> = {
   render: () => (
     <Grid container spacing={1}>
-      <Grid xs={2}>xsmall icon</Grid>
-      <Grid xs={2}>
+      <Grid size={{ xs: 2 }}>xsmall icon</Grid>
+      <Grid size={{ xs: 2 }}>
         <IconButton title="search">
           <SearchIcon fontSize="xsmall" />
         </IconButton>
       </Grid>
-      <Grid xs={8}>
+      <Grid size={{ xs: 8 }}>
         <IconButton title="search" variant="outlined">
           <SearchIcon fontSize="xsmall" />
         </IconButton>
       </Grid>
-      <Grid xs={2}>small icon</Grid>
-      <Grid xs={2}>
+      <Grid size={{ xs: 2 }}>small icon</Grid>
+      <Grid size={{ xs: 2 }}>
         <IconButton title="search">
           <SearchIcon fontSize="small" />
         </IconButton>
       </Grid>
-      <Grid xs={8}>
+      <Grid size={{ xs: 8 }}>
         <IconButton title="search" variant="outlined">
           <SearchIcon fontSize="small" />
         </IconButton>
       </Grid>
-      <Grid xs={2}>medium icon</Grid>
-      <Grid xs={2}>
+      <Grid size={{ xs: 2 }}>medium icon</Grid>
+      <Grid size={{ xs: 2 }}>
         <IconButton title="search">
           <SearchIcon fontSize="medium" />
         </IconButton>
       </Grid>
-      <Grid xs={8}>
+      <Grid size={{ xs: 8 }}>
         <IconButton title="search" variant="outlined">
           <SearchIcon fontSize="medium" />
         </IconButton>
       </Grid>
-      <Grid xs={2}>large icon</Grid>
-      <Grid xs={2}>
+      <Grid size={{ xs: 2 }}>large icon</Grid>
+      <Grid size={{ xs: 2 }}>
         <IconButton title="search">
           <SearchIcon fontSize="large" />
         </IconButton>
       </Grid>
-      <Grid xs={8}>
+      <Grid size={{ xs: 8 }}>
         <IconButton title="search" variant="outlined">
           <SearchIcon fontSize="large" />
         </IconButton>

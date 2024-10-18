@@ -36,13 +36,7 @@ export type DatepickerProps = {
 
 const paperProps = { elevation: 8, variant: 'elevation', sx: { marginTop: '4px' } } as const;
 
-const PickerTextField = (params: TextFieldProps) => {
-  if (params.inputProps) {
-    params.inputProps.placeholder = 'MM/DD/YYYY';
-  }
-
-  return <TextField {...params} />;
-};
+const PickerTextField = (params: TextFieldProps) => <TextField {...params} placeholder="MM/DD/YYYY" />;
 
 export const Datepicker = ({ FieldProps, placement = 'bottom-start', ...props }: DatepickerProps): JSX.Element => {
   return (

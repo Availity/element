@@ -1,7 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react';
-import Grid from '@mui/material/Grid';
+import { Grid } from '@availity/mui-layout';
 import { Pagination, PaginationProps } from './Pagination';
 
 const meta: Meta<typeof Pagination> = {
@@ -22,16 +22,12 @@ export const _Pagination: StoryObj<typeof Pagination> = {
 export const _Variants: StoryObj<typeof Pagination> = {
   render: () => (
     <Grid container spacing={1}>
-      <Grid item xs={2}>
-        Text
-      </Grid>
-      <Grid item xs={10}>
+      <Grid size={{ xs: 2 }}>Text</Grid>
+      <Grid size={{ xs: 10 }}>
         <Pagination variant="text" count={10} aria-label="text pagination" />
       </Grid>
-      <Grid item xs={2}>
-        Outlined
-      </Grid>
-      <Grid item xs={10}>
+      <Grid size={{ xs: 2 }}>Outlined</Grid>
+      <Grid size={{ xs: 10 }}>
         <Pagination variant="outlined" count={10} aria-label="outlined pagination" />
       </Grid>
     </Grid>
@@ -41,10 +37,8 @@ export const _Variants: StoryObj<typeof Pagination> = {
 export const _FirstLast: StoryObj<typeof Pagination> = {
   render: () => (
     <Grid container spacing={1}>
-      <Grid item xs={2}>
-        Text
-      </Grid>
-      <Grid item xs={10}>
+      <Grid size={{ xs: 2 }}>Text</Grid>
+      <Grid size={{ xs: 10 }}>
         <Pagination
           variant="text"
           aria-label="text pagination"
@@ -56,10 +50,8 @@ export const _FirstLast: StoryObj<typeof Pagination> = {
           showLastButton
         />
       </Grid>
-      <Grid item xs={2}>
-        Outlined
-      </Grid>
-      <Grid item xs={10}>
+      <Grid size={{ xs: 2 }}>Outlined</Grid>
+      <Grid size={{ xs: 10 }}>
         <Pagination
           variant="outlined"
           aria-label="outlined pagination"

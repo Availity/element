@@ -1,7 +1,7 @@
 import { IconButton } from '@availity/mui-button';
 import { CloseIcon } from '@availity/mui-icon';
 import { Typography } from '@availity/mui-typography';
-import Grid from '@mui/material/Grid';
+import { Grid } from '@availity/mui-layout';
 import { styled } from '@mui/material/styles';
 
 interface FeedbackHeaderProps {
@@ -23,12 +23,12 @@ export const FeedbackHeader = ({ appName, handleClose, loading, sent }: Feedback
       flexWrap="nowrap"
       id="feedback-form-header"
     >
-      <Grid item whiteSpace="normal">
+      <Grid sx={{ whiteSpace: 'normal' }}>
         <Typography component="h2" variant="h5">
           {sent ? 'Thank you for your feedback.' : `Tell us what you think about ${appName}`}
         </Typography>
       </Grid>
-      <Grid item>
+      <Grid>
         <IconButton disabled={loading} title="Close" onClick={handleClose} size="medium">
           <CloseIcon fontSize="xsmall" />
         </IconButton>

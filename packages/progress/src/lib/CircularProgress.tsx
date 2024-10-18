@@ -52,7 +52,7 @@ const getCaptionText = (status: string) =>
     loading: 'Loading',
     error: 'Loading error',
     success: 'Loading successful',
-  }[status] || '');
+  })[status] || '';
 
 export const CircularProgress = ({
   loadingCaption = true,
@@ -74,7 +74,7 @@ export const CircularProgress = ({
   }, [error, success]);
 
   return (
-    <Stack width="fit-content" alignItems="center">
+    <Stack sx={{ width: 'fit-content', alignItems: 'center' }}>
       {status === 'loading' ? (
         <MuiCircularProgress
           aria-label="Loading"
@@ -85,7 +85,7 @@ export const CircularProgress = ({
       ) : (
         <StatusIcon status={status} size={size} />
       )}
-      <Typography marginTop="8px" variant="caption">
+      <Typography sx={{ marginTop: '8px' }} variant="caption">
         {loadingCaption || error || success ? getCaptionText(status) : null}
       </Typography>
     </Stack>

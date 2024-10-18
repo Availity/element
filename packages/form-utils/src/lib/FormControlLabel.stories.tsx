@@ -18,9 +18,7 @@ const meta: Meta<typeof FormControlLabel> = {
   tags: ['autodocs'],
   parameters: {
     controls: {
-      exclude: [
-        'labelPlacement'
-      ],
+      exclude: ['labelPlacement'],
     },
   },
 };
@@ -53,7 +51,7 @@ export const _States: StoryObj<typeof FormControlLabel> = {
 
 export const _Groups: StoryObj<typeof FormControlLabel> = {
   render: () => (
-    <Box display="flex" flexDirection="column">
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <FormControl component="fieldset" aria-labelledby="checkbox-group" margin="normal">
         <MuiFormLabel component="legend" id="checkbox-group">
           Checkbox Group

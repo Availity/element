@@ -8,6 +8,7 @@ import { CircularProgress } from '@availity/mui-progress';
 import Link from '@mui/material/Link';
 import { FavoriteHeart } from '@availity/mui-favorites';
 import { Grid, Box } from '@availity/mui-layout';
+import MuiBox from '@mui/material/Box';
 import { ListItem, ListItemText } from '@availity/mui-list';
 import ReactMarkdown from 'react-markdown';
 import { styled } from '@mui/material/styles';
@@ -16,7 +17,7 @@ import { useLink } from './useLink';
 import type { SpacesLinkWithSpace, SpacesLinkWithSpaceId, SpacesLinkVariants } from './spaces-link-types';
 import { isFunction } from '../helpers';
 
-const SpacesLinkContainer = styled(Box, { name: 'AvSpacesLink', slot: 'root' })({});
+const SpacesLinkContainer = styled(Box, { name: 'AvSpacesLink', slot: 'root' })({}) as typeof MuiBox;
 const DateInfo = styled(Grid, { name: 'AvSpacesLink', slot: 'AvDateInfo' })({});
 const SpacesLinkFavoriteHeart = styled(Grid, { name: 'AvSpacesLink', slot: 'AvFavoriteHeart' })({});
 const IconLink = styled(Link, { name: 'AvSpacesLink', slot: 'IconLink' })({});
@@ -133,8 +134,10 @@ export const SpacesLink = ({
     () =>
       customBadgeText && (
         <Box
-          textAlign={stacked ? 'center' : 'inherit'}
-          marginRight={variant !== 'card' && (showDate || (showNew && linkSpace?.isNew)) ? 1 : undefined}
+          sx={{
+            textAlign: stacked ? 'center' : 'inherit',
+            marginRight: variant !== 'card' && (showDate || (showNew && linkSpace?.isNew)) ? 1 : undefined,
+          }}
         >
           <StatusChip
             color={customBadgeColor || 'info'}
@@ -195,10 +198,12 @@ export const SpacesLink = ({
     >
       <BodyTag style={{ width: '100%' }}>
         <Grid
-          alignItems={!showDescription || stacked ? 'center' : 'start'}
+          sx={{
+            alignItems: !showDescription || stacked ? 'center' : 'start',
+            flexWrap: 'nowrap',
+          }}
           direction={stacked ? 'column' : 'row'}
           container
-          flexWrap="nowrap"
         >
           {!stacked && favoriteIcon}
           {FileIcon && linkSpace?.url && linkSpace?.type?.toUpperCase() === 'FILE' ? (
@@ -214,11 +219,14 @@ export const SpacesLink = ({
           {children
             ? renderChildren()
             : body && (
-                <Grid id={`${idPrefix}${linkSpace?.type}-${linkSpace?.configurationId}`} flexGrow={1}>
+                <Grid id={`${idPrefix}${linkSpace?.type}-${linkSpace?.configurationId}`} sx={{ flexGrow: 1 }}>
                   <Box
-                    marginBottom={!customBadgeDisplay && (!showDescription || !linkSpace?.description) ? 0 : undefined}
-                    paddingTop={stacked ? 3 : undefined}
-                    textAlign={stacked ? 'center' : undefined}
+                    sx={{
+                      marginBottom:
+                        !customBadgeDisplay && (!showDescription || !linkSpace?.description) ? 0 : undefined,
+                      paddingTop: stacked ? 3 : undefined,
+                      textAlign: stacked ? 'center' : undefined,
+                    }}
                   >
                     <TitleTag
                       id={`${idPrefix}app-title-${linkSpace?.configurationId}`}

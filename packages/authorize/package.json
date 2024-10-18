@@ -32,12 +32,12 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/authorize": "^4.1.0",
+    "@availity/authorize": "^4.1.2",
     "@availity/mui-block-ui": "workspace:^",
     "@tanstack/react-query": "^4.36.1"
   },
   "devDependencies": {
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^6.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^8.0.2",

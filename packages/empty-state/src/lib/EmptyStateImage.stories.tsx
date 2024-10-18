@@ -36,9 +36,9 @@ export const _variants: StoryObj<typeof EmptyStateImage> = {
       'NoSearchFound',
     ];
     return (
-      <Stack direction="row" spacing={2} flexWrap="wrap">
+      <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap' }}>
         {variants.map((variant) => (
-          <Box textAlign="center" key={variant}>
+          <Box sx={{ textAlign: 'center' }} key={variant}>
             <Box>{variant}</Box>
             <EmptyStateImage variant={variant} />
           </Box>

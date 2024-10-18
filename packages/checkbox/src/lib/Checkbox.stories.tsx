@@ -51,7 +51,7 @@ export const _Checkbox: StoryObj<typeof Checkbox> = {
 export const _CustomCheckbox: StoryObj<typeof Checkbox> = {
   render: (args: CheckboxProps) => (
     <Container>
-      <Typography variant="h1" marginTop="1rem">
+      <Typography variant="h1" sx={{ marginTop: '1rem' }}>
         Examples
       </Typography>
       <Typography variant="body1">Storybook controls do not apply to these</Typography>
@@ -101,7 +101,7 @@ export const _CustomCheckbox: StoryObj<typeof Checkbox> = {
 export const _LabeledCheckbox: StoryObj<typeof Checkbox> = {
   render: (args: CheckboxProps) => (
     <Container>
-      <Typography variant="h1" marginTop="1rem">
+      <Typography variant="h1" sx={{ marginTop: '1rem' }}>
         Examples
       </Typography>
       <Typography variant="body1">Storybook controls do not apply to these</Typography>

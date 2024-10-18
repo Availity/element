@@ -2,7 +2,7 @@ import { Box, Breadcrumbs, HomeIcon, IconButton, Link, Typography } from '@avail
 
 export const HeaderSection = (): JSX.Element => {
   return (
-    <Box marginBottom=".5rem">
+    <Box sx={{ marginBottom: '.5rem' }}>
       <Breadcrumbs aria-label="breadcrumbs">
         <IconButton title="Home" sx={{ color: 'grey.300' }}>
           <HomeIcon fontSize="small" />
