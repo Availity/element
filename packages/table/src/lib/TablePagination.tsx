@@ -1,10 +1,11 @@
-import { ElementType, forwardRef } from 'react';
+import { ElementType, forwardRef, useState } from 'react';
 import {
   default as MuiTablePagination,
   TablePaginationProps as MuiTablePaginationProps,
 } from '@mui/material/TablePagination';
 import { TableCellBaseProps } from '@mui/material/TableCell';
 import { Pagination, PaginationProps } from '@availity/mui-pagination';
+import { SelectAccessibilityOverrides } from '@availity/mui-form-utils';
 
 export type TablePaginationProps = {
   Actions?: React.ReactNode;
@@ -35,6 +36,7 @@ type TablePaginationActionsProps = {
 
 export const TablePagination = forwardRef<unknown, TablePaginationProps>((props, ref) => {
   const { Actions, paginationProps, ...rest } = props;
+  const [ openDetected, setOpenDetected ] = useState(false);
 
   const ActionsPagination = (props: TablePaginationActionsProps): JSX.Element => {
     const { count, page, rowsPerPage, onPageChange, backIconButtonProps, nextIconButtonProps, ...rest } = props;
@@ -57,5 +59,5 @@ export const TablePagination = forwardRef<unknown, TablePaginationProps>((props,
     );
   };
 
-  return <MuiTablePagination ActionsComponent={ActionsPagination} {...rest} ref={ref} />;
+  return <MuiTablePagination ActionsComponent={ActionsPagination} {...rest} slotProps={{select: {...SelectAccessibilityOverrides(openDetected, setOpenDetected)}}} ref={ref} />;
 });
