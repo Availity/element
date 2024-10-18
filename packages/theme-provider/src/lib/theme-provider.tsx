@@ -3,7 +3,8 @@ import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/st
 import type { Theme, ThemeOptions } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers';
+import { enUS as enUSDate } from '@mui/x-date-pickers/locales';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
 const lightTheme = createTheme(lightThemeOptions as ThemeOptions);
 const legacyTheme = createTheme(legacyThemeOptions as ThemeOptions);
@@ -13,6 +14,7 @@ export type ThemeProviderProps = {
   /** Availity theme to use */
   theme?: 'lightTheme' | 'legacyBS';
 };
+
 const themes: Record<string, Theme> = {
   lightTheme: lightTheme,
   legacyBS: legacyTheme,
@@ -20,7 +22,10 @@ const themes: Record<string, Theme> = {
 
 export function ThemeProvider({ children, theme = 'lightTheme' }: ThemeProviderProps) {
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <LocalizationProvider
+      dateAdapter={AdapterDayjs}
+      localeText={enUSDate.components.MuiLocalizationProvider.defaultProps.localeText}
+    >
       <MuiThemeProvider theme={themes[theme]}>
         <CssBaseline />
         {children}

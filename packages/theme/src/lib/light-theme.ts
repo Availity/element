@@ -867,16 +867,6 @@ export const lightTheme = {
         },
       },
     },
-    MuiCalendarPicker: {
-      styleOverrides: {
-        root: {
-          width: '310px',
-          '.MuiIconButton-root': {
-            border: '0',
-          },
-        },
-      },
-    },
     MuiCard: {
       defaultProps: {
         variant: 'elevation',
@@ -995,7 +985,24 @@ export const lightTheme = {
         },
       },
     },
-    MuiDayPicker: {
+    MuiDateCalendar: {
+      styleOverrides: {
+        root: {
+          width: '310px'
+        }
+      }
+    },
+    MuiDatePicker: {
+      styleOverrides: {
+        root: {
+          width: '310px',
+          '.MuiIconButton-root': {
+            border: '0',
+          },
+        },
+      },
+    },
+    MuiDayCalendar: {
       styleOverrides: {
         header: {
           paddingBottom: '12px',
@@ -1215,7 +1222,7 @@ export const lightTheme = {
               },
               '.MuiIconButton-root': {
                 border: '0',
-                padding: '8px',
+                // padding: '8px',
                 color: tokens.colorGrey400,
               },
               '.MuiChip-label': {

@@ -51,8 +51,6 @@ const typographyStyles = (type: string) => ({
   lineHeight: `${tokens[`lineHeights${type}` as keyof typeof tokens]}`,
 });
 
-const dayOfWeekFormatter = (day: string) => day.charAt(0).toUpperCase() + day.charAt(1);
-
 export const legacyTheme = {
   mode: 'light',
   palette: {
@@ -852,13 +850,6 @@ export const legacyTheme = {
         },
       },
     },
-    // v5 datepicker, move to MuiDatePicker in v6+
-    MuiCalendarPicker: {
-      defaultProps: {
-        disableHighlightToday: true,
-        dayOfWeekFormatter: dayOfWeekFormatter,
-      },
-    },
     MuiCard: {
       defaultProps: {
         variant: 'outlined',
@@ -1084,31 +1075,16 @@ export const legacyTheme = {
         },
       },
     },
-    MuiDialogTitle: {
-      styleOverrides: {
-        root: {
-          backgroundColor: tokens.colorGrey100,
-          marginBottom: '24px',
-        },
+    MuiDatePicker: {
+      defaultProps: {
+        disableHighlightToday: true,
       },
     },
-    MuiDialogContent: {
+    MuiDayCalendar: {
       styleOverrides: {
         root: {
-          padding: '24px',
+
         },
-      },
-    },
-    MuiDialogActions: {
-      styleOverrides: {
-        root: {
-          backgroundColor: tokens.colorGrey100,
-        },
-      },
-    },
-    // v5 Datepicker, MuiDayCalendar in v6
-    MuiDayPicker: {
-      styleOverrides: {
         weekDayLabel: {
           fontSize: '.75rem',
           width: '39px',
@@ -1125,6 +1101,30 @@ export const legacyTheme = {
           '&:last-of-type': {
             marginBottom: '1px',
           },
+
+        }
+      }
+
+    },
+    MuiDialogActions: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorGrey100,
+        },
+      },
+    },
+    MuiDialogContent: {
+      styleOverrides: {
+        root: {
+          padding: '24px',
+        },
+      },
+    },
+    MuiDialogTitle: {
+      styleOverrides: {
+        root: {
+          backgroundColor: tokens.colorGrey100,
+          marginBottom: '24px',
         },
       },
     },
@@ -1721,7 +1721,7 @@ export const legacyTheme = {
           margin: '0px 0px 0px -1px',
           padding: '0px',
           borderRadius: 0,
-          border: `1px solid ${tokens.colorGrey100}`,
+          border: `1px solid ${tokens.colorGrey200}`,
           fontSize: '1.5rem',
           '&.Mui-focused, &:focus': {
             outline: `none`,
@@ -1781,11 +1781,22 @@ export const legacyTheme = {
           },
         },
         today: {
-          border: `1px solid ${tokens.colorGrey100}`,
+          '&:not(.Mui-selected), &:not(.Mui-focused)': {
+            border: `1px solid ${tokens.colorGrey100}`
+          }
         },
       },
     },
-    // v5 DatePicker, pass paper props to MuiDatePicker in v6+
+    MuiPickersMonth: {
+      styleOverrides: {
+        monthButton: {
+          borderRadius: '4px',
+          ':hover, :focus:not(.Mui-selected)': {
+            backgroundColor: tokens.colorGrey100,
+          },
+        }
+      }
+    },
     MuiPickersPopper: {
       styleOverrides: {
         paper: {
@@ -1793,6 +1804,16 @@ export const legacyTheme = {
           border: `1px solid ${tokens.borderDecorative}`,
         },
       },
+    },
+    MuiPickersYear: {
+      styleOverrides: {
+        yearButton: {
+          borderRadius: '4px',
+          ':hover, :focus:not(.Mui-selected)': {
+            backgroundColor: tokens.colorGrey100,
+          },
+        }
+      }
     },
     MuiPopover: {
       defaultProps: {
@@ -2377,28 +2398,6 @@ export const legacyTheme = {
           body2: 'p',
           inherit: 'p',
           agreement: 'div'
-        },
-      },
-    },
-    // v5 datepicker
-    PrivatePickersMonth: {
-      styleOverrides: {
-        root: {
-          borderRadius: '4px',
-          ':hover, :focus:not(.Mui-selected)': {
-            backgroundColor: tokens.colorGrey100,
-          },
-        },
-      },
-    },
-    PrivatePickersYear: {
-      styleOverrides: {
-        root: {},
-        button: {
-          borderRadius: '4px',
-          ':hover, :focus:not(.Mui-selected)': {
-            backgroundColor: tokens.colorGrey100,
-          },
         },
       },
     },
