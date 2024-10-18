@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.61.2](https://github.com/Availity/element/compare/@availity/theme@0.61.1...@availity/theme@0.61.2) (2024-10-18)
+
+
+### Bug Fixes
+
+* **mui-datepicker:** accessible dialog name and other updates ([6c530fe](https://github.com/Availity/element/commit/6c530fecf1051f32d72d4c113f29c86619299119))
+
 ## [0.61.1](https://github.com/Availity/element/compare/@availity/theme@0.61.0...@availity/theme@0.61.1) (2024-10-18)
 
 
