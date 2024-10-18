@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.61.1](https://github.com/Availity/element/compare/@availity/theme@0.61.0...@availity/theme@0.61.1) (2024-10-18)
+
+
+### Bug Fixes
+
+* **mui-tree:** sub tree item spacing ([a2ddb27](https://github.com/Availity/element/commit/a2ddb27f05f899e1d27552b66c1a275eb1ea0213))
+
 ## [0.61.0](https://github.com/Availity/element/compare/@availity/theme@0.60.0...@availity/theme@0.61.0) (2024-10-15)
 
 
