@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.5](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.8.4...@availity/mui-autocomplete@0.8.5) (2024-10-18)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.8.4`
+* `mui-textfield` updated to version `0.8.4`
+
+### Bug Fixes
+
+* **mui-form-utils:** resolve aria-controls warnings ([487fe12](https://github.com/Availity/element/commit/487fe12229a2f1510f8e7ba76028f798896a1b20))
+
 ## [0.8.4](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.8.3...@availity/mui-autocomplete@0.8.4) (2024-10-01)
 
 ### Dependency Updates
