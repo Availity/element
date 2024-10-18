@@ -48,7 +48,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^9.0.0",
+    "@availity/api-axios": "^9.0.3",
     "@availity/design-tokens": "workspace:^"
   }
 }
