@@ -1,4 +1,5 @@
 import { TextField, TextFieldProps } from '@availity/mui-textfield';
+import { CalendarDaysIcon } from '@availity/mui-icon';
 import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } from '@mui/x-date-pickers/DatePicker';
 import type { Dayjs } from 'dayjs';
 import type {} from '@mui/x-date-pickers/AdapterDayjs';
@@ -26,6 +27,8 @@ export type DatepickerProps = {
   | 'renderInput'
   | 'rifmFormatter'
   | 'showToolbar'
+  | 'slots'
+  | 'spotProps'
   | 'ToolbarComponent'
   | 'toolbarFormat'
   | 'toolbarPlaceholder'
@@ -42,15 +45,23 @@ export const Datepicker = ({ FieldProps, placement = 'bottom-start', ...props }:
   return (
     <MuiDatePicker
       {...props}
+      dayOfWeekFormatter={(weekday: Dayjs) => weekday.format('dd')}
       slotProps={{
         desktopPaper: paperProps,
-        mobilePaper: paperProps,
+        mobilePaper: {
+          ...paperProps,
+          'aria-label': FieldProps?.label?.toString() || FieldProps?.inputProps?.['aria-label'] || 'Date picker',
+          'aria-labelledby': FieldProps?.inputProps?.['aria-labelledby'] || undefined,
+        },
         textField: FieldProps,
         popper: {
           placement,
+          'aria-label': FieldProps?.label?.toString() || FieldProps?.inputProps?.['aria-label'] || 'Date picker',
+          'aria-labelledby': FieldProps?.inputProps?.['aria-labelledby'] || undefined,
         },
       }}
       slots={{
+        openPickerIcon: CalendarDaysIcon,
         textField: PickerTextField,
       }}
     />
