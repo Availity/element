@@ -73,23 +73,21 @@ export const Autocomplete = <
   };
 
   const resolvedProps = (params: AutocompleteRenderInputParams) => ({
-    slotProps: {
-      input: {
-        ...FieldProps?.InputProps,
-        ...params?.InputProps,
-        endAdornment: props.loading ? (
-          <>
-            {params?.InputProps.endAdornment || null}
-            <LoadingIndicator />
-          </>
-        ) : (
-          params?.InputProps.endAdornment || null
-        ),
-      },
-      htmlInput: {
-        ...FieldProps?.slotProps?.htmlInput,
-        ...params?.inputProps,
-      },
+    InputProps: {
+      ...FieldProps?.InputProps,
+      ...params?.InputProps,
+      endAdornment: props.loading ? (
+        <>
+          {params?.InputProps.endAdornment || null}
+          <LoadingIndicator />
+        </>
+      ) : (
+        params?.InputProps.endAdornment || null
+      ),
+    },
+    inputProps: {
+      ...FieldProps?.slotProps?.htmlInput,
+      ...params?.inputProps,
     },
   });
 
