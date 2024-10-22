@@ -1,14 +1,14 @@
 // Each exported component in the package should have its own stories file
-import type { Meta, StoryObj } from '@storybook/react';
-import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
-import { MonthCalendar } from '@mui/x-date-pickers/MonthCalendar';
-import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
 import { useState } from 'react';
-import dayjs, { Dayjs } from 'dayjs';
-import { Datepicker, DatepickerProps } from './Datepicker';
 import Grid from '@mui/material/Grid2';
+import type { Meta, StoryObj } from '@storybook/react';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import { MonthCalendar } from '@mui/x-date-pickers/MonthCalendar';
+import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
+import dayjs, { Dayjs } from 'dayjs';
+import { Datepicker, DatepickerProps } from './Datepicker';
+import { DateCalendar } from './DateCalendar';
 
 const meta: Meta<typeof Datepicker> = {
   title: 'Form Components/Datepicker/Datepicker',
@@ -68,7 +68,7 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
   },
 };
 
-export const _PickerViews: StoryObj<typeof Datepicker> = {
+export const _PickerViews: StoryObj<typeof DateCalendar> = {
   render: () => {
     const minDate = dayjs('2020-01-01T00:00:00.000');
     const maxDate = dayjs('2034-01-01T00:00:00.000');
@@ -78,7 +78,7 @@ export const _PickerViews: StoryObj<typeof Datepicker> = {
       <Grid container spacing={3}>
         <Grid size={{ xs: 'auto' }}>
           <Typography variant="h3" component="span">
-            Day View
+            Default View
           </Typography>
           <Paper sx={{ width: 'min-content' }}>
             <DateCalendar value={date} onChange={(newDate) => setDate(newDate)} />

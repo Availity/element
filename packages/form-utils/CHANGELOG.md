@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.13.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.13.0...@availity/mui-form-utils@0.13.1) (2024-10-18)
+
+
+### Bug Fixes
+
+* **mui-form-utils:** resolve aria-controls warnings ([487fe12](https://github.com/Availity/element/commit/487fe12229a2f1510f8e7ba76028f798896a1b20))
+
 ## [0.13.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.12.7...@availity/mui-form-utils@0.13.0) (2024-10-01)
 
 ### Dependency Updates

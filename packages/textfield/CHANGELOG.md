@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.9](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.8...@availity/mui-textfield@0.6.9) (2024-10-18)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.6.8`
+
+### Bug Fixes
+
+* **mui-form-utils:** resolve aria-controls warnings ([487fe12](https://github.com/Availity/element/commit/487fe12229a2f1510f8e7ba76028f798896a1b20))
+
 ## [0.6.8](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.7...@availity/mui-textfield@0.6.8) (2024-10-01)
 
 ### Dependency Updates

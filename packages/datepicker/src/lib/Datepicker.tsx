@@ -28,7 +28,7 @@ export type DatepickerProps = {
   | 'rifmFormatter'
   | 'showToolbar'
   | 'slots'
-  | 'spotProps'
+  | 'slotProps'
   | 'ToolbarComponent'
   | 'toolbarFormat'
   | 'toolbarPlaceholder'
@@ -58,6 +58,9 @@ export const Datepicker = ({ FieldProps, placement = 'bottom-start', ...props }:
           placement,
           'aria-label': FieldProps?.label?.toString() || FieldProps?.inputProps?.['aria-label'] || 'Date picker',
           'aria-labelledby': FieldProps?.inputProps?.['aria-labelledby'] || undefined,
+        },
+        openPickerIcon: {
+          fontSize: 'xsmall',
         },
       }}
       slots={{

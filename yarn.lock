@@ -408,6 +408,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-datepicker@workspace:packages/datepicker"
   dependencies:
+    "@availity/mui-icon": "workspace:*"
     "@availity/mui-textfield": "workspace:*"
     "@mui/material": ^6.1.4
     "@mui/x-date-pickers": ^7.20.0
@@ -888,6 +889,7 @@ __metadata:
     "@availity/mui-layout": "workspace:^"
     "@availity/mui-link": "workspace:*"
     "@availity/mui-menu": "workspace:*"
+    "@availity/mui-pagination": "workspace:*"
     "@availity/mui-paper": "workspace:*"
     "@availity/mui-textfield": "workspace:*"
     "@availity/mui-typography": "workspace:*"
