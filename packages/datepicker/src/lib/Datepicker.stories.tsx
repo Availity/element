@@ -23,39 +23,13 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
     const [value, setValue] = useState<Dayjs | null>(null);
 
     return (
-      <>
-        <Datepicker
-          {...args}
-          value={value}
-          onChange={(value) => {
-            setValue(value);
-          }}
-        />
-        <Datepicker
-          {...args}
-          value={value}
-          onChange={(value) => {
-            setValue(value);
-          }}
-          FieldProps={{ placeholder: 'Test' }}
-        />
-        <Datepicker
-          {...args}
-          value={value}
-          onChange={(value) => {
-            setValue(value);
-          }}
-          FieldProps={{ InputProps: { placeholder: 'InputProps' } }}
-        />
-        <Datepicker
-          {...args}
-          value={value}
-          onChange={(value) => {
-            setValue(value);
-          }}
-          slotProps={{ textField: { placeholder: 'slotProps textField' } }}
-        />
-      </>
+      <Datepicker
+        {...args}
+        value={value}
+        onChange={(value) => {
+          setValue(value);
+        }}
+      />
     );
   },
   args: {
