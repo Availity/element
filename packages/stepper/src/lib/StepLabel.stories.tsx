@@ -118,7 +118,7 @@ export const _Stepper: StoryObj<typeof StepLabel> = {
     };
 
     return (
-      <Box maxWidth="75vw" marginX="auto">
+      <Box sx={{ maxWidth: '75vw', marginX: 'auto' }}>
         <Paper sx={{ padding: '2rem' }}>
           <Stepper activeStep={activeStep} orientation={width < 600 ? 'vertical' : 'horizontal'}>
             {steps.map((label, index) => {
@@ -144,7 +144,9 @@ export const _Stepper: StoryObj<typeof StepLabel> = {
               return (
                 <Step key={label} {...stepProps}>
                   <StepButton color="inherit" onClick={handleStep(index)}>
-                    <StepLabel {...labelProps} {...args}>{label}</StepLabel>
+                    <StepLabel {...labelProps} {...args}>
+                      {label}
+                    </StepLabel>
                   </StepButton>
                 </Step>
               );

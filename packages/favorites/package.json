@@ -32,7 +32,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/api-axios": "^9.0.0",
+    "@availity/api-axios": "^9.0.3",
     "@availity/message-core": "^7.0.1",
     "@tanstack/react-query": "^4.36.1"
   },
@@ -40,7 +40,7 @@
     "@availity/mui-icon": "workspace:^",
     "@availity/mui-progress": "workspace:^",
     "@availity/mui-tooltip": "workspace:^",
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^6.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^8.0.2",

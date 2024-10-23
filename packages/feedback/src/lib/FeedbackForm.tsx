@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { TextField } from '@availity/mui-textfield';
 import { LoadingButton, Button, IconButton } from '@availity/mui-button';
 import { ToggleButtonGroup, ToggleButton } from '@availity/mui-toggle-button';
-import Grid from '@mui/material/Grid';
+import { Grid } from '@availity/mui-layout';
 import { SvgIconProps } from '@mui/material/SvgIcon';
 import { ToggleButtonProps } from '@mui/material/ToggleButton';
 import { styled } from '@mui/material/styles';
@@ -132,7 +132,7 @@ export const FeedbackForm = ({
       <Grid
         component="form"
         container
-        justifyContent="center"
+        sx={{ justifyContent: 'center' }}
         onSubmit={handleSubmit(onSubmit)}
         aria-label="Feedback Form"
         aria-describedby="feedback-form-header"
@@ -167,22 +167,24 @@ export const FeedbackForm = ({
           minRows={3}
           maxRows={3}
           label={getFeedbackLabel()}
-          inputProps={{ 'aria-required': 'true' }}
-          InputLabelProps={{
-            component: FormLabel,
-            required: true,
+          slotProps={{
+            htmlInput: { 'aria-required': 'true' },
+            inputLabel: {
+              component: FormLabel,
+              required: true,
+            },
           }}
           helperText={errors.feedback?.message || 'Max 200 characters'}
           error={!!errors.feedback}
           disabled={loading || !smileFieldValue}
         />
         <FormActions container direction="row">
-          <Grid item flex={1} minWidth="147px">
+          <Grid sx={{ flex: 1, minWidth: '147px' }}>
             <Button color="secondary" disabled={loading} onClick={handleClose}>
               Close
             </Button>
           </Grid>
-          <Grid item flex={1}>
+          <Grid sx={{ flex: 1 }}>
             <LoadingButton
               disabled={!smileFieldValue}
               loading={loading}

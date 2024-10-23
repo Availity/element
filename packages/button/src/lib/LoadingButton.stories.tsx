@@ -19,15 +19,15 @@ type Story = StoryObj<typeof LoadingButton>;
 export const _LoadingButton: Story = {
   render: ({ ...args }: LoadingButtonProps) => (
     <Grid container spacing={1}>
-      <Grid xs={12}>
+      <Grid size={{ xs: 12 }}>
         <LoadingButton {...args}>No Icon</LoadingButton>
       </Grid>
-      <Grid xs={12}>
+      <Grid size={{ xs: 12 }}>
         <LoadingButton {...args} startIcon={<SearchIcon />}>
           Start Icon
         </LoadingButton>
       </Grid>
-      <Grid xs={12}>
+      <Grid size={{ xs: 12 }}>
         <LoadingButton {...args} endIcon={<SearchIcon />}>
           End Icon
         </LoadingButton>

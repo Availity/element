@@ -41,7 +41,7 @@ const EventTrackerUI = ({ count, state, selectValue, setCount, setSelectValue }:
       </Typography>
       <Typography>Events logged: {count}</Typography>
       <pre>LastEvent: {state}</pre>
-      <Grid container direction="column" maxWidth="500px" data-analytics-app-name="app">
+      <Grid container direction="column" sx={{ maxWidth: '500px' }} data-analytics-app-name="app">
         <FormControl>
           <FormLabel id="select-label">Select</FormLabel>
           <Select
@@ -55,7 +55,7 @@ const EventTrackerUI = ({ count, state, selectValue, setCount, setSelectValue }:
             <MenuItem value="30">30</MenuItem>
           </Select>
         </FormControl>
-        <Box marginTop={2}>
+        <Box sx={{ marginTop: 2 }}>
           <FormControl>
             <FormLabel id="textarea-label" htmlFor="textarea">
               Text Area
@@ -69,7 +69,7 @@ const EventTrackerUI = ({ count, state, selectValue, setCount, setSelectValue }:
           </FormLabel>
           <Input id="input" data-analytics-action="focus" />
         </FormControl>
-        <Grid container justifyContent="space-between" data-analytics-container="buttons" marginTop={2}>
+        <Grid container sx={{ justifyContent: 'space-between', marginTop: 2 }} data-analytics-container="buttons">
           <Button
             id="reset-button"
             data-analytics-action="click"

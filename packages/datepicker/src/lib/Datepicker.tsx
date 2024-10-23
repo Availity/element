@@ -39,33 +39,34 @@ export type DatepickerProps = {
 
 const paperProps = { elevation: 8, variant: 'elevation', sx: { marginTop: '4px' } } as const;
 
+const PickerTextField = (params: TextFieldProps) => <TextField {...params} placeholder="MM/DD/YYYY" />;
+
 export const Datepicker = ({ FieldProps, placement = 'bottom-start', ...props }: DatepickerProps): JSX.Element => {
   return (
     <MuiDatePicker
       {...props}
-      dayOfWeekFormatter = {(weekday: Dayjs) => weekday.format('dd')}
+      dayOfWeekFormatter={(weekday: Dayjs) => weekday.format('dd')}
       slotProps={{
         desktopPaper: paperProps,
         mobilePaper: {
           ...paperProps,
-          'aria-label': FieldProps?.label?.toString() || FieldProps?.inputProps?.['aria-label'] || "Date picker",
-          'aria-labelledby': FieldProps?.inputProps?.['aria-labelledby'] || undefined
-        },
-        popper: {
-          placement,
-          'aria-label': FieldProps?.label?.toString() || FieldProps?.inputProps?.['aria-label'] || "Date picker",
-          'aria-labelledby': FieldProps?.inputProps?.['aria-labelledby'] || undefined
-        },
-        openPickerIcon: {
-          fontSize: 'xsmall'
+          'aria-label': FieldProps?.label?.toString() || FieldProps?.inputProps?.['aria-label'] || 'Date picker',
+          'aria-labelledby': FieldProps?.inputProps?.['aria-labelledby'] || undefined,
         },
         textField: FieldProps,
+        popper: {
+          placement,
+          'aria-label': FieldProps?.label?.toString() || FieldProps?.inputProps?.['aria-label'] || 'Date picker',
+          'aria-labelledby': FieldProps?.inputProps?.['aria-labelledby'] || undefined,
+        },
+        openPickerIcon: {
+          fontSize: 'xsmall',
+        },
       }}
       slots={{
         openPickerIcon: CalendarDaysIcon,
-        textField: TextField,
+        textField: PickerTextField,
       }}
-
     />
   );
 };

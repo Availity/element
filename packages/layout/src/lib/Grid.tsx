@@ -1,4 +1,4 @@
-import MuiGrid2, { Grid2Props as MuiGrid2Props } from '@mui/material/Unstable_Grid2';
+import MuiGrid2, { Grid2Props as MuiGrid2Props } from '@mui/material/Grid2';
 
 export interface GridProps extends Omit<MuiGrid2Props, 'item'> {
   children?: React.ReactNode;

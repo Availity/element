@@ -41,7 +41,7 @@ export const _TextField: StoryObj<typeof TextField> = {
 
 export const _States: StoryObj<typeof TextField> = {
   render: (args: TextFieldProps) => (
-    <Stack direction="row" spacing={1} flexWrap="wrap">
+    <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap' }}>
       <TextField label="Default" id="default" {...args} />
       <TextField label="Focused" id="Focused" focused {...args} />
       <TextField label="Error" id="error" error {...args} />
@@ -71,12 +71,14 @@ export const _WithIcon: StoryObj<typeof TextField> = {
       label="With Icon"
       id="search"
       fullWidth={false}
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
-            <SearchIcon />
-          </InputAdornment>
-        ),
+      slotProps={{
+        input: {
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        },
       }}
     />
   ),
@@ -92,14 +94,16 @@ export const _PasswordField: StoryObj<typeof TextField> = {
         label="Password"
         id="password"
         fullWidth={false}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton title="password visibility" onClick={() => setShowPassword((prev) => !prev)} edge="end">
-                {showPassword ? <EyeIcon fontSize="small" /> : <EyeSlashIcon fontSize="small" />}
-              </IconButton>
-            </InputAdornment>
-          ),
+        slotProps={{
+          input: {
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton title="password visibility" onClick={() => setShowPassword((prev) => !prev)} edge="end">
+                  {showPassword ? <EyeIcon fontSize="small" /> : <EyeSlashIcon fontSize="small" />}
+                </IconButton>
+              </InputAdornment>
+            ),
+          },
         }}
       />
     );
@@ -109,7 +113,7 @@ export const _PasswordField: StoryObj<typeof TextField> = {
 /** Formatted value using `libphonenumber-js`. _Formatting occurs `onBlur` for accessibility._ */
 export const _PhoneWithExt: StoryObj<typeof TextField> = {
   render: () => {
-    const [phone, setPhone] = useState('')
+    const [phone, setPhone] = useState('');
 
     const asYouFormat = (phoneString: string) => {
       // partial parsePhoneNumber always return country code :(
@@ -127,10 +131,10 @@ export const _PhoneWithExt: StoryObj<typeof TextField> = {
     };
 
     return (
-      <Grid container rowSpacing={3} columnSpacing={2} maxWidth='360px'>
-        <Grid xs>
+      <Grid container rowSpacing={3} columnSpacing={2} sx={{ maxWidth: '360px' }}>
+        <Grid size="grow">
           <TextField
-            type='tel'
+            type="tel"
             label="Phone"
             id="phone"
             value={phone}
@@ -139,13 +143,8 @@ export const _PhoneWithExt: StoryObj<typeof TextField> = {
             fullWidth={true}
           />
         </Grid>
-        <Grid xs={2} minWidth='5rem'>
-          <TextField
-            type='tel'
-            label="Ext"
-            id="phoneextension"
-            fullWidth={true}
-          />
+        <Grid size={{ xs: 2 }} sx={{ minWidth: '5rem' }}>
+          <TextField type="tel" label="Ext" id="phoneextension" fullWidth={true} />
         </Grid>
       </Grid>
     );
@@ -157,47 +156,43 @@ interface CustomProps {
   name: string;
 }
 
-const TextMaskCustom = forwardRef<HTMLInputElement, CustomProps>(
-  function TextMaskCustom(props, ref) {
-    const { onChange, ...other } = props;
-    return (
-      <IMaskInput
-        {...other}
-        mask="(#00) 000-0000"
-        definitions={{
-          '#': /[1-9]/,
-        }}
-        inputRef={ref}
-        onAccept={(value: any) => onChange({ target: { name: props.name, value } })}
-        overwrite
-      />
-    );
-  },
-);
+const TextMaskCustom = forwardRef<HTMLInputElement, CustomProps>(function TextMaskCustom(props, ref) {
+  const { onChange, ...other } = props;
+  return (
+    <IMaskInput
+      {...other}
+      mask="(#00) 000-0000"
+      definitions={{
+        '#': /[1-9]/,
+      }}
+      inputRef={ref}
+      onAccept={(value: any) => onChange({ target: { name: props.name, value } })}
+      overwrite
+    />
+  );
+});
 
-const NumericFormatCustom = forwardRef<NumericFormatProps, CustomProps>(
-  function NumericFormatCustom(props, ref) {
-    const { onChange, ...other } = props;
+const NumericFormatCustom = forwardRef<NumericFormatProps, CustomProps>(function NumericFormatCustom(props, ref) {
+  const { onChange, ...other } = props;
 
-    return (
-      <NumericFormat
-        {...other}
-        getInputRef={ref}
-        onValueChange={(values) => {
-          onChange({
-            target: {
-              name: props.name,
-              value: values.value,
-            },
-          });
-        }}
-        thousandSeparator
-        valueIsNumericString
-        prefix="$"
-      />
-    );
-  },
-);
+  return (
+    <NumericFormat
+      {...other}
+      getInputRef={ref}
+      onValueChange={(values) => {
+        onChange({
+          target: {
+            name: props.name,
+            value: values.value,
+          },
+        });
+      }}
+      thousandSeparator
+      valueIsNumericString
+      prefix="$"
+    />
+  );
+});
 
 /** _There are accessibility concerns with masking to consider as it is making live changes to values that may not be communicated via assistive technologies._
  *
@@ -206,7 +201,7 @@ const NumericFormatCustom = forwardRef<NumericFormatProps, CustomProps>(
  * > The following demo uses the `react-imask` and `react-number-format` libraries. The same concept could be applied to, for example `react-stripe-element`.
  * >
  * > -- <cite>[Integration with 3rd party input libraries](https://mui.com/material-ui/react-text-field/#integration-with-3rd-party-input-libraries)</cite>
-*/
+ */
 export const _InputMasking: StoryObj<typeof TextField> = {
   render: () => {
     // COMMENTED CODE IS OUTSIDE OF FUNCTION
@@ -290,15 +285,17 @@ export const _InputMasking: StoryObj<typeof TextField> = {
           onChange={handleChange}
           name="numberformat"
           id="formatted-numberformat-input"
-          InputProps={{
-            inputComponent: NumericFormatCustom as any,
+          slotProps={{
+            input: {
+              inputComponent: NumericFormatCustom as any,
+            },
           }}
           fullWidth={false}
           margin="normal"
         />
       </>
     );
-  }
+  },
 };
 
 export const _Select: StoryObj<typeof TextField> = {
@@ -310,7 +307,14 @@ export const _Select: StoryObj<typeof TextField> = {
     };
 
     return (
-      <TextField value={count} select SelectProps={{ onChange: handleChange }} {...args}>
+      <TextField
+        value={count}
+        select
+        slotProps={{
+          select: { onChange: handleChange },
+        }}
+        {...args}
+      >
         <MenuItem value={10}>10</MenuItem>
         <MenuItem value={20}>20</MenuItem>
         <MenuItem value={30}>30</MenuItem>
@@ -350,7 +354,9 @@ export const _MultiSelect: StoryObj<typeof TextField> = {
       <TextField
         id="multiple-chip"
         select
-        SelectProps={{ multiple: true, onChange: handleChange, renderValue: renderValue }}
+        slotProps={{
+          select: { multiple: true, onChange: handleChange, renderValue: renderValue },
+        }}
         value={multiValue}
         {...args}
       >
