@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.11](https://github.com/Availity/element/compare/@availity/mui-page-header@0.4.10...@availity/mui-page-header@0.4.11) (2024-10-25)
+
+### Dependency Updates
+
+* `mui-feedback` updated to version `0.4.10`
 ## [0.4.10](https://github.com/Availity/element/compare/@availity/mui-page-header@0.4.9...@availity/mui-page-header@0.4.10) (2024-10-18)
 
 ### Dependency Updates
