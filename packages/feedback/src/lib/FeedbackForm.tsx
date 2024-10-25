@@ -178,20 +178,14 @@ export const FeedbackForm = ({
           error={!!errors.feedback}
           disabled={loading || !smileFieldValue}
         />
-        <FormActions container direction="row">
+        <FormActions container direction="row" width="100%" spacing={1} wrap="wrap">
           <Grid sx={{ flex: 1, minWidth: '147px' }}>
             <Button color="secondary" disabled={loading} onClick={handleClose}>
               Close
             </Button>
           </Grid>
-          <Grid sx={{ flex: 1 }}>
-            <LoadingButton
-              disabled={!smileFieldValue}
-              loading={loading}
-              type="submit"
-              variant="contained"
-              sx={{ paddingLeft: 0, paddingRight: 0 }}
-            >
+          <Grid sx={{ flex: 1, minWidth: '147px' }}>
+            <LoadingButton disabled={!smileFieldValue} loading={loading} type="submit" variant="contained">
               Send Feedback
             </LoadingButton>
           </Grid>
