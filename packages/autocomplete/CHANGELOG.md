@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.6](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.8.5...@availity/mui-autocomplete@0.8.6) (2024-10-25)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.8.5`
+* `mui-textfield` updated to version `0.8.5`
 ## [0.8.5](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.8.4...@availity/mui-autocomplete@0.8.5) (2024-10-18)
 
 ### Dependency Updates
