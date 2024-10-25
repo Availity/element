@@ -41,10 +41,10 @@
     "@availity/mui-progress": "workspace:^",
     "@availity/mui-tooltip": "workspace:^",
     "@mui/material": "^5.15.15",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.5"
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tsup": "^8.3.4",
+    "typescript": "^5.6.3"
   },
   "peerDependencies": {
     "@availity/mui-icon": "workspace:^",
