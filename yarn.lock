@@ -588,7 +588,7 @@ __metadata:
     "@availity/mui-list": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@availity/upload-core": ^6.0.4
+    "@availity/upload-core": ^6.1.0
     "@mui/material": ^5.15.15
     "@tanstack/react-query": ^4.36.1
     "@types/tus-js-client": ^1.8.0
@@ -1114,13 +1114,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/upload-core@npm:^6.0.4":
-  version: 6.0.4
-  resolution: "@availity/upload-core@npm:6.0.4"
+"@availity/upload-core@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "@availity/upload-core@npm:6.1.0"
   dependencies:
     "@availity/resolve-url": 3.0.0
-    tus-js-client: 1.7.1
-  checksum: bc9ff88ec5c5718e1409fcd5205fc425c00ac59371a96a4f8b300bca15ccfdf78e9733ae3c9b1eb4e7f529c8a0fc5e7f0c183f736526e890865301b085b8f86f
+  checksum: f5269428a6aaa823e86887075e64a3d7ec48745e70666f5936002e9b843f62a0569fc20e4afc97a330e7a23a0507fd417bf0044194856d4516054d73fdcc8b8c
   languageName: node
   linkType: hard
 
@@ -8817,13 +8816,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"buffer-from@npm:^0.1.1":
-  version: 0.1.2
-  resolution: "buffer-from@npm:0.1.2"
-  checksum: 50a1fa5da97d2081b7d945483c8967d3b89a096fa585eb55000bb2100e827c647c9370280ec9bd057da8f9fa5abc1d3b764228851a31fa8a67f659f70c0052d8
-  languageName: node
-  linkType: hard
-
 "buffer-from@npm:^1.0.0":
   version: 1.1.2
   resolution: "buffer-from@npm:1.1.2"
@@ -13807,13 +13799,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-base64@npm:^2.4.9":
-  version: 2.6.4
-  resolution: "js-base64@npm:2.6.4"
-  checksum: 5f4084078d6c46f8529741d110df84b14fac3276b903760c21fa8cc8521370d607325dfe1c1a9fbbeaae1ff8e602665aaeef1362427d8fef704f9e3659472ce8
-  languageName: node
-  linkType: hard
-
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -14333,13 +14318,6 @@ __metadata:
   version: 4.4.0
   resolution: "lodash.startcase@npm:4.4.0"
   checksum: c03a4a784aca653845fe09d0ef67c902b6e49288dc45f542a4ab345a9c406a6dc194c774423fa313ee7b06283950301c1221dd2a1d8ecb2dac8dfbb9ed5606b5
-  languageName: node
-  linkType: hard
-
-"lodash.throttle@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "lodash.throttle@npm:4.1.1"
-  checksum: 129c0a28cee48b348aef146f638ef8a8b197944d4e9ec26c1890c19d9bf5a5690fe11b655c77a4551268819b32d27f4206343e30c78961f60b561b8608c8c805
   languageName: node
   linkType: hard
 
@@ -18949,19 +18927,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tus-js-client@npm:1.7.1":
-  version: 1.7.1
-  resolution: "tus-js-client@npm:1.7.1"
-  dependencies:
-    buffer-from: ^0.1.1
-    extend: ^3.0.0
-    js-base64: ^2.4.9
-    lodash.throttle: ^4.1.1
-    url-parse: ^1.4.3
-  checksum: 3026877d2205750688073f24ece53ba65dc6e70ba04d6a3038e1c83cdd2df4cbecc00b12eb83c0ed6fcfeefbfa737799f6bf7d17a3d77a06d9dd141901a0dbdd
-  languageName: node
-  linkType: hard
-
 "tween-functions@npm:^1.2.0":
   version: 1.2.0
   resolution: "tween-functions@npm:1.2.0"
@@ -19474,7 +19439,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"url-parse@npm:^1.4.3, url-parse@npm:^1.5.3":
+"url-parse@npm:^1.5.3":
   version: 1.5.10
   resolution: "url-parse@npm:1.5.10"
   dependencies:

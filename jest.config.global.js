@@ -17,10 +17,11 @@ module.exports = {
   },
   coverageReporters: ['json'],
   moduleNameMapper: {
+    uuid: require.resolve('uuid'),
     ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/../../' }),
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
   testEnvironmentOptions: {
     customExportConditions: [''],
-  }
+  },
 };
