@@ -34,11 +34,11 @@
   "dependencies": {
     "@availity/mui-icon": "workspace:*",
     "@availity/mui-textfield": "workspace:*",
-    "@mui/x-date-pickers": "^7.20.0",
+    "@mui/x-date-pickers": "^7.22.0",
     "dayjs": "^1.11.10"
   },
   "devDependencies": {
-    "@mui/material": "^6.1.4",
+    "@mui/material": "^6.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^8.0.2",

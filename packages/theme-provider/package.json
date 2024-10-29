@@ -18,8 +18,8 @@
     "@availity/theme": "workspace:*",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@mui/material": "^6.1.4",
-    "@mui/x-date-pickers": "^7.20.0",
+    "@mui/material": "^6.1.5",
+    "@mui/x-date-pickers": "^7.22.0",
     "dayjs": "^1.11.10"
   },
   "devDependencies": {
