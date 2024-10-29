@@ -42,6 +42,9 @@ const delayRequest = async () => {
   }
 };
 
+const testFile: Blob & { name?: string } = new Blob(['testfilewithwords'], { type: 'text/plain' });
+testFile.name = 'testfilewithwords.txt';
+
 export const handlers = [
   // Logging
   http.post(routes.LOG, async () => {
@@ -173,28 +176,31 @@ export const handlers = [
   }),
 
   // Organizations
-  http.post(routes.ORGANIZATIONS, ({request}) => {
+  http.post(routes.ORGANIZATIONS, ({ request }) => {
     const params = new URLSearchParams(request.url.split('?')[1]);
     const parsedParams: Record<string, string> = {};
     for (const [key, value] of params.entries()) {
-      parsedParams[key] =  value;
+      parsedParams[key] = value;
     }
     if (parsedParams) {
-      const orgs = organizations.organizations.slice(Number(parsedParams.offset), Number(parsedParams.limit) + Number(parsedParams.offset))
+      const orgs = organizations.organizations.slice(
+        Number(parsedParams.offset),
+        Number(parsedParams.limit) + Number(parsedParams.offset)
+      );
       return HttpResponse.json({
         totalCount: organizations.totalCount,
         count: orgs.length,
         limit: parsedParams.limit,
         links: {
           self: {
-            href: "https://apps.availity.com/api/sdk/platform/v1/organizations"
+            href: 'https://apps.availity.com/api/sdk/platform/v1/organizations',
           },
           user: {
-            href: "https://apps.availity.com/api/sdk/platform/v1/users/aka123456789"
-          }
+            href: 'https://apps.availity.com/api/sdk/platform/v1/users/aka123456789',
+          },
         },
-        organizations: orgs
-      })
+        organizations: orgs,
+      });
     }
     return HttpResponse.json(organizations);
   }),
@@ -246,6 +252,112 @@ export const handlers = [
       providers: options,
       count: options.length,
       totalCount: total,
+    });
+  }),
+
+  // Attachments
+  http.post(routes.ATTACHMENTS_POST, async () => {
+    await delay(1000);
+
+    return new HttpResponse(null, {
+      status: 201,
+      headers: {
+        'cache-control': 'no-store',
+        'transfer-encoding': 'chunked',
+        'tus-resumable': '1.0.0',
+        'upload-expires': 'Fri, 12 Jan 2030 15:54:39 GMT',
+        location: '11223344aabbccdd556677',
+      },
+    });
+  }),
+  http.patch(routes.ATTACHMENTS_PATCH, async ({ request }) => {
+    const reqOffset = Number(request.headers.get('upload-offset'));
+    await delay(1000);
+
+    return new HttpResponse(null, {
+      status: 204,
+      headers: {
+        'cache-control': 'no-store',
+        'tus-resumable': '1.0.0',
+        'upload-expires': 'Fri, 12 Jan 2030 15:54:39 GMT',
+        'upload-offset': reqOffset === 0 ? `${testFile.size / 2}` : `${testFile.size}`,
+      },
+    });
+  }),
+  http.head(routes.ATTACHMENTS_PATCH, async ({ params, request }) => {
+    await delay(1000);
+
+    console.log('params, request:', params, request);
+
+    return new HttpResponse(testFile, {
+      status: 200,
+      headers: {
+        'av-scan-bytes': `${testFile.size}`,
+        'av-scan-result': 'accepted',
+        'cache-control': 'no-store',
+        references: `["approved/${params.bucketId}/${params.location}"]`,
+        's3-references': `["s3://path-to-vault/approved/${params.bucketId}/01234/${params.location}"]`,
+        'transfer-encoding': 'chunked',
+        'tus-resumable': '1.0.0',
+        'upload-length': `${testFile.size}`,
+        'upload-metadata':
+          'availity-filename LnR4dAo=,availity-content-type dGV4dC9wbGFpbgo=,availity-attachment-name Ti9BCg==',
+        'upload-offset': `${testFile.size}`,
+        'upload-result': 'accepted',
+      },
+    });
+  }),
+
+  // Attachments Cloud
+  http.post(routes.ATTACHMENTS_CLOUD_POST, async () => {
+    await delay(1000);
+
+    return new HttpResponse(null, {
+      status: 201,
+      headers: {
+        'cache-control': 'no-store',
+        'transfer-encoding': 'chunked',
+        'tus-resumable': '1.0.0',
+        'upload-expires': 'Fri, 12 Jan 2030 15:54:39 GMT',
+        location: '11223344aabbccdd556677',
+      },
+    });
+  }),
+  http.patch(routes.ATTACHMENTS_CLOUD_PATCH, async ({ request }) => {
+    const reqOffset = Number(request.headers.get('upload-offset'));
+    await delay(1000);
+
+    return new HttpResponse(null, {
+      status: 204,
+      headers: {
+        'cache-control': 'no-store',
+        'tus-resumable': '1.0.0',
+        'upload-expires': 'Fri, 12 Jan 2030 15:54:39 GMT',
+        'upload-offset': reqOffset === 0 ? `${testFile.size / 2}` : `${testFile.size}`,
+      },
+    });
+  }),
+  http.head(routes.ATTACHMENTS_CLOUD_PATCH, async ({ params, request }) => {
+    await delay(1000);
+
+    console.log('params, request:', params, request);
+
+    return new HttpResponse(testFile, {
+      status: 200,
+      headers: {
+        'av-scan-bytes': `${testFile.size}`,
+        'av-scan-result': 'accepted',
+        'cache-control': 'no-store',
+        references: `["approved/${params.bucketId}/${params.location}"]`,
+        's3-references': `["s3://path-to-vault/approved/${params.bucketId}/01234/${params.location}"]`,
+        'transfer-encoding': 'chunked',
+        'tus-resumable': '1.0.0',
+        'upload-length': `${testFile.size}`,
+        'upload-metadata':
+          'availity-filename LnR4dAo=,availity-content-type dGV4dC9wbGFpbgo=,availity-attachment-name Ti9BCg==',
+        'upload-offset': `${testFile.size}`,
+        'upload-result': 'accepted',
+      },
     });
   }),
 

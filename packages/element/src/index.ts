@@ -19,6 +19,7 @@ export * from '@availity/mui-empty-state';
 export * from '@availity/mui-event-tracker';
 export * from '@availity/mui-favorites';
 export * from '@availity/mui-feedback';
+export * from '@availity/mui-file-selector';
 export * from '@availity/mui-form-utils';
 export * from '@availity/mui-icon';
 export * from '@availity/mui-layout';

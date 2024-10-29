@@ -11,7 +11,7 @@
     "preserveWatchOutput": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "strictFunctionTypes": false,
     "strictNullChecks": true,
     "lib": ["ES2017", "dom"],
@@ -67,6 +67,7 @@
       "@availity/mui-transitions": ["packages/transitions/src/index.ts"],
       "@availity/mui-tree": ["packages/tree/src/index.ts"],
       "@availity/mui-typography": ["packages/typography/src/index.ts"],
+      "@availity/mui-file-selector": ["packages/file-selector/src/index.ts"],
       "@availity/theme": ["packages/theme/src/index.ts"],
       "@availity/theme-provider": ["packages/theme-provider/src/index.ts"]
     }

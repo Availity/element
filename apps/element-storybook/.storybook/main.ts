@@ -1,4 +1,4 @@
-import { dirname, join } from "path";
+import { dirname, join } from 'path';
 import remarkGfm from 'remark-gfm';
 import { StorybookConfig } from '@storybook/react-vite';
 
@@ -7,13 +7,13 @@ const config: StorybookConfig = {
     '../src/*.mdx',
     '../src/**/*.@(stories.@(js|jsx|ts|tsx|mdx))',
     '../../../packages/*/*.mdx',
-    '../../../packages/*/src/lib/*.@(stories.@(js|jsx|ts|tsx|mdx))'
+    '../../../packages/*/src/lib/*.@(stories.@(js|jsx|ts|tsx|mdx))',
   ],
 
   addons: [
-    getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-themes"),
-    getAbsolutePath("@storybook/addon-a11y"),
+    getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@storybook/addon-themes'),
+    getAbsolutePath('@storybook/addon-a11y'),
     {
       name: '@storybook/addon-docs',
       options: {
@@ -24,11 +24,11 @@ const config: StorybookConfig = {
         },
       },
     },
-    getAbsolutePath("@chromatic-com/storybook")
+    getAbsolutePath('@chromatic-com/storybook'),
   ],
 
   framework: {
-    name: getAbsolutePath("@storybook/react-vite"),
+    name: getAbsolutePath('@storybook/react-vite'),
     options: {
       builder: {
         viteConfigPath: '',
@@ -44,7 +44,7 @@ const config: StorybookConfig = {
           : true,
     },
 
-    reactDocgen: 'react-docgen-typescript'
+    reactDocgen: 'react-docgen-typescript',
   },
 
   staticDirs: ['../../../static'],
@@ -57,6 +57,6 @@ export default config;
 // Check https://storybook.js.org/docs/react/builders/vite#configuration
 // and https://nx.dev/packages/storybook/documents/custom-builder-configs
 
-function getAbsolutePath(value: string): any {
-  return dirname(require.resolve(join(value, "package.json")));
+function getAbsolutePath(value: string) {
+  return dirname(require.resolve(join(value, 'package.json')));
 }
