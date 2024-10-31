@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.14.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.13.2...@availity/mui-form-utils@0.14.0) (2024-10-31)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.13.2`
+* `mui-icon` updated to version `0.13.2`
+* `mui-checkbox` updated to version `0.13.2`
+* `mui-chip` updated to version `0.13.2`
+* `mui-typography` updated to version `0.13.2`
+
+### Features
+
+* add FileSelector ([7ad1f7b](https://github.com/Availity/element/commit/7ad1f7bb364bbeb2048d2ff4c9b0a2b1a1e33777))
+
 ## [0.13.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.13.1...@availity/mui-form-utils@0.13.2) (2024-10-25)
 
 ### Dependency Updates
