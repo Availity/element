@@ -588,7 +588,7 @@ __metadata:
     "@availity/mui-list": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@availity/upload-core": ^6.1.0
+    "@availity/upload-core": ^6.1.1
     "@mui/material": ^5.15.15
     "@tanstack/react-query": ^4.36.1
     "@types/tus-js-client": ^1.8.0
@@ -1114,12 +1114,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/upload-core@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "@availity/upload-core@npm:6.1.0"
+"@availity/upload-core@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "@availity/upload-core@npm:6.1.1"
   dependencies:
     "@availity/resolve-url": 3.0.0
-  checksum: f5269428a6aaa823e86887075e64a3d7ec48745e70666f5936002e9b843f62a0569fc20e4afc97a330e7a23a0507fd417bf0044194856d4516054d73fdcc8b8c
+  checksum: 9694e39d9a1219a6bf4a2476ddad217d6c8ea44b74c4f551c0d83fe813dfe2d83e97ed53483d3613a012e09dd800c406762b319cc9cde5a96f720494fbaefae8
   languageName: node
   linkType: hard
 

@@ -11,7 +11,7 @@
     "preserveWatchOutput": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "strictFunctionTypes": false,
     "strictNullChecks": true,
     "lib": ["ES2017", "dom"],
