@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-transitions@0.2.4...@availity/mui-transitions@0.2.5) (2024-10-31)
+
+### Dependency Updates
+
+* `mui-alert` updated to version `0.2.4`
+* `mui-typography` updated to version `0.2.4`
 ## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-transitions@0.2.3...@availity/mui-transitions@0.2.4) (2024-10-15)
 
 ### Dependency Updates
