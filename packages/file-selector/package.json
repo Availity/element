@@ -1,21 +1,21 @@
 {
-  "name": "@availity/mui-autocomplete",
-  "version": "0.8.6",
-  "description": "Availity MUI Autocomplete Component - part of the @availity/element design system",
+  "name": "@availity/mui-file-selector",
+  "version": "0.0.0",
+  "description": "Availity MUI file-selector Component - part of the @availity/element design system",
   "keywords": [
     "react",
     "typescript",
     "availity",
     "mui"
   ],
-  "homepage": "https://availity.github.io/element/?path=/docs/form-components-autocomplete-introduction--docs",
+  "homepage": "https://availity.github.io/element/?path=/docs/components-file-selector-introduction--docs",
   "bugs": {
     "url": "https://github.com/Availity/element/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Availity/element.git",
-    "directory": "packages/autocomplete"
+    "directory": "packages/file-selector"
   },
   "license": "MIT",
   "author": "Availity Developers <AVOSS@availity.com>",
@@ -28,30 +28,35 @@
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "clean": "rm -rf dist",
     "clean:nm": "rm -rf node_modules",
-    "bundlesize": "bundlesize",
     "publish": "yarn npm publish --tolerate-republish --access public",
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@mui/types": "^7.2.14"
+    "@availity/api-axios": "^9.0.4",
+    "@availity/mui-button": "workspace:^",
+    "@availity/mui-divider": "workspace:^",
+    "@availity/mui-form-utils": "workspace:^",
+    "@availity/mui-icon": "workspace:^",
+    "@availity/mui-layout": "workspace:^",
+    "@availity/mui-list": "workspace:^",
+    "@availity/mui-progress": "workspace:^",
+    "@availity/mui-typography": "workspace:^",
+    "@availity/upload-core": "^6.1.1",
+    "@tanstack/react-query": "^4.36.1",
+    "react-dropzone": "^11.7.1",
+    "react-hook-form": "^7.51.3",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@availity/api-axios": "^9.0.4",
-    "@availity/mui-form-utils": "workspace:^",
-    "@availity/mui-textfield": "workspace:^",
     "@mui/material": "^5.15.15",
-    "@tanstack/react-query": "^4.36.1",
+    "@types/tus-js-client": "^1.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "@availity/api-axios": "^8.0.7",
-    "@availity/mui-form-utils": "workspace:^",
-    "@availity/mui-textfield": "workspace:^",
     "@mui/material": "^5.11.9",
-    "@tanstack/react-query": "^4.36.1",
     "react": ">=16.3.0"
   },
   "publishConfig": {

@@ -35,6 +35,7 @@
     "@availity/mui-event-tracker": "workspace:*",
     "@availity/mui-favorites": "workspace:*",
     "@availity/mui-feedback": "workspace:*",
+    "@availity/mui-file-selector": "workspace:*",
     "@availity/mui-form-utils": "workspace:*",
     "@availity/mui-icon": "workspace:*",
     "@availity/mui-layout": "workspace:*",
