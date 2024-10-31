@@ -2,6 +2,58 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.47.0](https://github.com/Availity/element/compare/@availity/element@0.46.4...@availity/element@0.47.0) (2024-10-31)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `0.46.4`
+* `mui-alert` updated to version `0.46.4`
+* `mui-authorize` updated to version `0.46.4`
+* `mui-autocomplete` updated to version `0.46.4`
+* `mui-avatar` updated to version `0.46.4`
+* `mui-badge` updated to version `0.46.4`
+* `mui-block-ui` updated to version `0.46.4`
+* `mui-breadcrumbs` updated to version `0.46.4`
+* `mui-button` updated to version `0.46.4`
+* `mui-card` updated to version `0.46.4`
+* `mui-checkbox` updated to version `0.46.4`
+* `mui-chip` updated to version `0.46.4`
+* `mui-datepicker` updated to version `0.46.4`
+* `mui-dialog` updated to version `0.46.4`
+* `mui-disclaimer` updated to version `0.46.4`
+* `mui-divider` updated to version `0.46.4`
+* `mui-empty-state` updated to version `0.46.4`
+* `mui-event-tracker` updated to version `0.46.4`
+* `mui-favorites` updated to version `0.46.4`
+* `mui-feedback` updated to version `0.46.4`
+* `mui-file-selector` updated to version `0.46.4`
+* `mui-form-utils` updated to version `0.46.4`
+* `mui-icon` updated to version `0.46.4`
+* `mui-layout` updated to version `0.46.4`
+* `mui-link` updated to version `0.46.4`
+* `mui-list` updated to version `0.46.4`
+* `mui-menu` updated to version `0.46.4`
+* `mui-modal` updated to version `0.46.4`
+* `mui-page-header` updated to version `0.46.4`
+* `mui-pagination` updated to version `0.46.4`
+* `mui-popover` updated to version `0.46.4`
+* `mui-popper` updated to version `0.46.4`
+* `mui-progress` updated to version `0.46.4`
+* `mui-snackbar` updated to version `0.46.4`
+* `mui-spaces` updated to version `0.46.4`
+* `mui-stepper` updated to version `0.46.4`
+* `mui-table` updated to version `0.46.4`
+* `mui-tabs` updated to version `0.46.4`
+* `mui-textfield` updated to version `0.46.4`
+* `mui-toggle-button` updated to version `0.46.4`
+* `mui-transitions` updated to version `0.46.4`
+* `mui-tree` updated to version `0.46.4`
+* `mui-typography` updated to version `0.46.4`
+
+### Features
+
+* add FileSelector ([7ad1f7b](https://github.com/Availity/element/commit/7ad1f7bb364bbeb2048d2ff4c9b0a2b1a1e33777))
+
 ## [0.46.4](https://github.com/Availity/element/compare/@availity/element@0.46.3...@availity/element@0.46.4) (2024-10-25)
 
 ### Dependency Updates
