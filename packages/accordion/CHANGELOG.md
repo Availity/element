@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-accordion@0.2.3...@availity/mui-accordion@0.2.4) (2024-10-31)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.2.3`
+* `mui-button` updated to version `0.2.3`
+* `mui-chip` updated to version `0.2.3`
+* `mui-layout` updated to version `0.2.3`
+* `mui-typography` updated to version `0.2.3`
 ## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-accordion@0.2.2...@availity/mui-accordion@0.2.3) (2024-10-25)
 
 ### Dependency Updates
