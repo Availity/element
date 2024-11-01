@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, waitForElementToBeRemoved } from '@testing-library/react';
 import { PageHeader } from './PageHeader';
 
 describe('PageHeader', () => {
@@ -13,7 +13,7 @@ describe('PageHeader', () => {
       <PageHeader
         breadcrumbs={{ active: 'This page' }}
         headerText="This is the header"
-        helpLink="https://www.availity.com"
+        help={{ url: 'https://www.availity.com' }}
       />
     );
     expect(getByText('This is the header')).toBeTruthy();
