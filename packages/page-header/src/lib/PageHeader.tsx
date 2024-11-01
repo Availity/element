@@ -5,14 +5,35 @@ import { Link } from '@availity/mui-link';
 import { Button, ButtonProps } from '@availity/mui-button';
 import { Feedback } from '@availity/mui-feedback';
 import { Box, Grid } from '@availity/mui-layout';
+import { SpacesImage } from '@availity/mui-spaces';
 
 export interface ButtonsProps extends Omit<ButtonProps, 'size' | 'height' | 'color'> {
   key: string;
 }
 
+export type Help = {
+  /** The URL to the Help Demo */
+  url: string;
+  /** The name that displays in the help text. Should be used when the help is a demo video.
+   * @example "This App"
+   * @returns Need Help? Watch a demo for This App
+   */
+  helpAppName?: string;
+};
+
+type LogoSpaceId = {
+  spaceId: string;
+  payerId?: string;
+};
+
+type LogoPayerId = {
+  spaceId?: string;
+  payerId: string;
+};
+
 export interface PageHeaderProps {
   /** Render breadcrumbs above the header */
-  breadcrumbs: BreadcrumbsProps;
+  breadcrumbs?: BreadcrumbsProps;
   /** Renders buttons in the right side of the header */
   buttons?: ButtonsProps[];
   /** If true, the Feedback button displays
@@ -21,22 +42,23 @@ export interface PageHeaderProps {
   feedback?: boolean;
   /** The text that displays in the header  */
   headerText: string;
-  /** The name that displays in the help text. Should be used when the help is a demo video.
-   * @example "This App"
-   * @returns Need Help? Watch a demo for This App
-   */
-  helpAppName?: string;
-  /** The URL to the Help Demo */
-  helpLink?: string;
+  help?: Help;
+  logo?: LogoSpaceId | LogoPayerId;
 }
+
+const Logo = (props: LogoSpaceId | LogoPayerId) => {
+  if (props.spaceId) return <SpacesImage imageType="images.logo" spaceId={props.spaceId} />;
+  else if (props.payerId) return <SpacesImage imageType="images.logo" payerId={props.payerId} />;
+  else return null;
+};
 
 export const PageHeader = ({
   breadcrumbs,
   buttons,
   feedback = false,
   headerText,
-  helpAppName,
-  helpLink,
+  logo,
+  help,
 }: PageHeaderProps): JSX.Element => {
   return (
     <Grid
@@ -48,22 +70,29 @@ export const PageHeader = ({
       paddingLeft={3}
       paddingRight={3}
     >
-      {breadcrumbs || helpLink ? (
+      {breadcrumbs || logo || help ? (
         <Grid direction="row" container justifyContent="space-between" marginBottom={4}>
           {breadcrumbs && (
             <Grid>
               <Breadcrumbs {...breadcrumbs} />
             </Grid>
           )}
-          {helpLink && (
-            <Grid marginLeft={2}>
-              <Typography variant="body1">
-                Need help?{' '}
-                <Link href={helpLink} target="_blank" loadApp={false}>
-                  {helpAppName ? 'Watch a demo' : 'Learn More'}
-                </Link>{' '}
-                {helpAppName ? ` for ${helpAppName}` : null}
-              </Typography>
+          {(logo || help) && (
+            <Grid>
+              {help && (
+                <Typography variant="body1">
+                  Need help?{' '}
+                  <Link href={help.url} target="_blank" loadApp={false}>
+                    {help.helpAppName ? 'Watch a demo' : 'Learn More'}
+                  </Link>{' '}
+                  {help.helpAppName ? ` for ${help.helpAppName}` : null}
+                </Typography>
+              )}
+              {logo && (
+                <Grid container justifyContent="end">
+                  <Logo {...logo} />
+                </Grid>
+              )}
             </Grid>
           )}
         </Grid>
