@@ -6,6 +6,7 @@ import { Button, ButtonProps } from '@availity/mui-button';
 import { Feedback } from '@availity/mui-feedback';
 import { Box, Grid } from '@availity/mui-layout';
 import { SpacesImage } from '@availity/mui-spaces';
+import Skeleton from '@mui/material/Skeleton';
 
 export interface ButtonsProps extends Omit<ButtonProps, 'size' | 'height' | 'color'> {
   key: string;
@@ -47,8 +48,22 @@ export interface PageHeaderProps {
 }
 
 const Logo = (props: LogoSpaceId | LogoPayerId) => {
-  if (props.spaceId) return <SpacesImage imageType="images.logo" spaceId={props.spaceId} />;
-  else if (props.payerId) return <SpacesImage imageType="images.logo" payerId={props.payerId} />;
+  if (props.spaceId)
+    return (
+      <SpacesImage
+        imageType="images.logo"
+        spaceId={props.spaceId}
+        Loader={(props) => <Skeleton {...props} height="60px" width="234px" />}
+      />
+    );
+  else if (props.payerId)
+    return (
+      <SpacesImage
+        imageType="images.logo"
+        payerId={props.payerId}
+        Loader={(props) => <Skeleton {...props} height="60px" width="234px" />}
+      />
+    );
   else return null;
 };
 
@@ -73,7 +88,7 @@ export const PageHeader = ({
       {breadcrumbs || logo || help ? (
         <Grid direction="row" container justifyContent="space-between" marginBottom={4}>
           {breadcrumbs && (
-            <Grid>
+            <Grid marginRight={2}>
               <Breadcrumbs {...breadcrumbs} />
             </Grid>
           )}

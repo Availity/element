@@ -12,6 +12,7 @@ type BaseSpacesImageProps = {
     | 'images.promotionalHover';
   fallback?: string;
   id?: string;
+  Loader?: (props: any) => JSX.Element;
 };
 
 type SpacesImageSpaceId = {
@@ -26,7 +27,14 @@ type SpacesImagePayerId = {
 
 export type SpacesImageProps = SpacesImageSpaceId | SpacesImagePayerId;
 
-export const SpacesImage = ({ spaceId, payerId, imageType = 'url', fallback, ...props }: SpacesImageProps) => {
+export const SpacesImage = ({
+  spaceId,
+  payerId,
+  imageType = 'url',
+  fallback,
+  Loader = CircularProgress,
+  ...props
+}: SpacesImageProps) => {
   let spaces;
 
   if (spaceId) {
@@ -51,7 +59,7 @@ export const SpacesImage = ({ spaceId, payerId, imageType = 'url', fallback, ...
   let url = imageMap[imageType];
 
   if (!url && loading) {
-    return <CircularProgress id={`app-${id}-loading`} />;
+    return <Loader id={`app-${id}-loading`} />;
   }
 
   if (!url && !loading && fallback) {
@@ -65,7 +73,7 @@ export const SpacesImage = ({ spaceId, payerId, imageType = 'url', fallback, ...
       id={props.id || `app-img-${id}`}
       src={url}
       alt={`Space ${imageType}`}
-      loader={<CircularProgress id={`app-img-${id}-loading`} />}
+      loader={<Loader id={`app-img-${id}-loading`} />}
       {...props}
     />
   );
