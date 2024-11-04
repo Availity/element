@@ -58,7 +58,7 @@ describe('PageHeader', () => {
 
   test('should render page header with a logo successfully', async () => {
     const queryClient = new QueryClient();
-    const { getByText, getByRole } = render(
+    const { getByText, container } = render(
       <QueryClientProvider client={queryClient}>
         <Spaces spaceIds={['11', '22', '33']}>
           <PageHeader breadcrumbs={{ active: 'This page' }} headerText="This is the header" logo={{ spaceId: '11' }} />
@@ -67,7 +67,7 @@ describe('PageHeader', () => {
     );
     expect(getByText('This is the header')).toBeTruthy();
     expect(getByText('This page')).toBeTruthy();
-    await waitForElementToBeRemoved(getByRole('progressbar'));
+    await waitForElementToBeRemoved(container.getElementsByClassName('MuiSkeleton-root')[0]);
     // Ensure the correct src was selected.
     expect(mockImage.mock.calls[0][0].src).toEqual('/spaces/test_logo.png');
   });
