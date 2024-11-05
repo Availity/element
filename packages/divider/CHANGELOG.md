@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-divider@0.3.7...@availity/mui-divider@0.4.0) (2024-10-31)
+
+
+### Features
+
+* add FileSelector ([7ad1f7b](https://github.com/Availity/element/commit/7ad1f7bb364bbeb2048d2ff4c9b0a2b1a1e33777))
+
 ## [0.3.7](https://github.com/Availity/element/compare/@availity/mui-divider@0.3.6...@availity/mui-divider@0.3.7) (2024-04-19)
 
 ## [0.3.6](https://github.com/Availity/element/compare/@availity/mui-divider@0.3.5...@availity/mui-divider@0.3.6) (2024-04-04)

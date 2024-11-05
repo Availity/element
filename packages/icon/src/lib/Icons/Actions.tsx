@@ -20,6 +20,7 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons/faPenToSquare';
 import { faPencil } from '@fortawesome/free-solid-svg-icons/faPencil';
 import { faPlay } from '@fortawesome/free-solid-svg-icons/faPlay';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
+import { faCloudArrowDown } from '@fortawesome/free-solid-svg-icons/faCloudArrowDown';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faTag } from '@fortawesome/free-solid-svg-icons/faTag';
 import { faTags } from '@fortawesome/free-solid-svg-icons/faTags';
@@ -92,3 +93,5 @@ export const PlayIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={f
 export const PauseIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPause} {...props} />;
 
 export const GearsIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faGears} {...props} />;
+
+export const CloudDownloadIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCloudArrowDown} {...props} />;

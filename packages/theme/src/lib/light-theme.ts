@@ -711,12 +711,15 @@ export const lightTheme = {
             width: '2.25rem',
             height: '2.25rem',
             '.MuiSelect-avExpandIcon': {
-              top: 'calc(50% - 2px)',
+              transform: 'unset',
+              top: 'auto'
             },
           },
         },
         popupIndicator: {
           color: tokens.borderInput,
+
+          padding: '.75rem'
         },
         popupIndicatorOpen: {
           transform: 'scaleY(-1)',

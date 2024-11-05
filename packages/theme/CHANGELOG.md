@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.61.4](https://github.com/Availity/element/compare/@availity/theme@0.61.3...@availity/theme@0.61.4) (2024-11-01)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** re-align the dropdown icon ([95382c6](https://github.com/Availity/element/commit/95382c63a3ce454ac9cff8bf9874af655a05e4fa))
+
+## [0.61.3](https://github.com/Availity/element/compare/@availity/theme@0.61.2...@availity/theme@0.61.3) (2024-10-25)
+
+### Dependency Updates
+
+* `design-tokens` updated to version `0.61.2`
 ## [0.61.2](https://github.com/Availity/element/compare/@availity/theme@0.61.1...@availity/theme@0.61.2) (2024-10-18)
 
 

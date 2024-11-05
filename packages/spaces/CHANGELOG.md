@@ -2,6 +2,34 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-spaces@0.3.25...@availity/mui-spaces@0.4.0) (2024-10-31)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.3.25`
+* `mui-card` updated to version `0.3.25`
+* `mui-chip` updated to version `0.3.25`
+* `mui-dialog` updated to version `0.3.25`
+* `mui-disclaimer` updated to version `0.3.25`
+* `mui-favorites` updated to version `0.3.25`
+* `mui-icon` updated to version `0.3.25`
+* `mui-layout` updated to version `0.3.25`
+* `mui-list` updated to version `0.3.25`
+* `mui-modal` updated to version `0.3.25`
+* `mui-progress` updated to version `0.3.25`
+* `mui-typography` updated to version `0.3.25`
+* `@availity/mock` updated to version `0.3.25`
+
+### Features
+
+* add FileSelector ([7ad1f7b](https://github.com/Availity/element/commit/7ad1f7bb364bbeb2048d2ff4c9b0a2b1a1e33777))
+
+## [0.3.25](https://github.com/Availity/element/compare/@availity/mui-spaces@0.3.24...@availity/mui-spaces@0.3.25) (2024-10-25)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.3.24`
+* `mui-list` updated to version `0.3.24`
 ## [0.3.24](https://github.com/Availity/element/compare/@availity/mui-spaces@0.3.23...@availity/mui-spaces@0.3.24) (2024-10-15)
 
 ### Dependency Updates
