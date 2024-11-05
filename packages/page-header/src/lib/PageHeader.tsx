@@ -53,7 +53,7 @@ const Logo = (props: LogoSpaceId | LogoPayerId) => {
       <SpacesImage
         imageType="images.logo"
         spaceId={props.spaceId}
-        Loader={(props) => <Skeleton {...props} height="60px" width="234px" />}
+        Loader={({ id }) => <Skeleton id={id} height="60px" width="234px" />}
       />
     );
   else if (props.payerId)
@@ -61,7 +61,7 @@ const Logo = (props: LogoSpaceId | LogoPayerId) => {
       <SpacesImage
         imageType="images.logo"
         payerId={props.payerId}
-        Loader={(props) => <Skeleton {...props} height="60px" width="234px" />}
+        Loader={({ id }) => <Skeleton id={id} height="60px" width="234px" />}
       />
     );
   else return null;

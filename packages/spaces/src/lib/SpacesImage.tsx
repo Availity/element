@@ -12,7 +12,7 @@ type BaseSpacesImageProps = {
     | 'images.promotionalHover';
   fallback?: string;
   id?: string;
-  Loader?: (props: any) => JSX.Element;
+  Loader?: ({ id }: { id: string }) => JSX.Element;
 };
 
 type SpacesImageSpaceId = {
