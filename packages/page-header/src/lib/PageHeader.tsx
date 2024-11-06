@@ -23,12 +23,16 @@ export type Help = {
 };
 
 type LogoSpaceId = {
+  /** The spaceId associated with the app. Required if payerId is not present. */
   spaceId: string;
+  /** The payerId associated with the app. Required if spaceId is not present. */
   payerId?: string;
 };
 
 type LogoPayerId = {
+  /** The spaceId associated with the app. Required if payerId is not present. */
   spaceId?: string;
+  /** The payerId associated with the app. Required if spaceId is not present. */
   payerId: string;
 };
 
@@ -43,7 +47,9 @@ export interface PageHeaderProps {
   feedback?: boolean;
   /** The text that displays in the header  */
   headerText: string;
+  /** Help attributes */
   help?: Help;
+  /** Logo attributes */
   logo?: LogoSpaceId | LogoPayerId;
 }
 
