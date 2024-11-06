@@ -11,33 +11,13 @@ describe('Datepicker', () => {
     );
     expect(getAllByText('Test')).toBeTruthy();
   });
-  test('should render successfully 2', () => {
-    const { getAllByText } = render(
-      <ThemeProvider>
-        <Datepicker FieldProps={{ placeholder: 'Test' }} onChange={jest.fn()} value={null} />
-      </ThemeProvider>
-    );
-    expect(getAllByText('Test')).toBeTruthy();
-  });
-  test('should render successfully 3', () => {
-    const { getAllByText } = render(
+
+  test('should render placeholder successfully', () => {
+    const { container } = render(
       <ThemeProvider>
         <Datepicker FieldProps={{ InputProps: { placeholder: 'InputProps' } }} onChange={jest.fn()} value={null} />
       </ThemeProvider>
     );
-    expect(getAllByText('Test')).toBeTruthy();
-  });
-
-  test('should render successfully 4', () => {
-    const { getAllByText } = render(
-      <ThemeProvider>
-        <Datepicker
-          slotProps={{ textField: { placeholder: 'slotProps textField' } }}
-          onChange={jest.fn()}
-          value={null}
-        />
-      </ThemeProvider>
-    );
-    expect(getAllByText('Test')).toBeTruthy();
+    expect(container.getElementsByClassName('MuiInputBase-input')[0].getAttribute('placeholder')).toBe('InputProps');
   });
 });

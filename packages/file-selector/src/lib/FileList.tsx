@@ -20,21 +20,21 @@ const FileRow = ({ upload, onRemoveFile }: FileRowProps) => {
   return (
     <ListItem>
       <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%">
-        <Grid xs={1}>
+        <Grid size={{ xs: 1 }}>
           <ListItemIcon>
             <FileIcon />
           </ListItemIcon>
         </Grid>
-        <Grid xs={4}>
+        <Grid size={{ xs: 4 }}>
           <ListItemText>{upload.trimFileName(upload.file.name)}</ListItemText>
         </Grid>
-        <Grid xs={2}>
+        <Grid size={{ xs: 2 }}>
           <ListItem>{formatBytes(upload.file.size)}</ListItem>
         </Grid>
-        <Grid xs={4}>
+        <Grid size={{ xs: 4 }}>
           <UploadProgressBar upload={upload} />
         </Grid>
-        <Grid xs={1}>
+        <Grid size={{ xs: 1 }}>
           <ListItemButton>
             <ListItemIcon
               onClick={() => {

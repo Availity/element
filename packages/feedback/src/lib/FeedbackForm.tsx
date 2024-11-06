@@ -167,13 +167,11 @@ export const FeedbackForm = ({
           minRows={3}
           maxRows={3}
           label={getFeedbackLabel()}
-          slotProps={{
-            htmlInput: { 'aria-required': 'true' },
-            inputLabel: {
-              component: FormLabel,
-              required: true,
-            },
+          InputLabelProps={{
+            component: FormLabel,
+            required: true,
           }}
+          inputProps={{ 'aria-required': 'true' }}
           helperText={errors.feedback?.message || 'Max 200 characters'}
           error={!!errors.feedback}
           disabled={loading || !smileFieldValue}
