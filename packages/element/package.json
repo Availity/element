@@ -61,8 +61,8 @@
     "@availity/mui-tree": "workspace:*",
     "@availity/mui-typography": "workspace:*",
     "@availity/theme-provider": "workspace:*",
-    "@mui/material": "^5.15.15",
-    "@mui/system": "^5.15.15"
+    "@mui/material": "^6.1.5",
+    "@mui/system": "^6.1.5"
   },
   "devDependencies": {
     "react": "18.2.0",

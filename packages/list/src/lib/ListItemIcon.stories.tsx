@@ -30,7 +30,7 @@ export const _ListItemIcon: StoryObj<typeof ListItemIcon> = {
 export const _FavoritesList: StoryObj<typeof List> = {
   render: () => (
     <Grid container spacing={8}>
-      <Grid xs={12} sm={6} component="nav" aria-labelledby="favorites-default-spacing-header">
+      <Grid size={{ xs: 12, sm: 6 }} component="nav" aria-labelledby="favorites-default-spacing-header">
         <Typography variant="h6" component="div" id="favorites-default-spacing-header">
           Default Spacing
         </Typography>
@@ -47,7 +47,7 @@ export const _FavoritesList: StoryObj<typeof List> = {
           ))}
         </List>
       </Grid>
-      <Grid xs={12} sm={6} component="nav" aria-labelledby="favorites-dense-spacing-header">
+      <Grid size={{ xs: 12, sm: 6 }} component="nav" aria-labelledby="favorites-dense-spacing-header">
         <Typography variant="h6" component="div" id="favorites-dense-spacing-header">
           Dense Spacing
         </Typography>

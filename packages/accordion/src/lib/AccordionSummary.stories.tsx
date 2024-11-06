@@ -10,29 +10,38 @@ const meta: Meta<typeof AccordionSummary> = {
   component: AccordionSummary,
   tags: ['autodocs'],
   args: {
-    primary: "Primary",
-    secondary: "Secondary"
-  }
+    primary: 'Primary',
+    secondary: 'Secondary',
+  },
 };
 
 export default meta;
 
 export const _AccordionSummary: StoryObj<typeof AccordionSummary> = {
-  render: (args: AccordionSummaryProps) => <AccordionSummary {...args}/>,
+  render: (args: AccordionSummaryProps) => <AccordionSummary {...args} />,
 };
 
 export const _Status: StoryObj<typeof AccordionSummary> = {
   render: (args: AccordionSummaryProps) => (
     <Grid container spacing={1}>
-      <Grid xs={12}>
+      <Grid size={{ xs: 12 }}>
         <Accordion {...args}>
-          <AccordionSummary aria-controls="filled-summary-content" id="filled-summary-header" secondary={<>Secondary<StatusChip color="success" label="Approved" sx={{marginLeft: 2}}/></>}>
+          <AccordionSummary
+            aria-controls="filled-summary-content"
+            id="filled-summary-header"
+            secondary={
+              <>
+                Secondary
+                <StatusChip color="success" label="Approved" sx={{ marginLeft: 2 }} />
+              </>
+            }
+          >
             Filled Summary
           </AccordionSummary>
           <AccordionDetails>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
             leo lobortis eget.
-            <Box mt={2}>
+            <Box sx={{ mt: 2 }}>
               <Accordion>
                 <AccordionSummary aria-controls="defaultexpanded-nested-content" id="defaultexpanded-nested-header">
                   Filled Nested Accordion
@@ -46,15 +55,24 @@ export const _Status: StoryObj<typeof AccordionSummary> = {
           </AccordionDetails>
         </Accordion>
       </Grid>
-      <Grid xs={12}>
+      <Grid size={{ xs: 12 }}>
         <Accordion {...args} variant="outlined">
-          <AccordionSummary aria-controls="outlined-summary-content" id="outlined-summary-header"  secondary={<>Secondary<StatusChip color="success" label="Approved" sx={{marginLeft: 2}}/></>}>
+          <AccordionSummary
+            aria-controls="outlined-summary-content"
+            id="outlined-summary-header"
+            secondary={
+              <>
+                Secondary
+                <StatusChip color="success" label="Approved" sx={{ marginLeft: 2 }} />
+              </>
+            }
+          >
             Outlined Summary
           </AccordionSummary>
           <AccordionDetails>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
             leo lobortis eget.
-            <Box mt={2}>
+            <Box sx={{ mt: 2 }}>
               <Accordion>
                 <AccordionSummary aria-controls="outlinedexpanded-nested-content" id="outlinedexpanded-nested-header">
                   Outlined Nested Accordion
@@ -75,7 +93,7 @@ export const _Status: StoryObj<typeof AccordionSummary> = {
 export const _States: StoryObj<typeof Accordion> = {
   render: (args: AccordionProps) => (
     <Grid container spacing={1}>
-      <Grid xs={12}>
+      <Grid size={{ xs: 12 }}>
         <Accordion {...args} defaultExpanded>
           <AccordionSummary aria-controls="defaultexpanded-content" id="defaultexpanded-header">
             Filled Expanded
@@ -93,7 +111,7 @@ export const _States: StoryObj<typeof Accordion> = {
           </AccordionDetails>
         </Accordion>
       </Grid>
-      <Grid xs={12}>
+      <Grid size={{ xs: 12 }}>
         <Accordion {...args} variant="outlined" defaultExpanded>
           <AccordionSummary aria-controls="outlined-summary-content" id="outlined-summary-header">
             Outlined Expanded
@@ -104,7 +122,7 @@ export const _States: StoryObj<typeof Accordion> = {
           </AccordionDetails>
         </Accordion>
       </Grid>
-      <Grid xs={12}>
+      <Grid size={{ xs: 12 }}>
         <Accordion {...args}>
           <AccordionSummary aria-controls="focused-content" id="focused-header" className="Mui-focusVisible">
             Focused
@@ -115,7 +133,7 @@ export const _States: StoryObj<typeof Accordion> = {
           </AccordionDetails>
         </Accordion>
       </Grid>
-      <Grid xs={12}>
+      <Grid size={{ xs: 12 }}>
         <Accordion {...args} disabled>
           <AccordionSummary aria-controls="disabled-content" id="disabled-header">
             Disabled

@@ -1,7 +1,7 @@
 // Each exported component in the package should have its own stories file
 import { useState } from 'react';
+import Grid from '@mui/material/Grid2';
 import type { Meta, StoryObj } from '@storybook/react';
-import Grid from '@mui/material/Unstable_Grid2';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { MonthCalendar } from '@mui/x-date-pickers/MonthCalendar';
@@ -50,7 +50,7 @@ export const _PickerViews: StoryObj<typeof DateCalendar> = {
 
     return (
       <Grid container spacing={3}>
-        <Grid xs="auto">
+        <Grid size={{ xs: 'auto' }}>
           <Typography variant="h3" component="span">
             Default View
           </Typography>
@@ -58,7 +58,7 @@ export const _PickerViews: StoryObj<typeof DateCalendar> = {
             <DateCalendar value={date} onChange={(newDate) => setDate(newDate)} />
           </Paper>
         </Grid>
-        <Grid xs="auto">
+        <Grid size={{ xs: 'auto' }}>
           <Typography variant="h3" component="span">
             Month View
           </Typography>
@@ -66,7 +66,7 @@ export const _PickerViews: StoryObj<typeof DateCalendar> = {
             <MonthCalendar value={date} minDate={minDate} maxDate={maxDate} onChange={(newDate) => setDate(newDate)} />
           </Paper>
         </Grid>
-        <Grid xs="auto">
+        <Grid size={{ xs: 'auto' }}>
           <Typography variant="h3" component="span">
             Year View
           </Typography>

@@ -2,7 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { TableSortLabel, TableSortLabelProps } from './TableSortLabel';
-import Grid from '@mui/material/Grid';
+import { Grid } from '@availity/mui-layout';
 import { useState } from 'react';
 
 const meta: Meta<typeof TableSortLabel> = {
@@ -35,30 +35,22 @@ export const _TableSortLabel: StoryObj<typeof TableSortLabel> = {
 export const _Variants: StoryObj<typeof TableSortLabel> = {
   render: () => (
     <Grid container spacing={1}>
-      <Grid item xs={3}>
-        Default
-      </Grid>
-      <Grid item xs={9}>
+      <Grid size={{ xs: 3 }}>Default</Grid>
+      <Grid size={{ xs: 9 }}>
         <TableSortLabel>Column Header</TableSortLabel>
       </Grid>
-      <Grid item xs={3}>
-        Active Undefined
-      </Grid>
-      <Grid item xs={9}>
+      <Grid size={{ xs: 3 }}>Active Undefined</Grid>
+      <Grid size={{ xs: 9 }}>
         <TableSortLabel active>Column Header</TableSortLabel>
       </Grid>
-      <Grid item xs={3}>
-        Active Ascending
-      </Grid>
-      <Grid item xs={9}>
+      <Grid size={{ xs: 3 }}>Active Ascending</Grid>
+      <Grid size={{ xs: 9 }}>
         <TableSortLabel active direction="asc">
           Column Header
         </TableSortLabel>
       </Grid>
-      <Grid item xs={3}>
-        Active Descending
-      </Grid>
-      <Grid item xs={9}>
+      <Grid size={{ xs: 3 }}>Active Descending</Grid>
+      <Grid size={{ xs: 9 }}>
         <TableSortLabel active direction="desc">
           Column Header
         </TableSortLabel>

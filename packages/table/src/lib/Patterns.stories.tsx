@@ -227,14 +227,14 @@ export const _HeaderWithSearchAndFilter: StoryObj = {
 
     return (
       <TableCell component="div" variant="header" size={theme === 'light' ? 'medium' : 'small'}>
-        <Typography component="h3" variant="h6" marginBottom={3}>
+        <Typography component="h3" variant="h6" sx={{ marginBottom: 3 }}>
           Table Title
         </Typography>
         <Box component="form" id="search-form" onSubmit={handleSubmit(onSearchSubmit)} sx={{ paddingBottom: 2 }}>
           <FormLabel htmlFor="searchbyValue" id="searchbyValueLabel">
             Search By
           </FormLabel>
-          <Grid container spacing={1} flexWrap="wrap">
+          <Grid container spacing={1} sx={{ flexWrap: 'wrap' }}>
             <Grid>
               <Controller
                 name="searchbyValue"
@@ -265,7 +265,7 @@ export const _HeaderWithSearchAndFilter: StoryObj = {
                 )}
               />
             </Grid>
-            <Grid sm={true}>
+            <Grid size="grow">
               <Controller
                 name="searchValue"
                 control={control}
@@ -333,7 +333,7 @@ export const _HeaderWithSearchAndFilter: StoryObj = {
           }}
         >
           <Box sx={{ padding: 2 }}>
-            <Box justifyContent="space-between" display="flex" paddingBottom={2}>
+            <Box sx={{ justifyContent: 'space-between', display: 'flex', paddingBottom: 2 }}>
               <Typography component="h2" variant="h6" id="filter-header">
                 Filters
               </Typography>

@@ -33,32 +33,32 @@ export const _HomeIcon: StoryObj<typeof HomeIcon> = {
 export const _Sizes: StoryObj<typeof HomeIcon> = {
   render: () => (
     <Grid container spacing={1}>
-      <Grid xs={2}>Inherit (default)</Grid>
-      <Grid xs={10}>
+      <Grid size={{ xs: 2 }}>Inherit (default)</Grid>
+      <Grid size={{ xs: 10 }}>
         <HomeIcon fontSize="inherit" />
       </Grid>
-      <Grid xs={2}>XXSmall</Grid>
-      <Grid xs={10}>
+      <Grid size={{ xs: 2 }}>XXSmall</Grid>
+      <Grid size={{ xs: 10 }}>
         <HomeIcon fontSize="xxsmall" />
       </Grid>
-      <Grid xs={2}>XSmall</Grid>
-      <Grid xs={10}>
+      <Grid size={{ xs: 2 }}>XSmall</Grid>
+      <Grid size={{ xs: 10 }}>
         <HomeIcon fontSize="xsmall" />
       </Grid>
-      <Grid xs={2}>Small</Grid>
-      <Grid xs={10}>
+      <Grid size={{ xs: 2 }}>Small</Grid>
+      <Grid size={{ xs: 10 }}>
         <HomeIcon fontSize="small" />
       </Grid>
-      <Grid xs={2}>Medium</Grid>
-      <Grid xs={10}>
+      <Grid size={{ xs: 2 }}>Medium</Grid>
+      <Grid size={{ xs: 10 }}>
         <HomeIcon fontSize="medium" />
       </Grid>
-      <Grid xs={2}>Large</Grid>
-      <Grid xs={10}>
+      <Grid size={{ xs: 2 }}>Large</Grid>
+      <Grid size={{ xs: 10 }}>
         <HomeIcon fontSize="large" />
       </Grid>
-      <Grid xs={2}>XLarge</Grid>
-      <Grid xs={10}>
+      <Grid size={{ xs: 2 }}>XLarge</Grid>
+      <Grid size={{ xs: 10 }}>
         <HomeIcon fontSize="xlarge" />
       </Grid>
     </Grid>

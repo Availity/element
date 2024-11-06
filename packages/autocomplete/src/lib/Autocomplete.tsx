@@ -86,7 +86,6 @@ export const Autocomplete = <
       ),
     },
     inputProps: {
-      ...FieldProps?.inputProps,
       ...params?.inputProps,
       // appease the Level Access scanning tools
       'aria-controls': params?.inputProps['aria-controls'] || '',

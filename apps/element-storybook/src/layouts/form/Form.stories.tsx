@@ -90,16 +90,16 @@ export const _SimpleForm: StoryObj = {
                 Simple Form
               </Typography>
               <Grid container rowSpacing={2}>
-                <Grid xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <SectionText />
                 </Grid>
-                <Grid xs={0} md={6} padding={0} />
-                <Grid xs={12} md={6}>
+                <Grid size={{ xs: 0, md: 6 }} sx={{ padding: 0 }} />
+                <Grid size={{ xs: 12, md: 6 }}>
                   <RequiredKey />
                 </Grid>
-                <Grid xs={0} md={6} padding={0} />
-                <Grid xs={12} />
-                <Grid xs={12} md={6}>
+                <Grid size={{ xs: 0, md: 6 }} sx={{ padding: 0 }} />
+                <Grid size={{ xs: 12 }} />
+                <Grid size={{ xs: 12, md: 6 }}>
                   <TextField
                     label="Example"
                     fullWidth
@@ -113,8 +113,8 @@ export const _SimpleForm: StoryObj = {
                     required
                   />
                 </Grid>
-                <Grid xs={0} md={6} padding={0} />
-                <Grid xs={12} md={6}>
+                <Grid size={{ xs: 0, md: 6 }} sx={{ padding: 0 }} />
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Controller
                     control={control}
                     name="dropdown"
@@ -136,9 +136,9 @@ export const _SimpleForm: StoryObj = {
                     }}
                   />
                 </Grid>
-                <Grid xs={0} md={6} padding={0} />
-                <Grid xs={12} />
-                <Grid xs={12} justifyContent="end" display="flex" paddingTop={2.5}>
+                <Grid size={{ xs: 0, md: 6 }} sx={{ padding: 0 }} />
+                <Grid size={{ xs: 12 }} />
+                <Grid size={{ xs: 12 }} sx={{ justifyContent: 'end', display: 'flex', paddingTop: 2.5 }}>
                   <Button
                     type="reset"
                     color="secondary"
@@ -204,11 +204,14 @@ export const _CompactForm: StoryObj = {
 
     return (
       <Container>
-        <Grid container justifyContent="center">
+        <Grid container sx={{ justifyContent: 'center' }}>
           <BlockUi blocking={loading}>
             <Paper sx={{ padding: '1rem', maxWidth: '400px' }}>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <Stack direction="row" alignItems="center" justifyContent="space-between" marginBottom="1rem">
+                <Stack
+                  direction="row"
+                  sx={{ alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}
+                >
                   <Typography component="h1" variant="h5">
                     Filters
                   </Typography>
@@ -217,7 +220,7 @@ export const _CompactForm: StoryObj = {
                   </IconButton>
                 </Stack>
                 <Grid container rowSpacing={1} columnSpacing={2}>
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <Controller
                       control={control}
                       name="status"
@@ -243,7 +246,7 @@ export const _CompactForm: StoryObj = {
                       )}
                     />
                   </Grid>
-                  <Grid xs={6}>
+                  <Grid size={{ xs: 6 }}>
                     <Controller
                       control={control}
                       name="fromDate"
@@ -253,7 +256,7 @@ export const _CompactForm: StoryObj = {
                       )}
                     />
                   </Grid>
-                  <Grid xs={6}>
+                  <Grid size={{ xs: 6 }}>
                     <Controller
                       control={control}
                       name="toDate"
@@ -263,7 +266,7 @@ export const _CompactForm: StoryObj = {
                       )}
                     />
                   </Grid>
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <TextField
                       label="Customer Name"
                       fullWidth
@@ -273,7 +276,7 @@ export const _CompactForm: StoryObj = {
                       placeholder="Value"
                     />
                   </Grid>
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <Controller
                       control={control}
                       name="payerName"
@@ -293,8 +296,8 @@ export const _CompactForm: StoryObj = {
                       )}
                     />
                   </Grid>
-                  <Grid xs={12} paddingY={1} />
-                  <Grid xs={6}>
+                  <Grid size={{ xs: 12 }} sx={{ paddingY: 1 }} />
+                  <Grid size={{ xs: 6 }}>
                     <Button
                       onClick={() => {
                         setSubmitted(false);
@@ -307,7 +310,7 @@ export const _CompactForm: StoryObj = {
                       Reset Filters
                     </Button>
                   </Grid>
-                  <Grid xs={6}>
+                  <Grid size={{ xs: 6 }}>
                     <Button type="submit" fullWidth>
                       Submit
                     </Button>
@@ -377,19 +380,19 @@ export const _SectionedForm: StoryObj = {
             <form onSubmit={handleSubmit(onSubmit)}>
               <Paper sx={{ padding: '1.5rem', marginBottom: '1.25rem' }}>
                 <Grid container rowSpacing={{ xs: 1, md: 2 }} columnSpacing={{ xs: 2, md: 3 }}>
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <Typography variant="h2">Section Header</Typography>
                   </Grid>
-                  <Grid xs={12} md={6}>
+                  <Grid size={{ xs: 12, md: 6 }}>
                     <SectionText />
                   </Grid>
-                  <Grid xs={0} md={6} padding={0} />
-                  <Grid xs={12} md={6}>
+                  <Grid size={{ xs: 0, md: 6 }} sx={{ padding: 0 }} />
+                  <Grid size={{ xs: 12, md: 6 }}>
                     <RequiredKey />
                   </Grid>
-                  <Grid xs={0} md={6} padding={0} />
-                  <Grid xs={12} />
-                  <Grid xs={12} md={4}>
+                  <Grid size={{ xs: 0, md: 6 }} sx={{ padding: 0 }} />
+                  <Grid size={{ xs: 12 }} />
+                  <Grid size={{ xs: 12, md: 4 }}>
                     <Controller
                       control={control}
                       name="dropdown1"
@@ -418,8 +421,8 @@ export const _SectionedForm: StoryObj = {
                       }}
                     />
                   </Grid>
-                  <Grid xs={0} md={8} padding={0} />
-                  <Grid xs={12} sm={6} md={4}>
+                  <Grid size={{ xs: 0, md: 8 }} sx={{ padding: 0 }} />
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                     <TextField
                       label="Text Field"
                       fullWidth
@@ -430,7 +433,7 @@ export const _SectionedForm: StoryObj = {
                       placeholder="Value"
                     />
                   </Grid>
-                  <Grid xs={12} sm={6} md={8}>
+                  <Grid size={{ xs: 12, sm: 6, md: 8 }}>
                     <Controller
                       control={control}
                       name="dropdown2"
@@ -452,7 +455,7 @@ export const _SectionedForm: StoryObj = {
                       }}
                     />
                   </Grid>
-                  <Grid xs={12} sm={6} md={4}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                     <TextField
                       label="Text Field"
                       fullWidth
@@ -464,7 +467,7 @@ export const _SectionedForm: StoryObj = {
                       size="medium"
                     />
                   </Grid>
-                  <Grid xs={12} sm={6} md={8}>
+                  <Grid size={{ xs: 12, sm: 6, md: 8 }}>
                     <Controller
                       control={control}
                       name="dropdown3"
@@ -486,21 +489,21 @@ export const _SectionedForm: StoryObj = {
                       }}
                     />
                   </Grid>
-                  <Grid xs={12} />
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }} />
+                  <Grid size={{ xs: 12 }}>
                     <Divider />
                   </Grid>
-                  <Grid xs={12} />
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }} />
+                  <Grid size={{ xs: 12 }}>
                     <Typography variant="h4" component="h3">
                       Subsection Header
                     </Typography>
                   </Grid>
-                  <Grid xs={12} />
-                  <Grid xs={12} sm={6} md={4}>
+                  <Grid size={{ xs: 12 }} />
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                     <TextField label="Text Field" fullWidth {...register('field2')} placeholder="Value" />
                   </Grid>
-                  <Grid xs={12} sm={6} md={4}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                     <Controller
                       control={control}
                       name="dropdown3"
@@ -522,7 +525,7 @@ export const _SectionedForm: StoryObj = {
                       }}
                     />
                   </Grid>
-                  <Grid xs={12} sm={6} md={4}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                     <Controller
                       control={control}
                       name="dropdown4"
@@ -544,7 +547,7 @@ export const _SectionedForm: StoryObj = {
                       }}
                     />
                   </Grid>
-                  <Grid xs={12} sm={6} md={4}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                     <Controller
                       control={control}
                       name="dropdown5"
@@ -566,27 +569,27 @@ export const _SectionedForm: StoryObj = {
                       }}
                     />
                   </Grid>
-                  <Grid xs={12} />
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }} />
+                  <Grid size={{ xs: 12 }}>
                     <Button color="secondary">Secondary Action Button</Button>
                   </Grid>
                 </Grid>
               </Paper>
               <Paper sx={{ padding: '1.5rem' }}>
                 <Grid container rowSpacing={{ xs: 1, md: 2 }} columnSpacing={{ xs: 2, md: 3 }}>
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <Typography variant="h2">Section Header</Typography>
                   </Grid>
-                  <Grid xs={12} lg={6}>
+                  <Grid size={{ xs: 12, lg: 6 }}>
                     <SectionText />
                   </Grid>
-                  <Grid xs={0} lg={6} padding={0} />
-                  <Grid xs={12} lg={6}>
+                  <Grid size={{ xs: 0, lg: 6 }} sx={{ padding: 0 }} />
+                  <Grid size={{ xs: 12, lg: 6 }}>
                     <RequiredKey />
                   </Grid>
-                  <Grid xs={0} lg={6} padding={0} />
-                  <Grid xs={12} />
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 0, lg: 6 }} sx={{ padding: 0 }} />
+                  <Grid size={{ xs: 12 }} />
+                  <Grid size={{ xs: 12 }}>
                     <TextField
                       fullWidth
                       {...register('field3')}
@@ -594,17 +597,19 @@ export const _SectionedForm: StoryObj = {
                       error={!!errors.field3}
                       helperText={errors.field3?.message}
                       placeholder="Search"
-                      inputProps={{ 'aria-label': 'Search' }}
-                      InputProps={{
-                        startAdornment: (
-                          <InputAdornment position="start">
-                            <SearchIcon />
-                          </InputAdornment>
-                        ),
+                      slotProps={{
+                        htmlInput: { 'aria-label': 'Search' },
+                        input: {
+                          startAdornment: (
+                            <InputAdornment position="start">
+                              <SearchIcon />
+                            </InputAdornment>
+                          ),
+                        },
                       }}
                     />
                   </Grid>
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <FormControl error={!!errors.radio}>
                       <FormLabel id="radio-group" component="div">
                         Radio Group
@@ -622,7 +627,7 @@ export const _SectionedForm: StoryObj = {
                       />
                     </FormControl>
                   </Grid>
-                  <Grid xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <TextField
                       label="Text Field"
                       fullWidth
@@ -633,7 +638,7 @@ export const _SectionedForm: StoryObj = {
                       placeholder="Value"
                     />
                   </Grid>
-                  <Grid xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Controller
                       control={control}
                       name="dropdown6"
@@ -657,7 +662,7 @@ export const _SectionedForm: StoryObj = {
                   </Grid>
                 </Grid>
               </Paper>
-              <Grid container justifyContent="flex-end" marginTop={2}>
+              <Grid container sx={{ justifyContent: 'flex-end', marginTop: 2 }}>
                 <Button
                   type="reset"
                   color="secondary"

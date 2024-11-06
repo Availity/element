@@ -20,21 +20,33 @@ export type TextFieldProps = {
   /** If `true`, the input will take up the full width of its container. @default true */
   fullWidth?: boolean;
 } & Pick<FormLabelProps, 'helpTopicId'> &
-  Omit<MuiTextFieldProps, 'fullWidth' | 'variant'>;
+  Omit<MuiTextFieldProps, 'fullWidth' | 'variant' | 'slotProps'>;
 
 export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextFieldProps>((props, ref) => {
   const { InputProps, helpTopicId, InputLabelProps, FormHelperTextProps, required, SelectProps, inputProps, ...rest } =
     props;
-  const [ openDetected, setOpenDetected ] = useState(false);
+  const [openDetected, setOpenDetected] = useState(false);
 
   return (
     <MuiTextField
       {...rest}
-      inputProps={{ 'aria-required': required, ...inputProps }}
-      InputProps={{ ...InputProps, ...InputPropOverrides }}
-      InputLabelProps={{ component: FormLabel, helpTopicId: helpTopicId, required, shrink: true, ...InputLabelProps }}
-      FormHelperTextProps={{ component: FormHelperText, ...FormHelperTextProps }}
-      SelectProps={{ ...SelectProps, ...SelectPropOverrides, ...SelectAccessibilityOverrides(openDetected, setOpenDetected, SelectProps?.open) }}
+      slotProps={{
+        input: { ...InputProps, ...InputPropOverrides },
+        htmlInput: { 'aria-required': required, ...inputProps },
+        select: {
+          ...SelectProps,
+          ...SelectPropOverrides,
+          ...SelectAccessibilityOverrides(openDetected, setOpenDetected, SelectProps?.open),
+        },
+        inputLabel: {
+          component: FormLabel,
+          helpTopicId: helpTopicId,
+          required,
+          shrink: true,
+          ...InputLabelProps,
+        },
+        formHelperText: { component: FormHelperText, ...FormHelperTextProps },
+      }}
       ref={ref}
     />
   );

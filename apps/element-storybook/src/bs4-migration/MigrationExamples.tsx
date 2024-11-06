@@ -43,10 +43,10 @@ export const ChipExample = () => (
 
 export const GridExample = () => (
   <Grid container spacing={0.5}>
-    <Grid xs={8}>8</Grid>
-    <Grid xs={4}>4</Grid>
-    <Grid xs={4}>4</Grid>
-    <Grid xs={8}>8</Grid>
+    <Grid size={{ xs: 8 }}>8</Grid>
+    <Grid size={{ xs: 4 }}>4</Grid>
+    <Grid size={{ xs: 4 }}>4</Grid>
+    <Grid size={{ xs: 8 }}>8</Grid>
   </Grid>
 );
 
@@ -148,10 +148,7 @@ export const ListItemExample = () => (
         <ListItemText>ListItem</ListItemText>
       </ListItem>
       <ListItemStatusCard>
-        <ListItemText
-          primary="ListItemStatusCard"
-          secondary={<StatusChip color="success" label='Approved'/>}
-        />
+        <ListItemText primary="ListItemStatusCard" secondary={<StatusChip color="success" label="Approved" />} />
       </ListItemStatusCard>
     </List>
   </ThemeProvider>
@@ -167,7 +164,7 @@ export const StepperExample = () => {
   return (
     <ThemeProvider theme="legacyBS">
       <Stepper nonLinear activeStep={activeStep} connector={null}>
-        {["First", "Second", "Third"].map((label, index) => (
+        {['First', 'Second', 'Third'].map((label, index) => (
           <Step key={label} completed={index < activeStep}>
             <StepButton color="inherit" onClick={handleStep(index)}>
               {label}

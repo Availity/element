@@ -2,10 +2,12 @@
 import MuiListItem, { ListItemProps as MuiListItemProps } from '@mui/material/ListItem';
 import { forwardRef } from 'react';
 
-export type ListItemProps = Omit<MuiListItemProps, 'autoFocus' | 'button' | 'components' | 'componentsProps' | 'ContainerComponent' | 'ContainerProps' | 'disabled' | 'selected'>;
+export type ListItemProps = Omit<
+  MuiListItemProps,
+  'components' | 'componentsProps' | 'ContainerComponent' | 'ContainerProps'
+>;
 
 /** A common list item. Renders as an `<li>` by default. */
 export const ListItem = forwardRef<HTMLLIElement, ListItemProps>((props, ref) => {
-  return <MuiListItem {...props} ref={ref}/>;
+  return <MuiListItem {...props} ref={ref} />;
 });
-
