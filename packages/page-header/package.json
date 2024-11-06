@@ -39,8 +39,10 @@
     "@availity/mui-link": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "@mui/material": "^5.15.15",
+    "@tanstack/react-query": "^4.36.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-image": "^4.1.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   },
@@ -50,6 +52,7 @@
     "@availity/mui-divider": "workspace:^",
     "@availity/mui-layout": "workspace:^",
     "@availity/mui-link": "workspace:^",
+    "@availity/mui-spaces": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "@mui/material": "^5.11.9",
     "react": ">=16.3.0"
