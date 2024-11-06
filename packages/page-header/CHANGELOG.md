@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0](https://github.com/Availity/element/compare/@availity/mui-page-header@0.4.12...@availity/mui-page-header@1.0.0) (2024-11-06)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `0.4.12`
+
+### ⚠ BREAKING CHANGES
+
+* **mui-page-header:** helpLink and helpAppName removed in favor of the help object
+
+### Features
+
+* **mui-page-header:** add logo ([c94a95c](https://github.com/Availity/element/commit/c94a95c19f4d4364394a9bdffc87ff53bfd67c5d))
+* **mui-page-header:** add logo ([4930c76](https://github.com/Availity/element/commit/4930c76b85aaa72590330fb53a60135dca743c71))
+* **mui-spaces:** allow custom Loaders in SpacesImage ([7a585c9](https://github.com/Availity/element/commit/7a585c9aeb1255abf56b87692f8c134820a20e60))
+
 ## [0.4.12](https://github.com/Availity/element/compare/@availity/mui-page-header@0.4.11...@availity/mui-page-header@0.4.12) (2024-10-31)
 
 ### Dependency Updates
