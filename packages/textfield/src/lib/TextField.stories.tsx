@@ -71,14 +71,12 @@ export const _WithIcon: StoryObj<typeof TextField> = {
       label="With Icon"
       id="search"
       fullWidth={false}
-      slotProps={{
-        input: {
-          startAdornment: (
-            <InputAdornment position="start">
-              <SearchIcon />
-            </InputAdornment>
-          ),
-        },
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <SearchIcon />
+          </InputAdornment>
+        ),
       }}
     />
   ),
@@ -94,16 +92,14 @@ export const _PasswordField: StoryObj<typeof TextField> = {
         label="Password"
         id="password"
         fullWidth={false}
-        slotProps={{
-          input: {
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton title="password visibility" onClick={() => setShowPassword((prev) => !prev)} edge="end">
-                  {showPassword ? <EyeIcon fontSize="small" /> : <EyeSlashIcon fontSize="small" />}
-                </IconButton>
-              </InputAdornment>
-            ),
-          },
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton title="password visibility" onClick={() => setShowPassword((prev) => !prev)} edge="end">
+                {showPassword ? <EyeIcon fontSize="small" /> : <EyeSlashIcon fontSize="small" />}
+              </IconButton>
+            </InputAdornment>
+          ),
         }}
       />
     );
@@ -285,11 +281,7 @@ export const _InputMasking: StoryObj<typeof TextField> = {
           onChange={handleChange}
           name="numberformat"
           id="formatted-numberformat-input"
-          slotProps={{
-            input: {
-              inputComponent: NumericFormatCustom as any,
-            },
-          }}
+          InputProps={{ inputComponent: NumericFormatCustom as any }}
           fullWidth={false}
           margin="normal"
         />
@@ -307,14 +299,7 @@ export const _Select: StoryObj<typeof TextField> = {
     };
 
     return (
-      <TextField
-        value={count}
-        select
-        slotProps={{
-          select: { onChange: handleChange },
-        }}
-        {...args}
-      >
+      <TextField value={count} select SelectProps={{ onChange: handleChange }} {...args}>
         <MenuItem value={10}>10</MenuItem>
         <MenuItem value={20}>20</MenuItem>
         <MenuItem value={30}>30</MenuItem>
@@ -354,9 +339,7 @@ export const _MultiSelect: StoryObj<typeof TextField> = {
       <TextField
         id="multiple-chip"
         select
-        slotProps={{
-          select: { multiple: true, onChange: handleChange, renderValue: renderValue },
-        }}
+        SelectProps={{ multiple: true, onChange: handleChange, renderValue: renderValue }}
         value={multiValue}
         {...args}
       >

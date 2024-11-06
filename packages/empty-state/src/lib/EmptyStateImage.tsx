@@ -24,7 +24,7 @@ const EmptyStateImageContainer = styled(Box, {
   name: 'AvEmptyState',
   slot: 'image',
   overridesResolver: (props, styles) => styles.image,
-})({ fontSize: '112px' }) as typeof Box;
+})({ fontSize: '112px' });
 
 /** Image to accompany Empty State message. */
 export const EmptyStateImage = forwardRef<unknown, EmptyStateImageProps>((props, ref) => {

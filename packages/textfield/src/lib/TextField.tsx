@@ -20,7 +20,7 @@ export type TextFieldProps = {
   /** If `true`, the input will take up the full width of its container. @default true */
   fullWidth?: boolean;
 } & Pick<FormLabelProps, 'helpTopicId'> &
-  Omit<MuiTextFieldProps, 'fullWidth' | 'variant'>;
+  Omit<MuiTextFieldProps, 'fullWidth' | 'variant' | 'slotProps'>;
 
 export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextFieldProps>((props, ref) => {
   const { InputProps, helpTopicId, InputLabelProps, FormHelperTextProps, required, SelectProps, inputProps, ...rest } =
@@ -38,7 +38,13 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
           ...SelectPropOverrides,
           ...SelectAccessibilityOverrides(openDetected, setOpenDetected, SelectProps?.open),
         },
-        inputLabel: { component: FormLabel, helpTopicId: helpTopicId, required, shrink: true, ...InputLabelProps },
+        inputLabel: {
+          component: FormLabel,
+          helpTopicId: helpTopicId,
+          required,
+          shrink: true,
+          ...InputLabelProps,
+        },
         formHelperText: { component: FormHelperText, ...FormHelperTextProps },
       }}
       ref={ref}
