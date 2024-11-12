@@ -3,7 +3,9 @@ import { Typography } from '@availity/mui-typography';
 import { formatBytes } from './util';
 
 type FileTypesMessageProps = {
+  /** Allowed file type extensions. Each extension should be prefixed with a ".". eg: .txt, .pdf, .png */
   allowedFileTypes: `.${string}`[];
+  /** Maximum size per file in bytes. This will be formatted. eg: 1000 * 20 = 20 KB */
   maxFileSize: number;
 };
 
