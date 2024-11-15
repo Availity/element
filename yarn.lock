@@ -98,7 +98,6 @@ __metadata:
     "@availity/mui-card": "workspace:*"
     "@availity/mui-checkbox": "workspace:*"
     "@availity/mui-chip": "workspace:*"
-    "@availity/mui-codemod": "workspace:*"
     "@availity/mui-datepicker": "workspace:*"
     "@availity/mui-dialog": "workspace:*"
     "@availity/mui-disclaimer": "workspace:*"
@@ -406,7 +405,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-codemod@workspace:*, @availity/mui-codemod@workspace:packages/codemod":
+"@availity/mui-codemod@workspace:packages/codemod":
   version: 0.0.0-use.local
   resolution: "@availity/mui-codemod@workspace:packages/codemod"
   dependencies:
