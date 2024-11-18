@@ -3,7 +3,7 @@ import {
   TableSortLabelProps as MuiTableSortLabelProps,
 } from '@mui/material/TableSortLabel';
 import Box from '@mui/material/Box';
-import visuallyHidden from '@mui/utils/visuallyHidden';
+import { visuallyHidden } from '@availity/mui-utils';
 import { SortDownIcon, SortIcon } from '@availity/mui-icon';
 
 export type TableSortLabelProps = Omit<

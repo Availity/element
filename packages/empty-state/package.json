@@ -35,6 +35,7 @@
     "@availity/mui-layout": "workspace:*"
   },
   "devDependencies": {
+    "@availity/mui-utils": "workspace:*",
     "@mui/material": "^5.15.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",

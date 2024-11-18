@@ -35,7 +35,8 @@
   "dependencies": {
     "@availity/mui-form-utils": "workspace:*",
     "@availity/mui-icon": "workspace:*",
-    "@availity/mui-pagination": "workspace:*"
+    "@availity/mui-pagination": "workspace:*",
+    "@availity/mui-utils": "workspace:*"
   },
   "devDependencies": {
     "@availity/mui-button": "workspace:*",
