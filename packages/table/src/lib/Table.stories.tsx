@@ -4,9 +4,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useMemo, useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
-import { visuallyHidden } from '@mui/utils';
-import type { AlertColor } from '@mui/material/Alert';
-import { Chip } from '@availity/mui-chip';
+import { StatusChip, StatusChipProps } from '@availity/mui-chip';
+import { Typography } from '@availity/mui-typography';
+import { visuallyHidden } from '@availity/mui-utils';
 import Patients from '../../../../data/patients.json';
 import { Patient } from '../../../../data/patient';
 import {
@@ -21,7 +21,6 @@ import {
   TablePagination,
   TableFooter,
 } from '../index';
-import { Typography } from '@availity/mui-typography';
 
 const meta: Meta<typeof Table> = {
   title: 'Components/Table/Table',
@@ -31,15 +30,15 @@ const meta: Meta<typeof Table> = {
 
 export default meta;
 
-const StatusChip = (status: string) => {
-  const color: Record<string, AlertColor> = {
+const Status = (status: string) => {
+  const color: Record<string, StatusChipProps['color']> = {
     Pending: 'warning',
     'Needs Info': 'info',
     Denied: 'error',
     Approved: 'success',
   };
 
-  return <Chip size="small" color={color[status]} label={status} />;
+  return <StatusChip color={color[status]} label={status} />;
 };
 
 const dataRows = Patients.data.patientPagination.items.slice(0, 7);
@@ -56,6 +55,7 @@ export const _Table: StoryObj<typeof Table> = {
             <TableRow>
               <TableCell>Payer</TableCell>
               <TableCell>Patient First Name</TableCell>
+              <TableCell>Patient Middle Initial</TableCell>
               <TableCell>Patient Last Name</TableCell>
               <TableCell>Birth Date</TableCell>
             </TableRow>
@@ -66,6 +66,7 @@ export const _Table: StoryObj<typeof Table> = {
                 <TableRow key={`basicTable-${row.payerName}-${row.birthDate}`}>
                   <TableCell>{row.payerName}</TableCell>
                   <TableCell>{row.firstName}</TableCell>
+                  <TableCell>{row.middleName}</TableCell>
                   <TableCell>{row.lastName}</TableCell>
                   {/* TODO: switch to dayjs */}
                   <TableCell>{new Date(row.birthDate).toLocaleDateString('en-us')}</TableCell>
@@ -381,6 +382,10 @@ export const _PaginatedTable: StoryObj<typeof Table> = {
         label: 'Birth Date',
       },
       {
+        id: 'deathDate',
+        label: 'Death Date',
+      },
+      {
         id: 'payerName',
         label: 'Payer',
       },
@@ -431,6 +436,7 @@ export const _PaginatedTable: StoryObj<typeof Table> = {
                 <TableCell>{row.firstName}</TableCell>
                 <TableCell>{row.lastName}</TableCell>
                 <TableCell>{new Date(row.birthDate).toLocaleDateString('en-us')}</TableCell>
+                <TableCell>{row.deathDate && new Date(row.deathDate).toLocaleDateString('en-us')}</TableCell>
                 <TableCell>{row.payerName}</TableCell>
               </TableRow>
             ))}

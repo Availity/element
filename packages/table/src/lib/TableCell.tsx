@@ -3,6 +3,7 @@ import {
   TableCellProps as MuiTableCellProps,
   TableCellBaseProps,
 } from '@mui/material/TableCell';
+import { visuallyHidden } from '@availity/mui-utils';
 import { ElementType } from 'react';
 
 declare module '@mui/material/TableCell' {
@@ -13,8 +14,13 @@ declare module '@mui/material/TableCell' {
 
 export type TableCellProps = {
   component?: ElementType<TableCellBaseProps>;
+  /** If `true` the placeholder for empty cells and accessible "No Data" text is disabled. */
+  disableEmptyPlaceholder?: boolean;
 } & MuiTableCellProps;
 
-export const TableCell = (props: TableCellProps): JSX.Element => {
-  return <MuiTableCell {...props} />;
+export const TableCell = ({disableEmptyPlaceholder = false, children, ...props}: TableCellProps): JSX.Element => {
+  const isPlaceholderActive = !disableEmptyPlaceholder && !children;
+  const placeholder = <><div aria-hidden>-</div><div style={visuallyHidden}>No Data</div></>;
+
+  return <MuiTableCell {...props}>{isPlaceholderActive ? placeholder : children}</MuiTableCell>;
 };
