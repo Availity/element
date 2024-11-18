@@ -151,6 +151,7 @@ __metadata:
     "@availity/mui-transitions": "workspace:*"
     "@availity/mui-tree": "workspace:*"
     "@availity/mui-typography": "workspace:*"
+    "@availity/mui-utils": "workspace:*"
     "@availity/theme-provider": "workspace:*"
     "@mui/material": ^5.15.15
     "@mui/system": ^5.15.15
@@ -1059,6 +1060,21 @@ __metadata:
 "@availity/mui-typography@workspace:*, @availity/mui-typography@workspace:^, @availity/mui-typography@workspace:packages/typography":
   version: 0.0.0-use.local
   resolution: "@availity/mui-typography@workspace:packages/typography"
+  dependencies:
+    "@mui/material": ^5.15.15
+    react: 18.2.0
+    react-dom: 18.2.0
+    tsup: ^8.0.2
+    typescript: ^5.4.5
+  peerDependencies:
+    "@mui/material": ^5.11.9
+    react: ">=16.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-utils@workspace:*, @availity/mui-utils@workspace:packages/utils":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-utils@workspace:packages/utils"
   dependencies:
     "@mui/material": ^5.15.15
     react: 18.2.0

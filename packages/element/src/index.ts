@@ -44,4 +44,5 @@ export * from '@availity/mui-tooltip';
 export * from '@availity/mui-transitions';
 export * from '@availity/mui-tree';
 export * from '@availity/mui-typography';
+export * from '@availity/mui-utils';
 export * from '@availity/theme-provider';

@@ -44,6 +44,7 @@
       "@availity/mui-event-tracker": ["packages/event-tracker/src/index.ts"],
       "@availity/mui-favorites": ["packages/favorites/src/index.ts"],
       "@availity/mui-feedback": ["packages/feedback/src/index.ts"],
+      "@availity/mui-file-selector": ["packages/file-selector/src/index.ts"],
       "@availity/mui-form-utils": ["packages/form-utils/src/index.ts"],
       "@availity/mui-icon": ["packages/icon/src/index.ts"],
       "@availity/mui-layout": ["packages/layout/src/index.ts"],
@@ -68,7 +69,7 @@
       "@availity/mui-transitions": ["packages/transitions/src/index.ts"],
       "@availity/mui-tree": ["packages/tree/src/index.ts"],
       "@availity/mui-typography": ["packages/typography/src/index.ts"],
-      "@availity/mui-file-selector": ["packages/file-selector/src/index.ts"],
+      "@availity/mui-utils": ["packages/utils/src/index.ts"],
       "@availity/theme": ["packages/theme/src/index.ts"],
       "@availity/theme-provider": ["packages/theme-provider/src/index.ts"]
     }
