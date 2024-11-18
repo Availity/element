@@ -24,8 +24,8 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "build": "tsup src/codemod.js --format esm,cjs --dts",
+    "dev": "tsup src/codemod.js --format esm,cjs --watch --dts",
     "clean": "rm -rf dist",
     "clean:nm": "rm -rf node_modules",
     "publish": "yarn npm publish --tolerate-republish --access public",
