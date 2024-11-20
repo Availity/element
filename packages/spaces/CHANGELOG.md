@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.1](https://github.com/Availity/element/compare/@availity/mui-spaces@0.5.0...@availity/mui-spaces@0.5.1) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-list` updated to version `0.5.0`
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-spaces@0.4.0...@availity/mui-spaces@0.5.0) (2024-11-06)
 
 
