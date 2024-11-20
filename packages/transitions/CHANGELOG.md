@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-transitions@0.2.5...@availity/mui-transitions@0.3.0) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-utils` updated to version `0.2.5`
+
+### Features
+
+* **mui-utils:** swap to element utils package ([6025a97](https://github.com/Availity/element/commit/6025a97905473a7db9e01cc47c9653febf221592))
+
 ## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-transitions@0.2.4...@availity/mui-transitions@0.2.5) (2024-10-31)
 
 ### Dependency Updates
