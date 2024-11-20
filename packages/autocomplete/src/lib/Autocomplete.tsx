@@ -12,6 +12,8 @@ import { OverridableStringUnion } from '@mui/types';
 import { TextField, TextFieldProps } from '@availity/mui-textfield';
 import { SelectDivider, SelectExpandIcon } from '@availity/mui-form-utils';
 
+export { createFilterOptions } from '@mui/material/Autocomplete';
+
 export interface AutocompleteProps<
   T,
   Multiple extends boolean | undefined,
