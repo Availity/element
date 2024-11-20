@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-table@0.1.27...@availity/mui-table@0.2.0) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.1.27`
+* `mui-textfield` updated to version `0.1.27`
+* `mui-pagination` updated to version `0.1.27`
+* `mui-utils` updated to version `0.1.27`
+
+### Features
+
+* **mui-table:** add empty cell placeholder ([2751a39](https://github.com/Availity/element/commit/2751a39c5378341799b22615514848aa42f32317))
+* **mui-utils:** swap to element utils package ([6025a97](https://github.com/Availity/element/commit/6025a97905473a7db9e01cc47c9653febf221592))
+
 ## [0.1.27](https://github.com/Availity/element/compare/@availity/mui-table@0.1.26...@availity/mui-table@0.1.27) (2024-10-31)
 
 ### Dependency Updates
