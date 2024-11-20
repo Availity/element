@@ -6,8 +6,8 @@ import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Typography from '@mui/material/Typography';
-import { visuallyHidden } from '@mui/utils';
 import { Link } from '@availity/mui-link';
+import { visuallyHidden } from '@availity/mui-utils';
 import { EmptyState, EmptyStateProps } from './EmptyState';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { SystemPropsList } from '../../../../data/MuiSystemProperties';

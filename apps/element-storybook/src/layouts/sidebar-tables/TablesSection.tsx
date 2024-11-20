@@ -11,10 +11,10 @@ import {
   TableContainer,
   TableBody,
   Typography,
+  visuallyHidden
 } from '@availity/element';
 import { Box, Paper } from '@mui/material';
 import type { AlertColor } from '@mui/material';
-import { visuallyHidden } from '@mui/utils';
 import { datarows, Data } from './TableData';
 
 const StatusChip = (status: string) => {

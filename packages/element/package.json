@@ -60,6 +60,7 @@
     "@availity/mui-transitions": "workspace:*",
     "@availity/mui-tree": "workspace:*",
     "@availity/mui-typography": "workspace:*",
+    "@availity/mui-utils": "workspace:*",
     "@availity/theme-provider": "workspace:*",
     "@mui/material": "^5.15.15",
     "@mui/system": "^5.15.15"
