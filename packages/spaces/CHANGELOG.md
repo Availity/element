@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-spaces@0.4.0...@availity/mui-spaces@0.5.0) (2024-11-06)
+
+
+### Features
+
+* **mui-spaces:** allow custom Loaders in SpacesImage ([7a585c9](https://github.com/Availity/element/commit/7a585c9aeb1255abf56b87692f8c134820a20e60))
+
 ## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-spaces@0.3.25...@availity/mui-spaces@0.4.0) (2024-10-31)
 
 ### Dependency Updates
