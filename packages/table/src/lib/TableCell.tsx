@@ -20,7 +20,7 @@ export type TableCellProps = {
 
 export const TableCell = ({disableEmptyPlaceholder = false, children, ...props}: TableCellProps): JSX.Element => {
   const isPlaceholderActive = !disableEmptyPlaceholder && !children;
-  const placeholder = <><div aria-hidden>-</div><div style={visuallyHidden}>No Data</div></>;
+  const placeholder = <><div aria-hidden>&mdash;</div><div style={visuallyHidden}>No Data</div></>;
 
   return <MuiTableCell {...props}>{isPlaceholderActive ? placeholder : children}</MuiTableCell>;
 };
