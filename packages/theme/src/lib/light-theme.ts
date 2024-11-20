@@ -434,7 +434,7 @@ export const lightTheme = {
           '.MuiListItemButton-root': {
             borderRadius: '0 4px 4px 0',
             '&.Mui-focusVisible': {
-              border: `2px solid ${tokens.colorPrimaryMain}`,
+              border: `2px solid ${tokens.borderDecorative}`,
               borderLeftWidth: 0,
               boxShadow: 'none',
               '&:not(:hover):not(:active)': {
@@ -1558,6 +1558,11 @@ export const lightTheme = {
     MuiPaper: {
       defaultProps: {
         variant: 'outlined',
+      },
+      styleOverrides: {
+        root: {
+          borderColor: tokens.borderDecorative,
+        },
       },
     },
     MuiPickersCalendarHeader: {
