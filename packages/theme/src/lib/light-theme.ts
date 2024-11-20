@@ -431,10 +431,11 @@ export const lightTheme = {
           backgroundColor: tokens.colorBackgroundAccent,
         },
         root: {
+          borderColor: tokens.borderDecorative,
           '.MuiListItemButton-root': {
             borderRadius: '0 4px 4px 0',
             '&.Mui-focusVisible': {
-              border: `2px solid ${tokens.borderDecorative}`,
+              border: `2px solid ${tokens.colorPrimaryMain}`,
               borderLeftWidth: 0,
               boxShadow: 'none',
               '&:not(:hover):not(:active)': {
