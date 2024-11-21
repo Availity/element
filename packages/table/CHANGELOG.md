@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-table@0.2.0...@availity/mui-table@0.2.1) (2024-11-21)
+
+
+### Bug Fixes
+
+* **mui-table:** replace placeholder dash ([fbed326](https://github.com/Availity/element/commit/fbed3260738275b1d17ff31005c7ea338cf0fe02))
+
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-table@0.1.27...@availity/mui-table@0.2.0) (2024-11-20)
 
 ### Dependency Updates
