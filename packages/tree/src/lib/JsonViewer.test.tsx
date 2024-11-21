@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react';
-import JsonViewer from './JsonViewer';
+import { JsonViewer } from './JsonViewer';
 
 const setup = (data: Record<string, unknown>) => render(<JsonViewer data={data} />);
 
