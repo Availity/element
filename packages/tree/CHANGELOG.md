@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-tree@0.2.2...@availity/mui-tree@0.2.3) (2024-11-22)
+
+
+### Bug Fixes
+
+* **mui-tree:** don't export JsonViewer as default ([404861f](https://github.com/Availity/element/commit/404861f4cb98a0dc3237b60c4d199ab24bbb3447))
+
 ## [0.2.2](https://github.com/Availity/element/compare/@availity/mui-tree@0.2.1...@availity/mui-tree@0.2.2) (2024-11-21)
 
 
