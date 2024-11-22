@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import JsonViewer, { JsonViewerProps } from './JsonViewer';
+import { JsonViewer, JsonViewerProps } from './JsonViewer';
 // import README from '../README.md';
 
 const meta: Meta<typeof JsonViewer> = {

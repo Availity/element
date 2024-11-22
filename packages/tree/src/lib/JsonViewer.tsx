@@ -35,9 +35,7 @@ const getDetails = ({ data }: JsonViewerProps): (JSX.Element | null)[] => {
   });
 };
 
-const JsonViewer = ({ data, ...rest }: JsonViewerProps): JSX.Element => {
+export const JsonViewer = ({ data, ...rest }: JsonViewerProps): JSX.Element => {
   const details = getDetails({ data });
   return <TreeView {...rest}>{details}</TreeView>;
 };
-
-export default JsonViewer;
