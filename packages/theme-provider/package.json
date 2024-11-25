@@ -16,11 +16,11 @@
   },
   "dependencies": {
     "@availity/theme": "workspace:*",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
     "@mui/material": "^5.15.15",
-    "@mui/x-date-pickers": "^7.2.0",
-    "dayjs": "^1.11.10"
+    "@mui/x-date-pickers": "^7.22.3",
+    "dayjs": "^1.11.13"
   },
   "devDependencies": {
     "react": "18.2.0",
