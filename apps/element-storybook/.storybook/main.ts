@@ -48,18 +48,7 @@ const config: StorybookConfig = {
   },
 
   async viteFinal(config) {
-    console.log('config', config);
-    return {
-      ...config,
-      // Ensure Vite is imported as ESM
-      optimizeDeps: {
-        ...config.optimizeDeps,
-        esbuildOptions: {
-          ...config.optimizeDeps?.esbuildOptions,
-          format: 'esm',
-        },
-      },
-    };
+    return config;
   },
 
   staticDirs: ['../../../static'],
