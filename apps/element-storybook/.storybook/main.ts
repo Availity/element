@@ -49,6 +49,7 @@ const config: StorybookConfig = {
 
   async viteFinal(config) {
     // console.log(config);
+    if (config.resolve) config.resolve.mainFields = [];
     return config;
   },
 
