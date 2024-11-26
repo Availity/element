@@ -47,11 +47,9 @@ const config: StorybookConfig = {
     reactDocgen: 'react-docgen-typescript',
   },
 
-  async viteFinal(config) {
-    // console.log(config);
-    if (config.resolve) config.resolve.mainFields = [];
-    return config;
-  },
+  // async viteFinal(config) {
+  //   return config;
+  // },
 
   staticDirs: ['../../../static'],
   features: { storyStoreV7: false, legacyMdx1: true },
