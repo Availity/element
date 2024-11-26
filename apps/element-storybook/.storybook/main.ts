@@ -47,9 +47,20 @@ const config: StorybookConfig = {
     reactDocgen: 'react-docgen-typescript',
   },
 
-  // async viteFinal(config) {
-  //   return config;
-  // },
+  async viteFinal(config) {
+    console.log('config', config);
+    return {
+      ...config,
+      // Ensure Vite is imported as ESM
+      optimizeDeps: {
+        ...config.optimizeDeps,
+        esbuildOptions: {
+          ...config.optimizeDeps?.esbuildOptions,
+          format: 'esm',
+        },
+      },
+    };
+  },
 
   staticDirs: ['../../../static'],
   features: { storyStoreV7: false, legacyMdx1: true },
