@@ -4,7 +4,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useMemo, useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
+import { IconButton } from '@availity/mui-button';
 import { StatusChip, StatusChipProps } from '@availity/mui-chip';
+import { CollapseIcon, ExpandIcon } from '@availity/mui-icon';
+import { Box, Grid } from '@availity/mui-layout';
+import { Collapse } from '@availity/mui-transitions';
 import { Typography } from '@availity/mui-typography';
 import { visuallyHidden } from '@availity/mui-utils';
 import Patients from '../../../../data/patients.json';
@@ -454,6 +458,88 @@ export const _PaginatedTable: StoryObj<typeof Table> = {
               />
             </TableRow>
           </TableFooter>
+        </Table>
+      </TableContainer>
+    );
+  },
+};
+
+export const _ExpandableTable: StoryObj<typeof Table> = {
+  render: (args: TableProps) => {
+    return (
+      <TableContainer>
+        <Typography id="table-title" sx={visuallyHidden}>
+          Table
+        </Typography>
+        <Table aria-labelledby="table-title" {...args}>
+          <TableHead>
+            <TableRow>
+              <TableCell><div style={visuallyHidden}>Expand Row</div></TableCell>
+              <TableCell>Payer</TableCell>
+              <TableCell>Patient First Name</TableCell>
+              <TableCell>Patient Last Name</TableCell>
+              <TableCell>Birth Date</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {dataRows.map((row) => {
+              const [open, setOpen] = useState(false);
+              return (
+                <>
+                  <TableRow key={`expandableTable-${row.payerName}-${row.birthDate}`}>
+                    <TableCell padding="checkbox">
+                      <IconButton
+                        title="expand row"
+                        size="medium"
+                        onClick={() => setOpen(!open)}
+                      >
+                        {open ? <ExpandIcon /> : <CollapseIcon />}
+                      </IconButton>
+                    </TableCell>
+                    <TableCell>{row.payerName}</TableCell>
+                    <TableCell>{row.firstName}</TableCell>
+                    <TableCell>{row.lastName}</TableCell>
+                    {/* TODO: switch to dayjs */}
+                    <TableCell>{new Date(row.birthDate).toLocaleDateString('en-us')}</TableCell>
+                  </TableRow>
+                  <TableRow key={`expandableTable-expanded-${row.payerName}-${row.birthDate}`} >
+                    <TableCell style={{ padding: 0, paddingLeft: "32px" }} colSpan={12}>
+                      <Collapse in={open} timeout="auto" unmountOnExit>
+                        <Box sx={{ padding: 2 }}>
+                          <Grid container spacing={2}>
+                            <Grid xs>
+                              <Typography variant="body2" sx={{fontWeight: "bold"}}>
+                                Subscriber Member Id
+                              </Typography>
+                              <Typography variant="body2">
+                                {row.subscriberMemberId}
+                              </Typography>
+                            </Grid>
+                            <Grid xs>
+                              <Typography variant="body2" sx={{fontWeight: "bold"}}>
+                                Subscriber Relationship
+                              </Typography>
+                              <Typography variant="body2">
+                                {row.subscriberRelationship}
+                              </Typography>
+                            </Grid>
+                            <Grid xs>
+                              <Typography variant="body2" sx={{fontWeight: "bold"}}>
+                                Subscriber Relationship Code
+                              </Typography>
+                              <Typography variant="body2">
+                                {row.subscriberRelationshipCode}
+                              </Typography>
+                            </Grid>
+                          </Grid>
+                        </Box>
+                      </Collapse>
+                    </TableCell>
+                  </TableRow>
+                </>
+              );
+            })}
+          </TableBody>
         </Table>
       </TableContainer>
     );
