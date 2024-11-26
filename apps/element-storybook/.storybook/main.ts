@@ -48,7 +48,13 @@ const config: StorybookConfig = {
   },
 
   async viteFinal(config) {
-    return config;
+    return {
+      ...config,
+      optimizeDeps: {
+        ...config.optimizeDeps,
+        exclude: ['@availity/upload-core'],
+      },
+    };
   },
 
   staticDirs: ['../../../static'],
