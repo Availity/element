@@ -5,8 +5,7 @@
     "composite": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "outDir": "",
-    "module": "CommonJS"
+    "outDir": ""
   },
   "files": [
     "../../node_modules/@nx/react/typings/styled-jsx.d.ts",
