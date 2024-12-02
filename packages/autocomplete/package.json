@@ -33,7 +33,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@mui/types": "^7.2.14"
+    "@mui/types": "^7.2.19"
   },
   "devDependencies": {
     "@availity/api-axios": "^9.0.4",
