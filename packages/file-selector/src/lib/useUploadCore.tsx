@@ -1,22 +1,18 @@
 import { useQuery } from '@tanstack/react-query';
 import Upload, { Options } from '@availity/upload-core';
 
-function startUploads(files: File[], options: Options) {
-  return files.map((file) => {
-    const upload = new Upload(file, options);
+function startUpload(file: File, options: Options) {
+  const upload = new Upload(file, options);
 
-    upload.start();
+  upload.start();
 
-    return upload;
-  });
+  return upload;
 }
 
-export function useUploadCore(files: File[], options: Options) {
-  const fileNames = files.map((file) => file.name).join(',');
+export function useUploadCore(file: File, options: Options) {
+  const isQueryEnabled = !!file;
 
-  const isQueryEnabled = files.length > 0;
-
-  return useQuery(['upload', fileNames, options], () => startUploads(files, options), {
+  return useQuery(['upload', file.name, options], () => startUpload(file, options), {
     enabled: isQueryEnabled,
     retry: false,
   });

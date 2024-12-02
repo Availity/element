@@ -1,24 +1,31 @@
-import type Upload from '@availity/upload-core';
+import type { default as Upload, Options } from '@availity/upload-core';
 import { List, ListItem, ListItemText, ListItemIcon, ListItemButton } from '@availity/mui-list';
 import { DeleteIcon, FileIcon } from '@availity/mui-icon';
 import { Grid } from '@availity/mui-layout';
 
 import { UploadProgressBar } from './UploadProgressBar';
 import { formatBytes, getFileExtIcon } from './util';
+import { useUploadCore } from './useUploadCore';
 
 type FileRowProps = {
-  /** The upload instance returned by creating a new Upload via @availity/upload-core. */
-  upload: Upload;
   /** Callback called when file is removed. The callback is passed the id of the file that was removed. */
-  onRemoveFile: (id: string) => void;
+  onRemoveFile: (id: string, upload: Upload) => void;
+  /** The upload instance returned by creating a new Upload via @availity/upload-core. */
+  // upload: Upload;
+  file: File;
+  options: Options;
 };
 
-const FileRow = ({ upload, onRemoveFile }: FileRowProps) => {
-  const { ext, icon } = getFileExtIcon(upload.file.name);
-  console.log('ext, icon:', ext, icon);
+const FileRow = ({ file, options, onRemoveFile }: FileRowProps) => {
+  // const { ext, icon } = getFileExtIcon(upload.file.name);
+  // console.log('ext, icon:', ext, icon);
+
+  const { data: upload } = useUploadCore(file, options);
+
+  if (!upload) return null;
 
   return (
-    <ListItem>
+    <>
       <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%">
         <Grid xs={1}>
           <ListItemIcon>
@@ -35,35 +42,37 @@ const FileRow = ({ upload, onRemoveFile }: FileRowProps) => {
           <UploadProgressBar upload={upload} />
         </Grid>
         <Grid xs={1}>
-          <ListItemButton>
-            <ListItemIcon
-              onClick={() => {
-                onRemoveFile(upload.id);
-              }}
-            >
+          <ListItemButton
+            onClick={() => {
+              onRemoveFile(upload.id, upload);
+            }}
+          >
+            <ListItemIcon>
               <DeleteIcon />
             </ListItemIcon>
           </ListItemButton>
         </Grid>
       </Grid>
-    </ListItem>
+    </>
   );
 };
 
 export type FileListProps = {
   /** List of Upload objects */
-  uploads: Upload[];
+  // uploads: Upload[];
   /** Callback called when file is removed. The callback is passed the id of the file that was removed. */
-  onRemoveFile: (id: string) => void;
+  files: File[];
+  options: Options;
+  onRemoveFile: (id: string, upload: Upload) => void;
 };
 
-export const FileList = ({ uploads, onRemoveFile }: FileListProps) => {
-  if (uploads.length === 0) return null;
+export const FileList = ({ files, options, onRemoveFile }: FileListProps) => {
+  if (files.length === 0) return null;
 
   return (
     <List>
-      {uploads.map((upload) => {
-        return <FileRow key={upload.id} upload={upload} onRemoveFile={onRemoveFile} />;
+      {files.map((file) => {
+        return <FileRow key={file.name} file={file} options={options} onRemoveFile={onRemoveFile} />;
       })}
     </List>
   );
