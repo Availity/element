@@ -27,7 +27,7 @@ export const FaSvgIcon = React.forwardRef<SVGSVGElement, FaSvgIconProps>((props,
   } = icon;
 
   return (
-    <SvgIcon ref={ref} viewBox={`0 0 ${width} ${height}`} {...svgProps}>
+    <SvgIcon ref={ref} viewBox={`0 0 ${width} ${height}`} role="img" {...svgProps}>
       {typeof svgPathData === 'string' ? (
         <path d={svgPathData} />
       ) : /**

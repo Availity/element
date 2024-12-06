@@ -1012,6 +1012,55 @@ export const lightTheme = {
         },
       },
     },
+    MuiDialog: {
+      styleOverrides: {
+        maxWidthSm: {
+          maxWidth: '25rem'
+        },
+        maxWidthMd: {
+          maxWidth: '39.75rem'
+        },
+        maxWidthLg: {
+          maxWidth: '58.75rem'
+        },
+        maxWidthXl: {
+          maxWidth: '71.25rem'
+        },
+        avCloseButton: {
+          "~ .MuiDialogTitle-root": {
+            marginRight: '2.5rem'
+          }
+        }
+      }
+    },
+    MuiDialogActions: {
+      styleOverrides: {
+        root: {
+          padding: '1rem'
+        }
+      }
+    },
+    MuiDialogContent: {
+      defaultProps: {
+        dividers: true
+      },
+      styleOverrides: {
+        root: {
+          padding: '1rem'
+        }
+      }
+    },
+    MuiDialogTitle: {
+      styleOverrides: {
+        root: {
+          padding: '.5rem',
+          paddingLeft: '1rem',
+          minHeight: '3.5rem',
+          display: 'flex',
+          alignItems: 'center'
+        }
+      }
+    },
     MuiFormControl: {
       defaultProps: {
         size: 'small',

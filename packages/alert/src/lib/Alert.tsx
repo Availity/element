@@ -8,11 +8,11 @@ export type AlertProps = Omit<MUIAlertProps, 'variant' | 'color' | 'components' 
   severity?: 'success' | 'info' | 'warning' | 'error';
 };
 
-const iconMapping = {
-  error: <WarningCircleIcon />,
-  info: <InfoCircleIcon />,
-  success: <SuccessCircleIcon />,
-  warning: <WarningCircleIcon sx={{ color: 'warning.dark' }} />,
+export const AlertIcons = {
+  error: <WarningCircleIcon color="error"/>,
+  info: <InfoCircleIcon color="info"/>,
+  success: <SuccessCircleIcon color="success"/>,
+  warning: <WarningCircleIcon color="warning" sx={{ color: 'warning.dark' }} />,
 };
 
 export const Alert = forwardRef<HTMLDivElement, AlertProps>((allProps, ref) => {
@@ -36,7 +36,7 @@ const slots = {
       action={onClose ? undefined : action}
       onClose={onClose}
       closeText={closeText}
-      iconMapping={iconMapping}
+      iconMapping={AlertIcons}
       slots={slots}
       ref={ref}
       {...args}
