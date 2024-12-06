@@ -29,6 +29,9 @@ export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator' 
   /** Url for the Home route.
    * @default /public/apps/dashboard */
   homeUrl?: string;
+  /** A string value that can be used to name an element
+   * @default breadcrumbs */
+  'aria-label'?: string;
 }
 
 const Breadcrumb = ({ name, url, target = '_top' }: Crumb) => {
@@ -54,6 +57,7 @@ export const Breadcrumbs = ({
       separator={<NavigateNextIcon fontSize="xsmall" />}
       slotProps={{ collapsedIcon: { className: 'breadcrumbs__collapsed-icon' } }}
       slots={{ CollapsedIcon: MoreHorizontalIcon }}
+      aria-label={rest['aria-label'] || 'breadcrumbs'}
     >
       <Link aria-label="Home" href={homeUrl} loadApp={false}>
         Home
