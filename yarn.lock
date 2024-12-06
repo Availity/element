@@ -447,8 +447,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-dialog@workspace:packages/dialog"
   dependencies:
+    "@availity/mui-alert": "workspace:*"
+    "@availity/mui-block-ui": "workspace:*"
     "@availity/mui-button": "workspace:*"
+    "@availity/mui-form-utils": "workspace:*"
+    "@availity/mui-icon": "workspace:*"
     "@availity/mui-layout": "workspace:*"
+    "@availity/mui-menu": "workspace:*"
     "@mui/material": ^5.15.15
     react: 18.2.0
     react-dom: 18.2.0
