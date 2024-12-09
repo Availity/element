@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-dialog@0.1.12...@availity/mui-dialog@0.2.0) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-block-ui` updated to version `0.1.12`
+* `mui-form-utils` updated to version `0.1.12`
+* `mui-menu` updated to version `0.1.12`
+* `mui-alert` updated to version `0.1.12`
+* `mui-button` updated to version `0.1.12`
+* `mui-icon` updated to version `0.1.12`
+* `mui-textfield` updated to version `0.1.12`
+
+### Features
+
+* **mui-dialog:** add styles, alert icons, and close button ([7efdbdf](https://github.com/Availity/element/commit/7efdbdf41cca4365d196f5bab6797a07824e2c3a))
+
 ## [0.1.12](https://github.com/Availity/element/compare/@availity/mui-dialog@0.1.11...@availity/mui-dialog@0.1.12) (2024-10-31)
 
 ### Dependency Updates
