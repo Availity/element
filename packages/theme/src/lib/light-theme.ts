@@ -622,9 +622,12 @@ export const lightTheme = {
             padding: '2px 4px',
             margin: '0px -4px',
           },
+          '.MuiIconButton-root': {
+            marginRight: '-8px'
+          },
           margin: '-2px 0px -2px auto',
-          padding: '0 0 0 8px',
-          gap: '8px'
+          padding: '0 0 0 16px',
+          gap: '16px'
         },
         icon: ({ ownerState }: { ownerState: any }) => ({
           ...(ownerState.severity === 'success' && {
@@ -643,7 +646,7 @@ export const lightTheme = {
           border: 'none',
           fontSize: tokens.fontSizesBody1,
           lineHeight: tokens.lineHeightsBody1,
-          padding: '8px 8px 8px 16px',
+          padding: '8px 16px',
         },
       },
     },
