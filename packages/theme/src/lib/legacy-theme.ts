@@ -435,6 +435,9 @@ export const legacyTheme = {
           },
           '.MuiListItemButton-root': {
             borderRadius: '0 4px 4px 0',
+            '&:active': {
+              backgroundColor: tokens.colorActionFocus
+            },
             '&.Mui-focusVisible': {
               border: `2px solid ${tokens.colorPrimaryMain}`,
               borderLeftWidth: 0,
@@ -444,9 +447,9 @@ export const legacyTheme = {
               }
             },
             '&.Mui-selected': {
-              backgroundColor: 'transparent',
+              backgroundColor: tokens.colorActionHover,
               color: tokens.colorTextPrimary,
-              boxShadow: tokens.shadows4,
+              borderColor: tokens.borderDisabled,
               '~ .MuiListItemSecondaryAction-root .MuiIconButton-root' : {
                 color: tokens.colorTextPrimary
               },
@@ -463,8 +466,7 @@ export const legacyTheme = {
           },
           '@supports (selector(:has(a, b)))': {
             ':has(.MuiListItemButton-root.Mui-selected)': {
-              boxShadow: tokens.shadows4,
-              borderColor: tokens.borderSecondary,
+              borderColor: tokens.borderDisabled,
             },
             ':has(.MuiListItemButton-root.Mui-focusVisible)': {
               borderColor: tokens.colorPrimaryMain,
@@ -475,7 +477,6 @@ export const legacyTheme = {
               }
             },
             ':has(.MuiListItemButton-root.Mui-focusVisible.Mui-selected)': {
-              boxShadow: `${tokens.shadows4}, 0 0 0px 1px ${tokens.colorPrimaryMain}`,
               borderColor: tokens.colorPrimaryMain
             },
           }
