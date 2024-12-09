@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.11.0...@availity/mui-icon@0.11.1) (2024-12-09)
+
+
+### Bug Fixes
+
+* **mui-icon:** add default role ([564c432](https://github.com/Availity/element/commit/564c4320d4a61c92b7cbeaf3fd2dd9cff6167745))
+
 ## [0.11.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.10.1...@availity/mui-icon@0.11.0) (2024-10-31)
 
 ### Dependency Updates
