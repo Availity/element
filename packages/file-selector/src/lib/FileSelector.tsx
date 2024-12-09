@@ -1,7 +1,7 @@
 import { ReactNode, useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import type { FileRejection } from 'react-dropzone/typings/react-dropzone';
-import Upload, { Options } from '@availity/upload-core';
+import Upload, { UploadOptions } from '@availity/upload-core';
 import { Button } from '@availity/mui-button';
 import { Grid } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
@@ -35,11 +35,12 @@ export type FileSelectorProps = {
   // onDeliveryError?: (error: unknown) => void;
   // onDeliverySuccess?: () => void;
   onSubmit?: (values: Record<string, unknown>) => void;
-  onSuccess?: (() => void)[];
-  onError?: ((error: Error) => void)[];
+  onSuccess?: UploadOptions['onSuccess'];
+  onError?: UploadOptions['onError'];
   onFilePreUpload?: (() => boolean)[];
   onUploadRemove?: (files: File[], removedUploadId: string) => void;
   // onFileDelivery?: (upload: Upload) => void;
+  retryDelays?: UploadOptions['retryDelays'];
 };
 
 export const FileSelector = ({
@@ -64,6 +65,7 @@ export const FileSelector = ({
   onError,
   onFilePreUpload = [],
   onUploadRemove,
+  retryDelays,
 }: FileSelectorProps) => {
   const [totalSize, setTotalSize] = useState(0);
 
@@ -73,7 +75,7 @@ export const FileSelector = ({
     },
   });
 
-  const options: Options = {
+  const options: UploadOptions = {
     bucketId,
     customerId,
     clientId,
@@ -82,6 +84,7 @@ export const FileSelector = ({
     allowedFileNameCharacters,
     onError,
     onSuccess,
+    retryDelays,
   };
 
   if (onFilePreUpload) options.onPreStart = onFilePreUpload;

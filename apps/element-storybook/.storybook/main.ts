@@ -1,7 +1,6 @@
 import { dirname, join } from 'path';
 import remarkGfm from 'remark-gfm';
 import { StorybookConfig } from '@storybook/react-vite';
-import path from 'path';
 
 const config: StorybookConfig = {
   stories: [
@@ -46,26 +45,6 @@ const config: StorybookConfig = {
     },
 
     reactDocgen: 'react-docgen-typescript',
-  },
-
-  async viteFinal(config) {
-    // if (config.resolve) {
-    //   config.resolve.alias = [
-    //     {
-    //       // Allow moment.js to be used as an ESM module
-    //       find: /^tus-js-client$/,
-    //       replacement: path.resolve(__dirname, '../../../node_modules/tus-js-client/lib/index.js'),
-    //     },
-    //   ];
-    // }
-    // if (config.build) {
-    //   config.build = {
-    //     commonjsOptions: {
-    //       include: ['@availity/upload-core'],
-    //     },
-    //   };
-    // }
-    return config;
   },
 
   staticDirs: ['../../../static'],

@@ -42,6 +42,7 @@ export const _FileSelector: StoryObj<typeof FileSelector> = {
     clientId: '123',
     customerId: '456',
     bucketId: '789',
+    retryDelays: [],
     maxSize: 1 * 1000 * 1000, // 1MB
     isCloud: true,
     multiple: true,

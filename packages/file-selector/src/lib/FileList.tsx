@@ -1,4 +1,4 @@
-import type { default as Upload, Options } from '@availity/upload-core';
+import type { default as Upload, UploadOptions } from '@availity/upload-core';
 import { List, ListItem, ListItemText, ListItemIcon, ListItemButton } from '@availity/mui-list';
 import { DeleteIcon, FileIcon } from '@availity/mui-icon';
 import { Grid } from '@availity/mui-layout';
@@ -13,12 +13,12 @@ type FileRowProps = {
   /** The upload instance returned by creating a new Upload via @availity/upload-core. */
   // upload: Upload;
   file: File;
-  options: Options;
+  options: UploadOptions;
 };
 
 const FileRow = ({ file, options, onRemoveFile }: FileRowProps) => {
-  // const { ext, icon } = getFileExtIcon(upload.file.name);
-  // console.log('ext, icon:', ext, icon);
+  const { ext, icon } = getFileExtIcon(file.name);
+  console.log('ext, icon:', ext, icon);
 
   const { data: upload } = useUploadCore(file, options);
 
@@ -62,7 +62,7 @@ export type FileListProps = {
   // uploads: Upload[];
   /** Callback called when file is removed. The callback is passed the id of the file that was removed. */
   files: File[];
-  options: Options;
+  options: UploadOptions;
   onRemoveFile: (id: string, upload: Upload) => void;
 };
 

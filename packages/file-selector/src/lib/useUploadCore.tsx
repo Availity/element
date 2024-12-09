@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import Upload, { Options } from '@availity/upload-core';
+import Upload, { UploadOptions } from '@availity/upload-core';
 
-function startUpload(file: File, options: Options) {
+function startUpload(file: File, options: UploadOptions) {
   const upload = new Upload(file, options);
 
   upload.start();
@@ -9,7 +9,7 @@ function startUpload(file: File, options: Options) {
   return upload;
 }
 
-export function useUploadCore(file: File, options: Options) {
+export function useUploadCore(file: File, options: UploadOptions) {
   const isQueryEnabled = !!file;
 
   return useQuery(['upload', file.name, options], () => startUpload(file, options), {
