@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.0](https://github.com/Availity/element/compare/@availity/mui-alert@0.6.1...@availity/mui-alert@0.7.0) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.6.1`
+* `mui-icon` updated to version `0.6.1`
+
+### Features
+
+* **mui-alert:** export icon mappings ([354c934](https://github.com/Availity/element/commit/354c9348640e71b61b3db631baa175398c42981d))
+
 ## [0.6.1](https://github.com/Availity/element/compare/@availity/mui-alert@0.6.0...@availity/mui-alert@0.6.1) (2024-10-31)
 
 ### Dependency Updates
