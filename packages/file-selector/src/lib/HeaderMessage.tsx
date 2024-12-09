@@ -3,7 +3,9 @@ import { Typography } from '@availity/mui-typography';
 import { formatBytes } from './util';
 
 export type HeaderMessageProps = {
+  /** Maximum number of files allowed */
   maxFiles: number;
+  /** Maximum combined total size of all files */
   maxSize: number;
 };
 

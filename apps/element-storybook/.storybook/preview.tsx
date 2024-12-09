@@ -1,3 +1,4 @@
+import React from 'react';
 import { themes } from '@storybook/theming';
 import { Preview } from '@storybook/react';
 import { Title, Subtitle, Description, Primary, Controls, Stories, useOf } from '@storybook/blocks';
@@ -37,7 +38,7 @@ const preview: Preview = {
       theme: themes.light,
       source: {
         excludeDecorators: true,
-        type: 'code'
+        type: 'code',
       },
       page: () => {
         // https://github.com/storybookjs/storybook/blob/next/code/ui/blocks/src/blocks/DocsPage.tsx

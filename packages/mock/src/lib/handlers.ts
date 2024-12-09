@@ -45,6 +45,8 @@ const delayRequest = async () => {
 const testFile: Blob & { name?: string } = new Blob(['testfilewithwords'], { type: 'text/plain' });
 testFile.name = 'testfilewithwords.txt';
 
+const requestHeaders = new Map<string, Headers>();
+
 export const handlers = [
   // Logging
   http.post(routes.LOG, async () => {
@@ -284,10 +286,8 @@ export const handlers = [
       },
     });
   }),
-  http.head(routes.ATTACHMENTS_PATCH, async ({ params, request }) => {
+  http.head(routes.ATTACHMENTS_PATCH, async ({ params }) => {
     await delay(1000);
-
-    console.log('params, request:', params, request);
 
     return new HttpResponse(testFile, {
       status: 200,
@@ -309,8 +309,11 @@ export const handlers = [
   }),
 
   // Attachments Cloud
-  http.post(routes.ATTACHMENTS_CLOUD_POST, async () => {
+  http.post(routes.ATTACHMENTS_CLOUD_POST, async ({ request, requestId }) => {
     await delay(1000);
+
+    // Save file size for patch request
+    requestHeaders.set(requestId, request.headers);
 
     return new HttpResponse(null, {
       status: 201,
@@ -319,13 +322,24 @@ export const handlers = [
         'transfer-encoding': 'chunked',
         'tus-resumable': '1.0.0',
         'upload-expires': 'Fri, 12 Jan 2030 15:54:39 GMT',
-        location: '11223344aabbccdd556677',
+        location: requestId,
       },
     });
   }),
-  http.patch(routes.ATTACHMENTS_CLOUD_PATCH, async ({ request }) => {
-    const reqOffset = Number(request.headers.get('upload-offset'));
+
+  http.patch<{ location: string }>(routes.ATTACHMENTS_CLOUD_PATCH, async ({ request, params }) => {
     await delay(1000);
+
+    // Parse passed in offset
+    let reqOffset = Number(request.headers.get('upload-offset'));
+    reqOffset = Number.isNaN(reqOffset) ? 0 : reqOffset;
+
+    // Get file size from previous request
+    let fileSize = Number(requestHeaders.get(params.location)?.get('upload-length'));
+    fileSize = Number.isNaN(fileSize) ? 0 : fileSize;
+
+    // If it's the first page then return half the file size
+    const offset = reqOffset === 0 ? `${fileSize / 2}` : `${fileSize}`;
 
     return new HttpResponse(null, {
       status: 204,
@@ -333,29 +347,31 @@ export const handlers = [
         'cache-control': 'no-store',
         'tus-resumable': '1.0.0',
         'upload-expires': 'Fri, 12 Jan 2030 15:54:39 GMT',
-        'upload-offset': reqOffset === 0 ? `${testFile.size / 2}` : `${testFile.size}`,
+        'upload-offset': offset,
       },
     });
   }),
-  http.head(routes.ATTACHMENTS_CLOUD_PATCH, async ({ params, request }) => {
+
+  http.head<{ bucket: string; location: string }>(routes.ATTACHMENTS_CLOUD_HEAD, async ({ params }) => {
     await delay(1000);
+    const headers = requestHeaders.get(params.location);
 
-    console.log('params, request:', params, request);
+    const fileSize = headers?.get('upload-length') || '0';
+    const metadata = headers?.get('upload-metadata') || '';
 
-    return new HttpResponse(testFile, {
+    return new HttpResponse(null, {
       status: 200,
       headers: {
-        'av-scan-bytes': `${testFile.size}`,
+        'av-scan-bytes': fileSize,
         'av-scan-result': 'accepted',
         'cache-control': 'no-store',
-        references: `["approved/${params.bucketId}/${params.location}"]`,
-        's3-references': `["s3://path-to-vault/approved/${params.bucketId}/01234/${params.location}"]`,
+        references: `["approved/${params.bucket}/${params.location}"]`,
+        's3-references': `["s3://path-to-vault/approved/${params.bucket}/${params.location}"]`,
         'transfer-encoding': 'chunked',
         'tus-resumable': '1.0.0',
-        'upload-length': `${testFile.size}`,
-        'upload-metadata':
-          'availity-filename LnR4dAo=,availity-content-type dGV4dC9wbGFpbgo=,availity-attachment-name Ti9BCg==',
-        'upload-offset': `${testFile.size}`,
+        'upload-length': fileSize,
+        'upload-metadata': metadata,
+        'upload-offset': fileSize,
         'upload-result': 'accepted',
       },
     });
