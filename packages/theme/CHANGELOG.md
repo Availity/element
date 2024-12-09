@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.62.0](https://github.com/Availity/element/compare/@availity/theme@0.61.4...@availity/theme@0.62.0) (2024-12-09)
+
+
+### Features
+
+* **mui-dialog:** add styles, alert icons, and close button ([7efdbdf](https://github.com/Availity/element/commit/7efdbdf41cca4365d196f5bab6797a07824e2c3a))
+
+
+### Bug Fixes
+
+* **mui-alert:** fix action spacing ([225a19a](https://github.com/Availity/element/commit/225a19af4295dd49c9b8e572912866fa3229f610))
+* **mui-list:** list item status card state fixes ([dc45520](https://github.com/Availity/element/commit/dc45520eea4ee95b5bb6854481549055c3189126))
+
 ## [0.61.4](https://github.com/Availity/element/compare/@availity/theme@0.61.3...@availity/theme@0.61.4) (2024-11-01)
 
 
