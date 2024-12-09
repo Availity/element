@@ -433,6 +433,9 @@ export const lightTheme = {
         root: {
           '.MuiListItemButton-root': {
             borderRadius: '0 4px 4px 0',
+            '&:active': {
+              backgroundColor: tokens.colorActionFocus
+            },
             '&.Mui-focusVisible': {
               border: `2px solid ${tokens.colorPrimaryMain}`,
               borderLeftWidth: 0,
@@ -442,9 +445,9 @@ export const lightTheme = {
               },
             },
             '&.Mui-selected': {
-              backgroundColor: 'transparent',
+              backgroundColor: tokens.colorActionSelected,
               color: tokens.colorTextPrimary,
-              boxShadow: tokens.shadows4,
+              borderColor: tokens.borderPrimary,
               '~ .MuiListItemSecondaryAction-root .MuiIconButton-root': {
                 color: tokens.colorTextPrimary,
               },
@@ -455,8 +458,7 @@ export const lightTheme = {
           },
           '@supports (selector(:has(a, b)))': {
             ':has(.MuiListItemButton-root.Mui-selected)': {
-              boxShadow: tokens.shadows4,
-              borderColor: tokens.borderSecondary,
+              borderColor: tokens.borderPrimary,
             },
             ':has(.MuiListItemButton-root.Mui-focusVisible)': {
               borderColor: tokens.colorPrimaryMain,
@@ -467,7 +469,6 @@ export const lightTheme = {
               },
             },
             ':has(.MuiListItemButton-root.Mui-focusVisible.Mui-selected)': {
-              boxShadow: `${tokens.shadows4}, 0 0 0px 1px ${tokens.colorPrimaryMain}`,
               borderColor: tokens.colorPrimaryMain,
             },
           },
