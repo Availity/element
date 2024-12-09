@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.3](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.1.2...@availity/mui-file-selector@0.1.3) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.2`
+* `mui-form-utils` updated to version `0.1.2`
+* `mui-icon` updated to version `0.1.2`
+* `mui-list` updated to version `0.1.2`
+* `mui-progress` updated to version `0.1.2`
 ## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.1.1...@availity/mui-file-selector@0.1.2) (2024-11-20)
 
 ### Dependency Updates
