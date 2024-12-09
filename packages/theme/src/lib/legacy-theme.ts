@@ -1107,25 +1107,57 @@ export const legacyTheme = {
       }
 
     },
+    MuiDialog: {
+      styleOverrides: {
+        maxWidthSm: {
+          maxWidth: '25rem'
+        },
+        maxWidthMd: {
+          maxWidth: '39.75rem'
+        },
+        maxWidthLg: {
+          maxWidth: '58.75rem'
+        },
+        maxWidthXl: {
+          maxWidth: '71.25rem'
+        },
+        paper: {
+          backgroundColor: tokens.colorGrey100
+        },
+        avCloseButton: {
+          padding: '.75rem',
+          '.MuiSvgIcon-root': {
+            fontSize: '1.125rem',
+          }
+        }
+      }
+    },
     MuiDialogActions: {
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorGrey100,
+          padding: '1rem 1.5rem'
         },
       },
     },
     MuiDialogContent: {
+      defaultProps: {
+        dividers: true
+      },
       styleOverrides: {
         root: {
           padding: '24px',
+          backgroundColor: tokens.colorBackgroundPaper
         },
+        divider: {
+          borderColor: tokens.colorGrey100,
+        }
       },
     },
     MuiDialogTitle: {
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorGrey100,
-          marginBottom: '24px',
         },
       },
     },
