@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.2.14...@availity/mui-breadcrumbs@0.3.0) (2024-12-11)
+
+
+### Features
+
+* **mui-breadcrumbs:** add LinkProps prop to pass props to the links ([ae54fc4](https://github.com/Availity/element/commit/ae54fc41cc0511f22d7abc5e24a62ab19e3e06b6))
+
 ## [0.2.14](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.2.13...@availity/mui-breadcrumbs@0.2.14) (2024-12-09)
 
 ### Dependency Updates
