@@ -36,7 +36,7 @@ export const _WithLabel: StoryObj<typeof Switch> = {
   render: () => (
     <>
       <FormControlLabel control={<Switch />} label="Form Control Label" />
-      <FormControlLabel control={<Switch />} label="Form Control Label" labelPlacement='start'/>
+      <FormControlLabel control={<Switch />} label="Form Control Label" labelPlacement="start" />
     </>
   ),
 };
@@ -44,8 +44,8 @@ export const _WithLabel: StoryObj<typeof Switch> = {
 export const _Sizes: StoryObj<typeof Switch> = {
   render: () => (
     <>
-      <FormControlLabel control={<Switch />} label="small" />
-      <FormControlLabel control={<Switch size="medium"/>} label="medium"/>
+      <FormControlLabel control={<Switch size="small" />} label="small" />
+      <FormControlLabel control={<Switch size="medium" />} label="medium" />
     </>
   ),
 };

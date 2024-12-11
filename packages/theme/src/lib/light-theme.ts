@@ -1796,6 +1796,63 @@ export const lightTheme = {
         },
       },
     },
+    MuiSwitch: {
+      styleOverrides: {
+        root: {
+          padding: 'unset',
+          height: '20px',
+          width: '40px',
+          '.MuiSwitch-switchBase': {
+            padding: '2px',
+            '&:hover': {
+              '+ .MuiSwitch-track': {
+                background: tokens.colorSecondaryMain
+              },
+            },
+          },
+          '&.Mui-checked': {
+            '.MuiSwitch-switchBase:hover': {
+              '+ .MuiSwitch-track': {
+                background: tokens.colorPrimaryLight
+              },
+            },
+            '.MuiSwitch-track': {
+              background: tokens.colorPrimaryLight
+            },
+            '.MuiSwitch-thumb': {
+              background: tokens.colorCommonWhite
+            }
+          },
+          '+ .MuiFormControlLabel-label': {
+            marginLeft: '6px'
+          }
+        },
+        thumb: {
+          height: '16px',
+          width: '16px'
+        },
+        track: {
+          borderRadius: '10px',
+          background: tokens.colorSecondaryLight,
+        },
+        sizeSmall: {
+          height: '16px',
+          width: '32px',
+          '.MuiSwitch-switchBase': {
+            '&.Mui-checked': {
+              transform: 'translateX(16px)',
+            }
+          },
+          '.MuiSwitch-thumb': {
+            height: '12px',
+            width: '12px'
+          },
+          '.MuiSwitch-track': {
+            borderRadius: '8px'
+          }
+        },
+      }
+    },
     MuiTab: {
       styleOverrides: {
         root: {
