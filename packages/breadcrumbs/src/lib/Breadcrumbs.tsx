@@ -1,7 +1,7 @@
 import { default as MuiBreadcrumbs, BreadcrumbsProps as MuiBreadcrumbsProps } from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 import { NavigateNextIcon, MoreHorizontalIcon } from '@availity/mui-icon';
-import { Link } from '@availity/mui-link';
+import { Link, LinkProps } from '@availity/mui-link';
 
 interface Crumb {
   /** The name of the ancestor page. */
@@ -12,6 +12,8 @@ interface Crumb {
    * @default _top
    */
   target?: string;
+  /** Props passed to the Links */
+  LinkProps?: Omit<LinkProps, 'href'>;
 }
 
 export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator' | 'slotProps' | 'slots'> {
@@ -32,15 +34,17 @@ export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator' 
   /** A string value that can be used to name an element
    * @default breadcrumbs */
   'aria-label'?: string;
+  /** Props passed to the Links */
+  LinkProps?: Omit<LinkProps, 'href'>;
 }
 
-const Breadcrumb = ({ name, url, target = '_top' }: Crumb) => {
+const Breadcrumb = ({ name, url, target = '_top', LinkProps }: Crumb) => {
   const props = {
     'aria-label': name,
     children: name,
   };
 
-  return url ? <Link {...props} href={url} target={target} /> : <Typography {...props} />;
+  return url ? <Link {...props} {...LinkProps} href={url} target={target} /> : <Typography {...props} />;
 };
 
 export const Breadcrumbs = ({
@@ -49,6 +53,7 @@ export const Breadcrumbs = ({
   crumbs,
   emptyState = '...',
   homeUrl = '/public/apps/dashboard',
+  LinkProps,
   ...rest
 }: BreadcrumbsProps): JSX.Element => {
   return (
@@ -65,7 +70,7 @@ export const Breadcrumbs = ({
       {crumbs &&
         crumbs.length > 0 &&
         crumbs.map(({ name = emptyState, url, target }) => (
-          <Breadcrumb name={name} url={url} target={target} key={name} />
+          <Breadcrumb name={name} url={url} target={target} key={name} LinkProps={LinkProps} />
         ))}
       {children}
       <Typography>{active || emptyState}</Typography>
