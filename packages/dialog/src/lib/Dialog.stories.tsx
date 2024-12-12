@@ -76,7 +76,7 @@ export const _Dialog: StoryObj<typeof Dialog> = {
             <Button onClick={handleClose} color="secondary">
               Disagree
             </Button>
-            <Button onClick={handleClose} autoFocus>
+            <Button onClick={handleClose}>
               Agree
             </Button>
           </DialogActions>
