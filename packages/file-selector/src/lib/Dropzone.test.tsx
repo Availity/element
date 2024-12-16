@@ -18,7 +18,7 @@ describe('Dropzone', () => {
     render(
       <QueryClientProvider client={client}>
         <TestForm>
-          <Dropzone name="test" maxSize={1000} totalSize={10} setTotalSize={jest.fn()} />
+          <Dropzone name="test" maxSize={1000} setTotalSize={jest.fn()} />
         </TestForm>
       </QueryClientProvider>
     );

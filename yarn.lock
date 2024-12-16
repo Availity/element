@@ -582,6 +582,7 @@ __metadata:
   resolution: "@availity/mui-file-selector@workspace:packages/file-selector"
   dependencies:
     "@availity/api-axios": ^9.0.4
+    "@availity/mui-alert": "workspace:^"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-divider": "workspace:^"
     "@availity/mui-form-utils": "workspace:^"
