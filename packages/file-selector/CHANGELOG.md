@@ -2,6 +2,25 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.1.3...@availity/mui-file-selector@0.2.0) (2024-12-16)
+
+
+### Features
+
+* **mui-file-selector:** add support for dropping files and fix removing ([66af280](https://github.com/Availity/element/commit/66af28076ed7149bc47c6b9758bb9a2e5461f201))
+* **mui-file-selector:** update upload-core ([0da6ec7](https://github.com/Availity/element/commit/0da6ec7672f1d7a884f42d03772ec20249a3309b))
+* pass uploads to onSubmit ([e894489](https://github.com/Availity/element/commit/e8944899a6a6ed4b4bb192a51b707a9aa88b6833))
+
+
+### Bug Fixes
+
+* add better error handling ([c2db0c0](https://github.com/Availity/element/commit/c2db0c0a1d06bebbb03bc38309d65829487717fb))
+* fixes for file selector ([add8801](https://github.com/Availity/element/commit/add88013c18816ccdaeeb9366768089d68aded7f))
+* fixes for tests ([e112880](https://github.com/Availity/element/commit/e11288079f203464f55f35cbaed47f86f4db3755))
+* **mui-file-selector:** update upload-core ([e24b673](https://github.com/Availity/element/commit/e24b67337a8b1a71441c6954e84a6bd3a1b8e323))
+* update upload-core ([e11a6ad](https://github.com/Availity/element/commit/e11a6ad155743afb221739686b608e581099c37a))
+* update upload-core ([5d820db](https://github.com/Availity/element/commit/5d820db3f146e9e0015daa0f5e9a9d9316cd6807))
+
 ## [0.1.3](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.1.2...@availity/mui-file-selector@0.1.3) (2024-12-09)
 
 ### Dependency Updates
