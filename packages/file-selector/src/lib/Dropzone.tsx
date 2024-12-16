@@ -20,6 +20,17 @@ const innerBoxStyles = {
   height: '100%',
 };
 
+const createCounter = () => {
+  let id = 0;
+  const increment = () => (id += 1);
+  return {
+    id,
+    increment,
+  };
+};
+
+const counter = createCounter();
+
 export type DropzoneProps = {
   name: string;
   allowedFileTypes?: `.${string}`[];
@@ -27,12 +38,12 @@ export type DropzoneProps = {
   // deliveryChannel?: string;
   disabled?: boolean;
   // fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
-  getDropRejectionMessages?: (fileRejectsions: FileRejection[]) => void;
   maxFiles?: number;
   maxSize?: number;
   multiple?: boolean;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  setFileRejections?: (fileRejectsions: (FileRejection & { id: number })[]) => void;
   setTotalSize: Dispatch<React.SetStateAction<number>>;
   // onDeliveryError?: (responses: unknown[]) => void;
   // onDeliverySuccess?: (responses: unknown[]) => void;
@@ -42,13 +53,13 @@ export type DropzoneProps = {
 export const Dropzone = ({
   allowedFileTypes = [],
   disabled,
-  getDropRejectionMessages,
   maxFiles,
   maxSize,
   multiple,
   name,
   onChange,
   onClick,
+  setFileRejections,
   setTotalSize,
 }: DropzoneProps) => {
   const { setValue, watch } = useFormContext();
@@ -79,7 +90,7 @@ export const Dropzone = ({
   );
 
   const onDrop = useCallback(
-    (acceptedFiles: File[], fileRejections: FileRejection[]) => {
+    (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[]) => {
       let newSize = 0;
       for (const file of acceptedFiles) {
         newSize += file.size;
@@ -92,9 +103,15 @@ export const Dropzone = ({
       // Set accepted files to form context
       setValue(name, previous.concat(acceptedFiles));
 
-      if (getDropRejectionMessages) getDropRejectionMessages(fileRejections);
+      if (fileRejections.length > 0) {
+        for (const rejection of fileRejections) {
+          rejection.id = counter.increment();
+        }
+      }
+
+      if (setFileRejections) setFileRejections(fileRejections);
     },
-    [getDropRejectionMessages]
+    [setFileRejections]
   );
 
   const accept = allowedFileTypes.join(',');

@@ -7,6 +7,7 @@ import { Grid } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 
 import { Dropzone } from './Dropzone';
+import { ErrorAlert } from './ErrorAlert';
 import { FileList } from './FileList';
 import { FileTypesMessage } from './FileTypesMessage';
 
@@ -25,7 +26,6 @@ export type FileSelectorProps = {
   disabled?: boolean;
   endpoint?: string;
   // fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
-  getDropRejectionMessages?: (rejections: FileRejection[]) => void;
   isCloud?: boolean;
   label?: ReactNode;
   maxFiles?: number;
@@ -54,10 +54,9 @@ export const FileSelector = ({
   customerId,
   disabled = false,
   endpoint,
-  getDropRejectionMessages,
   isCloud,
   label = 'Upload file',
-  maxFiles = 1,
+  maxFiles,
   maxSize,
   multiple = true,
   onChange,
@@ -69,6 +68,7 @@ export const FileSelector = ({
   retryDelays,
 }: FileSelectorProps) => {
   const [totalSize, setTotalSize] = useState(0);
+  const [fileRejections, setFileRejections] = useState<(FileRejection & { id: number })[]>([]);
 
   const methods = useForm({
     defaultValues: {
@@ -115,6 +115,12 @@ export const FileSelector = ({
     if (onSubmit) onSubmit(values);
   };
 
+  const handleRemoveRejection = (id: number) => {
+    console.log('i:', id);
+    const rejections = fileRejections.filter((value) => value.id !== id);
+    setFileRejections(rejections);
+  };
+
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
@@ -124,16 +130,28 @@ export const FileSelector = ({
             name={name}
             allowedFileTypes={allowedFileTypes}
             disabled={disabled}
-            getDropRejectionMessages={getDropRejectionMessages}
             maxFiles={maxFiles}
             maxSize={maxSize}
             multiple={multiple}
             onChange={onChange}
+            setFileRejections={setFileRejections}
             setTotalSize={setTotalSize}
           />
           <FileTypesMessage allowedFileTypes={allowedFileTypes} maxFileSize={maxSize} />
         </>
         {children}
+
+        {fileRejections.length > 0
+          ? fileRejections.map((rejection) => (
+              <ErrorAlert
+                key={rejection.id}
+                errors={rejection.errors}
+                fileName={rejection.file.name}
+                id={rejection.id}
+                onClose={() => handleRemoveRejection(rejection.id)}
+              />
+            ))
+          : null}
         <FileList files={files} options={options} onRemoveFile={handleOnRemoveFile} />
         {files.length > 0 && (
           <Grid xs={12} justifyContent="end" display="flex" paddingTop={2.5}>
