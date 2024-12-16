@@ -1,6 +1,7 @@
 import { ChangeEvent, ReactNode, useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import type { FileRejection } from 'react-dropzone/typings/react-dropzone';
+import { useQueryClient } from '@tanstack/react-query';
 import Upload, { UploadOptions } from '@availity/upload-core';
 import { Button } from '@availity/mui-button';
 import { Grid } from '@availity/mui-layout';
@@ -35,7 +36,7 @@ export type FileSelectorProps = {
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   // onDeliveryError?: (error: unknown) => void;
   // onDeliverySuccess?: () => void;
-  onSubmit?: (values: Record<string, File[]>) => void;
+  onSubmit?: (uploads: Upload[], values: Record<string, File[]>) => void;
   onSuccess?: UploadOptions['onSuccess'];
   onError?: UploadOptions['onError'];
   onFilePreUpload?: (() => boolean)[];
@@ -69,6 +70,8 @@ export const FileSelector = ({
 }: FileSelectorProps) => {
   const [totalSize, setTotalSize] = useState(0);
   const [fileRejections, setFileRejections] = useState<(FileRejection & { id: number })[]>([]);
+
+  const client = useQueryClient();
 
   const methods = useForm({
     defaultValues: {
@@ -112,11 +115,16 @@ export const FileSelector = ({
   const handleOnSubmit = (values: Record<string, File[]>) => {
     if (values[name].length === 0) return;
 
-    if (onSubmit) onSubmit(values);
+    const queries = client.getQueriesData<Upload>(['upload']);
+    const uploads = [];
+    for (const [, data] of queries) {
+      if (data) uploads.push(data);
+    }
+
+    if (onSubmit) onSubmit(uploads, values);
   };
 
   const handleRemoveRejection = (id: number) => {
-    console.log('i:', id);
     const rejections = fileRejections.filter((value) => value.id !== id);
     setFileRejections(rejections);
   };
