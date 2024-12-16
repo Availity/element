@@ -10,7 +10,7 @@ const TestForm = () => {
 
   return (
     <FormProvider {...methods}>
-      <FilePickerBtn name="test" inputProps={{ ref }} />
+      <FilePickerBtn name="test" inputProps={{ ref }} onChange={jest.fn()} />
     </FormProvider>
   );
 };

@@ -8,4 +8,10 @@ describe('FileTypesMessage', () => {
 
     expect(screen.getByText(/All file types allowed/)).toBeTruthy();
   });
+
+  test('should show file size', () => {
+    render(<FileTypesMessage allowedFileTypes={[]} maxFileSize={1000} />);
+
+    expect(screen.getByText(/Maximum file size is/)).toBeTruthy();
+  });
 });
