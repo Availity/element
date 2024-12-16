@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { styled } from '@mui/material/styles';
 import {
+  Alert,
   Badge,
   Button,
   Chip,
@@ -147,7 +149,7 @@ export const ListItemExample = () => (
       <ListItem>
         <ListItemText>ListItem</ListItemText>
       </ListItem>
-      <ListItemStatusCard>
+      <ListItemStatusCard color="success">
         <ListItemText
           primary="ListItemStatusCard"
           secondary={<StatusChip color="success" label='Approved'/>}
@@ -178,3 +180,19 @@ export const StepperExample = () => {
     </ThemeProvider>
   );
 };
+
+const SnackbarStoryPreview = styled("div", {
+  name: 'MuiSnackbar',
+  slot: 'Root',
+  overridesResolver: (props, styles) => styles.root,
+})(({}));
+
+export const SnackbarExample = () => (
+  <ThemeProvider theme="legacyBS">
+    <SnackbarStoryPreview>
+      <Alert severity="info" icon={false} onClose={()=>null}>
+        Close
+      </Alert>
+    </SnackbarStoryPreview>
+  </ThemeProvider>
+);
