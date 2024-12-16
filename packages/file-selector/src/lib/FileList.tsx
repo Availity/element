@@ -8,11 +8,9 @@ import { formatBytes, getFileExtIcon } from './util';
 import { useUploadCore } from './useUploadCore';
 
 type FileRowProps = {
+  file: File;
   /** Callback called when file is removed. The callback is passed the id of the file that was removed. */
   onRemoveFile: (id: string, upload: Upload) => void;
-  /** The upload instance returned by creating a new Upload via @availity/upload-core. */
-  // upload: Upload;
-  file: File;
   options: UploadOptions;
 };
 
@@ -58,12 +56,10 @@ const FileRow = ({ file, options, onRemoveFile }: FileRowProps) => {
 };
 
 export type FileListProps = {
-  /** List of Upload objects */
-  // uploads: Upload[];
   /** Callback called when file is removed. The callback is passed the id of the file that was removed. */
   files: File[];
-  options: UploadOptions;
   onRemoveFile: (id: string, upload: Upload) => void;
+  options: UploadOptions;
 };
 
 export const FileList = ({ files, options, onRemoveFile }: FileListProps) => {

@@ -1,4 +1,4 @@
-import { Dispatch, MouseEvent, useCallback } from 'react';
+import { Dispatch, MouseEvent, useCallback, ChangeEvent } from 'react';
 import { useDropzone, FileRejection } from 'react-dropzone';
 import { Divider } from '@availity/mui-divider';
 import { CloudDownloadIcon } from '@availity/mui-icon';
@@ -22,30 +22,24 @@ const innerBoxStyles = {
 
 export type DropzoneProps = {
   name: string;
-  allowedFileNameCharacters?: string;
   allowedFileTypes?: `.${string}`[];
   // deliverFileOnSubmit?: boolean;
   // deliveryChannel?: string;
   disabled?: boolean;
-  // endpoint?: string;
   // fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
   getDropRejectionMessages?: (fileRejectsions: FileRejection[]) => void;
-  // isCloud?: boolean;
   maxFiles?: number;
   maxSize?: number;
   multiple?: boolean;
-  onChange?: (files: File[]) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
-  totalSize: number;
   setTotalSize: Dispatch<React.SetStateAction<number>>;
   // onDeliveryError?: (responses: unknown[]) => void;
   // onDeliverySuccess?: (responses: unknown[]) => void;
   // onFileDelivery?: (upload: Upload) => void;
-  // onFilePreUpload?: ((upload: Upload) => boolean)[];
 };
 
 export const Dropzone = ({
-  // allowedFileNameCharacters,
   allowedFileTypes = [],
   disabled,
   getDropRejectionMessages,
@@ -56,17 +50,36 @@ export const Dropzone = ({
   onChange,
   onClick,
   setTotalSize,
-  totalSize,
 }: DropzoneProps) => {
   const { setValue, watch } = useFormContext();
 
-  const onDrop = useCallback(
-    (acceptedFiles: File[], fileRejections: FileRejection[]) => {
-      // Verify we have not exceeded max number of files
-      if (maxFiles && acceptedFiles.length > maxFiles) {
-        acceptedFiles.slice(0, Math.max(9, maxFiles));
+  const validator = useCallback(
+    (file: File) => {
+      const previous: File[] = watch(name) ?? [];
+
+      const isDuplicate = previous.some((prev) => prev.name === file.name);
+      if (isDuplicate) {
+        return {
+          code: 'duplicate-name',
+          message: 'A file with this name already exists',
+        };
       }
 
+      const hasMaxFiles = maxFiles && previous.length >= maxFiles;
+      if (hasMaxFiles) {
+        return {
+          code: 'too-many-files',
+          message: `Too many files. You may only upload ${maxFiles} file(s).`,
+        };
+      }
+
+      return null;
+    },
+    [maxFiles]
+  );
+
+  const onDrop = useCallback(
+    (acceptedFiles: File[], fileRejections: FileRejection[]) => {
       let newSize = 0;
       for (const file of acceptedFiles) {
         newSize += file.size;
@@ -84,9 +97,29 @@ export const Dropzone = ({
     [getDropRejectionMessages]
   );
 
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
-
   const accept = allowedFileTypes.join(',');
+
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop,
+    maxSize,
+    maxFiles,
+    disabled,
+    multiple,
+    accept,
+    validator,
+  });
+
+  const inputProps = getInputProps({
+    multiple,
+    accept,
+    onChange,
+  });
+
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (inputProps.onChange) {
+      inputProps.onChange(event);
+    }
+  };
 
   return (
     <Box sx={outerBoxStyles} {...getRootProps()}>
@@ -103,13 +136,8 @@ export const Dropzone = ({
               disabled={disabled}
               maxSize={maxSize}
               onClick={onClick}
-              inputProps={getInputProps({
-                multiple,
-                accept,
-              })}
-              onChange={onChange}
-              setTotalSize={setTotalSize}
-              totalSize={totalSize}
+              inputProps={inputProps}
+              onChange={handleOnChange}
             />
           </>
         </Stack>

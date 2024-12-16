@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { ChangeEvent, ReactNode, useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import type { FileRejection } from 'react-dropzone/typings/react-dropzone';
 import Upload, { UploadOptions } from '@availity/upload-core';
@@ -29,12 +29,13 @@ export type FileSelectorProps = {
   isCloud?: boolean;
   label?: ReactNode;
   maxFiles?: number;
+  /** Maximum file size allowed per file. Use Kibi or Mibibytes. eg: 1kb = 1024 bytes; 1mb = 1024kb */
   maxSize: number;
   multiple?: boolean;
-  onChange?: (files: File[]) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   // onDeliveryError?: (error: unknown) => void;
   // onDeliverySuccess?: () => void;
-  onSubmit?: (values: Record<string, unknown>) => void;
+  onSubmit?: (values: Record<string, File[]>) => void;
   onSuccess?: UploadOptions['onSuccess'];
   onError?: UploadOptions['onError'];
   onFilePreUpload?: (() => boolean)[];
@@ -108,8 +109,8 @@ export const FileSelector = ({
 
   const files = methods.watch(name);
 
-  const handleOnSubmit = (values: Record<string, unknown>) => {
-    if (files.length === 0) return;
+  const handleOnSubmit = (values: Record<string, File[]>) => {
+    if (values[name].length === 0) return;
 
     if (onSubmit) onSubmit(values);
   };
@@ -121,7 +122,6 @@ export const FileSelector = ({
           <Typography>{label}</Typography>
           <Dropzone
             name={name}
-            allowedFileNameCharacters={allowedFileNameCharacters}
             allowedFileTypes={allowedFileTypes}
             disabled={disabled}
             getDropRejectionMessages={getDropRejectionMessages}
@@ -130,7 +130,6 @@ export const FileSelector = ({
             multiple={multiple}
             onChange={onChange}
             setTotalSize={setTotalSize}
-            totalSize={totalSize}
           />
           <FileTypesMessage allowedFileTypes={allowedFileTypes} maxFileSize={maxSize} />
         </>

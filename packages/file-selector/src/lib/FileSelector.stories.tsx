@@ -38,12 +38,12 @@ export const _FileSelector: StoryObj<typeof FileSelector> = {
   ),
   args: {
     name: 'file-selector',
-    allowedFileTypes: ['.txt'],
+    allowedFileTypes: [],
     clientId: '123',
     customerId: '456',
     bucketId: '789',
     retryDelays: [],
-    maxSize: 1 * 1000 * 1000, // 1MB
+    maxSize: 1 * 1024 * 1024, // 1MB
     isCloud: true,
     multiple: true,
   },
