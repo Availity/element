@@ -6,13 +6,21 @@ import { Typography } from '@availity/mui-typography';
 import { WarningTriangleIcon } from '@availity/mui-icon';
 
 export type UploadProgressBarProps = {
-  /** The upload instance returned by creating a new Upload via @availity/upload-core. */
+  /**
+   * The upload instance returned by creating a new Upload via @availity/upload-core.
+   */
   upload: Upload;
-  /** Callback function to hook into the onProgress within the Upload instance provided in the upload prop. */
+  /**
+   * Callback function to hook into the onProgress within the Upload instance provided in the upload prop.
+   */
   onProgress?: (upload: Upload) => void;
-  /** Callback function to hook into the onSuccess within the Upload instance provided in the upload prop. */
+  /**
+   * Callback function to hook into the onSuccess within the Upload instance provided in the upload prop.
+   */
   onSuccess?: (upload: Upload) => void;
-  /** Callback function to hook into the onError within the Upload instance provided in the upload prop. */
+  /**
+   * Callback function to hook into the onError within the Upload instance provided in the upload prop.
+   */
   onError?: (upload: Upload) => void;
 };
 

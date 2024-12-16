@@ -10,9 +10,19 @@ const codes: Record<string, string> = {
 };
 
 export type ErrorAlertProps = {
+  /**
+   * Array of file rejection errors
+   */
   errors: FileRejection['errors'];
+  /**
+   * Name of the file that encountered errors
+   */
   fileName: string;
+  /**
+   * Unique identifier for the error alert
+   */
   id: number;
+
   onClose: () => void;
 };
 

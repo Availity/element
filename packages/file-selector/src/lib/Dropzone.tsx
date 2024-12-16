@@ -20,6 +20,7 @@ const innerBoxStyles = {
   height: '100%',
 };
 
+/** Counter for creating unique id */
 const createCounter = () => {
   let id = 0;
   const increment = () => (id += 1);
@@ -32,23 +33,56 @@ const createCounter = () => {
 const counter = createCounter();
 
 export type DropzoneProps = {
+  /**
+   * Name given to the input field. Used by react-hook-form
+   */
   name: string;
+  /**
+   * List of allowed file extensions (e.g. ['.pdf', '.doc']). Each extension must start with a dot
+   */
   allowedFileTypes?: `.${string}`[];
-  // deliverFileOnSubmit?: boolean;
-  // deliveryChannel?: string;
+  /**
+   * Whether the dropzone is disabled
+   */
   disabled?: boolean;
-  // fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
+  /**
+   * Maximum number of files that can be uploaded
+   */
   maxFiles?: number;
+  /**
+   * Maximum size of each file in bytes
+   */
   maxSize?: number;
+  /**
+   * Whether multiple file selection is allowed
+   */
   multiple?: boolean;
+  /**
+   * Handler called when the file input's value changes
+   */
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * Handler called when the file picker button is clicked
+   */
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
-  setFileRejections?: (fileRejectsions: (FileRejection & { id: number })[]) => void;
+  /**
+   * Callback to handle rejected files that don't meet validation criteria
+   */
+  setFileRejections?: (fileRejections: (FileRejection & { id: number })[]) => void;
+  /**
+   * Callback to update the total size of all uploaded files
+   */
   setTotalSize: Dispatch<React.SetStateAction<number>>;
-  // onDeliveryError?: (responses: unknown[]) => void;
-  // onDeliverySuccess?: (responses: unknown[]) => void;
-  // onFileDelivery?: (upload: Upload) => void;
 };
+
+// The types below were props used in the availity-react implementation.
+// Perserving this here in case it needs to be added back
+// deliverFileOnSubmit?: boolean;
+// deliveryChannel?: string;
+// fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
+// onDeliveryError?: (responses: unknown[]) => void;
+// onDeliverySuccess?: (responses: unknown[]) => void;
+// onFileDelivery?: (upload: Upload) => void;
 
 export const Dropzone = ({
   allowedFileTypes = [],

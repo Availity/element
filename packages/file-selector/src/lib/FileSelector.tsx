@@ -15,35 +15,115 @@ import { FileTypesMessage } from './FileTypesMessage';
 const CLOUD_URL = '/cloud/web/appl/vault/upload/v1/resumable';
 
 export type FileSelectorProps = {
+  /**
+   * Name attribute for the form field. Used by react-hook-form for form state management
+   * and must be unique within the form context
+   */
   name: string;
+  /**
+   * The ID of the bucket where files will be uploaded
+   */
   bucketId: string;
+  /**
+   * The customer ID associated with the upload
+   */
   customerId: string;
+  /**
+   * Regular expression pattern of allowed characters in file names
+   * @example "a-zA-Z0-9-_."
+   */
   allowedFileNameCharacters?: string;
+  /**
+   * List of allowed file extensions. Each extension must start with a dot
+   * @example ['.pdf', '.doc', '.docx']
+   * @default []
+   */
   allowedFileTypes?: `.${string}`[];
+  /**
+   * Optional content to render below the file upload area
+   */
   children?: ReactNode;
+  /**
+   * Client identifier used for upload authentication
+   */
   clientId: string;
-  // deliverFileOnSubmit?: boolean;
-  // deliveryChannel?: string;
+  /**
+   * Whether the file selector is disabled
+   * @default false
+   */
   disabled?: boolean;
+  /**
+   * Custom endpoint URL for file uploads. If not provided, default endpoint will be used
+   */
   endpoint?: string;
-  // fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
+  /**
+   * Whether to use the cloud upload endpoint
+   * When true, uses '/cloud/web/appl/vault/upload/v1/resumable'
+   */
   isCloud?: boolean;
+  /**
+   * Label text or element displayed above the upload area
+   * @default 'Upload file'
+   */
   label?: ReactNode;
+  /**
+   * Maximum number of files that can be uploaded simultaneously
+   */
   maxFiles?: number;
-  /** Maximum file size allowed per file. Use Kibi or Mibibytes. eg: 1kb = 1024 bytes; 1mb = 1024kb */
+  /**
+   * Maximum file size allowed per file in bytes
+   * Use Kibi or Mibibytes. eg: 1kb = 1024 bytes; 1mb = 1024kb
+   */
   maxSize: number;
+  /**
+   * Whether multiple file selection is allowed
+   * @default true
+   */
   multiple?: boolean;
+  /**
+   * Callback fired when files are selected
+   * @param event - The change event containing the selected file(s)
+   */
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-  // onDeliveryError?: (error: unknown) => void;
-  // onDeliverySuccess?: () => void;
+  /**
+   * Callback fired when the form is submitted
+   * @param uploads - Array of Upload instances for the submitted files
+   * @param values - Object containing the form values, with files indexed by the name prop
+   */
   onSubmit?: (uploads: Upload[], values: Record<string, File[]>) => void;
+  /**
+   * Callback fired when a file is successfully uploaded
+   */
   onSuccess?: UploadOptions['onSuccess'];
+  /**
+   * Callback fired when an error occurs during upload
+   */
   onError?: UploadOptions['onError'];
+  /**
+   * Array of functions to execute before file upload begins.
+   * Each function should return a boolean indicating whether to proceed with the upload.
+   * @default []
+   */
   onFilePreUpload?: (() => boolean)[];
+  /**
+   * Callback fired when a file is removed from the upload list
+   * @param files - Array of remaining files
+   * @param removedUploadId - ID of the removed upload
+   */
   onUploadRemove?: (files: File[], removedUploadId: string) => void;
-  // onFileDelivery?: (upload: Upload) => void;
+  /**
+   * Array of delays (in milliseconds) between upload retry attempts
+   */
   retryDelays?: UploadOptions['retryDelays'];
 };
+
+// Below props were removed from availity-react version. Perserving here in case needed later
+// deliverFileOnSubmit?: boolean;
+// deliveryChannel?: string;
+// fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
+// onDeliveryError?: (error: unknown) => void;
+// onDeliverySuccess?: () => void;
+// onFileDelivery?: (upload: Upload) => void;
 
 export const FileSelector = ({
   name,

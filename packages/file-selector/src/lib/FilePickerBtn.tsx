@@ -5,15 +5,25 @@ import { Button, ButtonProps } from '@availity/mui-button';
 import { Input } from '@availity/mui-form-utils';
 
 type FilePickerBtnProps = {
-  /** Name give to the input used for react-hook-form */
+  /**
+   * Name attribute for the input field, used by react-hook-form for form state management.
+   */
   name: string;
-  /** Files pulled from the input when the input is updated */
+  /**
+   *  Callback function triggered when files are selected through the input.
+   */
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  /** ID passed to the input */
+  /**
+   * Optional ID attribute for the file input element.
+   */
   inputId?: string;
-  /** Props that will be passed to the input component */
+  /**
+   * Additional props to customize the underlying input element.
+   */
   inputProps?: DropzoneInputProps & { ref?: RefObject<HTMLInputElement> };
-  /** Maximum size per file */
+  /**
+   * Maximum allowed size per file in bytes. Files exceeding this size will be rejected.
+   */
   maxSize?: number;
 } & Omit<ButtonProps, 'onChange'>;
 

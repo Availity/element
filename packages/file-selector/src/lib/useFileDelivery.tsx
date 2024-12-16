@@ -31,8 +31,8 @@ export function useFileDelivery({
   deliveryChannel,
   deliverFileOnSubmit,
   fileDeliveryMetadata,
-  onSuccess,
-  onError,
+  // onSuccess,
+  // onError,
   uploads,
 }: UploadDeliveryOptions) {
   const errors = {};

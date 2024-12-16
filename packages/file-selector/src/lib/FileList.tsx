@@ -8,9 +8,15 @@ import { formatBytes, getFileExtIcon } from './util';
 import { useUploadCore } from './useUploadCore';
 
 type FileRowProps = {
+  /** The File object containing information about the uploaded file */
   file: File;
-  /** Callback called when file is removed. The callback is passed the id of the file that was removed. */
+  /**
+   * Callback function called when a file is removed
+   * @param id - The unique identifier of the file being removed
+   * @param upload - The Upload instance associated with the file
+   */
   onRemoveFile: (id: string, upload: Upload) => void;
+  /** Configuration options for the upload process */
   options: UploadOptions;
 };
 
@@ -56,9 +62,19 @@ const FileRow = ({ file, options, onRemoveFile }: FileRowProps) => {
 };
 
 export type FileListProps = {
-  /** Callback called when file is removed. The callback is passed the id of the file that was removed. */
+  /**
+   * Array of File objects to be displayed in the list
+   */
   files: File[];
+  /**
+   * Callback function called when a file is removed from the list
+   * @param id - The unique identifier of the file being removed
+   * @param upload - The Upload instance associated with the file
+   */
   onRemoveFile: (id: string, upload: Upload) => void;
+  /**
+   * Configuration options applied to all file uploads in the list
+   */
   options: UploadOptions;
 };
 
