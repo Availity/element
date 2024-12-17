@@ -1797,6 +1797,11 @@ export const lightTheme = {
       },
     },
     MuiSwitch: {
+      defaultProps: {
+        disableRipple: true,
+        disableFocusRipple: true,
+        disableTouchRipple: true,
+      },
       styleOverrides: {
         root: {
           padding: 'unset',
