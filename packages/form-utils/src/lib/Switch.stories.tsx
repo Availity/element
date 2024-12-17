@@ -2,6 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { FormControlLabel, Switch, SwitchProps } from '..';
+import { Typography } from '@availity/mui-typography';
 
 const meta: Meta<typeof Switch> = {
   title: 'Form Components/FormUtils/Switch',
@@ -33,10 +34,17 @@ export const _Switch: StoryObj<typeof Switch> = {
 };
 
 export const _WithLabel: StoryObj<typeof Switch> = {
+  render: () => <FormControlLabel control={<Switch sx={{ marginRight: '6px' }} />} label="Form Control Label" />,
+};
+
+export const _WithCheckedIcon: StoryObj<typeof Switch> = {
   render: () => (
     <>
-      <FormControlLabel control={<Switch />} label="Form Control Label" />
-      <FormControlLabel control={<Switch />} label="Form Control Label" labelPlacement="start" />
+      <FormControlLabel
+        control={<Switch showCheckedIcon size="small" sx={{ marginRight: '6px' }} defaultChecked />}
+        label="Form Control Label"
+      />
+      <Typography variant="caption" children="The checked icon only applies to small Switches" />
     </>
   ),
 };
@@ -44,8 +52,8 @@ export const _WithLabel: StoryObj<typeof Switch> = {
 export const _Sizes: StoryObj<typeof Switch> = {
   render: () => (
     <>
-      <FormControlLabel control={<Switch size="small" />} label="small" />
-      <FormControlLabel control={<Switch size="medium" />} label="medium" />
+      <FormControlLabel control={<Switch size="small" sx={{ marginRight: '6px' }} />} label="small" />
+      <FormControlLabel control={<Switch size="medium" sx={{ marginRight: '6px' }} />} label="medium" />
     </>
   ),
 };
@@ -53,10 +61,14 @@ export const _Sizes: StoryObj<typeof Switch> = {
 export const _States: StoryObj<typeof Switch> = {
   render: () => (
     <>
-      <FormControlLabel control={<Switch />} label="unchecked" />
-      <FormControlLabel control={<Switch defaultChecked={true} />} label="checked" />
-      <FormControlLabel control={<Switch />} label="disabled unchecked" disabled />
-      <FormControlLabel control={<Switch defaultChecked={true} />} label="disabled checked" disabled />
+      <FormControlLabel control={<Switch sx={{ marginRight: '6px' }} />} label="unchecked" />
+      <FormControlLabel control={<Switch defaultChecked={true} sx={{ marginRight: '6px' }} />} label="checked" />
+      <FormControlLabel control={<Switch sx={{ marginRight: '6px' }} />} label="disabled unchecked" disabled />
+      <FormControlLabel
+        control={<Switch defaultChecked={true} sx={{ marginRight: '6px' }} />}
+        label="disabled checked"
+        disabled
+      />
     </>
   ),
 };

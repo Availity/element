@@ -1802,38 +1802,52 @@ export const lightTheme = {
           padding: 'unset',
           height: '20px',
           width: '40px',
+          overflow: 'initial',
           '.MuiSwitch-switchBase': {
             padding: '2px',
+            '&.Mui-focusVisible': {
+              '+ .MuiSwitch-track': {
+                outlineWidth: tokens.borderWidthXs,
+                outlineColor: tokens.colorTextInverse,
+                outlineStyle: 'solid',
+                boxShadow: `0 0 0px 4px ${tokens.borderPrimary}`,
+              },
+            },
             '&:hover': {
               '+ .MuiSwitch-track': {
-                background: tokens.colorSecondaryMain
+                backgroundColor: tokens.colorSecondaryMain,
               },
             },
-          },
-          '&.Mui-checked': {
-            '.MuiSwitch-switchBase:hover': {
+            '&.Mui-checked': {
+              ' + .MuiSwitch-track': {
+                backgroundColor: tokens.colorPrimaryLight,
+                opacity: 1
+              },
+              '&::hover': {
+                '+ .MuiSwitch-track': {
+                  backgroundColor: tokens.colorPrimaryDark
+                },
+              },
+            },
+            '&.Mui-disabled, &.Mui-disabled.Mui-checked': {
+              color: tokens.colorCommonWhite,
               '+ .MuiSwitch-track': {
-                background: tokens.colorPrimaryLight
-              },
-            },
-            '.MuiSwitch-track': {
-              background: tokens.colorPrimaryLight
-            },
-            '.MuiSwitch-thumb': {
-              background: tokens.colorCommonWhite
+                backgroundColor: tokens.colorTextDisabled,
+                opacity: 1
+              }
             }
           },
-          '+ .MuiFormControlLabel-label': {
-            marginLeft: '6px'
-          }
         },
         thumb: {
           height: '16px',
-          width: '16px'
+          width: '16px',
+          boxShadow: 'unset',
+          backgroundColor: tokens.colorCommonWhite
         },
         track: {
           borderRadius: '10px',
           background: tokens.colorSecondaryLight,
+          opacity: 'unset'
         },
         sizeSmall: {
           height: '16px',
