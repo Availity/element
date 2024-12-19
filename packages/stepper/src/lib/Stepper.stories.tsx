@@ -177,6 +177,71 @@ export const _Stepper: StoryObj<typeof Stepper> = {
   args: {},
 };
 
+export const _StepperOverflow: StoryObj<typeof Stepper> = {
+  render: (args) => (
+    <Box>
+      <Paper sx={{ padding: '2rem' }}>
+        <Stepper {...args}>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+        </Stepper>
+      </Paper>
+    </Box>
+  ),
+  args: {
+    scrollButtons: true,
+  },
+};
+
+export const _StepperWithoutConnectors: StoryObj<typeof Stepper> = {
+  render: (args) => (
+    <Box>
+      <Paper sx={{ padding: '2rem' }}>
+        <Stepper {...args}>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+        </Stepper>
+        <Typography children="Set the connector prop to null" />
+      </Paper>
+    </Box>
+  ),
+  args: {
+    connector: null,
+  },
+};
+
 export const _StepLabel: StoryObj<typeof StepLabel> = {
   render: (args) => <StepLabel {...args} />,
   args: {

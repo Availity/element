@@ -1760,35 +1760,52 @@ export const lightTheme = {
         }
       }
     },
+    MuiStepButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+          '&:active': {
+            backgroundColor: "#393B4626"
+          },
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+          },
+          '&.Mui-focusVisible': {
+            outline: `2px solid ${tokens.borderInputFocus}`
+          }
+        }
+      }
+    },
     MuiStepIcon: {
       styleOverrides: {
         root: {
           color: tokens.colorCommonWhite,
-          border: `solid ${tokens.colorSuccessMain}`,
+          outline: `2px solid ${tokens.colorSuccessMain}`,
+          outlineOffset: '-2px',
           borderRadius: '50%',
           height: '24px',
           width: '24px',
           '&.Mui-active': {
             color: tokens.colorSuccessMain,
-            border: 'none',
+            outline: 'none',
             '.MuiStepIcon-text': {
               fill: tokens.colorCommonWhite,
             },
           },
           '&.Mui-completed': {
             color: tokens.colorSuccessMain,
-            border: 'none',
+            outline: 'none',
           },
           '&.Mui-error': {
-            border: 'none',
+            outline: 'none',
           },
           '&.MuiSvgIcon-colorWarning': {
-            border: 'none',
+            outline: 'none',
           },
         },
         text: {
           fill: tokens.colorTextSuccess,
-          fontSize: '18px',
+          fontSize: '14px',
         },
       },
     },
