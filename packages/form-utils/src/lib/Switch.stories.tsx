@@ -34,17 +34,13 @@ export const _Switch: StoryObj<typeof Switch> = {
   render: (args: SwitchProps) => {
     const [checked, setChecked] = useState(false);
     return (
-      <FormGroup>
-        <FormLabel htmlFor="switch1">Label</FormLabel>
-        <FormControlLabel
-          control={<Switch {...args} onChange={(event) => setChecked(event.target.checked)} />}
-          label={checked ? 'On' : 'Off'}
-        />
-      </FormGroup>
+      <FormControlLabel
+        control={<Switch {...args} onChange={(event) => setChecked(event.target.checked)} />}
+        label={checked ? 'On' : 'Off'}
+      />
     );
   },
   args: {
-    id: 'switch1',
     sx: { marginRight: '6px' },
     inputProps: {
       'aria-label': 'example',
@@ -57,11 +53,9 @@ export const _WithCheckedIcon: StoryObj<typeof Switch> = {
     const [checked, setChecked] = useState(true);
     return (
       <FormGroup>
-        <FormLabel htmlFor="switch2">Label</FormLabel>
         <FormControlLabel
           control={
             <Switch
-              id="switch2"
               showCheckedIcon
               size="small"
               sx={{ marginRight: '6px' }}
@@ -83,34 +77,28 @@ export const _Sizes: StoryObj<typeof Switch> = {
     const [defaultChecked, setDefaultChecked] = useState(false);
     return (
       <>
-        <FormGroup>
-          <FormLabel htmlFor="smallSwitch">Small Switch</FormLabel>
-          <FormControlLabel
-            control={
-              <Switch
-                id="smallSwitch"
-                size="small"
-                sx={{ marginRight: '6px' }}
-                onChange={(event) => setSmallChecked(event.target.checked)}
-              />
-            }
-            label={smallChecked ? 'On' : 'Off'}
-          />
-        </FormGroup>
-        <FormGroup>
-          <FormLabel htmlFor="defaultSwitch">Default Switch</FormLabel>
-          <FormControlLabel
-            control={
-              <Switch
-                id="defaultSwitch"
-                size="medium"
-                sx={{ marginRight: '6px' }}
-                onChange={(event) => setDefaultChecked(event.target.checked)}
-              />
-            }
-            label={defaultChecked ? 'On' : 'Off'}
-          />
-        </FormGroup>
+        <FormControlLabel
+          control={
+            <Switch
+              id="smallSwitch"
+              size="small"
+              sx={{ marginRight: '6px' }}
+              onChange={(event) => setSmallChecked(event.target.checked)}
+            />
+          }
+          label={smallChecked ? 'On' : 'Off'}
+        />
+        <FormControlLabel
+          control={
+            <Switch
+              id="defaultSwitch"
+              size="medium"
+              sx={{ marginRight: '6px' }}
+              onChange={(event) => setDefaultChecked(event.target.checked)}
+            />
+          }
+          label={defaultChecked ? 'On' : 'Off'}
+        />
       </>
     );
   },
