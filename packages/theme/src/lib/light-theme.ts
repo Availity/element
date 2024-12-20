@@ -84,6 +84,7 @@ export const lightTheme = {
       accent: tokens.colorBackgroundAccent,
       border: tokens.colorBackgroundBorder,
       default: tokens.colorGrey100,
+      hover: '#393B4621',
     },
     action: {
       active: tokens.colorActionActive,
@@ -434,7 +435,7 @@ export const lightTheme = {
           '.MuiListItemButton-root': {
             borderRadius: '0 4px 4px 0',
             '&:active': {
-              backgroundColor: tokens.colorActionFocus
+              backgroundColor: tokens.colorActionFocus,
             },
             '&.Mui-focusVisible': {
               border: `2px solid ${tokens.colorPrimaryMain}`,
@@ -540,11 +541,12 @@ export const lightTheme = {
               '.MuiAccordionSummary-root:not(.Mui-focusVisible, :hover, :active)': {
                 backgroundColor: 'inherit',
               },
-              '> .MuiCollapse-root > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > .MuiAccordion-region > .MuiAccordionDetails-root:first-of-type': {
-                borderTop: 'none'
-              }
+              '> .MuiCollapse-root > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > .MuiAccordion-region > .MuiAccordionDetails-root:first-of-type':
+                {
+                  borderTop: 'none',
+                },
             },
-          }
+          },
         },
       },
     },
@@ -552,18 +554,18 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           padding: '1.25rem',
-          flexWrap: 'wrap'
+          flexWrap: 'wrap',
         },
         spacing: {
-          rowGap: tokens.spacingBase
-        }
+          rowGap: tokens.spacingBase,
+        },
       },
     },
     MuiAccordionDetails: {
       styleOverrides: {
         root: {
           minHeight: '1px',
-          padding: '1.25rem'
+          padding: '1.25rem',
         },
       },
     },
@@ -595,7 +597,7 @@ export const lightTheme = {
           order: 2,
           fontWeight: tokens.fontWeightsBold,
           margin: '12px 0px',
-          gap: 1
+          gap: 1,
         },
         expandIconWrapper: {
           order: 1,
@@ -624,11 +626,11 @@ export const lightTheme = {
             margin: '0px -4px',
           },
           '.MuiIconButton-root': {
-            marginRight: '-8px'
+            marginRight: '-8px',
           },
           margin: '-2px 0px -2px auto',
           padding: '0 0 0 16px',
-          gap: '16px'
+          gap: '16px',
         },
         icon: ({ ownerState }: { ownerState: any }) => ({
           ...(ownerState.severity === 'success' && {
@@ -713,14 +715,14 @@ export const lightTheme = {
             height: '2.25rem',
             '.MuiSelect-avExpandIcon': {
               transform: 'unset',
-              top: 'auto'
+              top: 'auto',
             },
           },
         },
         popupIndicator: {
           color: tokens.borderInput,
 
-          padding: '.75rem'
+          padding: '.75rem',
         },
         popupIndicatorOpen: {
           transform: 'scaleY(-1)',
@@ -977,7 +979,7 @@ export const lightTheme = {
         sizeSmall: {
           verticalAlign: 'text-bottom',
           borderRadius: '50px',
-          height: 'min-content'
+          height: 'min-content',
         },
         sizeMedium: {
           fontWeight: tokens.fontWeightsRegular,
@@ -995,9 +997,9 @@ export const lightTheme = {
     MuiDateCalendar: {
       styleOverrides: {
         root: {
-          width: '310px'
-        }
-      }
+          width: '310px',
+        },
+      },
     },
     MuiDatePicker: {
       styleOverrides: {
@@ -1019,40 +1021,40 @@ export const lightTheme = {
     MuiDialog: {
       styleOverrides: {
         maxWidthSm: {
-          maxWidth: '25rem'
+          maxWidth: '25rem',
         },
         maxWidthMd: {
-          maxWidth: '39.75rem'
+          maxWidth: '39.75rem',
         },
         maxWidthLg: {
-          maxWidth: '58.75rem'
+          maxWidth: '58.75rem',
         },
         maxWidthXl: {
-          maxWidth: '71.25rem'
+          maxWidth: '71.25rem',
         },
         avCloseButton: {
-          "~ .MuiDialogTitle-root": {
-            marginRight: '2.5rem'
-          }
-        }
-      }
+          '~ .MuiDialogTitle-root': {
+            marginRight: '2.5rem',
+          },
+        },
+      },
     },
     MuiDialogActions: {
       styleOverrides: {
         root: {
-          padding: '1rem'
-        }
-      }
+          padding: '1rem',
+        },
+      },
     },
     MuiDialogContent: {
       defaultProps: {
-        dividers: true
+        dividers: true,
       },
       styleOverrides: {
         root: {
-          padding: '1rem'
-        }
-      }
+          padding: '1rem',
+        },
+      },
     },
     MuiDialogTitle: {
       styleOverrides: {
@@ -1061,9 +1063,9 @@ export const lightTheme = {
           paddingLeft: '1rem',
           minHeight: '3.5rem',
           display: 'flex',
-          alignItems: 'center'
-        }
-      }
+          alignItems: 'center',
+        },
+      },
     },
     MuiFormControl: {
       defaultProps: {
@@ -1704,17 +1706,19 @@ export const lightTheme = {
     },
     MuiSnackbar: {
       styleOverrides: {
-        root: ({ theme } : { theme: Theme} ) => ({
+        root: ({ theme }: { theme: Theme }) => ({
           [theme.breakpoints.down('sm')]: {
-              // full width
-              left: '24px',
-              right: '24px',
-            '&.MuiSnackbar-anchorOriginBottomCenter, &.MuiSnackbar-anchorOriginBottomLeft, &.MuiSnackbar-anchorOriginBottomRight': {
-              bottom: '24px',
-            },
-            '&.MuiSnackbar-anchorOriginTopCenter, &.MuiSnackbar-anchorOriginTopLeft, &.MuiSnackbar-anchorOriginTopRight': {
-              top: '24px',
-            },
+            // full width
+            left: '24px',
+            right: '24px',
+            '&.MuiSnackbar-anchorOriginBottomCenter, &.MuiSnackbar-anchorOriginBottomLeft, &.MuiSnackbar-anchorOriginBottomRight':
+              {
+                bottom: '24px',
+              },
+            '&.MuiSnackbar-anchorOriginTopCenter, &.MuiSnackbar-anchorOriginTopLeft, &.MuiSnackbar-anchorOriginTopRight':
+              {
+                top: '24px',
+              },
           },
           [theme.breakpoints.up('sm')]: {
             maxWidth: '528px',
@@ -1725,7 +1729,7 @@ export const lightTheme = {
           },
           '.MuiAlert-root, .MuiSnackbarContent-root': {
             boxShadow: tokens.shadows24,
-          }
+          },
         }),
         anchorOriginBottomCenter: {
           bottom: '40px',
@@ -1756,9 +1760,9 @@ export const lightTheme = {
         root: {
           // info alert styling
           backgroundColor: tokens.colorBlue50,
-          color: tokens.colorTextPrimary
-        }
-      }
+          color: tokens.colorTextPrimary,
+        },
+      },
     },
     MuiStepIcon: {
       styleOverrides: {
@@ -2072,18 +2076,18 @@ export const lightTheme = {
       styleOverrides: {
         checkbox: {
           '&.Mui-checked': {
-            color: tokens.colorTextInverse
-          }
+            color: tokens.colorTextInverse,
+          },
         },
         content: {
           borderRadius: 0,
           padding: '8px 16px',
           alignItems: 'start',
           '&:hover': {
-            backgroundColor: tokens.colorActionHover
+            backgroundColor: tokens.colorActionHover,
           },
           '&:active': {
-            backgroundColor: `${tokens.colorSecondaryDark}26`
+            backgroundColor: `${tokens.colorSecondaryDark}26`,
           },
           '&.Mui-focused': {
             outlineWidth: tokens.borderWidthXs,
@@ -2104,18 +2108,18 @@ export const lightTheme = {
             },
             '&:active': {
               backgroundColor: tokens.colorPrimaryDarker,
-            }
+            },
           },
         },
         iconContainer: {
           color: tokens.colorSecondaryMain,
           paddingTop: '4px',
-          'svg': {
+          svg: {
             fontSize: 'inherit',
-            marginRight: '4px'
-          }
+            marginRight: '4px',
+          },
         },
-      }
+      },
     },
     MuiTypography: {
       defaultProps: {

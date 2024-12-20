@@ -1,3 +1,16 @@
+import {
+  FileArchiveIcon,
+  FileCodeIcon,
+  FileCsvIcon,
+  FileExcelIcon,
+  FileIcon,
+  FileImageIcon,
+  FileLinesIcon,
+  FilePdfIcon,
+  FilePowerpointIcon,
+  FileWordIcon,
+} from '@availity/mui-icon';
+
 export function formatBytes(bytes: number, decimals = 2) {
   if (!+bytes) return '0 Bytes';
 
@@ -11,23 +24,24 @@ export function formatBytes(bytes: number, decimals = 2) {
 }
 
 export const FILE_EXT_ICONS = {
-  png: 'file-image',
-  jpg: 'file-image',
-  jpeg: 'file-image',
-  gif: 'file-image',
-  ppt: 'file-powerpoint',
-  pptx: 'file-powerpoint',
-  xls: 'file-excel',
-  xlsx: 'file-excel',
-  doc: 'file-word',
-  docx: 'file-word',
-  txt: 'doc-alt',
-  text: 'doc-alt',
-  zip: 'file-archive',
-  '7zip': 'file-archive',
-  xml: 'file-code',
-  html: 'file-code',
-  pdf: 'file-pdf',
+  png: FileImageIcon,
+  jpg: FileImageIcon,
+  jpeg: FileImageIcon,
+  gif: FileImageIcon,
+  csv: FileCsvIcon,
+  ppt: FilePowerpointIcon,
+  pptx: FilePowerpointIcon,
+  xls: FileExcelIcon,
+  xlsx: FileExcelIcon,
+  doc: FileWordIcon,
+  docx: FileWordIcon,
+  txt: FileLinesIcon,
+  text: FileLinesIcon,
+  zip: FileArchiveIcon,
+  '7zip': FileArchiveIcon,
+  xml: FileCodeIcon,
+  html: FileCodeIcon,
+  pdf: FilePdfIcon,
 } as const;
 
 export type FileExtensionKey = keyof typeof FILE_EXT_ICONS;
@@ -36,7 +50,7 @@ export const isValidKey = (key: string): key is FileExtensionKey => (key ? key i
 
 export const getFileExtIcon = (fileName: string) => {
   const ext = fileName.split('.').pop()?.toLowerCase() || '';
-  const icon = isValidKey(ext) ? FILE_EXT_ICONS[ext] : 'doc';
+  const icon = isValidKey(ext) ? FILE_EXT_ICONS[ext] : FileIcon;
 
-  return { ext, icon };
+  return icon;
 };

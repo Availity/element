@@ -1,7 +1,8 @@
 import type { default as Upload, UploadOptions } from '@availity/upload-core';
 import { List, ListItem, ListItemText, ListItemIcon, ListItemButton } from '@availity/mui-list';
-import { DeleteIcon, FileIcon } from '@availity/mui-icon';
+import { DeleteIcon } from '@availity/mui-icon';
 import { Grid } from '@availity/mui-layout';
+import { Divider } from '@availity/mui-divider';
 
 import { UploadProgressBar } from './UploadProgressBar';
 import { formatBytes, getFileExtIcon } from './util';
@@ -21,8 +22,7 @@ type FileRowProps = {
 };
 
 const FileRow = ({ file, options, onRemoveFile }: FileRowProps) => {
-  const { ext, icon } = getFileExtIcon(file.name);
-  console.log('ext, icon:', ext, icon);
+  const Icon = getFileExtIcon(file.name);
 
   const { data: upload } = useUploadCore(file, options);
 
@@ -30,10 +30,10 @@ const FileRow = ({ file, options, onRemoveFile }: FileRowProps) => {
 
   return (
     <>
-      <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%">
+      <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%" borderBottom="1px">
         <Grid xs={1}>
           <ListItemIcon>
-            <FileIcon />
+            <Icon />
           </ListItemIcon>
         </Grid>
         <Grid xs={4}>
@@ -57,6 +57,7 @@ const FileRow = ({ file, options, onRemoveFile }: FileRowProps) => {
           </ListItemButton>
         </Grid>
       </Grid>
+      <Divider component="li" />
     </>
   );
 };

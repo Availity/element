@@ -1,7 +1,7 @@
 import { Dispatch, MouseEvent, useCallback, ChangeEvent } from 'react';
 import { useDropzone, FileRejection } from 'react-dropzone';
 import { Divider } from '@availity/mui-divider';
-import { CloudDownloadIcon } from '@availity/mui-icon';
+import { CloudUploadIcon } from '@availity/mui-icon';
 import { Box, Stack } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 
@@ -9,8 +9,9 @@ import { FilePickerBtn } from './FilePickerBtn';
 import { useFormContext } from 'react-hook-form';
 
 const outerBoxStyles = {
-  backgroundColor: 'background.canvas',
+  backgroundColor: 'background.hover',
   border: '1px dotted',
+  borderColor: 'secondary.light',
   borderRadius: '4px',
   padding: '2rem',
 };
@@ -175,12 +176,13 @@ export const Dropzone = ({
   return (
     <Box sx={outerBoxStyles} {...getRootProps()}>
       <Box sx={innerBoxStyles}>
-        <Stack spacing={2} divider={<Divider>OR</Divider>} alignItems="center" justifyContent="center">
+        <Stack spacing={2} alignItems="center" justifyContent="center">
           <>
-            <CloudDownloadIcon fontSize="xlarge" color="secondary" />
+            <CloudUploadIcon fontSize="xlarge" color="secondary" />
             <Typography variant="subtitle2" fontWeight="700">
               Drag and Drop Files Here
             </Typography>
+            <Divider>OR</Divider>
             <FilePickerBtn
               name={name}
               color="primary"
