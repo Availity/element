@@ -1872,6 +1872,19 @@ export const lightTheme = {
         },
       }
     },
+    AvSwitchCheckedIcon: {
+      styleOverrides: {
+        root:{
+          '& .Mui-checked': {
+            '+ .MuiSwitch-track': {
+              '&::before': {
+                left: 4,
+              }
+            }
+          }
+        }
+      }
+    },
     MuiTab: {
       styleOverrides: {
         root: {

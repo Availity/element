@@ -2148,6 +2148,19 @@ export const legacyTheme = {
         },
       },
     },
+    AvSwitchCheckedIcon: {
+      styleOverrides: {
+        root:{
+          '& .Mui-checked': {
+            '+ .MuiSwitch-track': {
+              '&::before': {
+                left: 7,
+              }
+            }
+          }
+        }
+      }
+    },
     MuiTab: {
       styleOverrides: {
         root: {

@@ -17,7 +17,7 @@ export type SwitchProps = {
   | 'touchRippleRef'
 >;
 
-const CheckedIconSwitch = styled(MuiSwitch)(({ theme }) => ({
+const CheckedIconSwitch = styled(MuiSwitch, { name: 'AvSwitchCheckedIcon', slot: 'root' })(({ theme }) => ({
   '& .Mui-checked': {
     '+ .MuiSwitch-track': {
       borderRadius: 22 / 2,
@@ -31,7 +31,6 @@ const CheckedIconSwitch = styled(MuiSwitch)(({ theme }) => ({
         backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 ${width} ${height}"><path fill="${encodeURIComponent(
           theme.palette.getContrastText(theme.palette.primary.main)
         )}" d="${svgPathData}"/></svg>')`,
-        left: 4,
       },
     },
   },
