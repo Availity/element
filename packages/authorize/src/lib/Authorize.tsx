@@ -18,7 +18,7 @@ export type AuthorizeProps = {
 
 /** Component for showing content based on the user's permissions. Wrap this component around content you only want specific users to see.
  *
- * The `useAuthorize` hook utilizes [react-query](https://tanstack.com/query/v4/docs/framework/react/overview) to handle data fetching.
+ * The internal `useAuthorize` hook utilizes [react-query](https://tanstack.com/query/v4/docs/framework/react/overview) to handle data fetching.
  * This means you must add a [QueryClientProvider](https://tanstack.com/query/v4/docs/framework/react/reference/QueryClientProvider)
  * to your app if you do not already have one.
  *
