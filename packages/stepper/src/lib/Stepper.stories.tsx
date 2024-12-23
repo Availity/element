@@ -177,10 +177,10 @@ export const _Stepper: StoryObj<typeof Stepper> = {
   args: {},
 };
 
-export const _StepperOverflow: StoryObj<typeof Stepper> = {
+export const _StepperScrollButtons: StoryObj<typeof Stepper> = {
   render: (args) => (
     <Box>
-      <Paper sx={{ padding: '2rem' }}>
+      <Paper>
         <Stepper {...args}>
           <Step>
             <StepLabel>Label</StepLabel>

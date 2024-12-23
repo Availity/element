@@ -1760,6 +1760,13 @@ export const lightTheme = {
         }
       }
     },
+    MuiStep: {
+      styleOverrides: {
+        root: {
+          minWidth: '71px',
+        }
+      }
+    },
     MuiStepButton: {
       styleOverrides: {
         root: {
@@ -1840,6 +1847,17 @@ export const lightTheme = {
           borderWidth: '4px',
         },
       },
+    },
+    MuiStepper: {
+      styleOverrides: {
+        root: {
+          flexGrow: 1,
+          overflowX: 'auto',
+          overflowY: 'hidden',
+          whiteSpace: 'nowrap',
+          scrollbarWidth: 'none'
+        }
+      }
     },
     MuiSvgIcon: {
       defaultProps: {
