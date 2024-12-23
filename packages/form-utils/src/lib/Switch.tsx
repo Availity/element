@@ -3,6 +3,9 @@ import MuiSwitch, { SwitchProps as MuiSwitchProps } from '@mui/material/Switch';
 import { svgPathData, width, height } from '@fortawesome/free-solid-svg-icons/faCheck';
 
 export type SwitchProps = {
+  /**
+   * When size is set to `small`, setting `showCheckedIcon` to `true` will display a checkmark in the track when the switch is checked.
+   */
   showCheckedIcon?: boolean;
 } & Omit<
   MuiSwitchProps,
