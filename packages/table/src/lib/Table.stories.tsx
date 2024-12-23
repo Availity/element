@@ -6,8 +6,8 @@ import { useMemo, useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
 import { IconButton } from '@availity/mui-button';
 import { StatusChip, StatusChipProps } from '@availity/mui-chip';
-import { CollapseIcon, ExpandIcon } from '@availity/mui-icon';
-import { Box, Grid } from '@availity/mui-layout';
+import { TriangleCollapseIcon, TriangleExpandIcon } from '@availity/mui-icon';
+import { Grid } from '@availity/mui-layout';
 import { Collapse } from '@availity/mui-transitions';
 import { Typography } from '@availity/mui-typography';
 import { visuallyHidden } from '@availity/mui-utils';
@@ -30,6 +30,12 @@ const meta: Meta<typeof Table> = {
   title: 'Components/Table/Table',
   component: Table,
   tags: ['autodocs'],
+  argTypes: {
+    size: {
+      options: ['small', 'medium'],
+      control: { type: 'radio' },
+    },
+  }
 };
 
 export default meta;
@@ -406,9 +412,6 @@ export const _PaginatedTable: StoryObj<typeof Table> = {
 
     const dataRowsLarge = Patients.data.patientPagination.items;
 
-    // Avoid a layout jump when reaching the last page with empty rows.
-    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - dataRowsLarge.length) : 0;
-
     const visibleRows = useMemo(
       () =>
         rowsPerPage > 0 ? dataRowsLarge.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) : dataRowsLarge,
@@ -466,6 +469,36 @@ export const _PaginatedTable: StoryObj<typeof Table> = {
 
 export const _ExpandableTable: StoryObj<typeof Table> = {
   render: (args: TableProps) => {
+    const [expanded, setExpanded] = useState<readonly string[]>([]);
+    const numExpanded=expanded.length;
+    const rowCount=dataRows.length;
+
+    const handleExpandAllClick = () => {
+      if (rowCount > 0 && numExpanded !== rowCount) {
+        const newExpanded = dataRows.map((n) => n.subscriberMemberId);
+        setExpanded(newExpanded);
+        return;
+      }
+      setExpanded([]);
+    };
+
+    const handleClick = (event: React.MouseEvent<unknown>, name: string) => {
+      const expandedIndex = expanded.indexOf(name);
+      let newExpanded: readonly string[] = [];
+
+      if (expandedIndex === -1) {
+        newExpanded = newExpanded.concat(expanded, name);
+      } else if (expandedIndex === 0) {
+        newExpanded = newExpanded.concat(expanded.slice(1));
+      } else if (expandedIndex === expanded.length - 1) {
+        newExpanded = newExpanded.concat(expanded.slice(0, -1));
+      } else if (expandedIndex > 0) {
+        newExpanded = newExpanded.concat(expanded.slice(0, expandedIndex), expanded.slice(expandedIndex + 1));
+      }
+
+      setExpanded(newExpanded);
+    };
+
     return (
       <TableContainer>
         <Typography id="table-title" sx={visuallyHidden}>
@@ -474,7 +507,15 @@ export const _ExpandableTable: StoryObj<typeof Table> = {
         <Table aria-labelledby="table-title" {...args}>
           <TableHead>
             <TableRow>
-              <TableCell><div style={visuallyHidden}>Expand Row</div></TableCell>
+              <TableCell padding="checkbox" aria-label="Expand Row">
+                <IconButton
+                  title={`${rowCount > 0 && numExpanded !== rowCount ? 'expand' : 'collapse'} all rows`}
+                  size="medium"
+                  onClick={handleExpandAllClick}
+                >
+                  {(rowCount > 0 && numExpanded !== rowCount) ? <TriangleExpandIcon fontSize="xsmall"/> : <TriangleCollapseIcon fontSize="xsmall" />}
+                </IconButton>
+              </TableCell>
               <TableCell>Payer</TableCell>
               <TableCell>Patient First Name</TableCell>
               <TableCell>Patient Last Name</TableCell>
@@ -482,31 +523,42 @@ export const _ExpandableTable: StoryObj<typeof Table> = {
             </TableRow>
           </TableHead>
           <TableBody>
-            {dataRows.map((row) => {
-              const [open, setOpen] = useState(false);
+            {dataRows.map((row, index) => {
+              const isItemExpanded = expanded.includes(row.subscriberMemberId);
               return (
                 <>
-                  <TableRow key={`expandableTable-${row.payerName}-${row.birthDate}`}>
+                  <TableRow
+                    key={`expandableTable-row-${index}`}
+                    id={`expandableTable-row-${index}`}
+                    aria-labelledby={`first-name-${index} last-name-${index}`}
+                  >
                     <TableCell padding="checkbox">
                       <IconButton
-                        title="expand row"
+                        title={isItemExpanded ? "collapse row" : "expand row"}
                         size="medium"
-                        onClick={() => setOpen(!open)}
+                        onClick={(event) => handleClick(event, row.subscriberMemberId)}
+                        aria-controls={`expandableTable-expanded-row-${index}`}
+                        aria-expanded={isItemExpanded}
                       >
-                        {open ? <ExpandIcon /> : <CollapseIcon />}
+                        {isItemExpanded ? <TriangleCollapseIcon fontSize="xsmall"/> : <TriangleExpandIcon fontSize="xsmall" />}
                       </IconButton>
                     </TableCell>
                     <TableCell>{row.payerName}</TableCell>
-                    <TableCell>{row.firstName}</TableCell>
-                    <TableCell>{row.lastName}</TableCell>
+                    <TableCell id={`first-name-${index}`}>{row.firstName}</TableCell>
+                    <TableCell id={`last-name-${index}`}>{row.lastName}</TableCell>
                     {/* TODO: switch to dayjs */}
                     <TableCell>{new Date(row.birthDate).toLocaleDateString('en-us')}</TableCell>
                   </TableRow>
-                  <TableRow key={`expandableTable-expanded-${row.payerName}-${row.birthDate}`} >
-                    <TableCell style={{ padding: 0, paddingLeft: "32px" }} colSpan={12}>
-                      <Collapse in={open} timeout="auto" unmountOnExit>
-                        <Box sx={{ padding: 2 }}>
-                          <Grid container spacing={2}>
+                  <TableRow
+                    key={`expandableTable-expanded-row-${index}`}
+                    id={`expandableTable-expanded-row-${index}`}
+                    aria-label="Additional information for"
+                    aria-labelledby={`expandableTable-expanded-row-${index} first-name-${index} last-name-${index}`}
+                  >
+                    <td colSpan={12}>
+                      <Collapse in={isItemExpanded} timeout="auto" unmountOnExit>
+                        <TableCell component="div" sx={{display: 'block'}}>
+                          <Grid container spacing={2} paddingLeft='32px'>
                             <Grid xs>
                               <Typography variant="body2" sx={{fontWeight: "bold"}}>
                                 Subscriber Member Id
@@ -532,9 +584,9 @@ export const _ExpandableTable: StoryObj<typeof Table> = {
                               </Typography>
                             </Grid>
                           </Grid>
-                        </Box>
+                        </TableCell>
                       </Collapse>
-                    </TableCell>
+                    </td>
                   </TableRow>
                 </>
               );
