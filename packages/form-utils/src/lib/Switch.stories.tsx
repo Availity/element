@@ -32,6 +32,17 @@ export default meta;
 
 export const _Switch: StoryObj<typeof Switch> = {
   render: (args: SwitchProps) => {
+    return <Switch {...args} />;
+  },
+  args: {
+    inputProps: {
+      'aria-label': 'example',
+    },
+  },
+};
+
+export const _WithLabel: StoryObj<typeof Switch> = {
+  render: (args: SwitchProps) => {
     const [checked, setChecked] = useState(false);
     return (
       <FormControlLabel
@@ -42,9 +53,6 @@ export const _Switch: StoryObj<typeof Switch> = {
   },
   args: {
     sx: { marginRight: '6px' },
-    inputProps: {
-      'aria-label': 'example',
-    },
   },
 };
 
