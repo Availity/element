@@ -1017,6 +1017,12 @@ export const lightTheme = {
       },
     },
     MuiDialog: {
+      defaultProps: {
+        PaperProps: {
+          variant: 'elevation',
+          elevation: 4,
+        }
+      },
       styleOverrides: {
         maxWidthSm: {
           maxWidth: '25rem'
