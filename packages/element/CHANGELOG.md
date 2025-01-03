@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.48.11](https://github.com/Availity/element/compare/@availity/element@0.48.10...@availity/element@0.48.11) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-datepicker` updated to version `0.48.10`
+* `mui-dialog` updated to version `0.48.10`
+* `mui-page-header` updated to version `0.48.10`
+* `mui-spaces` updated to version `0.48.10`
+* `theme-provider` updated to version `0.48.10`
 ## [0.48.10](https://github.com/Availity/element/compare/@availity/element@0.48.9...@availity/element@0.48.10) (2025-01-02)
 
 ### Dependency Updates
