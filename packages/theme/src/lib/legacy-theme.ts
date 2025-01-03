@@ -1136,7 +1136,14 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorGrey100,
-          padding: '1rem 1.5rem'
+          padding: '1rem 1.5rem',
+          flexWrap: 'wrap'
+        },
+        spacing: {
+          marginBottom: '-8px',
+          '.MuiButton-root': {
+            marginBottom: '8px'
+          }
         },
       },
     },

@@ -1017,6 +1017,12 @@ export const lightTheme = {
       },
     },
     MuiDialog: {
+      defaultProps: {
+        PaperProps: {
+          variant: 'elevation',
+          elevation: 4,
+        }
+      },
       styleOverrides: {
         maxWidthSm: {
           maxWidth: '25rem'
@@ -1040,7 +1046,14 @@ export const lightTheme = {
     MuiDialogActions: {
       styleOverrides: {
         root: {
-          padding: '1rem'
+          padding: '1rem',
+          flexWrap: 'wrap'
+        },
+        spacing: {
+          marginBottom: '-8px',
+          '.MuiButton-root': {
+            marginBottom: '8px'
+          }
         }
       }
     },
