@@ -21,13 +21,13 @@ export const _Step: StoryObj<typeof Step> = {
     <Box>
       <Paper sx={{ padding: '2rem' }}>
         <Stepper>
-          <Step {...args}/>
+          <Step {...args} />
         </Stepper>
       </Paper>
     </Box>
   ),
   args: {
-    children: 'Children'
+    children: 'Children',
   },
 };
 
