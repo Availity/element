@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.63.1](https://github.com/Availity/element/compare/@availity/theme@0.63.0...@availity/theme@0.63.1) (2025-01-03)
+
+
+### Bug Fixes
+
+* **mui-dialog:** remove title alignment options ([e03361e](https://github.com/Availity/element/commit/e03361ee2528ef626f29ee67962859a11ad6ce65))
+
 ## [0.63.0](https://github.com/Availity/element/compare/@availity/theme@0.62.0...@availity/theme@0.63.0) (2024-12-23)
 
 
