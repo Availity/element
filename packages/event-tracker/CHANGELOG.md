@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.2.3...@availity/mui-event-tracker@0.2.4) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.3`
+* `mui-form-utils` updated to version `0.2.3`
+* `mui-menu` updated to version `0.2.3`
+* `mui-textfield` updated to version `0.2.3`
 ## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.2.2...@availity/mui-event-tracker@0.2.3) (2024-12-23)
 
 ### Dependency Updates
