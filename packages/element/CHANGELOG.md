@@ -2,6 +2,48 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.48.12](https://github.com/Availity/element/compare/@availity/element@0.48.11...@availity/element@0.48.12) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `0.48.11`
+* `mui-alert` updated to version `0.48.11`
+* `mui-authorize` updated to version `0.48.11`
+* `mui-autocomplete` updated to version `0.48.11`
+* `mui-avatar` updated to version `0.48.11`
+* `mui-badge` updated to version `0.48.11`
+* `mui-block-ui` updated to version `0.48.11`
+* `mui-breadcrumbs` updated to version `0.48.11`
+* `mui-button` updated to version `0.48.11`
+* `mui-card` updated to version `0.48.11`
+* `mui-checkbox` updated to version `0.48.11`
+* `mui-chip` updated to version `0.48.11`
+* `mui-datepicker` updated to version `0.48.11`
+* `mui-dialog` updated to version `0.48.11`
+* `mui-disclaimer` updated to version `0.48.11`
+* `mui-empty-state` updated to version `0.48.11`
+* `mui-event-tracker` updated to version `0.48.11`
+* `mui-favorites` updated to version `0.48.11`
+* `mui-feedback` updated to version `0.48.11`
+* `mui-file-selector` updated to version `0.48.11`
+* `mui-form-utils` updated to version `0.48.11`
+* `mui-icon` updated to version `0.48.11`
+* `mui-link` updated to version `0.48.11`
+* `mui-list` updated to version `0.48.11`
+* `mui-menu` updated to version `0.48.11`
+* `mui-modal` updated to version `0.48.11`
+* `mui-page-header` updated to version `0.48.11`
+* `mui-pagination` updated to version `0.48.11`
+* `mui-popper` updated to version `0.48.11`
+* `mui-progress` updated to version `0.48.11`
+* `mui-snackbar` updated to version `0.48.11`
+* `mui-spaces` updated to version `0.48.11`
+* `mui-stepper` updated to version `0.48.11`
+* `mui-table` updated to version `0.48.11`
+* `mui-textfield` updated to version `0.48.11`
+* `mui-toggle-button` updated to version `0.48.11`
+* `mui-transitions` updated to version `0.48.11`
+* `mui-tree` updated to version `0.48.11`
 ## [0.48.11](https://github.com/Availity/element/compare/@availity/element@0.48.10...@availity/element@0.48.11) (2025-01-03)
 
 ### Dependency Updates
