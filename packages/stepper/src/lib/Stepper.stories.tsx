@@ -174,16 +174,15 @@ export const _Stepper: StoryObj<typeof Stepper> = {
       </Box>
     );
   },
-  args: {},
 };
 
 export const _StepperScrollButtons: StoryObj<typeof Stepper> = {
   render: (args) => (
     <Box>
-      <Paper>
+      <Paper sx={{ padding: '2rem' }}>
         <Stepper {...args}>
           <Step>
-            <StepLabel>Label</StepLabel>
+            <StepLabel optional="Optional Sub-label">Label</StepLabel>
           </Step>
           <Step>
             <StepLabel>Label</StepLabel>

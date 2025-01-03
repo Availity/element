@@ -3,12 +3,13 @@ import MuiStepper, { StepperProps as MuiStepperProps } from '@mui/material/Stepp
 import { IconButton } from '@availity/mui-button';
 import { NavigatePreviousIcon, NavigateNextIcon } from '@availity/mui-icon';
 import { Grid } from '@availity/mui-layout';
+import { styled } from '@mui/material/styles';
 
 export type StepperProps = {
   scrollButtons?: boolean;
 } & Omit<MuiStepperProps, 'alternativeLabel' | 'elevation'>;
 
-export const Stepper = ({ children, orientation, scrollButtons, ...rest }: StepperProps): JSX.Element => {
+export const Stepper = ({ children, connector, orientation, scrollButtons, ...rest }: StepperProps): JSX.Element => {
   const alternativeLabel = orientation !== 'vertical';
 
   const stepperRef = useRef<HTMLDivElement>(null);
@@ -47,42 +48,62 @@ export const Stepper = ({ children, orientation, scrollButtons, ...rest }: Stepp
     };
   }, []);
 
-  return (
-    <Grid container direction="row" justifyContent="space-between" wrap="nowrap" marginTop="16px" marginBottom="16px">
-      {scrollButtons && (
-        <div style={{ width: '50px', marginTop: '-10px', paddingRight: '8px', flexShrink: 0 }}>
-          {showLeftButton && (
-            <IconButton
-              title="Previous"
-              variant="outlined"
-              onClick={() => stepperRef.current?.scrollTo({ left: 0, behavior: 'smooth' })}
-            >
-              <NavigatePreviousIcon fontSize="xsmall" />
-            </IconButton>
-          )}
-        </div>
-      )}
-      <MuiStepper {...rest} orientation={orientation} alternativeLabel={alternativeLabel} ref={stepperRef}>
-        {children}
-      </MuiStepper>
-      {scrollButtons && (
-        <div style={{ width: '50px', marginTop: '-10px', paddingLeft: '8px', flexShrink: 0 }}>
-          {showRightButton && (
-            <IconButton
-              title="Next"
-              variant="outlined"
-              onClick={() => {
-                stepperRef.current?.scrollTo({
-                  left: stepperRef.current.scrollWidth - stepperRef.current.clientWidth,
-                  behavior: 'smooth',
-                });
-              }}
-            >
-              <NavigateNextIcon fontSize="xsmall" />
-            </IconButton>
-          )}
-        </div>
-      )}
+  const showScrollButtons = scrollButtons && orientation !== 'vertical';
+
+  const ScrollIconContainer = styled('div')({
+    width: '50px',
+    flexShrink: 0,
+    paddingTop: '15px',
+  });
+
+  return showScrollButtons ? (
+    <Grid container direction="row" justifyContent="space-between" wrap="nowrap">
+      <ScrollIconContainer style={{ paddingRight: '8px' }}>
+        {showLeftButton && (
+          <IconButton
+            title="Previous"
+            variant="outlined"
+            onClick={() => stepperRef.current?.scrollTo({ left: 0, behavior: 'smooth' })}
+          >
+            <NavigatePreviousIcon fontSize="xsmall" />
+          </IconButton>
+        )}
+      </ScrollIconContainer>
+
+      <MuiStepper
+        {...rest}
+        connector={connector}
+        orientation={orientation}
+        alternativeLabel={alternativeLabel}
+        ref={stepperRef}
+        children={children}
+      />
+
+      <ScrollIconContainer style={{ paddingLeft: '8px' }}>
+        {showRightButton && (
+          <IconButton
+            title="Next"
+            variant="outlined"
+            onClick={() => {
+              stepperRef.current?.scrollTo({
+                left: stepperRef.current.scrollWidth - stepperRef.current.clientWidth,
+                behavior: 'smooth',
+              });
+            }}
+          >
+            <NavigateNextIcon fontSize="xsmall" />
+          </IconButton>
+        )}
+      </ScrollIconContainer>
     </Grid>
+  ) : (
+    <MuiStepper
+      {...rest}
+      connector={connector}
+      orientation={orientation}
+      alternativeLabel={alternativeLabel}
+      ref={stepperRef}
+      children={children}
+    />
   );
 };
