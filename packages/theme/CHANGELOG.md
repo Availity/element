@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.63.1](https://github.com/Availity/element/compare/@availity/theme@0.63.0...@availity/theme@0.63.1) (2025-01-03)
+
+
+### Bug Fixes
+
+* **mui-dialog:** remove title alignment options ([e03361e](https://github.com/Availity/element/commit/e03361ee2528ef626f29ee67962859a11ad6ce65))
+
+## [0.63.0](https://github.com/Availity/element/compare/@availity/theme@0.62.0...@availity/theme@0.63.0) (2024-12-23)
+
+
+### Features
+
+* **mui-form-utils:** switch init commit ([9b35bcf](https://github.com/Availity/element/commit/9b35bcf4a11d1410a5664d4ccfde84cbb98e6e7b))
+* **mui-form-utils:** switch v1 theme ([8eb465c](https://github.com/Availity/element/commit/8eb465cc1ee78a026d3f8fa3779a966f8fec75e3))
+
 ## [0.62.0](https://github.com/Availity/element/compare/@availity/theme@0.61.4...@availity/theme@0.62.0) (2024-12-09)
 
 

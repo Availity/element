@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.12.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.11.1...@availity/mui-icon@0.12.0) (2025-01-03)
+
+
+### Features
+
+* **mui-icon:** add arrow icons ([d5f498e](https://github.com/Availity/element/commit/d5f498e0e69a8cfb3f38cdda84345020478694a3))
+
 ## [0.11.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.11.0...@availity/mui-icon@0.11.1) (2024-12-09)
 
 

@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.8](https://github.com/Availity/element/compare/@availity/mui-authorize@0.1.7...@availity/mui-authorize@0.1.8) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-block-ui` updated to version `0.1.7`
+## [0.1.7](https://github.com/Availity/element/compare/@availity/mui-authorize@0.1.6...@availity/mui-authorize@0.1.7) (2024-12-23)
+
+
+### Bug Fixes
+
+* **mui-authorize:** add note about where to find useauthorize hook ([e541f82](https://github.com/Availity/element/commit/e541f82f358cf6257b9c10bae2ad52282500a81c))
+
 ## [0.1.6](https://github.com/Availity/element/compare/@availity/mui-authorize@0.1.5...@availity/mui-authorize@0.1.6) (2024-12-09)
 
 ### Dependency Updates
