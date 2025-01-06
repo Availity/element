@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.3...@availity/mui-file-selector@0.2.4) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-alert` updated to version `0.2.3`
+* `mui-button` updated to version `0.2.3`
+* `mui-form-utils` updated to version `0.2.3`
+* `mui-icon` updated to version `0.2.3`
+* `mui-list` updated to version `0.2.3`
+* `mui-progress` updated to version `0.2.3`
+
+### Bug Fixes
+
+* add hover color ([5001b77](https://github.com/Availity/element/commit/5001b77407b26de13d44b3ac3e39f05224aacc08))
+* various fixes for file selector ([26c651d](https://github.com/Availity/element/commit/26c651d7b8e89919fac335f233acbe528d10956a))
+
 ## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.2...@availity/mui-file-selector@0.2.3) (2025-01-03)
 
 ### Dependency Updates
