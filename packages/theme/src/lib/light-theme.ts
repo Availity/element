@@ -76,6 +76,8 @@ export const lightTheme = {
       inverseSecondary: tokens.borderInverseSecondary,
     },
     background: {
+      primary: tokens.colorPrimaryMain20,
+      secondary: '#393B4621',
       canvas: tokens.colorBackgroundCanvas,
       paper: tokens.colorBackgroundPaper,
       header: tokens.colorBackgroundHeader,
@@ -84,7 +86,6 @@ export const lightTheme = {
       accent: tokens.colorBackgroundAccent,
       border: tokens.colorBackgroundBorder,
       default: tokens.colorGrey100,
-      hover: '#393B4621',
     },
     action: {
       active: tokens.colorActionActive,

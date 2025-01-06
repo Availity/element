@@ -1,19 +1,22 @@
 import { Dispatch, MouseEvent, useCallback, ChangeEvent } from 'react';
 import { useDropzone, FileRejection } from 'react-dropzone';
+import { useFormContext } from 'react-hook-form';
 import { Divider } from '@availity/mui-divider';
 import { CloudUploadIcon } from '@availity/mui-icon';
 import { Box, Stack } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 
 import { FilePickerBtn } from './FilePickerBtn';
-import { useFormContext } from 'react-hook-form';
 
 const outerBoxStyles = {
-  backgroundColor: 'background.hover',
+  backgroundColor: 'background.secondary',
   border: '1px dotted',
   borderColor: 'secondary.light',
   borderRadius: '4px',
   padding: '2rem',
+  '&:hover': {
+    backgroundColor: 'background.primary',
+  },
 };
 
 const innerBoxStyles = {
