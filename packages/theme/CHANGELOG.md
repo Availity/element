@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.63.2](https://github.com/Availity/element/compare/@availity/theme@0.63.1...@availity/theme@0.63.2) (2025-01-06)
+
+
+### Bug Fixes
+
+* add hover color ([5001b77](https://github.com/Availity/element/commit/5001b77407b26de13d44b3ac3e39f05224aacc08))
+* various fixes for file selector ([26c651d](https://github.com/Availity/element/commit/26c651d7b8e89919fac335f233acbe528d10956a))
+
 ## [0.63.1](https://github.com/Availity/element/compare/@availity/theme@0.63.0...@availity/theme@0.63.1) (2025-01-03)
 
 
