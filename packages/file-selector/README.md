@@ -6,20 +6,6 @@
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-file-selector.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-file-selector)
 [![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-file-selector?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-file-selector/package.json)
 
-TODO:
-
-- Icon should be "cloud-arrow-up" DONE
-- Check the spacing under the field label: seems tight DONE
-- Use coordinating icon for each file type DONE
-- Dropzone background color looks lighter than specs DONE
-- Dividers in the list DONE
-
-- The "lines and OR" piece is missing
-- Divider not showing up around "OR" (border color)
-
-- Error text is large
-- Add hovering
-
 ## Documentation
 
 This package extends the MUI File Selector component: [MUI File Selector Docs](https://mui.com/components/file-selector/)
