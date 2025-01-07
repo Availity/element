@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.4...@availity/mui-file-selector@0.2.5) (2025-01-07)
+
+
+### Bug Fixes
+
+* bump upload-core ([60dc9a3](https://github.com/Availity/element/commit/60dc9a38f27aa93098d593efcd20026b39a2b7d7))
+* generate id before starting ([3514684](https://github.com/Availity/element/commit/3514684dfb9ca218d8d320c43235d4a0866d31a4))
+
 ## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.3...@availity/mui-file-selector@0.2.4) (2025-01-06)
 
 ### Dependency Updates
