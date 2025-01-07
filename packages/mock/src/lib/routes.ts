@@ -14,8 +14,8 @@ export const ATTACHMENTS_POST = '/ms/api/availity/internal/core/vault/upload/v1/
 export const ATTACHMENTS_PATCH = '/ms/api/availity/internal/core/vault/upload/v1/resumable/:bucket/:location';
 export const ATTACHMENTS_HEAD = '/ms/api/availity/internal/core/vault/upload/v1/resumable/:bucket/:location';
 export const ATTACHMENTS_CLOUD_POST = '/cloud/web/appl/vault/upload/v1/resumable/:bucket/';
-export const ATTACHMENTS_CLOUD_PATCH = 'cloud/web/appl/vault/upload/v1/resumable/:bucket/:location';
-export const ATTACHMENTS_CLOUD_HEAD = 'cloud/web/appl/vault/upload/v1/resumable/:bucket/:location';
+export const ATTACHMENTS_CLOUD_PATCH = '/cloud/web/appl/vault/upload/v1/resumable/:bucket/:location';
+export const ATTACHMENTS_CLOUD_HEAD = '/cloud/web/appl/vault/upload/v1/resumable/:bucket/:location';
 
 // Misc
 export const EXAMPLE = '/api/v1/example';

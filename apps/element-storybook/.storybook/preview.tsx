@@ -96,11 +96,6 @@ if (typeof global.process === 'undefined') {
             onUnhandledRequest: 'bypass',
           };
     worker.start(config);
-    console.log(
-      worker.listHandlers().map((handler) => {
-        return handler.info;
-      })
-    );
   });
 }
 
