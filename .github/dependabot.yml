@@ -1,12 +1,44 @@
 version: 2
 updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      gh-actions:
+        update-types:
+          - "minor"
+          - "patch"
+          - "major"
   - package-ecosystem: npm
     directory: '/'
     schedule:
-      interval: weekly
+      interval: monthly
       time: '10:00'
     open-pull-requests-limit: 10
     groups:
+      mui:
+        patterns:
+          - "@mui/*"
+        exclude-patterns:
+          - "@mui/x-*"
+      nx:
+        patterns:
+          - "nx"
+          - "@nx/*"
+      storybook:
+        patterns:
+          - "@storybook/*"
+          - "*storybook*"
+      versioning:
+        patterns:
+          - "@commitlint/*"
+          - "@jscutlery/semver"
+          - "conventional-changelog-*"
+      jest:
+        patterns:
+          - "jest"
+          - "*jest*"
       dependencies:
         dependency-type: "production"
         update-types:
@@ -17,32 +49,3 @@ updates:
         update-types:
           - "minor"
           - "patch"
-      mui:
-        patterns:
-          - "@mui/*"
-        update-types:
-          - "major"
-      nx:
-        patterns:
-          - "nx"
-          - "@nx/*"
-        update-types:
-          - "major"
-      storybook:
-        patterns:
-          - "@storybook/*"
-        update-types:
-          - "major"
-      versioning:
-        patterns:
-          - "@commitlint/*"
-          - "@jscutlery/semver"
-          - "conventional-changelog-*"
-        update-types:
-          - "major"
-      jest:
-        patterns:
-          - "jest"
-          - "*jest*"
-        update-types:
-          - "major"

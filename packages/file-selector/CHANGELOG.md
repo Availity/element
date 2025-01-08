@@ -2,6 +2,54 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.5...@availity/mui-file-selector@0.2.6) (2025-01-08)
+
+
+### Bug Fixes
+
+* add hover border and fix accessibility ([7d8e7e4](https://github.com/Availity/element/commit/7d8e7e4136b266d42b3e453e57efe83f780a9e57))
+
+## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.4...@availity/mui-file-selector@0.2.5) (2025-01-07)
+
+
+### Bug Fixes
+
+* bump upload-core ([60dc9a3](https://github.com/Availity/element/commit/60dc9a38f27aa93098d593efcd20026b39a2b7d7))
+* generate id before starting ([3514684](https://github.com/Availity/element/commit/3514684dfb9ca218d8d320c43235d4a0866d31a4))
+
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.3...@availity/mui-file-selector@0.2.4) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-alert` updated to version `0.2.3`
+* `mui-button` updated to version `0.2.3`
+* `mui-form-utils` updated to version `0.2.3`
+* `mui-icon` updated to version `0.2.3`
+* `mui-list` updated to version `0.2.3`
+* `mui-progress` updated to version `0.2.3`
+
+### Bug Fixes
+
+* add hover color ([5001b77](https://github.com/Availity/element/commit/5001b77407b26de13d44b3ac3e39f05224aacc08))
+* various fixes for file selector ([26c651d](https://github.com/Availity/element/commit/26c651d7b8e89919fac335f233acbe528d10956a))
+
+## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.2...@availity/mui-file-selector@0.2.3) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-alert` updated to version `0.2.2`
+* `mui-button` updated to version `0.2.2`
+* `mui-form-utils` updated to version `0.2.2`
+* `mui-icon` updated to version `0.2.2`
+* `mui-list` updated to version `0.2.2`
+* `mui-progress` updated to version `0.2.2`
+## [0.2.2](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.1...@availity/mui-file-selector@0.2.2) (2025-01-02)
+
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.0...@availity/mui-file-selector@0.2.1) (2024-12-23)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.2.0`
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.1.3...@availity/mui-file-selector@0.2.0) (2024-12-16)
 
 

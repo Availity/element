@@ -1,8 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import Upload, { UploadOptions } from '@availity/upload-core';
 
-function startUpload(file: File, options: UploadOptions) {
+async function startUpload(file: File, options: UploadOptions) {
   const upload = new Upload(file, options);
+
+  await upload.generateId();
 
   upload.start();
 

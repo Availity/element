@@ -17,7 +17,7 @@ export type DialogTitleProps = {
   children?: React.ReactNode;
   /** The corresponding severity for the Alert Icon, if `undefined`/`false` no icon is displayed */
   icon?: keyof typeof AlertIcons;
-} & Omit<MuiDialogTitleProps, 'variantMapping'>
+} & Omit<MuiDialogTitleProps, 'align' | 'variantMapping'>
 
 export const DialogTitle = ({ children, component="h2", icon, variant="h5", ...rest }: DialogTitleProps): JSX.Element => {
   return (

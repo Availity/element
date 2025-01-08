@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.17](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.16...@availity/mui-toggle-button@0.1.17) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.1.16`
+## [0.1.16](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.15...@availity/mui-toggle-button@0.1.16) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.1.15`
 ## [0.1.15](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.14...@availity/mui-toggle-button@0.1.15) (2024-12-09)
 
 ### Dependency Updates

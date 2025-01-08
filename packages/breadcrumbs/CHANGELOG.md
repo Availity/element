@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.2](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.3.1...@availity/mui-breadcrumbs@0.3.2) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.1`
+* `mui-link` updated to version `0.3.1`
+## [0.3.1](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.3.0...@availity/mui-breadcrumbs@0.3.1) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.0`
+* `mui-link` updated to version `0.3.0`
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.2.14...@availity/mui-breadcrumbs@0.3.0) (2024-12-11)
 
 

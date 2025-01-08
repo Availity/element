@@ -2,6 +2,30 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.16.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.16.1...@availity/mui-form-utils@0.16.2) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.16.1`
+* `mui-icon` updated to version `0.16.1`
+* `mui-checkbox` updated to version `0.16.1`
+* `mui-chip` updated to version `0.16.1`
+## [0.16.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.16.0...@availity/mui-form-utils@0.16.1) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.16.0`
+* `mui-icon` updated to version `0.16.0`
+* `mui-checkbox` updated to version `0.16.0`
+* `mui-chip` updated to version `0.16.0`
+## [0.16.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.15.1...@availity/mui-form-utils@0.16.0) (2024-12-23)
+
+
+### Features
+
+* **mui-form-utils:** switch init commit ([9b35bcf](https://github.com/Availity/element/commit/9b35bcf4a11d1410a5664d4ccfde84cbb98e6e7b))
+* **mui-form-utils:** switch v1 theme ([8eb465c](https://github.com/Availity/element/commit/8eb465cc1ee78a026d3f8fa3779a966f8fec75e3))
+
 ## [0.15.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.15.0...@availity/mui-form-utils@0.15.1) (2024-12-09)
 
 ### Dependency Updates

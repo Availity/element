@@ -2,6 +2,36 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.63.3](https://github.com/Availity/element/compare/@availity/theme@0.63.2...@availity/theme@0.63.3) (2025-01-08)
+
+
+### Bug Fixes
+
+* add hover border and fix accessibility ([7d8e7e4](https://github.com/Availity/element/commit/7d8e7e4136b266d42b3e453e57efe83f780a9e57))
+
+## [0.63.2](https://github.com/Availity/element/compare/@availity/theme@0.63.1...@availity/theme@0.63.2) (2025-01-06)
+
+
+### Bug Fixes
+
+* add hover color ([5001b77](https://github.com/Availity/element/commit/5001b77407b26de13d44b3ac3e39f05224aacc08))
+* various fixes for file selector ([26c651d](https://github.com/Availity/element/commit/26c651d7b8e89919fac335f233acbe528d10956a))
+
+## [0.63.1](https://github.com/Availity/element/compare/@availity/theme@0.63.0...@availity/theme@0.63.1) (2025-01-03)
+
+
+### Bug Fixes
+
+* **mui-dialog:** remove title alignment options ([e03361e](https://github.com/Availity/element/commit/e03361ee2528ef626f29ee67962859a11ad6ce65))
+
+## [0.63.0](https://github.com/Availity/element/compare/@availity/theme@0.62.0...@availity/theme@0.63.0) (2024-12-23)
+
+
+### Features
+
+* **mui-form-utils:** switch init commit ([9b35bcf](https://github.com/Availity/element/commit/9b35bcf4a11d1410a5664d4ccfde84cbb98e6e7b))
+* **mui-form-utils:** switch v1 theme ([8eb465c](https://github.com/Availity/element/commit/8eb465cc1ee78a026d3f8fa3779a966f8fec75e3))
+
 ## [0.62.0](https://github.com/Availity/element/compare/@availity/theme@0.61.4...@availity/theme@0.62.0) (2024-12-09)
 
 

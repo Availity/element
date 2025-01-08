@@ -2,6 +2,138 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.48.15](https://github.com/Availity/element/compare/@availity/element@0.48.14...@availity/element@0.48.15) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-datepicker` updated to version `0.48.14`
+* `mui-file-selector` updated to version `0.48.14`
+* `theme-provider` updated to version `0.48.14`
+## [0.48.14](https://github.com/Availity/element/compare/@availity/element@0.48.13...@availity/element@0.48.14) (2025-01-07)
+
+### Dependency Updates
+
+* `mui-file-selector` updated to version `0.48.13`
+* `mui-page-header` updated to version `0.48.13`
+* `mui-pagination` updated to version `0.48.13`
+* `mui-spaces` updated to version `0.48.13`
+* `mui-table` updated to version `0.48.13`
+## [0.48.13](https://github.com/Availity/element/compare/@availity/element@0.48.12...@availity/element@0.48.13) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `0.48.12`
+* `mui-alert` updated to version `0.48.12`
+* `mui-authorize` updated to version `0.48.12`
+* `mui-autocomplete` updated to version `0.48.12`
+* `mui-avatar` updated to version `0.48.12`
+* `mui-badge` updated to version `0.48.12`
+* `mui-block-ui` updated to version `0.48.12`
+* `mui-breadcrumbs` updated to version `0.48.12`
+* `mui-button` updated to version `0.48.12`
+* `mui-card` updated to version `0.48.12`
+* `mui-checkbox` updated to version `0.48.12`
+* `mui-chip` updated to version `0.48.12`
+* `mui-datepicker` updated to version `0.48.12`
+* `mui-dialog` updated to version `0.48.12`
+* `mui-disclaimer` updated to version `0.48.12`
+* `mui-empty-state` updated to version `0.48.12`
+* `mui-event-tracker` updated to version `0.48.12`
+* `mui-favorites` updated to version `0.48.12`
+* `mui-feedback` updated to version `0.48.12`
+* `mui-file-selector` updated to version `0.48.12`
+* `mui-form-utils` updated to version `0.48.12`
+* `mui-icon` updated to version `0.48.12`
+* `mui-link` updated to version `0.48.12`
+* `mui-list` updated to version `0.48.12`
+* `mui-menu` updated to version `0.48.12`
+* `mui-modal` updated to version `0.48.12`
+* `mui-page-header` updated to version `0.48.12`
+* `mui-pagination` updated to version `0.48.12`
+* `mui-popper` updated to version `0.48.12`
+* `mui-progress` updated to version `0.48.12`
+* `mui-snackbar` updated to version `0.48.12`
+* `mui-spaces` updated to version `0.48.12`
+* `mui-stepper` updated to version `0.48.12`
+* `mui-table` updated to version `0.48.12`
+* `mui-textfield` updated to version `0.48.12`
+* `mui-toggle-button` updated to version `0.48.12`
+* `mui-transitions` updated to version `0.48.12`
+* `mui-tree` updated to version `0.48.12`
+* `theme-provider` updated to version `0.48.12`
+## [0.48.12](https://github.com/Availity/element/compare/@availity/element@0.48.11...@availity/element@0.48.12) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `0.48.11`
+* `mui-alert` updated to version `0.48.11`
+* `mui-authorize` updated to version `0.48.11`
+* `mui-autocomplete` updated to version `0.48.11`
+* `mui-avatar` updated to version `0.48.11`
+* `mui-badge` updated to version `0.48.11`
+* `mui-block-ui` updated to version `0.48.11`
+* `mui-breadcrumbs` updated to version `0.48.11`
+* `mui-button` updated to version `0.48.11`
+* `mui-card` updated to version `0.48.11`
+* `mui-checkbox` updated to version `0.48.11`
+* `mui-chip` updated to version `0.48.11`
+* `mui-datepicker` updated to version `0.48.11`
+* `mui-dialog` updated to version `0.48.11`
+* `mui-disclaimer` updated to version `0.48.11`
+* `mui-empty-state` updated to version `0.48.11`
+* `mui-event-tracker` updated to version `0.48.11`
+* `mui-favorites` updated to version `0.48.11`
+* `mui-feedback` updated to version `0.48.11`
+* `mui-file-selector` updated to version `0.48.11`
+* `mui-form-utils` updated to version `0.48.11`
+* `mui-icon` updated to version `0.48.11`
+* `mui-link` updated to version `0.48.11`
+* `mui-list` updated to version `0.48.11`
+* `mui-menu` updated to version `0.48.11`
+* `mui-modal` updated to version `0.48.11`
+* `mui-page-header` updated to version `0.48.11`
+* `mui-pagination` updated to version `0.48.11`
+* `mui-popper` updated to version `0.48.11`
+* `mui-progress` updated to version `0.48.11`
+* `mui-snackbar` updated to version `0.48.11`
+* `mui-spaces` updated to version `0.48.11`
+* `mui-stepper` updated to version `0.48.11`
+* `mui-table` updated to version `0.48.11`
+* `mui-textfield` updated to version `0.48.11`
+* `mui-toggle-button` updated to version `0.48.11`
+* `mui-transitions` updated to version `0.48.11`
+* `mui-tree` updated to version `0.48.11`
+## [0.48.11](https://github.com/Availity/element/compare/@availity/element@0.48.10...@availity/element@0.48.11) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-datepicker` updated to version `0.48.10`
+* `mui-dialog` updated to version `0.48.10`
+* `mui-page-header` updated to version `0.48.10`
+* `mui-spaces` updated to version `0.48.10`
+* `theme-provider` updated to version `0.48.10`
+## [0.48.10](https://github.com/Availity/element/compare/@availity/element@0.48.9...@availity/element@0.48.10) (2025-01-02)
+
+### Dependency Updates
+
+* `mui-file-selector` updated to version `0.48.9`
+## [0.48.9](https://github.com/Availity/element/compare/@availity/element@0.48.8...@availity/element@0.48.9) (2024-12-23)
+
+### Dependency Updates
+
+* `mui-authorize` updated to version `0.48.8`
+* `mui-autocomplete` updated to version `0.48.8`
+* `mui-datepicker` updated to version `0.48.8`
+* `mui-dialog` updated to version `0.48.8`
+* `mui-event-tracker` updated to version `0.48.8`
+* `mui-feedback` updated to version `0.48.8`
+* `mui-file-selector` updated to version `0.48.8`
+* `mui-form-utils` updated to version `0.48.8`
+* `mui-page-header` updated to version `0.48.8`
+* `mui-spaces` updated to version `0.48.8`
+* `mui-table` updated to version `0.48.8`
+* `mui-textfield` updated to version `0.48.8`
+* `theme-provider` updated to version `0.48.8`
 ## [0.48.8](https://github.com/Availity/element/compare/@availity/element@0.48.7...@availity/element@0.48.8) (2024-12-16)
 
 ### Dependency Updates

@@ -15,7 +15,7 @@ export default create({
   colorSecondary: 'rgb(255, 103, 31)',
 
   // UI
-  appBg: 'rgb(17, 49, 90)',
+  // appBg: 'rgb(17, 49, 90)',
 
   // Text colors
   textColor: 'rgb(33, 33, 33)',

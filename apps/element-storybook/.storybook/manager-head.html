@@ -1,4 +1,7 @@
 <style>
+  .sidebar-container {
+    background-color: rgb(17, 49, 90);
+  }
   #storybook-explorer-tree {
     & > div > div > .sidebar-item {
       margin-left: 8px;
@@ -18,7 +21,25 @@
       color: #ffffff;
     }
   }
-  #storybook-explorer-searchfield:not(:focus, :focus-visible) {
-    border-color: #ffffff;
+  .search-field {
+    #storybook-explorer-searchfield {
+      background-color: transparent;
+      color: #ffffff;
+      &:not(:focus, :focus-visible) {
+        border-color: #ffffff;
+      }
+    }
+    > svg, > code, &:focus-within > svg, &:focus-within > code {
+      color: #ffffff !important;
+      fill: #ffffff !important;
+    }
+  }
+  .search-result-item--label strong {
+    color: #ffffff;
+  }
+  #storybook-explorer-menu {
+    li > div, li > div *{
+      color: #ffffff;
+    }
   }
 </style>
