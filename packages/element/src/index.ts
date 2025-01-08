@@ -11,6 +11,7 @@ export * from '@availity/mui-button';
 export * from '@availity/mui-card';
 export * from '@availity/mui-checkbox';
 export * from '@availity/mui-chip';
+export * from '@availity/mui-controlled-form';
 export * from '@availity/mui-datepicker';
 export * from '@availity/mui-dialog';
 export * from '@availity/mui-disclaimer';
