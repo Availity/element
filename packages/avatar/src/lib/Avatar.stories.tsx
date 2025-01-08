@@ -3,6 +3,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar, AvatarProps } from './Avatar';
 import { HomeIcon } from '@availity/mui-icon';
+import Grid from '@mui/material/Unstable_Grid2';
 
 const meta: Meta<typeof Avatar> = {
   title: 'Components/Avatar/Avatar',
@@ -43,4 +44,39 @@ export const _IconAvatar: StoryObj<typeof Avatar> = {
       <HomeIcon />
     </Avatar>
   ),
+};
+
+export const _Sizes: StoryObj<typeof Avatar> = {
+  render: (args: AvatarProps) => (
+    <Grid container spacing={1}>
+      <Grid xs={2}>XSmall</Grid>
+      <Grid xs={10}>
+        <Avatar {...args} size="xs"/>
+      </Grid>
+      <Grid xs={2}>Small</Grid>
+      <Grid xs={10}>
+        <Avatar {...args} size="s"/>
+      </Grid>
+      <Grid xs={2}>Medium</Grid>
+      <Grid xs={10}>
+        <Avatar {...args} size="m"/>
+      </Grid>
+      <Grid xs={2}>Large</Grid>
+      <Grid xs={10}>
+        <Avatar {...args} size="l"/>
+      </Grid>
+      <Grid xs={2}>XLarge</Grid>
+      <Grid xs={10}>
+        <Avatar {...args} size="xl"/>
+      </Grid>
+    </Grid>
+  ),
+  args: {
+    children: 'John Doe',
+  },
+  parameters: {
+    controls: {
+      include: 'children'
+    }
+  }
 };

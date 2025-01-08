@@ -89,7 +89,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/design-tokens@workspace:*, @availity/design-tokens@workspace:^, @availity/design-tokens@workspace:packages/design-tokens":
+"@availity/design-tokens@workspace:*, @availity/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@availity/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -279,7 +279,6 @@ __metadata:
   resolution: "@availity/mui-avatar@workspace:packages/avatar"
   dependencies:
     "@availity/api-axios": ^9.0.4
-    "@availity/design-tokens": "workspace:^"
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
