@@ -2099,22 +2099,22 @@ export const legacyTheme = {
           color: tokens.colorWarningDark,
         },
         fontSizeXxsmall: {
-          fontSize: '.875rem',
+          fontSize: tokens.iconSizeXxsmall,
         },
         fontSizeXsmall: {
-          fontSize: '1rem',
+          fontSize: tokens.iconSizeXsmall,
         },
         fontSizeSmall: {
-          fontSize: '1.33rem',
+          fontSize: tokens.iconSizeSmall,
         },
         fontSizeMedium: {
-          fontSize: '1.66rem',
+          fontSize: tokens.iconSizeMedium,
         },
         fontSizeLarge: {
-          fontSize: '2rem',
+          fontSize: tokens.iconSizeLarge,
         },
         fontSizeXlarge: {
-          fontSize: '3rem',
+          fontSize: tokens.iconSizeXlarge,
         }
       },
     },
@@ -2326,7 +2326,7 @@ export const legacyTheme = {
           },
         },
         selectIcon: {
-          fontSize: '1.5rem',
+          fontSize: tokens.iconSizeXsmall,
         },
         selectLabel: {
           order: 2,
