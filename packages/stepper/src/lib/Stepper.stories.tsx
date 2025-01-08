@@ -220,11 +220,14 @@ export const _StepperScrollButtons: StoryObj<typeof Stepper> = {
   },
 };
 
+/**
+ * To remove the connector, set the `connector` prop to `null`.
+ * */
 export const _StepperWithoutConnectors: StoryObj<typeof Stepper> = {
   render: (args) => (
     <Box>
       <Paper sx={{ padding: '2rem' }}>
-        <Stepper {...args}>
+        <Stepper {...args} connector={null}>
           <Step>
             <StepLabel>Label</StepLabel>
           </Step>
@@ -232,7 +235,6 @@ export const _StepperWithoutConnectors: StoryObj<typeof Stepper> = {
             <StepLabel>Label</StepLabel>
           </Step>
         </Stepper>
-        <Typography children="Set the connector prop to null" />
       </Paper>
     </Box>
   ),
