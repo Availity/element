@@ -1854,17 +1854,23 @@ export const lightTheme = {
           color: tokens.colorWarningDark,
         },
         fontSizeXxsmall: {
-          fontSize: '.75rem',
+          fontSize: tokens.iconSizeXxsmall,
         },
         fontSizeXsmall: {
-          fontSize: '1rem',
+          fontSize: tokens.iconSizeXsmall,
+        },
+        fontSizeSmall: {
+          fontSize: tokens.iconSizeSmall,
+        },
+        fontSizeMedium: {
+          fontSize: tokens.iconSizeMedium,
         },
         fontSizeLarge: {
-          fontSize: '2rem',
+          fontSize: tokens.iconSizeLarge,
         },
         fontSizeXlarge: {
-          fontSize: '2.25rem',
-        },
+          fontSize: tokens.iconSizeXlarge,
+        }
       },
     },
     MuiSwitch: {
@@ -2050,7 +2056,8 @@ export const lightTheme = {
         },
         selectLabel: {},
         selectIcon: {
-          fontSize: '1.5rem',
+          fontSize: tokens.iconSizeXxsmall,
+          marginRight: '8px'
         },
         spacer: {
           display: 'none',
@@ -2080,7 +2087,7 @@ export const lightTheme = {
         icon: {
           opacity: 1,
           transition: 'none',
-          fontSize: '14px',
+          fontSize: tokens.iconSizeXxsmall,
           color: tokens.colorTextSecondary,
           marginRight: '0px',
         },
