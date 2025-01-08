@@ -558,7 +558,7 @@ export const _ExpandableTable: StoryObj<typeof Table> = {
                     <td colSpan={12}>
                       <Collapse in={isItemExpanded} timeout="auto" unmountOnExit>
                         <TableCell component="div" sx={{display: 'block'}}>
-                          <Grid container spacing={2} paddingLeft='32px'>
+                          <Grid container spacing={2} paddingLeft='3rem'>
                             <Grid xs>
                               <Typography variant="body2" sx={{fontWeight: "bold"}}>
                                 Subscriber Member Id
