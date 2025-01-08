@@ -2243,6 +2243,34 @@
       "type": "color"
     }
   },
+  "icon": {
+    "size": {
+      "xxsmall": {
+        "value": "0.875rem",
+        "type": "sizing"
+      },
+      "xsmall": {
+        "value": "1rem",
+        "type": "sizing"
+      },
+      "small": {
+        "value": "1.33rem",
+        "type": "sizing"
+      },
+      "medium": {
+        "value": "1.66rem",
+        "type": "sizing"
+      },
+      "large": {
+        "value": "2rem",
+        "type": "sizing"
+      },
+      "xlarge": {
+        "value": "3rem",
+        "type": "sizing"
+      }
+    }
+  },
   "tokenSetOrder": {
     "0": {
       "value": "core",
