@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.11](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.10...@availity/mui-pagination@0.3.11) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-list` updated to version `0.3.10`
+
+### Bug Fixes
+
+* **mui-pagination:** fix default icon sizes ([9aa099e](https://github.com/Availity/element/commit/9aa099e1cb192a134bb09f3fee395fb31179f9cd))
+
 ## [0.3.10](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.9...@availity/mui-pagination@0.3.10) (2025-01-07)
 
 ### Dependency Updates
