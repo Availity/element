@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.64.0](https://github.com/Availity/element/compare/@availity/theme@0.63.3...@availity/theme@0.64.0) (2025-01-08)
+
+### Dependency Updates
+
+* `design-tokens` updated to version `0.63.3`
+
+### Features
+
+* **theme:** use new iconsize tokens ([c1f9eec](https://github.com/Availity/element/commit/c1f9eecd1611bed86c07fa41965167fe278861aa))
+
 ## [0.63.3](https://github.com/Availity/element/compare/@availity/theme@0.63.2...@availity/theme@0.63.3) (2025-01-08)
 
 
