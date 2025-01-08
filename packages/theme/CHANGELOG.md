@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.63.3](https://github.com/Availity/element/compare/@availity/theme@0.63.2...@availity/theme@0.63.3) (2025-01-08)
+
+
+### Bug Fixes
+
+* add hover border and fix accessibility ([7d8e7e4](https://github.com/Availity/element/commit/7d8e7e4136b266d42b3e453e57efe83f780a9e57))
+
 ## [0.63.2](https://github.com/Availity/element/compare/@availity/theme@0.63.1...@availity/theme@0.63.2) (2025-01-06)
 
 
