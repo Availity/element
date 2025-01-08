@@ -5,7 +5,7 @@ import type { Favorite } from './utils';
 import { useFavoritesQuery, useSubmitFavorites, sendUpdateMessage, openMaxModal } from './utils';
 import { AV_INTERNAL_GLOBALS, MAX_FAVORITES } from './constants';
 
-type StatusUnion = 'idle' | 'error' | 'loading' | 'success';
+type StatusUnion = 'idle' | 'error' | 'loading' | 'reloading' | 'success';
 
 type FavoritesContextType = {
   favorites?: Favorite[];
@@ -21,14 +21,21 @@ const FavoritesContext = createContext<FavoritesContextType | null>(null);
 export const FavoritesProvider = ({
   children,
   onFavoritesChange,
+  settingsFavorites,
+  settingsStatus,
 }: {
   children: React.ReactNode;
   onFavoritesChange?: (favorites: Favorite[]) => void;
+  settingsFavorites?: Favorite[];
+  settingsStatus?: StatusUnion;
 }): JSX.Element => {
   const [lastClickedFavoriteId, setLastClickedFavoriteId] = useState<string>('');
 
   const queryClient = useQueryClient();
-  const { data: favorites, status: queryStatus } = useFavoritesQuery();
+  const { data: favorites, status: queryStatus } = settingsStatus ? {
+    data: settingsFavorites,
+    status: settingsStatus,
+  } : useFavoritesQuery();
 
   const { submitFavorites, status: mutationStatus } = useSubmitFavorites({
     onMutationStart(targetFavoriteId) {
@@ -155,6 +162,7 @@ export const useFavorites = (
 
   let status: MergedStatusUnion = 'initLoading';
   if (queryStatus === 'loading') status = 'initLoading';
+  if (queryStatus === 'reloading') status = 'reloading';
   if (mutationStatus === 'loading') status = 'reloading';
   if (queryStatus === 'error' || mutationStatus === 'error') status = 'error';
   if (queryStatus === 'success' && (mutationStatus === 'success' || mutationStatus === 'idle')) status = 'success';
