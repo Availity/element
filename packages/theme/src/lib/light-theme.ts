@@ -74,6 +74,7 @@ export const lightTheme = {
       inputFocus: tokens.borderInputFocus,
       inverse: tokens.borderInverse,
       inverseSecondary: tokens.borderInverseSecondary,
+      hover: tokens.colorInfoMain20,
     },
     background: {
       primary: tokens.colorPrimaryMain20,
@@ -1024,7 +1025,7 @@ export const lightTheme = {
         PaperProps: {
           variant: 'elevation',
           elevation: 4,
-        }
+        },
       },
       styleOverrides: {
         maxWidthSm: {
@@ -1050,15 +1051,15 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           padding: '1rem',
-          flexWrap: 'wrap'
+          flexWrap: 'wrap',
         },
         spacing: {
           marginBottom: '-8px',
           '.MuiButton-root': {
-            marginBottom: '8px'
-          }
-        }
-      }
+            marginBottom: '8px',
+          },
+        },
+      },
     },
     MuiDialogContent: {
       defaultProps: {
@@ -1897,11 +1898,11 @@ export const lightTheme = {
             '&.Mui-checked': {
               ' + .MuiSwitch-track': {
                 backgroundColor: tokens.colorPrimaryLight,
-                opacity: 1
+                opacity: 1,
               },
               '&::hover': {
                 '+ .MuiSwitch-track': {
-                  backgroundColor: tokens.colorPrimaryDark
+                  backgroundColor: tokens.colorPrimaryDark,
                 },
               },
             },
@@ -1909,21 +1910,21 @@ export const lightTheme = {
               color: tokens.colorCommonWhite,
               '+ .MuiSwitch-track': {
                 backgroundColor: tokens.colorTextDisabled,
-                opacity: 1
-              }
-            }
+                opacity: 1,
+              },
+            },
           },
         },
         thumb: {
           height: '16px',
           width: '16px',
           boxShadow: 'unset',
-          backgroundColor: tokens.colorCommonWhite
+          backgroundColor: tokens.colorCommonWhite,
         },
         track: {
           borderRadius: '10px',
           background: tokens.colorSecondaryLight,
-          opacity: 'unset'
+          opacity: 'unset',
         },
         sizeSmall: {
           height: '16px',
@@ -1931,30 +1932,30 @@ export const lightTheme = {
           '.MuiSwitch-switchBase': {
             '&.Mui-checked': {
               transform: 'translateX(16px)',
-            }
+            },
           },
           '.MuiSwitch-thumb': {
             height: '12px',
-            width: '12px'
+            width: '12px',
           },
           '.MuiSwitch-track': {
-            borderRadius: '8px'
-          }
+            borderRadius: '8px',
+          },
         },
-      }
+      },
     },
     AvSwitchCheckedIcon: {
       styleOverrides: {
-        root:{
+        root: {
           '& .Mui-checked': {
             '+ .MuiSwitch-track': {
               '&::before': {
                 left: 4,
-              }
-            }
-          }
-        }
-      }
+              },
+            },
+          },
+        },
+      },
     },
     MuiTab: {
       styleOverrides: {

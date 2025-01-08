@@ -16,6 +16,7 @@ const outerBoxStyles = {
   padding: '2rem',
   '&:hover': {
     backgroundColor: 'background.primary',
+    borderColor: 'border.primary',
   },
 };
 
@@ -176,8 +177,12 @@ export const Dropzone = ({
     }
   };
 
+  // Remove role and tabIndex for accessibility
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { role, tabIndex, ...rootProps } = getRootProps();
+
   return (
-    <Box sx={outerBoxStyles} {...getRootProps()}>
+    <Box sx={outerBoxStyles} {...rootProps}>
       <Box sx={innerBoxStyles}>
         <Stack spacing={2} alignItems="center" justifyContent="center">
           <>
