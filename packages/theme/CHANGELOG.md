@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.65.0](https://github.com/Availity/element/compare/@availity/theme@0.64.0...@availity/theme@0.65.0) (2025-01-09)
+
+
+### Features
+
+* **mui-stepper:** add scroll buttons ([5855cfb](https://github.com/Availity/element/commit/5855cfbdf8d43a709a37723c46b553631e115056))
+
+
+### Bug Fixes
+
+* **mui-stepper:** active state background color ([095cb98](https://github.com/Availity/element/commit/095cb98d72dc8d290a4128803919f87c82db611f))
+
 ## [0.64.0](https://github.com/Availity/element/compare/@availity/theme@0.63.3...@availity/theme@0.64.0) (2025-01-08)
 
 ### Dependency Updates
