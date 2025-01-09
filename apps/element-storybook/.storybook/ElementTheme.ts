@@ -6,7 +6,7 @@ import ElementLogo from '../../../static/availity-Element-Logo.png'
 export default create({
   base: 'light',
   brandTitle: 'Availity Element',
-  brandUrl: 'https://zeroheight.com/2e36e50c7/p/15d54a-element-design-system',
+  brandUrl: 'https://design.availity.com/2e36e50c7/p/15d54a-element-design-system',
   brandImage: ElementLogo,
   brandTarget: '_self',
 
