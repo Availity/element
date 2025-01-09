@@ -174,7 +174,73 @@ export const _Stepper: StoryObj<typeof Stepper> = {
       </Box>
     );
   },
-  args: {},
+};
+
+export const _StepperScrollButtons: StoryObj<typeof Stepper> = {
+  render: (args) => (
+    <Box>
+      <Paper sx={{ padding: '2rem' }}>
+        <Stepper {...args}>
+          <Step>
+            <StepLabel optional="Optional Sub-label">Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+        </Stepper>
+      </Paper>
+    </Box>
+  ),
+  args: {
+    scrollButtons: true,
+  },
+};
+
+/**
+ * To remove the connector, set the `connector` prop to `null`.
+ * */
+export const _StepperWithoutConnectors: StoryObj<typeof Stepper> = {
+  render: (args) => (
+    <Box>
+      <Paper sx={{ padding: '2rem' }}>
+        <Stepper {...args} connector={null}>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Label</StepLabel>
+          </Step>
+        </Stepper>
+      </Paper>
+    </Box>
+  ),
+  args: {
+    connector: null,
+  },
 };
 
 export const _StepLabel: StoryObj<typeof StepLabel> = {

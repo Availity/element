@@ -1394,14 +1394,14 @@ export const lightTheme = {
             top: '1.75rem',
           },
           '&.MuiListItem-padding:not(.MuiListItem-dense), &:not(.MuiListItem-padding):not(.MuiListItem-dense) .MuiListItemButton-root:not(.MuiListItemButton-dense)':
-            {
-              paddingTop: '.75rem',
-              paddingBottom: '.75rem',
-              '> .MuiIconButton-root, > .MuiChip-root': {
-                marginTop: '1rem',
-                marginBottom: '-1rem',
-              },
+          {
+            paddingTop: '.75rem',
+            paddingBottom: '.75rem',
+            '> .MuiIconButton-root, > .MuiChip-root': {
+              marginTop: '1rem',
+              marginBottom: '-1rem',
             },
+          },
           '&.MuiListItem-dense': {
             '.MuiListItemButton-root > .MuiChip-root': {
               marginTop: '1rem',
@@ -1488,9 +1488,9 @@ export const lightTheme = {
             backgroundColor: tokens.colorPrimaryMain,
             color: tokens.colorTextInverse,
             '.MuiListItemText-root, .MuiListItemText-root *, .MuiListItemSubheader-root, .MuiListItemSubheader-root *, .MuiListItemIcon-root, .MuiListItemIcon-root *, .MuiListItemSecondaryAction-root, .MuiIconButton-root':
-              {
-                color: 'inherit',
-              },
+            {
+              color: 'inherit',
+            },
             '&.Mui-focusVisible': {
               backgroundColor: tokens.colorPrimaryDark,
               boxShadow: `inset 0 0 0px 1px ${tokens.colorPrimaryDark}, inset 0 0 0px 2px ${tokens.colorCommonWhite}`,
@@ -1779,35 +1779,100 @@ export const lightTheme = {
         },
       },
     },
+    MuiStep: {
+      styleOverrides: {
+        root: {
+          minWidth: '71px',
+          whiteSpace: 'wrap',
+          '&:not(:first-of-type)': {
+            '.MuiStepLabel-vertical': {
+              '&::after': {
+                content: '""',
+                borderLeft: `4px solid ${tokens.colorGrey200}`,
+                position: 'absolute',
+                left: '26px',
+                bottom: 'calc(50% + 14px)',
+                top: 0,
+              },
+            }
+          },
+          '&:not(:last-of-type)': {
+            '.MuiStepLabel-vertical': {
+              ' &::before': {
+                content: '""',
+                borderLeft: `4px solid ${tokens.colorGrey200}`,
+                position: 'absolute',
+                left: '26px',
+                bottom: 0,
+                top: 'calc(50% + 14px)'
+              }
+            }
+          },
+          '&.Mui-completed': {
+            '.MuiStepLabel-vertical': {
+              '&::before, &::after': {
+                borderColor: tokens.colorSuccessMain,
+              }
+            },
+          },
+          '&.Mui-active': {
+            '.MuiStepLabel-vertical': {
+              '&::before, &::after': {
+                borderColor: tokens.colorSuccessMain,
+              }
+            },
+          }
+        },
+      }
+    },
+    MuiStepButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+          margin: 0,
+          padding: 0,
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+          },
+          '&:active': {
+            backgroundColor: "#393B4626"
+          },
+          '&.Mui-focusVisible': {
+            outline: `2px solid ${tokens.borderInputFocus}`
+          },
+        },
+      }
+    },
     MuiStepIcon: {
       styleOverrides: {
         root: {
           color: tokens.colorCommonWhite,
-          border: `solid ${tokens.colorSuccessMain}`,
+          outline: `2px solid ${tokens.colorSuccessMain}`,
+          outlineOffset: '-2px',
           borderRadius: '50%',
           height: '24px',
           width: '24px',
           '&.Mui-active': {
             color: tokens.colorSuccessMain,
-            border: 'none',
+            outline: 'none',
             '.MuiStepIcon-text': {
               fill: tokens.colorCommonWhite,
             },
           },
           '&.Mui-completed': {
             color: tokens.colorSuccessMain,
-            border: 'none',
+            outline: 'none',
           },
           '&.Mui-error': {
-            border: 'none',
+            outline: 'none',
           },
           '&.MuiSvgIcon-colorWarning': {
-            border: 'none',
+            outline: 'none',
           },
         },
         text: {
           fill: tokens.colorTextSuccess,
-          fontSize: '18px',
+          fontSize: '14px',
         },
       },
     },
@@ -1817,19 +1882,26 @@ export const lightTheme = {
           display: 'flex',
           alignSelf: 'center',
           justifyContent: 'center',
+          padding: '24px 0',
         },
         iconContainer: {
           '.MuiSvgIcon-colorWarning': {
             color: tokens.colorWarningDark,
           },
         },
+        vertical: {
+          padding: '20px 16px',
+          position: 'relative',
+        }
       },
     },
     MuiStepConnector: {
       styleOverrides: {
         root: {
-          top: '8px',
+          top: '34px',
           color: tokens.colorGrey200,
+          left: 'calc(-50% + 14px)',
+          right: 'calc(50% + 14px)',
           '&.Mui-completed': {
             color: tokens.colorSuccessMain,
           },
@@ -1841,7 +1913,30 @@ export const lightTheme = {
           borderColor: 'inherit',
           borderWidth: '4px',
         },
+        vertical: {
+          display: 'none',
+          '&.Mui-active + .MuiStep-vertical .MuiStepLabel-vertical::after': {
+            borderColor: tokens.colorSuccessMain,
+          }
+        },
       },
+    },
+    MuiStepper: {
+      styleOverrides: {
+        root: {
+          flexGrow: 1,
+          overflowX: 'auto',
+          overflowY: 'hidden',
+          whiteSpace: 'nowrap',
+          scrollbarWidth: 'none',
+          paddingTop: '2px',
+          paddingBottom: '2px'
+        },
+        vertical: {
+          alignItems: 'flex-start',
+          overflow: 'visible'
+        }
+      }
     },
     MuiSvgIcon: {
       defaultProps: {
