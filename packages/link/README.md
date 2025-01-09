@@ -12,7 +12,7 @@ This package extends the MUI Link component: [MUI Link Docs](https://mui.com/com
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-link-introduction--docs)
 
-Availity standards for design and usage can be found in the [Availity Design Guide](https://zeroheight.com/2e36e50c7)
+Availity standards for design and usage can be found in the [Availity Design Guide](https://design.availity.com/2e36e50c7)
 
 ## Installation
 
