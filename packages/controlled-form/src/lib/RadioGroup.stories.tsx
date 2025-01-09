@@ -1,27 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ControlledTextField, ControlledTextFieldProps } from './TextField';
+import { ControlledRadioGroup, ControlledRadioGroupProps } from './RadioGroup';
 import { ControlledForm } from './ControlledForm';
 import { Button } from '@availity/mui-button';
 import { useFormContext } from 'react-hook-form';
 import { Paper } from '@availity/mui-paper';
 import { Typography } from '@availity/mui-typography';
+import { FormControlLabel, Radio, FormControl, FormLabel } from '@availity/mui-form-utils';
 import { Grid } from '@availity/mui-layout';
 
-const meta: Meta<typeof ControlledTextField> = {
-  title: 'Components/ControlledForm/ControlledTextField',
-  component: ControlledTextField,
+const meta: Meta<typeof ControlledRadioGroup> = {
+  title: 'Components/ControlledForm/ControlledRadioGroup',
+  component: ControlledRadioGroup,
   tags: ['autodocs'],
-  argTypes: {
-    helperText: {
-      type: 'string',
-    },
-  },
 };
 
 export default meta;
 
-export const _ControlledTextField: StoryObj<typeof ControlledTextField> = {
-  render: (args: ControlledTextFieldProps) => {
+export const _ControlledRadioGroup: StoryObj<typeof ControlledRadioGroup> = {
+  render: (args: ControlledRadioGroupProps) => {
     const SubmittedValues = () => {
       const {
         getValues,
@@ -49,21 +45,24 @@ export const _ControlledTextField: StoryObj<typeof ControlledTextField> = {
       );
     };
     return (
-      <ControlledForm values={{ controlledTextField: undefined }} onSubmit={(data) => data}>
-        <ControlledTextField {...args} />
+      <ControlledForm onSubmit={(data) => data} values={{ controlledRadioGroup: 'N/A' }}>
+        <FormControl>
+          <FormLabel id="radio-group" component="div">
+            Radio Group
+          </FormLabel>
+          <ControlledRadioGroup {...args}>
+            <FormControlLabel control={<Radio />} label="N/A" value="N/A" />
+            <FormControlLabel control={<Radio />} label="Yes" value="Yes" />
+            <FormControlLabel control={<Radio />} label="No" value="No" />
+          </ControlledRadioGroup>
+        </FormControl>
         <Actions />
         <SubmittedValues />
       </ControlledForm>
     );
   },
   args: {
-    name: 'controlledTextField',
-    helperText: 'This is some helper text',
-    required: true,
-    placeholder: 'Name',
-    registerOptions: {
-      required: 'This field is required.',
-      maxLength: { value: 10, message: 'Too long' },
-    },
+    name: 'controlledRadioGroup',
+    'aria-labelledby': 'radio-group',
   },
 };

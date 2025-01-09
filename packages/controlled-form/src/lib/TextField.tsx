@@ -6,17 +6,30 @@ export type ControlledTextFieldProps = TextFieldProps & {
   registerOptions?: RegisterOptions<FieldValues, string>;
 };
 
-export const ControlledTextField = ({ name, registerOptions, ...rest }: ControlledTextFieldProps) => {
+export const ControlledTextField = ({ name, registerOptions, helperText, ...rest }: ControlledTextFieldProps) => {
   const {
     register,
     formState: { errors },
   } = useFormContext();
+
+  const errorMessage = errors[name]?.message;
+
   return (
     <TextField
       {...rest}
       {...register(name, registerOptions)}
       error={!!errors[name]}
-      helperText={errors[name]?.message ? JSON.stringify(errors[name].message) : ''}
+      helperText={
+        errorMessage && typeof errorMessage === 'string' ? (
+          <>
+            {errorMessage}
+            <br />
+            {helperText}
+          </>
+        ) : (
+          helperText
+        )
+      }
     />
   );
 };

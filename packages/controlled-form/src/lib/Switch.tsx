@@ -1,7 +1,7 @@
 import { Switch, SwitchProps } from '@availity/mui-form-utils';
 import { useFormContext, RegisterOptions, FieldValues } from 'react-hook-form';
 
-type ControlledSwitchProps = SwitchProps & {
+export type ControlledSwitchProps = SwitchProps & {
   name: string;
   registerOptions?: RegisterOptions<FieldValues, string>;
 };
