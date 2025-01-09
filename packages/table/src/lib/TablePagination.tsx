@@ -3,9 +3,11 @@ import {
   default as MuiTablePagination,
   TablePaginationProps as MuiTablePaginationProps,
 } from '@mui/material/TablePagination';
+import { SvgIconProps } from '@mui/material/SvgIcon';
 import { TableCellBaseProps } from '@mui/material/TableCell';
 import { Pagination, PaginationProps } from '@availity/mui-pagination';
 import { SelectAccessibilityOverrides } from '@availity/mui-form-utils';
+import { TriangleExpandIcon } from '@availity/mui-icon';
 
 export type TablePaginationProps = {
   Actions?: React.ReactNode;
@@ -34,6 +36,10 @@ type TablePaginationActionsProps = {
   onPageChange: (event: React.MouseEvent<HTMLButtonElement>, newPage: number) => void;
 } & Pick<MuiTablePaginationProps, 'backIconButtonProps' | 'nextIconButtonProps'>;
 
+const IconComponent = (args: SvgIconProps) => (
+  <TriangleExpandIcon fontSize='xxsmall' sx={{marginRight: '4px'}} {...args}/>
+);
+
 export const TablePagination = forwardRef<unknown, TablePaginationProps>((props, ref) => {
   const { Actions, paginationProps, ...rest } = props;
   const [ openDetected, setOpenDetected ] = useState(false);
@@ -59,5 +65,5 @@ export const TablePagination = forwardRef<unknown, TablePaginationProps>((props,
     );
   };
 
-  return <MuiTablePagination ActionsComponent={ActionsPagination} {...rest} slotProps={{select: {...SelectAccessibilityOverrides(openDetected, setOpenDetected)}}} ref={ref} />;
+  return <MuiTablePagination ActionsComponent={ActionsPagination} {...rest} slotProps={{select: {IconComponent: IconComponent, ...SelectAccessibilityOverrides(openDetected, setOpenDetected)}}} ref={ref} />;
 });

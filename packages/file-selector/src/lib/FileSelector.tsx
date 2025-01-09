@@ -213,7 +213,7 @@ export const FileSelector = ({
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
         <>
-          <Typography>{label}</Typography>
+          <Typography marginBottom="4px">{label}</Typography>
           <Dropzone
             name={name}
             allowedFileTypes={allowedFileTypes}
@@ -228,7 +228,6 @@ export const FileSelector = ({
           <FileTypesMessage allowedFileTypes={allowedFileTypes} maxFileSize={maxSize} />
         </>
         {children}
-
         {fileRejections.length > 0
           ? fileRejections.map((rejection) => (
               <ErrorAlert

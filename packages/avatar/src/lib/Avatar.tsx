@@ -1,6 +1,5 @@
 import { default as MuiAvatar, AvatarProps as MuiAvatarProps } from '@mui/material/Avatar';
 import React, { useEffect } from 'react';
-import { tokens } from '@availity/design-tokens';
 import { avSettingsApi } from '@availity/api-axios';
 import { UserIcon } from '@availity/mui-icon';
 
@@ -11,11 +10,11 @@ export interface AvatarProps extends Omit<MuiAvatarProps, 'variant'> {
 }
 
 const sizeStyling = {
-  xs: { width: 18, height: 18, fontSize: tokens.fontSizesCaption },
-  s: { width: 24, height: 24, fontSize: tokens.fontSizesCaption },
-  m: { width: 40, height: 40, fontSize: tokens.fontSizesH5, fontWeight: tokens.fontWeightsBold },
-  l: { width: 80, height: 80, fontSize: tokens.fontSizesH3, fontWeight: tokens.fontWeightsBold },
-  xl: { width: 140, height: 140, fontSize: tokens.fontSizesH1, fontWeight: tokens.fontWeightsBold },
+  xs: { width: 18, height: 18, fontSize: 'caption.fontSize' },
+  s: { width: 24, height: 24, fontSize: 'caption.fontSize' },
+  m: { width: 40, height: 40, fontSize: 'h5.fontSize', fontWeight: 'fontWeightBold' },
+  l: { width: 80, height: 80, fontSize: 'h3.fontSize', fontWeight: 'fontWeightBold' },
+  xl: { width: 140, height: 140, fontSize: 'h1.fontSize', fontWeight: 'fontWeightBold' },
 };
 
 const getInitials = (name: string, size: 'xs' | 's' | 'm' | 'l' | 'xl'): string => {

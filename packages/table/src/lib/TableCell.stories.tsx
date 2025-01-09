@@ -10,6 +10,12 @@ const meta: Meta<typeof TableCell> = {
   args: {
     children: 'Cell content',
   },
+  argTypes: {
+    size: {
+      options: ['small', 'medium'],
+      control: { type: 'radio' },
+    },
+  }
 };
 
 export default meta;

@@ -2,6 +2,37 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.8](https://github.com/Availity/element/compare/@availity/mui-table@0.2.7...@availity/mui-table@0.2.8) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.2.7`
+* `mui-form-utils` updated to version `0.2.7`
+* `mui-textfield` updated to version `0.2.7`
+* `mui-pagination` updated to version `0.2.7`
+
+### Bug Fixes
+
+* **mui-table:** icon updates ([592de69](https://github.com/Availity/element/commit/592de690f12955e154ab265151dd3619611d48f1))
+
+## [0.2.7](https://github.com/Availity/element/compare/@availity/mui-table@0.2.6...@availity/mui-table@0.2.7) (2025-01-07)
+
+### Dependency Updates
+
+* `mui-pagination` updated to version `0.2.6`
+## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-table@0.2.5...@availity/mui-table@0.2.6) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.5`
+* `mui-chip` updated to version `0.2.5`
+* `mui-form-utils` updated to version `0.2.5`
+* `mui-icon` updated to version `0.2.5`
+* `mui-link` updated to version `0.2.5`
+* `mui-menu` updated to version `0.2.5`
+* `mui-textfield` updated to version `0.2.5`
+* `mui-pagination` updated to version `0.2.5`
+* `mui-transitions` updated to version `0.2.5`
 ## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-table@0.2.4...@availity/mui-table@0.2.5) (2025-01-03)
 
 ### Dependency Updates

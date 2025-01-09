@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-stepper@0.2.4...@availity/mui-stepper@0.3.0) (2025-01-09)
+
+
+### Features
+
+* **mui-stepper:** add scroll buttons ([5855cfb](https://github.com/Availity/element/commit/5855cfbdf8d43a709a37723c46b553631e115056))
+
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-stepper@0.2.3...@availity/mui-stepper@0.2.4) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.3`
+* `mui-icon` updated to version `0.2.3`
 ## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-stepper@0.2.2...@availity/mui-stepper@0.2.3) (2025-01-03)
 
 ### Dependency Updates

@@ -1,18 +1,23 @@
 import { Dispatch, MouseEvent, useCallback, ChangeEvent } from 'react';
 import { useDropzone, FileRejection } from 'react-dropzone';
+import { useFormContext } from 'react-hook-form';
 import { Divider } from '@availity/mui-divider';
-import { CloudDownloadIcon } from '@availity/mui-icon';
+import { CloudUploadIcon } from '@availity/mui-icon';
 import { Box, Stack } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 
 import { FilePickerBtn } from './FilePickerBtn';
-import { useFormContext } from 'react-hook-form';
 
 const outerBoxStyles = {
-  backgroundColor: 'background.canvas',
+  backgroundColor: 'background.secondary',
   border: '1px dotted',
+  borderColor: 'secondary.light',
   borderRadius: '4px',
   padding: '2rem',
+  '&:hover': {
+    backgroundColor: 'background.primary',
+    borderColor: 'border.primary',
+  },
 };
 
 const innerBoxStyles = {
@@ -172,15 +177,20 @@ export const Dropzone = ({
     }
   };
 
+  // Remove role and tabIndex for accessibility
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { role, tabIndex, ...rootProps } = getRootProps();
+
   return (
-    <Box sx={outerBoxStyles} {...getRootProps()}>
+    <Box sx={outerBoxStyles} {...rootProps}>
       <Box sx={innerBoxStyles}>
-        <Stack spacing={2} divider={<Divider>OR</Divider>} alignItems="center" justifyContent="center">
+        <Stack spacing={2} alignItems="center" justifyContent="center">
           <>
-            <CloudDownloadIcon fontSize="xlarge" color="secondary" />
+            <CloudUploadIcon fontSize="xlarge" color="secondary" />
             <Typography variant="subtitle2" fontWeight="700">
               Drag and Drop Files Here
             </Typography>
+            <Divider>OR</Divider>
             <FilePickerBtn
               name={name}
               color="primary"
