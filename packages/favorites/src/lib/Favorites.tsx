@@ -32,10 +32,9 @@ export const FavoritesProvider = ({
   const [lastClickedFavoriteId, setLastClickedFavoriteId] = useState<string>('');
 
   const queryClient = useQueryClient();
-  const { data: favorites, status: queryStatus } = settingsStatus ? {
-    data: settingsFavorites,
-    status: settingsStatus,
-  } : useFavoritesQuery();
+  const { data: favoritesData, status: favoritesDataStatus } = useFavoritesQuery(!settingsStatus);
+  const favorites = settingsStatus ? settingsFavorites : favoritesData;
+  const queryStatus = settingsStatus ? settingsStatus : favoritesDataStatus;
 
   const { submitFavorites, status: mutationStatus } = useSubmitFavorites({
     onMutationStart(targetFavoriteId) {
