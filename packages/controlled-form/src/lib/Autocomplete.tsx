@@ -1,14 +1,14 @@
 import { Autocomplete, AutocompleteProps } from '@availity/mui-autocomplete';
-import { useFormContext, RegisterOptions, FieldValues } from 'react-hook-form';
+import { useFormContext, RegisterOptions, FieldValues, Controller } from 'react-hook-form';
 import { ChipTypeMap } from '@mui/material/Chip';
 
-type ControlledAutocompleteProps<
+export type ControlledAutocompleteProps<
   T,
   Multiple extends boolean | undefined,
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
-> = AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent> & {
+> = Omit<AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'onChange' | 'onBlur' | 'value'> & {
   name: string;
   registerOptions?: RegisterOptions<FieldValues, string>;
 };
@@ -21,9 +21,26 @@ export const ControlledAutocomplete = <
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
 >({
   name,
-  registerOptions,
   ...rest
 }: ControlledAutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
-  const { register } = useFormContext();
-  return <Autocomplete {...rest} {...register(name, registerOptions)} />;
+  const { control } = useFormContext();
+  return (
+    <Controller
+      control={control}
+      name={name}
+      render={({ field: { onChange, value, onBlur } }) => (
+        <Autocomplete
+          {...rest}
+          onChange={(event, value, reason) => {
+            if (reason === 'clear') {
+              onChange(null);
+            }
+            onChange(value);
+          }}
+          onBlur={onBlur}
+          value={value || null}
+        />
+      )}
+    />
+  );
 };
