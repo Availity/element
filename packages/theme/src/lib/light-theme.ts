@@ -1831,11 +1831,11 @@ export const lightTheme = {
           borderRadius: 8,
           margin: 0,
           padding: 0,
-          '&:active': {
-            backgroundColor: "#393B4626"
-          },
           '&:hover': {
             backgroundColor: tokens.colorActionHover,
+          },
+          '&:active': {
+            backgroundColor: "#393B4626"
           },
           '&.Mui-focusVisible': {
             outline: `2px solid ${tokens.borderInputFocus}`
