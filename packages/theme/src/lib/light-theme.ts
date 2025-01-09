@@ -320,7 +320,6 @@ export const lightTheme = {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: '1.5rem',
           '.MuiStack-root': {
             height: '24px',
           },
@@ -329,10 +328,6 @@ export const lightTheme = {
           appearance: 'none',
           cursor: 'pointer',
           margin: 0,
-          height: '2.5rem',
-          width: '2.5rem',
-          minHeight: '2.5rem',
-          minWidth: '2.5rem',
           borderRadius: '50%',
           display: 'block',
         },

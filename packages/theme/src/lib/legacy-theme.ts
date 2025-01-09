@@ -332,10 +332,6 @@ export const legacyTheme = {
           appearance: 'none',
           cursor: 'pointer',
           margin: 0,
-          height: '1.5rem',
-          width: '1.5rem',
-          minHeight: '1.5rem',
-          minWidth: '1.5rem',
           borderRadius: '0.25rem',
           display: 'block',
         }
