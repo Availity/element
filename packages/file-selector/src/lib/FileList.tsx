@@ -1,5 +1,6 @@
 import type { default as Upload, UploadOptions } from '@availity/upload-core';
-import { List, ListItem, ListItemText, ListItemIcon, ListItemButton } from '@availity/mui-list';
+import { List, ListItem, ListItemText, ListItemIcon } from '@availity/mui-list';
+import { IconButton } from '@availity/mui-button';
 import { DeleteIcon } from '@availity/mui-icon';
 import { Grid } from '@availity/mui-layout';
 import { Divider } from '@availity/mui-divider';
@@ -29,36 +30,37 @@ const FileRow = ({ file, options, onRemoveFile }: FileRowProps) => {
   if (!upload) return null;
 
   return (
-    <>
-      <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%" borderBottom="1px">
+    <ListItem
+      secondaryAction={
+        <IconButton
+          title="remove file"
+          edge="end"
+          onClick={() => {
+            onRemoveFile(upload.id, upload);
+          }}
+        >
+          <DeleteIcon />
+        </IconButton>
+      }
+    >
+      <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%">
         <Grid xs={1}>
           <ListItemIcon>
             <Icon />
           </ListItemIcon>
         </Grid>
-        <Grid xs={4}>
+        <Grid xs={3}>
           <ListItemText>{upload.trimFileName(upload.file.name)}</ListItemText>
         </Grid>
         <Grid xs={2}>
-          <ListItem>{formatBytes(upload.file.size)}</ListItem>
+          <ListItemText>{formatBytes(upload.file.size)}</ListItemText>
         </Grid>
-        <Grid xs={4}>
+        <Grid xs={6}>
           <UploadProgressBar upload={upload} />
         </Grid>
-        <Grid xs={1}>
-          <ListItemButton
-            onClick={() => {
-              onRemoveFile(upload.id, upload);
-            }}
-          >
-            <ListItemIcon>
-              <DeleteIcon />
-            </ListItemIcon>
-          </ListItemButton>
-        </Grid>
       </Grid>
-      <Divider component="li" />
-    </>
+      <Divider />
+    </ListItem>
   );
 };
 

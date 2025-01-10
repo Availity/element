@@ -50,6 +50,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@availity/mui-paper": "workspace:^",
     "@mui/material": "^5.15.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",

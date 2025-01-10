@@ -1,9 +1,8 @@
 import { useState } from 'react';
-// import { ChangeEvent, FormEventHandler, useState } from 'react';
 import { LinearProgress } from '@availity/mui-progress';
 import type Upload from '@availity/upload-core';
-import { Typography } from '@availity/mui-typography';
 import { WarningTriangleIcon } from '@availity/mui-icon';
+import { ListItemText } from '@availity/mui-list';
 
 export type UploadProgressBarProps = {
   /**
@@ -72,9 +71,9 @@ export const UploadProgressBar = ({ upload, onProgress, onError, onSuccess }: Up
 
   return upload.errorMessage ? (
     <>
-      <Typography color="text.error">
+      <ListItemText primaryTypographyProps={{ color: 'text.error', variant: 'body2' }}>
         <WarningTriangleIcon /> {upload.errorMessage}
-      </Typography>
+      </ListItemText>
       {/* {upload.status === 'encrypted' && (
         <div className="pwRequired">
           <Button color="primary" onClick={toggleModal}>
