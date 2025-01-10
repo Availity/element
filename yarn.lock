@@ -595,6 +595,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-layout": "workspace:^"
     "@availity/mui-list": "workspace:^"
+    "@availity/mui-paper": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@availity/upload-core": 7.0.0-alpha.6
