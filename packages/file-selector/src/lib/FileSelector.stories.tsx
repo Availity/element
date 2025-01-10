@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Paper } from '@availity/mui-paper';
 
 import { FileSelector, FileSelectorProps } from './FileSelector';
-import { FileList, FileListProps } from './FileList';
 
 const meta: Meta<typeof FileSelector> = {
   title: 'Components/File Selector/File Selector',
@@ -47,25 +46,5 @@ export const _FileSelector: StoryObj<typeof FileSelector> = {
     maxSize: 1 * 1024 * 1024, // 1MB
     isCloud: true,
     multiple: true,
-  },
-};
-
-const mockFile = new File(['file content'], 'mock.txt', { type: 'text/plain' });
-
-export const _FileList: StoryObj<typeof FileList> = {
-  render: (props: FileListProps) => {
-    return (
-      <FileList
-        files={[mockFile]}
-        onRemoveFile={() => {
-          console.log('removed');
-        }}
-        options={{
-          bucketId: '123',
-          customerId: '123',
-          clientId: '123',
-        }}
-      />
-    );
   },
 };
