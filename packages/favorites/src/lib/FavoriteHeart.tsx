@@ -14,16 +14,73 @@ const icons = {
   unfavoritedHeart: <HeartEmptyIcon aria-hidden color="secondary" />,
 };
 
-const FavoriteHeartContainer = styled('div', { name: 'AvFavoriteHeart', slot: 'root' })({});
+const DEFAULT_SIZE = '2.5rem';
+
+interface SizableHeartProps {
+  customSize?: string
+}
+
+const FavoriteHeartContainer = styled('div', {
+  name: 'AvFavoriteHeart',
+  slot: 'Root',
+})<SizableHeartProps>(({ customSize }) => ({
+  height: customSize,
+  width: customSize,
+}));
+
 const FavoriteInput = styled('input', {
   name: 'AvFavoriteHeart',
   slot: 'input',
-})({});
+})<SizableHeartProps>(({ customSize }) => ({
+  height: customSize,
+  width: customSize,
+  minHeight: customSize,
+  minWidth: customSize,
+}));
+
+const fontSize = (size = DEFAULT_SIZE) => {
+  // Match the number and unit in the size string
+  const match = size.match(/^(\d*\.?\d+)(px|rem)$/);
+
+  if (!match) {
+    throw new Error("Invalid size format. Must be in 'px' or 'rem'.");
+  }
+
+  const [, number, unit] = match;
+
+  // Parse the number, halve it, and return the new size string
+  const halvedNumber = parseFloat(number) / 2;
+  return `${halvedNumber}${unit}`;
+}
 
 const FavoriteIcon = styled('div', {
   name: 'AvFavoriteHeart',
   slot: 'icon',
-})({});
+})<SizableHeartProps>(({ customSize }) => ({
+  fontSize: fontSize(customSize),
+}));
+
+// validates the size input is the correct format and at least 24px or 1.5rem
+const validateSize = (size: string) => {
+  // Match the number and unit in the size string
+  const match = size.match(/^(\\d*\.?\d+)(px|rem)$/);
+
+  if (!match) {
+    return false; // Invalid format
+  }
+
+  const [, number, unit] = match;
+  const value = parseFloat(number);
+
+  // Validate the size based on the unit
+  if (unit === 'rem' && value >= 1.5) {
+    return true;
+  } else if (unit === 'px' && value >= 24) {
+    return true;
+  }
+
+  return false;
+}
 
 type FavoriteHeartProps = {
   /** The configuration's id */
@@ -41,6 +98,8 @@ type FavoriteHeartProps = {
    * @default false
    */
   disabled?: boolean;
+  /** The size of the icon in rem or px, minimum size is 1.5rem / 24px  */
+  customSize?: string;
 };
 
 export const FavoriteHeart = ({
@@ -49,6 +108,7 @@ export const FavoriteHeart = ({
   onChange,
   onMouseDown,
   disabled = false,
+  customSize = DEFAULT_SIZE,
 }: FavoriteHeartProps): JSX.Element => {
   const { isFavorited, isLastClickedFavorite, status, toggleFavorite } = useFavorites(id);
 
@@ -97,9 +157,11 @@ export const FavoriteHeart = ({
     style: { cursor },
   };
 
+  const validSize = validateSize(customSize) ? customSize : DEFAULT_SIZE;
+
   return (
-    <FavoriteHeartContainer>
-      <FavoriteIcon>{icons[iconKey]}</FavoriteIcon>
+    <FavoriteHeartContainer customSize={validSize}>
+      <FavoriteIcon customSize={validSize}>{icons[iconKey]}</FavoriteIcon>
       <span
         style={{
           position: 'absolute',
@@ -122,10 +184,10 @@ export const FavoriteHeart = ({
       </span>
 
       {disabled ? (
-        <FavoriteInput {...favoriteInputProps} />
+        <FavoriteInput customSize={validSize} {...favoriteInputProps} />
       ) : (
         <Tooltip title={tooltipContent} placement="top">
-          <FavoriteInput {...favoriteInputProps} />
+          <FavoriteInput customSize={validSize} {...favoriteInputProps} />
         </Tooltip>
       )}
     </FavoriteHeartContainer>
