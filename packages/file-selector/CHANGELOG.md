@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.8](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.7...@availity/mui-file-selector@0.2.8) (2025-01-10)
+
+
+### Bug Fixes
+
+* remove debug story ([091c909](https://github.com/Availity/element/commit/091c909acfb22464723dec19d6c258d30cd2ba8d))
+* update FileList ([036e91c](https://github.com/Availity/element/commit/036e91cd37f89ef67d77d4782dced6ebf841dd5c))
+
 ## [0.2.7](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.6...@availity/mui-file-selector@0.2.7) (2025-01-08)
 
 ### Dependency Updates
