@@ -63,7 +63,7 @@ const FavoriteIcon = styled('div', {
 // validates the size input is the correct format and at least 24px or 1.5rem
 const validateSize = (size: string) => {
   // Match the number and unit in the size string
-  const match = size.match(/^(\\d*\.?\d+)(px|rem)$/);
+  const match = size.match(/^(\d*\.?\d+)(px|rem)$/);
 
   if (!match) {
     return false; // Invalid format
