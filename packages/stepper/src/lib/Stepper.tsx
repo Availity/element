@@ -71,6 +71,8 @@ export const Stepper = ({ children, connector, orientation, scrollButtons, ...re
       </ScrollIconContainer>
 
       <MuiStepper
+        aria-label="multi-step process"
+        role="region"
         {...rest}
         connector={connector}
         orientation={orientation}
@@ -99,6 +101,8 @@ export const Stepper = ({ children, connector, orientation, scrollButtons, ...re
     </Grid>
   ) : (
     <MuiStepper
+      aria-label="multi-step process"
+      role="region"
       {...rest}
       connector={connector}
       orientation={orientation}
