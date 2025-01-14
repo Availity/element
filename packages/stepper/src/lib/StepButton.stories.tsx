@@ -22,12 +22,15 @@ export const _StepButton: StoryObj<typeof StepButton> = {
       <Paper sx={{ padding: '2rem' }}>
         <Stepper>
           <Step>
-            <StepButton {...args}/>
+            <StepButton {...args} />
           </Step>
         </Stepper>
       </Paper>
     </Box>
   ),
+  args: {
+    'aria-label': '1',
+  },
 };
 
 // credit: https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs

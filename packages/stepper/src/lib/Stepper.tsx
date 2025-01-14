@@ -77,6 +77,7 @@ export const Stepper = ({ children, connector, orientation, scrollButtons, ...re
         alternativeLabel={alternativeLabel}
         ref={stepperRef}
         children={children}
+        tabIndex={0}
       />
 
       <ScrollIconContainer style={{ paddingLeft: '8px' }}>

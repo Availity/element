@@ -7,7 +7,7 @@ export type StepButtonProps = Omit<
 
 export const StepButton = ({ children, ...rest }: StepButtonProps): JSX.Element => {
   return (
-    <MuiStepButton {...rest} disableRipple disableTouchRipple>
+    <MuiStepButton {...rest} tabIndex={0} disableRipple disableTouchRipple>
       {children}
     </MuiStepButton>
   );
