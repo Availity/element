@@ -20,10 +20,12 @@ import { faList } from '@fortawesome/free-solid-svg-icons/faList';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons/faLocationDot';
 import { faLock } from '@fortawesome/free-solid-svg-icons/faLock';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons/faPaperPlane';
 import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
 import { faPrint } from '@fortawesome/free-solid-svg-icons/faPrint';
 import { faSquareH } from '@fortawesome/free-solid-svg-icons/faSquareH';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
+import { faUserCheck } from '@fortawesome/free-solid-svg-icons/faUserCheck';
 import { faUserDoctor } from '@fortawesome/free-solid-svg-icons/faUserDoctor';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons/faUserPlus';
 import { faUsers } from '@fortawesome/free-solid-svg-icons/faUsers';
@@ -42,6 +44,8 @@ export const UserIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={f
 export const UserDoctorIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faUserDoctor} {...props} />;
 
 export const UsersIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faUsers} {...props} />;
+
+export const UserCheckIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faUserCheck} {...props} />;
 
 export const UserPlusIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faUserPlus} {...props} />;
 
@@ -80,6 +84,8 @@ export const PhoneIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={
 export const FaxIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFax} {...props} />;
 
 export const InboxIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faInbox} {...props} />;
+
+export const SendIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faPaperPlane} {...props} />;
 
 export const AsteriskIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faAsterisk} {...props} />;
 
