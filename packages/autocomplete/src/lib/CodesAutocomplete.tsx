@@ -29,6 +29,7 @@ export interface CodesAutocompleteProps<
     Optional<AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'queryKey'>,
     'loadOptions'
   > {
+  /** The code list id. */
   list: string;
   /** Config passed to the AvCodesApi.query function */
   apiConfig?: ApiConfig;

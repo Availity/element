@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ControlledAsyncAutocomplete } from './AsyncAutocomplete';
+import { ControlledCodesAutocomplete } from './CodesAutocomplete';
 import { ControlledForm } from './ControlledForm';
 import { Button } from '@availity/mui-button';
 import { useFormContext } from 'react-hook-form';
@@ -7,53 +7,16 @@ import { Paper } from '@availity/mui-paper';
 import { Typography } from '@availity/mui-typography';
 import { Grid } from '@availity/mui-layout';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import AvApi, { ApiConfig } from '@availity/api-axios';
 import { missingRHFprops } from '../../docs/propDefinitions';
 
-const meta: Meta<typeof ControlledAsyncAutocomplete> = {
-  title: 'Components/ControlledForm/Autocomplete/ControlledAsyncAutocomplete',
-  component: ControlledAsyncAutocomplete,
+const meta: Meta<typeof ControlledCodesAutocomplete> = {
+  title: 'Components/ControlledForm/Autocomplete/ControlledCodesAutocomplete',
+  component: ControlledCodesAutocomplete,
   tags: ['autodocs'],
   argTypes: missingRHFprops,
 };
 
 export default meta;
-
-const api = new AvApi({ name: 'example' } as ApiConfig);
-
-type Option = {
-  label: string;
-  value: number;
-};
-
-type ExampleResponse = {
-  totalCount: number;
-  options: Option[];
-  count: number;
-};
-
-const getResults = async (offset: number, limit: number) => {
-  // const offset = page * limit;
-  const resp = await api.post<ExampleResponse>({ offset, limit }, { params: {} });
-
-  return {
-    totalCount: resp.data.totalCount,
-    offset,
-    limit,
-    options: resp.data.options,
-    count: resp.data.count,
-  };
-};
-
-const loadOptions = async (offset: number, limit: number) => {
-  const { options, totalCount } = await getResults(offset, limit);
-
-  return {
-    options,
-    hasMore: offset + limit < totalCount,
-    offset,
-  };
-};
 
 const client = new QueryClient({
   defaultOptions: {
@@ -63,7 +26,7 @@ const client = new QueryClient({
   },
 });
 
-export const _ControlledAsyncAutoComplete: StoryObj<typeof ControlledAsyncAutocomplete> = {
+export const _ControlledCodesAutoComplete: StoryObj<typeof ControlledCodesAutocomplete> = {
   render: (args) => {
     const SubmittedValues = () => {
       const {
@@ -93,8 +56,8 @@ export const _ControlledAsyncAutoComplete: StoryObj<typeof ControlledAsyncAutoco
     };
     return (
       <QueryClientProvider client={client}>
-        <ControlledForm values={{ controlledAutocomplete: undefined }} onSubmit={(data) => data}>
-          <ControlledAsyncAutocomplete {...args} />
+        <ControlledForm values={{}} onSubmit={(data) => data}>
+          <ControlledCodesAutocomplete {...args} />
           <Actions />
           <SubmittedValues />
         </ControlledForm>
@@ -102,11 +65,14 @@ export const _ControlledAsyncAutoComplete: StoryObj<typeof ControlledAsyncAutoco
     );
   },
   args: {
-    name: 'controlledAsyncAutocomplete',
-    FieldProps: { label: 'Async Select', helperText: 'Helper Text', fullWidth: false },
-    getOptionLabel: (val: Option) => val.label,
-    loadOptions,
-    limit: 10,
-    queryKey: 'example',
+    name: 'controlledCodesAutocomplete',
+    list: 'ABC',
+    FieldProps: {
+      label: 'Code Select',
+      helperText: 'Select a code from the list',
+      placeholder: 'Select...',
+      fullWidth: false,
+    },
+    limit: 15,
   },
 };
