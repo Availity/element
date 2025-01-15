@@ -174,6 +174,9 @@ export const _Stepper: StoryObj<typeof Stepper> = {
       </Box>
     );
   },
+  args: {
+    'aria-label': 'stepper example',
+  },
 };
 
 export const _StepperScrollButtons: StoryObj<typeof Stepper> = {
