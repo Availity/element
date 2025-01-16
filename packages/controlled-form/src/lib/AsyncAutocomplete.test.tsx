@@ -122,7 +122,7 @@ describe('ControlledAsyncAutocomplete', () => {
     await waitFor(() => expect(screen.getByText('Option 1')).toBeDefined());
   });
 
-  test('should submit the form data', async () => {
+  test('should set the value and submit the form data', async () => {
     const screen = render(
       <QueryClientProvider client={client}>
         <ControlledForm values={{ controlledAutocomplete: undefined }} onSubmit={onSubmit}>
@@ -156,7 +156,7 @@ describe('ControlledAsyncAutocomplete', () => {
       const controlledAsyncAutocompleteValue = JSON.parse(result.innerHTML).controlledAsyncAutocomplete;
       expect(controlledAsyncAutocompleteValue.label).toBe('Option 1');
       expect(controlledAsyncAutocompleteValue.value).toBe(1);
-      expect(controlledAsyncAutocompleteValue.id).toBeDefined();
+      expect(controlledAsyncAutocompleteValue.id).toBeDefined(); // This is a unique id
     });
   });
 });
