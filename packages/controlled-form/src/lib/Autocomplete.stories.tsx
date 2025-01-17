@@ -54,5 +54,6 @@ export const _ControlledAutoComplete: StoryObj<typeof ControlledAutocomplete> = 
   args: {
     name: 'controlledAutocomplete',
     options: ['Option 1', 'Option 2'],
+    required: 'This is required.',
   },
 };

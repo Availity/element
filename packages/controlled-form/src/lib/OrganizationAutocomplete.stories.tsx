@@ -66,6 +66,7 @@ export const _ControlledOrganizationAutoComplete: StoryObj<typeof ControlledOrga
   },
   args: {
     name: 'controlledOrganizationAutocomplete',
+    required: 'This is required.',
     FieldProps: {
       label: 'Organization Select',
       helperText: 'Select an Organization from the list',

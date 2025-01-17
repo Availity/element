@@ -74,5 +74,6 @@ export const _ControlledCodesAutoComplete: StoryObj<typeof ControlledCodesAutoco
       fullWidth: false,
     },
     limit: 15,
+    required: 'This is required.',
   },
 };

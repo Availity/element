@@ -2,17 +2,16 @@ import { OrganizationAutocomplete, OrgAutocompleteProps } from '@availity/mui-au
 import { useFormContext, Controller, RegisterOptions, FieldValues, ControllerProps } from 'react-hook-form';
 
 type ControlledOrgAutocompleteProps = Omit<OrgAutocompleteProps, 'name'> &
-  Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'> &
+  Omit<
+    RegisterOptions<FieldValues, string>,
+    'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs' | 'max' | 'maxLength' | 'min' | 'minLength'
+  > &
   Pick<ControllerProps, 'defaultValue' | 'shouldUnregister' | 'name'>;
 
 export const ControlledOrganizationAutocomplete = ({
   name,
   defaultValue,
   deps,
-  max,
-  maxLength,
-  min,
-  minLength,
   onBlur,
   onChange,
   pattern,
@@ -20,10 +19,14 @@ export const ControlledOrganizationAutocomplete = ({
   shouldUnregister,
   validate,
   value,
+  FieldProps,
   ...rest
 }: ControlledOrgAutocompleteProps) => {
-  const { control } = useFormContext();
-
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext();
+  const errorMessage = errors[name]?.message;
   return (
     <Controller
       name={name}
@@ -31,10 +34,6 @@ export const ControlledOrganizationAutocomplete = ({
       defaultValue={defaultValue}
       rules={{
         deps,
-        max,
-        maxLength,
-        min,
-        minLength,
         onBlur,
         onChange,
         pattern,
@@ -47,6 +46,20 @@ export const ControlledOrganizationAutocomplete = ({
       render={({ field: { onChange, value, onBlur } }) => (
         <OrganizationAutocomplete
           {...rest}
+          FieldProps={{
+            ...FieldProps,
+            error: !!errorMessage,
+            helperText:
+              errorMessage && typeof errorMessage === 'string' ? (
+                <>
+                  {errorMessage}
+                  <br />
+                  {FieldProps?.helperText}
+                </>
+              ) : (
+                FieldProps?.helperText
+              ),
+          }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {
               onChange(null);

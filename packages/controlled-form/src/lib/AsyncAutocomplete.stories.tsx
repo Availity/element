@@ -108,5 +108,6 @@ export const _ControlledAsyncAutoComplete: StoryObj<typeof ControlledAsyncAutoco
     loadOptions,
     limit: 10,
     queryKey: 'example',
+    required: 'This is required.',
   },
 };

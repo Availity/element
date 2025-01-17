@@ -74,5 +74,6 @@ export const _ControlledProviderAutoComplete: StoryObj<typeof ControlledProvider
     },
     limit: 10,
     customerId: '1234',
+    required: 'This is required.',
   },
 };

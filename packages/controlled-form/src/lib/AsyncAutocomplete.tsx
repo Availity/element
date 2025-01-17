@@ -32,9 +32,14 @@ export const ControlledAsyncAutocomplete = <
   shouldUnregister,
   validate,
   value,
+  FieldProps,
   ...rest
 }: ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
-  const { control } = useFormContext();
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext();
+  const errorMessage = errors[name]?.message;
   return (
     <Controller
       name={name}
@@ -58,6 +63,20 @@ export const ControlledAsyncAutocomplete = <
       render={({ field: { onChange, value, onBlur } }) => (
         <AsyncAutocomplete
           {...rest}
+          FieldProps={{
+            ...FieldProps,
+            error: !!errorMessage,
+            helperText:
+              errorMessage && typeof errorMessage === 'string' ? (
+                <>
+                  {errorMessage}
+                  <br />
+                  {FieldProps?.helperText}
+                </>
+              ) : (
+                FieldProps?.helperText
+              ),
+          }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {
               onChange(null);
