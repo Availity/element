@@ -59,11 +59,8 @@ export const _ControlledTextField: StoryObj<typeof ControlledTextField> = {
   args: {
     name: 'controlledTextField',
     helperText: 'This is some helper text',
-    required: true,
     placeholder: 'Name',
-    registerOptions: {
-      required: 'This field is required.',
-      maxLength: { value: 10, message: 'Too long' },
-    },
+    required: 'This field is required.',
+    maxLength: { value: 10, message: 'Too long' },
   },
 };
