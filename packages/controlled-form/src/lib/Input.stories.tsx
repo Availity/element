@@ -54,10 +54,6 @@ export const _ControlledInput: StoryObj<typeof ControlledInput> = {
   args: {
     name: 'controlledInput',
     required: true,
-    placeholder: 'Name',
-    registerOptions: {
-      required: 'This field is required.',
-      maxLength: { value: 10, message: 'Too long' },
-    },
+    maxLength: { value: 10, message: 'Too long' },
   },
 };
