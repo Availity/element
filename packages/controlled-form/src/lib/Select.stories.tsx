@@ -64,5 +64,6 @@ export const _ControlledSelect: StoryObj<typeof ControlledSelect> = {
   },
   args: {
     name: 'controlledSelect',
+    required: 'This is required.',
   },
 };
