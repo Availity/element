@@ -46,16 +46,11 @@ export const _ControlledRadioGroup: StoryObj<typeof ControlledRadioGroup> = {
     };
     return (
       <ControlledForm onSubmit={(data) => data} values={{ controlledRadioGroup: 'N/A' }}>
-        <FormControl>
-          <FormLabel id="radio-group" component="div">
-            Radio Group
-          </FormLabel>
-          <ControlledRadioGroup {...args}>
-            <FormControlLabel control={<Radio />} label="N/A" value="N/A" />
-            <FormControlLabel control={<Radio />} label="Yes" value="Yes" />
-            <FormControlLabel control={<Radio />} label="No" value="No" />
-          </ControlledRadioGroup>
-        </FormControl>
+        <ControlledRadioGroup {...args}>
+          <FormControlLabel control={<Radio />} label="N/A" value="N/A" />
+          <FormControlLabel control={<Radio />} label="Yes" value="Yes" />
+          <FormControlLabel control={<Radio />} label="No" value="No" />
+        </ControlledRadioGroup>
         <Actions />
         <SubmittedValues />
       </ControlledForm>
@@ -63,6 +58,6 @@ export const _ControlledRadioGroup: StoryObj<typeof ControlledRadioGroup> = {
   },
   args: {
     name: 'controlledRadioGroup',
-    'aria-labelledby': 'radio-group',
+    label: 'Radio Group',
   },
 };
