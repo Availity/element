@@ -36,7 +36,15 @@ const Actions = () => {
 const onSubmit = jest.fn();
 
 describe('ControlledForm', () => {
-  test('should render successfully', async () => {
+  test('should render successfully', () => {
+    const { getByText } = render(
+      <ControlledForm onSubmit={(data) => data} values={{}}>
+        Test
+      </ControlledForm>
+    );
+    expect(getByText('Test')).toBeTruthy();
+  });
+  test('should handle yup schema resolver', async () => {
     const screen = render(
       <ControlledForm
         values={{ controlledTextField: undefined }}
