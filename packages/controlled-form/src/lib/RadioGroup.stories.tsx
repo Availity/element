@@ -38,7 +38,7 @@ export const _ControlledRadioGroup: StoryObj<typeof ControlledRadioGroup> = {
         formState: { isSubmitSuccessful },
       } = useFormContext();
       return (
-        <Grid container direction="row" justifyContent="space-between">
+        <Grid container direction="row" justifyContent="space-between" marginTop={1}>
           <Button disabled={!isSubmitSuccessful} children="Reset" color="secondary" onClick={() => reset()} />
           <Button type="submit" disabled={isSubmitSuccessful} children="Submit" />
         </Grid>

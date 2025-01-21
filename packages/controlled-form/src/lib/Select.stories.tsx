@@ -7,6 +7,7 @@ import { Paper } from '@availity/mui-paper';
 import { Typography } from '@availity/mui-typography';
 import { Grid } from '@availity/mui-layout';
 import { MenuItem } from '@availity/mui-menu';
+import { FormControl, FormLabel } from '@availity/mui-form-utils';
 
 const meta: Meta<typeof ControlledSelect> = {
   title: 'Components/ControlledForm/ControlledSelect',
@@ -38,7 +39,7 @@ export const _ControlledSelect: StoryObj<typeof ControlledSelect> = {
         formState: { isSubmitSuccessful },
       } = useFormContext();
       return (
-        <Grid container direction="row" justifyContent="space-between">
+        <Grid container direction="row" justifyContent="space-between" marginTop={1}>
           <Button
             disabled={!isSubmitSuccessful}
             children="Reset"
@@ -52,18 +53,22 @@ export const _ControlledSelect: StoryObj<typeof ControlledSelect> = {
 
     return (
       <ControlledForm values={{ controlledSelect: undefined }} onSubmit={(data) => data}>
-        <ControlledSelect {...args}>
-          <MenuItem value={1}>Option 1</MenuItem>
-          <MenuItem value={2}>Option 2</MenuItem>
-          <MenuItem value={3}>Option 3</MenuItem>
-        </ControlledSelect>
-        <Actions />
-        <SubmittedValues />
+        <FormControl>
+          <FormLabel id={`${args.id}-label`}>{args.label}</FormLabel>
+          <ControlledSelect {...args} labelId={`${args.id}-label`}>
+            <MenuItem value={1}>Option 1</MenuItem>
+            <MenuItem value={2}>Option 2</MenuItem>
+            <MenuItem value={3}>Option 3</MenuItem>
+          </ControlledSelect>
+          <Actions />
+          <SubmittedValues />
+        </FormControl>
       </ControlledForm>
     );
   },
   args: {
     name: 'controlledSelect',
     required: 'This is required.',
+    label: 'Select Label',
   },
 };
