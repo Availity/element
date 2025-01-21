@@ -32,7 +32,9 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "react-hook-form": "^7.51.3"
+    "@hookform/resolvers": "^3.10.0",
+    "react-hook-form": "^7.51.3",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@mui/material": "^5.15.15",
