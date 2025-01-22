@@ -1136,10 +1136,10 @@ export const legacyTheme = {
           flexWrap: 'wrap'
         },
         spacing: {
-          marginBottom: '-8px',
+          gap: '8px',
           '.MuiButton-root': {
-            marginBottom: '8px'
-          }
+            margin: 0,
+          },
         },
       },
     },

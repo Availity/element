@@ -1049,9 +1049,9 @@ export const lightTheme = {
           flexWrap: 'wrap',
         },
         spacing: {
-          marginBottom: '-8px',
+          gap: '8px',
           '.MuiButton-root': {
-            marginBottom: '8px',
+            margin: 0,
           },
         },
       },
