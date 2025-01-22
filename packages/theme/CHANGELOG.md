@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.65.2](https://github.com/Availity/element/compare/@availity/theme@0.65.1...@availity/theme@0.65.2) (2025-01-22)
+
+
+### Bug Fixes
+
+* **mui-dialog:** extra scrollbar issue ([570554c](https://github.com/Availity/element/commit/570554c72feca3fb49df5e1d4e50ebac4b35853a))
+
 ## [0.65.1](https://github.com/Availity/element/compare/@availity/theme@0.65.0...@availity/theme@0.65.1) (2025-01-10)
 
 ## [0.65.0](https://github.com/Availity/element/compare/@availity/theme@0.64.0...@availity/theme@0.65.0) (2025-01-09)
