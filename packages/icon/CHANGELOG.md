@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.13.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.12.1...@availity/mui-icon@0.13.0) (2025-01-22)
+
+
+### Features
+
+* **mui-icon:** add file icons ([8bc82dc](https://github.com/Availity/element/commit/8bc82dc8c5c15f0bd9a6daef3d399d8e828da834))
+
 ## [0.12.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.12.0...@availity/mui-icon@0.12.1) (2025-01-06)
 
 
