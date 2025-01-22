@@ -156,3 +156,96 @@ export const _PageNotFound: StoryObj<typeof EmptyState> = {
     variant: 'PageNotFound',
   },
 };
+
+export const _Instructional: StoryObj<typeof EmptyState> = {
+  render: (args: EmptyStateProps) => (
+    <EmptyState {...args}>
+      <Typography variant="h6" component="h3">
+        Tasks need to be completed
+      </Typography>
+      <Typography variant="body2">You have tasks to complete</Typography>
+      <Button>Get Started</Button>
+    </EmptyState>
+  ),
+  args: {
+    variant: 'Instructional',
+  },
+};
+
+export const _NoFavorites: StoryObj<typeof EmptyState> = {
+  render: (args: EmptyStateProps) => (
+    <Box sx={{ backgroundColor: 'background.paper', width: '25%' }}>
+      <EmptyState {...args}>
+        <Typography variant="h6" component="h3">
+          No favorites
+        </Typography>
+        <Typography variant="body2">
+          It's ok to have favorites. Select the heart icon next to an application to add it to the My Favorites menu for
+          quick access.
+        </Typography>
+      </EmptyState>
+    </Box>
+  ),
+  args: {
+    variant: 'NoFavorites',
+  },
+};
+
+export const _NoMessages: StoryObj<typeof EmptyState> = {
+  render: (args: EmptyStateProps) => (
+    <Box sx={{ backgroundColor: 'background.paper', width: '25%' }}>
+      <EmptyState {...args}>
+        <Typography variant="h6" component="h3">
+          No messages
+        </Typography>
+        <Typography variant="body2">You do not have any messages</Typography>
+      </EmptyState>
+    </Box>
+  ),
+  args: {
+    variant: 'NoMessages',
+  },
+};
+
+export const _NoNotifications: StoryObj<typeof EmptyState> = {
+  render: (args: EmptyStateProps) => (
+    <Box sx={{ backgroundColor: 'background.paper', width: '25%' }}>
+      <EmptyState {...args}>
+        <Typography variant="h6" component="h3">
+          No notifications
+        </Typography>
+        <Typography variant="body2">You do not have any notifications</Typography>
+      </EmptyState>
+    </Box>
+  ),
+  args: {
+    variant: 'NoNotifications',
+  },
+};
+
+export const _NoPatients: StoryObj<typeof EmptyState> = {
+  render: (args: EmptyStateProps) => (
+    <EmptyState {...args}>
+      <Typography variant="h6" component="h3">
+        Patient(s) not found
+      </Typography>
+    </EmptyState>
+  ),
+  args: {
+    variant: 'NoPatients',
+  },
+};
+
+export const _SuccessConfirmation: StoryObj<typeof EmptyState> = {
+  render: (args: EmptyStateProps) => (
+    <EmptyState {...args}>
+      <Typography variant="h6" component="h3">
+        Success!
+      </Typography>
+      <Typography variant="body2">You have completed your task</Typography>
+    </EmptyState>
+  ),
+  args: {
+    variant: 'SuccessConfirmation',
+  },
+};
