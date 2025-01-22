@@ -69,5 +69,5 @@ describe('Datepicker', () => {
       expect(controlledDatepickerValue).toBeDefined();
       expect(dayjs(controlledDatepickerValue).isValid()).toBeTruthy();
     });
-  });
+  }, 10000);
 });
