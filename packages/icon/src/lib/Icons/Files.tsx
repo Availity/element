@@ -1,11 +1,13 @@
 import { faBoxArchive } from '@fortawesome/free-solid-svg-icons/faBoxArchive';
 import { faFile } from '@fortawesome/free-solid-svg-icons/faFile';
+import { faFileArrowUp } from '@fortawesome/free-solid-svg-icons/faFileArrowUp';
 import { faFileAudio } from '@fortawesome/free-solid-svg-icons/faFileAudio';
 import { faFileCircleCheck } from '@fortawesome/free-solid-svg-icons/faFileCircleCheck';
 import { faFileCode } from '@fortawesome/free-solid-svg-icons/faFileCode';
 import { faFileCsv } from '@fortawesome/free-solid-svg-icons/faFileCsv';
 import { faFileExcel } from '@fortawesome/free-solid-svg-icons/faFileExcel';
 import { faFileImage } from '@fortawesome/free-solid-svg-icons/faFileImage';
+import { faFileImport } from '@fortawesome/free-solid-svg-icons/faFileImport';
 import { faFileLines } from '@fortawesome/free-solid-svg-icons/faFileLines';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons/faFilePdf';
 import { faFilePowerpoint } from '@fortawesome/free-solid-svg-icons/faFilePowerpoint';
@@ -66,3 +68,7 @@ export const FileCsvIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon
 export const FileLinesIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileLines} {...props} />;
 
 export const FileCircleCheckIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileCircleCheck} {...props} />;
+
+export const FileImportIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileImport} {...props} />;
+
+export const FileArrowUpIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFileArrowUp} {...props} />;
