@@ -8,7 +8,7 @@ import { Typography } from '@availity/mui-typography';
 import { Grid } from '@availity/mui-layout';
 
 const meta: Meta<typeof ControlledAutocomplete> = {
-  title: 'Components/ControlledForm/Autocomplete/ControlledAutocomplete',
+  title: 'Form Components/Controlled Form/Autocomplete/ControlledAutocomplete',
   component: ControlledAutocomplete,
   tags: ['autodocs'],
 };

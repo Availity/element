@@ -9,7 +9,7 @@ import { FormControlLabel, FormGroup, FormControl, FormLabel } from '@availity/m
 import { Grid } from '@availity/mui-layout';
 
 const meta: Meta<typeof ControlledCheckbox> = {
-  title: 'Components/ControlledForm/ControlledCheckbox',
+  title: 'Form Components/Controlled Form/ControlledCheckbox',
   component: ControlledCheckbox,
   tags: ['autodocs'],
 };

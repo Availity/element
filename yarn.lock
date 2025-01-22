@@ -52,16 +52,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/api-axios@npm:^9.0.4":
-  version: 9.0.4
-  resolution: "@availity/api-axios@npm:9.0.4"
+"@availity/api-axios@npm:^9.0.6":
+  version: 9.0.6
+  resolution: "@availity/api-axios@npm:9.0.6"
   dependencies:
     "@availity/resolve-url": 3.0.0
     lodash: ^4.17.21
     qs: ^6.13.0
   peerDependencies:
     axios: ^1.7.7
-  checksum: a255c46c1dc182c37c613a36e5dcdeed37edf9f49a10e309de19e2c4030eac90a85aa66877d25a9a7f5000cd87548cab970ec9d53656fa642fffac51fc55e834
+  checksum: ea662037e79960d435ae7c0fd6179ed62f69cb27bbac00ad607d9d9929232f3808ca3c4a6c6f2a6ba9600a68855a9125ab01bb5aa8c8e69081615a6a1cfcc873
   languageName: node
   linkType: hard
 
@@ -251,11 +251,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-autocomplete@workspace:*, @availity/mui-autocomplete@workspace:packages/autocomplete":
+"@availity/mui-autocomplete@workspace:*, @availity/mui-autocomplete@workspace:^, @availity/mui-autocomplete@workspace:packages/autocomplete":
   version: 0.0.0-use.local
   resolution: "@availity/mui-autocomplete@workspace:packages/autocomplete"
   dependencies:
-    "@availity/api-axios": ^9.0.4
+    "@availity/api-axios": ^9.0.6
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-textfield": "workspace:^"
     "@mui/material": ^5.15.15
@@ -279,7 +279,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-avatar@workspace:packages/avatar"
   dependencies:
-    "@availity/api-axios": ^9.0.4
+    "@availity/api-axios": ^9.0.6
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^5.15.15
     react: 18.2.0
@@ -428,8 +428,21 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-controlled-form@workspace:packages/controlled-form"
   dependencies:
+    "@availity/api-axios": ^9.0.6
+    "@availity/mui-autocomplete": "workspace:^"
+    "@availity/mui-button": "workspace:^"
+    "@availity/mui-checkbox": "workspace:^"
+    "@availity/mui-datepicker": "workspace:^"
+    "@availity/mui-form-utils": "workspace:^"
+    "@availity/mui-layout": "workspace:^"
+    "@availity/mui-menu": "workspace:^"
+    "@availity/mui-paper": "workspace:^"
+    "@availity/mui-textfield": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
     "@hookform/resolvers": ^3.10.0
     "@mui/material": ^5.15.15
+    "@tanstack/react-query": ^4.36.1
+    dayjs: ^1.11.13
     react: 18.2.0
     react-dom: 18.2.0
     react-hook-form: ^7.51.3
@@ -442,7 +455,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-datepicker@workspace:*, @availity/mui-datepicker@workspace:packages/datepicker":
+"@availity/mui-datepicker@workspace:*, @availity/mui-datepicker@workspace:^, @availity/mui-datepicker@workspace:packages/datepicker":
   version: 0.0.0-use.local
   resolution: "@availity/mui-datepicker@workspace:packages/datepicker"
   dependencies:
@@ -450,7 +463,7 @@ __metadata:
     "@availity/mui-textfield": "workspace:*"
     "@mui/material": ^5.15.15
     "@mui/x-date-pickers": ^7.2.0
-    dayjs: ^1.11.10
+    dayjs: ^1.11.13
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.0.2
@@ -558,7 +571,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-favorites@workspace:packages/favorites"
   dependencies:
-    "@availity/api-axios": ^9.0.4
+    "@availity/api-axios": ^9.0.6
     "@availity/message-core": ^7.0.1
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-progress": "workspace:^"
@@ -582,7 +595,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-feedback@workspace:packages/feedback"
   dependencies:
-    "@availity/api-axios": ^9.0.4
+    "@availity/api-axios": ^9.0.6
     "@availity/mui-button": "workspace:^"
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-icon": "workspace:^"
@@ -606,7 +619,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-file-selector@workspace:packages/file-selector"
   dependencies:
-    "@availity/api-axios": ^9.0.4
+    "@availity/api-axios": ^9.0.6
     "@availity/mui-alert": "workspace:^"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-divider": "workspace:^"
@@ -890,7 +903,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-spaces@workspace:packages/spaces"
   dependencies:
-    "@availity/api-axios": ^9.0.4
+    "@availity/api-axios": ^9.0.6
     "@availity/hooks": ^5.0.2
     "@availity/message-core": ^7.0.1
     "@availity/mui-button": "workspace:^"
@@ -910,7 +923,7 @@ __metadata:
     "@availity/resolve-url": ^2.0.6
     "@mui/material": ^5.15.15
     "@tanstack/react-query": ^4.36.1
-    dayjs: ^1.11.10
+    dayjs: ^1.11.13
     qs: ^6.13.1
     react: 18.2.0
     react-dom: 18.2.0
@@ -1165,7 +1178,7 @@ __metadata:
     "@emotion/styled": ^11.11.5
     "@mui/material": ^5.15.15
     "@mui/x-date-pickers": ^7.2.0
-    dayjs: ^1.11.10
+    dayjs: ^1.11.13
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.0.2
@@ -10130,10 +10143,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.11.10":
-  version: 1.11.10
-  resolution: "dayjs@npm:1.11.10"
-  checksum: a6b5a3813b8884f5cd557e2e6b7fa569f4c5d0c97aca9558e38534af4f2d60daafd3ff8c2000fed3435cfcec9e805bcebd99f90130c6d1c5ef524084ced588c4
+"dayjs@npm:^1.11.13":
+  version: 1.11.13
+  resolution: "dayjs@npm:1.11.13"
+  checksum: f388db88a6aa93956c1f6121644e783391c7b738b73dbc54485578736565c8931bdfba4bb94e9b1535c6e509c97d5deb918bbe1ae6b34358d994de735055cca9
   languageName: node
   linkType: hard
 

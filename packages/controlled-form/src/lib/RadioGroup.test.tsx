@@ -1,5 +1,5 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import { FormControl, FormLabel, FormControlLabel, Radio } from '@availity/mui-form-utils';
+import { FormControlLabel, Radio } from '@availity/mui-form-utils';
 import { useFormContext } from 'react-hook-form';
 import { Paper } from '@availity/mui-paper';
 import { Typography } from '@availity/mui-typography';

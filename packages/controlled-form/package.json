@@ -32,12 +32,25 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
+    "@availity/mui-autocomplete": "workspace:^",
+    "@availity/mui-checkbox": "workspace:^",
+    "@availity/mui-datepicker": "workspace:^",
+    "@availity/mui-form-utils": "workspace:^",
+    "@availity/mui-textfield": "workspace:^",
     "@hookform/resolvers": "^3.10.0",
     "react-hook-form": "^7.51.3",
     "yup": "^1.6.1"
   },
   "devDependencies": {
+    "@availity/api-axios": "^9.0.6",
+    "@availity/mui-button": "workspace:^",
+    "@availity/mui-layout": "workspace:^",
+    "@availity/mui-menu": "workspace:^",
+    "@availity/mui-paper": "workspace:^",
+    "@availity/mui-typography": "workspace:^",
     "@mui/material": "^5.15.15",
+    "@tanstack/react-query": "^4.36.1",
+    "dayjs": "^1.11.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^8.0.2",

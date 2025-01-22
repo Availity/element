@@ -11,7 +11,7 @@ import AvApi, { ApiConfig } from '@availity/api-axios';
 import { missingRHFprops } from '../../docs/propDefinitions';
 
 const meta: Meta<typeof ControlledAsyncAutocomplete> = {
-  title: 'Components/ControlledForm/Autocomplete/ControlledAsyncAutocomplete',
+  title: 'Form Components/Controlled Form/Autocomplete/ControlledAsyncAutocomplete',
   component: ControlledAsyncAutocomplete,
   tags: ['autodocs'],
   argTypes: missingRHFprops,

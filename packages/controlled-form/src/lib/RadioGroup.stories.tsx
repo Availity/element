@@ -5,11 +5,11 @@ import { Button } from '@availity/mui-button';
 import { useFormContext } from 'react-hook-form';
 import { Paper } from '@availity/mui-paper';
 import { Typography } from '@availity/mui-typography';
-import { FormControlLabel, Radio, FormControl, FormLabel } from '@availity/mui-form-utils';
+import { FormControlLabel, Radio } from '@availity/mui-form-utils';
 import { Grid } from '@availity/mui-layout';
 
 const meta: Meta<typeof ControlledRadioGroup> = {
-  title: 'Components/ControlledForm/ControlledRadioGroup',
+  title: 'Form Components/Controlled Form/ControlledRadioGroup',
   component: ControlledRadioGroup,
   tags: ['autodocs'],
 };

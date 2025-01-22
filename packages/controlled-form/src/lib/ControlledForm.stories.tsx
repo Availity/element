@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ControlledForm, ControlledFormProps } from './ControlledForm';
 
 const meta: Meta<typeof ControlledForm> = {
-  title: 'Components/ControlledForm/ControlledForm',
+  title: 'Form Components/Controlled Form/ControlledForm',
   component: ControlledForm,
   tags: ['autodocs'],
 };

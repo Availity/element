@@ -10,7 +10,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { missingRHFprops } from '../../docs/propDefinitions';
 
 const meta: Meta<typeof ControlledOrganizationAutocomplete> = {
-  title: 'Components/ControlledForm/Autocomplete/ControlledOrganizationAutocomplete',
+  title: 'Form Components/Controlled Form/Autocomplete/ControlledOrganizationAutocomplete',
   component: ControlledOrganizationAutocomplete,
   tags: ['autodocs'],
   argTypes: missingRHFprops,

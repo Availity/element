@@ -8,7 +8,7 @@ import { Typography } from '@availity/mui-typography';
 import { Grid } from '@availity/mui-layout';
 
 const meta: Meta<typeof ControlledDatepicker> = {
-  title: 'Components/ControlledForm/ControlledDatepicker',
+  title: 'Form Components/Controlled Form/ControlledDatepicker',
   component: ControlledDatepicker,
   tags: ['autodocs'],
 };

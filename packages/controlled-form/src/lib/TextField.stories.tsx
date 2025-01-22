@@ -8,7 +8,7 @@ import { Typography } from '@availity/mui-typography';
 import { Grid } from '@availity/mui-layout';
 
 const meta: Meta<typeof ControlledTextField> = {
-  title: 'Components/ControlledForm/ControlledTextField',
+  title: 'Form Components/Controlled Form/ControlledTextField',
   component: ControlledTextField,
   tags: ['autodocs'],
   argTypes: {

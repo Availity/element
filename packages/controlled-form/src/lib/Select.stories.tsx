@@ -10,7 +10,7 @@ import { MenuItem } from '@availity/mui-menu';
 import { FormControl, FormLabel } from '@availity/mui-form-utils';
 
 const meta: Meta<typeof ControlledSelect> = {
-  title: 'Components/ControlledForm/ControlledSelect',
+  title: 'Form Components/Controlled Form/ControlledSelect',
   component: ControlledSelect,
   tags: ['autodocs'],
 };
