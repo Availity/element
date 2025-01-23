@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.9](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.8...@availity/mui-autocomplete@0.9.9) (2025-01-23)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** export the CodesAutocomplete component ([b9eba2c](https://github.com/Availity/element/commit/b9eba2ce16de7a5bd277d724dab6b1003cc09f9f))
+
 ## [0.9.8](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.7...@availity/mui-autocomplete@0.9.8) (2025-01-22)
 
 ### Dependency Updates
