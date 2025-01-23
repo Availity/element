@@ -32,6 +32,7 @@ export interface OrgAutocompleteProps<
     Optional<AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'queryKey'>,
     'loadOptions'
   > {
+  /** Axios ApiConfig */
   apiConfig?: ApiConfig;
 }
 

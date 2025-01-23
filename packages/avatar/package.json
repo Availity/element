@@ -48,6 +48,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^9.0.4"
+    "@availity/api-axios": "^9.0.6"
   }
 }
