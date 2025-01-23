@@ -7,6 +7,7 @@ import { Paper } from '@availity/mui-paper';
 import { Typography } from '@availity/mui-typography';
 import { Grid } from '@availity/mui-layout';
 import { Button } from '@availity/mui-button';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 const SubmittedValues = () => {
   const {
@@ -50,6 +51,7 @@ describe('ControlledForm', () => {
         values={{ controlledTextField: undefined }}
         onSubmit={onSubmit}
         schema={yup.object({ controlledTextField: yup.string().max(10) })}
+        validationResolver={yupResolver}
       >
         <ControlledTextField
           name="controlledTextField"
