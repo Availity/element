@@ -30,7 +30,7 @@ const BlockUiContainer = styled('div')({
 const BlockUiOverlay = styled('div')({
   width: '100%',
   height: '100%',
-  opacity: '0.5',
+  opacity: '0.88',
   filter: 'alpha(opacity=50)',
   backgroundColor: 'white',
 });
@@ -64,6 +64,8 @@ const ScreenReaderOnly = styled('div')({
 });
 
 export type BlockUiProps = {
+  /** Set the color of the blocking component. */
+  backdropColor?: 'canvas' | 'paper';
   /** Set whether the component should block its children */
   blocking?: boolean;
   /** children to display */
@@ -81,6 +83,7 @@ export type BlockUiProps = {
 };
 
 export function BlockUi({
+  backdropColor = 'paper',
   blocking,
   children,
   keepInView,
@@ -184,7 +187,7 @@ export function BlockUi({
       {shouldRenderChildren ? children : null}
       {blocking ? (
         <BlockUiContainer tabIndex={0} ref={blockerRef} onKeyUp={tabbedUpBottom} onKeyDown={tabbedDownBottom}>
-          <BlockUiOverlay ref={containerRef} />
+          <BlockUiOverlay ref={containerRef} sx={{backgroundColor: `background.${backdropColor}`}} />
           <BlockUiMessageContainer ref={messageContainerRef} top={keepInView ? top : undefined}>
             <BlockUiMessage>
               {isValidElement(loader) ? <div aria-hidden>{loader}</div> : null}
