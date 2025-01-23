@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.59...@availity/mui-datepicker@0.5.0) (2025-01-23)
+
+
+### Features
+
+* **mui-controlled-form:** add ControlledDatepicker ([db89204](https://github.com/Availity/element/commit/db89204ac8c92bebcf1dae3f65be84718d87474a))
+
 ## [0.4.59](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.58...@availity/mui-datepicker@0.4.59) (2025-01-22)
 
 ### Dependency Updates
