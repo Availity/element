@@ -11,6 +11,11 @@ const meta: Meta<typeof BlockUi> = {
   title: 'Components/BlockUi/BlockUi',
   component: BlockUi,
   tags: ['autodocs'],
+  argTypes: {
+    backdropColor: {
+      options: ['paper', 'canvas'],
+    },
+  },
 };
 
 export default meta;
