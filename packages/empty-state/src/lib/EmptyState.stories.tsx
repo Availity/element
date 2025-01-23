@@ -29,6 +29,10 @@ const HeadingLevelDecorator: Decorator = (Story, context) => (
   </>
 );
 
+const StoryBox = ({ children }: { children: React.ReactNode }) => (
+  <Box sx={{ backgroundColor: 'background.paper', width: '25%' }}>{children}</Box>
+);
+
 /** Built on top of the `Stack` component, `EmptyState` will add the desired spacing to every direct descendant.
  *
  * _Accessibility Note: Check the appropriate heading level needed for your usage to not create a heading jump._
@@ -52,129 +56,92 @@ export default {
 
 export const _EmptyState: StoryObj<typeof EmptyState> = {
   render: (args: EmptyStateProps) => (
-    <EmptyState {...args}>
-      <Typography variant="h6" component="h3">
-        Header
-      </Typography>
-      <Box>This body explains the empty state. The illustration relates to the situation.</Box>
-      <Button>Optional Button</Button>
-      <Link href="#">Optional Link</Link>
-    </EmptyState>
+    <StoryBox>
+      <EmptyState {...args}>
+        <Typography variant="h6" component="h3">
+          Header
+        </Typography>
+        <Typography variant="body2">
+          This body explains the empty state. The illustration relates to the situation.
+        </Typography>
+        <Button>Optional Button</Button>
+        <Link href="#">Optional Link</Link>
+      </EmptyState>
+    </StoryBox>
   ),
-};
-
-export const _NoSearchResults: StoryObj<typeof EmptyState> = {
-  render: (args: EmptyStateProps) => (
-    <EmptyState {...args} alignItems="start" textAlign="start">
-      <Typography variant="h6" component="h3">
-        No search results found -- Results not found for [variable].
-      </Typography>
-      <Box>Adjust your search or filter options for better results.</Box>
-      <Box>
-        Suggestions:
-        <List
-          sx={{ listStyleType: 'disc', listStylePosition: 'inside', '.MuiListItem-root': { display: 'list-item' } }}
-          disablePadding
-        >
-          <ListItem disableGutters disablePadding>
-            Correctly spell all words in search criteria
-          </ListItem>
-          <ListItem disableGutters disablePadding>
-            Use different keywords
-          </ListItem>
-          <ListItem disableGutters disablePadding>
-            Use general keywords
-          </ListItem>
-          <ListItem disableGutters disablePadding>
-            Use fewer keywords
-          </ListItem>
-        </List>
-      </Box>
-      <Link href="#">Clear filter</Link>
-    </EmptyState>
-  ),
-  args: {
-    variant: 'NoSearchFound',
-  },
-};
-
-export const _Error: StoryObj<typeof EmptyState> = {
-  render: (args: EmptyStateProps) => (
-    <EmptyState {...args}>
-      <Typography variant="h6" component="h3">
-        Error
-      </Typography>
-      <Box>
-        Oops! Something went wrong. Try your request again later. If the problem continues, contact Availity Client
-        Services at 1.800.AVAILITY (282.4548).
-      </Box>
-    </EmptyState>
-  ),
-  args: {
-    variant: 'Error',
-  },
 };
 
 export const _ContentLoading: StoryObj<typeof EmptyState> = {
   render: (args: EmptyStateProps) => (
-    <EmptyState {...args}>
-      <Typography variant="h6" component="h3">
-        Content Loading
-      </Typography>
-      <Box>Data is loading.</Box>
-    </EmptyState>
+    <StoryBox>
+      <EmptyState {...args}>
+        <Typography variant="h6" component="h3">
+          Content Loading
+        </Typography>
+        <Typography variant="body2">Data is loading.</Typography>
+      </EmptyState>
+    </StoryBox>
   ),
   args: {
     variant: 'ContentLoading',
   },
 };
 
-export const _NoData: StoryObj<typeof EmptyState> = {
+export const _Error: StoryObj<typeof EmptyState> = {
   render: (args: EmptyStateProps) => (
-    <EmptyState {...args}>
-      <Typography variant="h6" component="h3">
-        No data
-      </Typography>
-      <Box>Sorry, but we cannot seem to find the data you are looking for.</Box>
-    </EmptyState>
+    <StoryBox>
+      <EmptyState {...args}>
+        <Typography variant="h6" component="h3">
+          Error
+        </Typography>
+        <Typography variant="body2">
+          Oops! Something went wrong. Try your request again later. If the problem continues, contact Availity Client
+          Services at 1.800.AVAILITY (282.4548).
+        </Typography>
+      </EmptyState>
+    </StoryBox>
   ),
   args: {
-    variant: 'NoData',
-  },
-};
-
-export const _PageNotFound: StoryObj<typeof EmptyState> = {
-  render: (args: EmptyStateProps) => (
-    <EmptyState {...args}>
-      <Typography variant="h6" component="h3">
-        Page not found
-      </Typography>
-      <Box>The page you are looking is no longer available.</Box>
-    </EmptyState>
-  ),
-  args: {
-    variant: 'PageNotFound',
+    variant: 'Error',
   },
 };
 
 export const _Instructional: StoryObj<typeof EmptyState> = {
   render: (args: EmptyStateProps) => (
-    <EmptyState {...args}>
-      <Typography variant="h6" component="h3">
-        Tasks need to be completed
-      </Typography>
-      <Typography variant="body2">You have tasks to complete</Typography>
-      <Button>Get Started</Button>
-    </EmptyState>
+    <StoryBox>
+      <EmptyState {...args}>
+        <Typography variant="h6" component="h3">
+          Tasks need to be completed
+        </Typography>
+        <Typography variant="body2">You have tasks to complete</Typography>
+        <Button>Get Started</Button>
+      </EmptyState>
+    </StoryBox>
   ),
   args: {
     variant: 'Instructional',
   },
 };
 
+export const _NoData: StoryObj<typeof EmptyState> = {
+  render: (args: EmptyStateProps) => (
+    <StoryBox>
+      <EmptyState {...args}>
+        <Typography variant="h6" component="h3">
+          No data
+        </Typography>
+        <Typography variant="body2">Sorry, but we cannot seem to find the data you are looking for.</Typography>
+      </EmptyState>
+    </StoryBox>
+  ),
+  args: {
+    variant: 'NoData',
+  },
+};
+
 export const _NoFavorites: StoryObj<typeof EmptyState> = {
   render: (args: EmptyStateProps) => (
-    <Box sx={{ backgroundColor: 'background.paper', width: '25%' }}>
+    <StoryBox>
       <EmptyState {...args}>
         <Typography variant="h6" component="h3">
           No favorites
@@ -184,7 +151,7 @@ export const _NoFavorites: StoryObj<typeof EmptyState> = {
           quick access.
         </Typography>
       </EmptyState>
-    </Box>
+    </StoryBox>
   ),
   args: {
     variant: 'NoFavorites',
@@ -193,14 +160,14 @@ export const _NoFavorites: StoryObj<typeof EmptyState> = {
 
 export const _NoMessages: StoryObj<typeof EmptyState> = {
   render: (args: EmptyStateProps) => (
-    <Box sx={{ backgroundColor: 'background.paper', width: '25%' }}>
+    <StoryBox>
       <EmptyState {...args}>
         <Typography variant="h6" component="h3">
           No messages
         </Typography>
         <Typography variant="body2">You do not have any messages</Typography>
       </EmptyState>
-    </Box>
+    </StoryBox>
   ),
   args: {
     variant: 'NoMessages',
@@ -209,14 +176,14 @@ export const _NoMessages: StoryObj<typeof EmptyState> = {
 
 export const _NoNotifications: StoryObj<typeof EmptyState> = {
   render: (args: EmptyStateProps) => (
-    <Box sx={{ backgroundColor: 'background.paper', width: '25%' }}>
+    <StoryBox>
       <EmptyState {...args}>
         <Typography variant="h6" component="h3">
           No notifications
         </Typography>
         <Typography variant="body2">You do not have any notifications</Typography>
       </EmptyState>
-    </Box>
+    </StoryBox>
   ),
   args: {
     variant: 'NoNotifications',
@@ -225,25 +192,82 @@ export const _NoNotifications: StoryObj<typeof EmptyState> = {
 
 export const _NoPatients: StoryObj<typeof EmptyState> = {
   render: (args: EmptyStateProps) => (
-    <EmptyState {...args}>
-      <Typography variant="h6" component="h3">
-        Patient(s) not found
-      </Typography>
-    </EmptyState>
+    <StoryBox>
+      <EmptyState {...args}>
+        <Typography variant="h6" component="h3">
+          Patient(s) not found
+        </Typography>
+      </EmptyState>
+    </StoryBox>
   ),
   args: {
     variant: 'NoPatients',
   },
 };
 
+export const _NoSearchResults: StoryObj<typeof EmptyState> = {
+  render: (args: EmptyStateProps) => (
+    <StoryBox>
+      <EmptyState {...args} alignItems="start" textAlign="start">
+        <Typography variant="h6" component="h3">
+          No search results found -- Results not found for [variable].
+        </Typography>
+        <Box>Adjust your search or filter options for better results.</Box>
+        <Box>
+          Suggestions:
+          <List
+            sx={{ listStyleType: 'disc', listStylePosition: 'inside', '.MuiListItem-root': { display: 'list-item' } }}
+            disablePadding
+          >
+            <ListItem disableGutters disablePadding>
+              Correctly spell all words in search criteria
+            </ListItem>
+            <ListItem disableGutters disablePadding>
+              Use different keywords
+            </ListItem>
+            <ListItem disableGutters disablePadding>
+              Use general keywords
+            </ListItem>
+            <ListItem disableGutters disablePadding>
+              Use fewer keywords
+            </ListItem>
+          </List>
+        </Box>
+        <Link href="#">Clear filter</Link>
+      </EmptyState>
+    </StoryBox>
+  ),
+  args: {
+    variant: 'NoSearchFound',
+  },
+};
+
+export const _PageNotFound: StoryObj<typeof EmptyState> = {
+  render: (args: EmptyStateProps) => (
+    <StoryBox>
+      <EmptyState {...args}>
+        <Typography variant="h6" component="h3">
+          Page not found
+        </Typography>
+        <Typography variant="body2">The page you are looking is no longer available.</Typography>
+      </EmptyState>
+    </StoryBox>
+  ),
+  args: {
+    variant: 'PageNotFound',
+  },
+};
+
 export const _SuccessConfirmation: StoryObj<typeof EmptyState> = {
   render: (args: EmptyStateProps) => (
-    <EmptyState {...args}>
-      <Typography variant="h6" component="h3">
-        Success!
-      </Typography>
-      <Typography variant="body2">You have completed your task</Typography>
-    </EmptyState>
+    <StoryBox>
+      <EmptyState {...args}>
+        <Typography variant="h6" component="h3">
+          Success!
+        </Typography>
+        <Typography variant="body2">You have completed your task</Typography>
+      </EmptyState>
+    </StoryBox>
   ),
   args: {
     variant: 'SuccessConfirmation',

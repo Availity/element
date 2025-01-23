@@ -2,6 +2,7 @@
 
 import type { StoryObj } from '@storybook/react';
 import { Box, Stack } from '@availity/mui-layout';
+import { Typography } from '@availity/mui-typography';
 
 import { EmptyStateImage, EmptyStateImageProps, EmptyStateImages } from './EmptyStateImage';
 // eslint-disable-next-line @nx/enforce-module-boundaries
@@ -24,7 +25,11 @@ export default {
 };
 
 export const _EmptyStateImage: StoryObj<typeof EmptyStateImage> = {
-  render: (args: EmptyStateImageProps) => <EmptyStateImage {...args} />,
+  render: (args: EmptyStateImageProps) => (
+    <Box sx={{ backgroundColor: 'background.paper', padding: '2rem', width: '25%' }}>
+      <EmptyStateImage {...args} />
+    </Box>
+  ),
 };
 
 const variants = Object.keys(EmptyStateImages);
@@ -32,10 +37,10 @@ const variants = Object.keys(EmptyStateImages);
 export const _variants: StoryObj<typeof EmptyStateImage> = {
   render: () => {
     return (
-      <Stack direction="row" spacing={2} flexWrap="wrap">
+      <Stack direction="row" spacing={2} alignItems="flex-start" flexWrap="wrap" useFlexGap>
         {variants.map((variant) => (
-          <Box textAlign="center" key={variant}>
-            <Box>{variant}</Box>
+          <Box textAlign="center" key={variant} sx={{ backgroundColor: 'background.paper', padding: '3rem' }}>
+            <Typography>{variant}</Typography>
             <EmptyStateImage variant={variant as keyof typeof EmptyStateImages} />
           </Box>
         ))}
