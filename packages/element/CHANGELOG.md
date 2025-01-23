@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.48.26](https://github.com/Availity/element/compare/@availity/element@0.48.25...@availity/element@0.48.26) (2025-01-23)
+
+### Dependency Updates
+
+* `mui-empty-state` updated to version `0.48.25`
 ## [0.48.25](https://github.com/Availity/element/compare/@availity/element@0.48.24...@availity/element@0.48.25) (2025-01-23)
 
 ### Dependency Updates
