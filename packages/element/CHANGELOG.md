@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.48.25](https://github.com/Availity/element/compare/@availity/element@0.48.24...@availity/element@0.48.25) (2025-01-23)
+
+### Dependency Updates
+
+* `mui-authorize` updated to version `0.48.24`
+* `mui-block-ui` updated to version `0.48.24`
+* `mui-dialog` updated to version `0.48.24`
+* `mui-page-header` updated to version `0.48.24`
+* `mui-spaces` updated to version `0.48.24`
 ## [0.48.24](https://github.com/Availity/element/compare/@availity/element@0.48.23...@availity/element@0.48.24) (2025-01-22)
 
 ### Dependency Updates
