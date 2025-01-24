@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.49.2](https://github.com/Availity/element/compare/@availity/element@0.49.1...@availity/element@0.49.2) (2025-01-24)
+
+### Dependency Updates
+
+* `mui-controlled-form` updated to version `0.49.1`
+* `mui-datepicker` updated to version `0.49.1`
+* `theme-provider` updated to version `0.49.1`
 ## [0.49.1](https://github.com/Availity/element/compare/@availity/element@0.49.0...@availity/element@0.49.1) (2025-01-24)
 
 ### Dependency Updates
