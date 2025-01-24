@@ -233,11 +233,13 @@ export const PhoneExample = () => {
 };
 
 export const InputGroupAddonExample = () => (
-  <Input
-    startAdornment={
-      <InputAdornment position="start">
-        <SearchIcon />
-      </InputAdornment>
-    }
-  />
+  <ThemeProvider theme="legacyBS">
+    <Input
+      startAdornment={
+        <InputAdornment position="start">
+          <SearchIcon />
+        </InputAdornment>
+      }
+    />
+  </ThemeProvider>
 );
