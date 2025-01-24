@@ -26,7 +26,22 @@ export default {
 
 export const _EmptyStateImage: StoryObj<typeof EmptyStateImage> = {
   render: (args: EmptyStateImageProps) => (
-    <Box sx={{ backgroundColor: 'background.paper', padding: '2rem', width: '25%' }}>
+    <Box
+      sx={{
+        backgroundColor: 'background.paper',
+        padding: '2rem',
+        width: {
+          xs: '100%',
+          md: '25%',
+        },
+        mx: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+      }}
+    >
       <EmptyStateImage {...args} />
     </Box>
   ),
