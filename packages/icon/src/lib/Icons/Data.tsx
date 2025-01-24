@@ -14,37 +14,36 @@ import { faSortDown } from '@fortawesome/free-solid-svg-icons/faSortDown';
 import { faSortUp } from '@fortawesome/free-solid-svg-icons/faSortUp';
 import { faTableCells } from '@fortawesome/free-solid-svg-icons/faTableCells';
 import { faTableCellsLarge } from '@fortawesome/free-solid-svg-icons/faTableCellsLarge';
-import { SvgIconProps } from '@mui/material/SvgIcon';
-import { FaSvgIcon } from '../FaSvgIcon';
+import { FaSvgIcon, IconProps } from '../FaSvgIcon';
 
-export const FilterIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFilter} {...props} />;
+export const FilterIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faFilter} {...props} />;
 
-export const SortIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faSort} {...props} />;
+export const SortIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faSort} {...props} />;
 
-export const SortDownIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faSortDown} {...props} />;
+export const SortDownIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faSortDown} {...props} />;
 
-export const SortUpIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faSortUp} {...props} />;
+export const SortUpIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faSortUp} {...props} />;
 
-export const SortAltDownIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faArrowUpWideShort} {...props} />;
+export const SortAltDownIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faArrowUpWideShort} {...props} />;
 
-export const SortAltUpIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faArrowUpShortWide} {...props} />;
+export const SortAltUpIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faArrowUpShortWide} {...props} />;
 
-export const TableCellsLargeIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faTableCellsLarge} {...props} />;
+export const TableCellsLargeIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faTableCellsLarge} {...props} />;
 
-export const TableCellsIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faTableCells} {...props} />;
+export const TableCellsIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faTableCells} {...props} />;
 
-export const DownloadIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCloudArrowDown} {...props} />;
+export const DownloadIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCloudArrowDown} {...props} />;
 
-export const UploadIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCloudArrowUp} {...props} />;
+export const UploadIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCloudArrowUp} {...props} />;
 
-export const ExportIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faShareFromSquare} {...props} />;
+export const ExportIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faShareFromSquare} {...props} />;
 
-export const ShareIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faShareNodes} {...props} />;
+export const ShareIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faShareNodes} {...props} />;
 
-export const ChartAreaIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faChartArea} {...props} />;
+export const ChartAreaIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faChartArea} {...props} />;
 
-export const ChartColumnIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faChartColumn} {...props} />;
+export const ChartColumnIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faChartColumn} {...props} />;
 
-export const ChartLineIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faChartLine} {...props} />;
+export const ChartLineIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faChartLine} {...props} />;
 
-export const ChartPieIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faChartPie} {...props} />;
+export const ChartPieIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faChartPie} {...props} />;

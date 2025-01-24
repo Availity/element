@@ -12,12 +12,14 @@ declare module '@mui/material/SvgIcon' {
   }
 }
 
-export interface FaSvgIconProps extends SvgIconProps {
+export interface FaSvgIconProps extends Omit<SvgIconProps, 'fontSize'> {
   /** Font Awesome Svg */
   icon: IconDefinition;
   /** The fontSize applied to the icon. @default 'inherit' */
   fontSize?: 'xxsmall' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'inherit';
 }
+
+export type IconProps = Omit<FaSvgIconProps, 'icon'>
 
 export const FaSvgIcon = React.forwardRef<SVGSVGElement, FaSvgIconProps>((props, ref) => {
   const { icon, ...svgProps } = props;
