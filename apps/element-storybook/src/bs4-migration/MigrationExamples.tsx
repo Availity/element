@@ -27,7 +27,12 @@ import {
   Tab,
   Tabs,
   ThemeProvider,
+  TextField,
+  Input,
+  InputAdornment,
+  SearchIcon,
 } from '@availity/element';
+import { AsYouType } from 'libphonenumber-js';
 
 export const BadgeExample = () => (
   <ThemeProvider theme="legacyBS">
@@ -150,10 +155,7 @@ export const ListItemExample = () => (
         <ListItemText>ListItem</ListItemText>
       </ListItem>
       <ListItemStatusCard color="success">
-        <ListItemText
-          primary="ListItemStatusCard"
-          secondary={<StatusChip color="success" label='Approved'/>}
-        />
+        <ListItemText primary="ListItemStatusCard" secondary={<StatusChip color="success" label="Approved" />} />
       </ListItemStatusCard>
     </List>
   </ThemeProvider>
@@ -169,7 +171,7 @@ export const StepperExample = () => {
   return (
     <ThemeProvider theme="legacyBS">
       <Stepper nonLinear activeStep={activeStep} connector={null}>
-        {["First", "Second", "Third"].map((label, index) => (
+        {['First', 'Second', 'Third'].map((label, index) => (
           <Step key={label} completed={index < activeStep}>
             <StepButton color="inherit" onClick={handleStep(index)}>
               {label}
@@ -181,18 +183,61 @@ export const StepperExample = () => {
   );
 };
 
-const SnackbarStoryPreview = styled("div", {
+const SnackbarStoryPreview = styled('div', {
   name: 'MuiSnackbar',
   slot: 'Root',
   overridesResolver: (props, styles) => styles.root,
-})(({}));
+})({});
 
 export const SnackbarExample = () => (
   <ThemeProvider theme="legacyBS">
     <SnackbarStoryPreview>
-      <Alert severity="info" icon={false} onClose={()=>null}>
+      <Alert severity="info" icon={false} onClose={() => null}>
         Close
       </Alert>
     </SnackbarStoryPreview>
   </ThemeProvider>
+);
+
+export const PhoneExample = () => {
+  const [phone, setPhone] = useState('');
+
+  const asYouFormat = (phoneString: string) => {
+    // partial parsePhoneNumber always return country code :(
+    const asYouType = new AsYouType('US');
+
+    return asYouType.input(phoneString);
+  };
+
+  const formatPhoneOnBlur = () => {
+    setPhone(asYouFormat(phone));
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPhone(event.target.value);
+  };
+
+  return (
+    <ThemeProvider theme="legacyBS">
+      <TextField
+        type="tel"
+        label="Phone"
+        id="phone"
+        value={phone}
+        onBlur={formatPhoneOnBlur}
+        onChange={handleChange}
+        fullWidth={true}
+      />
+    </ThemeProvider>
+  );
+};
+
+export const InputGroupAddonExample = () => (
+  <Input
+    startAdornment={
+      <InputAdornment position="start">
+        <SearchIcon />
+      </InputAdornment>
+    }
+  />
 );
