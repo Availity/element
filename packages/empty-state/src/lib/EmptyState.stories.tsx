@@ -30,7 +30,23 @@ const HeadingLevelDecorator: Decorator = (Story, context) => (
 );
 
 const StoryBox = ({ children }: { children: React.ReactNode }) => (
-  <Box sx={{ backgroundColor: 'background.paper', width: '25%' }}>{children}</Box>
+  <Box
+    sx={{
+      backgroundColor: 'background.paper',
+      width: {
+        xs: '100%',
+        md: '25%',
+      },
+      mx: 'auto',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
+    }}
+  >
+    {children}
+  </Box>
 );
 
 /** Built on top of the `Stack` component, `EmptyState` will add the desired spacing to every direct descendant.
