@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.66.0](https://github.com/Availity/element/compare/@availity/theme@0.65.2...@availity/theme@0.66.0) (2025-01-24)
+
+
+### Features
+
+* **theme:** set the body background color ([b868045](https://github.com/Availity/element/commit/b868045129d19a671f49cbfe6057d38183dcf02e))
+
 ## [0.65.2](https://github.com/Availity/element/compare/@availity/theme@0.65.1...@availity/theme@0.65.2) (2025-01-22)
 
 
