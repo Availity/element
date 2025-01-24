@@ -991,6 +991,13 @@ export const lightTheme = {
         },
       },
     },
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: tokens.colorBackgroundCanvas,
+        }
+      }
+    },
     MuiDateCalendar: {
       styleOverrides: {
         root: {
