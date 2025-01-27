@@ -24,55 +24,54 @@ import { faCircle as faCircleEmpty } from '@fortawesome/free-regular-svg-icons/f
 import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons/faStar';
 import { faCircleDot } from '@fortawesome/free-regular-svg-icons/faCircleDot';
 import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
-import { SvgIconProps } from '@mui/material/SvgIcon';
-import { FaSvgIcon } from '../FaSvgIcon';
+import { FaSvgIcon, IconProps } from '../FaSvgIcon';
 
-export const HelpCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faQuestionCircle} {...props} />;
+export const HelpCircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faQuestionCircle} {...props} />;
 
-export const SuccessCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCheckCircle} {...props} />;
+export const SuccessCircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCheckCircle} {...props} />;
 
-export const InfoCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faInfoCircle} {...props} />;
+export const InfoCircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faInfoCircle} {...props} />;
 
-export const WarningCircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faExclamationCircle} {...props} />;
+export const WarningCircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faExclamationCircle} {...props} />;
 
-export const WarningTriangleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faExclamationTriangle} {...props} />;
+export const WarningTriangleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faExclamationTriangle} {...props} />;
 
-export const FaceSmileIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFaceSmile} {...props} />;
+export const FaceSmileIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faFaceSmile} {...props} />;
 
-export const FaceNeutralIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFaceMeh} {...props} />;
+export const FaceNeutralIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faFaceMeh} {...props} />;
 
-export const FaceFrownIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faFaceFrown} {...props} />;
+export const FaceFrownIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faFaceFrown} {...props} />;
 
-export const ThumbUpIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faThumbsUp} {...props} />;
+export const ThumbUpIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faThumbsUp} {...props} />;
 
-export const ThumbDownIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faThumbsDown} {...props} />;
+export const ThumbDownIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faThumbsDown} {...props} />;
 
-export const EyeIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faEye} {...props} />;
+export const EyeIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faEye} {...props} />;
 
-export const EyeSlashIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faEyeSlash} {...props} />;
+export const EyeSlashIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faEyeSlash} {...props} />;
 
-export const StarHalfStrokeIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faStarHalfStroke} {...props} />;
+export const StarHalfStrokeIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faStarHalfStroke} {...props} />;
 
-export const StarHalfIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faStarHalf} {...props} />;
+export const StarHalfIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faStarHalf} {...props} />;
 
-export const StarIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faStar} {...props} />;
+export const StarIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faStar} {...props} />;
 
-export const StarEmptyIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faStarEmpty} {...props} />;
+export const StarEmptyIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faStarEmpty} {...props} />;
 
-export const CalendarDaysIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCalendarDays} {...props} />;
+export const CalendarDaysIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCalendarDays} {...props} />;
 
-export const CircleEmptyIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCircleEmpty} {...props} />;
+export const CircleEmptyIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCircleEmpty} {...props} />;
 
-export const CircleDotIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCircleDot} {...props} />;
+export const CircleDotIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCircleDot} {...props} />;
 
-export const CircleIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCircle} {...props} />;
+export const CircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCircle} {...props} />;
 
-export const ClockIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faClock} {...props} />;
+export const ClockIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faClock} {...props} />;
 
-export const CheckIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faCheck} {...props} />;
+export const CheckIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCheck} {...props} />;
 
-export const SquareCheckIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faSquareCheck} {...props} />;
+export const SquareCheckIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faSquareCheck} {...props} />;
 
-export const SquareMinusIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faSquareMinus} {...props} />;
+export const SquareMinusIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faSquareMinus} {...props} />;
 
-export const SquareEmptyIcon = (props: SvgIconProps): JSX.Element => <FaSvgIcon icon={faSquare} {...props} />;
+export const SquareEmptyIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faSquare} {...props} />;
