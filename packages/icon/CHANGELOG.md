@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.13.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.13.0...@availity/mui-icon@0.13.1) (2025-01-27)
+
+
+### Bug Fixes
+
+* **mui-icon:** fix icon type ([26aaf23](https://github.com/Availity/element/commit/26aaf2379151c34e343cfa79e3935fd4d2414a91))
+
 ## [0.13.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.12.1...@availity/mui-icon@0.13.0) (2025-01-22)
 
 
