@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.5](https://github.com/Availity/element/compare/@availity/mui-transitions@0.3.4...@availity/mui-transitions@0.3.5) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-alert` updated to version `0.3.4`
 ## [0.3.4](https://github.com/Availity/element/compare/@availity/mui-transitions@0.3.3...@availity/mui-transitions@0.3.4) (2025-01-22)
 
 ### Dependency Updates
