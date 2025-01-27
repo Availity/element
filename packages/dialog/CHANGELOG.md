@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.8](https://github.com/Availity/element/compare/@availity/mui-dialog@0.2.7...@availity/mui-dialog@0.2.8) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-block-ui` updated to version `0.2.7`
+* `mui-form-utils` updated to version `0.2.7`
+* `mui-menu` updated to version `0.2.7`
+* `mui-alert` updated to version `0.2.7`
+* `mui-button` updated to version `0.2.7`
+* `mui-icon` updated to version `0.2.7`
+* `mui-textfield` updated to version `0.2.7`
 ## [0.2.7](https://github.com/Availity/element/compare/@availity/mui-dialog@0.2.6...@availity/mui-dialog@0.2.7) (2025-01-23)
 
 ### Dependency Updates
