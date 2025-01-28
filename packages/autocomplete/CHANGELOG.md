@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.11](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.10...@availity/mui-autocomplete@0.9.11) (2025-01-28)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** add aria-label to LoadingIndicator ([79f47b4](https://github.com/Availity/element/commit/79f47b466b7a6838430cf20b101b937e9b810d3c))
+
 ## [0.9.10](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.9...@availity/mui-autocomplete@0.9.10) (2025-01-27)
 
 ### Dependency Updates
