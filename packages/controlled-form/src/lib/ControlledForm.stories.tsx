@@ -57,7 +57,8 @@ export const _ControlledForm: StoryObj<typeof ControlledForm> = {
       >
         <ControlledTextField
           name="controlledTextField"
-          placeholder="Name"
+          placeholder="Enter your name"
+          label="Name"
           inputProps={{
             'data-testid': 'testTextField',
           }}
