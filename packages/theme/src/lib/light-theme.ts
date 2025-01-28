@@ -879,16 +879,19 @@ export const lightTheme = {
         elevation: 1,
       },
       styleOverrides: {
-        root: {
+        root: ({ ownerState: { variant } }: {ownerState: {variant: 'outlined' | 'elevation'}}) => ({
           backgroundColor: tokens.colorBackgroundPaper,
           maxWidth: '345px',
-        },
+          border: variant === 'outlined' ? `1px solid ${tokens.borderDecorative}` : 0,
+          boxShadow: variant === 'elevation' ? tokens.shadows1 : 'none'
+        }),
       },
     },
     MuiCardActions: {
       styleOverrides: {
         root: {
           padding: '16px',
+          borderTop: `1px solid ${tokens.borderDecorative}`
         },
       },
     },
@@ -904,15 +907,10 @@ export const lightTheme = {
       },
     },
     MuiCardHeader: {
-      defaultProps: {
-        titleTypographyProps: {
-          variant: 'h6',
-        },
-      },
       styleOverrides: {
         root: {
-          backgroundColor: tokens.colorBackgroundCanvas,
           color: tokens.colorTextPrimary,
+          borderBottom: `1px solid ${tokens.borderDecorative}`
         },
       },
     },

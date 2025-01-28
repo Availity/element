@@ -1,6 +1,6 @@
 import { default as MuiCard, CardProps as MuiCardProps } from '@mui/material/Card';
 
-export interface CardProps extends Omit<MuiCardProps, 'elevation' | 'variant' | 'raised' | 'square'> {
+export interface CardProps extends Omit<MuiCardProps, 'elevation' | 'raised'> {
   children?: React.ReactNode;
 }
 

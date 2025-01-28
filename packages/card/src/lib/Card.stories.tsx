@@ -12,6 +12,11 @@ const meta: Meta<typeof Card> = {
   title: 'Components/Card/Card',
   component: Card,
   tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      options: ['elevation', 'outlined'],
+    },
+  },
 };
 
 export default meta;
