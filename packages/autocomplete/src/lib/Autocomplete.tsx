@@ -55,7 +55,7 @@ const PopupIndicatorWrapper = forwardRef<HTMLButtonElement, MuiIconButtonProps>(
 
 const progressSx = { marginRight: '.5rem' };
 
-const LoadingIndicator = () => <CircularProgress size={20} sx={progressSx} />;
+const LoadingIndicator = () => <CircularProgress aria-label="Loading" size={20} sx={progressSx} />;
 
 export const Autocomplete = <
   T,
