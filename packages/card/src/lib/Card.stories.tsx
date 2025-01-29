@@ -31,13 +31,15 @@ export const _Card: StoryObj<typeof Card> = {
         aria-label="Orange rectangle with interlocking AV logo"
       />
       <CardContent>This is the content of the Card.</CardContent>
-      <CardActions>
-        <Button size="small" color="primary">
-          Submit
-        </Button>
-        <Button size="small">Cancel</Button>
+      <CardActions sx={{ justifyContent: 'flex-end' }}>
+        <Button color="primary">Submit</Button>
+        <Button>Cancel</Button>
       </CardActions>
     </Card>
   ),
-  args: {},
+  args: {
+    sx: {
+      maxWidth: '375px',
+    },
+  },
 };
