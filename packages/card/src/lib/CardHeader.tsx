@@ -2,12 +2,14 @@ import { default as MuiCardHeader, CardHeaderProps as MuiCardHeaderProps } from 
 import { StatusChip, StatusChipProps } from '@availity/mui-chip';
 
 type CardStatusChipProps = StatusChipProps & {
+  /** Setting the position to `bottom` displays the StatusChip under the header and subheader. Setting the position to `right` displays the StatusChip next to the actions section. */
   position: 'bottom' | 'right';
 };
 
 export interface CardHeaderProps extends MuiCardHeaderProps {
-  children?: React.ReactNode;
+  /** These props will be forwarded to the StatusChip.  */
   statusChipProps?: CardStatusChipProps;
+  /** Section at the top-right of the card for displaying logos. */
   logo?: React.ReactNode;
 }
 
