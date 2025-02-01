@@ -50,6 +50,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@mui/x-tree-view": "^7.16.0"
+    "@mui/x-tree-view": "^7.25.0"
   }
 }
