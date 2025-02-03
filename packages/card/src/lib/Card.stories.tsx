@@ -2,6 +2,8 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@availity/mui-button';
+import { FieldHelpIcon } from '@availity/mui-form-utils';
+import { Grid } from '@availity/mui-layout';
 import { Card, CardProps } from './Card';
 import { CardHeader } from './CardHeader';
 import { CardMedia } from './CardMedia';
@@ -31,9 +33,16 @@ export const _Card: StoryObj<typeof Card> = {
         aria-label="Orange rectangle with interlocking AV logo"
       />
       <CardContent>This is the content of the Card.</CardContent>
-      <CardActions sx={{ justifyContent: 'flex-end' }}>
-        <Button color="primary">Submit</Button>
-        <Button>Cancel</Button>
+      <CardActions sx={{ justifyContent: 'space-between' }}>
+        <FieldHelpIcon helpTopicId="1234" />
+        <Grid container spacing={1}>
+          <Grid>
+            <Button color="secondary">Cancel</Button>
+          </Grid>
+          <Grid>
+            <Button color="primary">Submit</Button>
+          </Grid>
+        </Grid>
       </CardActions>
     </Card>
   ),
