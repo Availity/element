@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.17](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.16...@availity/mui-page-header@1.0.17) (2025-02-03)
+
+
+### Bug Fixes
+
+* **mui-page-header:** pass key in map ([b1491b2](https://github.com/Availity/element/commit/b1491b2126e4820ff06151dab48f77d79015cac7))
+
 ## [1.0.16](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.15...@availity/mui-page-header@1.0.16) (2025-01-27)
 
 ### Dependency Updates
