@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.4](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.1.3...@availity/mui-controlled-form@0.1.4) (2025-02-03)
+
+
+### Bug Fixes
+
+* **mui-controlled-form:** export form components ([e6bf91e](https://github.com/Availity/element/commit/e6bf91e33235c0fe5efa826cc9e2d3c04e86adbd))
+
 ## [0.1.3](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.1.2...@availity/mui-controlled-form@0.1.3) (2025-01-28)
 
 ### Dependency Updates
