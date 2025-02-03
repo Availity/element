@@ -126,8 +126,8 @@ export const PageHeader = ({
         <Grid container width="auto">
           {buttons &&
             buttons.length > 0 &&
-            buttons?.map((buttonProps) => (
-              <Grid marginLeft={2} height="100%">
+            buttons?.map(({ key, ...buttonProps }) => (
+              <Grid key={key} marginLeft={2} height="100%">
                 <Button {...buttonProps} size="large" color="secondary" />
               </Grid>
             ))}
