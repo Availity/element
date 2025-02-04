@@ -2,6 +2,25 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.10...@availity/mui-file-selector@0.3.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-paper` updated to version `0.2.10`
+* `mui-alert` updated to version `0.2.10`
+* `mui-button` updated to version `0.2.10`
+* `mui-divider` updated to version `0.2.10`
+* `mui-form-utils` updated to version `0.2.10`
+* `mui-icon` updated to version `0.2.10`
+* `mui-layout` updated to version `0.2.10`
+* `mui-list` updated to version `0.2.10`
+* `mui-progress` updated to version `0.2.10`
+* `mui-typography` updated to version `0.2.10`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.2.10](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.2.9...@availity/mui-file-selector@0.2.10) (2025-01-27)
 
 ### Dependency Updates
