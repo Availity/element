@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.67.0](https://github.com/Availity/element/compare/@availity/theme@0.66.0...@availity/theme@0.67.0) (2025-02-04)
+
+### Dependency Updates
+
+* `design-tokens` updated to version `0.66.0`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.66.0](https://github.com/Availity/element/compare/@availity/theme@0.65.2...@availity/theme@0.66.0) (2025-01-24)
 
 
