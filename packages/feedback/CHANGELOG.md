@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-feedback@0.3.8...@availity/mui-feedback@0.4.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.3.8`
+* `mui-form-utils` updated to version `0.3.8`
+* `mui-icon` updated to version `0.3.8`
+* `mui-popover` updated to version `0.3.8`
+* `mui-textfield` updated to version `0.3.8`
+* `mui-toggle-button` updated to version `0.3.8`
+* `mui-typography` updated to version `0.3.8`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.3.8](https://github.com/Availity/element/compare/@availity/mui-feedback@0.3.7...@availity/mui-feedback@0.3.8) (2025-01-27)
 
 ### Dependency Updates
