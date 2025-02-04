@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.17.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.16.5...@availity/mui-form-utils@0.17.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.16.5`
+* `mui-icon` updated to version `0.16.5`
+* `mui-checkbox` updated to version `0.16.5`
+* `mui-typography` updated to version `0.16.5`
+* `mui-utils` updated to version `0.16.5`
+* `mui-chip` updated to version `0.16.5`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.16.5](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.16.4...@availity/mui-form-utils@0.16.5) (2025-01-27)
 
 ### Dependency Updates
