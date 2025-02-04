@@ -3,6 +3,7 @@ import {
   default as MuiTablePagination,
   TablePaginationProps as MuiTablePaginationProps,
 } from '@mui/material/TablePagination';
+import { TablePaginationActionsProps as MuiTablePaginationActionsProps } from '@mui/material/TablePagination/TablePaginationActions';
 import { SvgIconProps } from '@mui/material/SvgIcon';
 import { TableCellBaseProps } from '@mui/material/TableCell';
 import { Pagination, PaginationProps } from '@availity/mui-pagination';
@@ -34,18 +35,21 @@ type TablePaginationActionsProps = {
   page: number;
   rowsPerPage: number;
   onPageChange: (event: React.MouseEvent<HTMLButtonElement>, newPage: number) => void;
-} & Pick<MuiTablePaginationProps, 'backIconButtonProps' | 'nextIconButtonProps'>;
+} & MuiTablePaginationActionsProps;
 
 const IconComponent = (args: SvgIconProps) => (
-  <TriangleExpandIcon fontSize='xxsmall' sx={{marginRight: '4px'}} {...args}/>
+  <TriangleExpandIcon fontSize="xxsmall" sx={{ marginRight: '4px' }} {...args} />
 );
 
 export const TablePagination = forwardRef<unknown, TablePaginationProps>((props, ref) => {
   const { Actions, paginationProps, ...rest } = props;
-  const [ openDetected, setOpenDetected ] = useState(false);
+  const [openDetected, setOpenDetected] = useState(false);
 
   const ActionsPagination = (props: TablePaginationActionsProps): JSX.Element => {
-    const { count, page, rowsPerPage, onPageChange, backIconButtonProps, nextIconButtonProps, ...rest } = props;
+    // Pull secondary props off so they are not passed to Pagination component
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { count, page, rowsPerPage, onPageChange, nextIconButtonProps, backIconButtonProps, slotProps, ...rest } =
+      props;
 
     return (
       <>
@@ -65,5 +69,14 @@ export const TablePagination = forwardRef<unknown, TablePaginationProps>((props,
     );
   };
 
-  return <MuiTablePagination ActionsComponent={ActionsPagination} {...rest} slotProps={{select: {IconComponent: IconComponent, ...SelectAccessibilityOverrides(openDetected, setOpenDetected)}}} ref={ref} />;
+  return (
+    <MuiTablePagination
+      ActionsComponent={ActionsPagination}
+      {...rest}
+      slotProps={{
+        select: { IconComponent: IconComponent, ...SelectAccessibilityOverrides(openDetected, setOpenDetected) },
+      }}
+      ref={ref}
+    />
+  );
 });
