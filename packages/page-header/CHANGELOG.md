@@ -2,6 +2,23 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.17...@availity/mui-page-header@1.1.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-breadcrumbs` updated to version `1.0.17`
+* `mui-button` updated to version `1.0.17`
+* `mui-divider` updated to version `1.0.17`
+* `mui-layout` updated to version `1.0.17`
+* `mui-link` updated to version `1.0.17`
+* `mui-spaces` updated to version `1.0.17`
+* `mui-typography` updated to version `1.0.17`
+* `mui-feedback` updated to version `1.0.17`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [1.0.17](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.16...@availity/mui-page-header@1.0.17) (2025-02-03)
 
 
