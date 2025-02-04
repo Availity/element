@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.2](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.2.1...@availity/mui-controlled-form@0.2.2) (2025-02-04)
+
+
+### Bug Fixes
+
+* **mui-controlled-form:** forward required from controlled text field to text field ([c223248](https://github.com/Availity/element/commit/c223248ec4a970ebb078d170d7d9fec74e02dbdc))
+
 ## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.2.0...@availity/mui-controlled-form@0.2.1) (2025-02-04)
 
 
