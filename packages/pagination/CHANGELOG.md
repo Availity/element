@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.13...@availity/mui-pagination@0.4.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.13`
+* `mui-layout` updated to version `0.3.13`
+* `mui-list` updated to version `0.3.13`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.3.13](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.12...@availity/mui-pagination@0.3.13) (2025-01-27)
 
 ### Dependency Updates
