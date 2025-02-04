@@ -2,7 +2,7 @@ import { AsyncAutocomplete, AsyncAutocompleteProps } from '@availity/mui-autocom
 import { useFormContext, RegisterOptions, FieldValues, Controller, ControllerProps } from 'react-hook-form';
 import { ChipTypeMap } from '@mui/material/Chip';
 
-type ControlledAsyncAutocompleteProps<
+export type ControlledAsyncAutocompleteProps<
   Option,
   Multiple extends boolean | undefined,
   DisableClearable extends boolean | undefined,

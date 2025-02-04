@@ -1,7 +1,7 @@
 import { Select, SelectProps } from '@availity/mui-form-utils';
 import { useFormContext, RegisterOptions, FieldValues } from 'react-hook-form';
 
-type ControlledSelectProps = Omit<SelectProps, 'error' | 'required'> & { name: string } & RegisterOptions<
+export type ControlledSelectProps = Omit<SelectProps, 'error' | 'required'> & { name: string } & RegisterOptions<
     FieldValues,
     string
   >;

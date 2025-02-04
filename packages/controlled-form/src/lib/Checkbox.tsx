@@ -1,7 +1,7 @@
 import { Checkbox, CheckboxProps } from '@availity/mui-checkbox';
 import { useFormContext, RegisterOptions, FieldValues } from 'react-hook-form';
 
-type ControlledCheckboxProps = CheckboxProps & {
+export type ControlledCheckboxProps = CheckboxProps & {
   name: string;
 } & Omit<
     RegisterOptions<FieldValues, string>,
