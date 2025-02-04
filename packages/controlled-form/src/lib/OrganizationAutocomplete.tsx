@@ -1,7 +1,7 @@
 import { OrganizationAutocomplete, OrgAutocompleteProps } from '@availity/mui-autocomplete';
 import { useFormContext, Controller, RegisterOptions, FieldValues, ControllerProps } from 'react-hook-form';
 
-type ControlledOrgAutocompleteProps = Omit<OrgAutocompleteProps, 'name'> &
+export type ControlledOrgAutocompleteProps = Omit<OrgAutocompleteProps, 'name'> &
   Omit<
     RegisterOptions<FieldValues, string>,
     'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs' | 'max' | 'maxLength' | 'min' | 'minLength'

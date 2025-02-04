@@ -1,7 +1,7 @@
 import { CodesAutocomplete, CodesAutocompleteProps } from '@availity/mui-autocomplete';
 import { useFormContext, Controller, RegisterOptions, ControllerProps, FieldValues } from 'react-hook-form';
 
-type ControlledCodesAutocompleteProps = Omit<CodesAutocompleteProps, 'name'> &
+export type ControlledCodesAutocompleteProps = Omit<CodesAutocompleteProps, 'name'> &
   Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'> &
   Pick<ControllerProps, 'defaultValue' | 'shouldUnregister' | 'name'>;
 
