@@ -39,11 +39,8 @@ export const ControlledAutocomplete = <
   value,
   ...rest
 }: ControlledAutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
-  const {
-    control,
-    formState: { errors },
-  } = useFormContext();
-  const errorMessage = errors[name]?.message;
+  const { control, getFieldState } = useFormContext();
+  const errorMessage = getFieldState(name).error?.message;
   return (
     <Controller
       control={control}

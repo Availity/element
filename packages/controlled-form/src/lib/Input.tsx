@@ -24,14 +24,11 @@ export const ControlledInput = ({
   deps,
   ...rest
 }: ControlledInputProps) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+  const { register, getFieldState } = useFormContext();
   return (
     <Input
       {...rest}
-      error={!!errors[name]}
+      error={!!getFieldState(name).error}
       required={!!required}
       {...register(name, {
         required,

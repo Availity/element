@@ -24,15 +24,12 @@ export const ControlledSelect = ({
   deps,
   ...rest
 }: ControlledSelectProps) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+  const { register, getFieldState } = useFormContext();
 
   return (
     <Select
       {...rest}
-      error={!!errors[name]}
+      error={!!getFieldState(name).error}
       required={!!required}
       {...register(name, {
         required,

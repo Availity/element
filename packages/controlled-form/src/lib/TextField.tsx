@@ -24,12 +24,9 @@ export const ControlledTextField = ({
   deps,
   ...rest
 }: ControlledTextFieldProps) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+  const { register, getFieldState } = useFormContext();
 
-  const errorMessage = errors[name]?.message;
+  const errorMessage = getFieldState(name).error?.message;
 
   return (
     <TextField
@@ -50,7 +47,7 @@ export const ControlledTextField = ({
         shouldUnregister,
         deps,
       })}
-      error={!!errors[name]}
+      error={!!getFieldState(name).error}
       helperText={
         errorMessage && typeof errorMessage === 'string' ? (
           <>
