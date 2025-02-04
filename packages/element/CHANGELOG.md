@@ -2,6 +2,64 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.50.0](https://github.com/Availity/element/compare/@availity/element@0.49.6...@availity/element@0.50.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `0.49.6`
+* `mui-alert` updated to version `0.49.6`
+* `mui-authorize` updated to version `0.49.6`
+* `mui-autocomplete` updated to version `0.49.6`
+* `mui-avatar` updated to version `0.49.6`
+* `mui-backdrop` updated to version `0.49.6`
+* `mui-badge` updated to version `0.49.6`
+* `mui-block-ui` updated to version `0.49.6`
+* `mui-breadcrumbs` updated to version `0.49.6`
+* `mui-button` updated to version `0.49.6`
+* `mui-card` updated to version `0.49.6`
+* `mui-checkbox` updated to version `0.49.6`
+* `mui-chip` updated to version `0.49.6`
+* `mui-controlled-form` updated to version `0.49.6`
+* `mui-datepicker` updated to version `0.49.6`
+* `mui-dialog` updated to version `0.49.6`
+* `mui-disclaimer` updated to version `0.49.6`
+* `mui-divider` updated to version `0.49.6`
+* `mui-empty-state` updated to version `0.49.6`
+* `mui-event-tracker` updated to version `0.49.6`
+* `mui-favorites` updated to version `0.49.6`
+* `mui-feedback` updated to version `0.49.6`
+* `mui-file-selector` updated to version `0.49.6`
+* `mui-form-utils` updated to version `0.49.6`
+* `mui-icon` updated to version `0.49.6`
+* `mui-layout` updated to version `0.49.6`
+* `mui-link` updated to version `0.49.6`
+* `mui-list` updated to version `0.49.6`
+* `mui-menu` updated to version `0.49.6`
+* `mui-modal` updated to version `0.49.6`
+* `mui-page-header` updated to version `0.49.6`
+* `mui-pagination` updated to version `0.49.6`
+* `mui-paper` updated to version `0.49.6`
+* `mui-popover` updated to version `0.49.6`
+* `mui-popper` updated to version `0.49.6`
+* `mui-progress` updated to version `0.49.6`
+* `mui-snackbar` updated to version `0.49.6`
+* `mui-spaces` updated to version `0.49.6`
+* `mui-stepper` updated to version `0.49.6`
+* `mui-table` updated to version `0.49.6`
+* `mui-tabs` updated to version `0.49.6`
+* `mui-textfield` updated to version `0.49.6`
+* `mui-toggle-button` updated to version `0.49.6`
+* `mui-tooltip` updated to version `0.49.6`
+* `mui-transitions` updated to version `0.49.6`
+* `mui-tree` updated to version `0.49.6`
+* `mui-typography` updated to version `0.49.6`
+* `mui-utils` updated to version `0.49.6`
+* `theme-provider` updated to version `0.49.6`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.49.6](https://github.com/Availity/element/compare/@availity/element@0.49.5...@availity/element@0.49.6) (2025-02-03)
 
 ### Dependency Updates
