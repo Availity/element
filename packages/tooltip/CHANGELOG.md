@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.5.8...@availity/mui-tooltip@0.6.0) (2025-02-04)
+
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.5.8](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.5.7...@availity/mui-tooltip@0.5.8) (2024-04-19)
 
 ## [0.5.7](https://github.com/Availity/element/compare/@availity/mui-tooltip@0.5.6...@availity/mui-tooltip@0.5.7) (2024-04-04)
