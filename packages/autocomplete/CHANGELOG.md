@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.10.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.11...@availity/mui-autocomplete@0.10.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.9.11`
+* `mui-textfield` updated to version `0.9.11`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.9.11](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.10...@availity/mui-autocomplete@0.9.11) (2025-01-28)
 
 
