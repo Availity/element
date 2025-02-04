@@ -2,6 +2,28 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-table@0.2.10...@availity/mui-table@0.3.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.10`
+* `mui-chip` updated to version `0.2.10`
+* `mui-form-utils` updated to version `0.2.10`
+* `mui-icon` updated to version `0.2.10`
+* `mui-layout` updated to version `0.2.10`
+* `mui-link` updated to version `0.2.10`
+* `mui-menu` updated to version `0.2.10`
+* `mui-paper` updated to version `0.2.10`
+* `mui-textfield` updated to version `0.2.10`
+* `mui-typography` updated to version `0.2.10`
+* `mui-pagination` updated to version `0.2.10`
+* `mui-utils` updated to version `0.2.10`
+* `mui-transitions` updated to version `0.2.10`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.2.10](https://github.com/Availity/element/compare/@availity/mui-table@0.2.9...@availity/mui-table@0.2.10) (2025-01-27)
 
 ### Dependency Updates
