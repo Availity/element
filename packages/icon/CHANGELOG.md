@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.14.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.13.1...@availity/mui-icon@0.14.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-layout` updated to version `0.13.1`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.13.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.13.0...@availity/mui-icon@0.13.1) (2025-01-27)
 
 
