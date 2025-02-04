@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-authorize@0.1.12...@availity/mui-authorize@0.2.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-block-ui` updated to version `0.1.12`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.1.12](https://github.com/Availity/element/compare/@availity/mui-authorize@0.1.11...@availity/mui-authorize@0.1.12) (2025-01-27)
 
 ### Dependency Updates
