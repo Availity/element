@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.1](https://github.com/Availity/element/compare/@availity/mui-table@0.3.0...@availity/mui-table@0.3.1) (2025-02-04)
+
+
+### Bug Fixes
+
+* **mui-table:** update pagination types ([51f1071](https://github.com/Availity/element/commit/51f10718f3659b8414edf6fdcf23be16ff10f2ad))
+
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-table@0.2.10...@availity/mui-table@0.3.0) (2025-02-04)
 
 ### Dependency Updates
