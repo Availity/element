@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.2.3...@availity/mui-controlled-form@0.2.4) (2025-02-05)
+
+
+### Bug Fixes
+
+* **mui-controlled-form:** support nested form properties ([5746baf](https://github.com/Availity/element/commit/5746bafdee011b6fcc7d6f712946fcb597ea48da))
+* **mui-controlled-form:** support nested form properties for ControlledAsyncAutocomplete ([9c97199](https://github.com/Availity/element/commit/9c97199bbee014ebcaef6fbbf3ab81b962e87c7b))
+
 ## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.2.2...@availity/mui-controlled-form@0.2.3) (2025-02-05)
 
 ### Dependency Updates
