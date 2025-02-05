@@ -44,7 +44,7 @@ export const _ControlledSelect: StoryObj<typeof ControlledSelect> = {
             disabled={!isSubmitSuccessful}
             children="Reset"
             color="secondary"
-            onClick={() => reset({ controlledSelect: undefined })}
+            onClick={() => reset({ [args.name]: '' })}
           />
           <Button type="submit" disabled={isSubmitSuccessful} children="Submit" />
         </Grid>
@@ -52,7 +52,7 @@ export const _ControlledSelect: StoryObj<typeof ControlledSelect> = {
     };
 
     return (
-      <ControlledForm values={{ controlledSelect: undefined }} onSubmit={(data) => data}>
+      <ControlledForm values={{ [args.name]: '' }} onSubmit={(data) => data} noValidate>
         <FormControl>
           <FormLabel id={`${args.id}-label`}>{args.label}</FormLabel>
           <ControlledSelect {...args} labelId={`${args.id}-label`}>

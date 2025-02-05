@@ -1,37 +1,49 @@
 import { Checkbox, CheckboxProps } from '@availity/mui-checkbox';
-import { useFormContext, RegisterOptions, FieldValues } from 'react-hook-form';
+import { RegisterOptions, FieldValues, Controller, ControllerProps } from 'react-hook-form';
 
-export type ControlledCheckboxProps = CheckboxProps & {
-  name: string;
-} & Omit<
+export type ControlledCheckboxProps = CheckboxProps &
+  Omit<
     RegisterOptions<FieldValues, string>,
-    'required' | 'max' | 'maxLength' | 'min' | 'minLength' | 'pattern' | 'validate'
-  >;
+    | 'required'
+    | 'disabled'
+    | 'valueAsNumber'
+    | 'valueAsDate'
+    | 'setValueAs'
+    | 'max'
+    | 'maxLength'
+    | 'min'
+    | 'minLength'
+    | 'pattern'
+  > &
+  Pick<ControllerProps, 'defaultValue' | 'shouldUnregister' | 'name'>;
 
 export const ControlledCheckbox = ({
   name,
-  setValueAs,
   disabled,
   onChange,
   onBlur,
   value,
+  defaultValue = false,
   shouldUnregister,
   deps,
   ...rest
 }: ControlledCheckboxProps) => {
-  const { register } = useFormContext();
   return (
-    <Checkbox
-      {...rest}
-      {...register(name, {
-        setValueAs,
-        disabled,
+    <Controller
+      name={name}
+      defaultValue={defaultValue}
+      disabled={disabled}
+      rules={{
         onChange,
         onBlur,
         value,
         shouldUnregister,
         deps,
-      })}
+      }}
+      shouldUnregister={shouldUnregister}
+      render={({ field }) => (
+        <Checkbox {...rest} {...field} checked={field.value} onChange={(e) => field.onChange(e.target.checked)} />
+      )}
     />
   );
 };

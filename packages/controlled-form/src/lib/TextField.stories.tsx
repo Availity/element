@@ -43,13 +43,18 @@ export const _ControlledTextField: StoryObj<typeof ControlledTextField> = {
       } = useFormContext();
       return (
         <Grid container direction="row" justifyContent="space-between" marginTop={1}>
-          <Button disabled={!isSubmitSuccessful} children="Reset" color="secondary" onClick={() => reset()} />
+          <Button
+            disabled={!isSubmitSuccessful}
+            children="Reset"
+            color="secondary"
+            onClick={() => reset({ [args.name]: '' })}
+          />
           <Button type="submit" disabled={isSubmitSuccessful} children="Submit" />
         </Grid>
       );
     };
     return (
-      <ControlledForm values={{ controlledTextField: undefined }} onSubmit={(data) => data}>
+      <ControlledForm values={{ [args.name]: '' }} onSubmit={(data) => data}>
         <ControlledTextField {...args} />
         <Actions />
         <SubmittedValues />

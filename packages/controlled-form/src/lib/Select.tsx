@@ -1,10 +1,9 @@
 import { Select, SelectProps } from '@availity/mui-form-utils';
-import { useFormContext, RegisterOptions, FieldValues } from 'react-hook-form';
+import { RegisterOptions, FieldValues, Controller, ControllerProps } from 'react-hook-form';
 
-export type ControlledSelectProps = Omit<SelectProps, 'error' | 'required'> & { name: string } & RegisterOptions<
-    FieldValues,
-    string
-  >;
+export type ControlledSelectProps = Omit<SelectProps, 'error' | 'required'> &
+  Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'> &
+  Pick<ControllerProps, 'defaultValue' | 'shouldUnregister' | 'name'>;
 
 export const ControlledSelect = ({
   name,
@@ -15,23 +14,21 @@ export const ControlledSelect = ({
   min,
   pattern,
   validate,
-  setValueAs,
   disabled,
   onChange,
   onBlur,
   value,
+  defaultValue,
   shouldUnregister,
   deps,
   ...rest
 }: ControlledSelectProps) => {
-  const { register, getFieldState } = useFormContext();
-
   return (
-    <Select
-      {...rest}
-      error={!!getFieldState(name).error}
-      required={typeof required === 'object' ? required.value : !!required}
-      {...register(name, {
+    <Controller
+      name={name}
+      defaultValue={defaultValue}
+      disabled={disabled}
+      rules={{
         required,
         maxLength,
         minLength,
@@ -39,14 +36,21 @@ export const ControlledSelect = ({
         min,
         pattern,
         validate,
-        setValueAs,
-        disabled,
         onChange,
         onBlur,
         value,
         shouldUnregister,
         deps,
-      })}
+      }}
+      shouldUnregister={shouldUnregister}
+      render={({ field, fieldState: { error } }) => (
+        <Select
+          {...rest}
+          {...field}
+          error={!!error}
+          required={typeof required === 'object' ? required.value : !!required}
+        />
+      )}
     />
   );
 };

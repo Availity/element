@@ -1,5 +1,5 @@
 import { Datepicker, DatepickerProps } from '@availity/mui-datepicker';
-import { useFormContext, RegisterOptions, FieldValues, Controller, ControllerProps } from 'react-hook-form';
+import { RegisterOptions, FieldValues, Controller, ControllerProps } from 'react-hook-form';
 
 export type ControlledDatepickerProps = DatepickerProps &
   Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'> &
@@ -23,11 +23,9 @@ export const ControlledDatepicker = ({
   FieldProps,
   ...rest
 }: ControlledDatepickerProps) => {
-  const { control } = useFormContext();
   return (
     <Controller
       name={name}
-      control={control}
       defaultValue={defaultValue}
       rules={{
         deps,

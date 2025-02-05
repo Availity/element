@@ -1,10 +1,9 @@
 import { Input, InputProps } from '@availity/mui-form-utils';
-import { useFormContext, RegisterOptions, FieldValues } from 'react-hook-form';
+import { RegisterOptions, FieldValues, Controller, ControllerProps } from 'react-hook-form';
 
-export type ControlledInputProps = Omit<InputProps, 'error' | 'name' | 'required'> & { name: string } & RegisterOptions<
-    FieldValues,
-    string
-  >;
+export type ControlledInputProps = Omit<InputProps, 'error' | 'name' | 'required'> &
+  Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'> &
+  Pick<ControllerProps, 'defaultValue' | 'shouldUnregister' | 'name'>;
 
 export const ControlledInput = ({
   name,
@@ -15,7 +14,7 @@ export const ControlledInput = ({
   min,
   pattern,
   validate,
-  setValueAs,
+  defaultValue,
   disabled,
   onChange,
   onBlur,
@@ -24,13 +23,12 @@ export const ControlledInput = ({
   deps,
   ...rest
 }: ControlledInputProps) => {
-  const { register, getFieldState } = useFormContext();
   return (
-    <Input
-      {...rest}
-      error={!!getFieldState(name).error}
-      required={typeof required === 'object' ? required.value : !!required}
-      {...register(name, {
+    <Controller
+      name={name}
+      defaultValue={defaultValue}
+      disabled={disabled}
+      rules={{
         required,
         maxLength,
         minLength,
@@ -38,14 +36,21 @@ export const ControlledInput = ({
         min,
         pattern,
         validate,
-        setValueAs,
-        disabled,
         onChange,
         onBlur,
         value,
         shouldUnregister,
         deps,
-      })}
+      }}
+      shouldUnregister={shouldUnregister}
+      render={({ field, fieldState: { error } }) => (
+        <Input
+          {...rest}
+          {...field}
+          error={!!error}
+          required={typeof required === 'object' ? required.value : !!required}
+        />
+      )}
     />
   );
 };
