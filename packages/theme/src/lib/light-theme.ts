@@ -879,9 +879,33 @@ export const lightTheme = {
         elevation: 1,
       },
       styleOverrides: {
-        root: {
+        root: ({ ownerState: { variant } }: {ownerState: {variant: 'outlined' | 'elevation'}}) => ({
           backgroundColor: tokens.colorBackgroundPaper,
-          maxWidth: '345px',
+          border: variant === 'outlined' ? `1px solid ${tokens.borderDecorative}` : 0,
+          boxShadow: variant === 'elevation' ? tokens.shadows1 : 'none'
+        }),
+      },
+    },
+    MuiCardActionArea: {
+      styleOverrides: {
+        root: {
+          '&:hover': {
+            backgroundColor: tokens.colorActionHover,
+
+          },
+          '&.Mui-focusVisible': {
+            boxShadow: `inset 0 0 0px 2px ${tokens.colorPrimaryMain}`,
+            paddingBottom: '1px',
+            '.MuiCardActionArea-focusHighlight ': {
+              opacity: 0
+            },
+            '.MuiCardHeader-root': {
+              borderBottom: 0,
+            },
+          },
+          '&:hover:active': {
+            backgroundColor: tokens.colorActionFocus,
+          }
         },
       },
     },
@@ -889,6 +913,7 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           padding: '16px',
+          borderTop: `1px solid ${tokens.borderDecorative}`
         },
       },
     },
@@ -904,16 +929,17 @@ export const lightTheme = {
       },
     },
     MuiCardHeader: {
-      defaultProps: {
-        titleTypographyProps: {
-          variant: 'h6',
-        },
-      },
       styleOverrides: {
         root: {
-          backgroundColor: tokens.colorBackgroundCanvas,
           color: tokens.colorTextPrimary,
+          borderBottom: `1px solid ${tokens.borderDecorative}`
         },
+        action: {
+          marginTop: 0,
+          marginBottom: 0,
+          display: 'flex',
+          alignItems: 'center'
+        }
       },
     },
     MuiCardMedia: {

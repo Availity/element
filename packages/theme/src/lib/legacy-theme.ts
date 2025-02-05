@@ -886,11 +886,6 @@ export const legacyTheme = {
       },
     },
     MuiCardHeader: {
-      defaultProps: {
-        titleTypographyProps: {
-          variant: 'h5',
-        },
-      },
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorGrey100,

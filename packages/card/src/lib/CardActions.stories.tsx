@@ -18,21 +18,21 @@ export const _CardActions: StoryObj<typeof CardActions> = {
   render: (args: CardActionsProps) => (
     <Card>
       <CardActions {...args}>
-        <Button size="small" color="primary">
-          Submit
-        </Button>
-        <Button size="small">Cancel</Button>
+        <Button color="secondary">Cancel</Button>
+        <Button color="primary">Submit</Button>
       </CardActions>
     </Card>
   ),
-  args: {},
+  args: {
+    sx: { justifyContent: 'flex-end' },
+  },
 };
 export const _CardActionsIconButtons: StoryObj<typeof CardActions> = {
   render: (args: CardActionsProps) => (
     <Card>
       <CardActions {...args}>
-        <IconButton color="primary" title="search">
-          <SearchIcon fontSize="small" />
+        <IconButton color="primary" title="search" size="small">
+          <SearchIcon fontSize="xsmall" />
         </IconButton>
       </CardActions>
     </Card>

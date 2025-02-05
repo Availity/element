@@ -1,31 +1,68 @@
-import { useTheme } from '@mui/material/styles';
 import { default as MuiCardHeader, CardHeaderProps as MuiCardHeaderProps } from '@mui/material/CardHeader';
+import { StatusChip, StatusChipProps } from '@availity/mui-chip';
 
-export interface CardHeaderProps extends Omit<MuiCardHeaderProps, 'avatar'> {
-  children?: React.ReactNode;
+type CardStatusChipProps = StatusChipProps & {
+  /** Setting the position to `bottom` displays the StatusChip under the header and subheader. Setting the position to `right` displays the StatusChip next to the actions section. */
+  position: 'bottom' | 'right';
+};
+
+export interface CardHeaderProps extends MuiCardHeaderProps {
+  /** These props will be forwarded to the StatusChip.  */
+  statusChipProps?: CardStatusChipProps;
+  /** Section at the top-right of the card for displaying logos. */
+  logo?: React.ReactNode;
 }
 
 export const CardHeader = ({
   titleTypographyProps,
   subheaderTypographyProps,
+  statusChipProps,
+  action,
+  subheader,
+  title,
+  logo,
   ...rest
 }: CardHeaderProps): JSX.Element => {
-  const theme = useTheme();
-
-  /**
-   * This is ugly, but it allows us to define a default variant while retaining the rest of the
-   * titleTypographyProps that the user passed.
-   */
-  const titleVariant = theme.components?.MuiCardHeader?.defaultProps?.titleTypographyProps?.variant;
-
   return (
     <MuiCardHeader
       {...rest}
+      title={
+        logo ? (
+          <>
+            {logo}
+            <br />
+            {title}
+          </>
+        ) : (
+          title
+        )
+      }
       titleTypographyProps={{
-        variant: titleVariant,
         ...titleTypographyProps,
+        variant: 'h5',
       }}
-      subheaderTypographyProps={{ variant: 'subtitle2', ...subheaderTypographyProps }}
+      subheaderTypographyProps={{ ...subheaderTypographyProps, variant: 'body2' }}
+      subheader={
+        statusChipProps && statusChipProps.position === 'bottom' ? (
+          <>
+            {subheader}
+            <br />
+            <StatusChip {...statusChipProps} />
+          </>
+        ) : (
+          subheader
+        )
+      }
+      action={
+        statusChipProps && statusChipProps.position === 'right' ? (
+          <>
+            <StatusChip {...statusChipProps} />
+            {action}
+          </>
+        ) : (
+          action
+        )
+      }
     />
   );
 };

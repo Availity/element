@@ -1,6 +1,7 @@
 // Each exported component in the package should have its own stories file
 import type { Meta, StoryObj } from '@storybook/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Card, CardHeader, CardHeaderProps } from '@availity/mui-card';
 import { Spaces } from './Spaces';
 import { SpacesImage, SpacesImageProps } from './SpacesImage';
 
@@ -73,5 +74,27 @@ export const _SpacesBillboard: StoryObj<typeof SpacesImage> = {
   args: {
     spaceId: '22',
     imageType: 'images.billboard',
+  },
+};
+
+export const _CardHeaderWithLogo: StoryObj<typeof CardHeader> = {
+  render: (args: CardHeaderProps) => (
+    <QueryClientProvider client={queryClient}>
+      <Spaces spaceIds={['11', '22', '33']}>
+        <Card>
+          <CardHeader {...args} />
+        </Card>
+      </Spaces>
+    </QueryClientProvider>
+  ),
+  args: {
+    title: 'Card header',
+    subheader: 'Subheader',
+    statusChipProps: {
+      position: 'right',
+      label: 'Approved',
+      color: 'success',
+    },
+    logo: <SpacesImage spaceId="11" imageType="images.logo" />,
   },
 };
