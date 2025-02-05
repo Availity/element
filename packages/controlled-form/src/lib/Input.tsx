@@ -29,7 +29,7 @@ export const ControlledInput = ({
     <Input
       {...rest}
       error={!!getFieldState(name).error}
-      required={!!required}
+      required={typeof required === 'object' ? required.value : !!required}
       {...register(name, {
         required,
         maxLength,

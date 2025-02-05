@@ -45,7 +45,7 @@ export const ControlledRadioGroup = ({
       shouldUnregister={shouldUnregister}
       render={({ field }) => (
         <FormControl error={!!errorMessage}>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel required={typeof required === 'object' ? required.value : !!required}>{label}</FormLabel>
           <RadioGroup {...field} {...rest} />
           <FormHelperText>
             {errorMessage && typeof errorMessage === 'string' ? (
