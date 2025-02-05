@@ -50,6 +50,7 @@ export const ControlledProviderAutocomplete = ({
           {...rest}
           FieldProps={{
             ...FieldProps,
+            required: typeof required === 'object' ? required.value : !!required,
             error: !!errorMessage,
             helperText:
               errorMessage && typeof errorMessage === 'string' ? (

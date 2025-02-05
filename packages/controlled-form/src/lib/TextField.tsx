@@ -31,7 +31,7 @@ export const ControlledTextField = ({
   return (
     <TextField
       {...rest}
-      required={!!required}
+      required={typeof required === 'object' ? required.value : !!required}
       {...register(name, {
         required,
         maxLength,

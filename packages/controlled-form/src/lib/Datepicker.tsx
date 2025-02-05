@@ -20,6 +20,7 @@ export const ControlledDatepicker = ({
   shouldUnregister,
   validate,
   value,
+  FieldProps,
   ...rest
 }: ControlledDatepickerProps) => {
   const { control } = useFormContext();
@@ -43,7 +44,27 @@ export const ControlledDatepicker = ({
         value,
       }}
       shouldUnregister={shouldUnregister}
-      render={({ field: { onChange, value } }) => <Datepicker {...rest} onChange={onChange} value={value || null} />}
+      render={({ field: { onChange, value }, fieldState: { error } }) => (
+        <Datepicker
+          {...rest}
+          FieldProps={{
+            ...FieldProps,
+            required: typeof required === 'object' ? required.value : !!required,
+            error: !!error,
+            helperText: error?.message ? (
+              <>
+                {error?.message}
+                <br />
+                {FieldProps?.helperText}
+              </>
+            ) : (
+              FieldProps?.helperText
+            ),
+          }}
+          onChange={onChange}
+          value={value || null}
+        />
+      )}
     />
   );
 };
