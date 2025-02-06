@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-pagination@0.4.0...@availity/mui-pagination@0.4.1) (2025-02-06)
+
+
+### Bug Fixes
+
+* enchance aria label generation for pagination ([17e7747](https://github.com/Availity/element/commit/17e77476fd71482f3ae78898a9d9886ccaf5d90f))
+
 ## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.13...@availity/mui-pagination@0.4.0) (2025-02-04)
 
 ### Dependency Updates
