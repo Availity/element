@@ -7,6 +7,13 @@ export type PaginationProps = {
   size?: 'medium' | 'large';
 } & Omit<MuiPaginationProps, 'color' | 'getItemAriaLabel' | 'renderItem' | 'shape' | 'size'>;
 
-export const Pagination = ({ ...rest }: PaginationProps): JSX.Element => {
-  return <MuiPagination {...rest} renderItem={(item) => <PaginationItem {...item} />} />;
+const getItemAriaLabel: MuiPaginationProps['getItemAriaLabel'] = (type, page) => {
+  if (type === 'page') return `Go to page ${page}`;
+  return `Go to ${type} page`;
+};
+
+export const Pagination = (props: PaginationProps): JSX.Element => {
+  return (
+    <MuiPagination {...props} getItemAriaLabel={getItemAriaLabel} renderItem={(item) => <PaginationItem {...item} />} />
+  );
 };

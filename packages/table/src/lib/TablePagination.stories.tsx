@@ -1,6 +1,7 @@
 // Each exported component in the package should have its own stories file
-
+import { useEffect, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { Table, TableFooter, TableRow, TablePagination, TablePaginationProps } from '..';
 
 const meta: Meta<typeof TablePagination> = {
@@ -26,19 +27,49 @@ const meta: Meta<typeof TablePagination> = {
 export default meta;
 
 export const _TablePagination: StoryObj<typeof TablePagination> = {
-  render: (args: TablePaginationProps) => <TablePagination {...args} />,
+  render: (args: TablePaginationProps) => {
+    const [page, setPage] = useState(args.page);
+
+    useEffect(() => {
+      setPage(args.page);
+    }, [args.page]);
+
+    return (
+      <TablePagination
+        {...args}
+        page={page}
+        onPageChange={(event, page) => {
+          setPage(page);
+        }}
+      />
+    );
+  },
 };
 
 export const _AsPartOfTable: StoryObj<typeof TablePagination> = {
-  render: (args: TablePaginationProps) => (
-    <Table role="presentation">
-      <TableFooter>
-        <TableRow>
-          <TablePagination {...args} />
-        </TableRow>
-      </TableFooter>
-    </Table>
-  ),
+  render: (args: TablePaginationProps) => {
+    const [page, setPage] = useState(args.page);
+
+    useEffect(() => {
+      setPage(args.page);
+    }, [args.page]);
+
+    return (
+      <Table role="presentation">
+        <TableFooter>
+          <TableRow>
+            <TablePagination
+              {...args}
+              page={page}
+              onPageChange={(event, page) => {
+                setPage(page);
+              }}
+            />
+          </TableRow>
+        </TableFooter>
+      </Table>
+    );
+  },
   args: {
     component: undefined,
   },
