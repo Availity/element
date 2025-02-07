@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.2.5...@availity/mui-controlled-form@0.2.6) (2025-02-07)
+
+
+### Bug Fixes
+
+* **mui-controlled-form:** disable browser validation so custom errors can be shown ([7aea029](https://github.com/Availity/element/commit/7aea029fc8802366cdb8240e6d0a64bfb4853a9f))
+
 ## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.2.4...@availity/mui-controlled-form@0.2.5) (2025-02-05)
 
 
