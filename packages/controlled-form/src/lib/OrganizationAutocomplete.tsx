@@ -1,5 +1,5 @@
 import { OrganizationAutocomplete, OrgAutocompleteProps } from '@availity/mui-autocomplete';
-import { useFormContext, Controller, RegisterOptions, FieldValues, ControllerProps } from 'react-hook-form';
+import { Controller, RegisterOptions, FieldValues, ControllerProps } from 'react-hook-form';
 
 export type ControlledOrgAutocompleteProps = Omit<OrgAutocompleteProps, 'name'> &
   Omit<
@@ -22,12 +22,9 @@ export const ControlledOrganizationAutocomplete = ({
   FieldProps,
   ...rest
 }: ControlledOrgAutocompleteProps) => {
-  const { control, getFieldState } = useFormContext();
-  const errorMessage = getFieldState(name).error?.message;
   return (
     <Controller
       name={name}
-      control={control}
       defaultValue={defaultValue}
       rules={{
         deps,
@@ -40,23 +37,22 @@ export const ControlledOrganizationAutocomplete = ({
         value,
       }}
       shouldUnregister={shouldUnregister}
-      render={({ field: { onChange, value, onBlur } }) => (
+      render={({ field: { onChange, value, onBlur }, fieldState: { error } }) => (
         <OrganizationAutocomplete
           {...rest}
           FieldProps={{
             ...FieldProps,
             required: typeof required === 'object' ? required.value : !!required,
-            error: !!errorMessage,
-            helperText:
-              errorMessage && typeof errorMessage === 'string' ? (
-                <>
-                  {errorMessage}
-                  <br />
-                  {FieldProps?.helperText}
-                </>
-              ) : (
-                FieldProps?.helperText
-              ),
+            error: !!error,
+            helperText: error?.message ? (
+              <>
+                {error.message}
+                <br />
+                {FieldProps?.helperText}
+              </>
+            ) : (
+              FieldProps?.helperText
+            ),
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {

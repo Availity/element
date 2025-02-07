@@ -1,9 +1,9 @@
 import { TextField, TextFieldProps } from '@availity/mui-textfield';
-import { useFormContext, RegisterOptions, FieldValues } from 'react-hook-form';
+import { RegisterOptions, FieldValues, Controller, ControllerProps } from 'react-hook-form';
 
-export type ControlledTextFieldProps = Omit<TextFieldProps, 'required'> & {
-  name: string;
-} & RegisterOptions<FieldValues, string>;
+export type ControlledTextFieldProps = Omit<TextFieldProps, 'required'> &
+  Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'> &
+  Pick<ControllerProps, 'defaultValue' | 'shouldUnregister' | 'name'>;
 
 export const ControlledTextField = ({
   name,
@@ -15,8 +15,8 @@ export const ControlledTextField = ({
   min,
   pattern,
   validate,
-  setValueAs,
   disabled,
+  defaultValue,
   onChange,
   onBlur,
   value,
@@ -24,15 +24,12 @@ export const ControlledTextField = ({
   deps,
   ...rest
 }: ControlledTextFieldProps) => {
-  const { register, getFieldState } = useFormContext();
-
-  const errorMessage = getFieldState(name).error?.message;
-
   return (
-    <TextField
-      {...rest}
-      required={typeof required === 'object' ? required.value : !!required}
-      {...register(name, {
+    <Controller
+      name={name}
+      defaultValue={defaultValue}
+      disabled={disabled}
+      rules={{
         required,
         maxLength,
         minLength,
@@ -40,26 +37,32 @@ export const ControlledTextField = ({
         min,
         pattern,
         validate,
-        setValueAs,
-        disabled,
         onChange,
         onBlur,
         value,
         shouldUnregister,
         deps,
-      })}
-      error={!!getFieldState(name).error}
-      helperText={
-        errorMessage && typeof errorMessage === 'string' ? (
-          <>
-            {errorMessage}
-            <br />
-            {helperText}
-          </>
-        ) : (
-          helperText
-        )
-      }
+      }}
+      shouldUnregister={shouldUnregister}
+      render={({ field, fieldState: { error } }) => (
+        <TextField
+          {...rest}
+          {...field}
+          required={typeof required === 'object' ? required.value : !!required}
+          error={!!error}
+          helperText={
+            error?.message ? (
+              <>
+                {error.message}
+                <br />
+                {helperText}
+              </>
+            ) : (
+              helperText
+            )
+          }
+        />
+      )}
     />
   );
 };

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ControlledCheckbox } from './Checkbox';
+import { ControlledCheckbox, ControlledCheckboxProps } from './Checkbox';
 import { ControlledForm } from './ControlledForm';
 import { Button } from '@availity/mui-button';
 import { useFormContext } from 'react-hook-form';
@@ -17,7 +17,7 @@ const meta: Meta<typeof ControlledCheckbox> = {
 export default meta;
 
 export const _ControlledCheckbox: StoryObj<typeof ControlledCheckbox> = {
-  render: () => {
+  render: (args: ControlledCheckboxProps) => {
     const SubmittedValues = () => {
       const {
         getValues,
@@ -39,19 +39,24 @@ export const _ControlledCheckbox: StoryObj<typeof ControlledCheckbox> = {
       } = useFormContext();
       return (
         <Grid container direction="row" justifyContent="space-between" marginTop={1}>
-          <Button disabled={!isSubmitSuccessful} children="Reset" color="secondary" onClick={() => reset()} />
+          <Button
+            disabled={!isSubmitSuccessful}
+            children="Reset"
+            color="secondary"
+            onClick={() => reset({ [args.name]: false })}
+          />
           <Button type="submit" disabled={isSubmitSuccessful} children="Submit" />
         </Grid>
       );
     };
     return (
-      <ControlledForm onSubmit={(data) => data} values={{ controlledCheckbox: undefined }}>
+      <ControlledForm onSubmit={(data) => data} values={{ [args.name]: false }} noValidate>
         <FormControl>
           <FormLabel id="radio-group" component="div">
             Radio Group
           </FormLabel>
           <FormGroup>
-            <FormControlLabel label="Option 1" control={<ControlledCheckbox name="Option 1" />} />
+            <FormControlLabel label="Option 1" control={<ControlledCheckbox {...args} />} />
             <FormControlLabel label="Option 2" control={<ControlledCheckbox name="Option 2" />} />
             <FormControlLabel label="Option 3" control={<ControlledCheckbox name="Option 3" />} />
           </FormGroup>

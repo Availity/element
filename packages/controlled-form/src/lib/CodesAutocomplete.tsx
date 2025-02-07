@@ -1,5 +1,5 @@
 import { CodesAutocomplete, CodesAutocompleteProps } from '@availity/mui-autocomplete';
-import { useFormContext, Controller, RegisterOptions, ControllerProps, FieldValues } from 'react-hook-form';
+import { Controller, RegisterOptions, ControllerProps, FieldValues } from 'react-hook-form';
 
 export type ControlledCodesAutocompleteProps = Omit<CodesAutocompleteProps, 'name'> &
   Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'> &
@@ -21,12 +21,9 @@ export const ControlledCodesAutocomplete = ({
   FieldProps,
   ...rest
 }: ControlledCodesAutocompleteProps) => {
-  const { control, getFieldState } = useFormContext();
-  const errorMessage = getFieldState(name).error?.message;
   return (
     <Controller
       name={name}
-      control={control}
       defaultValue={defaultValue}
       rules={{
         deps,
@@ -41,23 +38,22 @@ export const ControlledCodesAutocomplete = ({
         value,
       }}
       shouldUnregister={shouldUnregister}
-      render={({ field: { onChange, value, onBlur } }) => (
+      render={({ field: { onChange, value, onBlur }, fieldState: { error } }) => (
         <CodesAutocomplete
           {...rest}
           FieldProps={{
             ...FieldProps,
             required: typeof required === 'object' ? required.value : !!required,
-            error: !!errorMessage,
-            helperText:
-              errorMessage && typeof errorMessage === 'string' ? (
-                <>
-                  {errorMessage}
-                  <br />
-                  {FieldProps?.helperText}
-                </>
-              ) : (
-                FieldProps?.helperText
-              ),
+            error: !!error,
+            helperText: error?.message ? (
+              <>
+                {error.message}
+                <br />
+                {FieldProps?.helperText}
+              </>
+            ) : (
+              FieldProps?.helperText
+            ),
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {
