@@ -29,7 +29,7 @@ export const ControlledForm = ({ onSubmit, values, schema, validationResolver, .
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} {...rest} />
+      <form onSubmit={methods.handleSubmit(onSubmit)} noValidate {...rest} />
     </FormProvider>
   );
 };
