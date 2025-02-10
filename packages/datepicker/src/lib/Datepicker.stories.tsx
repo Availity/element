@@ -52,14 +52,12 @@ type DateRangePickerProps = {
     helperText?: string;
     helpTopicId?: string;
     fullWidth?: boolean;
-    error?: boolean;
   };
   endFieldProps?: {
     label?: string;
     helperText?: string;
     helpTopicId?: string;
     fullWidth?: boolean;
-    error?: boolean;
   };
 };
 
