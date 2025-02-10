@@ -68,53 +68,35 @@ export const _DateRangePicker: StoryObj<DateRangePicker> = {
     const [startDate, setStartDate] = useState<Dayjs | null>(null);
     const [endDate, setEndDate] = useState<Dayjs | null>(null);
 
-    const DateRangePicker = ({
-      startDate,
-      endDate,
-      onStartDateChange,
-      onEndDateChange,
-      startFieldProps = {
-        label: 'Start Date',
-        helperText: 'Select start date',
-      },
-      endFieldProps = {
-        label: 'End Date',
-        helperText: 'Select end date',
-      },
-    }: DateRangePickerProps) => {
-      return (
-        <Box sx={{ backgroundColor: 'background.paper', padding: '1.25rem' }}>
-          <Grid container spacing={2}>
-            <Grid xs={12} sm={6}>
-              <Datepicker
-                value={startDate}
-                onChange={onStartDateChange}
-                FieldProps={startFieldProps}
-                maxDate={endDate ?? undefined} // Prevent selecting start date after end date
-                views={['day', 'month', 'year']}
-              />
-            </Grid>
-            <Grid xs={12} sm={6}>
-              <Datepicker
-                value={endDate}
-                onChange={onEndDateChange}
-                FieldProps={endFieldProps}
-                minDate={startDate ?? undefined} // Prevent selecting end date before start date
-                views={['day', 'month', 'year']}
-              />
-            </Grid>
-          </Grid>
-        </Box>
-      );
-    };
-
     return (
-      <DateRangePicker
-        startDate={startDate}
-        endDate={endDate}
-        onStartDateChange={setStartDate}
-        onEndDateChange={setEndDate}
-      />
+      <Box sx={{ backgroundColor: 'background.paper', padding: '1.25rem' }}>
+        <Grid container spacing={2}>
+          <Grid xs={12} sm={6}>
+            <Datepicker
+              value={startDate}
+              onChange={setStartDate}
+              FieldProps={{
+                label: 'Start Date',
+                helperText: 'Select start date',
+              }}
+              maxDate={endDate ?? undefined} // Prevent selecting start date after end date
+              views={['day', 'month', 'year']}
+            />
+          </Grid>
+          <Grid xs={12} sm={6}>
+            <Datepicker
+              value={endDate}
+              onChange={setEndDate}
+              FieldProps={{
+                label: 'End Date',
+                helperText: 'Select end date',
+              }}
+              minDate={startDate ?? undefined} // Prevent selecting end date before start date
+              views={['day', 'month', 'year']}
+            />
+          </Grid>
+        </Grid>
+      </Box>
     );
   },
 };
