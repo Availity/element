@@ -40,7 +40,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
-    "@mui/utils": "^5.15.15",
+    "@mui/utils": "^6.4.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^8.0.2",

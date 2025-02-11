@@ -1,8 +1,6 @@
 // Each exported component in the package should have its own stories file
 import { useState } from 'react';
-import Grid from '@mui/material/Grid2';
 import type { Meta, StoryObj } from '@storybook/react';
-import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { MonthCalendar } from '@mui/x-date-pickers/MonthCalendar';
 import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
