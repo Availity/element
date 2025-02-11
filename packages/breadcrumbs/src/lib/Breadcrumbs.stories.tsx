@@ -16,7 +16,20 @@ export const _Breadcrumbs: StoryObj<typeof Breadcrumbs> = {
   render: (args: BreadcrumbsProps) => <Breadcrumbs {...args} />,
   args: {
     active: 'Current Page',
+    'aria-label': 'test-breadcrumbs',
     crumbs: [{ name: 'Previous Page', url: '#' }],
+  },
+};
+
+export const _BreadcrumbsLinkProps: StoryObj<typeof Breadcrumbs> = {
+  render: (args: BreadcrumbsProps) => <Breadcrumbs {...args} />,
+  args: {
+    active: 'Current Page',
+    'aria-label': 'test-breadcrumbs',
+    crumbs: [{ name: 'Previous Page', url: '/previous-page' }],
+    LinkProps: {
+      loadApp: false,
+    },
   },
 };
 

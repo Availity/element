@@ -5,7 +5,7 @@ import type { Dayjs } from 'dayjs';
 import type {} from '@mui/x-date-pickers/AdapterDayjs';
 
 export type DatepickerProps = {
-  value: Dayjs | null | undefined;
+  value?: Dayjs | null | undefined;
   /** Props applied to the `TextField` component */
   FieldProps?: TextFieldProps;
   /** Determines where the Calendar will be placed when opened.

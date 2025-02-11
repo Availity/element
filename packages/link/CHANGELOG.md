@@ -2,6 +2,41 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-link@0.4.9...@availity/mui-link@0.5.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.4.9`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.4.9](https://github.com/Availity/element/compare/@availity/mui-link@0.4.8...@availity/mui-link@0.4.9) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.4.8`
+## [0.4.8](https://github.com/Availity/element/compare/@availity/mui-link@0.4.7...@availity/mui-link@0.4.8) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.4.7`
+## [0.4.7](https://github.com/Availity/element/compare/@availity/mui-link@0.4.6...@availity/mui-link@0.4.7) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.4.6`
+## [0.4.6](https://github.com/Availity/element/compare/@availity/mui-link@0.4.5...@availity/mui-link@0.4.6) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.4.5`
+## [0.4.5](https://github.com/Availity/element/compare/@availity/mui-link@0.4.4...@availity/mui-link@0.4.5) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.4.4`
 ## [0.4.4](https://github.com/Availity/element/compare/@availity/mui-link@0.4.3...@availity/mui-link@0.4.4) (2024-10-31)
 
 ### Dependency Updates

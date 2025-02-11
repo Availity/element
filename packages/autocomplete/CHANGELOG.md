@@ -2,6 +2,81 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.10.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.11...@availity/mui-autocomplete@0.10.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.9.11`
+* `mui-textfield` updated to version `0.9.11`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.9.11](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.10...@availity/mui-autocomplete@0.9.11) (2025-01-28)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** add aria-label to LoadingIndicator ([79f47b4](https://github.com/Availity/element/commit/79f47b466b7a6838430cf20b101b937e9b810d3c))
+
+## [0.9.10](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.9...@availity/mui-autocomplete@0.9.10) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.9.9`
+* `mui-textfield` updated to version `0.9.9`
+## [0.9.9](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.8...@availity/mui-autocomplete@0.9.9) (2025-01-23)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** export the CodesAutocomplete component ([b9eba2c](https://github.com/Availity/element/commit/b9eba2ce16de7a5bd277d724dab6b1003cc09f9f))
+
+## [0.9.8](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.7...@availity/mui-autocomplete@0.9.8) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.9.7`
+* `mui-textfield` updated to version `0.9.7`
+## [0.9.7](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.6...@availity/mui-autocomplete@0.9.7) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.9.6`
+* `mui-textfield` updated to version `0.9.6`
+## [0.9.6](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.5...@availity/mui-autocomplete@0.9.6) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.9.5`
+* `mui-textfield` updated to version `0.9.5`
+## [0.9.5](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.4...@availity/mui-autocomplete@0.9.5) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.9.4`
+* `mui-textfield` updated to version `0.9.4`
+## [0.9.4](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.3...@availity/mui-autocomplete@0.9.4) (2024-12-23)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.9.3`
+* `mui-textfield` updated to version `0.9.3`
+## [0.9.3](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.2...@availity/mui-autocomplete@0.9.3) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.9.2`
+* `mui-textfield` updated to version `0.9.2`
+## [0.9.2](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.1...@availity/mui-autocomplete@0.9.2) (2024-11-20)
+
+## [0.9.1](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.9.0...@availity/mui-autocomplete@0.9.1) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.9.0`
+* `mui-textfield` updated to version `0.9.0`
 ## [0.9.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@0.8.6...@availity/mui-autocomplete@0.9.0) (2024-10-31)
 
 ### Dependency Updates

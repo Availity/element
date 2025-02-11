@@ -2,6 +2,52 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/Availity/element/compare/@availity/mui-alert@0.7.4...@availity/mui-alert@0.8.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.7.4`
+* `mui-icon` updated to version `0.7.4`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.7.4](https://github.com/Availity/element/compare/@availity/mui-alert@0.7.3...@availity/mui-alert@0.7.4) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.7.3`
+* `mui-icon` updated to version `0.7.3`
+## [0.7.3](https://github.com/Availity/element/compare/@availity/mui-alert@0.7.2...@availity/mui-alert@0.7.3) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.7.2`
+* `mui-icon` updated to version `0.7.2`
+## [0.7.2](https://github.com/Availity/element/compare/@availity/mui-alert@0.7.1...@availity/mui-alert@0.7.2) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.7.1`
+* `mui-icon` updated to version `0.7.1`
+## [0.7.1](https://github.com/Availity/element/compare/@availity/mui-alert@0.7.0...@availity/mui-alert@0.7.1) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.7.0`
+* `mui-icon` updated to version `0.7.0`
+## [0.7.0](https://github.com/Availity/element/compare/@availity/mui-alert@0.6.1...@availity/mui-alert@0.7.0) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.6.1`
+* `mui-icon` updated to version `0.6.1`
+
+### Features
+
+* **mui-alert:** export icon mappings ([354c934](https://github.com/Availity/element/commit/354c9348640e71b61b3db631baa175398c42981d))
+
 ## [0.6.1](https://github.com/Availity/element/compare/@availity/mui-alert@0.6.0...@availity/mui-alert@0.6.1) (2024-10-31)
 
 ### Dependency Updates

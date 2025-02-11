@@ -4,9 +4,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useMemo, useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
-import { visuallyHidden } from '@mui/utils';
-import type { AlertColor } from '@mui/material/Alert';
-import { Chip } from '@availity/mui-chip';
+import { IconButton } from '@availity/mui-button';
+import { StatusChip, StatusChipProps } from '@availity/mui-chip';
+import { TriangleCollapseIcon, TriangleExpandIcon } from '@availity/mui-icon';
+import { Grid } from '@availity/mui-layout';
+import { Collapse } from '@availity/mui-transitions';
+import { Typography } from '@availity/mui-typography';
+import { visuallyHidden } from '@availity/mui-utils';
 import Patients from '../../../../data/patients.json';
 import { Patient } from '../../../../data/patient';
 import {
@@ -21,25 +25,30 @@ import {
   TablePagination,
   TableFooter,
 } from '../index';
-import { Typography } from '@availity/mui-typography';
 
 const meta: Meta<typeof Table> = {
   title: 'Components/Table/Table',
   component: Table,
   tags: ['autodocs'],
+  argTypes: {
+    size: {
+      options: ['small', 'medium'],
+      control: { type: 'radio' },
+    },
+  }
 };
 
 export default meta;
 
-const StatusChip = (status: string) => {
-  const color: Record<string, AlertColor> = {
+const Status = (status: string) => {
+  const color: Record<string, StatusChipProps['color']> = {
     Pending: 'warning',
     'Needs Info': 'info',
     Denied: 'error',
     Approved: 'success',
   };
 
-  return <Chip size="small" color={color[status]} label={status} />;
+  return <StatusChip color={color[status]} label={status} />;
 };
 
 const dataRows = Patients.data.patientPagination.items.slice(0, 7);
@@ -56,6 +65,7 @@ export const _Table: StoryObj<typeof Table> = {
             <TableRow>
               <TableCell>Payer</TableCell>
               <TableCell>Patient First Name</TableCell>
+              <TableCell>Patient Middle Initial</TableCell>
               <TableCell>Patient Last Name</TableCell>
               <TableCell>Birth Date</TableCell>
             </TableRow>
@@ -66,6 +76,7 @@ export const _Table: StoryObj<typeof Table> = {
                 <TableRow key={`basicTable-${row.payerName}-${row.birthDate}`}>
                   <TableCell>{row.payerName}</TableCell>
                   <TableCell>{row.firstName}</TableCell>
+                  <TableCell>{row.middleName}</TableCell>
                   <TableCell>{row.lastName}</TableCell>
                   {/* TODO: switch to dayjs */}
                   <TableCell>{new Date(row.birthDate).toLocaleDateString('en-us')}</TableCell>
@@ -381,6 +392,10 @@ export const _PaginatedTable: StoryObj<typeof Table> = {
         label: 'Birth Date',
       },
       {
+        id: 'deathDate',
+        label: 'Death Date',
+      },
+      {
         id: 'payerName',
         label: 'Payer',
       },
@@ -396,9 +411,6 @@ export const _PaginatedTable: StoryObj<typeof Table> = {
     };
 
     const dataRowsLarge = Patients.data.patientPagination.items;
-
-    // Avoid a layout jump when reaching the last page with empty rows.
-    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - dataRowsLarge.length) : 0;
 
     const visibleRows = useMemo(
       () =>
@@ -431,6 +443,7 @@ export const _PaginatedTable: StoryObj<typeof Table> = {
                 <TableCell>{row.firstName}</TableCell>
                 <TableCell>{row.lastName}</TableCell>
                 <TableCell>{new Date(row.birthDate).toLocaleDateString('en-us')}</TableCell>
+                <TableCell>{row.deathDate && new Date(row.deathDate).toLocaleDateString('en-us')}</TableCell>
                 <TableCell>{row.payerName}</TableCell>
               </TableRow>
             ))}
@@ -448,6 +461,137 @@ export const _PaginatedTable: StoryObj<typeof Table> = {
               />
             </TableRow>
           </TableFooter>
+        </Table>
+      </TableContainer>
+    );
+  },
+};
+
+export const _ExpandableTable: StoryObj<typeof Table> = {
+  render: (args: TableProps) => {
+    const [expanded, setExpanded] = useState<readonly string[]>([]);
+    const numExpanded=expanded.length;
+    const rowCount=dataRows.length;
+
+    const handleExpandAllClick = () => {
+      if (rowCount > 0 && numExpanded !== rowCount) {
+        const newExpanded = dataRows.map((n) => n.subscriberMemberId);
+        setExpanded(newExpanded);
+        return;
+      }
+      setExpanded([]);
+    };
+
+    const handleClick = (event: React.MouseEvent<unknown>, name: string) => {
+      const expandedIndex = expanded.indexOf(name);
+      let newExpanded: readonly string[] = [];
+
+      if (expandedIndex === -1) {
+        newExpanded = newExpanded.concat(expanded, name);
+      } else if (expandedIndex === 0) {
+        newExpanded = newExpanded.concat(expanded.slice(1));
+      } else if (expandedIndex === expanded.length - 1) {
+        newExpanded = newExpanded.concat(expanded.slice(0, -1));
+      } else if (expandedIndex > 0) {
+        newExpanded = newExpanded.concat(expanded.slice(0, expandedIndex), expanded.slice(expandedIndex + 1));
+      }
+
+      setExpanded(newExpanded);
+    };
+
+    return (
+      <TableContainer>
+        <Typography id="table-title" sx={visuallyHidden}>
+          Table
+        </Typography>
+        <Table aria-labelledby="table-title" {...args}>
+          <TableHead>
+            <TableRow>
+              <TableCell padding="checkbox" aria-label="Expand Row">
+                <IconButton
+                  title={`${rowCount > 0 && numExpanded !== rowCount ? 'expand' : 'collapse'} all rows`}
+                  size="medium"
+                  onClick={handleExpandAllClick}
+                >
+                  {(rowCount > 0 && numExpanded !== rowCount) ? <TriangleExpandIcon fontSize="xsmall"/> : <TriangleCollapseIcon fontSize="xsmall" />}
+                </IconButton>
+              </TableCell>
+              <TableCell>Payer</TableCell>
+              <TableCell>Patient First Name</TableCell>
+              <TableCell>Patient Last Name</TableCell>
+              <TableCell>Birth Date</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {dataRows.map((row, index) => {
+              const isItemExpanded = expanded.includes(row.subscriberMemberId);
+              return (
+                <>
+                  <TableRow
+                    key={`expandableTable-row-${index}`}
+                    id={`expandableTable-row-${index}`}
+                    aria-labelledby={`first-name-${index} last-name-${index}`}
+                  >
+                    <TableCell padding="checkbox">
+                      <IconButton
+                        title={isItemExpanded ? "collapse row" : "expand row"}
+                        size="medium"
+                        onClick={(event) => handleClick(event, row.subscriberMemberId)}
+                        aria-controls={`expandableTable-expanded-row-${index}`}
+                        aria-expanded={isItemExpanded}
+                      >
+                        {isItemExpanded ? <TriangleCollapseIcon fontSize="xsmall"/> : <TriangleExpandIcon fontSize="xsmall" />}
+                      </IconButton>
+                    </TableCell>
+                    <TableCell>{row.payerName}</TableCell>
+                    <TableCell id={`first-name-${index}`}>{row.firstName}</TableCell>
+                    <TableCell id={`last-name-${index}`}>{row.lastName}</TableCell>
+                    {/* TODO: switch to dayjs */}
+                    <TableCell>{new Date(row.birthDate).toLocaleDateString('en-us')}</TableCell>
+                  </TableRow>
+                  <TableRow
+                    key={`expandableTable-expanded-row-${index}`}
+                    id={`expandableTable-expanded-row-${index}`}
+                    aria-label="Additional information for"
+                    aria-labelledby={`expandableTable-expanded-row-${index} first-name-${index} last-name-${index}`}
+                  >
+                    <td colSpan={12}>
+                      <Collapse in={isItemExpanded} timeout="auto" unmountOnExit>
+                        <TableCell component="div" sx={{display: 'block'}}>
+                          <Grid container spacing={2} paddingLeft='3rem'>
+                            <Grid xs>
+                              <Typography variant="body2" sx={{fontWeight: "bold"}}>
+                                Subscriber Member Id
+                              </Typography>
+                              <Typography variant="body2">
+                                {row.subscriberMemberId}
+                              </Typography>
+                            </Grid>
+                            <Grid xs>
+                              <Typography variant="body2" sx={{fontWeight: "bold"}}>
+                                Subscriber Relationship
+                              </Typography>
+                              <Typography variant="body2">
+                                {row.subscriberRelationship}
+                              </Typography>
+                            </Grid>
+                            <Grid xs>
+                              <Typography variant="body2" sx={{fontWeight: "bold"}}>
+                                Subscriber Relationship Code
+                              </Typography>
+                              <Typography variant="body2">
+                                {row.subscriberRelationshipCode}
+                              </Typography>
+                            </Grid>
+                          </Grid>
+                        </TableCell>
+                      </Collapse>
+                    </td>
+                  </TableRow>
+                </>
+              );
+            })}
+          </TableBody>
         </Table>
       </TableContainer>
     );

@@ -332,10 +332,6 @@ export const legacyTheme = {
           appearance: 'none',
           cursor: 'pointer',
           margin: 0,
-          height: '1.5rem',
-          width: '1.5rem',
-          minHeight: '1.5rem',
-          minWidth: '1.5rem',
           borderRadius: '0.25rem',
           display: 'block',
         }
@@ -435,6 +431,9 @@ export const legacyTheme = {
           },
           '.MuiListItemButton-root': {
             borderRadius: '0 4px 4px 0',
+            '&:active': {
+              backgroundColor: tokens.colorActionFocus
+            },
             '&.Mui-focusVisible': {
               border: `2px solid ${tokens.colorPrimaryMain}`,
               borderLeftWidth: 0,
@@ -444,9 +443,9 @@ export const legacyTheme = {
               }
             },
             '&.Mui-selected': {
-              backgroundColor: 'transparent',
+              backgroundColor: tokens.colorActionHover,
               color: tokens.colorTextPrimary,
-              boxShadow: tokens.shadows4,
+              borderColor: tokens.borderDisabled,
               '~ .MuiListItemSecondaryAction-root .MuiIconButton-root' : {
                 color: tokens.colorTextPrimary
               },
@@ -463,8 +462,7 @@ export const legacyTheme = {
           },
           '@supports (selector(:has(a, b)))': {
             ':has(.MuiListItemButton-root.Mui-selected)': {
-              boxShadow: tokens.shadows4,
-              borderColor: tokens.borderSecondary,
+              borderColor: tokens.borderDisabled,
             },
             ':has(.MuiListItemButton-root.Mui-focusVisible)': {
               borderColor: tokens.colorPrimaryMain,
@@ -475,7 +473,6 @@ export const legacyTheme = {
               }
             },
             ':has(.MuiListItemButton-root.Mui-focusVisible.Mui-selected)': {
-              boxShadow: `${tokens.shadows4}, 0 0 0px 1px ${tokens.colorPrimaryMain}`,
               borderColor: tokens.colorPrimaryMain
             },
           }
@@ -889,11 +886,6 @@ export const legacyTheme = {
       },
     },
     MuiCardHeader: {
-      defaultProps: {
-        titleTypographyProps: {
-          variant: 'h5',
-        },
-      },
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorGrey100,
@@ -1106,25 +1098,64 @@ export const legacyTheme = {
       }
 
     },
+    MuiDialog: {
+      styleOverrides: {
+        maxWidthSm: {
+          maxWidth: '25rem'
+        },
+        maxWidthMd: {
+          maxWidth: '39.75rem'
+        },
+        maxWidthLg: {
+          maxWidth: '58.75rem'
+        },
+        maxWidthXl: {
+          maxWidth: '71.25rem'
+        },
+        paper: {
+          backgroundColor: tokens.colorGrey100
+        },
+        avCloseButton: {
+          padding: '.75rem',
+          '.MuiSvgIcon-root': {
+            fontSize: '1.125rem',
+          }
+        }
+      }
+    },
     MuiDialogActions: {
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorGrey100,
+          padding: '1rem 1.5rem',
+          flexWrap: 'wrap'
+        },
+        spacing: {
+          gap: '8px',
+          '.MuiButton-root': {
+            margin: 0,
+          },
         },
       },
     },
     MuiDialogContent: {
+      defaultProps: {
+        dividers: true
+      },
       styleOverrides: {
         root: {
           padding: '24px',
+          backgroundColor: tokens.colorBackgroundPaper
         },
+        divider: {
+          borderColor: tokens.colorGrey100,
+        }
       },
     },
     MuiDialogTitle: {
       styleOverrides: {
         root: {
           backgroundColor: tokens.colorGrey100,
-          marginBottom: '24px',
         },
       },
     },
@@ -2059,22 +2090,22 @@ export const legacyTheme = {
           color: tokens.colorWarningDark,
         },
         fontSizeXxsmall: {
-          fontSize: '.875rem',
+          fontSize: tokens.iconSizeXxsmall,
         },
         fontSizeXsmall: {
-          fontSize: '1rem',
+          fontSize: tokens.iconSizeXsmall,
         },
         fontSizeSmall: {
-          fontSize: '1.33rem',
+          fontSize: tokens.iconSizeSmall,
         },
         fontSizeMedium: {
-          fontSize: '1.66rem',
+          fontSize: tokens.iconSizeMedium,
         },
         fontSizeLarge: {
-          fontSize: '2rem',
+          fontSize: tokens.iconSizeLarge,
         },
         fontSizeXlarge: {
-          fontSize: '3rem',
+          fontSize: tokens.iconSizeXlarge,
         }
       },
     },
@@ -2147,6 +2178,19 @@ export const legacyTheme = {
           fontSize: '1.5rem'
         },
       },
+    },
+    AvSwitchCheckedIcon: {
+      styleOverrides: {
+        root:{
+          '& .Mui-checked': {
+            '+ .MuiSwitch-track': {
+              '&::before': {
+                left: 7,
+              }
+            }
+          }
+        }
+      }
     },
     MuiTab: {
       styleOverrides: {
@@ -2273,7 +2317,7 @@ export const legacyTheme = {
           },
         },
         selectIcon: {
-          fontSize: '1.5rem',
+          fontSize: tokens.iconSizeXsmall,
         },
         selectLabel: {
           order: 2,

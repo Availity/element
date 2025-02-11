@@ -2,6 +2,8 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@availity/mui-button';
+import { FieldHelpIcon } from '@availity/mui-form-utils';
+import { Grid } from '@availity/mui-layout';
 import { Card, CardProps } from './Card';
 import { CardHeader } from './CardHeader';
 import { CardMedia } from './CardMedia';
@@ -12,6 +14,11 @@ const meta: Meta<typeof Card> = {
   title: 'Components/Card/Card',
   component: Card,
   tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      options: ['elevation', 'outlined'],
+    },
+  },
 };
 
 export default meta;
@@ -26,13 +33,22 @@ export const _Card: StoryObj<typeof Card> = {
         aria-label="Orange rectangle with interlocking AV logo"
       />
       <CardContent>This is the content of the Card.</CardContent>
-      <CardActions>
-        <Button size="small" color="primary">
-          Submit
-        </Button>
-        <Button size="small">Cancel</Button>
+      <CardActions sx={{ justifyContent: 'space-between' }}>
+        <FieldHelpIcon helpTopicId="1234" />
+        <Grid container spacing={1}>
+          <Grid>
+            <Button color="secondary">Cancel</Button>
+          </Grid>
+          <Grid>
+            <Button color="primary">Submit</Button>
+          </Grid>
+        </Grid>
       </CardActions>
     </Card>
   ),
-  args: {},
+  args: {
+    sx: {
+      maxWidth: '375px',
+    },
+  },
 };

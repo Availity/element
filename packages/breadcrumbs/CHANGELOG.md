@@ -2,6 +2,56 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.3.4...@availity/mui-breadcrumbs@0.4.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.4`
+* `mui-link` updated to version `0.3.4`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.3.4](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.3.3...@availity/mui-breadcrumbs@0.3.4) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.3`
+* `mui-link` updated to version `0.3.3`
+## [0.3.3](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.3.2...@availity/mui-breadcrumbs@0.3.3) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.2`
+* `mui-link` updated to version `0.3.2`
+## [0.3.2](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.3.1...@availity/mui-breadcrumbs@0.3.2) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.1`
+* `mui-link` updated to version `0.3.1`
+## [0.3.1](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.3.0...@availity/mui-breadcrumbs@0.3.1) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.0`
+* `mui-link` updated to version `0.3.0`
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.2.14...@availity/mui-breadcrumbs@0.3.0) (2024-12-11)
+
+
+### Features
+
+* **mui-breadcrumbs:** add LinkProps prop to pass props to the links ([ae54fc4](https://github.com/Availity/element/commit/ae54fc41cc0511f22d7abc5e24a62ab19e3e06b6))
+
+## [0.2.14](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.2.13...@availity/mui-breadcrumbs@0.2.14) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.2.13`
+* `mui-link` updated to version `0.2.13`
+## [0.2.13](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.2.12...@availity/mui-breadcrumbs@0.2.13) (2024-12-09)
+
 ## [0.2.12](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@0.2.11...@availity/mui-breadcrumbs@0.2.12) (2024-10-31)
 
 ### Dependency Updates

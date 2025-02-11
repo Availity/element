@@ -7,13 +7,13 @@ import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import visuallyHidden from '@mui/utils/visuallyHidden';
 import Table from '@mui/material/Table';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import { Alert } from '@availity/mui-alert';
+import { visuallyHidden } from '@availity/mui-utils';
 
 /** Expand from the start edge of the child element. */
 const meta: Meta<typeof Collapse> = {

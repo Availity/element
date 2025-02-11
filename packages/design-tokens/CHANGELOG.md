@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.16.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.15.0...@availity/design-tokens@0.16.0) (2025-02-04)
+
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.15.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.14.1...@availity/design-tokens@0.15.0) (2025-01-08)
+
+
+### Features
+
+* **design-tokens:** icon-sizes ([2f4837d](https://github.com/Availity/element/commit/2f4837d48265fe0e9c5faf8a0aaecd98ff207bc2))
+
 ## [0.14.1](https://github.com/Availity/element/compare/@availity/design-tokens@0.14.0...@availity/design-tokens@0.14.1) (2024-10-25)
 
 

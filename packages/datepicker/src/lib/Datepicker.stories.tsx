@@ -7,6 +7,8 @@ import Typography from '@mui/material/Typography';
 import { MonthCalendar } from '@mui/x-date-pickers/MonthCalendar';
 import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
 import dayjs, { Dayjs } from 'dayjs';
+import { Box, Grid } from '@availity/mui-layout';
+import { Paper } from '@availity/mui-paper';
 import { Datepicker, DatepickerProps } from './Datepicker';
 import { DateCalendar } from './DateCalendar';
 
@@ -39,6 +41,65 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
       helpTopicId: '1234',
       label: 'Date',
     },
+  },
+};
+
+type DateRangePickerProps = {
+  startDate: Dayjs | null;
+  endDate: Dayjs | null;
+  onStartDateChange: (date: Dayjs | null) => void;
+  onEndDateChange: (date: Dayjs | null) => void;
+  startFieldProps?: {
+    label?: string;
+    helperText?: string;
+    helpTopicId?: string;
+    fullWidth?: boolean;
+  };
+  endFieldProps?: {
+    label?: string;
+    helperText?: string;
+    helpTopicId?: string;
+    fullWidth?: boolean;
+  };
+};
+
+type DateRangePicker = (props: DateRangePickerProps) => JSX.Element;
+
+export const _DateRangePicker: StoryObj<DateRangePicker> = {
+  render: () => {
+    const [startDate, setStartDate] = useState<Dayjs | null>(null);
+    const [endDate, setEndDate] = useState<Dayjs | null>(null);
+
+    return (
+      <Box sx={{ backgroundColor: 'background.paper', padding: '1.25rem' }}>
+        <Grid container spacing={2}>
+          <Grid xs={12} sm={6}>
+            <Datepicker
+              value={startDate}
+              onChange={setStartDate}
+              FieldProps={{
+                label: 'Start Date',
+                helperText: 'Select start date',
+              }}
+              maxDate={endDate ?? undefined} // Prevent selecting start date after end date
+              views={['day', 'month', 'year']}
+            />
+          </Grid>
+          <Grid xs={12} sm={6}>
+            <Datepicker
+              value={endDate}
+              onChange={setEndDate}
+              FieldProps={{
+                label: 'End Date',
+                helperText: 'Select end date',
+              }}
+              minDate={startDate ?? undefined} // Prevent selecting end date before start date
+              views={['day', 'month', 'year']}
+            />
+          </Grid>
+        </Grid>
+      </Box>
+    );
   },
 };
 

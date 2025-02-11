@@ -12,7 +12,7 @@ This package extends many of the MUI form components: [MUI Field Docs](https://m
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/form-components-form-utils-introduction--docs)
 
-Availity standards for design and usage can be found in the [Availity Design Guide](https://zeroheight.com/2e36e50c7)
+Availity standards for design and usage can be found in the [Availity Design Guide](https://design.availity.com/2e36e50c7)
 
 ## Installation
 

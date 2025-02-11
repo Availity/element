@@ -2,6 +2,79 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.2.8...@availity/mui-event-tracker@0.3.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.8`
+* `mui-form-utils` updated to version `0.2.8`
+* `mui-layout` updated to version `0.2.8`
+* `mui-menu` updated to version `0.2.8`
+* `mui-textfield` updated to version `0.2.8`
+* `mui-typography` updated to version `0.2.8`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.2.8](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.2.7...@availity/mui-event-tracker@0.2.8) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.7`
+* `mui-form-utils` updated to version `0.2.7`
+* `mui-menu` updated to version `0.2.7`
+* `mui-textfield` updated to version `0.2.7`
+## [0.2.7](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.2.6...@availity/mui-event-tracker@0.2.7) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.6`
+* `mui-form-utils` updated to version `0.2.6`
+* `mui-menu` updated to version `0.2.6`
+* `mui-textfield` updated to version `0.2.6`
+## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.2.5...@availity/mui-event-tracker@0.2.6) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.2.5`
+* `mui-textfield` updated to version `0.2.5`
+## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.2.4...@availity/mui-event-tracker@0.2.5) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.4`
+* `mui-form-utils` updated to version `0.2.4`
+* `mui-menu` updated to version `0.2.4`
+* `mui-textfield` updated to version `0.2.4`
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.2.3...@availity/mui-event-tracker@0.2.4) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.3`
+* `mui-form-utils` updated to version `0.2.3`
+* `mui-menu` updated to version `0.2.3`
+* `mui-textfield` updated to version `0.2.3`
+## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.2.2...@availity/mui-event-tracker@0.2.3) (2024-12-23)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.2.2`
+* `mui-textfield` updated to version `0.2.2`
+## [0.2.2](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.2.1...@availity/mui-event-tracker@0.2.2) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.1`
+* `mui-form-utils` updated to version `0.2.1`
+* `mui-menu` updated to version `0.2.1`
+* `mui-textfield` updated to version `0.2.1`
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.2.0...@availity/mui-event-tracker@0.2.1) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.2.0`
+* `mui-textfield` updated to version `0.2.0`
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-event-tracker@0.1.11...@availity/mui-event-tracker@0.2.0) (2024-10-31)
 
 ### Dependency Updates

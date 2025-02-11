@@ -1,44 +1,129 @@
-import { ReactNode, useState } from 'react';
+import { ChangeEvent, ReactNode, useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import type { FileRejection } from 'react-dropzone/typings/react-dropzone';
-import Upload, { Options } from '@availity/upload-core';
+import { useQueryClient } from '@tanstack/react-query';
+import Upload, { UploadOptions } from '@availity/upload-core';
+import { Button } from '@availity/mui-button';
+import { Grid } from '@availity/mui-layout';
+import { Typography } from '@availity/mui-typography';
 
 import { Dropzone } from './Dropzone';
+import { ErrorAlert } from './ErrorAlert';
 import { FileList } from './FileList';
 import { FileTypesMessage } from './FileTypesMessage';
-import { useUploadCore } from './useUploadCore';
-import { Typography } from '@availity/mui-typography';
 
 const CLOUD_URL = '/cloud/web/appl/vault/upload/v1/resumable';
 
 export type FileSelectorProps = {
+  /**
+   * Name attribute for the form field. Used by react-hook-form for form state management
+   * and must be unique within the form context
+   */
   name: string;
+  /**
+   * The ID of the bucket where files will be uploaded
+   */
   bucketId: string;
+  /**
+   * The customer ID associated with the upload
+   */
   customerId: string;
+  /**
+   * Regular expression pattern of allowed characters in file names
+   * @example "a-zA-Z0-9-_."
+   */
   allowedFileNameCharacters?: string;
+  /**
+   * List of allowed file extensions. Each extension must start with a dot
+   * @example ['.pdf', '.doc', '.docx']
+   * @default []
+   */
   allowedFileTypes?: `.${string}`[];
+  /**
+   * Optional content to render below the file upload area
+   */
   children?: ReactNode;
+  /**
+   * Client identifier used for upload authentication
+   */
   clientId: string;
-  deliverFileOnSubmit?: boolean;
-  deliveryChannel?: string;
+  /**
+   * Whether the file selector is disabled
+   * @default false
+   */
   disabled?: boolean;
+  /**
+   * Custom endpoint URL for file uploads. If not provided, default endpoint will be used
+   */
   endpoint?: string;
-  fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
-  getDropRejectionMessages?: (rejections: FileRejection[]) => void;
+  /**
+   * Whether to use the cloud upload endpoint
+   * When true, uses '/cloud/web/appl/vault/upload/v1/resumable'
+   */
   isCloud?: boolean;
+  /**
+   * Label text or element displayed above the upload area
+   * @default 'Upload file'
+   */
   label?: ReactNode;
+  /**
+   * Maximum number of files that can be uploaded simultaneously
+   */
   maxFiles?: number;
+  /**
+   * Maximum file size allowed per file in bytes
+   * Use Kibi or Mibibytes. eg: 1kb = 1024 bytes; 1mb = 1024kb
+   */
   maxSize: number;
+  /**
+   * Whether multiple file selection is allowed
+   * @default true
+   */
   multiple?: boolean;
-  onDeliveryError?: (error: unknown) => void;
-  onDeliverySuccess?: () => void;
-  onSubmit?: (values: Record<string, unknown>) => void;
-  onSuccess?: (() => void)[];
-  onError?: ((error: Error) => void)[];
+  /**
+   * Callback fired when files are selected
+   * @param event - The change event containing the selected file(s)
+   */
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * Callback fired when the form is submitted
+   * @param uploads - Array of Upload instances for the submitted files
+   * @param values - Object containing the form values, with files indexed by the name prop
+   */
+  onSubmit?: (uploads: Upload[], values: Record<string, File[]>) => void;
+  /**
+   * Callback fired when a file is successfully uploaded
+   */
+  onSuccess?: UploadOptions['onSuccess'];
+  /**
+   * Callback fired when an error occurs during upload
+   */
+  onError?: UploadOptions['onError'];
+  /**
+   * Array of functions to execute before file upload begins.
+   * Each function should return a boolean indicating whether to proceed with the upload.
+   * @default []
+   */
   onFilePreUpload?: (() => boolean)[];
-  onUploadRemove?: (uploads: Upload[], removedUploadId: string) => void;
-  onFileDelivery?: (upload: Upload) => void;
+  /**
+   * Callback fired when a file is removed from the upload list
+   * @param files - Array of remaining files
+   * @param removedUploadId - ID of the removed upload
+   */
+  onUploadRemove?: (files: File[], removedUploadId: string) => void;
+  /**
+   * Array of delays (in milliseconds) between upload retry attempts
+   */
+  retryDelays?: UploadOptions['retryDelays'];
 };
+
+// Below props were removed from availity-react version. Perserving here in case needed later
+// deliverFileOnSubmit?: boolean;
+// deliveryChannel?: string;
+// fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
+// onDeliveryError?: (error: unknown) => void;
+// onDeliverySuccess?: () => void;
+// onFileDelivery?: (upload: Upload) => void;
 
 export const FileSelector = ({
   name,
@@ -48,36 +133,33 @@ export const FileSelector = ({
   clientId,
   children,
   customerId,
-  deliverFileOnSubmit = false,
-  deliveryChannel,
   disabled = false,
   endpoint,
-  fileDeliveryMetadata,
-  getDropRejectionMessages,
   isCloud,
   label = 'Upload file',
-  maxFiles = 1,
+  maxFiles,
   maxSize,
   multiple = true,
-  // onDeliveryError,
-  // onDeliverySuccess,
+  onChange,
   onSubmit,
   onSuccess,
   onError,
   onFilePreUpload = [],
   onUploadRemove,
-  onFileDelivery,
+  retryDelays,
 }: FileSelectorProps) => {
-  // const classes = classNames(
-  //   className,
-  //   metadata.touched ? 'is-touched' : 'is-untouched',
-  //   metadata.touched && metadata.error && 'is-invalid'
-  // );
   const [totalSize, setTotalSize] = useState(0);
+  const [fileRejections, setFileRejections] = useState<(FileRejection & { id: number })[]>([]);
 
-  const methods = useForm();
+  const client = useQueryClient();
 
-  const options: Options = {
+  const methods = useForm({
+    defaultValues: {
+      [name]: [] as File[],
+    },
+  });
+
+  const options: UploadOptions = {
     bucketId,
     customerId,
     clientId,
@@ -86,62 +168,85 @@ export const FileSelector = ({
     allowedFileNameCharacters,
     onError,
     onSuccess,
+    retryDelays,
   };
 
   if (onFilePreUpload) options.onPreStart = onFilePreUpload;
   if (endpoint) options.endpoint = endpoint;
   if (isCloud) options.endpoint = CLOUD_URL;
 
-  const { data: uploads = [] } = useUploadCore(methods.watch(name) || [], options);
+  const handleOnRemoveFile = (uploadId: string, upload: Upload) => {
+    const prevFiles = methods.watch(name);
+    const newFiles = prevFiles.filter((file) => file.name !== upload.file.name);
 
-  const handleOnRemoveFile = (uploadId: string) => {
-    const newFiles = uploads.filter((upload) => upload.id !== uploadId);
-
-    if (newFiles.length !== uploads.length) {
-      const removedFile = uploads.find((upload) => upload.id === uploadId);
+    if (newFiles.length !== prevFiles.length) {
+      const removedFile = prevFiles.find((file) => file.name === upload.file.name);
 
       methods.setValue(name, newFiles);
 
-      if (!removedFile?.error && !removedFile?.errorMessage && removedFile?.file.size)
-        setTotalSize(totalSize - removedFile.file.size);
+      if (removedFile?.size) setTotalSize(totalSize - removedFile.size);
+
       if (onUploadRemove) onUploadRemove(newFiles, uploadId);
     }
   };
 
-  const handleOSubmit = (values: Record<string, unknown>) => {
-    if (onSubmit) onSubmit(values);
+  const files = methods.watch(name);
+
+  const handleOnSubmit = (values: Record<string, File[]>) => {
+    if (values[name].length === 0) return;
+
+    const queries = client.getQueriesData<Upload>(['upload']);
+    const uploads = [];
+    for (const [, data] of queries) {
+      if (data) uploads.push(data);
+    }
+
+    if (onSubmit) onSubmit(uploads, values);
+  };
+
+  const handleRemoveRejection = (id: number) => {
+    const rejections = fileRejections.filter((value) => value.id !== id);
+    setFileRejections(rejections);
   };
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(handleOSubmit)}>
+      <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
         <>
-          <Typography>{label}</Typography>
+          <Typography marginBottom="4px">{label}</Typography>
           <Dropzone
             name={name}
-            allowedFileNameCharacters={allowedFileNameCharacters}
             allowedFileTypes={allowedFileTypes}
-            bucketId={bucketId}
-            clientId={clientId}
-            customerId={customerId}
-            deliverFileOnSubmit={deliverFileOnSubmit}
-            deliveryChannel={deliveryChannel}
             disabled={disabled}
-            endpoint={endpoint}
-            fileDeliveryMetadata={fileDeliveryMetadata}
-            getDropRejectionMessages={getDropRejectionMessages}
-            isCloud={isCloud}
+            maxFiles={maxFiles}
             maxSize={maxSize}
             multiple={multiple}
-            // onDeliveryError={onDeliveryError}
-            // onDeliverySuccess={onDeliverySuccess}
-            onFilePreUpload={onFilePreUpload}
-            onFileDelivery={onFileDelivery}
+            onChange={onChange}
+            setFileRejections={setFileRejections}
+            setTotalSize={setTotalSize}
           />
           <FileTypesMessage allowedFileTypes={allowedFileTypes} maxFileSize={maxSize} />
         </>
         {children}
-        <FileList uploads={uploads} onRemoveFile={handleOnRemoveFile} />
+        {fileRejections.length > 0
+          ? fileRejections.map((rejection) => (
+              <ErrorAlert
+                key={rejection.id}
+                errors={rejection.errors}
+                fileName={rejection.file.name}
+                id={rejection.id}
+                onClose={() => handleRemoveRejection(rejection.id)}
+              />
+            ))
+          : null}
+        <FileList files={files} options={options} onRemoveFile={handleOnRemoveFile} />
+        {files.length > 0 && (
+          <Grid xs={12} justifyContent="end" display="flex" paddingTop={2.5}>
+            <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
+              Submit
+            </Button>
+          </Grid>
+        )}
       </form>
     </FormProvider>
   );

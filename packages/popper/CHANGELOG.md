@@ -2,6 +2,42 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-popper@0.1.16...@availity/mui-popper@0.2.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-layout` updated to version `0.1.16`
+* `mui-button` updated to version `0.1.16`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.1.16](https://github.com/Availity/element/compare/@availity/mui-popper@0.1.15...@availity/mui-popper@0.1.16) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.15`
+## [0.1.15](https://github.com/Availity/element/compare/@availity/mui-popper@0.1.14...@availity/mui-popper@0.1.15) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.14`
+## [0.1.14](https://github.com/Availity/element/compare/@availity/mui-popper@0.1.13...@availity/mui-popper@0.1.14) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.13`
+## [0.1.13](https://github.com/Availity/element/compare/@availity/mui-popper@0.1.12...@availity/mui-popper@0.1.13) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.12`
+## [0.1.12](https://github.com/Availity/element/compare/@availity/mui-popper@0.1.11...@availity/mui-popper@0.1.12) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.11`
 ## [0.1.11](https://github.com/Availity/element/compare/@availity/mui-popper@0.1.10...@availity/mui-popper@0.1.11) (2024-10-31)
 
 ### Dependency Updates

@@ -2,6 +2,99 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.67.1](https://github.com/Availity/element/compare/@availity/theme@0.67.0...@availity/theme@0.67.1) (2025-02-05)
+
+## [0.67.0](https://github.com/Availity/element/compare/@availity/theme@0.66.0...@availity/theme@0.67.0) (2025-02-04)
+
+### Dependency Updates
+
+* `design-tokens` updated to version `0.66.0`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.66.0](https://github.com/Availity/element/compare/@availity/theme@0.65.2...@availity/theme@0.66.0) (2025-01-24)
+
+
+### Features
+
+* **theme:** set the body background color ([b868045](https://github.com/Availity/element/commit/b868045129d19a671f49cbfe6057d38183dcf02e))
+
+## [0.65.2](https://github.com/Availity/element/compare/@availity/theme@0.65.1...@availity/theme@0.65.2) (2025-01-22)
+
+
+### Bug Fixes
+
+* **mui-dialog:** extra scrollbar issue ([570554c](https://github.com/Availity/element/commit/570554c72feca3fb49df5e1d4e50ebac4b35853a))
+
+## [0.65.1](https://github.com/Availity/element/compare/@availity/theme@0.65.0...@availity/theme@0.65.1) (2025-01-10)
+
+## [0.65.0](https://github.com/Availity/element/compare/@availity/theme@0.64.0...@availity/theme@0.65.0) (2025-01-09)
+
+
+### Features
+
+* **mui-stepper:** add scroll buttons ([5855cfb](https://github.com/Availity/element/commit/5855cfbdf8d43a709a37723c46b553631e115056))
+
+
+### Bug Fixes
+
+* **mui-stepper:** active state background color ([095cb98](https://github.com/Availity/element/commit/095cb98d72dc8d290a4128803919f87c82db611f))
+
+## [0.64.0](https://github.com/Availity/element/compare/@availity/theme@0.63.3...@availity/theme@0.64.0) (2025-01-08)
+
+### Dependency Updates
+
+* `design-tokens` updated to version `0.63.3`
+
+### Features
+
+* **theme:** use new iconsize tokens ([c1f9eec](https://github.com/Availity/element/commit/c1f9eecd1611bed86c07fa41965167fe278861aa))
+
+## [0.63.3](https://github.com/Availity/element/compare/@availity/theme@0.63.2...@availity/theme@0.63.3) (2025-01-08)
+
+
+### Bug Fixes
+
+* add hover border and fix accessibility ([7d8e7e4](https://github.com/Availity/element/commit/7d8e7e4136b266d42b3e453e57efe83f780a9e57))
+
+## [0.63.2](https://github.com/Availity/element/compare/@availity/theme@0.63.1...@availity/theme@0.63.2) (2025-01-06)
+
+
+### Bug Fixes
+
+* add hover color ([5001b77](https://github.com/Availity/element/commit/5001b77407b26de13d44b3ac3e39f05224aacc08))
+* various fixes for file selector ([26c651d](https://github.com/Availity/element/commit/26c651d7b8e89919fac335f233acbe528d10956a))
+
+## [0.63.1](https://github.com/Availity/element/compare/@availity/theme@0.63.0...@availity/theme@0.63.1) (2025-01-03)
+
+
+### Bug Fixes
+
+* **mui-dialog:** remove title alignment options ([e03361e](https://github.com/Availity/element/commit/e03361ee2528ef626f29ee67962859a11ad6ce65))
+
+## [0.63.0](https://github.com/Availity/element/compare/@availity/theme@0.62.0...@availity/theme@0.63.0) (2024-12-23)
+
+
+### Features
+
+* **mui-form-utils:** switch init commit ([9b35bcf](https://github.com/Availity/element/commit/9b35bcf4a11d1410a5664d4ccfde84cbb98e6e7b))
+* **mui-form-utils:** switch v1 theme ([8eb465c](https://github.com/Availity/element/commit/8eb465cc1ee78a026d3f8fa3779a966f8fec75e3))
+
+## [0.62.0](https://github.com/Availity/element/compare/@availity/theme@0.61.4...@availity/theme@0.62.0) (2024-12-09)
+
+
+### Features
+
+* **mui-dialog:** add styles, alert icons, and close button ([7efdbdf](https://github.com/Availity/element/commit/7efdbdf41cca4365d196f5bab6797a07824e2c3a))
+
+
+### Bug Fixes
+
+* **mui-alert:** fix action spacing ([225a19a](https://github.com/Availity/element/commit/225a19af4295dd49c9b8e572912866fa3229f610))
+* **mui-list:** list item status card state fixes ([dc45520](https://github.com/Availity/element/commit/dc45520eea4ee95b5bb6854481549055c3189126))
+
 ## [0.61.4](https://github.com/Availity/element/compare/@availity/theme@0.61.3...@availity/theme@0.61.4) (2024-11-01)
 
 

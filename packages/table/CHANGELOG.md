@@ -2,6 +2,160 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.2](https://github.com/Availity/element/compare/@availity/mui-table@0.3.1...@availity/mui-table@0.3.2) (2025-02-06)
+
+### Dependency Updates
+
+* `mui-pagination` updated to version `0.3.1`
+
+### Bug Fixes
+
+* enchance aria label generation for pagination ([17e7747](https://github.com/Availity/element/commit/17e77476fd71482f3ae78898a9d9886ccaf5d90f))
+
+## [0.3.1](https://github.com/Availity/element/compare/@availity/mui-table@0.3.0...@availity/mui-table@0.3.1) (2025-02-04)
+
+
+### Bug Fixes
+
+* **mui-table:** update pagination types ([51f1071](https://github.com/Availity/element/commit/51f10718f3659b8414edf6fdcf23be16ff10f2ad))
+
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-table@0.2.10...@availity/mui-table@0.3.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.10`
+* `mui-chip` updated to version `0.2.10`
+* `mui-form-utils` updated to version `0.2.10`
+* `mui-icon` updated to version `0.2.10`
+* `mui-layout` updated to version `0.2.10`
+* `mui-link` updated to version `0.2.10`
+* `mui-menu` updated to version `0.2.10`
+* `mui-paper` updated to version `0.2.10`
+* `mui-textfield` updated to version `0.2.10`
+* `mui-typography` updated to version `0.2.10`
+* `mui-pagination` updated to version `0.2.10`
+* `mui-utils` updated to version `0.2.10`
+* `mui-transitions` updated to version `0.2.10`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.2.10](https://github.com/Availity/element/compare/@availity/mui-table@0.2.9...@availity/mui-table@0.2.10) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.9`
+* `mui-chip` updated to version `0.2.9`
+* `mui-form-utils` updated to version `0.2.9`
+* `mui-icon` updated to version `0.2.9`
+* `mui-link` updated to version `0.2.9`
+* `mui-menu` updated to version `0.2.9`
+* `mui-textfield` updated to version `0.2.9`
+* `mui-pagination` updated to version `0.2.9`
+* `mui-transitions` updated to version `0.2.9`
+## [0.2.9](https://github.com/Availity/element/compare/@availity/mui-table@0.2.8...@availity/mui-table@0.2.9) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.8`
+* `mui-chip` updated to version `0.2.8`
+* `mui-form-utils` updated to version `0.2.8`
+* `mui-icon` updated to version `0.2.8`
+* `mui-link` updated to version `0.2.8`
+* `mui-menu` updated to version `0.2.8`
+* `mui-textfield` updated to version `0.2.8`
+* `mui-pagination` updated to version `0.2.8`
+* `mui-transitions` updated to version `0.2.8`
+## [0.2.8](https://github.com/Availity/element/compare/@availity/mui-table@0.2.7...@availity/mui-table@0.2.8) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.2.7`
+* `mui-form-utils` updated to version `0.2.7`
+* `mui-textfield` updated to version `0.2.7`
+* `mui-pagination` updated to version `0.2.7`
+
+### Bug Fixes
+
+* **mui-table:** icon updates ([592de69](https://github.com/Availity/element/commit/592de690f12955e154ab265151dd3619611d48f1))
+
+## [0.2.7](https://github.com/Availity/element/compare/@availity/mui-table@0.2.6...@availity/mui-table@0.2.7) (2025-01-07)
+
+### Dependency Updates
+
+* `mui-pagination` updated to version `0.2.6`
+## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-table@0.2.5...@availity/mui-table@0.2.6) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.5`
+* `mui-chip` updated to version `0.2.5`
+* `mui-form-utils` updated to version `0.2.5`
+* `mui-icon` updated to version `0.2.5`
+* `mui-link` updated to version `0.2.5`
+* `mui-menu` updated to version `0.2.5`
+* `mui-textfield` updated to version `0.2.5`
+* `mui-pagination` updated to version `0.2.5`
+* `mui-transitions` updated to version `0.2.5`
+## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-table@0.2.4...@availity/mui-table@0.2.5) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.4`
+* `mui-chip` updated to version `0.2.4`
+* `mui-form-utils` updated to version `0.2.4`
+* `mui-icon` updated to version `0.2.4`
+* `mui-link` updated to version `0.2.4`
+* `mui-menu` updated to version `0.2.4`
+* `mui-textfield` updated to version `0.2.4`
+* `mui-pagination` updated to version `0.2.4`
+* `mui-transitions` updated to version `0.2.4`
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-table@0.2.3...@availity/mui-table@0.2.4) (2024-12-23)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.2.3`
+* `mui-textfield` updated to version `0.2.3`
+## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-table@0.2.2...@availity/mui-table@0.2.3) (2024-12-16)
+
+### Dependency Updates
+
+* `mui-pagination` updated to version `0.2.2`
+## [0.2.2](https://github.com/Availity/element/compare/@availity/mui-table@0.2.1...@availity/mui-table@0.2.2) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.1`
+* `mui-chip` updated to version `0.2.1`
+* `mui-form-utils` updated to version `0.2.1`
+* `mui-icon` updated to version `0.2.1`
+* `mui-link` updated to version `0.2.1`
+* `mui-menu` updated to version `0.2.1`
+* `mui-textfield` updated to version `0.2.1`
+* `mui-pagination` updated to version `0.2.1`
+* `mui-transitions` updated to version `0.2.1`
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-table@0.2.0...@availity/mui-table@0.2.1) (2024-11-21)
+
+
+### Bug Fixes
+
+* **mui-table:** replace placeholder dash ([fbed326](https://github.com/Availity/element/commit/fbed3260738275b1d17ff31005c7ea338cf0fe02))
+
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-table@0.1.27...@availity/mui-table@0.2.0) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.1.27`
+* `mui-textfield` updated to version `0.1.27`
+* `mui-pagination` updated to version `0.1.27`
+* `mui-utils` updated to version `0.1.27`
+
+### Features
+
+* **mui-table:** add empty cell placeholder ([2751a39](https://github.com/Availity/element/commit/2751a39c5378341799b22615514848aa42f32317))
+* **mui-utils:** swap to element utils package ([6025a97](https://github.com/Availity/element/commit/6025a97905473a7db9e01cc47c9653febf221592))
+
 ## [0.1.27](https://github.com/Availity/element/compare/@availity/mui-table@0.1.26...@availity/mui-table@0.1.27) (2024-10-31)
 
 ### Dependency Updates

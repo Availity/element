@@ -2,6 +2,109 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.1](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.6.0...@availity/mui-datepicker@0.6.1) (2025-02-05)
+
+### Dependency Updates
+
+* `theme-provider` updated to version `0.6.0`
+## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.5.2...@availity/mui-datepicker@0.6.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.5.2`
+* `mui-textfield` updated to version `0.5.2`
+* `theme-provider` updated to version `0.5.2`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.5.2](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.5.1...@availity/mui-datepicker@0.5.2) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.5.1`
+* `mui-textfield` updated to version `0.5.1`
+## [0.5.1](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.5.0...@availity/mui-datepicker@0.5.1) (2025-01-24)
+
+### Dependency Updates
+
+* `theme-provider` updated to version `0.5.0`
+## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.59...@availity/mui-datepicker@0.5.0) (2025-01-23)
+
+
+### Features
+
+* **mui-controlled-form:** add ControlledDatepicker ([db89204](https://github.com/Availity/element/commit/db89204ac8c92bebcf1dae3f65be84718d87474a))
+
+## [0.4.59](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.58...@availity/mui-datepicker@0.4.59) (2025-01-22)
+
+### Dependency Updates
+
+* `theme-provider` updated to version `0.4.58`
+## [0.4.58](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.57...@availity/mui-datepicker@0.4.58) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.4.57`
+* `mui-textfield` updated to version `0.4.57`
+## [0.4.57](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.56...@availity/mui-datepicker@0.4.57) (2025-01-10)
+
+### Dependency Updates
+
+* `theme-provider` updated to version `0.4.56`
+## [0.4.56](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.55...@availity/mui-datepicker@0.4.56) (2025-01-09)
+
+### Dependency Updates
+
+* `theme-provider` updated to version `0.4.55`
+## [0.4.55](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.54...@availity/mui-datepicker@0.4.55) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-textfield` updated to version `0.4.54`
+* `theme-provider` updated to version `0.4.54`
+## [0.4.54](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.53...@availity/mui-datepicker@0.4.54) (2025-01-08)
+
+### Dependency Updates
+
+* `theme-provider` updated to version `0.4.53`
+## [0.4.53](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.52...@availity/mui-datepicker@0.4.53) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.4.52`
+* `mui-textfield` updated to version `0.4.52`
+* `theme-provider` updated to version `0.4.52`
+## [0.4.52](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.51...@availity/mui-datepicker@0.4.52) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.4.51`
+* `mui-textfield` updated to version `0.4.51`
+## [0.4.51](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.50...@availity/mui-datepicker@0.4.51) (2025-01-03)
+
+### Dependency Updates
+
+* `theme-provider` updated to version `0.4.50`
+## [0.4.50](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.49...@availity/mui-datepicker@0.4.50) (2024-12-23)
+
+### Dependency Updates
+
+* `mui-textfield` updated to version `0.4.49`
+* `theme-provider` updated to version `0.4.49`
+## [0.4.49](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.48...@availity/mui-datepicker@0.4.49) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.4.48`
+* `mui-textfield` updated to version `0.4.48`
+* `theme-provider` updated to version `0.4.48`
+## [0.4.48](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.47...@availity/mui-datepicker@0.4.48) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-textfield` updated to version `0.4.47`
 ## [0.4.47](https://github.com/Availity/element/compare/@availity/mui-datepicker@0.4.46...@availity/mui-datepicker@0.4.47) (2024-11-01)
 
 ### Dependency Updates

@@ -1,11 +1,19 @@
 {
   "name": "@availity/design-tokens",
-  "version": "0.14.1",
+  "version": "0.16.0",
   "description": "Design tokens for the Element design system",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
     "transform": "token-transformer src/tokens.json src/tokens/core.json --expandTypography=true",
     "transform-legacy": "token-transformer src/legacytokens.json src/tokens/legacy.json --expandTypography=true",

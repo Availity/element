@@ -42,6 +42,7 @@ const meta: Meta<typeof Authorize> = {
 
 export default meta;
 
+/** _Demo is for the `Authorize` component. If the `useAuthorize` hook is directly needed it can be found in the [@availity/authorize](https://availity.github.io/availity-react/components/authorize/) package._ */
 export const _Authorize: StoryObj<typeof Authorize> = {
   render: ({children, unauthorized, ...args}: AuthorizeProps) => (
     <div>

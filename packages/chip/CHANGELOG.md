@@ -2,6 +2,46 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.28...@availity/mui-chip@0.3.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-avatar` updated to version `0.2.28`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.2.28](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.27...@availity/mui-chip@0.2.28) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-avatar` updated to version `0.2.27`
+## [0.2.27](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.26...@availity/mui-chip@0.2.27) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-avatar` updated to version `0.2.26`
+## [0.2.26](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.25...@availity/mui-chip@0.2.26) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-avatar` updated to version `0.2.25`
+## [0.2.25](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.24...@availity/mui-chip@0.2.25) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-avatar` updated to version `0.2.24`
+## [0.2.24](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.23...@availity/mui-chip@0.2.24) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-avatar` updated to version `0.2.23`
+## [0.2.23](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.22...@availity/mui-chip@0.2.23) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-avatar` updated to version `0.2.22`
 ## [0.2.22](https://github.com/Availity/element/compare/@availity/mui-chip@0.2.21...@availity/mui-chip@0.2.22) (2024-10-31)
 
 ### Dependency Updates

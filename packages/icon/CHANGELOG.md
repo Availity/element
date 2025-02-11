@@ -2,6 +2,51 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.14.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.13.1...@availity/mui-icon@0.14.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-layout` updated to version `0.13.1`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.13.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.13.0...@availity/mui-icon@0.13.1) (2025-01-27)
+
+
+### Bug Fixes
+
+* **mui-icon:** fix icon type ([26aaf23](https://github.com/Availity/element/commit/26aaf2379151c34e343cfa79e3935fd4d2414a91))
+
+## [0.13.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.12.1...@availity/mui-icon@0.13.0) (2025-01-22)
+
+
+### Features
+
+* **mui-icon:** add file icons ([8bc82dc](https://github.com/Availity/element/commit/8bc82dc8c5c15f0bd9a6daef3d399d8e828da834))
+
+## [0.12.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.12.0...@availity/mui-icon@0.12.1) (2025-01-06)
+
+
+### Bug Fixes
+
+* various fixes for file selector ([26c651d](https://github.com/Availity/element/commit/26c651d7b8e89919fac335f233acbe528d10956a))
+
+## [0.12.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.11.1...@availity/mui-icon@0.12.0) (2025-01-03)
+
+
+### Features
+
+* **mui-icon:** add arrow icons ([d5f498e](https://github.com/Availity/element/commit/d5f498e0e69a8cfb3f38cdda84345020478694a3))
+
+## [0.11.1](https://github.com/Availity/element/compare/@availity/mui-icon@0.11.0...@availity/mui-icon@0.11.1) (2024-12-09)
+
+
+### Bug Fixes
+
+* **mui-icon:** add default role ([564c432](https://github.com/Availity/element/commit/564c4320d4a61c92b7cbeaf3fd2dd9cff6167745))
+
 ## [0.11.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.10.1...@availity/mui-icon@0.11.0) (2024-10-31)
 
 ### Dependency Updates

@@ -12,6 +12,8 @@ import { OverridableStringUnion } from '@mui/types';
 import { TextField, TextFieldProps } from '@availity/mui-textfield';
 import { SelectDivider, SelectExpandIcon } from '@availity/mui-form-utils';
 
+export { createFilterOptions } from '@mui/material/Autocomplete';
+
 export interface AutocompleteProps<
   T,
   Multiple extends boolean | undefined,
@@ -53,7 +55,7 @@ const PopupIndicatorWrapper = forwardRef<HTMLButtonElement, MuiIconButtonProps>(
 
 const progressSx = { marginRight: '.5rem' };
 
-const LoadingIndicator = () => <CircularProgress size={20} sx={progressSx} />;
+const LoadingIndicator = () => <CircularProgress aria-label="Loading" size={20} sx={progressSx} />;
 
 export const Autocomplete = <
   T,

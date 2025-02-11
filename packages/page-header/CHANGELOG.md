@@ -2,6 +2,138 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.1](https://github.com/Availity/element/compare/@availity/mui-page-header@1.1.0...@availity/mui-page-header@1.1.1) (2025-02-05)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `1.1.0`
+## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.17...@availity/mui-page-header@1.1.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-breadcrumbs` updated to version `1.0.17`
+* `mui-button` updated to version `1.0.17`
+* `mui-divider` updated to version `1.0.17`
+* `mui-layout` updated to version `1.0.17`
+* `mui-link` updated to version `1.0.17`
+* `mui-spaces` updated to version `1.0.17`
+* `mui-typography` updated to version `1.0.17`
+* `mui-feedback` updated to version `1.0.17`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [1.0.17](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.16...@availity/mui-page-header@1.0.17) (2025-02-03)
+
+
+### Bug Fixes
+
+* **mui-page-header:** pass key in map ([b1491b2](https://github.com/Availity/element/commit/b1491b2126e4820ff06151dab48f77d79015cac7))
+
+## [1.0.16](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.15...@availity/mui-page-header@1.0.16) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-breadcrumbs` updated to version `1.0.15`
+* `mui-button` updated to version `1.0.15`
+* `mui-link` updated to version `1.0.15`
+* `mui-spaces` updated to version `1.0.15`
+* `mui-feedback` updated to version `1.0.15`
+## [1.0.15](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.14...@availity/mui-page-header@1.0.15) (2025-01-23)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `1.0.14`
+## [1.0.14](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.13...@availity/mui-page-header@1.0.14) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-breadcrumbs` updated to version `1.0.13`
+* `mui-button` updated to version `1.0.13`
+* `mui-link` updated to version `1.0.13`
+* `mui-spaces` updated to version `1.0.13`
+* `mui-feedback` updated to version `1.0.13`
+## [1.0.13](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.12...@availity/mui-page-header@1.0.13) (2025-01-13)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `1.0.12`
+## [1.0.12](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.11...@availity/mui-page-header@1.0.12) (2025-01-10)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `1.0.11`
+## [1.0.11](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.10...@availity/mui-page-header@1.0.11) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `1.0.10`
+* `mui-feedback` updated to version `1.0.10`
+## [1.0.10](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.9...@availity/mui-page-header@1.0.10) (2025-01-07)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `1.0.9`
+## [1.0.9](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.8...@availity/mui-page-header@1.0.9) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-breadcrumbs` updated to version `1.0.8`
+* `mui-button` updated to version `1.0.8`
+* `mui-link` updated to version `1.0.8`
+* `mui-spaces` updated to version `1.0.8`
+* `mui-feedback` updated to version `1.0.8`
+## [1.0.8](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.7...@availity/mui-page-header@1.0.8) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-breadcrumbs` updated to version `1.0.7`
+* `mui-button` updated to version `1.0.7`
+* `mui-link` updated to version `1.0.7`
+* `mui-spaces` updated to version `1.0.7`
+* `mui-feedback` updated to version `1.0.7`
+## [1.0.7](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.6...@availity/mui-page-header@1.0.7) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `1.0.6`
+## [1.0.6](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.5...@availity/mui-page-header@1.0.6) (2024-12-23)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `1.0.5`
+* `mui-feedback` updated to version `1.0.5`
+## [1.0.5](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.4...@availity/mui-page-header@1.0.5) (2024-12-16)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `1.0.4`
+## [1.0.4](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.3...@availity/mui-page-header@1.0.4) (2024-12-11)
+
+### Dependency Updates
+
+* `mui-breadcrumbs` updated to version `1.0.3`
+## [1.0.3](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.2...@availity/mui-page-header@1.0.3) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-breadcrumbs` updated to version `1.0.2`
+* `mui-button` updated to version `1.0.2`
+* `mui-link` updated to version `1.0.2`
+* `mui-spaces` updated to version `1.0.2`
+* `mui-feedback` updated to version `1.0.2`
+## [1.0.2](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.1...@availity/mui-page-header@1.0.2) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-breadcrumbs` updated to version `1.0.1`
+## [1.0.1](https://github.com/Availity/element/compare/@availity/mui-page-header@1.0.0...@availity/mui-page-header@1.0.1) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-spaces` updated to version `1.0.0`
+* `mui-feedback` updated to version `1.0.0`
 ## [1.0.0](https://github.com/Availity/element/compare/@availity/mui-page-header@0.4.12...@availity/mui-page-header@1.0.0) (2024-11-06)
 
 ### Dependency Updates

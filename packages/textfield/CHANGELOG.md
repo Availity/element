@@ -2,6 +2,82 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.0](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.19...@availity/mui-textfield@0.7.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.6.19`
+* `mui-icon` updated to version `0.6.19`
+* `mui-button` updated to version `0.6.19`
+* `mui-chip` updated to version `0.6.19`
+* `mui-layout` updated to version `0.6.19`
+* `mui-menu` updated to version `0.6.19`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.6.19](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.18...@availity/mui-textfield@0.6.19) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.6.18`
+* `mui-icon` updated to version `0.6.18`
+* `mui-button` updated to version `0.6.18`
+* `mui-chip` updated to version `0.6.18`
+* `mui-menu` updated to version `0.6.18`
+## [0.6.18](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.17...@availity/mui-textfield@0.6.18) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.6.17`
+* `mui-icon` updated to version `0.6.17`
+* `mui-button` updated to version `0.6.17`
+* `mui-chip` updated to version `0.6.17`
+* `mui-menu` updated to version `0.6.17`
+## [0.6.17](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.16...@availity/mui-textfield@0.6.17) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.6.16`
+* `mui-chip` updated to version `0.6.16`
+## [0.6.16](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.15...@availity/mui-textfield@0.6.16) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.6.15`
+* `mui-icon` updated to version `0.6.15`
+* `mui-button` updated to version `0.6.15`
+* `mui-chip` updated to version `0.6.15`
+* `mui-menu` updated to version `0.6.15`
+## [0.6.15](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.14...@availity/mui-textfield@0.6.15) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.6.14`
+* `mui-icon` updated to version `0.6.14`
+* `mui-button` updated to version `0.6.14`
+* `mui-chip` updated to version `0.6.14`
+* `mui-menu` updated to version `0.6.14`
+## [0.6.14](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.13...@availity/mui-textfield@0.6.14) (2024-12-23)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.6.13`
+## [0.6.13](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.12...@availity/mui-textfield@0.6.13) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.6.12`
+* `mui-icon` updated to version `0.6.12`
+* `mui-button` updated to version `0.6.12`
+* `mui-chip` updated to version `0.6.12`
+* `mui-menu` updated to version `0.6.12`
+## [0.6.12](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.11...@availity/mui-textfield@0.6.12) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.6.11`
 ## [0.6.11](https://github.com/Availity/element/compare/@availity/mui-textfield@0.6.10...@availity/mui-textfield@0.6.11) (2024-10-31)
 
 ### Dependency Updates

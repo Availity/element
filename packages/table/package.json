@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-table",
-  "version": "0.1.27",
+  "version": "0.3.2",
   "description": "Availity MUI Table Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -23,6 +23,14 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
@@ -35,7 +43,8 @@
   "dependencies": {
     "@availity/mui-form-utils": "workspace:*",
     "@availity/mui-icon": "workspace:*",
-    "@availity/mui-pagination": "workspace:*"
+    "@availity/mui-pagination": "workspace:*",
+    "@availity/mui-utils": "workspace:*"
   },
   "devDependencies": {
     "@availity/mui-button": "workspace:*",

@@ -2,6 +2,50 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.2.1...@availity/mui-block-ui@0.3.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.1`
+* `mui-paper` updated to version `0.2.1`
+* `mui-typography` updated to version `0.2.1`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.2.0...@availity/mui-block-ui@0.2.1) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.0`
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.19...@availity/mui-block-ui@0.2.0) (2025-01-23)
+
+
+### Features
+
+* **mui-block-ui:** backdrop colors ([dfcbffe](https://github.com/Availity/element/commit/dfcbffebb724f8787b16c5ad779d210e623ca2c7))
+
+## [0.1.19](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.18...@availity/mui-block-ui@0.1.19) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.18`
+## [0.1.18](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.17...@availity/mui-block-ui@0.1.18) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.17`
+## [0.1.17](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.16...@availity/mui-block-ui@0.1.17) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.16`
+## [0.1.16](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.15...@availity/mui-block-ui@0.1.16) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.15`
 ## [0.1.15](https://github.com/Availity/element/compare/@availity/mui-block-ui@0.1.14...@availity/mui-block-ui@0.1.15) (2024-10-31)
 
 ### Dependency Updates

@@ -1,10 +1,18 @@
 {
   "name": "@availity/element",
-  "version": "0.47.3",
+  "version": "0.50.8",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
@@ -27,6 +35,7 @@
     "@availity/mui-card": "workspace:*",
     "@availity/mui-checkbox": "workspace:*",
     "@availity/mui-chip": "workspace:*",
+    "@availity/mui-controlled-form": "workspace:*",
     "@availity/mui-datepicker": "workspace:*",
     "@availity/mui-dialog": "workspace:*",
     "@availity/mui-disclaimer": "workspace:*",
@@ -60,6 +69,7 @@
     "@availity/mui-transitions": "workspace:*",
     "@availity/mui-tree": "workspace:*",
     "@availity/mui-typography": "workspace:*",
+    "@availity/mui-utils": "workspace:*",
     "@availity/theme-provider": "workspace:*",
     "@mui/material": "^6.1.5",
     "@mui/system": "^6.1.5"

@@ -2,6 +2,85 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-feedback@0.3.8...@availity/mui-feedback@0.4.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.3.8`
+* `mui-form-utils` updated to version `0.3.8`
+* `mui-icon` updated to version `0.3.8`
+* `mui-popover` updated to version `0.3.8`
+* `mui-textfield` updated to version `0.3.8`
+* `mui-toggle-button` updated to version `0.3.8`
+* `mui-typography` updated to version `0.3.8`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.3.8](https://github.com/Availity/element/compare/@availity/mui-feedback@0.3.7...@availity/mui-feedback@0.3.8) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.3.7`
+* `mui-form-utils` updated to version `0.3.7`
+* `mui-icon` updated to version `0.3.7`
+* `mui-textfield` updated to version `0.3.7`
+* `mui-toggle-button` updated to version `0.3.7`
+## [0.3.7](https://github.com/Availity/element/compare/@availity/mui-feedback@0.3.6...@availity/mui-feedback@0.3.7) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.3.6`
+* `mui-form-utils` updated to version `0.3.6`
+* `mui-icon` updated to version `0.3.6`
+* `mui-textfield` updated to version `0.3.6`
+* `mui-toggle-button` updated to version `0.3.6`
+## [0.3.6](https://github.com/Availity/element/compare/@availity/mui-feedback@0.3.5...@availity/mui-feedback@0.3.6) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.3.5`
+* `mui-textfield` updated to version `0.3.5`
+## [0.3.5](https://github.com/Availity/element/compare/@availity/mui-feedback@0.3.4...@availity/mui-feedback@0.3.5) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.3.4`
+* `mui-form-utils` updated to version `0.3.4`
+* `mui-icon` updated to version `0.3.4`
+* `mui-textfield` updated to version `0.3.4`
+* `mui-toggle-button` updated to version `0.3.4`
+## [0.3.4](https://github.com/Availity/element/compare/@availity/mui-feedback@0.3.3...@availity/mui-feedback@0.3.4) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.3.3`
+* `mui-form-utils` updated to version `0.3.3`
+* `mui-icon` updated to version `0.3.3`
+* `mui-textfield` updated to version `0.3.3`
+* `mui-toggle-button` updated to version `0.3.3`
+## [0.3.3](https://github.com/Availity/element/compare/@availity/mui-feedback@0.3.2...@availity/mui-feedback@0.3.3) (2024-12-23)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.3.2`
+* `mui-textfield` updated to version `0.3.2`
+## [0.3.2](https://github.com/Availity/element/compare/@availity/mui-feedback@0.3.1...@availity/mui-feedback@0.3.2) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.3.1`
+* `mui-form-utils` updated to version `0.3.1`
+* `mui-icon` updated to version `0.3.1`
+* `mui-textfield` updated to version `0.3.1`
+* `mui-toggle-button` updated to version `0.3.1`
+## [0.3.1](https://github.com/Availity/element/compare/@availity/mui-feedback@0.3.0...@availity/mui-feedback@0.3.1) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `0.3.0`
+* `mui-textfield` updated to version `0.3.0`
 ## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-feedback@0.2.12...@availity/mui-feedback@0.3.0) (2024-10-31)
 
 ### Dependency Updates

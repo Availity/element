@@ -2,6 +2,41 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.19...@availity/mui-toggle-button@0.2.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.1.19`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.1.19](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.18...@availity/mui-toggle-button@0.1.19) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.1.18`
+## [0.1.18](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.17...@availity/mui-toggle-button@0.1.18) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.1.17`
+## [0.1.17](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.16...@availity/mui-toggle-button@0.1.17) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.1.16`
+## [0.1.16](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.15...@availity/mui-toggle-button@0.1.16) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.1.15`
+## [0.1.15](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.14...@availity/mui-toggle-button@0.1.15) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.1.14`
 ## [0.1.14](https://github.com/Availity/element/compare/@availity/mui-toggle-button@0.1.13...@availity/mui-toggle-button@0.1.14) (2024-10-31)
 
 ### Dependency Updates

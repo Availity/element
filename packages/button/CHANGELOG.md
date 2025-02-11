@@ -2,6 +2,42 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.0](https://github.com/Availity/element/compare/@availity/mui-button@0.6.16...@availity/mui-button@0.7.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-layout` updated to version `0.6.16`
+* `mui-icon` updated to version `0.6.16`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.6.16](https://github.com/Availity/element/compare/@availity/mui-button@0.6.15...@availity/mui-button@0.6.16) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.6.15`
+## [0.6.15](https://github.com/Availity/element/compare/@availity/mui-button@0.6.14...@availity/mui-button@0.6.15) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.6.14`
+## [0.6.14](https://github.com/Availity/element/compare/@availity/mui-button@0.6.13...@availity/mui-button@0.6.14) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.6.13`
+## [0.6.13](https://github.com/Availity/element/compare/@availity/mui-button@0.6.12...@availity/mui-button@0.6.13) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.6.12`
+## [0.6.12](https://github.com/Availity/element/compare/@availity/mui-button@0.6.11...@availity/mui-button@0.6.12) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.6.11`
 ## [0.6.11](https://github.com/Availity/element/compare/@availity/mui-button@0.6.10...@availity/mui-button@0.6.11) (2024-10-31)
 
 ### Dependency Updates

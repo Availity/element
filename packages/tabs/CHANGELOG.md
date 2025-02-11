@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-tabs@0.1.10...@availity/mui-tabs@0.2.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-divider` updated to version `0.1.10`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.1.10](https://github.com/Availity/element/compare/@availity/mui-tabs@0.1.9...@availity/mui-tabs@0.1.10) (2024-10-31)
 
 ### Dependency Updates

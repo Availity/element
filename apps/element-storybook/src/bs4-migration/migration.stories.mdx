@@ -1,8 +1,20 @@
 import { Markdown } from '@storybook/blocks';
 import { Meta, Source } from '@storybook/blocks';
-import { BadgeExample, ChipExample, DialogExample, GridExample, ListItemExample, MenuExample, TabExample, StepperExample } from './MigrationExamples';
+import {
+  BadgeExample,
+  ChipExample,
+  DialogExample,
+  GridExample,
+  ListItemExample,
+  MenuExample,
+  TabExample,
+  StepperExample,
+  SnackbarExample,
+  PhoneExample,
+  InputGroupAddonExample,
+} from './MigrationExamples';
 
-<Meta title='BS4 Migration/Getting Started' />
+<Meta title="BS4 Migration/Getting Started" />
 
 <Markdown># Getting Started</Markdown>
 
@@ -10,7 +22,7 @@ import { BadgeExample, ChipExample, DialogExample, GridExample, ListItemExample,
 
 <Markdown>## Planning and Strategy</Markdown>
 
-_Our guide is written assuming you're planning migration one component swap at a time. However, if you're doing whole sections at a time pay extra attention to the [Components Without a Drop-in Option](#components-without-a-drop-in-option) section to plan accordingly._
+_Our guide is written assuming you're planning migration one component swap at a time. However, if you're doing whole sections at a time pay extra attention to the [Components Without a Drop-in Option](./?path=/docs/bs4-migration-getting-started--docs&args=#components-without-a-drop-in-option) section to plan accordingly._
 
 ### Drop-in Components and the Migration Theme
 
@@ -31,13 +43,13 @@ The migration theme is accessible by passing `theme='legacyBS'` to the `ThemePro
 
 Where you're coming from will determine your strategy for form migration. We have moved away from `formik` (used by `@availity/form`) in favor of `react-hook-form`. We have also provided the base components to utilize with your own logic/libraries.
 
-See the [Form migration](/?path=/docs/bs4-migration-form-migration) docs for more information.
+See the [Form migration](./?path=/docs/bs4-migration-form-migration) docs for more information.
 
 <Markdown>### Components Without a Drop-in Option</Markdown>
 
 There are many bootstrap elements and other design guidelines that will not be making it into the new Element Design System. These components we recommend saving for last so the changes will be introduced as you are switching to the new theme.
 
-For all Design Patterns and UX Guidelines, visit the [Zeroheight Docs](https://zeroheight.com/2e36e50c7/n/53a73e)
+For all Design Patterns and UX Guidelines, visit the [Design Docs](https://design.availity.com/2e36e50c7)
 
 #### Required UX changes
 
@@ -59,18 +71,20 @@ For all Design Patterns and UX Guidelines, visit the [Zeroheight Docs](https://z
 To install the library in your project, you can use either NPM or Yarn:
 
 <Source
-  language='sh'
+  language="sh"
   code={`
 npm install @availity/element
-`}/>
+`}
+/>
 
 OR
 
 <Source
-  language='sh'
+  language="sh"
   code={`
 yarn add @availity/element
-`}/>
+`}
+/>
 
 <br />
 
@@ -83,7 +97,8 @@ To use the components in your project, you will need to import them first:
 <Source
   code={`
 import { Button, ThemeProvider } from '@availity/element';
-`}/>
+`}
+/>
 
 Make sure all of the components you use are inside the `ThemeProvider` component. We recommend placing it in your root `index.{js|tsx}` file.
 
@@ -93,7 +108,8 @@ import { ThemeProvider } from '@availity/element';\n
 const App = () => {
   return <ThemeProvider>{/* Application code. Most likely a router. */}</ThemeProvider>;
 };
-`}/>
+`}
+/>
 
 <br />
 
@@ -128,16 +144,16 @@ Instead of the utility classes used by Bootstrap, MUI uses the [System Propertie
 
 While there's the css properties that you'd expect, MUI also uses similar shorthand notations to bootstrap
 
-| Bootstrap Class | MUI Sx Value |
-| :-- | :-- |
-| `margin-left-1` | `marginLeft: '4px'` |
-| `ml-1` | `ml: .5` |
-| `ml-2` | `ml: 1` |
-| `ml-3` | `ml: 2` |
-| `mx-1` | `mx: .5` |
-| `m-1` | `m: .5` |
-| `d-flex` | `display: 'flex'` |
-| `text-primary` | `color: 'text.link'` |
+| Bootstrap Class | MUI Sx Value         |
+| :-------------- | :------------------- |
+| `margin-left-1` | `marginLeft: '4px'`  |
+| `ml-1`          | `ml: .5`             |
+| `ml-2`          | `ml: 1`              |
+| `ml-3`          | `ml: 2`              |
+| `mx-1`          | `mx: .5`             |
+| `m-1`           | `m: .5`              |
+| `d-flex`        | `display: 'flex'`    |
+| `text-primary`  | `color: 'text.link'` |
 
 Many system properties can access styles from the theme, like colors and spacings. i.e. `bgColor: 'background.canvas'` or `bgColor: 'action.hover'`.
 
@@ -145,25 +161,28 @@ Many system properties can access styles from the theme, like colors and spacing
 
 Without the bootstrap utility classes, it's important to know which MUI components can be used to take advantage of MUI styling
 
-| Usage | HTML | MUI |
-| ----- | ---- | --- |
-| layout | `div`, `span` | <tr><td>`Box`</td><td>unstyled element, most versatile. The go-to when styling any element, i.e. pass `form` to `component` to add styles to your form.</td></tr><tr></tr><tr><td>`Container`</td><td>fixed width based on screensize, generally used on top level of app</td></tr><tr></tr><tr><td>`Grid`</td><td>two dimensional layouts</td></tr><tr></tr><tr><td>`Stack`</td><td>one dimensional layouts</td></tr> |<tr></tr>
-| semantic/structure | headers(`h1`, `h2`, etc), `body`, `caption`, etc | <tr><td>`Typography`</td><td>`variant` prop sets tag and styling, tag can be overwritten with `component` to keep the styling of a different variant. i.e. an `h2` with the styling of an `h5`</td></tr> |<tr></tr>
-| tables | `table`, `thead`, `tr`, `th`, `td`, etc | Semantic replacements (`Table`, `TableHead`, `TableRow`, `TableCell`, etc) along with additional common components (`TablePagination`, `TableSortLabel`, etc) |
+| Usage                                                | HTML                                             | MUI                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ---------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| layout                                               | `div`, `span`                                    | <tr><td>[`Box`](./?path=/docs/components-layout-box--docs)</td><td>unstyled element, most versatile. The go-to when styling any element, i.e. pass `form` to `component` to add styles to your form.</td></tr><tr></tr><tr><td>[`Container`](./?path=/docs/components-layout-container--docs)</td><td>fixed width based on screensize, generally used on top level of app</td></tr><tr></tr><tr><td>[`Grid`](./?path=/docs/components-layout-grid--docs)</td><td>two dimensional layouts</td></tr><tr></tr><tr><td>[`Stack`](./?path=/docs/components-layout-stack--docs)</td><td>one dimensional layouts</td></tr> | <tr></tr> |
+| semantic/structure                                   | headers(`h1`, `h2`, etc), `body`, `caption`, etc | <tr><td>[`Typography`](./?path=/docs/components-typography-typography--docs)</td><td>`variant` prop sets tag and styling, tag can be overwritten with `component` to keep the styling of a different variant. i.e. an `h2` with the styling of an `h5`</td></tr>                                                                                                                                                                                                                                                                                                                                                    | <tr></tr> |
+| [tables](./?path=/docs/components-table-table--docs) | `table`, `thead`, `tr`, `th`, `td`, etc          | Semantic replacements (`Table`, `TableHead`, `TableRow`, `TableCell`, etc) along with additional common components (`TablePagination`, `TableSortLabel`, etc)                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 ### Component Equivalents
 
 Not all classes/components from Bootstrap/Reactstrap have a similar name or 1:1 equivalent in MUI. Listed below are some notable changes
 
-| Bootstrap           | MUI        | Description                                                 |        Sample        |
-| ------------------- | ---------- | -------------------------------------------------- | :------------------: |
-| `Badge`<sup>1</sup> | `Badge`    | Small corner overlay of base element               | <BadgeExample/> |
-| `Badge`<sup>2</sup> | `Chip`     | Inline colored label/descriptor                    | <ChipExample/> |
-| `Column`/`Row`      | `Grid`     | Horizontal and Vertical layout                     | <GridExample/> |
-| `Dropdown`          | `Menu`     | Display a list on temporary surface                | <MenuExample/> |
-| `Modal`             | `Dialog`   | Popover Dialog (Blocking and Non-Blocking)         | <DialogExample/> |
-| `Nav`               | `Tab`      | Tab Navigation                                     | <TabExample/>  |
-| `ListGroup`         | `List`     | List Item, Availity `ListItemStatusCard` available | <ListItemExample/>  |
-| `Wizard`            | `Stepper`  | Convey progress through numbered steps             | <StepperExample/>  |
-| `Navbar`            | `AppBar`   | Navigation Header                                  |   |
-| `Toast`             | `Snackbar` | Brief Notifications                                |   |
+| Bootstrap                                           | MUI                                                                                                                                                                                       | Description                                                                                                                              |           Sample           |
+| --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | :------------------------: |
+| `Badge`<sup>1</sup>                                 | [`Badge`](./?path=/docs/components-badge-badge--docs)                                                                                                                                     | Small corner overlay of base element                                                                                                     |      <BadgeExample/>       |
+| `Badge`<sup>2</sup>                                 | [`Chip`](./?path=/docs/components-chip-chip--docs)                                                                                                                                        | Inline colored label/descriptor                                                                                                          |       <ChipExample/>       |
+| `Column`/`Row`                                      | [`Grid`](./?path=/docs/components-layout-grid--docs)                                                                                                                                      | Horizontal and Vertical layout                                                                                                           |       <GridExample/>       |
+| `Dropdown`                                          | [`Menu`](./?path=/docs/components-menu-menu--docs)                                                                                                                                        | Display a list on temporary surface                                                                                                      |       <MenuExample/>       |
+| `InputGroupAddon`                                   | [`InputAdornment`](./?path=/docs/form-components-formutils-input--docs) used in the `startAdornment` or `endAdornment` prop on the Input component or any component that takes InputProps | Extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs. | <InputGroupAddonExample /> |
+| `ListGroup`, `ListGroupItem`, `ListGroupItemStatus` | [`List`](./?path=/docs/components-list-list--docs)                                                                                                                                        | List, ListItem, ListItemStatusCard                                                                                                       |     <ListItemExample/>     |
+| `ListGroupItemHeading`                              | [`Typography`](./?path=/docs/components-typography-typography--docs)                                                                                                                      | No longer a separate component                                                                                                           |                            |
+| `Modal`                                             | [`Dialog`](./?path=/docs/components-dialog-dialog--docs)                                                                                                                                  | Popover Dialog (Blocking and Non-Blocking)                                                                                               |      <DialogExample/>      |
+| `Nav`                                               | [`Tabs`](./?path=/docs/components-tabs-tabs--docs)                                                                                                                                        | Tab Navigation                                                                                                                           |       <TabExample/>        |
+| `Phone`                                             | [`TextField` with phone masking](https://availity.github.io/element/?path=/story/form-components-textfield-textfield--phone-with-ext)                                                     | TextField that auto-formats phone numbers                                                                                                |      <PhoneExample />      |
+| `Toast`                                             | [`Snackbar`](./?path=/docs/components-snackbar-snackbar--docs)                                                                                                                            | Brief Notifications                                                                                                                      |     <SnackbarExample/>     |
+| `Upload`                                            | [`FileSelector`](./?path=/docs/components-file-selector-file-selector--docs)                                                                                                              | Select a file to upload                                                                                                                  |                            |
+| `Wizard`                                            | [`Stepper`](./?path=/docs/components-stepper-stepper--docs)                                                                                                                               | Convey progress through numbered steps                                                                                                   |     <StepperExample/>      |

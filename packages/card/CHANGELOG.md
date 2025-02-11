@@ -2,6 +2,49 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.1](https://github.com/Availity/element/compare/@availity/mui-card@0.3.0...@availity/mui-card@0.3.1) (2025-02-05)
+
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-card@0.2.23...@availity/mui-card@0.3.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.23`
+* `mui-icon` updated to version `0.2.23`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.2.23](https://github.com/Availity/element/compare/@availity/mui-card@0.2.22...@availity/mui-card@0.2.23) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.22`
+* `mui-icon` updated to version `0.2.22`
+## [0.2.22](https://github.com/Availity/element/compare/@availity/mui-card@0.2.21...@availity/mui-card@0.2.22) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.21`
+* `mui-icon` updated to version `0.2.21`
+## [0.2.21](https://github.com/Availity/element/compare/@availity/mui-card@0.2.20...@availity/mui-card@0.2.21) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.20`
+* `mui-icon` updated to version `0.2.20`
+## [0.2.20](https://github.com/Availity/element/compare/@availity/mui-card@0.2.19...@availity/mui-card@0.2.20) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.19`
+* `mui-icon` updated to version `0.2.19`
+## [0.2.19](https://github.com/Availity/element/compare/@availity/mui-card@0.2.18...@availity/mui-card@0.2.19) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.2.18`
+* `mui-icon` updated to version `0.2.18`
 ## [0.2.18](https://github.com/Availity/element/compare/@availity/mui-card@0.2.17...@availity/mui-card@0.2.18) (2024-10-31)
 
 ### Dependency Updates

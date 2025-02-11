@@ -20,4 +20,21 @@ describe('UploadProgressBar', () => {
 
     expect(screen.getByText('50%')).toBeTruthy();
   });
+
+  test('should show error message', () => {
+    const mockUpload: unknown = {
+      onProgress: [],
+      onError: [],
+      onSuccess: [],
+      errorMessage: 'error message',
+      file: {
+        name: 'test',
+      },
+      percentage: 0,
+    };
+
+    render(<UploadProgressBar upload={mockUpload as Upload} />);
+
+    expect(screen.getByText('error message')).toBeTruthy();
+  });
 });

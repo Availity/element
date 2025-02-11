@@ -2,6 +2,84 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-list@0.2.7...@availity/mui-list@0.3.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.2.7`
+* `mui-avatar` updated to version `0.2.7`
+* `mui-transitions` updated to version `0.2.7`
+* `mui-icon` updated to version `0.2.7`
+* `mui-layout` updated to version `0.2.7`
+* `mui-typography` updated to version `0.2.7`
+* `mui-button` updated to version `0.2.7`
+* `mui-checkbox` updated to version `0.2.7`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.2.7](https://github.com/Availity/element/compare/@availity/mui-list@0.2.6...@availity/mui-list@0.2.7) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.2.6`
+* `mui-avatar` updated to version `0.2.6`
+* `mui-transitions` updated to version `0.2.6`
+* `mui-icon` updated to version `0.2.6`
+* `mui-button` updated to version `0.2.6`
+* `mui-checkbox` updated to version `0.2.6`
+## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-list@0.2.5...@availity/mui-list@0.2.6) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.2.5`
+* `mui-avatar` updated to version `0.2.5`
+* `mui-transitions` updated to version `0.2.5`
+* `mui-icon` updated to version `0.2.5`
+* `mui-button` updated to version `0.2.5`
+* `mui-checkbox` updated to version `0.2.5`
+## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-list@0.2.4...@availity/mui-list@0.2.5) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.2.4`
+* `mui-avatar` updated to version `0.2.4`
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-list@0.2.3...@availity/mui-list@0.2.4) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.2.3`
+* `mui-avatar` updated to version `0.2.3`
+* `mui-transitions` updated to version `0.2.3`
+* `mui-icon` updated to version `0.2.3`
+* `mui-button` updated to version `0.2.3`
+* `mui-checkbox` updated to version `0.2.3`
+## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-list@0.2.2...@availity/mui-list@0.2.3) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.2.2`
+* `mui-avatar` updated to version `0.2.2`
+* `mui-transitions` updated to version `0.2.2`
+* `mui-icon` updated to version `0.2.2`
+* `mui-button` updated to version `0.2.2`
+* `mui-checkbox` updated to version `0.2.2`
+## [0.2.2](https://github.com/Availity/element/compare/@availity/mui-list@0.2.1...@availity/mui-list@0.2.2) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.2.1`
+* `mui-avatar` updated to version `0.2.1`
+* `mui-transitions` updated to version `0.2.1`
+* `mui-icon` updated to version `0.2.1`
+* `mui-button` updated to version `0.2.1`
+* `mui-checkbox` updated to version `0.2.1`
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-list@0.2.0...@availity/mui-list@0.2.1) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-transitions` updated to version `0.2.0`
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-list@0.1.18...@availity/mui-list@0.2.0) (2024-10-31)
 
 ### Dependency Updates

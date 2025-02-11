@@ -2,6 +2,156 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.1](https://github.com/Availity/element/compare/@availity/mui-spaces@0.7.0...@availity/mui-spaces@0.7.1) (2025-02-05)
+
+### Dependency Updates
+
+* `mui-card` updated to version `0.7.0`
+* `mui-modal` updated to version `0.7.0`
+## [0.7.0](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.11...@availity/mui-spaces@0.7.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.6.11`
+* `mui-card` updated to version `0.6.11`
+* `mui-chip` updated to version `0.6.11`
+* `mui-dialog` updated to version `0.6.11`
+* `mui-disclaimer` updated to version `0.6.11`
+* `mui-favorites` updated to version `0.6.11`
+* `mui-icon` updated to version `0.6.11`
+* `mui-layout` updated to version `0.6.11`
+* `mui-list` updated to version `0.6.11`
+* `mui-modal` updated to version `0.6.11`
+* `mui-progress` updated to version `0.6.11`
+* `mui-typography` updated to version `0.6.11`
+* `mui-paper` updated to version `0.6.11`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.6.11](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.10...@availity/mui-spaces@0.6.11) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.6.10`
+* `mui-card` updated to version `0.6.10`
+* `mui-chip` updated to version `0.6.10`
+* `mui-dialog` updated to version `0.6.10`
+* `mui-disclaimer` updated to version `0.6.10`
+* `mui-favorites` updated to version `0.6.10`
+* `mui-icon` updated to version `0.6.10`
+* `mui-list` updated to version `0.6.10`
+* `mui-modal` updated to version `0.6.10`
+* `mui-progress` updated to version `0.6.10`
+## [0.6.10](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.9...@availity/mui-spaces@0.6.10) (2025-01-23)
+
+### Dependency Updates
+
+* `mui-dialog` updated to version `0.6.9`
+## [0.6.9](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.8...@availity/mui-spaces@0.6.9) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.6.8`
+* `mui-card` updated to version `0.6.8`
+* `mui-chip` updated to version `0.6.8`
+* `mui-dialog` updated to version `0.6.8`
+* `mui-disclaimer` updated to version `0.6.8`
+* `mui-favorites` updated to version `0.6.8`
+* `mui-icon` updated to version `0.6.8`
+* `mui-list` updated to version `0.6.8`
+* `mui-modal` updated to version `0.6.8`
+* `mui-progress` updated to version `0.6.8`
+## [0.6.8](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.7...@availity/mui-spaces@0.6.8) (2025-01-13)
+
+### Dependency Updates
+
+* `mui-favorites` updated to version `0.6.7`
+## [0.6.7](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.6...@availity/mui-spaces@0.6.7) (2025-01-10)
+
+### Dependency Updates
+
+* `mui-favorites` updated to version `0.6.6`
+## [0.6.6](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.5...@availity/mui-spaces@0.6.6) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.6.5`
+* `mui-dialog` updated to version `0.6.5`
+* `mui-list` updated to version `0.6.5`
+## [0.6.5](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.4...@availity/mui-spaces@0.6.5) (2025-01-07)
+
+### Dependency Updates
+
+* `@availity/mock` updated to version `0.6.4`
+## [0.6.4](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.3...@availity/mui-spaces@0.6.4) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.6.3`
+* `mui-card` updated to version `0.6.3`
+* `mui-chip` updated to version `0.6.3`
+* `mui-dialog` updated to version `0.6.3`
+* `mui-disclaimer` updated to version `0.6.3`
+* `mui-favorites` updated to version `0.6.3`
+* `mui-icon` updated to version `0.6.3`
+* `mui-list` updated to version `0.6.3`
+* `mui-modal` updated to version `0.6.3`
+* `mui-progress` updated to version `0.6.3`
+## [0.6.3](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.2...@availity/mui-spaces@0.6.3) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.6.2`
+* `mui-card` updated to version `0.6.2`
+* `mui-chip` updated to version `0.6.2`
+* `mui-dialog` updated to version `0.6.2`
+* `mui-disclaimer` updated to version `0.6.2`
+* `mui-favorites` updated to version `0.6.2`
+* `mui-icon` updated to version `0.6.2`
+* `mui-list` updated to version `0.6.2`
+* `mui-modal` updated to version `0.6.2`
+* `mui-progress` updated to version `0.6.2`
+## [0.6.2](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.1...@availity/mui-spaces@0.6.2) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-dialog` updated to version `0.6.1`
+## [0.6.1](https://github.com/Availity/element/compare/@availity/mui-spaces@0.6.0...@availity/mui-spaces@0.6.1) (2024-12-23)
+
+### Dependency Updates
+
+* `mui-dialog` updated to version `0.6.0`
+## [0.6.0](https://github.com/Availity/element/compare/@availity/mui-spaces@0.5.2...@availity/mui-spaces@0.6.0) (2024-12-16)
+
+### Dependency Updates
+
+* `@availity/mock` updated to version `0.5.2`
+
+### Features
+
+* **mui-file-selector:** update upload-core ([0da6ec7](https://github.com/Availity/element/commit/0da6ec7672f1d7a884f42d03772ec20249a3309b))
+
+## [0.5.2](https://github.com/Availity/element/compare/@availity/mui-spaces@0.5.1...@availity/mui-spaces@0.5.2) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.5.1`
+* `mui-card` updated to version `0.5.1`
+* `mui-chip` updated to version `0.5.1`
+* `mui-dialog` updated to version `0.5.1`
+* `mui-disclaimer` updated to version `0.5.1`
+* `mui-favorites` updated to version `0.5.1`
+* `mui-icon` updated to version `0.5.1`
+* `mui-list` updated to version `0.5.1`
+* `mui-modal` updated to version `0.5.1`
+* `mui-progress` updated to version `0.5.1`
+## [0.5.1](https://github.com/Availity/element/compare/@availity/mui-spaces@0.5.0...@availity/mui-spaces@0.5.1) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-list` updated to version `0.5.0`
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-spaces@0.4.0...@availity/mui-spaces@0.5.0) (2024-11-06)
 
 

@@ -2,6 +2,84 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.17.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.16.5...@availity/mui-form-utils@0.17.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.16.5`
+* `mui-icon` updated to version `0.16.5`
+* `mui-checkbox` updated to version `0.16.5`
+* `mui-typography` updated to version `0.16.5`
+* `mui-utils` updated to version `0.16.5`
+* `mui-chip` updated to version `0.16.5`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.16.5](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.16.4...@availity/mui-form-utils@0.16.5) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.16.4`
+* `mui-icon` updated to version `0.16.4`
+* `mui-checkbox` updated to version `0.16.4`
+* `mui-chip` updated to version `0.16.4`
+## [0.16.4](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.16.3...@availity/mui-form-utils@0.16.4) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.16.3`
+* `mui-icon` updated to version `0.16.3`
+* `mui-checkbox` updated to version `0.16.3`
+* `mui-chip` updated to version `0.16.3`
+## [0.16.3](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.16.2...@availity/mui-form-utils@0.16.3) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `0.16.2`
+## [0.16.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.16.1...@availity/mui-form-utils@0.16.2) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.16.1`
+* `mui-icon` updated to version `0.16.1`
+* `mui-checkbox` updated to version `0.16.1`
+* `mui-chip` updated to version `0.16.1`
+## [0.16.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.16.0...@availity/mui-form-utils@0.16.1) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.16.0`
+* `mui-icon` updated to version `0.16.0`
+* `mui-checkbox` updated to version `0.16.0`
+* `mui-chip` updated to version `0.16.0`
+## [0.16.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.15.1...@availity/mui-form-utils@0.16.0) (2024-12-23)
+
+
+### Features
+
+* **mui-form-utils:** switch init commit ([9b35bcf](https://github.com/Availity/element/commit/9b35bcf4a11d1410a5664d4ccfde84cbb98e6e7b))
+* **mui-form-utils:** switch v1 theme ([8eb465c](https://github.com/Availity/element/commit/8eb465cc1ee78a026d3f8fa3779a966f8fec75e3))
+
+## [0.15.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.15.0...@availity/mui-form-utils@0.15.1) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.15.0`
+* `mui-icon` updated to version `0.15.0`
+* `mui-checkbox` updated to version `0.15.0`
+* `mui-chip` updated to version `0.15.0`
+## [0.15.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.14.0...@availity/mui-form-utils@0.15.0) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-utils` updated to version `0.14.0`
+
+### Features
+
+* **mui-utils:** swap to element utils package ([6025a97](https://github.com/Availity/element/commit/6025a97905473a7db9e01cc47c9653febf221592))
+
 ## [0.14.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@0.13.2...@availity/mui-form-utils@0.14.0) (2024-10-31)
 
 ### Dependency Updates

@@ -2,6 +2,75 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.3.3...@availity/mui-empty-state@0.4.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-utils` updated to version `0.3.3`
+* `mui-layout` updated to version `0.3.3`
+* `mui-link` updated to version `0.3.3`
+* `mui-typography` updated to version `0.3.3`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.3.3](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.3.2...@availity/mui-empty-state@0.3.3) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-link` updated to version `0.3.2`
+## [0.3.2](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.3.1...@availity/mui-empty-state@0.3.2) (2025-01-24)
+
+
+### Bug Fixes
+
+* **mui-empty-state:** update stories ([65b5d9e](https://github.com/Availity/element/commit/65b5d9e0b23cc3e9489cb6480512a2989370a445))
+
+## [0.3.1](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.3.0...@availity/mui-empty-state@0.3.1) (2025-01-23)
+
+
+### Bug Fixes
+
+* **mui-empty-state:** update stories ([19d5cbb](https://github.com/Availity/element/commit/19d5cbb52859edeff75b6f31d29b4c2e9a07613f))
+
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.2.4...@availity/mui-empty-state@0.3.0) (2025-01-22)
+
+
+### Features
+
+* **mui-empty-state:** add more states ([76acf6d](https://github.com/Availity/element/commit/76acf6d31cc00575947a999ea4c9345e23d718cf))
+
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.2.3...@availity/mui-empty-state@0.2.4) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-link` updated to version `0.2.3`
+## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.2.2...@availity/mui-empty-state@0.2.3) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-link` updated to version `0.2.2`
+## [0.2.2](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.2.1...@availity/mui-empty-state@0.2.2) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-link` updated to version `0.2.1`
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.2.0...@availity/mui-empty-state@0.2.1) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-link` updated to version `0.2.0`
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.1.13...@availity/mui-empty-state@0.2.0) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-utils` updated to version `0.1.13`
+
+### Features
+
+* **mui-utils:** swap to element utils package ([6025a97](https://github.com/Availity/element/commit/6025a97905473a7db9e01cc47c9653febf221592))
+
 ## [0.1.13](https://github.com/Availity/element/compare/@availity/mui-empty-state@0.1.12...@availity/mui-empty-state@0.1.13) (2024-10-31)
 
 ### Dependency Updates

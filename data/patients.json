@@ -19,7 +19,7 @@
           "genderCode": "F",
           "ssn": null,
           "birthDate": "1956-02-16T05:00:00.000+0000",
-          "deathDate": null,
+          "deathDate": "2018-05-31T15:04:05.999-05:00",
           "address": null,
           "subscriberMemberId": "ABC12345",
           "payerName": "PAYER 1"
@@ -114,7 +114,7 @@
           "genderCode": "F",
           "ssn": null,
           "birthDate": "1958-01-19T05:00:00.000+0000",
-          "deathDate": null,
+          "deathDate": "2018-05-31T15:04:05.999-05:00",
           "address": null,
           "subscriberMemberId": "12380123",
           "payerName": "PAYER 4"
@@ -133,7 +133,7 @@
           "genderCode": "F",
           "ssn": null,
           "birthDate": "1955-08-25T04:00:00.000+0000",
-          "deathDate": null,
+          "deathDate": "2018-05-31T15:04:05.999-05:00",
           "address": null,
           "subscriberMemberId": "NAD12315",
           "payerName": "PAYER 5"
@@ -190,7 +190,7 @@
           "genderCode": "F",
           "ssn": null,
           "birthDate": "1935-08-28T04:00:00.000+0000",
-          "deathDate": null,
+          "deathDate": "2018-05-31T15:04:05.999-05:00",
           "address": null,
           "subscriberMemberId": "ASD13501",
           "payerName": "PAYER 2"
@@ -247,7 +247,7 @@
           "genderCode": "M",
           "ssn": null,
           "birthDate": "2017-08-20T04:00:00.000+0000",
-          "deathDate": null,
+          "deathDate": "2018-05-31T15:04:05.999-05:00",
           "address": null,
           "subscriberMemberId": "ASDF02389",
           "payerName": "PAYER 2"
@@ -323,7 +323,7 @@
           "genderCode": "M",
           "ssn": null,
           "birthDate": "1991-02-11T05:00:00.000+0000",
-          "deathDate": null,
+          "deathDate": "2018-05-31T15:04:05.999-05:00",
           "address": null,
           "subscriberMemberId": "AFN1098",
           "payerName": "PAYER 5"
@@ -380,7 +380,7 @@
           "genderCode": "F",
           "ssn": null,
           "birthDate": "1945-03-13T04:00:00.000+0000",
-          "deathDate": null,
+          "deathDate": "2018-05-31T15:04:05.999-05:00",
           "address": null,
           "subscriberMemberId": "SGTEST2",
           "payerName": "PAYER 5"

@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-paper@0.1.9...@availity/mui-paper@0.2.0) (2025-02-04)
+
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
 ## [0.1.9](https://github.com/Availity/element/compare/@availity/mui-paper@0.1.8...@availity/mui-paper@0.1.9) (2024-04-19)
 
 ## [0.1.8](https://github.com/Availity/element/compare/@availity/mui-paper@0.1.7...@availity/mui-paper@0.1.8) (2024-04-04)

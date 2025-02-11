@@ -2,6 +2,80 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-pagination@0.4.0...@availity/mui-pagination@0.4.1) (2025-02-06)
+
+
+### Bug Fixes
+
+* enchance aria label generation for pagination ([17e7747](https://github.com/Availity/element/commit/17e77476fd71482f3ae78898a9d9886ccaf5d90f))
+
+## [0.4.0](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.13...@availity/mui-pagination@0.4.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.13`
+* `mui-layout` updated to version `0.3.13`
+* `mui-list` updated to version `0.3.13`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.3.13](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.12...@availity/mui-pagination@0.3.13) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.12`
+* `mui-list` updated to version `0.3.12`
+## [0.3.12](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.11...@availity/mui-pagination@0.3.12) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.11`
+* `mui-list` updated to version `0.3.11`
+## [0.3.11](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.10...@availity/mui-pagination@0.3.11) (2025-01-08)
+
+### Dependency Updates
+
+* `mui-list` updated to version `0.3.10`
+
+### Bug Fixes
+
+* **mui-pagination:** fix default icon sizes ([9aa099e](https://github.com/Availity/element/commit/9aa099e1cb192a134bb09f3fee395fb31179f9cd))
+
+## [0.3.10](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.9...@availity/mui-pagination@0.3.10) (2025-01-07)
+
+### Dependency Updates
+
+* `@availity/mock` updated to version `0.3.9`
+## [0.3.9](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.8...@availity/mui-pagination@0.3.9) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.8`
+* `mui-list` updated to version `0.3.8`
+## [0.3.8](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.7...@availity/mui-pagination@0.3.8) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.7`
+* `mui-list` updated to version `0.3.7`
+## [0.3.7](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.6...@availity/mui-pagination@0.3.7) (2024-12-16)
+
+### Dependency Updates
+
+* `@availity/mock` updated to version `0.3.6`
+## [0.3.6](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.5...@availity/mui-pagination@0.3.6) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.3.5`
+* `mui-list` updated to version `0.3.5`
+## [0.3.5](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.4...@availity/mui-pagination@0.3.5) (2024-11-20)
+
+### Dependency Updates
+
+* `mui-list` updated to version `0.3.4`
 ## [0.3.4](https://github.com/Availity/element/compare/@availity/mui-pagination@0.3.3...@availity/mui-pagination@0.3.4) (2024-10-31)
 
 ### Dependency Updates

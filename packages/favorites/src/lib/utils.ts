@@ -35,7 +35,7 @@ const getFavorites = async () => {
   return validatedFavorites;
 };
 
-export const useFavoritesQuery = (): UseQueryResult<Favorite[], unknown> => useQuery(['favorites'], getFavorites);
+export const useFavoritesQuery = (enabled: boolean): UseQueryResult<Favorite[], unknown> => useQuery(['favorites'], getFavorites, { enabled });
 
 type MutationOptions = {
   onMutationStart?: (targetFavoriteId: string) => void;

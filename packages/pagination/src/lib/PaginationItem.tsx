@@ -9,22 +9,22 @@ export type PaginationItemProps = Omit<MuiPaginationItemProps, 'components' | 'c
 const slots = {
   first: () => (
     <>
-      <NavigatePreviousIcon sx={{ mr: '.2rem' }} /> First
+      <NavigatePreviousIcon fontSize="inherit" sx={{ mr: '.2rem' }} /> First
     </>
   ),
   previous: () => (
     <>
-      <NavigatePreviousIcon sx={{ mr: '.2rem' }} /> Prev
+      <NavigatePreviousIcon fontSize="inherit" sx={{ mr: '.2rem' }} /> Prev
     </>
   ),
   next: () => (
     <>
-      Next <NavigateNextIcon sx={{ ml: '.2rem' }} />
+      Next <NavigateNextIcon fontSize="inherit" sx={{ ml: '.2rem' }} />
     </>
   ),
   last: () => (
     <>
-      Last <NavigateNextIcon sx={{ ml: '.2rem' }} />
+      Last <NavigateNextIcon fontSize="inherit" sx={{ ml: '.2rem' }} />
     </>
   ),
 };

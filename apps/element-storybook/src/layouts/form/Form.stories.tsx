@@ -28,7 +28,7 @@ import dayjs from 'dayjs';
 
 /** Some form examples with proper layouts and spacings. As `Grid` is already used to handle layout it is easiest to also use it for form spacing.
  *
- * There are two spacing variations: `normal` and `dense` (See Zeroheight documentation for when to use each). Normal spacing will use `rowSpacing={2}` & `columnSpacing={3}` while dense spacing will use `rowSpacing={1}` & `columnSpacing={2}` on the wrapping `Grid container`.
+ * There are two spacing variations: `normal` and `dense` (See [Element Design documentation](https://design.availity.com/2e36e50c7/p/72201e-forms/b/32e1a2/t/page-72201e-81827849-32e1a2-27) for when to use each). Normal spacing will use `rowSpacing={2}` & `columnSpacing={3}` while dense spacing will use `rowSpacing={1}` & `columnSpacing={2}` on the wrapping `Grid container`.
  *
  * While `Grid` will be the most common way to handle spacing, the form components have their own `margin` prop that can be used en lieu of `rowSpacing` in the case where all form components have the same width, removing the need for a `Grid`.
  */

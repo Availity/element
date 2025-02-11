@@ -2,6 +2,52 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-favorites@0.2.7...@availity/mui-favorites@0.3.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.2.7`
+* `mui-progress` updated to version `0.2.7`
+* `mui-tooltip` updated to version `0.2.7`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.2.7](https://github.com/Availity/element/compare/@availity/mui-favorites@0.2.6...@availity/mui-favorites@0.2.7) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.2.6`
+* `mui-progress` updated to version `0.2.6`
+## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-favorites@0.2.5...@availity/mui-favorites@0.2.6) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.2.5`
+* `mui-progress` updated to version `0.2.5`
+## [0.2.5](https://github.com/Availity/element/compare/@availity/mui-favorites@0.2.4...@availity/mui-favorites@0.2.5) (2025-01-13)
+
+## [0.2.4](https://github.com/Availity/element/compare/@availity/mui-favorites@0.2.3...@availity/mui-favorites@0.2.4) (2025-01-10)
+
+## [0.2.3](https://github.com/Availity/element/compare/@availity/mui-favorites@0.2.2...@availity/mui-favorites@0.2.3) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.2.2`
+* `mui-progress` updated to version `0.2.2`
+## [0.2.2](https://github.com/Availity/element/compare/@availity/mui-favorites@0.2.1...@availity/mui-favorites@0.2.2) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.2.1`
+* `mui-progress` updated to version `0.2.1`
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-favorites@0.2.0...@availity/mui-favorites@0.2.1) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `0.2.0`
+* `mui-progress` updated to version `0.2.0`
 ## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-favorites@0.1.8...@availity/mui-favorites@0.2.0) (2024-10-31)
 
 ### Dependency Updates

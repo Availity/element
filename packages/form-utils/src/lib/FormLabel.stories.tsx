@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import FormControl from '@mui/material/FormControl';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import { visuallyHidden } from '@mui/utils';
+import { visuallyHidden } from '@availity/mui-utils';
 import { FormHelperText, FormLabel, FormLabelProps, Input } from '..';
 
 /** Label component for use with individual inputs, form controls,  and form groups. For labels to use with `checkbox`/`radio` see `FormControlLabel`. */

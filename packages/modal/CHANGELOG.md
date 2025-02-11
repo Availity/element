@@ -2,6 +2,53 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.1](https://github.com/Availity/element/compare/@availity/mui-modal@0.2.0...@availity/mui-modal@0.2.1) (2025-02-05)
+
+### Dependency Updates
+
+* `mui-card` updated to version `0.2.0`
+## [0.2.0](https://github.com/Availity/element/compare/@availity/mui-modal@0.1.13...@availity/mui-modal@0.2.0) (2025-02-04)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.13`
+* `mui-card` updated to version `0.1.13`
+* `mui-typography` updated to version `0.1.13`
+
+### Features
+
+* configure package.json to allow esm to be used ([5a5393d](https://github.com/Availity/element/commit/5a5393de761f52608e714dd94a05106937dd95db))
+
+## [0.1.13](https://github.com/Availity/element/compare/@availity/mui-modal@0.1.12...@availity/mui-modal@0.1.13) (2025-01-27)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.12`
+* `mui-card` updated to version `0.1.12`
+## [0.1.12](https://github.com/Availity/element/compare/@availity/mui-modal@0.1.11...@availity/mui-modal@0.1.12) (2025-01-22)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.11`
+* `mui-card` updated to version `0.1.11`
+## [0.1.11](https://github.com/Availity/element/compare/@availity/mui-modal@0.1.10...@availity/mui-modal@0.1.11) (2025-01-06)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.10`
+* `mui-card` updated to version `0.1.10`
+## [0.1.10](https://github.com/Availity/element/compare/@availity/mui-modal@0.1.9...@availity/mui-modal@0.1.10) (2025-01-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.9`
+* `mui-card` updated to version `0.1.9`
+## [0.1.9](https://github.com/Availity/element/compare/@availity/mui-modal@0.1.8...@availity/mui-modal@0.1.9) (2024-12-09)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.1.8`
+* `mui-card` updated to version `0.1.8`
 ## [0.1.8](https://github.com/Availity/element/compare/@availity/mui-modal@0.1.7...@availity/mui-modal@0.1.8) (2024-10-31)
 
 ### Dependency Updates

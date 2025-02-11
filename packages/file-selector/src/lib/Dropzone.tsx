@@ -1,19 +1,23 @@
-import { ChangeEvent, MouseEvent, useCallback, useState } from 'react';
-import { useDropzone, FileRejection, DropEvent } from 'react-dropzone';
-import { v4 as uuid } from 'uuid';
+import { Dispatch, MouseEvent, useCallback, ChangeEvent } from 'react';
+import { useDropzone, FileRejection } from 'react-dropzone';
+import { useFormContext } from 'react-hook-form';
 import { Divider } from '@availity/mui-divider';
-import { CloudDownloadIcon } from '@availity/mui-icon';
+import { CloudUploadIcon } from '@availity/mui-icon';
 import { Box, Stack } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
-import Upload, { Options } from '@availity/upload-core';
 
 import { FilePickerBtn } from './FilePickerBtn';
 
 const outerBoxStyles = {
-  backgroundColor: 'background.canvas',
+  backgroundColor: 'background.secondary',
   border: '1px dotted',
+  borderColor: 'secondary.light',
   borderRadius: '4px',
   padding: '2rem',
+  '&:hover': {
+    backgroundColor: 'background.primary',
+    borderColor: 'border.primary',
+  },
 };
 
 const innerBoxStyles = {
@@ -21,161 +25,180 @@ const innerBoxStyles = {
   height: '100%',
 };
 
-const CLOUD_URL = '/cloud/web/appl/vault/upload/v1/resumable';
-
-export type DropzoneProps = {
-  name: string;
-  bucketId: string;
-  clientId: string;
-  customerId: string;
-  allowedFileNameCharacters?: string;
-  allowedFileTypes?: `.${string}`[];
-  deliverFileOnSubmit?: boolean;
-  deliveryChannel?: string;
-  disabled?: boolean;
-  endpoint?: string;
-  fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
-  getDropRejectionMessages?: (fileRejectsions: FileRejection[]) => void;
-  isCloud?: boolean;
-  maxFiles?: number;
-  maxSize?: number;
-  multiple?: boolean;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
-  // onDeliveryError?: (responses: unknown[]) => void;
-  // onDeliverySuccess?: (responses: unknown[]) => void;
-  onFileDelivery?: (upload: Upload) => void;
-  onFilePreUpload?: ((upload: Upload) => boolean)[];
+/** Counter for creating unique id */
+const createCounter = () => {
+  let id = 0;
+  const increment = () => (id += 1);
+  return {
+    id,
+    increment,
+  };
 };
 
+const counter = createCounter();
+
+export type DropzoneProps = {
+  /**
+   * Name given to the input field. Used by react-hook-form
+   */
+  name: string;
+  /**
+   * List of allowed file extensions (e.g. ['.pdf', '.doc']). Each extension must start with a dot
+   */
+  allowedFileTypes?: `.${string}`[];
+  /**
+   * Whether the dropzone is disabled
+   */
+  disabled?: boolean;
+  /**
+   * Maximum number of files that can be uploaded
+   */
+  maxFiles?: number;
+  /**
+   * Maximum size of each file in bytes
+   */
+  maxSize?: number;
+  /**
+   * Whether multiple file selection is allowed
+   */
+  multiple?: boolean;
+  /**
+   * Handler called when the file input's value changes
+   */
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * Handler called when the file picker button is clicked
+   */
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * Callback to handle rejected files that don't meet validation criteria
+   */
+  setFileRejections?: (fileRejections: (FileRejection & { id: number })[]) => void;
+  /**
+   * Callback to update the total size of all uploaded files
+   */
+  setTotalSize: Dispatch<React.SetStateAction<number>>;
+};
+
+// The types below were props used in the availity-react implementation.
+// Perserving this here in case it needs to be added back
+// deliverFileOnSubmit?: boolean;
+// deliveryChannel?: string;
+// fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
+// onDeliveryError?: (responses: unknown[]) => void;
+// onDeliverySuccess?: (responses: unknown[]) => void;
+// onFileDelivery?: (upload: Upload) => void;
+
 export const Dropzone = ({
-  allowedFileNameCharacters,
   allowedFileTypes = [],
-  bucketId,
-  clientId,
-  customerId,
-  deliveryChannel,
-  // deliverFileOnSubmit,
-  fileDeliveryMetadata,
   disabled,
-  endpoint,
-  getDropRejectionMessages,
-  isCloud,
   maxFiles,
   maxSize,
   multiple,
   name,
   onChange,
   onClick,
-  onFilePreUpload,
-  onFileDelivery,
+  setFileRejections,
+  setTotalSize,
 }: DropzoneProps) => {
-  const [totalSize, setTotalSize] = useState(0);
-  const [files, setFiles] = useState<Upload[]>([]);
+  const { setValue, watch } = useFormContext();
 
-  const onDrop = useCallback(
-    (acceptedFiles: File[], fileRejections: FileRejection[], dropEvent: DropEvent) => {
-      // Do something with the files
-      console.log('Dropzone acceptedFiles:', acceptedFiles);
-      console.log('Dropzone fileRejections:', fileRejections);
-      console.log('Dropzone dropEvent:', dropEvent);
+  const validator = useCallback(
+    (file: File) => {
+      const previous: File[] = watch(name) ?? [];
 
-      // Verify we have not exceeded max number of files
-      if (maxFiles && acceptedFiles.length > maxFiles) {
-        acceptedFiles.slice(0, Math.max(9, maxFiles));
+      const isDuplicate = previous.some((prev) => prev.name === file.name);
+      if (isDuplicate) {
+        return {
+          code: 'duplicate-name',
+          message: 'A file with this name already exists',
+        };
       }
 
-      const uploads = acceptedFiles.map((file) => {
-        const options: Options = {
-          bucketId,
-          customerId,
-          clientId,
-          fileTypes: allowedFileTypes,
-          maxSize,
-          allowedFileNameCharacters,
+      const hasMaxFiles = maxFiles && previous.length >= maxFiles;
+      if (hasMaxFiles) {
+        return {
+          code: 'too-many-files',
+          message: `Too many files. You may only upload ${maxFiles} file(s).`,
         };
+      }
 
-        if (onFilePreUpload) options.onPreStart = onFilePreUpload;
-        if (endpoint) options.endpoint = endpoint;
-        if (isCloud) options.endpoint = CLOUD_URL;
-
-        const upload = new Upload(file, options);
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        upload.id = `${upload.id}-${uuid()}`;
-
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        if (file.dropRejectionMessage) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          upload.errorMessage = file.dropRejectionMessage;
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-        } else if (maxSize && totalSize + newFilesTotalSize + upload.file.size > maxSize) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          upload.errorMessage = 'Total documents size is too large';
-        } else {
-          upload.start();
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          newFilesTotalSize += upload.file.size;
-        }
-        if (onFileDelivery) {
-          onFileDelivery(upload);
-        } else if (deliveryChannel && fileDeliveryMetadata) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          // upload.onSuccess.push(() => {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          // if (upload?.references?.[0]) {
-          // allow form to revalidate when upload is complete
-          // setFieldTouched(name, true);
-          // deliver upon upload complete, not form submit
-          // if (!deliverFileOnSubmit) {
-          //   callFileDelivery(upload);
-          // }
-          // }
-          // });
-        }
-
-        return upload;
-      });
-
-      // Set uploads somewhere. state?
-      setFiles(files);
-
-      if (getDropRejectionMessages) getDropRejectionMessages(fileRejections);
+      return null;
     },
-    [getDropRejectionMessages]
+    [maxFiles]
   );
 
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  const onDrop = useCallback(
+    (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[]) => {
+      let newSize = 0;
+      for (const file of acceptedFiles) {
+        newSize += file.size;
+      }
+
+      setTotalSize((prev) => prev + newSize);
+
+      const previous = watch(name) ?? [];
+
+      // Set accepted files to form context
+      setValue(name, previous.concat(acceptedFiles));
+
+      if (fileRejections.length > 0) {
+        for (const rejection of fileRejections) {
+          rejection.id = counter.increment();
+        }
+      }
+
+      if (setFileRejections) setFileRejections(fileRejections);
+    },
+    [setFileRejections]
+  );
 
   const accept = allowedFileTypes.join(',');
 
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop,
+    maxSize,
+    maxFiles,
+    disabled,
+    multiple,
+    accept,
+    validator,
+  });
+
+  const inputProps = getInputProps({
+    multiple,
+    accept,
+    onChange,
+  });
+
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (inputProps.onChange) {
+      inputProps.onChange(event);
+    }
+  };
+
+  // Remove role and tabIndex for accessibility
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { role, tabIndex, ...rootProps } = getRootProps();
+
   return (
-    <Box sx={outerBoxStyles} {...getRootProps()}>
+    <Box sx={outerBoxStyles} {...rootProps}>
       <Box sx={innerBoxStyles}>
-        <Stack spacing={2} divider={<Divider>OR</Divider>} alignItems="center" justifyContent="center">
+        <Stack spacing={2} alignItems="center" justifyContent="center">
           <>
-            <CloudDownloadIcon fontSize="xlarge" color="secondary" />
+            <CloudUploadIcon fontSize="xlarge" color="secondary" />
             <Typography variant="subtitle2" fontWeight="700">
               Drag and Drop Files Here
             </Typography>
+            <Divider>OR</Divider>
             <FilePickerBtn
               name={name}
               color="primary"
               disabled={disabled}
               maxSize={maxSize}
               onClick={onClick}
-              inputProps={getInputProps({
-                multiple,
-                accept,
-                onChange,
-              })}
+              inputProps={inputProps}
+              onChange={handleOnChange}
             />
           </>
         </Stack>

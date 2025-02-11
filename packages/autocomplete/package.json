@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-autocomplete",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Availity MUI Autocomplete Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -23,6 +23,14 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
@@ -36,7 +44,7 @@
     "@mui/types": "^7.2.18"
   },
   "devDependencies": {
-    "@availity/api-axios": "^9.0.4",
+    "@availity/api-axios": "^9.0.6",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
     "@mui/material": "^6.1.5",

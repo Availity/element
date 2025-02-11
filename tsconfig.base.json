@@ -37,6 +37,7 @@
       "@availity/mui-checkbox": ["packages/checkbox/src/index.ts"],
       "@availity/mui-chip": ["packages/chip/src/index.ts"],
       "@availity/mui-codemod": ["packages/codemod/src/index.ts"],
+      "@availity/mui-controlled-form": ["packages/controlled-form/src/index.ts"],
       "@availity/mui-datepicker": ["packages/datepicker/src/index.ts"],
       "@availity/mui-dialog": ["packages/dialog/src/index.ts"],
       "@availity/mui-disclaimer": ["packages/disclaimer/src/index.ts"],
@@ -70,6 +71,7 @@
       "@availity/mui-transitions": ["packages/transitions/src/index.ts"],
       "@availity/mui-tree": ["packages/tree/src/index.ts"],
       "@availity/mui-typography": ["packages/typography/src/index.ts"],
+      "@availity/mui-utils": ["packages/utils/src/index.ts"],
       "@availity/theme": ["packages/theme/src/index.ts"],
       "@availity/theme-provider": ["packages/theme-provider/src/index.ts"]
     }
