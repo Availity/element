@@ -49,13 +49,13 @@ const FileRow = ({ file, options, onRemoveFile }: FileRowProps) => {
             <Icon />
           </ListItemIcon>
         </Grid>
-        <Grid xs={3}>
+        <Grid size={{ xs: 3 }}>
           <ListItemText>{upload.trimFileName(upload.file.name)}</ListItemText>
         </Grid>
-        <Grid xs={2}>
+        <Grid size={{ xs: 2 }}>
           <ListItemText>{formatBytes(upload.file.size)}</ListItemText>
         </Grid>
-        <Grid xs={6}>
+        <Grid size={{ xs: 6 }}>
           <UploadProgressBar upload={upload} />
         </Grid>
       </Grid>

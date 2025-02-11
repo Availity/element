@@ -48,7 +48,7 @@
     "react-hook-form": "^7.51.3"
   },
   "devDependencies": {
-    "@availity/api-axios": "^9.0.6",
+    "@availity/api-axios": "^10.0.0",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-layout": "workspace:^",
     "@availity/mui-menu": "workspace:^",
