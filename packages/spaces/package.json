@@ -57,7 +57,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.26.0",
-    "tsup": "^8.0.2",
+    "tsup": "^8.3.6",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
@@ -88,7 +88,7 @@
     "@availity/resolve-url": "^3.0.0",
     "@tanstack/react-query": "^4.36.1",
     "dayjs": "^1.11.13",
-    "qs": "^6.13.1",
+    "qs": "^6.14.0",
     "react-image": "^4.1.0",
     "react-markdown": "^6.0.3"
   }

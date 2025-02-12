@@ -45,7 +45,7 @@
     "@availity/mui-datepicker": "workspace:^",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
-    "react-hook-form": "^7.51.3"
+    "react-hook-form": "^7.54.2"
   },
   "devDependencies": {
     "@availity/api-axios": "^10.0.0",
@@ -60,7 +60,7 @@
     "dayjs": "^1.11.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsup": "^8.0.2",
+    "tsup": "^8.3.6",
     "typescript": "^5.4.5",
     "yup": "^1.6.1"
   },
