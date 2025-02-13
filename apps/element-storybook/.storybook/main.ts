@@ -24,7 +24,6 @@ const config: StorybookConfig = {
         },
       },
     },
-    getAbsolutePath('@chromatic-com/storybook'),
   ],
 
   framework: {
