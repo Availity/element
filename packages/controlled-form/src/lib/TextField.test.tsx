@@ -34,11 +34,12 @@ const Actions = () => {
 };
 
 const onSubmit = jest.fn();
+const onSubmitDeprecated = jest.fn();
 
 describe('ControlledTextField', () => {
   test('Deprecated Check: should render the error styling if an error is returned', async () => {
     const screen = render(
-      <ControlledForm values={{ controlledTextField: undefined }} onSubmit={(data) => data}>
+      <ControlledForm values={{ controlledTextField: undefined }} onSubmit={onSubmitDeprecated}>
         <ControlledTextField
           name="controlledTextField"
           helperText="This is some helper text"
@@ -60,14 +61,14 @@ describe('ControlledTextField', () => {
 
     fireEvent.click(screen.getByText('Submit'));
 
-    await waitFor(() => expect(onSubmit).toHaveBeenCalledTimes(0));
+    await waitFor(() => expect(onSubmitDeprecated).toHaveBeenCalledTimes(0));
 
     await waitFor(() => expect(screen.findByText('Too long')).toBeDefined());
   });
 
   test('Deprecated Check: should render the error styling if an error is returned', async () => {
     const screen = render(
-      <ControlledForm values={{ controlledTextField: undefined }} onSubmit={onSubmit}>
+      <ControlledForm values={{ controlledTextField: undefined }} onSubmit={onSubmitDeprecated}>
         <ControlledTextField
           name="controlledTextField"
           helperText="This is some helper text"
@@ -89,7 +90,7 @@ describe('ControlledTextField', () => {
 
     fireEvent.click(screen.getByText('Submit'));
 
-    await waitFor(() => expect(onSubmit).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(onSubmitDeprecated).toHaveBeenCalledTimes(1));
 
     const result = screen.getByTestId('result');
     await waitFor(() => {
@@ -100,7 +101,7 @@ describe('ControlledTextField', () => {
 
   test('should render the error styling if an error is returned', async () => {
     const screen = render(
-      <TestForm UseFormOptions={{values: { controlledTextField: undefined }}} onSubmit={(data) => data}>
+      <TestForm UseFormOptions={{values: { controlledTextField: undefined }}} onSubmit={onSubmit}>
         <ControlledTextField
           name="controlledTextField"
           helperText="This is some helper text"
@@ -128,9 +129,9 @@ describe('ControlledTextField', () => {
     await waitFor(() => expect(screen.findByText('Too long')).toBeDefined());
   });
 
-  test('should render the error styling if an error is returned', async () => {
+  test('should not render the error styling if no error is returned', async () => {
     const screen = render(
-      <TestForm UseFormOptions={{values: { controlledTextField: undefined }}} onSubmit={(data) => data}>
+      <TestForm UseFormOptions={{values: { controlledTextField: undefined }}} onSubmit={onSubmit}>
         <ControlledTextField
           name="controlledTextField"
           helperText="This is some helper text"

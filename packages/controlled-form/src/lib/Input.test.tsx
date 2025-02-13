@@ -34,11 +34,12 @@ const Actions = () => {
 };
 
 const onSubmit = jest.fn();
+const onSubmitDeprecated = jest.fn();
 
 describe('ControlledInput', () => {
   test('Deprecation Check: should render the error styling if an error is returned', async () => {
     const screen = render(
-      <ControlledForm values={{ controlledInput: undefined }} onSubmit={(data) => data}>
+      <ControlledForm values={{ controlledInput: undefined }} onSubmit={onSubmitDeprecated}>
         <ControlledInput
           data-testid="controlledInputWrapper"
           name="controlledInput"
@@ -59,7 +60,7 @@ describe('ControlledInput', () => {
 
     fireEvent.click(screen.getByText('Submit'));
 
-    await waitFor(() => expect(onSubmit).toHaveBeenCalledTimes(0));
+    await waitFor(() => expect(onSubmitDeprecated).toHaveBeenCalledTimes(0));
 
     const muiInputBase = screen.getByTestId('controlledInputWrapper');
 
@@ -68,7 +69,7 @@ describe('ControlledInput', () => {
 
   test('DeprecatedCheck: should not render the error styling if no error is returned', async () => {
     const screen = render(
-      <ControlledForm values={{ controlledInput: undefined }} onSubmit={onSubmit}>
+      <ControlledForm values={{ controlledInput: undefined }} onSubmit={onSubmitDeprecated}>
         <ControlledInput
           name="controlledInput"
           required="This field is required."
@@ -88,7 +89,7 @@ describe('ControlledInput', () => {
 
     fireEvent.click(screen.getByText('Submit'));
 
-    await waitFor(() => expect(onSubmit).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(onSubmitDeprecated).toHaveBeenCalledTimes(1));
 
     const result = screen.getByTestId('result');
     await waitFor(() => {
