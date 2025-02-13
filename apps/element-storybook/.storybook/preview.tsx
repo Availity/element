@@ -29,13 +29,16 @@ const preview: Preview = {
       },
     },
   },
+
   decorators: [withThemeProvider],
+
   parameters: {
     docs: {
       controls: {
         sort: 'requiredFirst',
+        disableSaveFromUI: true,
       },
-      theme: themes.light,
+      // theme: themes.light,
       source: {
         excludeDecorators: true,
         type: 'code',
@@ -82,6 +85,8 @@ const preview: Preview = {
       },
     },
   },
+
+  tags: ['autodocs', 'autodocs'],
 };
 
 // Make sure we are in the browser before starting
