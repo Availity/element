@@ -38,7 +38,7 @@ const preview: Preview = {
         sort: 'requiredFirst',
         disableSaveFromUI: true,
       },
-      // theme: themes.light,
+      theme: themes.light,
       source: {
         excludeDecorators: true,
         type: 'code',
