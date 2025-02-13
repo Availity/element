@@ -64,7 +64,6 @@ export const SearchSection = (): JSX.Element => {
         <Grid container size={{ xs: 6 }} sx={{ justifyContent: 'flex-end', wrap: 'nowrap' }}>
           <Input
             sx={{ bgcolor: 'background.canvas', padding: '0 .5rem', borderRadius: '1.5rem', marginLeft: '.5rem' }}
-            disableUnderline
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             startAdornment={
