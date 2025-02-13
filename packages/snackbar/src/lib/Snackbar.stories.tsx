@@ -24,11 +24,11 @@ const meta: Meta<typeof Snackbar> = {
 
 export default meta;
 
-const SnackbarStoryPreview = styled("div", {
+const SnackbarStoryPreview = styled('div', {
   name: 'MuiSnackbar',
   slot: 'Root',
   overridesResolver: (props, styles) => styles.root,
-})(({}));
+})({});
 
 export const _Snackbar: StoryObj<typeof Snackbar> = {
   render: (args: SnackbarProps) => {
@@ -38,10 +38,7 @@ export const _Snackbar: StoryObj<typeof Snackbar> = {
       setOpen(true);
     };
 
-    const handleClose = (
-      event: SyntheticEvent | Event,
-      reason?: SnackbarCloseReason,
-    ) => {
+    const handleClose = (event: SyntheticEvent | Event, reason?: SnackbarCloseReason) => {
       if (reason === 'clickaway') {
         return;
       }
@@ -56,19 +53,18 @@ export const _Snackbar: StoryObj<typeof Snackbar> = {
     );
 
     return (
-      <Box sx={{minHeight: '200px'}}>
+      <Box sx={{ minHeight: '200px' }}>
         <Button onClick={handleClick}>Open Snackbar</Button>
-        <Snackbar
-          {...args}
-          open={open}
-        >
-          <Alert icon={false} onClose={handleClose} action={action} severity='info'>Alert Text</Alert>
+        <Snackbar {...args} open={open}>
+          <Alert icon={false} onClose={handleClose} action={action} severity="info">
+            Alert Text
+          </Alert>
         </Snackbar>
       </Box>
     );
   },
   args: {
-    anchorOrigin: { vertical: 'bottom', horizontal: 'left'},
+    anchorOrigin: { vertical: 'bottom', horizontal: 'left' },
     autoHideDuration: 6000,
   },
 };
@@ -82,9 +78,13 @@ export const _Actions: StoryObj<typeof Snackbar> = {
       setTimeout(() => setVisible(true), 1000);
     };
 
-    const actionButton = <Link component="button" onClick={onClose}>Action Button</Link>;
+    const actionButton = (
+      <Link component="button" onClick={onClose}>
+        Action Button
+      </Link>
+    );
 
-    const actionLink = <Link href='#' >Action Link</Link>;
+    const actionLink = <Link href="#">Action Link</Link>;
 
     return (
       <Grid container spacing={1} maxWidth="620px">
@@ -134,8 +134,8 @@ export const _Actions: StoryObj<typeof Snackbar> = {
           </Collapse>
         </Grid>
       </Grid>
-    )
-  }
+    );
+  },
 };
 
 export const _Alerts: StoryObj<typeof Snackbar> = {
@@ -190,8 +190,8 @@ export const _Alerts: StoryObj<typeof Snackbar> = {
           </Collapse>
         </Grid>
       </Grid>
-    )
-  }
+    );
+  },
 };
 
 interface SnackbarMessage {
@@ -204,9 +204,7 @@ export const _ConsecutiveSnackbars: StoryObj<typeof Snackbar> = {
   render: () => {
     const [snackPack, setSnackPack] = useState<readonly SnackbarMessage[]>([]);
     const [open, setOpen] = useState(false);
-    const [messageInfo, setMessageInfo] = useState<SnackbarMessage | undefined>(
-      undefined,
-    );
+    const [messageInfo, setMessageInfo] = useState<SnackbarMessage | undefined>(undefined);
 
     useEffect(() => {
       if (snackPack.length && !messageInfo) {
@@ -224,10 +222,7 @@ export const _ConsecutiveSnackbars: StoryObj<typeof Snackbar> = {
       setSnackPack((prev) => [...prev, { message, key: new Date().getTime() }]);
     };
 
-    const handleClose = (
-      event: SyntheticEvent | Event,
-      reason?: SnackbarCloseReason,
-    ) => {
+    const handleClose = (event: SyntheticEvent | Event, reason?: SnackbarCloseReason) => {
       if (reason === 'clickaway') {
         return;
       }
@@ -241,10 +236,10 @@ export const _ConsecutiveSnackbars: StoryObj<typeof Snackbar> = {
     return (
       <Box minHeight="250px" gap="8px">
         <Grid container spacing={2}>
-          <Grid xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Button onClick={handleClick('Message A')}>Show message A</Button>
           </Grid>
-          <Grid xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Button onClick={handleClick('Message B')}>Show message B</Button>
           </Grid>
         </Grid>
@@ -261,5 +256,5 @@ export const _ConsecutiveSnackbars: StoryObj<typeof Snackbar> = {
         </Snackbar>
       </Box>
     );
-  }
-}
+  },
+};

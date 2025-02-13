@@ -46,7 +46,7 @@ const DateRangePicker = ({
   return (
     <>
       <Grid container spacing={2}>
-        <Grid xs={12} sm={6}>
+        <Grid size={{xs: 12, sm: 6}}>
           <Datepicker
             value={startDate}
             onChange={onStartDateChange}
@@ -55,7 +55,7 @@ const DateRangePicker = ({
             views={['day', 'month', 'year']}
           />
         </Grid>
-        <Grid xs={12} sm={6}>
+        <Grid size={{xs: 12, sm: 6}}>
           <Datepicker
             value={endDate}
             onChange={onEndDateChange}

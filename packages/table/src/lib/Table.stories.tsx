@@ -35,7 +35,7 @@ const meta: Meta<typeof Table> = {
       options: ['small', 'medium'],
       control: { type: 'radio' },
     },
-  }
+  },
 };
 
 export default meta;
@@ -470,8 +470,8 @@ export const _PaginatedTable: StoryObj<typeof Table> = {
 export const _ExpandableTable: StoryObj<typeof Table> = {
   render: (args: TableProps) => {
     const [expanded, setExpanded] = useState<readonly string[]>([]);
-    const numExpanded=expanded.length;
-    const rowCount=dataRows.length;
+    const numExpanded = expanded.length;
+    const rowCount = dataRows.length;
 
     const handleExpandAllClick = () => {
       if (rowCount > 0 && numExpanded !== rowCount) {
@@ -513,7 +513,11 @@ export const _ExpandableTable: StoryObj<typeof Table> = {
                   size="medium"
                   onClick={handleExpandAllClick}
                 >
-                  {(rowCount > 0 && numExpanded !== rowCount) ? <TriangleExpandIcon fontSize="xsmall"/> : <TriangleCollapseIcon fontSize="xsmall" />}
+                  {rowCount > 0 && numExpanded !== rowCount ? (
+                    <TriangleExpandIcon fontSize="xsmall" />
+                  ) : (
+                    <TriangleCollapseIcon fontSize="xsmall" />
+                  )}
                 </IconButton>
               </TableCell>
               <TableCell>Payer</TableCell>
@@ -534,13 +538,17 @@ export const _ExpandableTable: StoryObj<typeof Table> = {
                   >
                     <TableCell padding="checkbox">
                       <IconButton
-                        title={isItemExpanded ? "collapse row" : "expand row"}
+                        title={isItemExpanded ? 'collapse row' : 'expand row'}
                         size="medium"
                         onClick={(event) => handleClick(event, row.subscriberMemberId)}
                         aria-controls={`expandableTable-expanded-row-${index}`}
                         aria-expanded={isItemExpanded}
                       >
-                        {isItemExpanded ? <TriangleCollapseIcon fontSize="xsmall"/> : <TriangleExpandIcon fontSize="xsmall" />}
+                        {isItemExpanded ? (
+                          <TriangleCollapseIcon fontSize="xsmall" />
+                        ) : (
+                          <TriangleExpandIcon fontSize="xsmall" />
+                        )}
                       </IconButton>
                     </TableCell>
                     <TableCell>{row.payerName}</TableCell>
@@ -557,31 +565,25 @@ export const _ExpandableTable: StoryObj<typeof Table> = {
                   >
                     <td colSpan={12}>
                       <Collapse in={isItemExpanded} timeout="auto" unmountOnExit>
-                        <TableCell component="div" sx={{display: 'block'}}>
-                          <Grid container spacing={2} paddingLeft='3rem'>
-                            <Grid xs>
-                              <Typography variant="body2" sx={{fontWeight: "bold"}}>
+                        <TableCell component="div" sx={{ display: 'block' }}>
+                          <Grid container spacing={2} paddingLeft="3rem">
+                            <Grid size="grow">
+                              <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                                 Subscriber Member Id
                               </Typography>
-                              <Typography variant="body2">
-                                {row.subscriberMemberId}
-                              </Typography>
+                              <Typography variant="body2">{row.subscriberMemberId}</Typography>
                             </Grid>
-                            <Grid xs>
-                              <Typography variant="body2" sx={{fontWeight: "bold"}}>
+                            <Grid size="grow">
+                              <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                                 Subscriber Relationship
                               </Typography>
-                              <Typography variant="body2">
-                                {row.subscriberRelationship}
-                              </Typography>
+                              <Typography variant="body2">{row.subscriberRelationship}</Typography>
                             </Grid>
-                            <Grid xs>
-                              <Typography variant="body2" sx={{fontWeight: "bold"}}>
+                            <Grid size="grow">
+                              <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                                 Subscriber Relationship Code
                               </Typography>
-                              <Typography variant="body2">
-                                {row.subscriberRelationshipCode}
-                              </Typography>
+                              <Typography variant="body2">{row.subscriberRelationshipCode}</Typography>
                             </Grid>
                           </Grid>
                         </TableCell>
