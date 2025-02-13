@@ -1,6 +1,7 @@
 import { AsyncAutocomplete, AsyncAutocompleteProps } from '@availity/mui-autocomplete';
-import { RegisterOptions, FieldValues, Controller, ControllerProps } from 'react-hook-form';
+import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
 import { ChipTypeMap } from '@mui/material/Chip';
+import { ControllerProps, DeprecatedRulesProps } from './Types';
 
 export type ControlledAsyncAutocompleteProps<
   Option,
@@ -8,9 +9,13 @@ export type ControlledAsyncAutocompleteProps<
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
-> = Omit<AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'name'> &
-  Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'> &
-  Pick<ControllerProps, 'defaultValue' | 'shouldUnregister' | 'name'>;
+> = Omit<AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>,
+'onBlur' | 'onChange' | 'value' | 'name'
+> & Pick<RegisterOptions<FieldValues, string>,
+'onBlur' | 'onChange' | 'value'
+> & ControllerProps
+//TODO v1 - remove deprecated props
+& DeprecatedRulesProps;
 
 export const ControlledAsyncAutocomplete = <
   Option,
@@ -29,6 +34,7 @@ export const ControlledAsyncAutocomplete = <
   onChange,
   pattern,
   required,
+  rules = {},
   shouldUnregister,
   validate,
   value,
@@ -52,14 +58,14 @@ export const ControlledAsyncAutocomplete = <
         shouldUnregister,
         validate,
         value,
+        ...rules,
       }}
       shouldUnregister={shouldUnregister}
-      render={({ field: { onChange, value, onBlur }, fieldState: { error } }) => (
+      render={({ field: { onChange, value, onBlur, ref }, fieldState: { error } }) => (
         <AsyncAutocomplete
           {...rest}
           FieldProps={{
             ...FieldProps,
-            required: typeof required === 'object' ? required.value : !!required,
             error: !!error,
             helperText: error?.message ? (
               <>
@@ -70,6 +76,7 @@ export const ControlledAsyncAutocomplete = <
             ) : (
               FieldProps?.helperText
             ),
+            inputRef:ref
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {
