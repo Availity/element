@@ -13,7 +13,19 @@ const meta: Meta<typeof ControlledSelect> = {
   title: 'Form Components/Controlled Form/ControlledSelect',
   component: ControlledSelect,
   tags: ['autodocs'],
-    argTypes: {...AllControllerPropertiesCategorized, ...SelectPropsCategorized}
+  argTypes: {...AllControllerPropertiesCategorized, ...SelectPropsCategorized},
+  parameters: {
+    controls: {
+      exclude: [
+        'className',
+        'defaultChecked',
+        'onError',
+        'ref',
+        'style',
+        'tabIndex'
+      ]
+    }
+  }
 };
 
 export default meta;
@@ -57,7 +69,7 @@ export const _ControlledSelect: StoryObj<typeof ControlledSelect> = {
 
 export const _ControlledMultiSelect: StoryObj<typeof ControlledSelect> = {
   render: (args) => {
-    const methods = useForm();
+    const methods = useForm({values:{ [args.name]: [] }});
 
     return (
       <FormProvider {...methods}>

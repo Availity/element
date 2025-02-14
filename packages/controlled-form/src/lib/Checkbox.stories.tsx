@@ -16,11 +16,20 @@ const meta: Meta<typeof ControlledCheckbox> = {
   parameters: {
     controls: {
       exclude: [
+        'form',
+        'formAction',
+        'formEncType',
+        'formMethod',
+        'formNoValidate',
+        'formTarget',
+        'key',
         'max',
         'maxLength',
         'min',
         'minLength',
-        'pattern'
+        'pattern',
+        'style',
+        'tabIndex'
       ]
     }
   }

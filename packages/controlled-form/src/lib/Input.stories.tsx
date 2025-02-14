@@ -11,7 +11,19 @@ const meta: Meta<typeof ControlledInput> = {
   title: 'Form Components/Controlled Form/ControlledInput',
   component: ControlledInput,
   tags: ['autodocs'],
-  argTypes: {...AllControllerPropertiesCategorized, ...InputPropsCategorized}
+  argTypes: {...AllControllerPropertiesCategorized, ...InputPropsCategorized},
+  parameters: {
+    controls: {
+      exclude: [
+        'className',
+        'defaultChecked',
+        'onError',
+        'ref',
+        'style',
+        'tabIndex'
+      ]
+    }
+  }
 };
 
 export default meta;
