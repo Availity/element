@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.2.6...@availity/mui-controlled-form@0.3.0) (2025-02-17)
+
+
+### Features
+
+* **mui-block-ui:** collapsing individual rule props, deprecate individual rules and controlledform ([c559d83](https://github.com/Availity/element/commit/c559d83629f0cda74d52f3fb8bbeb0d22bfb933c))
+
 ## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.2.5...@availity/mui-controlled-form@0.2.6) (2025-02-07)
 
 
