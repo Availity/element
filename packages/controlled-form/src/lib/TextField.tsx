@@ -64,6 +64,7 @@ export const ControlledTextField = ({
           {...field}
           {...rest}
           inputRef={ref}
+          required={!!required}
           error={!!error}
           helperText={
             error?.message ? (
