@@ -630,7 +630,7 @@ __metadata:
     "@availity/mui-paper": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@availity/upload-core": 7.0.0-alpha.6
+    "@availity/upload-core": ^7.0.1
     "@mui/material": ^5.15.15
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
@@ -638,7 +638,6 @@ __metadata:
     react-dropzone: ^11.7.1
     react-hook-form: ^7.51.3
     tsup: ^8.0.2
-    tus-js-client: 4.2.3
     typescript: ^5.4.5
     uuid: ^9.0.1
   peerDependencies:
@@ -1199,13 +1198,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/upload-core@npm:7.0.0-alpha.6":
-  version: 7.0.0-alpha.6
-  resolution: "@availity/upload-core@npm:7.0.0-alpha.6"
+"@availity/upload-core@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@availity/upload-core@npm:7.0.1"
   dependencies:
     "@availity/resolve-url": 3.0.0
     tus-js-client: 4.2.3
-  checksum: 053b988aa686bd87863795444eb8e04987447b36b6935eab2a0f3773bb8a5b5de0b66f177c366d29d0a9ee1a7c7faa1c21d2c9ea2725659c58894a3dead352dd
+  checksum: 1f3e2555d0476095e01755e5831b38b280032859585a2feec5d524e2409287ebc23a19d6af12ba68e25ef1e353ffa555d8ee4820cba7522d66aab613b93dc9d8
   languageName: node
   linkType: hard
 

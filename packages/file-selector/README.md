@@ -59,3 +59,70 @@ import { FileSelector } from '@availity/element';
 ```tsx
 import { FileSelector } from '@availity/mui-file-selector';
 ```
+
+#### Basic Example
+
+Here's a basic example of how to use the FileSelector component:
+
+```tsx
+import React from 'react';
+import { FileSelector } from '@availity/mui-file-selector';
+
+const MyComponent = () => {
+  const handleSubmit = (uploads, values) => {
+    console.log('Submitted files:', uploads);
+    console.log('Form values:', values);
+  };
+
+  return (
+    <FileSelector
+      name="myFiles"
+      bucketId="your-bucket-id"
+      customerId="your-customer-id"
+      clientId="your-client-id"
+      maxSize={5 * 1024 * 1024} // 5MB
+      allowedFileTypes={['.pdf', '.doc', '.docx']}
+      maxFiles={3}
+      onSubmit={handleSubmit}
+    />
+  );
+};
+
+export default MyComponent;
+```
+
+#### Advanced Examples
+
+The `onSuccess` and `onError` callbacks are available to use to add logic for after the file is uploaded or in the event there is an error with the api call.
+
+```tsx
+import React from 'react';
+import { FileSelector } from '@availity/mui-file-selector';
+
+const MyFileUploadComponent = () => {
+  const handleSuccess = () => {
+    // Handle successful upload - e.g., show success message, update UI
+  };
+
+  const handleError = (error) => {
+    // Handle upload error - e.g., show error message, retry upload
+  };
+
+  return (
+    <FileSelector
+      name="documentUpload"
+      bucketId="your-bucket-id"
+      customerId="your-customer-id"
+      clientId="your-client-id"
+      maxSize={10 * 1024 * 1024} // 10MB
+      allowedFileTypes={['.pdf', '.doc', '.docx']}
+      multiple={true}
+      maxFiles={5}
+      onSuccess={handleSuccess}
+      onError={handleError}
+    />
+  );
+};
+
+export default MyFileUploadComponent;
+```

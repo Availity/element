@@ -11,6 +11,7 @@ import { Dropzone } from './Dropzone';
 import { ErrorAlert } from './ErrorAlert';
 import { FileList } from './FileList';
 import { FileTypesMessage } from './FileTypesMessage';
+import { Options } from './useUploadCore';
 
 const CLOUD_URL = '/cloud/web/appl/vault/upload/v1/resumable';
 
@@ -94,11 +95,11 @@ export type FileSelectorProps = {
   /**
    * Callback fired when a file is successfully uploaded
    */
-  onSuccess?: UploadOptions['onSuccess'];
+  onSuccess?: () => void;
   /**
    * Callback fired when an error occurs during upload
    */
-  onError?: UploadOptions['onError'];
+  onError?: (error: Error) => void;
   /**
    * Array of functions to execute before file upload begins.
    * Each function should return a boolean indicating whether to proceed with the upload.
@@ -159,7 +160,7 @@ export const FileSelector = ({
     },
   });
 
-  const options: UploadOptions = {
+  const options: Options = {
     bucketId,
     customerId,
     clientId,

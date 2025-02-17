@@ -31,11 +31,13 @@ const meta: Meta<typeof FileSelector> = {
 export default meta;
 
 export const _FileSelector: StoryObj<typeof FileSelector> = {
-  render: (props: FileSelectorProps) => (
-    <Paper sx={{ padding: '2rem' }}>
-      <FileSelector {...props} />
-    </Paper>
-  ),
+  render: (props: FileSelectorProps) => {
+    return (
+      <Paper sx={{ padding: '2rem' }}>
+        <FileSelector {...props} />
+      </Paper>
+    );
+  },
   args: {
     name: 'file-selector',
     allowedFileTypes: [],
