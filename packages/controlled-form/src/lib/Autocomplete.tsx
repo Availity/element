@@ -1,6 +1,7 @@
 import { Autocomplete, AutocompleteProps } from '@availity/mui-autocomplete';
-import { RegisterOptions, FieldValues, Controller, ControllerProps } from 'react-hook-form';
+import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
 import { ChipTypeMap } from '@mui/material/Chip';
+import { ControllerProps, DeprecatedRulesProps } from './Types';
 
 export type ControlledAutocompleteProps<
   T,
@@ -9,11 +10,13 @@ export type ControlledAutocompleteProps<
   FreeSolo extends boolean | undefined,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
 > = Omit<
-  AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>,
-  'onChange' | 'onBlur' | 'value' | 'name'
-> &
-  Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'> &
-  Pick<ControllerProps, 'defaultValue' | 'shouldUnregister' | 'name'>;
+AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>,
+'onBlur' | 'onChange' | 'value' | 'name'
+> & Pick<RegisterOptions<FieldValues, string>,
+'onBlur' | 'onChange' | 'value'
+> & ControllerProps
+//TODO v1 - remove deprecated props
+& DeprecatedRulesProps;
 
 export const ControlledAutocomplete = <
   T,
@@ -25,6 +28,7 @@ export const ControlledAutocomplete = <
   name,
   FieldProps,
   defaultValue,
+  rules = {},
   deps,
   max,
   maxLength,
@@ -56,24 +60,25 @@ export const ControlledAutocomplete = <
         shouldUnregister,
         validate,
         value,
+        ...rules,
       }}
       shouldUnregister={shouldUnregister}
-      render={({ field: { onChange, value, onBlur }, fieldState: { error } }) => (
+      render={({ field: { onChange, value, onBlur, ref }, fieldState: { error } }) => (
         <Autocomplete
           {...rest}
           FieldProps={{
             ...FieldProps,
-            required: typeof required === 'object' ? required.value : !!required,
             error: !!error,
             helperText: error?.message ? (
-              <>
-                {error.message}
-                <br />
-                {FieldProps?.helperText}
-              </>
-            ) : (
-              FieldProps?.helperText
-            ),
+                <>
+                  {error.message}
+                  <br />
+                  {FieldProps?.helperText}
+                </>
+              ) : (
+                FieldProps?.helperText
+              ),
+            inputRef: ref
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {

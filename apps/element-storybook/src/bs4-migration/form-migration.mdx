@@ -55,8 +55,8 @@ yarn add react-hook-form
 
 - Form with `@availity/react`, `formik`, and `yup`
 - Form with `@availity/element`, `react-hook-form`, `yup` and `@hookform/resolvers/yup`
+- Form with `@availity/element` and `react-hook-form` - using internal rules for validation
 - Form with `@availity/element`, `formik`, and `yup` (<ins>Not Recommended</ins>)
-- Form with `@availity/element`, `react-hook-form`, and `react-hook-form` Internal Rules
 
 
 At the moment, @availity/element does not export a `<Form />` component.
@@ -123,30 +123,28 @@ export const Form = () => {
 };
 `}/>
 
-### Form with `@availity/element`, `react-hook-form`, `yup` and `@hookform/resolvers/yup`
+### Form with `@availity/element`, `yup` and `@hookform/resolvers/yup`
 
 <Source
   code={`
-import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import dayjs from 'dayjs';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Autocomplete, Button, FormControl, FormControlLabel, FormHelperText, FormLabel, Paper, Radio, RadioGroup, RequiredKey, TextField } from '@availity/element';\n
+import {
+  ControlledTextField,
+  ControlledAutocomplete,
+  ControlledRadioGroup,
+  ControlledDatepicker,
+  FormControlLabel,
+  FormProvider,
+  LoadingButton,
+  Radio,
+  RequiredKey,
+  SubmitHandler,
+  useForm,
+} from '@availity/element';\n
 export const Form = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    control,
-    reset,
-    getValues,
-  } = useForm({
-    defaultValues: {
-      textField: "",
-      selectField: undefined,
-      radio: "",
-    },
-    mode: 'onTouched',
-    resolver: yupResolver(yup.object().shape({
+    const schema = yup.object({
       textField: yup
         .string()
         .max(200, 'Text Field cannot exceed 200 characters.')
@@ -155,75 +153,145 @@ export const Form = () => {
         .string()
         .required('This Field is required.')
         .nullable(),
+      datePicker: yup
+        .mixed<dayjs.Dayjs>()
+        .required('This Field is required.')
+        .nullable(),
       radio: yup
         .string()
         .required('A selection is required'),
-    })),
-  });
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <RequiredKey />
-      <TextField
-        label="Textfield"
-        margin="normal"
-        fullWidth
-        {...register('textField')}
-        required
-        error={!!errors.textField}
-        helperText={errors.textField?.message || 'Max 200 characters'}
-      />
-      <Controller
-        control={control}
-        name="selectField"
-        render={({ field: { onChange, value, onBlur } }) => {
-          return (
-            <Autocomplete
-              onChange={(event, value, reason) => {
-                if (reason === 'clear') {
-                  onChange(null);
-                }
-                onChange(value);
-              }}
-              onBlur={onBlur}
-              FieldProps={{
-                margin:"normal",
-                label: 'Select Field',
-                placeholder: 'Value',
-                required: true,
-                error: !!errors.selectField?.message,
-                helperText: errors.selectField?.message,
-              }}
-              options={dropdownOptions}
-              value={value || null}
-            />
-          );
-        }}
-      />
-      <FormControl margin="normal" error={!!errors.radio} required>
-        <FormLabel id="radio-label" component="div">
-          Radio Group
-        </FormLabel>
-        <Controller
-          control={control}
-          name="radio"
-          render={({ field }) => (
-            <RadioGroup aria-labelledby="radio-label" row {...field} aria-required>
-              <FormControlLabel control={<Radio />} value="1" label="Option 1" />
-              <FormControlLabel control={<Radio />} value="2" label="Option 2" />
-            </RadioGroup>
-          )}
-        />
-        {errors.radio ? <FormHelperText id="radio-helper-text">{errors.radio?.message}</FormHelperText> : null }
-      </FormControl>
-      <Button loading={loading} type="submit" variant="contained">
-        Submit
-      </Button>
-    </form>
-  )
-}
+    });\n
+    type FormInputsType = yup.InferType<typeof schema>;\n
+    const onSubmit: SubmitHandler<FormInputsType> = (data) => console.log(data)\n
+    const methods = useForm({
+      defaultValues: {
+        textField: "",
+        selectField: undefined,
+        datePicker: undefined,
+        radio: "",
+      },
+      mode: 'onBlur',
+      resolver: yupResolver(schema)
+    });\n
+    return (
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
+          <RequiredKey />
+          <ControlledTextField
+            name="textField"
+            label="Textfield"
+            margin="normal"
+            fullWidth
+            required
+            helperText='Max 200 characters'
+          />
+          <ControlledAutocomplete
+            name="selectField"
+            FieldProps={{
+              margin:"normal",
+              label: 'Select Field',
+              placeholder: 'Value',
+              required: true,
+            }}
+            options={dropdownOptions}
+          />
+          <ControlledDatepicker
+            name="datePicker"
+            FieldProps={{
+              label: "Date",
+              margin: "normal",
+              required: true,
+            }}
+          />
+          <ControlledRadioGroup name="radio" label="Radio Group" row aria-required required>
+            <FormControlLabel control={<Radio />} value="1" label="Option 1" />
+            <FormControlLabel control={<Radio />} value="2" label="Option 2" />
+          </ControlledRadioGroup>
+          <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" variant="contained">
+            Submit
+          </LoadingButton>
+        </form>
+      </FormProvider>
+    )
+  }
 `}/>
 
 You can find more working examples of react-hook-form [here](/docs/sample-layouts-form--docs).
+
+### Form with `@availity/element`, `react-hook-form`, and `react-hook-form` Internal Rules
+
+<Source
+  code={`
+import {
+  ControlledTextField,
+  ControlledAutocomplete,
+  ControlledRadioGroup,
+  ControlledDatepicker,
+  FormControlLabel,
+  FormProvider,
+  LoadingButton,
+  Radio,
+  RequiredKey,
+  useForm,
+} from '@availity/element';\n
+export const Form = () => {
+    const methods = useForm({defaultValues: {textField: '', selectField: null, datePicker: null, radio: ''}});
+    const onSubmit = (data: any) => console.log(data)
+    return (
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
+          <RequiredKey />
+          <ControlledTextField
+            name="textField"
+            label="Textfield"
+            margin="normal"
+            fullWidth
+            required
+            rules={{
+              required: 'This field is required',
+              maxLength: { value: 200, message: 'This field must not exceed 200 characters'}
+            }}
+            helperText='Max 200 characters'
+          />
+          <ControlledAutocomplete
+            name="selectField"
+            rules={{ required: 'This field is required'}}
+            FieldProps={{
+              margin:"normal",
+              label: 'Select Field',
+              placeholder: 'Value',
+              required: true,
+            }}
+            options={dropdownOptions}
+          />
+          <ControlledDatepicker
+            name="datePicker"
+            rules={{ required: 'This field is required' }}
+            FieldProps={{
+              label: "Date",
+              margin: "normal",
+              required: true,
+            }}
+          />
+          <ControlledRadioGroup
+            name="radio"
+            label="Radio Group"
+            row
+            aria-required
+            required
+            rules={{ required: 'This field is required' }}
+          >
+            <FormControlLabel control={<Radio />} value="1" label="Option 1" />
+            <FormControlLabel control={<Radio />} value="2" label="Option 2" />
+          </ControlledRadioGroup>
+          <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" variant="contained">
+            Submit
+          </LoadingButton>
+        </form>
+      </FormProvider>
+    )
+  }
+`}/>
 
 ### Form with `@availity/element`, `formik`, and `yup` (Not Recommended)
 
@@ -333,86 +401,4 @@ export const Form = () => (
     )}
   </Formik>
 );
-`}/>
-
-### Form with `@availity/element`, `react-hook-form`, and `react-hook-form` Internal Rules
-
-<Source
-  code={`
-import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { Autocomplete, Button, FormControl, FormControlLabel, FormHelperText, FormLabel, Paper, Radio, RadioGroup, RequiredKey, TextField } from '@availity/element';\n
-export const Form = () => {
-  const {
-      register,
-      handleSubmit,
-      formState: { errors },
-      control,
-      reset,
-      getValues,
-    } = useForm({defaultValues: { textField: "", selectField: "", radio: ""}});
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <RequiredKey />
-      <TextField
-        label="Textfield"
-        margin="normal"
-        fullWidth
-        {...register('textField', {
-          required: 'This field is required',
-          maxLength: { value: 200, message: 'This field must not exceed 200 characters'}})}
-        required
-        error={!!errors.textField}
-        helperText={errors.textField?.message || 'Max 200 characters'}
-      />
-      <Controller
-        control={control}
-        name="selectField"
-        rules={{ required: 'This field is required' }}
-        render={({ field: { onChange, value, onBlur } }) => {
-          return (
-            <Autocomplete
-              onChange={(event, value, reason) => {
-                if (reason === 'clear') {
-                  onChange(null);
-                }
-                onChange(value);
-              }}
-              onBlur={onBlur}
-              FieldProps={{
-                margin:"normal",
-                label: 'Select Field',
-                placeholder: 'Value',
-                required: true,
-                error: !!errors.selectField?.message,
-                helperText: errors.selectField?.message,
-              }}
-              options={dropdownOptions}
-              value={value || null}
-            />
-          );
-        }}
-      />
-      <FormControl margin="normal" error={!!errors.radio} required>
-        <FormLabel id="radio-label" component="div">
-          Radio Group
-        </FormLabel>
-        <Controller
-          control={control}
-          name="radio"
-          rules={{ required: 'This field is required' }}
-          render={({ field }) => (
-            <RadioGroup aria-labelledby="radio-label" row {...field} aria-required>
-              <FormControlLabel control={<Radio />} value="1" label="Option 1" />
-              <FormControlLabel control={<Radio />} value="2" label="Option 2" />
-            </RadioGroup>
-          )}
-        />
-        {errors.radio ? <FormHelperText id="radio-helper-text">{errors.radio?.message}</FormHelperText> : null }
-      </FormControl>
-      <LoadingButton loading={loading} type="submit" variant="contained">
-        Submit
-      </LoadingButton>
-    </form>
-  )
-}
 `}/>

@@ -1,15 +1,10 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Paper } from '@availity/mui-paper';
-import { Typography } from '@availity/mui-typography';
-import { useFormContext } from 'react-hook-form';
-import { Grid } from '@availity/mui-layout';
-import { Button } from '@availity/mui-button';
 import AvApi, { ApiConfig } from '@availity/api-axios';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '@availity/mock/src/lib/server';
-import { ControlledForm } from './ControlledForm';
 import { ControlledAsyncAutocomplete } from './AsyncAutocomplete';
+import { TestForm } from './UtilComponents';
 
 const api = new AvApi({ name: 'example' } as ApiConfig);
 
@@ -47,33 +42,6 @@ const loadOptions = async (offset: number, limit: number) => {
   };
 };
 
-const SubmittedValues = () => {
-  const {
-    getValues,
-    formState: { isSubmitSuccessful },
-  } = useFormContext();
-
-  return isSubmitSuccessful ? (
-    <Paper sx={{ padding: '1.5rem', marginTop: '1.5rem' }}>
-      <Typography variant="h2">Submitted Values</Typography>
-      <pre data-testid="result">{JSON.stringify(getValues(), null, 2)}</pre>
-    </Paper>
-  ) : null;
-};
-
-const Actions = () => {
-  const {
-    reset,
-    formState: { isSubmitSuccessful },
-  } = useFormContext();
-  return (
-    <Grid container direction="row" justifyContent="space-between">
-      <Button disabled={!isSubmitSuccessful} children="Reset" color="secondary" onClick={() => reset()} />
-      <Button type="submit" disabled={isSubmitSuccessful} children="Submit" />
-    </Grid>
-  );
-};
-
 const onSubmit = jest.fn();
 
 describe('ControlledAsyncAutocomplete', () => {
@@ -98,20 +66,18 @@ describe('ControlledAsyncAutocomplete', () => {
   });
 
   test('should loadOptions successfully', async () => {
-    const screen = render(
-      <QueryClientProvider client={client}>
-        <ControlledForm values={{ controlledAutocomplete: undefined }} onSubmit={(data) => data}>
-          <ControlledAsyncAutocomplete
-            name="controlledAsyncAutocomplete"
-            FieldProps={{ label: 'Async Select', helperText: 'Helper Text', fullWidth: false }}
-            getOptionLabel={(val: Option) => val.label}
-            loadOptions={loadOptions}
-            limit={10}
-            queryKey="example"
-          />
-          <Actions />
-          <SubmittedValues />
-        </ControlledForm>
+      const screen = render(
+        <QueryClientProvider client={client}>
+          <TestForm UseFormOptions={{values: { controlledAutocomplete: undefined }}} onSubmit={onSubmit}>
+            <ControlledAsyncAutocomplete
+              name="controlledAsyncAutocomplete"
+              FieldProps={{ label: 'Async Select', helperText: 'Helper Text', fullWidth: false }}
+              getOptionLabel={(val: Option) => val.label}
+              loadOptions={loadOptions}
+              limit={10}
+              queryKey="example"
+            />
+        </TestForm>
       </QueryClientProvider>
     );
 
@@ -125,7 +91,7 @@ describe('ControlledAsyncAutocomplete', () => {
   test('should set the value and submit the form data', async () => {
     const screen = render(
       <QueryClientProvider client={client}>
-        <ControlledForm values={{ controlledAutocomplete: undefined }} onSubmit={onSubmit}>
+        <TestForm UseFormOptions={{values: { controlledAutocomplete: undefined }}} onSubmit={onSubmit}>
           <ControlledAsyncAutocomplete
             name="controlledAsyncAutocomplete"
             FieldProps={{ label: 'Async Select', helperText: 'Helper Text', fullWidth: false }}
@@ -134,11 +100,9 @@ describe('ControlledAsyncAutocomplete', () => {
             limit={10}
             queryKey="example"
           />
-          <Actions />
-          <SubmittedValues />
-        </ControlledForm>
-      </QueryClientProvider>
-    );
+      </TestForm>
+    </QueryClientProvider>
+  );
 
     const dropdown = screen.getByRole('combobox');
     fireEvent.click(dropdown);

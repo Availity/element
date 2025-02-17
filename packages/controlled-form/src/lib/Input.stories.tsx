@@ -1,65 +1,59 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ControlledInput, ControlledInputProps } from './Input';
-import { ControlledForm } from './ControlledForm';
 import { Button } from '@availity/mui-button';
-import { useFormContext } from 'react-hook-form';
 import { Paper } from '@availity/mui-paper';
 import { Typography } from '@availity/mui-typography';
 import { Grid } from '@availity/mui-layout';
+import { AllControllerPropertiesCategorized, InputPropsCategorized } from './Types';
+import { FormProvider, useForm } from '..';
 
 const meta: Meta<typeof ControlledInput> = {
   title: 'Form Components/Controlled Form/ControlledInput',
   component: ControlledInput,
   tags: ['autodocs'],
+  argTypes: {...AllControllerPropertiesCategorized, ...InputPropsCategorized},
+  parameters: {
+    controls: {
+      exclude: [
+        'className',
+        'defaultChecked',
+        'onError',
+        'ref',
+        'style',
+        'tabIndex'
+      ]
+    }
+  }
 };
 
 export default meta;
 
 export const _ControlledInput: StoryObj<typeof ControlledInput> = {
   render: (args: ControlledInputProps) => {
-    const SubmittedValues = () => {
-      const {
-        getValues,
-        formState: { isSubmitSuccessful },
-      } = useFormContext();
+    const methods = useForm();
 
-      return isSubmitSuccessful ? (
-        <Paper sx={{ padding: '1.5rem', marginTop: '1.5rem' }}>
-          <Typography variant="h2">Submitted Values</Typography>
-          <pre>{JSON.stringify(getValues(), null, 2)}</pre>
-        </Paper>
-      ) : null;
-    };
-
-    const Actions = () => {
-      const {
-        reset,
-        formState: { isSubmitSuccessful },
-      } = useFormContext();
-      return (
-        <Grid container direction="row" justifyContent="space-between" marginTop={1}>
-          <Button
-            disabled={!isSubmitSuccessful}
-            children="Reset"
-            color="secondary"
-            onClick={() => reset({ [args.name]: '' })}
-          />
-          <Button type="submit" disabled={isSubmitSuccessful} children="Submit" />
-        </Grid>
-      );
-    };
     return (
-      <ControlledForm values={{ [args.name]: '' }} onSubmit={(data) => data}>
-        <ControlledInput {...args} />
-        <Actions />
-        <SubmittedValues />
-      </ControlledForm>
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit((data) => data)}>
+          <ControlledInput {...args} />
+          <Grid container direction="row" justifyContent="space-between" marginTop={1}>
+            <Button disabled={!methods?.formState?.isSubmitSuccessful} children="Reset" color="secondary" onClick={() => methods.reset()} />
+            <Button type="submit" disabled={methods?.formState?.isSubmitSuccessful} children="Submit" />
+          </Grid>
+          { methods?.formState?.isSubmitSuccessful ? (
+            <Paper sx={{ padding: '1.5rem', marginTop: '1.5rem' }}>
+              <Typography variant="h2">Submitted Values</Typography>
+              <pre data-testid="result">{JSON.stringify(methods.getValues(), null, 2)}</pre>
+            </Paper>
+          ) : null }
+        </form>
+      </FormProvider>
     );
   },
   args: {
     name: 'controlledInput',
     required: true,
-    maxLength: { value: 10, message: 'Too long' },
+    rules: { required:'This is required.', maxLength: { value: 10, message: 'Too long' }},
     inputProps: { 'aria-label': 'Input Label' },
   },
 };
