@@ -358,7 +358,7 @@ export const _SectionedForm: StoryObj = {
                     </Grid>
                     <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                       <ControlledTextField
-                        label="Text Field"
+                        label="Medium Text Field"
                         fullWidth
                         name="field2"
                         required
@@ -371,7 +371,7 @@ export const _SectionedForm: StoryObj = {
                     <Grid size={{ xs: 12, sm: 6, md: 8 }}>
                       <ControlledAutocomplete
                         name="dropdown3"
-                        FieldProps={{ label: 'Dropdown', placeholder: 'Value', size: 'medium' }}
+                        FieldProps={{ label: 'Medium Dropdown', placeholder: 'Value', size: 'medium' }}
                         options={dropdownOptions}
                       />
                     </Grid>
@@ -434,8 +434,6 @@ export const _SectionedForm: StoryObj = {
                       <ControlledTextField
                         fullWidth
                         name="field3"
-                        required
-                        rules={{ required: 'This field is required.' }}
                         placeholder="Search"
                         inputProps={{ 'aria-label': 'Search' }}
                         InputProps={{
