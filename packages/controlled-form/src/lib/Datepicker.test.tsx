@@ -1,38 +1,8 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import { useFormContext } from 'react-hook-form';
-import { Paper } from '@availity/mui-paper';
-import { Typography } from '@availity/mui-typography';
-import { Grid } from '@availity/mui-layout';
-import { Button } from '@availity/mui-button';
 import { ThemeProvider } from '@availity/theme-provider';
 import dayjs from 'dayjs';
-import { ControlledForm } from './ControlledForm';
 import { ControlledDatepicker } from './Datepicker';
-
-const SubmittedValues = () => {
-  const {
-    getValues,
-    formState: { isSubmitSuccessful },
-  } = useFormContext();
-
-  return isSubmitSuccessful ? (
-    <Paper sx={{ padding: '1.5rem', marginTop: '1.5rem' }}>
-      <Typography variant="h2">Submitted Values</Typography>
-      <pre data-testid="result">{JSON.stringify(getValues(), null, 2)}</pre>
-    </Paper>
-  ) : null;
-};
-
-const Actions = () => {
-  const {
-    formState: { isSubmitSuccessful },
-  } = useFormContext();
-  return (
-    <Grid container direction="row" justifyContent="space-between">
-      <Button type="submit" disabled={isSubmitSuccessful} children="Submit" />
-    </Grid>
-  );
-};
+import { TestForm } from './UtilComponents';
 
 const onSubmit = jest.fn();
 
@@ -40,7 +10,7 @@ describe('Datepicker', () => {
   test('should render successfully and submit selection', async () => {
     const screen = render(
       <ThemeProvider>
-        <ControlledForm values={{ controlledDatepicker: undefined }} onSubmit={onSubmit}>
+        <TestForm UseFormOptions={{values: { controlledDatepicker: null}}} onSubmit={onSubmit}>
           <ControlledDatepicker
             name="controlledDatepicker"
             FieldProps={{
@@ -50,9 +20,7 @@ describe('Datepicker', () => {
               label: 'Date',
             }}
           />
-          <Actions />
-          <SubmittedValues />
-        </ControlledForm>
+        </TestForm>
       </ThemeProvider>
     );
     expect(screen.getAllByText('Date')).toBeTruthy();

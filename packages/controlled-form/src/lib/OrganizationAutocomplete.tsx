@@ -1,12 +1,15 @@
 import { OrganizationAutocomplete, OrgAutocompleteProps } from '@availity/mui-autocomplete';
-import { Controller, RegisterOptions, FieldValues, ControllerProps } from 'react-hook-form';
+import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
+import { ControllerProps, DeprecatedRulesProps } from './Types';
 
-export type ControlledOrgAutocompleteProps = Omit<OrgAutocompleteProps, 'name'> &
-  Omit<
-    RegisterOptions<FieldValues, string>,
-    'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs' | 'max' | 'maxLength' | 'min' | 'minLength'
-  > &
-  Pick<ControllerProps, 'defaultValue' | 'shouldUnregister' | 'name'>;
+export type ControlledOrgAutocompleteProps = Omit<OrgAutocompleteProps,
+'onBlur' | 'onChange' | 'value' | 'name'
+> & Pick<RegisterOptions<FieldValues, string>,
+'onBlur' | 'onChange' | 'value'
+> & ControllerProps
+//TODO v1 - remove deprecated props
+& Omit<DeprecatedRulesProps, 'max' | 'maxLength' | 'min' | 'minLength'
+>;
 
 export const ControlledOrganizationAutocomplete = ({
   name,
@@ -16,6 +19,7 @@ export const ControlledOrganizationAutocomplete = ({
   onChange,
   pattern,
   required,
+  rules = {},
   shouldUnregister,
   validate,
   value,
@@ -35,14 +39,14 @@ export const ControlledOrganizationAutocomplete = ({
         shouldUnregister,
         validate,
         value,
+        ...rules,
       }}
       shouldUnregister={shouldUnregister}
-      render={({ field: { onChange, value, onBlur }, fieldState: { error } }) => (
+      render={({ field: { onChange, value, onBlur, ref }, fieldState: { error } }) => (
         <OrganizationAutocomplete
           {...rest}
           FieldProps={{
             ...FieldProps,
-            required: typeof required === 'object' ? required.value : !!required,
             error: !!error,
             helperText: error?.message ? (
               <>
@@ -53,6 +57,7 @@ export const ControlledOrganizationAutocomplete = ({
             ) : (
               FieldProps?.helperText
             ),
+            inputRef:ref
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {
