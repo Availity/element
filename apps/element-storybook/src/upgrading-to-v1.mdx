@@ -1,0 +1,90 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Upgrading to v1" />
+
+## Upgrading to Element v1
+
+Element v1 introduces a major upgrade to Material UI v6. This guide outlines
+the breaking changes and provides migration tools to ensure a smooth
+transition. We've developed custom codemods based on Material UI's
+official migration tools to automate many of the required changes. For a
+comporehensive list of the changes made in MUI v6 see
+[Material UI's Upgrade to v6 Guide](https://mui.com/material-ui/migration/upgrade-to-v6/).
+
+### Critical Changes
+
+These changes will more than likely affect your application:
+
+#### Grid Component Updates
+
+- **Size Props**: Renamed the `xs`, `sm`, `md`, `lg`, and `xl` props to unified size prop
+
+- **Offset Props**: Renamed the `xsOffset`, `smOffset`, `mdOffset`, `lgOffset`, and `xlOffset` props to unified offset prop
+
+Use this codemod to migrate to the new props:
+
+```bash
+npx @availty/mui-codemod@latest v1.0.0/grid-v2-props <path/to/folder>
+```
+
+To migrate manually, see [Material UI's documentation](https://mui.com/material-ui/migration/upgrade-to-v6/#grid2).
+
+### Potential Impact Changes
+
+These changes may affect your application depending on component usage:
+
+#### Component-Specific Changes
+
+- [Accordion](https://mui.com/material-ui/migration/upgrade-to-v6/#accordion)
+
+  - Summary wrapped in an `h3` heading element
+  - Summary as a button html structure changes
+
+- [Autocomplete](https://mui.com/material-ui/migration/upgrade-to-v6/#autocomplete)
+
+  - Modified `onInputChange` callback behavior
+
+- [Chip](https://mui.com/material-ui/migration/upgrade-to-v6/#chip)
+
+  - Updated focus handling mechanics
+
+- [Divider](https://mui.com/material-ui/migration/upgrade-to-v6/#divider)
+
+  - Changed vertical orientation to a `<div>`
+
+- [Grid](https://mui.com/material-ui/migration/upgrade-to-v6/#grid2)
+
+  - Removed `disableEqualOverflow` prop
+
+  - Modified item spacing behavior
+
+- [Typography](https://mui.com/material-ui/migration/upgrade-to-v6/#typography)
+
+  - Removed color prop
+
+#### Non-Impact Changes
+
+The following changes should not require any action:
+
+- [Removal of UMD bundle](https://mui.com/material-ui/migration/upgrade-to-v6/#umd-bundle-removed)
+
+- [Grid2 unstable prefix removal](https://mui.com/material-ui/migration/upgrade-to-v6/#grid2)
+
+- [Button loading state removed from Lab](https://mui.com/material-ui/migration/upgrade-to-v6/#button-with-loading-state)
+
+- [ListItem deprecated props removal](https://mui.com/material-ui/migration/upgrade-to-v6/#listitem)
+
+- [useMediaQuery type modifications](https://mui.com/material-ui/migration/upgrade-to-v6/#usemediaquery-types)
+
+### Optional Future-Proofing
+
+Material UI v6 deprecates system props in the `Box`, `Typography`, `Link`,
+`Grid`, `Stack` components. Deprecated props include: `mt`, `bgcolor`, and
+similar styling props. While not required for Element v1, early migration
+can be done via codemod:
+
+```bash
+npx @availty/mui-codemod@latest v1.0.0/system-props <path/to/folder>
+```
+
+For More information see [Material UI's Migrating From Deprecated APIs Guide](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/#system-props).
