@@ -261,10 +261,12 @@ type SectionedFormInputs = {
   dropdown4: string;
   dropdown5: string;
   dropdown6: string;
+  dropdown7: string;
   field1: string;
   field2: string;
   field3: string;
   field4: string;
+  field5: string;
   radio: string;
 };
 
@@ -368,14 +370,7 @@ export const _SectionedForm: StoryObj = {
                     </Grid>
                     <Grid xs={12} />
                     <Grid xs={12} sm={6} md={4}>
-                      <ControlledTextField label="Text Field" fullWidth name='field2' placeholder="Value" />
-                    </Grid>
-                    <Grid xs={12} sm={6} md={4}>
-                      <ControlledAutocomplete
-                        name="dropdown3"
-                        FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
-                        options={dropdownOptions}
-                      />
+                      <ControlledTextField label="Text Field" fullWidth name='field3' placeholder="Value" />
                     </Grid>
                     <Grid xs={12} sm={6} md={4}>
                       <ControlledAutocomplete
@@ -387,6 +382,13 @@ export const _SectionedForm: StoryObj = {
                     <Grid xs={12} sm={6} md={4}>
                       <ControlledAutocomplete
                         name="dropdown5"
+                        FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
+                        options={dropdownOptions}
+                      />
+                    </Grid>
+                    <Grid xs={12} sm={6} md={4}>
+                      <ControlledAutocomplete
+                        name="dropdown6"
                         FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
                         options={dropdownOptions}
                       />
@@ -414,7 +416,7 @@ export const _SectionedForm: StoryObj = {
                     <Grid xs={12}>
                       <ControlledTextField
                         fullWidth
-                        name='field3'
+                        name='field4'
                         placeholder="Search"
                         inputProps={{ 'aria-label': 'Search' }}
                         InputProps={{
@@ -441,7 +443,7 @@ export const _SectionedForm: StoryObj = {
                       <ControlledTextField
                         label="Text Field"
                         fullWidth
-                        name='field4'
+                        name='field5'
                         required
                         rules={{ required: 'This field is required' }}
                         placeholder="Value"
@@ -449,7 +451,7 @@ export const _SectionedForm: StoryObj = {
                     </Grid>
                     <Grid xs={12} sm={6}>
                       <ControlledAutocomplete
-                        name="dropdown6"
+                        name="dropdown7"
                         FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
                         options={dropdownOptions}
                       />
