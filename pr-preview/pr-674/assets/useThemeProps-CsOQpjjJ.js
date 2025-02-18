@@ -1,1 +1,0 @@
-import{d as m}from"./DefaultPropsProvider-LCKMq1Iv.js";import{T as o}from"./identifier-CenlGZaM.js";import{u as s}from"./useThemeProps-BAwiOWAz.js";function a({props:e,name:r}){return s({props:e,name:r,defaultTheme:m,themeId:o})}export{a as u};
