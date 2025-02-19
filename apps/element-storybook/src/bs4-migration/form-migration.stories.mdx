@@ -4,9 +4,9 @@ import { Meta, Source } from '@storybook/blocks';
 
 # Form Migration
 
-For the `@availity/element` components we have chosen to move away from any
-built-in form management. While there's flexibility to use your library of
-choice, internally we have replaced `formik` with `react-hook-form`.
+For the `@availity/element` components we have chosen to give more flexibility, having a
+set of components with built-in form management (@availity/mui-controlled-form) and adding a set
+of components without. Our controlled components have replaced `formik` with `react-hook-form`.
 For existing forms utilizing `@availity/react` and `formik`,
 some refactor is required.
 
@@ -17,11 +17,10 @@ in 2019 with sparse feature work and dependency updates since.
 We were faced with the question of what to replace it with, but also if it
 _should_ be replaced at all.
 
-We have chosen the middle ground. Our form components are no longer tied to
-one library for validation and state management. However, after a successful
-internal implementation of an extremely long and complicated form using
-`react-hook-form`, we decided to move forward with it for any internal form
-components, like the feedback component, and recommend it for use with `@availity/element`.
+We have chosen the middle ground. We're updating our library of choice for
+our controlled components, while also allowing the use of the non-controlled fields.
+After a successful internal implementation of an extremely long and complicated form using
+`react-hook-form`, we decided to move forward with it for our controlled form components.
 
 `react-hook-form` is very lightweight and flexible. It also boasts a
 large community and is actively and regularly supported. `react-hook-form`
@@ -35,21 +34,32 @@ We've included examples using only `react-hook-form` as well as
 using it with `yup`+`@hookform/resolvers/yup` (don't worry,
 `@hookform/resolvers` is an official part of `react-hook-form`)
 
-## react-hook-form Installation
+## Component Equivalents
 
-<Source
-  language="sh"
-  code={`
-npm install react-hook-form
-`}/>
-
-OR
-
-<Source
-  language="sh"
-  code={`
-yarn add react-hook-form
-`}/>
+| availity-react<br />formik | element<br />react-hook-form | element<br />Not Controlled | Description |
+| ---------------------------- | ---------------------------- | --------------------------- | ----------- |
+| CheckboxGroup | _N/A_ | _N/A - built with `FormControl`, `FormLabel`, & `FormGroup`_ | Full checkbox group field |
+| CurrencyInput | _N/A_ | _N/A - built with `TextField` and replacing input. See [Input Masking](./?path=/docs/form-components-textfield-textfield--docs&args=#input-masking)_ | Field with currency input masking |
+| DateField | ControlledDatepicker | Datepicker | Date field with picker |
+| DateRangeField | _N/A_ | _N/A - see [date range code example](./?path=/docs/form-components-datepicker-datepicker--docs#date-range-picker)_ | Date range field(s) with picker |
+| Field | ControlledTextField | TextField | Text input field |
+| FieldHelpIcon | _N/A_ | FieldHelpIcon | Availity help topic link |
+| FormGroup | _N/A_ | FormControl | Context wrapper for a field. Syncs state, i.e. error, required, disabled, focused, etc |
+| Input | _N/A_ | Input | Bare input |
+| Label | _N/A_ | FormLabel<br />FormControlLabel | Label for input/group |
+| Phone | _N/A_ | _N/A - built with `TextField` and replacing input. See [Input Masking](./?path=/docs/form-components-textfield-textfield--docs&args=#input-masking)_ | Field with phone masking |
+| RadioGroup | ControlledRadioGroup | _N/A - built with `FormControl`, `FormLabel`, & `RadioGroup`_ | Full radio group field |
+| SelectField | ControlledAutocomplete | Autocomplete | Select field with autocompletion |
+| ResourceSelect | ControlledAsyncAutocomplete | AsyncAutocomplete | Select field with loader while loading options |
+| AvCodeSelect | ControlledCodesAutocomplete | CodesAutocomplete | Specialized autocomplete with codes |
+| AvNavigationSelect | _N/A_ | _N/A_ | |
+| AvOrganizationSelect | ControlledOrganizationAutocomplete | OrganizationAutocomplete | Specialized autocomplete for organizations |
+| AvPayerSelect | _N/A_ | _N/A_ | |
+| AvPermissionSelect | _N/A_ | _N/A_ | |
+| AvProviderSelect | ControlledProviderAutocomplete | ProviderAutocomplete | Specialized autocomplete for providers |
+| AvRegionSelect | _N/A_ | _N/A_ | |
+| AvUserSelect | _N/A_ | _N/A_ | |
+| Upload | _N/A_ | FileSelector | Select files for upload, show upload progress |
 
 ## Form Examples
 
