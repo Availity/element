@@ -161,10 +161,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/message-core@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "@availity/message-core@npm:7.0.1"
-  checksum: e18835f8c5bdb2630d6af54ace963666288e4530f5a3ea722761f89a3ff050cdac04347d96c6be033629b6e5414a0e8cef242c76bf4dec50068ae00a91ef26f9
+"@availity/message-core@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "@availity/message-core@npm:7.0.2"
+  checksum: afa4de74480d65055042eb0b04560077098403c3dcf46ab949288967f8f038029c5471a032758761db07b5d914d98b34fecaabb510412da2391ac76bd1df4d06
   languageName: node
   linkType: hard
 
@@ -569,7 +569,7 @@ __metadata:
   resolution: "@availity/mui-favorites@workspace:packages/favorites"
   dependencies:
     "@availity/api-axios": ^10.0.0
-    "@availity/message-core": ^7.0.1
+    "@availity/message-core": ^7.0.2
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-tooltip": "workspace:^"
@@ -628,7 +628,7 @@ __metadata:
     "@availity/mui-paper": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@availity/upload-core": 7.0.0
+    "@availity/upload-core": ^7.0.1
     "@mui/material": ^6.4.4
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
@@ -649,7 +649,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-form-utils@workspace:packages/form-utils"
   dependencies:
-    "@availity/message-core": ^7.0.1
+    "@availity/message-core": ^7.0.2
     "@availity/mui-button": "workspace:*"
     "@availity/mui-checkbox": "workspace:^"
     "@availity/mui-icon": "workspace:*"
@@ -904,7 +904,7 @@ __metadata:
   dependencies:
     "@availity/api-axios": ^10.0.0
     "@availity/hooks": ^5.1.2
-    "@availity/message-core": ^7.0.1
+    "@availity/message-core": ^7.0.2
     "@availity/mui-button": "workspace:^"
     "@availity/mui-card": "workspace:^"
     "@availity/mui-chip": "workspace:^"
@@ -1185,13 +1185,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/upload-core@npm:7.0.0":
-  version: 7.0.0
-  resolution: "@availity/upload-core@npm:7.0.0"
+"@availity/upload-core@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@availity/upload-core@npm:7.0.1"
   dependencies:
     "@availity/resolve-url": 3.0.0
     tus-js-client: 4.2.3
-  checksum: d18efc6c8f3d1c4e8ca56047eed8fd02861645eae8daa849719cc0e94e947969ea5856b933d54bf4d8b0837f927334b9b33fe36052f9c6c81df4d6a7764ea8ea
+  checksum: 1f3e2555d0476095e01755e5831b38b280032859585a2feec5d524e2409287ebc23a19d6af12ba68e25ef1e353ffa555d8ee4820cba7522d66aab613b93dc9d8
   languageName: node
   linkType: hard
 
