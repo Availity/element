@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-form-utils",
-  "version": "0.17.0",
+  "version": "0.17.1",
   "description": "Availity MUI Form Components - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -40,7 +40,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/message-core": "^7.0.1",
+    "@availity/message-core": "^7.0.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2"
   },
   "devDependencies": {

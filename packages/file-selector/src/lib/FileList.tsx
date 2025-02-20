@@ -1,4 +1,4 @@
-import type { default as Upload, UploadOptions } from '@availity/upload-core';
+import type { default as Upload } from '@availity/upload-core';
 import { List, ListItem, ListItemText, ListItemIcon } from '@availity/mui-list';
 import { IconButton } from '@availity/mui-button';
 import { DeleteIcon } from '@availity/mui-icon';
@@ -7,7 +7,7 @@ import { Divider } from '@availity/mui-divider';
 
 import { UploadProgressBar } from './UploadProgressBar';
 import { formatBytes, getFileExtIcon } from './util';
-import { useUploadCore } from './useUploadCore';
+import { useUploadCore, Options } from './useUploadCore';
 
 type FileRowProps = {
   /** The File object containing information about the uploaded file */
@@ -19,7 +19,7 @@ type FileRowProps = {
    */
   onRemoveFile: (id: string, upload: Upload) => void;
   /** Configuration options for the upload process */
-  options: UploadOptions;
+  options: Options;
 };
 
 const FileRow = ({ file, options, onRemoveFile }: FileRowProps) => {
@@ -78,7 +78,7 @@ export type FileListProps = {
   /**
    * Configuration options applied to all file uploads in the list
    */
-  options: UploadOptions;
+  options: Options;
 };
 
 export const FileList = ({ files, options, onRemoveFile }: FileListProps) => {

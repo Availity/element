@@ -2,6 +2,27 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.4](https://github.com/Availity/element/compare/@availity/mui-spaces@0.7.3...@availity/mui-spaces@0.7.4) (2025-02-20)
+
+
+### Bug Fixes
+
+* **mui-spaces:** update useLink to passthrough full space ([b194d1a](https://github.com/Availity/element/commit/b194d1ad6c5f821b674ce0f2b7da7ad599a2562b))
+
+## [0.7.3](https://github.com/Availity/element/compare/@availity/mui-spaces@0.7.2...@availity/mui-spaces@0.7.3) (2025-02-19)
+
+### Dependency Updates
+
+* `mui-favorites` updated to version `0.7.2`
+* `mui-progress` updated to version `0.7.2`
+## [0.7.2](https://github.com/Availity/element/compare/@availity/mui-spaces@0.7.1...@availity/mui-spaces@0.7.2) (2025-02-18)
+
+### Dependency Updates
+
+* `mui-card` updated to version `0.7.1`
+* `mui-dialog` updated to version `0.7.1`
+* `mui-favorites` updated to version `0.7.1`
+* `mui-modal` updated to version `0.7.1`
 ## [0.7.1](https://github.com/Availity/element/compare/@availity/mui-spaces@0.7.0...@availity/mui-spaces@0.7.1) (2025-02-05)
 
 ### Dependency Updates

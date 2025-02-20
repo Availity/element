@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.1](https://github.com/Availity/element/compare/@availity/mui-progress@0.5.0...@availity/mui-progress@0.5.1) (2025-02-19)
+
+
+### Bug Fixes
+
+* **mui-progress:** allow hiding of percentge ([168da9b](https://github.com/Availity/element/commit/168da9bfa7af44089cea27317e0d6ad9a057db3d))
+
 ## [0.5.0](https://github.com/Availity/element/compare/@availity/mui-progress@0.4.5...@availity/mui-progress@0.5.0) (2025-02-04)
 
 ### Dependency Updates

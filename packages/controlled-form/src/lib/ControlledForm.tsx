@@ -1,6 +1,7 @@
 import { FormHTMLAttributes } from 'react';
-import { useForm, SubmitHandler, FormProvider, Resolver } from 'react-hook-form';
+import { useForm, SubmitHandler, FormProvider, Resolver, UseFormProps } from 'react-hook-form';
 
+/** @deprecated Use `UseFormProps` directly with `useForm` and `FormProvider` */
 export type ControlledFormProps = {
   /** This function will receive the form data if form validation is successful. */
   onSubmit: SubmitHandler<any>;
@@ -13,6 +14,8 @@ export type ControlledFormProps = {
    * found here: https://github.com/react-hook-form/resolvers#quickstart
    */
   validationResolver?: (schema: unknown) => Resolver;
+  /** Additional react-hook-form `useForm` options, like `defaultValues` and validation `mode`. For more information see the [react-hook-form useForm docs](https://react-hook-form.com/docs/useform) */
+  additionalUseFormOptions?: Omit<UseFormProps, 'values' | 'resolver'>;
 } & FormHTMLAttributes<HTMLFormElement>;
 
 type UseFormOptions = {
@@ -20,8 +23,9 @@ type UseFormOptions = {
   resolver?: Resolver;
 };
 
-export const ControlledForm = ({ onSubmit, values, schema, validationResolver, ...rest }: ControlledFormProps) => {
-  const useFormOptions: UseFormOptions = { values };
+/** @deprecated Use `FormProvider` and `useForm` directly. */
+export const ControlledForm = ({ onSubmit, values, schema, validationResolver, additionalUseFormOptions = {mode: 'onBlur'}, ...rest }: ControlledFormProps) => {
+  const useFormOptions: UseFormOptions = { values, ...additionalUseFormOptions };
   if (schema && validationResolver) {
     useFormOptions.resolver = validationResolver(schema);
   }

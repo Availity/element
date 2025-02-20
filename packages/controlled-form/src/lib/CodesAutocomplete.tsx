@@ -1,9 +1,14 @@
 import { CodesAutocomplete, CodesAutocompleteProps } from '@availity/mui-autocomplete';
-import { Controller, RegisterOptions, ControllerProps, FieldValues } from 'react-hook-form';
+import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
+import { ControllerProps, DeprecatedRulesProps } from './Types';
 
-export type ControlledCodesAutocompleteProps = Omit<CodesAutocompleteProps, 'name'> &
-  Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'> &
-  Pick<ControllerProps, 'defaultValue' | 'shouldUnregister' | 'name'>;
+export type ControlledCodesAutocompleteProps = Omit<CodesAutocompleteProps,
+'onBlur' | 'onChange' | 'value' | 'name'
+> & Pick<RegisterOptions<FieldValues, string>,
+'onBlur' | 'onChange' | 'value'
+> & ControllerProps
+//TODO v1 - remove deprecated props
+& DeprecatedRulesProps;
 
 export const ControlledCodesAutocomplete = ({
   name,
@@ -15,6 +20,7 @@ export const ControlledCodesAutocomplete = ({
   onChange,
   pattern,
   required,
+  rules = {},
   shouldUnregister,
   validate,
   value,
@@ -36,14 +42,14 @@ export const ControlledCodesAutocomplete = ({
         shouldUnregister,
         validate,
         value,
+        ...rules,
       }}
       shouldUnregister={shouldUnregister}
-      render={({ field: { onChange, value, onBlur }, fieldState: { error } }) => (
+      render={({ field: { onChange, value, onBlur, ref }, fieldState: { error } }) => (
         <CodesAutocomplete
           {...rest}
           FieldProps={{
             ...FieldProps,
-            required: typeof required === 'object' ? required.value : !!required,
             error: !!error,
             helperText: error?.message ? (
               <>
@@ -54,6 +60,7 @@ export const ControlledCodesAutocomplete = ({
             ) : (
               FieldProps?.helperText
             ),
+            inputRef:ref
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {

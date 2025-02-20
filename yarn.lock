@@ -179,10 +179,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/message-core@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "@availity/message-core@npm:7.0.1"
-  checksum: e18835f8c5bdb2630d6af54ace963666288e4530f5a3ea722761f89a3ff050cdac04347d96c6be033629b6e5414a0e8cef242c76bf4dec50068ae00a91ef26f9
+"@availity/message-core@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "@availity/message-core@npm:7.0.2"
+  checksum: afa4de74480d65055042eb0b04560077098403c3dcf46ab949288967f8f038029c5471a032758761db07b5d914d98b34fecaabb510412da2391ac76bd1df4d06
   languageName: node
   linkType: hard
 
@@ -572,7 +572,7 @@ __metadata:
   resolution: "@availity/mui-favorites@workspace:packages/favorites"
   dependencies:
     "@availity/api-axios": ^9.0.6
-    "@availity/message-core": ^7.0.1
+    "@availity/message-core": ^7.0.2
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-tooltip": "workspace:^"
@@ -630,7 +630,7 @@ __metadata:
     "@availity/mui-paper": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@availity/upload-core": 7.0.0-alpha.6
+    "@availity/upload-core": ^7.0.1
     "@mui/material": ^5.15.15
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
@@ -638,7 +638,6 @@ __metadata:
     react-dropzone: ^11.7.1
     react-hook-form: ^7.51.3
     tsup: ^8.0.2
-    tus-js-client: 4.2.3
     typescript: ^5.4.5
     uuid: ^9.0.1
   peerDependencies:
@@ -651,7 +650,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-form-utils@workspace:packages/form-utils"
   dependencies:
-    "@availity/message-core": ^7.0.1
+    "@availity/message-core": ^7.0.2
     "@availity/mui-button": "workspace:*"
     "@availity/mui-checkbox": "workspace:^"
     "@availity/mui-icon": "workspace:*"
@@ -906,7 +905,7 @@ __metadata:
   dependencies:
     "@availity/api-axios": ^9.0.6
     "@availity/hooks": ^5.0.2
-    "@availity/message-core": ^7.0.1
+    "@availity/message-core": ^7.0.2
     "@availity/mui-button": "workspace:^"
     "@availity/mui-card": "workspace:^"
     "@availity/mui-chip": "workspace:^"
@@ -1199,13 +1198,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/upload-core@npm:7.0.0-alpha.6":
-  version: 7.0.0-alpha.6
-  resolution: "@availity/upload-core@npm:7.0.0-alpha.6"
+"@availity/upload-core@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@availity/upload-core@npm:7.0.1"
   dependencies:
     "@availity/resolve-url": 3.0.0
     tus-js-client: 4.2.3
-  checksum: 053b988aa686bd87863795444eb8e04987447b36b6935eab2a0f3773bb8a5b5de0b66f177c366d29d0a9ee1a7c7faa1c21d2c9ea2725659c58894a3dead352dd
+  checksum: 1f3e2555d0476095e01755e5831b38b280032859585a2feec5d524e2409287ebc23a19d6af12ba68e25ef1e353ffa555d8ee4820cba7522d66aab613b93dc9d8
   languageName: node
   linkType: hard
 
@@ -10609,8 +10608,8 @@ __metadata:
   linkType: hard
 
 "elliptic@npm:^6.5.3, elliptic@npm:^6.5.5":
-  version: 6.5.7
-  resolution: "elliptic@npm:6.5.7"
+  version: 6.6.1
+  resolution: "elliptic@npm:6.6.1"
   dependencies:
     bn.js: ^4.11.9
     brorand: ^1.1.0
@@ -10619,7 +10618,7 @@ __metadata:
     inherits: ^2.0.4
     minimalistic-assert: ^1.0.1
     minimalistic-crypto-utils: ^1.0.1
-  checksum: af0ffddffdbc2fea4eeec74388cd73e62ed5a0eac6711568fb28071566319785df529c968b0bf1250ba4bc628e074b2d64c54a633e034aa6f0c6b152ceb49ab8
+  checksum: 27b14a52f68bbbc0720da259f712cb73e953f6d2047958cd02fb0d0ade2e83849dc39fb4af630889c67df8817e24237428cf59c4f4c07700f755b401149a7375
   languageName: node
   linkType: hard
 
