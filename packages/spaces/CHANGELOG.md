@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.5](https://github.com/Availity/element/compare/@availity/mui-spaces@0.7.4...@availity/mui-spaces@0.7.5) (2025-02-20)
+
+
+### Bug Fixes
+
+* **mui-spaces:** make SpaceLink header should match CardHeader size ([1b7a975](https://github.com/Availity/element/commit/1b7a97590a3153a0219a1eed53ca9de252dd0fd5))
+
 ## [0.7.4](https://github.com/Availity/element/compare/@availity/mui-spaces@0.7.3...@availity/mui-spaces@0.7.4) (2025-02-20)
 
 
