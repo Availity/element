@@ -17,7 +17,7 @@ export const useLink: UseLink = (spaceOrSpaceId, options) => {
 
   const openModal = useModal();
 
-  const space = spaceFromSpacesProvider?.[0];
+  const space = spaceFromSpacesProvider?.[0] || (typeof spaceOrSpaceId === 'object' ? spaceOrSpaceId : undefined);
 
   const parentPayerSpaces = space?.parents?.filter(
     (p) => p.type && (p.type.toLowerCase() === 'space' || p.type.toLowerCase() === 'payerspace')
