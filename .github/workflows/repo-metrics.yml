@@ -35,7 +35,7 @@ jobs:
                 pullRequests(
                   states: [MERGED],
                   first: 100,
-                  orderBy: {field: UPDATED_AT, direction: DESC}
+                  orderBy: {field: MERGED_AT, direction: DESC}
                 ) {
                   nodes {
                     createdAt
