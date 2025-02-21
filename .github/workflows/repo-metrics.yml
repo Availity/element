@@ -41,7 +41,7 @@ jobs:
             -f repo=$REPO > prs.json
       - name: Calculate Mean Time To Merge
         run: |
-          jq -c '
+          jq '
             .data.repository.pullRequests.nodes |
             reduce .[] as $pr (
               {"total_prs": 0, "total_hours": 0};
