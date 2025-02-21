@@ -61,8 +61,10 @@ jobs:
       - name: Format Coverage Report
         run: |
           jq -r '
-          .total
-          ' coverage/coverage-final.json > metrics.txt
+
+          Code Coverage Report:
+          \(.total)
+          ' coverage/coverage-final.json >> metrics.txt
       - name: Print Repo Metrics Report
         run: |
           echo "${{ github.repository_owner }} ${{ github.event.repository.name }} Repo Metrics"
