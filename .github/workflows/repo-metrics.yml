@@ -34,7 +34,7 @@ jobs:
               repository(owner: $owner, name: $repo) {
                 pullRequests(
                   states: [MERGED],
-                  first: 100,
+                  first: 25,
                   orderBy: {field: UPDATED_AT, direction: DESC}
                 ) {
                   nodes {
@@ -48,22 +48,20 @@ jobs:
             -f repo=$REPO > prs.json
       - name: Calculate metrics
         run: |
-          jq '
-          .data.repository.pullRequests.nodes |
-          map(
-            . + {
-              mergeTimeHours: (
-                ((.mergedAt | fromdateiso8601) - (.createdAt | fromdateiso8601)) / 3600
-              )
-            }
-          ) |
-          {
-            total_prs: length,
-            average_hours: (map(.mergeTimeHours) | add / length | round),
-          } |
-          "PR Metrics Summary:
-          Total PRs: \(.total_prs)
-          Average Time to Merge: \(.average_hours) hours
+          jq -c '
+            .data.repository.pullRequests.nodes |
+            reduce .[] as $pr (
+              {"total_prs": 0, "total_hours": 0};
+              . + {
+                "total_prs": (.total_prs + 1),
+                "total_hours": (.total_hours + (($pr.mergedAt | fromdateiso8601) - ($pr.createdAt | fromdateiso8601)) / 3600)
+              }
+            ) |
+            {
+              total_prs: .total_prs,
+              average_hours: (.total_hours / .total_prs | round)
+            } |
+            "PR Metrics Summary:\nTotal PRs: \(.total_prs)\nAverage Time to Merge: \(.average_hours) hours"
           ' prs.json > metrics.txt
       - name: Print Mean Time To Merge Report
         run: |
