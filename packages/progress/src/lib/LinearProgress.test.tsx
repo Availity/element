@@ -25,4 +25,9 @@ describe('LinearProgress', () => {
     expect(screen.getByText('100%')).toBeDefined();
     expect(svgEl.classList.toString()).toContain('MuiSvgIcon-root');
   });
+
+  test('should not show value as percentage for indeterminate', () => {
+    render(<LinearProgress hidePercentage value={50} />);
+    expect(screen.queryByText('50%')).toBeNull();
+  });
 });

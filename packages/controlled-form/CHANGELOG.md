@@ -2,6 +2,28 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.2](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.3.1...@availity/mui-controlled-form@0.3.2) (2025-02-18)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `0.3.1`
+* `mui-datepicker` updated to version `0.3.1`
+* `mui-form-utils` updated to version `0.3.1`
+* `mui-textfield` updated to version `0.3.1`
+## [0.3.1](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.3.0...@availity/mui-controlled-form@0.3.1) (2025-02-17)
+
+
+### Bug Fixes
+
+* **mui-controlled-form:** pass missing required prop ([1ac4883](https://github.com/Availity/element/commit/1ac4883085dd12d14160b9cea1ab810edf3d355b))
+
+## [0.3.0](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.2.6...@availity/mui-controlled-form@0.3.0) (2025-02-17)
+
+
+### Features
+
+* **mui-block-ui:** collapsing individual rule props, deprecate individual rules and controlledform ([c559d83](https://github.com/Availity/element/commit/c559d83629f0cda74d52f3fb8bbeb0d22bfb933c))
+
 ## [0.2.6](https://github.com/Availity/element/compare/@availity/mui-controlled-form@0.2.5...@availity/mui-controlled-form@0.2.6) (2025-02-07)
 
 

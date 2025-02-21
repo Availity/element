@@ -1,27 +1,41 @@
 import { TextField, TextFieldProps } from '@availity/mui-textfield';
-import { RegisterOptions, FieldValues, Controller, ControllerProps } from 'react-hook-form';
+import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
+import { ControllerProps, DeprecatedRulesProps } from './Types';
 
-export type ControlledTextFieldProps = Omit<TextFieldProps, 'required'> &
-  Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'> &
-  Pick<ControllerProps, 'defaultValue' | 'shouldUnregister' | 'name'>;
+export type ControlledTextFieldProps = Omit<TextFieldProps,
+'onBlur' | 'onChange' | 'value' | 'name' | 'required'
+> & Pick<RegisterOptions<FieldValues, string>,
+'onBlur' | 'onChange' | 'value'
+> & ControllerProps
+//TODO v1 - remove deprecated props
+& Omit<DeprecatedRulesProps, 'required'> & {
+  /** If `true`, will add required asterisk to `label` and `aria-required` to `input`.
+   *
+   * @deprecated There has been a collision of properties. The boolean value
+   * to mark the input as required will remain in future versions, but the
+   * required object for `react-hook-form` has been moved to the `rules` prop.
+   */
+  required?: boolean | RegisterOptions['required'];
+};
 
 export const ControlledTextField = ({
   name,
-  helperText,
-  required,
-  maxLength,
-  minLength,
-  max,
-  min,
-  pattern,
-  validate,
-  disabled,
   defaultValue,
-  onChange,
-  onBlur,
-  value,
-  shouldUnregister,
   deps,
+  disabled,
+  helperText,
+  max,
+  maxLength,
+  min,
+  minLength,
+  onBlur,
+  onChange,
+  pattern,
+  required,
+  rules = {},
+  shouldUnregister,
+  validate,
+  value,
   ...rest
 }: ControlledTextFieldProps) => {
   return (
@@ -30,7 +44,7 @@ export const ControlledTextField = ({
       defaultValue={defaultValue}
       disabled={disabled}
       rules={{
-        required,
+        required: typeof required === 'boolean' ? undefined : required,
         maxLength,
         minLength,
         max,
@@ -42,13 +56,15 @@ export const ControlledTextField = ({
         value,
         shouldUnregister,
         deps,
+        ...rules,
       }}
       shouldUnregister={shouldUnregister}
-      render={({ field, fieldState: { error } }) => (
+      render={({ field : {ref, ...field}, fieldState: { error } }) => (
         <TextField
-          {...rest}
           {...field}
-          required={typeof required === 'object' ? required.value : !!required}
+          {...rest}
+          inputRef={ref}
+          required={!!required}
           error={!!error}
           helperText={
             error?.message ? (

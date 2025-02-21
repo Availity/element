@@ -51,13 +51,13 @@ yarn add @availity/mui-controlled-form
 #### Import through @availity/element
 
 ```tsx
-import { ControlledForm } from '@availity/element';
+import { ControlledTextField } from '@availity/element';
 ```
 
 #### Direct import
 
 ```tsx
-import { ControlledForm } from '@availity/mui-controlled-form';
+import { ControlledTextField } from '@availity/mui-controlled-form';
 ```
 
 ### Form Validation

@@ -11,6 +11,7 @@ import { ControlledTextField } from './TextField';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
+/** Deprecated. Use `FormProvider` and `useForm` directly. */
 const meta: Meta<typeof ControlledForm> = {
   title: 'Form Components/Controlled Form/ControlledForm',
   component: ControlledForm,
