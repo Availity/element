@@ -16,10 +16,6 @@ jobs:
         run: yarn install --immutable
       - name: Run Code Coverage Report
         run: yarn test:coverage
-      #     - name: Print Coverage Report
-      #       run: |
-      #         echo "Coverage Report"
-      #         cat coverage/coverage-final.json
       - name: Get Merged PRs from the last two weeks
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -58,14 +54,12 @@ jobs:
               total_prs: .total_prs,
               average_hours: (.total_hours / .total_prs)
             } |
-            "PR Metrics Summary:\nTotal PRs: \(.total_prs)\nAverage Time to Merge: \(.average_hours) hours"
-          ' prs.json > metrics.txt
-      # - name: Print Mean Time To Merge Report
+            "PR Metrics Summary:
+            Total PRs: \(.total_prs)
+            Average Time to Merge: \(.average_hours) hours"
+          ' prs.json
+      # - name: Print Repo Metrics Report
       #   run: |
-      #     echo "Mean Time To Merge Report"
+      #     echo "${{ github.repository_owner }} ${{ github.event.repository.name }} Repo Metrics"
+      #     cat coverage/coverage-final.json
       #     cat metrics.txt
-      - name: Print Repo Metrics Report
-        run: |
-          echo "${{ github.repository_owner }} ${{ github.event.repository.name }} Repo Metrics"
-          cat coverage/coverage-final.json
-          cat metrics.txt
