@@ -61,9 +61,9 @@ jobs:
       - name: Format Coverage Report
         run: |
           jq -r '
-
+            "
             Code Coverage Report:
-            \(.total)
+            \(.total)"
           ' coverage/coverage-final.json >> metrics.txt
       - name: Print Repo Metrics Report
         run: |
