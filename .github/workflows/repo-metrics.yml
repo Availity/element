@@ -62,7 +62,7 @@ jobs:
         run: |
           jq -r '
             "Code Coverage Report:
-            \(.total )"
+            \(.total | to_entries[] | "\(.key): \(.value)")"
           ' coverage/coverage-final.json >> metrics.txt
       - name: Print Repo Metrics Report
         run: |
