@@ -59,7 +59,7 @@ jobs:
             ) |
             {
               total_prs: .total_prs,
-              average_hours: (.total_hours / .total_prs | round)
+              average_hours: (.total_hours / .total_prs)
             } |
             "PR Metrics Summary:\nTotal PRs: \(.total_prs)\nAverage Time to Merge: \(.average_hours) hours"
           ' prs.json > metrics.txt
