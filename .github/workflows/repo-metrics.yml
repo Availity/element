@@ -60,9 +60,9 @@ jobs:
           ' prs.json > metrics.txt
       - name: Format Coverage Report
         run: |
+          echo "Code Coverage Report:" >> metrics.txt
           jq -r '
-            "Code Coverage Report:
-            \(.total | to_entries[] | "\(.key): \(.value)")"
+            (.total | to_entries[] | "\(.key): \(.value)")
           ' coverage/coverage-final.json >> metrics.txt
       - name: Print Repo Metrics Report
         run: |
