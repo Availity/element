@@ -30,6 +30,7 @@
     "start:storybook": "nx storybook element-storybook",
     "test": "nx run-many --target=test --all",
     "test:affected": "nx affected --target=test",
+    "test:coverage": "nx run-many --target=test --all --parallel=3 --runInBand --coverage --no-cache  && node ./scripts/merge-coverage.js",
     "version:affected": "nx affected --target=version --parallel=1",
     "version:affected:canary": "nx affected --target=version --parallel=1 --verbose --preid=alpha --releaseAs=prerelease ${*}",
     "version:dry-run": "nx affected --target version --dryRun --parallel=1 --verbose"
