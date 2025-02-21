@@ -1,1 +1,0 @@
-import{g as i}from"./generateUtilityClasses-DyVAdLaw.js";import{g as e}from"./generateUtilityClass-Bqc1qv72.js";function a(t){return e("MuiDialogTitle",t)}const o=i("MuiDialogTitle",["root"]);export{o as d,a as g};
