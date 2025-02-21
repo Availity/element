@@ -60,7 +60,10 @@ jobs:
           ' prs.json > metrics.txt
       - name: Format Coverage Report
         run: |
-          jq -r '. | fromjson' coverage/coverage-final.json > metrics.txt
+          jq -r '
+          Code Coverage Report:
+          .total
+          ' coverage/coverage-final.json > metrics.txt
       - name: Print Repo Metrics Report
         run: |
           echo "${{ github.repository_owner }} ${{ github.event.repository.name }} Repo Metrics"
