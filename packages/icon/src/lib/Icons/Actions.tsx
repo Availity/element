@@ -42,10 +42,6 @@ export const PlusCircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon
 
 export const CancelCircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faXmarkCircle} {...props} />;
 
-// TODO: remove for Element v1
-/** @deprecated use `SuccessCircleIcon` */
-export const CheckCircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCheckCircle} {...props} />;
-
 export const CloseIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faClose} {...props} />;
 
 export const ExpandIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faAngleDown} {...props} />;

@@ -30,8 +30,7 @@ Component names append `Icon` to the names below. For instance, the `Home` icon 
 
 <IconGallery>
   {Object.values(Actions).map((icon) => (
-    // TODO: remove checkcircleicon check when icon removed for element v1
-    icon.displayName === 'CheckCircleIcon' ? null :  <IconItem key={icon.displayName} name={icon.displayName?.substring(0, icon.displayName?.length - 4)}>
+    <IconItem key={icon.displayName} name={icon.displayName?.substring(0, icon.displayName?.length - 4)}>
       {icon({ 'aria-hidden': false, titleAccess: icon.displayName })}
     </IconItem>
   ))}

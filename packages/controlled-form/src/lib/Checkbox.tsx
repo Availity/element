@@ -1,20 +1,12 @@
 import { Checkbox, CheckboxProps } from '@availity/mui-checkbox';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
-import { ControllerProps, DeprecatedRulesProps } from './Types';
+import { ControllerProps } from './Types';
 
 export type ControlledCheckboxProps = Omit<CheckboxProps,
   'disabled' | 'onBlur' | 'onChange' | 'value' | 'name'
 > & Pick<RegisterOptions<FieldValues, string>,
   'disabled' | 'onBlur' | 'onChange' | 'value'
-> & ControllerProps
-//TODO v1 - remove deprecated props
-& Omit<DeprecatedRulesProps,
-| 'required'
-| 'max'
-| 'maxLength'
-| 'min'
-| 'minLength'
-| 'pattern'>;
+> & ControllerProps;
 
 export const ControlledCheckbox = ({
   name,
@@ -25,8 +17,6 @@ export const ControlledCheckbox = ({
   defaultValue = false,
   rules = {},
   shouldUnregister,
-  deps,
-  validate,
   ...rest
 }: ControlledCheckboxProps) => {
   return (
@@ -39,8 +29,6 @@ export const ControlledCheckbox = ({
         onBlur,
         value,
         shouldUnregister,
-        deps,
-        validate,
         ...rules,
       }}
       shouldUnregister={shouldUnregister}

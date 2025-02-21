@@ -1,27 +1,20 @@
 import { OrganizationAutocomplete, OrgAutocompleteProps } from '@availity/mui-autocomplete';
 import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
-import { ControllerProps, DeprecatedRulesProps } from './Types';
+import { ControllerProps } from './Types';
 
 export type ControlledOrgAutocompleteProps = Omit<OrgAutocompleteProps,
 'onBlur' | 'onChange' | 'value' | 'name'
 > & Pick<RegisterOptions<FieldValues, string>,
 'onBlur' | 'onChange' | 'value'
-> & ControllerProps
-//TODO v1 - remove deprecated props
-& Omit<DeprecatedRulesProps, 'max' | 'maxLength' | 'min' | 'minLength'
->;
+> & ControllerProps;
 
 export const ControlledOrganizationAutocomplete = ({
   name,
   defaultValue,
-  deps,
   onBlur,
   onChange,
-  pattern,
-  required,
   rules = {},
   shouldUnregister,
-  validate,
   value,
   FieldProps,
   ...rest
@@ -31,13 +24,9 @@ export const ControlledOrganizationAutocomplete = ({
       name={name}
       defaultValue={defaultValue}
       rules={{
-        deps,
         onBlur,
         onChange,
-        pattern,
-        required,
         shouldUnregister,
-        validate,
         value,
         ...rules,
       }}
