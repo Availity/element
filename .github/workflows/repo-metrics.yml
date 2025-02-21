@@ -5,7 +5,7 @@ on:
     branches:
       - build/repo-metrics
 jobs:
-  Code-Coverage-Report:
+  Repo-Metrics-Report:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository to the runner
@@ -16,13 +16,10 @@ jobs:
         run: yarn install --immutable
       - name: Run Code Coverage Report
         run: yarn test:coverage
-  #     - name: Print Coverage Report
-  #       run: |
-  #         echo "Coverage Report"
-  #         cat coverage/coverage-final.json
-  Mean-Time-To-Merge-Report:
-    runs-on: ubuntu-latest
-    steps:
+      #     - name: Print Coverage Report
+      #       run: |
+      #         echo "Coverage Report"
+      #         cat coverage/coverage-final.json
       - name: Get Merged PRs from the last two weeks
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -46,7 +43,7 @@ jobs:
             }' \
             -f owner=$OWNER \
             -f repo=$REPO > prs.json
-      - name: Calculate metrics
+      - name: Calculate Mean Time To Merge
         run: |
           jq -c '
             .data.repository.pullRequests.nodes |
@@ -67,10 +64,7 @@ jobs:
       #   run: |
       #     echo "Mean Time To Merge Report"
       #     cat metrics.txt
-  Print-Full-Report:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Repo Metrics Report
+      - name: Print Repo Metrics Report
         run: |
           echo "${{ github.repository_owner }} ${{ github.event.repository.name }} Repo Metrics"
           cat coverage/coverage-final.json
