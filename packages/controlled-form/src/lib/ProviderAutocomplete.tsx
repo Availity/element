@@ -2,11 +2,12 @@ import { ProviderAutocomplete, ProviderAutocompleteProps } from '@availity/mui-a
 import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
 import { ControllerProps } from './Types';
 
-export type ControlledProviderAutocompleteProps = Omit<ProviderAutocompleteProps,
-'onBlur' | 'onChange' | 'value' | 'name'
-> & Pick<RegisterOptions<FieldValues, string>,
-'onBlur' | 'onChange' | 'value'
-> & ControllerProps;
+export type ControlledProviderAutocompleteProps = Omit<
+  ProviderAutocompleteProps,
+  'onBlur' | 'onChange' | 'value' | 'name'
+> &
+  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
+  ControllerProps;
 
 export const ControlledProviderAutocomplete = ({
   name,
@@ -35,6 +36,7 @@ export const ControlledProviderAutocomplete = ({
         <ProviderAutocomplete
           {...rest}
           FieldProps={{
+            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
             ...FieldProps,
             error: !!error,
             helperText: error?.message ? (

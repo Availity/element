@@ -2,11 +2,9 @@ import { OrganizationAutocomplete, OrgAutocompleteProps } from '@availity/mui-au
 import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
 import { ControllerProps } from './Types';
 
-export type ControlledOrgAutocompleteProps = Omit<OrgAutocompleteProps,
-'onBlur' | 'onChange' | 'value' | 'name'
-> & Pick<RegisterOptions<FieldValues, string>,
-'onBlur' | 'onChange' | 'value'
-> & ControllerProps;
+export type ControlledOrgAutocompleteProps = Omit<OrgAutocompleteProps, 'onBlur' | 'onChange' | 'value' | 'name'> &
+  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
+  ControllerProps;
 
 export const ControlledOrganizationAutocomplete = ({
   name,
@@ -35,6 +33,7 @@ export const ControlledOrganizationAutocomplete = ({
         <OrganizationAutocomplete
           {...rest}
           FieldProps={{
+            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
             ...FieldProps,
             error: !!error,
             helperText: error?.message ? (
@@ -46,7 +45,7 @@ export const ControlledOrganizationAutocomplete = ({
             ) : (
               FieldProps?.helperText
             ),
-            inputRef:ref
+            inputRef: ref,
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {

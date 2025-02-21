@@ -13,11 +13,8 @@ describe('ControlledAsyncAutocomplete', () => {
 
   test('should set the value and submit the form', async () => {
     const screen = render(
-      <TestForm UseFormOptions={{values: { controlledAutocomplete: null}}} onSubmit={onSubmit}>
-        <ControlledAutocomplete
-          name="controlledAutocomplete"
-          options={['Option 1', 'Option 2']}
-        />
+      <TestForm UseFormOptions={{ values: { controlledAutocomplete: null } }} onSubmit={onSubmit}>
+        <ControlledAutocomplete name="controlledAutocomplete" options={['Option 1', 'Option 2']} />
       </TestForm>
     );
 
@@ -35,6 +32,55 @@ describe('ControlledAsyncAutocomplete', () => {
     await waitFor(() => {
       const controlledAutocompleteValue = JSON.parse(result.innerHTML).controlledAutocomplete;
       expect(controlledAutocompleteValue).toBe('Option 1');
+    });
+  });
+
+  describe('when using rules', () => {
+    describe('when required', () => {
+      test('should indicate it is required when passing a string', async () => {
+        const screen = render(
+          <TestForm UseFormOptions={{ values: { controlledAutocomplete: null } }} onSubmit={onSubmit}>
+            <ControlledAutocomplete
+              FieldProps={{ label: 'Autocomplete Label' }}
+              name="controlledAutocomplete"
+              options={['Option 1', 'Option 2']}
+              rules={{ required: 'This field is required' }}
+            />
+          </TestForm>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should indicate it is required when passing an object with true', async () => {
+        const screen = render(
+          <TestForm UseFormOptions={{ values: { controlledAutocomplete: null } }} onSubmit={onSubmit}>
+            <ControlledAutocomplete
+              FieldProps={{ label: 'Autocomplete Label' }}
+              name="controlledAutocomplete"
+              options={['Option 1', 'Option 2']}
+              rules={{ required: { value: true, message: 'This field is required' } }}
+            />
+          </TestForm>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should not indicate it is required when passing an object with false', async () => {
+        const screen = render(
+          <TestForm UseFormOptions={{ values: { controlledAutocomplete: null } }} onSubmit={onSubmit}>
+            <ControlledAutocomplete
+              FieldProps={{ label: 'Autocomplete Label' }}
+              name="controlledAutocomplete"
+              options={['Option 1', 'Option 2']}
+              rules={{ required: { value: false, message: 'This field is required' } }}
+            />
+          </TestForm>
+        );
+
+        expect(screen.queryByText('*')).toBeNull();
+      });
     });
   });
 });

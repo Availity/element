@@ -2,11 +2,9 @@ import { Select, SelectProps } from '@availity/mui-form-utils';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
 import { ControllerProps } from './Types';
 
-export type ControlledSelectProps = Omit<SelectProps,
-'onBlur' | 'onChange' | 'value' | 'name'
-> & Pick<RegisterOptions<FieldValues, string>,
-'onBlur' | 'onChange' | 'value'
-> & ControllerProps;
+export type ControlledSelectProps = Omit<SelectProps, 'onBlur' | 'onChange' | 'value' | 'name'> &
+  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
+  ControllerProps;
 
 export const ControlledSelect = ({
   name,
@@ -34,6 +32,7 @@ export const ControlledSelect = ({
       shouldUnregister={shouldUnregister}
       render={({ field, fieldState: { error } }) => (
         <Select
+          required={typeof rules.required === 'object' ? rules.required.value : !!rules.required}
           {...rest}
           {...field}
           error={!!error}

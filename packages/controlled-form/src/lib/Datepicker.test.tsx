@@ -10,7 +10,7 @@ describe('Datepicker', () => {
   test('should render successfully and submit selection', async () => {
     const screen = render(
       <ThemeProvider>
-        <TestForm UseFormOptions={{values: { controlledDatepicker: null}}} onSubmit={onSubmit}>
+        <TestForm UseFormOptions={{ values: { controlledDatepicker: null } }} onSubmit={onSubmit}>
           <ControlledDatepicker
             name="controlledDatepicker"
             FieldProps={{
@@ -38,4 +38,71 @@ describe('Datepicker', () => {
       expect(dayjs(controlledDatepickerValue).isValid()).toBeTruthy();
     });
   }, 10000);
+
+  describe('when using rules', () => {
+    describe('when required', () => {
+      test('should indicate it is required when passing a string', async () => {
+        const screen = render(
+          <ThemeProvider>
+            <TestForm UseFormOptions={{ values: { controlledDatepicker: null } }} onSubmit={onSubmit}>
+              <ControlledDatepicker
+                name="controlledDatepicker"
+                FieldProps={{
+                  fullWidth: false,
+                  helperText: 'Help text for the field',
+                  helpTopicId: '1234',
+                  label: 'Date',
+                }}
+                rules={{ required: 'This field is required' }}
+              />
+            </TestForm>
+          </ThemeProvider>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should indicate it is required when passing an object with true', async () => {
+        const screen = render(
+          <ThemeProvider>
+            <TestForm UseFormOptions={{ values: { controlledDatepicker: null } }} onSubmit={onSubmit}>
+              <ControlledDatepicker
+                name="controlledDatepicker"
+                FieldProps={{
+                  fullWidth: false,
+                  helperText: 'Help text for the field',
+                  helpTopicId: '1234',
+                  label: 'Date',
+                }}
+                rules={{ required: { value: true, message: 'This field is required' } }}
+              />
+            </TestForm>
+          </ThemeProvider>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should not indicate it is required when passing an object with false', async () => {
+        const screen = render(
+          <ThemeProvider>
+            <TestForm UseFormOptions={{ values: { controlledDatepicker: null } }} onSubmit={onSubmit}>
+              <ControlledDatepicker
+                name="controlledDatepicker"
+                FieldProps={{
+                  fullWidth: false,
+                  helperText: 'Help text for the field',
+                  helpTopicId: '1234',
+                  label: 'Date',
+                }}
+                rules={{ required: { value: false, message: 'This field is required' } }}
+              />
+            </TestForm>
+          </ThemeProvider>
+        );
+
+        expect(screen.queryByText('*')).toBeNull();
+      });
+    });
+  });
 });
