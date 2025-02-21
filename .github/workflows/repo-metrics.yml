@@ -8,14 +8,14 @@ jobs:
   Repo-Metrics-Report:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository to the runner
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Install Dependencies
-        run: yarn install --immutable
-      - name: Run Code Coverage Report
-        run: yarn test:coverage
+      # - name: Check out the repository to the runner
+      #   uses: actions/checkout@v4
+      #   with:
+      #     fetch-depth: 0
+      # - name: Install Dependencies
+      #   run: yarn install --immutable
+      # - name: Run Code Coverage Report
+      #   run: yarn test:coverage
       - name: Get Merged PRs from the last two weeks
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -41,7 +41,7 @@ jobs:
             -f repo=$REPO > prs.json
       - name: Calculate Mean Time To Merge
         run: |
-          jq '
+          jq -r '
             .data.repository.pullRequests.nodes |
             reduce .[] as $pr (
               {"total_prs": 0, "total_hours": 0};
