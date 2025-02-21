@@ -1,30 +1,20 @@
 import { Datepicker, DatepickerProps } from '@availity/mui-datepicker';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
-import { ControllerProps, DeprecatedRulesProps } from './Types';
+import { ControllerProps } from './Types';
 
 export type ControlledDatepickerProps = Omit<DatepickerProps,
   'onBlur' | 'onChange' | 'value' | 'name'
 > & Pick<RegisterOptions<FieldValues, string>,
   'onBlur' | 'onChange' | 'value'
-> & ControllerProps
-//TODO v1 - remove deprecated props
-& DeprecatedRulesProps;
+> & ControllerProps;
 
 export const ControlledDatepicker = ({
   name,
   defaultValue,
-  deps,
-  max,
-  maxLength,
-  min,
-  minLength,
   onBlur,
   onChange,
-  pattern,
-  required,
   rules = {},
   shouldUnregister,
-  validate,
   value,
   FieldProps,
   ...rest
@@ -34,17 +24,9 @@ export const ControlledDatepicker = ({
       name={name}
       defaultValue={defaultValue}
       rules={{
-        deps,
-        max,
-        maxLength,
-        min,
-        minLength,
         onBlur,
         onChange,
-        pattern,
-        required,
         shouldUnregister,
-        validate,
         value,
         ...rules,
       }}

@@ -1,7 +1,7 @@
 import { AsyncAutocomplete, AsyncAutocompleteProps } from '@availity/mui-autocomplete';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
 import { ChipTypeMap } from '@mui/material/Chip';
-import { ControllerProps, DeprecatedRulesProps } from './Types';
+import { ControllerProps } from './Types';
 
 export type ControlledAsyncAutocompleteProps<
   Option,
@@ -14,8 +14,6 @@ export type ControlledAsyncAutocompleteProps<
 > & Pick<RegisterOptions<FieldValues, string>,
 'onBlur' | 'onChange' | 'value'
 > & ControllerProps
-//TODO v1 - remove deprecated props
-& DeprecatedRulesProps;
 
 export const ControlledAsyncAutocomplete = <
   Option,
@@ -25,18 +23,10 @@ export const ControlledAsyncAutocomplete = <
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
 >({
   name,
-  deps,
-  max,
-  maxLength,
-  min,
-  minLength,
   onBlur,
   onChange,
-  pattern,
-  required,
   rules = {},
   shouldUnregister,
-  validate,
   value,
   FieldProps,
   ...rest
@@ -46,17 +36,9 @@ export const ControlledAsyncAutocomplete = <
       name={name}
       defaultValue={rest.defaultValue}
       rules={{
-        deps,
-        max,
-        maxLength,
-        min,
-        minLength,
         onBlur,
         onChange,
-        pattern,
-        required,
         shouldUnregister,
-        validate,
         value,
         ...rules,
       }}
