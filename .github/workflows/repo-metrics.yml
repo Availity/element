@@ -34,6 +34,7 @@ jobs:
               repository(owner: $owner, name: $repo) {
                 pullRequests(
                   states: [MERGED],
+                  first: 100,
                   orderBy: {field: UPDATED_AT, direction: DESC}
                 ) {
                   nodes {
