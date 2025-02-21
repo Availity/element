@@ -9,11 +9,12 @@ export type ControlledAsyncAutocompleteProps<
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
-> = Omit<AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>,
-'onBlur' | 'onChange' | 'value' | 'name'
-> & Pick<RegisterOptions<FieldValues, string>,
-'onBlur' | 'onChange' | 'value'
-> & ControllerProps
+> = Omit<
+  AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>,
+  'onBlur' | 'onChange' | 'value' | 'name'
+> &
+  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
+  ControllerProps;
 
 export const ControlledAsyncAutocomplete = <
   Option,
@@ -47,6 +48,7 @@ export const ControlledAsyncAutocomplete = <
         <AsyncAutocomplete
           {...rest}
           FieldProps={{
+            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
             ...FieldProps,
             error: !!error,
             helperText: error?.message ? (
@@ -58,7 +60,7 @@ export const ControlledAsyncAutocomplete = <
             ) : (
               FieldProps?.helperText
             ),
-            inputRef:ref
+            inputRef: ref,
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {

@@ -10,11 +10,11 @@ export type ControlledAutocompleteProps<
   FreeSolo extends boolean | undefined,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
 > = Omit<
-AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>,
-'onBlur' | 'onChange' | 'value' | 'name'
-> & Pick<RegisterOptions<FieldValues, string>,
-'onBlur' | 'onChange' | 'value'
-> & ControllerProps;
+  AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>,
+  'onBlur' | 'onChange' | 'value' | 'name'
+> &
+  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
+  ControllerProps;
 
 export const ControlledAutocomplete = <
   T,
@@ -49,18 +49,19 @@ export const ControlledAutocomplete = <
         <Autocomplete
           {...rest}
           FieldProps={{
+            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
             ...FieldProps,
             error: !!error,
             helperText: error?.message ? (
-                <>
-                  {error.message}
-                  <br />
-                  {FieldProps?.helperText}
-                </>
-              ) : (
-                FieldProps?.helperText
-              ),
-            inputRef: ref
+              <>
+                {error.message}
+                <br />
+                {FieldProps?.helperText}
+              </>
+            ) : (
+              FieldProps?.helperText
+            ),
+            inputRef: ref,
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {

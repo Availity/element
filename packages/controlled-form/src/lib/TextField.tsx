@@ -2,11 +2,9 @@ import { TextField, TextFieldProps } from '@availity/mui-textfield';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
 import { ControllerProps } from './Types';
 
-export type ControlledTextFieldProps = Omit<TextFieldProps,
-'onBlur' | 'onChange' | 'value' | 'name'
-> & Pick<RegisterOptions<FieldValues, string>,
-'onBlur' | 'onChange' | 'value'
-> & ControllerProps;
+export type ControlledTextFieldProps = Omit<TextFieldProps, 'onBlur' | 'onChange' | 'value' | 'name'> &
+  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
+  ControllerProps;
 
 export const ControlledTextField = ({
   name,
@@ -33,8 +31,9 @@ export const ControlledTextField = ({
         ...rules,
       }}
       shouldUnregister={shouldUnregister}
-      render={({ field : {ref, ...field}, fieldState: { error } }) => (
+      render={({ field: { ref, ...field }, fieldState: { error } }) => (
         <TextField
+          required={typeof rules.required === 'object' ? rules.required.value : !!rules.required}
           {...field}
           {...rest}
           inputRef={ref}

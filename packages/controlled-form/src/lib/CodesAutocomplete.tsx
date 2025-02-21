@@ -2,11 +2,9 @@ import { CodesAutocomplete, CodesAutocompleteProps } from '@availity/mui-autocom
 import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
 import { ControllerProps } from './Types';
 
-export type ControlledCodesAutocompleteProps = Omit<CodesAutocompleteProps,
-'onBlur' | 'onChange' | 'value' | 'name'
-> & Pick<RegisterOptions<FieldValues, string>,
-'onBlur' | 'onChange' | 'value'
-> & ControllerProps;
+export type ControlledCodesAutocompleteProps = Omit<CodesAutocompleteProps, 'onBlur' | 'onChange' | 'value' | 'name'> &
+  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
+  ControllerProps;
 
 export const ControlledCodesAutocomplete = ({
   name,
@@ -35,6 +33,7 @@ export const ControlledCodesAutocomplete = ({
         <CodesAutocomplete
           {...rest}
           FieldProps={{
+            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
             ...FieldProps,
             error: !!error,
             helperText: error?.message ? (
@@ -46,7 +45,7 @@ export const ControlledCodesAutocomplete = ({
             ) : (
               FieldProps?.helperText
             ),
-            inputRef:ref
+            inputRef: ref,
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {

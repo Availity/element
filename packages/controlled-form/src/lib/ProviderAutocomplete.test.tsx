@@ -31,18 +31,18 @@ describe('ControlledProviderAutocomplete', () => {
   test('should loadOptions successfully', async () => {
     const screen = render(
       <QueryClientProvider client={client}>
-        <TestForm UseFormOptions={{values: { controlledAutocomplete: null }}} onSubmit={onSubmit}>
-            <ControlledProviderAutocomplete
-              name="controlledProviderAutocomplete"
-              FieldProps={{
-                label: 'Provider Select',
-                helperText: 'Select a Provider from the list',
-                placeholder: 'Select...',
-                fullWidth: false,
-              }}
-              limit={10}
-              customerId="1234"
-            />
+        <TestForm UseFormOptions={{ values: { controlledAutocomplete: null } }} onSubmit={onSubmit}>
+          <ControlledProviderAutocomplete
+            name="controlledProviderAutocomplete"
+            FieldProps={{
+              label: 'Provider Select',
+              helperText: 'Select a Provider from the list',
+              placeholder: 'Select...',
+              fullWidth: false,
+            }}
+            limit={10}
+            customerId="1234"
+          />
         </TestForm>
       </QueryClientProvider>
     );
@@ -55,20 +55,20 @@ describe('ControlledProviderAutocomplete', () => {
   });
 
   test('should set the value and submit the form data', async () => {
-      const screen = render(
-        <QueryClientProvider client={client}>
-          <TestForm UseFormOptions={{values: { controlledAutocomplete: null }}} onSubmit={onSubmit}>
-            <ControlledProviderAutocomplete
-              name="controlledProviderAutocomplete"
-              FieldProps={{
-                label: 'Provider Select',
-                helperText: 'Select a Provider from the list',
-                placeholder: 'Select...',
-                fullWidth: false,
-              }}
-              limit={10}
-              customerId="1234"
-            />
+    const screen = render(
+      <QueryClientProvider client={client}>
+        <TestForm UseFormOptions={{ values: { controlledAutocomplete: null } }} onSubmit={onSubmit}>
+          <ControlledProviderAutocomplete
+            name="controlledProviderAutocomplete"
+            FieldProps={{
+              label: 'Provider Select',
+              helperText: 'Select a Provider from the list',
+              placeholder: 'Select...',
+              fullWidth: false,
+            }}
+            limit={10}
+            customerId="1234"
+          />
         </TestForm>
       </QueryClientProvider>
     );
@@ -89,6 +89,79 @@ describe('ControlledProviderAutocomplete', () => {
       const controlledProviderAutocompleteValue = JSON.parse(result.innerHTML).controlledProviderAutocomplete;
       expect(controlledProviderAutocompleteValue.uiDisplayName).toBe('Provider 1');
       expect(controlledProviderAutocompleteValue.id).toBeDefined();
+    });
+  });
+
+  describe('when using rules', () => {
+    describe('when required', () => {
+      test('should indicate it is required when passing a string', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm UseFormOptions={{ values: { controlledAutocomplete: null } }} onSubmit={onSubmit}>
+              <ControlledProviderAutocomplete
+                name="controlledProviderAutocomplete"
+                FieldProps={{
+                  label: 'Provider Select',
+                  helperText: 'Select a Provider from the list',
+                  placeholder: 'Select...',
+                  fullWidth: false,
+                }}
+                limit={10}
+                customerId="1234"
+                rules={{ required: 'This field is required' }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should indicate it is required when passing an object with true', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm UseFormOptions={{ values: { controlledAutocomplete: null } }} onSubmit={onSubmit}>
+              <ControlledProviderAutocomplete
+                name="controlledProviderAutocomplete"
+                FieldProps={{
+                  label: 'Provider Select',
+                  helperText: 'Select a Provider from the list',
+                  placeholder: 'Select...',
+                  fullWidth: false,
+                }}
+                limit={10}
+                customerId="1234"
+                rules={{ required: { value: true, message: 'This field is required' } }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should not indicate it is required when passing an object with false', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm UseFormOptions={{ values: { controlledAutocomplete: null } }} onSubmit={onSubmit}>
+              <ControlledProviderAutocomplete
+                name="controlledProviderAutocomplete"
+                FieldProps={{
+                  label: 'Provider Select',
+                  helperText: 'Select a Provider from the list',
+                  placeholder: 'Select...',
+                  fullWidth: false,
+                }}
+                limit={10}
+                customerId="1234"
+                rules={{ required: { value: false, message: 'This field is required' } }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.queryByText('*')).toBeNull();
+      });
     });
   });
 });

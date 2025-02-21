@@ -2,11 +2,9 @@ import { Datepicker, DatepickerProps } from '@availity/mui-datepicker';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
 import { ControllerProps } from './Types';
 
-export type ControlledDatepickerProps = Omit<DatepickerProps,
-  'onBlur' | 'onChange' | 'value' | 'name'
-> & Pick<RegisterOptions<FieldValues, string>,
-  'onBlur' | 'onChange' | 'value'
-> & ControllerProps;
+export type ControlledDatepickerProps = Omit<DatepickerProps, 'onBlur' | 'onChange' | 'value' | 'name'> &
+  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
+  ControllerProps;
 
 export const ControlledDatepicker = ({
   name,
@@ -35,6 +33,7 @@ export const ControlledDatepicker = ({
         <Datepicker
           {...rest}
           FieldProps={{
+            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
             ...FieldProps,
             error: !!error,
             helperText: error ? (
@@ -48,7 +47,7 @@ export const ControlledDatepicker = ({
             ),
             inputRef: ref,
             inputProps: {
-              onBlur: onBlur
+              onBlur: onBlur,
             },
           }}
           onChange={onChange}
