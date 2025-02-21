@@ -12,61 +12,62 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Install Dependencies
+        run: yarn install --immutable
       - name: Run Code Coverage Report
         run: yarn test:coverage
       - name: Print Coverage Report
         run: |
           echo "Coverage Report"
           cat coverage/coverage-final.json
-  Mean-Time-To-Merge-Report:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get Merged PRs from the last two weeks
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OWNER: ${{ github.repository_owner }}
-          REPO: ${{ github.event.repository.name }}
-        run: |
-          TWO_WEEKS_AGO=$(date -d '2 weeks ago' +'%Y-%m-%d')
+  # Mean-Time-To-Merge-Report:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Get Merged PRs from the last two weeks
+  #       env:
+  #         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #         OWNER: ${{ github.repository_owner }}
+  #         REPO: ${{ github.event.repository.name }}
+  #       run: |
+  #         TWO_WEEKS_AGO=$(date -d '2 weeks ago' +'%Y-%m-%d')
 
-          gh api graphql -f query='
-            query($owner: String!, $repo: String!) {
-              repository(owner: $owner, name: $repo) {
-                pullRequests(
-                  first: 100,
-                  states: [MERGED],
-                  orderBy: {field: UPDATED_AT, direction: DESC}
-                  filterBy: {since: "$TWO_WEEKS_AGO"}
-                ) {
-                  nodes {
-                    createdAt
-                    mergedAt
-                  }
-                }
-              }
-            }' \
-            -f owner=$OWNER \
-            -f repo=$REPO > prs.json
-      - name: Calculate metrics
-        run: |
-          jq '
-          .data.repository.pullRequests.nodes |
-          map(
-            . + {
-              mergeTimeHours: (
-                ((.mergedAt | fromdateiso8601) - (.createdAt | fromdateiso8601)) / 3600
-              )
-            }
-          ) |
-          {
-            total_prs: length,
-            average_hours: (map(.mergeTimeHours) | add / length | round),
-          } |
-          "PR Metrics Summary:
-          Total PRs: \(.total_prs)
-          Average Time to Merge: \(.average_hours) hours
-          ' prs.json > metrics.txt
-      - name: Print Mean Time To Merge Report
-        run: |
-          echo "Mean Time To Merge Report"
-          cat metrics.txt
+  #         gh api graphql -f query='
+  #           query($owner: String!, $repo: String!) {
+  #             repository(owner: $owner, name: $repo) {
+  #               pullRequests(
+  #                 states: [MERGED],
+  #                 orderBy: {field: UPDATED_AT, direction: DESC}
+  #                 search: { }
+  #               ) {
+  #                 nodes {
+  #                   createdAt
+  #                   mergedAt
+  #                 }
+  #               }
+  #             }
+  #           }' \
+  #           -f owner=$OWNER \
+  #           -f repo=$REPO > prs.json
+  #     - name: Calculate metrics
+  #       run: |
+  #         jq '
+  #         .data.repository.pullRequests.nodes |
+  #         map(
+  #           . + {
+  #             mergeTimeHours: (
+  #               ((.mergedAt | fromdateiso8601) - (.createdAt | fromdateiso8601)) / 3600
+  #             )
+  #           }
+  #         ) |
+  #         {
+  #           total_prs: length,
+  #           average_hours: (map(.mergeTimeHours) | add / length | round),
+  #         } |
+  #         "PR Metrics Summary:
+  #         Total PRs: \(.total_prs)
+  #         Average Time to Merge: \(.average_hours) hours
+  #         ' prs.json > metrics.txt
+  #     - name: Print Mean Time To Merge Report
+  #       run: |
+  #         echo "Mean Time To Merge Report"
+  #         cat metrics.txt
