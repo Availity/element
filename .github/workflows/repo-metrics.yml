@@ -5,17 +5,17 @@ on:
     branches:
       - build/repo-metrics
 jobs:
-  # Code-Coverage-Report:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Check out the repository to the runner
-  #       uses: actions/checkout@v4
-  #       with:
-  #         fetch-depth: 0
-  #     - name: Install Dependencies
-  #       run: yarn install --immutable
-  #     - name: Run Code Coverage Report
-  #       run: yarn test:coverage
+  Code-Coverage-Report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install Dependencies
+        run: yarn install --immutable
+      - name: Run Code Coverage Report
+        run: yarn test:coverage
   #     - name: Print Coverage Report
   #       run: |
   #         echo "Coverage Report"
@@ -63,7 +63,15 @@ jobs:
             } |
             "PR Metrics Summary:\nTotal PRs: \(.total_prs)\nAverage Time to Merge: \(.average_hours) hours"
           ' prs.json > metrics.txt
-      - name: Print Mean Time To Merge Report
+      # - name: Print Mean Time To Merge Report
+      #   run: |
+      #     echo "Mean Time To Merge Report"
+      #     cat metrics.txt
+  Print-Full-Report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo Metrics Report
         run: |
-          echo "Mean Time To Merge Report"
+          echo "${{ github.repository_owner }} ${{ github.event.repository.name }} Repo Metrics"
+          cat coverage/coverage-final.json
           cat metrics.txt
