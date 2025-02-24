@@ -57,6 +57,7 @@ const loadPage = async <TData,>({
   };
 };
 
+/** @requires `@tanstack/react-query` peer dependency */
 export const useResourcePagination = <TData,>({
   page,
   itemsPerPage,

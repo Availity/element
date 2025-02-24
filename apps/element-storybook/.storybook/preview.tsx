@@ -79,7 +79,7 @@ const preview: Preview = {
           'Sample Layouts',
           'Design System',
           'Form Components',
-          ['FormUtils'],
+          ['Component Guide', 'Controlled Form', 'FormUtils'],
           'Components',
         ],
       },

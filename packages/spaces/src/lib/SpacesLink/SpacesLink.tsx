@@ -244,7 +244,7 @@ export const SpacesLink = ({
                           ? `${idPrefix}app-new-badge-${linkSpace?.configurationId}`
                           : undefined
                       }
-                      variant={variant === 'list' ? 'h5' : 'h6'}
+                      variant="h5"
                       title={showName ? linkSpace?.name : undefined}
                     >
                       {showName ? linkSpace?.name : undefined}
