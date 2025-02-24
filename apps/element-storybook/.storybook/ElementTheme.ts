@@ -1,13 +1,14 @@
 import { create } from '@storybook/theming';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import ElementLogo from '../../../static/availity-Element-Logo.png'
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import ElementPackageInfo from '../../../packages/element/package.json'
 
 // https://storybook.js.org/docs/7/configure/user-interface/theming#create-a-theme-quickstart
 export default create({
   base: 'light',
-  brandTitle: 'Availity Element',
+  brandTitle: `<img src="${ElementLogo}"/> <div class="version-number">${ElementPackageInfo?.version || 'prerelease'}</div>`,
   brandUrl: 'https://design.availity.com/2e36e50c7/p/15d54a-element-design-system',
-  brandImage: ElementLogo,
   brandTarget: '_self',
 
   //
