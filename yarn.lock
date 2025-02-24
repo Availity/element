@@ -1131,7 +1131,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/utils": ^5.11.9
+    "@mui/utils": ^6.4.3
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
