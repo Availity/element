@@ -4,7 +4,7 @@ import { Typography } from '@availity/mui-typography';
 import { visuallyHidden } from './Utils';
 
 const meta: Meta = {
-  title: 'Utils/Utils/Utils',
+  title: 'Utils/Utils',
   tags: ['autodocs'],
 };
 
