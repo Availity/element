@@ -1,9 +1,3 @@
-import { Meta, Source } from '@storybook/blocks';
-
-<Meta title="BS4 Migration/Form Migration" />
-
-# Form Migration
-
 For the `@availity/element` components we have chosen to give more flexibility, having a
 set of components with built-in form management (@availity/mui-controlled-form) and adding a set
 of components without. Our controlled components have replaced `formik` with `react-hook-form`.
@@ -63,23 +57,28 @@ using it with `yup`+`@hookform/resolvers/yup` (don't worry,
 
 ## Form Examples
 
-- Form with `@availity/react`, `formik`, and `yup`
+- Legacy form with `@availity/react`, `formik`, and `yup`
+- Form with `@availity/element` uncontrolled components, `formik`, and `yup` (<ins>Not Recommended</ins>)
 - Form with `@availity/element`, `react-hook-form`, `yup` and `@hookform/resolvers/yup`
-- Form with `@availity/element` and `react-hook-form` - using internal rules for validation
-- Form with `@availity/element`, `formik`, and `yup` (<ins>Not Recommended</ins>)
+- Form with `@availity/element` and `react-hook-form` using internal rules for validation
 
 
 At the moment, @availity/element does not export a `<Form />` component.
 Instead, use the native `<form>` element. You can then use
 `react-hook-form`'s `useForm` hook to manage your form.
 
-### Form with `@availity/react`, `formik`, and `yup`
+<br />
 
-<Source
-  code={`
+### Legacy form with `@availity/react`, `formik`, and `yup`
+
+<details>
+<summary>Code example</summary>
+
+```tsx
 import React from 'react';
 import { Form, Field, Radio, RadioGroup, SelectField } from '@availity/form';
-import { Button } from 'reactstrap';\n
+import { Button } from 'reactstrap';
+
 export const Form = () => {
   const ref = useRef();
   return (
@@ -131,185 +130,19 @@ export const Form = () => {
     </Form>
   );
 };
-`}/>
+```
+</details>
+<br />
 
-### Form with `@availity/element`, `yup` and `@hookform/resolvers/yup`
-
-<Source
-  code={`
-import dayjs from 'dayjs';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import {
-  ControlledTextField,
-  ControlledAutocomplete,
-  ControlledRadioGroup,
-  ControlledDatepicker,
-  FormControlLabel,
-  FormProvider,
-  LoadingButton,
-  Radio,
-  RequiredKey,
-  SubmitHandler,
-  useForm,
-} from '@availity/element';\n
-export const Form = () => {
-    const schema = yup.object({
-      textField: yup
-        .string()
-        .max(200, 'Text Field cannot exceed 200 characters.')
-        .required('This field is required.'),
-      selectField: yup
-        .string()
-        .required('This Field is required.')
-        .nullable(),
-      datePicker: yup
-        .mixed<dayjs.Dayjs>()
-        .required('This Field is required.')
-        .nullable(),
-      radio: yup
-        .string()
-        .required('A selection is required'),
-    });\n
-    type FormInputsType = yup.InferType<typeof schema>;\n
-    const onSubmit: SubmitHandler<FormInputsType> = (data) => console.log(data)\n
-    const methods = useForm({
-      defaultValues: {
-        textField: "",
-        selectField: undefined,
-        datePicker: undefined,
-        radio: "",
-      },
-      mode: 'onBlur',
-      resolver: yupResolver(schema)
-    });\n
-    return (
-      <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <RequiredKey />
-          <ControlledTextField
-            name="textField"
-            label="Textfield"
-            margin="normal"
-            fullWidth
-            required
-            helperText='Max 200 characters'
-          />
-          <ControlledAutocomplete
-            name="selectField"
-            FieldProps={{
-              margin:"normal",
-              label: 'Select Field',
-              placeholder: 'Value',
-              required: true,
-            }}
-            options={dropdownOptions}
-          />
-          <ControlledDatepicker
-            name="datePicker"
-            FieldProps={{
-              label: "Date",
-              margin: "normal",
-              required: true,
-            }}
-          />
-          <ControlledRadioGroup name="radio" label="Radio Group" row aria-required required>
-            <FormControlLabel control={<Radio />} value="1" label="Option 1" />
-            <FormControlLabel control={<Radio />} value="2" label="Option 2" />
-          </ControlledRadioGroup>
-          <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" variant="contained">
-            Submit
-          </LoadingButton>
-        </form>
-      </FormProvider>
-    )
-  }
-`}/>
-
-You can find more working examples of react-hook-form [here](/docs/sample-layouts-form--docs).
-
-### Form with `@availity/element`, `react-hook-form`, and `react-hook-form` Internal Rules
-
-<Source
-  code={`
-import {
-  ControlledTextField,
-  ControlledAutocomplete,
-  ControlledRadioGroup,
-  ControlledDatepicker,
-  FormControlLabel,
-  FormProvider,
-  LoadingButton,
-  Radio,
-  RequiredKey,
-  useForm,
-} from '@availity/element';\n
-export const Form = () => {
-    const methods = useForm({defaultValues: {textField: '', selectField: null, datePicker: null, radio: ''}});
-    const onSubmit = (data: any) => console.log(data)
-    return (
-      <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <RequiredKey />
-          <ControlledTextField
-            name="textField"
-            label="Textfield"
-            margin="normal"
-            fullWidth
-            required
-            rules={{
-              required: 'This field is required',
-              maxLength: { value: 200, message: 'This field must not exceed 200 characters'}
-            }}
-            helperText='Max 200 characters'
-          />
-          <ControlledAutocomplete
-            name="selectField"
-            rules={{ required: 'This field is required'}}
-            FieldProps={{
-              margin:"normal",
-              label: 'Select Field',
-              placeholder: 'Value',
-              required: true,
-            }}
-            options={dropdownOptions}
-          />
-          <ControlledDatepicker
-            name="datePicker"
-            rules={{ required: 'This field is required' }}
-            FieldProps={{
-              label: "Date",
-              margin: "normal",
-              required: true,
-            }}
-          />
-          <ControlledRadioGroup
-            name="radio"
-            label="Radio Group"
-            row
-            aria-required
-            required
-            rules={{ required: 'This field is required' }}
-          >
-            <FormControlLabel control={<Radio />} value="1" label="Option 1" />
-            <FormControlLabel control={<Radio />} value="2" label="Option 2" />
-          </ControlledRadioGroup>
-          <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" variant="contained">
-            Submit
-          </LoadingButton>
-        </form>
-      </FormProvider>
-    )
-  }
-`}/>
-
-### Form with `@availity/element`, `formik`, and `yup` (Not Recommended)
+### Form with `@availity/element` uncontrolled components, `formik`, and `yup` (Not Recommended)
 
 It does not save much time/effort reformatting to keep `formik` versus switching
 over to `react-hook-form`, therefore we don't recommend this approach to migrate.
 
-<Source
-  code={`
+<details>
+<summary>Code example</summary>
+
+```tsx
 import React from 'react';
 import * as yup from 'yup';
 import { useFormikContext, Form, Formik, useFormik } from 'formik';
@@ -324,7 +157,8 @@ import {
   RadioGroup,
   RequiredKey,
   TextField,
-  Autocomplete} from '@availity/element';\n
+  Autocomplete} from '@availity/element';
+
 export const Form = () => (
   <Formik
     initialValues={{
@@ -411,4 +245,196 @@ export const Form = () => (
     )}
   </Formik>
 );
-`}/>
+```
+</details>
+
+<!--
+### Form with `@availity/element`, `yup` and `@hookform/resolvers/yup`
+
+<details>
+<summary>Code example</summary>
+
+```tsx
+import type { Meta, StoryObj } from '@storybook/react';
+import dayjs from 'dayjs';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import {
+  ControlledTextField,
+  ControlledAutocomplete,
+  ControlledRadioGroup,
+  ControlledDatepicker,
+  FormControlLabel,
+  FormProvider,
+  LoadingButton,
+  Radio,
+  RequiredKey,
+  SubmitHandler,
+  useForm
+} from '@availity/element';
+
+export const Form = () => {
+  const schema = yup.object({
+    textField: yup
+      .string()
+      .max(200, 'Text Field cannot exceed 200 characters.')
+      .required('This field is required.'),
+    selectField: yup
+      .string()
+      .required('This Field is required.')
+      .nullable(),
+    datePicker: yup
+      .mixed<dayjs.Dayjs>()
+      .required('This Field is required.')
+      .nullable(),
+    radio: yup
+      .string()
+      .required('A selection is required'),
+  });
+
+  type FormInputsType = yup.InferType<typeof schema>;
+
+  const onSubmit: SubmitHandler<FormInputsType> = (data) => console.log(data)/n
+  const methods = useForm({
+    defaultValues: {
+      textField: "",
+      selectField: undefined,
+      datePicker: undefined,
+      radio: "",
+    },
+    mode: 'onBlur',
+    resolver: yupResolver(schema)
+  });
+
+  return (
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onSubmit)}>
+        <RequiredKey />
+        <ControlledTextField
+          name="textField"
+          label="Textfield"
+          margin="normal"
+          fullWidth
+          helperText='Max 200 characters'
+          required
+        />
+        <ControlledAutocomplete
+          name="selectField"
+          FieldProps={{
+            margin:"normal",
+            label: 'Select Field',
+            placeholder: 'Value',
+            required: true,
+          }}
+          options={dropdownOptions}
+        />
+        <ControlledDatepicker
+          name="datePicker"
+          FieldProps={{
+            label: "Date",
+            margin: "normal",
+            required: true,
+          }}
+        />
+        <ControlledRadioGroup name="radio" label="Radio Group" row aria-required required>
+          <FormControlLabel control={<Radio />} value="1" label="Option 1" />
+          <FormControlLabel control={<Radio />} value="2" label="Option 2" />
+        </ControlledRadioGroup>
+        <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" variant="contained">
+          Submit
+        </LoadingButton>
+      </form>
+    </FormProvider>
+  )
+}
+```
+</details>
+
+You can find more working examples of react-hook-form [here](/docs/sample-layouts-form--docs). -->
+
+<!--
+### Form with `@availity/element`, `react-hook-form`, and `react-hook-form` Internal Rules
+
+<details>
+<summary>Code example</summary>
+
+```tsx
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { Autocomplete, Button, FormControl, FormControlLabel, FormHelperText, FormLabel, Paper, Radio, RadioGroup, RequiredKey, TextField } from '@availity/element';
+
+export const Form = () => {
+  const {
+      register,
+      handleSubmit,
+      formState: { errors },
+      control,
+      reset,
+      getValues,
+    } = useForm({defaultValues: { textField: "", selectField: "", radio: ""}});
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <RequiredKey />
+      <TextField
+        label="Textfield"
+        margin="normal"
+        fullWidth
+        {...register('textField', {
+          required: 'This field is required',
+          maxLength: { value: 200, message: 'This field must not exceed 200 characters'}})}
+        required
+        error={!!errors.textField}
+        helperText={errors.textField?.message || 'Max 200 characters'}
+      />
+      <Controller
+        control={control}
+        name="selectField"
+        rules={{ required: 'This field is required' }}
+        render={({ field: { onChange, value, onBlur } }) => {
+          return (
+            <Autocomplete
+              onChange={(event, value, reason) => {
+                if (reason === 'clear') {
+                  onChange(null);
+                }
+                onChange(value);
+              }}
+              onBlur={onBlur}
+              FieldProps={{
+                margin:"normal",
+                label: 'Select Field',
+                placeholder: 'Value',
+                required: true,
+                error: !!errors.selectField?.message,
+                helperText: errors.selectField?.message,
+              }}
+              options={dropdownOptions}
+              value={value || null}
+            />
+          );
+        }}
+      />
+      <FormControl margin="normal" error={!!errors.radio} required>
+        <FormLabel id="radio-label" component="div">
+          Radio Group
+        </FormLabel>
+        <Controller
+          control={control}
+          name="radio"
+          rules={{ required: 'This field is required' }}
+          render={({ field }) => (
+            <RadioGroup aria-labelledby="radio-label" row {...field} aria-required>
+              <FormControlLabel control={<Radio />} value="1" label="Option 1" />
+              <FormControlLabel control={<Radio />} value="2" label="Option 2" />
+            </RadioGroup>
+          )}
+        />
+        {errors.radio ? <FormHelperText id="radio-helper-text">{errors.radio?.message}</FormHelperText> : null }
+      </FormControl>
+      <LoadingButton loading={loading} type="submit" variant="contained">
+        Submit
+      </LoadingButton>
+    </form>
+  )
+}
+```
+</details> -->
