@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0-alpha.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.14.0...@availity/mui-icon@1.0.0-alpha.0) (2025-02-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgraded to @mui/material v6
+* **element:** upgraded to @mui/material v6
+
+### Features
+
+* **element:** upgrade to @mui/material v6 ([cb958bb](https://github.com/Availity/element/commit/cb958bba99a4f1ee6dab323f0ff54b69e6fd3493))
+* **mui-icon:** removed deprecated checkcircleicon ([9436b9e](https://github.com/Availity/element/commit/9436b9eefc6d138696736498f23d542690e5c828))
+* upgrade @mui/material ([571453a](https://github.com/Availity/element/commit/571453a34b21c344594ab4c03bc497d19aba942b))
+* upgrade to MUI v6 ([7febd6f](https://github.com/Availity/element/commit/7febd6fd4fd58e87e1c97a832cea3b4595a35d58))
+
 ## [0.14.0](https://github.com/Availity/element/compare/@availity/mui-icon@0.13.1...@availity/mui-icon@0.14.0) (2025-02-04)
 
 ### Dependency Updates
