@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.2](https://github.com/Availity/element/compare/@availity/mui-pagination@0.4.1...@availity/mui-pagination@0.4.2) (2025-02-24)
+
+
+### Bug Fixes
+
+* **mui-pagination:** add react-query peer dependency ([39ae736](https://github.com/Availity/element/commit/39ae736a8a9a2a9529691f4edb841f2c774262c7))
+
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-pagination@0.4.0...@availity/mui-pagination@0.4.1) (2025-02-06)
 
 
