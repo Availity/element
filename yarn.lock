@@ -134,7 +134,7 @@ __metadata:
     "@availity/mui-typography": "workspace:*"
     "@availity/mui-utils": "workspace:*"
     "@availity/theme-provider": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@mui/system": ^6.4.3
     react: 18.2.0
     react-dom: 18.2.0
@@ -186,14 +186,14 @@ __metadata:
     "@availity/mui-chip": "workspace:^"
     "@availity/mui-layout": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -204,13 +204,13 @@ __metadata:
   dependencies:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -221,14 +221,14 @@ __metadata:
   dependencies:
     "@availity/authorize": ^4.1.2
     "@availity/mui-block-ui": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -240,7 +240,7 @@ __metadata:
     "@availity/api-axios": ^10.0.0
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-textfield": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@mui/types": ^7.2.21
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
@@ -251,7 +251,7 @@ __metadata:
     "@availity/api-axios": ^8.0.7
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-textfield": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     react: ">=16.3.0"
   languageName: unknown
@@ -263,14 +263,14 @@ __metadata:
   dependencies:
     "@availity/api-axios": ^10.0.0
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -279,13 +279,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-backdrop@workspace:packages/backdrop"
   dependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -295,13 +295,13 @@ __metadata:
   resolution: "@availity/mui-badge@workspace:packages/badge"
   dependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -312,13 +312,13 @@ __metadata:
   dependencies:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-paper": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -329,13 +329,13 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-link": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -345,13 +345,13 @@ __metadata:
   resolution: "@availity/mui-button@workspace:packages/button"
   dependencies:
     "@mui/lab": 6.0.0-beta.12
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -362,13 +362,13 @@ __metadata:
   dependencies:
     "@availity/mui-button": "workspace:^"
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -379,13 +379,13 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -395,13 +395,13 @@ __metadata:
   resolution: "@availity/mui-chip@workspace:packages/chip"
   dependencies:
     "@availity/mui-avatar": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -437,7 +437,7 @@ __metadata:
     "@availity/mui-textfield": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@hookform/resolvers": ^4.0.0
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     dayjs: ^1.11.13
     react: 18.2.0
@@ -447,7 +447,7 @@ __metadata:
     typescript: ^5.4.5
     yup: ^1.6.1
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -458,7 +458,7 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:*"
     "@availity/mui-textfield": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@mui/x-date-pickers": ^7.26.0
     dayjs: ^1.11.13
     react: 18.2.0
@@ -466,7 +466,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -482,13 +482,13 @@ __metadata:
     "@availity/mui-icon": "workspace:*"
     "@availity/mui-layout": "workspace:*"
     "@availity/mui-menu": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -499,13 +499,13 @@ __metadata:
   dependencies:
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -514,13 +514,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-divider@workspace:packages/divider"
   dependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -531,13 +531,13 @@ __metadata:
   dependencies:
     "@availity/mui-layout": "workspace:*"
     "@availity/mui-utils": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -553,13 +553,13 @@ __metadata:
     "@availity/mui-menu": "workspace:^"
     "@availity/mui-textfield": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -573,7 +573,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-tooltip": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
     react-dom: 18.2.0
@@ -583,7 +583,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-tooltip": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -601,14 +601,14 @@ __metadata:
     "@availity/mui-textfield": "workspace:^"
     "@availity/mui-toggle-button": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     react-hook-form: ^7.54.2
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -629,7 +629,7 @@ __metadata:
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@availity/upload-core": ^7.0.1
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
     react-dom: 18.2.0
@@ -640,7 +640,7 @@ __metadata:
     typescript: ^5.4.5
     uuid: ^9.0.1
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -656,7 +656,7 @@ __metadata:
     "@availity/mui-typography": "workspace:*"
     "@availity/mui-utils": "workspace:*"
     "@fortawesome/free-solid-svg-icons": ^6.7.2
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
@@ -664,7 +664,7 @@ __metadata:
   peerDependencies:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -676,13 +676,13 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": ^6.7.2
     "@fortawesome/free-regular-svg-icons": ^6.7.2
     "@fortawesome/free-solid-svg-icons": ^6.7.2
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -691,13 +691,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-layout@workspace:packages/layout"
   dependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -707,13 +707,13 @@ __metadata:
   resolution: "@availity/mui-link@workspace:packages/link"
   dependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -723,13 +723,13 @@ __metadata:
   resolution: "@availity/mui-list@workspace:packages/list"
   dependencies:
     "@availity/mui-chip": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -739,13 +739,13 @@ __metadata:
   resolution: "@availity/mui-menu@workspace:packages/menu"
   dependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -757,13 +757,13 @@ __metadata:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-card": "workspace:*"
     "@availity/mui-typography": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -779,7 +779,7 @@ __metadata:
     "@availity/mui-layout": "workspace:^"
     "@availity/mui-link": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
     react-dom: 18.2.0
@@ -794,7 +794,7 @@ __metadata:
     "@availity/mui-link": "workspace:^"
     "@availity/mui-spaces": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -804,7 +804,7 @@ __metadata:
   resolution: "@availity/mui-pagination@workspace:packages/pagination"
   dependencies:
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
     react-dom: 18.2.0
@@ -812,7 +812,7 @@ __metadata:
     typescript: ^5.4.5
   peerDependencies:
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     react: ">=16.3.0"
   peerDependenciesMeta:
@@ -825,13 +825,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-paper@workspace:packages/paper"
   dependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -841,13 +841,13 @@ __metadata:
   resolution: "@availity/mui-popover@workspace:packages/popover"
   dependencies:
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -856,13 +856,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-popper@workspace:packages/popper"
   dependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -873,13 +873,13 @@ __metadata:
   dependencies:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -892,13 +892,13 @@ __metadata:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-layout": "workspace:*"
     "@availity/mui-transitions": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -925,7 +925,7 @@ __metadata:
     "@availity/mui-typography": "workspace:^"
     "@availity/native-form": ^6.0.8
     "@availity/resolve-url": ^3.0.0
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     dayjs: ^1.11.13
     qs: ^6.14.0
@@ -949,7 +949,7 @@ __metadata:
     "@availity/mui-modal": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
     react-router-dom: ^6.26.0
   languageName: unknown
@@ -964,13 +964,13 @@ __metadata:
     "@availity/mui-layout": "workspace:^"
     "@availity/mui-paper": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -991,14 +991,14 @@ __metadata:
     "@availity/mui-textfield": "workspace:*"
     "@availity/mui-typography": "workspace:*"
     "@availity/mui-utils": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     react-hook-form: ^7.54.2
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1009,13 +1009,13 @@ __metadata:
   dependencies:
     "@availity/mui-divider": "workspace:^"
     "@mui/lab": 6.0.0-beta.12
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1026,13 +1026,13 @@ __metadata:
   dependencies:
     "@availity/mui-form-utils": "workspace:*"
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1042,13 +1042,13 @@ __metadata:
   resolution: "@availity/mui-toggle-button@workspace:packages/toggle-button"
   dependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1057,13 +1057,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-tooltip@workspace:packages/tooltip"
   dependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1075,13 +1075,13 @@ __metadata:
     "@availity/mui-alert": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@availity/mui-utils": "workspace:*"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1093,7 +1093,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-layout": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@mui/x-tree-view": ^7.26.0
     react: 18.2.0
     react-dom: 18.2.0
@@ -1101,7 +1101,7 @@ __metadata:
     typescript: ^5.4.5
   peerDependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1110,13 +1110,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-typography@workspace:packages/typography"
   dependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1168,7 +1168,7 @@ __metadata:
     "@availity/theme": "workspace:*"
     "@emotion/react": ^11.14.0
     "@emotion/styled": ^11.14.0
-    "@mui/material": ^6.4.4
+    "@mui/material": ^6.4.5
     "@mui/x-date-pickers": ^7.26.0
     dayjs: ^1.11.13
     react: 18.2.0
@@ -4389,10 +4389,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/core-downloads-tracker@npm:^6.4.4":
-  version: 6.4.4
-  resolution: "@mui/core-downloads-tracker@npm:6.4.4"
-  checksum: 93f43021ebda70980446e2dc0dbfe3b3ab53772e446d0e94b05182a28e4b42d8573b4aae4048bbcfe2db7648088a20ec7ce71c79ca370ad30a91c0eba85ebef7
+"@mui/core-downloads-tracker@npm:^6.4.5":
+  version: 6.4.5
+  resolution: "@mui/core-downloads-tracker@npm:6.4.5"
+  checksum: 45de88d2b63f6cfaaf5d141f6d96accb53a6455ea6d7e9f1b370b4811b9b728de2289d33f77d7d037b5c203197dced8cd366b0245049d3e887dc30c36a2251db
   languageName: node
   linkType: hard
 
@@ -4428,12 +4428,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material@npm:^6.4.4":
-  version: 6.4.4
-  resolution: "@mui/material@npm:6.4.4"
+"@mui/material@npm:^6.4.5":
+  version: 6.4.5
+  resolution: "@mui/material@npm:6.4.5"
   dependencies:
     "@babel/runtime": ^7.26.0
-    "@mui/core-downloads-tracker": ^6.4.4
+    "@mui/core-downloads-tracker": ^6.4.5
     "@mui/system": ^6.4.3
     "@mui/types": ^7.2.21
     "@mui/utils": ^6.4.3
@@ -4460,7 +4460,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 53597c329d0f929020782232f1cf3320a2dac640565e5ac14c0240c866a5735bf879f7c626178c5f76a76ffc17dd37e5fe682fdfb5acbb7b7170c0d6bfd9dac3
+  checksum: 21834839b3f6504ad1de60eaa90a99e444e6e8af837d73ae27158c95338d2d8e26c2689e1439c2aaaf020fc5a34aab3d02a63c5eefd4f75a7fc2f581ec062e9b
   languageName: node
   linkType: hard
 

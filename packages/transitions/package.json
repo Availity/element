@@ -43,14 +43,14 @@
     "@availity/mui-alert": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "@availity/mui-utils": "workspace:*",
-    "@mui/material": "^6.4.4",
+    "@mui/material": "^6.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^8.3.6",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "@mui/material": "^6.4.4",
+    "@mui/material": "^6.4.5",
     "react": ">=16.3.0"
   },
   "publishConfig": {
