@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-datepicker",
-  "version": "0.6.2",
+  "version": "1.0.0-alpha.0",
   "description": "Availity MUI Datepicker Component - part of the @availity/element design system",
   "keywords": [
     "react",
