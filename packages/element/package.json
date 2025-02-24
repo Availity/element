@@ -1,6 +1,6 @@
 {
   "name": "@availity/element",
-  "version": "0.50.16",
+  "version": "1.0.0-alpha.0",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
