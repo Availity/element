@@ -1,5 +1,11 @@
 .sidebar-container {
   background-color: rgb(17, 49, 90) !important;
+
+  .sidebar-header {
+    .version {
+      color: #FFE5CC!important;
+    }
+  }
 }
 
 #storybook-explorer-tree {
