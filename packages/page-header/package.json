@@ -62,7 +62,7 @@
     "@availity/mui-link": "workspace:^",
     "@availity/mui-spaces": "workspace:^",
     "@availity/mui-typography": "workspace:^",
-    "@mui/material": "^5.11.9",
+    "@mui/material": "^6.4.4",
     "react": ">=16.3.0"
   },
   "publishConfig": {

@@ -65,7 +65,7 @@
     "yup": "^1.6.1"
   },
   "peerDependencies": {
-    "@mui/material": "^5.11.9",
+    "@mui/material": "^6.4.4",
     "react": ">=16.3.0"
   },
   "publishConfig": {

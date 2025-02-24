@@ -193,7 +193,7 @@ __metadata:
     typescript: ^5.4.5
   peerDependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -210,7 +210,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -228,7 +228,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -251,7 +251,7 @@ __metadata:
     "@availity/api-axios": ^8.0.7
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-textfield": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     "@tanstack/react-query": ^4.36.1
     react: ">=16.3.0"
   languageName: unknown
@@ -270,7 +270,7 @@ __metadata:
     typescript: ^5.4.5
   peerDependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -285,7 +285,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -301,7 +301,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -318,7 +318,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -335,7 +335,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -351,7 +351,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -368,7 +368,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -385,7 +385,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -401,7 +401,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -447,7 +447,7 @@ __metadata:
     typescript: ^5.4.5
     yup: ^1.6.1
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -466,7 +466,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -488,7 +488,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -505,7 +505,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -520,7 +520,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -537,7 +537,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -559,7 +559,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -583,7 +583,7 @@ __metadata:
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-tooltip": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -608,7 +608,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -640,7 +640,7 @@ __metadata:
     typescript: ^5.4.5
     uuid: ^9.0.1
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -664,7 +664,7 @@ __metadata:
   peerDependencies:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -682,7 +682,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -697,7 +697,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -713,7 +713,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -729,7 +729,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -745,7 +745,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -763,7 +763,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -794,7 +794,7 @@ __metadata:
     "@availity/mui-link": "workspace:^"
     "@availity/mui-spaces": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -812,7 +812,7 @@ __metadata:
     typescript: ^5.4.5
   peerDependencies:
     "@availity/mui-icon": "workspace:*"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     "@tanstack/react-query": ^4.36.1
     react: ">=16.3.0"
   peerDependenciesMeta:
@@ -831,7 +831,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -847,7 +847,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -862,7 +862,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -879,7 +879,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -898,7 +898,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -949,7 +949,7 @@ __metadata:
     "@availity/mui-modal": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
     react-router-dom: ^6.26.0
   languageName: unknown
@@ -970,7 +970,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -998,7 +998,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1015,7 +1015,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1032,7 +1032,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1048,7 +1048,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1063,7 +1063,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1081,7 +1081,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1101,7 +1101,7 @@ __metadata:
     typescript: ^5.4.5
   peerDependencies:
     "@availity/mui-icon": "workspace:^"
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
@@ -1116,7 +1116,7 @@ __metadata:
     tsup: ^8.3.6
     typescript: ^5.4.5
   peerDependencies:
-    "@mui/material": ^5.11.9
+    "@mui/material": ^6.4.4
     react: ">=16.3.0"
   languageName: unknown
   linkType: soft
