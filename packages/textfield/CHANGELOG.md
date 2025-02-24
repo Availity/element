@@ -2,6 +2,25 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0-alpha.0](https://github.com/Availity/element/compare/@availity/mui-textfield@0.7.1...@availity/mui-textfield@1.0.0-alpha.0) (2025-02-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgraded to @mui/material v6
+* **element:** upgraded to @mui/material v6
+
+### Features
+
+* **element:** upgrade to @mui/material v6 ([cb958bb](https://github.com/Availity/element/commit/cb958bba99a4f1ee6dab323f0ff54b69e6fd3493))
+* upgrade @mui/material ([571453a](https://github.com/Availity/element/commit/571453a34b21c344594ab4c03bc497d19aba942b))
+* upgrade to MUI v6 ([7febd6f](https://github.com/Availity/element/commit/7febd6fd4fd58e87e1c97a832cea3b4595a35d58))
+
+
+### Bug Fixes
+
+* **mui-textfield:** remove slotProps and use custom props to ease prop merging ([4543505](https://github.com/Availity/element/commit/45435056abcca6de9538f0f6fd29f58a5b5f26d3))
+
 ## [0.7.1](https://github.com/Availity/element/compare/@availity/mui-textfield@0.7.0...@availity/mui-textfield@0.7.1) (2025-02-18)
 
 ### Dependency Updates
