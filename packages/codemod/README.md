@@ -1,6 +1,6 @@
 # @availity/mui-codemod
 
-> Availity MUI v1 Codemods to be used when migrating from @availity/element v0 to v1.
+> Availity MUI Codemods to be used when upgrading major versions of @availity/element.
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-codemod.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-codemod)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-codemod.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-codemod)
@@ -9,8 +9,6 @@
 ## Documentation
 
 This package extends the MUI v6 Codemods: [MUI Codemod Docs](https://mui.com/material-ui/migration/upgrade-to-v6/)
-
-Availity standards for design and usage can be found in the [Availity Design Guide](https://zeroheight.com/2e36e50c7)
 
 ## Usage
 
