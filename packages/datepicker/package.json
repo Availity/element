@@ -42,7 +42,7 @@
   "dependencies": {
     "@availity/mui-icon": "workspace:*",
     "@availity/mui-textfield": "workspace:*",
-    "@mui/x-date-pickers": "^7.26.0",
+    "@mui/x-date-pickers": "^7.27.1",
     "dayjs": "^1.11.13"
   },
   "devDependencies": {
