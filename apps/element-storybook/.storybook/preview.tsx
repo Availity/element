@@ -85,8 +85,6 @@ const preview: Preview = {
       },
     },
   },
-
-  tags: ['autodocs', 'autodocs'],
 };
 
 // Make sure we are in the browser before starting
