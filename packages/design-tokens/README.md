@@ -1,6 +1,6 @@
 # @availity/design-tokens
 
-> Theme Provider using MUI and @availity/design-tokens
+> Framework agnostic set of design tokens. Used internally by `@availity/theme` and `@availity/theme-provider`.
 
 [![Version](https://img.shields.io/npm/v/@availity/design-tokens.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/design-tokens)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/design-tokens.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/design-tokens)
@@ -19,3 +19,8 @@ npm install @availity/design-tokens
 ```bash
 yarn add @availity/design-tokens
 ```
+
+## Raw token lists
+
+- legacy tokens: [legacytokens.js](https://github.com/Availity/element/blob/main/packages/design-tokens/src/generated/legacytokens.js)
+- light theme tokens: [tokens.js](https://github.com/Availity/element/blob/main/packages/design-tokens/src/generated/tokens.js)

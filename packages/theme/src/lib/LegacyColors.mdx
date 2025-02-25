@@ -1,0 +1,26 @@
+import React from 'react';
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+import { legacyTheme } from './legacy-theme.ts';
+
+<Meta title="Design System/Theme/Legacy/Colors" />
+
+# Colors
+
+Colors for 'legacyBS' theme.
+
+Listed colors are directly available through the `sx` property for select properties (see [MUI System Properties Documentation](https://mui.com/system/properties/))
+
+e.g. `sx={{ bgcolor: 'primary.main' }}`
+
+<ColorPalette>
+  {Object.entries(legacyTheme.palette).map(([name, value]) => {
+    let values= typeof value === 'object' ? value : {[name]: value};
+    values = Object.fromEntries(Object.entries(values).filter(([k,v]) => isNaN(v)));
+    if (JSON.stringify(values) === '{}') return;
+    return(
+      <ColorItem
+        title={name}
+        colors={{...values}}
+      />
+  )})}
+</ColorPalette>
