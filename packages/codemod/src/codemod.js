@@ -15,8 +15,8 @@ const postcssExecutable = path.join(postcssCliDirectory, postcssCliPackage.bin.p
 
 async function runJscodeshiftTransform(transform, files, flags, codemodFlags) {
   const paths = [
-    path.resolve(__dirname, './src', `${transform}/index.js`),
-    path.resolve(__dirname, './src', `${transform}.js`),
+    path.resolve(__dirname, './lib', `${transform}/index.js`),
+    path.resolve(__dirname, './lib', `${transform}.js`),
     path.resolve(__dirname, './node', `${transform}/index.js`),
     path.resolve(__dirname, './node', `${transform}.js`),
   ];
@@ -97,7 +97,7 @@ const parseCssFilePaths = async (files) => {
 
 async function runPostcssTransform(transform, files) {
   const paths = [
-    path.resolve(__dirname, './src', `${transform}/postcss.config.js`),
+    path.resolve(__dirname, './lib', `${transform}/postcss.config.js`),
     path.resolve(__dirname, './node', `${transform}/postcss.config.js`),
   ];
 
