@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-snackbar",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0",
   "description": "Availity MUI Snackbar Component - part of the @availity/element design system",
   "keywords": [
     "react",
