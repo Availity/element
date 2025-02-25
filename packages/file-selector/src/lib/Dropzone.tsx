@@ -1,5 +1,7 @@
-import { Dispatch, MouseEvent, useCallback, ChangeEvent } from 'react';
-import { useDropzone, FileRejection } from 'react-dropzone';
+import { useCallback } from 'react';
+import type { Dispatch, MouseEvent } from 'react';
+import { useDropzone } from 'react-dropzone';
+import type { DropEvent, FileError, FileRejection } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
 import { Divider } from '@availity/mui-divider';
 import { CloudUploadIcon } from '@availity/mui-icon';
@@ -65,11 +67,15 @@ export type DropzoneProps = {
   /**
    * Handler called when the file input's value changes
    */
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: DropEvent) => void;
   /**
    * Handler called when the file picker button is clicked
    */
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * More sophisticated version of "onChange". This is the recommend function to use for changes to the form state
+   */
+  onDrop?: (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[], event: DropEvent) => void;
   /**
    * Callback to handle rejected files that don't meet validation criteria
    */
@@ -78,6 +84,10 @@ export type DropzoneProps = {
    * Callback to update the total size of all uploaded files
    */
   setTotalSize: Dispatch<React.SetStateAction<number>>;
+  /**
+   * Validation function used for custom validation that is not covered with the other props
+   * */
+  validator?: (file: File) => FileError | FileError[] | null;
 };
 
 // The types below were props used in the availity-react implementation.
@@ -98,38 +108,52 @@ export const Dropzone = ({
   name,
   onChange,
   onClick,
+  onDrop,
   setFileRejections,
   setTotalSize,
+  validator,
 }: DropzoneProps) => {
   const { setValue, watch } = useFormContext();
 
-  const validator = useCallback(
+  const handleValidation = useCallback(
     (file: File) => {
       const previous: File[] = watch(name) ?? [];
+      const errors: FileError[] = [];
 
       const isDuplicate = previous.some((prev) => prev.name === file.name);
       if (isDuplicate) {
-        return {
+        errors.push({
           code: 'duplicate-name',
           message: 'A file with this name already exists',
-        };
+        });
       }
 
       const hasMaxFiles = maxFiles && previous.length >= maxFiles;
       if (hasMaxFiles) {
-        return {
+        errors.push({
           code: 'too-many-files',
           message: `Too many files. You may only upload ${maxFiles} file(s).`,
-        };
+        });
       }
 
-      return null;
+      if (validator) {
+        const validatorErrors = validator(file);
+        if (validatorErrors) {
+          if (Array.isArray(validatorErrors)) {
+            errors.push(...validatorErrors);
+          } else {
+            errors.push(validatorErrors);
+          }
+        }
+      }
+
+      return errors.length > 0 ? errors : null;
     },
     [maxFiles]
   );
 
-  const onDrop = useCallback(
-    (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[]) => {
+  const handleOnDrop = useCallback(
+    (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[], event: DropEvent) => {
       let newSize = 0;
       for (const file of acceptedFiles) {
         newSize += file.size;
@@ -149,6 +173,7 @@ export const Dropzone = ({
       }
 
       if (setFileRejections) setFileRejections(fileRejections);
+      if (onDrop) onDrop(acceptedFiles, fileRejections, event);
     },
     [setFileRejections]
   );
@@ -156,13 +181,13 @@ export const Dropzone = ({
   const accept = allowedFileTypes.join(',');
 
   const { getRootProps, getInputProps } = useDropzone({
-    onDrop,
+    onDrop: handleOnDrop,
     maxSize,
     maxFiles,
     disabled,
     multiple,
     accept,
-    validator,
+    validator: handleValidation,
   });
 
   const inputProps = getInputProps({

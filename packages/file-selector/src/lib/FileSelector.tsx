@@ -1,8 +1,8 @@
 import { ChangeEvent, ReactNode, useState } from 'react';
-import { useForm, FormProvider } from 'react-hook-form';
-import type { FileRejection } from 'react-dropzone/typings/react-dropzone';
+import { FormProvider, useForm } from 'react-hook-form';
+import type { DropEvent, FileError, FileRejection } from 'react-dropzone/typings/react-dropzone';
 import { useQueryClient } from '@tanstack/react-query';
-import Upload, { UploadOptions } from '@availity/upload-core';
+import type { default as Upload, UploadOptions } from '@availity/upload-core';
 import { Button } from '@availity/mui-button';
 import { Grid } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
@@ -11,7 +11,7 @@ import { Dropzone } from './Dropzone';
 import { ErrorAlert } from './ErrorAlert';
 import { FileList } from './FileList';
 import { FileTypesMessage } from './FileTypesMessage';
-import { Options } from './useUploadCore';
+import type { Options, UploadQueryOptions } from './useUploadCore';
 
 const CLOUD_URL = '/cloud/web/appl/vault/upload/v1/resumable';
 
@@ -87,6 +87,10 @@ export type FileSelectorProps = {
    */
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   /**
+   *
+   */
+  onDrop?: (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[], event: DropEvent) => void;
+  /**
    * Callback fired when the form is submitted
    * @param uploads - Array of Upload instances for the submitted files
    * @param values - Object containing the form values, with files indexed by the name prop
@@ -113,9 +117,17 @@ export type FileSelectorProps = {
    */
   onUploadRemove?: (files: File[], removedUploadId: string) => void;
   /**
+   * Query options from `react-query` for the upload call
+   * */
+  queryOptions?: UploadQueryOptions;
+  /**
    * Array of delays (in milliseconds) between upload retry attempts
    */
   retryDelays?: UploadOptions['retryDelays'];
+  /**
+   * Validation function used for custom validation that is not covered with the other props
+   * */
+  validator?: (file: File) => FileError | FileError[] | null;
 };
 
 // Below props were removed from availity-react version. Perserving here in case needed later
@@ -142,12 +154,15 @@ export const FileSelector = ({
   maxSize,
   multiple = true,
   onChange,
+  onDrop,
   onSubmit,
   onSuccess,
   onError,
   onFilePreUpload = [],
   onUploadRemove,
   retryDelays,
+  queryOptions,
+  validator,
 }: FileSelectorProps) => {
   const [totalSize, setTotalSize] = useState(0);
   const [fileRejections, setFileRejections] = useState<(FileRejection & { id: number })[]>([]);
@@ -183,7 +198,16 @@ export const FileSelector = ({
     if (newFiles.length !== prevFiles.length) {
       const removedFile = prevFiles.find((file) => file.name === upload.file.name);
 
+      // Stop upload
+      try {
+        upload.abort();
+      } catch {
+        console.error('Encountered an issue stopping the file upload');
+      }
+
+      // Remove from context and cache
       methods.setValue(name, newFiles);
+      client.removeQueries(['upload', upload.file.name]);
 
       if (removedFile?.size) setTotalSize(totalSize - removedFile.size);
 
@@ -223,8 +247,10 @@ export const FileSelector = ({
             maxSize={maxSize}
             multiple={multiple}
             onChange={onChange}
+            onDrop={onDrop}
             setFileRejections={setFileRejections}
             setTotalSize={setTotalSize}
+            validator={validator}
           />
           <FileTypesMessage allowedFileTypes={allowedFileTypes} maxFileSize={maxSize} />
         </>
@@ -240,7 +266,7 @@ export const FileSelector = ({
               />
             ))
           : null}
-        <FileList files={files} options={options} onRemoveFile={handleOnRemoveFile} />
+        <FileList files={files} options={options} onRemoveFile={handleOnRemoveFile} queryOptions={queryOptions} />
         {files.length > 0 && (
           <Grid xs={12} justifyContent="end" display="flex" paddingTop={2.5}>
             <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>

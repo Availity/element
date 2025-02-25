@@ -2,7 +2,7 @@ import { Typography } from '@availity/mui-typography';
 
 import { formatBytes } from './util';
 
-type FileTypesMessageProps = {
+export type FileTypesMessageProps = {
   /**
    * Allowed file type extensions. Each extension should be prefixed with a ".". eg: .txt, .pdf, .png
    */

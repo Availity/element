@@ -1,10 +1,10 @@
-import { ChangeEvent, RefObject } from 'react';
+import type { ChangeEvent, RefObject } from 'react';
 import type { DropzoneInputProps } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
 import { Button, ButtonProps } from '@availity/mui-button';
 import { Input } from '@availity/mui-form-utils';
 
-type FilePickerBtnProps = {
+export type FilePickerBtnProps = {
   /**
    * Name attribute for the input field, used by react-hook-form for form state management.
    */

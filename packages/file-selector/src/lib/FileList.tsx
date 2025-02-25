@@ -7,10 +7,13 @@ import { Divider } from '@availity/mui-divider';
 
 import { UploadProgressBar } from './UploadProgressBar';
 import { formatBytes, getFileExtIcon } from './util';
-import { useUploadCore, Options } from './useUploadCore';
+import { useUploadCore } from './useUploadCore';
+import type { Options, UploadQueryOptions } from './useUploadCore';
 
-type FileRowProps = {
-  /** The File object containing information about the uploaded file */
+export type FileRowProps = {
+  /**
+   * The File object containing information about the uploaded file
+   * */
   file: File;
   /**
    * Callback function called when a file is removed
@@ -18,14 +21,20 @@ type FileRowProps = {
    * @param upload - The Upload instance associated with the file
    */
   onRemoveFile: (id: string, upload: Upload) => void;
-  /** Configuration options for the upload process */
+  /**
+   * Configuration options for the upload call
+   * */
   options: Options;
+  /**
+   * Query options from `react-query` for the upload call
+   * */
+  queryOptions?: UploadQueryOptions;
 };
 
-const FileRow = ({ file, options, onRemoveFile }: FileRowProps) => {
+export const FileRow = ({ file, options, onRemoveFile, queryOptions }: FileRowProps) => {
   const Icon = getFileExtIcon(file.name);
 
-  const { data: upload } = useUploadCore(file, options);
+  const { data: upload } = useUploadCore(file, options, queryOptions);
 
   if (!upload) return null;
 
@@ -69,25 +78,23 @@ export type FileListProps = {
    * Array of File objects to be displayed in the list
    */
   files: File[];
-  /**
-   * Callback function called when a file is removed from the list
-   * @param id - The unique identifier of the file being removed
-   * @param upload - The Upload instance associated with the file
-   */
-  onRemoveFile: (id: string, upload: Upload) => void;
-  /**
-   * Configuration options applied to all file uploads in the list
-   */
-  options: Options;
-};
+} & Omit<FileRowProps, 'file'>;
 
-export const FileList = ({ files, options, onRemoveFile }: FileListProps) => {
+export const FileList = ({ files, options, onRemoveFile, queryOptions }: FileListProps) => {
   if (files.length === 0) return null;
 
   return (
     <List>
       {files.map((file) => {
-        return <FileRow key={file.name} file={file} options={options} onRemoveFile={onRemoveFile} />;
+        return (
+          <FileRow
+            key={file.name}
+            file={file}
+            options={options}
+            onRemoveFile={onRemoveFile}
+            queryOptions={queryOptions}
+          />
+        );
       })}
     </List>
   );
