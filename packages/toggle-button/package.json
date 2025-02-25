@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-toggle-button",
-  "version": "0.2.0",
+  "version": "1.0.0-alpha.0",
   "description": "Availity MUI ToggleButton Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -41,14 +41,14 @@
   },
   "devDependencies": {
     "@availity/mui-icon": "workspace:^",
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^6.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsup": "^8.0.2",
+    "tsup": "^8.3.6",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "@mui/material": "^5.11.9",
+    "@mui/material": "^6.4.5",
     "react": ">=16.3.0"
   },
   "publishConfig": {

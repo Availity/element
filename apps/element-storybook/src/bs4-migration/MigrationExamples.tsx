@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import {
   Alert,
@@ -50,10 +50,10 @@ export const ChipExample = () => (
 
 export const GridExample = () => (
   <Grid container spacing={0.5}>
-    <Grid xs={8}>8</Grid>
-    <Grid xs={4}>4</Grid>
-    <Grid xs={4}>4</Grid>
-    <Grid xs={8}>8</Grid>
+    <Grid size={{ xs: 8 }}>8</Grid>
+    <Grid size={{ xs: 4 }}>4</Grid>
+    <Grid size={{ xs: 4 }}>4</Grid>
+    <Grid size={{ xs: 8 }}>8</Grid>
   </Grid>
 );
 

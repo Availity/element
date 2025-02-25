@@ -31,19 +31,19 @@ export const _SidebarLayout: StoryObj = {
         <Container fixed>
           <HeaderSection />
           <Grid container spacing={2}>
-            <Grid xs={12} sm="auto">
+            <Grid size={{ xs: 12, sm: 'auto' }}>
               <SidebarNav activeTab={activeTab} onItemClick={setActiveTab} />
             </Grid>
-            <Grid xs>
+            <Grid size="grow">
               <div role="tabpanel">
                 <Grid container spacing={2}>
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <SearchSection />
                   </Grid>
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <TablesSection />
                   </Grid>
-                  <Grid xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <DataGridSection />
                   </Grid>
                 </Grid>

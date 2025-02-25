@@ -1,0 +1,47 @@
+{
+  "name": "@availity/mui-codemod",
+  "version": "0.1.0-alpha.1",
+  "description": "Availity MUI v1 Codemods - part of the @availity/element design system",
+  "keywords": [
+    "react",
+    "typescript",
+    "availity",
+    "mui"
+  ],
+  "homepage": "https://availity.github.io/element/?path=/docs/components-codemod-introduction--docs",
+  "bugs": {
+    "url": "https://github.com/Availity/element/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Availity/element.git",
+    "directory": "packages/codemod"
+  },
+  "license": "MIT",
+  "author": "Availity Developers <AVOSS@availity.com>",
+  "bin": "./src/codemod.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsup src/codemod.js --format esm,cjs --dts",
+    "dev": "tsup src/codemod.js --format esm,cjs --watch --dts",
+    "clean": "rm -rf dist",
+    "clean:nm": "rm -rf node_modules",
+    "publish": "yarn npm publish --tolerate-republish --access public",
+    "publish:canary": "yarn npm publish --access public --tag canary"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.6",
+    "typescript": "^5.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@types/jscodeshift": "^0.12.0",
+    "jscodeshift": "^17.1.2",
+    "postcss-cli": "^11.0.0",
+    "yargs": "^17.7.2"
+  }
+}

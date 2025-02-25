@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-file-selector",
-  "version": "0.3.3",
+  "version": "1.0.0-alpha.0",
   "description": "Availity MUI file-selector Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -40,7 +40,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/api-axios": "^9.0.6",
+    "@availity/api-axios": "^10.0.0",
     "@availity/mui-alert": "workspace:^",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-divider": "workspace:^",
@@ -53,19 +53,20 @@
     "@availity/upload-core": "^7.0.1",
     "@tanstack/react-query": "^4.36.1",
     "react-dropzone": "^11.7.1",
-    "react-hook-form": "^7.51.3",
+    "react-hook-form": "^7.54.2",
+    "tus-js-client": "4.2.3",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@availity/mui-paper": "workspace:^",
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^6.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsup": "^8.0.2",
+    "tsup": "^8.3.6",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "@mui/material": "^5.11.9",
+    "@mui/material": "^6.4.5",
     "react": ">=16.3.0"
   },
   "publishConfig": {

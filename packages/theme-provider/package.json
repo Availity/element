@@ -1,6 +1,6 @@
 {
   "name": "@availity/theme-provider",
-  "version": "0.5.1",
+  "version": "1.0.0-alpha.0",
   "description": "Theme provider for the Element design system",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
@@ -24,16 +24,16 @@
   },
   "dependencies": {
     "@availity/theme": "workspace:*",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@mui/material": "^5.15.15",
-    "@mui/x-date-pickers": "^7.2.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.5",
+    "@mui/x-date-pickers": "^7.26.0",
     "dayjs": "^1.11.13"
   },
   "devDependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsup": "^8.0.2",
+    "tsup": "^8.3.6",
     "typescript": "~5.4.5"
   },
   "peerDependencies": {

@@ -15,7 +15,7 @@ export default meta;
 export const _Paper: StoryObj<typeof Paper> = {
   render: ({ children, ...args }: PaperProps) => (
     <Paper {...args}>
-      <Box p={5}>{children}</Box>
+      <Box sx={{ p: 5 }}>{children}</Box>
     </Paper>
   ),
   args: {

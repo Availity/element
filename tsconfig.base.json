@@ -36,6 +36,7 @@
       "@availity/mui-card": ["packages/card/src/index.ts"],
       "@availity/mui-checkbox": ["packages/checkbox/src/index.ts"],
       "@availity/mui-chip": ["packages/chip/src/index.ts"],
+      "@availity/mui-codemod": ["packages/codemod/src/index.ts"],
       "@availity/mui-controlled-form": ["packages/controlled-form/src/index.ts"],
       "@availity/mui-datepicker": ["packages/datepicker/src/index.ts"],
       "@availity/mui-dialog": ["packages/dialog/src/index.ts"],

@@ -109,7 +109,7 @@ export const _PickerViews: StoryObj<typeof DateCalendar> = {
 
     return (
       <Grid container spacing={3}>
-        <Grid xs="auto">
+        <Grid size={{ xs: 'auto' }}>
           <Typography variant="h3" component="span">
             Default View
           </Typography>
@@ -117,7 +117,7 @@ export const _PickerViews: StoryObj<typeof DateCalendar> = {
             <DateCalendar value={date} onChange={(newDate) => setDate(newDate)} />
           </Paper>
         </Grid>
-        <Grid xs="auto">
+        <Grid size={{ xs: 'auto' }}>
           <Typography variant="h3" component="span">
             Month View
           </Typography>
@@ -125,7 +125,7 @@ export const _PickerViews: StoryObj<typeof DateCalendar> = {
             <MonthCalendar value={date} minDate={minDate} maxDate={maxDate} onChange={(newDate) => setDate(newDate)} />
           </Paper>
         </Grid>
-        <Grid xs="auto">
+        <Grid size={{ xs: 'auto' }}>
           <Typography variant="h3" component="span">
             Year View
           </Typography>

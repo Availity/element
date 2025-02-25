@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-spaces",
-  "version": "0.7.6",
+  "version": "1.0.0-alpha.0",
   "description": "Availity MUI Spaces Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -53,10 +53,11 @@
     "@availity/mui-paper": "workspace:^",
     "@availity/mui-progress": "workspace:^",
     "@availity/mui-typography": "workspace:^",
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^6.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsup": "^8.0.2",
+    "react-router-dom": "^6.26.0",
+    "tsup": "^8.3.6",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
@@ -72,21 +73,22 @@
     "@availity/mui-modal": "workspace:^",
     "@availity/mui-progress": "workspace:^",
     "@availity/mui-typography": "workspace:^",
-    "@mui/material": "^5.11.9",
-    "react": ">=16.3.0"
+    "@mui/material": "^6.4.5",
+    "react": ">=16.3.0",
+    "react-router-dom": "^6.26.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^9.0.6",
-    "@availity/hooks": "^5.0.2",
+    "@availity/api-axios": "^10.0.0",
+    "@availity/hooks": "^5.1.2",
     "@availity/message-core": "^7.0.2",
-    "@availity/native-form": "^5.0.6",
-    "@availity/resolve-url": "^2.0.6",
+    "@availity/native-form": "^6.0.8",
+    "@availity/resolve-url": "^3.0.0",
     "@tanstack/react-query": "^4.36.1",
     "dayjs": "^1.11.13",
-    "qs": "^6.13.1",
+    "qs": "^6.14.0",
     "react-image": "^4.1.0",
     "react-markdown": "^6.0.3"
   }

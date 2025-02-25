@@ -1,6 +1,6 @@
 {
   "name": "@availity/element",
-  "version": "0.50.16",
+  "version": "1.0.0-alpha.0",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -71,13 +71,13 @@
     "@availity/mui-typography": "workspace:*",
     "@availity/mui-utils": "workspace:*",
     "@availity/theme-provider": "workspace:*",
-    "@mui/material": "^5.15.15",
-    "@mui/system": "^5.15.15"
+    "@mui/material": "^6.4.5",
+    "@mui/system": "^6.4.3"
   },
   "devDependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsup": "^8.0.2",
+    "tsup": "^8.3.6",
     "typescript": "~5.4.5"
   },
   "peerDependencies": {

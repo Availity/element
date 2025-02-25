@@ -66,17 +66,17 @@ describe('ControlledAsyncAutocomplete', () => {
   });
 
   test('should loadOptions successfully', async () => {
-      const screen = render(
-        <QueryClientProvider client={client}>
-          <TestForm UseFormOptions={{values: { controlledAutocomplete: undefined }}} onSubmit={onSubmit}>
-            <ControlledAsyncAutocomplete
-              name="controlledAsyncAutocomplete"
-              FieldProps={{ label: 'Async Select', helperText: 'Helper Text', fullWidth: false }}
-              getOptionLabel={(val: Option) => val.label}
-              loadOptions={loadOptions}
-              limit={10}
-              queryKey="example"
-            />
+    const screen = render(
+      <QueryClientProvider client={client}>
+        <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
+          <ControlledAsyncAutocomplete
+            name="controlledAsyncAutocomplete"
+            FieldProps={{ label: 'Async Select', helperText: 'Helper Text', fullWidth: false }}
+            getOptionLabel={(val: Option) => val.label}
+            loadOptions={loadOptions}
+            limit={10}
+            queryKey="example"
+          />
         </TestForm>
       </QueryClientProvider>
     );
@@ -91,7 +91,7 @@ describe('ControlledAsyncAutocomplete', () => {
   test('should set the value and submit the form data', async () => {
     const screen = render(
       <QueryClientProvider client={client}>
-        <TestForm UseFormOptions={{values: { controlledAutocomplete: undefined }}} onSubmit={onSubmit}>
+        <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
           <ControlledAsyncAutocomplete
             name="controlledAsyncAutocomplete"
             FieldProps={{ label: 'Async Select', helperText: 'Helper Text', fullWidth: false }}
@@ -100,9 +100,9 @@ describe('ControlledAsyncAutocomplete', () => {
             limit={10}
             queryKey="example"
           />
-      </TestForm>
-    </QueryClientProvider>
-  );
+        </TestForm>
+      </QueryClientProvider>
+    );
 
     const dropdown = screen.getByRole('combobox');
     fireEvent.click(dropdown);
@@ -121,6 +121,70 @@ describe('ControlledAsyncAutocomplete', () => {
       expect(controlledAsyncAutocompleteValue.label).toBe('Option 1');
       expect(controlledAsyncAutocompleteValue.value).toBe(1);
       expect(controlledAsyncAutocompleteValue.id).toBeDefined(); // This is a unique id
+    });
+  });
+
+  describe('when using rules', () => {
+    describe('when required', () => {
+      test('should indicate it is required when passing a string', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
+              <ControlledAsyncAutocomplete
+                name="controlledAsyncAutocomplete"
+                FieldProps={{ label: 'Async Select', helperText: 'Helper Text', fullWidth: false }}
+                getOptionLabel={(val: Option) => val.label}
+                loadOptions={loadOptions}
+                limit={10}
+                queryKey="example"
+                rules={{ required: 'This field is required' }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should indicate it is required when passing an object with true', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
+              <ControlledAsyncAutocomplete
+                name="controlledAsyncAutocomplete"
+                FieldProps={{ label: 'Async Select', helperText: 'Helper Text', fullWidth: false }}
+                getOptionLabel={(val: Option) => val.label}
+                loadOptions={loadOptions}
+                limit={10}
+                queryKey="example"
+                rules={{ required: { value: true, message: 'This field is required' } }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should not indicate it is required when passing an object with false', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
+              <ControlledAsyncAutocomplete
+                name="controlledAsyncAutocomplete"
+                FieldProps={{ label: 'Async Select', helperText: 'Helper Text', fullWidth: false }}
+                getOptionLabel={(val: Option) => val.label}
+                loadOptions={loadOptions}
+                limit={10}
+                queryKey="example"
+                rules={{ required: { value: false, message: 'This field is required' } }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.queryByText('*')).toBeNull();
+      });
     });
   });
 });

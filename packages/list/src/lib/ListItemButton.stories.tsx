@@ -8,7 +8,15 @@ import { Checkbox } from '@availity/mui-checkbox';
 import { DeleteIcon, FolderIcon, MailIcon, MoreVerticalIcon } from '@availity/mui-icon';
 import { Box, Grid } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
-import { List, ListItem, ListItemText, ListItemButton, ListItemButtonProps, ListItemIcon, ListItemStatusCard } from '..';
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemButton,
+  ListItemButtonProps,
+  ListItemIcon,
+  ListItemStatusCard,
+} from '..';
 
 const meta: Meta<typeof ListItemButton> = {
   title: 'Components/List/ListItemButton',
@@ -45,7 +53,7 @@ const meta: Meta<typeof ListItemButton> = {
         disable: true,
       },
     },
-  }
+  },
 };
 
 export default meta;
@@ -89,12 +97,16 @@ export const _States: StoryObj<typeof List> = {
         </ListItem>
       </List>
     </Box>
-  )
+  ),
 };
 
 export const _FolderList: StoryObj<typeof List> = {
   render: () => (
-    <Box component="nav" aria-label="mailbox folders" sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+    <Box
+      component="nav"
+      aria-label="mailbox folders"
+      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+    >
       <List>
         <ListItem disablePadding>
           <ListItemButton>
@@ -124,7 +136,7 @@ export const _FolderList: StoryObj<typeof List> = {
         </ListItem>
       </List>
     </Box>
-  )
+  ),
 };
 
 export const _Selectable: StoryObj<typeof List> = {
@@ -146,9 +158,11 @@ export const _Selectable: StoryObj<typeof List> = {
 
     return (
       <Grid container spacing={8}>
-        <Grid xs={12} sm={6}>
-          <Typography variant="h6" component="div" id='selectable-default-spacing-header'>Default Spacing</Typography>
-          <List aria-labelledby='selectable-default-spacing-header'>
+        <Grid size={{ xs: 12, sm: 6 }}>
+          <Typography variant="h6" component="div" id="selectable-default-spacing-header">
+            Default Spacing
+          </Typography>
+          <List aria-labelledby="selectable-default-spacing-header">
             {[0, 1, 2, 3].map((value) => {
               const labelId = `checkbox-list-label-${value}`;
 
@@ -162,7 +176,11 @@ export const _Selectable: StoryObj<typeof List> = {
                     </IconButton>
                   }
                 >
-                  <ListItemButton role={undefined} onClick={handleToggle(value)} selected={checked.indexOf(value) !== -1}>
+                  <ListItemButton
+                    role={undefined}
+                    onClick={handleToggle(value)}
+                    selected={checked.indexOf(value) !== -1}
+                  >
                     <ListItemIcon>
                       <Checkbox
                         edge="start"
@@ -178,9 +196,11 @@ export const _Selectable: StoryObj<typeof List> = {
             })}
           </List>
         </Grid>
-        <Grid xs={12} sm={6}>
-          <Typography variant="h6" component="div" id='selectable-dense-spacing-header'>Dense Spacing</Typography>
-          <List dense aria-labelledby='selectable-dense-spacing-header'>
+        <Grid size={{ xs: 12, sm: 6 }}>
+          <Typography variant="h6" component="div" id="selectable-dense-spacing-header">
+            Dense Spacing
+          </Typography>
+          <List dense aria-labelledby="selectable-dense-spacing-header">
             {[4, 5, 6, 7].map((value) => {
               const labelId = `checkbox-list-label-${value}`;
 
@@ -194,7 +214,11 @@ export const _Selectable: StoryObj<typeof List> = {
                     </IconButton>
                   }
                 >
-                  <ListItemButton role={undefined} onClick={handleToggle(value)} selected={checked.indexOf(value) !== -1}>
+                  <ListItemButton
+                    role={undefined}
+                    onClick={handleToggle(value)}
+                    selected={checked.indexOf(value) !== -1}
+                  >
                     <ListItemIcon>
                       <Checkbox
                         edge="start"
@@ -211,7 +235,8 @@ export const _Selectable: StoryObj<typeof List> = {
           </List>
         </Grid>
       </Grid>
-  )}
+    );
+  },
 };
 
 export const _InteractiveStatusCards: StoryObj<typeof List> = {
@@ -223,13 +248,13 @@ export const _InteractiveStatusCards: StoryObj<typeof List> = {
           color="success"
           secondaryAction={
             <IconButton title="More Actions">
-              <MoreVerticalIcon fontSize='xsmall'/>
+              <MoreVerticalIcon fontSize="xsmall" />
             </IconButton>
           }
         >
-          <ListItemButton >
+          <ListItemButton>
             <ListItemText>Item</ListItemText>
-            <StatusChip color="success" label="Approved"/>
+            <StatusChip color="success" label="Approved" />
           </ListItemButton>
         </ListItemStatusCard>
         <ListItemStatusCard
@@ -237,13 +262,13 @@ export const _InteractiveStatusCards: StoryObj<typeof List> = {
           color="warning"
           secondaryAction={
             <IconButton title="More Actions">
-              <MoreVerticalIcon fontSize='xsmall'/>
+              <MoreVerticalIcon fontSize="xsmall" />
             </IconButton>
           }
         >
           <ListItemButton>
             <ListItemText>Item</ListItemText>
-            <StatusChip color="warning" label="Pending"/>
+            <StatusChip color="warning" label="Pending" />
           </ListItemButton>
         </ListItemStatusCard>
         <ListItemStatusCard
@@ -251,13 +276,13 @@ export const _InteractiveStatusCards: StoryObj<typeof List> = {
           color="error"
           secondaryAction={
             <IconButton title="More Actions">
-              <MoreVerticalIcon fontSize='xsmall'/>
+              <MoreVerticalIcon fontSize="xsmall" />
             </IconButton>
           }
         >
-          <ListItemButton >
+          <ListItemButton>
             <ListItemText>Item</ListItemText>
-            <StatusChip color="error" label="Denied"/>
+            <StatusChip color="error" label="Denied" />
           </ListItemButton>
         </ListItemStatusCard>
         <ListItemStatusCard
@@ -265,16 +290,16 @@ export const _InteractiveStatusCards: StoryObj<typeof List> = {
           color="success"
           secondaryAction={
             <IconButton title="More Actions">
-              <MoreVerticalIcon fontSize='xsmall'/>
+              <MoreVerticalIcon fontSize="xsmall" />
             </IconButton>
           }
         >
-          <ListItemButton >
+          <ListItemButton>
             <ListItemText>Item</ListItemText>
-            <StatusChip color="success" label="Approved"/>
+            <StatusChip color="success" label="Approved" />
           </ListItemButton>
         </ListItemStatusCard>
       </List>
     </Box>
-  )
+  ),
 };

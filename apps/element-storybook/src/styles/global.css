@@ -1,0 +1,69 @@
+.sidebar-container {
+  background-color: rgb(17, 49, 90) !important;
+
+  .sidebar-header {
+    .version {
+      color: #FFE5CC!important;
+    }
+  }
+}
+
+#storybook-explorer-tree {
+  &>div>div>.sidebar-item {
+    margin-left: 8px!important;
+  }
+
+  .sidebar-subheading>button {
+    color: #FFE5CC!important;
+  }
+
+  button[data-nodetype="component"],
+  button[data-nodetype="group"] {
+
+    svg,
+    svg use {
+      color: #ffffff!important;
+    }
+  }
+
+  button[data-nodetype="group"] svg {
+    display: none!important;
+  }
+
+  div,
+  button,
+  a {
+    color: #ffffff!important;
+  }
+}
+
+.search-field {
+  #storybook-explorer-searchfield {
+    background-color: transparent!important;
+    color: #ffffff!important;
+
+    &:not(:focus, :focus-visible) {
+      border-color: #ffffff!important;
+    }
+  }
+
+  >svg,
+  >code,
+  &:focus-within>svg,
+  &:focus-within>code {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+  }
+}
+
+.search-result-item--label strong {
+  color: #ffffff!important;
+}
+
+#storybook-explorer-menu {
+
+  li>div,
+  li>div * {
+    color: #ffffff!important;
+  }
+}

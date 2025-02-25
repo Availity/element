@@ -1,5 +1,4 @@
 import { forwardRef } from 'react';
-import Box from '@mui/material/Box';
 import { default as MuiFormLabel, FormLabelProps as MuiFormLabelProps } from '@mui/material/FormLabel';
 import { styled } from '@mui/material/styles';
 import { FieldHelpIcon } from './FieldHelpIcon';
@@ -10,7 +9,7 @@ export type FormLabelProps = {
 } & MuiFormLabelProps;
 
 // Form Label styles moved up to wrapper to include field level help
-const Wrapper = styled(Box, {
+const Wrapper = styled('div', {
   name: 'MuiFormLabel',
   slot: 'AvWrapper',
   overridesResolver: (props, styles) => styles.avWrapper,

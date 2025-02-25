@@ -86,13 +86,15 @@ export const PageHeader = ({
       component={Box}
       container
       direction="column"
-      marginTop="1rem"
-      marginBottom="1.25rem"
-      paddingLeft={3}
-      paddingRight={3}
+      sx={{
+        marginTop: '1rem',
+        marginBottom: '1.25rem',
+        paddingLeft: 3,
+        paddingRight: 3,
+      }}
     >
       {breadcrumbs || logo || help ? (
-        <Grid direction="row" container justifyContent="space-between" marginBottom={4}>
+        <Grid direction="row" container sx={{ justifyContent: 'space-between', marginBottom: 4 }}>
           {breadcrumbs && (
             <Grid marginRight={2}>
               <Breadcrumbs {...breadcrumbs} />
@@ -119,11 +121,11 @@ export const PageHeader = ({
         </Grid>
       ) : null}
 
-      <Grid direction="row" container marginBottom={2} alignItems="center" justifyContent="space-between">
+      <Grid direction="row" container sx={{ marginBottom: 2, alignItems: 'center', justifyContent: 'space-between' }}>
         <Grid>
           <Typography variant="h1" children={headerText} />
         </Grid>
-        <Grid container width="auto">
+        <Grid container sx={{ width: 'auto' }}>
           {buttons &&
             buttons.length > 0 &&
             buttons?.map(({ key, ...buttonProps }) => (
@@ -132,7 +134,7 @@ export const PageHeader = ({
               </Grid>
             ))}
           {feedback ? (
-            <Grid marginLeft={2} height="100%">
+            <Grid sx={{ marginLeft: 2, height: '100%' }}>
               <Feedback appName={headerText} />
             </Grid>
           ) : null}

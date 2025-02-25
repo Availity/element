@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-table",
-  "version": "0.3.4",
+  "version": "1.0.0-alpha.0",
   "description": "Availity MUI Table Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -51,21 +51,21 @@
     "@availity/mui-chip": "workspace:*",
     "@availity/mui-form-utils": "workspace:*",
     "@availity/mui-icon": "workspace:*",
-    "@availity/mui-layout": "workspace:*",
+    "@availity/mui-layout": "workspace:^",
     "@availity/mui-link": "workspace:*",
     "@availity/mui-menu": "workspace:*",
     "@availity/mui-paper": "workspace:*",
     "@availity/mui-textfield": "workspace:*",
     "@availity/mui-typography": "workspace:*",
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^6.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.51.3",
-    "tsup": "^8.0.2",
+    "react-hook-form": "^7.54.2",
+    "tsup": "^8.3.6",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "@mui/material": "^5.11.9",
+    "@mui/material": "^6.4.5",
     "react": ">=16.3.0"
   },
   "publishConfig": {

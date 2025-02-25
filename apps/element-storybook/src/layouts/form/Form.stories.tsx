@@ -2,7 +2,31 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import dayjs from 'dayjs';
-import { BlockUi, Button, CloseIcon, Container, ControlledAutocomplete, ControlledDatepicker, ControlledRadioGroup, ControlledTextField, Divider, FormControlLabel, FormProvider, Grid, IconButton, InputAdornment, PageHeader, Paper, Radio, RequiredKey, SearchIcon, Stack, SubmitHandler, Typography, useForm } from '@availity/element';
+import {
+  BlockUi,
+  Button,
+  CloseIcon,
+  Container,
+  ControlledAutocomplete,
+  ControlledDatepicker,
+  ControlledRadioGroup,
+  ControlledTextField,
+  Divider,
+  FormControlLabel,
+  FormProvider,
+  Grid,
+  IconButton,
+  InputAdornment,
+  PageHeader,
+  Paper,
+  Radio,
+  RequiredKey,
+  SearchIcon,
+  Stack,
+  SubmitHandler,
+  Typography,
+  useForm,
+} from '@availity/element';
 
 /** Some form examples with proper layouts and spacings. As `Grid` is already used to handle layout it is easiest to also use it for form spacing.
  *
@@ -64,40 +88,40 @@ export const _SimpleForm: StoryObj = {
                   Simple Form
                 </Typography>
                 <Grid container rowSpacing={2}>
-                  <Grid xs={12} md={6}>
+                  <Grid size={{ xs: 12, md: 6 }}>
                     <SectionText />
                   </Grid>
-                  <Grid xs={0} md={6} padding={0} />
-                  <Grid xs={12} md={6}>
+                  <Grid size={{ xs: 0, md: 6 }} padding={0} />
+                  <Grid size={{ xs: 12, md: 6 }}>
                     <RequiredKey />
                   </Grid>
-                  <Grid xs={0} md={6} padding={0} />
-                  <Grid xs={12} />
-                  <Grid xs={12} md={6}>
+                  <Grid size={{ xs: 0, md: 6 }} padding={0} />
+                  <Grid size={{ xs: 12 }} />
+                  <Grid size={{ xs: 12, md: 6 }}>
                     <ControlledTextField
                       label="Example"
                       name="text"
                       fullWidth
-                      helperText='This is helper text'
+                      helperText="This is helper text"
                       required
-                      rules={{required: 'This field is required.'}}
+                      rules={{ required: 'This field is required.' }}
                     />
                   </Grid>
-                  <Grid xs={0} md={6} padding={0} />
-                  <Grid xs={12} md={6}>
+                  <Grid size={{ xs: 0, md: 6 }} padding={0} />
+                  <Grid size={{ xs: 12, md: 6 }}>
                     <ControlledAutocomplete
                       name="dropdown"
                       FieldProps={{
                         label: 'Dropdown',
                         helperText: 'This is helper text',
-                        placeholder: 'Value'
+                        placeholder: 'Value',
                       }}
                       options={dropdownOptions}
                     />
                   </Grid>
-                  <Grid xs={0} md={6} padding={0} />
-                  <Grid xs={12} />
-                  <Grid xs={12} justifyContent="end" display="flex" paddingTop={2.5}>
+                  <Grid size={{ xs: 0, md: 6 }} padding={0} />
+                  <Grid size={{ xs: 12 }} />
+                  <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
                     <Button
                       type="reset"
                       color="secondary"
@@ -155,7 +179,7 @@ export const _CompactForm: StoryObj = {
 
     return (
       <Container>
-        <Grid container justifyContent="center">
+        <Grid container sx={{ justifyContent: 'center' }}>
           <BlockUi blocking={loading}>
             <Paper sx={{ padding: '1rem', maxWidth: '400px' }}>
               <FormProvider {...methods}>
@@ -169,7 +193,7 @@ export const _CompactForm: StoryObj = {
                     </IconButton>
                   </Stack>
                   <Grid container rowSpacing={1} columnSpacing={2}>
-                    <Grid xs={12}>
+                    <Grid size={{ xs: 12 }}>
                       <ControlledAutocomplete
                         name="status"
                         FieldProps={{
@@ -179,44 +203,39 @@ export const _CompactForm: StoryObj = {
                         options={['Pending', 'Accepted', 'Denied']}
                       />
                     </Grid>
-                    <Grid xs={6}>
+                    <Grid size={{ xs: 6 }}>
                       <ControlledDatepicker
                         name="fromDate"
                         defaultValue={today}
                         FieldProps={{
-                          label: "From Date",
+                          label: 'From Date',
                         }}
                       />
                     </Grid>
-                    <Grid xs={6}>
+                    <Grid size={{ xs: 6 }}>
                       <ControlledDatepicker
                         name="toDate"
                         defaultValue={today}
                         FieldProps={{
-                          label: "To Date",
+                          label: 'To Date',
                         }}
                       />
                     </Grid>
-                    <Grid xs={12}>
-                      <ControlledTextField
-                        label="Customer Name"
-                        fullWidth
-                        name="customerName"
-                        placeholder="Value"
-                      />
+                    <Grid size={{ xs: 12 }}>
+                      <ControlledTextField label="Customer Name" fullWidth name="customerName" placeholder="Value" />
                     </Grid>
-                    <Grid xs={12}>
+                    <Grid size={{ xs: 12 }}>
                       <ControlledAutocomplete
                         name="payerName"
                         FieldProps={{
                           label: 'Payer Name',
-                          placeholder: 'Value'
+                          placeholder: 'Value',
                         }}
                         options={['Health Plan', 'Another Plan', 'Best Plan']}
                       />
                     </Grid>
-                    <Grid xs={12} paddingY={1} />
-                    <Grid xs={6}>
+                    <Grid size={{ xs: 12 }} paddingY={1} />
+                    <Grid size={{ xs: 6 }}>
                       <Button
                         onClick={() => {
                           setSubmitted(false);
@@ -229,7 +248,7 @@ export const _CompactForm: StoryObj = {
                         Reset Filters
                       </Button>
                     </Grid>
-                    <Grid xs={6}>
+                    <Grid size={{ xs: 6 }}>
                       <Button type="submit" fullWidth>
                         Submit
                       </Button>
@@ -296,19 +315,19 @@ export const _SectionedForm: StoryObj = {
               <form onSubmit={methods.handleSubmit(onSubmit)}>
                 <Paper sx={{ padding: '1.5rem', marginBottom: '1.25rem' }}>
                   <Grid container rowSpacing={{ xs: 1, md: 2 }} columnSpacing={{ xs: 2, md: 3 }}>
-                    <Grid xs={12}>
+                    <Grid size={{ xs: 12 }}>
                       <Typography variant="h2">Section Header</Typography>
                     </Grid>
-                    <Grid xs={12} md={6}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                       <SectionText />
                     </Grid>
-                    <Grid xs={0} md={6} padding={0} />
-                    <Grid xs={12} md={6}>
+                    <Grid size={{ xs: 0, md: 6 }} padding={0} />
+                    <Grid size={{ xs: 12, md: 6 }}>
                       <RequiredKey />
                     </Grid>
-                    <Grid xs={0} md={6} padding={0} />
-                    <Grid xs={12} />
-                    <Grid xs={12} md={4}>
+                    <Grid size={{ xs: 0, md: 6 }} padding={0} />
+                    <Grid size={{ xs: 12 }} />
+                    <Grid size={{ xs: 12, md: 4 }}>
                       <ControlledAutocomplete
                         name="dropdown1"
                         rules={{ required: 'This field is required' }}
@@ -320,103 +339,103 @@ export const _SectionedForm: StoryObj = {
                         options={dropdownOptions}
                       />
                     </Grid>
-                    <Grid xs={0} md={8} padding={0} />
-                    <Grid xs={12} sm={6} md={4}>
+                    <Grid size={{ xs: 0, md: 8 }} padding={0} />
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                       <ControlledTextField
                         label="Text Field"
                         fullWidth
                         name="field1"
                         required
                         rules={{ required: 'This field is required' }}
-                        helperText='Help text'
+                        helperText="Help text"
                         placeholder="Value"
                       />
                     </Grid>
-                    <Grid xs={12} sm={6} md={8}>
+                    <Grid size={{ xs: 12, sm: 6, md: 8 }}>
                       <ControlledAutocomplete
                         name="dropdown2"
                         FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
                         options={dropdownOptions}
                       />
                     </Grid>
-                    <Grid xs={12} sm={6} md={4}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                       <ControlledTextField
                         label="Medium Text Field"
                         fullWidth
-                        name='field2'
+                        name="field2"
                         required
                         rules={{ required: 'This field is required' }}
-                        helperText='Help text'
+                        helperText="Help text"
                         placeholder="Value"
                         size="medium"
                       />
                     </Grid>
-                    <Grid xs={12} sm={6} md={8}>
+                    <Grid size={{ xs: 12, sm: 6, md: 8 }}>
                       <ControlledAutocomplete
                         name="dropdown3"
                         FieldProps={{ label: 'Medium Dropdown', placeholder: 'Value', size: 'medium' }}
                         options={dropdownOptions}
                       />
                     </Grid>
-                    <Grid xs={12} />
-                    <Grid xs={12}>
+                    <Grid size={{ xs: 12 }} />
+                    <Grid size={{ xs: 12 }}>
                       <Divider />
                     </Grid>
-                    <Grid xs={12} />
-                    <Grid xs={12}>
+                    <Grid size={{ xs: 12 }} />
+                    <Grid size={{ xs: 12 }}>
                       <Typography variant="h4" component="h3">
                         Subsection Header
                       </Typography>
                     </Grid>
-                    <Grid xs={12} />
-                    <Grid xs={12} sm={6} md={4}>
-                      <ControlledTextField label="Text Field" fullWidth name='field3' placeholder="Value" />
+                    <Grid size={{ xs: 12 }} />
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+                      <ControlledTextField label="Text Field" fullWidth name="field3" placeholder="Value" />
                     </Grid>
-                    <Grid xs={12} sm={6} md={4}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                       <ControlledAutocomplete
                         name="dropdown4"
                         FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
                         options={dropdownOptions}
                       />
                     </Grid>
-                    <Grid xs={12} sm={6} md={4}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                       <ControlledAutocomplete
                         name="dropdown5"
                         FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
                         options={dropdownOptions}
                       />
                     </Grid>
-                    <Grid xs={12} sm={6} md={4}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                       <ControlledAutocomplete
                         name="dropdown6"
                         FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}
                         options={dropdownOptions}
                       />
                     </Grid>
-                    <Grid xs={12} />
-                    <Grid xs={12}>
+                    <Grid size={{ xs: 12 }} />
+                    <Grid size={{ xs: 12 }}>
                       <Button color="secondary">Secondary Action Button</Button>
                     </Grid>
                   </Grid>
                 </Paper>
                 <Paper sx={{ padding: '1.5rem' }}>
                   <Grid container rowSpacing={{ xs: 1, md: 2 }} columnSpacing={{ xs: 2, md: 3 }}>
-                    <Grid xs={12}>
+                    <Grid size={{ xs: 12 }}>
                       <Typography variant="h2">Section Header</Typography>
                     </Grid>
-                    <Grid xs={12} lg={6}>
+                    <Grid size={{ xs: 12, lg: 6 }}>
                       <SectionText />
                     </Grid>
-                    <Grid xs={0} lg={6} padding={0} />
-                    <Grid xs={12} lg={6}>
+                    <Grid size={{ xs: 0, lg: 6 }} padding={0} />
+                    <Grid size={{ xs: 12, lg: 6 }}>
                       <RequiredKey />
                     </Grid>
-                    <Grid xs={0} lg={6} padding={0} />
-                    <Grid xs={12} />
-                    <Grid xs={12}>
+                    <Grid size={{ xs: 0, lg: 6 }} padding={0} />
+                    <Grid size={{ xs: 12 }} />
+                    <Grid size={{ xs: 12 }}>
                       <ControlledTextField
                         fullWidth
-                        name='field4'
+                        name="field4"
                         placeholder="Search"
                         inputProps={{ 'aria-label': 'Search' }}
                         InputProps={{
@@ -428,28 +447,23 @@ export const _SectionedForm: StoryObj = {
                         }}
                       />
                     </Grid>
-                    <Grid xs={12}>
-                      <ControlledRadioGroup
-                        label="Radio Group"
-                        name="radio"
-                        defaultValue="3"
-                        row
-                      >
+                    <Grid size={{ xs: 12 }}>
+                      <ControlledRadioGroup label="Radio Group" name="radio" defaultValue="3" row>
                         <FormControlLabel control={<Radio />} value="1" label="Option 1" />
                         <FormControlLabel control={<Radio />} value="2" label="Option 2" />
                       </ControlledRadioGroup>
                     </Grid>
-                    <Grid xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <ControlledTextField
                         label="Text Field"
                         fullWidth
-                        name='field5'
+                        name="field5"
                         required
                         rules={{ required: 'This field is required' }}
                         placeholder="Value"
                       />
                     </Grid>
-                    <Grid xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <ControlledAutocomplete
                         name="dropdown7"
                         FieldProps={{ label: 'Dropdown', placeholder: 'Value' }}

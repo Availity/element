@@ -109,7 +109,7 @@ export const _Stepper: StoryObj<typeof Stepper> = {
     };
 
     return (
-      <Box maxWidth="75vw" marginX="auto">
+      <Box sx={{ maxWidth: '75vw', marginX: 'auto' }}>
         <Paper sx={{ padding: '2rem' }}>
           <Stepper activeStep={activeStep} {...args} orientation={width < 600 ? 'vertical' : args.orientation}>
             {steps.map((label, index) => {

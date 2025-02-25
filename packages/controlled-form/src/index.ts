@@ -2,7 +2,6 @@ export * from './/lib/AsyncAutocomplete';
 export * from './lib/Autocomplete';
 export * from './lib/Checkbox';
 export * from './lib/CodesAutocomplete';
-export * from './lib/ControlledForm';
 export * from './lib/Datepicker';
 export * from './lib/Input';
 export * from './lib/OrganizationAutocomplete';

@@ -1,20 +1,10 @@
 import { Checkbox, CheckboxProps } from '@availity/mui-checkbox';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
-import { ControllerProps, DeprecatedRulesProps } from './Types';
+import { ControllerProps } from './Types';
 
-export type ControlledCheckboxProps = Omit<CheckboxProps,
-  'disabled' | 'onBlur' | 'onChange' | 'value' | 'name'
-> & Pick<RegisterOptions<FieldValues, string>,
-  'disabled' | 'onBlur' | 'onChange' | 'value'
-> & ControllerProps
-//TODO v1 - remove deprecated props
-& Omit<DeprecatedRulesProps,
-| 'required'
-| 'max'
-| 'maxLength'
-| 'min'
-| 'minLength'
-| 'pattern'>;
+export type ControlledCheckboxProps = Omit<CheckboxProps, 'disabled' | 'onBlur' | 'onChange' | 'value' | 'name'> &
+  Pick<RegisterOptions<FieldValues, string>, 'disabled' | 'onBlur' | 'onChange' | 'value'> &
+  ControllerProps;
 
 export const ControlledCheckbox = ({
   name,
@@ -25,8 +15,6 @@ export const ControlledCheckbox = ({
   defaultValue = false,
   rules = {},
   shouldUnregister,
-  deps,
-  validate,
   ...rest
 }: ControlledCheckboxProps) => {
   return (
@@ -39,13 +27,17 @@ export const ControlledCheckbox = ({
         onBlur,
         value,
         shouldUnregister,
-        deps,
-        validate,
         ...rules,
       }}
       shouldUnregister={shouldUnregister}
       render={({ field }) => (
-        <Checkbox {...rest} {...field} checked={field.value} onChange={(e) => field.onChange(e.target.checked)} />
+        <Checkbox
+          required={typeof rules.required === 'object' ? rules.required.value : !!rules.required}
+          {...rest}
+          {...field}
+          checked={field.value}
+          onChange={(e) => field.onChange(e.target.checked)}
+        />
       )}
     />
   );

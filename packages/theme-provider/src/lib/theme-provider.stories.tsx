@@ -1,17 +1,23 @@
 import type { StoryObj } from '@storybook/react';
+import { Alert } from '@availity/mui-alert';
 import { ThemeProvider } from './theme-provider';
+
+/** Wraps entire app for theme, locale, and date context */
+export default {
+  title: 'Design System/ThemeProvider',
+  component: ThemeProvider,
+  tags: ['autodocs']
+};
 
 export const Default: StoryObj<typeof ThemeProvider> = {
   render: () => (
     <>
-      <ThemeProvider>
-        <div>This component is inside the ThemeProvider</div>
+      <ThemeProvider theme="lightTheme">
+        <Alert severity="info" sx={{mb: 2}}>This alert is inside the ThemeProvider using "lightTheme"</Alert>
       </ThemeProvider>
-      <div>This component is outside the ThemeProvider</div>
+      <ThemeProvider theme="legacyBS">
+        <Alert severity="info">This alert is inside the ThemeProvider using "legacyBS" theme</Alert>
+      </ThemeProvider>
     </>
   ),
-};
-
-export default {
-  title: 'Design System/ThemeProvider',
 };

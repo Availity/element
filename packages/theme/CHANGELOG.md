@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.67.2-alpha.0](https://github.com/Availity/element/compare/@availity/theme@0.67.1...@availity/theme@0.67.2-alpha.0) (2025-02-24)
+
+
+### Bug Fixes
+
+* **mui-accordion:** cleanup Accordion styling to account for new h3 layer ([031f86e](https://github.com/Availity/element/commit/031f86e7821716cdf93c375f5118dbe02431ad44))
+
 ## [0.67.1](https://github.com/Availity/element/compare/@availity/theme@0.67.0...@availity/theme@0.67.1) (2025-02-05)
 
 ## [0.67.0](https://github.com/Availity/element/compare/@availity/theme@0.66.0...@availity/theme@0.67.0) (2025-02-04)

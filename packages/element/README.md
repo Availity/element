@@ -1,6 +1,6 @@
 # @availity/element
 
-> Theme Provider using MUI and @availity/design-tokens
+> Frontend design system built on top of @mui/material with @availity/design-tokens
 
 [![Version](https://img.shields.io/npm/v/@availity/element.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/element)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/element.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/element)
