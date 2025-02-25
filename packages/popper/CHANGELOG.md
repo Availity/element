@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0](https://github.com/Availity/element/compare/@availity/mui-popper@1.0.0-alpha.0...@availity/mui-popper@1.0.0) (2025-02-25)
+
+### Dependency Updates
+
+* `mui-layout` updated to version `0.2.0`
+* `mui-button` updated to version `0.2.0`
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to @mui/material v6
+
+### Miscellaneous Chores
+
+* element v1 release ([a6e3567](https://github.com/Availity/element/commit/a6e35671185b9f13d25c7a39c4488ecb8774633e))
+
 ## [1.0.0-alpha.0](https://github.com/Availity/element/compare/@availity/mui-popper@0.2.0...@availity/mui-popper@1.0.0-alpha.0) (2025-02-24)
 
 
