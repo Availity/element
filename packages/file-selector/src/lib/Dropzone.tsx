@@ -97,7 +97,7 @@ export type DropzoneProps = {
 export const Dropzone = ({
   allowedFileTypes = [],
   disabled,
-  enableDropArea,
+  enableDropArea = true,
   maxFiles,
   maxSize,
   multiple,
@@ -145,7 +145,7 @@ export const Dropzone = ({
 
       return errors.length > 0 ? errors : null;
     },
-    [maxFiles]
+    [maxFiles, validator]
   );
 
   const handleOnDrop = useCallback(
