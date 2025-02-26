@@ -4,13 +4,14 @@ import type { DropEvent, FileError, FileRejection } from 'react-dropzone/typings
 import { useQueryClient } from '@tanstack/react-query';
 import type { default as Upload, UploadOptions } from '@availity/upload-core';
 import { Button } from '@availity/mui-button';
-import { Grid } from '@availity/mui-layout';
+import { Grid, Stack } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 
 import { Dropzone } from './Dropzone';
 import { ErrorAlert } from './ErrorAlert';
 import { FileList } from './FileList';
 import { FileTypesMessage } from './FileTypesMessage';
+import { HeaderMessage } from './HeaderMessage';
 import type { Options, UploadQueryOptions } from './useUploadCore';
 
 const CLOUD_URL = '/cloud/web/appl/vault/upload/v1/resumable';
@@ -54,6 +55,10 @@ export type FileSelectorProps = {
    */
   disabled?: boolean;
   /**
+   * Whether to enable the dropzone area
+   */
+  enableDropArea?: boolean;
+  /**
    * Custom endpoint URL for file uploads. If not provided, default endpoint will be used
    */
   endpoint?: string;
@@ -70,7 +75,7 @@ export type FileSelectorProps = {
   /**
    * Maximum number of files that can be uploaded simultaneously
    */
-  maxFiles?: number;
+  maxFiles: number;
   /**
    * Maximum file size allowed per file in bytes
    * Use Kibi or Mibibytes. eg: 1kb = 1024 bytes; 1mb = 1024kb
@@ -130,14 +135,6 @@ export type FileSelectorProps = {
   validator?: (file: File) => FileError | FileError[] | null;
 };
 
-// Below props were removed from availity-react version. Perserving here in case needed later
-// deliverFileOnSubmit?: boolean;
-// deliveryChannel?: string;
-// fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
-// onDeliveryError?: (error: unknown) => void;
-// onDeliverySuccess?: () => void;
-// onFileDelivery?: (upload: Upload) => void;
-
 export const FileSelector = ({
   name,
   allowedFileNameCharacters,
@@ -147,6 +144,7 @@ export const FileSelector = ({
   children,
   customerId,
   disabled = false,
+  enableDropArea = true,
   endpoint,
   isCloud,
   label = 'Upload file',
@@ -238,23 +236,50 @@ export const FileSelector = ({
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
         <>
-          <Typography marginBottom="4px">{label}</Typography>
-          <Dropzone
-            name={name}
-            allowedFileTypes={allowedFileTypes}
-            disabled={disabled}
-            maxFiles={maxFiles}
-            maxSize={maxSize}
-            multiple={multiple}
-            onChange={onChange}
-            onDrop={onDrop}
-            setFileRejections={setFileRejections}
-            setTotalSize={setTotalSize}
-            validator={validator}
-          />
-          <FileTypesMessage allowedFileTypes={allowedFileTypes} maxFileSize={maxSize} />
+          {enableDropArea ? (
+            <>
+              {label ? <Typography marginBottom="4px">{label}</Typography> : null}
+              <Dropzone
+                name={name}
+                allowedFileTypes={allowedFileTypes}
+                disabled={disabled}
+                enableDropArea={enableDropArea}
+                maxFiles={maxFiles}
+                maxSize={maxSize}
+                multiple={multiple}
+                onChange={onChange}
+                onDrop={onDrop}
+                setFileRejections={setFileRejections}
+                setTotalSize={setTotalSize}
+                validator={validator}
+              />
+              <FileTypesMessage allowedFileTypes={allowedFileTypes} maxFileSize={maxSize} variant="caption" />
+              {children}
+            </>
+          ) : (
+            <>
+              <Stack spacing={2}>
+                <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} />
+                <FileTypesMessage allowedFileTypes={allowedFileTypes} variant="body2" />
+                {children}
+                <Dropzone
+                  name={name}
+                  allowedFileTypes={allowedFileTypes}
+                  disabled={disabled}
+                  enableDropArea={enableDropArea}
+                  maxFiles={maxFiles}
+                  maxSize={maxSize}
+                  multiple={multiple}
+                  onChange={onChange}
+                  onDrop={onDrop}
+                  setFileRejections={setFileRejections}
+                  setTotalSize={setTotalSize}
+                  validator={validator}
+                />
+              </Stack>
+            </>
+          )}
         </>
-        {children}
         {fileRejections.length > 0
           ? fileRejections.map((rejection) => (
               <ErrorAlert

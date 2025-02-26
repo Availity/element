@@ -4,7 +4,7 @@ import { useDropzone } from 'react-dropzone';
 import type { DropEvent, FileError, FileRejection } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
 import { Divider } from '@availity/mui-divider';
-import { CloudUploadIcon } from '@availity/mui-icon';
+import { CloudUploadIcon, PlusIcon } from '@availity/mui-icon';
 import { Box, Stack } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 
@@ -53,6 +53,10 @@ export type DropzoneProps = {
    */
   disabled?: boolean;
   /**
+   * Whether to enable the dropzone area
+   */
+  enableDropArea?: boolean;
+  /**
    * Maximum number of files that can be uploaded
    */
   maxFiles?: number;
@@ -90,18 +94,10 @@ export type DropzoneProps = {
   validator?: (file: File) => FileError | FileError[] | null;
 };
 
-// The types below were props used in the availity-react implementation.
-// Perserving this here in case it needs to be added back
-// deliverFileOnSubmit?: boolean;
-// deliveryChannel?: string;
-// fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
-// onDeliveryError?: (responses: unknown[]) => void;
-// onDeliverySuccess?: (responses: unknown[]) => void;
-// onFileDelivery?: (upload: Upload) => void;
-
 export const Dropzone = ({
   allowedFileTypes = [],
   disabled,
+  enableDropArea,
   maxFiles,
   maxSize,
   multiple,
@@ -206,7 +202,7 @@ export const Dropzone = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { role, tabIndex, ...rootProps } = getRootProps();
 
-  return (
+  return enableDropArea ? (
     <Box sx={outerBoxStyles} {...rootProps}>
       <Box sx={innerBoxStyles}>
         <Stack spacing={2} alignItems="center" justifyContent="center">
@@ -224,10 +220,25 @@ export const Dropzone = ({
               onClick={onClick}
               inputProps={inputProps}
               onChange={handleOnChange}
-            />
+            >
+              Browse Files
+            </FilePickerBtn>
           </>
         </Stack>
       </Box>
     </Box>
+  ) : (
+    <FilePickerBtn
+      name={name}
+      color="tertiary"
+      disabled={disabled}
+      maxSize={maxSize}
+      onClick={onClick}
+      inputProps={inputProps}
+      onChange={handleOnChange}
+      startIcon={<PlusIcon />}
+    >
+      Add File(s)
+    </FilePickerBtn>
   );
 };

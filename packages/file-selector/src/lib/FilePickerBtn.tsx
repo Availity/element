@@ -29,7 +29,7 @@ export type FilePickerBtnProps = {
 
 export const FilePickerBtn = ({
   name,
-  children = 'Browse Files',
+  children,
   color,
   inputId,
   inputProps = {},
