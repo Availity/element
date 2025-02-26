@@ -8,7 +8,7 @@ describe('FileSelector', () => {
     const client = new QueryClient();
     const { getByText } = render(
       <QueryClientProvider client={client}>
-        <FileSelector name="test" bucketId="test" customerId="123" clientId="test" maxSize={1000} />
+        <FileSelector name="test" bucketId="test" customerId="123" clientId="test" maxSize={1000} maxFiles={1} />
       </QueryClientProvider>
     );
 
