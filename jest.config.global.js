@@ -15,7 +15,7 @@ module.exports = {
   globals: {
     jsdom: true,
   },
-  coverageReporters: ['json'],
+  coverageReporters: ['json-summary'],
   moduleNameMapper: {
     uuid: require.resolve('uuid'),
     ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/../../' }),
