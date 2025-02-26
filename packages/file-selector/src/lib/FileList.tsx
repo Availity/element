@@ -40,6 +40,7 @@ export const FileRow = ({ file, options, onRemoveFile, queryOptions }: FileRowPr
 
   return (
     <ListItem
+      disableGutters
       secondaryAction={
         <IconButton
           title="remove file"
@@ -52,7 +53,7 @@ export const FileRow = ({ file, options, onRemoveFile, queryOptions }: FileRowPr
         </IconButton>
       }
     >
-      <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%">
+      <Grid container rowSpacing={2} alignItems="center" justifyContent="space-between" width="100%">
         <Grid xs={1}>
           <ListItemIcon>
             <Icon />

@@ -4,7 +4,7 @@ import type { DropEvent, FileError, FileRejection } from 'react-dropzone/typings
 import { useQueryClient } from '@tanstack/react-query';
 import type { default as Upload, UploadOptions } from '@availity/upload-core';
 import { Button } from '@availity/mui-button';
-import { Grid, Stack } from '@availity/mui-layout';
+import { Grid } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 
 import { Dropzone } from './Dropzone';
@@ -258,25 +258,29 @@ export const FileSelector = ({
             </>
           ) : (
             <>
-              <Stack spacing={2}>
-                <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} />
-                <FileTypesMessage allowedFileTypes={allowedFileTypes} variant="body2" />
-                {children}
-                <Dropzone
-                  name={name}
-                  allowedFileTypes={allowedFileTypes}
-                  disabled={disabled}
-                  enableDropArea={enableDropArea}
-                  maxFiles={maxFiles}
-                  maxSize={maxSize}
-                  multiple={multiple}
-                  onChange={onChange}
-                  onDrop={onDrop}
-                  setFileRejections={setFileRejections}
-                  setTotalSize={setTotalSize}
-                  validator={validator}
-                />
-              </Stack>
+              <Grid container rowSpacing={3} flexDirection="column">
+                <Grid>
+                  <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} />
+                  <FileTypesMessage allowedFileTypes={allowedFileTypes} variant="body2" />
+                </Grid>
+                {children ? <Grid>{children}</Grid> : null}
+                <Grid>
+                  <Dropzone
+                    name={name}
+                    allowedFileTypes={allowedFileTypes}
+                    disabled={disabled}
+                    enableDropArea={enableDropArea}
+                    maxFiles={maxFiles}
+                    maxSize={maxSize}
+                    multiple={multiple}
+                    onChange={onChange}
+                    onDrop={onDrop}
+                    setFileRejections={setFileRejections}
+                    setTotalSize={setTotalSize}
+                    validator={validator}
+                  />
+                </Grid>
+              </Grid>
             </>
           )}
         </>

@@ -109,7 +109,7 @@ export const Dropzone = ({
   setTotalSize,
   validator,
 }: DropzoneProps) => {
-  const { setValue, watch } = useFormContext();
+  const { getValues, setValue, watch } = useFormContext();
 
   const handleValidation = useCallback(
     (file: File) => {
@@ -192,15 +192,27 @@ export const Dropzone = ({
     onChange,
   });
 
+  // Remove role and tabIndex for accessibility
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { role, tabIndex, ...rootProps } = getRootProps();
+
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (inputProps.onChange) {
       inputProps.onChange(event);
     }
   };
 
-  // Remove role and tabIndex for accessibility
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { role, tabIndex, ...rootProps } = getRootProps();
+  const handleOnClick = (event: MouseEvent<HTMLButtonElement>) => {
+    if (!enableDropArea && rootProps.onClick) rootProps.onClick(event);
+    if (onClick) onClick;
+  };
+
+  const getFieldValue = () => {
+    const field = getValues();
+    return field[name] || [];
+  };
+
+  const hasFiles = getFieldValue().length > 0;
 
   return enableDropArea ? (
     <Box sx={outerBoxStyles} {...rootProps}>
@@ -233,12 +245,12 @@ export const Dropzone = ({
       color="tertiary"
       disabled={disabled}
       maxSize={maxSize}
-      onClick={onClick}
+      onClick={handleOnClick}
       inputProps={inputProps}
       onChange={handleOnChange}
       startIcon={<PlusIcon />}
     >
-      Add File(s)
+      {hasFiles ? 'Add More Files' : 'Add File(s)'}
     </FilePickerBtn>
   );
 };
