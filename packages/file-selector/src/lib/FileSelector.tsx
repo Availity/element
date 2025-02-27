@@ -88,6 +88,10 @@ export type FileSelectorProps = {
    */
   maxSize: number;
   /**
+   * Additional metadata to include with the upload
+   */
+  metadata?: UploadOptions['metadata'];
+  /**
    * Whether multiple file selection is allowed
    * @default true
    */
@@ -157,6 +161,7 @@ export const FileSelector = ({
   label = 'Upload file',
   maxFiles,
   maxSize,
+  metadata,
   multiple = true,
   onChange,
   onDrop,
@@ -190,6 +195,7 @@ export const FileSelector = ({
     onError,
     onSuccess,
     retryDelays,
+    metadata,
   };
 
   if (onFilePreUpload) options.onPreStart = onFilePreUpload;
