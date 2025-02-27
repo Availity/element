@@ -67,7 +67,9 @@ export const _FileSelector: StoryObj<typeof FileSelector> = {
     clientId: '123',
     customerId: '456',
     bucketId: '789',
-    retryDelays: [],
+    uploadOptions: {
+      retryDelays: [],
+    },
     maxFiles: 5,
     maxSize: 1 * 1024 * 1024, // 1MB
     enableDropArea: true,

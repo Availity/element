@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { ChangeEvent, ElementType, ReactNode } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import type { DropEvent, FileError, FileRejection } from 'react-dropzone/typings/react-dropzone';
@@ -88,10 +88,6 @@ export type FileSelectorProps = {
    */
   maxSize: number;
   /**
-   * Additional metadata to include with the upload
-   */
-  metadata?: UploadOptions['metadata'];
-  /**
    * Whether multiple file selection is allowed
    * @default true
    */
@@ -112,20 +108,6 @@ export type FileSelectorProps = {
    */
   onSubmit?: (uploads: Upload[], values: Record<string, File[]>) => void;
   /**
-   * Callback fired when a file is successfully uploaded
-   */
-  onSuccess?: () => void;
-  /**
-   * Callback fired when an error occurs during upload
-   */
-  onError?: (error: Error) => void;
-  /**
-   * Array of functions to execute before file upload begins.
-   * Each function should return a boolean indicating whether to proceed with the upload.
-   * @default []
-   */
-  onFilePreUpload?: (() => boolean)[];
-  /**
    * Callback fired when a file is removed from the upload list
    * @param files - Array of remaining files
    * @param removedUploadId - ID of the removed upload
@@ -136,9 +118,9 @@ export type FileSelectorProps = {
    * */
   queryOptions?: UploadQueryOptions;
   /**
-   * Array of delays (in milliseconds) between upload retry attempts
+   * Options that are passed to the Upload class from `@availity/upload-core`
    */
-  retryDelays?: UploadOptions['retryDelays'];
+  uploadOptions?: Partial<UploadOptions>;
   /**
    * Validation function used for custom validation that is not covered with the other props
    * */
@@ -161,17 +143,13 @@ export const FileSelector = ({
   label = 'Upload file',
   maxFiles,
   maxSize,
-  metadata,
   multiple = true,
   onChange,
   onDrop,
   onSubmit,
-  onSuccess,
-  onError,
-  onFilePreUpload = [],
   onUploadRemove,
-  retryDelays,
   queryOptions,
+  uploadOptions,
   validator,
 }: FileSelectorProps) => {
   const [totalSize, setTotalSize] = useState(0);
@@ -192,13 +170,9 @@ export const FileSelector = ({
     fileTypes: allowedFileTypes,
     maxSize,
     allowedFileNameCharacters,
-    onError,
-    onSuccess,
-    retryDelays,
-    metadata,
+    ...uploadOptions,
   };
 
-  if (onFilePreUpload) options.onPreStart = onFilePreUpload;
   if (endpoint) options.endpoint = endpoint;
   if (isCloud) options.endpoint = CLOUD_URL;
 

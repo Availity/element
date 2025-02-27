@@ -6,15 +6,19 @@ export type FileTypesMessageProps = {
   /**
    * Allowed file type extensions. Each extension should be prefixed with a ".". eg: .txt, .pdf, .png
    */
-  allowedFileTypes: `.${string}`[];
+  allowedFileTypes?: `.${string}`[];
   /**
    * Maximum size per file in bytes. This will be formatted. eg: 1024 * 20 = 20 KB
    */
   maxFileSize?: number;
-  variant: 'caption' | 'body2';
+  variant?: 'caption' | 'body2';
 };
 
-export const FileTypesMessage = ({ allowedFileTypes, maxFileSize, variant }: FileTypesMessageProps) => {
+export const FileTypesMessage = ({
+  allowedFileTypes = [],
+  maxFileSize,
+  variant = 'caption',
+}: FileTypesMessageProps) => {
   const fileSizeMsg = typeof maxFileSize === 'number' ? `Maximum file size is ${formatBytes(maxFileSize)}. ` : null;
   const fileTypesMsg =
     allowedFileTypes.length > 0
