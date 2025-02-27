@@ -29,12 +29,19 @@ export type FileRowProps = {
    * Query options from `react-query` for the upload call
    * */
   queryOptions?: UploadQueryOptions;
+  customFileRow?: React.ElementType<{
+    upload?: Upload;
+    options: Options;
+    onRemoveFile: (id: string, upload: Upload) => void;
+  }>;
 };
 
-export const FileRow = ({ file, options, onRemoveFile, queryOptions }: FileRowProps) => {
+export const FileRow = ({ file, options, onRemoveFile, queryOptions, customFileRow: CustomRow }: FileRowProps) => {
   const Icon = getFileExtIcon(file.name);
 
   const { data: upload } = useUploadCore(file, options, queryOptions);
+
+  if (CustomRow) return <CustomRow upload={upload} options={options} onRemoveFile={onRemoveFile} />;
 
   if (!upload) return null;
 
@@ -81,7 +88,13 @@ export type FileListProps = {
   files: File[];
 } & Omit<FileRowProps, 'file'>;
 
-export const FileList = ({ files, options, onRemoveFile, queryOptions }: FileListProps) => {
+export const FileList = ({
+  files,
+  options,
+  onRemoveFile,
+  queryOptions,
+  customFileRow,
+}: FileListProps): JSX.Element | null => {
   if (files.length === 0) return null;
 
   return (
@@ -94,6 +107,7 @@ export const FileList = ({ files, options, onRemoveFile, queryOptions }: FileLis
             options={options}
             onRemoveFile={onRemoveFile}
             queryOptions={queryOptions}
+            customFileRow={customFileRow}
           />
         );
       })}

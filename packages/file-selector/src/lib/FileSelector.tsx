@@ -1,4 +1,5 @@
-import { ChangeEvent, ReactNode, useState } from 'react';
+import React, { useState } from 'react';
+import type { ChangeEvent, ElementType, ReactNode } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import type { DropEvent, FileError, FileRejection } from 'react-dropzone/typings/react-dropzone';
 import { useQueryClient } from '@tanstack/react-query';
@@ -10,6 +11,7 @@ import { Typography } from '@availity/mui-typography';
 import { Dropzone } from './Dropzone';
 import { ErrorAlert } from './ErrorAlert';
 import { FileList } from './FileList';
+import type { FileListProps } from './FileList';
 import { FileTypesMessage } from './FileTypesMessage';
 import { HeaderMessage } from './HeaderMessage';
 import type { Options, UploadQueryOptions } from './useUploadCore';
@@ -62,6 +64,10 @@ export type FileSelectorProps = {
    * Custom endpoint URL for file uploads. If not provided, default endpoint will be used
    */
   endpoint?: string;
+  /**
+   * Componet to render the File information. This should return a `ListItem`
+   */
+  customFileRow?: ElementType<FileListProps>;
   /**
    * Whether to use the cloud upload endpoint
    * When true, uses '/cloud/web/appl/vault/upload/v1/resumable'
@@ -143,6 +149,7 @@ export const FileSelector = ({
   clientId,
   children,
   customerId,
+  customFileRow,
   disabled = false,
   enableDropArea = true,
   endpoint,
@@ -295,7 +302,13 @@ export const FileSelector = ({
               />
             ))
           : null}
-        <FileList files={files} options={options} onRemoveFile={handleOnRemoveFile} queryOptions={queryOptions} />
+        <FileList
+          files={files}
+          options={options}
+          onRemoveFile={handleOnRemoveFile}
+          queryOptions={queryOptions}
+          customFileRow={customFileRow}
+        />
         {files.length > 0 && (
           <Grid xs={12} justifyContent="end" display="flex" paddingTop={2.5}>
             <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
