@@ -27,7 +27,9 @@ async function startUpload(file: File, options: Options) {
 export function useUploadCore(file: File, options: Options, queryOptions?: UploadQueryOptions) {
   const isQueryEnabled = !!file;
 
-  return useQuery(['upload', file.name, options], () => startUpload(file, options), {
+  return useQuery({
+    queryKey: ['upload', file.name, options],
+    queryFn: () => startUpload(file, options),
     enabled: isQueryEnabled,
     retry: false,
     refetchOnWindowFocus: false,
