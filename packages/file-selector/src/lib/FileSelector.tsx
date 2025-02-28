@@ -3,7 +3,7 @@ import type { ChangeEvent, ElementType, ReactNode } from 'react';
 import { useFormContext } from 'react-hook-form';
 import type { DropEvent, FileError, FileRejection } from 'react-dropzone/typings/react-dropzone';
 import { useQueryClient } from '@tanstack/react-query';
-import type { default as Upload, UploadOptions } from '@availity/upload-core';
+import type { default as Upload } from '@availity/upload-core';
 import { Grid } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 
@@ -113,7 +113,7 @@ export type FileSelectorProps = {
   /**
    * Options that are passed to the Upload class from `@availity/upload-core`
    */
-  uploadOptions?: Partial<UploadOptions>;
+  uploadOptions?: Partial<Options>;
   /**
    * Validation function used for custom validation that is not covered with the other props
    * */
