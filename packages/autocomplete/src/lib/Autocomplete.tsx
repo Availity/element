@@ -76,8 +76,8 @@ export const Autocomplete = <
 
   const resolvedProps = (params: AutocompleteRenderInputParams) => ({
     InputProps: {
-      ...FieldProps?.InputProps,
       ...params?.InputProps,
+      ...FieldProps?.InputProps,
       endAdornment: props.loading ? (
         <>
           {params?.InputProps.endAdornment || null}
