@@ -545,6 +545,9 @@ export const lightTheme = {
             },
           },
         },
+        heading: {
+          borderRadius: 'inherit'
+        }
       },
     },
     MuiAccordionActions: {

@@ -42,16 +42,16 @@ export default meta;
 export const _Grid: StoryObj<typeof Grid> = {
   render: ({ children, container, spacing, ...args }: GridProps) => (
     <Grid container={container} spacing={spacing} {...args}>
-      <Grid xs={8}>
+      <Grid size={{ xs: 8 }}>
         <Paper>{children}</Paper>
       </Grid>
-      <Grid xs={4}>
+      <Grid size={{ xs: 4 }}>
         <Paper>{children}</Paper>
       </Grid>
-      <Grid xs={4}>
+      <Grid size={{ xs: 4 }}>
         <Paper>{children}</Paper>
       </Grid>
-      <Grid xs={8}>
+      <Grid size={{ xs: 8 }}>
         <Paper>{children}</Paper>
       </Grid>
     </Grid>

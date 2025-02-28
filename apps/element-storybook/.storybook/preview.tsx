@@ -29,11 +29,14 @@ const preview: Preview = {
       },
     },
   },
+
   decorators: [withThemeProvider],
+
   parameters: {
     docs: {
       controls: {
         sort: 'requiredFirst',
+        disableSaveFromUI: true,
       },
       theme: themes.light,
       source: {

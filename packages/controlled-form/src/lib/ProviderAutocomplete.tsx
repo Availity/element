@@ -1,30 +1,21 @@
 import { ProviderAutocomplete, ProviderAutocompleteProps } from '@availity/mui-autocomplete';
 import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
-import { ControllerProps, DeprecatedRulesProps } from './Types';
+import { ControllerProps } from './Types';
 
-export type ControlledProviderAutocompleteProps = Omit<ProviderAutocompleteProps,
-'onBlur' | 'onChange' | 'value' | 'name'
-> & Pick<RegisterOptions<FieldValues, string>,
-'onBlur' | 'onChange' | 'value'
-> & ControllerProps
-//TODO v1 - remove deprecated props
-& DeprecatedRulesProps;
+export type ControlledProviderAutocompleteProps = Omit<
+  ProviderAutocompleteProps,
+  'onBlur' | 'onChange' | 'value' | 'name'
+> &
+  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
+  ControllerProps;
 
 export const ControlledProviderAutocomplete = ({
   name,
   defaultValue,
-  deps,
-  max,
-  maxLength,
-  min,
-  minLength,
   onBlur,
   onChange,
-  pattern,
-  required,
   rules = {},
   shouldUnregister,
-  validate,
   value,
   FieldProps,
   ...rest
@@ -34,17 +25,9 @@ export const ControlledProviderAutocomplete = ({
       name={name}
       defaultValue={defaultValue}
       rules={{
-        deps,
-        max,
-        maxLength,
-        min,
-        minLength,
         onBlur,
         onChange,
-        pattern,
-        required,
         shouldUnregister,
-        validate,
         value,
         ...rules,
       }}
@@ -53,6 +36,7 @@ export const ControlledProviderAutocomplete = ({
         <ProviderAutocomplete
           {...rest}
           FieldProps={{
+            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
             ...FieldProps,
             error: !!error,
             helperText: error?.message ? (

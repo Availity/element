@@ -16,9 +16,9 @@ export const SearchSection = (): JSX.Element => {
   const [searchValue, setSearchValue] = useState('');
   return (
     <Paper variant="elevation" elevation={0}>
-      <Grid container sx={{ padding: '1rem' }} alignItems={'center'}>
-        <Grid container xs={6}>
-          <Grid xs={6} sx={{ paddingRight: '.5rem' }}>
+      <Grid container sx={{ padding: '1rem', alignItems: 'center' }}>
+        <Grid container size={{ xs: 6 }}>
+          <Grid size={{ xs: 6 }} sx={{ paddingRight: '.5rem' }}>
             <Autocomplete
               disablePortal
               id="payer-filter"
@@ -29,11 +29,17 @@ export const SearchSection = (): JSX.Element => {
                 { label: 'Payer3', id: 'payer3' },
               ]}
               renderInput={({ InputProps, ...params }) => (
-                <TextField {...params} InputProps={{ ...InputProps, sx: { borderRadius: '1rem' } }} label="Payer" />
+                <TextField
+                  {...params}
+                  slotProps={{
+                    input: { ...InputProps, sx: { borderRadius: '1rem' } },
+                  }}
+                  label="Payer"
+                />
               )}
             />
           </Grid>
-          <Grid xs={6}>
+          <Grid size={{ xs: 6 }}>
             <Autocomplete
               disablePortal
               id="status-filter"
@@ -44,15 +50,20 @@ export const SearchSection = (): JSX.Element => {
                 { label: 'Status3', id: 'status3' },
               ]}
               renderInput={({ InputProps, ...params }) => (
-                <TextField {...params} InputProps={{ ...InputProps, sx: { borderRadius: '1rem' } }} label="Status" />
+                <TextField
+                  {...params}
+                  slotProps={{
+                    input: { ...InputProps, sx: { borderRadius: '1rem' } },
+                  }}
+                  label="Status"
+                />
               )}
             />
           </Grid>
         </Grid>
-        <Grid container xs={6} justifyContent={'flex-end'} wrap="nowrap">
+        <Grid container size={{ xs: 6 }} sx={{ justifyContent: 'flex-end', wrap: 'nowrap' }}>
           <Input
             sx={{ bgcolor: 'background.canvas', padding: '0 .5rem', borderRadius: '1.5rem', marginLeft: '.5rem' }}
-            disableUnderline
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             startAdornment={

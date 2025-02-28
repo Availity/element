@@ -25,7 +25,7 @@ export const SelectExpandIcon = styled(ExpandIcon, {
 
 // IconComponent is absolutely positioned, combining divider and icon to position together
 const InnerEndAdornment = (args: StackProps) => (
-  <Stack {...args} direction="row" height="100%" top="unset!important">
+  <Stack {...args} direction="row" sx={{ height: '100%', top: 'unset!important' }}>
     <SelectDivider orientation="vertical" className="MuiSelect-avEndAdornmentDivider" />
     <SelectExpandIcon className="MuiSelect-avExpandIcon" />
   </Stack>

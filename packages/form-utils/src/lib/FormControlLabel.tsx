@@ -16,7 +16,7 @@ const Wrapper = styled(Box, {
   name: 'MuiFormControlLabel',
   slot: 'AvWrapper',
   overridesResolver: (props, styles) => styles.avWrapper,
-})({});
+})({}) as typeof Box;
 
 export const FormControlLabel = forwardRef(({ helpTopicId, id, sx, ...rest }: FormControlLabelProps, ref) => {
   const labelId = id || (rest.htmlFor ? `${rest.htmlFor}-label` : undefined);

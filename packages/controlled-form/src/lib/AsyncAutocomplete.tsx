@@ -1,7 +1,7 @@
 import { AsyncAutocomplete, AsyncAutocompleteProps } from '@availity/mui-autocomplete';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
 import { ChipTypeMap } from '@mui/material/Chip';
-import { ControllerProps, DeprecatedRulesProps } from './Types';
+import { ControllerProps } from './Types';
 
 export type ControlledAsyncAutocompleteProps<
   Option,
@@ -9,13 +9,12 @@ export type ControlledAsyncAutocompleteProps<
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
-> = Omit<AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>,
-'onBlur' | 'onChange' | 'value' | 'name'
-> & Pick<RegisterOptions<FieldValues, string>,
-'onBlur' | 'onChange' | 'value'
-> & ControllerProps
-//TODO v1 - remove deprecated props
-& DeprecatedRulesProps;
+> = Omit<
+  AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>,
+  'onBlur' | 'onChange' | 'value' | 'name'
+> &
+  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
+  ControllerProps;
 
 export const ControlledAsyncAutocomplete = <
   Option,
@@ -25,18 +24,10 @@ export const ControlledAsyncAutocomplete = <
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
 >({
   name,
-  deps,
-  max,
-  maxLength,
-  min,
-  minLength,
   onBlur,
   onChange,
-  pattern,
-  required,
   rules = {},
   shouldUnregister,
-  validate,
   value,
   FieldProps,
   ...rest
@@ -46,17 +37,9 @@ export const ControlledAsyncAutocomplete = <
       name={name}
       defaultValue={rest.defaultValue}
       rules={{
-        deps,
-        max,
-        maxLength,
-        min,
-        minLength,
         onBlur,
         onChange,
-        pattern,
-        required,
         shouldUnregister,
-        validate,
         value,
         ...rules,
       }}
@@ -65,6 +48,7 @@ export const ControlledAsyncAutocomplete = <
         <AsyncAutocomplete
           {...rest}
           FieldProps={{
+            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
             ...FieldProps,
             error: !!error,
             helperText: error?.message ? (
@@ -76,7 +60,7 @@ export const ControlledAsyncAutocomplete = <
             ) : (
               FieldProps?.helperText
             ),
-            inputRef:ref
+            inputRef: ref,
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {

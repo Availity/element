@@ -1,0 +1,26 @@
+{
+  "name": "mui-codemod",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/codemod/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/codemod"],
+      "options": {
+        "jestConfig": "packages/codemod/jest.config.js"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "commitMessageFormat": "chore({projectName}): release version ${version} [skip ci]",
+        "tagPrefix": "@availity/{projectName}@",
+        "trackDeps": true,
+        "skipCommitTypes": ["docs"]
+      }
+    }
+  }
+}

@@ -43,9 +43,9 @@ describe('ControlledAsyncAutocomplete', () => {
             }}
             limit={15}
           />
-      </TestForm>
-    </QueryClientProvider>
-  );
+        </TestForm>
+      </QueryClientProvider>
+    );
 
     const dropdown = screen.getByRole('combobox');
     fireEvent.click(dropdown);
@@ -55,20 +55,20 @@ describe('ControlledAsyncAutocomplete', () => {
   });
 
   test('should set the value and submit the form data', async () => {
-      const screen = render(
-        <QueryClientProvider client={client}>
-          <TestForm onSubmit={onSubmit}>
-            <ControlledCodesAutocomplete
-              name="controlledCodesAutocomplete"
-              list="ABC"
-              FieldProps={{
-                label: 'Code Select',
-                helperText: 'Select a code from the list',
-                placeholder: 'Select...',
-                fullWidth: false,
-              }}
-              limit={15}
-            />
+    const screen = render(
+      <QueryClientProvider client={client}>
+        <TestForm onSubmit={onSubmit}>
+          <ControlledCodesAutocomplete
+            name="controlledCodesAutocomplete"
+            list="ABC"
+            FieldProps={{
+              label: 'Code Select',
+              helperText: 'Select a code from the list',
+              placeholder: 'Select...',
+              fullWidth: false,
+            }}
+            limit={15}
+          />
         </TestForm>
       </QueryClientProvider>
     );
@@ -89,6 +89,79 @@ describe('ControlledAsyncAutocomplete', () => {
       const controlledCodesAutocompleteValue = JSON.parse(result.innerHTML).controlledCodesAutocomplete;
       expect(controlledCodesAutocompleteValue.code).toBe('171100000X');
       expect(controlledCodesAutocompleteValue.value).toBe('Acupuncturist');
+    });
+  });
+
+  describe('when using rules', () => {
+    describe('when required', () => {
+      test('should indicate it is required when passing a string', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm onSubmit={onSubmit}>
+              <ControlledCodesAutocomplete
+                name="controlledCodesAutocomplete"
+                list="ABC"
+                FieldProps={{
+                  label: 'Code Select',
+                  helperText: 'Select a code from the list',
+                  placeholder: 'Select...',
+                  fullWidth: false,
+                }}
+                limit={15}
+                rules={{ required: 'This field is required' }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should indicate it is required when passing an object with true', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm onSubmit={onSubmit}>
+              <ControlledCodesAutocomplete
+                name="controlledCodesAutocomplete"
+                list="ABC"
+                FieldProps={{
+                  label: 'Code Select',
+                  helperText: 'Select a code from the list',
+                  placeholder: 'Select...',
+                  fullWidth: false,
+                }}
+                limit={15}
+                rules={{ required: { value: true, message: 'This field is required' } }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should not indicate it is required when passing an object with false', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm onSubmit={onSubmit}>
+              <ControlledCodesAutocomplete
+                name="controlledCodesAutocomplete"
+                list="ABC"
+                FieldProps={{
+                  label: 'Code Select',
+                  helperText: 'Select a code from the list',
+                  placeholder: 'Select...',
+                  fullWidth: false,
+                }}
+                limit={15}
+                rules={{ required: { value: false, message: 'This field is required' } }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.queryByText('*')).toBeNull();
+      });
     });
   });
 });

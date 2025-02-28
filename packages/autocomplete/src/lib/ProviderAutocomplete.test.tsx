@@ -52,4 +52,39 @@ describe('ProviderAutocomplete', () => {
       expect(screen.getByText('No options')).toBeDefined();
     });
   });
+
+  test('should refetch with no inputValue on clear', async () => {
+    const client = new QueryClient();
+
+    render(
+      <QueryClientProvider client={client}>
+        <ProviderAutocomplete customerId="123" FieldProps={{ label: 'Test' }} />
+      </QueryClientProvider>
+    );
+
+    const input = screen.getByRole('combobox');
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(screen.getByText('Provider 0')).toBeDefined();
+    });
+
+    fireEvent.change(input, { target: { value: '21' } });
+
+    await waitFor(() => {
+      expect(screen.getByText('Provider 21')).toBeDefined();
+      expect(() => screen.getByText('Provider 0')).toThrow();
+      fireEvent.click(screen.getByText('Provider 21'));
+    });
+
+    expect(screen.getByTitle('Clear')).toBeDefined();
+    fireEvent.click(screen.getByTitle('Clear'));
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(screen.getByText('Provider 0')).toBeDefined();
+    });
+  }, 10000000000);
 });

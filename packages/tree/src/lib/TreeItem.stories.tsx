@@ -62,7 +62,7 @@ export const _TreeIcon: StoryObj<typeof TreeItem> = {
   args: {
     itemId: 'tree-item',
     label: (
-      <Grid container alignItems="center">
+      <Grid container sx={{ alignItems: 'center' }}>
         <FolderIcon sx={{ marginRight: 1 }} />
         Tree Item
       </Grid>

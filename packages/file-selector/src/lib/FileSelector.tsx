@@ -310,7 +310,7 @@ export const FileSelector = ({
           customFileRow={customFileRow}
         />
         {files.length > 0 && (
-          <Grid xs={12} justifyContent="end" display="flex" paddingTop={2.5}>
+          <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
             <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
               Submit
             </Button>

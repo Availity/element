@@ -32,15 +32,15 @@ describe('ControlledOrganizationAutocomplete', () => {
     const screen = render(
       <QueryClientProvider client={client}>
         <TestForm onSubmit={onSubmit}>
-            <ControlledOrganizationAutocomplete
-              name="controlledOrganizationAutocomplete"
-              FieldProps={{
-                label: 'Organization Select',
-                helperText: 'Select an Organization from the list',
-                placeholder: 'Select...',
-                fullWidth: false,
-              }}
-            />
+          <ControlledOrganizationAutocomplete
+            name="controlledOrganizationAutocomplete"
+            FieldProps={{
+              label: 'Organization Select',
+              helperText: 'Select an Organization from the list',
+              placeholder: 'Select...',
+              fullWidth: false,
+            }}
+          />
         </TestForm>
       </QueryClientProvider>
     );
@@ -56,15 +56,15 @@ describe('ControlledOrganizationAutocomplete', () => {
     const screen = render(
       <QueryClientProvider client={client}>
         <TestForm onSubmit={onSubmit}>
-            <ControlledOrganizationAutocomplete
-              name="controlledOrganizationAutocomplete"
-              FieldProps={{
-                label: 'Organization Select',
-                helperText: 'Select an Organization from the list',
-                placeholder: 'Select...',
-                fullWidth: false,
-              }}
-            />
+          <ControlledOrganizationAutocomplete
+            name="controlledOrganizationAutocomplete"
+            FieldProps={{
+              label: 'Organization Select',
+              helperText: 'Select an Organization from the list',
+              placeholder: 'Select...',
+              fullWidth: false,
+            }}
+          />
         </TestForm>
       </QueryClientProvider>
     );
@@ -86,6 +86,73 @@ describe('ControlledOrganizationAutocomplete', () => {
       expect(controlledCodesAutocompleteValue.customerId).toBe('1');
       expect(controlledCodesAutocompleteValue.name).toBe('Organization 1');
       expect(controlledCodesAutocompleteValue.id).toBeDefined();
+    });
+  });
+
+  describe('when using rules', () => {
+    describe('when required', () => {
+      test('should indicate it is required when passing a string', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm onSubmit={onSubmit}>
+              <ControlledOrganizationAutocomplete
+                name="controlledOrganizationAutocomplete"
+                FieldProps={{
+                  label: 'Organization Select',
+                  helperText: 'Select an Organization from the list',
+                  placeholder: 'Select...',
+                  fullWidth: false,
+                }}
+                rules={{ required: 'This field is required' }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should indicate it is required when passing an object with true', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm onSubmit={onSubmit}>
+              <ControlledOrganizationAutocomplete
+                name="controlledOrganizationAutocomplete"
+                FieldProps={{
+                  label: 'Organization Select',
+                  helperText: 'Select an Organization from the list',
+                  placeholder: 'Select...',
+                  fullWidth: false,
+                }}
+                rules={{ required: { value: true, message: 'This field is required' } }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.getByText('*')).toBeDefined();
+      });
+
+      test('should not indicate it is required when passing an object with false', async () => {
+        const screen = render(
+          <QueryClientProvider client={client}>
+            <TestForm onSubmit={onSubmit}>
+              <ControlledOrganizationAutocomplete
+                name="controlledOrganizationAutocomplete"
+                FieldProps={{
+                  label: 'Organization Select',
+                  helperText: 'Select an Organization from the list',
+                  placeholder: 'Select...',
+                  fullWidth: false,
+                }}
+                rules={{ required: { value: false, message: 'This field is required' } }}
+              />
+            </TestForm>
+          </QueryClientProvider>
+        );
+
+        expect(screen.queryByText('*')).toBeNull();
+      });
     });
   });
 });

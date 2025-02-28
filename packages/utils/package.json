@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-utils",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Availity MUI Utils Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -40,14 +40,14 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
-    "@mui/utils": "^5.15.15",
+    "@mui/utils": "^6.4.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsup": "^8.0.2",
+    "tsup": "^8.3.6",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "@mui/utils": "^5.11.9",
+    "@mui/utils": "^6.4.3",
     "react": ">=16.3.0"
   },
   "publishConfig": {

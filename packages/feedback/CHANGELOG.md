@@ -2,6 +2,46 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0](https://github.com/Availity/element/compare/@availity/mui-feedback@1.0.0-alpha.0...@availity/mui-feedback@1.0.0) (2025-02-25)
+
+### Dependency Updates
+
+* `mui-button` updated to version `0.4.1`
+* `mui-form-utils` updated to version `0.4.1`
+* `mui-icon` updated to version `0.4.1`
+* `mui-layout` updated to version `0.4.1`
+* `mui-popover` updated to version `0.4.1`
+* `mui-textfield` updated to version `0.4.1`
+* `mui-toggle-button` updated to version `0.4.1`
+* `mui-typography` updated to version `0.4.1`
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to @mui/material v6
+
+### Miscellaneous Chores
+
+* element v1 release ([a6e3567](https://github.com/Availity/element/commit/a6e35671185b9f13d25c7a39c4488ecb8774633e))
+
+## [1.0.0-alpha.0](https://github.com/Availity/element/compare/@availity/mui-feedback@0.4.1...@availity/mui-feedback@1.0.0-alpha.0) (2025-02-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgraded to @mui/material v6
+* **element:** upgraded to @mui/material v6
+
+### Features
+
+* **element:** upgrade to @mui/material v6 ([cb958bb](https://github.com/Availity/element/commit/cb958bba99a4f1ee6dab323f0ff54b69e6fd3493))
+* upgrade @mui/material ([571453a](https://github.com/Availity/element/commit/571453a34b21c344594ab4c03bc497d19aba942b))
+* upgrade to MUI v6 ([7febd6f](https://github.com/Availity/element/commit/7febd6fd4fd58e87e1c97a832cea3b4595a35d58))
+
+
+### Bug Fixes
+
+* **mui-feedback:** cleanup FormButton styling ([2245012](https://github.com/Availity/element/commit/224501284abf5d5120ce14a34bd11e608af5ad62))
+
 ## [0.4.1](https://github.com/Availity/element/compare/@availity/mui-feedback@0.4.0...@availity/mui-feedback@0.4.1) (2025-02-18)
 
 ### Dependency Updates

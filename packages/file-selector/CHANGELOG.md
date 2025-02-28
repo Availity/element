@@ -2,6 +2,42 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.0.0-alpha.0...@availity/mui-file-selector@1.0.0) (2025-02-25)
+
+### Dependency Updates
+
+* `mui-paper` updated to version `0.3.3`
+* `mui-alert` updated to version `0.3.3`
+* `mui-button` updated to version `0.3.3`
+* `mui-divider` updated to version `0.3.3`
+* `mui-form-utils` updated to version `0.3.3`
+* `mui-icon` updated to version `0.3.3`
+* `mui-layout` updated to version `0.3.3`
+* `mui-list` updated to version `0.3.3`
+* `mui-progress` updated to version `0.3.3`
+* `mui-typography` updated to version `0.3.3`
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to @mui/material v6
+
+### Miscellaneous Chores
+
+* element v1 release ([a6e3567](https://github.com/Availity/element/commit/a6e35671185b9f13d25c7a39c4488ecb8774633e))
+
+## [1.0.0-alpha.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.3.3...@availity/mui-file-selector@1.0.0-alpha.0) (2025-02-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgraded to @mui/material v6
+* **element:** upgraded to @mui/material v6
+
+### Features
+
+* **element:** upgrade to @mui/material v6 ([cb958bb](https://github.com/Availity/element/commit/cb958bba99a4f1ee6dab323f0ff54b69e6fd3493))
+* upgrade @mui/material ([571453a](https://github.com/Availity/element/commit/571453a34b21c344594ab4c03bc497d19aba942b))
+
 ## [0.3.3](https://github.com/Availity/element/compare/@availity/mui-file-selector@0.3.2...@availity/mui-file-selector@0.3.3) (2025-02-19)
 
 ### Dependency Updates

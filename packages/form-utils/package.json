@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-form-utils",
-  "version": "0.17.1",
+  "version": "1.0.0",
   "description": "Availity MUI Form Components - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@availity/message-core": "^7.0.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2"
+    "@fortawesome/free-solid-svg-icons": "^6.7.2"
   },
   "devDependencies": {
     "@availity/mui-button": "workspace:*",
@@ -49,16 +49,16 @@
     "@availity/mui-icon": "workspace:*",
     "@availity/mui-typography": "workspace:*",
     "@availity/mui-utils": "workspace:*",
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^6.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsup": "^8.0.2",
+    "tsup": "^8.3.6",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "@availity/mui-button": "workspace:*",
     "@availity/mui-icon": "workspace:*",
-    "@mui/material": "^5.11.9",
+    "@mui/material": "^6.4.5",
     "react": ">=16.3.0"
   },
   "publishConfig": {

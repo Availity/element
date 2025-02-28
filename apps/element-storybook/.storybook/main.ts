@@ -5,8 +5,10 @@ import { StorybookConfig } from '@storybook/react-vite';
 const config: StorybookConfig = {
   stories: [
     '../src/*.mdx',
-    '../src/**/*.@(stories.@(js|jsx|ts|tsx|mdx))',
+    '../src/**/*.mdx',
+    '../src/**/*.@(stories.@(js|jsx|ts|tsx))',
     '../../../packages/*/*.mdx',
+    '../../../packages/*/src/lib/*.mdx',
     '../../../packages/*/src/lib/*.@(stories.@(js|jsx|ts|tsx|mdx))',
   ],
 
@@ -24,7 +26,6 @@ const config: StorybookConfig = {
         },
       },
     },
-    getAbsolutePath('@chromatic-com/storybook'),
   ],
 
   framework: {
@@ -48,7 +49,11 @@ const config: StorybookConfig = {
   },
 
   staticDirs: ['../../../static'],
-  features: { storyStoreV7: false, legacyMdx1: true },
+  features: {
+    storyStoreV7: false
+  },
+
+  docs: {}
 };
 
 export default config;

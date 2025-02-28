@@ -2,6 +2,25 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.16.1-alpha.0...@availity/design-tokens@1.0.0) (2025-02-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to @mui/material v6
+* element v1 release
+
+### Documentation
+
+* update docs ([b944e78](https://github.com/Availity/element/commit/b944e78856e395b58d08cbe6cf0c6ec370b1b8e0))
+
+
+### Miscellaneous Chores
+
+* element v1 release ([a6e3567](https://github.com/Availity/element/commit/a6e35671185b9f13d25c7a39c4488ecb8774633e))
+
+## [0.16.1-alpha.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.16.0...@availity/design-tokens@0.16.1-alpha.0) (2025-02-24)
+
 ## [0.16.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.15.0...@availity/design-tokens@0.16.0) (2025-02-04)
 
 

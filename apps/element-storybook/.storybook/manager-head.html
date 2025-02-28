@@ -5,33 +5,37 @@
     }
   }
   .sidebar-container {
-    background-color: rgb(17, 49, 90);
+    background-color: rgb(17, 49, 90) !important;
   }
   #storybook-explorer-tree {
     & > div > div > .sidebar-item {
-      margin-left: 8px;
+      margin-left: 8px !important;
+      &:hover:not([data-selected="true"]) {
+        background-color: rgba(255,103,31,0.07)
+      }
     }
     .sidebar-subheading > button {
-      color: #FFE5CC;
+      color: #FFE5CC !important;
     }
     button[data-nodetype="component"], button[data-nodetype="group"] {
       svg, svg use {
-        color: #ffffff;
+        color: #ffffff !important;
       }
     }
     button[data-nodetype="group"] svg {
-      display: none;
+      display: none !important;
     }
     div, button, a {
-      color: #ffffff;
+      color: #ffffff !important;
     }
   }
   .search-field {
+    background-color: transparent !important;
     #storybook-explorer-searchfield {
-      background-color: transparent;
-      color: #ffffff;
+      background-color: transparent !important;
+      color: #ffffff !important;
       &:not(:focus, :focus-visible) {
-        border-color: #ffffff;
+        border-color: #ffffff !important;
       }
     }
     > svg, > code, &:focus-within > svg, &:focus-within > code {
@@ -40,11 +44,14 @@
     }
   }
   .search-result-item--label strong {
-    color: #ffffff;
+    color: #ffffff !important;
   }
   #storybook-explorer-menu {
     li > div, li > div *{
-      color: #ffffff;
+      color: #ffffff !important;
     }
   }
+  #icon--group {
+      color: rgb(255, 103, 31);
+    }
 </style>

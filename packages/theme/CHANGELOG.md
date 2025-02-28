@@ -2,6 +2,33 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0](https://github.com/Availity/element/compare/@availity/theme@0.67.2-alpha.0...@availity/theme@1.0.0) (2025-02-25)
+
+### Dependency Updates
+
+* `design-tokens` updated to version `0.67.1`
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to @mui/material v6
+* element v1 release
+
+### Documentation
+
+* update docs ([b944e78](https://github.com/Availity/element/commit/b944e78856e395b58d08cbe6cf0c6ec370b1b8e0))
+
+
+### Miscellaneous Chores
+
+* element v1 release ([a6e3567](https://github.com/Availity/element/commit/a6e35671185b9f13d25c7a39c4488ecb8774633e))
+
+## [0.67.2-alpha.0](https://github.com/Availity/element/compare/@availity/theme@0.67.1...@availity/theme@0.67.2-alpha.0) (2025-02-24)
+
+
+### Bug Fixes
+
+* **mui-accordion:** cleanup Accordion styling to account for new h3 layer ([031f86e](https://github.com/Availity/element/commit/031f86e7821716cdf93c375f5118dbe02431ad44))
+
 ## [0.67.1](https://github.com/Availity/element/compare/@availity/theme@0.67.0...@availity/theme@0.67.1) (2025-02-05)
 
 ## [0.67.0](https://github.com/Availity/element/compare/@availity/theme@0.66.0...@availity/theme@0.67.0) (2025-02-04)

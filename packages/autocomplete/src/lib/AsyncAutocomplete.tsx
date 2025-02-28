@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { ChipTypeMap } from '@mui/material/Chip';
 import { useInfiniteQuery, UseInfiniteQueryOptions } from '@tanstack/react-query';
+import { AutocompleteInputChangeReason } from '@mui/material/Autocomplete';
 
 import { Autocomplete, AutocompleteProps } from './Autocomplete';
 import { useDebounce } from './util';
@@ -28,7 +29,7 @@ export interface AsyncAutocompleteProps<
   limit?: number;
   /** Config options for the useInfiniteQuery hook */
   queryOptions?: UseInfiniteQueryOptions<{ options: Option[]; hasMore: boolean; offset: number }>;
-  /** Object of parameters used for the cacheKey. Options are re-reftched when a value in the object changes  */
+  /** Object of parameters used for the cacheKey. Options are re-refetched when a value in the object changes  */
   watchParams?: Record<string, unknown>;
   /** Time to wait before searching with the input value typed into the component */
   debounceTimeout?: number;
@@ -49,11 +50,12 @@ export const AsyncAutocomplete = <
   watchParams,
   debounceTimeout = 350,
   FieldProps,
+  onInputChange,
   ...rest
 }: AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
   const [inputValue, setInputValue] = useState('');
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputPropsOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
     // Call passed in onChange if present
     if (FieldProps?.InputProps?.onChange) FieldProps.InputProps.onChange(event);
@@ -71,14 +73,27 @@ export const AsyncAutocomplete = <
 
   const options = data?.pages ? data.pages.map((page) => page.options).flat() : [];
 
+  const handleOnInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    value: string,
+    reason: AutocompleteInputChangeReason
+  ) => {
+    if (reason === 'clear') {
+      setInputValue(event.target.value);
+    }
+
+    if (onInputChange) onInputChange(event, value, reason);
+  };
+
   return (
     <Autocomplete
       {...rest}
+      onInputChange={handleOnInputChange}
       FieldProps={{
         ...FieldProps,
         InputProps: {
           ...FieldProps?.InputProps,
-          onChange: handleInputChange,
+          onChange: handleInputPropsOnChange,
         },
       }}
       loading={isFetching}
