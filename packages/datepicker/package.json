@@ -42,18 +42,18 @@
   "dependencies": {
     "@availity/mui-icon": "workspace:*",
     "@availity/mui-textfield": "workspace:*",
-    "@mui/x-date-pickers": "^7.26.0",
+    "@mui/x-date-pickers": "^7.27.1",
     "dayjs": "^1.11.13"
   },
   "devDependencies": {
-    "@mui/material": "^6.4.5",
+    "@mui/material": "^6.4.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^8.3.6",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "@mui/material": "^6.4.5",
+    "@mui/material": "^6.4.6",
     "react": ">=16.3.0"
   },
   "publishConfig": {
