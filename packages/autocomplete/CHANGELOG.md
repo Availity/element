@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.2](https://github.com/Availity/element/compare/@availity/mui-autocomplete@1.0.1...@availity/mui-autocomplete@1.0.2) (2025-03-03)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** resolve InputProps overwrites ([1700687](https://github.com/Availity/element/commit/17006876c43c4a8ec00d3cf5b2d3f3c4ffa35bb1))
+
 ## [1.0.1](https://github.com/Availity/element/compare/@availity/mui-autocomplete@1.0.0...@availity/mui-autocomplete@1.0.1) (2025-02-26)
 
 
