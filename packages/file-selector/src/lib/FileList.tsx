@@ -34,9 +34,21 @@ export type FileRowProps = {
     options: Options;
     onRemoveFile: (id: string, upload: Upload) => void;
   }>;
+  /**
+   * Whether the remove button is disabled
+   * @default false
+   */
+  disableRemove?: boolean;
 };
 
-export const FileRow = ({ file, options, onRemoveFile, queryOptions, customFileRow: CustomRow }: FileRowProps) => {
+export const FileRow = ({
+  file,
+  options,
+  onRemoveFile,
+  queryOptions,
+  customFileRow: CustomRow,
+  disableRemove = false,
+}: FileRowProps) => {
   const Icon = getFileExtIcon(file.name);
 
   const { data: upload } = useUploadCore(file, options, queryOptions);
@@ -49,15 +61,17 @@ export const FileRow = ({ file, options, onRemoveFile, queryOptions, customFileR
     <ListItem
       disableGutters
       secondaryAction={
-        <IconButton
-          title="remove file"
-          edge="end"
-          onClick={() => {
-            onRemoveFile(upload.id, upload);
-          }}
-        >
-          <DeleteIcon />
-        </IconButton>
+        !disableRemove && (
+          <IconButton
+            title="remove file"
+            edge="end"
+            onClick={() => {
+              onRemoveFile(upload.id, upload);
+            }}
+          >
+            <DeleteIcon />
+          </IconButton>
+        )
       }
     >
       <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%">
@@ -94,6 +108,7 @@ export const FileList = ({
   onRemoveFile,
   queryOptions,
   customFileRow,
+  disableRemove,
 }: FileListProps): JSX.Element | null => {
   if (files.length === 0) return null;
 
@@ -108,6 +123,7 @@ export const FileList = ({
             onRemoveFile={onRemoveFile}
             queryOptions={queryOptions}
             customFileRow={customFileRow}
+            disableRemove={disableRemove}
           />
         );
       })}
