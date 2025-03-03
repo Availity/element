@@ -1,5 +1,7 @@
 import { useCallback } from 'react';
 import type { Dispatch, MouseEvent } from 'react';
+import { styled } from '@mui/material/styles';
+import MuiBox from '@mui/material/Box';
 import { useDropzone } from 'react-dropzone';
 import type { DropEvent, FileError, FileRejection } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
@@ -93,6 +95,14 @@ export type DropzoneProps = {
    * */
   validator?: (file: File) => FileError | FileError[] | null;
 };
+
+const DropzoneContainer = styled(Box, { name: 'AvDropzoneContainer', slot: 'root' })({
+  '.MuiDivider-root': {
+    width: '196px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+}) as typeof MuiBox;
 
 export const Dropzone = ({
   allowedFileTypes = [],
@@ -215,7 +225,7 @@ export const Dropzone = ({
   const hasFiles = getFieldValue().length > 0;
 
   return enableDropArea ? (
-    <Box sx={outerBoxStyles} {...rootProps}>
+    <DropzoneContainer sx={outerBoxStyles} {...rootProps}>
       <Box sx={innerBoxStyles}>
         <Stack spacing={2} alignItems="center" justifyContent="center">
           <>
@@ -223,7 +233,9 @@ export const Dropzone = ({
             <Typography variant="subtitle2" fontWeight="700">
               Drag and Drop Files Here
             </Typography>
-            <Divider>OR</Divider>
+            <Divider flexItem>
+              <Typography variant="subtitle2">OR</Typography>
+            </Divider>
             <FilePickerBtn
               name={name}
               color="primary"
@@ -238,7 +250,7 @@ export const Dropzone = ({
           </>
         </Stack>
       </Box>
-    </Box>
+    </DropzoneContainer>
   ) : (
     <FilePickerBtn
       name={name}
