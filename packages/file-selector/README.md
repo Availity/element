@@ -71,7 +71,7 @@ import { FileSelector } from '@availity/mui-file-selector';
 const MyComponent = () => {
   const methods = useForm({
     defaultValues: {
-      [props.name]: [] as File[],
+      myFiles: [] as File[],
     },
   });
 
@@ -80,7 +80,7 @@ const MyComponent = () => {
   const files = methods.watch(props.name);
 
   const handleOnSubmit = (values: Record<string, File[]>) => {
-    if (values[props.name].length === 0) return;
+    if (values.myFiles.length === 0) return;
 
     const queries = client.getQueriesData<Upload>(['upload']);
     const uploads = [];
@@ -125,9 +125,13 @@ const MyFileUploadComponent = () => {
   };
 
   const handleValidation = (file) => {
-    // Custom validation can be added with the `validator` prop
+    // Custom validation can be added with the `validator` prop.
     // If an error fails validation here it should show up
-    // in the `fileRejections` array from `onDrop`
+    // in the `fileRejections` array from `onDrop`.
+    //
+    // To return a custom error, return an object with a code
+    // and message.
+    // return { code: 'an-error', message: 'An error occurred' };
   };
 
   return (
@@ -218,3 +222,59 @@ const MyFileUploadComponent = () => {
 
 export default MyFileUploadComponent;
 ```
+
+##### Custom `helpText`
+
+To provide custom help text, pass it as a child of the `<FileSelector />` component. The help text should be formatted using the `<Typography />` component with the `'caption'` variant.
+
+```tsx
+import React from 'react';
+import { FileSelector } from '@availity/mui-file-selector';
+import { Typography } from '@availity/mui-typography';
+
+const MyComponent = () => {
+  const methods = useForm({
+    defaultValues: {
+      myFiles: [] as File[],
+    },
+  });
+
+  const client = useQueryClient();
+
+  const files = methods.watch('myFiles);
+
+  const handleOnSubmit = (values: Record<string, File[]>) => {
+    if (values.myFiles.length === 0) return;
+
+    const queries = client.getQueriesData<Upload>(['upload']);
+    const uploads = [];
+    for (const [, data] of queries) {
+      if (data) uploads.push(data);
+    }
+  };
+
+  return (
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
+        <FileSelector
+          name="myFiles"
+          bucketId="your-bucket-id"
+          customerId="your-customer-id"
+          clientId="your-client-id"
+          maxSize={5 * 1024 * 1024} // 5MB
+          maxFiles={3}
+          allowedFileTypes={['.pdf', '.doc', '.docx']}
+        >
+          <Typography component="div" variant="caption">Here is some help text.</Typography>
+        </FileSelector>
+      </form>
+    </FormProvider>
+  );
+};
+
+export default MyComponent;
+```
+
+
+
+
