@@ -71,7 +71,7 @@ import { FileSelector } from '@availity/mui-file-selector';
 const MyComponent = () => {
   const methods = useForm({
     defaultValues: {
-      [props.name]: [] as File[],
+      myFiles: [] as File[],
     },
   });
 
@@ -80,7 +80,7 @@ const MyComponent = () => {
   const files = methods.watch(props.name);
 
   const handleOnSubmit = (values: Record<string, File[]>) => {
-    if (values[props.name].length === 0) return;
+    if (values.myFiles.length === 0) return;
 
     const queries = client.getQueriesData<Upload>(['upload']);
     const uploads = [];
@@ -235,16 +235,16 @@ import { Typography } from '@availity/mui-typography';
 const MyComponent = () => {
   const methods = useForm({
     defaultValues: {
-      [props.name]: [] as File[],
+      myFiles: [] as File[],
     },
   });
 
   const client = useQueryClient();
 
-  const files = methods.watch(props.name);
+  const files = methods.watch('myFiles);
 
   const handleOnSubmit = (values: Record<string, File[]>) => {
-    if (values[props.name].length === 0) return;
+    if (values.myFiles.length === 0) return;
 
     const queries = client.getQueriesData<Upload>(['upload']);
     const uploads = [];
