@@ -2,6 +2,31 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.0.0...@availity/mui-file-selector@1.1.0) (2025-03-04)
+
+
+### Features
+
+* **mui-file-selector:** add ability to disable remove button on FileList ([df1f7f0](https://github.com/Availity/element/commit/df1f7f05016bf625208db18ee1d4ef96912abaac))
+
+
+### Bug Fixes
+
+* **mui-file-selector:** add ability to override file row ([5dd864b](https://github.com/Availity/element/commit/5dd864baf323fe879de6efda6b6176be09e058d0))
+* **mui-file-selector:** add ability to toggle dropzone area ([2c80730](https://github.com/Availity/element/commit/2c807309f1e387a2531b56421f2d7e08d4c50e19))
+* **mui-file-selector:** add exports ([c7c50d1](https://github.com/Availity/element/commit/c7c50d1a90bafa424f9758c191f25c1772cc945d))
+* **mui-file-selector:** add metadata prop ([757b747](https://github.com/Availity/element/commit/757b747d66f6d2fe2414cf14e30ec72c33b1547e))
+* **mui-file-selector:** add uploadOptions prop ([afaabe7](https://github.com/Availity/element/commit/afaabe7498535d40ea426a88c8c6d81701ff078e))
+* **mui-file-selector:** display divider with OR on the FileSelector dropzone ([8f5fd5a](https://github.com/Availity/element/commit/8f5fd5a3a813a6244a4a72b6cd6878325c095d7a))
+* **mui-file-selector:** fix bugs, add onDrop and validator props ([01d4257](https://github.com/Availity/element/commit/01d42570496797b080f5d5552e4cdaf2843d621b))
+* **mui-file-selector:** fix spacing ([b9964bc](https://github.com/Availity/element/commit/b9964bc9446a7b2d2bc07f999a93cce4af524f3b))
+* **mui-file-selector:** fix type and add docs ([704454f](https://github.com/Availity/element/commit/704454f7fde50ddb4154f287355026810dd152dc))
+* **mui-file-selector:** fix unit test ([92f08fc](https://github.com/Availity/element/commit/92f08fc7c3e86e27d4436090ba2b781c2a26c024))
+* **mui-file-selector:** fix unit test ([f892c12](https://github.com/Availity/element/commit/f892c1268bd20acdd2be7cc39eeb7f9dd7260f5e))
+* **mui-file-selector:** fix unit test ([c4282c1](https://github.com/Availity/element/commit/c4282c1a93c1ef3ec5380aed09b02d07ce26dab1))
+* **mui-file-selector:** remove form and make input standalone ([a6b6e81](https://github.com/Availity/element/commit/a6b6e81f5c4f8133676b5e07b58d208d2bf46a11))
+* **mui-file-selector:** update query format ([0372a45](https://github.com/Availity/element/commit/0372a45864aadf42aa1c2e23aca132f7bea4ad23))
+
 ## [1.0.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.0.0-alpha.0...@availity/mui-file-selector@1.0.0) (2025-02-25)
 
 ### Dependency Updates
