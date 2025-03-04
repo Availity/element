@@ -62,29 +62,47 @@ import { FileSelector } from '@availity/mui-file-selector';
 
 #### Basic Example
 
-Here's a basic example of how to use the FileSelector component:
+The `FileSelector` component must be used inside a `FormProvider` from `react-hook-form` and a `QueryClientProvider` from `@tanstack/react-query`. Each provider has its own state that is necessary for using the component. The `FormProvider` stores the `Files` that are selected while the `QueryClientProvider` has the `upload` response data.
 
 ```tsx
 import React from 'react';
 import { FileSelector } from '@availity/mui-file-selector';
 
 const MyComponent = () => {
-  const handleSubmit = (uploads, values) => {
-    console.log('Submitted files:', uploads);
-    console.log('Form values:', values);
+  const methods = useForm({
+    defaultValues: {
+      [props.name]: [] as File[],
+    },
+  });
+
+  const client = useQueryClient();
+
+  const files = methods.watch(props.name);
+
+  const handleOnSubmit = (values: Record<string, File[]>) => {
+    if (values[props.name].length === 0) return;
+
+    const queries = client.getQueriesData<Upload>(['upload']);
+    const uploads = [];
+    for (const [, data] of queries) {
+      if (data) uploads.push(data);
+    }
   };
 
   return (
-    <FileSelector
-      name="myFiles"
-      bucketId="your-bucket-id"
-      customerId="your-customer-id"
-      clientId="your-client-id"
-      maxSize={5 * 1024 * 1024} // 5MB
-      allowedFileTypes={['.pdf', '.doc', '.docx']}
-      maxFiles={3}
-      onSubmit={handleSubmit}
-    />
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
+        <FileSelector
+          name="myFiles"
+          bucketId="your-bucket-id"
+          customerId="your-customer-id"
+          clientId="your-client-id"
+          maxSize={5 * 1024 * 1024} // 5MB
+          maxFiles={3}
+          allowedFileTypes={['.pdf', '.doc', '.docx']}
+        />
+      </form>
+    </FormProvider>
   );
 };
 
@@ -93,18 +111,58 @@ export default MyComponent;
 
 #### Advanced Examples
 
-The `onSuccess` and `onError` callbacks are available to use to add logic for after the file is uploaded or in the event there is an error with the api call.
+> Note: the following examples assume you have setup `react-hook-form` and `react-query` already
+
+##### File Selection Events
 
 ```tsx
 import React from 'react';
 import { FileSelector } from '@availity/mui-file-selector';
 
 const MyFileUploadComponent = () => {
-  const handleSuccess = () => {
+  const handleOnDrop = (acceptedFiles, fileRejections, event) => {
+    // Use this callback for interacting with the files before they are uploaded
+  };
+
+  const handleValidation = (file) => {
+    // Custom validation can be added with the `validator` prop
+    // If an error fails validation here it should show up
+    // in the `fileRejections` array from `onDrop`
+  };
+
+  return (
+    <FileSelector
+      name="documentUpload"
+      bucketId="your-bucket-id"
+      customerId="your-customer-id"
+      clientId="your-client-id"
+      maxSize={10 * 1024 * 1024} // 10MB
+      allowedFileTypes={['.pdf', '.doc', '.docx']}
+      multiple={true}
+      maxFiles={5}
+      onDrop={handleOnDrop}
+      validator={handleValidation}
+    />
+  );
+};
+
+export default MyFileUploadComponent;
+```
+
+##### Upload Callbacks
+
+It is possible to pass callbacks based on whether the upload finished successfully or there was an error.
+
+```tsx
+import React from 'react';
+import { FileSelector } from '@availity/mui-file-selector';
+
+const MyFileUploadComponent = () => {
+  const handleOnSuccess = () => {
     // Handle successful upload - e.g., show success message, update UI
   };
 
-  const handleError = (error) => {
+  const handleOnError = (error) => {
     // Handle upload error - e.g., show error message, retry upload
   };
 
@@ -118,8 +176,42 @@ const MyFileUploadComponent = () => {
       allowedFileTypes={['.pdf', '.doc', '.docx']}
       multiple={true}
       maxFiles={5}
-      onSuccess={handleSuccess}
-      onError={handleError}
+      uploadOptions={{
+        onSuccess: handleOnSuccess,
+        onError: handleOnError,
+      }}
+    />
+  );
+};
+
+export default MyFileUploadComponent;
+```
+
+##### Custom File Row
+
+If you would like to show different information in each row then you are able to pass a custom `FileRow` component. We recommend using the `ListItem` component. The upload object from `@availity/upload-core`, the options passed to its constructor, and the `onRemoveFile` function will all be passed as props.
+
+```tsx
+import React from 'react';
+import { FileSelector } from '@availity/mui-file-selector';
+import { ListItem } from '@availity/mui-list';
+
+const FileRow = ({ upload, options, onRemoveFile }) => {
+  return <ListItem>Your code here</ListItem>;
+};
+
+const MyFileUploadComponent = () => {
+  return (
+    <FileSelector
+      name="documentUpload"
+      bucketId="your-bucket-id"
+      customerId="your-customer-id"
+      clientId="your-client-id"
+      maxSize={10 * 1024 * 1024} // 10MB
+      allowedFileTypes={['.pdf', '.doc', '.docx']}
+      multiple={true}
+      maxFiles={5}
+      customFileRow={FileRow}
     />
   );
 };

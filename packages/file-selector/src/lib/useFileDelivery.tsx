@@ -77,7 +77,9 @@ export function useFileDelivery({
     uploads.length > 0 &&
     validate(errors);
 
-  return useQuery(['file-delivery', customerId, clientId, bucketId], () => callFileDelivery(uploads), {
+  return useQuery({
+    queryKey: ['file-delivery', customerId, clientId, bucketId],
+    queryFn: () => callFileDelivery(uploads),
     enabled: isQueryEnabled,
     retry: false,
   });

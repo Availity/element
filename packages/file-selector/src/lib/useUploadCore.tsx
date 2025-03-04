@@ -1,10 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import Upload, { UploadOptions } from '@availity/upload-core';
+import type { UseQueryOptions } from '@tanstack/react-query';
+import Upload from '@availity/upload-core';
+import type { UploadOptions } from '@availity/upload-core';
 
 export type Options = {
   onError?: (error: Error) => void;
   onSuccess?: () => void;
 } & UploadOptions;
+
+export type UploadQueryOptions = UseQueryOptions<Upload, Error, Upload, [string, string, Options]>;
 
 async function startUpload(file: File, options: Options) {
   const { onSuccess, onError, ...uploadOptions } = options;
@@ -20,12 +24,15 @@ async function startUpload(file: File, options: Options) {
   return upload;
 }
 
-export function useUploadCore(file: File, options: Options) {
+export function useUploadCore(file: File, options: Options, queryOptions?: UploadQueryOptions) {
   const isQueryEnabled = !!file;
 
-  return useQuery(['upload', file.name, options], () => startUpload(file, options), {
+  return useQuery({
+    queryKey: ['upload', file.name, options],
+    queryFn: () => startUpload(file, options),
     enabled: isQueryEnabled,
     retry: false,
     refetchOnWindowFocus: false,
+    ...queryOptions,
   });
 }

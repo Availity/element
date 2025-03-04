@@ -11,10 +11,10 @@ const TestForm = ({ children }: { children: ReactNode }) => {
   return <FormProvider {...methods}>{children}</FormProvider>;
 };
 
+const client = new QueryClient();
+
 describe('Dropzone', () => {
   test('should render successfully', () => {
-    const client = new QueryClient();
-
     render(
       <QueryClientProvider client={client}>
         <TestForm>

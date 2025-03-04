@@ -1,8 +1,12 @@
-import { Dispatch, MouseEvent, useCallback, ChangeEvent } from 'react';
-import { useDropzone, FileRejection } from 'react-dropzone';
+import { useCallback } from 'react';
+import type { Dispatch, MouseEvent } from 'react';
+import { styled } from '@mui/material/styles';
+import MuiBox from '@mui/material/Box';
+import { useDropzone } from 'react-dropzone';
+import type { DropEvent, FileError, FileRejection } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
 import { Divider } from '@availity/mui-divider';
-import { CloudUploadIcon } from '@availity/mui-icon';
+import { CloudUploadIcon, PlusIcon } from '@availity/mui-icon';
 import { Box, Stack } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 
@@ -51,6 +55,10 @@ export type DropzoneProps = {
    */
   disabled?: boolean;
   /**
+   * Whether to enable the dropzone area
+   */
+  enableDropArea?: boolean;
+  /**
    * Maximum number of files that can be uploaded
    */
   maxFiles?: number;
@@ -65,11 +73,15 @@ export type DropzoneProps = {
   /**
    * Handler called when the file input's value changes
    */
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: DropEvent) => void;
   /**
    * Handler called when the file picker button is clicked
    */
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * More sophisticated version of "onChange". This is the recommend function to use for changes to the form state
+   */
+  onDrop?: (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[], event: DropEvent) => void;
   /**
    * Callback to handle rejected files that don't meet validation criteria
    */
@@ -78,58 +90,76 @@ export type DropzoneProps = {
    * Callback to update the total size of all uploaded files
    */
   setTotalSize: Dispatch<React.SetStateAction<number>>;
+  /**
+   * Validation function used for custom validation that is not covered with the other props
+   * */
+  validator?: (file: File) => FileError | FileError[] | null;
 };
 
-// The types below were props used in the availity-react implementation.
-// Perserving this here in case it needs to be added back
-// deliverFileOnSubmit?: boolean;
-// deliveryChannel?: string;
-// fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
-// onDeliveryError?: (responses: unknown[]) => void;
-// onDeliverySuccess?: (responses: unknown[]) => void;
-// onFileDelivery?: (upload: Upload) => void;
+const DropzoneContainer = styled(Box, { name: 'AvDropzoneContainer', slot: 'root' })({
+  '.MuiDivider-root': {
+    width: '196px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+}) as typeof MuiBox;
 
 export const Dropzone = ({
   allowedFileTypes = [],
   disabled,
+  enableDropArea = true,
   maxFiles,
   maxSize,
   multiple,
   name,
   onChange,
   onClick,
+  onDrop,
   setFileRejections,
   setTotalSize,
+  validator,
 }: DropzoneProps) => {
-  const { setValue, watch } = useFormContext();
+  const { getValues, setValue, watch } = useFormContext();
 
-  const validator = useCallback(
+  const handleValidation = useCallback(
     (file: File) => {
       const previous: File[] = watch(name) ?? [];
+      const errors: FileError[] = [];
 
       const isDuplicate = previous.some((prev) => prev.name === file.name);
       if (isDuplicate) {
-        return {
+        errors.push({
           code: 'duplicate-name',
           message: 'A file with this name already exists',
-        };
+        });
       }
 
       const hasMaxFiles = maxFiles && previous.length >= maxFiles;
       if (hasMaxFiles) {
-        return {
+        errors.push({
           code: 'too-many-files',
           message: `Too many files. You may only upload ${maxFiles} file(s).`,
-        };
+        });
       }
 
-      return null;
+      if (validator) {
+        const validatorErrors = validator(file);
+        if (validatorErrors) {
+          if (Array.isArray(validatorErrors)) {
+            errors.push(...validatorErrors);
+          } else {
+            errors.push(validatorErrors);
+          }
+        }
+      }
+
+      return errors.length > 0 ? errors : null;
     },
-    [maxFiles]
+    [maxFiles, validator]
   );
 
-  const onDrop = useCallback(
-    (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[]) => {
+  const handleOnDrop = useCallback(
+    (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[], event: DropEvent) => {
       let newSize = 0;
       for (const file of acceptedFiles) {
         newSize += file.size;
@@ -149,6 +179,7 @@ export const Dropzone = ({
       }
 
       if (setFileRejections) setFileRejections(fileRejections);
+      if (onDrop) onDrop(acceptedFiles, fileRejections, event);
     },
     [setFileRejections]
   );
@@ -156,13 +187,13 @@ export const Dropzone = ({
   const accept = allowedFileTypes.join(',');
 
   const { getRootProps, getInputProps } = useDropzone({
-    onDrop,
+    onDrop: handleOnDrop,
     maxSize,
     maxFiles,
     disabled,
     multiple,
     accept,
-    validator,
+    validator: handleValidation,
   });
 
   const inputProps = getInputProps({
@@ -171,18 +202,30 @@ export const Dropzone = ({
     onChange,
   });
 
+  // Remove role and tabIndex for accessibility
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { role, tabIndex, ...rootProps } = getRootProps();
+
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (inputProps.onChange) {
       inputProps.onChange(event);
     }
   };
 
-  // Remove role and tabIndex for accessibility
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { role, tabIndex, ...rootProps } = getRootProps();
+  const handleOnClick = (event: MouseEvent<HTMLButtonElement>) => {
+    if (!enableDropArea && rootProps.onClick) rootProps.onClick(event);
+    if (onClick) onClick;
+  };
 
-  return (
-    <Box sx={outerBoxStyles} {...rootProps}>
+  const getFieldValue = () => {
+    const field = getValues();
+    return field[name] || [];
+  };
+
+  const hasFiles = getFieldValue().length > 0;
+
+  return enableDropArea ? (
+    <DropzoneContainer sx={outerBoxStyles} {...rootProps}>
       <Box sx={innerBoxStyles}>
         <Stack spacing={2} alignItems="center" justifyContent="center">
           <>
@@ -190,7 +233,9 @@ export const Dropzone = ({
             <Typography variant="subtitle2" fontWeight="700">
               Drag and Drop Files Here
             </Typography>
-            <Divider>OR</Divider>
+            <Divider flexItem>
+              <Typography variant="subtitle2">OR</Typography>
+            </Divider>
             <FilePickerBtn
               name={name}
               color="primary"
@@ -199,10 +244,25 @@ export const Dropzone = ({
               onClick={onClick}
               inputProps={inputProps}
               onChange={handleOnChange}
-            />
+            >
+              Browse Files
+            </FilePickerBtn>
           </>
         </Stack>
       </Box>
-    </Box>
+    </DropzoneContainer>
+  ) : (
+    <FilePickerBtn
+      name={name}
+      color="tertiary"
+      disabled={disabled}
+      maxSize={maxSize}
+      onClick={handleOnClick}
+      inputProps={inputProps}
+      onChange={handleOnChange}
+      startIcon={<PlusIcon />}
+    >
+      {hasFiles ? 'Add More Files' : 'Add File(s)'}
+    </FilePickerBtn>
   );
 };

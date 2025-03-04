@@ -1,10 +1,10 @@
-import { ChangeEvent, RefObject } from 'react';
+import type { ChangeEvent, RefObject } from 'react';
 import type { DropzoneInputProps } from 'react-dropzone';
-import { useFormContext } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 import { Button, ButtonProps } from '@availity/mui-button';
 import { Input } from '@availity/mui-form-utils';
 
-type FilePickerBtnProps = {
+export type FilePickerBtnProps = {
   /**
    * Name attribute for the input field, used by react-hook-form for form state management.
    */
@@ -29,7 +29,7 @@ type FilePickerBtnProps = {
 
 export const FilePickerBtn = ({
   name,
-  children = 'Browse Files',
+  children,
   color,
   inputId,
   inputProps = {},
@@ -38,27 +38,29 @@ export const FilePickerBtn = ({
   onClick,
   ...rest
 }: FilePickerBtnProps) => {
-  const { register } = useFormContext();
-
   const { accept, multiple, ref, style, type: inputType } = inputProps;
-
-  const field = register(name);
 
   return (
     <>
-      <Input
-        {...field}
-        onChange={onChange}
-        value=""
-        inputRef={ref}
-        type={inputType}
-        sx={style}
-        inputProps={{
-          accept,
-          size: maxSize ?? undefined,
-          multiple,
-        }}
-        id={inputId}
+      <Controller
+        name={name}
+        defaultValue={[]}
+        render={({ field }) => (
+          <Input
+            {...field}
+            onChange={onChange}
+            value={[]}
+            inputRef={ref}
+            type={inputType}
+            sx={style}
+            inputProps={{
+              accept,
+              size: maxSize ?? undefined,
+              multiple,
+            }}
+            id={inputId}
+          />
+        )}
       />
       <Button color={color} {...rest} onClick={onClick} fullWidth={false}>
         {children}

@@ -1,17 +1,19 @@
-import { ChangeEvent, ReactNode, useState } from 'react';
-import { useForm, FormProvider } from 'react-hook-form';
-import type { FileRejection } from 'react-dropzone/typings/react-dropzone';
+import { useState } from 'react';
+import type { ChangeEvent, ElementType, ReactNode } from 'react';
+import { useFormContext } from 'react-hook-form';
+import type { DropEvent, FileError, FileRejection } from 'react-dropzone/typings/react-dropzone';
 import { useQueryClient } from '@tanstack/react-query';
-import Upload, { UploadOptions } from '@availity/upload-core';
-import { Button } from '@availity/mui-button';
+import type { default as Upload } from '@availity/upload-core';
 import { Grid } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 
 import { Dropzone } from './Dropzone';
 import { ErrorAlert } from './ErrorAlert';
 import { FileList } from './FileList';
+import type { FileListProps } from './FileList';
 import { FileTypesMessage } from './FileTypesMessage';
-import { Options } from './useUploadCore';
+import { HeaderMessage } from './HeaderMessage';
+import type { Options, UploadQueryOptions } from './useUploadCore';
 
 const CLOUD_URL = '/cloud/web/appl/vault/upload/v1/resumable';
 
@@ -54,9 +56,17 @@ export type FileSelectorProps = {
    */
   disabled?: boolean;
   /**
+   * Whether to enable the dropzone area
+   */
+  enableDropArea?: boolean;
+  /**
    * Custom endpoint URL for file uploads. If not provided, default endpoint will be used
    */
   endpoint?: string;
+  /**
+   * Componet to render the File information. This should return a `ListItem`
+   */
+  customFileRow?: ElementType<FileListProps>;
   /**
    * Whether to use the cloud upload endpoint
    * When true, uses '/cloud/web/appl/vault/upload/v1/resumable'
@@ -70,7 +80,7 @@ export type FileSelectorProps = {
   /**
    * Maximum number of files that can be uploaded simultaneously
    */
-  maxFiles?: number;
+  maxFiles: number;
   /**
    * Maximum file size allowed per file in bytes
    * Use Kibi or Mibibytes. eg: 1kb = 1024 bytes; 1mb = 1024kb
@@ -87,25 +97,9 @@ export type FileSelectorProps = {
    */
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   /**
-   * Callback fired when the form is submitted
-   * @param uploads - Array of Upload instances for the submitted files
-   * @param values - Object containing the form values, with files indexed by the name prop
+   *
    */
-  onSubmit?: (uploads: Upload[], values: Record<string, File[]>) => void;
-  /**
-   * Callback fired when a file is successfully uploaded
-   */
-  onSuccess?: () => void;
-  /**
-   * Callback fired when an error occurs during upload
-   */
-  onError?: (error: Error) => void;
-  /**
-   * Array of functions to execute before file upload begins.
-   * Each function should return a boolean indicating whether to proceed with the upload.
-   * @default []
-   */
-  onFilePreUpload?: (() => boolean)[];
+  onDrop?: (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[], event: DropEvent) => void;
   /**
    * Callback fired when a file is removed from the upload list
    * @param files - Array of remaining files
@@ -113,18 +107,23 @@ export type FileSelectorProps = {
    */
   onUploadRemove?: (files: File[], removedUploadId: string) => void;
   /**
-   * Array of delays (in milliseconds) between upload retry attempts
+   * Query options from `react-query` for the upload call
+   * */
+  queryOptions?: UploadQueryOptions;
+  /**
+   * Options that are passed to the Upload class from `@availity/upload-core`
    */
-  retryDelays?: UploadOptions['retryDelays'];
+  uploadOptions?: Partial<Options>;
+  /**
+   * Validation function used for custom validation that is not covered with the other props
+   * */
+  validator?: (file: File) => FileError | FileError[] | null;
+  /**
+   * Whether the remove button is disabled
+   * @default false
+   */
+  disableRemove?: boolean;
 };
-
-// Below props were removed from availity-react version. Perserving here in case needed later
-// deliverFileOnSubmit?: boolean;
-// deliveryChannel?: string;
-// fileDeliveryMetadata?: Record<string, unknown> | ((file: Upload) => Record<string, unknown>);
-// onDeliveryError?: (error: unknown) => void;
-// onDeliverySuccess?: () => void;
-// onFileDelivery?: (upload: Upload) => void;
 
 export const FileSelector = ({
   name,
@@ -134,7 +133,9 @@ export const FileSelector = ({
   clientId,
   children,
   customerId,
+  customFileRow,
   disabled = false,
+  enableDropArea = true,
   endpoint,
   isCloud,
   label = 'Upload file',
@@ -142,48 +143,51 @@ export const FileSelector = ({
   maxSize,
   multiple = true,
   onChange,
-  onSubmit,
-  onSuccess,
-  onError,
-  onFilePreUpload = [],
+  onDrop,
   onUploadRemove,
-  retryDelays,
+  queryOptions,
+  uploadOptions,
+  validator,
+  disableRemove,
 }: FileSelectorProps) => {
   const [totalSize, setTotalSize] = useState(0);
   const [fileRejections, setFileRejections] = useState<(FileRejection & { id: number })[]>([]);
 
   const client = useQueryClient();
-
-  const methods = useForm({
-    defaultValues: {
-      [name]: [] as File[],
-    },
-  });
+  const formMethods = useFormContext();
 
   const options: Options = {
+    ...uploadOptions,
     bucketId,
     customerId,
     clientId,
     fileTypes: allowedFileTypes,
     maxSize,
     allowedFileNameCharacters,
-    onError,
-    onSuccess,
-    retryDelays,
   };
 
-  if (onFilePreUpload) options.onPreStart = onFilePreUpload;
+  // Endpoint is set by default in upload-core so check if it exists before passing `undefined`
   if (endpoint) options.endpoint = endpoint;
+  // Override endpoint if using the cloud
   if (isCloud) options.endpoint = CLOUD_URL;
 
   const handleOnRemoveFile = (uploadId: string, upload: Upload) => {
-    const prevFiles = methods.watch(name);
+    const prevFiles: File[] = formMethods.getValues(name);
     const newFiles = prevFiles.filter((file) => file.name !== upload.file.name);
 
     if (newFiles.length !== prevFiles.length) {
       const removedFile = prevFiles.find((file) => file.name === upload.file.name);
 
-      methods.setValue(name, newFiles);
+      // Stop upload
+      try {
+        upload.abort();
+      } catch {
+        console.error('Encountered an issue stopping the file upload');
+      }
+
+      // Remove from context and cache
+      formMethods.setValue(name, newFiles);
+      client.removeQueries(['upload', upload.file.name]);
 
       if (removedFile?.size) setTotalSize(totalSize - removedFile.size);
 
@@ -191,19 +195,7 @@ export const FileSelector = ({
     }
   };
 
-  const files = methods.watch(name);
-
-  const handleOnSubmit = (values: Record<string, File[]>) => {
-    if (values[name].length === 0) return;
-
-    const queries = client.getQueriesData<Upload>(['upload']);
-    const uploads = [];
-    for (const [, data] of queries) {
-      if (data) uploads.push(data);
-    }
-
-    if (onSubmit) onSubmit(uploads, values);
-  };
+  const files = formMethods.watch(name);
 
   const handleRemoveRejection = (id: number) => {
     const rejections = fileRejections.filter((value) => value.id !== id);
@@ -211,44 +203,71 @@ export const FileSelector = ({
   };
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
+    <>
+      {enableDropArea ? (
         <>
-          <Typography marginBottom="4px">{label}</Typography>
+          {label ? <Typography marginBottom="4px">{label}</Typography> : null}
           <Dropzone
             name={name}
             allowedFileTypes={allowedFileTypes}
             disabled={disabled}
+            enableDropArea={enableDropArea}
             maxFiles={maxFiles}
             maxSize={maxSize}
             multiple={multiple}
             onChange={onChange}
+            onDrop={onDrop}
             setFileRejections={setFileRejections}
             setTotalSize={setTotalSize}
+            validator={validator}
           />
-          <FileTypesMessage allowedFileTypes={allowedFileTypes} maxFileSize={maxSize} />
+          <FileTypesMessage allowedFileTypes={allowedFileTypes} maxFileSize={maxSize} variant="caption" />
+          {children}
         </>
-        {children}
-        {fileRejections.length > 0
-          ? fileRejections.map((rejection) => (
-              <ErrorAlert
-                key={rejection.id}
-                errors={rejection.errors}
-                fileName={rejection.file.name}
-                id={rejection.id}
-                onClose={() => handleRemoveRejection(rejection.id)}
-              />
-            ))
-          : null}
-        <FileList files={files} options={options} onRemoveFile={handleOnRemoveFile} />
-        {files.length > 0 && (
-          <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
-            <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
-              Submit
-            </Button>
+      ) : (
+        <Grid container rowSpacing={3} flexDirection="column">
+          <Grid>
+            <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} />
+            <FileTypesMessage allowedFileTypes={allowedFileTypes} variant="body2" />
           </Grid>
-        )}
-      </form>
-    </FormProvider>
+          {children ? <Grid>{children}</Grid> : null}
+          <Grid>
+            <Dropzone
+              name={name}
+              allowedFileTypes={allowedFileTypes}
+              disabled={disabled}
+              enableDropArea={enableDropArea}
+              maxFiles={maxFiles}
+              maxSize={maxSize}
+              multiple={multiple}
+              onChange={onChange}
+              onDrop={onDrop}
+              setFileRejections={setFileRejections}
+              setTotalSize={setTotalSize}
+              validator={validator}
+            />
+          </Grid>
+        </Grid>
+      )}
+      {fileRejections.length > 0
+        ? fileRejections.map((rejection) => (
+            <ErrorAlert
+              key={rejection.id}
+              errors={rejection.errors}
+              fileName={rejection.file.name}
+              id={rejection.id}
+              onClose={() => handleRemoveRejection(rejection.id)}
+            />
+          ))
+        : null}
+      <FileList
+        files={files || []}
+        options={options}
+        onRemoveFile={handleOnRemoveFile}
+        queryOptions={queryOptions}
+        customFileRow={customFileRow}
+        disableRemove={disableRemove}
+      />
+    </>
   );
 };
