@@ -3,7 +3,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import avMessages from '@availity/message-core';
 import type { Favorite } from './utils';
 import { useFavoritesQuery, useSubmitFavorites, sendUpdateMessage, openMaxModal } from './utils';
-import { AV_INTERNAL_GLOBALS, MAX_FAVORITES } from './constants';
+import { AV_INTERNAL_GLOBALS, MAX_FAVORITES, NAV_APP_ID } from './constants';
 
 type StatusUnion = 'idle' | 'error' | 'loading' | 'reloading' | 'success';
 
@@ -21,18 +21,24 @@ const FavoritesContext = createContext<FavoritesContextType | null>(null);
 export const FavoritesProvider = ({
   children,
   onFavoritesChange,
+  onMaxFavoritesReached,
   settingsFavorites,
   settingsStatus,
+  applicationId = NAV_APP_ID,
+  maxFavorites = MAX_FAVORITES,
 }: {
   children: React.ReactNode;
   onFavoritesChange?: (favorites: Favorite[]) => void;
+  onMaxFavoritesReached?: (favorites: Favorite[]) => void;
   settingsFavorites?: Favorite[];
   settingsStatus?: StatusUnion;
+  applicationId?: string;
+  maxFavorites?: number;
 }): JSX.Element => {
   const [lastClickedFavoriteId, setLastClickedFavoriteId] = useState<string>('');
 
   const queryClient = useQueryClient();
-  const { data: favoritesData, status: favoritesDataStatus } = useFavoritesQuery(!settingsStatus);
+  const { data: favoritesData, status: favoritesDataStatus } = useFavoritesQuery(!settingsStatus, applicationId);
   const favorites = settingsStatus ? settingsFavorites : favoritesData;
   const queryStatus = settingsStatus ? settingsStatus : favoritesDataStatus;
 
@@ -40,34 +46,37 @@ export const FavoritesProvider = ({
     onMutationStart(targetFavoriteId) {
       setLastClickedFavoriteId(targetFavoriteId);
     },
-  });
+  }, applicationId);
 
   useEffect(() => {
-    const unsubscribeFavoritesChanged = avMessages.subscribe(
-      AV_INTERNAL_GLOBALS.FAVORITES_CHANGED,
-      (data) => {
-        if (data?.favorites) {
-          queryClient.setQueryData(['favorites'], data?.favorites);
-        }
-      },
-      { ignoreSameWindow: false }
-    );
+    if (applicationId === NAV_APP_ID) {
+      const unsubscribeFavoritesChanged = avMessages.subscribe(
+        AV_INTERNAL_GLOBALS.FAVORITES_CHANGED,
+        (data) => {
+          if (data?.favorites) {
+            queryClient.setQueryData(['favorites'], data?.favorites);
+          }
+        },
+        { ignoreSameWindow: false }
+      );
 
-    const unsubscribeFavoritesUpdate = avMessages.subscribe(
-      AV_INTERNAL_GLOBALS.FAVORITES_UPDATE,
-      (data) => {
-        if (data?.favorites) {
-          queryClient.setQueryData(['favorites'], data?.favorites);
-        }
-      },
-      { ignoreSameWindow: false }
-    );
+      const unsubscribeFavoritesUpdate = avMessages.subscribe(
+        AV_INTERNAL_GLOBALS.FAVORITES_UPDATE,
+        (data) => {
+          if (data?.favorites) {
+            queryClient.setQueryData(['favorites'], data?.favorites);
+          }
+        },
+        { ignoreSameWindow: false }
+      );
 
-    return () => {
-      unsubscribeFavoritesChanged();
-      unsubscribeFavoritesUpdate();
-    };
-  }, [queryClient]);
+      return () => {
+        unsubscribeFavoritesChanged();
+        unsubscribeFavoritesUpdate();
+      };
+    }
+    return () => null;
+  }, [queryClient, applicationId]);
 
   const deleteFavorite = async (id: string) => {
     if (favorites) {
@@ -76,7 +85,7 @@ export const FavoritesProvider = ({
         targetFavoriteId: id,
       });
 
-      sendUpdateMessage(response.favorites);
+      sendUpdateMessage(response.favorites, applicationId);
       onFavoritesChange?.(response.favorites);
     }
   };
@@ -84,8 +93,11 @@ export const FavoritesProvider = ({
   const addFavorite = async (id: string) => {
     if (!favorites) return false;
 
-    if (favorites.length >= MAX_FAVORITES) {
-      openMaxModal();
+    if (favorites.length >= maxFavorites) {
+      openMaxModal(applicationId);
+      if (onMaxFavoritesReached && typeof onMaxFavoritesReached === 'function') {
+        await onMaxFavoritesReached(favorites);
+      }
       return false;
     }
 
@@ -103,10 +115,10 @@ export const FavoritesProvider = ({
       targetFavoriteId: id,
     });
 
-    sendUpdateMessage(response.favorites);
+    sendUpdateMessage(response.favorites, applicationId);
     onFavoritesChange?.(response.favorites);
 
-    const isFavorited = response.favorites.find((f) => f.id === id);
+    const isFavorited = response.favorites.find((f: Favorite) => f.id === id);
 
     return !!isFavorited;
   };
@@ -128,7 +140,7 @@ export const FavoritesProvider = ({
 };
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
-const noOp = () => {};
+const noOp = () => { };
 
 type MergedStatusUnion = 'initLoading' | 'reloading' | 'error' | 'success';
 
