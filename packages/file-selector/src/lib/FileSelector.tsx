@@ -118,6 +118,11 @@ export type FileSelectorProps = {
    * Validation function used for custom validation that is not covered with the other props
    * */
   validator?: (file: File) => FileError | FileError[] | null;
+  /**
+   * Whether the remove button is disabled
+   * @default false
+   */
+  disableRemove?: boolean;
 };
 
 export const FileSelector = ({
@@ -143,6 +148,7 @@ export const FileSelector = ({
   queryOptions,
   uploadOptions,
   validator,
+  disableRemove,
 }: FileSelectorProps) => {
   const [totalSize, setTotalSize] = useState(0);
   const [fileRejections, setFileRejections] = useState<(FileRejection & { id: number })[]>([]);
@@ -260,6 +266,7 @@ export const FileSelector = ({
         onRemoveFile={handleOnRemoveFile}
         queryOptions={queryOptions}
         customFileRow={customFileRow}
+        disableRemove={disableRemove}
       />
     </>
   );
