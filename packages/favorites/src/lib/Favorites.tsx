@@ -49,33 +49,40 @@ export const FavoritesProvider = ({
   }, applicationId);
 
   useEffect(() => {
-    if (applicationId === NAV_APP_ID) {
-      const unsubscribeFavoritesChanged = avMessages.subscribe(
-        AV_INTERNAL_GLOBALS.FAVORITES_CHANGED,
-        (data) => {
-          if (data?.favorites) {
-            queryClient.setQueryData(['favorites'], data?.favorites);
-          }
-        },
-        { ignoreSameWindow: false }
-      );
+    const subscribe = () => {
+      if (applicationId === NAV_APP_ID) {
+        const unsubscribeFavoritesChanged = avMessages.subscribe(
+          AV_INTERNAL_GLOBALS.FAVORITES_CHANGED,
+          (data) => {
+            if (data?.favorites) {
+              queryClient.setQueryData(['favorites'], data?.favorites);
+            }
+          },
+          { ignoreSameWindow: false }
+        );
 
-      const unsubscribeFavoritesUpdate = avMessages.subscribe(
-        AV_INTERNAL_GLOBALS.FAVORITES_UPDATE,
-        (data) => {
-          if (data?.favorites) {
-            queryClient.setQueryData(['favorites'], data?.favorites);
-          }
-        },
-        { ignoreSameWindow: false }
-      );
+        const unsubscribeFavoritesUpdate = avMessages.subscribe(
+          AV_INTERNAL_GLOBALS.FAVORITES_UPDATE,
+          (data) => {
+            if (data?.favorites) {
+              queryClient.setQueryData(['favorites'], data?.favorites);
+            }
+          },
+          { ignoreSameWindow: false }
+        );
 
-      return () => {
-        unsubscribeFavoritesChanged();
-        unsubscribeFavoritesUpdate();
-      };
-    }
-    return () => null;
+        return () => {
+          unsubscribeFavoritesChanged();
+          unsubscribeFavoritesUpdate();
+        };
+      }
+    };
+
+    const unsubscribe = subscribe();
+
+    return () => {
+      if (unsubscribe) unsubscribe();
+    };
   }, [queryClient, applicationId]);
 
   const deleteFavorite = async (id: string) => {
