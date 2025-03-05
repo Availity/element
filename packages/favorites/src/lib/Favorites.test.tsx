@@ -15,9 +15,8 @@ const domain = () => {
   }
 
   if (window.location.hostname) {
-    return `${window.location.protocol}//${window.location.hostname}${
-      window.location.port ? `:${window.location.port}` : ''
-    }`;
+    return `${window.location.protocol}//${window.location.hostname}${window.location.port ? `:${window.location.port}` : ''
+      }`;
   }
 
   return '*';
@@ -270,4 +269,6 @@ describe('Favorites', () => {
       });
     });
   });
+
+
 });
