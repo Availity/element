@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-favorites@1.0.0...@availity/mui-favorites@1.1.0) (2025-03-06)
+
+
+### Features
+
+* **mui-favorites:** add applicationId, maxFavorites, onMaxFavoritesReached props ([015e297](https://github.com/Availity/element/commit/015e2977cb17a2166971d82588055880027662a0))
+
 ## [1.0.0](https://github.com/Availity/element/compare/@availity/mui-favorites@1.0.0-alpha.0...@availity/mui-favorites@1.0.0) (2025-02-25)
 
 ### Dependency Updates
