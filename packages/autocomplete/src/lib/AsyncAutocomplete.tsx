@@ -83,7 +83,7 @@ export const AsyncAutocomplete = <
     if (reason === 'clear') {
       setInputValue(event.target.value);
     } else if (reason === 'blur') {
-      setInputValue(value || '');
+      setInputValue(value);
     }
 
     if (onInputChange) onInputChange(event, value, reason);
