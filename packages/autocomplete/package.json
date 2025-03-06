@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-autocomplete",
-  "version": "1.0.2",
+  "version": "1.0.3-alpha.0",
   "description": "Availity MUI Autocomplete Component - part of the @availity/element design system",
   "keywords": [
     "react",

@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.3-alpha.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@1.0.2...@availity/mui-autocomplete@1.0.3-alpha.0) (2025-03-06)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** refetch on blur when filter returns no results ([08cb7b6](https://github.com/Availity/element/commit/08cb7b63d055518fd02adb740da9aeb02d146f5f))
+
 ## [1.0.2](https://github.com/Availity/element/compare/@availity/mui-autocomplete@1.0.1...@availity/mui-autocomplete@1.0.2) (2025-03-03)
 
 
