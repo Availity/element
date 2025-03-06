@@ -35,8 +35,6 @@ export interface AsyncAutocompleteProps<
   debounceTimeout?: number;
 }
 
-const shouldSetInputValue = (reason: string) => Boolean(reason === 'clear');
-
 export const AsyncAutocomplete = <
   Option,
   Multiple extends boolean | undefined = false,
@@ -80,8 +78,10 @@ export const AsyncAutocomplete = <
     value: string,
     reason: AutocompleteInputChangeReason
   ) => {
-    if (shouldSetInputValue(reason)) {
+    if (reason === 'clear') {
       setInputValue(event.target.value);
+    } else if (reason === 'blur') {
+      setInputValue(value);
     }
 
     if (onInputChange) onInputChange(event, value, reason);
