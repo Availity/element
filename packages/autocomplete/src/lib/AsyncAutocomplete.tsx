@@ -35,7 +35,7 @@ export interface AsyncAutocompleteProps<
   debounceTimeout?: number;
 }
 
-const shouldSetInputValue = (reason: string) => Boolean(reason === 'clear');
+const shouldSetInputValue = (reason: string) => ['blur', 'clear'].includes(reason);
 
 export const AsyncAutocomplete = <
   Option,
