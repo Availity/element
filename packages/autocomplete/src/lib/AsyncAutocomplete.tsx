@@ -78,7 +78,7 @@ export const AsyncAutocomplete = <
     value: string,
     reason: AutocompleteInputChangeReason
   ) => {
-    if (reason === 'clear') {
+    if (reason === 'clear' || reason === 'blur') {
       setInputValue(event.target.value);
     }
 
