@@ -107,7 +107,7 @@
     "workerDirectory": "static"
   },
   "dependencies": {
-    "@storybook/addon-interactions": "^8.2.8",
-    "storybook": "^8.2.8"
+    "@storybook/addon-interactions": "^8.6.4",
+    "storybook": "^8.6.4"
   }
 }
