@@ -2361,15 +2361,16 @@ export const legacyTheme = {
     },
     MuiTabs: {
       styleOverrides: {
-        root: {
-          backgroundColor: tokens.colorBackgroundPaper,
-        },
         flexContainer: {
           borderBottom: '1px solid #dee2e6',
         },
         indicator: {
           display: 'none',
         },
+        avSecondary: {
+          '.MuiTab-root:hover, .MuiTab-root:hover.Mui-selected': {
+            backgroundColor: tokens.colorBackgroundPaper,
+          },}
       },
     },
     MuiTextField: {

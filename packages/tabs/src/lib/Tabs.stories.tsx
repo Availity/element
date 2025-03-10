@@ -10,6 +10,12 @@ import { Tab } from './Tab';
 const meta: Meta<typeof Tabs> = {
   title: 'Components/Tabs/Tabs',
   component: Tabs,
+  argTypes: {
+    level: {
+      options: ['primary', 'secondary'],
+      control: { type: 'radio' },
+    },
+  },
   tags: ['autodocs'],
 };
 
@@ -40,7 +46,7 @@ function CustomTabPanel(props: TabPanelProps) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>Hello from panel {index}</Typography>
+          <Typography>Hello from panel {index + 1}</Typography>
         </Box>
       )}
     </div>
@@ -92,5 +98,39 @@ export const _TabsScrollable: StoryObj<typeof Tabs> = {
   args: {
     value: 0,
     variant: 'scrollable',
+  },
+};
+
+/** There is a hierarchy for tab styling. Most tabs will have the primary level styling while nested tabs have the secondary level styling. */
+export const _Levels: StoryObj<typeof Tabs> = {
+  render: () => {
+    return (
+      <Box sx={{ p: 3, backgroundColor: 'background.paper' }}>
+        <Tabs level="primary" value={0} onChange={() => {}}>
+          <Tab label="Item One" {...a11yProps(0)} />
+          <Tab label="Item Two" {...a11yProps(1)} />
+          <Tab label="Item Three" {...a11yProps(2)} disabled />
+        </Tabs>
+          <div
+            role="tabpanel"
+            id={`simple-tabpanel-0`}
+            aria-labelledby={`simple-tab-0`}
+          >
+            <Box sx={{ p: 3 }}>
+              <Typography sx={{mb: 2}}>Hello from panel 1</Typography>
+              <Tabs level="secondary" value={1} onChange={()=> {}} >
+                <Tab label="Item Four" {...a11yProps(3)} />
+                <Tab label="Item Five" {...a11yProps(4)} />
+                <Tab label="Item Six" {...a11yProps(5)} disabled />
+              </Tabs>
+              <CustomTabPanel value={4} index={3} />
+              <CustomTabPanel value={4} index={4} />
+              <CustomTabPanel value={4} index={5} />
+            </Box>
+          </div>
+          <CustomTabPanel value={0} index={1} />
+          <CustomTabPanel value={0} index={2} />
+      </Box>
+    );
   },
 };
