@@ -2090,6 +2090,9 @@ export const lightTheme = {
       },
     },
     MuiTab: {
+      defaultProps: {
+        disableRipple: true
+      },
       styleOverrides: {
         root: {
           textTransform: 'unset',
@@ -2098,13 +2101,20 @@ export const lightTheme = {
           fontFamily: tokens.typographyBody1FontFamily,
           letterSpacing: tokens.typographyBody1LetterSpacing,
           color: tokens.colorTextPrimary,
+          marginBottom: '-1px',
           padding: '11px 8px',
           '&:hover': {
             backgroundColor: tokens.colorActionHover,
           },
-          '&:Mui-selected': {
-            color: tokens.colorPrimaryMain,
+          '&.Mui-selected': {
+            fontWeight: tokens.fontWeightsBold,
+            '&:hover': {
+              backgroundColor: tokens.colorActionSelected
+            }
           },
+          '&.Mui-focusVisible': {
+            backgroundColor: tokens.colorActionFocus
+          }
         },
       },
     },
@@ -2223,9 +2233,17 @@ export const lightTheme = {
     MuiTabs: {
       styleOverrides: {
         root: {
-          backgroundColor: tokens.colorBackgroundCanvas,
           height: '3rem',
         },
+        flexContainer: {
+          // mui v7: flexContainer becomes list
+          borderBottom: `1px solid ${tokens.borderDecorative}`,
+        },
+        avSecondary: {
+          '.MuiTab-root.Mui-selected:hover': {
+            backgroundColor: tokens.colorActionSelected
+          }
+        }
       },
     },
     MuiTextField: {
