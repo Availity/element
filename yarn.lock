@@ -628,7 +628,7 @@ __metadata:
     "@availity/mui-paper": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@availity/upload-core": ^7.0.1
+    "@availity/upload-core": ^7.0.3
     "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
@@ -924,7 +924,7 @@ __metadata:
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@availity/native-form": ^6.0.8
-    "@availity/resolve-url": ^3.0.0
+    "@availity/resolve-url": ^3.0.2
     "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     dayjs: ^1.11.13
@@ -1154,10 +1154,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/resolve-url@npm:3.0.0, @availity/resolve-url@npm:^3.0.0":
+"@availity/resolve-url@npm:3.0.0":
   version: 3.0.0
   resolution: "@availity/resolve-url@npm:3.0.0"
   checksum: 5dac7fa0368dc1c18a38b02f96462ae3bfd85953ccc0605bbd2e008a3dd6d904aa73b3deb2318bb1e3ba4feb989acb774712d206b7bffd7e793123e4716789d4
+  languageName: node
+  linkType: hard
+
+"@availity/resolve-url@npm:3.0.2, @availity/resolve-url@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@availity/resolve-url@npm:3.0.2"
+  checksum: 286cd972beb6c158fb660b6fc1c8a50834493b5d65ec8183ac20501391754906e8cce08c4c55f79542896519cbf61a5a1e89fcb89d6364b53971e455668902f4
   languageName: node
   linkType: hard
 
@@ -1190,13 +1197,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/upload-core@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "@availity/upload-core@npm:7.0.1"
+"@availity/upload-core@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "@availity/upload-core@npm:7.0.3"
   dependencies:
-    "@availity/resolve-url": 3.0.0
+    "@availity/resolve-url": 3.0.2
     tus-js-client: 4.2.3
-  checksum: 1f3e2555d0476095e01755e5831b38b280032859585a2feec5d524e2409287ebc23a19d6af12ba68e25ef1e353ffa555d8ee4820cba7522d66aab613b93dc9d8
+  checksum: 0ef7b8ffbf5bb76522f585e777f363e0eb90709b5bccf825076fe1b0cf22eca55ae09a3fa6114d8e6b6d5d24e3086340be57ce7f03fe6520e900548cfdf65de6
   languageName: node
   linkType: hard
 
