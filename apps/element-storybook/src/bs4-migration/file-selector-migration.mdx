@@ -10,23 +10,20 @@ The `Upload` component from `@availity/upload` and `@availity/form-upload` has b
 
 ```tsx
 import { Upload } from '@availity/form-upload';
-import { Formik, Field } from 'formik';
+import { Form } from '@availity/form';
 
 const UploadForm = () => (
-  <Formik initialValues={{ fileUpload: [] }} onSubmit={(values) => console.log(values)}>
-    <Form>
-      <Field
-        name="fileUpload"
-        component={Upload}
-        clientId="my-client-id"
-        bucketId="my-bucket-id"
-        customerId="my-customer-id"
-        maxSize={5 * 1024 * 1024}
-        multiple={true}
-        allowedFileTypes={['.pdf', '.doc', '.docx']}
-      />
-    </Form>
-  </Formik>
+  <Form initialValues={{ fileUpload: [] }} onSubmit={(values) => console.log(values)}>
+    <Upload
+      name="fileUpload"
+      clientId="my-client-id"
+      bucketId="my-bucket-id"
+      customerId="my-customer-id"
+      maxSize={5 * 1024 * 1024}
+      multiple={true}
+      allowedFileTypes={['.pdf', '.doc', '.docx']}
+    />
+  </Form>
 );
 ```
 
