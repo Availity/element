@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.4](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.3...@availity/mui-spaces@1.0.4) (2025-03-13)
+
+### Dependency Updates
+
+* `mui-favorites` updated to version `1.0.3`
+* `@availity/mock` updated to version `1.0.3`
 ## [1.0.3](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.2...@availity/mui-spaces@1.0.3) (2025-03-12)
 
 ## [1.0.2](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.1...@availity/mui-spaces@1.0.2) (2025-03-07)
