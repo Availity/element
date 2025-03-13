@@ -1,17 +1,27 @@
 import { default as MuiTabList, TabListProps as MuiTabListProps } from '@mui/lab/TabList';
+import { TabsProps, secondaryTabStyling } from './Tabs';
+import { styled } from '@mui/material/styles';
 
-export interface TabListProps
-  extends Omit<
+export type TabListProps = Omit<
     MuiTabListProps,
     'centered' | 'centerRipple' | 'focusRipple' | 'orientation' | 'TouchRippleProps' | 'touchRippleRef'
-  > {
-  children?: React.ReactNode;
-}
+  > & Pick<TabsProps, 'level'>
 
-export const TabList = ({ children, ...rest }: TabListProps): JSX.Element => {
+const PrimaryTabs = styled(MuiTabList, {
+  name: 'MuiTabs',
+  slot: 'AvPrimary',
+  overridesResolver: (props, styles) => styles.avPrimary,
+})({});
+
+const SecondaryTabs = styled(MuiTabList, {
+  name: 'MuiTabs',
+  slot: 'AvSecondary',
+  overridesResolver: (props, styles) => styles.avSecondary,
+})<{ ownerState: MuiTabListProps }>(secondaryTabStyling);
+
+export const TabList = ({ level = 'primary', ...rest }: TabListProps): JSX.Element => {
+  const LevelledTabs = level === 'primary' ? PrimaryTabs : SecondaryTabs;
   return (
-    <MuiTabList {...rest} orientation="horizontal" centered={false}>
-      {children}
-    </MuiTabList>
+    <LevelledTabs {...rest} orientation="horizontal" centered={false}/>
   );
 };

@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import type { Theme } from '@mui/material/styles';
 import { default as MuiTabs, TabsProps as MuiTabsProps } from '@mui/material/Tabs';
 
 export interface TabsProps
@@ -10,17 +11,7 @@ export interface TabsProps
   level?: "primary" | "secondary";
 }
 
-const PrimaryTabs = styled(MuiTabs, {
-  name: 'MuiTabs',
-  slot: 'AvPrimary',
-  overridesResolver: (props, styles) => styles.avPrimary,
-})({});
-
-const SecondaryTabs = styled(MuiTabs, {
-  name: 'MuiTabs',
-  slot: 'AvSecondary',
-  overridesResolver: (props, styles) => styles.avSecondary,
-})<{ ownerState: MuiTabsProps }>(({ theme }) => ({
+export const secondaryTabStyling = ({theme}: {theme:Theme} ) => ({
   '.MuiTabs-indicator': {
     display: 'none'
   },
@@ -44,7 +35,19 @@ const SecondaryTabs = styled(MuiTabs, {
       borderBottomColor: theme.palette.background.paper,
     },
   },
-}));
+});
+
+const PrimaryTabs = styled(MuiTabs, {
+  name: 'MuiTabs',
+  slot: 'AvPrimary',
+  overridesResolver: (props, styles) => styles.avPrimary,
+})({});
+
+const SecondaryTabs = styled(MuiTabs, {
+  name: 'MuiTabs',
+  slot: 'AvSecondary',
+  overridesResolver: (props, styles) => styles.avSecondary,
+})<{ ownerState: MuiTabsProps }>(secondaryTabStyling);
 
 export const Tabs = ({level = "primary", ...rest}: TabsProps): JSX.Element => {
   const LevelledTabs = level === 'primary' ? PrimaryTabs : SecondaryTabs;
