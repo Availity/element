@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://github.com/Availity/element/compare/@availity/theme@1.0.1...@availity/theme@1.1.0) (2025-03-13)
+
+
+### Features
+
+* **mui-tabs:** add secondary tabs ([8cfca7c](https://github.com/Availity/element/commit/8cfca7ce2d8b1dd6b8ccd7bbed2ddb506b159f38))
+
 ## [1.0.1](https://github.com/Availity/element/compare/@availity/theme@1.0.0...@availity/theme@1.0.1) (2025-03-07)
 
 ### Dependency Updates
