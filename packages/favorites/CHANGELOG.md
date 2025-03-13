@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.2](https://github.com/Availity/element/compare/@availity/mui-favorites@1.1.1...@availity/mui-favorites@1.1.2) (2025-03-13)
+
+### Dependency Updates
+
+* `@availity/mock` updated to version `1.1.1`
 ## [1.1.1](https://github.com/Availity/element/compare/@availity/mui-favorites@1.1.0...@availity/mui-favorites@1.1.1) (2025-03-07)
 
 ### Dependency Updates
