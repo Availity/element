@@ -37,4 +37,22 @@ describe('UploadProgressBar', () => {
 
     expect(screen.getByText('error message')).toBeTruthy();
   });
+
+  test('should allow passwords for encrypted files', () => {
+    const mockUpload: unknown = {
+      onProgress: [],
+      onError: [],
+      onSuccess: [],
+      errorMessage: 'error message',
+      file: {
+        name: 'test',
+      },
+      status: 'encrypted'
+    };
+
+    render(<UploadProgressBar upload={mockUpload as Upload} />);
+
+    expect(screen.getByText('error message')).toBeTruthy();
+    expect(screen.getByText('Enter Password')).toBeTruthy();
+  });
 });
