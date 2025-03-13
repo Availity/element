@@ -10,6 +10,12 @@ import { TabPanel } from './TabPanel';
 const meta: Meta<typeof TabList> = {
   title: 'Components/Tabs/TabList',
   component: TabList,
+  argTypes: {
+    level: {
+      options: ['primary', 'secondary'],
+      control: { type: 'radio' },
+    },
+  },
   tags: ['autodocs'],
 };
 
