@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.1.2...@availity/mui-file-selector@1.2.0) (2025-03-13)
+
+
+### Features
+
+* **mui-file-selector:** add encrypted file support ([831383d](https://github.com/Availity/element/commit/831383d7c1470f0fbb086b40f268a60925268656))
+
 ## [1.1.2](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.1.1...@availity/mui-file-selector@1.1.2) (2025-03-12)
 
 ## [1.1.1](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.1.0...@availity/mui-file-selector@1.1.1) (2025-03-07)
