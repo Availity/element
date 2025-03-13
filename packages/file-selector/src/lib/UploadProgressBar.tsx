@@ -1,8 +1,13 @@
-import { useState } from 'react';
-import { LinearProgress } from '@availity/mui-progress';
-import type Upload from '@availity/upload-core';
-import { WarningTriangleIcon } from '@availity/mui-icon';
+import { ChangeEvent, FormEventHandler, useState } from 'react';
+import { Button, IconButton } from '@availity/mui-button';
+import { Dialog, DialogActions, DialogContent, DialogTitle } from '@availity/mui-dialog';
+import { InputAdornment } from '@availity/mui-form-utils';
+import { EyeIcon, EyeSlashIcon, WarningTriangleIcon } from '@availity/mui-icon';
+import { Box } from '@availity/mui-layout';
 import { ListItemText } from '@availity/mui-list';
+import { LinearProgress } from '@availity/mui-progress';
+import { TextField } from '@availity/mui-textfield';
+import type Upload from '@availity/upload-core';
 
 export type UploadProgressBarProps = {
   /**
@@ -25,75 +30,90 @@ export type UploadProgressBarProps = {
 
 export const UploadProgressBar = ({ upload, onProgress, onError, onSuccess }: UploadProgressBarProps) => {
   const [statePercentage, setStatePercentage] = useState(upload.percentage || 0);
-  const [error, setError] = useState(false);
-  // const [password, setPassword] = useState('');
-  // const [modalOpen, setModalOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(upload.errorMessage || '');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleOnProgress = () => {
     setStatePercentage(upload.percentage);
-    setError(false);
+    setErrorMessage('');
 
     if (onProgress) onProgress(upload);
   };
 
   const handleOnError = () => {
-    setError(true);
+    setErrorMessage(upload.errorMessage || 'Error');
 
     if (onError) onError(upload);
   };
 
   const handleOnSuccess = () => {
     setStatePercentage(100);
-    setError(false);
+    setErrorMessage('');
 
     if (onSuccess) onSuccess(upload);
   };
 
-  // const toggleModal = () => {
-  //   setModalOpen((prev) => !prev);
-  //   setPassword('');
-  // };
+  const toggleModal = () => {
+    setModalOpen((prev) => !prev);
+    setPassword('');
+  };
 
-  // const verifyPassword: FormEventHandler<HTMLFormElement> = (event) => {
-  //   event.preventDefault();
-  //   event.stopPropagation();
-  //   upload.sendPassword(password);
-  //   toggleModal();
-  // };
+  const verifyPassword: FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    upload.sendPassword(password);
+    toggleModal();
+  };
 
-  // const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
-  //   setPassword(event.target.value);
-  // };
+  const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value);
+  };
 
   upload.onProgress.push(handleOnProgress);
   upload.onSuccess.push(handleOnSuccess);
   upload.onError.push(handleOnError);
 
-  return upload.errorMessage ? (
-    <>
-      <ListItemText primaryTypographyProps={{ color: 'text.error', variant: 'body2' }}>
-        <WarningTriangleIcon /> {upload.errorMessage}
+  return errorMessage ? (
+    <Box sx={{display: 'flex', flexWrap: 'wrap', columnGap: '4px'}}>
+      <ListItemText slotProps={{primary: { color: 'text.error', variant: 'body2', component: 'div' }}}>
+        <WarningTriangleIcon sx={{verticalAlign: 'middle', mt: '-2px'}}/> {errorMessage}
       </ListItemText>
-      {/* {upload.status === 'encrypted' && (
+      {upload.status === 'encrypted' && (
         <div className="pwRequired">
-          <Button color="primary" onClick={toggleModal}>
-            Enter password
+          <Button color="secondary" size="small" onClick={toggleModal}>
+            Enter Password
           </Button>
-          <Modal isOpen={modalOpen} toggle={toggleModal}>
+          <Dialog open={modalOpen} onClose={toggleModal}>
             <form onSubmit={verifyPassword}>
-              <ModalHeader toggle={toggleModal}>Enter Password</ModalHeader>
-              <ModalBody>
-                <Label for="upload-password">Password</Label>
-                <Input id="upload-password" onChange={handlePasswordChange} type="password" placeholder="password" />
-              </ModalBody>
-              <ModalFooter>
-                <Button color="primary">Ok</Button>
-              </ModalFooter>
+              <DialogTitle>Enter Password</DialogTitle>
+              <DialogContent>
+                <TextField
+                  type={showPassword ? 'text' : 'password'}
+                  name="upload-password"
+                  label="Password"
+                  onChange={handlePasswordChange}
+                  autoFocus
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton title="password visibility" onClick={() => setShowPassword((prev) => !prev)} edge="end">
+                          {showPassword ? <EyeIcon fontSize="small" /> : <EyeSlashIcon fontSize="small" />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </DialogContent>
+              <DialogActions>
+                <Button color="primary" type="submit">Ok</Button>
+              </DialogActions>
             </form>
-          </Modal>
+          </Dialog>
         </div>
-      )} */}
-    </>
+      )}
+    </Box>
   ) : (
     <LinearProgress value={statePercentage} aria-label={`${upload.file.name}-progress`} />
   );

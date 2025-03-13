@@ -33,6 +33,21 @@ const meta: Meta<typeof FileSelector> = {
       </QueryClientProvider>
     ),
   ],
+  args: {
+    name: 'file-selector',
+    allowedFileTypes: ['.txt', '.png', '.pdf'],
+    clientId: '123',
+    customerId: '456',
+    bucketId: '789',
+    uploadOptions: {
+      retryDelays: [],
+    },
+    maxFiles: 5,
+    maxSize: 1 * 1024 * 1024, // 1MB
+    enableDropArea: true,
+    isCloud: true,
+    multiple: true,
+  },
 };
 
 export default meta;
@@ -85,7 +100,91 @@ export const _FileSelector: StoryObj<typeof FileSelector> = {
               </DismissableAlert>
             </FileSelector>
             {files.length > 0 && (
-              <Grid xs={12} justifyContent="end" display="flex" paddingTop={2.5}>
+              <Grid size={{xs: 12}} justifyContent="end" display="flex" paddingTop={2.5}>
+                <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
+                  Submit
+                </Button>
+              </Grid>
+            )}
+          </form>
+        </FormProvider>
+      </Paper>
+    );
+  },
+};
+
+/** Set `enableDropzone` to `false` for a button only file selector. */
+export const _ButtonOnly: StoryObj<typeof FileSelector> = {
+  render: (props: FileSelectorProps) => {
+    const methods = useForm({
+      defaultValues: {
+        [props.name]: [] as File[],
+      },
+    });
+
+    const client = useQueryClient();
+
+    const files = methods.watch(props.name);
+
+    const handleOnSubmit = (values: Record<string, File[]>) => {
+      if (values[props.name].length === 0) return;
+
+      const queries = client.getQueriesData<Upload>(['upload']);
+      const uploads = [];
+      for (const [, data] of queries) {
+        if (data) uploads.push(data);
+      }
+    };
+
+    return (
+      <Paper sx={{ padding: '2rem' }}>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
+            <FileSelector {...props} enableDropArea={false}/>
+            {files.length > 0 && (
+              <Grid size={{xs: 12}} justifyContent="end" display="flex" paddingTop={2.5}>
+                <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
+                  Submit
+                </Button>
+              </Grid>
+            )}
+          </form>
+        </FormProvider>
+      </Paper>
+    );
+  },
+};
+
+/** Upload password protected files. _For this example, the password for any file is '1234'_ */
+export const _Encrypted: StoryObj<typeof FileSelector> = {
+  render: (props: Omit<FileSelectorProps, 'bucketId'>) => {
+    const methods = useForm({
+      defaultValues: {
+        [props.name]: [] as File[],
+      },
+    });
+
+    const client = useQueryClient();
+
+    const files = methods.watch(props.name);
+
+    const handleOnSubmit = (values: Record<string, File[]>) => {
+      if (values[props.name].length === 0) return;
+
+      const queries = client.getQueriesData<Upload>(['upload']);
+      const uploads = [];
+      for (const [, data] of queries) {
+        if (data) uploads.push(data);
+      }
+    };
+
+    return (
+      <Paper sx={{ padding: '2rem' }}>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
+            <FileSelector {...props} bucketId="enc"/>
+            {files.length > 0 && (
+              <Grid size={{xs: 12}} justifyContent="end" display="flex" paddingTop={2.5}>
                 <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
                   Submit
                 </Button>
@@ -97,18 +196,9 @@ export const _FileSelector: StoryObj<typeof FileSelector> = {
     );
   },
   args: {
-    name: 'file-selector',
-    allowedFileTypes: ['.txt', '.png', '.pdf'],
-    clientId: '123',
-    customerId: '456',
-    bucketId: '789',
-    uploadOptions: {
-      retryDelays: [],
-    },
-    maxFiles: 5,
-    maxSize: 1 * 1024 * 1024, // 1MB
-    enableDropArea: true,
-    isCloud: true,
-    multiple: true,
+    bucketId: 'enc'
   },
+  argTypes: {
+    bucketId: { control: false }
+  }
 };

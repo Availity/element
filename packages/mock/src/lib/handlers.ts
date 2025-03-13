@@ -352,12 +352,60 @@ export const handlers = [
     });
   }),
 
-  http.head<{ bucket: string; location: string }>(routes.ATTACHMENTS_CLOUD_HEAD, async ({ params }) => {
-    await delay(1000);
+  http.head<{ bucket: string; location: string }>(routes.ATTACHMENTS_CLOUD_HEAD, async ({ request, params }) => {
     const headers = requestHeaders.get(params.location);
 
     const fileSize = headers?.get('upload-length') || '0';
     const metadata = headers?.get('upload-metadata') || '';
+    const password = request.headers.get('Encryption-Password') || '';
+
+    const results: Record<string, string> = {
+      abc: 'accepted',
+      enc: 'encrypted',
+      mno: 'pending',
+      xyz: 'rejected',
+    };
+
+    if (password) {
+      return password === "1234" ?
+      new HttpResponse(null, {
+        status: 200,
+        headers: {
+          'av-scan-bytes': fileSize,
+          'av-scan-result': 'accepted',
+          'cache-control': 'no-store',
+          'decryption-result': 'accepted',
+          references: `["approved/${params.bucket}/${params.location}"]`,
+          's3-references': `["s3://path-to-vault/approved/${params.bucket}/${params.location}"]`,
+          'transfer-encoding': 'chunked',
+          'tus-resumable': '1.0.0',
+          'upload-length': fileSize,
+          'upload-metadata': metadata,
+          'upload-offset': fileSize,
+          'upload-result': 'accepted',
+        },
+      })
+      :
+      new HttpResponse(null, {
+        status: 200,
+        headers: {
+          'av-scan-bytes': fileSize,
+          'av-scan-result': 'accepted',
+          'cache-control': 'no-store',
+          'decryption-result': 'rejected',
+          references: `["approved/${params.bucket}/${params.location}"]`,
+          's3-references': `["s3://path-to-vault/approved/${params.bucket}/${params.location}"]`,
+          'transfer-encoding': 'chunked',
+          'tus-resumable': '1.0.0',
+          'upload-length': fileSize,
+          'upload-metadata': metadata,
+          'upload-offset': fileSize,
+          'upload-result': 'encrypted',
+        },
+      });
+    }
+
+    await delay(1000);
 
     return new HttpResponse(null, {
       status: 200,
@@ -372,7 +420,7 @@ export const handlers = [
         'upload-length': fileSize,
         'upload-metadata': metadata,
         'upload-offset': fileSize,
-        'upload-result': 'accepted',
+        'upload-result': results[params.bucket] || 'accepted',
       },
     });
   }),
