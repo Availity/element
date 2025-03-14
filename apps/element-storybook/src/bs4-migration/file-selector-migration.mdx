@@ -75,11 +75,11 @@ Here's a quick look at some of the changes relating to props. Check out our docs
 
 #### New
 
-- `onDrop`. This prop is our way of letting you hook into the
-- `disableRemove`
-- `validator`
-- `customFileRow`
-- `queryOptions`
+- `onDrop`: this prop serves as an `onChange` callback. Use it to get access to the files and the change event
+- `disableRemove`: used to prevent removing the file from the list
+- `validator`: allows for custom validation
+- `customFileRow`: pass in your own component to be used in the FileList
+- `queryOptions`: options for the `useQuery` hook
 
 #### Renamed
 
