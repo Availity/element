@@ -1,0 +1,115 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="BS4 Migration/Upload" />
+
+The `Upload` component from `@availity/upload` and `@availity/form-upload` has been renamed to the `FileSelector` component. It still uses `@availity/upload-core` package to do the lifting, however, we have renamed, removed, and added some things.
+
+## Basic Usage Changes
+
+### Before (Upload component):
+
+```tsx
+import { Upload } from '@availity/form-upload';
+import { Form } from '@availity/form';
+
+const UploadForm = () => (
+  <Form initialValues={{ fileUpload: [] }} onSubmit={(values) => console.log(values)}>
+    <Upload
+      name="fileUpload"
+      clientId="my-client-id"
+      bucketId="my-bucket-id"
+      customerId="my-customer-id"
+      maxSize={5 * 1024 * 1024}
+      multiple={true}
+      allowedFileTypes={['.pdf', '.doc', '.docx']}
+    />
+  </Form>
+);
+```
+
+### After (FileSelector component):
+
+```tsx
+import { FileSelector } from '@availity/mui-file-selector';
+import { FormProvider, useForm } from 'react-hook-form';
+
+const UploadForm = () => {
+  const methods = useForm({
+    defaultValues: {
+      fileUpload: [],
+    },
+  });
+
+  const onSubmit = (data) => console.log(data);
+
+  return (
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onSubmit)}>
+        <FileSelector
+          name="fileUpload"
+          clientId="my-client-id"
+          bucketId="my-bucket-id"
+          customerId="my-customer-id"
+          maxSize={5 * 1024 * 1024}
+          maxFiles={5}
+          multiple={true}
+          allowedFileTypes={['.pdf', '.doc', '.docx']}
+        />
+      </form>
+    </FormProvider>
+  );
+};
+```
+
+## Key Changes
+
+### Form Management
+
+- The FileSelector uses `react-hook-form` instead of `Formik`
+- Must wrap component with FormProvider from `react-hook-form`
+- The `react-hook-form` provider maintains the state of the selected files. It does not use `@availity/upload-core`.
+
+### Props changes
+
+Here's a quick look at some of the changes relating to props. Check out our docs for more information about each prop.
+
+#### New
+
+- `onDrop`: this prop serves as an `onChange` callback. Use it to get access to the files and the change event
+- `disableRemove`: used to prevent removing the file from the list
+- `validator`: allows for custom validation
+- `customFileRow`: pass in your own component to be used in the FileList
+- `queryOptions`: options for the `useQuery` hook
+
+#### Renamed
+
+- `max` -> `maxFiles`
+- `showFileDrop` -> `enableDropArea`
+
+#### Removed
+
+- `onFileUpload`: this prop has been removed in favor of adding `onProgress`, `onSuccess`, and `onError`. Previously, you were required to add these functions yourself. Now they can be passed directly to the component
+- `buttonText` (use children prop instead)
+- `buttonClassName`
+- `dropZoneText`
+- `component`
+
+## Additional Considerations
+
+### Error Handling
+
+- The new component provides more detailed error feedback
+- Errors are displayed using Element Alert components
+- Custom error handling can be implemented through the validator prop
+
+### File List Display
+
+- Files are now displayed in a MUI List component
+- Can be customized using the customFileRow prop
+- Shows upload progress and status more clearly
+
+### Accessibility
+
+- Improved keyboard navigation
+- Better screen reader support
+- Clear focus indicators
