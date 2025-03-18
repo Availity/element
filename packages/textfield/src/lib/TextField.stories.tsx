@@ -39,6 +39,21 @@ export const _TextField: StoryObj<typeof TextField> = {
   },
 };
 
+export const _TextFieldCharacterCount: StoryObj<typeof TextField> = {
+  render: (args: TextFieldProps) => <TextField {...args} />,
+  args: {
+    label: 'Field Label',
+    id: 'test',
+    helpTopicId: '123',
+    showCharacterCount: true,
+    slotProps: {
+      htmlInput: {
+        maxLength: 10,
+      },
+    },
+  },
+};
+
 export const _States: StoryObj<typeof TextField> = {
   render: (args: TextFieldProps) => (
     <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap' }}>

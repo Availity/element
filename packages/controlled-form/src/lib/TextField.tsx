@@ -36,6 +36,13 @@ export const ControlledTextField = ({
           required={typeof rules.required === 'object' ? rules.required.value : !!rules.required}
           {...field}
           {...rest}
+          slotProps={{
+            ...rest.slotProps,
+            htmlInput: {
+              maxLength: rules.maxLength,
+              ...rest.slotProps?.htmlInput,
+            },
+          }}
           inputRef={ref}
           error={!!error}
           helperText={
