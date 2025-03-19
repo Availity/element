@@ -1,16 +1,18 @@
 import { forwardRef, useState } from 'react';
-import { TextField as MuiTextField, TextFieldProps as MuiTextFieldProps } from '@mui/material';
+import MuiTextField, { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField';
 import {
   FormHelperText,
   FormHelperTextProps,
   FormLabel,
   FormLabelProps,
+  InputPropOverrides,
   InputProps,
   SelectAccessibilityOverrides,
   SelectPropOverrides,
   SelectProps,
 } from '@availity/mui-form-utils';
 import { Grid } from '@availity/mui-layout';
+import { styled } from '@mui/material/styles';
 
 export type TextFieldProps = {
   FormHelperTextProps?: FormHelperTextProps;
@@ -23,6 +25,12 @@ export type TextFieldProps = {
   showCharacterCount?: boolean;
 } & Pick<FormLabelProps, 'helpTopicId'> &
   Omit<MuiTextFieldProps, 'fullWidth' | 'variant'>;
+
+const SelectPlaceholder = styled('span', {
+  name: 'MuiTextField',
+  slot: 'SelectPlaceholder',
+  overridesResolver: (props, styles) => styles.avFilled,
+})(({ theme }) => ({ opacity: 1, color: theme.palette.grey[400] }));
 
 export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextFieldProps>((props, ref) => {
   const {
@@ -63,17 +71,22 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
           helperText
         )
       }
-      slots={{
-        formHelperText: FormHelperText,
-      }}
+      slots={{ formHelperText: FormHelperText }}
       slotProps={{
-        input: resolvedProps({ ...InputProps, ...rest.slotProps?.input }),
+        input: resolvedProps({ ...InputProps, ...InputPropOverrides, ...rest.slotProps?.input }),
         htmlInput: resolvedProps({ 'aria-required': required, ...inputProps, ...rest.slotProps?.htmlInput }),
         select: resolvedProps({
+          displayEmpty: !!rest.placeholder,
+          renderValue: (value: unknown) =>
+            rest.placeholder && (!value || (Array.isArray(value) && value.length === 0)) ? (
+              <SelectPlaceholder className="MuiSelect-placeholder">{rest.placeholder}</SelectPlaceholder>
+            ) : (
+              value
+            ),
           ...SelectProps,
-          ...rest.slotProps?.select,
           ...SelectPropOverrides,
           ...SelectAccessibilityOverrides(openDetected, setOpenDetected, SelectProps?.open),
+          ...rest.slotProps?.select,
         }),
         inputLabel: resolvedProps({
           component: FormLabel,
@@ -83,11 +96,7 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
           ...InputLabelProps,
           ...rest.slotProps?.inputLabel,
         }),
-        formHelperText: resolvedProps({
-          component: 'div',
-          ...FormHelperTextProps,
-          ...rest.slotProps?.formHelperText,
-        }),
+        formHelperText: resolvedProps({ component: 'div', ...FormHelperTextProps, ...rest.slotProps?.formHelperText }),
       }}
       ref={ref}
     />

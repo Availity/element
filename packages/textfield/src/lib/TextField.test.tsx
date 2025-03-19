@@ -1,4 +1,5 @@
 import { render, fireEvent } from '@testing-library/react';
+import { MenuItem } from '@availity/mui-menu';
 import { TextField } from './TextField';
 
 describe('TextField', () => {
@@ -43,6 +44,18 @@ describe('TextField', () => {
       fireEvent.change(input, { target: { value: "Some More Text that doesn't fit" } });
 
       expect(getByTitle('Error')).toBeTruthy();
+    });
+  });
+  describe('TextField select placeholder', () => {
+    test('should render select placeholder successfully', () => {
+      const { getByText } = render(
+        <TextField label="Test" select placeholder="Select...">
+          <MenuItem value={10}>10</MenuItem>
+          <MenuItem value={20}>20</MenuItem>
+          <MenuItem value={30}>30</MenuItem>
+        </TextField>
+      );
+      expect(getByText('Select...')).toBeTruthy();
     });
   });
 });
