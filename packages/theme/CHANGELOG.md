@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.0](https://github.com/Availity/element/compare/@availity/theme@1.1.0...@availity/theme@1.2.0) (2025-03-21)
+
+
+### Features
+
+* **mui-textfield, mui-form-utils:** add placeholder support to select ([3a6b1ef](https://github.com/Availity/element/commit/3a6b1ef2e5ceedca632bd1916734e56402371ffb))
+
 ## [1.1.0](https://github.com/Availity/element/compare/@availity/theme@1.0.1...@availity/theme@1.1.0) (2025-03-13)
 
 
