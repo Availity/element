@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-textfield@1.0.1...@availity/mui-textfield@1.1.0) (2025-03-21)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `1.0.1`
+
+### Features
+
+* **mui-textfield, mui-form-utils:** add placeholder support to select ([3a6b1ef](https://github.com/Availity/element/commit/3a6b1ef2e5ceedca632bd1916734e56402371ffb))
+* **mui-textfield:** add optional character count to textfield ([1c3f0dc](https://github.com/Availity/element/commit/1c3f0dc886e153c79afc81c98b3326ed8990b305))
+
 ## [1.0.1](https://github.com/Availity/element/compare/@availity/mui-textfield@1.0.0...@availity/mui-textfield@1.0.1) (2025-03-07)
 
 ### Dependency Updates
