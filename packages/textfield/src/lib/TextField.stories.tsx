@@ -17,25 +17,25 @@ const meta: Meta<typeof TextField> = {
   title: 'Form Components/TextField/TextField',
   component: TextField,
   tags: ['autodocs'],
-  args: {
-    helperText: 'Helper Text',
-    fullWidth: false,
-  },
-  argTypes: {
-    helperText: {
-      type: 'string',
-    },
-  },
+  args: { helperText: 'Helper Text', fullWidth: false },
+  argTypes: { helperText: { type: 'string' } },
 };
 
 export default meta;
 
 export const _TextField: StoryObj<typeof TextField> = {
   render: (args: TextFieldProps) => <TextField {...args} />,
+  args: { label: 'Field Label', id: 'test', helpTopicId: '123' },
+};
+
+export const _TextFieldCharacterCount: StoryObj<typeof TextField> = {
+  render: (args: TextFieldProps) => <TextField {...args} />,
   args: {
     label: 'Field Label',
     id: 'test',
     helpTopicId: '123',
+    showCharacterCount: true,
+    slotProps: { htmlInput: { maxLength: 10 } },
   },
 };
 
@@ -48,9 +48,7 @@ export const _States: StoryObj<typeof TextField> = {
       <TextField label="Disabled" id="disabled" disabled {...args} />
     </Stack>
   ),
-  args: {
-    margin: 'normal',
-  },
+  args: { margin: 'normal' },
 };
 
 export const _Sizes: StoryObj<typeof TextField> = {
@@ -60,9 +58,7 @@ export const _Sizes: StoryObj<typeof TextField> = {
       <TextField label="Medium" id="medium" size="medium" {...args} />
     </Stack>
   ),
-  args: {
-    margin: 'normal',
-  },
+  args: { margin: 'normal' },
 };
 
 export const _WithIcon: StoryObj<typeof TextField> = {
@@ -158,9 +154,7 @@ const TextMaskCustom = forwardRef<HTMLInputElement, CustomProps>(function TextMa
     <IMaskInput
       {...other}
       mask="(#00) 000-0000"
-      definitions={{
-        '#': /[1-9]/,
-      }}
+      definitions={{ '#': /[1-9]/ }}
       inputRef={ref}
       onAccept={(value: any) => onChange({ target: { name: props.name, value } })}
       overwrite
@@ -176,12 +170,7 @@ const NumericFormatCustom = forwardRef<NumericFormatProps, CustomProps>(function
       {...other}
       getInputRef={ref}
       onValueChange={(values) => {
-        onChange({
-          target: {
-            name: props.name,
-            value: values.value,
-          },
-        });
+        onChange({ target: { name: props.name, value: values.value } });
       }}
       thousandSeparator
       valueIsNumericString
@@ -251,16 +240,10 @@ export const _InputMasking: StoryObj<typeof TextField> = {
 
     // ---------------------------------------
 
-    const [values, setValues] = useState({
-      textmask: '(100) 000-0000',
-      numberformat: '1320',
-    });
+    const [values, setValues] = useState({ textmask: '(100) 000-0000', numberformat: '1320' });
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      setValues({
-        ...values,
-        [event.target.name]: event.target.value,
-      });
+      setValues({ ...values, [event.target.name]: event.target.value });
     };
 
     return (
@@ -306,9 +289,26 @@ export const _Select: StoryObj<typeof TextField> = {
       </TextField>
     );
   },
-  args: {
-    label: 'Select',
+  args: { label: 'Select' },
+};
+
+export const _SelectPlaceholder: StoryObj<typeof TextField> = {
+  render: (args: TextFieldProps) => {
+    const [count, setCount] = useState('');
+
+    const handleChange = (event: SelectChangeEvent) => {
+      setCount(event.target.value as string);
+    };
+
+    return (
+      <TextField value={count} select SelectProps={{ onChange: handleChange }} {...args}>
+        <MenuItem value={10}>10</MenuItem>
+        <MenuItem value={20}>20</MenuItem>
+        <MenuItem value={30}>30</MenuItem>
+      </TextField>
+    );
   },
+  args: { label: 'Select', placeholder: 'Select...' },
 };
 
 export const _MultiSelect: StoryObj<typeof TextField> = {
@@ -351,7 +351,5 @@ export const _MultiSelect: StoryObj<typeof TextField> = {
       </TextField>
     );
   },
-  args: {
-    label: 'MultiSelect',
-  },
+  args: { label: 'MultiSelect' },
 };
