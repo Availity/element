@@ -40,7 +40,7 @@ export const _Select: StoryObj<typeof Select> = {
       </FormControl>
     );
   },
-  args: { label: 'count', id: 'count', size: 'small', placeholder: 'Select...' },
+  args: { label: 'count', id: 'count', size: 'small' },
 };
 
 export const _SelectPlaceholder: StoryObj<typeof Select> = {
@@ -64,7 +64,7 @@ export const _SelectPlaceholder: StoryObj<typeof Select> = {
       </FormControl>
     );
   },
-  args: { label: 'count', id: 'count', size: 'small' },
+  args: { label: 'count', id: 'count', size: 'small', placeholder: 'Select...' },
 };
 
 export const _MultiSelect: StoryObj<typeof Select> = {
