@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.0.7...@availity/mui-controlled-form@1.1.0) (2025-03-21)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `1.0.7`
+* `mui-datepicker` updated to version `1.0.7`
+* `mui-form-utils` updated to version `1.0.7`
+* `mui-textfield` updated to version `1.0.7`
+* `theme-provider` updated to version `1.0.7`
+
+### Features
+
+* **mui-textfield, mui-form-utils:** add placeholder support to select ([3a6b1ef](https://github.com/Availity/element/commit/3a6b1ef2e5ceedca632bd1916734e56402371ffb))
+* **mui-textfield:** add optional character count to textfield ([1c3f0dc](https://github.com/Availity/element/commit/1c3f0dc886e153c79afc81c98b3326ed8990b305))
+
 ## [1.0.7](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.0.6...@availity/mui-controlled-form@1.0.7) (2025-03-13)
 
 ### Dependency Updates
