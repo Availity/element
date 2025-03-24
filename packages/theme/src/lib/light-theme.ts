@@ -2103,7 +2103,7 @@ export const lightTheme = {
           letterSpacing: tokens.typographyBody1LetterSpacing,
           color: tokens.colorTextPrimary,
           marginBottom: '-1px',
-          padding: '11px 8px',
+          padding: '11px 16px',
           '&:hover': {
             backgroundColor: tokens.colorActionHover,
           },
