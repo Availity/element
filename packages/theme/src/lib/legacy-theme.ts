@@ -2193,6 +2193,10 @@ export const legacyTheme = {
       }
     },
     MuiTab: {
+      defaultProps: {
+        disableRipple: true,
+        iconPosition: 'start'
+      },
       styleOverrides: {
         root: {
           textTransform: 'unset',
@@ -2221,6 +2225,9 @@ export const legacyTheme = {
             color: tokens.colorTextPrimary,
           },
         },
+        labelIcon: {
+          minHeight: '3rem'
+        }
       },
     },
     MuiTable: {

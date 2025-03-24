@@ -2091,7 +2091,8 @@ export const lightTheme = {
     },
     MuiTab: {
       defaultProps: {
-        disableRipple: true
+        disableRipple: true,
+        iconPosition: 'start'
       },
       styleOverrides: {
         root: {
@@ -2116,6 +2117,9 @@ export const lightTheme = {
             backgroundColor: tokens.colorActionFocus
           }
         },
+        labelIcon: {
+          minHeight: '3rem'
+        }
       },
     },
     MuiTable: {
