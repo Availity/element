@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.2.1...@availity/mui-file-selector@1.3.0) (2025-03-24)
+
+
+### Features
+
+* **mui-file-selector:** error alert and file list style updates ([341f5c9](https://github.com/Availity/element/commit/341f5c90cab723f786908f88e72963a4e588f1ac))
+
 ## [1.2.1](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.2.0...@availity/mui-file-selector@1.2.1) (2025-03-21)
 
 ### Dependency Updates
