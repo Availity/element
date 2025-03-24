@@ -46,7 +46,7 @@
     "@availity/mui-layout": "workspace:^",
     "@availity/mui-link": "workspace:^",
     "@availity/mui-typography": "workspace:^",
-    "@mui/material": "^6.4.5",
+    "@mui/material": "^6.4.8",
     "@tanstack/react-query": "^4.36.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -62,7 +62,7 @@
     "@availity/mui-link": "workspace:^",
     "@availity/mui-spaces": "workspace:^",
     "@availity/mui-typography": "workspace:^",
-    "@mui/material": "^6.4.5",
+    "@mui/material": "^6.4.8",
     "react": ">=16.3.0"
   },
   "publishConfig": {
