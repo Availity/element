@@ -74,19 +74,19 @@ export const FileRow = ({
         )
       }
     >
-      <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%">
-        <Grid size={{ xs: 1 }}>
-          <ListItemIcon>
+      <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%"  flexWrap="wrap">
+        <Grid size={{ xs: "auto" }}>
+          <ListItemIcon sx={{minWidth: '1.5rem'}}>
             <Icon />
           </ListItemIcon>
         </Grid>
-        <Grid size={{ xs: 3 }}>
-          <ListItemText>{upload.trimFileName(upload.file.name)}</ListItemText>
+        <Grid size={{ xs: 4 }} sx={{minWidth: '8rem'}}>
+          <ListItemText sx={{wordBreak: 'break-all'}}>{upload.trimFileName(upload.file.name)}</ListItemText>
         </Grid>
-        <Grid size={{ xs: 2 }}>
-          <ListItemText>{formatBytes(upload.file.size)}</ListItemText>
+        <Grid size={{ xs: 2 }} sx={{minWidth: '3rem'}}>
+          <ListItemText sx={{textAlign: 'end'}}>{formatBytes(upload.file.size)}</ListItemText>
         </Grid>
-        <Grid size={{ xs: 6 }}>
+        <Grid size={{ xs: 'grow' }} sx={{minWidth: '6rem'}}>
           <UploadProgressBar upload={upload} />
         </Grid>
       </Grid>

@@ -1,4 +1,5 @@
 import { Alert, AlertTitle } from '@availity/mui-alert';
+import { List, ListItem } from '@availity/mui-list';
 import type { FileRejection } from 'react-dropzone';
 
 const codes: Record<string, string> = {
@@ -30,17 +31,39 @@ export const ErrorAlert = ({ errors, fileName, id, onClose }: ErrorAlertProps) =
   if (errors.length === 0) return null;
 
   return (
-    <>
-      {errors.map((error) => {
-        return (
-          <Alert severity="error" onClose={onClose} key={`${id}-${error.code}`}>
-            <AlertTitle>
-              {codes[error.code] || 'Error'}: {fileName}
-            </AlertTitle>
-            {error.message}
-          </Alert>
-        );
-      })}
-    </>
+    <Alert severity="error" onClose={onClose}>
+      {errors.length > 1 ?
+        <>
+          <AlertTitle>
+            There were {errors.length} error(s) found when uploading {fileName}
+          </AlertTitle>
+          <List sx={{
+            listStyleType: 'disc',
+            listStylePosition: 'inside',
+            marginLeft: 1,
+            '.MuiListItem-root': {
+              display: 'list-item'
+            }
+          }} disablePadding>
+            <>
+              {errors.map((error) => {
+                return (
+                  <ListItem disableGutters disablePadding divider={false} key={`${id}-${error.code}`}>
+                    {error.message}
+                  </ListItem>
+                );
+              })}
+            </>
+          </List>
+        </>
+      :
+        <>
+          <AlertTitle>
+            {codes[errors[0].code] || 'Error'}: {fileName}
+          </AlertTitle>
+          {errors[0].message}
+        </>
+      }
+    </Alert>
   );
 };

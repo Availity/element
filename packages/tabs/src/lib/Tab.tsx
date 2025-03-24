@@ -7,8 +7,6 @@ export type TabProps = Omit<
   | 'disableRipple'
   | 'disableTouchRipple'
   | 'focusRipple'
-  | 'icon'
-  | 'iconPosition'
   | 'touchRippleRef'
   | 'TouchRippleProps'
 >;
