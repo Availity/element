@@ -13,54 +13,31 @@ const meta: Meta<typeof ControlledAsyncAutocomplete> = {
   title: 'Form Components/Controlled Form/Autocomplete/ControlledAsyncAutocomplete',
   component: ControlledAsyncAutocomplete,
   tags: ['autodocs'],
-  argTypes: {...AllControllerPropertiesCategorized, ...AsyncAutocompletePropsCategorized}
+  argTypes: { ...AllControllerPropertiesCategorized, ...AsyncAutocompletePropsCategorized },
 };
 
 export default meta;
 
 const api = new AvApi({ name: 'example' } as ApiConfig);
 
-type Option = {
-  label: string;
-  value: number;
-};
+type Option = { label: string; value: number };
 
-type ExampleResponse = {
-  totalCount: number;
-  options: Option[];
-  count: number;
-};
+type ExampleResponse = { totalCount: number; options: Option[]; count: number };
 
 const getResults = async (offset: number, limit: number) => {
   // const offset = page * limit;
   const resp = await api.post<ExampleResponse>({ offset, limit }, { params: {} });
 
-  return {
-    totalCount: resp.data.totalCount,
-    offset,
-    limit,
-    options: resp.data.options,
-    count: resp.data.count,
-  };
+  return { totalCount: resp.data.totalCount, offset, limit, options: resp.data.options, count: resp.data.count };
 };
 
 const loadOptions = async (offset: number, limit: number) => {
   const { options, totalCount } = await getResults(offset, limit);
 
-  return {
-    options,
-    hasMore: offset + limit < totalCount,
-    offset,
-  };
+  return { options, hasMore: offset + limit < totalCount, offset };
 };
 
-const client = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-    },
-  },
-});
+const client = new QueryClient({ defaultOptions: { queries: { refetchOnWindowFocus: false } } });
 
 export const _ControlledAsyncAutoComplete: StoryObj<typeof ControlledAsyncAutocomplete> = {
   render: (args) => {
@@ -72,15 +49,20 @@ export const _ControlledAsyncAutoComplete: StoryObj<typeof ControlledAsyncAutoco
           <form onSubmit={methods.handleSubmit((data) => data)}>
             <ControlledAsyncAutocomplete {...args} />
             <Grid container direction="row" justifyContent="space-between" marginTop={1}>
-              <Button disabled={!methods?.formState?.isSubmitSuccessful} children="Reset" color="secondary" onClick={() => methods.reset()} />
+              <Button
+                disabled={!methods?.formState?.isSubmitSuccessful}
+                children="Reset"
+                color="secondary"
+                onClick={() => methods.reset()}
+              />
               <Button type="submit" disabled={methods?.formState?.isSubmitSuccessful} children="Submit" />
             </Grid>
-            { methods?.formState?.isSubmitSuccessful ? (
+            {methods?.formState?.isSubmitSuccessful ? (
               <Paper sx={{ padding: '1.5rem', marginTop: '1.5rem' }}>
                 <Typography variant="h2">Submitted Values</Typography>
                 <pre data-testid="result">{JSON.stringify(methods.getValues(), null, 2)}</pre>
               </Paper>
-            ) : null }
+            ) : null}
           </form>
         </FormProvider>
       </QueryClientProvider>
@@ -93,6 +75,7 @@ export const _ControlledAsyncAutoComplete: StoryObj<typeof ControlledAsyncAutoco
     loadOptions,
     limit: 10,
     queryKey: 'example',
-    rules: { required:'This is required.' },
+    rules: { required: 'This is required.' },
+    defaultToFirstOption: true,
   },
 };
