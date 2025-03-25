@@ -16,7 +16,7 @@ const meta: Meta<typeof ControlledTextField> = {
     ...TextFieldPropsCategorized,
     helperText: {
       type: 'string',
-      table: { category: 'Input Props' }
+      table: { category: 'Input Props' },
     },
   },
 };
@@ -25,22 +25,27 @@ export default meta;
 
 export const _ControlledTextField: StoryObj<typeof ControlledTextField> = {
   render: (args: ControlledTextFieldProps) => {
-    const methods = useForm({values:{ [args.name]: '' }});
+    const methods = useForm({ values: { [args.name]: '' } });
 
     return (
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit((data) => data)}>
           <ControlledTextField {...args} />
           <Grid container direction="row" justifyContent="space-between" marginTop={1}>
-            <Button disabled={!methods?.formState?.isSubmitSuccessful} children="Reset" color="secondary" onClick={() => methods.reset()} />
+            <Button
+              disabled={!methods?.formState?.isSubmitSuccessful}
+              children="Reset"
+              color="secondary"
+              onClick={() => methods.reset()}
+            />
             <Button type="submit" disabled={methods?.formState?.isSubmitSuccessful} children="Submit" />
           </Grid>
-          { methods?.formState?.isSubmitSuccessful ? (
+          {methods?.formState?.isSubmitSuccessful ? (
             <Paper sx={{ padding: '1.5rem', marginTop: '1.5rem' }}>
               <Typography variant="h2">Submitted Values</Typography>
               <pre data-testid="result">{JSON.stringify(methods.getValues(), null, 2)}</pre>
             </Paper>
-          ) : null }
+          ) : null}
         </form>
       </FormProvider>
     );
@@ -52,8 +57,51 @@ export const _ControlledTextField: StoryObj<typeof ControlledTextField> = {
     required: true,
     rules: {
       required: 'This field is required.',
-      maxLength: { value: 10, message: 'Too long' }
+      maxLength: { value: 10, message: 'Too long' },
     },
     label: 'TextField Label',
+    showCharacterCount: true,
+  },
+};
+
+export const _ControlledTextFieldDisplayOverflow: StoryObj<typeof ControlledTextField> = {
+  render: (args: ControlledTextFieldProps) => {
+    const methods = useForm({ values: { [args.name]: '' } });
+
+    return (
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit((data) => data)}>
+          <ControlledTextField {...args} />
+          <Grid container direction="row" justifyContent="space-between" marginTop={1}>
+            <Button
+              disabled={!methods?.formState?.isSubmitSuccessful}
+              children="Reset"
+              color="secondary"
+              onClick={() => methods.reset()}
+            />
+            <Button type="submit" disabled={methods?.formState?.isSubmitSuccessful} children="Submit" />
+          </Grid>
+          {methods?.formState?.isSubmitSuccessful ? (
+            <Paper sx={{ padding: '1.5rem', marginTop: '1.5rem' }}>
+              <Typography variant="h2">Submitted Values</Typography>
+              <pre data-testid="result">{JSON.stringify(methods.getValues(), null, 2)}</pre>
+            </Paper>
+          ) : null}
+        </form>
+      </FormProvider>
+    );
+  },
+  args: {
+    name: 'controlledTextField',
+    helperText: 'This is some helper text',
+    placeholder: 'Name',
+    required: true,
+    rules: {
+      required: 'This field is required.',
+      maxLength: { value: 10, message: 'Too long' },
+    },
+    label: 'TextField Label',
+    displayOverflowMaxLength: true,
+    showCharacterCount: true,
   },
 };

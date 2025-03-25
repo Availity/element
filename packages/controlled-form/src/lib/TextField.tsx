@@ -39,7 +39,7 @@ export const ControlledTextField = ({
           slotProps={{
             ...rest.slotProps,
             htmlInput: {
-              maxLength: rules.maxLength,
+              maxLength: typeof rules.maxLength === 'object' ? rules.maxLength.value : rules.maxLength,
               ...rest.slotProps?.htmlInput,
             },
           }}
