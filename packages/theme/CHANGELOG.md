@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.1](https://github.com/Availity/element/compare/@availity/theme@1.3.0...@availity/theme@1.3.1) (2025-03-25)
+
+
+### Bug Fixes
+
+* **theme:** fix tab padding ([fc087c5](https://github.com/Availity/element/commit/fc087c506a7246cbc0c2d4a4606fdcf70ee6674a))
+
 ## [1.3.0](https://github.com/Availity/element/compare/@availity/theme@1.2.0...@availity/theme@1.3.0) (2025-03-24)
 
 
