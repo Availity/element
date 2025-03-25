@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { LinkIcon, UserIcon } from '@availity/mui-icon';
-import { Tooltip } from '@availity/mui-tooltip';
 import { Tabs, TabsProps } from './Tabs';
 import { Tab } from './Tab';
 import { useState } from 'react';
@@ -151,27 +150,6 @@ export const _WithIcons: StoryObj<typeof Tabs> = {
         <Tabs value={value} onChange={handleChange}>
           <Tab icon={<LinkIcon/>} label="Links" {...a11yProps(0)} />
           <Tab icon={<UserIcon/>} label="My Account" {...a11yProps(1)} />
-        </Tabs>
-        <CustomTabPanel value={value} index={0} />
-        <CustomTabPanel value={value} index={1} />
-      </>
-    );
-  },
-};
-
-export const _IconOnly: StoryObj<typeof Tabs> = {
-  render: () => {
-    const [value, setValue] = useState(0);
-
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-      setValue(newValue);
-    };
-
-    return (
-      <>
-        <Tabs value={value} onChange={handleChange}>
-          <Tab label={<Tooltip title="Links"><LinkIcon/></Tooltip>} {...a11yProps(0)} />
-          <Tooltip title="My Account"><Tab label={<UserIcon/>}  {...a11yProps(1)} /></Tooltip>
         </Tabs>
         <CustomTabPanel value={value} index={0} />
         <CustomTabPanel value={value} index={1} />
