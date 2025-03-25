@@ -52,7 +52,6 @@ export const _ControlledTextField: StoryObj<typeof ControlledTextField> = {
   },
   args: {
     name: 'controlledTextField',
-    helperText: 'This is some helper text',
     placeholder: 'Name',
     required: true,
     rules: {

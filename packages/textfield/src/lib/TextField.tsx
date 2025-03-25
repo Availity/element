@@ -95,7 +95,7 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
         setCharCount(event.target.value.length);
         if (rest.onChange) rest.onChange(event);
       }}
-      helperText={helperText}
+      helperText={helperText || <></>}
       slots={{ formHelperText: TextFieldFormHelperText }}
       slotProps={{
         input: resolvedProps({ ...InputProps, ...InputPropOverrides, ...rest.slotProps?.input }),
