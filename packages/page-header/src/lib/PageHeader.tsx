@@ -94,22 +94,26 @@ export const PageHeader = ({
       }}
     >
       {breadcrumbs || logo || help ? (
-        <Grid direction="row" container sx={{ justifyContent: 'space-between', marginBottom: 4 }}>
-          {breadcrumbs && (
-            <Grid marginRight={2}>
+        <Grid direction="row" container sx={{ justifyContent: 'space-between', marginBottom: 4 }} spacing={2}>
+          {breadcrumbs ?
+            <Grid>
               <Breadcrumbs {...breadcrumbs} />
             </Grid>
-          )}
+            :
+            <Grid sx={{display: {xs: 'none', sm: 'block'}}}/>
+          }
           {(logo || help) && (
-            <Grid>
+            <Grid direction="column" container spacing={2}>
               {help && (
-                <Typography variant="body1">
-                  Need help?{' '}
-                  <Link href={help.url} target="_blank" loadApp={false}>
-                    {help.helpAppName ? 'Watch a demo' : 'Learn More'}
-                  </Link>{' '}
-                  {help.helpAppName ? ` for ${help.helpAppName}` : null}
-                </Typography>
+                <Grid>
+                  <Typography variant="body1">
+                    Need help?{' '}
+                    <Link href={help.url} target="_blank" loadApp={false}>
+                      {help.helpAppName ? 'Watch a demo' : 'Learn More'}
+                    </Link>{' '}
+                    {help.helpAppName ? ` for ${help.helpAppName}` : null}
+                  </Typography>
+                </Grid>
               )}
               {logo && (
                 <Grid container justifyContent="end">
