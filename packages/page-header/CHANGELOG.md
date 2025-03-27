@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.14](https://github.com/Availity/element/compare/@availity/mui-page-header@1.1.13...@availity/mui-page-header@1.1.14) (2025-03-27)
+
+
+### Bug Fixes
+
+* **mui-page-header:** fix demo link and logo spacings ([57ecad5](https://github.com/Availity/element/commit/57ecad555e7c762a26c3c41fabce5215ae78defd))
+
 ## [1.1.13](https://github.com/Availity/element/compare/@availity/mui-page-header@1.1.12...@availity/mui-page-header@1.1.13) (2025-03-27)
 
 ### Dependency Updates
