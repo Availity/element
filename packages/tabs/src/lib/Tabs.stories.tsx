@@ -4,8 +4,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { LinkIcon, UserIcon } from '@availity/mui-icon';
 import { Tabs, TabsProps } from './Tabs';
 import { Tab } from './Tab';
+import { useState } from 'react';
 
 const meta: Meta<typeof Tabs> = {
   title: 'Components/Tabs/Tabs',
@@ -131,6 +133,27 @@ export const _Levels: StoryObj<typeof Tabs> = {
           <CustomTabPanel value={0} index={1} />
           <CustomTabPanel value={0} index={2} />
       </Box>
+    );
+  },
+};
+
+export const _WithIcons: StoryObj<typeof Tabs> = {
+  render: () => {
+    const [value, setValue] = useState(0);
+
+    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+      setValue(newValue);
+    };
+
+    return (
+      <>
+        <Tabs value={value} onChange={handleChange}>
+          <Tab icon={<LinkIcon/>} label="Links" {...a11yProps(0)} />
+          <Tab icon={<UserIcon/>} label="My Account" {...a11yProps(1)} />
+        </Tabs>
+        <CustomTabPanel value={value} index={0} />
+        <CustomTabPanel value={value} index={1} />
+      </>
     );
   },
 };

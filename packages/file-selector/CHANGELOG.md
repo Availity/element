@@ -2,6 +2,26 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.1](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.3.0...@availity/mui-file-selector@1.3.1) (2025-03-27)
+
+### Dependency Updates
+
+* `mui-dialog` updated to version `1.3.0`
+* `mui-textfield` updated to version `1.3.0`
+## [1.3.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.2.1...@availity/mui-file-selector@1.3.0) (2025-03-24)
+
+
+### Features
+
+* **mui-file-selector:** error alert and file list style updates ([341f5c9](https://github.com/Availity/element/commit/341f5c90cab723f786908f88e72963a4e588f1ac))
+
+## [1.2.1](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.2.0...@availity/mui-file-selector@1.2.1) (2025-03-21)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `1.2.0`
+* `mui-dialog` updated to version `1.2.0`
+* `mui-textfield` updated to version `1.2.0`
 ## [1.2.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.1.2...@availity/mui-file-selector@1.2.0) (2025-03-13)
 
 

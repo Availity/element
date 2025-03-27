@@ -77,7 +77,7 @@ export const UploadProgressBar = ({ upload, onProgress, onError, onSuccess }: Up
 
   return errorMessage ? (
     <Box sx={{display: 'flex', flexWrap: 'wrap', columnGap: '4px'}}>
-      <ListItemText slotProps={{primary: { color: 'text.error', variant: 'body2', component: 'div' }}}>
+      <ListItemText slotProps={{primary: { color: 'text.error', variant: 'body2', component: 'div' }}} sx={{wordWrap: 'break-word'}}>
         <WarningTriangleIcon sx={{verticalAlign: 'middle', mt: '-2px'}}/> {errorMessage}
       </ListItemText>
       {upload.status === 'encrypted' && (

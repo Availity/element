@@ -1747,6 +1747,11 @@ export const lightTheme = {
           '&.MuiInputBase-input.MuiSelect-select.MuiOutlinedInput-input': {
             paddingRight: '4rem',
           },
+          ':hover': {
+            '.MuiSelect-placeholder': {
+              color: important(tokens.colorTextPrimary)
+            }
+          }
         },
       },
     },
@@ -2091,7 +2096,8 @@ export const lightTheme = {
     },
     MuiTab: {
       defaultProps: {
-        disableRipple: true
+        disableRipple: true,
+        iconPosition: 'start'
       },
       styleOverrides: {
         root: {
@@ -2102,7 +2108,7 @@ export const lightTheme = {
           letterSpacing: tokens.typographyBody1LetterSpacing,
           color: tokens.colorTextPrimary,
           marginBottom: '-1px',
-          padding: '11px 8px',
+          padding: '11px 16px',
           '&:hover': {
             backgroundColor: tokens.colorActionHover,
           },
@@ -2116,6 +2122,9 @@ export const lightTheme = {
             backgroundColor: tokens.colorActionFocus
           }
         },
+        labelIcon: {
+          minHeight: '3rem'
+        }
       },
     },
     MuiTable: {

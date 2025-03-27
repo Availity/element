@@ -188,6 +188,8 @@ export const AllControllerPropertiesCategorized: CategorizedControllerPropsObjec
 };
 
 export const TextFieldPropsCategorized: TextFieldPropsObject = {
+  displayOverflowMaxLength: { table: { category: 'Input Props' } },
+  slotProps: { table: { category: 'Input Props' } },
   className: { table: { category: 'Input Props' } },
   style: { table: { category: 'Input Props' } },
   classes: { table: { category: 'Input Props' } },
@@ -224,6 +226,7 @@ export const TextFieldPropsCategorized: TextFieldPropsObject = {
   SelectProps: { table: { category: 'Input Props' } },
   type: { table: { category: 'Input Props' } },
   slots: { table: { category: 'Input Props' } },
+  showCharacterCount: { table: { category: 'Input Props' } },
 };
 
 export const RadioGroupPropsCategorized: RadioGroupPropsObject = {
@@ -633,6 +636,7 @@ export const InputPropsCategorized: InputPropsObject = {
 };
 
 export const SelectPropsCategorized: SelectPropsObject = {
+  placeholder: { table: { category: 'Input Props' } },
   className: { table: { category: 'Input Props' } },
   style: { table: { category: 'Input Props' } },
   classes: { table: { category: 'Input Props' } },

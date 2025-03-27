@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { LinkIcon, UserIcon } from '@availity/mui-icon';
 import { TabList, TabListProps } from './TabList';
 import { Tab } from './Tab';
 import { TabContext } from './TabContext';
@@ -42,4 +43,24 @@ export const _TabList: StoryObj<typeof TabList> = {
     );
   },
   args: {},
+};
+
+export const _WithIcons: StoryObj<typeof TabList> = {
+  render: () => {
+    const [value, setValue] = useState('1');
+
+    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+      setValue(newValue);
+    };
+    return (
+      <TabContext value={value}>
+        <TabList onChange={handleChange} aria-label="lab API tabs example">
+          <Tab value="1" icon={<LinkIcon/>} label="Links" />
+          <Tab value="2" icon={<UserIcon/>} label="My Account" />
+        </TabList>
+        <TabPanel value="1" children={`Hello from Panel ${value}`} />
+        <TabPanel value="2" children={`Hello from Panel ${value}`} />
+      </TabContext>
+    );
+  },
 };

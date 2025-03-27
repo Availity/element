@@ -13,16 +13,8 @@ const meta: Meta<typeof Select> = {
   title: 'Form Components/FormUtils/Select',
   component: Select,
   tags: ['autodocs'],
-  args: {
-    size: 'small',
-  },
-  parameters: {
-    docs: {
-      controls: {
-        exclude: ['placeholder'],
-      },
-    },
-  },
+  args: { size: 'small' },
+  parameters: { docs: { controls: { exclude: ['placeholder'] } } },
 };
 
 export default meta;
@@ -48,11 +40,31 @@ export const _Select: StoryObj<typeof Select> = {
       </FormControl>
     );
   },
-  args: {
-    label: 'count',
-    id: 'count',
-    size: 'small',
+  args: { label: 'count', id: 'count', size: 'small' },
+};
+
+export const _SelectPlaceholder: StoryObj<typeof Select> = {
+  render: ({ required, size, ...args }: SelectProps) => {
+    const [count, setCount] = useState('');
+
+    const handleChange = (event: SelectChangeEvent) => {
+      setCount(event.target.value as string);
+    };
+
+    return (
+      <FormControl required={required} size={size}>
+        <FormLabel id={`${args.id}-label`} sx={visuallyHidden}>
+          {args.label}
+        </FormLabel>
+        <Select value={count} onChange={handleChange} labelId={`${args.id}-label`} {...args}>
+          <MenuItem value={10}>10</MenuItem>
+          <MenuItem value={20}>20</MenuItem>
+          <MenuItem value={30}>30</MenuItem>
+        </Select>
+      </FormControl>
+    );
   },
+  args: { label: 'count', id: 'count', size: 'small', placeholder: 'Select...' },
 };
 
 export const _MultiSelect: StoryObj<typeof Select> = {
@@ -98,10 +110,5 @@ export const _MultiSelect: StoryObj<typeof Select> = {
       </FormControl>
     );
   },
-  args: {
-    label: 'counts',
-    id: 'multiple-chip',
-    size: 'small',
-    multiple: true,
-  },
+  args: { label: 'counts', id: 'multiple-chip', size: 'small', multiple: true },
 };
