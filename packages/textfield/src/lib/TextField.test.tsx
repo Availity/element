@@ -14,12 +14,14 @@ describe('TextField', () => {
         <TextField label="Test" showCharacterCount inputProps={{ 'data-testid': 'testTextField', maxLength: 20 }} />
       );
 
-      expect(getByText('0/20')).toBeTruthy();
+      expect(getByText('0')).toBeTruthy();
+      expect(getByText('/20')).toBeTruthy();
 
       const input = getByTestId('testTextField');
       fireEvent.change(input, { target: { value: 'Some Text' } });
 
-      expect(getByText('9/20')).toBeTruthy();
+      expect(getByText('9')).toBeTruthy();
+      expect(getByText('/20')).toBeTruthy();
 
       fireEvent.change(input, { target: { value: "Some More Text that doesn't fit" } });
 
@@ -34,12 +36,14 @@ describe('TextField', () => {
           slotProps={{ htmlInput: { 'data-testid': 'testTextField', maxLength: 20 } }}
         />
       );
-      expect(getByText('0/20')).toBeTruthy();
+      expect(getByText('0')).toBeTruthy();
+      expect(getByText('/20')).toBeTruthy();
 
       const input = getByTestId('testTextField');
       fireEvent.change(input, { target: { value: 'Some Text' } });
 
-      expect(getByText('9/20')).toBeTruthy();
+      expect(getByText('9')).toBeTruthy();
+      expect(getByText('/20')).toBeTruthy();
 
       fireEvent.change(input, { target: { value: "Some More Text that doesn't fit" } });
 

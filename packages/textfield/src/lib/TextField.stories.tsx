@@ -29,12 +29,24 @@ export const _TextField: StoryObj<typeof TextField> = {
 };
 
 export const _TextFieldCharacterCount: StoryObj<typeof TextField> = {
-  render: (args: TextFieldProps) => <TextField {...args} />,
+  render: (args: TextFieldProps) => <TextField sx={{ width: 'min-content' }} {...args} />,
   args: {
     label: 'Field Label',
     id: 'test',
     helpTopicId: '123',
     showCharacterCount: true,
+    slotProps: { htmlInput: { maxLength: 10 } },
+  },
+};
+
+export const _TextFieldCharacterCountOverflow: StoryObj<typeof TextField> = {
+  render: (args: TextFieldProps) => <TextField sx={{ width: 'min-content' }} {...args} />,
+  args: {
+    label: 'Field Label',
+    id: 'test',
+    helpTopicId: '123',
+    showCharacterCount: true,
+    displayOverflowMaxLength: true,
     slotProps: { htmlInput: { maxLength: 10 } },
   },
 };
