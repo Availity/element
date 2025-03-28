@@ -400,6 +400,8 @@ export const DatepickerPropsCategorized: DatepickerPropsObject = {
 
 export const CodesAutocompletePropsCategorized: CodesAutocompletePropsObject = {
   classes: { table: { category: 'Input Props' } },
+  defaultToFirstOption: { table: { category: 'Input Props' } },
+  defaultToOnlyOption: { table: { category: 'Input Props' } },
   id: { table: { category: 'Input Props' } },
   onKeyDown: { table: { category: 'Input Props' } },
   sx: { table: { category: 'Input Props' } },
