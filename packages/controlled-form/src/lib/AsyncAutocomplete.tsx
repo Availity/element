@@ -1,5 +1,5 @@
 import { AsyncAutocomplete, AsyncAutocompleteProps } from '@availity/mui-autocomplete';
-import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
+import { RegisterOptions, FieldValues, Controller, useFormContext } from 'react-hook-form';
 import { ChipTypeMap } from '@mui/material/Chip';
 import { ControllerProps } from './Types';
 
@@ -9,7 +9,7 @@ export type ControlledAsyncAutocompleteProps<
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
-> = Omit<
+> = { defaultToFirstOption?: boolean; defaultToOnlyOption?: boolean } & Omit<
   AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>,
   'onBlur' | 'onChange' | 'value' | 'name'
 > &
@@ -30,19 +30,16 @@ export const ControlledAsyncAutocomplete = <
   shouldUnregister,
   value,
   FieldProps,
+  defaultToFirstOption,
+  defaultToOnlyOption,
   ...rest
 }: ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
+  const { setValue } = useFormContext();
   return (
     <Controller
       name={name}
       defaultValue={rest.defaultValue}
-      rules={{
-        onBlur,
-        onChange,
-        shouldUnregister,
-        value,
-        ...rules,
-      }}
+      rules={{ onBlur, onChange, shouldUnregister, value, ...rules }}
       shouldUnregister={shouldUnregister}
       render={({ field: { onChange, value, onBlur, ref }, fieldState: { error } }) => (
         <AsyncAutocomplete
@@ -70,6 +67,19 @@ export const ControlledAsyncAutocomplete = <
           }}
           onBlur={onBlur}
           value={value || null}
+          loadOptions={async (offset, limit, inputValue) => {
+            const { options, hasMore, offset: returnedOffsetValue } = await rest.loadOptions(offset, limit, inputValue);
+
+            if (defaultToFirstOption && offset === 0) {
+              setValue(name, options[0]);
+            }
+
+            if (defaultToOnlyOption && offset === 0 && options.length === 1) {
+              setValue(name, options[0]);
+            }
+
+            return { options, hasMore, offset: returnedOffsetValue };
+          }}
         />
       )}
     />

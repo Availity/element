@@ -447,6 +447,7 @@ __metadata:
     typescript: ^5.4.5
     yup: ^1.6.1
   peerDependencies:
+    "@availity/api-axios": ^8.0.7
     "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown
