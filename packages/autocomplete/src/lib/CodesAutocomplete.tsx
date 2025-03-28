@@ -4,12 +4,12 @@ import type { ChipTypeMap } from '@mui/material/Chip';
 import { AsyncAutocomplete, AsyncAutocompleteProps } from './AsyncAutocomplete';
 import type { Optional } from './util';
 
-type Code = {
+export type Code = {
   code: string;
   value: string;
 };
 
-const fetchCodes = async (config: ApiConfig) => {
+export const fetchCodes = async (config: ApiConfig) => {
   const resp = await avCodesApi.query(config);
 
   return {
@@ -35,6 +35,8 @@ export interface CodesAutocompleteProps<
   apiConfig?: ApiConfig;
 }
 
+export const handleGetCodesOptionLabel = (option: Code) => [option.code, option.value].filter(Boolean).join(' - ');
+
 export const CodesAutocomplete = ({
   apiConfig = {},
   queryOptions,
@@ -52,11 +54,9 @@ export const CodesAutocomplete = ({
     return resp;
   };
 
-  const handleGetOptionLabel = (option: Code) => [option.code, option.value].filter(Boolean).join(' - ');
-
   return (
     <AsyncAutocomplete
-      getOptionLabel={handleGetOptionLabel}
+      getOptionLabel={handleGetCodesOptionLabel}
       queryKey={queryKey}
       queryOptions={{ enabled: !!list, ...queryOptions }}
       watchParams={{ list, ...watchParams }}

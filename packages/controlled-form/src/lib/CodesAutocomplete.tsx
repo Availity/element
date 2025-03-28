@@ -1,8 +1,9 @@
-import { avCodesApi, ApiConfig } from '@availity/api-axios';
+import type { Code } from '@availity/mui-autocomplete';
+import { fetchCodes, handleGetCodesOptionLabel } from '@availity/mui-autocomplete';
+import { ApiConfig } from '@availity/api-axios';
 import { ChipTypeMap } from '@mui/material/Chip';
+import type { Optional } from './utils';
 import { ControlledAsyncAutocomplete, ControlledAsyncAutocompleteProps } from './AsyncAutocomplete';
-
-export type Optional<T, K extends keyof T> = Pick<Partial<T>, K> & Omit<T, K>;
 
 export interface ControlledCodesAutocompleteProps<
   Option = Code,
@@ -19,21 +20,6 @@ export interface ControlledCodesAutocompleteProps<
   /** Config passed to the AvCodesApi.query function */
   apiConfig?: ApiConfig;
 }
-
-type Code = {
-  code: string;
-  value: string;
-};
-
-const fetchCodes = async (config: ApiConfig) => {
-  const resp = await avCodesApi.query(config);
-
-  return {
-    options: resp.data.codes as Code[],
-    hasMore: config.params.offset + config.params.limit < resp.data.totalCount,
-    offset: config.params.offset,
-  };
-};
 
 export const ControlledCodesAutocomplete = ({
   name,
@@ -60,8 +46,6 @@ export const ControlledCodesAutocomplete = ({
     return resp;
   };
 
-  const handleGetOptionLabel = (option: Code) => [option.code, option.value].filter(Boolean).join(' - ');
-
   return (
     <ControlledAsyncAutocomplete
       name={name}
@@ -72,7 +56,7 @@ export const ControlledCodesAutocomplete = ({
       shouldUnregister={shouldUnregister}
       value={value}
       FieldProps={FieldProps}
-      getOptionLabel={handleGetOptionLabel}
+      getOptionLabel={handleGetCodesOptionLabel}
       queryKey={queryKey}
       queryOptions={{ enabled: !!list, ...queryOptions }}
       watchParams={{ list, ...watchParams }}
