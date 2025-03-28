@@ -66,7 +66,11 @@ export type FileSelectorProps = {
   /**
    * Componet to render the File information. This should return a `ListItem`
    */
-  customFileRow?: ElementType<FileListProps>;
+  customFileRow?: React.ElementType<{
+    upload?: Upload;
+    options: Options;
+    onRemoveFile: (id: string, upload: Upload) => void;
+  }>;
   /**
    * Whether to use the cloud upload endpoint
    * When true, uses '/cloud/web/appl/vault/upload/v1/resumable'
