@@ -53,9 +53,9 @@ export const FileRow = ({
 
   const { data: upload } = useUploadCore(file, options, queryOptions);
 
-  if (CustomRow) return <CustomRow upload={upload} options={options} onRemoveFile={onRemoveFile} />;
-
   if (!upload) return null;
+
+  if (CustomRow) return <CustomRow upload={upload} options={options} onRemoveFile={onRemoveFile} />;
 
   return (
     <ListItem
@@ -74,19 +74,19 @@ export const FileRow = ({
         )
       }
     >
-      <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%"  flexWrap="wrap">
-        <Grid size={{ xs: "auto" }}>
-          <ListItemIcon sx={{minWidth: '1.5rem'}}>
+      <Grid container spacing={2} alignItems="center" justifyContent="space-between" width="100%" flexWrap="wrap">
+        <Grid size={{ xs: 'auto' }}>
+          <ListItemIcon sx={{ minWidth: '1.5rem' }}>
             <Icon />
           </ListItemIcon>
         </Grid>
-        <Grid size={{ xs: 4 }} sx={{minWidth: '8rem'}}>
-          <ListItemText sx={{wordBreak: 'break-all'}}>{upload.trimFileName(upload.file.name)}</ListItemText>
+        <Grid size={{ xs: 4 }} sx={{ minWidth: '8rem' }}>
+          <ListItemText sx={{ wordBreak: 'break-all' }}>{upload.trimFileName(upload.file.name)}</ListItemText>
         </Grid>
-        <Grid size={{ xs: 2 }} sx={{minWidth: '3rem'}}>
-          <ListItemText sx={{textAlign: 'end'}}>{formatBytes(upload.file.size)}</ListItemText>
+        <Grid size={{ xs: 2 }} sx={{ minWidth: '3rem' }}>
+          <ListItemText sx={{ textAlign: 'end' }}>{formatBytes(upload.file.size)}</ListItemText>
         </Grid>
-        <Grid size={{ xs: 'grow' }} sx={{minWidth: '6rem'}}>
+        <Grid size={{ xs: 'grow' }} sx={{ minWidth: '6rem' }}>
           <UploadProgressBar upload={upload} />
         </Grid>
       </Grid>
