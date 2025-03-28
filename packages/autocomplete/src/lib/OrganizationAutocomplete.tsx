@@ -12,7 +12,9 @@ export type Organization = {
   links: Record<string, Record<string, string>>;
 };
 
-const fetchOrgs = async (config: ApiConfig): Promise<{ options: Organization[]; hasMore: boolean; offset: number }> => {
+export const fetchOrgs = async (
+  config: ApiConfig
+): Promise<{ options: Organization[]; hasMore: boolean; offset: number }> => {
   const resp = await avOrganizationsApi.getOrganizations(config);
 
   return {
@@ -36,6 +38,8 @@ export interface OrgAutocompleteProps<
   apiConfig?: ApiConfig;
 }
 
+export const handleGetOrgOptionLabel = (org: Organization) => org.name;
+
 export const OrganizationAutocomplete = ({
   apiConfig = {},
   queryKey = 'org-autocomplete',
@@ -47,11 +51,9 @@ export const OrganizationAutocomplete = ({
     return resp;
   };
 
-  const handleGetOptionLabel = (org: Organization) => org.name;
-
   return (
     <AsyncAutocomplete
-      getOptionLabel={handleGetOptionLabel}
+      getOptionLabel={handleGetOrgOptionLabel}
       queryKey={queryKey}
       {...rest}
       loadOptions={handleLoadOptions}

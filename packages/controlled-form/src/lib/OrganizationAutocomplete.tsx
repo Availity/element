@@ -1,10 +1,23 @@
-import { OrganizationAutocomplete, OrgAutocompleteProps } from '@availity/mui-autocomplete';
-import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
-import { ControllerProps } from './Types';
+import type { Organization } from '@availity/mui-autocomplete';
+import { handleGetOrgOptionLabel, fetchOrgs } from '@availity/mui-autocomplete';
+import type { ChipTypeMap } from '@mui/material/Chip';
+import type { ApiConfig } from '@availity/api-axios';
+import type { Optional } from './utils';
+import { ControlledAsyncAutocomplete, ControlledAsyncAutocompleteProps } from './AsyncAutocomplete';
 
-export type ControlledOrgAutocompleteProps = Omit<OrgAutocompleteProps, 'onBlur' | 'onChange' | 'value' | 'name'> &
-  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
-  ControllerProps;
+export interface ControlledOrgAutocompleteProps<
+  Option = Organization,
+  Multiple extends boolean | undefined = false,
+  DisableClearable extends boolean | undefined = false,
+  FreeSolo extends boolean | undefined = false,
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+> extends Omit<
+    Optional<ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'queryKey'>,
+    'loadOptions'
+  > {
+  /** Axios ApiConfig */
+  apiConfig?: ApiConfig;
+}
 
 export const ControlledOrganizationAutocomplete = ({
   name,
@@ -15,48 +28,29 @@ export const ControlledOrganizationAutocomplete = ({
   shouldUnregister,
   value,
   FieldProps,
+  queryKey = 'org-autocomplete',
+  apiConfig = {},
   ...rest
 }: ControlledOrgAutocompleteProps) => {
+  const handleLoadOptions = async (offset: number, limit: number) => {
+    const resp = await fetchOrgs({ ...apiConfig, params: { dropdown: true, ...apiConfig.params, offset, limit } });
+
+    return resp;
+  };
   return (
-    <Controller
+    <ControlledAsyncAutocomplete
       name={name}
       defaultValue={defaultValue}
-      rules={{
-        onBlur,
-        onChange,
-        shouldUnregister,
-        value,
-        ...rules,
-      }}
+      onBlur={onBlur}
+      onChange={onChange}
+      rules={rules}
       shouldUnregister={shouldUnregister}
-      render={({ field: { onChange, value, onBlur, ref }, fieldState: { error } }) => (
-        <OrganizationAutocomplete
-          {...rest}
-          FieldProps={{
-            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
-            ...FieldProps,
-            error: !!error,
-            helperText: error?.message ? (
-              <>
-                {error.message}
-                <br />
-                {FieldProps?.helperText}
-              </>
-            ) : (
-              FieldProps?.helperText
-            ),
-            inputRef: ref,
-          }}
-          onChange={(event, value, reason) => {
-            if (reason === 'clear') {
-              onChange(null);
-            }
-            onChange(value);
-          }}
-          onBlur={onBlur}
-          value={value || null}
-        />
-      )}
+      value={value}
+      FieldProps={FieldProps}
+      getOptionLabel={handleGetOrgOptionLabel}
+      queryKey={queryKey}
+      {...rest}
+      loadOptions={handleLoadOptions}
     />
   );
 };
