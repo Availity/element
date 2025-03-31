@@ -11,17 +11,22 @@ This migration guide is just an overview. For more in depth component informatio
 
 ## Key Differences (not exhaustive list)
 
-- Removed
-  - `name` previously determined the icon used, now every icon is a separate component. `<Icon name="home"/>` -> `<HomeIcon/>`
-- Changed
-  - Icons are now aria-hidden by default.
-  - `arialabel` -> `titleAccess` SVGs use titles instead of aria-labels, with no default title provided.
-  If `Icon` is no longer aria-hidden a title must be assigned.
-  - `size` -> `fontSize` The old sizes start at undefined and go up from `lg` to `5x`,
-  while the new `fontSize` goes from `xxsmall` to `xlarge`. The equivalent sizes in `element` are two sizes smaller than `availity-react`
-    - `undefined` -> `xxsmall`
-    - `lg` -> `small`
-    - `3x` -> `xlarge`
+### Props
+
+#### ⚠️ Changed
+
+- Icons are now aria-hidden by default.
+- `arialabel` -> `titleAccess` SVGs use titles instead of aria-labels, with no default title provided.
+If `Icon` is no longer aria-hidden a title must be assigned.
+- `size` -> `fontSize` The old sizes start at undefined and go up from `lg` to `5x`,
+while the new `fontSize` goes from `xxsmall` to `xlarge`. The equivalent sizes in `element` are two sizes smaller than `availity-react`
+  - `undefined` -> `xxsmall`
+  - `lg` -> `small`
+  - `3x` -> `xlarge`
+
+#### 🚫 Removed
+
+- `name` previously determined the icon used, now every icon is a separate component. `<Icon name="home"/>` -> `<HomeIcon/>`
 
 ## Code Examples
 
