@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.2](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.3.1...@availity/mui-file-selector@1.3.2) (2025-03-31)
+
+
+### Bug Fixes
+
+* **mui-file-selector:** check if upload is defined before attempting to render CustomRow ([26d22cc](https://github.com/Availity/element/commit/26d22cc44e18ac9c0fce9ea64c2d8d6c8a4cff47))
+* **mui-file-selector:** update customFileRow type on FileSelector ([8020d04](https://github.com/Availity/element/commit/8020d045d68b744fddd21b8f4953a4fd63c551de))
+
 ## [1.3.1](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.3.0...@availity/mui-file-selector@1.3.1) (2025-03-27)
 
 ### Dependency Updates
