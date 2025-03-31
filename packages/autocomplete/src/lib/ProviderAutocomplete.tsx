@@ -33,7 +33,7 @@ export type Provider = {
   };
 };
 
-const fetchProviders = async (
+export const fetchProviders = async (
   customerId: string,
   config: ApiConfig
 ): Promise<{ options: Provider[]; hasMore: boolean; offset: number }> => {
@@ -62,6 +62,8 @@ export interface ProviderAutocompleteProps<
   apiConfig?: ApiConfig;
 }
 
+export const handleGetProviderOptionLabel = (option: Provider) => option.uiDisplayName;
+
 export const ProviderAutocomplete = ({
   apiConfig = {},
   customerId,
@@ -77,11 +79,9 @@ export const ProviderAutocomplete = ({
     return resp;
   };
 
-  const handleGetOptionLabel = (option: Provider) => option.uiDisplayName;
-
   return (
     <AsyncAutocomplete
-      getOptionLabel={handleGetOptionLabel}
+      getOptionLabel={handleGetProviderOptionLabel}
       queryOptions={{ enabled: !!customerId }}
       queryKey={queryKey}
       watchParams={{ customerId }}

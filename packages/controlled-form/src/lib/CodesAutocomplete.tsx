@@ -1,10 +1,25 @@
-import { CodesAutocomplete, CodesAutocompleteProps } from '@availity/mui-autocomplete';
-import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
-import { ControllerProps } from './Types';
+import type { Code } from '@availity/mui-autocomplete';
+import { fetchCodes, handleGetCodesOptionLabel } from '@availity/mui-autocomplete';
+import { ApiConfig } from '@availity/api-axios';
+import { ChipTypeMap } from '@mui/material/Chip';
+import type { Optional } from './utils';
+import { ControlledAsyncAutocomplete, ControlledAsyncAutocompleteProps } from './AsyncAutocomplete';
 
-export type ControlledCodesAutocompleteProps = Omit<CodesAutocompleteProps, 'onBlur' | 'onChange' | 'value' | 'name'> &
-  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
-  ControllerProps;
+export interface ControlledCodesAutocompleteProps<
+  Option = Code,
+  Multiple extends boolean | undefined = false,
+  DisableClearable extends boolean | undefined = false,
+  FreeSolo extends boolean | undefined = false,
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+> extends Omit<
+    Optional<ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'queryKey'>,
+    'loadOptions'
+  > {
+  /** The code list id. */
+  list: string;
+  /** Config passed to the AvCodesApi.query function */
+  apiConfig?: ApiConfig;
+}
 
 export const ControlledCodesAutocomplete = ({
   name,
@@ -15,48 +30,38 @@ export const ControlledCodesAutocomplete = ({
   shouldUnregister,
   value,
   FieldProps,
+  apiConfig = {},
+  queryOptions,
+  queryKey = 'codes-autocomplete',
+  list,
+  watchParams,
   ...rest
 }: ControlledCodesAutocompleteProps) => {
+  const handleLoadOptions = async (offset: number, limit: number, inputValue: string) => {
+    const resp = await fetchCodes({
+      ...apiConfig,
+      params: { ...apiConfig.params, list, offset, limit, q: inputValue },
+    });
+
+    return resp;
+  };
+
   return (
-    <Controller
+    <ControlledAsyncAutocomplete
       name={name}
       defaultValue={defaultValue}
-      rules={{
-        onBlur,
-        onChange,
-        shouldUnregister,
-        value,
-        ...rules,
-      }}
+      onBlur={onBlur}
+      onChange={onChange}
+      rules={rules}
       shouldUnregister={shouldUnregister}
-      render={({ field: { onChange, value, onBlur, ref }, fieldState: { error } }) => (
-        <CodesAutocomplete
-          {...rest}
-          FieldProps={{
-            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
-            ...FieldProps,
-            error: !!error,
-            helperText: error?.message ? (
-              <>
-                {error.message}
-                <br />
-                {FieldProps?.helperText}
-              </>
-            ) : (
-              FieldProps?.helperText
-            ),
-            inputRef: ref,
-          }}
-          onChange={(event, value, reason) => {
-            if (reason === 'clear') {
-              onChange(null);
-            }
-            onChange(value);
-          }}
-          onBlur={onBlur}
-          value={value || null}
-        />
-      )}
+      value={value}
+      FieldProps={FieldProps}
+      getOptionLabel={handleGetCodesOptionLabel}
+      queryKey={queryKey}
+      queryOptions={{ enabled: !!list, ...queryOptions }}
+      watchParams={{ list, ...watchParams }}
+      {...rest}
+      loadOptions={handleLoadOptions}
     />
   );
 };

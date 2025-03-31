@@ -1,13 +1,25 @@
-import { ProviderAutocomplete, ProviderAutocompleteProps } from '@availity/mui-autocomplete';
-import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
-import { ControllerProps } from './Types';
+import type { Provider } from '@availity/mui-autocomplete';
+import { handleGetProviderOptionLabel, fetchProviders } from '@availity/mui-autocomplete';
+import type { ChipTypeMap } from '@mui/material/Chip';
+import type { Optional } from './utils';
+import type { ApiConfig } from '@availity/api-axios';
+import { ControlledAsyncAutocomplete, type ControlledAsyncAutocompleteProps } from './AsyncAutocomplete';
 
-export type ControlledProviderAutocompleteProps = Omit<
-  ProviderAutocompleteProps,
-  'onBlur' | 'onChange' | 'value' | 'name'
-> &
-  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
-  ControllerProps;
+export interface ControlledProviderAutocompleteProps<
+  Option = Provider,
+  Multiple extends boolean | undefined = false,
+  DisableClearable extends boolean | undefined = false,
+  FreeSolo extends boolean | undefined = false,
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+> extends Omit<
+    Optional<ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'queryKey'>,
+    'loadOptions'
+  > {
+  /** Customer ID of the Organization you are requesting the providers for */
+  customerId: string;
+  /** Config passed to the AvProvidersApi.getProviders function */
+  apiConfig?: ApiConfig;
+}
 
 export const ControlledProviderAutocomplete = ({
   name,
@@ -18,47 +30,35 @@ export const ControlledProviderAutocomplete = ({
   shouldUnregister,
   value,
   FieldProps,
+  apiConfig = {},
+  customerId,
+  queryKey = 'prov-autocomplete',
   ...rest
 }: ControlledProviderAutocompleteProps) => {
+  const handleLoadOptions = async (offset: number, limit: number, inputValue: string) => {
+    const resp = await fetchProviders(customerId, {
+      ...apiConfig,
+      params: { ...apiConfig.params, offset, limit, q: inputValue },
+    });
+
+    return resp;
+  };
   return (
-    <Controller
+    <ControlledAsyncAutocomplete
       name={name}
       defaultValue={defaultValue}
-      rules={{
-        onBlur,
-        onChange,
-        shouldUnregister,
-        value,
-        ...rules,
-      }}
+      onBlur={onBlur}
+      onChange={onChange}
+      rules={rules}
       shouldUnregister={shouldUnregister}
-      render={({ field: { onChange, value, onBlur }, fieldState: { error } }) => (
-        <ProviderAutocomplete
-          {...rest}
-          FieldProps={{
-            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
-            ...FieldProps,
-            error: !!error,
-            helperText: error?.message ? (
-              <>
-                {error.message}
-                <br />
-                {FieldProps?.helperText}
-              </>
-            ) : (
-              FieldProps?.helperText
-            ),
-          }}
-          onChange={(event, value, reason) => {
-            if (reason === 'clear') {
-              onChange(null);
-            }
-            onChange(value);
-          }}
-          onBlur={onBlur}
-          value={value || null}
-        />
-      )}
+      value={value}
+      FieldProps={FieldProps}
+      getOptionLabel={handleGetProviderOptionLabel}
+      queryOptions={{ enabled: !!customerId }}
+      queryKey={queryKey}
+      watchParams={{ customerId }}
+      {...rest}
+      loadOptions={handleLoadOptions}
     />
   );
 };

@@ -242,6 +242,8 @@ export const RadioGroupPropsCategorized: RadioGroupPropsObject = {
 
 export const ProviderAutocompletePropsCategorized: ProviderAutocompletePropsObject = {
   classes: { table: { category: 'Input Props' } },
+  defaultToFirstOption: { table: { category: 'Input Props' } },
+  defaultToOnlyOption: { table: { category: 'Input Props' } },
   id: { table: { category: 'Input Props' } },
   onKeyDown: { table: { category: 'Input Props' } },
   sx: { table: { category: 'Input Props' } },
@@ -297,6 +299,8 @@ export const ProviderAutocompletePropsCategorized: ProviderAutocompletePropsObje
 
 export const OrganizationAutocompletePropsCategorized: OrganizationAutocompletePropsObject = {
   classes: { table: { category: 'Input Props' } },
+  defaultToFirstOption: { table: { category: 'Input Props' } },
+  defaultToOnlyOption: { table: { category: 'Input Props' } },
   id: { table: { category: 'Input Props' } },
   onKeyDown: { table: { category: 'Input Props' } },
   sx: { table: { category: 'Input Props' } },
@@ -400,6 +404,8 @@ export const DatepickerPropsCategorized: DatepickerPropsObject = {
 
 export const CodesAutocompletePropsCategorized: CodesAutocompletePropsObject = {
   classes: { table: { category: 'Input Props' } },
+  defaultToFirstOption: { table: { category: 'Input Props' } },
+  defaultToOnlyOption: { table: { category: 'Input Props' } },
   id: { table: { category: 'Input Props' } },
   onKeyDown: { table: { category: 'Input Props' } },
   sx: { table: { category: 'Input Props' } },
@@ -455,6 +461,8 @@ export const CodesAutocompletePropsCategorized: CodesAutocompletePropsObject = {
 
 export const AsyncAutocompletePropsCategorized: AsyncAutocompletePropsObject = {
   classes: { table: { category: 'Input Props' } },
+  defaultToFirstOption: { table: { category: 'Input Props' } },
+  defaultToOnlyOption: { table: { category: 'Input Props' } },
   id: { table: { category: 'Input Props' } },
   onKeyDown: { table: { category: 'Input Props' } },
   sx: { table: { category: 'Input Props' } },
