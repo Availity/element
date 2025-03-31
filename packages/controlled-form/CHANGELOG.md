@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.0](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.1.3...@availity/mui-controlled-form@1.2.0) (2025-03-31)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `1.1.3`
+
+### Features
+
+* **mui-controlled-form:** add defaultToFirstOption and defaultToOnlyOption in Autocomplete ([fa9f67a](https://github.com/Availity/element/commit/fa9f67ab1a5086f07f97b85aedf2eb8568b7beba))
+
 ## [1.1.3](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.1.2...@availity/mui-controlled-form@1.1.3) (2025-03-27)
 
 ### Dependency Updates
