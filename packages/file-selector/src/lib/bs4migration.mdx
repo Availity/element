@@ -2,11 +2,49 @@ import { Meta } from '@storybook/blocks';
 
 <Meta title="BS4 Migration/Upload" />
 
+# Upload Migration
+
 The `Upload` component from `@availity/upload` and `@availity/form-upload` has been renamed to the `FileSelector` component. It still uses `@availity/upload-core` package to do the lifting, however, we have renamed, removed, and added some things.
 
-## Basic Usage Changes
+For more in depth component information, visit:
 
-### Before (Upload component):
+- [Availity Design Documentation](https://design.availity.com/2e36e50c7/p/121639-file-selector)
+- [Component Documentation](./?path=/docs/components-file-selector-file-selector--docs)
+
+## Key Differences (not exhaustive list)
+
+### Props
+
+#### ✅ New
+
+- `onDrop`: this prop serves as an `onChange` callback. Use it to get access to the files and the change event
+- `disableRemove`: used to prevent removing the file from the list
+- `validator`: allows for custom validation
+- `customFileRow`: pass in your own component to be used in the FileList
+- `queryOptions`: options for the `useQuery` hook
+
+#### ⚠️ Changed
+
+- `max` -> `maxFiles`
+- `showFileDrop` -> `enableDropArea`
+
+#### 🚫 Removed
+
+- `onFileUpload`: this prop has been removed in favor of adding `onProgress`, `onSuccess`, and `onError`. Previously, you were required to add these functions yourself. Now they can be passed directly to the component
+- `buttonText` (use children prop instead)
+- `buttonClassName`
+- `dropZoneText`
+- `component`
+
+### Form Management
+
+- The FileSelector uses `react-hook-form` instead of `Formik`
+- Must wrap component with FormProvider from `react-hook-form`
+- The `react-hook-form` provider maintains the state of the selected files. It does not use `@availity/upload-core`.
+
+## Code Examples
+
+`availity-react` Example:
 
 ```tsx
 import { Upload } from '@availity/form-upload';
@@ -27,7 +65,7 @@ const UploadForm = () => (
 );
 ```
 
-### After (FileSelector component):
+`@availity/element` Example:
 
 ```tsx
 import { FileSelector } from '@availity/mui-file-selector';
@@ -60,39 +98,6 @@ const UploadForm = () => {
   );
 };
 ```
-
-## Key Changes
-
-### Form Management
-
-- The FileSelector uses `react-hook-form` instead of `Formik`
-- Must wrap component with FormProvider from `react-hook-form`
-- The `react-hook-form` provider maintains the state of the selected files. It does not use `@availity/upload-core`.
-
-### Props changes
-
-Here's a quick look at some of the changes relating to props. Check out our docs for more information about each prop.
-
-#### New
-
-- `onDrop`: this prop serves as an `onChange` callback. Use it to get access to the files and the change event
-- `disableRemove`: used to prevent removing the file from the list
-- `validator`: allows for custom validation
-- `customFileRow`: pass in your own component to be used in the FileList
-- `queryOptions`: options for the `useQuery` hook
-
-#### Renamed
-
-- `max` -> `maxFiles`
-- `showFileDrop` -> `enableDropArea`
-
-#### Removed
-
-- `onFileUpload`: this prop has been removed in favor of adding `onProgress`, `onSuccess`, and `onError`. Previously, you were required to add these functions yourself. Now they can be passed directly to the component
-- `buttonText` (use children prop instead)
-- `buttonClassName`
-- `dropZoneText`
-- `component`
 
 ## Additional Considerations
 

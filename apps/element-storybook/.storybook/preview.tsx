@@ -75,7 +75,7 @@ const preview: Preview = {
           'Contributing',
           'Introduction',
           'BS4 Migration',
-          ['Getting Started'],
+          ['Getting Started', 'Form Migration', '*', 'Upload'],
           'Sample Layouts',
           'Design System',
           'Form Components',
