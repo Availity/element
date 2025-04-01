@@ -118,7 +118,7 @@ export const _ControlledAsyncAutoCompleteDefaultToOnlyOption: StoryObj<typeof Co
     limit: 1,
     queryKey: 'example2',
     rules: { required: 'This is required.' },
-    defaultToFirstOption: true,
+    defaultToOnlyOption: true,
     disableClearable: true,
   },
 };
