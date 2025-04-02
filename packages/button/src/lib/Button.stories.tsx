@@ -100,7 +100,7 @@ export const _ButtonWithIcon: Story = {
   ),
 };
 
-export const _Groups: Story = {
+export const _DisconnectedButtonGroup: Story = {
   render: () => {
     const groupedButtonStyles = {
       mr: 1,

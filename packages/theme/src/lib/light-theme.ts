@@ -876,6 +876,26 @@ export const lightTheme = {
         },
       },
     },
+    MuiButtonGroup: {
+      defaultProps: {
+        color: 'tertiary',
+        size: 'large'
+      },
+      styleOverrides: {
+        root: {
+          '&.MuiButtonGroup-horizontal.MuiButtonGroup-colorTertiary': {
+            '.MuiButton-root:not(:first-of-type)': {
+              borderLeft: '0'
+            }
+          },
+          '&.MuiButtonGroup-vertical.MuiButtonGroup-colorTertiary': {
+            '.MuiButton-root:not(:first-of-type)': {
+              borderTop: '0'
+            }
+          }
+        }
+      }
+    },
     MuiCard: {
       defaultProps: {
         variant: 'elevation',
