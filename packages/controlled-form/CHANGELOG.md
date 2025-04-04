@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.1](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.2.0...@availity/mui-controlled-form@1.2.1) (2025-04-04)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `1.2.0`
+* `mui-datepicker` updated to version `1.2.0`
+* `mui-textfield` updated to version `1.2.0`
+
+### Bug Fixes
+
+* **mui-controlled-form:** allow defaultOptions on multiple AsyncAutocomplete ([4dcb5bc](https://github.com/Availity/element/commit/4dcb5bc4d1a02a54b5a2d0540e15d77a07aa7c02))
+
 ## [1.2.0](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.1.3...@availity/mui-controlled-form@1.2.0) (2025-03-31)
 
 ### Dependency Updates

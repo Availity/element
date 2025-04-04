@@ -170,6 +170,10 @@ const MyFileUploadComponent = () => {
     // Handle upload error - e.g., show error message, retry upload
   };
 
+  const handleOnProgress = (error) => {
+    // Handle upload error - e.g., show error message, retry upload
+  };
+
   return (
     <FileSelector
       name="documentUpload"
@@ -183,6 +187,7 @@ const MyFileUploadComponent = () => {
       uploadOptions={{
         onSuccess: handleOnSuccess,
         onError: handleOnError,
+        onProgress: handleOnProgress,
       }}
     />
   );
