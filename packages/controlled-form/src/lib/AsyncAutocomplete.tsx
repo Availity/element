@@ -71,11 +71,11 @@ export const ControlledAsyncAutocomplete = <
             const { options, hasMore, offset: returnedOffsetValue } = await rest.loadOptions(offset, limit, inputValue);
 
             if (defaultToFirstOption && offset === 0) {
-              setValue(name, options[0]);
+              setValue(name, rest.multiple ? [options[0]] : options[0]);
             }
 
             if (defaultToOnlyOption && offset === 0 && options.length === 1) {
-              setValue(name, options[0]);
+              setValue(name, rest.multiple ? [options[0]] : options[0]);
             }
 
             return { options, hasMore, offset: returnedOffsetValue };
