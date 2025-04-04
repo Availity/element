@@ -831,18 +831,31 @@ export const legacyTheme = {
         disableRipple: true,
       },
       styleOverrides: {
+        root: {
+          '&.MuiButtonGroup-horizontal.MuiButtonGroup-colorTertiary': {
+            '.MuiButton-root:not(:first-of-type)': {
+              borderLeft: '0'
+            }
+          },
+          '&.MuiButtonGroup-vertical.MuiButtonGroup-colorTertiary': {
+            '.MuiButton-root:not(:first-of-type)': {
+              borderTop: '0'
+            }
+          }
+        },
         grouped: {
           '&:focus': {
             zIndex: '1',
           },
         },
         groupedContained: { borderColor: important(tokens.colorPrimaryContrast) },
-        groupedContainedPrimary: { '&:focus:hover': { boxShadow: `0 0 0px 4px ${tokens.colorPrimaryDark}` } },
-        groupedContainedSecondary: { '&:focus:hover': { boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}` } },
+        groupedContainedPrimary: { border: 0, '&:focus:hover': { boxShadow: `0 0 0px 4px ${tokens.colorPrimaryDark}` } },
+        groupedContainedSecondary: { border: 0, '&:focus:hover': { boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}` } },
         groupedContainedTertiary: {
           borderColor: important(tokens.colorSecondaryMain),
           '&:focus:hover': {
             boxShadow: `0 0 0px 4px ${tokens.colorSecondaryDark}`,
+            color: tokens.colorPrimaryContrast
           },
         },
       },
