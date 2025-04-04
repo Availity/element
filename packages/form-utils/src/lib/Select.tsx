@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 import { ExpandIcon } from '@availity/mui-icon';
 import { InputPropOverrides } from './Input';
 
-export type SelectProps = { placeholder?: string } & Omit<
+export type SelectProps = Omit<
   MuiSelectProps,
   'components' | 'componentsProps' | 'SelectComponent' | 'notched' | 'slots' | 'slotProps' | 'variant'
 >;
@@ -55,24 +55,10 @@ export const SelectAccessibilityOverrides = (
   return open ? {} : { SelectDisplayProps: { 'aria-controls': '' } };
 };
 
-const SelectPlaceholder = styled('span', {
-  name: 'MuiSelect',
-  slot: 'SelectPlaceholder',
-  overridesResolver: (props, styles) => styles.avFilled,
-})(({ theme }) => ({ opacity: 1, color: theme.palette.grey[400] }));
-
 export const Select = (props: SelectProps): JSX.Element => {
   const [openDetected, setOpenDetected] = useState(false);
   return (
     <MuiSelect
-      displayEmpty={!!props.placeholder}
-      renderValue={(value: React.ReactNode) =>
-        props.placeholder && (!value || (Array.isArray(value) && value.length === 0)) ? (
-          <SelectPlaceholder className="MuiSelect-placeholder">{props.placeholder}</SelectPlaceholder>
-        ) : (
-          value
-        )
-      }
       {...props}
       {...SelectPropOverrides}
       {...SelectAccessibilityOverrides(openDetected, setOpenDetected, props?.open)}
