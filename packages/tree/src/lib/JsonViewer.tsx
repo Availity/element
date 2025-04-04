@@ -14,18 +14,20 @@ const isObject = (value: unknown): value is Record<string, unknown> => {
   return !!value && typeof value === 'object';
 };
 
+const validateId = (id: string) => id.replace(/[^.\w:-]+/gi, '');
+
 const getDetails = ({ data }: JsonViewerProps, parentKey?: string): (JSX.Element | null)[] => {
   return Object.entries(data).map((entry, index) => {
     const [key, value] = entry;
 
     if (isPrimitive(value)) {
       const label = `${key}: ${value.toString()}`;
-      const id = parentKey ? `${parentKey}.${index}.${key}.${value}` : `${index}.${key}.${value}`;
+      const id = validateId(parentKey ? `${parentKey}.${index}.${key}` : `${index}.${key}`);
       return <TreeItem label={label} itemId={id} key={id} />;
     }
     if (isObject(value)) {
       const label = `${key}: ${Array.isArray(value) ? `[ ] ${value.length} items` : `{ } ${Object.keys(value).length} keys`}`;
-      const id = parentKey ? `${parentKey}.${index}.${key}` : `${index}.${key}`;
+      const id = validateId(parentKey ? `${parentKey}.${index}.${key}` : `${index}.${key}`);
       return (
         <TreeItem label={label} itemId={id} key={id}>
           {getDetails({ data: value }, id)}
