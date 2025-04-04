@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.2](https://github.com/Availity/element/compare/@availity/mui-tree@1.0.1...@availity/mui-tree@1.0.2) (2025-04-04)
+
+
+### Bug Fixes
+
+* **mui-tree:** account for duplicative ids and keys ([dad00ae](https://github.com/Availity/element/commit/dad00ae252ae316dd7ed128f19031e299132d3a1))
+
 ## [1.0.1](https://github.com/Availity/element/compare/@availity/mui-tree@1.0.0...@availity/mui-tree@1.0.1) (2025-03-07)
 
 ### Dependency Updates
