@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.2](https://github.com/Availity/element/compare/@availity/mui-textfield@1.1.1...@availity/mui-textfield@1.1.2) (2025-04-04)
+
+
+### Bug Fixes
+
+* **mui-textfield:** ensure helperText props are passed to helperText ([2d3de04](https://github.com/Availity/element/commit/2d3de04393bb0df18d5a8d73cad0ea688f90a0b2))
+
 ## [1.1.1](https://github.com/Availity/element/compare/@availity/mui-textfield@1.1.0...@availity/mui-textfield@1.1.1) (2025-03-27)
 
 ## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-textfield@1.0.1...@availity/mui-textfield@1.1.0) (2025-03-21)
