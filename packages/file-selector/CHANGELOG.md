@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.4.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.3.2...@availity/mui-file-selector@1.4.0) (2025-04-04)
+
+
+### Features
+
+* **mui-file-selector:** add onProgress to useUploadCore ([6bef795](https://github.com/Availity/element/commit/6bef7950f0e392fdbf7b395f45ed16562cda0295))
+
 ## [1.3.2](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.3.1...@availity/mui-file-selector@1.3.2) (2025-03-31)
 
 
