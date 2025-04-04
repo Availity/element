@@ -1747,11 +1747,6 @@ export const lightTheme = {
           '&.MuiInputBase-input.MuiSelect-select.MuiOutlinedInput-input': {
             paddingRight: '4rem',
           },
-          ':hover': {
-            '.MuiSelect-placeholder': {
-              color: important(tokens.colorTextPrimary)
-            }
-          }
         },
       },
     },

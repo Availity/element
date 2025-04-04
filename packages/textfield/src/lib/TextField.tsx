@@ -13,7 +13,6 @@ import {
 } from '@availity/mui-form-utils';
 import { Grid } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
-import { styled } from '@mui/material/styles';
 
 export type TextFieldProps = {
   FormHelperTextProps?: FormHelperTextProps;
@@ -28,12 +27,6 @@ export type TextFieldProps = {
   displayOverflowMaxLength?: boolean;
 } & Pick<FormLabelProps, 'helpTopicId'> &
   Omit<MuiTextFieldProps, 'fullWidth' | 'variant'>;
-
-const SelectPlaceholder = styled('span', {
-  name: 'MuiTextField',
-  slot: 'SelectPlaceholder',
-  overridesResolver: (props, styles) => styles.avFilled,
-})(({ theme }) => ({ opacity: 1, color: theme.palette.grey[400] }));
 
 export type TextFieldFormHelperTextProps = {
   charCount: string;
@@ -109,13 +102,6 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
           maxLength: !displayOverflowMaxLength ? maxLength : undefined,
         }),
         select: resolvedProps({
-          displayEmpty: !!rest.placeholder,
-          renderValue: (value: unknown) =>
-            rest.placeholder && (!value || (Array.isArray(value) && value.length === 0)) ? (
-              <SelectPlaceholder className="MuiSelect-placeholder">{rest.placeholder}</SelectPlaceholder>
-            ) : (
-              value
-            ),
           ...SelectProps,
           ...SelectPropOverrides,
           ...SelectAccessibilityOverrides(openDetected, setOpenDetected, SelectProps?.open),

@@ -10,6 +10,7 @@ import { FormControl, FormLabel, Input, InputAdornment, SelectChangeEvent } from
 import { EyeIcon, EyeSlashIcon, SearchIcon } from '@availity/mui-icon';
 import { Box, Grid, Stack } from '@availity/mui-layout';
 import { MenuItem } from '@availity/mui-menu';
+import { Typography } from '@availity/mui-typography';
 
 import { TextField, TextFieldProps } from './TextField';
 
@@ -320,7 +321,21 @@ export const _SelectPlaceholder: StoryObj<typeof TextField> = {
       </TextField>
     );
   },
-  args: { label: 'Select', placeholder: 'Select...' },
+  args: {
+    label: 'Select',
+    slotProps: {
+      select: {
+        displayEmpty: true,
+        renderValue: (selected: string) => {
+          if (!selected) {
+            return <Typography color="grey.400">Placeholder</Typography>;
+          }
+
+          return selected;
+        },
+      },
+    },
+  },
 };
 
 export const _MultiSelect: StoryObj<typeof TextField> = {

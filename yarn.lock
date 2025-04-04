@@ -1028,6 +1028,7 @@ __metadata:
   dependencies:
     "@availity/mui-form-utils": "workspace:*"
     "@availity/mui-icon": "workspace:*"
+    "@availity/mui-typography": "workspace:*"
     "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
