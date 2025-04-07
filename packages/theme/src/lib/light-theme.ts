@@ -883,9 +883,12 @@ export const lightTheme = {
       },
       styleOverrides: {
         root: {
+          '.MuiButtonBase-root:hover': {
+            zIndex: 1
+          },
           '&.MuiButtonGroup-horizontal.MuiButtonGroup-colorTertiary': {
             '.MuiButton-root:not(:first-of-type)': {
-              borderLeft: '0'
+              marginLeft: '-1px'
             }
           },
           '&.MuiButtonGroup-vertical.MuiButtonGroup-colorTertiary': {
