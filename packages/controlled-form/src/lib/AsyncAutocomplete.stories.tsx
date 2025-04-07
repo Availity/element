@@ -81,6 +81,51 @@ export const _ControlledAsyncAutoComplete: StoryObj<typeof ControlledAsyncAutoco
   },
 };
 
+export const _ControlledAsyncAutoCompleteMultiple: StoryObj<typeof ControlledAsyncAutocomplete> = {
+  render: (args) => {
+    const methods = useForm({ defaultValues: { controlledAsyncAutocomplete: [] } });
+
+    return (
+      <QueryClientProvider client={client}>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit((data) => data)}>
+            <ControlledAsyncAutocomplete {...args} />
+            <Grid container direction="row" justifyContent="space-between" marginTop={1}>
+              <Button
+                disabled={!methods?.formState?.isSubmitSuccessful}
+                children="Reset"
+                color="secondary"
+                onClick={() => methods.reset()}
+              />
+              <Button type="submit" disabled={methods?.formState?.isSubmitSuccessful} children="Submit" />
+            </Grid>
+            {methods?.formState?.isSubmitSuccessful ? (
+              <Paper sx={{ padding: '1.5rem', marginTop: '1.5rem' }}>
+                <Typography variant="h2">Submitted Values</Typography>
+                <pre data-testid="result">{JSON.stringify(methods.getValues(), null, 2)}</pre>
+              </Paper>
+            ) : null}
+          </form>
+        </FormProvider>
+      </QueryClientProvider>
+    );
+  },
+  args: {
+    name: 'controlledAsyncAutocomplete',
+    FieldProps: { label: 'Async Select', helperText: 'Helper Text', fullWidth: false, required: true },
+    getOptionLabel: (val: Option) => val.label,
+    isOptionEqualToValue: (option, value) => option.label === value.label,
+    loadOptions,
+    limit: 5,
+    queryKey: 'example',
+    rules: { required: 'This is required.' },
+    defaultToFirstOption: true,
+    disableClearable: true,
+    multiple: true,
+    filterSelectedOptions: true,
+  },
+};
+
 export const _ControlledAsyncAutoCompleteDefaultToOnlyOption: StoryObj<typeof ControlledAsyncAutocomplete> = {
   render: (args) => {
     const methods = useForm();
@@ -118,7 +163,7 @@ export const _ControlledAsyncAutoCompleteDefaultToOnlyOption: StoryObj<typeof Co
     limit: 1,
     queryKey: 'example2',
     rules: { required: 'This is required.' },
-    defaultToFirstOption: true,
+    defaultToOnlyOption: true,
     disableClearable: true,
   },
 };

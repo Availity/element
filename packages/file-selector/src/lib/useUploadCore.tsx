@@ -6,18 +6,20 @@ import type { UploadOptions } from '@availity/upload-core';
 export type Options = {
   onError?: (error: Error) => void;
   onSuccess?: () => void;
+  onProgress?: () => void;
 } & UploadOptions;
 
 export type UploadQueryOptions = UseQueryOptions<Upload, Error, Upload, [string, string, Options]>;
 
 async function startUpload(file: File, options: Options) {
-  const { onSuccess, onError, ...uploadOptions } = options;
+  const { onSuccess, onError, onProgress, ...uploadOptions } = options;
   const upload = new Upload(file, uploadOptions);
 
   await upload.generateId();
 
   if (onSuccess) upload.onSuccess.push(onSuccess);
   if (onError) upload.onError.push(onError);
+  if (onProgress) upload.onProgress.push(onProgress);
 
   upload.start();
 

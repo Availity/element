@@ -40,18 +40,21 @@ export type TextFieldFormHelperTextProps = {
   helperText: string;
   maxLength: string;
   showCharacterCount: boolean;
-};
+} & FormHelperTextProps;
 
 const TextFieldFormHelperText = ({
   charCount,
   helperText,
   maxLength,
   showCharacterCount,
+  ...FormHelperTextProps
 }: TextFieldFormHelperTextProps) => {
   if (showCharacterCount) {
     return (
       <Grid container justifyContent="space-between" flexWrap="nowrap">
-        <FormHelperText sx={{ marginRight: '12px' }}>{helperText}</FormHelperText>
+        <FormHelperText {...FormHelperTextProps} sx={{ marginRight: '12px' }}>
+          {helperText}
+        </FormHelperText>
         <Typography variant="caption" marginTop="4px" lineHeight="1.25rem">
           <Typography component="span" variant="inherit" color={charCount > maxLength ? 'error' : 'textPrimary'}>
             {charCount || 0}
@@ -62,7 +65,7 @@ const TextFieldFormHelperText = ({
     );
   }
 
-  return <FormHelperText>{helperText}</FormHelperText>;
+  return <FormHelperText {...FormHelperTextProps}>{helperText}</FormHelperText>;
 };
 
 export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextFieldProps>((props, ref) => {
