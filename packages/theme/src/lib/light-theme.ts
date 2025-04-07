@@ -883,8 +883,10 @@ export const lightTheme = {
       },
       styleOverrides: {
         root: {
-          '.MuiButtonBase-root:hover': {
-            zIndex: 1
+          '.MuiButtonBase-root': {
+            '&:hover, &:focus, &:active': {
+              zIndex: 1
+            }
           },
           '&.MuiButtonGroup-horizontal.MuiButtonGroup-colorTertiary': {
             '.MuiButton-root:not(:first-of-type)': {
