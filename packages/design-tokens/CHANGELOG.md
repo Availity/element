@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://github.com/Availity/element/compare/@availity/design-tokens@1.0.1...@availity/design-tokens@1.1.0) (2025-04-08)
+
+
+### Features
+
+* **design-tokens:** input background read-only grey-50 and text placeholder grey-400 ([1930df5](https://github.com/Availity/element/commit/1930df5984f05bd575bbe09944fc5abaac40273f))
+
 ## [1.0.1](https://github.com/Availity/element/compare/@availity/design-tokens@1.0.0...@availity/design-tokens@1.0.1) (2025-03-07)
 
 ## [1.0.0](https://github.com/Availity/element/compare/@availity/design-tokens@0.16.1-alpha.0...@availity/design-tokens@1.0.0) (2025-02-25)

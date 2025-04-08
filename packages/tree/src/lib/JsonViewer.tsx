@@ -3,7 +3,7 @@ import { TreeView, TreeViewProps } from './TreeView';
 
 export interface JsonViewerProps extends Omit<TreeViewProps, 'children'> {
   /** Data to be rendered, can be most valid javascript objects, some uncommon types may not by fully supported - like cyclical objects, proxies, symbols as keys. */
-  data: Record<string, unknown>;
+  data: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const isPrimitive = (value: unknown): value is string | number | boolean => {
@@ -14,19 +14,22 @@ const isObject = (value: unknown): value is Record<string, unknown> => {
   return !!value && typeof value === 'object';
 };
 
-const getDetails = ({ data }: JsonViewerProps): (JSX.Element | null)[] => {
-  return Object.entries(data).map((entry) => {
-    const [key, value] = entry;
+const validateId = (id: string) => id.replace(/[^.\w:-]+/gi, '');
+
+const getDetails = ({ data }: JsonViewerProps, parentKey?: string): (JSX.Element | null)[] => {
+  return Object.entries(data).map(([key, value], index) => {
+    const id = validateId(parentKey ? `${parentKey}.${index}.${key}` : `${index}.${key}`);
 
     if (isPrimitive(value)) {
       const label = `${key}: ${value.toString()}`;
-      return <TreeItem label={label} itemId={`${key}.${value}`} key={`${key}.${value}`} />;
+
+      return <TreeItem label={label} itemId={id} key={id} />;
     }
     if (isObject(value)) {
       const label = `${key}: ${Array.isArray(value) ? `[ ] ${value.length} items` : `{ } ${Object.keys(value).length} keys`}`;
       return (
-        <TreeItem label={label} itemId={key} key={key}>
-          {getDetails({ data: value })}
+        <TreeItem label={label} itemId={id} key={id}>
+          {getDetails({ data: value }, id)}
         </TreeItem>
       );
     }
