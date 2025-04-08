@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-button@1.0.1...@availity/mui-button@1.1.0) (2025-04-08)
+
+
+### Features
+
+* **mui-button:** add MUI's ButtonGroup ([3e66a5f](https://github.com/Availity/element/commit/3e66a5f521ba6fbc9546446054a6e45199fa9e8b))
+
 ## [1.0.1](https://github.com/Availity/element/compare/@availity/mui-button@1.0.0...@availity/mui-button@1.0.1) (2025-03-07)
 
 ### Dependency Updates
