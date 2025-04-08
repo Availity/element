@@ -1504,6 +1504,10 @@
       "focus": {
         "value": "#00000029",
         "type": "color"
+      },
+      "readonlyBg": {
+        "value": "#0000001f",
+        "type": "color"
       }
     },
     "background": {
@@ -1533,10 +1537,6 @@
       },
       "border": {
         "value": "#E8EBEB",
-        "type": "color"
-      },
-      "readOnly": {
-        "value": "#0000001f",
         "type": "color"
       }
     }
