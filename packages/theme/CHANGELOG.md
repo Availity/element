@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.0](https://github.com/Availity/element/compare/@availity/theme@1.4.0...@availity/theme@1.5.0) (2025-04-08)
+
+
+### Features
+
+* **mui-button:** add MUI's ButtonGroup ([3e66a5f](https://github.com/Availity/element/commit/3e66a5f521ba6fbc9546446054a6e45199fa9e8b))
+
+
+### Bug Fixes
+
+* **mui-button:** z-index on ButtonGroup active state ([887ee20](https://github.com/Availity/element/commit/887ee201e86a0dd1a0584daca9a31d5ff6e333ef))
+* **mui-button:** z-index on ButtonGroup focus and hover state ([3fda7f6](https://github.com/Availity/element/commit/3fda7f6e688f3a85421a244b5ee4c536d50e75c1))
+
 ## [1.4.0](https://github.com/Availity/element/compare/@availity/theme@1.3.1...@availity/theme@1.4.0) (2025-04-08)
 
 ### Dependency Updates
