@@ -70,6 +70,7 @@ export const legacyTheme = {
       link: tokens.colorTextLink,
       inverse: tokens.colorCommonWhite,
       inverseSecondary: '#ffffff24',
+      placeholder: tokens.colorTextPlaceholder,
     },
     border: {
       primary: tokens.borderPrimary,
@@ -103,6 +104,7 @@ export const legacyTheme = {
       disabled: tokens.colorActionDisabled,
       disabledBackground: tokens.colorActionDisabledBg,
       disabledOpacity: 0.38,
+      readonlyBackground: tokens.colorActionReadonlyBg,
       focus: tokens.colorActionFocus,
       // focus: 'rgb(184, 212, 251)',
       focusOpacity: 0.12,
