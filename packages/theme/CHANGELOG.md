@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.4.0](https://github.com/Availity/element/compare/@availity/theme@1.3.1...@availity/theme@1.4.0) (2025-04-08)
+
+### Dependency Updates
+
+* `design-tokens` updated to version `1.3.1`
+
+### Features
+
+* **theme:** add placeholder and readonly colors to palette ([d7212f6](https://github.com/Availity/element/commit/d7212f63150fb4a8845076cbede77387e41609ea))
+
 ## [1.3.1](https://github.com/Availity/element/compare/@availity/theme@1.3.0...@availity/theme@1.3.1) (2025-03-25)
 
 
