@@ -62,6 +62,7 @@ export const lightTheme = {
       link: tokens.colorTextLink,
       inverse: tokens.colorTextInverse,
       inverseSecondary: tokens.colorTextInverseSecondary,
+      placeholder: tokens.colorTextPlaceholder,
     },
     border: {
       primary: tokens.borderPrimary,
@@ -97,6 +98,7 @@ export const lightTheme = {
       disabled: tokens.colorActionDisabled,
       disabledBackground: tokens.colorActionDisabledBg,
       disabledOpacity: 0.38,
+      readonlyBackground: tokens.colorActionReadonlyBg,
       focus: tokens.colorActionFocus,
       focusOpacity: 0.12,
       activatedOpacity: 0.12,

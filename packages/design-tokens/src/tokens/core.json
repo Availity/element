@@ -1348,6 +1348,10 @@
       "inverseSecondary": {
         "value": "#ffffff84",
         "type": "color"
+      },
+      "placeholder": {
+        "value": "#5E616E",
+        "type": "color"
       }
     },
     "teal": {
@@ -1457,6 +1461,10 @@
       },
       "focus": {
         "value": "#00000029",
+        "type": "color"
+      },
+      "readonlyBg": {
+        "value": "#F3F5F7",
         "type": "color"
       }
     },
