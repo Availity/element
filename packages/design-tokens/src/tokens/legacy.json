@@ -1390,6 +1390,10 @@
       "inverseSecondary": {
         "value": "#ffffff84",
         "type": "color"
+      },
+      "placeholder": {
+        "value": "#666666",
+        "type": "color"
       }
     },
     "teal": {
@@ -1529,6 +1533,10 @@
       },
       "border": {
         "value": "#E8EBEB",
+        "type": "color"
+      },
+      "readOnly": {
+        "value": "#0000001f",
         "type": "color"
       }
     }
