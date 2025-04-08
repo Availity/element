@@ -328,7 +328,7 @@ export const _SelectPlaceholder: StoryObj<typeof TextField> = {
         displayEmpty: true,
         renderValue: (selected: string) => {
           if (!selected) {
-            return <Typography color="grey.400">Placeholder</Typography>;
+            return <Typography color="text.placeholder">Placeholder</Typography>;
           }
 
           return selected;
