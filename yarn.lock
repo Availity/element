@@ -629,7 +629,7 @@ __metadata:
     "@availity/mui-paper": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@availity/upload-core": ^7.0.3
+    "@availity/upload-core": ^7.1.1
     "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
@@ -1164,7 +1164,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/resolve-url@npm:3.0.2, @availity/resolve-url@npm:^3.0.2":
+"@availity/resolve-url@npm:3.0.3":
+  version: 3.0.3
+  resolution: "@availity/resolve-url@npm:3.0.3"
+  checksum: 36fe5ff7a79cef1b4ef805059d9c233cca83456e6421ca63b75dcc072617caef44d02b1db110abac78ea22c2c888dba45463ed49dfb11b2d90d17629519b2211
+  languageName: node
+  linkType: hard
+
+"@availity/resolve-url@npm:^3.0.2":
   version: 3.0.2
   resolution: "@availity/resolve-url@npm:3.0.2"
   checksum: 286cd972beb6c158fb660b6fc1c8a50834493b5d65ec8183ac20501391754906e8cce08c4c55f79542896519cbf61a5a1e89fcb89d6364b53971e455668902f4
@@ -1200,13 +1207,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/upload-core@npm:^7.0.3":
-  version: 7.0.3
-  resolution: "@availity/upload-core@npm:7.0.3"
+"@availity/upload-core@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "@availity/upload-core@npm:7.1.1"
   dependencies:
-    "@availity/resolve-url": 3.0.2
+    "@availity/resolve-url": 3.0.3
     tus-js-client: 4.2.3
-  checksum: 0ef7b8ffbf5bb76522f585e777f363e0eb90709b5bccf825076fe1b0cf22eca55ae09a3fa6114d8e6b6d5d24e3086340be57ce7f03fe6520e900548cfdf65de6
+  checksum: 0d686166610d7c4e215ada21e736d0c8fad341bff8329cc51832bd5ac403aec8b8f97547424de269d430d19797dc1d113e12e777cc85fd4d48f11a903cefd8d5
   languageName: node
   linkType: hard
 
