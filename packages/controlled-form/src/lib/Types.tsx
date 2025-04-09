@@ -642,7 +642,6 @@ export const InputPropsCategorized: InputPropsObject = {
 };
 
 export const SelectPropsCategorized: SelectPropsObject = {
-  placeholder: { table: { category: 'Input Props' } },
   className: { table: { category: 'Input Props' } },
   style: { table: { category: 'Input Props' } },
   classes: { table: { category: 'Input Props' } },

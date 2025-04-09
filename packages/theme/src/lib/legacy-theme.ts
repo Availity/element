@@ -1938,11 +1938,6 @@ export const legacyTheme = {
           '&.MuiInputBase-input': {
             paddingRight: '2.5rem',
           },
-          ':hover': {
-            '.MuiSelect-placeholder': {
-              color: important(tokens.colorTextPrimary)
-            }
-          }
         },
       },
     },

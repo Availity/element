@@ -7,6 +7,7 @@ import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
 import { Chip } from '@availity/mui-chip';
 import { visuallyHidden } from '@availity/mui-utils';
+import { Typography } from '@availity/mui-typography';
 import { FormLabel, Select, SelectProps, SelectChangeEvent } from '..';
 
 const meta: Meta<typeof Select> = {
@@ -64,7 +65,19 @@ export const _SelectPlaceholder: StoryObj<typeof Select> = {
       </FormControl>
     );
   },
-  args: { label: 'count', id: 'count', size: 'small', placeholder: 'Select...' },
+  args: {
+    label: 'count',
+    id: 'count',
+    size: 'small',
+    displayEmpty: true,
+    renderValue: (selected: string) => {
+      if (!selected) {
+        return <Typography color="text.placeholder">Placeholder</Typography>;
+      }
+
+      return selected;
+    },
+  },
 };
 
 export const _MultiSelect: StoryObj<typeof Select> = {
