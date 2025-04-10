@@ -32,7 +32,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
-    "tsup": "^8.3.6",
+    "tsup": "^8.4.0",
     "typescript": "^5.4.5"
   },
   "publishConfig": {
@@ -40,8 +40,8 @@
   },
   "dependencies": {
     "@types/jscodeshift": "^0.12.0",
-    "jscodeshift": "^17.1.2",
-    "postcss-cli": "^11.0.0",
+    "jscodeshift": "^17.3.0",
+    "postcss-cli": "^11.0.1",
     "yargs": "^17.7.2"
   }
 }
