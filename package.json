@@ -91,7 +91,7 @@
     "lint-staged": "^15.4.3",
     "nx": "20.4.3",
     "prettier": "^3.5.1",
-    "react-hook-form": "^7.54.2",
+    "react-hook-form": "^7.55.0",
     "react-imask": "7.6.1",
     "react-number-format": "5.4.0",
     "remark-gfm": "^4.0.1",
@@ -108,7 +108,7 @@
     "workerDirectory": "static"
   },
   "dependencies": {
-    "@storybook/addon-interactions": "^8.2.8",
-    "storybook": "^8.2.8"
+    "@storybook/addon-interactions": "^8.6.12",
+    "storybook": "^8.6.12"
   }
 }

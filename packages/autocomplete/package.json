@@ -41,10 +41,10 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@mui/types": "^7.2.21"
+    "@mui/types": "^7.4.1"
   },
   "devDependencies": {
-    "@availity/api-axios": "^10.0.0",
+    "@availity/api-axios": "^10.0.3",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
     "@mui/material": "^6.4.5",
