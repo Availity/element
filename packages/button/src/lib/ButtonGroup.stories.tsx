@@ -3,6 +3,7 @@ import { ButtonGroup, ButtonGroupProps } from './ButtonGroup';
 import { Button } from './Button';
 
 import React from 'react';
+import { HomeIcon, SearchIcon, SettingsIcon } from '@availity/mui-icon';
 
 const meta: Meta<typeof ButtonGroup> = {
   title: 'Components/Button/ButtonGroup',
@@ -20,6 +21,17 @@ export const _ButtonGroup: Story = {
       <Button>Button</Button>
       <Button>Button</Button>
       <Button>Button</Button>
+    </ButtonGroup>
+  ),
+  args: {},
+};
+
+export const _IconButtonGroup: Story = {
+  render: ({ ...args }: ButtonGroupProps) => (
+    <ButtonGroup {...args}>
+      <Button startIcon={<HomeIcon />}>Home</Button>
+      <Button startIcon={<SettingsIcon />}>Settings</Button>
+      <Button startIcon={<SearchIcon />}>Search</Button>
     </ButtonGroup>
   ),
   args: {},

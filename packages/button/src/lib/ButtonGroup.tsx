@@ -6,11 +6,10 @@ declare module '@mui/material/ButtonGroup' {
   }
 }
 
-export type ButtonGroupProps = {
-  /** The color of the component.
-   * @default secondary */
-  color?: 'primary' | 'secondary' | 'tertiary';
-} & Omit<MUIButtonGroupProps, 'color' | 'disableElevation' | 'disableFocusRipple' | 'disableRipple' | 'variant'>;
+export type ButtonGroupProps = Omit<
+  MUIButtonGroupProps,
+  'color' | 'disableElevation' | 'disableFocusRipple' | 'disableRipple' | 'variant'
+>;
 
 const overrideProps = {
   disableElevation: true,
@@ -19,5 +18,5 @@ const overrideProps = {
 };
 
 export const ButtonGroup = (props: ButtonGroupProps) => {
-  return <MUIButtonGroup {...props} {...overrideProps} variant="contained" />;
+  return <MUIButtonGroup {...props} {...overrideProps} variant="contained" color="tertiary" />;
 };
