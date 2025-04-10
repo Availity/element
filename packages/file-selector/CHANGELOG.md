@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.4.3...@availity/mui-file-selector@1.5.0) (2025-04-10)
+
+
+### Features
+
+* **mui-file-selector:** pass onChunkComplete method in usUpdateNav ([f2b5ec1](https://github.com/Availity/element/commit/f2b5ec1a97205c6f2a83f9f7b7a3abbad16d0eb6))
+
 ## [1.4.3](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.4.2...@availity/mui-file-selector@1.4.3) (2025-04-09)
 
 ### Dependency Updates
