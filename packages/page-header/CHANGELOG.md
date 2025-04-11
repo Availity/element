@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.18](https://github.com/Availity/element/compare/@availity/mui-page-header@1.1.17...@availity/mui-page-header@1.1.18) (2025-04-11)
+
+### Dependency Updates
+
+* `mui-breadcrumbs` updated to version `1.1.17`
+* `mui-button` updated to version `1.1.17`
+* `mui-divider` updated to version `1.1.17`
+* `mui-layout` updated to version `1.1.17`
+* `mui-link` updated to version `1.1.17`
+* `mui-spaces` updated to version `1.1.17`
+* `mui-typography` updated to version `1.1.17`
+* `mui-feedback` updated to version `1.1.17`
 ## [1.1.17](https://github.com/Availity/element/compare/@availity/mui-page-header@1.1.16...@availity/mui-page-header@1.1.17) (2025-04-09)
 
 ### Dependency Updates
