@@ -886,7 +886,7 @@ export const lightTheme = {
             },
             '&.Mui-disabled': {
               padding: '7px 21px',
-            }
+            },
           },
           '&.MuiButtonGroup-horizontal.MuiButtonGroup-colorTertiary': {
             '.MuiButton-root:not(.MuiButtonGroup-firstButton)': {
@@ -899,15 +899,25 @@ export const lightTheme = {
             }
           }
         },
+        grouped: {
+          ':focus': {
+            boxShadow: `0 0 0px 4px ${tokens.colorTertiaryDark}`
+          }
+        },
         firstButton: {
-          border: `1px solid transparent`,
-
+          '&.Mui-disabled': {
+            border: `1px solid transparent`,
+          }
         },
         middleButton: {
-          border: `1px solid transparent`,
+          '&.Mui-disabled': {
+            border: `1px solid transparent`,
+          }
         },
         lastButton: {
-          border: `1px solid transparent`,
+          '&.Mui-disabled': {
+            border: `1px solid transparent`,
+          }
         }
       }
     },
