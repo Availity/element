@@ -43,7 +43,7 @@
     "@mui/utils": "^6.4.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsup": "^8.3.6",
+    "tsup": "^8.4.0",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {

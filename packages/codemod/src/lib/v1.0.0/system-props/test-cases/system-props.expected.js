@@ -65,7 +65,7 @@ const ml = 2;
 </Typographyyy>;
 function Copyright(props) {
   return (
-    (<Typographyyy
+    <Typographyyy
       variant="body2"
       align="center"
       {...props}
@@ -78,7 +78,7 @@ function Copyright(props) {
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
-    </Typographyyy>)
+    </Typographyyy>
   );
 }
 
