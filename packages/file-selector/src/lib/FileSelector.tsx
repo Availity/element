@@ -56,6 +56,14 @@ export type FileSelectorProps = {
    */
   disabled?: boolean;
   /**
+   * Overrides the standard file size message
+   */
+  customSizeMessage?: React.ReactNode;
+  /**
+   * Overrides the standard file types message
+   */
+  customTypesMessage?: React.ReactNode;
+  /**
    * Whether to enable the dropzone area
    */
   enableDropArea?: boolean;
@@ -136,6 +144,8 @@ export const FileSelector = ({
   bucketId,
   clientId,
   children,
+  customSizeMessage,
+  customTypesMessage,
   customerId,
   customFileRow,
   disabled = false,
@@ -225,14 +235,25 @@ export const FileSelector = ({
             setTotalSize={setTotalSize}
             validator={validator}
           />
-          <FileTypesMessage allowedFileTypes={allowedFileTypes} maxFileSize={maxSize} variant="caption" />
+          <FileTypesMessage
+            allowedFileTypes={allowedFileTypes}
+            maxFileSize={maxSize}
+            customSizeMessage={customSizeMessage}
+            customTypesMessage={customTypesMessage}
+            variant="caption"
+          />
           {children}
         </>
       ) : (
         <Grid container rowSpacing={3} flexDirection="column">
           <Grid>
             <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} />
-            <FileTypesMessage allowedFileTypes={allowedFileTypes} variant="body2" />
+            <FileTypesMessage
+              allowedFileTypes={allowedFileTypes}
+              customSizeMessage={customSizeMessage}
+              customTypesMessage={customTypesMessage}
+              variant="body2"
+            />
           </Grid>
           {children ? <Grid>{children}</Grid> : null}
           <Grid>

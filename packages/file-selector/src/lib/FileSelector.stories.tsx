@@ -100,7 +100,7 @@ export const _FileSelector: StoryObj<typeof FileSelector> = {
               </DismissableAlert>
             </FileSelector>
             {files.length > 0 && (
-              <Grid size={{xs: 12}} justifyContent="end" display="flex" paddingTop={2.5}>
+              <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
                 <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
                   Submit
                 </Button>
@@ -140,9 +140,9 @@ export const _ButtonOnly: StoryObj<typeof FileSelector> = {
       <Paper sx={{ padding: '2rem' }}>
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
-            <FileSelector {...props} enableDropArea={false}/>
+            <FileSelector {...props} enableDropArea={false} />
             {files.length > 0 && (
-              <Grid size={{xs: 12}} justifyContent="end" display="flex" paddingTop={2.5}>
+              <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
                 <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
                   Submit
                 </Button>
@@ -182,9 +182,9 @@ export const _Encrypted: StoryObj<typeof FileSelector> = {
       <Paper sx={{ padding: '2rem' }}>
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
-            <FileSelector {...props} bucketId="enc"/>
+            <FileSelector {...props} bucketId="enc" />
             {files.length > 0 && (
-              <Grid size={{xs: 12}} justifyContent="end" display="flex" paddingTop={2.5}>
+              <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
                 <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
                   Submit
                 </Button>
@@ -196,9 +196,109 @@ export const _Encrypted: StoryObj<typeof FileSelector> = {
     );
   },
   args: {
-    bucketId: 'enc'
+    bucketId: 'enc',
   },
   argTypes: {
-    bucketId: { control: false }
-  }
+    bucketId: { control: false },
+  },
+};
+
+export const _FileSelectorCustomTypesMessage: StoryObj<typeof FileSelector> = {
+  render: (props: FileSelectorProps) => {
+    const methods = useForm({
+      defaultValues: {
+        [props.name]: [] as File[],
+      },
+    });
+
+    const client = useQueryClient();
+
+    const files = methods.watch(props.name);
+
+    const handleOnSubmit = (values: Record<string, File[]>) => {
+      if (values[props.name].length === 0) return;
+
+      const queries = client.getQueriesData<Upload>(['upload']);
+      const uploads = [];
+      for (const [, data] of queries) {
+        if (data) uploads.push(data);
+      }
+    };
+
+    return (
+      <Paper sx={{ padding: '2rem' }}>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
+            <FileSelector {...props}>
+              <DismissableAlert severity="warning">
+                <AlertTitle>Make an Appeal</AlertTitle>
+                This is an example alert. It is not part of the component. `children` you pass to the component will
+                show up here.
+              </DismissableAlert>
+            </FileSelector>
+            {files.length > 0 && (
+              <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
+                <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
+                  Submit
+                </Button>
+              </Grid>
+            )}
+          </form>
+        </FormProvider>
+      </Paper>
+    );
+  },
+  args: {
+    customTypesMessage: 'Only cool file types allowed',
+  },
+};
+
+export const _FileSelectorCustomSizeMessage: StoryObj<typeof FileSelector> = {
+  render: (props: FileSelectorProps) => {
+    const methods = useForm({
+      defaultValues: {
+        [props.name]: [] as File[],
+      },
+    });
+
+    const client = useQueryClient();
+
+    const files = methods.watch(props.name);
+
+    const handleOnSubmit = (values: Record<string, File[]>) => {
+      if (values[props.name].length === 0) return;
+
+      const queries = client.getQueriesData<Upload>(['upload']);
+      const uploads = [];
+      for (const [, data] of queries) {
+        if (data) uploads.push(data);
+      }
+    };
+
+    return (
+      <Paper sx={{ padding: '2rem' }}>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
+            <FileSelector {...props}>
+              <DismissableAlert severity="warning">
+                <AlertTitle>Make an Appeal</AlertTitle>
+                This is an example alert. It is not part of the component. `children` you pass to the component will
+                show up here.
+              </DismissableAlert>
+            </FileSelector>
+            {files.length > 0 && (
+              <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
+                <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
+                  Submit
+                </Button>
+              </Grid>
+            )}
+          </form>
+        </FormProvider>
+      </Paper>
+    );
+  },
+  args: {
+    customSizeMessage: <div>Only huge files allowed</div>,
+  },
 };

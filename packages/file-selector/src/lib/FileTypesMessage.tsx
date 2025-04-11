@@ -8,6 +8,14 @@ export type FileTypesMessageProps = {
    */
   allowedFileTypes?: `.${string}`[];
   /**
+   * Overrides the standard file size message
+   */
+  customSizeMessage?: React.ReactNode;
+  /**
+   * Overrides the standard file types message
+   */
+  customTypesMessage?: React.ReactNode;
+  /**
    * Maximum size per file in bytes. This will be formatted. eg: 1024 * 20 = 20 KB
    */
   maxFileSize?: number;
@@ -16,15 +24,19 @@ export type FileTypesMessageProps = {
 
 export const FileTypesMessage = ({
   allowedFileTypes = [],
+  customSizeMessage,
+  customTypesMessage,
   maxFileSize,
   variant = 'caption',
 }: FileTypesMessageProps) => {
-  const fileSizeMsg = typeof maxFileSize === 'number' ? `Maximum file size is ${formatBytes(maxFileSize)}. ` : null;
+  const fileSizeMsg =
+    customSizeMessage ||
+    (typeof maxFileSize === 'number' ? `Maximum file size is ${formatBytes(maxFileSize)}. ` : null);
   const fileTypesMsg =
-    allowedFileTypes.length > 0
+    customTypesMessage ||
+    (allowedFileTypes.length > 0
       ? `Supported file types include: ${allowedFileTypes.join(', ')}`
-      : 'All file types allowed.';
-
+      : 'All file types allowed.');
   return (
     <Typography variant={variant}>
       {fileSizeMsg}
