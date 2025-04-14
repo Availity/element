@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.4](https://github.com/Availity/element/compare/@availity/mui-snackbar@1.0.3...@availity/mui-snackbar@1.0.4) (2025-04-14)
+
+### Dependency Updates
+
+* `mui-alert` updated to version `1.0.3`
+* `mui-button` updated to version `1.0.3`
+* `mui-transitions` updated to version `1.0.3`
 ## [1.0.3](https://github.com/Availity/element/compare/@availity/mui-snackbar@1.0.2...@availity/mui-snackbar@1.0.3) (2025-04-11)
 
 ### Dependency Updates
