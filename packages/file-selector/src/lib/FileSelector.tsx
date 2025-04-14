@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import type { ChangeEvent, ElementType, ReactNode } from 'react';
+import type { ChangeEvent, ReactNode } from 'react';
 import { useFormContext } from 'react-hook-form';
 import type { DropEvent, FileError, FileRejection } from 'react-dropzone/typings/react-dropzone';
 import { useQueryClient } from '@tanstack/react-query';
 import type { default as Upload } from '@availity/upload-core';
 import { Grid } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
+import { Alert, AlertTitle } from '@availity/mui-alert';
 
 import { Dropzone } from './Dropzone';
 import { ErrorAlert } from './ErrorAlert';
 import { FileList } from './FileList';
-import type { FileListProps } from './FileList';
 import { FileTypesMessage } from './FileTypesMessage';
 import { HeaderMessage } from './HeaderMessage';
 import type { Options, UploadQueryOptions } from './useUploadCore';
@@ -72,7 +72,7 @@ export type FileSelectorProps = {
    */
   endpoint?: string;
   /**
-   * Componet to render the File information. This should return a `ListItem`
+   * Component to render the File information. This should return a `ListItem`
    */
   customFileRow?: React.ElementType<{
     upload?: Upload;
@@ -216,6 +216,18 @@ export const FileSelector = ({
     setFileRejections(rejections);
   };
 
+  const TOO_MANY_FILES_CODE = 'too-many-files';
+
+  // Extract too-many-files rejections
+  const tooManyFilesRejections = fileRejections.filter((rejection) =>
+    rejection.errors.some((error) => error.code === TOO_MANY_FILES_CODE)
+  );
+
+  // Extract other rejections
+  const otherRejections = fileRejections.filter(
+    (rejection) => !rejection.errors.some((error) => error.code === TOO_MANY_FILES_CODE)
+  );
+
   return (
     <>
       {enableDropArea ? (
@@ -274,17 +286,26 @@ export const FileSelector = ({
           </Grid>
         </Grid>
       )}
-      {fileRejections.length > 0
-        ? fileRejections.map((rejection) => (
-            <ErrorAlert
-              key={rejection.id}
-              errors={rejection.errors}
-              fileName={rejection.file.name}
-              id={rejection.id}
-              onClose={() => handleRemoveRejection(rejection.id)}
-            />
-          ))
-        : null}
+      {tooManyFilesRejections.length > 0 && (
+        <Alert
+          severity="error"
+          onClose={() => tooManyFilesRejections.forEach((rejection) => handleRemoveRejection(rejection.id))}
+        >
+          <AlertTitle>Items not allowed.</AlertTitle>
+          Too many files are selected for upload, maximum {maxFiles} allowed.
+        </Alert>
+      )}
+
+      {otherRejections.length > 0 &&
+        otherRejections.map((rejection) => (
+          <ErrorAlert
+            key={rejection.id}
+            errors={rejection.errors}
+            fileName={rejection.file.name}
+            id={rejection.id}
+            onClose={() => handleRemoveRejection(rejection.id)}
+          />
+        ))}
       <FileList
         files={files || []}
         options={options}
