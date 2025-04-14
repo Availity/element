@@ -607,6 +607,7 @@ export const legacyTheme = {
         message: {
           color: 'inherit',
           padding: 0,
+          wordBreak: 'break-word'
         },
         root: {
           border: 'none',

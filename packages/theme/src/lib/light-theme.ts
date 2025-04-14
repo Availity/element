@@ -646,6 +646,7 @@ export const lightTheme = {
         message: {
           color: tokens.colorTextPrimary,
           padding: 0,
+          wordBreak: 'break-word'
         },
         root: {
           border: 'none',
