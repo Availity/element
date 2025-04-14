@@ -47,6 +47,7 @@
     "@availity/mui-button": "workspace:*",
     "@availity/mui-checkbox": "workspace:^",
     "@availity/mui-icon": "workspace:*",
+    "@availity/mui-layout": "workspace:*",
     "@availity/mui-typography": "workspace:*",
     "@availity/mui-utils": "workspace:*",
     "@mui/material": "^6.4.5",
@@ -58,6 +59,7 @@
   "peerDependencies": {
     "@availity/mui-button": "workspace:*",
     "@availity/mui-icon": "workspace:*",
+    "@availity/mui-layout": "workspace:*",
     "@mui/material": "^6.4.5",
     "react": ">=16.3.0"
   },
