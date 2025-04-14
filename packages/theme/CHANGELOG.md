@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.3](https://github.com/Availity/element/compare/@availity/theme@1.5.2...@availity/theme@1.5.3) (2025-04-14)
+
+
+### Bug Fixes
+
+* **mui-button:** vertical button group styles ([9adc921](https://github.com/Availity/element/commit/9adc9211498249ed5a7240b1cc5cc8321a5612ce))
+
 ## [1.5.2](https://github.com/Availity/element/compare/@availity/theme@1.5.1...@availity/theme@1.5.2) (2025-04-11)
 
 ### Dependency Updates
