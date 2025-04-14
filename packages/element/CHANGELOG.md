@@ -2,6 +2,37 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.25](https://github.com/Availity/element/compare/@availity/element@1.0.24...@availity/element@1.0.25) (2025-04-14)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `1.0.24`
+* `mui-alert` updated to version `1.0.24`
+* `mui-authorize` updated to version `1.0.24`
+* `mui-autocomplete` updated to version `1.0.24`
+* `mui-block-ui` updated to version `1.0.24`
+* `mui-button` updated to version `1.0.24`
+* `mui-card` updated to version `1.0.24`
+* `mui-controlled-form` updated to version `1.0.24`
+* `mui-datepicker` updated to version `1.0.24`
+* `mui-dialog` updated to version `1.0.24`
+* `mui-event-tracker` updated to version `1.0.24`
+* `mui-feedback` updated to version `1.0.24`
+* `mui-file-selector` updated to version `1.0.24`
+* `mui-form-utils` updated to version `1.0.24`
+* `mui-list` updated to version `1.0.24`
+* `mui-menu` updated to version `1.0.24`
+* `mui-modal` updated to version `1.0.24`
+* `mui-page-header` updated to version `1.0.24`
+* `mui-pagination` updated to version `1.0.24`
+* `mui-popper` updated to version `1.0.24`
+* `mui-snackbar` updated to version `1.0.24`
+* `mui-spaces` updated to version `1.0.24`
+* `mui-stepper` updated to version `1.0.24`
+* `mui-table` updated to version `1.0.24`
+* `mui-textfield` updated to version `1.0.24`
+* `mui-transitions` updated to version `1.0.24`
+* `theme-provider` updated to version `1.0.24`
 ## [1.0.24](https://github.com/Availity/element/compare/@availity/element@1.0.23...@availity/element@1.0.24) (2025-04-11)
 
 ### Dependency Updates
