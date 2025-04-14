@@ -3,6 +3,9 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Autocomplete, createFilterOptions } from './Autocomplete';
 import { FilterOptionsState } from '@mui/material';
+import { InputAdornment, SearchByFormGroup } from '@availity/mui-form-utils';
+import { TextField } from '@availity/mui-textfield';
+import { SearchIcon } from '@availity/mui-icon';
 
 const languages = [
   'Python',
@@ -165,6 +168,37 @@ export const _Grouped: StoryObj<typeof Autocomplete> = {
         getOptionLabel={(option) => option.title}
         FieldProps={{ label: 'FreeSolo Select', helperText: 'Helper Text', fullWidth: false }}
       />
+    );
+  },
+};
+
+/** Wrap the fields in a `SearchByFormGroup` from the [@availity/mui-form-utils](./?path=/docs/form-components-formutils-introduction--docs) package for our combined search by styles.
+ *
+ * The "Search By" field id must be passed as the FormGroup supplies the label.
+ */
+export const _SearchBy: StoryObj<typeof Autocomplete> = {
+  render: () => {
+    const searchByOptions = ['Parameter 1', 'Parameter 2', 'Parameter 3']
+
+    return (
+      <SearchByFormGroup searchById="searchby">
+        <Autocomplete
+          id="searchby"
+          options={searchByOptions}
+          FieldProps= {{ fullWidth: false }}
+        />
+        <TextField
+          id="search"
+          placeholder="search"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon aria-hidden={false} aria-label="search"/>
+              </InputAdornment>
+            ),
+          }}
+        />
+      </SearchByFormGroup>
     );
   },
 };

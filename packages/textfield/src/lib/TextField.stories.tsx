@@ -6,7 +6,7 @@ import { IMaskInput } from 'react-imask';
 import { NumericFormat, NumericFormatProps } from 'react-number-format';
 import { IconButton } from '@availity/mui-button';
 import { Chip } from '@availity/mui-chip';
-import { FormControl, FormLabel, Input, InputAdornment, SelectChangeEvent } from '@availity/mui-form-utils';
+import { FormControl, FormLabel, Input, InputAdornment, SearchByFormGroup, SelectChangeEvent } from '@availity/mui-form-utils';
 import { EyeIcon, EyeSlashIcon, SearchIcon } from '@availity/mui-icon';
 import { Box, Grid, Stack } from '@availity/mui-layout';
 import { MenuItem } from '@availity/mui-menu';
@@ -379,4 +379,41 @@ export const _MultiSelect: StoryObj<typeof TextField> = {
     );
   },
   args: { label: 'MultiSelect' },
+};
+
+/** Wrap the fields in a `SearchByFormGroup` from the [@availity/mui-form-utils](./?path=/docs/form-components-formutils-introduction--docs) package for our combined search by styles.
+ *
+ * It is recommended to use `Autocomplete` for the "Search By" selection, however a `select` `TextField` can be used with `slotProps.select.labelId = {searchById passed to form group}-label`.
+ */
+export const _SearchBy: StoryObj<typeof TextField> = {
+  render: () => {
+    const [searchBy, setSearchBy] = useState('');
+
+    const handleChange = (event: SelectChangeEvent) => {
+      setSearchBy(event.target.value as string);
+    };
+
+    return (
+      <SearchByFormGroup searchById="searchby">
+        <TextField id="searchby" value={searchBy} fullWidth={false} select slotProps={{select:{ onChange: handleChange, labelId: "searchby-label"}}}>
+          <MenuItem value="Parameter 1">Parameter 1</MenuItem>
+          <MenuItem value="Parameter 2">Parameter 2</MenuItem>
+          <MenuItem value="Parameter 3">Parameter 3</MenuItem>
+        </TextField>
+        <TextField
+          id="search"
+          placeholder="search"
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon aria-hidden={false} aria-label="search"/>
+                </InputAdornment>
+              ),
+            }
+          }}
+        />
+      </SearchByFormGroup>
+    );
+  },
 };

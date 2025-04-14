@@ -239,6 +239,7 @@ __metadata:
   dependencies:
     "@availity/api-axios": ^10.0.3
     "@availity/mui-form-utils": "workspace:^"
+    "@availity/mui-icon": "workspace:^"
     "@availity/mui-textfield": "workspace:^"
     "@mui/material": ^6.4.5
     "@mui/types": ^7.2.21
@@ -654,6 +655,7 @@ __metadata:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-checkbox": "workspace:^"
     "@availity/mui-icon": "workspace:*"
+    "@availity/mui-layout": "workspace:*"
     "@availity/mui-typography": "workspace:*"
     "@availity/mui-utils": "workspace:*"
     "@fortawesome/free-solid-svg-icons": ^6.7.2
@@ -665,6 +667,7 @@ __metadata:
   peerDependencies:
     "@availity/mui-button": "workspace:*"
     "@availity/mui-icon": "workspace:*"
+    "@availity/mui-layout": "workspace:*"
     "@mui/material": ^6.4.5
     react: ">=16.3.0"
   languageName: unknown

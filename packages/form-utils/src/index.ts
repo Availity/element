@@ -8,5 +8,6 @@ export * from './lib/Input';
 export * from './lib/Radio';
 export * from './lib/RadioGroup';
 export * from './lib/RequiredKey';
+export * from './lib/SearchBy';
 export * from './lib/Select';
 export * from './lib/Switch';
