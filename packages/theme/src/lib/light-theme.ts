@@ -794,31 +794,26 @@ export const lightTheme = {
         containedPrimary: { ...containedButtonStyles('Primary') },
         containedSecondary: { ...containedButtonStyles('Secondary') },
         containedTertiary: {
-          '&.MuiButton-containedTertiary': {
-            ...containedButtonStyles('Tertiary'),
+          ...containedButtonStyles('Tertiary'),
+          '&:not(.Mui-disabled)': {
             boxSizing: 'border-box',
             border: `1px solid ${tokens.borderSecondary}`,
             color: tokens.colorTertiaryDark,
-            '&:hover': {
-              color: tokens.colorCommonWhite,
-              border: '1px solid transparent',
-              backgroundColor: tokens.colorTertiaryDark,
-            },
-            '&:active, &.Mui-focused:active, &:focus:active': {
-              color: tokens.colorCommonWhite,
-              border: '1px solid transparent',
-              backgroundColor: tokens.colorSecondaryLight,
-            },
-            '&.Mui-focused, &:focus': {
-              border: `1px solid ${tokens.borderSecondary}`,
-              backgroundColor: tokens.colorTertiaryLight,
-              color: tokens.colorTertiaryDark,
-            },
-            '&.Mui-disabled, &:disabled': {
-              border: `1px solid ${tokens.borderSecondary}`,
-              backgroundColor: tokens.colorTertiaryLight,
-              color: tokens.colorTertiaryDark,
-            },
+          },
+          '&.MuiButton-containedTertiary:hover': {
+            color: tokens.colorCommonWhite,
+            border: '1px solid transparent',
+            backgroundColor: tokens.colorTertiaryDark,
+          },
+          '&:active, &.Mui-focused:active, &:focus:active': {
+            color: tokens.colorCommonWhite,
+            border: '1px solid transparent',
+            backgroundColor: tokens.colorSecondaryLight,
+          },
+          '&.Mui-focused, &:focus': {
+            border: `1px solid ${tokens.borderSecondary}`,
+            backgroundColor: tokens.colorTertiaryLight,
+            color: tokens.colorTertiaryDark,
           },
         },
         containedSuccess: { ...containedButtonStyles('Success') },
@@ -857,14 +852,14 @@ export const lightTheme = {
         outlinedError: { ...outlinedButtonStyles('Error') },
         sizeSmall: {
           padding: '4px 16px',
-          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+          '&.MuiButton-containedTertiary:not(.Mui-disabled), &.MuiButton-outlined': {
             // any buttons with border need padding decreased to accommodate
             padding: '3px 15px',
           },
         },
         sizeMedium: {
           padding: '6px 18px',
-          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+          '&.MuiButton-containedTertiary:not(.Mui-disabled), &.MuiButton-outlined': {
             padding: '5px 17px',
           },
         },
@@ -872,7 +867,7 @@ export const lightTheme = {
           fontSize: '.9375rem',
           lineHeight: '1.5rem',
           padding: '8px 22px',
-          '&.MuiButton-containedTertiary, &.MuiButton-outlined': {
+          '&.MuiButton-containedTertiary:not(.Mui-disabled), &.MuiButton-outlined': {
             padding: '7px 21px',
           },
         },
@@ -888,17 +883,40 @@ export const lightTheme = {
           '.MuiButtonBase-root': {
             '&:hover, &:focus, &:active': {
               zIndex: 1
-            }
+            },
+            '&.Mui-disabled': {
+              padding: '7px 21px',
+            },
           },
           '&.MuiButtonGroup-horizontal.MuiButtonGroup-colorTertiary': {
-            '.MuiButton-root:not(:first-of-type)': {
+            '.MuiButton-root:not(.MuiButtonGroup-firstButton)': {
               marginLeft: '-1px'
             }
           },
           '&.MuiButtonGroup-vertical.MuiButtonGroup-colorTertiary': {
             '.MuiButton-root:not(:first-of-type)': {
-              borderTop: '0'
+              marginTop: '-1px'
             }
+          }
+        },
+        grouped: {
+          ':focus': {
+            boxShadow: `0 0 0px 4px ${tokens.colorTertiaryDark}`
+          }
+        },
+        firstButton: {
+          '&.Mui-disabled': {
+            border: `1px solid transparent`,
+          }
+        },
+        middleButton: {
+          '&.Mui-disabled': {
+            border: `1px solid transparent`,
+          }
+        },
+        lastButton: {
+          '&.Mui-disabled': {
+            border: `1px solid transparent`,
           }
         }
       }
