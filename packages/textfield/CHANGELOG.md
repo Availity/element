@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.0](https://github.com/Availity/element/compare/@availity/mui-textfield@1.1.6...@availity/mui-textfield@1.2.0) (2025-04-14)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `1.1.6`
+
+### Features
+
+* **mui-form-utils:** add searchbyformgroup ([4207b27](https://github.com/Availity/element/commit/4207b2768f86036df0d3443e452de867d6ceb491))
+
 ## [1.1.6](https://github.com/Availity/element/compare/@availity/mui-textfield@1.1.5...@availity/mui-textfield@1.1.6) (2025-04-14)
 
 ### Dependency Updates
