@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.4](https://github.com/Availity/element/compare/@availity/theme@1.5.3...@availity/theme@1.5.4) (2025-04-15)
+
+
+### Bug Fixes
+
+* **theme:** fix alert text wrapping ([8c3ded9](https://github.com/Availity/element/commit/8c3ded96c88c9928adac8d198acd4791d52b0587))
+
 ## [1.5.3](https://github.com/Availity/element/compare/@availity/theme@1.5.2...@availity/theme@1.5.3) (2025-04-14)
 
 
