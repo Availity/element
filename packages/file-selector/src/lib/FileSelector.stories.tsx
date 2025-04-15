@@ -42,7 +42,7 @@ const meta: Meta<typeof FileSelector> = {
     uploadOptions: {
       retryDelays: [],
     },
-    maxFiles: 1,
+    maxFiles: 2,
     maxSize: 1 * 1024 * 1024, // 1MB
     enableDropArea: true,
     isCloud: true,
