@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.28](https://github.com/Availity/element/compare/@availity/element@1.0.27...@availity/element@1.0.28) (2025-04-15)
+
+### Dependency Updates
+
+* `mui-file-selector` updated to version `1.0.27`
 ## [1.0.27](https://github.com/Availity/element/compare/@availity/element@1.0.26...@availity/element@1.0.27) (2025-04-15)
 
 ### Dependency Updates
