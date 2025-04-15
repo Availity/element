@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-file-selector",
-  "version": "1.5.3",
+  "version": "1.6.0",
   "description": "Availity MUI file-selector Component - part of the @availity/element design system",
   "keywords": [
     "react",

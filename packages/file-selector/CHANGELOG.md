@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.6.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.5.3...@availity/mui-file-selector@1.6.0) (2025-04-15)
+
+
+### Features
+
+* **mui-file-selector:** allow customSizeMessage and customTypesMessage ([378ccc0](https://github.com/Availity/element/commit/378ccc05fac7bc0e9086aafd4ad9aa9fdd5026de))
+
 ## [1.5.3](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.5.2...@availity/mui-file-selector@1.5.3) (2025-04-14)
 
 ### Dependency Updates
