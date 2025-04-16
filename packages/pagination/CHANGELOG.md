@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.6](https://github.com/Availity/element/compare/@availity/mui-pagination@1.0.5...@availity/mui-pagination@1.0.6) (2025-04-16)
+
+
+### Bug Fixes
+
+* **mui-pagination:** added missing export ([9ed0267](https://github.com/Availity/element/commit/9ed02670a87d81480add8139d21e536df8090f57))
+
 ## [1.0.5](https://github.com/Availity/element/compare/@availity/mui-pagination@1.0.4...@availity/mui-pagination@1.0.5) (2025-04-14)
 
 ### Dependency Updates
