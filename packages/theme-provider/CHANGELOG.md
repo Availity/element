@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.12](https://github.com/Availity/element/compare/@availity/theme-provider@1.0.11...@availity/theme-provider@1.0.12) (2025-04-21)
+
+### Dependency Updates
+
+* `mui-alert` updated to version `1.0.11`
 ## [1.0.11](https://github.com/Availity/element/compare/@availity/theme-provider@1.0.10...@availity/theme-provider@1.0.11) (2025-04-15)
 
 ### Dependency Updates
