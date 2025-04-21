@@ -48,6 +48,14 @@ const meta: Meta<typeof FileSelector> = {
     isCloud: true,
     multiple: true,
   },
+  argTypes: {
+    customSizeMessage: {
+      control: 'text',
+    },
+    customTypesMessage: {
+      control: 'text',
+    },
+  },
 };
 
 export default meta;
@@ -299,6 +307,6 @@ export const _FileSelectorCustomSizeMessage: StoryObj<typeof FileSelector> = {
     );
   },
   args: {
-    customSizeMessage: <div>Only huge files allowed</div>,
+    customSizeMessage: 'Only huge files allowed. ',
   },
 };
