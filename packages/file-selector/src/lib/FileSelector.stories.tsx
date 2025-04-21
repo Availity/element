@@ -307,6 +307,6 @@ export const _FileSelectorCustomSizeMessage: StoryObj<typeof FileSelector> = {
     );
   },
   args: {
-    customSizeMessage: <div>Only huge files allowed</div>,
+    customSizeMessage: 'Only huge files allowed. ',
   },
 };
