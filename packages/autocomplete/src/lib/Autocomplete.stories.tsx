@@ -192,8 +192,8 @@ export const _SearchBy: StoryObj<typeof Autocomplete> = {
           placeholder="search"
           InputProps={{
             startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon aria-hidden={false} aria-label="search"/>
+              <InputAdornment position="start" component="label" htmlFor="search">
+                <SearchIcon aria-hidden={false} titleAccess="search"/>
               </InputAdornment>
             ),
           }}
