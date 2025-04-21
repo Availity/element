@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.3](https://github.com/Availity/element/compare/@availity/mui-button@1.1.2...@availity/mui-button@1.1.3) (2025-04-21)
+
+
+### Bug Fixes
+
+* **mui-button:** add buttongroup export ([c2bccd0](https://github.com/Availity/element/commit/c2bccd0727ce55bde320f3c6f921ca2a6df60f2e))
+
 ## [1.1.2](https://github.com/Availity/element/compare/@availity/mui-button@1.1.1...@availity/mui-button@1.1.2) (2025-04-14)
 
 ## [1.1.1](https://github.com/Availity/element/compare/@availity/mui-button@1.1.0...@availity/mui-button@1.1.1) (2025-04-11)
