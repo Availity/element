@@ -18,11 +18,11 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
     env:
-      NODE_OPTIONS: "--max-old-space-size=6144"
+      NODE_OPTIONS: '--max-old-space-size=6144'
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        node: [18, 20]
+        node: [18, 20, 22]
 
     steps:
       - name: Checkout Code
