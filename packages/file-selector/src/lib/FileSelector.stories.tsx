@@ -48,6 +48,14 @@ const meta: Meta<typeof FileSelector> = {
     isCloud: true,
     multiple: true,
   },
+  argTypes: {
+    customSizeMessage: {
+      control: 'text',
+    },
+    customTypesMessage: {
+      control: 'text',
+    },
+  },
 };
 
 export default meta;
