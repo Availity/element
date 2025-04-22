@@ -3,7 +3,7 @@
   command = "yarn build:storybook:ci"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
   YARN_VERSION = "1.19.1"
 
 [[redirects]]
