@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@1.2.1...@availity/mui-form-utils@1.2.2) (2025-04-24)
+
+
+### Bug Fixes
+
+* **mui-form-utils:** add searchbyformgroup wrap behavior ([941e75f](https://github.com/Availity/element/commit/941e75ffff7fcde135ee54af038353104f304f8b))
+
 ## [1.2.1](https://github.com/Availity/element/compare/@availity/mui-form-utils@1.2.0...@availity/mui-form-utils@1.2.1) (2025-04-21)
 
 ### Dependency Updates
