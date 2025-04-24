@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.3](https://github.com/Availity/element/compare/@availity/mui-link@1.0.2...@availity/mui-link@1.0.3) (2025-04-24)
+
+
+### Bug Fixes
+
+* **mui-link:** fix onclick type collision ([fd98866](https://github.com/Availity/element/commit/fd98866b5d36ffb01567f46f66aeee11d6b2baf2))
+
 ## [1.0.2](https://github.com/Availity/element/compare/@availity/mui-link@1.0.1...@availity/mui-link@1.0.2) (2025-04-11)
 
 ### Dependency Updates
