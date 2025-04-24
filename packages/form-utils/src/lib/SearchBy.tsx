@@ -22,17 +22,24 @@ export const SearchByContainer = styled(FormGroup, {
   '.MuiFormControl-fullWidth': {
     flex: 1
   },
+  '> .MuiStack-root': {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '> .MuiFormControl-root': {
+      minWidth: '10rem'
+    },
+  },
   '& :is(.MuiFormControl-root, .MuiAutocomplete-root):not(:is(.MuiFormControl-root, .MuiAutocomplete-root):first-of-type)': {
     '.MuiInputBase-root': {
       borderBottomLeftRadius: 0,
-      borderTopLeftRadius: 0,
-      marginLeft: '-1px'
+      borderTopLeftRadius: 0
     }
   },
   '& :is(.MuiFormControl-root, .MuiAutocomplete-root):not(:is(.MuiFormControl-root, .MuiAutocomplete-root):last-of-type)': {
     '.MuiInputBase-root': {
       borderBottomRightRadius: 0,
-      borderTopRightRadius: 0
+      borderTopRightRadius: 0,
+      marginRight: '-1px'
     }
   }
 }));
