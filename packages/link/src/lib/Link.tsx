@@ -57,7 +57,7 @@ export type LinkProps = {
    *
    * @default 'start' */
   iconPosition?: 'start' | 'end';
-} & Omit<MuiLinkProps, 'underline' | 'noWrap' | 'variantMapping'>;
+} & Omit<MuiLinkProps, 'noWrap' | 'onClick' | 'underline' | 'variantMapping'>;
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
   const { href, target = '_self', children, onClick, loadApp = true, rel, iconPosition = 'start', ...rest } = props;
