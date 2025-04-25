@@ -1,7 +1,7 @@
 import { AsyncAutocomplete, AsyncAutocompleteProps } from '@availity/mui-autocomplete';
 import { RegisterOptions, FieldValues, Controller, useFormContext } from 'react-hook-form';
 import { ChipTypeMap } from '@mui/material/Chip';
-import { ControllerProps } from './Types';
+import { ControllerProps, TransformProp } from './Types';
 
 export type ControlledAsyncAutocompleteProps<
   Option,
@@ -9,12 +9,17 @@ export type ControlledAsyncAutocompleteProps<
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+  Output = AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null,
 > = { defaultToFirstOption?: boolean; defaultToOnlyOption?: boolean } & Omit<
   AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>,
   'onBlur' | 'onChange' | 'value' | 'name'
 > &
   Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
-  ControllerProps;
+  ControllerProps &
+  TransformProp<
+    AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null,
+    Output
+  >;
 
 export const ControlledAsyncAutocomplete = <
   Option,
@@ -22,6 +27,7 @@ export const ControlledAsyncAutocomplete = <
   DisableClearable extends boolean | undefined = false,
   FreeSolo extends boolean | undefined = false,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+  Output = AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null,
 >({
   name,
   onBlur,
@@ -32,8 +38,9 @@ export const ControlledAsyncAutocomplete = <
   FieldProps,
   defaultToFirstOption,
   defaultToOnlyOption,
+  transform,
   ...rest
-}: ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
+}: ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent, Output>) => {
   const { setValue } = useFormContext();
   return (
     <Controller
@@ -61,12 +68,12 @@ export const ControlledAsyncAutocomplete = <
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {
-              onChange(null);
+              onChange(transform?.output?.(null) ?? null);
             }
-            onChange(value);
+            onChange(transform?.output?.(value) ?? value);
           }}
           onBlur={onBlur}
-          value={value || null}
+          value={transform?.input?.(value) ?? value ?? null}
           loadOptions={async (offset, limit, inputValue) => {
             const { options, hasMore, offset: returnedOffsetValue } = await rest.loadOptions(offset, limit, inputValue);
 

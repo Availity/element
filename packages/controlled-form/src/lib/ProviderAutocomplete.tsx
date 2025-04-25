@@ -1,4 +1,4 @@
-import type { Provider } from '@availity/mui-autocomplete';
+import type { AsyncAutocompleteProps, Provider } from '@availity/mui-autocomplete';
 import { handleGetProviderOptionLabel, fetchProviders } from '@availity/mui-autocomplete';
 import type { ChipTypeMap } from '@mui/material/Chip';
 import type { Optional } from './utils';
@@ -11,8 +11,9 @@ export interface ControlledProviderAutocompleteProps<
   DisableClearable extends boolean | undefined = false,
   FreeSolo extends boolean | undefined = false,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+  Output = AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null,
 > extends Omit<
-    Optional<ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'queryKey'>,
+    Optional<ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent, Output>, 'queryKey'>,
     'loadOptions'
   > {
   /** Customer ID of the Organization you are requesting the providers for */
@@ -21,20 +22,19 @@ export interface ControlledProviderAutocompleteProps<
   apiConfig?: ApiConfig;
 }
 
-export const ControlledProviderAutocomplete = ({
-  name,
-  defaultValue,
-  onBlur,
-  onChange,
-  rules = {},
-  shouldUnregister,
-  value,
-  FieldProps,
+export const ControlledProviderAutocomplete = <
+  Option = Provider,
+  Multiple extends boolean | undefined = false,
+  DisableClearable extends boolean | undefined = false,
+  FreeSolo extends boolean | undefined = false,
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+  Output = AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null,
+>({
   apiConfig = {},
   customerId,
   queryKey = 'prov-autocomplete',
   ...rest
-}: ControlledProviderAutocompleteProps) => {
+}: ControlledProviderAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent, Output>) => {
   const handleLoadOptions = async (offset: number, limit: number, inputValue: string) => {
     const resp = await fetchProviders(customerId, {
       ...apiConfig,
@@ -45,14 +45,6 @@ export const ControlledProviderAutocomplete = ({
   };
   return (
     <ControlledAsyncAutocomplete
-      name={name}
-      defaultValue={defaultValue}
-      onBlur={onBlur}
-      onChange={onChange}
-      rules={rules}
-      shouldUnregister={shouldUnregister}
-      value={value}
-      FieldProps={FieldProps}
       getOptionLabel={handleGetProviderOptionLabel}
       queryOptions={{ enabled: !!customerId }}
       queryKey={queryKey}

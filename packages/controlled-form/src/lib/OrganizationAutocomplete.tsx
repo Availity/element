@@ -1,4 +1,4 @@
-import type { Organization } from '@availity/mui-autocomplete';
+import type { AsyncAutocompleteProps, Organization } from '@availity/mui-autocomplete';
 import { handleGetOrgOptionLabel, fetchOrgs } from '@availity/mui-autocomplete';
 import type { ChipTypeMap } from '@mui/material/Chip';
 import type { ApiConfig } from '@availity/api-axios';
@@ -11,27 +11,30 @@ export interface ControlledOrgAutocompleteProps<
   DisableClearable extends boolean | undefined = false,
   FreeSolo extends boolean | undefined = false,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+  Output = AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null,
 > extends Omit<
-    Optional<ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'queryKey'>,
+    Optional<
+      ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent, Output>,
+      'queryKey'
+    >,
     'loadOptions'
   > {
   /** Axios ApiConfig */
   apiConfig?: ApiConfig;
 }
 
-export const ControlledOrganizationAutocomplete = ({
-  name,
-  defaultValue,
-  onBlur,
-  onChange,
-  rules = {},
-  shouldUnregister,
-  value,
-  FieldProps,
+export const ControlledOrganizationAutocomplete = <
+  Option = Organization,
+  Multiple extends boolean | undefined = false,
+  DisableClearable extends boolean | undefined = false,
+  FreeSolo extends boolean | undefined = false,
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+  Output = AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null,
+>({
   queryKey = 'org-autocomplete',
   apiConfig = {},
   ...rest
-}: ControlledOrgAutocompleteProps) => {
+}: ControlledOrgAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent, Output>) => {
   const handleLoadOptions = async (offset: number, limit: number) => {
     const resp = await fetchOrgs({ ...apiConfig, params: { dropdown: true, ...apiConfig.params, offset, limit } });
 
@@ -39,14 +42,6 @@ export const ControlledOrganizationAutocomplete = ({
   };
   return (
     <ControlledAsyncAutocomplete
-      name={name}
-      defaultValue={defaultValue}
-      onBlur={onBlur}
-      onChange={onChange}
-      rules={rules}
-      shouldUnregister={shouldUnregister}
-      value={value}
-      FieldProps={FieldProps}
       getOptionLabel={handleGetOrgOptionLabel}
       queryKey={queryKey}
       {...rest}

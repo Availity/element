@@ -1,12 +1,17 @@
 import { Datepicker, DatepickerProps } from '@availity/mui-datepicker';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
-import { ControllerProps } from './Types';
+import { ControllerProps, TransformProp } from './Types';
+import { Dayjs } from 'dayjs';
 
-export type ControlledDatepickerProps = Omit<DatepickerProps, 'onBlur' | 'onChange' | 'value' | 'name'> &
+export type ControlledDatepickerProps<Output = Dayjs | null> = Omit<
+  DatepickerProps,
+  'onBlur' | 'onChange' | 'value' | 'name'
+> &
   Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
-  ControllerProps;
+  ControllerProps &
+  TransformProp<Dayjs | null, Output>;
 
-export const ControlledDatepicker = ({
+export const ControlledDatepicker = <Output = Dayjs | null,>({
   name,
   defaultValue,
   onBlur,
@@ -15,8 +20,9 @@ export const ControlledDatepicker = ({
   shouldUnregister,
   value,
   FieldProps,
+  transform,
   ...rest
-}: ControlledDatepickerProps) => {
+}: ControlledDatepickerProps<Output>) => {
   return (
     <Controller
       name={name}
@@ -50,8 +56,8 @@ export const ControlledDatepicker = ({
               onBlur: onBlur,
             },
           }}
-          onChange={onChange}
-          value={value || null}
+          onChange={(e) => onChange(transform?.output?.(e) ?? e)}
+          value={transform?.input?.(value) ?? value ?? null}
         />
       )}
     />

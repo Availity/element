@@ -1,7 +1,7 @@
 import { Autocomplete, AutocompleteProps } from '@availity/mui-autocomplete';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
 import { ChipTypeMap } from '@mui/material/Chip';
-import { ControllerProps } from './Types';
+import { ControllerProps, TransformProp } from './Types';
 
 export type ControlledAutocompleteProps<
   T,
@@ -9,12 +9,14 @@ export type ControlledAutocompleteProps<
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+  Output = AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null,
 > = Omit<
   AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>,
   'onBlur' | 'onChange' | 'value' | 'name'
 > &
   Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
-  ControllerProps;
+  ControllerProps &
+  TransformProp<AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null, Output>;
 
 export const ControlledAutocomplete = <
   T,
@@ -22,6 +24,7 @@ export const ControlledAutocomplete = <
   DisableClearable extends boolean | undefined = false,
   FreeSolo extends boolean | undefined = false,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+  Output = AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null,
 >({
   name,
   FieldProps,
@@ -31,8 +34,9 @@ export const ControlledAutocomplete = <
   onChange,
   shouldUnregister,
   value,
+  transform,
   ...rest
-}: ControlledAutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
+}: ControlledAutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent, Output>) => {
   return (
     <Controller
       name={name}
@@ -65,12 +69,12 @@ export const ControlledAutocomplete = <
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {
-              onChange(null);
+              onChange(transform?.output?.(null) ?? null);
             }
-            onChange(value);
+            onChange(transform?.output?.(value) ?? value);
           }}
           onBlur={onBlur}
-          value={value || null}
+          value={transform?.input?.(value) ?? value ?? null}
         />
       )}
     />

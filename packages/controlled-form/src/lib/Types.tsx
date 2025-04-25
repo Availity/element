@@ -33,9 +33,22 @@ export type ControllerProps = {
   shouldUnregister?: MuiControllerProps['shouldUnregister'];
 };
 
+export type TransformProp<Input = string, Output = string> = {
+  /** Object containing functions to parse the input value and format the output value. Useful for converting values from API responses to display values and back.
+   * - `input`: Function to transform the value from the underlying data to the input value.
+   * - `output`: Function to transform the value from the input to the underlying data.
+   *
+   * Example: The input always expects a dayjs object, but your endpoint expects and returns a string:
+   * `{ input: (value) => value ? dayjs(value) : null, output: (value) => value.format('YYYY-MM-DD') }`
+   */
+  transform?: { input?: (value: Output) => Input; output?: (value: Input) => Output };
+};
+
 // Storybook Categories
 
-type AllControllerProps = ControllerProps & Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'>;
+type AllControllerProps = ControllerProps &
+  Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
+  TransformProp;
 
 type CategorizedControllerPropsObject = Record<keyof AllControllerProps, { table: { category: 'Controller Props' } }>;
 
@@ -185,6 +198,7 @@ export const AllControllerPropertiesCategorized: CategorizedControllerPropsObjec
   value: { table: { category: 'Controller Props' } },
   rules: { table: { category: 'Controller Props' } },
   shouldUnregister: { table: { category: 'Controller Props' } },
+  transform: { table: { category: 'Controller Props' } },
 };
 
 export const TextFieldPropsCategorized: TextFieldPropsObject = {

@@ -1,4 +1,4 @@
-import type { Code } from '@availity/mui-autocomplete';
+import type { AsyncAutocompleteProps, Code } from '@availity/mui-autocomplete';
 import { fetchCodes, handleGetCodesOptionLabel } from '@availity/mui-autocomplete';
 import { ApiConfig } from '@availity/api-axios';
 import { ChipTypeMap } from '@mui/material/Chip';
@@ -11,8 +11,12 @@ export interface ControlledCodesAutocompleteProps<
   DisableClearable extends boolean | undefined = false,
   FreeSolo extends boolean | undefined = false,
   ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+  Output = AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null,
 > extends Omit<
-    Optional<ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>, 'queryKey'>,
+    Optional<
+      ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent, Output>,
+      'queryKey'
+    >,
     'loadOptions'
   > {
   /** The code list id. */
@@ -21,22 +25,21 @@ export interface ControlledCodesAutocompleteProps<
   apiConfig?: ApiConfig;
 }
 
-export const ControlledCodesAutocomplete = ({
-  name,
-  defaultValue,
-  onBlur,
-  onChange,
-  rules = {},
-  shouldUnregister,
-  value,
-  FieldProps,
+export const ControlledCodesAutocomplete = <
+  Option = Code,
+  Multiple extends boolean | undefined = false,
+  DisableClearable extends boolean | undefined = false,
+  FreeSolo extends boolean | undefined = false,
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+  Output = AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>['value'] | null,
+>({
   apiConfig = {},
   queryOptions,
   queryKey = 'codes-autocomplete',
   list,
   watchParams,
   ...rest
-}: ControlledCodesAutocompleteProps) => {
+}: ControlledCodesAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent, Output>) => {
   const handleLoadOptions = async (offset: number, limit: number, inputValue: string) => {
     const resp = await fetchCodes({
       ...apiConfig,
@@ -48,14 +51,6 @@ export const ControlledCodesAutocomplete = ({
 
   return (
     <ControlledAsyncAutocomplete
-      name={name}
-      defaultValue={defaultValue}
-      onBlur={onBlur}
-      onChange={onChange}
-      rules={rules}
-      shouldUnregister={shouldUnregister}
-      value={value}
-      FieldProps={FieldProps}
       getOptionLabel={handleGetCodesOptionLabel}
       queryKey={queryKey}
       queryOptions={{ enabled: !!list, ...queryOptions }}
