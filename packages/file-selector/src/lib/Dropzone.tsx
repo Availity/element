@@ -173,9 +173,34 @@ export const Dropzone = ({
       setValue(name, previous.concat(acceptedFiles));
 
       if (fileRejections.length > 0) {
-        for (const rejection of fileRejections) {
-          rejection.id = counter.increment();
-        }
+        const TOO_MANY_FILES_CODE = 'too-many-files';
+        let hasTooManyFiles = false;
+
+        fileRejections = fileRejections.reduce(
+          (acc, rejection) => {
+            const isTooManyFiles = rejection.errors.some((error) => error.code === TOO_MANY_FILES_CODE);
+
+            if (isTooManyFiles) {
+              // Only add the first too-many-files rejection
+              if (!hasTooManyFiles) {
+                hasTooManyFiles = true;
+                acc.push({
+                  ...rejection,
+                  id: counter.increment(),
+                });
+              }
+            } else {
+              // Add all other rejection types normally
+              acc.push({
+                ...rejection,
+                id: counter.increment(),
+              });
+            }
+
+            return acc;
+          },
+          [] as Array<(typeof fileRejections)[0] & { id: number }>
+        );
       }
 
       if (setFileRejections) setFileRejections(fileRejections);

@@ -8,8 +8,6 @@
 
 ## Documentation
 
-This package extends the MUI Spaces component: [MUI Spaces Docs](https://mui.com/components/spaces/)
-
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-spaces-introduction--docs)
 
 Availity standards for design and usage can be found in the [Availity Design Guide](https://design.availity.com/2e36e50c7)

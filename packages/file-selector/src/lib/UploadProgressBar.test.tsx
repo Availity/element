@@ -38,6 +38,23 @@ describe('UploadProgressBar', () => {
     expect(screen.getByText('error message')).toBeTruthy();
   });
 
+  test('should intercept file extension error message', () => {
+    const mockUpload: unknown = {
+      onProgress: [],
+      onError: [],
+      onSuccess: [],
+      errorMessage: '.txt is application&#x2f;pdf but has an extension for text&#x2f;plain',
+      file: {
+        name: 'test',
+      },
+      percentage: 0,
+    };
+
+    render(<UploadProgressBar upload={mockUpload as Upload} />);
+
+    expect(screen.getByText('File format does not match file extension.')).toBeTruthy();
+  });
+
   test('should allow passwords for encrypted files', () => {
     const mockUpload: unknown = {
       onProgress: [],
@@ -47,7 +64,7 @@ describe('UploadProgressBar', () => {
       file: {
         name: 'test',
       },
-      status: 'encrypted'
+      status: 'encrypted',
     };
 
     render(<UploadProgressBar upload={mockUpload as Upload} />);

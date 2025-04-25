@@ -28,9 +28,32 @@ export type UploadProgressBarProps = {
   onError?: (upload: Upload) => void;
 };
 
+type ErrorMapping = {
+  pattern: RegExp;
+  friendlyMessage: string;
+};
+
+/**
+ * These errors are separate from the errors associated with ErrorAlert.
+ * These are errors received in the response from vault.
+ */
+const ERROR_MAPPINGS: ErrorMapping[] = [
+  {
+    pattern: /but has an extension for/i,
+    friendlyMessage: 'File format does not match file extension.',
+  },
+];
+
+const friendlyErrorMessage = (errorMessage: string): string => {
+  const mapping = ERROR_MAPPINGS.find(({ pattern }) => pattern.test(errorMessage));
+  return mapping ? mapping.friendlyMessage : errorMessage;
+};
+
 export const UploadProgressBar = ({ upload, onProgress, onError, onSuccess }: UploadProgressBarProps) => {
   const [statePercentage, setStatePercentage] = useState(upload.percentage || 0);
-  const [errorMessage, setErrorMessage] = useState(upload.errorMessage || '');
+  const [errorMessage, setErrorMessage] = useState(
+    upload.errorMessage ? friendlyErrorMessage(upload.errorMessage) : ''
+  );
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -43,7 +66,7 @@ export const UploadProgressBar = ({ upload, onProgress, onError, onSuccess }: Up
   };
 
   const handleOnError = () => {
-    setErrorMessage(upload.errorMessage || 'Error');
+    setErrorMessage(upload.errorMessage ? friendlyErrorMessage(upload.errorMessage) : 'Error');
 
     if (onError) onError(upload);
   };
@@ -76,9 +99,12 @@ export const UploadProgressBar = ({ upload, onProgress, onError, onSuccess }: Up
   upload.onError.push(handleOnError);
 
   return errorMessage ? (
-    <Box sx={{display: 'flex', flexWrap: 'wrap', columnGap: '4px'}}>
-      <ListItemText slotProps={{primary: { color: 'text.error', variant: 'body2', component: 'div' }}} sx={{wordWrap: 'break-word'}}>
-        <WarningTriangleIcon sx={{verticalAlign: 'middle', mt: '-2px'}}/> {errorMessage}
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', columnGap: '4px' }}>
+      <ListItemText
+        slotProps={{ primary: { color: 'text.error', variant: 'body2', component: 'div' } }}
+        sx={{ wordWrap: 'break-word' }}
+      >
+        <WarningTriangleIcon sx={{ verticalAlign: 'middle', mt: '-2px' }} /> {errorMessage}
       </ListItemText>
       {upload.status === 'encrypted' && (
         <div className="pwRequired">
@@ -98,7 +124,11 @@ export const UploadProgressBar = ({ upload, onProgress, onError, onSuccess }: Up
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <IconButton title="password visibility" onClick={() => setShowPassword((prev) => !prev)} edge="end">
+                        <IconButton
+                          title="password visibility"
+                          onClick={() => setShowPassword((prev) => !prev)}
+                          edge="end"
+                        >
                           {showPassword ? <EyeIcon fontSize="small" /> : <EyeSlashIcon fontSize="small" />}
                         </IconButton>
                       </InputAdornment>
@@ -107,7 +137,9 @@ export const UploadProgressBar = ({ upload, onProgress, onError, onSuccess }: Up
                 />
               </DialogContent>
               <DialogActions>
-                <Button color="primary" type="submit">Ok</Button>
+                <Button color="primary" type="submit">
+                  Ok
+                </Button>
               </DialogActions>
             </form>
           </Dialog>
