@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.33](https://github.com/Availity/element/compare/@availity/element@1.0.32...@availity/element@1.0.33) (2025-04-28)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `1.0.32`
+* `mui-card` updated to version `1.0.32`
+* `mui-controlled-form` updated to version `1.0.32`
+* `mui-datepicker` updated to version `1.0.32`
+* `mui-dialog` updated to version `1.0.32`
+* `mui-event-tracker` updated to version `1.0.32`
+* `mui-feedback` updated to version `1.0.32`
+* `mui-file-selector` updated to version `1.0.32`
+* `mui-form-utils` updated to version `1.0.32`
+* `mui-modal` updated to version `1.0.32`
+* `mui-page-header` updated to version `1.0.32`
+* `mui-spaces` updated to version `1.0.32`
+* `mui-table` updated to version `1.0.32`
+* `mui-textfield` updated to version `1.0.32`
 ## [1.0.32](https://github.com/Availity/element/compare/@availity/element@1.0.31...@availity/element@1.0.32) (2025-04-25)
 
 ### Dependency Updates
