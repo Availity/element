@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.2.10...@availity/mui-controlled-form@1.3.0) (2025-04-28)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `1.2.10`
+* `mui-datepicker` updated to version `1.2.10`
+* `mui-form-utils` updated to version `1.2.10`
+* `mui-textfield` updated to version `1.2.10`
+
+### Features
+
+* **mui-controlled-form:** add transform prop to parse and format values ([2485a93](https://github.com/Availity/element/commit/2485a93e6b97fc4a492baa2786ae16e9a8b81eea))
+
 ## [1.2.10](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.2.9...@availity/mui-controlled-form@1.2.10) (2025-04-24)
 
 ### Dependency Updates
