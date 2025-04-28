@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://github.com/Availity/element/compare/@availity/mui-form-utils@1.2.2...@availity/mui-form-utils@1.3.0) (2025-04-28)
+
+
+### Features
+
+* **mui-controlled-form:** add transform prop to parse and format values ([2485a93](https://github.com/Availity/element/commit/2485a93e6b97fc4a492baa2786ae16e9a8b81eea))
+
 ## [1.2.2](https://github.com/Availity/element/compare/@availity/mui-form-utils@1.2.1...@availity/mui-form-utils@1.2.2) (2025-04-24)
 
 
