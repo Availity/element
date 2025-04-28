@@ -1,12 +1,13 @@
 import { Input, InputProps } from '@availity/mui-form-utils';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
-import { ControllerProps } from './Types';
+import { ControllerProps, TransformProp } from './Types';
 
-export type ControlledInputProps = Omit<InputProps, 'onBlur' | 'onChange' | 'value' | 'name'> &
+export type ControlledInputProps<Output = string> = Omit<InputProps, 'onBlur' | 'onChange' | 'value' | 'name'> &
   Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
-  ControllerProps;
+  ControllerProps &
+  TransformProp<string, Output>;
 
-export const ControlledInput = ({
+export const ControlledInput = <Output = string,>({
   name,
   defaultValue,
   disabled,
@@ -15,8 +16,9 @@ export const ControlledInput = ({
   rules = {},
   shouldUnregister,
   value,
+  transform,
   ...rest
-}: ControlledInputProps) => {
+}: ControlledInputProps<Output>) => {
   return (
     <Controller
       name={name}
@@ -35,6 +37,8 @@ export const ControlledInput = ({
           required={typeof rules.required === 'object' ? rules.required.value : !!rules.required}
           {...rest}
           {...field}
+          onChange={(e) => field.onChange(transform?.output?.(e.target.value) ?? e)}
+          value={transform?.input?.(field.value) ?? field.value ?? ''}
           error={!!error}
         />
       )}

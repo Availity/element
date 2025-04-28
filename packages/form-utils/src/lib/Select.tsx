@@ -6,8 +6,8 @@ import { styled } from '@mui/material/styles';
 import { ExpandIcon } from '@availity/mui-icon';
 import { InputPropOverrides } from './Input';
 
-export type SelectProps = Omit<
-  MuiSelectProps,
+export type SelectProps<Value = unknown> = Omit<
+  MuiSelectProps<Value>,
   'components' | 'componentsProps' | 'SelectComponent' | 'notched' | 'slots' | 'slotProps' | 'variant'
 >;
 
@@ -35,14 +35,14 @@ const InnerEndAdornment = (args: StackProps) => (
 export const SelectPropOverrides = { IconComponent: InnerEndAdornment, ...InputPropOverrides };
 
 /** Accessibility additions to resolve Level Access violations. Requires tracking of open state for updates. */
-export const SelectAccessibilityOverrides = (
+export const SelectAccessibilityOverrides = <Value = unknown,>(
   /** The detected open status for uncontrolled components */
   openDetected?: boolean,
   /** Function to update detected open status for uncontrolled components */
   setOpenDetected?: React.Dispatch<React.SetStateAction<boolean>>,
   /** The open status for controlled components */
   open?: boolean
-): SelectProps => {
+): SelectProps<Value> => {
   if (setOpenDetected && open === undefined) {
     const onOpen = () => {
       setOpenDetected(true);
@@ -55,7 +55,7 @@ export const SelectAccessibilityOverrides = (
   return open ? {} : { SelectDisplayProps: { 'aria-controls': '' } };
 };
 
-export const Select = (props: SelectProps): JSX.Element => {
+export const Select = <Value = unknown,>(props: SelectProps<Value>): JSX.Element => {
   const [openDetected, setOpenDetected] = useState(false);
   return (
     <MuiSelect

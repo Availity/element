@@ -1,18 +1,19 @@
 import { FormControlProps, RadioGroup, RadioGroupProps } from '@availity/mui-form-utils';
 import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
 import { FormControl, FormLabel, FormHelperText } from '@availity/mui-form-utils';
-import { ControllerProps } from './Types';
+import { ControllerProps, TransformProp } from './Types';
 
-export type ControlledRadioGroupProps = {
+export type ControlledRadioGroupProps<Output = string> = {
   name: string;
   label: string;
   helperText?: string;
 } & Omit<RadioGroupProps, 'onBlur' | 'onChange' | 'value' | 'name'> &
   Pick<RegisterOptions<FieldValues, string>, 'onBlur' | 'onChange' | 'value'> &
   ControllerProps &
+  TransformProp<string, Output> &
   Pick<FormControlProps, 'required'>;
 
-export const ControlledRadioGroup = ({
+export const ControlledRadioGroup = <Output = string,>({
   name,
   helperText,
   label,
@@ -23,8 +24,9 @@ export const ControlledRadioGroup = ({
   rules = {},
   shouldUnregister,
   value,
+  transform,
   ...rest
-}: ControlledRadioGroupProps) => {
+}: ControlledRadioGroupProps<Output>) => {
   return (
     <Controller
       name={name}
@@ -38,7 +40,12 @@ export const ControlledRadioGroup = ({
           required={!!required || (typeof rules.required === 'object' ? rules.required.value : !!rules.required)}
         >
           <FormLabel>{label}</FormLabel>
-          <RadioGroup {...field} {...rest} />
+          <RadioGroup
+            {...field}
+            onChange={(e) => field.onChange(transform?.output?.(e.target.value) ?? e)}
+            value={transform?.input?.(field.value) ?? field.value ?? ''}
+            {...rest}
+          />
           <FormHelperText>
             {error?.message ? (
               <>

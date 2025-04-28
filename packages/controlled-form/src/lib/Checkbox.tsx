@@ -1,12 +1,12 @@
 import { Checkbox, CheckboxProps } from '@availity/mui-checkbox';
 import { RegisterOptions, FieldValues, Controller } from 'react-hook-form';
-import { ControllerProps } from './Types';
+import { ControllerProps, TransformProp } from './Types';
 
-export type ControlledCheckboxProps = Omit<CheckboxProps, 'disabled' | 'onBlur' | 'onChange' | 'value' | 'name'> &
+export type ControlledCheckboxProps<Output = boolean> = Omit<CheckboxProps, 'disabled' | 'onBlur' | 'onChange' | 'value' | 'name'> &
   Pick<RegisterOptions<FieldValues, string>, 'disabled' | 'onBlur' | 'onChange' | 'value'> &
-  ControllerProps;
+  ControllerProps & TransformProp<boolean, Output>;
 
-export const ControlledCheckbox = ({
+export const ControlledCheckbox = <Output = boolean,>({
   name,
   disabled,
   onChange,
@@ -15,8 +15,9 @@ export const ControlledCheckbox = ({
   defaultValue = false,
   rules = {},
   shouldUnregister,
+  transform,
   ...rest
-}: ControlledCheckboxProps) => {
+}: ControlledCheckboxProps<Output>) => {
   return (
     <Controller
       name={name}
@@ -35,8 +36,8 @@ export const ControlledCheckbox = ({
           required={typeof rules.required === 'object' ? rules.required.value : !!rules.required}
           {...rest}
           {...field}
-          checked={field.value}
-          onChange={(e) => field.onChange(e.target.checked)}
+          checked={transform?.input?.(field.value) ?? field.value}
+          onChange={(e) => field.onChange(transform?.output?.(e.target.checked) ?? e.target.checked)}
         />
       )}
     />
