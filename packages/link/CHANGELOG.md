@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-link@1.0.3...@availity/mui-link@1.1.0) (2025-04-29)
+
+
+### Features
+
+* set target to _top when loadApp true ([0751d9a](https://github.com/Availity/element/commit/0751d9a382159f9eb4a0a39f3d9de0809a4385ec))
+* set target to _top when loadApp true ([d5a7fe8](https://github.com/Availity/element/commit/d5a7fe8c1e707da170b685de3ec71b121f706961))
+
 ## [1.0.3](https://github.com/Availity/element/compare/@availity/mui-link@1.0.2...@availity/mui-link@1.0.3) (2025-04-24)
 
 
