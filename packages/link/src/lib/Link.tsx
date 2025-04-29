@@ -71,7 +71,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
   return (
     <MuiLink
       href={url}
-      target={target}
+      target={loadApp ? '_top' : target}
       onClick={(event: React.MouseEvent) => onClick && onClick(event, url)}
       rel={rel || setRel(url, target, absolute)}
       {...rest}
