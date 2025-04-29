@@ -137,4 +137,15 @@ describe('Link', () => {
     const link = getByRole('link');
     expect(link.getAttribute('target')).toBe('_top');
   });
+
+  test('should set target when loadApp false and target passed', () => {
+    const { getByRole } = render(
+      <Link href="/public/apps/my-app" loadApp={false} target="_self">
+        My App
+      </Link>
+    );
+
+    const link = getByRole('link');
+    expect(link.getAttribute('target')).toBe('_self');
+  });
 });
