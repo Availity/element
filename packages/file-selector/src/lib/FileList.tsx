@@ -7,14 +7,13 @@ import { Divider } from '@availity/mui-divider';
 
 import { UploadProgressBar } from './UploadProgressBar';
 import { formatBytes, getFileExtIcon } from './util';
-import { useUploadCore } from './useUploadCore';
-import type { Options, UploadQueryOptions } from './useUploadCore';
+import type { Options } from './useUploadCore';
 
 export type FileRowProps = {
   /**
    * The File object containing information about the uploaded file
    * */
-  file: File;
+  upload: Upload;
   /**
    * Callback function called when a file is removed
    * @param id - The unique identifier of the file being removed
@@ -25,10 +24,6 @@ export type FileRowProps = {
    * Configuration options for the upload call
    * */
   options: Options;
-  /**
-   * Query options from `react-query` for the upload call
-   * */
-  queryOptions?: UploadQueryOptions;
   customFileRow?: React.ElementType<{
     upload?: Upload;
     options: Options;
@@ -42,16 +37,13 @@ export type FileRowProps = {
 };
 
 export const FileRow = ({
-  file,
+  upload,
   options,
   onRemoveFile,
-  queryOptions,
   customFileRow: CustomRow,
   disableRemove = false,
 }: FileRowProps) => {
-  const Icon = getFileExtIcon(file.name);
-
-  const { data: upload } = useUploadCore(file, options, queryOptions);
+  const Icon = getFileExtIcon(upload.file.name);
 
   if (!upload) return null;
 
@@ -99,29 +91,27 @@ export type FileListProps = {
   /**
    * Array of File objects to be displayed in the list
    */
-  files: File[];
-} & Omit<FileRowProps, 'file'>;
+  uploads: Upload[];
+} & Omit<FileRowProps, 'upload'>;
 
 export const FileList = ({
-  files,
+  uploads,
   options,
   onRemoveFile,
-  queryOptions,
   customFileRow,
   disableRemove,
 }: FileListProps): JSX.Element | null => {
-  if (files.length === 0) return null;
+  if (uploads.length === 0) return null;
 
   return (
     <List>
-      {files.map((file) => {
+      {uploads.map((upload) => {
         return (
           <FileRow
-            key={file.name}
-            file={file}
+            key={upload.id}
+            upload={upload}
             options={options}
             onRemoveFile={onRemoveFile}
-            queryOptions={queryOptions}
             customFileRow={customFileRow}
             disableRemove={disableRemove}
           />

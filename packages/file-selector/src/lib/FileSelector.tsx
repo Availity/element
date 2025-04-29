@@ -2,7 +2,6 @@ import { useState } from 'react';
 import type { ChangeEvent, ReactNode } from 'react';
 import { useFormContext } from 'react-hook-form';
 import type { DropEvent, FileError, FileRejection } from 'react-dropzone/typings/react-dropzone';
-import { useQueryClient } from '@tanstack/react-query';
 import type { default as Upload } from '@availity/upload-core';
 import { Grid } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
@@ -13,7 +12,7 @@ import { ErrorAlert } from './ErrorAlert';
 import { FileList } from './FileList';
 import { FileTypesMessage } from './FileTypesMessage';
 import { HeaderMessage } from './HeaderMessage';
-import type { Options, UploadQueryOptions } from './useUploadCore';
+import type { Options } from './useUploadCore';
 
 const CLOUD_URL = '/cloud/web/appl/vault/upload/v1/resumable';
 
@@ -117,11 +116,7 @@ export type FileSelectorProps = {
    * @param files - Array of remaining files
    * @param removedUploadId - ID of the removed upload
    */
-  onUploadRemove?: (files: File[], removedUploadId: string) => void;
-  /**
-   * Query options from `react-query` for the upload call
-   * */
-  queryOptions?: UploadQueryOptions;
+  onUploadRemove?: (uploads: Upload[], removedUploadId: string) => void;
   /**
    * Options that are passed to the Upload class from `@availity/upload-core`
    */
@@ -159,7 +154,6 @@ export const FileSelector = ({
   onChange,
   onDrop,
   onUploadRemove,
-  queryOptions,
   uploadOptions,
   validator,
   disableRemove,
@@ -167,7 +161,6 @@ export const FileSelector = ({
   const [totalSize, setTotalSize] = useState(0);
   const [fileRejections, setFileRejections] = useState<(FileRejection & { id: number })[]>([]);
 
-  const client = useQueryClient();
   const formMethods = useFormContext();
 
   const options: Options = {
@@ -186,11 +179,11 @@ export const FileSelector = ({
   if (isCloud) options.endpoint = CLOUD_URL;
 
   const handleOnRemoveFile = (uploadId: string, upload: Upload) => {
-    const prevFiles: File[] = formMethods.getValues(name);
-    const newFiles = prevFiles.filter((file) => file.name !== upload.file.name);
+    const prevFiles: Upload[] = formMethods.getValues(name);
+    const newFiles = prevFiles.filter((prev) => prev.file.name !== upload.file.name);
 
     if (newFiles.length !== prevFiles.length) {
-      const removedFile = prevFiles.find((file) => file.name === upload.file.name);
+      const removedFile = prevFiles.find((prev) => prev.file.name === upload.file.name);
 
       // Stop upload
       try {
@@ -201,15 +194,14 @@ export const FileSelector = ({
 
       // Remove from context and cache
       formMethods.setValue(name, newFiles);
-      client.removeQueries(['upload', upload.file.name]);
 
-      if (removedFile?.size) setTotalSize(totalSize - removedFile.size);
+      if (removedFile?.file.size) setTotalSize(totalSize - removedFile.file.size);
 
       if (onUploadRemove) onUploadRemove(newFiles, uploadId);
     }
   };
 
-  const files = formMethods.watch(name);
+  const uploads = (formMethods.watch(name) as Upload[]) || [];
 
   const handleRemoveRejection = (id: number) => {
     const rejections = fileRejections.filter((value) => value.id !== id);
@@ -245,6 +237,7 @@ export const FileSelector = ({
             onDrop={onDrop}
             setFileRejections={setFileRejections}
             setTotalSize={setTotalSize}
+            uploadOptions={options}
             validator={validator}
           />
           <FileTypesMessage
@@ -281,6 +274,7 @@ export const FileSelector = ({
               onDrop={onDrop}
               setFileRejections={setFileRejections}
               setTotalSize={setTotalSize}
+              uploadOptions={options}
               validator={validator}
             />
           </Grid>
@@ -307,10 +301,9 @@ export const FileSelector = ({
           />
         ))}
       <FileList
-        files={files || []}
+        uploads={uploads || []}
         options={options}
         onRemoveFile={handleOnRemoveFile}
-        queryOptions={queryOptions}
         customFileRow={customFileRow}
         disableRemove={disableRemove}
       />

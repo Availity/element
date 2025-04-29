@@ -2,8 +2,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { QueryClient, QueryClientProvider, useQueryClient } from '@tanstack/react-query';
-import type { default as Upload } from '@availity/upload-core';
 import { Paper } from '@availity/mui-paper';
 import { Alert, AlertProps, AlertTitle } from '@availity/mui-alert';
 import { Grid } from '@availity/mui-layout';
@@ -16,23 +14,6 @@ const meta: Meta<typeof FileSelector> = {
   title: 'Components/File Selector/File Selector',
   component: FileSelector,
   tags: ['autodocs'],
-  decorators: [
-    (Story: () => JSX.Element) => (
-      <QueryClientProvider
-        client={
-          new QueryClient({
-            defaultOptions: {
-              queries: {
-                refetchOnWindowFocus: false,
-              },
-            },
-          })
-        }
-      >
-        <Story />
-      </QueryClientProvider>
-    ),
-  ],
   args: {
     name: 'file-selector',
     allowedFileTypes: ['.txt', '.png', '.pdf'],
@@ -82,18 +63,10 @@ export const _FileSelector: StoryObj<typeof FileSelector> = {
       },
     });
 
-    const client = useQueryClient();
-
     const files = methods.watch(props.name);
 
     const handleOnSubmit = (values: Record<string, File[]>) => {
       if (values[props.name].length === 0) return;
-
-      const queries = client.getQueriesData<Upload>(['upload']);
-      const uploads = [];
-      for (const [, data] of queries) {
-        if (data) uploads.push(data);
-      }
     };
 
     return (
@@ -130,18 +103,10 @@ export const _ButtonOnly: StoryObj<typeof FileSelector> = {
       },
     });
 
-    const client = useQueryClient();
-
     const files = methods.watch(props.name);
 
     const handleOnSubmit = (values: Record<string, File[]>) => {
       if (values[props.name].length === 0) return;
-
-      const queries = client.getQueriesData<Upload>(['upload']);
-      const uploads = [];
-      for (const [, data] of queries) {
-        if (data) uploads.push(data);
-      }
     };
 
     return (
@@ -172,18 +137,10 @@ export const _Encrypted: StoryObj<typeof FileSelector> = {
       },
     });
 
-    const client = useQueryClient();
-
     const files = methods.watch(props.name);
 
     const handleOnSubmit = (values: Record<string, File[]>) => {
       if (values[props.name].length === 0) return;
-
-      const queries = client.getQueriesData<Upload>(['upload']);
-      const uploads = [];
-      for (const [, data] of queries) {
-        if (data) uploads.push(data);
-      }
     };
 
     return (
@@ -219,18 +176,10 @@ export const _FileSelectorCustomTypesMessage: StoryObj<typeof FileSelector> = {
       },
     });
 
-    const client = useQueryClient();
-
     const files = methods.watch(props.name);
 
     const handleOnSubmit = (values: Record<string, File[]>) => {
       if (values[props.name].length === 0) return;
-
-      const queries = client.getQueriesData<Upload>(['upload']);
-      const uploads = [];
-      for (const [, data] of queries) {
-        if (data) uploads.push(data);
-      }
     };
 
     return (
@@ -269,18 +218,10 @@ export const _FileSelectorCustomSizeMessage: StoryObj<typeof FileSelector> = {
       },
     });
 
-    const client = useQueryClient();
-
     const files = methods.watch(props.name);
 
     const handleOnSubmit = (values: Record<string, File[]>) => {
       if (values[props.name].length === 0) return;
-
-      const queries = client.getQueriesData<Upload>(['upload']);
-      const uploads = [];
-      for (const [, data] of queries) {
-        if (data) uploads.push(data);
-      }
     };
 
     return (

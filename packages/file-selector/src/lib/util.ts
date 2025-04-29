@@ -10,6 +10,7 @@ import {
   FilePowerpointIcon,
   FileWordIcon,
 } from '@availity/mui-icon';
+import type { FileError } from 'react-dropzone';
 
 export function formatBytes(bytes: number, decimals = 2) {
   if (!+bytes) return '0 Bytes';
@@ -22,7 +23,6 @@ export function formatBytes(bytes: number, decimals = 2) {
 
   return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
 }
-
 export const FILE_EXT_ICONS = {
   png: FileImageIcon,
   jpg: FileImageIcon,
@@ -48,9 +48,20 @@ export type FileExtensionKey = keyof typeof FILE_EXT_ICONS;
 
 export const isValidKey = (key: string): key is FileExtensionKey => (key ? key in FILE_EXT_ICONS : false);
 
-export const getFileExtIcon = (fileName: string) => {
-  const ext = fileName.split('.').pop()?.toLowerCase() || '';
-  const icon = isValidKey(ext) ? FILE_EXT_ICONS[ext] : FileIcon;
+export const getFileExtension = (fileName: string) => fileName.split('.').pop()?.toLowerCase() || '';
 
-  return icon;
+export const getFileExtIcon = (fileName: string) => {
+  const ext = getFileExtension(fileName);
+  return isValidKey(ext) ? FILE_EXT_ICONS[ext] : FileIcon;
+};
+
+export const dedupeErrors = (errors: FileError[]) => {
+  const dedupedErrors = errors.reduce((acc, error) => {
+    if (!acc.find((err) => err.code === error.code)) {
+      acc.push(error);
+    }
+    return acc;
+  }, [] as FileError[]);
+
+  return dedupedErrors;
 };
