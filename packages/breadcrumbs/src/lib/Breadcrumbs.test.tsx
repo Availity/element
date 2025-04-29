@@ -130,6 +130,7 @@ describe('Breadcrumbs', () => {
             { name: 'Grand Parent', url: '/grandparent', target: '_self' },
             { name: 'Parent', url: '/grandparent/parent' },
           ]}
+          LinkProps={{ loadApp: false }}
         />
       );
 
