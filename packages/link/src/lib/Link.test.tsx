@@ -126,4 +126,26 @@ describe('Link', () => {
 
     expect(link.getAttribute('class')).toContain('card-link');
   });
+
+  test('should set target to _top when loadApp is true', () => {
+    const { getByRole } = render(
+      <Link href="/public/apps/my-app" loadApp={true} target="_self">
+        My App
+      </Link>
+    );
+
+    const link = getByRole('link');
+    expect(link.getAttribute('target')).toBe('_top');
+  });
+
+  test('should set target when loadApp false and target passed', () => {
+    const { getByRole } = render(
+      <Link href="/public/apps/my-app" loadApp={false} target="_self">
+        My App
+      </Link>
+    );
+
+    const link = getByRole('link');
+    expect(link.getAttribute('target')).toBe('_self');
+  });
 });
