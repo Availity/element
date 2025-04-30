@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-icon@1.0.2...@availity/mui-icon@1.1.0) (2025-04-30)
+
+
+### Features
+
+* change download and upload icons ([68946be](https://github.com/Availity/element/commit/68946be79e7c98f609bb4d6def3e455a2ade8f2f))
+
 ## [1.0.2](https://github.com/Availity/element/compare/@availity/mui-icon@1.0.1...@availity/mui-icon@1.0.2) (2025-04-11)
 
 ### Dependency Updates
