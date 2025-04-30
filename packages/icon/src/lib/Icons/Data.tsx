@@ -4,8 +4,8 @@ import { faChartArea } from '@fortawesome/free-solid-svg-icons/faChartArea';
 import { faChartColumn } from '@fortawesome/free-solid-svg-icons/faChartColumn';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine';
 import { faChartPie } from '@fortawesome/free-solid-svg-icons/faChartPie';
-import { faCloudArrowDown } from '@fortawesome/free-solid-svg-icons/faCloudArrowDown';
-import { faCloudArrowUp } from '@fortawesome/free-solid-svg-icons/faCloudArrowUp';
+import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
+import { faUpload } from '@fortawesome/free-solid-svg-icons/faUpload';
 import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 import { faShareFromSquare } from '@fortawesome/free-solid-svg-icons/faShareFromSquare';
 import { faShareNodes } from '@fortawesome/free-solid-svg-icons/faShareNodes';
@@ -32,9 +32,9 @@ export const TableCellsLargeIcon = (props: IconProps): JSX.Element => <FaSvgIcon
 
 export const TableCellsIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faTableCells} {...props} />;
 
-export const DownloadIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCloudArrowDown} {...props} />;
+export const DownloadIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faDownload} {...props} />;
 
-export const UploadIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCloudArrowUp} {...props} />;
+export const UploadIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faUpload} {...props} />;
 
 export const ExportIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faShareFromSquare} {...props} />;
 
