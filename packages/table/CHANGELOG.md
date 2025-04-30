@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.16](https://github.com/Availity/element/compare/@availity/mui-table@1.0.15...@availity/mui-table@1.0.16) (2025-04-30)
+
+### Dependency Updates
+
+* `mui-button` updated to version `1.0.15`
+* `mui-chip` updated to version `1.0.15`
+* `mui-form-utils` updated to version `1.0.15`
+* `mui-icon` updated to version `1.0.15`
+* `mui-link` updated to version `1.0.15`
+* `mui-menu` updated to version `1.0.15`
+* `mui-textfield` updated to version `1.0.15`
+* `mui-pagination` updated to version `1.0.15`
+* `mui-transitions` updated to version `1.0.15`
 ## [1.0.15](https://github.com/Availity/element/compare/@availity/mui-table@1.0.14...@availity/mui-table@1.0.15) (2025-04-29)
 
 ### Dependency Updates
