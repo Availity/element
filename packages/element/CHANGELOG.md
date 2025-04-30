@@ -2,6 +2,51 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.35](https://github.com/Availity/element/compare/@availity/element@1.0.34...@availity/element@1.0.35) (2025-04-30)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `1.0.34`
+* `mui-alert` updated to version `1.0.34`
+* `mui-authorize` updated to version `1.0.34`
+* `mui-autocomplete` updated to version `1.0.34`
+* `mui-avatar` updated to version `1.0.34`
+* `mui-badge` updated to version `1.0.34`
+* `mui-block-ui` updated to version `1.0.34`
+* `mui-breadcrumbs` updated to version `1.0.34`
+* `mui-button` updated to version `1.0.34`
+* `mui-card` updated to version `1.0.34`
+* `mui-checkbox` updated to version `1.0.34`
+* `mui-chip` updated to version `1.0.34`
+* `mui-controlled-form` updated to version `1.0.34`
+* `mui-datepicker` updated to version `1.0.34`
+* `mui-dialog` updated to version `1.0.34`
+* `mui-disclaimer` updated to version `1.0.34`
+* `mui-empty-state` updated to version `1.0.34`
+* `mui-event-tracker` updated to version `1.0.34`
+* `mui-favorites` updated to version `1.0.34`
+* `mui-feedback` updated to version `1.0.34`
+* `mui-file-selector` updated to version `1.0.34`
+* `mui-form-utils` updated to version `1.0.34`
+* `mui-icon` updated to version `1.0.34`
+* `mui-link` updated to version `1.0.34`
+* `mui-list` updated to version `1.0.34`
+* `mui-menu` updated to version `1.0.34`
+* `mui-modal` updated to version `1.0.34`
+* `mui-page-header` updated to version `1.0.34`
+* `mui-pagination` updated to version `1.0.34`
+* `mui-popper` updated to version `1.0.34`
+* `mui-progress` updated to version `1.0.34`
+* `mui-snackbar` updated to version `1.0.34`
+* `mui-spaces` updated to version `1.0.34`
+* `mui-stepper` updated to version `1.0.34`
+* `mui-table` updated to version `1.0.34`
+* `mui-tabs` updated to version `1.0.34`
+* `mui-textfield` updated to version `1.0.34`
+* `mui-toggle-button` updated to version `1.0.34`
+* `mui-transitions` updated to version `1.0.34`
+* `mui-tree` updated to version `1.0.34`
+* `theme-provider` updated to version `1.0.34`
 ## [1.0.34](https://github.com/Availity/element/compare/@availity/element@1.0.33...@availity/element@1.0.34) (2025-04-29)
 
 ### Dependency Updates
