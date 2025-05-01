@@ -8,8 +8,7 @@ import { default as MuiFormLabel } from '@mui/material/FormLabel';
 import FormGroup from '@mui/material/FormGroup';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
-import { FormLabel } from './FormLabel';
-import { FormControlLabel, FormControlLabelProps } from './FormControlLabel';
+import { FormLabel, FormControlLabel, FormControlLabelProps, Switch } from '..';
 
 /** Drop-in replacement of the `Radio`, `Switch` and `Checkbox` component to display a label. */
 const meta: Meta<typeof FormControlLabel> = {
@@ -71,6 +70,41 @@ export const _Groups: StoryObj<typeof FormControlLabel> = {
           <FormControlLabel control={<Radio />} value="2" label="Radio 2" />
           <FormControlLabel control={<Radio />} value="3" label="Radio 3" />
         </RadioGroup>
+      </FormControl>
+    </Box>
+  ),
+};
+
+export const _Alignment: StoryObj<typeof FormControlLabel> = {
+  render: () => (
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      <FormControl component="fieldset" aria-labelledby="checkbox-group" margin="normal">
+        <MuiFormLabel component="legend" id="checkbox-group" required>
+          Checkbox Group with Extra Loooooooooooooong Label
+        </MuiFormLabel>
+        <FormGroup>
+          <FormControlLabel control={<Checkbox size="small"/>} label="Small with Extra Loooooooooooooong Label" />
+          <FormControlLabel control={<Checkbox size="medium"/>} label="Medium with Extra Loooooooooooooong Label" helpTopicId="2" />
+          <FormControlLabel control={<Checkbox size="large"/>} label="Large with Extra Loooooooooooooong Label" />
+        </FormGroup>
+      </FormControl>
+      <FormControl required error margin="normal">
+        <FormLabel id="radio-group" helpTopicId="12">
+          Radio Group
+        </FormLabel>
+        <RadioGroup aria-labelledby="radio-group" name="radio-group" defaultValue="3">
+          <FormControlLabel control={<Radio size="small"/>} value="small" label="Small with Extra Loooooooooooooong Label" />
+          <FormControlLabel control={<Radio size="medium"/>} value="medium" label="Medium with Extra Loooooooooooooong Label" helpTopicId="2" />
+        </RadioGroup>
+      </FormControl>
+      <FormControl component="fieldset" aria-labelledby="switch-group" margin="normal">
+        <MuiFormLabel component="legend" id="switch-group">
+          Switch Group
+        </MuiFormLabel>
+        <FormGroup sx={{gap: 1}}>
+          <FormControlLabel control={<Switch size="small"/>} label="Small with Extra Loooooooooooooong Label" />
+          <FormControlLabel control={<Switch size="medium"/>} label="Medium with Extra Loooooooooooooong Label" helpTopicId="2" />
+        </FormGroup>
       </FormControl>
     </Box>
   ),
