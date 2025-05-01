@@ -926,6 +926,9 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           padding: '2px 4px',
+          '+ .MuiFormControlLabel-label': {
+            lineHeight: '1.25rem'
+          },
           '&.PrivateSwitchBase-edgeStart': {
             marginLeft: '-4px'
           },
@@ -1184,6 +1187,7 @@ export const legacyTheme = {
     MuiFormControlLabel: {
       styleOverrides: {
         root: {
+          alignItems: 'start',
           marginLeft: '-4px',
           marginRight: '12px',
           '&.Mui-error': {
@@ -1197,6 +1201,7 @@ export const legacyTheme = {
           display: 'none',
         },
         avWrapper: {
+          display: 'flex',
           marginLeft: '-4px',
           marginRight: '12px',
           lineHeight: '1rem',
@@ -1253,7 +1258,7 @@ export const legacyTheme = {
           fontWeight: tokens.fontWeightsBold,
           marginRight: '.25rem',
           fontSize: '1.3rem',
-          lineHeight: '100%',
+          textWrapMode: 'nowrap',
         },
         avWrapper: {
           marginBottom: '.1rem',
@@ -2137,6 +2142,10 @@ export const legacyTheme = {
           height: '1.5em',
           width: '2.5em',
           padding: '.25em',
+          '+ .MuiFormControlLabel-label': {
+            lineHeight: '1.5rem',
+            paddingTop: '.375rem'
+          },
           '.MuiSwitch-switchBase': {
             opacity: 1,
             padding: '0px',
@@ -2188,7 +2197,10 @@ export const legacyTheme = {
           opacity: 1
         },
         sizeSmall: {
-          fontSize: '1rem'
+          fontSize: '1rem',
+          '+ .MuiFormControlLabel-label': {
+            paddingTop: '0px'
+          },
         },
         sizeMedium: {
           fontSize: '1.5rem'
