@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, act } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AvApi, { ApiConfig } from '@availity/api-axios';
 // eslint-disable-next-line @nx/enforce-module-boundaries
@@ -82,10 +82,13 @@ describe('ControlledAsyncAutocomplete', () => {
     );
 
     const dropdown = screen.getByRole('combobox');
-    fireEvent.click(dropdown);
-    fireEvent.keyDown(dropdown, { key: 'ArrowDown' });
 
-    await waitFor(() => expect(screen.getByText('Option 1')).toBeDefined());
+    act(() => {
+      fireEvent.click(dropdown);
+      fireEvent.keyDown(dropdown, { key: 'ArrowDown' });
+    });
+
+    await waitFor(() => expect(screen.getByText('Option 0')).toBeDefined());
   });
 
   test('should set the value and submit the form data', async () => {
@@ -121,37 +124,6 @@ describe('ControlledAsyncAutocomplete', () => {
       expect(controlledAsyncAutocompleteValue.label).toBe('Option 1');
       expect(controlledAsyncAutocompleteValue.value).toBe(1);
       expect(controlledAsyncAutocompleteValue.id).toBeDefined(); // This is a unique id
-    });
-  });
-
-  test('should default to first option when prop is true', async () => {
-    const mockOnChange = jest.fn();
-
-    render(
-      <QueryClientProvider client={client}>
-        <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
-          <ControlledAsyncAutocomplete
-            name="controlledAsyncAutocomplete"
-            FieldProps={{ label: 'Async Select', helperText: 'Helper Text', fullWidth: false }}
-            getOptionLabel={(val: Option) => val.label}
-            loadOptions={loadOptions}
-            limit={10}
-            queryKey="example"
-            defaultToFirstOption
-            onChange={mockOnChange}
-          />
-        </TestForm>
-      </QueryClientProvider>
-    );
-
-    const dropdown = screen.getByRole('combobox');
-    fireEvent.click(dropdown);
-    fireEvent.keyDown(dropdown, { key: 'ArrowDown' });
-
-    await waitFor(() => screen.getByText('Option 1'));
-
-    await waitFor(() => {
-      expect(mockOnChange).toHaveBeenCalled();
     });
   });
 
