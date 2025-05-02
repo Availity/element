@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AvApi, { ApiConfig } from '@availity/api-axios';
 // eslint-disable-next-line @nx/enforce-module-boundaries
@@ -66,7 +66,7 @@ describe('ControlledAsyncAutocomplete', () => {
   });
 
   test('should loadOptions successfully', async () => {
-    const screen = render(
+    render(
       <QueryClientProvider client={client}>
         <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
           <ControlledAsyncAutocomplete
@@ -89,7 +89,7 @@ describe('ControlledAsyncAutocomplete', () => {
   });
 
   test('should set the value and submit the form data', async () => {
-    const screen = render(
+    render(
       <QueryClientProvider client={client}>
         <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
           <ControlledAsyncAutocomplete
@@ -124,10 +124,41 @@ describe('ControlledAsyncAutocomplete', () => {
     });
   });
 
+  test('should default to first option when prop is true', async () => {
+    const mockOnChange = jest.fn();
+
+    render(
+      <QueryClientProvider client={client}>
+        <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
+          <ControlledAsyncAutocomplete
+            name="controlledAsyncAutocomplete"
+            FieldProps={{ label: 'Async Select', helperText: 'Helper Text', fullWidth: false }}
+            getOptionLabel={(val: Option) => val.label}
+            loadOptions={loadOptions}
+            limit={10}
+            queryKey="example"
+            defaultToFirstOption
+            onChange={mockOnChange}
+          />
+        </TestForm>
+      </QueryClientProvider>
+    );
+
+    const dropdown = screen.getByRole('combobox');
+    fireEvent.click(dropdown);
+    fireEvent.keyDown(dropdown, { key: 'ArrowDown' });
+
+    await waitFor(() => screen.getByText('Option 1'));
+
+    await waitFor(() => {
+      expect(mockOnChange).toHaveBeenCalled();
+    });
+  });
+
   describe('when using rules', () => {
     describe('when required', () => {
       test('should indicate it is required when passing a string', async () => {
-        const screen = render(
+        render(
           <QueryClientProvider client={client}>
             <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
               <ControlledAsyncAutocomplete
@@ -147,7 +178,7 @@ describe('ControlledAsyncAutocomplete', () => {
       });
 
       test('should indicate it is required when passing an object with true', async () => {
-        const screen = render(
+        render(
           <QueryClientProvider client={client}>
             <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
               <ControlledAsyncAutocomplete
@@ -167,7 +198,7 @@ describe('ControlledAsyncAutocomplete', () => {
       });
 
       test('should not indicate it is required when passing an object with false', async () => {
-        const screen = render(
+        render(
           <QueryClientProvider client={client}>
             <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
               <ControlledAsyncAutocomplete

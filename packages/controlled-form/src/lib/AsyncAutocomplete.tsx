@@ -77,12 +77,13 @@ export const ControlledAsyncAutocomplete = <
           loadOptions={async (offset, limit, inputValue) => {
             const { options, hasMore, offset: returnedOffsetValue } = await rest.loadOptions(offset, limit, inputValue);
 
-            if (defaultToFirstOption && offset === 0) {
-              setValue(name, rest.multiple ? [options[0]] : options[0]);
-            }
+            const shouldAssignValue =
+              (defaultToFirstOption && offset === 0) || (defaultToOnlyOption && offset === 0 && options.length === 1);
 
-            if (defaultToOnlyOption && offset === 0 && options.length === 1) {
-              setValue(name, rest.multiple ? [options[0]] : options[0]);
+            if (shouldAssignValue) {
+              const newValue = rest.multiple ? [options[0]] : options[0];
+              setValue(name, newValue);
+              onChange(newValue);
             }
 
             return { options, hasMore, offset: returnedOffsetValue };
