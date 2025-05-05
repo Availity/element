@@ -1,1 +1,0 @@
-import{g as i}from"./generateUtilityClasses-aotQgNYZ.js";import{g as e}from"./generateUtilityClass-GxznSYtt.js";function a(t){return e("MuiDialogTitle",t)}const o=i("MuiDialogTitle",["root"]);export{o as d,a as g};
