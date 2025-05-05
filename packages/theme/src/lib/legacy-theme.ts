@@ -926,7 +926,7 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           padding: '2px 4px',
-          '+ .MuiFormControlLabel-label': {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
             lineHeight: '1.25rem'
           },
           '&.PrivateSwitchBase-edgeStart': {
@@ -2142,7 +2142,7 @@ export const legacyTheme = {
           height: '1.5em',
           width: '2.5em',
           padding: '.25em',
-          '+ .MuiFormControlLabel-label': {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
             lineHeight: '1.5rem',
             paddingTop: '.375rem'
           },
@@ -2198,7 +2198,7 @@ export const legacyTheme = {
         },
         sizeSmall: {
           fontSize: '1rem',
-          '+ .MuiFormControlLabel-label': {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
             paddingTop: '0px'
           },
         },

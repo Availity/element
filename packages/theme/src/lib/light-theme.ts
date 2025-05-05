@@ -1003,7 +1003,7 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           padding: '8px',
-          '~ .MuiFormControlLabel-label': {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
             paddingTop: '8px',
             lineHeight: '1.5rem'
           },
@@ -1012,12 +1012,12 @@ export const lightTheme = {
           },
         },
         sizeSmall: {
-          '+ .MuiFormControlLabel-label': {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
             lineHeight: '1.25rem'
           },
         },
         sizeLarge: {
-          '+ .MuiFormControlLabel-label': {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
             lineHeight: '2rem'
           },
         }
@@ -1195,6 +1195,9 @@ export const lightTheme = {
         root: {
           alignItems: 'start',
           display: 'flex',
+          '> div': {
+            display: 'flex'
+          },
           '> .MuiIconButton-sizeSmall': {
             top: '2px',
           },
@@ -1764,7 +1767,7 @@ export const lightTheme = {
         root: {
           marginLeft: '-10px',
           padding: '10px',
-          '+ .MuiFormControlLabel-label': {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
             paddingTop: '10px'
           },
           '&.MuiButtonBase-root': {
@@ -1783,7 +1786,7 @@ export const lightTheme = {
           },
         },
         sizeSmall: {
-          '+ .MuiFormControlLabel-label': {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
             lineHeight: '1.25rem'
           },
         }
@@ -2095,7 +2098,7 @@ export const lightTheme = {
           height: '20px',
           width: '40px',
           overflow: 'initial',
-          '+ .MuiFormControlLabel-label': {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
             lineHeight: '20px'
           },
           '.MuiSwitch-switchBase': {
@@ -2159,7 +2162,7 @@ export const lightTheme = {
           '.MuiSwitch-track': {
             borderRadius: '8px',
           },
-          '+ .MuiFormControlLabel-label': {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
             lineHeight: '16px'
           }
         },
