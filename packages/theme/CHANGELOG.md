@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.6.0](https://github.com/Availity/element/compare/@availity/theme@1.5.4...@availity/theme@1.6.0) (2025-05-05)
+
+
+### Features
+
+* **theme:** formcontrollabel alignment and wrapping ([00634c5](https://github.com/Availity/element/commit/00634c5e5627f1d98f6b066dc28cbfbec9283cdb))
+
 ## [1.5.4](https://github.com/Availity/element/compare/@availity/theme@1.5.3...@availity/theme@1.5.4) (2025-04-15)
 
 
