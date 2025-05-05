@@ -1003,10 +1003,24 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           padding: '8px',
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
+            paddingTop: '8px',
+            lineHeight: '1.5rem'
+          },
           '&:hover': {
             backgroundColor: '#00000008',
           },
         },
+        sizeSmall: {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
+            lineHeight: '1.25rem'
+          },
+        },
+        sizeLarge: {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
+            lineHeight: '2rem'
+          },
+        }
       },
     },
     MuiChip: {
@@ -1179,6 +1193,14 @@ export const lightTheme = {
       },
       styleOverrides: {
         root: {
+          alignItems: 'start',
+          display: 'flex',
+          '> div': {
+            display: 'flex'
+          },
+          '> .MuiIconButton-sizeSmall': {
+            top: '2px',
+          },
           '&.Mui-error': {
             '.MuiFormControlLabel-label': {
               color: tokens.colorTextError,
@@ -1206,9 +1228,18 @@ export const lightTheme = {
           // required indicators shown on the group level
           display: 'none',
         },
+        avWrapper: {
+          display: 'inline-flex',
+          '> .MuiIconButton-root': {
+            alignSelf: 'center'
+          }
+        },
         labelPlacementEnd: {
           marginLeft: 0,
           marginRight: 0,
+          '.MuiSwitch-root': {
+            marginRight: '4px'
+          }
         },
       },
     },
@@ -1263,6 +1294,7 @@ export const lightTheme = {
           color: tokens.colorTextError,
           marginRight: '.25rem',
           marginLeft: '-.15rem',
+          textWrapMode: 'nowrap',
         },
         avWrapper: {
           marginBottom: '3px',
@@ -1735,6 +1767,9 @@ export const lightTheme = {
         root: {
           marginLeft: '-10px',
           padding: '10px',
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
+            paddingTop: '10px'
+          },
           '&.MuiButtonBase-root': {
             '&:hover': {
               backgroundColor: tokens.colorActionHover,
@@ -1750,6 +1785,11 @@ export const lightTheme = {
             },
           },
         },
+        sizeSmall: {
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
+            lineHeight: '1.25rem'
+          },
+        }
       },
     },
     MuiSelect: {
@@ -2058,6 +2098,9 @@ export const lightTheme = {
           height: '20px',
           width: '40px',
           overflow: 'initial',
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
+            lineHeight: '20px'
+          },
           '.MuiSwitch-switchBase': {
             padding: '2px',
             '&.Mui-focusVisible': {
@@ -2119,6 +2162,9 @@ export const lightTheme = {
           '.MuiSwitch-track': {
             borderRadius: '8px',
           },
+          '+ .MuiFormControlLabel-label, + div > .MuiFormControlLabel-label': {
+            lineHeight: '16px'
+          }
         },
       },
     },
