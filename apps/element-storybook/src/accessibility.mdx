@@ -1,21 +1,25 @@
 import { Meta } from '@storybook/addon-docs';
 import storybook_accessibility from '../../../static/storybook_accessibility.png';
+import level_access_accessibility from '../../../static/level_access_accessibility.png';
 
 <Meta title="Accessibility" />
 
 # Accessibility
 
-The `@availity/element` library is built with accessibility in mind.
-Specifically, we are following the 508 compliance guidelines. However,
+The `@availity/element` library is built with accessibility in mind. All
+components and examples are written to follow US accessibility guidelines. However,
 it's important to note that simply using `@availity/element` does not
-guarantee your app's compliance with 508 guidelines. It gives you a
+guarantee your app's compliance with these guidelines. It gives you a
 head start. As you implement the components, you will need to ensure your
-compliance based on your implementation. This guide will provide some
-pointers on how you can monitor and maintain 508 compliance in your app.
+compliance based on your implementation - components are used as intended
+and that larger page patterns keep accessiblity in mind. Testing will need
+to be done at the page level to check these larger patterns, i.e. unique
+regions and names on the page, not embedding tables, not overusing aria
+attributes, etc.
 
-## What is 508 compliance?
+## What is Accessibility/Section 508 Compliance?
 
-508 compliance is adherence to a set of standards outlined in Section 508
+Accessibility in the United States is adherence to a set of standards outlined in Section 508
 of the Rehabilitation Act of 1973. These standards, maintained by the
 U.S. Access Board, are in place to ensure information and communication
 technology is accessible to people with disabilities.
@@ -28,24 +32,54 @@ Consortium (W3C). The version of the guidelines we are following is WCAG
 ## How did we test for 508 compliance?
 
 The components within `@availity/element` are designed from the beginning
-in collaboration with the UX team and with 508 compliance in mind.
+in collaboration with our UX team and with 508 compliance in mind.
 
-After development, we use three tools to test individual components for 508
-compliance. First, we use [Storybook's addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y).
+After development, we use two tools to test individual components for 508
+compliance. First, we use [Storybook's addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y),
+which internally relies on the AXE testing engine.
 You can see the results of these scans for each component within [Storybook](https://availity.github.io/element/?path=/docs/element--docs)
 on the Accessibility tab.
 
-<img src={storybook_accessibility} />
+<img src={storybook_accessibility} alt="example accessibility testing results with storybook accessibility tab"/>
 
-We also scan each component using the WAVE extension and Level Access's Access Assistant.
+Secondly, Availity uses the suite of accessibility testing tools from
+Level Access for more in depth testing and reporting. This is truly what
+Availity refers to as our source of truth when it comes to accessibility
+testing and remediation. Internally we use Level Access not only for the
+quick scans, but also for extensive manual testing, reporting,
+and our annual accessibility audits from the Level Access team.
+
+<img src={level_access_accessibility} alt="example accessibility testing results with level access extension"/>
 
 ## How can I ensure 508 compliance in my app?
 
-Scanning your app using the [WAVE extension](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
-and [Continuum Explorer](https://chromewebstore.google.com/detail/continuum-explorer/pgkgokkkoamjdmbnegbedepbhbgecplj)
-is a good way to test for 508 compliance. They will identify issues and,
-in some cases, suggest a remediation path.
+### Approved Testing tools
 
-In general it is important to use native html elements whenever possible
-and for their intended purposes. When not possible, ensure you are using
-the correct [ARIA roles and attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA).
+Availity recommends two testing tools for quick scans of applications
+
+- AXE - [DevTools Extension](https://www.deque.com/axe/browser-extensions)
+- Level Access - the [Level Access Extension](https://client.levelaccess.com/hc/en-us/articles/18183852987671-Install-the-Level-Access-browser-extension)
+has a `Quick Scan` option that does not require a Level Access account.
+It divides found issues into two categories: confirmed violations and
+issues that need review. If an issue needs review it is up to the
+accessibility tester to read the possible issue and see if that issue applies.
+More often than not the "needs review" issues end up being non-issues, but
+require a human to confirm.
+
+### What if I want to use other testing tools?
+
+In theory, the more testing tools the better but our experience has shown
+this leads to many false positives in testing. There are multiple patterns
+and solutions for every accessibility problem, and different testing tools
+will have different (oftentimes conflicting) preferred solutions. We have
+come across a few scenarios already where it is impossible to satisfy
+multiple tool requirements because of these conflicts.
+
+Since internally we use Level Access and Storybook uses Axe, those are the
+two we are aligning with and recommend for use with `@availity/element`.
+
+### Other Resources
+
+- [Color Contrast Checker](https://www.digitala11y.com/products/color/) - useful for absolutely positioned elements that cannot determine background.
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) - published by w3 and the official guide for accessibility patterns and usage.
+- [Element Accessibility Issue Tracker](https://github.com/Availity/element/issues/212) - where we're tracking larger accessibility issues and document possible false positives.
