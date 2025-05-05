@@ -1,6 +1,6 @@
 {
   "name": "@availity/theme-provider",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Theme provider for the Element design system",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
