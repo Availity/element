@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.3](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.3.2...@availity/mui-controlled-form@1.3.3) (2025-05-07)
+
+
+### Bug Fixes
+
+* **mui-controlled-form:** fix issue with passing an empty string to datepicker ([3eae51d](https://github.com/Availity/element/commit/3eae51d9f859035899eed136c5229baa8d41f1dd))
+
 ## [1.3.2](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.3.1...@availity/mui-controlled-form@1.3.2) (2025-05-05)
 
 ### Dependency Updates
