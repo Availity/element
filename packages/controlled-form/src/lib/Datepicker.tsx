@@ -57,7 +57,7 @@ export const ControlledDatepicker = <Output = Dayjs | null,>({
             },
           }}
           onChange={(e) => onChange(transform?.output?.(e) ?? e)}
-          value={transform?.input?.(value) ?? value ?? null}
+          value={transform?.input?.(value) || value || null}
         />
       )}
     />
