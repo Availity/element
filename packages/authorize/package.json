@@ -40,7 +40,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/authorize": "^4.1.4",
+    "@availity/authorize": "^4.1.6",
     "@availity/mui-block-ui": "workspace:^",
     "@tanstack/react-query": "^4.36.1"
   },
