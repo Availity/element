@@ -1269,6 +1269,9 @@ export const lightTheme = {
           '.MuiSvgIcon-root': {
             verticalAlign: 'text-bottom',
           },
+          '&.Mui-disabled': {
+            color: tokens.colorTextPrimary,
+          },
         },
       },
     },
@@ -1276,13 +1279,10 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           marginBottom: '3px',
-          '&.Mui-disabled': {
-            color: tokens.colorTextDisabled,
-          },
           '&.Mui-error, &.Mui-error.Mui-focused': {
             color: tokens.colorTextError,
           },
-          '&.Mui-focused': {
+          '&.Mui-focused, &.Mui-disabled': {
             color: tokens.colorTextPrimary,
           },
           // move required asterisk before text
@@ -1364,6 +1364,9 @@ export const lightTheme = {
               '&.Mui-disabled > fieldset': {
                 borderColor: tokens.borderDisabled,
                 color: tokens.colorTextDisabled,
+              },
+              '&.Mui-readOnly, > input[readonly]': {
+                backgroundColor: tokens.colorActionReadonlyBg
               },
               '.MuiInputBase-input': {
                 padding: '8px 12px',

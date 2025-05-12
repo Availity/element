@@ -63,12 +63,13 @@ export const _States: StoryObj<typeof TextField> = {
   render: (args: TextFieldProps) => (
     <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap' }}>
       <TextField label="Default" id="default" {...args} />
-      <TextField label="Focused" id="Focused" focused {...args} />
+      <TextField label="Focused" id="focused" focused {...args} />
       <TextField label="Error" id="error" error {...args} />
+      <TextField label="Read Only" id="read-only" {...args} slotProps={{input: {readOnly: true}}}/>
       <TextField label="Disabled" id="disabled" disabled {...args} />
     </Stack>
   ),
-  args: { margin: 'normal' },
+  args: { margin: 'normal', value: 'value' },
 };
 
 export const _Sizes: StoryObj<typeof TextField> = {

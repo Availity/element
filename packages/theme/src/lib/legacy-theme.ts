@@ -1239,11 +1239,8 @@ export const legacyTheme = {
       styleOverrides: {
         root: {
           marginBottom: '.1rem',
-          '&.Mui-error, &.Mui-error.Mui-focused': {
+          '&.Mui-error, &.Mui-error.Mui-focused, &.Mui-disabled': {
             color: tokens.colorTextPrimary,
-          },
-          '&.Mui-disabled': {
-            color: tokens.colorTextDisabled,
           },
           '&.Mui-focused': {
             color: 'inherit',
@@ -1682,8 +1679,9 @@ export const legacyTheme = {
               borderColor: tokens.borderError,
             },
           },
-          '&.Mui-disabled': {
+          '&.Mui-disabled, &.Mui-readOnly': {
             backgroundColor: tokens.colorActionDisabledBg,
+            borderColor: tokens.borderDisabled
           },
         },
         notchedOutline: {

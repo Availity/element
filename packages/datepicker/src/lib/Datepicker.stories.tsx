@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { MonthCalendar } from '@mui/x-date-pickers/MonthCalendar';
 import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
 import dayjs, { Dayjs } from 'dayjs';
-import { Box, Grid } from '@availity/mui-layout';
+import { Box, Grid, Stack } from '@availity/mui-layout';
 import { Paper } from '@availity/mui-paper';
 import { Datepicker, DatepickerProps } from './Datepicker';
 import { DateCalendar } from './DateCalendar';
@@ -32,6 +32,26 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
       />
     );
   },
+  args: {
+    FieldProps: {
+      fullWidth: false,
+      helperText: 'Help text for the field',
+      helpTopicId: '1234',
+      label: 'Date',
+    },
+  },
+};
+
+export const _States: StoryObj<typeof Datepicker> = {
+  render: (args) => (
+    <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap' }}>
+      <Datepicker {...args} FieldProps={{...args.FieldProps, id: "default", label: "Default"}}/>
+      <Datepicker {...args} FieldProps={{...args.FieldProps, id: "focused", label: "Focused", focused: true}} />
+      <Datepicker {...args} FieldProps={{...args.FieldProps, id: "error", label: "Error", error: true}} />
+      <Datepicker {...args} FieldProps={{...args.FieldProps, id: "read-only", label: "Read Only"}} readOnly />
+      <Datepicker {...args} FieldProps={{...args.FieldProps, id: "disabled", label: "Disabled"}} disabled />
+    </Stack>
+  ),
   args: {
     FieldProps: {
       fullWidth: false,

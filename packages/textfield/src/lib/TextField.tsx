@@ -81,6 +81,10 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
   // @ts-expect-error I'm not sure why maxLength is undefined in htmlInput, but it works. There's something weird with the type.
   const maxLength = inputProps?.maxLength || rest.slotProps?.htmlInput?.maxLength;
 
+  // @ts-expect-error More htmlInput type issues.
+  // slotProps.input is correct place to pass readOnly for class to be applied, but Autocomplete passes it through deprecated inputProps.
+  const allReadOnly = InputProps?.readOnly || inputProps?.readOnly || rest.slotProps?.htmlInput?.readOnly || rest.slotProps?.input?.readOnly
+
   const resolvedProps = (props: Record<string, unknown>) =>
     !props || Object.keys(props).length === 0 ? undefined : props;
 
@@ -94,7 +98,12 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
       helperText={helperText || <></>}
       slots={{ formHelperText: TextFieldFormHelperText }}
       slotProps={{
-        input: resolvedProps({ ...InputProps, ...InputPropOverrides, ...rest.slotProps?.input }),
+        input: resolvedProps({
+          ...InputProps,
+          ...InputPropOverrides,
+          ...rest.slotProps?.input,
+          readOnly: allReadOnly
+        }),
         htmlInput: resolvedProps({
           'aria-required': required,
           ...inputProps,
@@ -122,7 +131,6 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
           charCount,
           helperText,
           maxLength,
-          displayOverflowMaxLength,
           showCharacterCount,
         }),
       }}
