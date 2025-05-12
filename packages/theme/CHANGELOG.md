@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.7.0](https://github.com/Availity/element/compare/@availity/theme@1.6.0...@availity/theme@1.7.0) (2025-05-12)
+
+
+### Features
+
+* **mui-textfield:** new readonly and updated disabled styles ([093844f](https://github.com/Availity/element/commit/093844ff8811656acb701a95a280076a9f0cb030))
+
 ## [1.6.0](https://github.com/Availity/element/compare/@availity/theme@1.5.4...@availity/theme@1.6.0) (2025-05-05)
 
 
