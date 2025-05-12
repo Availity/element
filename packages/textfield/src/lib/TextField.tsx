@@ -131,7 +131,6 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
           charCount,
           helperText,
           maxLength,
-          displayOverflowMaxLength,
           showCharacterCount,
         }),
       }}
