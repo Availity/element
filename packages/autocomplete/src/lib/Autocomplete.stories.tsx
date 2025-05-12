@@ -6,6 +6,7 @@ import { FilterOptionsState } from '@mui/material';
 import { InputAdornment, SearchByFormGroup } from '@availity/mui-form-utils';
 import { TextField } from '@availity/mui-textfield';
 import { SearchIcon } from '@availity/mui-icon';
+import { Stack } from '@availity/mui-layout';
 
 const languages = [
   'Python',
@@ -67,6 +68,26 @@ export const _Multi: StoryObj<typeof Autocomplete> = {
   args: {
     FieldProps: { label: 'Multi Select', helperText: 'Helper Text', fullWidth: false },
     multiple: true,
+  },
+};
+
+export const _States: StoryObj<typeof Autocomplete> = {
+  render: (args) => (
+    <Stack direction="row" sx={{ flexWrap: 'wrap' }}>
+    <Autocomplete {...args} value="Option 1" id="default" FieldProps={{...args.FieldProps, label: "Default"}}/>
+    <Autocomplete {...args} value="Option 1" id="focused" FieldProps={{...args.FieldProps, label: "Focused", focused: true}} />
+    <Autocomplete {...args} value="Option 1" id="error" FieldProps={{...args.FieldProps, label: "Error", error: true}} />
+    <Autocomplete {...args} value="Option 1" id="read-only" FieldProps={{...args.FieldProps, label: "Read Only"}} readOnly />
+    <Autocomplete {...args} value="Option 1" id="disabled" FieldProps={{...args.FieldProps, label: "Disabled"}} disabled />
+    <Autocomplete {...args} multiple value={["Option 1"]} id="default-multiple" FieldProps={{...args.FieldProps, label: "Default Multiple"}}/>
+    <Autocomplete {...args} multiple value={["Option 1"]} id="focused-multiple" FieldProps={{...args.FieldProps, label: "Focused Multiple", focused: true}} />
+    <Autocomplete {...args} multiple value={["Option 1"]} id="error-multiple" FieldProps={{...args.FieldProps, label: "Error Multiple", error: true}} />
+    <Autocomplete {...args} multiple value={["Option 1"]} id="read-only-multiple" FieldProps={{...args.FieldProps, label: "Read Only Multiple"}} readOnly />
+    <Autocomplete {...args} multiple value={["Option 1"]} id="disabled-multiple" FieldProps={{...args.FieldProps, label: "Disabled Multiple"}} disabled />
+    </Stack>
+  ),
+  args: {
+    FieldProps: { helperText: 'Helper Text', fullWidth: false },
   },
 };
 
