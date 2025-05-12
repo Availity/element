@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://github.com/Availity/element/compare/@availity/mui-textfield@1.2.4...@availity/mui-textfield@1.3.0) (2025-05-12)
+
+
+### Features
+
+* **mui-textfield:** new readonly and updated disabled styles ([093844f](https://github.com/Availity/element/commit/093844ff8811656acb701a95a280076a9f0cb030))
+
+
+### Bug Fixes
+
+* **mui-textfield:** resolve displayoverflowmaxlength not recognized prop error ([8324691](https://github.com/Availity/element/commit/83246910cfe8339a40eecba6224ce611cfa7ceaf))
+
 ## [1.2.4](https://github.com/Availity/element/compare/@availity/mui-textfield@1.2.3...@availity/mui-textfield@1.2.4) (2025-04-30)
 
 ### Dependency Updates
