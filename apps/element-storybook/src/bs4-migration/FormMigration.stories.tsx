@@ -27,112 +27,6 @@ import {
 } from '@availity/element';
 import FormMigration from './form-migration.md?raw';
 
-/**
- * For the `@availity/element` components we have chosen to move away from any
- * built-in form management. While there's flexibility to use your library of
- * choice, internally we have replaced `formik` with `react-hook-form`.
- * For existing forms utilizing `@availity/react` and `formik`,
- * some refactor is required.
- *
- * ## Why the change?
- *
- * The future of `formik` is looking questionable - The current major version released
- * in 2019 with sparse feature work and dependency updates since.
- * We were faced with the question of what to replace it with, but also if it
- * _should_ be replaced at all.
- *
- * We have chosen the middle ground. Our form components are no longer tied to
- * one library for validation and state management. However, after a successful
- * internal implementation of an extremely long and complicated form using
- * `react-hook-form`, we decided to move forward with it for any internal form
- * components, like the feedback component, and recommend it for use with `@availity/element`.
-
- * `react-hook-form` is very lightweight and flexible. It also boasts a
- * large community and is actively and regularly supported. `react-hook-form`
- * utilizes it's own internal rules engine for validation, but can be used
- * with schema-based validation libraries like `yup`, `zod`, and `joi`
- * when used with the corresponding resolver package. See the
- * [react-hook-form docs](https://react-hook-form.com/get-started#SchemaValidation)
- * for more.
- *
- * We've included examples using only `react-hook-form` as well as
- * using it with `yup`+`@hookform/resolvers/yup` (don't worry,
- * `@hookform/resolvers` is an official part of `react-hook-form`)
- *
- * ## Form Examples
- *
- * - Form with `@availity/react`, `formik`, and `yup`
- * - Form with `@availity/element`, `react-hook-form`, `yup` and `@hookform/resolvers/yup`
- * - Form with `@availity/element`, `formik`, and `yup` (<ins>Not Recommended</ins>)
- * - Form with `@availity/element`, `react-hook-form`, and `react-hook-form` Internal Rules
- *
- *
- * At the moment, @availity/element does not export a `<Form />` component.
- * Instead, use the native `<form>` element. You can then use
- * `react-hook-form`'s `useForm` hook to manage your form.
- *
- * ### Form with `@availity/react`, `formik`, and `yup`
- *
- * ```
- * import React from 'react';
- * import { Form, Field, Radio, RadioGroup, SelectField } from '@availity/form';
- * import { Button } from 'reactstrap';
- *
- * export const Form = () => {
- *   const ref = useRef();
- *   return (
- *     <Form
- *       onKeyDown={({ key }) => key === 'Escape' && onClose()}
- *       initialValues={{
- *         textField: "",
- *         selectField: undefined,
- *         radio: "",
- *       }}
- *       validationSchema={yup.object().shape({
- *         textField: yup
- *           .string()
- *           .max(200, 'Text Field cannot exceed 200 characters.')
- *           .required('This field is required.'),
- *         selectField: yup
- *           .string()
- *           .required('This Field is required.')
- *           .nullable(),
- *         radio: yup
- *           .string()
- *           .required('A selection is required'),
- *       })}
- *       {...formProps}
- *       onSubmit={(values) => sendValues(values)}
- *     >
- *       <RequiredKey/>
- *       <Field type="textarea" name="textField" label="Text Field" required/>
- *       <SelectField
- *         label="Select Field"
- *         name="selectField"
- *         required
- *         options={[{label: "Option 1", value: "1"}, {label: "Option 2", value: "2"}]}
- *       />
- *       <RadioGroup
- *         name="radio"
- *         label="Radio Group"
- *         inline
- *         required
- *       >
- *         <Radio label="Radio 1" value="1" />
- *         <Radio label="Radio 2" value="2" />
- *       </RadioGroup>
- *       <Button
- *         type="submit"
- *       >
- *         Submit
- *       </Button>
- *     </Form>
- *   );
- * };
- * ```
- */
-
-
 const meta: Meta = {
   title: 'BS4 Migration/Form Migration',
   tags: ['autodocs'],
@@ -515,3 +409,31 @@ export const _RHFRules: StoryObj = {
     )
   }
 }
+
+/** We are moving away from our extensive use of `disabled` fields in favor of `read-only` fields.
+ * This is necessary for accessibility as `disabled` fields are not available to the keyboard/screenreader, so the filled in values cannot be seen.
+  */
+export const _DisabledFields: StoryObj = {
+  render: () => (
+    <>
+      <TextField
+        margin="normal"
+        value="value"
+        label="Read Only"
+        id="read-only"
+        fullWidth
+        slotProps={{input: {readOnly: true}}}
+        helperText="Read-only state should be used for values that cannot be changed by the user, but are still significant. i.e. when the value is populated based on another field value."
+      />
+      <TextField
+        margin="normal"
+        value="value"
+        label="Disabled"
+        id="disabled"
+        fullWidth
+        disabled
+        helperText="Disabled state should be used for values that are not applicable currently, but could be enabled in a different state."
+      />
+    </>
+  ),
+};

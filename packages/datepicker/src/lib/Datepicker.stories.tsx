@@ -42,6 +42,9 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
   },
 };
 
+/** Notice the new `read-only` styling. We're moving away from `disabled` in favor of `read-only`.
+ * _See the [Disabled Fields Explainer](./?path=/docs/bs4-migration-form-migration--disabled-fields) for more information on when to use each._
+*/
 export const _States: StoryObj<typeof Datepicker> = {
   render: (args) => (
     <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap' }}>

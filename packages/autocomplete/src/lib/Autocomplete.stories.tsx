@@ -71,6 +71,9 @@ export const _Multi: StoryObj<typeof Autocomplete> = {
   },
 };
 
+/** Notice the new `read-only` styling. We're moving away from `disabled` in favor of `read-only`.
+ * _See the [Disabled Fields Explainer](./?path=/docs/bs4-migration-form-migration--disabled-fields) for more information on when to use each._
+*/
 export const _States: StoryObj<typeof Autocomplete> = {
   render: (args) => (
     <Stack direction="row" sx={{ flexWrap: 'wrap' }}>
