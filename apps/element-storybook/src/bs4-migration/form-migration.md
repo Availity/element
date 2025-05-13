@@ -1,18 +1,18 @@
-For the `@availity/element` components we have chosen to give more flexibility, having a
-set of components with built-in form management (@availity/mui-controlled-form) and adding a set
-of components without. Our controlled components have replaced `formik` with `react-hook-form`.
-For existing forms utilizing `@availity/react` and `formik`,
-some refactor is required.
+There are two main changes made with the form components in `@availity/element`:
 
-## Why the change?
+- Removed `formik`
+- Updated [usage guidelines](./?path=/docs/bs4-migration-form-migration--disabled-fields)  for `disabled` fields and the new `read-only` fields
 
-The future of `formik` is looking questionable - The current major version released
+## Why did we remove formik?
+
+The future of `formik` is looking questionable - The current major version was released
 in 2019 with sparse feature work and dependency updates since.
 We were faced with the question of what to replace it with, but also if it
 _should_ be replaced at all.
 
 We have chosen the middle ground. We're updating our library of choice for
-our controlled components, while also allowing the use of the non-controlled fields.
+our controlled components, while also allowing the use of the non-controlled fields. _See the [Form Component Guide](./?path=/docs/form-components-component-guide--docs) for more information on all our form components._
+
 After a successful internal implementation of an extremely long and complicated form using
 `react-hook-form`, we decided to move forward with it for our controlled form components.
 
