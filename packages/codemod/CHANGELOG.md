@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.39](https://github.com/Availity/element/compare/@availity/mui-codemod@1.0.38...@availity/mui-codemod@1.0.39) (2025-05-15)
+
+### Dependency Updates
+
+* `element` updated to version `1.0.38`
 ## [1.0.38](https://github.com/Availity/element/compare/@availity/mui-codemod@1.0.37...@availity/mui-codemod@1.0.38) (2025-05-12)
 
 ### Dependency Updates
