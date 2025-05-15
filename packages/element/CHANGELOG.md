@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.39](https://github.com/Availity/element/compare/@availity/element@1.0.38...@availity/element@1.0.39) (2025-05-15)
+
+### Dependency Updates
+
+* `mui-stepper` updated to version `1.0.38`
 ## [1.0.38](https://github.com/Availity/element/compare/@availity/element@1.0.37...@availity/element@1.0.38) (2025-05-12)
 
 ### Dependency Updates
