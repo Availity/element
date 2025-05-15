@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.7](https://github.com/Availity/element/compare/@availity/mui-stepper@1.0.6...@availity/mui-stepper@1.0.7) (2025-05-15)
+
+
+### Bug Fixes
+
+* **mui-stepper:** remove vertical connector styles when connector is null ([3a4e433](https://github.com/Availity/element/commit/3a4e433c8d89fc5b7fdf351106bc5f5a518e543c))
+
 ## [1.0.6](https://github.com/Availity/element/compare/@availity/mui-stepper@1.0.5...@availity/mui-stepper@1.0.6) (2025-04-30)
 
 ### Dependency Updates
