@@ -9,8 +9,19 @@ export type StepperProps = {
   scrollButtons?: boolean;
 } & Omit<MuiStepperProps, 'alternativeLabel' | 'elevation'>;
 
+const HiddenConnectorStepper = styled(MuiStepper, {
+  name: 'MuiStepper',
+  slot: 'AvHideConnector',
+  overridesResolver: (props, styles) => styles.avHideConnector,
+})({
+  '.MuiStepLabel-root::before, .MuiStepLabel-root::after, .MuiStepConnector-root': {
+    display: 'none'
+  }
+});
+
 export const Stepper = ({ children, connector, orientation, scrollButtons, ...rest }: StepperProps): JSX.Element => {
   const alternativeLabel = orientation !== 'vertical';
+  const Stepper = connector === null ? HiddenConnectorStepper : MuiStepper;
 
   const stepperRef = useRef<HTMLDivElement>(null);
   const [showLeftButton, setShowLeftButton] = useState(true);
@@ -70,7 +81,7 @@ export const Stepper = ({ children, connector, orientation, scrollButtons, ...re
         )}
       </ScrollIconContainer>
 
-      <MuiStepper
+      <Stepper
         aria-label="multi-step process"
         role="region"
         {...rest}
@@ -100,7 +111,7 @@ export const Stepper = ({ children, connector, orientation, scrollButtons, ...re
       </ScrollIconContainer>
     </Grid>
   ) : (
-    <MuiStepper
+    <Stepper
       aria-label="multi-step process"
       role="region"
       {...rest}
