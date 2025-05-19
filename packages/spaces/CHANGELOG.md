@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.19](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.18...@availity/mui-spaces@1.0.19) (2025-05-19)
+
+
+### Bug Fixes
+
+* **mui-spaces:** add page to default configurationPagination query ([0872af8](https://github.com/Availity/element/commit/0872af820f169fb3a274246d87eb0176f003fb77))
+
 ## [1.0.18](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.17...@availity/mui-spaces@1.0.18) (2025-05-12)
 
 ### Dependency Updates
