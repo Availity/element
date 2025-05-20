@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.20](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.19...@availity/mui-spaces@1.0.20) (2025-05-20)
+
+### Dependency Updates
+
+* `mui-favorites` updated to version `1.0.19`
+* `@availity/mock` updated to version `1.0.19`
+
+### Bug Fixes
+
+* **mui-spaces:** fix casing of payerIDs ([379fd35](https://github.com/Availity/element/commit/379fd3544271e3fd90ee5ee0b0920a682cb5e022))
+
 ## [1.0.19](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.18...@availity/mui-spaces@1.0.19) (2025-05-19)
 
 
