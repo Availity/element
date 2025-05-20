@@ -74,7 +74,7 @@ export const Spaces = ({
 
   const spaceIdVars = { ...variables, ids: [...spaceIdsToQuery.keys()] };
 
-  const payerIdVars = { ...variables, payerIds: [...payerIdsToQuery.keys()] };
+  const payerIdVars = { ...variables, payerIDs: [...payerIdsToQuery.keys()] };
 
   const [
     { data: spacesBySpaceIds, isFetching: isLoadingBySpaceIds, isError: isErrorBySpaceIds },
