@@ -152,20 +152,24 @@ const configurations: any[] = [
 ];
 
 const buildLinkUrl = (configuration: any, isLocal: boolean) => {
+  const addElementPrefix = (url: string) => {
+    return !isLocal ? (url.startsWith('/element') ? url : `/element${url}`) : url;
+  };
+
   if (configuration.url) {
-    configuration.url = !isLocal ? `/element${configuration.url}` : configuration.url;
+    configuration.url = addElementPrefix(configuration.url);
   }
 
   if (configuration.images?.tile) {
-    configuration.images.tile = !isLocal ? `/element${configuration.images.tile}` : configuration.images.tile;
+    configuration.images.tile = addElementPrefix(configuration.images.tile);
   }
 
   if (configuration.images?.billboard) {
-    configuration.images.billboard = !isLocal ? `/element${configuration.images.billboard}` : configuration.images.billboard;
+    configuration.images.billboard = addElementPrefix(configuration.images.billboard);
   }
 
   if (configuration.images?.logo) {
-    configuration.images.logo = !isLocal ? `/element${configuration.images.logo}` : configuration.images.logo;
+    configuration.images.logo = addElementPrefix(configuration.images.logo);
   }
 
   return configuration;
