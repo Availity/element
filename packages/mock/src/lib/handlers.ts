@@ -115,9 +115,9 @@ export const handlers = [
   }),
 
   // Thanos
-  graphql.query('configurationFindMany', ({ variables: { payerIds, page = 1, perPage, ids }, request }) => {
+  graphql.query('configurationFindMany', ({ variables: { payerIDs, page = 1, perPage, ids }, request }) => {
     const isLocal = request.url.includes('localhost');
-    const configs = getConfigs({ payerIds, ids, isLocal });
+    const configs = getConfigs({ payerIds: payerIDs, ids, isLocal });
     const totalCount = configs.length;
 
     if (!perPage) {

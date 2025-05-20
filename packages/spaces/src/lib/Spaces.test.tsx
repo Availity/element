@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Spaces, useSpaces, useSpacesContext } from '..';
-import type { Space } from './spaces-types';
 
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '../../../mock/src/lib/server';
