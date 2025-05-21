@@ -40,8 +40,8 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/api-axios": "^10.0.3",
-    "@availity/message-core": "^7.0.5",
+    "@availity/api-axios": "^11.0.0",
+    "@availity/message-core": "^8.0.0",
     "@tanstack/react-query": "^4.36.1"
   },
   "devDependencies": {

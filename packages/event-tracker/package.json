@@ -60,6 +60,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/analytics-core": "^5.0.11"
+    "@availity/analytics-core": "^6.0.0"
   }
 }

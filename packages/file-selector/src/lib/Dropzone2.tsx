@@ -1,7 +1,5 @@
 import { useCallback } from 'react';
-import type { Dispatch, MouseEvent } from 'react';
-import { styled } from '@mui/material/styles';
-import MuiBox from '@mui/material/Box';
+import type { MouseEvent } from 'react';
 import { useDropzone } from 'react-dropzone';
 import type { DropEvent, FileError, FileRejection } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
@@ -9,102 +7,45 @@ import { Divider } from '@availity/mui-divider';
 import { CloudUploadIcon, PlusIcon } from '@availity/mui-icon';
 import { Box, Stack } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
+import Upload from '@availity/upload-core';
+import type { UploadOptions } from '@availity/upload-core';
+import type { OnSuccessPayload } from 'tus-js-client';
 
 import { FilePickerBtn } from './FilePickerBtn';
-
-export const outerBoxStyles = {
-  backgroundColor: 'background.secondary',
-  border: '1px dotted',
-  borderColor: 'secondary.light',
-  borderRadius: '4px',
-  padding: '2rem',
-  '&:hover': {
-    backgroundColor: 'background.primary',
-    borderColor: 'border.primary',
-  },
-};
-
-export const innerBoxStyles = {
-  width: '100%',
-  height: '100%',
-};
-
-/** Counter for creating unique id */
-export const createCounter = () => {
-  let id = 0;
-  const increment = () => (id += 1);
-  return {
-    id,
-    increment,
-  };
-};
+import { dedupeErrors, getFileExtension } from './util';
+import { createCounter, DropzoneContainer, innerBoxStyles, outerBoxStyles } from './Dropzone';
+import type { DropzoneProps } from './Dropzone';
 
 const counter = createCounter();
 
-export type DropzoneProps = {
-  /**
-   * Name given to the input field. Used by react-hook-form
-   */
-  name: string;
-  /**
-   * List of allowed file extensions (e.g. ['.pdf', '.doc']). Each extension must start with a dot
-   */
-  allowedFileTypes?: `.${string}`[];
-  /**
-   * Whether the dropzone is disabled
-   */
-  disabled?: boolean;
-  /**
-   * Whether to enable the dropzone area
-   */
-  enableDropArea?: boolean;
-  /**
-   * Maximum number of files that can be uploaded
-   */
-  maxFiles?: number;
-  /**
-   * Maximum size of each file in bytes
-   */
-  maxSize?: number;
-  /**
-   * Whether multiple file selection is allowed
-   */
-  multiple?: boolean;
-  /**
-   * Handler called when the file input's value changes
-   */
-  onChange?: (event: DropEvent) => void;
-  /**
-   * Handler called when the file picker button is clicked
-   */
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
-  /**
-   * More sophisticated version of "onChange". This is the recommend function to use for changes to the form state
-   */
-  onDrop?: (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[], event: DropEvent) => void;
-  /**
-   * Callback to handle rejected files that don't meet validation criteria
-   */
-  setFileRejections?: (fileRejections: (FileRejection & { id: number })[]) => void;
-  /**
-   * Callback to update the total size of all uploaded files
-   */
-  setTotalSize: Dispatch<React.SetStateAction<number>>;
-  /**
-   * Validation function used for custom validation that is not covered with the other props
-   * */
-  validator?: (file: File) => FileError | FileError[] | null;
+export type Dropzone2Props = DropzoneProps & {
+  uploadOptions: UploadOptions;
 };
 
-export const DropzoneContainer = styled(Box, { name: 'AvDropzoneContainer', slot: 'root' })({
-  '.MuiDivider-root': {
-    width: '196px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-}) as typeof MuiBox;
+type Options = {
+  onError?: (error: Error) => void;
+  onSuccess?: (response: OnSuccessPayload) => void;
+  onProgress?: () => void;
+  onChunkComplete?: (chunkSize: number, bytesAccepted: number, bytesTotal: number | null) => void;
+} & UploadOptions;
 
-export const Dropzone = ({
+async function startUpload(file: File, options: Options) {
+  const { onSuccess, onError, onProgress, onChunkComplete, ...uploadOptions } = options;
+  const upload = new Upload(file, uploadOptions);
+
+  await upload.generateId();
+
+  if (onSuccess) upload.onSuccess.push(onSuccess);
+  if (onError) upload.onError.push(onError);
+  if (onProgress) upload.onProgress.push(onProgress);
+  if (onChunkComplete) upload.onChunkComplete.push(onChunkComplete);
+
+  upload.start();
+
+  return upload;
+}
+
+export const Dropzone2 = ({
   allowedFileTypes = [],
   disabled,
   enableDropArea = true,
@@ -117,16 +58,28 @@ export const Dropzone = ({
   onDrop,
   setFileRejections,
   setTotalSize,
+  uploadOptions,
   validator,
-}: DropzoneProps) => {
+}: Dropzone2Props) => {
   const { getValues, setValue, watch } = useFormContext();
+
+  const accept = allowedFileTypes.join(',');
 
   const handleValidation = useCallback(
     (file: File) => {
-      const previous: File[] = watch(name) ?? [];
+      const previous: Upload[] = watch(name) ?? [];
       const errors: FileError[] = [];
 
-      const isDuplicate = previous.some((prev) => prev.name === file.name);
+      // const ext = getFileExtension(file.name);
+      // const isAllowedExtension = accept.includes(`.${ext}`);
+      // if (!isAllowedExtension) {
+      //   errors.push({
+      //     code: 'invalid-type',
+      //     message: `File type .${ext} is not allowed`,
+      //   });
+      // }
+
+      const isDuplicate = previous.some((prev) => prev.file.name === file.name);
       if (isDuplicate) {
         errors.push({
           code: 'duplicate-name',
@@ -153,13 +106,13 @@ export const Dropzone = ({
         }
       }
 
-      return errors.length > 0 ? errors : null;
+      return errors.length > 0 ? dedupeErrors(errors) : null;
     },
     [maxFiles, validator]
   );
 
   const handleOnDrop = useCallback(
-    (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[], event: DropEvent) => {
+    async (acceptedFiles: File[], fileRejections: (FileRejection & { id: number })[], event: DropEvent) => {
       let newSize = 0;
       for (const file of acceptedFiles) {
         newSize += file.size;
@@ -170,7 +123,8 @@ export const Dropzone = ({
       const previous = watch(name) ?? [];
 
       // Set accepted files to form context
-      setValue(name, previous.concat(acceptedFiles));
+      const uploads = acceptedFiles.map((file) => startUpload(file, uploadOptions));
+      setValue(name, previous.concat(await Promise.all(uploads)));
 
       if (fileRejections.length > 0) {
         const TOO_MANY_FILES_CODE = 'too-many-files';
@@ -208,8 +162,6 @@ export const Dropzone = ({
     },
     [setFileRejections]
   );
-
-  const accept = allowedFileTypes.join(',');
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: handleOnDrop,

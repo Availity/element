@@ -1,22 +1,23 @@
 import { screen, render, fireEvent, waitFor } from '@testing-library/react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { FileList } from './FileList';
+import { FileList2 } from './FileList2';
+import Upload from '@availity/upload-core';
 
-describe('FileList', () => {
+const options = { bucketId: '123', customerId: '123', clientId: '123' };
+
+describe('FileList2', () => {
   test('should render successfully', async () => {
     const mockFile = new File(['file content'], 'mock.txt', { type: 'text/plain' });
+    const upload = new Upload(mockFile, options);
 
     render(
-      <QueryClientProvider client={new QueryClient()}>
-        <FileList
-          files={[mockFile]}
-          options={{ bucketId: '123', customerId: '123', clientId: '123' }}
-          onRemoveFile={() => {
-            // noop
-          }}
-        />
-      </QueryClientProvider>
+      <FileList2
+        uploads={[upload]}
+        options={options}
+        onRemoveFile={() => {
+          // noop
+        }}
+      />
     );
 
     await waitFor(() => {
@@ -27,17 +28,16 @@ describe('FileList', () => {
   test('should call onRemoveFile', async () => {
     const mockRemove = jest.fn();
     const mockFile = new File(['file content'], 'mock.txt', { type: 'text/plain' });
+    const upload = new Upload(mockFile, options);
 
     render(
-      <QueryClientProvider client={new QueryClient()}>
-        <FileList
-          files={[mockFile]}
-          options={{ bucketId: '123', customerId: '123', clientId: '123' }}
-          onRemoveFile={(id) => {
-            mockRemove(id);
-          }}
-        />
-      </QueryClientProvider>
+      <FileList2
+        uploads={[upload]}
+        options={options}
+        onRemoveFile={(id) => {
+          mockRemove(id);
+        }}
+      />
     );
 
     await waitFor(() => {
@@ -51,18 +51,17 @@ describe('FileList', () => {
   test('should not display remove button when disableRemove is set to true', async () => {
     const mockRemove = jest.fn();
     const mockFile = new File(['file content'], 'mock.txt', { type: 'text/plain' });
+    const upload = new Upload(mockFile, options);
 
     render(
-      <QueryClientProvider client={new QueryClient()}>
-        <FileList
-          files={[mockFile]}
-          options={{ bucketId: '123', customerId: '123', clientId: '123' }}
-          onRemoveFile={(id) => {
-            mockRemove(id);
-          }}
-          disableRemove
-        />
-      </QueryClientProvider>
+      <FileList2
+        uploads={[upload]}
+        options={options}
+        onRemoveFile={(id) => {
+          mockRemove(id);
+        }}
+        disableRemove
+      />
     );
 
     await waitFor(() => {
