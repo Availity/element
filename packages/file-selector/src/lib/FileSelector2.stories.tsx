@@ -63,7 +63,7 @@ export const _FileSelector2: StoryObj<typeof FileSelector2> = {
       },
     });
 
-    const files = methods.watch(props.name);
+    const uploads = methods.watch(props.name);
 
     const handleOnSubmit = (values: Record<string, File[]>) => {
       if (values[props.name].length === 0) return;
@@ -80,7 +80,7 @@ export const _FileSelector2: StoryObj<typeof FileSelector2> = {
                 show up here.
               </DismissableAlert>
             </FileSelector2>
-            {files.length > 0 && (
+            {uploads.length > 0 && (
               <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
                 <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
                   Submit
@@ -103,7 +103,7 @@ export const _FileSelector2ButtonOnly: StoryObj<typeof FileSelector2> = {
       },
     });
 
-    const files = methods.watch(props.name);
+    const uploads = methods.watch(props.name);
 
     const handleOnSubmit = (values: Record<string, File[]>) => {
       if (values[props.name].length === 0) return;
@@ -114,7 +114,7 @@ export const _FileSelector2ButtonOnly: StoryObj<typeof FileSelector2> = {
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
             <FileSelector2 {...props} enableDropArea={false} />
-            {files.length > 0 && (
+            {uploads.length > 0 && (
               <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
                 <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
                   Submit
@@ -137,7 +137,7 @@ export const _FileSelector2Encrypted: StoryObj<typeof FileSelector2> = {
       },
     });
 
-    const files = methods.watch(props.name);
+    const uploads = methods.watch(props.name);
 
     const handleOnSubmit = (values: Record<string, File[]>) => {
       if (values[props.name].length === 0) return;
@@ -148,7 +148,7 @@ export const _FileSelector2Encrypted: StoryObj<typeof FileSelector2> = {
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
             <FileSelector2 {...props} bucketId="enc" />
-            {files.length > 0 && (
+            {uploads.length > 0 && (
               <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
                 <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
                   Submit
@@ -176,7 +176,7 @@ export const _FileSelector2CustomTypesMessage: StoryObj<typeof FileSelector2> = 
       },
     });
 
-    const files = methods.watch(props.name);
+    const uploads = methods.watch(props.name);
 
     const handleOnSubmit = (values: Record<string, File[]>) => {
       if (values[props.name].length === 0) return;
@@ -193,7 +193,7 @@ export const _FileSelector2CustomTypesMessage: StoryObj<typeof FileSelector2> = 
                 show up here.
               </DismissableAlert>
             </FileSelector2>
-            {files.length > 0 && (
+            {uploads.length > 0 && (
               <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
                 <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
                   Submit
@@ -218,7 +218,7 @@ export const _FileSelector2CustomSizeMessage: StoryObj<typeof FileSelector2> = {
       },
     });
 
-    const files = methods.watch(props.name);
+    const uploads = methods.watch(props.name);
 
     const handleOnSubmit = (values: Record<string, File[]>) => {
       if (values[props.name].length === 0) return;
@@ -235,7 +235,7 @@ export const _FileSelector2CustomSizeMessage: StoryObj<typeof FileSelector2> = {
                 show up here.
               </DismissableAlert>
             </FileSelector2>
-            {files.length > 0 && (
+            {uploads.length > 0 && (
               <Grid size={{ xs: 12 }} justifyContent="end" display="flex" paddingTop={2.5}>
                 <Button type="submit" sx={{ marginLeft: 'auto', marginRight: 0 }}>
                   Submit

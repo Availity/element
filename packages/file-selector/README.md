@@ -46,7 +46,38 @@ npm install @availity/mui-file-selector
 yarn add @availity/mui-file-selector
 ```
 
-### Usage
+### File Selector vs File Selector 2
+
+`<FileSelector />` and `<FileSelector2 />` are two takes on the same functionality.
+At a high level, the difference between the two is the logic for handling
+the upload request. The `<FileSelector />` component utilizes
+`@tanstack/react-query` to handle the upload request logic, while `<FileSelector2 />`
+uses the form state to handle the upload request logic.
+
+#### Which component should I use?
+
+`<FileSelector />` is a more established and battle-tested component. If you
+don't need access to the Upload object, `<FileSelector />` may be a good option
+for you.
+
+`<FileSelector2 />` is slightly more experimental. It maintains feature parity
+with `<FileSelector />`, but can be considered a work in progress. `<FileSelector2 />`
+more closely aligns with our future plans for the `<FileSelector />` component.
+
+#### Future Plans
+
+In a future major release of `@availity/element`, we will consolidate to a single File
+Selector component. You can think of `<FileSelector2 />` as a bridge to get
+there. If you want to continue using the existing `<FileSelector />`, we will
+provide a simple migration path when the consolidation happens.
+
+#### File Selector 2 Benefits
+
+- Easier access to the Upload object
+- Simplified internals
+- Aligns with future development plans
+
+### File Selector Usage
 
 #### Import through @availity/element
 
@@ -280,6 +311,58 @@ const MyComponent = () => {
 export default MyComponent;
 ```
 
+### File Selector 2 Usage
 
+#### Import through @availity/element
 
+```tsx
+import { FileSelector2 } from '@availity/element';
+```
+
+#### Direct import
+
+```tsx
+import { FileSelector2 } from '@availity/mui-file-selector';
+```
+
+#### Basic Example
+
+The `FileSelector2` component must be used inside a `FormProvider` from `react-hook-form`. Each provider has its own state that is necessary for using the component.
+
+```tsx
+import React from 'react';
+import { FileSelector2 } from '@availity/mui-file-selector';
+
+const MyComponent = () => {
+  const methods = useForm({
+    defaultValues: {
+      myFiles: [] as File[],
+    },
+  });
+
+  const uploads = methods.watch(props.name);
+
+  const handleOnSubmit = (values: Record<string, File[]>) => {
+    if (values.myFiles.length === 0) return;
+  };
+
+  return (
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(handleOnSubmit)}>
+        <FileSelector2
+          name="myFiles"
+          bucketId="your-bucket-id"
+          customerId="your-customer-id"
+          clientId="your-client-id"
+          maxSize={5 * 1024 * 1024} // 5MB
+          maxFiles={3}
+          allowedFileTypes={['.pdf', '.doc', '.docx']}
+        />
+      </form>
+    </FormProvider>
+  );
+};
+
+export default MyComponent;
+```
 

@@ -12,7 +12,7 @@ import type { UploadOptions } from '@availity/upload-core';
 import type { OnSuccessPayload } from 'tus-js-client';
 
 import { FilePickerBtn } from './FilePickerBtn';
-import { dedupeErrors, getFileExtension } from './util';
+import { dedupeErrors } from './util';
 import { createCounter, DropzoneContainer, innerBoxStyles, outerBoxStyles } from './Dropzone';
 import type { DropzoneProps } from './Dropzone';
 
@@ -69,15 +69,6 @@ export const Dropzone2 = ({
     (file: File) => {
       const previous: Upload[] = watch(name) ?? [];
       const errors: FileError[] = [];
-
-      // const ext = getFileExtension(file.name);
-      // const isAllowedExtension = accept.includes(`.${ext}`);
-      // if (!isAllowedExtension) {
-      //   errors.push({
-      //     code: 'invalid-type',
-      //     message: `File type .${ext} is not allowed`,
-      //   });
-      // }
 
       const isDuplicate = previous.some((prev) => prev.file.name === file.name);
       if (isDuplicate) {
