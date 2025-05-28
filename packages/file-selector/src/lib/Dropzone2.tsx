@@ -45,6 +45,14 @@ async function startUpload(file: File, options: Options) {
   return upload;
 }
 
+/**
+ * `<Dropzone2 />` is the future of the the `<Dropzone />` component. In a
+ * future release, the `<Dropzone />` and `<Dropzone2 />` components will be
+ * consolidated into a single component.
+ *
+ * `<Dropzone2 />` adds the `uploadOptions` prop that previously existed on
+ * `<FileSelector />`.
+ */
 export const Dropzone2 = ({
   allowedFileTypes = [],
   disabled,

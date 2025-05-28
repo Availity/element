@@ -17,6 +17,14 @@ export type FileRow2Props = Omit<FileRowProps, 'file' | 'queryOptions'> & {
   upload: Upload;
 };
 
+/**
+ * `<FileRow2 />` is the future of the the `<FileRow />` component. In a
+ * future release, the `<FileRow />` and `<FileRow2 />` components will be
+ * consolidated into a single component.
+ *
+ * `<FileRow2 />` replaces the `file` prop with the `upload` prop and
+ * removes the `queryOptions` prop.
+ */
 export const FileRow2 = ({
   upload,
   options,
@@ -75,6 +83,13 @@ export type FileList2Props = Omit<FileListProps, 'files'> & {
   uploads: Upload[];
 } & Omit<FileRow2Props, 'upload'>;
 
+/**
+ * `<FileList2 />` is the future of the the `<FileList />` component. In a
+ * future release, the `<FileList />` and `<FileList2 />` components will
+ * be consolidated into a single component.
+ *
+ * `<FileList2 />` replaces the `files` prop with the `uploads` prop.
+ */
 export const FileList2 = ({
   uploads,
   options,

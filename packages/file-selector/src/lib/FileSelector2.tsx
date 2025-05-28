@@ -20,6 +20,15 @@ export type FileSelector2Props = Omit<FileSelectorProps, 'onUploadRemove' | 'que
   onUploadRemove?: (uploads: Upload[], removedUploadId: string) => void;
 };
 
+/**
+ * `<FileSelector2 />` is the future of the the `<FileSelector />`
+ * component. In a future major release, the `<FileSelector />` and
+ * `<FileSelector2 />` components will be consolidated into a single
+ * component.
+ *
+ * `<FileSelector2 />` removes the reliance on `@tanstack/react-query`. The
+ * `Upload` object can now be accessed from the form state.
+ */
 export const FileSelector2 = ({
   name,
   allowedFileNameCharacters,
