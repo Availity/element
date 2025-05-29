@@ -499,6 +499,8 @@ export const legacyTheme = {
           }
         },
         avDateInfo: {
+          minWidth: 'unset',
+          whiteSpace: 'nowrap',
           '.MuiChip-root': {
             marginRight: '.25rem'
           }
