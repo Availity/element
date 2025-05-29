@@ -44,7 +44,7 @@
     "@mui/types": "^7.2.21"
   },
   "devDependencies": {
-    "@availity/api-axios": "^10.0.3",
+    "@availity/api-axios": "^11.0.0",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-icon": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
