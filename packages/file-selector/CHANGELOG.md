@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.7.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.6.6...@availity/mui-file-selector@1.7.0) (2025-05-29)
+
+### Dependency Updates
+
+* `mui-form-utils` updated to version `1.6.6`
+* `mui-list` updated to version `1.6.6`
+* `mui-dialog` updated to version `1.6.6`
+* `mui-textfield` updated to version `1.6.6`
+
+### Features
+
+* **mui-file-selector:** update tests and remove unused deps ([46cc9c2](https://github.com/Availity/element/commit/46cc9c23c5d885ecff71e9f252ba080c6c336aed))
+* set uploads in form context instead of files ([6d96ea9](https://github.com/Availity/element/commit/6d96ea900857b085ca3975f3e319091b6ba1d8c9))
+
 ## [1.6.6](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.6.5...@availity/mui-file-selector@1.6.6) (2025-05-12)
 
 ### Dependency Updates
