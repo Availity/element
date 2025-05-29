@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.6](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.3.5...@availity/mui-controlled-form@1.3.6) (2025-05-29)
+
+### Dependency Updates
+
+* `mui-autocomplete` updated to version `1.3.5`
+* `mui-datepicker` updated to version `1.3.5`
+* `mui-form-utils` updated to version `1.3.5`
+* `mui-textfield` updated to version `1.3.5`
 ## [1.3.5](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.3.4...@availity/mui-controlled-form@1.3.5) (2025-05-20)
 
 ### Dependency Updates
