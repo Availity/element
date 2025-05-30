@@ -493,6 +493,8 @@ export const lightTheme = {
           },
         },
         avDateInfo: {
+          minWidth: 'unset',
+          whiteSpace: 'nowrap',
           '.MuiChip-root': {
             marginRight: '.25rem',
           },
