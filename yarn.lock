@@ -632,6 +632,7 @@ __metadata:
     "@availity/mui-typography": "workspace:^"
     "@availity/upload-core": ^8.0.0
     "@mui/material": ^6.4.5
+    "@tanstack/react-query": ^4.36.1
     react: 18.2.0
     react-dom: 18.2.0
     react-dropzone: ^11.7.1
