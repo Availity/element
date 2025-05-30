@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.7.1](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.7.0...@availity/mui-file-selector@1.7.1) (2025-05-30)
+
+
+### Bug Fixes
+
+* **mui-file-selector:** add back missing react-query dependency [#773](https://github.com/Availity/element/issues/773) ([9331a6c](https://github.com/Availity/element/commit/9331a6ca2e2ec721c2dac53c49900f89649f271a))
+
 ## [1.7.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.6.6...@availity/mui-file-selector@1.7.0) (2025-05-29)
 
 ### Dependency Updates
