@@ -114,7 +114,8 @@ describe('AsyncAutocomplete', () => {
     fireEvent.keyDown(input, { key: 'ArrowDown' });
 
     await waitFor(() => {
-      expect(screen.getByText('Option 1')).toBeDefined();
+      expect(screen.getByText('Option 0')).toBeDefined();
+      expect(() => screen.getByText('Option 10')).toThrow();
     });
 
     await act(async () => {
@@ -124,7 +125,7 @@ describe('AsyncAutocomplete', () => {
 
     await waitFor(() => {
       expect(screen.getByText('Option 10')).toBeDefined();
-      expect(() => screen.getByText('Option 20')).toThrowError();
+      expect(() => screen.getByText('Option 20')).toThrow();
     });
   });
 
