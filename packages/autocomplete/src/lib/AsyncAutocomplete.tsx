@@ -67,7 +67,7 @@ export const AsyncAutocomplete = <
     queryKey: [queryKey, limit, debouncedInput, watchParams],
     queryFn: async ({ pageParam = 0 }) => loadOptions(pageParam, limit, debouncedInput),
     staleTime: 10000,
-    getNextPageParam: (lastPage) => (lastPage.hasMore ? lastPage.offset + limit : false),
+    getNextPageParam: (lastPage) => (lastPage.hasMore ? lastPage.offset + limit : undefined),
     ...queryOptions,
   });
 
