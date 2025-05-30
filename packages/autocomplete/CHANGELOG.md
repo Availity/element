@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.3](https://github.com/Availity/element/compare/@availity/mui-autocomplete@1.2.2...@availity/mui-autocomplete@1.2.3) (2025-05-30)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** getNextPageParam should return undefined if no more pages ([b1ff081](https://github.com/Availity/element/commit/b1ff0817b3f97ce5e6f755cd5fb463a1881578a5))
+
 ## [1.2.2](https://github.com/Availity/element/compare/@availity/mui-autocomplete@1.2.1...@availity/mui-autocomplete@1.2.2) (2025-05-29)
 
 ### Dependency Updates
