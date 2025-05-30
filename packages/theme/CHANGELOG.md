@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.7.1](https://github.com/Availity/element/compare/@availity/theme@1.7.0...@availity/theme@1.7.1) (2025-05-30)
+
+
+### Bug Fixes
+
+* **mui-spaces:** fix styling for SpaceLink when date is visible ([226d680](https://github.com/Availity/element/commit/226d6801222ef3feb174407979f5054212002c15))
+
 ## [1.7.0](https://github.com/Availity/element/compare/@availity/theme@1.6.0...@availity/theme@1.7.0) (2025-05-12)
 
 
