@@ -37,6 +37,7 @@ export const _States: StoryObj<typeof FormControlLabel> = {
     <FormGroup>
       <FormControlLabel control={<Checkbox />} label="Default" />
       <FormControlLabel helpTopicId="1234" control={<Checkbox />} label="With FieldHelpIcon" />
+      <FormControlLabel control={<Checkbox readOnly/>} label="Read-only (doesn't exist on non-text inputs, must recreate read-only behavior)" />
       <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
       {/* Error state not available on individual control, must be within FormControl. */}
       <FormControl error>
