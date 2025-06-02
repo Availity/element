@@ -1,1 +1,0 @@
-import{d as m}from"./DefaultPropsProvider-ArLX9SCD.js";import{T as o}from"./identifier-CHUoN9pF.js";import{u as s}from"./useThemeProps-BNBLMFIr.js";function a({props:e,name:r}){return s({props:e,name:r,defaultTheme:m,themeId:o})}export{a as u};
