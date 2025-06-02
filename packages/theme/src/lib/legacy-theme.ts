@@ -828,6 +828,15 @@ export const legacyTheme = {
         },
       },
     },
+        MuiButtonBase: {
+          styleOverrides: {
+            root: {
+              'input.PrivateSwitchBase-input[readonly] + *': {
+                color: tokens.colorTextDisabled
+              }
+            }
+          }
+        },
     MuiButtonGroup: {
       defaultProps: {
         color: 'secondary',
@@ -1185,6 +1194,13 @@ export const legacyTheme = {
         size: 'small',
         fullWidth: true,
       },
+      styleOverrides: {
+        root: {
+          '&.Mui-readOnly .PrivateSwitchBase-root, &.Mui-readOnly .PrivateSwitchBase-root.Mui-checked, .PrivateSwitchBase-input[readonly] + *': {
+            color: tokens.colorTextDisabled
+          }
+        },
+      }
     },
     MuiFormControlLabel: {
       styleOverrides: {

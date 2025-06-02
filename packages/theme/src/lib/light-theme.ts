@@ -876,6 +876,15 @@ export const lightTheme = {
         },
       },
     },
+    MuiButtonBase: {
+      styleOverrides: {
+        root: {
+          'input.PrivateSwitchBase-input[readonly] + *': {
+            color: tokens.colorTextDisabled
+          }
+        }
+      }
+    },
     MuiButtonGroup: {
       defaultProps: {
         color: 'tertiary',
@@ -1181,6 +1190,11 @@ export const lightTheme = {
         fullWidth: true,
       },
       styleOverrides: {
+        root: {
+          '&.Mui-readOnly .PrivateSwitchBase-root, &.Mui-readOnly .PrivateSwitchBase-root.Mui-checked, .PrivateSwitchBase-input[readonly] + *': {
+            color: tokens.colorTextDisabled
+          }
+        },
         marginDense: {
           margin: '0 0 .5rem',
         },
