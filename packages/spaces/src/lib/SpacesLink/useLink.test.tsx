@@ -29,6 +29,8 @@ const buildSpacesLink = (space: Space, linkAttributes: Record<any, any>) => {
   );
 };
 
+const originalWindowLocation = window.location;
+
 describe('useLink', () => {
   beforeAll(() => {
     // Start the interception.
@@ -41,6 +43,11 @@ describe('useLink', () => {
     jest.clearAllMocks();
     cleanup();
     server.resetHandlers();
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      enumerable: true,
+      value: originalWindowLocation,
+    });
   });
 
   const space: Space = {
@@ -205,6 +212,8 @@ describe('useLink', () => {
     });
   });
 
+
+
   it('should call legacySSO on enter keypress with disclaimerId metadata', async () => {
     space.id = '8';
     space.configurationId = '8';
@@ -227,6 +236,7 @@ describe('useLink', () => {
       expect(nativeForm).not.toHaveBeenCalled();
     });
   });
+
 
   it('should call ssoId onclick with ssoId metadata', async () => {
     space.id = '9';
@@ -274,6 +284,31 @@ describe('useLink', () => {
         'saml'
       );
       expect(window.open).not.toHaveBeenCalled();
+    });
+  });
+
+  it('should replace essentials with apps for onprem', async () => {
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      enumerable: true,
+      value: new URL("https://test-essentials.availity.com"),
+    });
+
+    space.id = '11';
+    space.configurationId = '11';
+    space.link = { text: 'the link', target: '_self', url: '/path/to/url' };
+    space.type = 'APPLICATION';
+    space.meta = {};
+
+    const { container } = render(buildSpacesLink(space, { spaceId: space.id }));
+
+    const linkHeader11 = await waitFor(() => container.querySelector('#app-title-11'));
+
+    if (linkHeader11) fireEvent.click(linkHeader11);
+
+    await waitFor(() => {
+      expect(window.open).toHaveBeenCalledWith('https://test-apps.availity.com/path/to/url?spaceId=11', '_self');
+      expect(nativeForm).not.toHaveBeenCalled();
     });
   });
 });
