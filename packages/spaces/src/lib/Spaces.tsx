@@ -4,7 +4,6 @@ import { spacesReducer, fetchAllSpaces } from './spaces-data';
 import configurationFindMany from './configurationFindMany';
 import { ModalProvider } from './modals/ModalProvider';
 import type { Space, SpacesProps, SpacesContextType, UseSpaces } from './spaces-types';
-import type { SsoTypeSpace } from './SpacesLink/spaces-link-types';
 import { isReactNodeFunction } from './helpers';
 
 export const INITIAL_STATE = {
@@ -206,7 +205,7 @@ export const useSpaces: UseSpaces = (...ids) => {
     return spaces && [...spaces.values()];
   }
 
-  return ids.reduce((acc: (Space | SsoTypeSpace)[], id) => {
+  return ids.reduce((acc: (Space)[], id) => {
     const matchedSpace = spaces?.get(id) || spacesByConfig?.get(id);
 
     if (matchedSpace) {
