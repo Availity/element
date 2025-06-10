@@ -927,7 +927,7 @@ __metadata:
     "@availity/mui-paper": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@availity/native-form": ^7.0.0
+    "@availity/native-form": ^7.0.1
     "@availity/resolve-url": ^4.0.0
     "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
@@ -1142,12 +1142,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/native-form@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "@availity/native-form@npm:7.0.0"
+"@availity/native-form@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@availity/native-form@npm:7.0.1"
   dependencies:
     "@availity/api-axios": 11.0.0
-  checksum: 047aa7fb9d391ec230c995f0387248df1d53c57c597ec0f3d08552378ab67c85d40b0cd480ccc7000b57d053a048261320f921b8252e096f8aeacb28dd1f4991
+  checksum: e61a054efd655e38b374cdbca687cd147e098613b2e8e261e74725c5e3ce9e9ab80dfffe3da8f2c85114e500dc0b84cfe2bd764c0bf8502c815a4dffbffdbabb
   languageName: node
   linkType: hard
 
