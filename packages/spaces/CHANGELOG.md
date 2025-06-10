@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.23](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.22...@availity/mui-spaces@1.0.23) (2025-06-10)
+
+
+### Bug Fixes
+
+* **mui-spaces:** don't check for sso type on rendered apps for sso linkout ([3bda63f](https://github.com/Availity/element/commit/3bda63f80fea1c6cdb7526fe905dd2b6bfbc1ffe))
+* **mui-spaces:** put type back ([6aa9083](https://github.com/Availity/element/commit/6aa9083ff39fd3b384002f4e6951de80627b4c35))
+
 ## [1.0.22](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.21...@availity/mui-spaces@1.0.22) (2025-05-29)
 
 ### Dependency Updates
