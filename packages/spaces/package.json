@@ -84,7 +84,7 @@
     "@availity/api-axios": "^11.0.0",
     "@availity/hooks": "^5.1.5",
     "@availity/message-core": "^8.0.0",
-    "@availity/native-form": "^7.0.0",
+    "@availity/native-form": "^7.0.1",
     "@availity/resolve-url": "^4.0.0",
     "@tanstack/react-query": "^4.36.1",
     "dayjs": "^1.11.13",

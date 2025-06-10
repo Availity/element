@@ -14,7 +14,7 @@ export type SpacesLinkWithSpace = {
    * This component does not have to be a child of SpacesProvider.
    * Note: If you are wanting to take advantage of the sso links you will additionally need to pass the clientId in.
    */
-  space: Space | SsoTypeSpace;
+  space: Space;
 } & SpacesLinkProps;
 
 export type SpacesLinkWithSpaceId = {
@@ -26,7 +26,7 @@ export type SpacesLinkWithSpaceId = {
    * This component does not have to be a child of SpacesProvider.
    * Note: If you are wanting to take advantage of the sso links you will additionally need to pass the clientId in.
    */
-  space?: Space | SsoTypeSpace;
+  space?: Space;
 } & SpacesLinkProps;
 
 export type SpacesLinkProps = {
@@ -111,13 +111,9 @@ export type MediaProps = {
   onKeyDown?: (event: React.KeyboardEvent) => void;
 };
 
-export interface SsoTypeSpace extends Space {
-  type: 'saml' | 'openid';
-}
-
 export type UseLink = {
   (
-    spaceId?: Space | SsoTypeSpace | string,
+    spaceId?: Space | string,
     options?: { clientId?: string; linkAttributes?: Record<string, any> }
   ): [Space | undefined, MediaProps | undefined];
 };
@@ -134,7 +130,7 @@ export type OpenLink = {
 
 export type OpenLinkWithSso = {
   (
-    space: SsoTypeSpace | Space,
+    space: Space,
     params: {
       akaname?: string;
       clientId: string;

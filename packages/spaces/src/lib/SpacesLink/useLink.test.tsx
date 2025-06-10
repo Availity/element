@@ -4,14 +4,13 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Spaces } from '../Spaces';
 import { SpacesLink } from './SpacesLink';
 import type { Space } from '../spaces-types';
-import type { SsoTypeSpace } from './spaces-link-types';
 
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '@availity/mock/src/lib/server';
 
 jest.mock('@availity/native-form');
 
-const buildSpacesLink = (space: Space | SsoTypeSpace, linkAttributes: Record<any, any>) => {
+const buildSpacesLink = (space: Space, linkAttributes: Record<any, any>) => {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
@@ -44,7 +43,7 @@ describe('useLink', () => {
     server.resetHandlers();
   });
 
-  const space: Space | SsoTypeSpace = {
+  const space: Space = {
     type: 'APPLICATION',
     name: 'an application',
     description: 'This is an application',
