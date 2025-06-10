@@ -134,7 +134,7 @@ export type OpenLink = {
 
 export type OpenLinkWithSso = {
   (
-    space: SsoTypeSpace,
+    space: SsoTypeSpace | Space,
     params: {
       akaname?: string;
       clientId: string;
