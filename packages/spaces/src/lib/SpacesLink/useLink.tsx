@@ -2,11 +2,7 @@ import { useCurrentUser } from '@availity/hooks';
 import { useSpaces } from '../Spaces';
 import { useModal } from '../modals/ModalProvider';
 import { openLink, openLinkWithSso } from './linkHandlers';
-import type { UseLink, MediaProps, SsoTypeSpace } from './spaces-link-types';
-import { Space } from '../spaces-types';
-
-const isSsoSpace = (space: Space | SsoTypeSpace | undefined): space is SsoTypeSpace =>
-  space?.type === 'saml' || space?.type === 'openid';
+import type { UseLink, MediaProps } from './spaces-link-types';
 
 export const useLink: UseLink = (spaceOrSpaceId, options) => {
   const spaceFromSpacesProvider = useSpaces(
@@ -56,7 +52,7 @@ export const useLink: UseLink = (spaceOrSpaceId, options) => {
     role: 'link',
   };
 
-  if (isSsoSpace(space) && space?.meta?.ssoId) {
+  if (space?.meta?.ssoId) {
     if (!options?.clientId) {
       throw new Error('clientId is required for SSO spaces');
     }
