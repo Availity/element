@@ -20,7 +20,7 @@ export const openLink: OpenLink = async (space, params) => {
 
   let url = !isAbsoluteUrl(space.link.url) ? getUrl(urlWithParams, false, false) : urlWithParams;
 
-  if (!isAbsoluteUrl(url) && essentialsDomainRegex.test(window.location.origin)) {
+  if (!isAbsoluteUrl(url) && essentialsDomainRegex.test(window.location.origin) && /\/public\/spaces/.test(url)) {
     const appsDomain = window.location.origin.replace("essentials", "apps");
     url = `${appsDomain}${url}`
   }

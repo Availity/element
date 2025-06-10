@@ -296,7 +296,7 @@ describe('useLink', () => {
 
     space.id = '11';
     space.configurationId = '11';
-    space.link = { text: 'the link', target: '_self', url: '/path/to/url' };
+    space.link = { text: 'the link', target: '_self', url: '/public/spaces/url' };
     space.type = 'APPLICATION';
     space.meta = {};
 
@@ -307,7 +307,7 @@ describe('useLink', () => {
     if (linkHeader11) fireEvent.click(linkHeader11);
 
     await waitFor(() => {
-      expect(window.open).toHaveBeenCalledWith('https://test-apps.availity.com/path/to/url?spaceId=11', '_self');
+      expect(window.open).toHaveBeenCalledWith('https://test-apps.availity.com/public/spaces/url?spaceId=11', '_self');
       expect(nativeForm).not.toHaveBeenCalled();
     });
   });
