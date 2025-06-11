@@ -29,7 +29,7 @@ const buildSpacesLink = (space: Space, linkAttributes: Record<any, any>) => {
   );
 };
 
-const originalWindowLocation = window.location;
+const originalDocumentReferrer = document.referrer;
 
 describe('useLink', () => {
   beforeAll(() => {
@@ -40,9 +40,9 @@ describe('useLink', () => {
     Object.defineProperty(window, 'open', { value: jest.fn() });
   });
   afterEach(() => {
-    Object.defineProperty(window, 'location', {
+    Object.defineProperty(document, 'referrer', {
       writable: true,
-      value: originalWindowLocation,
+      value: originalDocumentReferrer,
     });
     jest.clearAllMocks();
     cleanup();
@@ -287,9 +287,9 @@ describe('useLink', () => {
     });
   });
 
-  it('should replace essentials with apps for onprem', async () => {
-    Object.defineProperty(window, 'location', {
-      value: new URL("https://test-essentials.availity.com"),
+  it('should build relative onprem path to full url - t14', async () => {
+    Object.defineProperty(document, 'referrer', {
+      value: new URL("https://t14-apps.availity.com"),
     });
 
     space.id = '11';
@@ -305,7 +305,30 @@ describe('useLink', () => {
     if (linkHeader11) fireEvent.click(linkHeader11);
 
     await waitFor(() => {
-      expect(window.open).toHaveBeenCalledWith('https://test-apps.availity.com/public/spaces/url?spaceId=11', '_self');
+      expect(window.open).toHaveBeenCalledWith('https://t14-apps.availity.com/public/spaces/url?spaceId=11', '_self');
+      expect(nativeForm).not.toHaveBeenCalled();
+    });
+  });
+
+  it('should build relative onprem path to full url - test', async () => {
+    Object.defineProperty(document, 'referrer', {
+      value: new URL("https://test-apps.availity.com"),
+    });
+
+    space.id = '12';
+    space.configurationId = '12';
+    space.link = { text: 'the link', target: '_self', url: '/public/spaces/url' };
+    space.type = 'APPLICATION';
+    space.meta = {};
+
+    const { container } = render(buildSpacesLink(space, { spaceId: space.id }));
+
+    const linkHeader = await waitFor(() => container.querySelector('#app-title-12'));
+
+    if (linkHeader) fireEvent.click(linkHeader);
+
+    await waitFor(() => {
+      expect(window.open).toHaveBeenCalledWith('https://test-apps.availity.com/public/spaces/url?spaceId=12', '_self');
       expect(nativeForm).not.toHaveBeenCalled();
     });
   });
