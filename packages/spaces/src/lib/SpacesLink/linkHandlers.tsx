@@ -12,10 +12,18 @@ export const openLink: OpenLink = async (space, params) => {
   if (params?.akaname) await updateTopApps(space, params.akaname);
 
   const spaceId = params?.payerSpaceId || space.parents?.[0]?.id;
+
+  const essentialsDomainRegex = /(test|qa(p?)-)?essentials\.availity\.com/;
   const needsSpaceId =
-    !isAbsoluteUrl(space.link.url) || /(test|qa(p?)-)?essentials\.availity\.com/.test(space.link.url);
+    !isAbsoluteUrl(space.link.url) || essentialsDomainRegex.test(space.link.url);
   const urlWithParams = needsSpaceId ? updateUrl(space.link.url, 'spaceId', spaceId) : space.link.url;
-  const url = !isAbsoluteUrl(space.link.url) ? getUrl(urlWithParams, false, false) : urlWithParams;
+
+  let url = !isAbsoluteUrl(space.link.url) ? getUrl(urlWithParams, false, false) : urlWithParams;
+
+  if (!isAbsoluteUrl(url) && essentialsDomainRegex.test(window.location.origin) && /\/web\/|\/public\/(apps|spaces)/.test(url)) {
+    const appsDomain = window.location.origin.replace("essentials", "apps");
+    url = `${appsDomain}${url}`
+  }
 
   const target = getTarget(space.link.target);
 
