@@ -29,6 +29,8 @@ const buildSpacesLink = (space: Space, linkAttributes: Record<any, any>) => {
   );
 };
 
+const originalWindowLocation = window.location;
+
 describe('useLink', () => {
   beforeAll(() => {
     // Start the interception.
@@ -38,9 +40,14 @@ describe('useLink', () => {
     Object.defineProperty(window, 'open', { value: jest.fn() });
   });
   afterEach(() => {
+    Object.defineProperty(window, 'location', {
+      writable: true,
+      value: originalWindowLocation,
+    });
     jest.clearAllMocks();
     cleanup();
     server.resetHandlers();
+
   });
 
   const space: Space = {
@@ -282,8 +289,6 @@ describe('useLink', () => {
 
   it('should replace essentials with apps for onprem', async () => {
     Object.defineProperty(window, 'location', {
-      configurable: true,
-      enumerable: true,
       value: new URL("https://test-essentials.availity.com"),
     });
 
