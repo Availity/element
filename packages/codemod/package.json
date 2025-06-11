@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-codemod",
-  "version": "1.0.46",
+  "version": "1.0.47",
   "description": "Availity MUI v1 Codemods - part of the @availity/element design system",
   "keywords": [
     "react",
