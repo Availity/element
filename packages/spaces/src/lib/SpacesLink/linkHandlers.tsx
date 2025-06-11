@@ -20,9 +20,9 @@ export const openLink: OpenLink = async (space, params) => {
 
   let url = !isAbsoluteUrl(space.link.url) ? getUrl(urlWithParams, false, false) : urlWithParams;
 
-  if (!isAbsoluteUrl(url) && essentialsDomainRegex.test(window.location.origin) && /\/web\/|\/public\/(apps|spaces)/.test(url)) {
-    const appsDomain = window.location.origin.replace("essentials", "apps");
-    url = `${appsDomain}${url}`
+  if (!isAbsoluteUrl(url) && !essentialsDomainRegex.test(document.referrer) && /\/web\/|\/public\/(apps|spaces)/.test(url)) {
+    const referrer = new URL(document.referrer);
+    url = `${referrer.origin}${url}`
   }
 
   const target = getTarget(space.link.target);
