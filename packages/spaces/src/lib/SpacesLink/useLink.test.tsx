@@ -29,8 +29,6 @@ const buildSpacesLink = (space: Space, linkAttributes: Record<any, any>) => {
   );
 };
 
-const originalWindowLocation = window.location;
-
 describe('useLink', () => {
   beforeAll(() => {
     // Start the interception.
@@ -43,11 +41,6 @@ describe('useLink', () => {
     jest.clearAllMocks();
     cleanup();
     server.resetHandlers();
-    Object.defineProperty(window, 'location', {
-      configurable: true,
-      enumerable: true,
-      value: originalWindowLocation,
-    });
   });
 
   const space: Space = {
