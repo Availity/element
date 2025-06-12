@@ -122,8 +122,24 @@ export const Dropzone2 = ({
       const previous = watch(name) ?? [];
 
       // Set accepted files to form context
-      const uploads = acceptedFiles.map((file) => startUpload(file, uploadOptions));
+      const remainingSlots = maxFiles ? Math.max(0, maxFiles - previous.length) : acceptedFiles.length;
+      const filesToAdd = acceptedFiles.slice(0, remainingSlots);
+      const uploads = filesToAdd.map((file) => startUpload(file, uploadOptions));
       setValue(name, previous.concat(await Promise.all(uploads)));
+
+      // Add rejections for excess files if needed
+      if (maxFiles && acceptedFiles.length > remainingSlots) {
+        fileRejections.push({
+          file: acceptedFiles[remainingSlots], // Use the first excess file
+          errors: [
+            {
+              code: 'too-many-files',
+              message: `Too many files. You may only upload ${maxFiles} file(s).`,
+            },
+          ],
+          id: counter.increment(),
+        });
+      }
 
       if (fileRejections.length > 0) {
         const TOO_MANY_FILES_CODE = 'too-many-files';
