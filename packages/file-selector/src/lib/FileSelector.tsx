@@ -107,7 +107,7 @@ export type FileSelectorProps = {
    * Maximum size allowed for total upload in bytes
    * Use Kibi or Mibibytes. eg: 1kb = 1024 bytes; 1mb = 1024kb
    */
-  maxTotalSize: number;
+  maxTotalSize?: number;
   /**
    * Whether multiple file selection is allowed
    * @default true
