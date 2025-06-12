@@ -67,6 +67,10 @@ export type DropzoneProps = {
    */
   maxSize?: number;
   /**
+   * Maximum size of total upload in bytes
+   */
+  maxTotalSize?: number;
+  /**
    * Whether multiple file selection is allowed
    */
   multiple?: boolean;
@@ -110,6 +114,7 @@ export const Dropzone = ({
   enableDropArea = true,
   maxFiles,
   maxSize,
+  maxTotalSize,
   multiple,
   name,
   onChange,
@@ -169,8 +174,47 @@ export const Dropzone = ({
 
       const previous = watch(name) ?? [];
 
+      if (maxTotalSize) {
+        // Calculate current total size
+        const currentTotalSize = previous.reduce((sum: number, file: File) => sum + file.size, 0);
+        let newSize = 0;
+
+        const availableSize = Math.max(0, maxTotalSize - currentTotalSize);
+        let sizeCounter = 0;
+
+        // Find the index where we exceed the total size limit
+        const cutoffIndex = acceptedFiles.findIndex((file) => {
+          sizeCounter += file.size;
+          return sizeCounter > availableSize;
+        });
+
+        // If we found files that exceed the limit
+        if (cutoffIndex !== -1) {
+          // Files that fit within the size limit
+          const filesToAdd = acceptedFiles.slice(0, cutoffIndex === 0 ? 0 : cutoffIndex);
+
+          // Create rejection for excess files
+          fileRejections.push({
+            file: acceptedFiles[cutoffIndex],
+            errors: [
+              {
+                code: 'upload-too-large',
+                message: `Total upload size exceeds the limit of ${maxTotalSize} bytes.`,
+              },
+            ],
+            id: counter.increment(),
+          });
+
+          // Update acceptedFiles to only include files that fit
+          acceptedFiles = filesToAdd;
+        }
+
+        // Calculate size of accepted files for the state update
+        newSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
+        setTotalSize((prev) => prev + newSize);
+      }
+
       // Set accepted files to form context
-      // setValue(name, previous.concat(acceptedFiles));
       const remainingSlots = maxFiles ? Math.max(0, maxFiles - previous.length) : acceptedFiles.length;
       const filesToAdd = acceptedFiles.slice(0, remainingSlots);
       setValue(name, previous.concat(filesToAdd));
