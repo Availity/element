@@ -44,7 +44,6 @@ const meta: Meta<typeof FileSelector> = {
     },
     maxFiles: 2,
     maxSize: 1 * 1024 * 1024, // 1MB
-    maxTotalSize: 2 * 1024 * 1024, // 2MB
     enableDropArea: true,
     isCloud: true,
     multiple: true,
