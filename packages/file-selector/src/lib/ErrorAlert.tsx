@@ -5,6 +5,7 @@ import { formatBytes } from './util';
 
 const codes: Record<string, string> = {
   'file-too-large': 'File exceeds maximum size',
+  'upload-too-large': 'File causes maximum total upload size to be exceeded',
   'file-invalid-type': 'File has an invalid type',
   'file-too-small': 'File is smaller than minimum size',
   'too-many-file': 'Too many files',

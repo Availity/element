@@ -12,7 +12,7 @@ import type { UploadOptions } from '@availity/upload-core';
 import type { OnSuccessPayload } from 'tus-js-client';
 
 import { FilePickerBtn } from './FilePickerBtn';
-import { dedupeErrors } from './util';
+import { dedupeErrors, formatBytes } from './util';
 import { createCounter, DropzoneContainer, innerBoxStyles, outerBoxStyles } from './Dropzone';
 import type { DropzoneProps } from './Dropzone';
 
@@ -59,6 +59,7 @@ export const Dropzone2 = ({
   enableDropArea = true,
   maxFiles,
   maxSize,
+  maxTotalSize,
   multiple,
   name,
   onChange,
@@ -121,9 +122,66 @@ export const Dropzone2 = ({
 
       const previous = watch(name) ?? [];
 
+      if (maxTotalSize) {
+        // Calculate current total size
+        const currentTotalSize = previous.reduce((sum: number, upload: Upload) => sum + upload.file.size, 0);
+        console.log({ previous });
+        let newSize = 0;
+
+        const availableSize = Math.max(0, maxTotalSize - currentTotalSize);
+        let sizeCounter = 0;
+
+        // Find the index where we exceed the total size limit
+        const cutoffIndex = acceptedFiles.findIndex((file) => {
+          sizeCounter += file.size;
+          return sizeCounter > availableSize;
+        });
+
+        // If we found files that exceed the limit
+        if (cutoffIndex !== -1) {
+          // Files that fit within the size limit
+          const filesToAdd = acceptedFiles.slice(0, cutoffIndex === 0 ? 0 : cutoffIndex);
+
+          // Create rejection for excess files
+          fileRejections.push({
+            file: acceptedFiles[cutoffIndex],
+            errors: [
+              {
+                code: 'upload-too-large',
+                message: `Total upload size exceeds the limit of ${formatBytes(maxTotalSize)}.`,
+              },
+            ],
+            id: counter.increment(),
+          });
+
+          // Update acceptedFiles to only include files that fit
+          acceptedFiles = filesToAdd;
+        }
+
+        // Calculate size of accepted files for the state update
+        newSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
+        setTotalSize((prev) => prev + newSize);
+      }
+
       // Set accepted files to form context
-      const uploads = acceptedFiles.map((file) => startUpload(file, uploadOptions));
+      const remainingSlots = maxFiles ? Math.max(0, maxFiles - previous.length) : acceptedFiles.length;
+      const filesToAdd = acceptedFiles.slice(0, remainingSlots);
+      const uploads = filesToAdd.map((file) => startUpload(file, uploadOptions));
       setValue(name, previous.concat(await Promise.all(uploads)));
+
+      // Add rejections for excess files if needed
+      if (maxFiles && acceptedFiles.length > remainingSlots) {
+        fileRejections.push({
+          file: acceptedFiles[remainingSlots], // Use the first excess file
+          errors: [
+            {
+              code: 'too-many-files',
+              message: `Too many files. You may only upload ${maxFiles} file(s).`,
+            },
+          ],
+          id: counter.increment(),
+        });
+      }
 
       if (fileRejections.length > 0) {
         const TOO_MANY_FILES_CODE = 'too-many-files';

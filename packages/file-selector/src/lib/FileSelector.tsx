@@ -59,6 +59,11 @@ export type FileSelectorProps = {
    * Overrides the standard file size message
    */
   customSizeMessage?: React.ReactNode;
+
+  /**
+   * Overrides the standard total upload size message
+   */
+  customTotalSizeMessage?: React.ReactNode;
   /**
    * Overrides the standard file types message
    */
@@ -99,9 +104,15 @@ export type FileSelectorProps = {
    */
   maxSize: number;
   /**
+   * Maximum size allowed for total upload in bytes
+   * Use Kibi or Mibibytes. eg: 1kb = 1024 bytes; 1mb = 1024kb
+   */
+  maxTotalSize?: number;
+  /**
    * Whether multiple file selection is allowed
    * @default true
    */
+
   multiple?: boolean;
   /**
    * Callback fired when files are selected
@@ -145,6 +156,7 @@ export const FileSelector = ({
   clientId,
   children,
   customSizeMessage,
+  customTotalSizeMessage,
   customTypesMessage,
   customerId,
   customFileRow,
@@ -155,6 +167,7 @@ export const FileSelector = ({
   label = 'Upload file',
   maxFiles,
   maxSize,
+  maxTotalSize,
   multiple = true,
   onChange,
   onDrop,
@@ -240,6 +253,7 @@ export const FileSelector = ({
             enableDropArea={enableDropArea}
             maxFiles={maxFiles}
             maxSize={maxSize}
+            maxTotalSize={maxTotalSize}
             multiple={multiple}
             onChange={onChange}
             onDrop={onDrop}
@@ -250,7 +264,9 @@ export const FileSelector = ({
           <FileTypesMessage
             allowedFileTypes={allowedFileTypes}
             maxFileSize={maxSize}
+            maxTotalSize={maxTotalSize}
             customSizeMessage={customSizeMessage}
+            customTotalSizeMessage={customTotalSizeMessage}
             customTypesMessage={customTypesMessage}
             variant="caption"
           />
@@ -259,9 +275,10 @@ export const FileSelector = ({
       ) : (
         <Grid container rowSpacing={3} flexDirection="column">
           <Grid>
-            <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} />
+            <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} maxTotalSize={maxTotalSize} />
             <FileTypesMessage
               allowedFileTypes={allowedFileTypes}
+              customTotalSizeMessage={customTotalSizeMessage}
               customSizeMessage={customSizeMessage}
               customTypesMessage={customTypesMessage}
               variant="body2"
@@ -276,6 +293,7 @@ export const FileSelector = ({
               enableDropArea={enableDropArea}
               maxFiles={maxFiles}
               maxSize={maxSize}
+              maxTotalSize={maxTotalSize}
               multiple={multiple}
               onChange={onChange}
               onDrop={onDrop}
