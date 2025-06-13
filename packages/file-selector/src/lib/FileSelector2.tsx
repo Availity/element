@@ -37,6 +37,7 @@ export const FileSelector2 = ({
   clientId,
   children,
   customSizeMessage,
+  customTotalSizeMessage,
   customTypesMessage,
   customerId,
   customFileRow,
@@ -47,6 +48,7 @@ export const FileSelector2 = ({
   label = 'Upload file',
   maxFiles,
   maxSize,
+  maxTotalSize,
   multiple = true,
   onChange,
   onDrop,
@@ -129,6 +131,7 @@ export const FileSelector2 = ({
             enableDropArea={enableDropArea}
             maxFiles={maxFiles}
             maxSize={maxSize}
+            maxTotalSize={maxTotalSize}
             multiple={multiple}
             onChange={onChange}
             onDrop={onDrop}
@@ -140,7 +143,9 @@ export const FileSelector2 = ({
           <FileTypesMessage
             allowedFileTypes={allowedFileTypes}
             maxFileSize={maxSize}
+            maxTotalSize={maxTotalSize}
             customSizeMessage={customSizeMessage}
+            customTotalSizeMessage={customTotalSizeMessage}
             customTypesMessage={customTypesMessage}
             variant="caption"
           />
@@ -149,10 +154,11 @@ export const FileSelector2 = ({
       ) : (
         <Grid container rowSpacing={3} flexDirection="column">
           <Grid>
-            <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} />
+            <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} maxTotalSize={maxTotalSize} />
             <FileTypesMessage
               allowedFileTypes={allowedFileTypes}
               customSizeMessage={customSizeMessage}
+              customTotalSizeMessage={customTotalSizeMessage}
               customTypesMessage={customTypesMessage}
               variant="body2"
             />
@@ -166,6 +172,7 @@ export const FileSelector2 = ({
               enableDropArea={enableDropArea}
               maxFiles={maxFiles}
               maxSize={maxSize}
+              maxTotalSize={maxTotalSize}
               multiple={multiple}
               onChange={onChange}
               onDrop={onDrop}

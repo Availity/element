@@ -11,6 +11,7 @@ import { Box, Stack } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 
 import { FilePickerBtn } from './FilePickerBtn';
+import { formatBytes } from './util';
 
 export const outerBoxStyles = {
   backgroundColor: 'background.secondary',
@@ -199,7 +200,7 @@ export const Dropzone = ({
             errors: [
               {
                 code: 'upload-too-large',
-                message: `Total upload size exceeds the limit of ${maxTotalSize} bytes.`,
+                message: `Total upload size exceeds the limit of ${formatBytes(maxTotalSize)}.`,
               },
             ],
             id: counter.increment(),
