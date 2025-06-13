@@ -19,7 +19,7 @@ import { isFunction } from '../helpers';
 
 const SpacesLinkContainer = styled(Box, { name: 'AvSpacesLink', slot: 'root' })({}) as typeof MuiBox;
 const DateInfo = styled(Grid, { name: 'AvSpacesLink', slot: 'AvDateInfo' })({});
-const SpacesLinkFavoriteHeart = styled(Grid, { name: 'AvSpacesLink', slot: 'AvFavoriteHeart' })({});
+const SpacesLinkFavoriteHeart = styled(FavoriteHeart, { name: 'AvSpacesLink', slot: 'AvFavoriteHeart' })({});
 const IconLink = styled(Link, { name: 'AvSpacesLink', slot: 'IconLink' })({});
 
 const getDisplayDate = (date: string | null | undefined) => dayjs(date).format('MM/DD/YYYY');
@@ -98,13 +98,11 @@ export const SpacesLink = ({
     () =>
       linkSpace?.configurationId &&
       favorite && (
-        <SpacesLinkFavoriteHeart>
-          <FavoriteHeart
-            id={`${idPrefix}${linkSpace?.configurationId}`}
-            name={linkSpace?.name}
-            onChange={(_, e) => e.stopPropagation()}
-          />
-        </SpacesLinkFavoriteHeart>
+        <SpacesLinkFavoriteHeart
+          id={`${idPrefix}${linkSpace?.configurationId}`}
+          name={linkSpace?.name}
+          onChange={(_, e) => e.stopPropagation()}
+        />
       ),
     [favorite, linkSpace?.configurationId, linkSpace?.name, idPrefix]
   );
@@ -112,7 +110,7 @@ export const SpacesLink = ({
   const dateInfo = useMemo(
     () =>
       (showNew || showDate) && (
-        <DateInfo textAlign={stacked ? 'center' : 'right'}>
+        <DateInfo textAlign={stacked ? 'center' : 'right'} sx={{ marginTop: '8px' }}>
           {showNew && linkSpace?.isNew && (
             <StatusChip id={`${idPrefix}app-new-badge-${linkSpace?.configurationId}`} label="New!" color="secondary" />
           )}
@@ -199,13 +197,13 @@ export const SpacesLink = ({
       <BodyTag style={{ width: '100%' }}>
         <Grid
           sx={{
-            alignItems: !showDescription || stacked ? 'center' : 'start',
+            alignItems: 'start',
             flexWrap: 'nowrap',
           }}
           direction={stacked ? 'column' : 'row'}
           container
         >
-          {!stacked && favoriteIcon}
+          {!stacked && <div style={{ marginRight: '8px' }}>{favoriteIcon}</div>}
           {FileIcon && linkSpace?.url && linkSpace?.type?.toUpperCase() === 'FILE' ? (
             <IconLink
               target="_blank"
@@ -219,7 +217,10 @@ export const SpacesLink = ({
           {children
             ? renderChildren()
             : body && (
-                <Grid id={`${idPrefix}${linkSpace?.type}-${linkSpace?.configurationId}`} sx={{ flexGrow: 1 }}>
+                <Grid
+                  id={`${idPrefix}${linkSpace?.type}-${linkSpace?.configurationId}`}
+                  sx={{ flexGrow: 1, marginTop: '8px' }}
+                >
                   <Box
                     sx={{
                       marginBottom:

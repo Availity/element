@@ -499,12 +499,6 @@ export const lightTheme = {
             marginRight: '.25rem',
           },
         },
-        avFavoriteHeart: {
-          marginTop: '-.5rem',
-          marginRight: '.5rem',
-          marginLeft: '-.5rem',
-          minWidth: 'auto',
-        },
         iconLink: {
           height: '2.5rem',
           width: '2.5rem',
