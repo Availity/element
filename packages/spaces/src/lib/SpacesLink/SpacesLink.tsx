@@ -197,13 +197,13 @@ export const SpacesLink = ({
       <BodyTag style={{ width: '100%' }}>
         <Grid
           sx={{
-            alignItems: !showDescription || stacked ? 'center' : 'start',
+            alignItems: 'start',
             flexWrap: 'nowrap',
           }}
           direction={stacked ? 'column' : 'row'}
           container
         >
-          {!stacked && favoriteIcon}
+          {!stacked && <div style={{ marginRight: '8px' }}>{favoriteIcon}</div>}
           {FileIcon && linkSpace?.url && linkSpace?.type?.toUpperCase() === 'FILE' ? (
             <IconLink
               target="_blank"
