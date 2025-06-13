@@ -505,11 +505,6 @@ export const legacyTheme = {
             marginRight: '.25rem'
           }
         },
-        avFavoriteHeart: {
-          marginRight: '.25rem',
-          marginLeft: '-.25rem',
-          minWidth: 'auto'
-        },
         iconLink: {
           marginRight: '.25rem',
           borderRadius: '50%',
