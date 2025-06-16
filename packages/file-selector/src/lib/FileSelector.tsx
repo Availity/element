@@ -249,6 +249,7 @@ export const FileSelector = ({
           <Dropzone
             name={name}
             allowedFileTypes={allowedFileTypes}
+            allowedFileNameCharacters={allowedFileNameCharacters}
             disabled={disabled}
             enableDropArea={enableDropArea}
             maxFiles={maxFiles}
@@ -289,6 +290,7 @@ export const FileSelector = ({
             <Dropzone
               name={name}
               allowedFileTypes={allowedFileTypes}
+              allowedFileNameCharacters={allowedFileNameCharacters}
               disabled={disabled}
               enableDropArea={enableDropArea}
               maxFiles={maxFiles}
