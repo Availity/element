@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.8.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.7.1...@availity/mui-file-selector@1.8.0) (2025-06-16)
+
+
+### Features
+
+* **mui-file-selector:** add maxTotalSize check to FileSelector ([03f78d6](https://github.com/Availity/element/commit/03f78d674243a76cc6d3e65a20b6e8ce3a46b8ca))
+* **mui-file-selector:** add maxTotalSize check to FileSelector ([802e2ae](https://github.com/Availity/element/commit/802e2ae502aa8727037e2998849acf01a6ea0382))
+* **mui-file-selector:** add maxTotalSize check to FileSelector2 ([ccd0cfa](https://github.com/Availity/element/commit/ccd0cfa95610d6e354402a3fa698b63b6659644c))
+
+
+### Bug Fixes
+
+* **mui-file-selector:** ensure only the maximum amount of files are uploaded ([5d80d2b](https://github.com/Availity/element/commit/5d80d2b046ea928ea432d7f269d1bfc99dd43782))
+
 ## [1.7.1](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.7.0...@availity/mui-file-selector@1.7.1) (2025-05-30)
 
 
