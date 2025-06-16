@@ -52,6 +52,11 @@ export type DropzoneProps = {
    */
   allowedFileTypes?: `.${string}`[];
   /**
+   * Regular expression pattern of allowed characters in file names
+   * @example "a-zA-Z0-9-_."
+   */
+  allowedFileNameCharacters?: string;
+  /**
    * Whether the dropzone is disabled
    */
   disabled?: boolean;
@@ -111,6 +116,7 @@ export const DropzoneContainer = styled(Box, { name: 'AvDropzoneContainer', slot
 
 export const Dropzone = ({
   allowedFileTypes = [],
+  allowedFileNameCharacters,
   disabled,
   enableDropArea = true,
   maxFiles,
@@ -147,6 +153,35 @@ export const Dropzone = ({
           message: `Too many files. You may only upload ${maxFiles} file(s).`,
         });
       }
+      
+      // Check for allowed file name characters
+      if (allowedFileNameCharacters) {
+        const fileName = file.name.substring(0, file.name.lastIndexOf('.'));
+        const regExp = new RegExp(`([^${allowedFileNameCharacters}])`, 'g');
+        
+        if (fileName.match(regExp) !== null) {
+          errors.push({
+            code: 'invalid-file-name-characters',
+            message: 'File name contains characters not allowed',
+          });
+        }
+      }
+      
+      // Explicit check for allowed file types
+      if (allowedFileTypes.length > 0) {
+        const fileName = file.name;
+        const fileExt = fileName.substring(fileName.lastIndexOf('.')).toLowerCase();
+        
+        // Convert all file types to lowercase for comparison
+        const lowerCaseAllowedTypes = allowedFileTypes.map(type => type.toLowerCase());
+        
+        if (!lowerCaseAllowedTypes.includes(fileExt)) {
+          errors.push({
+            code: 'file-invalid-type',
+            message: `File type ${fileExt} is not allowed`,
+          });
+        }
+      }
 
       if (validator) {
         const validatorErrors = validator(file);
@@ -161,7 +196,7 @@ export const Dropzone = ({
 
       return errors.length > 0 ? errors : null;
     },
-    [maxFiles, validator]
+    [maxFiles, validator, allowedFileNameCharacters, watch, name, allowedFileTypes]
   );
 
   const handleOnDrop = useCallback(
@@ -268,7 +303,7 @@ export const Dropzone = ({
       if (setFileRejections) setFileRejections(fileRejections);
       if (onDrop) onDrop(acceptedFiles, fileRejections, event);
     },
-    [setFileRejections]
+    [setFileRejections, setTotalSize, watch, name, maxTotalSize, maxFiles, setValue, onDrop]
   );
 
   const accept = allowedFileTypes.join(',');
@@ -301,7 +336,7 @@ export const Dropzone = ({
 
   const handleOnClick = (event: MouseEvent<HTMLButtonElement>) => {
     if (!enableDropArea && rootProps.onClick) rootProps.onClick(event);
-    if (onClick) onClick;
+    if (onClick) onClick(event);
   };
 
   const getFieldValue = () => {

@@ -94,6 +94,35 @@ export const Dropzone2 = ({
           message: `Too many files. You may only upload ${maxFiles} file(s).`,
         });
       }
+      
+      // Check for allowed file name characters
+      if (uploadOptions.allowedFileNameCharacters) {
+        const fileName = file.name.substring(0, file.name.lastIndexOf('.'));
+        const regExp = new RegExp(`([^${uploadOptions.allowedFileNameCharacters}])`, 'g');
+        
+        if (fileName.match(regExp) !== null) {
+          errors.push({
+            code: 'invalid-file-name-characters',
+            message: 'File name contains characters not allowed',
+          });
+        }
+      }
+      
+      // Explicit check for allowed file types
+      if (allowedFileTypes.length > 0) {
+        const fileName = file.name;
+        const fileExt = fileName.substring(fileName.lastIndexOf('.')).toLowerCase();
+        
+        // Convert all file types to lowercase for comparison
+        const lowerCaseAllowedTypes = allowedFileTypes.map(type => type.toLowerCase());
+        
+        if (!lowerCaseAllowedTypes.includes(fileExt)) {
+          errors.push({
+            code: 'file-invalid-type',
+            message: `File type ${fileExt} is not allowed`,
+          });
+        }
+      }
 
       if (validator) {
         const validatorErrors = validator(file);
@@ -108,7 +137,7 @@ export const Dropzone2 = ({
 
       return errors.length > 0 ? dedupeErrors(errors) : null;
     },
-    [maxFiles, validator]
+    [maxFiles, validator, uploadOptions.allowedFileNameCharacters, allowedFileTypes, watch, name]
   );
 
   const handleOnDrop = useCallback(
@@ -125,7 +154,6 @@ export const Dropzone2 = ({
       if (maxTotalSize) {
         // Calculate current total size
         const currentTotalSize = previous.reduce((sum: number, upload: Upload) => sum + upload.file.size, 0);
-        console.log({ previous });
         let newSize = 0;
 
         const availableSize = Math.max(0, maxTotalSize - currentTotalSize);
@@ -217,7 +245,7 @@ export const Dropzone2 = ({
       if (setFileRejections) setFileRejections(fileRejections);
       if (onDrop) onDrop(acceptedFiles, fileRejections, event);
     },
-    [setFileRejections]
+    [setFileRejections, setTotalSize, watch, name, maxTotalSize, maxFiles, uploadOptions, setValue, onDrop]
   );
 
   const { getRootProps, getInputProps } = useDropzone({
@@ -248,7 +276,7 @@ export const Dropzone2 = ({
 
   const handleOnClick = (event: MouseEvent<HTMLButtonElement>) => {
     if (!enableDropArea && rootProps.onClick) rootProps.onClick(event);
-    if (onClick) onClick;
+    if (onClick) onClick(event);
   };
 
   const getFieldValue = () => {
