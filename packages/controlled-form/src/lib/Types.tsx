@@ -414,6 +414,11 @@ export const DatepickerPropsCategorized: DatepickerPropsObject = {
   closeOnSelect: { table: { category: 'Input Props' } },
   disableOpenPicker: { table: { category: 'Input Props' } },
   placement: { table: { category: 'Input Props' } },
+  clearable: {
+    table: {
+      category: 'Input Props',
+    },
+  },
 };
 
 export const CodesAutocompletePropsCategorized: CodesAutocompletePropsObject = {
