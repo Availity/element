@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.4](https://github.com/Availity/element/compare/@availity/mui-autocomplete@1.2.3...@availity/mui-autocomplete@1.2.4) (2025-06-18)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** serialize organization params ([23d9dce](https://github.com/Availity/element/commit/23d9dce0bd63e9417a8a79a95ab2c7e5c8946301))
+
 ## [1.2.3](https://github.com/Availity/element/compare/@availity/mui-autocomplete@1.2.2...@availity/mui-autocomplete@1.2.3) (2025-05-30)
 
 
