@@ -1,5 +1,6 @@
 import { avOrganizationsApi, ApiConfig } from '@availity/api-axios';
 import type { ChipTypeMap } from '@mui/material/Chip';
+import qs from 'qs';
 
 import { AsyncAutocomplete, AsyncAutocompleteProps } from './AsyncAutocomplete';
 import type { Optional } from './util';
@@ -15,7 +16,15 @@ export type Organization = {
 export const fetchOrgs = async (
   config: ApiConfig
 ): Promise<{ options: Organization[]; hasMore: boolean; offset: number }> => {
-  const resp = await avOrganizationsApi.getOrganizations(config);
+  // Configure axios to use 'repeat' format for arrays (no brackets)
+  const configWithParamsSerializer = {
+    ...config,
+    paramsSerializer: {
+      serialize: (params: Record<string, any>) => qs.stringify(params, { arrayFormat: 'repeat' }),
+    },
+  };
+
+  const resp = await avOrganizationsApi.getOrganizations(configWithParamsSerializer);
 
   return {
     options: resp.data.organizations as Organization[],
