@@ -12,6 +12,8 @@ export type DatepickerProps = {
    * @default bottom-start
    */
   placement?: 'bottom-start' | 'bottom' | 'bottom-end';
+  /** Determines if the clear button appears in the action bar */
+  clearable?: boolean;
 } & Omit<
   MuiDatePickerProps<Dayjs, false>,
   | 'components'
@@ -41,12 +43,20 @@ const paperProps = { elevation: 8, variant: 'elevation', sx: { marginTop: '4px' 
 
 const PickerTextField = (params: TextFieldProps) => <TextField {...params} placeholder="MM/DD/YYYY" />;
 
-export const Datepicker = ({ FieldProps, placement = 'bottom-start', ...props }: DatepickerProps): JSX.Element => {
+export const Datepicker = ({
+  FieldProps,
+  placement = 'bottom-start',
+  clearable,
+  ...props
+}: DatepickerProps): JSX.Element => {
   return (
     <MuiDatePicker
       {...props}
       dayOfWeekFormatter={(weekday: Dayjs) => weekday.format('dd')}
       slotProps={{
+        actionBar: {
+          actions: clearable ? ['clear'] : [],
+        },
         desktopPaper: paperProps,
         mobilePaper: {
           ...paperProps,
