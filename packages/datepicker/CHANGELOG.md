@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.0](https://github.com/Availity/element/compare/@availity/mui-datepicker@1.1.3...@availity/mui-datepicker@1.2.0) (2025-06-23)
+
+
+### Features
+
+* **mui-datepicker:** allow clearable ([60a645f](https://github.com/Availity/element/commit/60a645f8205da1bf886e3de277b3167cef54991c))
+
 ## [1.1.3](https://github.com/Availity/element/compare/@availity/mui-datepicker@1.1.2...@availity/mui-datepicker@1.1.3) (2025-06-13)
 
 ### Dependency Updates
