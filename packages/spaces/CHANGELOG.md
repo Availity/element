@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.27](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.26...@availity/mui-spaces@1.0.27) (2025-06-25)
+
+
+### Bug Fixes
+
+* **mui-spaces:** in SpacesLink, fix showUrl logic and TitleTag ([bc7c480](https://github.com/Availity/element/commit/bc7c48094d33d4da2c264fe378114143d73b3a96))
+
 ## [1.0.26](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.25...@availity/mui-spaces@1.0.26) (2025-06-13)
 
 ## [1.0.25](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.24...@availity/mui-spaces@1.0.25) (2025-06-11)
