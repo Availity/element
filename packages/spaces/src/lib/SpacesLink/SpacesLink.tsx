@@ -42,8 +42,10 @@ const getBodyTag = (
 
 const getTitleTag = (
   propTag: ElementType<any, keyof JSX.IntrinsicElements> | undefined,
-  variant: SpacesLinkVariants
+  variant: SpacesLinkVariants,
+  showUrl?: boolean
 ) => {
+  if (!showUrl) return Typography;
   if (variant && variant !== 'default') return Link;
   return propTag || Link;
 };
@@ -92,7 +94,7 @@ export const SpacesLink = ({
 
   const [linkSpace, props] = useLink(propSpace || spaceId, { clientId: propsClientId, linkAttributes });
 
-  const showUrl = !linkSpace?.isGhosted && linkSpace?.link?.url;
+  const showUrl = !linkSpace?.isGhosted && !!linkSpace?.link?.url;
 
   const favoriteIcon = useMemo(
     () =>
@@ -163,7 +165,7 @@ export const SpacesLink = ({
 
   const Tag = getContainerTag(tag, variant);
   const BodyTag = getBodyTag(bodyTag, variant);
-  const TitleTag = getTitleTag(titleTag, variant);
+  const TitleTag = getTitleTag(titleTag, variant, showUrl);
   const TextTag = getTextTag(textTag, variant);
 
   const renderChildren = () => {
