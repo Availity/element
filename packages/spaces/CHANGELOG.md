@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.28](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.27...@availity/mui-spaces@1.0.28) (2025-07-01)
+
+
+### Bug Fixes
+
+* allow onprem sso ([3985456](https://github.com/Availity/element/commit/3985456532bbe6f1cf095f87d5c159aa41b05621))
+
 ## [1.0.27](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.26...@availity/mui-spaces@1.0.27) (2025-06-25)
 
 
