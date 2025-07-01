@@ -32,7 +32,12 @@ export const openLink: OpenLink = async (space, params) => {
 
 export const openLinkWithSso: OpenLinkWithSso = async (space, { akaname, clientId, payerSpaceId, ssoParams }) => {
   if (space.meta && space.meta.ssoId) {
-    const options = space.link?.target ? { target: getTarget(space.link.target) } : undefined;
+    let options;
+    if (space.meta.appsDomain === 'true') {
+      options = space.link?.target ? { target: getTarget(space.link.target) } : { action: `${new URL(document.referrer).origin}/ms/api/availity/internal/spc/magneto/sso/v1/saml/${space.meta.ssoId}`};
+    } else {
+      options = space.link?.target ? { target: getTarget(space.link.target) } : undefined;
+    }
 
     const attributes: Record<string, string> = {
       X_XSRF_TOKEN: document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*=\s*([^;]*).*$)|^.*$/, '$1'),
