@@ -34,7 +34,12 @@ export const openLinkWithSso: OpenLinkWithSso = async (space, { akaname, clientI
   if (space.meta && space.meta.ssoId) {
     let options;
     if (space.meta.appsDomain === 'true') {
-      options = space.link?.target ? { target: getTarget(space.link.target) } : { action: `${new URL(document.referrer).origin}/ms/api/availity/internal/spc/magneto/sso/v1/saml/${space.meta.ssoId}`};
+      options = space.link?.target ?
+      {
+        target: getTarget(space.link.target),
+        action: `${new URL(document.referrer).origin}/ms/api/availity/internal/spc/magneto/sso/v1/saml/${space.meta.ssoId}`
+      } :
+      { action: `${new URL(document.referrer).origin}/ms/api/availity/internal/spc/magneto/sso/v1/saml/${space.meta.ssoId}`};
     } else {
       options = space.link?.target ? { target: getTarget(space.link.target) } : undefined;
     }
