@@ -45,10 +45,10 @@
     "@availity/mui-datepicker": "workspace:^",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
-    "react-hook-form": "^7.55.0"
+    "react-hook-form": "^7.60.0"
   },
   "devDependencies": {
-    "@availity/api-axios": "^11.0.0",
+    "@availity/api-axios": "^11.1.0",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-layout": "workspace:^",
     "@availity/mui-menu": "workspace:^",
