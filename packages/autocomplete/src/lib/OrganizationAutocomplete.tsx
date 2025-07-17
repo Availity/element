@@ -49,20 +49,29 @@ export interface OrgAutocompleteProps<
 
 export const handleGetOrgOptionLabel = (org: Organization) => org.name;
 
-export const OrganizationAutocomplete = ({
+export const OrganizationAutocomplete = <
+  Option = Organization,
+  Multiple extends boolean | undefined = false,
+  DisableClearable extends boolean | undefined = false,
+  FreeSolo extends boolean | undefined = false,
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+>({
   apiConfig = {},
   queryKey = 'org-autocomplete',
   ...rest
-}: OrgAutocompleteProps) => {
+}: OrgAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
   const handleLoadOptions = async (offset: number, limit: number) => {
     const resp = await fetchOrgs({ ...apiConfig, params: { dropdown: true, ...apiConfig.params, offset, limit } });
 
-    return resp;
+    return {
+      ...resp,
+      options: resp.options as Option[],
+    };
   };
 
   return (
     <AsyncAutocomplete
-      getOptionLabel={handleGetOrgOptionLabel}
+      getOptionLabel={handleGetOrgOptionLabel as (option: Option) => string}
       queryKey={queryKey}
       {...rest}
       loadOptions={handleLoadOptions}

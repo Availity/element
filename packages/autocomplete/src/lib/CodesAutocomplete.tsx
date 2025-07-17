@@ -37,26 +37,35 @@ export interface CodesAutocompleteProps<
 
 export const handleGetCodesOptionLabel = (option: Code) => [option.code, option.value].filter(Boolean).join(' - ');
 
-export const CodesAutocomplete = ({
+export const CodesAutocomplete = <
+  Option = Code,
+  Multiple extends boolean | undefined = false,
+  DisableClearable extends boolean | undefined = false,
+  FreeSolo extends boolean | undefined = false,
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+>({
   apiConfig = {},
   queryOptions,
   queryKey = 'codes-autocomplete',
   list,
   watchParams,
   ...rest
-}: CodesAutocompleteProps) => {
+}: CodesAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
   const handleLoadOptions = async (offset: number, limit: number, inputValue: string) => {
     const resp = await fetchCodes({
       ...apiConfig,
       params: { ...apiConfig.params, list, offset, limit, q: inputValue },
     });
 
-    return resp;
+    return {
+      ...resp,
+      options: resp.options as Option[],
+    };
   };
 
   return (
     <AsyncAutocomplete
-      getOptionLabel={handleGetCodesOptionLabel}
+      getOptionLabel={handleGetCodesOptionLabel as (option: Option) => string}
       queryKey={queryKey}
       queryOptions={{ enabled: !!list, ...queryOptions }}
       watchParams={{ list, ...watchParams }}
