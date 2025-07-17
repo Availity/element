@@ -64,24 +64,33 @@ export interface ProviderAutocompleteProps<
 
 export const handleGetProviderOptionLabel = (option: Provider) => option.uiDisplayName;
 
-export const ProviderAutocomplete = ({
+export const ProviderAutocomplete = <
+  Option = Provider,
+  Multiple extends boolean | undefined = false,
+  DisableClearable extends boolean | undefined = false,
+  FreeSolo extends boolean | undefined = false,
+  ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent'],
+>({
   apiConfig = {},
   customerId,
   queryKey = 'prov-autocomplete',
   ...rest
-}: ProviderAutocompleteProps) => {
+}: ProviderAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
   const handleLoadOptions = async (offset: number, limit: number, inputValue: string) => {
     const resp = await fetchProviders(customerId, {
       ...apiConfig,
       params: { ...apiConfig.params, offset, limit, q: inputValue },
     });
 
-    return resp;
+    return {
+      ...resp,
+      options: resp.options as Option[],
+    };
   };
 
   return (
     <AsyncAutocomplete
-      getOptionLabel={handleGetProviderOptionLabel}
+      getOptionLabel={handleGetProviderOptionLabel as (option: Option) => string}
       queryOptions={{ enabled: !!customerId }}
       queryKey={queryKey}
       watchParams={{ customerId }}

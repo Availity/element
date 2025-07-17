@@ -12,13 +12,6 @@ const meta: Meta<typeof AsyncAutocomplete> = {
   args: {
     id: 'example',
   },
-  argTypes: {
-    multiple: {
-      table: {
-        disable: true,
-      },
-    },
-  },
 };
 
 export default meta;

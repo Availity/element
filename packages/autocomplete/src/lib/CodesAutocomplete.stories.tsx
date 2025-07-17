@@ -11,13 +11,6 @@ const meta: Meta<typeof CodesAutocomplete> = {
   args: {
     id: 'example',
   },
-  argTypes: {
-    multiple: {
-      table: {
-        disable: true,
-      },
-    },
-  },
 };
 
 export default meta;
