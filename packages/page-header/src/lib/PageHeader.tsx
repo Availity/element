@@ -51,6 +51,8 @@ export interface PageHeaderProps {
   help?: Help;
   /** Logo attributes */
   logo?: LogoSpaceId | LogoPayerId;
+  /** The divider below the header, defaults to `<Divider />`. Can be replaced with `<TabList>`. */
+  divider?: JSX.Element;
 }
 
 const Logo = (props: LogoSpaceId | LogoPayerId) => {
@@ -80,6 +82,7 @@ export const PageHeader = ({
   headerText,
   logo,
   help,
+  divider = <Divider />
 }: PageHeaderProps): JSX.Element => {
   return (
     <Grid
@@ -144,7 +147,7 @@ export const PageHeader = ({
           ) : null}
         </Grid>
       </Grid>
-      <Divider />
+      { divider }
     </Grid>
   );
 };

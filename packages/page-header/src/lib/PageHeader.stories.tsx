@@ -1,8 +1,10 @@
 // Each exported component in the package should have its own stories file
 
+import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Spaces } from '@availity/mui-spaces';
+import { Tab, TabContext, TabList, TabPanel } from '@availity/mui-tabs';
 import { PageHeader, PageHeaderProps } from './PageHeader';
 
 const meta: Meta<typeof PageHeader> = {
@@ -58,6 +60,38 @@ export const _PageHeaderDoubleButtons: StoryObj<typeof PageHeader> = {
       { children: 'Button 1', key: 'button1' },
       { children: 'Button 2', key: 'button2' },
     ],
+  },
+};
+
+/** Divider can be replaced with primary style `<TabList>` */
+export const _PageHeaderTabs: StoryObj<typeof PageHeader> = {
+  render: (args: PageHeaderProps) => {
+    const [value, setValue] = useState('1');
+
+    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+      setValue(newValue);
+    };
+    return (
+      <TabContext value={value}>
+        <PageHeader
+          divider={
+            <TabList {...args} onChange={handleChange} aria-label="pageheader tabs example">
+              <Tab label="Tab One" value="1" />
+              <Tab label="Tab Two" value="2" />
+              <Tab label="Tab Three" value="3" />
+            </TabList>
+          }
+          {...args}
+        />
+        <TabPanel value="1" children={`Hello from Panel ${value}`} />
+        <TabPanel value="2" children={`Hello from Panel ${value}`} />
+        <TabPanel value="3" children={`Hello from Panel ${value}`} />
+      </TabContext>
+    );
+  },
+  args: {
+    headerText: 'This text is a child of PageHeader',
+    breadcrumbs: { active: 'This Page' },
   },
 };
 

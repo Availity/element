@@ -1,6 +1,7 @@
 import { render, waitForElementToBeRemoved } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Spaces } from '@availity/mui-spaces';
+import { Tab, TabContext, TabList } from '@availity/mui-tabs';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '@availity/mock/src/lib/server';
 import { PageHeader } from './PageHeader';
@@ -54,6 +55,21 @@ describe('PageHeader', () => {
     expect(getByText('This is the header')).toBeTruthy();
     expect(getByText('This page')).toBeTruthy();
     expect(getByText('Button 1')).toBeTruthy();
+  });
+
+  test('should render page header with a replaced divider successfully', () => {
+    const { getByText } = render(
+      <TabContext value={1}>
+        <PageHeader
+          breadcrumbs={{ active: 'This page' }}
+          headerText="This is the header"
+          divider={<TabList><Tab value={1} label="Tab One"/></TabList>}
+        />
+      </TabContext>
+    );
+    expect(getByText('This is the header')).toBeTruthy();
+    expect(getByText('This page')).toBeTruthy();
+    expect(getByText('Tab One')).toBeTruthy();
   });
 
   test('should render page header with a logo successfully', async () => {
