@@ -45,6 +45,7 @@
     "@availity/mui-divider": "workspace:^",
     "@availity/mui-layout": "workspace:^",
     "@availity/mui-link": "workspace:^",
+    "@availity/mui-tabs": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "@mui/material": "^6.4.5",
     "@tanstack/react-query": "^4.36.1",

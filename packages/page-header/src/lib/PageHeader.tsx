@@ -51,6 +51,8 @@ export interface PageHeaderProps {
   help?: Help;
   /** Logo attributes */
   logo?: LogoSpaceId | LogoPayerId;
+  /** The divider below the header, defaults to `<Divider />`. Can be replaced with `<TabList>`. */
+  divider?: JSX.Element;
 }
 
 const Logo = (props: LogoSpaceId | LogoPayerId) => {
@@ -80,6 +82,7 @@ export const PageHeader = ({
   headerText,
   logo,
   help,
+  divider = <Divider />
 }: PageHeaderProps): JSX.Element => {
   return (
     <Grid
@@ -125,26 +128,26 @@ export const PageHeader = ({
         </Grid>
       ) : null}
 
-      <Grid direction="row" container sx={{ marginBottom: 2, alignItems: 'center', justifyContent: 'space-between' }}>
+      <Grid direction="row" container sx={{ marginBottom: 2, alignItems: 'center', justifyContent: 'space-between' }} spacing={2}>
         <Grid>
           <Typography variant="h1" children={headerText} />
         </Grid>
-        <Grid container sx={{ width: 'auto' }}>
+        <Grid container sx={{ width: 'auto' }} spacing={2}>
           {buttons &&
             buttons.length > 0 &&
             buttons?.map(({ key, ...buttonProps }) => (
-              <Grid key={key} marginLeft={2} height="100%">
+              <Grid key={key} height="100%">
                 <Button {...buttonProps} size="large" color="secondary" />
               </Grid>
             ))}
           {feedback ? (
-            <Grid sx={{ marginLeft: 2, height: '100%' }}>
+            <Grid sx={{ height: '100%' }}>
               <Feedback appName={headerText} />
             </Grid>
           ) : null}
         </Grid>
       </Grid>
-      <Divider />
+      { divider }
     </Grid>
   );
 };
