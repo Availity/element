@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.30](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.29...@availity/mui-spaces@1.0.30) (2025-08-21)
+
+
+### Bug Fixes
+
+* spaces link full url only if starts with web ([5db57d4](https://github.com/Availity/element/commit/5db57d4c0e58f1b1c98b95186b6600ebb9d44493))
+
 ## [1.0.29](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.28...@availity/mui-spaces@1.0.29) (2025-07-02)
 
 
