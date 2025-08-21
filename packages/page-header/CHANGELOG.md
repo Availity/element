@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.2](https://github.com/Availity/element/compare/@availity/mui-page-header@1.2.1...@availity/mui-page-header@1.2.2) (2025-08-21)
+
+### Dependency Updates
+
+* `mui-breadcrumbs` updated to version `1.2.1`
 ## [1.2.1](https://github.com/Availity/element/compare/@availity/mui-page-header@1.2.0...@availity/mui-page-header@1.2.1) (2025-08-21)
 
 ### Dependency Updates
