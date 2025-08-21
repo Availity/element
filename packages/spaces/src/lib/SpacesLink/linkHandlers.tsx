@@ -20,7 +20,7 @@ export const openLink: OpenLink = async (space, params) => {
 
   let url = !isAbsoluteUrl(space.link.url) ? getUrl(urlWithParams, false, false) : urlWithParams;
 
-  if (!isAbsoluteUrl(url) && !essentialsDomainRegex.test(document.referrer) && /\/web\/|\/public\/(apps|spaces)/.test(url)) {
+  if (!isAbsoluteUrl(url) && !essentialsDomainRegex.test(document.referrer) && /^\/web\/|\/public\/(apps|spaces)/.test(url)) {
     const referrer = new URL(document.referrer);
     url = `${referrer.origin}${url}`
   }
