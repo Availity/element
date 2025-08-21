@@ -52,7 +52,7 @@ export const Breadcrumbs = ({
   children,
   crumbs,
   emptyState = '...',
-  homeUrl = '/public/apps/dashboard',
+  homeUrl = '/static/web/onb/onboarding-ui-apps/dashboard-ui/',
   LinkProps,
   ...rest
 }: BreadcrumbsProps): JSX.Element => {
