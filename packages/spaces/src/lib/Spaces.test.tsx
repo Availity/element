@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Spaces, useSpaces, useSpacesContext } from '..';
+import { fetchAllSpaces } from './spaces-data';
 
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '../../../mock/src/lib/server';
@@ -257,4 +258,96 @@ it('returns first payer space with when no spaceId passed', async () => {
 
   expect(spc1).toBeDefined();
   expect(spc2).toBeDefined();
+});
+describe('ID validation', () => {
+  let mockFetchAllSpaces: jest.SpyInstance;
+
+  beforeEach(() => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    mockFetchAllSpaces = jest.spyOn(require('./spaces-data'), 'fetchAllSpaces').mockResolvedValue([]);
+  });
+
+  afterEach(() => {
+    mockFetchAllSpaces.mockRestore();
+  });
+
+  it('filters invalid spaceIds before querying', async () => {
+    mockFetchAllSpaces.mockResolvedValue([]);
+    const queryClient = new QueryClient();
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Spaces spaceIds={['valid-id', null, undefined, '', '  ', 123 as any] as any}>
+          <div>test</div>
+        </Spaces>
+      </QueryClientProvider>
+    );
+
+    await waitFor(() => {
+      expect(mockFetchAllSpaces).toHaveBeenCalledWith(
+        expect.objectContaining({
+          variables: expect.objectContaining({
+            ids: ['valid-id'],
+          }),
+        })
+      );
+    });
+  });
+
+  it('avoids querying if no valid spaceIds exist', async () => {
+    mockFetchAllSpaces.mockResolvedValue([]);
+    const queryClient = new QueryClient();
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Spaces spaceIds={[null, undefined, '', '  ', 123 as any] as any}>
+          <div>test</div>
+        </Spaces>
+      </QueryClientProvider>
+    );
+
+    await waitFor(() => {
+      expect(mockFetchAllSpaces).not.toHaveBeenCalled();
+    });
+  });
+
+  it('filters invalid payerIds before querying', async () => {
+    mockFetchAllSpaces.mockResolvedValue([]);
+    const queryClient = new QueryClient();
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Spaces payerIds={['valid-payer', null, undefined, '', '  ', 456 as any] as any}>
+          <div>test</div>
+        </Spaces>
+      </QueryClientProvider>
+    );
+
+    await waitFor(() => {
+      expect(mockFetchAllSpaces).toHaveBeenCalledWith(
+        expect.objectContaining({
+          variables: expect.objectContaining({
+            payerIDs: ['valid-payer'],
+          }),
+        })
+      );
+    });
+  });
+
+  it('avoids querying if no valid payerIds exist', async () => {
+    mockFetchAllSpaces.mockResolvedValue([]);
+    const queryClient = new QueryClient();
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Spaces payerIds={[null, undefined, '', '  ', 456 as any] as any}>
+          <div>test</div>
+        </Spaces>
+      </QueryClientProvider>
+    );
+
+    await waitFor(() => {
+      expect(mockFetchAllSpaces).not.toHaveBeenCalled();
+    });
+  });
 });
