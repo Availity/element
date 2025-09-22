@@ -1,0 +1,27 @@
+import{j as o}from"./jsx-runtime-BTJTZTIL.js";import{C as r}from"./index-CC6mOWec.js";import"./FieldHelpIcon-Do0u9pLB.js";import{F as b,b as t}from"./Switch-D0XBXF4G.js";import"./Input-B6zmG83b.js";import"./index-ClMemn8c.js";import{F as p}from"./RadioGroup-CGGGzwtq.js";import{F as x}from"./FormControl-eNKWX08Y.js";import"./index-ChsGqxH_.js";import"./index-BgYLq7fD.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./Checkbox-DEN02h0-.js";import"./generateUtilityClass-GxznSYtt.js";import"./identifier-CHUoN9pF.js";import"./SwitchBase-DpeF2ikX.js";import"./styled-FZfCzBz5.js";import"./DefaultPropsProvider-ArLX9SCD.js";import"./useFormControl-t_-EwZHM.js";import"./generateUtilityClasses-aotQgNYZ.js";import"./useControlled-DxC1uCGX.js";import"./ButtonBase-DwAEbHIm.js";import"./useTimeout-iC_34LsC.js";import"./useEnhancedEffect-j2zQLnYm.js";import"./objectWithoutPropertiesLoose-Dsqj8S3w.js";import"./TransitionGroupContext-BKlA24Pm.js";import"./emotion-react.browser.esm-DW5OmoQI.js";import"./useForkRef-Dz4aGlyk.js";import"./isFocusVisible-B8k4qzLc.js";import"./createSvgIcon-DK1T27V3.js";import"./SvgIcon-D3xe1wVB.js";import"./memoTheme-BLrvrRyo.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./index-DJKl12U0.js";import"./index-CmMPo3bx.js";import"./faCircleArrowRight-B14F5Piw.js";import"./faUser-D77uLSLS.js";import"./faSortDown-BIc1sKK4.js";import"./index-k9OtkSpc.js";import"./Tooltip-Xh9QA514.js";import"./index-DyJdRKzS.js";import"./useTheme-BGaXYmwe.js";import"./useTheme-CVByJb8R.js";import"./useSlot-qvYlW2UV.js";import"./resolveComponentProps-XMphxBSb.js";import"./useId-DIK8ekB4.js";import"./getReactElementRef-Df0xbma2.js";import"./Portal-DEVqEMA6.js";import"./utils-tFrEP9Vf.js";import"./index-Bxu_udwM.js";import"./index-DdXvKv-Q.js";import"./ownerDocument-DW-IO8s5.js";import"./useSlotProps-DT0tbkWv.js";import"./IconButton-BFylt634.js";import"./CircularProgress-o1goEU37.js";import"./Button-DrYdciQ0.js";import"./LoadingButton-C6EjcQI6.js";import"./FormControlLabel-NrRuXsuu.js";import"./formControlState-Dq1zat_P.js";import"./Typography-geKghQyJ.js";import"./index-Df15702_.js";import"./extendSxProp-BZnzVrgj.js";import"./Box-BU2WakPM.js";import"./Select-D8Pqa1Dd.js";import"./Menu-BUIr0rCt.js";import"./Popover-DNs0CrC2.js";import"./isHostComponent-DVu5iVWx.js";import"./ownerWindow-HkKU3E4x.js";import"./debounce-Be36O1Ab.js";import"./Paper-zGtC1N39.js";import"./Modal-BSor9Am9.js";import"./Backdrop-DwIksyfj.js";import"./Fade-rL0rk9XF.js";import"./List-CN2yCDHK.js";import"./OutlinedInput-ClKDCKpR.js";import"./Stack-2ILcP_1D.js";import"./styled-CsKbBpC_.js";import"./useThemeProps-BNBLMFIr.js";import"./Divider-CE8hkX1u.js";import"./dividerClasses-Cy3VQ5Zc.js";import"./faCheck-BUdkY9Qv.js";import"./Switch-B_HzHwQu.js";import"./index-DmY_4rvh.js";import"./Grid2-BbvvmKhh.js";import"./isMuiElement-DiOAsJE6.js";import"./Container-DvcsWH8C.js";const No={title:"Form Components/FormUtils/FormGroup",component:p,tags:["autodocs"],args:{size:"small"},parameters:{docs:{description:{component:"Form input context. Controls styling (`size`, etc) and state (`error`, `disabled`, etc) across input components, like `FormLabel`, `Input`, `FormHelperText`."}}}},e={render:i=>o.jsxs(x,{sx:{m:3},component:"fieldset",variant:"standard",required:!0,children:[o.jsx(b,{component:"legend",children:"Vertical Checkboxes"}),o.jsxs(p,{...i,children:[o.jsx(t,{control:o.jsx(r,{defaultChecked:!0}),label:"Label"}),o.jsx(t,{control:o.jsx(r,{}),label:"Label 2"}),o.jsx(t,{disabled:!0,control:o.jsx(r,{}),label:"Label 3"})]})]}),args:{}},m={render:i=>o.jsxs(x,{sx:{m:3},component:"fieldset",variant:"standard",required:!0,children:[o.jsx(b,{component:"legend",children:"Horizontal Checkboxes"}),o.jsxs(p,{...i,children:[o.jsx(t,{control:o.jsx(r,{defaultChecked:!0}),label:"Label"}),o.jsx(t,{control:o.jsx(r,{}),label:"Label 2"}),o.jsx(t,{disabled:!0,control:o.jsx(r,{}),label:"Label 3"})]})]}),args:{row:!0}};var n,l,a;e.parameters={...e.parameters,docs:{...(n=e.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  render: (args: FormGroupProps) => <FormControl sx={{
+    m: 3
+  }} component="fieldset" variant="standard" required>
+      <FormLabel component="legend">Vertical Checkboxes</FormLabel>
+      <FormGroup {...args}>
+        <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+        <FormControlLabel control={<Checkbox />} label="Label 2" />
+        <FormControlLabel disabled control={<Checkbox />} label="Label 3" />
+      </FormGroup>
+    </FormControl>,
+  args: {}
+}`,...(a=(l=e.parameters)==null?void 0:l.docs)==null?void 0:a.source}}};var s,c,d;m.parameters={...m.parameters,docs:{...(s=m.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  render: (args: FormGroupProps) => <FormControl sx={{
+    m: 3
+  }} component="fieldset" variant="standard" required>
+      <FormLabel component="legend">Horizontal Checkboxes</FormLabel>
+      <FormGroup {...args}>
+        <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+        <FormControlLabel control={<Checkbox />} label="Label 2" />
+        <FormControlLabel disabled control={<Checkbox />} label="Label 3" />
+      </FormGroup>
+    </FormControl>,
+  args: {
+    row: true
+  }
+}`,...(d=(c=m.parameters)==null?void 0:c.docs)==null?void 0:d.source}}};const Qo=["_FormGroupCheckbox","_HorizontalFormGroupCheckbox"];export{e as _FormGroupCheckbox,m as _HorizontalFormGroupCheckbox,Qo as __namedExportsOrder,No as default};
