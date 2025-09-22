@@ -57,7 +57,7 @@ export const Spaces = ({
 
   if (spaceIds && spaceIds.length > 0) {
     for (const id of spaceIds) {
-      if (!(spacesMap.has(id) || configIdsMap.has(id))) {
+      if (id && typeof id === 'string' && id.trim() && !(spacesMap.has(id) || configIdsMap.has(id))) {
         spaceIdsToQuery.add(id);
       }
     }
@@ -65,7 +65,7 @@ export const Spaces = ({
 
   if (payerIds && payerIds.length > 0) {
     for (const pid of payerIds) {
-      if (!payerIdsMap.has(pid)) {
+      if (pid && typeof pid === 'string' && pid.trim() && !payerIdsMap.has(pid)) {
         payerIdsToQuery.add(pid);
       }
     }
