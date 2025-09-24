@@ -94,12 +94,12 @@ export const Dropzone2 = ({
           message: `Too many files. You may only upload ${maxFiles} file(s).`,
         });
       }
-      
+
       // Check for allowed file name characters
       if (uploadOptions.allowedFileNameCharacters) {
         const fileName = file.name.substring(0, file.name.lastIndexOf('.'));
         const regExp = new RegExp(`([^${uploadOptions.allowedFileNameCharacters}])`, 'g');
-        
+
         if (fileName.match(regExp) !== null) {
           errors.push({
             code: 'invalid-file-name-characters',
@@ -107,15 +107,15 @@ export const Dropzone2 = ({
           });
         }
       }
-      
+
       // Explicit check for allowed file types
       if (allowedFileTypes.length > 0) {
         const fileName = file.name;
         const fileExt = fileName.substring(fileName.lastIndexOf('.')).toLowerCase();
-        
+
         // Convert all file types to lowercase for comparison
-        const lowerCaseAllowedTypes = allowedFileTypes.map(type => type.toLowerCase());
-        
+        const lowerCaseAllowedTypes = allowedFileTypes.map((type) => type.toLowerCase());
+
         if (!lowerCaseAllowedTypes.includes(fileExt)) {
           errors.push({
             code: 'file-invalid-type',
@@ -284,7 +284,15 @@ export const Dropzone2 = ({
     return field[name] || [];
   };
 
-  const hasFiles = getFieldValue().length > 0;
+  const currentFileCount = getFieldValue().length;
+
+  const hasFiles = currentFileCount > 0;
+
+  const isMaxFilesReached = maxFiles && currentFileCount >= maxFiles;
+
+  if (isMaxFilesReached) {
+    disabled = true;
+  }
 
   return enableDropArea ? (
     <DropzoneContainer sx={outerBoxStyles} {...rootProps}>
