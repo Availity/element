@@ -66,6 +66,13 @@ export type FetchSpacesProps = {
   variables?: object;
   /** The page sent to the avWebQL endpoint. */
   page?: string;
+  /**
+   * Name for the GraphQL operation, used for debugging and monitoring.
+   *
+   * Format: `{ValueStream || PayerName}{AbbreviatedAppName}{Description}{Type}` (PascalCase)
+   * @example "OnbPsFavoritesQuery"
+   */
+  operationName?: string;
 };
 
 export type FetchAllSpacesProps = {
@@ -77,6 +84,13 @@ export type FetchAllSpacesProps = {
   variables?: Record<string, any>;
   /** Array of spaces to be passed into the Spaces provider. */
   _spaces?: Space[];
+  /**
+   * Name for the GraphQL operation, used for debugging and monitoring.
+   *
+   * Format: `{ValueStream || PayerName}{AbbreviatedAppName}{Description}{Type}` (PascalCase)
+   * @example "OnbPsFavoritesQuery"
+   */
+  operationName?: string;
 };
 
 export type SpacesContextType = {
@@ -116,6 +130,13 @@ export type SpacesProps = {
   /** Override the default variables used in the thanos query. Default: { types: [PAYERSPACE] }.
    * If the spaces provider should contain configurations of a type other than PAYERSPACE, you must override this prop */
   variables?: object;
+  /**
+   * Name for the GraphQL operation, used for debugging and monitoring.
+   *
+   * Format: `{ValueStream || PayerName}{AbbreviatedAppName}{Description}{Type}` (PascalCase)
+   * @example "OnbPsFavoritesQuery"
+   */
+  operationName?: string;
   /** The Client ID obtained from APIConnect. */
   clientId?: string;
   /** Children can be a react child or render prop. */
@@ -133,4 +154,4 @@ export type SpacesProps = {
   spaces?: Space[];
 };
 
-export type UseSpaces = (...ids: string[]) => (Space)[] | undefined;
+export type UseSpaces = (...ids: string[]) => Space[] | undefined;
