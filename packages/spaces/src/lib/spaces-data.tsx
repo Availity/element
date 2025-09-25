@@ -28,7 +28,7 @@ export const spacesReducer = (state: SpacesContextType, action: SpacesReducerAct
   return actions[type](state, action);
 };
 
-export const fetchSpaces = async ({ query, clientId, variables }: FetchSpacesProps) => {
+export const fetchSpaces = async ({ query, clientId, variables, operationName }: FetchSpacesProps) => {
   const headers: Record<string, string> = {};
 
   if (clientId) {
@@ -43,6 +43,7 @@ export const fetchSpaces = async ({ query, clientId, variables }: FetchSpacesPro
     {
       query,
       variables: { ...variables },
+      operationName: operationName || 'PuiSpacesCmpAnonymousOperation',
     },
     { headers: { ...headers } }
   );
@@ -64,8 +65,9 @@ export const fetchAllSpaces = async ({
   clientId,
   variables,
   _spaces = [],
+  operationName,
 }: FetchAllSpacesProps): Promise<Space[]> => {
-  const { items, currentPage, hasNextPage } = await fetchSpaces({ query, clientId, variables });
+  const { items, currentPage, hasNextPage } = await fetchSpaces({ query, clientId, variables, operationName });
 
   _spaces.push(...items);
 
@@ -74,7 +76,7 @@ export const fetchAllSpaces = async ({
       ...variables,
       page: currentPage + 1,
     };
-    return fetchAllSpaces({ query, clientId, variables: vars, _spaces });
+    return fetchAllSpaces({ query, clientId, variables: vars, _spaces, operationName });
   }
 
   return _spaces;

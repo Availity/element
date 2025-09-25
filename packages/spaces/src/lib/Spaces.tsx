@@ -17,6 +17,7 @@ export const useSpacesContext = () => useContext(SpacesContext);
 export const Spaces = ({
   query = configurationFindMany,
   variables = { types: ['PAYERSPACE'] },
+  operationName,
   clientId,
   children,
   payerIds,
@@ -82,12 +83,12 @@ export const Spaces = ({
     queries: [
       {
         queryKey: ['id', spaceIdVars],
-        queryFn: () => fetchAllSpaces({ query, clientId, variables: spaceIdVars }),
+        queryFn: () => fetchAllSpaces({ query, clientId, variables: spaceIdVars, operationName }),
         enabled: spaceIdsToQuery.size > 0,
       },
       {
         queryKey: ['id', payerIdVars],
-        queryFn: () => fetchAllSpaces({ query, clientId, variables: payerIdVars }),
+        queryFn: () => fetchAllSpaces({ query, clientId, variables: payerIdVars, operationName }),
         enabled: payerIdsToQuery.size > 0,
       },
     ],
