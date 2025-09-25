@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.31...@availity/mui-spaces@1.1.0) (2025-09-25)
+
+
+### Features
+
+* **mui-spaces:** add operationName support ([f33f02b](https://github.com/Availity/element/commit/f33f02b2ef3cacee17a48a86849e2b4c96fac722))
+
 ## [1.0.31](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.30...@availity/mui-spaces@1.0.31) (2025-09-22)
 
 ## [1.0.30](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.29...@availity/mui-spaces@1.0.30) (2025-08-21)
