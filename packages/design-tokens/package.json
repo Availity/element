@@ -27,10 +27,10 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.2",
     "style-dictionary": "^3.9.2",
     "token-transformer": "^0.0.33",
-    "tsup": "^8.4.0",
-    "typescript": "~5.4.5"
+    "tsup": "^8.5.0",
+    "typescript": "~5.9.3"
   }
 }
