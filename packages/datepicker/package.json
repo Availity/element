@@ -43,7 +43,7 @@
     "@availity/mui-icon": "workspace:*",
     "@availity/mui-textfield": "workspace:*",
     "@mui/x-date-pickers": "^7.26.0",
-    "dayjs": "^1.11.13"
+    "dayjs": "^1.11.18"
   },
   "devDependencies": {
     "@mui/material": "^6.4.5",

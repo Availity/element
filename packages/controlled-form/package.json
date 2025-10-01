@@ -45,10 +45,10 @@
     "@availity/mui-datepicker": "workspace:^",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
-    "react-hook-form": "^7.55.0"
+    "react-hook-form": "^7.63.0"
   },
   "devDependencies": {
-    "@availity/api-axios": "^11.0.0",
+    "@availity/api-axios": "^11.2.1",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-layout": "workspace:^",
     "@availity/mui-menu": "workspace:^",
@@ -57,7 +57,7 @@
     "@hookform/resolvers": "^4.1.3",
     "@mui/material": "^6.4.5",
     "@tanstack/react-query": "^4.36.1",
-    "dayjs": "^1.11.13",
+    "dayjs": "^1.11.18",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^8.4.0",

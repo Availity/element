@@ -25,10 +25,10 @@
   "dependencies": {
     "@availity/theme": "workspace:*",
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@mui/material": "^6.4.5",
     "@mui/x-date-pickers": "^7.26.0",
-    "dayjs": "^1.11.13"
+    "dayjs": "^1.11.18"
   },
   "devDependencies": {
     "react": "18.2.0",
