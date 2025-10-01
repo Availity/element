@@ -22,32 +22,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/analytics-core@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "@availity/analytics-core@npm:6.0.0"
+"@availity/analytics-core@npm:^6.0.4":
+  version: 6.0.4
+  resolution: "@availity/analytics-core@npm:6.0.4"
   dependencies:
     uuid: ^10.0.0
     yup: ^0.32.11
-  checksum: d35ce0cb8543ceb6f8dc8d3b72d42296c6314674df6d753fbfbd340d1aeba49443d82da1b038a24ce98607594e36aae96712901134cb35a1c08613d45e33ea1f
+  checksum: 992c5640b2b1789f1a02fa90a20ea2df59fd67a46d97dba782ecde4c536aa779d8c7bc4e6d0acc9cafbbd3c4a6a7f75e3b7af2818d1b733248fa5e74e4c27869
   languageName: node
   linkType: hard
 
-"@availity/api-axios@npm:11.0.0, @availity/api-axios@npm:^11.0.0":
-  version: 11.0.0
-  resolution: "@availity/api-axios@npm:11.0.0"
+"@availity/api-axios@npm:11.2.1, @availity/api-axios@npm:^11.2.1":
+  version: 11.2.1
+  resolution: "@availity/api-axios@npm:11.2.1"
   dependencies:
     "@availity/resolve-url": 4.0.0
     lodash: ^4.17.21
     qs: ^6.14.0
   peerDependencies:
+    "@availity/upload-core": ^8.1.0
     axios: ^1.7.7
-  checksum: 0cf4c3b5642f2c9a582c92e34cf10479b945b87f271eac0ca6b2ca6b0f110eb0e98a46261fc95c1e7b5b39e915eace094574b01a893fdf8cb64d60a802cdb408
+  checksum: 43125ead60e3645f44908e9a0a344b441f734e1ffd8db4666b965de0533addb8cfb8010e60cc77c77efd7acc94e1a15e48f4e168cb371984c032118d31e7f6bf
   languageName: node
   linkType: hard
 
-"@availity/authorize@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "@availity/authorize@npm:5.0.0"
+"@availity/authorize@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "@availity/authorize@npm:5.0.1"
   dependencies:
     "@availity/block-ui": ^1.0.0
     "@tanstack/react-query": ^4.36.1
@@ -56,7 +57,7 @@ __metadata:
     axios: ^1.8.2
     react: ^18.0.0
     react-dom: ^18.0.0
-  checksum: 476c6c78502b40757c710664b90728eb893d35cd2a7337fa4e06ebad12154da53ea22cfabec7ca834d30a227b975ad9c9db361ba07917641f2d298985ddca762
+  checksum: ad85a1d349f4e5023429c37099ec64b8a6f99f5a8378a405f1726ae2a91fc2989affacf634e4d4f218219e9ab62ce87a94e458400b58e87ca828049ce0ae8368
   languageName: node
   linkType: hard
 
@@ -145,9 +146,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/hooks@npm:^5.1.5":
-  version: 5.1.5
-  resolution: "@availity/hooks@npm:5.1.5"
+"@availity/hooks@npm:^5.1.6":
+  version: 5.1.6
+  resolution: "@availity/hooks@npm:5.1.6"
   dependencies:
     "@tanstack/react-query": ^4.36.1
     prop-types: ^15.8.1
@@ -157,14 +158,14 @@ __metadata:
     axios: ^1.8.2
     react: ^18.0.0
     react-router-dom: ^6.26.0
-  checksum: 23a0637e753e58eb948e56ad8c3acf592650f6a184652fd14ad4b0504289e1c4c61559fe555307e8c6e9cb00c473fa470e422658040692eb0e3b8f827107234d
+  checksum: 42b84a3d2e68fe54c6253fa86c80a1c68091e417a702655b7752eff36c4c82c0c30cca4cab89511e4045fe6923bd95b3b7622c0e7ff818e78a76858037866de3
   languageName: node
   linkType: hard
 
-"@availity/message-core@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "@availity/message-core@npm:8.0.0"
-  checksum: b33c6500c8a46556356eb37f87b1c07aef24b21cfc2a9547de45f6db94ff9ec18ec82e849f27be2ea08d5d1f9ae05f20c6663e9fb8ad373dc6195505875ac1ed
+"@availity/message-core@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "@availity/message-core@npm:8.0.1"
+  checksum: e020795fd2bbe9636ca562fb9a0071485ffe0bc2be56d626de709219fadc2b82a72be10399902441190ac95891c0cbd9f5a85a9f457c06c32f0c4f56317a996e
   languageName: node
   linkType: hard
 
@@ -172,7 +173,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mock@workspace:packages/mock"
   dependencies:
-    msw: 2.4.11
+    msw: 2.11.3
     qs: ^6.14.0
     typescript: ^5.4.5
   languageName: unknown
@@ -219,7 +220,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-authorize@workspace:packages/authorize"
   dependencies:
-    "@availity/authorize": ^5.0.0
+    "@availity/authorize": ^5.0.1
     "@availity/mui-block-ui": "workspace:^"
     "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
@@ -237,12 +238,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-autocomplete@workspace:packages/autocomplete"
   dependencies:
-    "@availity/api-axios": ^11.0.0
+    "@availity/api-axios": ^11.2.1
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-textfield": "workspace:^"
     "@mui/material": ^6.4.5
-    "@mui/types": ^7.2.21
+    "@mui/types": ^7.4.6
     "@tanstack/react-query": ^4.36.1
     qs: ^6.14.0
     react: 18.2.0
@@ -263,7 +264,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-avatar@workspace:packages/avatar"
   dependencies:
-    "@availity/api-axios": ^11.0.0
+    "@availity/api-axios": ^11.2.1
     "@availity/mui-icon": "workspace:^"
     "@mui/material": ^6.4.5
     react: 18.2.0
@@ -427,7 +428,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-controlled-form@workspace:packages/controlled-form"
   dependencies:
-    "@availity/api-axios": ^11.0.0
+    "@availity/api-axios": ^11.2.1
     "@availity/mui-autocomplete": "workspace:^"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-checkbox": "workspace:^"
@@ -441,10 +442,10 @@ __metadata:
     "@hookform/resolvers": ^4.1.3
     "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
-    dayjs: ^1.11.13
+    dayjs: ^1.11.18
     react: 18.2.0
     react-dom: 18.2.0
-    react-hook-form: ^7.55.0
+    react-hook-form: ^7.63.0
     tsup: ^8.4.0
     typescript: ^5.4.5
     yup: ^1.6.1
@@ -463,7 +464,7 @@ __metadata:
     "@availity/mui-textfield": "workspace:*"
     "@mui/material": ^6.4.5
     "@mui/x-date-pickers": ^7.26.0
-    dayjs: ^1.11.13
+    dayjs: ^1.11.18
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.4.0
@@ -549,7 +550,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-event-tracker@workspace:packages/event-tracker"
   dependencies:
-    "@availity/analytics-core": ^6.0.0
+    "@availity/analytics-core": ^6.0.4
     "@availity/mui-button": "workspace:^"
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-layout": "workspace:^"
@@ -571,8 +572,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-favorites@workspace:packages/favorites"
   dependencies:
-    "@availity/api-axios": ^11.0.0
-    "@availity/message-core": ^8.0.0
+    "@availity/api-axios": ^11.2.1
+    "@availity/message-core": ^8.0.1
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-tooltip": "workspace:^"
@@ -595,7 +596,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-feedback@workspace:packages/feedback"
   dependencies:
-    "@availity/api-axios": ^11.0.0
+    "@availity/api-axios": ^11.2.1
     "@availity/mui-button": "workspace:^"
     "@availity/mui-form-utils": "workspace:^"
     "@availity/mui-icon": "workspace:^"
@@ -607,7 +608,7 @@ __metadata:
     "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
-    react-hook-form: ^7.55.0
+    react-hook-form: ^7.63.0
     tsup: ^8.4.0
     typescript: ^5.4.5
   peerDependencies:
@@ -620,7 +621,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-file-selector@workspace:packages/file-selector"
   dependencies:
-    "@availity/api-axios": ^11.0.0
+    "@availity/api-axios": ^11.2.1
     "@availity/mui-alert": "workspace:^"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-divider": "workspace:^"
@@ -631,13 +632,13 @@ __metadata:
     "@availity/mui-paper": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@availity/upload-core": ^8.0.0
+    "@availity/upload-core": ^8.1.0
     "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
     react: 18.2.0
     react-dom: 18.2.0
     react-dropzone: ^11.7.1
-    react-hook-form: ^7.55.0
+    react-hook-form: ^7.63.0
     tsup: ^8.4.0
     tus-js-client: 4.3.1
     typescript: ^5.4.5
@@ -652,7 +653,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-form-utils@workspace:packages/form-utils"
   dependencies:
-    "@availity/message-core": ^8.0.0
+    "@availity/message-core": ^8.0.1
     "@availity/mui-button": "workspace:*"
     "@availity/mui-checkbox": "workspace:^"
     "@availity/mui-icon": "workspace:*"
@@ -913,9 +914,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-spaces@workspace:packages/spaces"
   dependencies:
-    "@availity/api-axios": ^11.0.0
-    "@availity/hooks": ^5.1.5
-    "@availity/message-core": ^8.0.0
+    "@availity/api-axios": ^11.2.1
+    "@availity/hooks": ^5.1.6
+    "@availity/message-core": ^8.0.1
     "@availity/mui-button": "workspace:^"
     "@availity/mui-card": "workspace:^"
     "@availity/mui-chip": "workspace:^"
@@ -929,11 +930,11 @@ __metadata:
     "@availity/mui-paper": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-typography": "workspace:^"
-    "@availity/native-form": ^7.0.1
+    "@availity/native-form": ^7.0.5
     "@availity/resolve-url": ^4.0.0
     "@mui/material": ^6.4.5
     "@tanstack/react-query": ^4.36.1
-    dayjs: ^1.11.13
+    dayjs: ^1.11.18
     qs: ^6.14.0
     react: 18.2.0
     react-dom: 18.2.0
@@ -1000,7 +1001,7 @@ __metadata:
     "@mui/material": ^6.4.5
     react: 18.2.0
     react-dom: 18.2.0
-    react-hook-form: ^7.55.0
+    react-hook-form: ^7.63.0
     tsup: ^8.4.0
     typescript: ^5.4.5
   peerDependencies:
@@ -1144,12 +1145,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/native-form@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "@availity/native-form@npm:7.0.1"
+"@availity/native-form@npm:^7.0.5":
+  version: 7.0.5
+  resolution: "@availity/native-form@npm:7.0.5"
   dependencies:
-    "@availity/api-axios": 11.0.0
-  checksum: e61a054efd655e38b374cdbca687cd147e098613b2e8e261e74725c5e3ce9e9ab80dfffe3da8f2c85114e500dc0b84cfe2bd764c0bf8502c815a4dffbffdbabb
+    "@availity/api-axios": 11.2.1
+  checksum: 2444127a21146525fac0c4dc2b5b47a60225b986844a7e26f6a795a7afb7b9d61e75699bbefd825a8feef5131901c821b4a3134a41a685858e6bf87f092a28a2
   languageName: node
   linkType: hard
 
@@ -1175,10 +1176,10 @@ __metadata:
   dependencies:
     "@availity/theme": "workspace:*"
     "@emotion/react": ^11.14.0
-    "@emotion/styled": ^11.14.0
+    "@emotion/styled": ^11.14.1
     "@mui/material": ^6.4.5
     "@mui/x-date-pickers": ^7.26.0
-    dayjs: ^1.11.13
+    dayjs: ^1.11.18
     react: 18.2.0
     react-dom: 18.2.0
     tsup: ^8.4.0
@@ -1198,13 +1199,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/upload-core@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "@availity/upload-core@npm:8.0.0"
+"@availity/upload-core@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "@availity/upload-core@npm:8.1.0"
   dependencies:
     "@availity/resolve-url": 4.0.0
     tus-js-client: 4.3.1
-  checksum: e7260133931156352d94b7e9064157b8c581d782d8f3978a18d8e49a0ad2a08d5f7b3ba1b37e10b345c08d9d2eb409ddcedb8c5720b567c1ae81aa7c2f8d3958
+  checksum: fe9b0dce3e79ca6698b8ebfea53cd0b215ac505a57a8e198e9bb0feb8a0452601479de0d10075b37760e2ae0493e644789b1874f2dde574ed30cb48751f604db
   languageName: node
   linkType: hard
 
@@ -2659,6 +2660,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.28.3":
+  version: 7.28.4
+  resolution: "@babel/runtime@npm:7.28.4"
+  checksum: 934b0a0460f7d06637d93fcd1a44ac49adc33518d17253b5a0b55ff4cb90a45d8fe78bf034b448911dbec7aff2a90b918697559f78d21c99ff8dbadae9565b55
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.27.1, @babel/template@npm:^7.27.2, @babel/template@npm:^7.3.3":
   version: 7.27.2
   resolution: "@babel/template@npm:7.27.2"
@@ -2702,7 +2710,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bundled-es-modules/cookie@npm:^2.0.0":
+"@bundled-es-modules/cookie@npm:^2.0.1":
   version: 2.0.1
   resolution: "@bundled-es-modules/cookie@npm:2.0.1"
   dependencies:
@@ -2717,16 +2725,6 @@ __metadata:
   dependencies:
     statuses: ^2.0.1
   checksum: bcaa7de192e73056950b5fd20e75140d8d09074b1adc4437924b2051bb02b4dbf568c96e67d53b220fb7d735c3446e2ba746599cb1793ab2d23dd2ef230a8622
-  languageName: node
-  linkType: hard
-
-"@bundled-es-modules/tough-cookie@npm:^0.1.6":
-  version: 0.1.6
-  resolution: "@bundled-es-modules/tough-cookie@npm:0.1.6"
-  dependencies:
-    "@types/tough-cookie": ^4.0.5
-    tough-cookie: ^4.1.4
-  checksum: e31c1262cbc044373e757117b1b152acc86ba5d088124153b3d1ae83e0de0a2b4d2362758cec3e1a49cf15c39a4447587cc2672e4f5a961754c91ef9ca3221e1
   languageName: node
   linkType: hard
 
@@ -3069,9 +3067,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:^11.14.0":
-  version: 11.14.0
-  resolution: "@emotion/styled@npm:11.14.0"
+"@emotion/styled@npm:^11.14.1":
+  version: 11.14.1
+  resolution: "@emotion/styled@npm:11.14.1"
   dependencies:
     "@babel/runtime": ^7.18.3
     "@emotion/babel-plugin": ^11.13.5
@@ -3085,7 +3083,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 9c1b842e942e69fb6037d1ab161046d2bcfeff95fd2ccfdab30acaaf6b89dc07b14bb00f8cc8ec14df11e6746c8e4e1d781bc54d10bd739aab44966ded64d4fb
+  checksum: 86238d9f5c41232a73499e441fa9112e855545519d6772f489fa885634bb8f31b422a9ba9d1e8bc0b4ad66132f9d398b1c309d92c19c5ee21356b41671ec984a
   languageName: node
   linkType: hard
 
@@ -3640,58 +3638,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@inquirer/confirm@npm:^3.0.0":
-  version: 3.2.0
-  resolution: "@inquirer/confirm@npm:3.2.0"
-  dependencies:
-    "@inquirer/core": ^9.1.0
-    "@inquirer/type": ^1.5.3
-  checksum: 6b032a26c64075dc14769558720b17f09bc6784a223bbf2c85ec42e491be6ce4c4b83518433c47e05d7e8836ba680ab1b2f6b9c553410d4326582308a1fd2259
+"@inquirer/ansi@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@inquirer/ansi@npm:1.0.0"
+  checksum: 153b619c1178ece3e28a66ab41b7827b9ee64c84180f779bcc1c38c8c3e87979130bba109dd7e648ccdd3786da75c4a3a0945e816dc6afec9219f54ac7fbbb69
   languageName: node
   linkType: hard
 
-"@inquirer/core@npm:^9.1.0":
-  version: 9.2.1
-  resolution: "@inquirer/core@npm:9.2.1"
+"@inquirer/confirm@npm:^5.0.0":
+  version: 5.1.18
+  resolution: "@inquirer/confirm@npm:5.1.18"
   dependencies:
-    "@inquirer/figures": ^1.0.6
-    "@inquirer/type": ^2.0.0
-    "@types/mute-stream": ^0.0.4
-    "@types/node": ^22.5.5
-    "@types/wrap-ansi": ^3.0.0
-    ansi-escapes: ^4.3.2
+    "@inquirer/core": ^10.2.2
+    "@inquirer/type": ^3.0.8
+  peerDependencies:
+    "@types/node": ">=18"
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+  checksum: 59a27eedf9b8e5ff1ca5eb738121caf56c94d9ec80f0ff02021300a7894c608e9c32e06b79ba21714f6977a277c84025e62b141c50c580be2a30697f52ef4941
+  languageName: node
+  linkType: hard
+
+"@inquirer/core@npm:^10.2.2":
+  version: 10.2.2
+  resolution: "@inquirer/core@npm:10.2.2"
+  dependencies:
+    "@inquirer/ansi": ^1.0.0
+    "@inquirer/figures": ^1.0.13
+    "@inquirer/type": ^3.0.8
     cli-width: ^4.1.0
-    mute-stream: ^1.0.0
+    mute-stream: ^2.0.0
     signal-exit: ^4.1.0
-    strip-ansi: ^6.0.1
     wrap-ansi: ^6.2.0
     yoctocolors-cjs: ^2.1.2
-  checksum: 681339aac03b6998e7fee1c5a0a15951e9268b7be20fd7532f180b408893f9e7203020a57d40dc78352d281f19b66222df83c68f73a125f6e1beadfa0df3920c
+  peerDependencies:
+    "@types/node": ">=18"
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+  checksum: 79d528ecb5f485a0f63bd5e48273a2ffba9457240e2a1971da8ea97a97c8398b932260691b8d5e5134f306ba8b08ce7a4800dfa7bd8cc9143a86760714215927
   languageName: node
   linkType: hard
 
-"@inquirer/figures@npm:^1.0.6":
-  version: 1.0.7
-  resolution: "@inquirer/figures@npm:1.0.7"
-  checksum: 82edc998d0ace2f147eb332177f451c02e6a4a6e829d47817f5a4b3341c12cd0850b92ee3187d483328cce5824b870ed75e868850b6ac819447b9d56501f01cb
+"@inquirer/figures@npm:^1.0.13":
+  version: 1.0.13
+  resolution: "@inquirer/figures@npm:1.0.13"
+  checksum: 1042cbefad8c69b004396ce6be2d0b135c303317d870ddd0cee75bac429fc7c7f577bac9e3c1ec1cd3668a709f49a591edb2f714193778e7d7b140a622f2a1ef
   languageName: node
   linkType: hard
 
-"@inquirer/type@npm:^1.5.3":
-  version: 1.5.5
-  resolution: "@inquirer/type@npm:1.5.5"
-  dependencies:
-    mute-stream: ^1.0.0
-  checksum: 6cada82bb14519f3c71f455b08dc03c1064046fe0469aa5fce44c7ebf88a3a3d67a0cf852b0a7339476fec3b02874167f46d2c5b0964218d00273ab27ff861c5
-  languageName: node
-  linkType: hard
-
-"@inquirer/type@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@inquirer/type@npm:2.0.0"
-  dependencies:
-    mute-stream: ^1.0.0
-  checksum: 0f78f84c182ef3879109a651c7b4afdc7480bc5365948cbdad7e0aa5b9713ef052761b6914b8c76c3ffeef5a8f61ef1d6d44c6c3914800e17506ecb1a8e99844
+"@inquirer/type@npm:^3.0.8":
+  version: 3.0.8
+  resolution: "@inquirer/type@npm:3.0.8"
+  peerDependencies:
+    "@types/node": ">=18"
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+  checksum: 361fa75c98f274462aaa3f2baf40ee43f284daaa64e3689a92863ed4ff63236ca3d40c6e715b3ff80c45feb6ab679792a6162e2d4521daff3929c490b0dddfcf
   languageName: node
   linkType: hard
 
@@ -4601,9 +4606,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mswjs/interceptors@npm:^0.35.8":
-  version: 0.35.9
-  resolution: "@mswjs/interceptors@npm:0.35.9"
+"@mswjs/interceptors@npm:^0.39.1":
+  version: 0.39.7
+  resolution: "@mswjs/interceptors@npm:0.39.7"
   dependencies:
     "@open-draft/deferred-promise": ^2.2.0
     "@open-draft/logger": ^0.3.0
@@ -4611,7 +4616,7 @@ __metadata:
     is-node-process: ^1.2.0
     outvariant: ^1.4.3
     strict-event-emitter: ^0.5.1
-  checksum: 35b9382b94b7e3af962dc901db80bde99385645fb0b1f4cbaf64d58ff7181adb962430437db5b7d6db9db2e82399a3d1f319378d3c98e72c7ada8245180f0979
+  checksum: a0cb0570051314310b8107cb5a68ddf9d6ad4c01c5dd1568aee1a4bc4d65dc797c7ad6d9179cfeca1fb12e206d1a7369258bc199b611efb3fd823607173e9d38
   languageName: node
   linkType: hard
 
@@ -4789,6 +4794,20 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 9e1fa710a7d25d71b5f8bec8ccfd04a51c09eac8ca379af1a72faf9dab7b5ee8f4827d66efbaa365b605affad9a5d616ab2b85b91ba3747c45f6a49299e1515e
+  languageName: node
+  linkType: hard
+
+"@mui/types@npm:^7.4.6":
+  version: 7.4.6
+  resolution: "@mui/types@npm:7.4.6"
+  dependencies:
+    "@babel/runtime": ^7.28.3
+  peerDependencies:
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 7e4b4ae06066468e8a8211376d0a08250325f4b92f6d2ea24576df37dfcd0f683602567debdf15889e0e4510eb48d677aa0d71a2ed9423c16dbd4b4ecfbccbb9
   languageName: node
   linkType: hard
 
@@ -5338,7 +5357,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@open-draft/until@npm:^2.0.0, @open-draft/until@npm:^2.1.0":
+"@open-draft/until@npm:^2.0.0":
   version: 2.1.0
   resolution: "@open-draft/until@npm:2.1.0"
   checksum: 140ea3b16f4a3a6a729c1256050e20a93d408d7aa1e125648ce2665b3c526ed452510c6e4a6f4b15d95fb5e41203fb51510eb8fbc8812d5e5a91880293d66471
@@ -5816,18 +5835,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-interactions@npm:^8.2.8":
-  version: 8.5.5
-  resolution: "@storybook/addon-interactions@npm:8.5.5"
+"@storybook/addon-interactions@npm:^8.6.14":
+  version: 8.6.14
+  resolution: "@storybook/addon-interactions@npm:8.6.14"
   dependencies:
     "@storybook/global": ^5.0.0
-    "@storybook/instrumenter": 8.5.5
-    "@storybook/test": 8.5.5
+    "@storybook/instrumenter": 8.6.14
+    "@storybook/test": 8.6.14
     polished: ^4.2.2
     ts-dedent: ^2.2.0
   peerDependencies:
-    storybook: ^8.5.5
-  checksum: ae8a69873c2bc52099af4d942223661b760263847de527c8c0285ed327798fd918e43716b641dbf48bf4c05dabff4db51926887b124e3cc474400492f5f0e71d
+    storybook: ^8.6.14
+  checksum: 18e94b1adc4a79405e03403824c7bbebddd0728826afc096ceb4d406a8e343fecbdd44f0d2c275adbaca4ff35462453e1c984cb65f49ec50cd5f22cda52ad588
   languageName: node
   linkType: hard
 
@@ -6011,6 +6030,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/instrumenter@npm:8.6.14":
+  version: 8.6.14
+  resolution: "@storybook/instrumenter@npm:8.6.14"
+  dependencies:
+    "@storybook/global": ^5.0.0
+    "@vitest/utils": ^2.1.1
+  peerDependencies:
+    storybook: ^8.6.14
+  checksum: d94ae151671673d1a392e124b6e4003ce76b7a13e68de0283656f9c9725cc5b46d2b59b118063a3ceb8a006a6090ffb9547b6a7a04cb451a50a562b7cca9d0ac
+  languageName: node
+  linkType: hard
+
 "@storybook/manager-api@npm:8.5.5, @storybook/manager-api@npm:^8.2.8":
   version: 8.5.5
   resolution: "@storybook/manager-api@npm:8.5.5"
@@ -6106,6 +6137,23 @@ __metadata:
   peerDependencies:
     storybook: ^8.5.5
   checksum: 6e9ee083489f5ff564f1c32cdadd84a17e4f74328412aa74703e4d08d662c398791bf806b9980289b27d08a05a375b85348e2624b42eb991a5e9866f6b0a340f
+  languageName: node
+  linkType: hard
+
+"@storybook/test@npm:8.6.14":
+  version: 8.6.14
+  resolution: "@storybook/test@npm:8.6.14"
+  dependencies:
+    "@storybook/global": ^5.0.0
+    "@storybook/instrumenter": 8.6.14
+    "@testing-library/dom": 10.4.0
+    "@testing-library/jest-dom": 6.5.0
+    "@testing-library/user-event": 14.5.2
+    "@vitest/expect": 2.0.5
+    "@vitest/spy": 2.0.5
+  peerDependencies:
+    storybook: ^8.6.14
+  checksum: 996c7d623017f924f61cd44ba84df1844d2b72bddff76cbb3b0f9e76e1de02f4e63e56598ecfea557ba873359b0c5c5a0e1bc7f1811887dc647f83143233a88b
   languageName: node
   linkType: hard
 
@@ -6703,16 +6751,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mute-stream@npm:^0.0.4":
-  version: 0.0.4
-  resolution: "@types/mute-stream@npm:0.0.4"
-  dependencies:
-    "@types/node": "*"
-  checksum: af8d83ad7b68ea05d9357985daf81b6c9b73af4feacb2f5c2693c7fd3e13e5135ef1bd083ce8d5bdc8e97acd28563b61bb32dec4e4508a8067fcd31b8a098632
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:*, @types/node@npm:^22.5.5":
+"@types/node@npm:*":
   version: 22.9.0
   resolution: "@types/node@npm:22.9.0"
   dependencies:
@@ -6824,7 +6863,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/tough-cookie@npm:*, @types/tough-cookie@npm:^4.0.5":
+"@types/tough-cookie@npm:*":
   version: 4.0.5
   resolution: "@types/tough-cookie@npm:4.0.5"
   checksum: f19409d0190b179331586365912920d192733112a195e870c7f18d20ac8adb7ad0b0ff69dad430dba8bc2be09593453a719cfea92dc3bda19748fd158fe1498d
@@ -6849,13 +6888,6 @@ __metadata:
   version: 9.0.8
   resolution: "@types/uuid@npm:9.0.8"
   checksum: b8c60b7ba8250356b5088302583d1704a4e1a13558d143c549c408bf8920535602ffc12394ede77f8a8083511b023704bc66d1345792714002bfa261b17c5275
-  languageName: node
-  linkType: hard
-
-"@types/wrap-ansi@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@types/wrap-ansi@npm:3.0.0"
-  checksum: 492f0610093b5802f45ca292777679bb9b381f1f32ae939956dd9e00bf81dba7cc99979687620a2817d9a7d8b59928207698166c47a0861c6a2e5c30d4aaf1e9
   languageName: node
   linkType: hard
 
@@ -7517,7 +7549,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-escapes@npm:^4.2.1, ansi-escapes@npm:^4.3.2":
+"ansi-escapes@npm:^4.2.1":
   version: 4.3.2
   resolution: "ansi-escapes@npm:4.3.2"
   dependencies:
@@ -7879,7 +7911,7 @@ __metadata:
     "@nx/workspace": 20.8.2
     "@storybook/addon-a11y": 8.5.5
     "@storybook/addon-essentials": 8.5.5
-    "@storybook/addon-interactions": ^8.2.8
+    "@storybook/addon-interactions": ^8.6.14
     "@storybook/addon-themes": 8.5.5
     "@storybook/core-server": 8.5.5
     "@storybook/manager-api": ^8.2.8
@@ -7916,7 +7948,7 @@ __metadata:
     lint-staged: ^15.5.0
     nx: 20.8.2
     prettier: ^3.5.3
-    react-hook-form: ^7.55.0
+    react-hook-form: ^7.63.0
     react-imask: 7.6.1
     react-number-format: 5.4.0
     remark-gfm: ^4.0.1
@@ -9625,10 +9657,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.11.13":
-  version: 1.11.13
-  resolution: "dayjs@npm:1.11.13"
-  checksum: f388db88a6aa93956c1f6121644e783391c7b738b73dbc54485578736565c8931bdfba4bb94e9b1535c6e509c97d5deb918bbe1ae6b34358d994de735055cca9
+"dayjs@npm:^1.11.18":
+  version: 1.11.18
+  resolution: "dayjs@npm:1.11.18"
+  checksum: cc90054bad30ab011417a7a474b2ffa70e7a28ca6f834d7e86fe53a408a40a14c174f26155072628670e9eda4c48c4ed0d847d2edf83d47c0bfb78be15bbf2dd
   languageName: node
   linkType: hard
 
@@ -15364,26 +15396,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"msw@npm:2.4.11":
-  version: 2.4.11
-  resolution: "msw@npm:2.4.11"
+"msw@npm:2.11.3":
+  version: 2.11.3
+  resolution: "msw@npm:2.11.3"
   dependencies:
-    "@bundled-es-modules/cookie": ^2.0.0
+    "@bundled-es-modules/cookie": ^2.0.1
     "@bundled-es-modules/statuses": ^1.0.1
-    "@bundled-es-modules/tough-cookie": ^0.1.6
-    "@inquirer/confirm": ^3.0.0
-    "@mswjs/interceptors": ^0.35.8
-    "@open-draft/until": ^2.1.0
+    "@inquirer/confirm": ^5.0.0
+    "@mswjs/interceptors": ^0.39.1
+    "@open-draft/deferred-promise": ^2.2.0
     "@types/cookie": ^0.6.0
     "@types/statuses": ^2.0.4
-    chalk: ^4.1.2
     graphql: ^16.8.1
     headers-polyfill: ^4.0.2
     is-node-process: ^1.2.0
     outvariant: ^1.4.3
     path-to-regexp: ^6.3.0
+    picocolors: ^1.1.1
+    rettime: ^0.7.0
     strict-event-emitter: ^0.5.1
+    tough-cookie: ^6.0.0
     type-fest: ^4.26.1
+    until-async: ^3.0.2
     yargs: ^17.7.2
   peerDependencies:
     typescript: ">= 4.8.x"
@@ -15392,7 +15426,7 @@ __metadata:
       optional: true
   bin:
     msw: cli/index.js
-  checksum: f58634f5b7e7c1b69fd7d4f0d6ca09169719b8829e01f6bf5c4517b9c3159738d4a0cbd1b8c8b080fced82bf692edf72a064b419feb863f2d7e82ec852cf694b
+  checksum: bb664fa0a73579e20335afcaa8aa519511a8ad4179ca6bafbaf9b11d6ebde840df70a659b39648580fcfcadb917f946a846cc03409f2cd16c6828a7d457e12e3
   languageName: node
   linkType: hard
 
@@ -15403,10 +15437,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mute-stream@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "mute-stream@npm:1.0.0"
-  checksum: 36fc968b0e9c9c63029d4f9dc63911950a3bdf55c9a87f58d3a266289b67180201cade911e7699f8b2fa596b34c9db43dad37649e3f7fdd13c3bb9edb0017ee7
+"mute-stream@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "mute-stream@npm:2.0.0"
+  checksum: d2e4fd2f5aa342b89b98134a8d899d8ef9b0a6d69274c4af9df46faa2d97aeb1f2ce83d867880d6de63643c52386579b99139801e24e7526c3b9b0a6d1e18d6c
   languageName: node
   linkType: hard
 
@@ -16867,12 +16901,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.55.0":
-  version: 7.55.0
-  resolution: "react-hook-form@npm:7.55.0"
+"react-hook-form@npm:^7.63.0":
+  version: 7.63.0
+  resolution: "react-hook-form@npm:7.63.0"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18 || ^19
-  checksum: ff37fba242c0e94911bf8515bfe1b0670f93bf0ed0c44c923108859244f41da3f0f6dffcf70d570b152ef6b1d56936d943b45fba11c63f21b913fba8f0da862b
+  checksum: 7194e8c4be1d7e618765b603bd4ab7b8bb44ada24d1d8395fbe4c8bf9daf012485396a4629cf1c25d71ffb618762fb0689e31f9f389109963a082aaf182784c0
   languageName: node
   linkType: hard
 
@@ -17462,6 +17496,13 @@ __metadata:
   version: 0.12.0
   resolution: "retry@npm:0.12.0"
   checksum: 623bd7d2e5119467ba66202d733ec3c2e2e26568074923bc0585b6b99db14f357e79bdedb63cab56cec47491c4a0da7e6021a7465ca6dc4f481d3898fdd3158c
+  languageName: node
+  linkType: hard
+
+"rettime@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "rettime@npm:0.7.0"
+  checksum: 1ad3984a4f8000adf56c623882170115d7453b3bbaed56429a40077b067fad98c1c5db9a58e63793add15a97006fa7c817516d985c3347df40b5d274dc087803
   languageName: node
   linkType: hard
 
@@ -18806,6 +18847,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tldts-core@npm:^7.0.16":
+  version: 7.0.16
+  resolution: "tldts-core@npm:7.0.16"
+  checksum: 83006703fb5c94b1fdfea450b09b775963d4753629b6102351f7159f9087757de141b6b5caa066c05f868b59b463a11119168ed45337a8beccc42f76a9183f05
+  languageName: node
+  linkType: hard
+
+"tldts@npm:^7.0.5":
+  version: 7.0.16
+  resolution: "tldts@npm:7.0.16"
+  dependencies:
+    tldts-core: ^7.0.16
+  bin:
+    tldts: bin/cli.js
+  checksum: 37a3b6df79dd25a52e79cb46dddba9144bd5f94a6b32696111822b7bdfbb7022658d7b1f31a19b65d8fdd26cd0aa61d493e90042f8057e3ce5774cdfdcdbbbe1
+  languageName: node
+  linkType: hard
+
 "tmp@npm:^0.0.33":
   version: 0.0.33
   resolution: "tmp@npm:0.0.33"
@@ -18874,7 +18933,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tough-cookie@npm:^4.1.2, tough-cookie@npm:^4.1.4":
+"tough-cookie@npm:^4.1.2":
   version: 4.1.4
   resolution: "tough-cookie@npm:4.1.4"
   dependencies:
@@ -18883,6 +18942,15 @@ __metadata:
     universalify: ^0.2.0
     url-parse: ^1.5.3
   checksum: 5815059f014c31179a303c673f753f7899a6fce94ac93712c88ea5f3c26e0c042b5f0c7a599a00f8e0feeca4615dba75c3dffc54f3c1a489978aa8205e09307c
+  languageName: node
+  linkType: hard
+
+"tough-cookie@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "tough-cookie@npm:6.0.0"
+  dependencies:
+    tldts: ^7.0.5
+  checksum: 66d32ee40e1c6c61be5388e1c124674871dae0a684c30853f1628a4da2c5ad4199a825d1b0a7ba424dadfba7b5a9b37e8c761eafbf48f1b9f75a4629e73b14bc
   languageName: node
   linkType: hard
 
@@ -19607,6 +19675,13 @@ __metadata:
     webpack-sources:
       optional: true
   checksum: 91716ec14deb315496458d5a5f88ceb5d53d1594235e51f69ccfc4f4d012c1c0bd7cd268490a7bc6fd528f15de025b3ba15271c178ae595da3b2c0c189cd891d
+  languageName: node
+  linkType: hard
+
+"until-async@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "until-async@npm:3.0.2"
+  checksum: 7134a00131457f03983a22deb11a726441169bfd38ac963cd9cd0b3057498c4bb94022cbb968f2d5cc60f1a75aa3c141ec403fc52ea5a4732e239aa7ce1f5e73
   languageName: node
   linkType: hard
 

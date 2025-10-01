@@ -40,7 +40,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/message-core": "^8.0.0",
+    "@availity/message-core": "^8.0.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.2"
   },
   "devDependencies": {
