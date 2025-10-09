@@ -115,7 +115,7 @@ export const handlers = [
   }),
 
   // Thanos
-  graphql.query('configurationFindMany', ({ variables: { payerIDs, page = 1, perPage, ids }, request }) => {
+  graphql.query('PuiSpacesCmpConfigurationFindMany', ({ variables: { payerIDs, page = 1, perPage, ids }, request }) => {
     const isLocal = request.url.includes('localhost');
     const configs = getConfigs({ payerIds: payerIDs, ids, isLocal });
     const totalCount = configs.length;
