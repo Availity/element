@@ -133,6 +133,11 @@ export type SpacesProps = {
   /**
    * Name for the GraphQL operation, used for debugging and monitoring.
    *
+   * If an operation name exists in the query string, leave this undefined or
+   * ensure it matches what is in the query string.
+   *
+   * If no operation name exists in the query string, it can be defined here.
+   *
    * Format: `{ValueStream || PayerName}{AbbreviatedAppName}{Description}{Type}` (PascalCase)
    * @example "OnbPsFavoritesQuery"
    */
