@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.1](https://github.com/Availity/element/compare/@availity/mui-spaces@1.1.0...@availity/mui-spaces@1.1.1) (2025-10-09)
+
+### Dependency Updates
+
+* `mui-favorites` updated to version `1.1.0`
+* `@availity/mock` updated to version `1.1.0`
+
+### Bug Fixes
+
+* **mui-spaces:** try to parse operationName ([8189c94](https://github.com/Availity/element/commit/8189c94dd6b8fef981266d121b3a2893639fa482))
+
 ## [1.1.0](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.31...@availity/mui-spaces@1.1.0) (2025-09-25)
 
 
