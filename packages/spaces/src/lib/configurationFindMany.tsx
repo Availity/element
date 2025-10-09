@@ -1,4 +1,4 @@
-export default `query configurationFindMany($ids: [String!], $payerIDs: [ID!], $types: [TypeEnum!], $page: Int) {
+export default `query PuiSpacesCmpConfigurationFindMany($ids: [String!], $payerIDs: [ID!], $types: [TypeEnum!], $page: Int) {
   configurationPagination(filter: { ids: $ids, payerIds: $payerIDs, types: $types }, page: $page) {
     pageInfo {
       hasNextPage

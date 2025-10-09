@@ -1,6 +1,11 @@
 import { avWebQLApi } from '@availity/api-axios';
 import { Space, FetchSpacesProps, FetchAllSpacesProps, SpacesContextType, SpacesReducerAction } from './spaces-types';
 
+export const parseOperationName = (query: string): string | undefined => {
+  const match = query.match(/(?:query|mutation|subscription)\s+([a-zA-Z_][a-zA-Z0-9_]*)/i);
+  return match?.[1];
+};
+
 export const actions = {
   SPACES: (
     currentState: SpacesContextType,
@@ -43,7 +48,7 @@ export const fetchSpaces = async ({ query, clientId, variables, operationName }:
     {
       query,
       variables: { ...variables },
-      operationName: operationName || 'PuiSpacesCmpAnonymousOperation',
+      operationName: operationName || parseOperationName(query) || 'PuiSpacesCmpAnonymousOperation',
     },
     { headers: { ...headers } }
   );
