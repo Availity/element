@@ -136,7 +136,7 @@ jobs:
           git checkout -b release/version-updates
           git push origin release/version-updates
           git push origin --tags
-          gh pr create --title "Release: Version Updates" --body "Automated release PR with version updates and package publications." --base master --head release/version-updates
+          gh pr create --title "Release: Version Updates" --body "Automated release PR with version updates and package publications." --base main --head release/version-updates
 
   deploy-docs:
     if: "${{!contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, 'Release: Version Updates')}}"
@@ -152,7 +152,7 @@ jobs:
       - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
         with:
           fetch-depth: 0
-          ref: 'master'
+          ref: 'main'
 
       - name: Set Node Version
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
