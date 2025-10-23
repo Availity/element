@@ -55,6 +55,8 @@ jobs:
     if: "${{!contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, 'Release: Version Updates')}}"
     needs: [setup]
     runs-on: ubuntu-latest
+    outputs:
+      has_changes: ${{ steps.changes.outputs.has_changes }}
     permissions:
       contents: write # Required for git push and creating tags
       pull-requests: write # Required for creating pull requests
@@ -102,6 +104,10 @@ jobs:
           # Reset .yarnrc.yml to prevent committing
           git checkout -- .yarnrc.yml
 
+      - name: Store initial commit SHA
+        id: initial-sha
+        run: echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
       - name: Version Packages
         run: |
           yarn nx affected --target version --parallel=1
@@ -109,17 +115,15 @@ jobs:
       - name: Check for Version Changes
         id: changes
         run: |
-          git status
-          git diff --name-only
-          # Check for changes excluding .yarnrc.yml
-          if git diff --quiet HEAD -- ':!.yarnrc.yml'; then
+          INITIAL_SHA="${{ steps.initial-sha.outputs.sha }}"
+          CURRENT_SHA=$(git rev-parse HEAD)
+          if [ "$INITIAL_SHA" = "$CURRENT_SHA" ]; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "No version changes detected (excluding .yarnrc.yml)"
+            echo "No new commits created by version step"
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "Version changes detected (excluding .yarnrc.yml)"
+            echo "New commits created by version step"
           fi
-          echo "Output set to: $(cat $GITHUB_OUTPUT | grep has_changes)"
 
       - name: Publish
         if: steps.changes.outputs.has_changes == 'true'
@@ -136,10 +140,10 @@ jobs:
           git checkout -b release/version-updates
           git push origin release/version-updates
           git push origin --tags
-          gh pr create --title "Release: Version Updates" --body "Automated release PR with version updates and package publications." --base master --head release/version-updates
+          gh pr create --title "Release: Version Updates" --body "Automated release PR with version updates and package publications." --base main --head release/version-updates
 
   deploy-docs:
-    if: "${{!contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, 'Release: Version Updates')}}"
+    if: "${{!contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, 'Release: Version Updates') && needs.publish.outputs.has_changes == 'true'}}"
     needs: [publish]
     runs-on: ubuntu-latest
     permissions:
@@ -152,7 +156,7 @@ jobs:
       - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
         with:
           fetch-depth: 0
-          ref: 'master'
+          ref: 'main'
 
       - name: Set Node Version
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
@@ -164,13 +168,16 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
+      - name: Build Packages
+        run: yarn build
+
       - name: Build Docs
-        run: yarn build:docs
+        run: yarn build:storybook:ci
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
-          path: docusaurus/build
+          path: dist/storybook
 
       - name: Deploy to GitHub Pages
         id: deployment
