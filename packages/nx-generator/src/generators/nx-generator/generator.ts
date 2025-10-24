@@ -98,19 +98,9 @@ function addExportsToElement(tree: Tree, options: NormalizedSchema) {
   const scopedPackageName = `@availity/${options.packageName}`;
   const elementIndexPath = `${getWorkspaceLayout(tree).libsDir}/element/src/index.ts`;
   const indexContents = tree.read(elementIndexPath)?.toString().split(/\r?\n/) || [];
-  indexContents.push(`export * from '${scopedPackageName}';`);
-  const sortedIndexContents = indexContents?.sort((n1, n2) => {
-    if (n1 > n2) {
-      return 1;
-    }
+  indexContents.push(`// ${options.componentName}\nexport { ${options.componentName} } from '${scopedPackageName}';\nexport type { ${options.componentName}Props } from '${scopedPackageName}';`);
 
-    if (n1 < n2) {
-      return -1;
-    }
-
-    return 0;
-  });
-  tree.write(elementIndexPath, sortedIndexContents.join('\r\n'));
+  tree.write(elementIndexPath, indexContents.join('\r\n'));
 }
 
 export default async function (tree: Tree, options: NxGeneratorGeneratorSchema) {
@@ -134,7 +124,7 @@ export default async function (tree: Tree, options: NxGeneratorGeneratorSchema) 
   addDependencyToElement(tree, normalizedOptions);
   console.log('\u2714 added new package dependency to @availity/element');
   addExportsToElement(tree, normalizedOptions);
-  console.log('\u2714 added new package exports to @availity/element');
+  console.log("\u2714 added new package exports to @availity/element. Don't forget to add any additional named exports!");
   await formatFiles(tree);
   console.log(`@availity/mui-${names(options.name).fileName} generated! Don't forget to 'yarn install' again.\n`);
 }
