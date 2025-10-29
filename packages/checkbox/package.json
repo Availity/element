@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-checkbox",
-  "version": "1.0.3",
+  "version": "1.0.4-alpha.0",
   "description": "Availity MUI Checkbox Component - part of the @availity/element design system",
   "keywords": [
     "react",
