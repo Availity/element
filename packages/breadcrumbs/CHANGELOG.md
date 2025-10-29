@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.6-alpha.0](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@1.0.5...@availity/mui-breadcrumbs@1.0.6-alpha.0) (2025-10-29)
+
+
+### Bug Fixes
+
+* **mui-breadcrumbs:** default homeUrl to cloud dashboard ([b955baa](https://github.com/Availity/element/commit/b955baa32644b44dfa840439fb0df9be65c7067c))
+
 ## [1.0.6](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@1.0.5...@availity/mui-breadcrumbs@1.0.6) (2025-08-21)
 
 
