@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.0-alpha.1](https://github.com/Availity/element/compare/@availity/mui-page-header@1.1.37...@availity/mui-page-header@2.0.0-alpha.1) (2025-10-29)
+
+
+### Features
+
+* **mui-page-header:** add tab variant ([fd6bc4e](https://github.com/Availity/element/commit/fd6bc4ec9b467ef6e885fe27fdee35ac30b87758))
+
+
+### Bug Fixes
+
+* **mui-page-header:** button spacings ([8c36a05](https://github.com/Availity/element/commit/8c36a05d5502f2a9f476d83d9cc994eb36a32b3a))
+
 ## [1.2.5](https://github.com/Availity/element/compare/@availity/mui-page-header@1.2.4...@availity/mui-page-header@1.2.5) (2025-10-09)
 
 ### Dependency Updates
