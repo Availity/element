@@ -71,5 +71,6 @@
   },
   "dependencies": {
     "@availity/mui-feedback": "workspace:^"
-  }
+  },
+  "sideEffects": false
 }

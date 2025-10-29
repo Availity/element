@@ -56,5 +56,6 @@
   "dependencies": {
     "@availity/mui-link": "workspace:^",
     "@availity/mui-typography": "workspace:^"
-  }
+  },
+  "sideEffects": false
 }
