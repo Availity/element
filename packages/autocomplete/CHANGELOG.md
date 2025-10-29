@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.5-alpha.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@1.2.4...@availity/mui-autocomplete@1.2.5-alpha.0) (2025-10-29)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** fix the multiple prop type for async autocompletes ([3b904a4](https://github.com/Availity/element/commit/3b904a4f88b250433d75ff4a439aab10adc238e9))
+
 ## [1.2.6](https://github.com/Availity/element/compare/@availity/mui-autocomplete@1.2.5...@availity/mui-autocomplete@1.2.6) (2025-10-09)
 
 ### Dependency Updates
