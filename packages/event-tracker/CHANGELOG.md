@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.16-alpha.0](https://github.com/Availity/element/compare/@availity/mui-event-tracker@1.0.15...@availity/mui-event-tracker@1.0.16-alpha.0) (2025-10-29)
+
 ## [1.0.15](https://github.com/Availity/element/compare/@availity/mui-event-tracker@1.0.14...@availity/mui-event-tracker@1.0.15) (2025-05-29)
 
 ### Dependency Updates
