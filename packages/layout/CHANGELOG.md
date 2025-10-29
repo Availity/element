@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.3-alpha.0](https://github.com/Availity/element/compare/@availity/mui-layout@1.0.2...@availity/mui-layout@1.0.3-alpha.0) (2025-10-29)
+
 ## [1.0.2](https://github.com/Availity/element/compare/@availity/mui-layout@1.0.1...@availity/mui-layout@1.0.2) (2025-04-11)
 
 ### Dependency Updates
