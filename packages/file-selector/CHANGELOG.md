@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.9.0-alpha.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.8.1...@availity/mui-file-selector@1.9.0-alpha.0) (2025-10-29)
+
+
+### Features
+
+* **mui-file-selector:** disable FilePickerBtn when max files is reached ([06f1764](https://github.com/Availity/element/commit/06f176448192e89088e760c762b37b469ac39e95))
+
 ## [1.9.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.8.1...@availity/mui-file-selector@1.9.0) (2025-09-24)
 
 
