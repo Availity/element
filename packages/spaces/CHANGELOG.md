@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0-alpha.0](https://github.com/Availity/element/compare/@availity/mui-spaces@1.0.29...@availity/mui-spaces@1.1.0-alpha.0) (2025-10-29)
+
+
+### Features
+
+* **mui-spaces:** add operationName support ([f33f02b](https://github.com/Availity/element/commit/f33f02b2ef3cacee17a48a86849e2b4c96fac722))
+
+
+### Bug Fixes
+
+* **mui-spaces:** try to parse operationName ([8189c94](https://github.com/Availity/element/commit/8189c94dd6b8fef981266d121b3a2893639fa482))
+* spaces link full url only if starts with web ([5db57d4](https://github.com/Availity/element/commit/5db57d4c0e58f1b1c98b95186b6600ebb9d44493))
+
 ## [1.1.1](https://github.com/Availity/element/compare/@availity/mui-spaces@1.1.0...@availity/mui-spaces@1.1.1) (2025-10-09)
 
 ### Dependency Updates
