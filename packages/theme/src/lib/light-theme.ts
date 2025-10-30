@@ -541,9 +541,9 @@ export const lightTheme = {
                 backgroundColor: 'inherit',
               },
               '> .MuiCollapse-root > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > .MuiAccordion-region > .MuiAccordionDetails-root:first-of-type':
-                {
-                  borderTop: 'none',
-                },
+              {
+                borderTop: 'none',
+              },
             },
           },
         },
@@ -555,7 +555,7 @@ export const lightTheme = {
     MuiAccordionActions: {
       styleOverrides: {
         root: {
-          padding: '1.25rem',
+          padding: '1rem',
           flexWrap: 'wrap',
         },
         spacing: {
@@ -567,7 +567,7 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           minHeight: '1px',
-          padding: '1.25rem',
+          padding: '1rem',
         },
       },
     },
@@ -928,7 +928,7 @@ export const lightTheme = {
         elevation: 1,
       },
       styleOverrides: {
-        root: ({ ownerState: { variant } }: {ownerState: {variant: 'outlined' | 'elevation'}}) => ({
+        root: ({ ownerState: { variant } }: { ownerState: { variant: 'outlined' | 'elevation' } }) => ({
           backgroundColor: tokens.colorBackgroundPaper,
           border: variant === 'outlined' ? `1px solid ${tokens.borderDecorative}` : 0,
           boxShadow: variant === 'elevation' ? tokens.shadows1 : 'none'
@@ -1847,13 +1847,13 @@ export const lightTheme = {
             left: '24px',
             right: '24px',
             '&.MuiSnackbar-anchorOriginBottomCenter, &.MuiSnackbar-anchorOriginBottomLeft, &.MuiSnackbar-anchorOriginBottomRight':
-              {
-                bottom: '24px',
-              },
+            {
+              bottom: '24px',
+            },
             '&.MuiSnackbar-anchorOriginTopCenter, &.MuiSnackbar-anchorOriginTopLeft, &.MuiSnackbar-anchorOriginTopRight':
-              {
-                top: '24px',
-              },
+            {
+              top: '24px',
+            },
           },
           [theme.breakpoints.up('sm')]: {
             maxWidth: '528px',
