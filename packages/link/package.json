@@ -55,5 +55,6 @@
   },
   "dependencies": {
     "@availity/mui-icon": "workspace:^"
-  }
+  },
+  "sideEffects": false
 }

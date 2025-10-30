@@ -57,5 +57,6 @@
   },
   "dependencies": {
     "@availity/api-axios": "^11.0.0"
-  }
+  },
+  "sideEffects": false
 }

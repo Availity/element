@@ -61,5 +61,6 @@
   },
   "dependencies": {
     "@availity/analytics-core": "^6.0.0"
-  }
+  },
+  "sideEffects": false
 }

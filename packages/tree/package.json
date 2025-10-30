@@ -59,5 +59,6 @@
   },
   "dependencies": {
     "@mui/x-tree-view": "^7.26.0"
-  }
+  },
+  "sideEffects": false
 }

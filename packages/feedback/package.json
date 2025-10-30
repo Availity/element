@@ -64,5 +64,6 @@
     "@availity/mui-toggle-button": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "react-hook-form": "^7.55.0"
-  }
+  },
+  "sideEffects": false
 }
