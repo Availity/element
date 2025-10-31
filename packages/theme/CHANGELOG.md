@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.7.3](https://github.com/Availity/element/compare/@availity/theme@1.7.2...@availity/theme@1.7.3) (2025-10-31)
+
+
+### Bug Fixes
+
+* **theme:** fixed accordian spacing to match figma ([4a534f9](https://github.com/Availity/element/commit/4a534f946e15244fd9d412c4722a0143ddc1b0c3))
+
 ## [1.7.2](https://github.com/Availity/element/compare/@availity/theme@1.7.1...@availity/theme@1.7.2) (2025-06-13)
 
 ## [1.7.1](https://github.com/Availity/element/compare/@availity/theme@1.7.0...@availity/theme@1.7.1) (2025-05-30)
