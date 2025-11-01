@@ -32,8 +32,8 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
-    "tsup": "^8.4.0",
-    "typescript": "^5.4.5"
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
   },
   "publishConfig": {
     "access": "public"
