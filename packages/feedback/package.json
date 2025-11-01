@@ -54,7 +54,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^11.0.0",
+    "@availity/api-axios": "^11.2.2",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-icon": "workspace:^",
@@ -63,7 +63,7 @@
     "@availity/mui-textfield": "workspace:^",
     "@availity/mui-toggle-button": "workspace:^",
     "@availity/mui-typography": "workspace:^",
-    "react-hook-form": "^7.55.0"
+    "react-hook-form": "^7.66.0"
   },
   "sideEffects": false
 }
