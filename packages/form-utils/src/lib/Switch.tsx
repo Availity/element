@@ -39,7 +39,7 @@ const CheckedIconSwitch = styled(MuiSwitch, { name: 'AvSwitchCheckedIcon', slot:
   },
 }));
 
-export const Switch = ({ showCheckedIcon, ...args }: SwitchProps): JSX.Element => {
+export const Switch = ({ showCheckedIcon, ...args }: SwitchProps): React.JSX.Element => {
   if (showCheckedIcon && args.size === 'small') {
     return <CheckedIconSwitch {...args} />;
   }

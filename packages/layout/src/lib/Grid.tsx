@@ -1,9 +1,9 @@
-import MuiGrid2, { Grid2Props as MuiGrid2Props } from '@mui/material/Grid2';
+import MuiGrid, { GridProps as MuiGridProps } from '@mui/material/Grid';
 
-export interface GridProps extends Omit<MuiGrid2Props, 'item'> {
+export interface GridProps extends Omit<MuiGridProps, 'item'> {
   children?: React.ReactNode;
 }
 
-export const Grid = (args: GridProps): JSX.Element => {
-  return <MuiGrid2 {...args} />;
+export const Grid = (args: GridProps): React.JSX.Element => {
+  return <MuiGrid {...args} />;
 };

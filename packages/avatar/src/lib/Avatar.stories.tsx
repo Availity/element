@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar, AvatarProps } from './Avatar';
 import { HomeIcon } from '@availity/mui-icon';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 
 const meta: Meta<typeof Avatar> = {
   title: 'Components/Avatar/Avatar',

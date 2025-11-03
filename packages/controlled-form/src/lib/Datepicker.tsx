@@ -39,8 +39,8 @@ export const ControlledDatepicker = <Output = Dayjs | null,>({
         <Datepicker
           {...rest}
           FieldProps={{
-            required: typeof rules.required === 'object' ? rules.required.value : !!rules.required,
             ...FieldProps,
+            required: (typeof rules.required === 'object' ? rules.required.value : !!rules.required) || FieldProps?.required,
             error: !!error,
             helperText: error ? (
               <>

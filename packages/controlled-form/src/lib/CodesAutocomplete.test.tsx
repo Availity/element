@@ -7,7 +7,7 @@ import { TestForm } from './UtilComponents';
 
 const onSubmit = jest.fn();
 
-describe('ControlledAsyncAutocomplete', () => {
+describe('ControlledCodesAutocomplete', () => {
   beforeAll(() => {
     // Start the interception.
     server.listen();

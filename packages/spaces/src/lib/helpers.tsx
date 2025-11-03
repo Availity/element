@@ -31,8 +31,8 @@ export const getTarget = (target?: string) => {
 };
 
 export const isFunction = (
-  children: JSX.Element | ((props: any | undefined) => JSX.Element)
-): children is (props: any | undefined) => JSX.Element => typeof children === 'function';
+  children: React.JSX.Element | ((props: any | undefined) => React.JSX.Element)
+): children is (props: any | undefined) => React.JSX.Element => typeof children === 'function';
 
 export const isReactNodeFunction = (
   children: React.ReactNode | ((props: any | undefined) => React.ReactNode)

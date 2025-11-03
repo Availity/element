@@ -33,7 +33,7 @@ const formatChildren = (children: React.ReactNode, size: 'xs' | 's' | 'm' | 'l' 
   return children;
 };
 
-export const Avatar = ({ children, size = 'xl', src, sx, ...rest }: AvatarProps): JSX.Element => {
+export const Avatar = ({ children, size = 'xl', src, sx, ...rest }: AvatarProps): React.JSX.Element => {
   const [avatar, setAvatar] = React.useState<string>();
 
   useEffect(() => {

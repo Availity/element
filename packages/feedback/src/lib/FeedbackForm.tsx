@@ -18,7 +18,7 @@ interface Inputs {
 
 interface SmileButtonProps extends ToggleButtonProps {
   disabled: boolean;
-  Icon: (props: SvgIconProps) => JSX.Element;
+  Icon: (props: SvgIconProps) => React.JSX.Element;
   label: string;
   value: string;
 }
@@ -64,7 +64,7 @@ export const FeedbackForm = ({
   sent,
   setLoading,
   setSent,
-}: FeedbackFormProps): JSX.Element | null => {
+}: FeedbackFormProps): React.JSX.Element | null => {
   const {
     control,
     formState: { errors },
@@ -183,7 +183,7 @@ export const FeedbackForm = ({
             </Button>
           </Grid>
           <Grid sx={{ flex: 1, minWidth: '147px' }}>
-            <LoadingButton disabled={!smileFieldValue} loading={loading} type="submit" variant="contained">
+            <LoadingButton disabled={!smileFieldValue} loading={loading} type="submit">
               Send Feedback
             </LoadingButton>
           </Grid>

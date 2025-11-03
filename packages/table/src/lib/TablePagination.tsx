@@ -3,7 +3,7 @@ import {
   default as MuiTablePagination,
   TablePaginationProps as MuiTablePaginationProps,
 } from '@mui/material/TablePagination';
-import { TablePaginationActionsProps as MuiTablePaginationActionsProps } from '@mui/material/TablePagination/TablePaginationActions';
+import { TablePaginationActionsProps as MuiTablePaginationActionsProps } from '@mui/material/TablePaginationActions';
 import { SvgIconProps } from '@mui/material/SvgIcon';
 import { TableCellBaseProps } from '@mui/material/TableCell';
 import { Pagination, PaginationProps } from '@availity/mui-pagination';
@@ -45,7 +45,7 @@ export const TablePagination = forwardRef<unknown, TablePaginationProps>((props,
   const { Actions, paginationProps, ...rest } = props;
   const [openDetected, setOpenDetected] = useState(false);
 
-  const ActionsPagination = (props: TablePaginationActionsProps): JSX.Element => {
+  const ActionsPagination = (props: TablePaginationActionsProps): React.JSX.Element => {
     // Pull secondary props off so they are not passed to Pagination component
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { count, page, rowsPerPage, onPageChange, nextIconButtonProps, backIconButtonProps, slotProps, ...rest } =

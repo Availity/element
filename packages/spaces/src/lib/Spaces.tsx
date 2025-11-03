@@ -3,7 +3,7 @@ import { useQueries } from '@tanstack/react-query';
 import { spacesReducer, fetchAllSpaces } from './spaces-data';
 import configurationFindMany from './configurationFindMany';
 import { ModalProvider } from './modals/ModalProvider';
-import type { Space, SpacesProps, SpacesContextType, UseSpaces } from './spaces-types';
+import type { Space, SpacesProps, SpacesContextType, UseSpaces, SpacesReducerAction } from './spaces-types';
 import { isReactNodeFunction } from './helpers';
 
 export const INITIAL_STATE = {
@@ -23,9 +23,9 @@ export const Spaces = ({
   payerIds,
   spaceIds,
   spaces: spacesFromProps,
-}: SpacesProps): JSX.Element => {
+}: SpacesProps): React.JSX.Element => {
   const [{ previousSpacesMap, previousSpacesByConfigMap, previousSpacesByPayerMap, loading, error }, dispatch] =
-    useReducer(spacesReducer, INITIAL_STATE);
+    useReducer<SpacesContextType, [SpacesReducerAction]>(spacesReducer, INITIAL_STATE);
 
   const spacesMap: Map<string, Space> = new Map(previousSpacesMap);
   const configIdsMap: Map<string, Space> = new Map(previousSpacesByConfigMap);

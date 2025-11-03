@@ -340,7 +340,7 @@ export const Form = () => {
           <FormControlLabel control={<Radio />} value="1" label="Option 1" />
           <FormControlLabel control={<Radio />} value="2" label="Option 2" />
         </ControlledRadioGroup>
-        <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" variant="contained">
+        <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" >
           Submit
         </LoadingButton>
       </form>
@@ -430,7 +430,7 @@ export const Form = () => {
         />
         {errors.radio ? <FormHelperText id="radio-helper-text">{errors.radio?.message}</FormHelperText> : null }
       </FormControl>
-      <LoadingButton loading={loading} type="submit" variant="contained">
+      <LoadingButton loading={loading} type="submit" >
         Submit
       </LoadingButton>
     </form>

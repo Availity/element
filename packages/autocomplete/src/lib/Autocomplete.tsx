@@ -66,7 +66,7 @@ export const Autocomplete = <
 >({
   FieldProps,
   ...props
-}: AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>): JSX.Element => {
+}: AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>): React.JSX.Element => {
   // Availity desired default props are not making it into component context through theme defaultProps.
   // Can be overridden by props passed to TextField through `FieldProps`.
   const defaultProps = {

@@ -2,6 +2,6 @@ import MuiStepConnector, { StepConnectorProps as MuiStepConnectorProps } from '@
 
 export type StepConnectorProps = MuiStepConnectorProps;
 
-export const StepConnector = (props: StepConnectorProps): JSX.Element => {
+export const StepConnector = (props: StepConnectorProps): React.JSX.Element => {
   return <MuiStepConnector {...props} />;
 };

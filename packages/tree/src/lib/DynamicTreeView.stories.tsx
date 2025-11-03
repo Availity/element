@@ -85,7 +85,6 @@ export const _DynamicTreeViewEditable: StoryObj<typeof DynamicTreeView> = {
   args: {
     items,
     isItemEditable: true,
-    experimentalFeatures: { labelEditing: true },
     'aria-labelledby': 'dynamic-tree-editable',
   },
 };

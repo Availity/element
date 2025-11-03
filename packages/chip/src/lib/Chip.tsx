@@ -5,6 +5,6 @@ export type ChipProps = Omit<
   'children' | 'color' | 'variant' | 'skipFocusWhenDisabled' | 'disabled' | 'size' | 'icon' | 'clickable' | 'color'
 >;
 
-export const Chip = (props: ChipProps): JSX.Element => {
+export const Chip = (props: ChipProps): React.JSX.Element => {
   return <MuiChip {...props} color="default" size="medium" />;
 };

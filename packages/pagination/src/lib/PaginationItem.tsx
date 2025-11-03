@@ -29,6 +29,6 @@ const slots = {
   ),
 };
 
-export const PaginationItem = (props: PaginationItemProps): JSX.Element => {
+export const PaginationItem = (props: PaginationItemProps): React.JSX.Element => {
   return <MuiPaginationItem slots={slots} {...props} />;
 };

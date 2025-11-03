@@ -537,9 +537,9 @@ export const lightTheme = {
                 backgroundColor: 'inherit',
               },
               '> .MuiCollapse-root > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > .MuiAccordion-region > .MuiAccordionDetails-root:first-of-type':
-              {
-                borderTop: 'none',
-              },
+                {
+                  borderTop: 'none',
+                },
             },
           },
         },
@@ -1754,6 +1754,102 @@ export const lightTheme = {
         },
       },
     },
+    MuiPickersInputBase: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          boxSizing: 'border-box',
+          width: '220px',
+          maxWidth: '100%',
+          minHeight: '56px',
+          '&.MuiPickersInputBase-inputSizeSmall': {
+            minHeight: '40px',
+          },
+          '&.MuiPickersInputBase-fullWidth': {
+            width: '100%',
+          },
+          // copied from MuiInputBase
+          backgroundColor: 'white',
+          padding: '0px',
+          '& > fieldset': {
+            borderColor: tokens.colorGrey400,
+          },
+          '&:hover > fieldset': {
+            borderColor: tokens.borderInputHover,
+          },
+          '&.Mui-focused > fieldset': {
+            borderColor: tokens.borderInputFocus,
+          },
+          '&.Mui-error > fieldset': {
+            borderColor: tokens.colorErrorMain,
+          },
+          '&.Mui-disabled > fieldset': {
+            borderColor: tokens.borderDisabled,
+            color: tokens.colorTextDisabled,
+          },
+          '&.Mui-readOnly, > input[readonly]': {
+            backgroundColor: tokens.colorActionReadonlyBg
+          },
+          '.MuiPickersInputBase-input': {
+            padding: '8px 12px',
+            lineHeight: '1.5rem',
+            color: tokens.colorTextPrimary,
+            '&::placeholder': {
+              opacity: 1,
+              color: tokens.colorGrey400,
+            },
+          },
+          '.MuiPickersInputBase-inputAdornedEnd': {
+            paddingRight: '0',
+          },
+          '.MuiPickersInputBase-inputAdornedStart': {
+            paddingLeft: '0',
+          },
+          '&.MuiPickersInputBase-adornedStart': {
+            paddingLeft: '12px',
+          },
+          '&.MuiPickersInputBase-adornedEnd': {
+            paddingRight: '12px',
+          },
+          '&:hover': {
+            '.MuiPickersInputBase-input::placeholder': {
+              color: tokens.colorTextPrimary,
+            },
+            '.MuiIconButton-root': {
+              color: tokens.colorGrey700,
+            },
+          },
+          '&.Mui-disabled': {
+            '.MuiIconButton-root': {
+              color: tokens.colorTextDisabled,
+            },
+          },
+          '.MuiIconButton-root': {
+            border: '0',
+            // padding: '8px',
+            color: tokens.colorGrey400,
+          },
+        },
+      },
+    },
+    MuiPickersOutlinedInput: {
+      styleOverrides: {
+        notchedOutline: {
+          'legend': {
+            width: '0px',
+          },
+        },
+      },
+    },
+    MuiPickersTextField: {
+      defaultProps: {
+        variant: 'outlined',
+        fullWidth: true,
+        size: 'small'
+      }
+    },
     MuiPopover: {
       defaultProps: {
         PaperProps: {
@@ -1843,13 +1939,13 @@ export const lightTheme = {
             left: '24px',
             right: '24px',
             '&.MuiSnackbar-anchorOriginBottomCenter, &.MuiSnackbar-anchorOriginBottomLeft, &.MuiSnackbar-anchorOriginBottomRight':
-            {
-              bottom: '24px',
-            },
+              {
+                bottom: '24px',
+              },
             '&.MuiSnackbar-anchorOriginTopCenter, &.MuiSnackbar-anchorOriginTopLeft, &.MuiSnackbar-anchorOriginTopRight':
-            {
-              top: '24px',
-            },
+              {
+                top: '24px',
+              },
           },
           [theme.breakpoints.up('sm')]: {
             maxWidth: '528px',
@@ -2422,52 +2518,56 @@ export const lightTheme = {
         },
       },
     },
-    MuiTreeItem2: {
+    MuiTreeItem: {
       styleOverrides: {
         checkbox: {
-          '&.Mui-checked': {
+          '&.MuiTreeItem-checkbox.Mui-checked': {
             color: tokens.colorTextInverse,
           },
         },
         content: {
-          borderRadius: 0,
-          padding: '8px 16px',
-          alignItems: 'start',
-          '&:hover': {
-            backgroundColor: tokens.colorActionHover,
-          },
-          '&:active': {
-            backgroundColor: `${tokens.colorSecondaryDark}26`,
-          },
-          '&.Mui-focused': {
-            outlineWidth: tokens.borderWidthXs,
-            outlineColor: tokens.colorTextInverse,
-            outlineStyle: 'solid',
-            boxShadow: `0 0 0px 4px ${tokens.borderPrimary}`,
-          },
-          '&.Mui-selected': {
-            backgroundColor: tokens.colorPrimaryMain,
-            '.MuiTreeItem-iconContainer': {
-              color: tokens.colorTextInverse,
-            },
-            '.MuiTreeItem-label': {
-              color: tokens.colorTextInverse,
-            },
+          '&.MuiTreeItem-content, &.MuiSimpleTreeView-itemContent, &.MuiRichTreeView-itemContent':{
+            borderRadius: 0,
+            padding: '8px 16px',
+            alignItems: 'start',
             '&:hover': {
-              backgroundColor: tokens.colorPrimaryDark,
+              backgroundColor: tokens.colorActionHover,
             },
             '&:active': {
-              backgroundColor: tokens.colorPrimaryDarker,
+              backgroundColor: `${tokens.colorSecondaryDark}26`,
             },
-          },
+            '&.Mui-focused': {
+              outlineWidth: tokens.borderWidthXs,
+              outlineColor: tokens.colorTextInverse,
+              outlineStyle: 'solid',
+              boxShadow: `0 0 0px 4px ${tokens.borderPrimary}`,
+            },
+            '&.Mui-selected': {
+              backgroundColor: tokens.colorPrimaryMain,
+              '.MuiTreeItem-iconContainer': {
+                color: tokens.colorTextInverse,
+              },
+              '.MuiTreeItem-label': {
+                color: tokens.colorTextInverse,
+              },
+              '&:hover': {
+                backgroundColor: tokens.colorPrimaryDark,
+              },
+              '&:active': {
+                backgroundColor: tokens.colorPrimaryDarker,
+              },
+            },
+          }
         },
         iconContainer: {
-          color: tokens.colorSecondaryMain,
-          paddingTop: '4px',
-          svg: {
-            fontSize: 'inherit',
-            marginRight: '4px',
-          },
+          '&.MuiTreeItem-iconContainer, &.MuiSimpleTreeView-itemIconContainer, &.MuiRichTreeView-itemIconConainer':{
+            color: tokens.colorSecondaryMain,
+            paddingTop: '4px',
+            svg: {
+              fontSize: 'inherit',
+              marginRight: '4px',
+            },
+          }
         },
       },
     },

@@ -13,7 +13,7 @@ interface FeedbackHeaderProps {
 
 const FeedbackHeaderContainer = styled(Grid, { name: 'AvFeedbackContainer', slot: 'FeedbackHeaderContainer' })({});
 
-export const FeedbackHeader = ({ appName, handleClose, loading, sent }: FeedbackHeaderProps): JSX.Element => {
+export const FeedbackHeader = ({ appName, handleClose, loading, sent }: FeedbackHeaderProps): React.JSX.Element => {
   return (
     <FeedbackHeaderContainer
       alignItems="flex-start"

@@ -1658,28 +1658,28 @@ export const legacyTheme = {
       },
       styleOverrides: {
         root: {
-          backgroundColor: tokens.colorCommonWhite,
-          '&.Mui-focused': {
-            '.MuiOutlinedInput-notchedOutline': {
-              borderColor: tokens.borderInputFocus,
-              borderWidth: '1px',
-              boxShadow: `0 0 0px .2rem ${tokens.borderInputFocus}`,
-            },
-            '&.Mui-error': {
+            backgroundColor: tokens.colorCommonWhite,
+            '&.Mui-focused': {
               '.MuiOutlinedInput-notchedOutline': {
-                boxShadow: `0 0 0px .2rem ${tokens.borderError}`,
+                borderColor: tokens.borderInputFocus,
+                borderWidth: '1px',
+                boxShadow: `0 0 0px .2rem ${tokens.borderInputFocus}`,
+              },
+              '&.Mui-error': {
+                '.MuiOutlinedInput-notchedOutline': {
+                  boxShadow: `0 0 0px .2rem ${tokens.borderError}`,
+                },
               },
             },
-          },
-          '&.Mui-error, &.Mui-error.Mui-focused': {
-            '.MuiOutlinedInput-notchedOutline': {
-              borderColor: tokens.borderError,
+            '&.Mui-error, &.Mui-error.Mui-focused': {
+              '.MuiOutlinedInput-notchedOutline': {
+                borderColor: tokens.borderError,
+              },
             },
-          },
-          '&.Mui-disabled, &.Mui-readOnly': {
-            backgroundColor: tokens.colorActionDisabledBg,
-            borderColor: tokens.borderDisabled
-          },
+            '&.Mui-disabled, &.Mui-readOnly': {
+              backgroundColor: tokens.colorActionDisabledBg,
+              borderColor: tokens.borderDisabled
+            },
         },
         notchedOutline: {
           padding: 0,
@@ -1760,6 +1760,14 @@ export const legacyTheme = {
         },
       },
     },
+    MuiPickerPopper: {
+      styleOverrides: {
+        paper: {
+          boxShadow: 'none',
+          border: `1px solid ${tokens.borderDecorative}`,
+        },
+      },
+    },
     MuiPickersArrowSwitcher: {
       styleOverrides: {
         button: {
@@ -1834,6 +1842,40 @@ export const legacyTheme = {
         },
       },
     },
+    MuiPickersInputBase: {
+      defaultProps: {
+        size: 'small',
+      },
+      styleOverrides: {
+        root: {
+          // copied from MuiInputBase
+          boxSizing: 'border-box',
+          width: '220px',
+          maxWidth: '100%',
+          '&.MuiPickersInputBase-fullWidth': {
+            width: '100%',
+          },
+          'label + &': {
+            marginTop: '.5rem',
+          },
+          borderRadius: 4,
+          position: 'relative',
+          fontSize: '1rem',
+          '.MuiPickersOutlinedInput-input': {
+            color: tokens.colorTextPrimary,
+            '&::placeholder': {
+              opacity: 1,
+              color: tokens.colorTextDisabled,
+            },
+            '&.MuiPickersInputBase-inputSizeSmall': {
+              padding: '.375rem .75rem',
+              lineHeight: '24px',
+              minHeight: '24px',
+            },
+          },
+        },
+      },
+    },
     MuiPickersMonth: {
       styleOverrides: {
         monthButton: {
@@ -1844,13 +1886,51 @@ export const legacyTheme = {
         }
       }
     },
-    MuiPickersPopper: {
+    MuiPickersOutlinedInput: {
       styleOverrides: {
-        paper: {
-          boxShadow: 'none',
-          border: `1px solid ${tokens.borderDecorative}`,
+        root: {
+          // copied from MuiOutlinedInput
+          '&.MuiPickersOutlinedInput-root, &.MuiPickersOutlinedInput-root': {
+            backgroundColor: tokens.colorCommonWhite,
+            '&.Mui-focused': {
+              '.MuiPickersOutlinedInput-notchedOutline': {
+                borderColor: tokens.borderInputFocus,
+                borderWidth: '1px',
+                boxShadow: `0 0 0px .2rem ${tokens.borderInputFocus}`,
+              },
+              '&.Mui-error': {
+                '.MuiPickersOutlinedInput-notchedOutline': {
+                  boxShadow: `0 0 0px .2rem ${tokens.borderError}`,
+                },
+              },
+            },
+            '&.Mui-error, &.Mui-error.Mui-focused': {
+              '.MuiPickersOutlinedInput-notchedOutline': {
+                borderColor: tokens.borderError,
+              },
+            },
+            '&.Mui-disabled, &.Mui-readOnly': {
+              backgroundColor: tokens.colorActionDisabledBg,
+              borderColor: tokens.borderDisabled
+            },
+          }
+        },
+        notchedOutline: {
+          padding: 0,
+          border: '1px solid',
+          borderColor: tokens.borderInput,
+          'legend': {
+            width: '0px',
+          },
         },
       },
+    },
+    MuiPickersTextField: {
+      defaultProps: {
+        variant: 'outlined',
+        fullWidth: true,
+        size: 'small'
+      }
     },
     MuiPickersYear: {
       styleOverrides: {

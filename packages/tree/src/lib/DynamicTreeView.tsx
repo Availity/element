@@ -4,7 +4,7 @@ import { TreeItem } from './TreeItem';
 
 export type DynamicTreeViewProps = MuiDynamicTreeViewProps<TreeViewBaseItem, true>;
 
-export const DynamicTreeView = ({ children, slots, ...rest }: DynamicTreeViewProps): JSX.Element => {
+export const DynamicTreeView = ({ children, slots, ...rest }: DynamicTreeViewProps): React.JSX.Element => {
   return (
     <RichTreeView {...rest} slots={{ ...slots, item: TreeItem }}>
       {children}

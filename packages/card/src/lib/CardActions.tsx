@@ -4,6 +4,6 @@ export interface CardActionsProps extends MuiCardActionsProps {
   children?: React.ReactNode;
 }
 
-export const CardActions = ({ children, ...rest }: CardActionsProps): JSX.Element => {
+export const CardActions = ({ children, ...rest }: CardActionsProps): React.JSX.Element => {
   return <MuiCardActions {...rest}>{children}</MuiCardActions>;
 };

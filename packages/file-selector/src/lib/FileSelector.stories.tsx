@@ -17,7 +17,7 @@ const meta: Meta<typeof FileSelector> = {
   component: FileSelector,
   tags: ['autodocs'],
   decorators: [
-    (Story: () => JSX.Element) => (
+    (Story: () => React.JSX.Element) => (
       <QueryClientProvider
         client={
           new QueryClient({

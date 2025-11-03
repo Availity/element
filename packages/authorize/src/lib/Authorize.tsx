@@ -35,7 +35,7 @@ export const Authorize = ({
   permissions,
   parameters = {},
   queryOptions
-}: AuthorizeProps): JSX.Element | null => {
+}: AuthorizeProps): React.JSX.Element | null => {
   const { authorized, isLoading } = useAuthorize(permissions, parameters, queryOptions);
 
   if (isLoading) {

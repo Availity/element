@@ -31,7 +31,7 @@ const SpaceComponent = ({ spaceId }: { spaceId: string }) => {
   );
 };
 
-const SpaceContainer = ({ children }: { children?: React.ReactNode }): JSX.Element => {
+const SpaceContainer = ({ children }: { children?: React.ReactNode }): React.JSX.Element => {
   const { loading } = useSpacesContext();
   return loading ? <span>loading...</span> : <div>{children}</div>;
 };

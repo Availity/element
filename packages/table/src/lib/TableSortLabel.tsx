@@ -19,7 +19,7 @@ export type TableSortLabelProps = Omit<
   | 'touchRippleRef'
 >;
 
-const TableSortLabel = (props: TableSortLabelProps): JSX.Element => {
+const TableSortLabel = (props: TableSortLabelProps): React.JSX.Element => {
   // mui rotates descending icon 180 degrees for ascending icon
   const IconComponent = props.active ? SortDownIcon : SortIcon;
   const SortedDescription = props.active ? (
