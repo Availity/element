@@ -1,0 +1,2 @@
+import{r}from"./index-BSuoOqEd.js";import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{B as a}from"./Button-DMnfP4ih.js";let o=!1;const i=()=>{o||(console.warn(["MUI: The LoadingButton component functionality is now part of the Button component from Material UI.","","You should use `import Button from '@mui/material/Button'`","or `import { Button } from '@mui/material'`"].join(`
+`)),o=!0)},p=r.forwardRef(function(t,n){return i(),e.jsx(a,{ref:n,...t})});export{p as M};

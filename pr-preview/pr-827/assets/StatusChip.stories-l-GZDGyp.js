@@ -1,0 +1,20 @@
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{C as d}from"./Chip-D0HJqAnB.js";import"./index-BSuoOqEd.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./identifier-DhnHujDJ.js";import"./createSvgIcon-DjY4rWdK.js";import"./SvgIcon-enpUMgPP.js";import"./memoTheme-BwIkkReu.js";import"./styled-9znMky1q.js";import"./DefaultPropsProvider-B1sWsgx2.js";import"./generateUtilityClass-BtcU_pBl.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./useSlot-jI6_c_PV.js";import"./mergeSlotProps-C8ahzxnq.js";import"./isHostComponent-DVu5iVWx.js";import"./useForkRef-BIkqQIqh.js";import"./ButtonBase-AdAh9sBA.js";import"./useTimeout-B9dULhq6.js";import"./TransitionGroupContext-CcytU7uK.js";import"./emotion-react.browser.esm-CVJjYY2z.js";import"./useEventCallback-Dvy07Fv6.js";import"./useEnhancedEffect-CIAiDanS.js";import"./isFocusVisible-B8k4qzLc.js";const r=({color:t="default",...c})=>e.jsx(d,{color:t,...c,size:"small"});try{r.displayName="StatusChip",r.__docgenInfo={description:"",displayName:"StatusChip",props:{color:{defaultValue:{value:"default"},description:"The color of the component.",name:"color",required:!1,type:{name:'"success" | "info" | "warning" | "error" | "primary" | "secondary" | "default"'}},slots:{defaultValue:{value:"{}"},description:"The components used for each slot inside.",name:"slots",required:!1,type:{name:"Partial<ChipSlots>"}},classes:{defaultValue:null,description:"Override or extend the styles applied to the component.",name:"classes",required:!1,type:{name:"Partial<ChipClasses> & Partial<ClassNameMap<never>>"}},className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},style:{defaultValue:null,description:"",name:"style",required:!1,type:{name:"CSSProperties"}},sx:{defaultValue:null,description:"The system prop that allows defining system overrides as well as additional CSS styles.",name:"sx",required:!1,type:{name:"SxProps<Theme>"}},label:{defaultValue:null,description:"The content of the component.",name:"label",required:!1,type:{name:"ReactNode"}},tabIndex:{defaultValue:null,description:"@ignore",name:"tabIndex",required:!1,type:{name:"number"}},component:{defaultValue:null,description:"",name:"component",required:!1,type:{name:"ElementType<any, keyof IntrinsicElements>"}},slotProps:{defaultValue:{value:"{}"},description:"The props used for each slot inside.",name:"slotProps",required:!1,type:{name:'{ root?: SlotProps<"div", {}, ChipOwnerState>; label?: SlotProps<"span", {}, ChipOwnerState>; }'}}}}}catch{}const k={title:"Components/Chip/StatusChip",component:r,tags:["autodocs"],args:{label:"Chip",color:"default"}},a={render:t=>e.jsx(r,{...t}),args:{label:"Chip",color:"primary"}},o={render:()=>e.jsxs(e.Fragment,{children:["Item 1 ",e.jsx(r,{color:"success",label:"Approved"}),e.jsx("br",{}),"Item 2 ",e.jsx(r,{color:"info",label:"Info"}),e.jsx("br",{}),"Item 3 ",e.jsx(r,{color:"warning",label:"Pending"}),e.jsx("br",{}),"Item 4 ",e.jsx(r,{color:"error",label:"Declined"}),e.jsx("br",{}),"Item 5 ",e.jsx(r,{color:"secondary",label:"Neutral"}),e.jsx("br",{})]})};var s,l,n;a.parameters={...a.parameters,docs:{...(s=a.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  render: (args: StatusChipProps) => <StatusChip {...args} />,
+  args: {
+    label: 'Chip',
+    color: 'primary'
+  }
+}`,...(n=(l=a.parameters)==null?void 0:l.docs)==null?void 0:n.source}}};var i,p,m;o.parameters={...o.parameters,docs:{...(i=o.parameters)==null?void 0:i.docs,source:{originalSource:`{
+  render: () => <>
+      Item 1 <StatusChip color="success" label="Approved" />
+      <br />
+      Item 2 <StatusChip color="info" label="Info" />
+      <br />
+      Item 3 <StatusChip color="warning" label="Pending" />
+      <br />
+      Item 4 <StatusChip color="error" label="Declined" />
+      <br />
+      Item 5 <StatusChip color="secondary" label="Neutral" />
+      <br />
+    </>
+}`,...(m=(p=o.parameters)==null?void 0:p.docs)==null?void 0:m.source}}};const z=["_Chip","_Status"];export{a as _Chip,o as _Status,z as __namedExportsOrder,k as default};
