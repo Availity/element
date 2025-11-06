@@ -53,11 +53,7 @@ const config: StorybookConfig = {
     storyStoreV7: false
   },
 
-  docs: {},
-  
-  ...(process.env.STORYBOOK_BASE_PATH && {
-    base: process.env.STORYBOOK_BASE_PATH + '/'
-  })
+  docs: {}
 };
 
 export default config;
