@@ -9,11 +9,14 @@ on:
       - synchronize
       - closed
 
-concurrency: preview-${{ github.ref }}
+concurrency: preview-${{ github.event.number }}
+
+permissions:
+  contents: write
 
 jobs:
   deploy-preview:
-    if: ${{ github.actor != 'dependabot[bot]' }}
+    if: ${{ github.event.action != 'closed' && github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -52,10 +55,34 @@ jobs:
       - name: Build Docs
         run: yarn build:storybook:ci
 
-      - name: Deploy preview
-        uses: rossjrw/pr-preview-action@9f77b1d057b494e662c50b8ca40ecc63f21e0887
+      - name: Deploy PR Preview
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
         with:
-          source-dir: dist/storybook
-          preview-branch: gh-pages
-          umbrella-dir: pr-preview
-          action: auto
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist/storybook
+          destination_dir: pr-preview/pr-${{ github.event.number }}
+          keep_files: true
+
+  cleanup-preview:
+    if: ${{ github.event.action == 'closed' && github.actor != 'dependabot[bot]' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          ref: gh-pages
+
+      - name: Remove PR preview
+        run: |
+          if [ -d "pr-preview/pr-${{ github.event.number }}" ]; then
+            rm -rf pr-preview/pr-${{ github.event.number }}
+            git config user.email ${{ secrets.GH_EMAIL }}
+            git config user.name ${{ secrets.GH_USER }}
+            git add .
+            git commit -m "Remove preview for PR #${{ github.event.number }}"
+            git push
+          else
+            echo "Preview directory not found, nothing to clean up"
+          fi
