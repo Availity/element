@@ -65,7 +65,7 @@ jobs:
           keep_files: true
 
       - name: Comment PR
-        uses: actions/github-script@35b1cdd1b2c1fc704b1cd442536d6de4654e9c4d # v7.1.0
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7.1.0
         with:
           script: |
             github.rest.issues.createComment({
