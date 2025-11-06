@@ -1,8 +1,0 @@
-import{j as o}from"./jsx-runtime-BTJTZTIL.js";import{C as n}from"./CardActionArea-BLKKnSHE.js";import{C as e}from"./Card-DX7ZVCJg.js";import{C as p}from"./CardContent-BoMW9N52.js";import"./index-ChsGqxH_.js";import"./index-BgYLq7fD.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./generateUtilityClass-BeVSWKCg.js";import"./identifier-CudAVvBZ.js";import"./memoTheme-CpoNRPWX.js";import"./styled-CKuRQFSa.js";import"./DefaultPropsProvider-CWkNlXkE.js";import"./generateUtilityClasses-whvyra8-.js";import"./ButtonBase-D97P5WV0.js";import"./useTimeout-iC_34LsC.js";import"./useEnhancedEffect-j2zQLnYm.js";import"./objectWithoutPropertiesLoose-Dsqj8S3w.js";import"./TransitionGroupContext-BKlA24Pm.js";import"./emotion-react.browser.esm-v7Jm8XFw.js";import"./useForkRef-Dz4aGlyk.js";import"./isFocusVisible-B8k4qzLc.js";import"./Card-cxokKFMq.js";import"./Paper-4P5FqKie.js";import"./useTheme-Cx1wRXKO.js";import"./useTheme-Ib01SJ3a.js";const z={title:"Components/Card/CardActionArea",component:n,tags:["autodocs"]},r={render:m=>o.jsx(e,{children:o.jsx(n,{...m,children:o.jsx(p,{children:"You can click on this card"})})}),args:{}};var t,a,i;r.parameters={...r.parameters,docs:{...(t=r.parameters)==null?void 0:t.docs,source:{originalSource:`{
-  render: (args: CardActionAreaProps) => <Card>
-      <CardActionArea {...args}>
-        <CardContent>You can click on this card</CardContent>
-      </CardActionArea>
-    </Card>,
-  args: {}
-}`,...(i=(a=r.parameters)==null?void 0:a.docs)==null?void 0:i.source}}};const B=["_CardActionArea"];export{r as _CardActionArea,B as __namedExportsOrder,z as default};
