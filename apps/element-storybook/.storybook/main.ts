@@ -57,7 +57,7 @@ const config: StorybookConfig = {
   
   managerHead: (head) => `
     ${head}
-    <base href="${process.env.STORYBOOK_BASE_PATH || '/'}" />
+    <base href="${process.env.STORYBOOK_BASE_PATH ? process.env.STORYBOOK_BASE_PATH + '/' : '/'}" />
   `,
   
   viteFinal: async (config) => {
