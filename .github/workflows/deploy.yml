@@ -150,7 +150,7 @@ jobs:
       - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
         with:
           fetch-depth: 0
-          ref: 'main'
+          ref: ${{ github.sha }}
 
       - name: Set Node Version
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
@@ -164,6 +164,12 @@ jobs:
 
       - name: Build Packages
         run: yarn build
+
+      - name: Debug version
+        run: |
+          echo "Current commit: $(git rev-parse HEAD)"
+          echo "Package version: $(cat packages/element/package.json | grep '"version"' | head -1)"
+          ls -la packages/element/
 
       - name: Build Docs
         run: yarn build:storybook:ci
