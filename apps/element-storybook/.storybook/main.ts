@@ -53,7 +53,19 @@ const config: StorybookConfig = {
     storyStoreV7: false
   },
 
-  docs: {}
+  docs: {},
+  
+  managerHead: (head) => `
+    ${head}
+    <base href="${process.env.STORYBOOK_BASE_PATH || '/'}" />
+  `,
+  
+  viteFinal: async (config) => {
+    if (process.env.STORYBOOK_BASE_PATH) {
+      config.base = process.env.STORYBOOK_BASE_PATH + '/';
+    }
+    return config;
+  }
 };
 
 export default config;
