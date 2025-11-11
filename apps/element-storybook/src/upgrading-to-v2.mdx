@@ -32,6 +32,17 @@ These changes may affect your application depending on component usage:
 - LoadingButton
   - LoadingButton pattern now matches Button, removing the `variant` prop
 
+#### Removed Internals
+
+We are cleaning up our exports to no longer include internal utils/components
+
+- Alert: `AlertIcons`
+- Autocomplete: `fetchCodes`, `handleGetCodesOptionLabel`, `fetchOrgs`, `handleGetOrgOptionLabel`, `fetchProviders`, `handleGetProviderOptionLabel`, `Code` type, `Organization` type, `Provider` type
+- Dialog: `CloseButtonSlot`
+- FileSelector: `outerBoxStyles`, `innerBoxStyles`, `createCounter`, `DropzoneContainer`, `formatFileTooLarge`, `CLOUD_URL`
+- Form Utils: `InputPropOverrides`, `SearchByContainer`, `SelectDivider`, `SelectExpandIcon`, `SelectPropOverrides`, `SelectAccessibilityOverrides`
+- Spaces: `INITIAL_STATE`
+
 ### Non-Impact Changes
 
 The following changes should not require any action:
