@@ -6,6 +6,6 @@ export type TableHeadProps = {
   component?: ElementType<TableCellBaseProps>;
 } & MuiTableHeadProps;
 
-export const TableHead = (props: TableHeadProps): JSX.Element => {
+export const TableHead = (props: TableHeadProps): React.JSX.Element => {
   return <MuiTableHead {...props} />;
 };

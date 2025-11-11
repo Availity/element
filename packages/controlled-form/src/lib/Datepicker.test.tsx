@@ -6,7 +6,7 @@ import { TestForm } from './UtilComponents';
 
 const onSubmit = jest.fn();
 
-describe('Datepicker', () => {
+describe('ControlledDatepicker', () => {
   test('should render successfully and submit selection', async () => {
     const screen = render(
       <ThemeProvider>
@@ -59,7 +59,7 @@ describe('Datepicker', () => {
           </ThemeProvider>
         );
 
-        expect(screen.getByText('*')).toBeDefined();
+        expect(screen.getAllByText('*')).toBeDefined();
       });
 
       test('should indicate it is required when passing an object with true', async () => {
@@ -80,7 +80,7 @@ describe('Datepicker', () => {
           </ThemeProvider>
         );
 
-        expect(screen.getByText('*')).toBeDefined();
+        expect(screen.getAllByText('*')).toBeDefined();
       });
 
       test('should not indicate it is required when passing an object with false', async () => {
@@ -101,7 +101,7 @@ describe('Datepicker', () => {
           </ThemeProvider>
         );
 
-        expect(screen.queryByText('*')).toBeNull();
+        expect(screen.queryAllByText('*')).toHaveLength(0);
       });
     });
   });

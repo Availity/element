@@ -19,7 +19,7 @@ const SecondaryTabs = styled(MuiTabList, {
   overridesResolver: (props, styles) => styles.avSecondary,
 })<{ ownerState: MuiTabListProps }>(secondaryTabStyling);
 
-export const TabList = ({ level = 'primary', ...rest }: TabListProps): JSX.Element => {
+export const TabList = ({ level = 'primary', ...rest }: TabListProps): React.JSX.Element => {
   const LevelledTabs = level === 'primary' ? PrimaryTabs : SecondaryTabs;
   return (
     <LevelledTabs {...rest} orientation="horizontal" centered={false}/>

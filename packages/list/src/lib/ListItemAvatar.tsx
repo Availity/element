@@ -4,6 +4,6 @@ import MuiListItemAvatar, { ListItemAvatarProps as MuiListItemAvatarProps } from
 export type ListItemAvatarProps = MuiListItemAvatarProps;
 
 /** Avatar to be used inside of a list item. */
-export const ListItemAvatar = ({ children, ...rest }: ListItemAvatarProps): JSX.Element => {
+export const ListItemAvatar = ({ children, ...rest }: ListItemAvatarProps): React.JSX.Element => {
   return <MuiListItemAvatar {...rest}>{children}</MuiListItemAvatar>;
 };

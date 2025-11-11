@@ -7,7 +7,7 @@ export interface BadgeProps extends MUIBadgeProps {
   color?: 'primary' | 'error' | 'success';
 }
 
-export const Badge = ({ children, color = 'error', ...rest }: BadgeProps): JSX.Element => (
+export const Badge = ({ children, color = 'error', ...rest }: BadgeProps): React.JSX.Element => (
   <MUIBadge color={color} {...rest}>
     {children}
   </MUIBadge>

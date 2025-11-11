@@ -1,13 +1,13 @@
-import { TreeItem2, TreeItem2Props as MuiTreeItem2Props } from '@mui/x-tree-view/TreeItem2';
+import { TreeItem as MuiTreeItem, TreeItemProps as MuiTreeItemProps } from '@mui/x-tree-view/TreeItem';
 import { TriangleRightIcon, TriangleExpandIcon } from '@availity/mui-icon';
 
-export interface TreeItemProps extends MuiTreeItem2Props {
+export interface TreeItemProps extends MuiTreeItemProps {
   truncate?: boolean;
 }
 
-export const TreeItem = ({ children, label, slots, slotProps, truncate, ...rest }: TreeItemProps): JSX.Element => {
+export const TreeItem = ({ children, label, slots, slotProps, truncate, ...rest }: TreeItemProps): React.JSX.Element => {
   return (
-    <TreeItem2
+    <MuiTreeItem
       {...rest}
       label={label}
       slots={{
@@ -23,7 +23,7 @@ export const TreeItem = ({ children, label, slots, slotProps, truncate, ...rest 
           style: truncate ? { overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' } : {},
         },
         checkbox: {
-          // @ts-expect-error TreeItem2SlotProps.checkbox types are incorrect
+          // @ts-expect-error SlotProps.checkbox types are incorrect
           inputProps: {
             'aria-hidden': true,
           },
@@ -31,6 +31,6 @@ export const TreeItem = ({ children, label, slots, slotProps, truncate, ...rest 
       }}
     >
       {children}
-    </TreeItem2>
+    </MuiTreeItem>
   );
 };

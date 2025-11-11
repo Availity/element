@@ -4,6 +4,6 @@ export interface CardMediaProps extends MuiCardMediaProps {
   children?: React.ReactNode;
 }
 
-export const CardMedia = ({ children, ...rest }: CardMediaProps): JSX.Element => {
+export const CardMedia = ({ children, ...rest }: CardMediaProps): React.JSX.Element => {
   return <MuiCardMedia {...rest}>{children}</MuiCardMedia>;
 };

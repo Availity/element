@@ -109,7 +109,7 @@ export const FavoriteHeart = ({
   onMouseDown,
   disabled = false,
   customSize = DEFAULT_SIZE,
-}: FavoriteHeartProps): JSX.Element => {
+}: FavoriteHeartProps): React.JSX.Element => {
   const { isFavorited, isLastClickedFavorite, status, toggleFavorite } = useFavorites(id);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

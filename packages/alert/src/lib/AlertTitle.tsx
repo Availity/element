@@ -5,6 +5,6 @@ export type AlertTitleProps = {
   children: React.ReactNode;
 } & MUIAlertTitleProps;
 
-export const AlertTitle = ({ children, ...rest }: AlertTitleProps): JSX.Element => (
+export const AlertTitle = ({ children, ...rest }: AlertTitleProps): React.JSX.Element => (
   <MUIAlertTitle {...rest}>{children}</MUIAlertTitle>
 );

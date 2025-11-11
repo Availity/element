@@ -1,6 +1,6 @@
 import { Box, Breadcrumbs, HomeIcon, IconButton, Link, Typography } from '@availity/element';
 
-export const HeaderSection = (): JSX.Element => {
+export const HeaderSection = (): React.JSX.Element => {
   return (
     <Box sx={{ marginBottom: '.5rem' }}>
       <Breadcrumbs aria-label="breadcrumbs">

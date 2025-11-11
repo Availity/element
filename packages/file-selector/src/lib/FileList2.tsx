@@ -96,7 +96,7 @@ export const FileList2 = ({
   onRemoveFile,
   customFileRow,
   disableRemove,
-}: FileList2Props): JSX.Element | null => {
+}: FileList2Props): React.JSX.Element | null => {
   if (uploads.length === 0) return null;
 
   return (

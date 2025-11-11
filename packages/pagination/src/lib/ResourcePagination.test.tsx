@@ -20,7 +20,7 @@ afterEach(() => {
 
 const client = new QueryClient();
 
-const ResourcePaginationComponent = (): JSX.Element => {
+const ResourcePaginationComponent = (): React.JSX.Element => {
   const resp = useResourcePagination({
     page: 1,
     resource: avOrganizationsApi,

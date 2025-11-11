@@ -2,6 +2,6 @@ import { default as MuiPopover, PopoverProps as MuiPopoverProps } from '@mui/mat
 
 export type PopoverProps = MuiPopoverProps;
 
-export const Popover = ({ ...rest }: PopoverProps): JSX.Element => {
+export const Popover = ({ ...rest }: PopoverProps): React.JSX.Element => {
   return <MuiPopover {...rest} />;
 };

@@ -155,7 +155,7 @@ const dropdownOptions = ['Bulbasaur', 'Squirtle', 'Charmander'];
 //           />
 //           {errors.radio ? <FormHelperText id="radio-helper-text">{errors.radio?.message}</FormHelperText> : null }
 //         </FormControl>
-//         <LoadingButton loading={isSubmitting} type="submit" variant="contained">
+//         <LoadingButton loading={isSubmitting} type="submit">
 //           Submit
 //         </LoadingButton>
 //       </form>
@@ -185,7 +185,7 @@ export const _YupValidation: StoryObj = {
     });
 
     const isRequired = (name: string) => {
-      return(!schema.describe().fields[name]?.optional || undefined)
+      return(!(schema.describe().fields[name] as yup.SchemaDescription)?.optional || undefined)
     }
 
     type FormInputsType = yup.InferType<typeof schema>;
@@ -237,7 +237,7 @@ export const _YupValidation: StoryObj = {
             <FormControlLabel control={<Radio />} value="1" label="Option 1" />
             <FormControlLabel control={<Radio />} value="2" label="Option 2" />
           </ControlledRadioGroup>
-          <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" variant="contained" sx={{mt: 2}}>
+          <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" sx={{mt: 2}}>
             Submit
           </LoadingButton>
         </form>
@@ -338,7 +338,7 @@ export const _YupValidation: StoryObj = {
 //             </FormControl>
 //           )}
 //         />
-//         <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" variant="contained">
+//         <LoadingButton loading={methods?.formState?.isSubmitting} type="submit">
 //           Submit
 //         </LoadingButton>
 //       </form>
@@ -401,7 +401,7 @@ export const _RHFRules: StoryObj = {
             <FormControlLabel control={<Radio />} value="1" label="Option 1" />
             <FormControlLabel control={<Radio />} value="2" label="Option 2" />
           </ControlledRadioGroup>
-          <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" variant="contained" sx={{mt: 2}}>
+          <LoadingButton loading={methods?.formState?.isSubmitting} type="submit" sx={{mt: 2}}>
             Submit
           </LoadingButton>
         </form>

@@ -60,7 +60,7 @@ export const CircularProgress = ({
   success = false,
   size = 'default',
   ...props
-}: CircularProgressProps): JSX.Element => {
+}: CircularProgressProps): React.JSX.Element => {
   const [status, setStatus] = useState('loading');
 
   useEffect(() => {

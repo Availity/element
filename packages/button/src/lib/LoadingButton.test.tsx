@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { LoadingButton } from './LoadingButton';
 
 describe('LoadingButton', () => {
@@ -16,6 +17,6 @@ describe('LoadingButton', () => {
   test('should display spinner in end position when no icon passed', () => {
     const { getByRole } = render(<LoadingButton loading>Test</LoadingButton>);
     expect(getByRole('progressbar')).toBeTruthy();
-    expect(getByRole('progressbar').parentElement).toHaveClass('MuiLoadingButton-loadingIndicatorEnd');
+    expect(getByRole('button')).toHaveClass('MuiButton-loadingPositionEnd');
   });
 });

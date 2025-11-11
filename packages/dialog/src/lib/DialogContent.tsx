@@ -4,6 +4,6 @@ export interface DialogContentProps extends MuiDialogContentProps {
   children?: React.ReactNode;
 }
 
-export const DialogContent = ({ children, ...rest }: DialogContentProps): JSX.Element => {
+export const DialogContent = ({ children, ...rest }: DialogContentProps): React.JSX.Element => {
   return <MuiDialogContent {...rest}>{children}</MuiDialogContent>;
 };

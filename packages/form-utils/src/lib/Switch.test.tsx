@@ -4,6 +4,6 @@ import { Switch } from './Switch';
 describe('Switch', () => {
   test('should render successfully', () => {
     const { getByRole } = render(<Switch />);
-    expect(getByRole('checkbox')).toBeTruthy();
+    expect(getByRole('switch')).toBeTruthy();
   });
 });

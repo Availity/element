@@ -16,7 +16,7 @@ const isObject = (value: unknown): value is Record<string, unknown> => {
 
 const validateId = (id: string) => id.replace(/[^.\w:-]+/gi, '');
 
-const getDetails = ({ data }: JsonViewerProps, parentKey?: string): (JSX.Element | null)[] => {
+const getDetails = ({ data }: JsonViewerProps, parentKey?: string): (React.JSX.Element | null)[] => {
   return Object.entries(data).map(([key, value], index) => {
     const id = validateId(parentKey ? `${parentKey}.${index}.${key}` : `${index}.${key}`);
 
@@ -38,7 +38,7 @@ const getDetails = ({ data }: JsonViewerProps, parentKey?: string): (JSX.Element
   });
 };
 
-export const JsonViewer = ({ data, ...rest }: JsonViewerProps): JSX.Element => {
+export const JsonViewer = ({ data, ...rest }: JsonViewerProps): React.JSX.Element => {
   const details = getDetails({ data });
   return <TreeView {...rest}>{details}</TreeView>;
 };

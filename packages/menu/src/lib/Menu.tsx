@@ -19,7 +19,7 @@ export type MenuProps = Omit<
   | 'TransitionProps'
 >;
 
-export const Menu = (props: MenuProps): JSX.Element => {
+export const Menu = (props: MenuProps): React.JSX.Element => {
   return <MuiMenu {...props} />;
 };
 

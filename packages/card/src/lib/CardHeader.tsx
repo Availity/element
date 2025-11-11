@@ -22,7 +22,7 @@ export const CardHeader = ({
   title,
   logo,
   ...rest
-}: CardHeaderProps): JSX.Element => {
+}: CardHeaderProps): React.JSX.Element => {
   return (
     <MuiCardHeader
       {...rest}

@@ -109,7 +109,7 @@ export const FileList = ({
   queryOptions,
   customFileRow,
   disableRemove,
-}: FileListProps): JSX.Element | null => {
+}: FileListProps): React.JSX.Element | null => {
   if (files.length === 0) return null;
 
   return (

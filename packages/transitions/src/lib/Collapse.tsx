@@ -2,6 +2,6 @@ import MuiCollapse, { CollapseProps as MuiCollapseProps } from '@mui/material/Co
 
 export type CollapseProps = MuiCollapseProps;
 
-export const Collapse = (props: CollapseProps): JSX.Element => {
+export const Collapse = (props: CollapseProps): React.JSX.Element => {
   return <MuiCollapse {...props} />;
 };

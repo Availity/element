@@ -15,7 +15,7 @@ export type ModalProps = {
   | 'onBackdropClick'
 >;
 
-export const Modal = ({ children, ...rest }: ModalProps): JSX.Element => {
+export const Modal = ({ children, ...rest }: ModalProps): React.JSX.Element => {
   return (
     <MuiModal {...rest} disablePortal>
       {children}

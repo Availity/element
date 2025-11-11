@@ -11,7 +11,7 @@ export interface CardActionAreaProps
   children?: React.ReactNode;
 }
 
-export const CardActionArea = ({ children, ...rest }: CardActionAreaProps): JSX.Element => {
+export const CardActionArea = ({ children, ...rest }: CardActionAreaProps): React.JSX.Element => {
   return (
     <MuiCardActionArea {...rest} disableRipple>
       {children}

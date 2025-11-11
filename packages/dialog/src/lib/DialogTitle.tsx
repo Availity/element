@@ -19,7 +19,7 @@ export type DialogTitleProps = {
   icon?: keyof typeof AlertIcons;
 } & Omit<MuiDialogTitleProps, 'align' | 'variantMapping'>
 
-export const DialogTitle = ({ children, component="h2", icon, variant="h5", ...rest }: DialogTitleProps): JSX.Element => {
+export const DialogTitle = ({ children, component="h2", icon, variant="h5", ...rest }: DialogTitleProps): React.JSX.Element => {
   return (
     <MuiDialogTitle component={component} variant={variant} {...rest}>
       {icon ? <AlertIcon>{AlertIcons[icon]}</AlertIcon> : null}

@@ -12,7 +12,7 @@ import {
   ChartColumnIcon,
 } from '@availity/element';
 
-export const SearchSection = (): JSX.Element => {
+export const SearchSection = (): React.JSX.Element => {
   const [searchValue, setSearchValue] = useState('');
   return (
     <Paper variant="elevation" elevation={0}>

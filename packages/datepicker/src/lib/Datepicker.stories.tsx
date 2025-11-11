@@ -37,7 +37,7 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
       fullWidth: false,
       helperText: 'Help text for the field',
       helpTopicId: '1234',
-      label: 'Date',
+      label: 'Date'
     },
   },
 };
@@ -84,7 +84,7 @@ type DateRangePickerProps = {
   };
 };
 
-type DateRangePicker = (props: DateRangePickerProps) => JSX.Element;
+type DateRangePicker = (props: DateRangePickerProps) => React.JSX.Element;
 
 export const _DateRangePicker: StoryObj<DateRangePicker> = {
   render: () => {

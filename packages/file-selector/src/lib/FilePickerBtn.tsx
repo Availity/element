@@ -20,7 +20,7 @@ export type FilePickerBtnProps = {
   /**
    * Additional props to customize the underlying input element.
    */
-  inputProps?: DropzoneInputProps & { ref?: RefObject<HTMLInputElement> };
+  inputProps?: DropzoneInputProps & { ref?: RefObject<HTMLInputElement | null> };
   /**
    * Maximum allowed size per file in bytes. Files exceeding this size will be rejected.
    */

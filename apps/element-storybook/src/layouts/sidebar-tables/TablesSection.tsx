@@ -143,7 +143,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   );
 }
 
-export const TablesSection = (): JSX.Element => {
+export const TablesSection = (): React.JSX.Element => {
   const [order, setOrder] = useState<Order>();
   const [orderBy, setOrderBy] = useState<keyof Data>();
 

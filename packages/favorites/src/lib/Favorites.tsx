@@ -34,7 +34,7 @@ export const FavoritesProvider = ({
   settingsStatus?: StatusUnion;
   applicationId?: string;
   maxFavorites?: number;
-}): JSX.Element => {
+}): React.JSX.Element => {
   const [lastClickedFavoriteId, setLastClickedFavoriteId] = useState<string>('');
 
   const queryClient = useQueryClient();

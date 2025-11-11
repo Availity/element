@@ -26,52 +26,52 @@ import { faCircleDot } from '@fortawesome/free-regular-svg-icons/faCircleDot';
 import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
 import { FaSvgIcon, IconProps } from '../FaSvgIcon';
 
-export const HelpCircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faQuestionCircle} {...props} />;
+export const HelpCircleIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faQuestionCircle} {...props} />;
 
-export const SuccessCircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCheckCircle} {...props} />;
+export const SuccessCircleIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faCheckCircle} {...props} />;
 
-export const InfoCircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faInfoCircle} {...props} />;
+export const InfoCircleIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faInfoCircle} {...props} />;
 
-export const WarningCircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faExclamationCircle} {...props} />;
+export const WarningCircleIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faExclamationCircle} {...props} />;
 
-export const WarningTriangleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faExclamationTriangle} {...props} />;
+export const WarningTriangleIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faExclamationTriangle} {...props} />;
 
-export const FaceSmileIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faFaceSmile} {...props} />;
+export const FaceSmileIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faFaceSmile} {...props} />;
 
-export const FaceNeutralIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faFaceMeh} {...props} />;
+export const FaceNeutralIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faFaceMeh} {...props} />;
 
-export const FaceFrownIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faFaceFrown} {...props} />;
+export const FaceFrownIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faFaceFrown} {...props} />;
 
-export const ThumbUpIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faThumbsUp} {...props} />;
+export const ThumbUpIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faThumbsUp} {...props} />;
 
-export const ThumbDownIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faThumbsDown} {...props} />;
+export const ThumbDownIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faThumbsDown} {...props} />;
 
-export const EyeIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faEye} {...props} />;
+export const EyeIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faEye} {...props} />;
 
-export const EyeSlashIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faEyeSlash} {...props} />;
+export const EyeSlashIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faEyeSlash} {...props} />;
 
-export const StarHalfStrokeIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faStarHalfStroke} {...props} />;
+export const StarHalfStrokeIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faStarHalfStroke} {...props} />;
 
-export const StarHalfIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faStarHalf} {...props} />;
+export const StarHalfIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faStarHalf} {...props} />;
 
-export const StarIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faStar} {...props} />;
+export const StarIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faStar} {...props} />;
 
-export const StarEmptyIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faStarEmpty} {...props} />;
+export const StarEmptyIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faStarEmpty} {...props} />;
 
-export const CalendarDaysIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCalendarDays} {...props} />;
+export const CalendarDaysIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faCalendarDays} {...props} />;
 
-export const CircleEmptyIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCircleEmpty} {...props} />;
+export const CircleEmptyIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faCircleEmpty} {...props} />;
 
-export const CircleDotIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCircleDot} {...props} />;
+export const CircleDotIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faCircleDot} {...props} />;
 
-export const CircleIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCircle} {...props} />;
+export const CircleIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faCircle} {...props} />;
 
-export const ClockIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faClock} {...props} />;
+export const ClockIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faClock} {...props} />;
 
-export const CheckIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faCheck} {...props} />;
+export const CheckIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faCheck} {...props} />;
 
-export const SquareCheckIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faSquareCheck} {...props} />;
+export const SquareCheckIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faSquareCheck} {...props} />;
 
-export const SquareMinusIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faSquareMinus} {...props} />;
+export const SquareMinusIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faSquareMinus} {...props} />;
 
-export const SquareEmptyIcon = (props: IconProps): JSX.Element => <FaSvgIcon icon={faSquare} {...props} />;
+export const SquareEmptyIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faSquare} {...props} />;

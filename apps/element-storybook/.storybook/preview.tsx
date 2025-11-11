@@ -5,7 +5,7 @@ import { Title, Subtitle, Description, Primary, Controls, Stories, useOf } from 
 import type { StoryContext } from '@storybook/types';
 import { ThemeProvider } from '@availity/theme-provider';
 
-const withThemeProvider = (Story: () => JSX.Element, context: StoryContext) => {
+const withThemeProvider = (Story: () => React.JSX.Element, context: StoryContext) => {
   return (
     <ThemeProvider theme={context.globals.theme || 'lightTheme'}>
       <Story />

@@ -31,26 +31,26 @@ export type SpacesLinkWithSpaceId = {
 
 export type SpacesLinkProps = {
   /** Children can be a react child or render prop. */
-  children?: JSX.Element | ((props: any | undefined) => JSX.Element);
+  children?: React.JSX.Element | ((props: any | undefined) => React.JSX.Element);
   /** Tag to overwrite the root component rendered. */
-  tag?: ElementType<any, keyof JSX.IntrinsicElements>;
+  tag?: ElementType<any, keyof React.JSX.IntrinsicElements>;
   /** Tag to overwrite the body component that renders the title, description and data values.
    * It defaults to CardBody or div depending on the value of the variant prop.
    */
-  bodyTag?: ElementType<any, keyof JSX.IntrinsicElements>;
+  bodyTag?: ElementType<any, keyof React.JSX.IntrinsicElements>;
   /** Tag to overwrite the title component. If variant prop is set to "card", defaults to CardTitle.
    * If variant is set to "list", defaults to ListItemHeading. Overwise, defaults to div.
    */
-  titleTag?: ElementType<any, keyof JSX.IntrinsicElements>;
+  titleTag?: ElementType<any, keyof React.JSX.IntrinsicElements>;
   /** Tag to overwrite the text component. If variant prop is set to "card", defaults to Card Text.
    * If variant is set to "list", defaults to ListItemText. Otherwise, defaults to div.
    */
-  textTag?: ElementType<any, keyof JSX.IntrinsicElements>;
+  textTag?: ElementType<any, keyof React.JSX.IntrinsicElements>;
   titleClassName?: string;
   /** When true, utilizes the Card component for styling. */
   card?: boolean;
   /** When true, renders an @availity/mui-icon next to the title if present on the Space. */
-  icon?: (props: SvgIconProps) => JSX.Element;
+  icon?: (props: SvgIconProps) => React.JSX.Element;
   /** When true, renders the Spaces description beneath the title. */
   description?: boolean;
   /** When passed in, provides predefined styles for the component.

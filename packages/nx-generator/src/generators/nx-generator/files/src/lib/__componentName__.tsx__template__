@@ -5,7 +5,7 @@ export interface <%= componentName %>Props extends MuiCardProps {
   children?: React.ReactNode;
 }
 
-export const <%= componentName %> = ({ children, ...rest }: <%= componentName %>Props) : JSX.Element => {
+export const <%= componentName %> = ({ children, ...rest }: <%= componentName %>Props) : React.JSX.Element => {
   return (
     <MuiCard {...rest}>
       {children}

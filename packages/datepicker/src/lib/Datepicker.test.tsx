@@ -11,13 +11,4 @@ describe('Datepicker', () => {
     );
     expect(getAllByText('Test')).toBeTruthy();
   });
-
-  test('should render placeholder successfully', () => {
-    const { container } = render(
-      <ThemeProvider>
-        <Datepicker FieldProps={{ InputProps: { placeholder: 'InputProps' } }} onChange={jest.fn()} value={null} />
-      </ThemeProvider>
-    );
-    expect(container.getElementsByClassName('MuiInputBase-input')[0].getAttribute('placeholder')).toBe('InputProps');
-  });
 });

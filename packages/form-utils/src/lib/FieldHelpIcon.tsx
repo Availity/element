@@ -32,7 +32,7 @@ export type FieldHelpIconProps = {
   | 'variant'
 >;
 
-export const FieldHelpIcon = ({ helpTopicId, labelId, sx, ...rest }: FieldHelpIconProps): JSX.Element => {
+export const FieldHelpIcon = ({ helpTopicId, labelId, sx, ...rest }: FieldHelpIconProps): React.JSX.Element => {
   return (
     <IconButton
       {...rest}

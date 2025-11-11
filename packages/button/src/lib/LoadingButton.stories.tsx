@@ -10,7 +10,6 @@ const meta: Meta<typeof LoadingButton> = {
   args: {
     loading: true,
     color: 'primary',
-    variant: 'contained',
   },
 };
 export default meta;

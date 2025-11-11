@@ -55,7 +55,7 @@ export const Breadcrumbs = ({
   homeUrl = '/static/web/onb/onboarding-ui-apps/dashboard-ui/',
   LinkProps,
   ...rest
-}: BreadcrumbsProps): JSX.Element => {
+}: BreadcrumbsProps): React.JSX.Element => {
   return (
     <MuiBreadcrumbs
       {...rest}

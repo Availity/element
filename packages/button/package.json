@@ -40,19 +40,16 @@
     "publish": "yarn npm publish --tolerate-republish --access public",
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
-  "dependencies": {
-    "@mui/lab": "6.0.0-beta.12"
-  },
   "devDependencies": {
-    "@mui/material": "^6.4.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "@mui/material": "^7.3.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
     "tsup": "^8.4.0",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "@mui/material": "^6.4.5",
-    "react": ">=16.3.0"
+    "@mui/material": "^7.0.0",
+    "react": ">=17.0.0"
   },
   "publishConfig": {
     "access": "public"

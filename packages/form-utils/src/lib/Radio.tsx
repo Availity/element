@@ -14,6 +14,6 @@ export type RadioProps = Omit<
   | 'touchRippleRef'
 >;
 
-export const Radio = (args: RadioProps): JSX.Element => {
+export const Radio = (args: RadioProps): React.JSX.Element => {
   return <MuiRadio {...args} size="small" />;
 };

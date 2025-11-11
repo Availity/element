@@ -58,7 +58,7 @@ export const Disclaimer = ({
   headerText,
   link,
   ...rest
-}: DisclaimerProps): JSX.Element => {
+}: DisclaimerProps): React.JSX.Element => {
   let textVariant: 'body1' | 'body2' = 'body1';
   let headerVariant: 'h5' | 'h6' = 'h5';
 
