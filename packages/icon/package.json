@@ -45,7 +45,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2"
   },
   "devDependencies": {
-    "@mui/material": "^7.3.4",
+    "@mui/material": "^7.3.5",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "tsup": "^8.4.0",
