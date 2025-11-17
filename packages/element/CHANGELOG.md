@@ -2,6 +2,72 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.0](https://github.com/Availity/element/compare/@availity/element@1.0.67...@availity/element@2.0.0) (2025-11-17)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `1.0.67`
+* `mui-alert` updated to version `1.0.67`
+* `mui-authorize` updated to version `1.0.67`
+* `mui-autocomplete` updated to version `1.0.67`
+* `mui-avatar` updated to version `1.0.67`
+* `mui-backdrop` updated to version `1.0.67`
+* `mui-badge` updated to version `1.0.67`
+* `mui-block-ui` updated to version `1.0.67`
+* `mui-breadcrumbs` updated to version `1.0.67`
+* `mui-button` updated to version `1.0.67`
+* `mui-card` updated to version `1.0.67`
+* `mui-checkbox` updated to version `1.0.67`
+* `mui-chip` updated to version `1.0.67`
+* `mui-controlled-form` updated to version `1.0.67`
+* `mui-datepicker` updated to version `1.0.67`
+* `mui-dialog` updated to version `1.0.67`
+* `mui-disclaimer` updated to version `1.0.67`
+* `mui-divider` updated to version `1.0.67`
+* `mui-empty-state` updated to version `1.0.67`
+* `mui-event-tracker` updated to version `1.0.67`
+* `mui-favorites` updated to version `1.0.67`
+* `mui-feedback` updated to version `1.0.67`
+* `mui-file-selector` updated to version `1.0.67`
+* `mui-form-utils` updated to version `1.0.67`
+* `mui-icon` updated to version `1.0.67`
+* `mui-layout` updated to version `1.0.67`
+* `mui-link` updated to version `1.0.67`
+* `mui-list` updated to version `1.0.67`
+* `mui-menu` updated to version `1.0.67`
+* `mui-modal` updated to version `1.0.67`
+* `mui-page-header` updated to version `1.0.67`
+* `mui-pagination` updated to version `1.0.67`
+* `mui-paper` updated to version `1.0.67`
+* `mui-popover` updated to version `1.0.67`
+* `mui-popper` updated to version `1.0.67`
+* `mui-progress` updated to version `1.0.67`
+* `mui-snackbar` updated to version `1.0.67`
+* `mui-spaces` updated to version `1.0.67`
+* `mui-stepper` updated to version `1.0.67`
+* `mui-table` updated to version `1.0.67`
+* `mui-tabs` updated to version `1.0.67`
+* `mui-textfield` updated to version `1.0.67`
+* `mui-toggle-button` updated to version `1.0.67`
+* `mui-tooltip` updated to version `1.0.67`
+* `mui-transitions` updated to version `1.0.67`
+* `mui-tree` updated to version `1.0.67`
+* `mui-typography` updated to version `1.0.67`
+* `mui-utils` updated to version `1.0.67`
+* `theme-provider` updated to version `1.0.67`
+
+### ⚠ BREAKING CHANGES
+
+* removed exports of internals
+* @mui/material upgraded to v7
+* @mui/x-* upgraded to v8
+* react upgraded to v19
+
+### Features
+
+* cleanup element exports to not include internal utils and components ([2ec1665](https://github.com/Availity/element/commit/2ec1665d7072be9b7e218b6fecd5cdd6a0ed10fc))
+* upgrade material and react dependencies ([51602a4](https://github.com/Availity/element/commit/51602a48c5304db6f61e2c7e772c9a3a4aa3f65c))
+
 ## [1.0.67](https://github.com/Availity/element/compare/@availity/element@1.0.66...@availity/element@1.0.67) (2025-10-31)
 
 ### Dependency Updates
