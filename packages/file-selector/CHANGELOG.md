@@ -2,6 +2,35 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.9.1...@availity/mui-file-selector@2.0.0) (2025-11-17)
+
+### Dependency Updates
+
+* `mui-paper` updated to version `1.9.1`
+* `mui-alert` updated to version `1.9.1`
+* `mui-button` updated to version `1.9.1`
+* `mui-divider` updated to version `1.9.1`
+* `mui-form-utils` updated to version `1.9.1`
+* `mui-icon` updated to version `1.9.1`
+* `mui-layout` updated to version `1.9.1`
+* `mui-list` updated to version `1.9.1`
+* `mui-progress` updated to version `1.9.1`
+* `mui-typography` updated to version `1.9.1`
+* `mui-dialog` updated to version `1.9.1`
+* `mui-textfield` updated to version `1.9.1`
+
+### ⚠ BREAKING CHANGES
+
+* **mui-file-selector:** use cloud upload endpoint by default
+* @mui/material upgraded to v7
+* @mui/x-* upgraded to v8
+* react upgraded to v19
+
+### Features
+
+* **mui-file-selector:** set isCloud to true by default ([8d5c45a](https://github.com/Availity/element/commit/8d5c45ae3a55865ef4b943d3e7f2dff2a61c868d))
+* upgrade material and react dependencies ([51602a4](https://github.com/Availity/element/commit/51602a48c5304db6f61e2c7e772c9a3a4aa3f65c))
+
 ## [1.9.1](https://github.com/Availity/element/compare/@availity/mui-file-selector@1.9.0...@availity/mui-file-selector@1.9.1) (2025-10-30)
 
 ### Dependency Updates
