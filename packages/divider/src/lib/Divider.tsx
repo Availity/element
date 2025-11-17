@@ -2,6 +2,6 @@ import { default as MuiDivider, DividerProps as MuiDividerProps } from '@mui/mat
 
 export type DividerProps = Omit<MuiDividerProps, 'textAlign'>;
 
-export const Divider = (props: DividerProps): JSX.Element => {
+export const Divider = (props: DividerProps): React.JSX.Element => {
   return <MuiDivider {...props} />;
 };

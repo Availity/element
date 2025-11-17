@@ -41,10 +41,16 @@ export const AutocompleteExample = () => (
   </QueryClientProvider>
 );
 
+function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+const loadOptions = async (offset: number, limit: number) => {await sleep(10000); return({options: [], hasMore: false, offset: 0})};
+
 export const AsyncAutocompleteExample = () => (
   <QueryClientProvider client={client}>
     <ThemeProvider>
-      <AsyncAutocomplete FieldProps={{label:"Async Autocomplete", helperText:"Help Text"}}/>
+      <AsyncAutocomplete FieldProps={{label:"Async Autocomplete", helperText:"Help Text"}} queryKey='example' loadOptions={loadOptions}/>
     </ThemeProvider>
   </QueryClientProvider>
 );

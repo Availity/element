@@ -47,6 +47,9 @@ describe('DisclaimerModal', () => {
     server.resetHandlers();
   });
 
+  // terminate the server
+  afterAll(() => server.close());
+
   it('renders modal when space metadata contains disclaimerId', async () => {
     const { getByText } = render(<DisclaimerModal />);
 

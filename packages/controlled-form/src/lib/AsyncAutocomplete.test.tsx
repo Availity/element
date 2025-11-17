@@ -57,6 +57,9 @@ describe('ControlledAsyncAutocomplete', () => {
     jest.restoreAllMocks();
   });
 
+  // terminate the server
+  afterAll(() => server.close());
+
   const client = new QueryClient({
     defaultOptions: {
       queries: {

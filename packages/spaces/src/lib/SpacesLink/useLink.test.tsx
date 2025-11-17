@@ -50,6 +50,9 @@ describe('useLink', () => {
 
   });
 
+  // terminate the server
+  afterAll(() => server.close());
+
   const space: Space = {
     type: 'APPLICATION',
     name: 'an application',

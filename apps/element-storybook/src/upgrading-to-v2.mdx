@@ -1,0 +1,58 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Upgrading to v2" />
+
+## Upgrading to Element v2
+
+Element v2 introduces major upgrades to `@mui/material` v7 and `@mui/x-*` v8. For a
+comprehensive list of the changes made see
+
+- [`@mui/material` Upgrade to v7 Guide](https://mui.com/material-ui/migration/upgrade-to-v7/)
+- [`@mui/x-date-pickers` Migration from v7 to v8](https://mui.com/x/migration/migration-pickers-v7/)
+- [`@mui/x-tree-view` Migration from v7 to v8](https://mui.com/x/migration/migration-tree-view-v7/)
+
+### Critical Changes
+
+#### React Upgrade and Dependency Coordination
+
+By default the material packages will use v19 of react, however if using a lower version of react a resolution will need to be
+set for the corresponding version of `react-is`. See the MUI notes on [React 18 and below](https://mui.com/material-ui/migration/upgrade-to-v7/#react-18-and-below)
+
+### Potential Impact Changes
+
+These changes may affect your application depending on component usage:
+
+#### Component-Specific Changes
+
+- [Datepicker](https://mui.com/x/migration/migration-pickers-v7/)
+  - [New DOM structure for the field](https://mui.com/x/migration/migration-pickers-v7/) moves away from the old text input. The new section list input is more accessible,
+  but removes any `placeholder` from the field. If you are passing your own `TextField` you will need to swap to a `PickersTextField`.
+  - [Treat partially filled date as `null` in `onChange`](https://mui.com/x/migration/migration-pickers-v7/#treat-partially-filled-date-as-null-in-onchange)
+  - [disableOpenPicker prop deprecated](https://mui.com/x/migration/migration-pickers-v7/#deprecate-the-disableopenpicker-prop)
+  - [Do not pass the date object as a generic](https://mui.com/x/migration/migration-pickers-v7/#do-not-pass-the-date-object-as-a-generic)
+- FileSelector/FileSelector2
+  - `isCloud` is true by default
+- LoadingButton
+  - LoadingButton pattern now matches Button, removing the `variant` prop
+
+#### Removed Internals
+
+We are cleaning up our exports to no longer include internal utils/components
+
+- Alert: `AlertIcons`
+- Autocomplete: `fetchCodes`, `handleGetCodesOptionLabel`, `fetchOrgs`, `handleGetOrgOptionLabel`, `fetchProviders`, `handleGetProviderOptionLabel`, `Code` type, `Organization` type, `Provider` type
+- Dialog: `CloseButtonSlot`
+- FileSelector: `outerBoxStyles`, `innerBoxStyles`, `createCounter`, `DropzoneContainer`, `formatFileTooLarge`, `CLOUD_URL`
+- Form Utils: `InputPropOverrides`, `SearchByContainer`, `SelectDivider`, `SelectExpandIcon`, `SelectPropOverrides`, `SelectAccessibilityOverrides`
+- Spaces: `INITIAL_STATE`
+
+### Non-Impact Changes
+
+The following changes should not require any action:
+
+- [Deprecated APIs removed](https://mui.com/material-ui/migration/upgrade-to-v7/#deprecated-apis-removed)
+  - [Dialog onBackdropClick prop removal]()
+- [Grid and Grid2 renamed](https://mui.com/material-ui/migration/upgrade-to-v7/#grid-and-grid2-renamed) - see `element` v1 codemods
+- [TablePaginationActions types import path changed](https://mui.com/material-ui/migration/upgrade-to-v7/#tablepaginationactions-types-import-path-changed)
+- [Use Simple Tree View instead of Tree View](https://mui.com/x/migration/migration-tree-view-v7/#%E2%9C%85-use-simple-tree-view-instead-of-tree-view)
+

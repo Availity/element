@@ -3,11 +3,17 @@ import { CalendarDaysIcon } from '@availity/mui-icon';
 import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } from '@mui/x-date-pickers/DatePicker';
 import type { Dayjs } from 'dayjs';
 import type {} from '@mui/x-date-pickers/AdapterDayjs';
+import { PickersTextField as MuiPickersTextField, PickersTextFieldProps as MuiPickersTextFieldProps } from '@mui/x-date-pickers/PickersTextField';
+import { PickerFieldUISlotProps } from '@mui/x-date-pickers/internals';
+import { FormHelperText, FormLabel, InputPropOverrides } from '@availity/mui-form-utils';
+import { forwardRef } from 'react';
+
+type AvTextFieldAdditionalProps = Pick<TextFieldProps, 'error' | 'helpTopicId' | 'helperText' | 'inputProps' | 'label' | 'required'>;
 
 export type DatepickerProps = {
   value?: Dayjs | null | undefined;
-  /** Props applied to the `TextField` component */
-  FieldProps?: TextFieldProps;
+  /** Props applied to the `PickersTextField` component */
+  FieldProps?: PickerFieldUISlotProps['textField'] & AvTextFieldAdditionalProps;
   /** Determines where the Calendar will be placed when opened.
    * @default bottom-start
    */
@@ -15,7 +21,7 @@ export type DatepickerProps = {
   /** Determines if the clear button appears in the action bar */
   clearable?: boolean;
 } & Omit<
-  MuiDatePickerProps<Dayjs, false>,
+  MuiDatePickerProps<false>,
   | 'components'
   | 'componentsProps'
   | 'desktopModeMediaQuery'
@@ -41,14 +47,37 @@ export type DatepickerProps = {
 
 const paperProps = { elevation: 8, variant: 'elevation', sx: { marginTop: '4px' } } as const;
 
-const PickerTextField = (params: TextFieldProps) => <TextField {...params} placeholder="MM/DD/YYYY" />;
+const PickersTextField = forwardRef((props: MuiPickersTextFieldProps & AvTextFieldAdditionalProps, ref: React.Ref<HTMLDivElement>) => {
+  const {helperText=<></>, helpTopicId, InputLabelProps: InputLabelPropsIN, inputProps: inputPropsIN, FormHelperTextProps: FormHelperTextPropsIN,  required, ...params} = props;
+  const PickersLabel = (props: MuiPickersTextFieldProps["InputLabelProps"] & Pick<TextFieldProps, 'helpTopicId'>) => <FormLabel helpTopicId={helpTopicId} required={required} {...props}/>;
+  return (
+    <MuiPickersTextField
+      {...params}
+      helperText={helperText}
+      InputLabelProps= {{
+        component: PickersLabel,
+        ...InputLabelPropsIN,
+      }}
+      inputProps= {{
+        'aria-required': required,
+        ...inputPropsIN
+      }}
+      FormHelperTextProps= {{
+        component: FormHelperText,
+        error: params.error,
+        ...FormHelperTextPropsIN,
+      }}
+      ref={ref}
+    />
+  )
+});
 
 export const Datepicker = ({
   FieldProps,
   placement = 'bottom-start',
   clearable,
   ...props
-}: DatepickerProps): JSX.Element => {
+}: DatepickerProps): React.JSX.Element => {
   return (
     <MuiDatePicker
       {...props}
@@ -75,7 +104,7 @@ export const Datepicker = ({
       }}
       slots={{
         openPickerIcon: CalendarDaysIcon,
-        textField: PickerTextField,
+        textField: PickersTextField
       }}
     />
   );

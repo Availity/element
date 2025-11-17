@@ -87,6 +87,7 @@ export type FileSelectorProps = {
   /**
    * Whether to use the cloud upload endpoint
    * When true, uses '/cloud/web/appl/vault/upload/v1/resumable'
+   * @default true
    */
   isCloud?: boolean;
   /**
@@ -163,7 +164,7 @@ export const FileSelector = ({
   disabled = false,
   enableDropArea = true,
   endpoint,
-  isCloud,
+  isCloud = true,
   label = 'Upload file',
   maxFiles,
   maxSize,
@@ -193,10 +194,9 @@ export const FileSelector = ({
     allowedFileNameCharacters,
   };
 
-  // Endpoint is set by default in upload-core so check if it exists before passing `undefined`
+  // Endpoint is set by default in upload-core so check if it exists or using cloud url before passing `undefined`
   if (endpoint) options.endpoint = endpoint;
-  // Override endpoint if using the cloud
-  if (isCloud) options.endpoint = CLOUD_URL;
+  else if (isCloud) options.endpoint = CLOUD_URL;
 
   const handleOnRemoveFile = (uploadId: string, upload: Upload) => {
     const prevFiles: File[] = formMethods.getValues(name);

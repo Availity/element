@@ -1,4 +1,4 @@
-import { AttachmentIcon, Badge, Chip } from '@availity/element';
+import { AttachmentIcon, Badge, StatusChip } from '@availity/element';
 import { Paper, Typography } from '@mui/material';
 import { DataGrid, GridColDef, GridRenderCellParams, GridValueGetterParams } from '@mui/x-data-grid';
 import type { AlertColor } from '@mui/material';
@@ -53,12 +53,12 @@ const columns: GridColDef[] = [
         Denied: 'error',
         Approved: 'success',
       };
-      return <Chip size="small" color={color[params.value] || 'secondary'} label={params.value || 'Unknown'} />;
+      return <StatusChip color={color[params.value] || 'secondary'} label={params.value || 'Unknown'} />;
     },
   },
 ];
 
-export const DataGridSection = (): JSX.Element => (
+export const DataGridSection = (): React.JSX.Element => (
   <Paper variant="elevation" elevation={0} sx={{ padding: '10px' }}>
     <Typography variant="h2" id="datagridTitle">
       DataGrid

@@ -8,6 +8,6 @@ export type TableProps = {
   striped?: boolean;
 } & MuiTableProps;
 
-export const Table = ({ className, striped, ...props }: TableProps): JSX.Element => {
+export const Table = ({ className, striped, ...props }: TableProps): React.JSX.Element => {
   return <MuiTable className={`${striped ? 'striped ' : ''}${className || ''}`} {...props} />;
 };

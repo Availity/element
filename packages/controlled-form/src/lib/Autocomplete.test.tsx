@@ -4,7 +4,7 @@ import { TestForm } from './UtilComponents';
 
 const onSubmit = jest.fn();
 
-describe('ControlledAsyncAutocomplete', () => {
+describe('ControlledAutocomplete', () => {
   afterEach(() => {
     // Remove any handlers you may have added
     // in individual tests (runtime handlers).

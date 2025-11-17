@@ -21,6 +21,9 @@ describe('OrganizationAutocomplete', () => {
     client.clear();
   });
 
+  // terminate the server
+  afterAll(() => server.close());
+
   test('organizations are fetched and displayed by name', async () => {
     render(
       <QueryClientProvider client={client}>

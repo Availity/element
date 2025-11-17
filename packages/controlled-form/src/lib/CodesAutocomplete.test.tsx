@@ -7,7 +7,7 @@ import { TestForm } from './UtilComponents';
 
 const onSubmit = jest.fn();
 
-describe('ControlledAsyncAutocomplete', () => {
+describe('ControlledCodesAutocomplete', () => {
   beforeAll(() => {
     // Start the interception.
     server.listen();
@@ -19,6 +19,9 @@ describe('ControlledAsyncAutocomplete', () => {
     server.resetHandlers();
     jest.restoreAllMocks();
   });
+
+  // terminate the server
+  afterAll(() => server.close());
 
   const client = new QueryClient({
     defaultOptions: {

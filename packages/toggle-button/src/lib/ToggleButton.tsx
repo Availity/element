@@ -20,7 +20,7 @@ export interface ToggleButtonProps
   size?: 'small' | 'medium' | 'large';
 }
 
-export const ToggleButton = ({ children, ...rest }: ToggleButtonProps): JSX.Element => {
+export const ToggleButton = ({ children, ...rest }: ToggleButtonProps): React.JSX.Element => {
   return (
     <MuiToggleButton
       {...rest}

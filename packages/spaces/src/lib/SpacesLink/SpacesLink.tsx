@@ -25,7 +25,7 @@ const IconLink = styled(Link, { name: 'AvSpacesLink', slot: 'IconLink' })({});
 const getDisplayDate = (date: string | null | undefined) => dayjs(date).format('MM/DD/YYYY');
 
 const getContainerTag = (
-  propTag: ElementType<any, keyof JSX.IntrinsicElements> | undefined,
+  propTag: ElementType<any, keyof React.JSX.IntrinsicElements> | undefined,
   variant: SpacesLinkVariants
 ) => {
   if (variant && variant !== 'default') return { card: Card, list: ListItem }[variant];
@@ -33,7 +33,7 @@ const getContainerTag = (
 };
 
 const getBodyTag = (
-  propTag: ElementType<any, keyof JSX.IntrinsicElements> | undefined,
+  propTag: ElementType<any, keyof React.JSX.IntrinsicElements> | undefined,
   variant: SpacesLinkVariants
 ) => {
   if (variant && variant !== 'default') return { card: CardContent, list: 'div' }[variant];
@@ -41,7 +41,7 @@ const getBodyTag = (
 };
 
 const getTitleTag = (
-  propTag: ElementType<any, keyof JSX.IntrinsicElements> | undefined,
+  propTag: ElementType<any, keyof React.JSX.IntrinsicElements> | undefined,
   variant: SpacesLinkVariants,
   showUrl?: boolean
 ) => {
@@ -51,7 +51,7 @@ const getTitleTag = (
 };
 
 const getTextTag = (
-  propTag: ElementType<any, keyof JSX.IntrinsicElements> | undefined,
+  propTag: ElementType<any, keyof React.JSX.IntrinsicElements> | undefined,
   variant: SpacesLinkVariants
 ) => {
   if (variant && variant !== 'default') return { card: Typography, list: ListItemText }[variant];

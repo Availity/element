@@ -22,7 +22,7 @@ export const Feedback = ({
   analytics = avLogMessagesApiV2,
   appName,
   buttonVariant = 'secondary',
-}: FeedbackProps): JSX.Element => {
+}: FeedbackProps): React.JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [sent, setSent] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);

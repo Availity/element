@@ -10,7 +10,7 @@ const meta: Meta<typeof Authorize> = {
   component: Authorize,
   tags: ['autodocs'],
   decorators: [
-    (Story: () => JSX.Element) => (
+    (Story: () => React.JSX.Element) => (
       <QueryClientProvider client={new QueryClient()}>
         <Story />
       </QueryClientProvider>

@@ -71,6 +71,10 @@ describe('Favorites', () => {
     jest.clearAllMocks();
     queryClient.clear();
   });
+
+  // terminate the server
+  afterAll(() => server.close());
+
   it('should render favorited', async () => {
     const { container } = render(
       <QueryClientProvider client={queryClient}>

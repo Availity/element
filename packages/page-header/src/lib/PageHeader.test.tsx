@@ -25,6 +25,10 @@ describe('PageHeader', () => {
     server.resetHandlers();
     jest.restoreAllMocks();
   });
+
+  // terminate the server
+  afterAll(() => server.close());
+
   test('should render simple page header successfully', () => {
     const { getByText } = render(<PageHeader breadcrumbs={{ active: 'This page' }} headerText="This is the header" />);
     expect(getByText('This is the header')).toBeTruthy();

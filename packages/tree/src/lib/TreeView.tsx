@@ -2,6 +2,6 @@ import { SimpleTreeView, SimpleTreeViewProps } from '@mui/x-tree-view/SimpleTree
 
 export type TreeViewProps = SimpleTreeViewProps<true>;
 
-export const TreeView = ({ children, ...rest }: TreeViewProps): JSX.Element => {
+export const TreeView = ({ children, ...rest }: TreeViewProps): React.JSX.Element => {
   return <SimpleTreeView {...rest}>{children}</SimpleTreeView>;
 };

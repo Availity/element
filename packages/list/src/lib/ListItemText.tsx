@@ -4,6 +4,6 @@ import MuiListItemText, { ListItemTextProps as MuiListItemTextProps } from '@mui
 export type ListItemTextProps = MuiListItemTextProps
 
 /** Container inside a list item, used to display text content. */
-export const ListItemText = ({ children, ...rest }: ListItemTextProps): JSX.Element => {
+export const ListItemText = ({ children, ...rest }: ListItemTextProps): React.JSX.Element => {
   return <MuiListItemText {...rest}>{children}</MuiListItemText>;
 };

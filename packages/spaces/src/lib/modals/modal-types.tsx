@@ -56,8 +56,8 @@ export type ModalProviderState = {
   modalState: ModalState;
   selectedModal?: {
     body?:
-      | (({ disclaimerId }: ModalProps) => JSX.Element)
-      | (({ parentPayerSpaces, name, state: { selectedOption }, setState }: ModalProps) => JSX.Element);
+      | (({ disclaimerId }: ModalProps) => React.JSX.Element)
+      | (({ parentPayerSpaces, name, state: { selectedOption }, setState }: ModalProps) => React.JSX.Element);
     onSubmit?: (
       props: ModalOptions,
       modalState: ModalState,

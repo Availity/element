@@ -55,7 +55,7 @@ export const SelectAccessibilityOverrides = <Value = unknown,>(
   return open ? {} : { SelectDisplayProps: { 'aria-controls': '' } };
 };
 
-export const Select = <Value = unknown,>(props: SelectProps<Value>): JSX.Element => {
+export const Select = <Value = unknown,>(props: SelectProps<Value>): React.JSX.Element => {
   const [openDetected, setOpenDetected] = useState(false);
   return (
     <MuiSelect

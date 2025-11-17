@@ -2,7 +2,7 @@ import MuiStepIcon, { StepIconProps as MuiStepIconProps } from '@mui/material/St
 import { SuccessCircleIcon, WarningCircleIcon } from '@availity/mui-icon';
 import { SvgIconProps } from '@mui/material/SvgIcon';
 
-type Tag = ((props: SvgIconProps) => JSX.Element) | null;
+type Tag = ((props: SvgIconProps) => React.JSX.Element) | null;
 
 declare module '@mui/material/StepIcon' {
   interface StepIconProps {
@@ -16,7 +16,7 @@ export type StepIconProps = {
   warning?: boolean
 } & MuiStepIconProps;
 
-export const StepIcon = ({ error, completed, warning, ...rest }: StepIconProps): JSX.Element => {
+export const StepIcon = ({ error, completed, warning, ...rest }: StepIconProps): React.JSX.Element => {
   let tag: Tag = null;
   if (error) tag = WarningCircleIcon;
   if (warning) tag = (props: SvgIconProps) => <WarningCircleIcon color="warning" {...props} />;

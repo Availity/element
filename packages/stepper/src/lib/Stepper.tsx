@@ -19,7 +19,7 @@ const HiddenConnectorStepper = styled(MuiStepper, {
   }
 });
 
-export const Stepper = ({ children, connector, orientation, scrollButtons, ...rest }: StepperProps): JSX.Element => {
+export const Stepper = ({ children, connector, orientation, scrollButtons, ...rest }: StepperProps): React.JSX.Element => {
   const alternativeLabel = orientation !== 'vertical';
   const Stepper = connector === null ? HiddenConnectorStepper : MuiStepper;
 

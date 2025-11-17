@@ -24,6 +24,9 @@ afterEach(() => {
   jest.restoreAllMocks();
 });
 
+// terminate the server
+afterAll(() => server.close());
+
 describe('SpacesImage', () => {
   it('should render successfully', async () => {
     const queryClient = new QueryClient();

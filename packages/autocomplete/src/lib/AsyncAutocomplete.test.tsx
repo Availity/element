@@ -64,6 +64,9 @@ describe('AsyncAutocomplete', () => {
     jest.restoreAllMocks();
   });
 
+  // terminate the server
+  afterAll(() => server.close());
+
   test('should render successfully', () => {
     const client = new QueryClient();
 

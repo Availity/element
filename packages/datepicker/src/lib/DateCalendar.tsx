@@ -2,7 +2,7 @@ import { DateCalendar as MuiDateCalendar, DateCalendarProps as MuiDateCalendarPr
 import type { Dayjs } from 'dayjs';
 import type {} from '@mui/x-date-pickers/AdapterDayjs';
 
-export type DateCalendarProps = Omit<MuiDateCalendarProps<Dayjs>,
+export type DateCalendarProps = Omit<MuiDateCalendarProps,
   | 'components'
   | 'componentsProps'
   | 'slots'
@@ -15,7 +15,7 @@ export type DateCalendarProps = Omit<MuiDateCalendarProps<Dayjs>,
 >;
 
 // just being used for stories atm, if ux finds a use for it we can add it to index.
-export const DateCalendar = (props: DateCalendarProps): JSX.Element => {
+export const DateCalendar = (props: DateCalendarProps): React.JSX.Element => {
   return (
     <MuiDateCalendar
       {...props}
