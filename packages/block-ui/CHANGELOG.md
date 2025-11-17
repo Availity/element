@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.0](https://github.com/Availity/element/compare/@availity/mui-block-ui@1.0.7...@availity/mui-block-ui@2.0.0) (2025-11-17)
+
+### Dependency Updates
+
+* `mui-button` updated to version `1.0.7`
+* `mui-paper` updated to version `1.0.7`
+* `mui-typography` updated to version `1.0.7`
+
+### ⚠ BREAKING CHANGES
+
+* @mui/material upgraded to v7
+* @mui/x-* upgraded to v8
+* react upgraded to v19
+
+### Features
+
+* upgrade material and react dependencies ([51602a4](https://github.com/Availity/element/commit/51602a48c5304db6f61e2c7e772c9a3a4aa3f65c))
+
 ## [1.0.7](https://github.com/Availity/element/compare/@availity/mui-block-ui@1.0.6...@availity/mui-block-ui@1.0.7) (2025-10-30)
 
 ### Dependency Updates
