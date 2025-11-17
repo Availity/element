@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.0](https://github.com/Availity/element/compare/@availity/mui-favorites@1.1.8...@availity/mui-favorites@2.0.0) (2025-11-17)
+
+### Dependency Updates
+
+* `mui-icon` updated to version `1.1.8`
+* `mui-progress` updated to version `1.1.8`
+* `mui-tooltip` updated to version `1.1.8`
+
+### ⚠ BREAKING CHANGES
+
+* @mui/material upgraded to v7
+* @mui/x-* upgraded to v8
+* react upgraded to v19
+
+### Features
+
+* upgrade material and react dependencies ([51602a4](https://github.com/Availity/element/commit/51602a48c5304db6f61e2c7e772c9a3a4aa3f65c))
+
 ## [1.1.8](https://github.com/Availity/element/compare/@availity/mui-favorites@1.1.7...@availity/mui-favorites@1.1.8) (2025-10-30)
 
 ### Dependency Updates
