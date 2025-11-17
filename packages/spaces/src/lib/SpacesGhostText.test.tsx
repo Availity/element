@@ -16,6 +16,9 @@ afterEach(() => {
   server.resetHandlers();
 });
 
+// terminate the server
+afterAll(() => server.close());
+
 describe('SpacesGhostText', () => {
   it('should render successfully', async () => {
     const queryClient = new QueryClient();

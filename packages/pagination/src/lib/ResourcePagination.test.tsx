@@ -18,6 +18,9 @@ afterEach(() => {
   server.resetHandlers();
 });
 
+// terminate the server
+afterAll(() => server.close());
+
 const client = new QueryClient();
 
 const ResourcePaginationComponent = (): React.JSX.Element => {

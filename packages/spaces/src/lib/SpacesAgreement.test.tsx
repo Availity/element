@@ -16,6 +16,9 @@ afterEach(() => {
   server.resetHandlers();
 });
 
+// terminate the server
+afterAll(() => server.close());
+
 describe('SpacesAgreement', () => {
   it('should render regular text successfully', async () => {
     const queryClient = new QueryClient();

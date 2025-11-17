@@ -21,6 +21,9 @@ describe('CodesAutocomplete', () => {
     client.clear();
   });
 
+  // terminate the server
+  afterAll(() => server.close());
+
   test('providers are fetched and displayed by name', async () => {
     render(
       <QueryClientProvider client={client}>
