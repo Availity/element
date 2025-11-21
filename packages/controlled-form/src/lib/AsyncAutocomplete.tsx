@@ -42,6 +42,7 @@ export const ControlledAsyncAutocomplete = <
   ...rest
 }: ControlledAsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent, Output>) => {
   const { setValue } = useFormContext();
+  const emptyValue = rest?.multiple ? [] : null;
   return (
     <Controller
       name={name}
@@ -68,12 +69,12 @@ export const ControlledAsyncAutocomplete = <
           }}
           onChange={(event, value, reason) => {
             if (reason === 'clear') {
-              onChange(transform?.output?.(null) ?? null);
+              onChange(transform?.output?.(null) ?? emptyValue);
             }
             onChange(transform?.output?.(value) ?? value);
           }}
           onBlur={onBlur}
-          value={transform?.input?.(value) ?? value ?? null}
+          value={transform?.input?.(value) ?? value ?? emptyValue}
           loadOptions={async (offset, limit, inputValue) => {
             const { options, hasMore, offset: returnedOffsetValue } = await rest.loadOptions(offset, limit, inputValue);
 
