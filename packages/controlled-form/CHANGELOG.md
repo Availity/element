@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.1](https://github.com/Availity/element/compare/@availity/mui-controlled-form@2.0.0...@availity/mui-controlled-form@2.0.1) (2025-11-21)
+
+
+### Bug Fixes
+
+* **mui-controlled-form:** update empty value for multi-select controlled autocomplete ([f67f483](https://github.com/Availity/element/commit/f67f483489a1bf2a7a5c6b8182db6382dac80c1c))
+
 ## [2.0.0](https://github.com/Availity/element/compare/@availity/mui-controlled-form@1.4.4...@availity/mui-controlled-form@2.0.0) (2025-11-17)
 
 ### Dependency Updates

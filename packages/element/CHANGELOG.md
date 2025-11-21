@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.1](https://github.com/Availity/element/compare/@availity/element@2.0.0...@availity/element@2.0.1) (2025-11-21)
+
+### Dependency Updates
+
+* `mui-controlled-form` updated to version `2.0.0`
 ## [2.0.0](https://github.com/Availity/element/compare/@availity/element@1.0.67...@availity/element@2.0.0) (2025-11-17)
 
 ### Dependency Updates
