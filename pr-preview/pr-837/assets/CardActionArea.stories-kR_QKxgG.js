@@ -1,0 +1,8 @@
+import{j as o}from"./jsx-runtime-D_zvdyIk.js";import{C as m}from"./CardActionArea-4Ix7RtG1.js";import{C as e}from"./Card-BMkyumM-.js";import{C as p}from"./CardContent-B_7Z9mZ3.js";import"./index-BSuoOqEd.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./identifier-DhnHujDJ.js";import"./memoTheme-BwIkkReu.js";import"./styled-9znMky1q.js";import"./DefaultPropsProvider-B1sWsgx2.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./generateUtilityClass-BtcU_pBl.js";import"./useSlot-jI6_c_PV.js";import"./mergeSlotProps-C8ahzxnq.js";import"./isHostComponent-DVu5iVWx.js";import"./useForkRef-BIkqQIqh.js";import"./ButtonBase-AdAh9sBA.js";import"./useTimeout-B9dULhq6.js";import"./TransitionGroupContext-CcytU7uK.js";import"./emotion-react.browser.esm-CVJjYY2z.js";import"./useEventCallback-Dvy07Fv6.js";import"./useEnhancedEffect-CIAiDanS.js";import"./isFocusVisible-B8k4qzLc.js";import"./Card-DkaJnXWL.js";import"./Paper-BZZ0Jx2l.js";import"./useTheme-DG5qVMsu.js";import"./useTheme-C_c7PR3o.js";const D={title:"Components/Card/CardActionArea",component:m,tags:["autodocs"]},r={render:n=>o.jsx(e,{children:o.jsx(m,{...n,children:o.jsx(p,{children:"You can click on this card"})})}),args:{}};var t,a,i;r.parameters={...r.parameters,docs:{...(t=r.parameters)==null?void 0:t.docs,source:{originalSource:`{
+  render: (args: CardActionAreaProps) => <Card>
+      <CardActionArea {...args}>
+        <CardContent>You can click on this card</CardContent>
+      </CardActionArea>
+    </Card>,
+  args: {}
+}`,...(i=(a=r.parameters)==null?void 0:a.docs)==null?void 0:i.source}}};const F=["_CardActionArea"];export{r as _CardActionArea,F as __namedExportsOrder,D as default};
