@@ -1,13 +1,20 @@
 {
   "root": true,
   "ignorePatterns": [],
-  "plugins": ["@nx"],
+  "plugins": [
+    "@nx"
+  ],
   "env": {
     "es2020": true
   },
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
       "rules": {
         "@nx/enforce-module-boundaries": [
           "error",
@@ -17,7 +24,9 @@
             "depConstraints": [
               {
                 "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "onlyDependOnLibsWithTags": [
+                  "*"
+                ]
               }
             ]
           }
@@ -25,16 +34,26 @@
       }
     },
     {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "extends": [
+        "plugin:@nx/typescript"
+      ],
       "rules": {
         "@typescript-eslint/no-extra-semi": "error",
         "no-extra-semi": "off"
       }
     },
     {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
+      "files": [
+        "*.js",
+        "*.jsx"
+      ],
+      "extends": [
+        "plugin:@nx/javascript"
+      ],
       "rules": {
         "@typescript-eslint/no-extra-semi": "error",
         "no-extra-semi": "off"
@@ -51,7 +70,9 @@
         "*.test.js",
         "*.test.jsx"
       ],
-      "extends": ["plugin:@nx/typescript"],
+      "extends": [
+        "plugin:@nx/typescript"
+      ],
       "env": {},
       "rules": {
         "@typescript-eslint/no-extra-semi": "error",
@@ -72,5 +93,8 @@
         "jest": true
       }
     }
+  ],
+  "extends": [
+    "plugin:storybook/recommended"
   ]
 }

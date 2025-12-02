@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { Tooltip, TooltipProps } from './Tooltip';
 
 // TODO: use our components when forwardRef is being applied correctly

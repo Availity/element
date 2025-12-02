@@ -1,6 +1,10 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
+import { createRequire } from "node:module";
 import { dirname, join } from 'path';
 import remarkGfm from 'remark-gfm';
 import { StorybookConfig } from '@storybook/react-vite';
+
+const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
   stories: [
@@ -13,11 +17,10 @@ const config: StorybookConfig = {
   ],
 
   addons: [
-    getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-themes'),
     getAbsolutePath('@storybook/addon-a11y'),
     {
-      name: '@storybook/addon-docs',
+      name: getAbsolutePath("@storybook/addon-docs"),
       options: {
         mdxPluginOptions: {
           mdxCompileOptions: {
@@ -25,7 +28,7 @@ const config: StorybookConfig = {
           },
         },
       },
-    },
+    }
   ],
 
   framework: {

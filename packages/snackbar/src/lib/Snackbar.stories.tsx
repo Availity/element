@@ -1,7 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import { SyntheticEvent, useEffect, useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Alert, AlertTitle } from '@availity/mui-alert';
 import { Button } from '@availity/mui-button';
 import { Box, Grid } from '@availity/mui-layout';

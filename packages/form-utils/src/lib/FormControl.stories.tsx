@@ -1,7 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import { useState } from 'react';
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import Box from '@mui/material/Box';
 import MenuItem from '@mui/material/MenuItem';
 import { Chip } from '@availity/mui-chip';

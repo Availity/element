@@ -1,8 +1,8 @@
-import React from 'react';
-import { themes } from '@storybook/theming';
-import { Preview } from '@storybook/react';
-import { Title, Subtitle, Description, Primary, Controls, Stories, useOf } from '@storybook/blocks';
-import type { StoryContext } from '@storybook/types';
+ import React from 'react';
+import { themes } from 'storybook/theming';
+import { Preview } from '@storybook/react-vite';
+import { Title, Subtitle, Description, Primary, Controls, Stories, useOf } from '@storybook/addon-docs/blocks';
+import type { StoryContext } from 'storybook/internal/types';
 import { ThemeProvider } from '@availity/theme-provider';
 
 const withThemeProvider = (Story: () => React.JSX.Element, context: StoryContext) => {
@@ -93,7 +93,9 @@ if (typeof global.process === 'undefined') {
   import('../../../packages/mock/src/lib/browser').then(({ worker }) => {
     const config =
       process.env.NODE_ENV === 'development'
-        ? undefined
+        ? {
+            onUnhandledRequest: 'bypass',
+          }
         : {
             serviceWorker: { url: '/element/mockServiceWorker.js' },
             onUnhandledRequest: 'bypass',

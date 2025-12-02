@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import Collapse from '@mui/material/Collapse';
 import { Alert } from './Alert';
 import { AlertTitle } from './AlertTitle';

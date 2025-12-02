@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlledAsyncAutocomplete } from './AsyncAutocomplete';
 import { Button } from '@availity/mui-button';
 import { FormProvider, useForm } from 'react-hook-form';

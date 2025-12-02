@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { Alert } from '@availity/mui-alert';
 import { ThemeProvider } from './theme-provider';
 

@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TableRow, TableRowProps } from './TableRow';
 import { TableBody, TableCell } from '..';
 import { useState } from 'react';

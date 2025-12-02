@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { HomeIcon } from '@availity/mui-icon';
 import { Badge, BadgeProps } from './Badge';
 

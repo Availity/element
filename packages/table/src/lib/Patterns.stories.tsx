@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StoryObj, Decorator } from '@storybook/react';
+import { StoryObj, Decorator } from '@storybook/react-vite';
 import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
 import Popover from '@mui/material/Popover';

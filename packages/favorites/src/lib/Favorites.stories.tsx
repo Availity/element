@@ -1,4 +1,4 @@
-import { StoryObj } from '@storybook/react';
+import { StoryObj } from '@storybook/react-vite';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 
 import { FavoritesProvider } from './Favorites';

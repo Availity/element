@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Authorize, AuthorizeProps } from '..';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import Alert from '@mui/material/Alert';

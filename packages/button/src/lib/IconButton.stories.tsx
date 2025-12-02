@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Grid } from '@availity/mui-layout';
 import { SearchIcon } from '@availity/mui-icon';
 import { IconButton, IconButtonProps } from './IconButton';

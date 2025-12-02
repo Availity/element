@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 
-import type { StoryObj, Decorator } from '@storybook/react';
+import type { StoryObj, Decorator } from '@storybook/react-vite';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';

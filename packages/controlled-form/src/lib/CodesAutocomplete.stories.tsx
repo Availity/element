@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlledCodesAutocomplete } from './CodesAutocomplete';
 import { Button } from '@availity/mui-button';
 import { Paper } from '@availity/mui-paper';

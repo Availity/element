@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { Box, Stack } from '@availity/mui-layout';
 import { Typography } from '@availity/mui-typography';
 

@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Autocomplete, createFilterOptions } from './Autocomplete';
 import { FilterOptionsState } from '@mui/material';
 import { InputAdornment, SearchByFormGroup } from '@availity/mui-form-utils';

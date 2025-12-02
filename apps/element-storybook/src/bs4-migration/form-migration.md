@@ -255,7 +255,7 @@ export const Form = () => (
 <summary>Code example</summary>
 
 ```tsx
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import dayjs from 'dayjs';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';

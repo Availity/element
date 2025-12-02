@@ -1,7 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { HomeIcon, FilterIcon, BellIcon } from '@availity/mui-icon';
 import { ToggleButton } from './ToggleButton';
 import { ToggleButtonGroup, ToggleButtonGroupProps } from './ToggleButtonGroup';

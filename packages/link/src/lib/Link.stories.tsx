@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { SystemPropsList } from '../../../../data/MuiSystemProperties';
 import { Link, LinkProps } from './Link';
