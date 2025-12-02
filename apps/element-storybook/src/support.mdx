@@ -1,0 +1,42 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Support" />
+
+## Releases and Long Term Support Schedule
+
+Element is built on top of `@mui/material` and it's corresponding libraries. Our release and LTS schedule
+follows their schedules to ensure the latest updates as they're made available.
+
+### <img src="https://icon.icepanel.io/Technology/svg/Material-UI.svg" alt="MUI logo" height="16"/> Material Schedule
+
+Material has updated their [release/support schedule](https://mui.com/material-ui/getting-started/support/#long-term-support-lts)
+to allow for a yearly major release around the end of Q1 with long term support for the previous major release,
+dropping support for the version that falls 2 majors behind the current.
+
+As Material drops support for a major version, we will also be dropping support for the corresponding
+version of Element.
+
+### Element Schedule
+
+- Current version: Released yearly in Q2 following new MUI major release
+- Previous version: Long Term Support corresponding with support of MUI version
+  - There will be a gap where the previous MUI version will be unsupported before a new Element version is released,
+  resulting in only the current version of Element being supported from end of Q1 to our release of the next major in Q2.
+- 2+ Major versions behind Current: Unsupported
+
+#### Support Status
+
+| Element Version | MUI Version | Status | EOL Date |
+|---|---|---|---|
+| ^2.0.0 | ^7.0.0 | ✅ Full Support | March 2027 (proj) |
+| ^1.0.0 | ^6.0.0 | ⚠️ LTS | March 2026 (proj) |
+| ^0.0.0 | ^5.0.0 | 🚫 Unsupported | August 2024 |
+
+#### Element Version 1 & 2 Caveats
+
+MUI updated their release schedule starting with v6. While originally planning on 2 major versions a year, they have scaled it
+back to only one major release a year and supporting 1 previous major version. As such, v6 was released in August 2024 but
+will likely lose support in March 2026, about 6 months shy of the typical 2 year support schedule.
+
+This means version 1 of Element will also be losing support in March 2026 and version 2 in March 2027, but future versions
+should have the full 22 months of support.

@@ -46,6 +46,19 @@ We are cleaning up our exports to no longer include internal utils/components
 - Form Utils: `InputPropOverrides`, `SearchByContainer`, `SelectDivider`, `SelectExpandIcon`, `SelectPropOverrides`, `SelectAccessibilityOverrides`
 - Spaces: `INITIAL_STATE`
 
+#### Jest Testing in `@availity/workflow` Apps
+
+Depending on your configuration you may need to add `@availity` and `axios` to the ignore transform list
+
+```js
+// workflow.js
+  config.development.jestOverrides = {
+    transformIgnorePatterns: [
+      'node_modules/(?!(@availity|axios)/)'
+    ],
+  }
+```
+
 ### Non-Impact Changes
 
 The following changes should not require any action:
