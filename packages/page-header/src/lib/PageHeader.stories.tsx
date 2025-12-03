@@ -1,7 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Spaces } from '@availity/mui-spaces';
 import { Tab, TabContext, TabList, TabPanel } from '@availity/mui-tabs';

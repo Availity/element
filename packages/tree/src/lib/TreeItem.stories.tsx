@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TreeItem, TreeItemProps } from './TreeItem';
 import { TreeView } from './TreeView';
 import { FolderIcon } from '@availity/mui-icon';

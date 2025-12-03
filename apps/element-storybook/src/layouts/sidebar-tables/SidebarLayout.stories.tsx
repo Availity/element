@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StoryObj, Meta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react-vite';
 import { Container, Grid } from '@availity/element';
 import { HeaderSection } from './HeaderSection';
 import { SearchSection } from './SearchSection';
@@ -16,7 +16,7 @@ import { DataGridSection } from './DataGridSection';
  * Sidebar layout that includes header, sidenav, search section, & tables. */
 const meta: Meta = {
   title: 'Sample Layouts/Sidebar',
-  tags: ['autodocs', 'hideInSidebar'],
+  tags: ['!autodocs', '!dev'],
 };
 
 /**  */

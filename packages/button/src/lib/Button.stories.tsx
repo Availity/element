@@ -1,4 +1,4 @@
-import { StoryObj, Meta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react-vite';
 import { Box, Grid } from '@availity/mui-layout';
 import { ArrowCircleLeftIcon, ArrowCircleRightIcon } from '@availity/mui-icon';
 import { Button, ButtonProps } from './Button';

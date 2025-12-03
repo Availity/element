@@ -1,7 +1,7 @@
 /* eslint-disable @nx/enforce-module-boundaries */
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useMemo, useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
 import { IconButton } from '@availity/mui-button';

@@ -1,7 +1,7 @@
 // Each exported component in the package should have its own stories file
 
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Grid } from '@availity/mui-layout';
 import { FaSvgIconProps } from './FaSvgIcon';
 import { HomeIcon } from './Icons/Common';

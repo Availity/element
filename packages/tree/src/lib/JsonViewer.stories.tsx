@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 
 import { JsonViewer, JsonViewerProps } from './JsonViewer';
 // import README from '../README.md';

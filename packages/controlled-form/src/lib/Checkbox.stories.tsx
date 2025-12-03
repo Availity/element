@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ControlledCheckbox, ControlledCheckboxProps } from './Checkbox';
 import { Button } from '@availity/mui-button';
 import { FormProvider, useForm } from 'react-hook-form';

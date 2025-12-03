@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Typography from '@mui/material/Typography';
 import { MonthCalendar } from '@mui/x-date-pickers/MonthCalendar';
 import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
@@ -94,7 +94,7 @@ export const _DateRangePicker: StoryObj<DateRangePicker> = {
     return (
       <Box sx={{ backgroundColor: 'background.paper', padding: '1.25rem' }}>
         <Grid container spacing={2}>
-          <Grid xs={12} sm={6}>
+          <Grid size={{xs:12, sm:6}} >
             <Datepicker
               value={startDate}
               onChange={setStartDate}
@@ -106,7 +106,7 @@ export const _DateRangePicker: StoryObj<DateRangePicker> = {
               views={['day', 'month', 'year']}
             />
           </Grid>
-          <Grid xs={12} sm={6}>
+          <Grid size={{xs:12, sm:6}} >
             <Datepicker
               value={endDate}
               onChange={setEndDate}

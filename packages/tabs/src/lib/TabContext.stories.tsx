@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TabContext, TabContextProps } from './TabContext';
 import { Divider } from '@availity/mui-divider';
 import { TabList } from './TabList';

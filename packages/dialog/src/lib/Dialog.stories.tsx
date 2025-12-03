@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 import { useEffect, useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '@availity/mui-button';
 import { BlockUi } from '@availity/mui-block-ui';
 import { SelectChangeEvent, FormControlLabel, Switch } from '@availity/mui-form-utils';

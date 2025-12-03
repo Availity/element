@@ -1,5 +1,5 @@
 // Each exported component in the package should have its own stories file
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import AvApi, { ApiConfig } from '@availity/api-axios';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 

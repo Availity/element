@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { CircularProgress, CircularProgressProps } from './CircularProgress';
 
 const meta: Meta<typeof CircularProgress> = {

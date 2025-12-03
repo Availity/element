@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import type { AlertColor } from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
 import { Alert, AlertProps } from './Alert';

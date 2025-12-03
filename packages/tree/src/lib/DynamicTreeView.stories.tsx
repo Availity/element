@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { TreeViewBaseItem } from '@mui/x-tree-view/models';
 import { Typography } from '@availity/mui-typography';
 import { DynamicTreeView, DynamicTreeViewProps } from './DynamicTreeView';

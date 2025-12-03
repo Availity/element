@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { IconButton } from '@availity/mui-button';
 import { StatusChip } from '@availity/mui-chip';
 import { AttachmentIcon, MoreVerticalIcon } from '@availity/mui-icon';

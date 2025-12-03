@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { SystemPropsList } from '../../../../data/MuiSystemProperties';
 import { Stack, StackProps } from './Stack';

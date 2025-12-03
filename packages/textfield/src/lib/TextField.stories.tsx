@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 import { forwardRef, useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { AsYouType } from 'libphonenumber-js';
 import { IMaskInput } from 'react-imask';
 import { NumericFormat, NumericFormatProps } from 'react-number-format';

@@ -17,6 +17,6 @@ describe('Menu', () => {
         <MenuItem>Test</MenuItem>
       </Menu>
     );
-    expect(() => getByText('Test')).toThrowError();
+    expect(() => getByText('Test')).toThrow();
   });
 });

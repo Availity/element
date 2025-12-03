@@ -1,4 +1,4 @@
-import { create } from '@storybook/theming';
+import { create } from 'storybook/theming';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import ElementLogo from '../../../static/availity-Element-Logo.png'
 // eslint-disable-next-line @nx/enforce-module-boundaries

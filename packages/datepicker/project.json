@@ -4,12 +4,12 @@
   "sourceRoot": "packages/datepicker/src",
   "projectType": "library",
   "trackDeps": true,
-  "tags": [],
   "build": {
     "options": {
       "cache": false
     }
   },
+  "tags": [],
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint",

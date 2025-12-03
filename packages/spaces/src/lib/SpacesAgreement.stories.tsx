@@ -1,5 +1,5 @@
 // Each exported component in the package should have its own stories file
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Spaces } from './Spaces';
 import { SpacesAgreement, SpacesAgreementProps } from './SpacesAgreement';

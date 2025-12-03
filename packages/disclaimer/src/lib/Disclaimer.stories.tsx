@@ -1,6 +1,6 @@
 // Each exported component in the package should have its own stories file
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Disclaimer, DisclaimerProps } from './Disclaimer';
 
 const meta: Meta<typeof Disclaimer> = {
