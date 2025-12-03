@@ -71,7 +71,7 @@ jobs:
         run: yarn test:affected
 
       - name: Version Bump Dry Run (only run for ubuntu-latest-24 matching deploy action)
-        if: ${{ matrix.node == 24 && matrix.os == "ubuntu-latest"}}
+        if: ${{ matrix.node == 24 && matrix.os == 'ubuntu-latest' }}
         run: yarn version:dry-run
 
       # - name: Upload coverage report
