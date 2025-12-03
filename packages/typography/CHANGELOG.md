@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.1](https://github.com/Availity/element/compare/@availity/mui-typography@2.0.0...@availity/mui-typography@2.0.1) (2025-12-03)
+
+### Dependency Updates
+
+* `mui-layout` updated to version `2.0.0`
 ## [2.0.0](https://github.com/Availity/element/compare/@availity/mui-typography@1.0.3...@availity/mui-typography@2.0.0) (2025-11-17)
 
 ### Dependency Updates
