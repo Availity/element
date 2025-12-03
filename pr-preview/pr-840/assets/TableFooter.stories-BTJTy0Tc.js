@@ -1,0 +1,21 @@
+import{j as r}from"./iframe-D4l0qtta.js";import{T as i,a as c}from"./TablePagination-BGqzOR6e.js";import{T}from"./Table-DdLjeS29.js";import{T as b}from"./TableRow-DV0jtsWt.js";import{T as g}from"./TableCell-DO-YrpV-.js";import"./preload-helper-Dp1pzeXC.js";import"./TableCell-BT4Md-7-.js";import"./memoTheme-BA7dV9ce.js";import"./styled-BTFFsjyJ.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./generateUtilityClass-BtcU_pBl.js";import"./index-D3XRuDHB.js";import"./useSlot-D-iz2SxY.js";import"./mergeSlotProps-DF_C76Yp.js";import"./isHostComponent-DVu5iVWx.js";import"./useForkRef-Dd_PEYLR.js";import"./KeyboardArrowRight-DhFhNZ69.js";import"./createSvgIcon-0ZTEW-tI.js";import"./SvgIcon-Domhqj7B.js";import"./PaginationItem-DuvKAN7F.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./ButtonBase-caw8p1XZ.js";import"./useTimeout-tDfAfQSP.js";import"./TransitionGroupContext-CoIben92.js";import"./useEventCallback-BZanBeRj.js";import"./isFocusVisible-B8k4qzLc.js";import"./IconButton-vTRylTTB.js";import"./CircularProgress-CNlJ1A1Z.js";import"./OutlinedInput-C0jP2jLp.js";import"./useFormControl-Cf7b7V2i.js";import"./formControlState-Dq1zat_P.js";import"./utils-DoM3o7-Q.js";import"./ownerWindow-HkKU3E4x.js";import"./ownerDocument-DW-IO8s5.js";import"./debounce-Be36O1Ab.js";import"./MenuItem-BOVE50hy.js";import"./List-CMRknLMF.js";import"./listItemIconClasses-CyGEUV5Q.js";import"./listItemTextClasses-CiRxluPw.js";import"./dividerClasses-CxQzuCbE.js";import"./Select--IzqTXcD.js";import"./Menu-C__YMKvy.js";import"./useSlotProps-CDGpK8qC.js";import"./Popover-CTlIoDyj.js";import"./Portal-D2eOL5uX.js";import"./useTheme-CeD1owOb.js";import"./utils-C5eKUPpq.js";import"./getReactElementRef-CBOb2zug.js";import"./mergeSlotProps-PW512166.js";import"./Modal--YBRLag_.js";import"./createChainedFunction-BO_9K8Jh.js";import"./Backdrop-C4Qzx4Iq.js";import"./Fade-22-1AoWN.js";import"./Paper-DbNlwRfL.js";import"./useControlled-Cq9ik7Uv.js";import"./index-B-RlsP5T.js";import"./faCircleArrowRight-B87giHcC.js";import"./faUser-meEUFR5-.js";import"./Pagination-YsrP7_Hr.js";import"./index-DNyVveUa.js";import"./index-DJKl12U0.js";import"./index-CzvPe9hU.js";import"./Tooltip-CWqA7bV3.js";import"./Button-c5qr7CJB.js";import"./index-BpTvn-wv.js";import"./Box-CbXkJEEm.js";import"./Grid-AzzeqWvx.js";import"./styled-CK-eMcBj.js";import"./isMuiElement-CH7W9SW2.js";import"./Stack-DeWONcZO.js";import"./Container-Cbdyqd46.js";import"./faCheck-BUdkY9Qv.js";import"./FormLabel-BOy5HPW6.js";import"./FormHelperText-BC2JKs99.js";import"./FormControlLabel-DwCec4RA.js";import"./Typography-DQo__xQb.js";import"./Switch-Bu62HeQk.js";import"./SwitchBase-zo6P8E0k.js";import"./RadioGroup-DdFhp1NH.js";import"./Radio-BvlDOov9.js";import"./FormGroup-BUu0NSyx.js";import"./Divider-DYT8Z4PY.js";import"./Table-EGya6bIJ.js";import"./TableRow-DH__M_0c.js";import"./visuallyHidden-Dan1xhjv.js";const Qr={title:"Components/Table/TableFooter",component:i,tags:["autodocs"],args:{}},o={render:e=>r.jsx(T,{role:"presentation",children:r.jsx(i,{...e,children:r.jsx(b,{children:r.jsx(g,{children:"Footer"})})})})},t={render:e=>r.jsx(T,{children:r.jsx(i,{...e,children:r.jsx(b,{children:r.jsx(c,{count:50,page:0,rowsPerPage:10,rowsPerPageOptions:[5,10,25,{value:-1,label:"all"}],onPageChange:()=>null})})})}),args:{}};var p,m,a;o.parameters={...o.parameters,docs:{...(p=o.parameters)==null?void 0:p.docs,source:{originalSource:`{
+  render: (args: TableFooterProps) => <Table role="presentation">
+      <TableFooter {...args}>
+        <TableRow>
+          <TableCell>Footer</TableCell>
+        </TableRow>
+      </TableFooter>
+    </Table>
+}`,...(a=(m=o.parameters)==null?void 0:m.docs)==null?void 0:a.source}}};var n,s,l;t.parameters={...t.parameters,docs:{...(n=t.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  render: (args: TableFooterProps) => <Table>
+      <TableFooter {...args}>
+        <TableRow>
+          <TablePagination count={50} page={0} rowsPerPage={10} rowsPerPageOptions={[5, 10, 25, {
+          value: -1,
+          label: 'all'
+        }]} onPageChange={() => null} />
+        </TableRow>
+      </TableFooter>
+    </Table>,
+  args: {}
+}`,...(l=(s=t.parameters)==null?void 0:s.docs)==null?void 0:l.source}}};const Ur=["_TableFooter","_Pagination"];export{t as _Pagination,o as _TableFooter,Ur as __namedExportsOrder,Qr as default};
