@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.1](https://github.com/Availity/element/compare/@availity/mui-modal@2.0.0...@availity/mui-modal@2.0.1) (2025-12-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `2.0.0`
+* `mui-card` updated to version `2.0.0`
+* `mui-typography` updated to version `2.0.0`
 ## [2.0.0](https://github.com/Availity/element/compare/@availity/mui-modal@1.0.13...@availity/mui-modal@2.0.0) (2025-11-17)
 
 ### Dependency Updates
