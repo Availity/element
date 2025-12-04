@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.1](https://github.com/Availity/element/compare/@availity/mui-authorize@2.0.0...@availity/mui-authorize@2.0.1) (2025-12-03)
+
+### Dependency Updates
+
+* `mui-block-ui` updated to version `2.0.0`
 ## [2.0.0](https://github.com/Availity/element/compare/@availity/mui-authorize@1.0.11...@availity/mui-authorize@2.0.0) (2025-11-17)
 
 ### Dependency Updates

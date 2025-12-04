@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.1](https://github.com/Availity/element/compare/@availity/mui-block-ui@2.0.0...@availity/mui-block-ui@2.0.1) (2025-12-03)
+
+### Dependency Updates
+
+* `mui-button` updated to version `2.0.0`
+* `mui-paper` updated to version `2.0.0`
+* `mui-typography` updated to version `2.0.0`
 ## [2.0.0](https://github.com/Availity/element/compare/@availity/mui-block-ui@1.0.7...@availity/mui-block-ui@2.0.0) (2025-11-17)
 
 ### Dependency Updates
