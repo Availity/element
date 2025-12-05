@@ -48,7 +48,7 @@
     "react-hook-form": "^7.55.0"
   },
   "devDependencies": {
-    "@availity/api-axios": "^11.0.0",
+    "@availity/api-axios": "^12.0.0",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-layout": "workspace:^",
     "@availity/mui-menu": "workspace:^",
@@ -65,7 +65,7 @@
     "yup": "^1.6.1"
   },
   "peerDependencies": {
-    "@availity/api-axios": "^8.0.7",
+    "@availity/api-axios": "^12.0.0",
     "@mui/material": "^7.0.0",
     "react": ">=17.0.0"
   },
