@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.2](https://github.com/Availity/element/compare/@availity/mui-authorize@2.0.1...@availity/mui-authorize@2.0.2) (2025-12-09)
+
 ## [2.0.1](https://github.com/Availity/element/compare/@availity/mui-authorize@2.0.0...@availity/mui-authorize@2.0.1) (2025-12-03)
 
 ### Dependency Updates
