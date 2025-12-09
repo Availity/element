@@ -51,10 +51,10 @@
     "@availity/mui-typography": "workspace:*",
     "@availity/mui-utils": "workspace:*",
     "@mui/material": "^7.3.4",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "tsup": "^8.4.0",
-    "typescript": "^5.4.5"
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "@availity/mui-button": "workspace:*",
