@@ -57,13 +57,11 @@ const FlushAccordion = styled(MuiAccordion, {
     backgroundColor: 'transparent'
   },
   '> .MuiAccordion-heading .MuiAccordionSummary-root': {
-    padding: 0,
-    paddingLeft: 8,
-    paddingRight: 8,
+    padding: 8,
     minHeight: 40,
   },
   '> .MuiAccordion-heading .MuiAccordionSummary-root .MuiAccordionSummary-content': {
-    margin: 8,
+    margin: 0
   }
 }));
 
