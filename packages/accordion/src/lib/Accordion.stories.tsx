@@ -13,7 +13,7 @@ const meta: Meta<typeof Accordion> = {
   tags: ['autodocs'],
   argTypes: {
     variant: {
-      options: ['filled', 'outlined'],
+      options: ['filled', 'outlined', 'flush'],
     },
   },
 };
