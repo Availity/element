@@ -2,9 +2,11 @@ import MuiAccordion, { AccordionProps as MuiAccordionProps } from '@mui/material
 import { styled } from '@mui/material/styles';
 import { forwardRef } from 'react';
 
+type Variant = 'filled' | 'outlined' | 'flush';
+
 export type AccordionProps = {
   /** @default "filled" */
-  variant?: 'filled' | 'outlined';
+  variant?: Variant
   /**
    * Disable nested styling for child `Accordions`
    * @default false
@@ -33,19 +35,49 @@ const OutlinedAccordion = styled(MuiAccordion, {
     backgroundColor: theme.palette.background.paper,
   },
   '> .MuiCollapse-root > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > .MuiAccordion-region > .MuiAccordionDetails-root:first-of-type':
-    {
-      borderTop: `1px solid ${theme.palette.divider}`,
-    },
+  {
+    borderTop: `1px solid ${theme.palette.divider}`,
+  },
 }));
+
+const FlushAccordion = styled(MuiAccordion, {
+  name: 'MuiAccordion',
+  slot: 'AvFlush',
+  overridesResolver: (props, styles) => styles.avFlush,
+})(({ theme }) => ({
+  '&&': {
+    borderRadius: 0,
+    border: 0,
+    borderBottom: `1px solid ${theme.palette.divider}`,
+  },
+  '&&:first-of-type': {
+    borderTop: `1px solid ${theme.palette.divider}`,
+  },
+  '> .MuiAccordion-heading .MuiAccordionSummary-root:not(.Mui-focusVisible, :hover, :active)': {
+    backgroundColor: 'transparent'
+  },
+  '> .MuiAccordion-heading .MuiAccordionSummary-root': {
+    padding: 0,
+    paddingLeft: 8,
+    paddingRight: 8,
+    minHeight: 40,
+  },
+  '> .MuiAccordion-heading .MuiAccordionSummary-root .MuiAccordionSummary-content': {
+    margin: 8,
+  }
+}));
+
+const VariantComponent: Record<Variant, typeof FilledAccordion> = {
+  filled: FilledAccordion,
+  outlined: OutlinedAccordion,
+  flush: FlushAccordion
+}
 
 export const Accordion = forwardRef<HTMLDivElement, AccordionProps>((allProps, ref) => {
   const { variant = 'filled', disableNestedStyling = false, className, ...props } = allProps;
+  const Variant = VariantComponent[variant]
 
-  const classnames = `${variant === 'filled' ? 'MuiAccordion-avFilled' : 'MuiAccordion-avOutlined'}${disableNestedStyling ? ' Av-disableNested' : ''} ${className || ''}`;
+  const classnames = `MuiAccordion-av${variant.charAt(0).toUpperCase() + variant.slice(1)}${disableNestedStyling ? ' Av-disableNested' : ''} ${className || ''}`;
 
-  return variant === 'filled' ? (
-    <FilledAccordion className={classnames} {...props} ref={ref} />
-  ) : (
-    <OutlinedAccordion className={classnames} {...props} ref={ref} />
-  );
+  return <Variant className={classnames} {...props} ref={ref} />;
 });

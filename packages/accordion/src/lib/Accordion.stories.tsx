@@ -85,6 +85,28 @@ export const _Variants: StoryObj<typeof Accordion> = {
           </AccordionDetails>
         </Accordion>
       </Grid>
+      <Grid size={{ xs: 12 }}>
+        <Accordion {...args} variant='flush'>
+          <AccordionSummary aria-controls="filled-summary-content" id="filled-summary-header" secondary="Secondary">
+            Flush
+          </AccordionSummary>
+          <AccordionDetails>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
+            leo lobortis eget.
+            <Box sx={{ mt: 2 }}>
+              <Accordion variant='flush'>
+                <AccordionSummary aria-controls="filled-nested-content" id="filled-nested-header">
+                  Flush Nested Accordion
+                </AccordionSummary>
+                <AccordionDetails>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                  blandit leo lobortis eget.
+                </AccordionDetails>
+              </Accordion>
+            </Box>
+          </AccordionDetails>
+        </Accordion>
+      </Grid>
     </Grid>
   ),
 };
