@@ -33,6 +33,8 @@ export interface AsyncAutocompleteProps<
   watchParams?: Record<string, unknown>;
   /** Time to wait before searching with the input value typed into the component */
   debounceTimeout?: number;
+  /** Options to prepend to the list (e.g., frequently used items). These will be filtered from loadOptions results to avoid duplicates. */
+  prependOptions?: Option[];
 }
 
 export const AsyncAutocomplete = <
@@ -51,6 +53,7 @@ export const AsyncAutocomplete = <
   debounceTimeout = 350,
   FieldProps,
   onInputChange,
+  prependOptions = [],
   ...rest
 }: AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
   const [inputValue, setInputValue] = useState('');
@@ -72,6 +75,19 @@ export const AsyncAutocomplete = <
   });
 
   const options = data?.pages ? data.pages.map((page) => page.options).flat() : [];
+
+  const finalOptions =
+    prependOptions.length > 0
+      ? [
+          ...prependOptions,
+          ...options.filter(
+            (option) =>
+              !prependOptions.some((prepended) =>
+                rest.isOptionEqualToValue ? rest.isOptionEqualToValue(option, prepended) : option === prepended
+              )
+          ),
+        ]
+      : options;
 
   const handleOnInputChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -99,7 +115,7 @@ export const AsyncAutocomplete = <
         },
       }}
       loading={isFetching}
-      options={options}
+      options={finalOptions}
       ListboxProps={{
         ...ListboxProps,
         onScroll: async (event: React.SyntheticEvent) => {
