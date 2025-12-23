@@ -1,0 +1,3 @@
+import{j as s}from"./iframe-uHgbxI5K.js";import{T as t}from"./TableContainer-6ZScHoCr.js";import"./preload-helper-Dp1pzeXC.js";import"./TableContainer-DRxswvCa.js";import"./generateUtilityClass-BtcU_pBl.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./styled-8YbhM9a0.js";const b={title:"Components/Table/TableContainer",component:t,tags:["autodocs"],args:{}},r={render:n=>s.jsx(t,{...n})};var e,o,a;r.parameters={...r.parameters,docs:{...(e=r.parameters)==null?void 0:e.docs,source:{originalSource:`{
+  render: (args: TableContainerProps) => <TableContainer {...args} />
+}`,...(a=(o=r.parameters)==null?void 0:o.docs)==null?void 0:a.source}}};const C=["_TableContainer"];export{r as _TableContainer,C as __namedExportsOrder,b as default};
