@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.1.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@2.0.2...@availity/mui-autocomplete@2.1.0) (2025-12-23)
+
+
+### Features
+
+* prependOptions functionality for AsyncAutocompletes ([532b8b6](https://github.com/Availity/element/commit/532b8b6dc7a165ed37feb885fcea9cdf8007ae41))
+
 ## [2.0.2](https://github.com/Availity/element/compare/@availity/mui-autocomplete@2.0.1...@availity/mui-autocomplete@2.0.2) (2025-12-09)
 
 ### Dependency Updates
