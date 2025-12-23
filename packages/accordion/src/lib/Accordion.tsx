@@ -15,8 +15,8 @@ export type AccordionProps = {
 } & Omit<MuiAccordionProps, 'component' | 'elevation' | 'TransitionComponent' | 'TransitionProps' | 'variant'>;
 
 const baseStyles = (theme: any) => ({
-  '> .MuiCollapse-root > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > .MuiAccordion-region > .MuiAccordionDetails-root > .MuiBox-root > .MuiAccordion-root > .MuiAccordion-heading > .MuiAccordionSummary-root': {
-    borderRadius: '4px',
+  '& .MuiAccordionDetails-root .MuiAccordionSummary-root': {
+    borderRadius: 4,
   }
 });
 
