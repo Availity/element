@@ -14,11 +14,18 @@ export type AccordionProps = {
   disableNestedStyling?: boolean;
 } & Omit<MuiAccordionProps, 'component' | 'elevation' | 'TransitionComponent' | 'TransitionProps' | 'variant'>;
 
+const baseStyles = (theme: any) => ({
+  '> .MuiCollapse-root > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > .MuiAccordion-region > .MuiAccordionDetails-root > .MuiBox-root > .MuiAccordion-root > .MuiAccordion-heading > .MuiAccordionSummary-root': {
+    borderRadius: '4px',
+  }
+});
+
 const FilledAccordion = styled(MuiAccordion, {
   name: 'MuiAccordion',
   slot: 'AvFilled',
   overridesResolver: (props, styles) => styles.avFilled,
 })(({ theme }) => ({
+  ...baseStyles(theme),
   borderColor: theme.palette.grey[100],
   '> .MuiAccordion-heading .MuiAccordionSummary-root': {
     backgroundColor: theme.palette.grey[100],
@@ -30,6 +37,7 @@ const OutlinedAccordion = styled(MuiAccordion, {
   slot: 'AvOutlined',
   overridesResolver: (props, styles) => styles.avOutlined,
 })(({ theme }) => ({
+  ...baseStyles(theme),
   borderColor: theme.palette.divider,
   '> .MuiAccordion-heading .MuiAccordionSummary-root:not(.Mui-focusVisible, :hover, :active)': {
     backgroundColor: theme.palette.background.paper,
@@ -45,12 +53,13 @@ const FlushAccordion = styled(MuiAccordion, {
   slot: 'AvFlush',
   overridesResolver: (props, styles) => styles.avFlush,
 })(({ theme }) => ({
+  ...baseStyles(theme),
+  border: 0,
+  borderBottom: `1px solid ${theme.palette.divider}`,
   '&&': {
     borderRadius: 0,
-    border: 0,
-    borderBottom: `1px solid ${theme.palette.divider}`,
   },
-  '&&:first-of-type': {
+  '&:first-of-type': {
     borderTop: `1px solid ${theme.palette.divider}`,
   },
   '> .MuiAccordion-heading .MuiAccordionSummary-root:not(.Mui-focusVisible, :hover, :active)': {
@@ -62,7 +71,7 @@ const FlushAccordion = styled(MuiAccordion, {
   },
   '> .MuiAccordion-heading .MuiAccordionSummary-root .MuiAccordionSummary-content': {
     margin: 0
-  }
+  },
 }));
 
 const VariantComponent: Record<Variant, typeof FilledAccordion> = {
