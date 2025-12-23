@@ -94,7 +94,7 @@ export const _Variants: StoryObj<typeof Accordion> = {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
             leo lobortis eget.
             <Box sx={{ mt: 2 }}>
-              <Accordion variant='flush'>
+              <Accordion {...args} variant='flush'>
                 <AccordionSummary aria-controls="filled-nested-content" id="filled-nested-header">
                   Flush Nested Accordion
                 </AccordionSummary>
