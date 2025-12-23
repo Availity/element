@@ -1,0 +1,31 @@
+import{r as g,j as e}from"./iframe-BOqhEPj6.js";import{G as o}from"./index-DMdqsLqb.js";import{a as s}from"./index-DX6yAWWK.js";import{B as y}from"./Button-BDF2rRxm.js";import{C as b}from"./CircularProgress-Xg5tMO8-.js";import"./preload-helper-Dp1pzeXC.js";import"./Box-CIHxGpEh.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./generateUtilityClass-BtcU_pBl.js";import"./Grid-BJc_wFud.js";import"./useTheme-s5qe_7AX.js";import"./styled-BY2Q14_8.js";import"./styled-ClQgRsdc.js";import"./isMuiElement-FBus6K6C.js";import"./Stack-DPaZpNJF.js";import"./Container-Ck_72FoA.js";import"./faCircleArrowRight-B87giHcC.js";import"./faUser-meEUFR5-.js";import"./SvgIcon-BlVGnbba.js";import"./memoTheme-BYC15E_2.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./ButtonBase-C7cVXKAH.js";import"./useTimeout-CKtuW5yl.js";import"./TransitionGroupContext-TO625Yxj.js";import"./useForkRef-D87wou6e.js";import"./useEventCallback-BHkbNqwn.js";import"./isFocusVisible-B8k4qzLc.js";const I=e.jsx(b,{color:"inherit",size:16,"aria-label":"loading"}),t=g.forwardRef((n,u)=>{const{children:p,loading:r=!1,...a}=n,m=a.startIcon?"start":"end",f=a.startIcon||a.endIcon||r?{}:{padding:"0 .7rem"},h=a.startIcon?void 0:e.jsx("span",{style:r?{padding:"0 .7rem"}:{}});return e.jsx(y,{endIcon:h,loadingPosition:m,loading:r,disableRipple:!0,loadingIndicator:I,...a,ref:u,children:e.jsx("span",{style:f,children:p})})});try{t.displayName="LoadingButton",t.__docgenInfo={description:"",displayName:"LoadingButton",props:{className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},style:{defaultValue:null,description:"",name:"style",required:!1,type:{name:"CSSProperties"}},classes:{defaultValue:null,description:"Override or extend the styles applied to the component.",name:"classes",required:!1,type:{name:"Partial<ButtonClasses> & Partial<ClassNameMap<never>>"}},children:{defaultValue:null,description:"The content of the component.",name:"children",required:!1,type:{name:"ReactNode"}},color:{defaultValue:{value:"secondary"},description:"The color of the component.",name:"color",required:!1,type:{name:'"primary" | "secondary" | "tertiary"'}},sx:{defaultValue:null,description:"The system prop that allows defining system overrides as well as additional CSS styles.",name:"sx",required:!1,type:{name:"SxProps<Theme>"}},tabIndex:{defaultValue:{value:"0"},description:"",name:"tabIndex",required:!1,type:{name:"number"}},href:{defaultValue:null,description:"The URL to link to when the button is clicked.\nIf defined, an `a` element will be used as the root node.",name:"href",required:!1,type:{name:"string"}},action:{defaultValue:null,description:"A ref for imperative actions.\nIt currently only supports `focusVisible()` action.",name:"action",required:!1,type:{name:"Ref<ButtonBaseActions>"}},disabled:{defaultValue:{value:`false
+false`},description:"If `true`, the component is disabled.",name:"disabled",required:!1,type:{name:"boolean"}},focusVisibleClassName:{defaultValue:null,description:`This prop can help identify which element has keyboard focus.
+The class name will be applied when the element gains the focus through keyboard interaction.
+It's a polyfill for the [CSS :focus-visible selector](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).
+The rationale for using this feature [is explained here](https://github.com/WICG/focus-visible/blob/HEAD/explainer.md).
+A [polyfill can be used](https://github.com/WICG/focus-visible) to apply a \`focus-visible\` class to other components
+if needed.`,name:"focusVisibleClassName",required:!1,type:{name:"string"}},LinkComponent:{defaultValue:{value:"'a'"},description:"The component used to render a link when the `href` prop is provided.",name:"LinkComponent",required:!1,type:{name:"ElementType<any, keyof IntrinsicElements>"}},onFocusVisible:{defaultValue:null,description:"Callback fired when the component is focused with a keyboard.\nWe trigger a `onFocus` callback too.",name:"onFocusVisible",required:!1,type:{name:"FocusEventHandler<any>"}},loading:{defaultValue:{value:"null"},description:"If `true`, the loading indicator is visible and the button is disabled.\nIf `true | false`, the loading wrapper is always rendered before the children to prevent [Google Translation Crash](https://github.com/mui/material-ui/issues/27853).",name:"loading",required:!1,type:{name:"boolean"}},fullWidth:{defaultValue:{value:"false"},description:"If `true`, the button will take up the full width of its container.",name:"fullWidth",required:!1,type:{name:"boolean"}},size:{defaultValue:{value:"large"},description:"The size of the component.",name:"size",required:!1,type:{name:'"small" | "medium" | "large"'}},endIcon:{defaultValue:null,description:"Element placed after the children.",name:"endIcon",required:!1,type:{name:"ReactNode"}},startIcon:{defaultValue:null,description:"Element placed before the children.",name:"startIcon",required:!1,type:{name:"ReactNode"}}}}}catch{}const J={title:"Components/Button/LoadingButton",component:t,tags:["autodocs"],args:{loading:!0,color:"primary"}},i={render:({...n})=>e.jsxs(o,{container:!0,spacing:1,children:[e.jsx(o,{size:{xs:12},children:e.jsx(t,{...n,children:"No Icon"})}),e.jsx(o,{size:{xs:12},children:e.jsx(t,{...n,startIcon:e.jsx(s,{}),children:"Start Icon"})}),e.jsx(o,{size:{xs:12},children:e.jsx(t,{...n,endIcon:e.jsx(s,{}),children:"End Icon"})})]})};var l,d,c;i.parameters={...i.parameters,docs:{...(l=i.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  render: ({
+    ...args
+  }: LoadingButtonProps) => <Grid container spacing={1}>
+      <Grid size={{
+      xs: 12
+    }}>
+        <LoadingButton {...args}>No Icon</LoadingButton>
+      </Grid>
+      <Grid size={{
+      xs: 12
+    }}>
+        <LoadingButton {...args} startIcon={<SearchIcon />}>
+          Start Icon
+        </LoadingButton>
+      </Grid>
+      <Grid size={{
+      xs: 12
+    }}>
+        <LoadingButton {...args} endIcon={<SearchIcon />}>
+          End Icon
+        </LoadingButton>
+      </Grid>
+    </Grid>
+}`,...(c=(d=i.parameters)==null?void 0:d.docs)==null?void 0:c.source}}};const K=["_LoadingButton"];export{i as _LoadingButton,K as __namedExportsOrder,J as default};
