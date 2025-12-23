@@ -103,6 +103,85 @@ describe('AsyncAutocomplete', () => {
     });
   });
 
+  test('prependedOptions should be available', async () => {
+    const client = new QueryClient();
+
+    render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete
+          queryKey="prepended-options"
+          prependOptions={[{ label: 'Option 0', value: 0 }]}
+          loadOptions={loadOptions}
+          FieldProps={{ label: 'Test' }}
+        />
+      </QueryClientProvider>
+    );
+
+    const input = screen.getByRole('combobox');
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    waitFor(() => {
+      expect(screen.getByText('Option 0')).toBeDefined();
+      expect(screen.getByText('Option 1')).toBeDefined();
+    });
+
+    fireEvent.click(await screen.findByText('Option 0'));
+
+    waitFor(() => {
+      expect(screen.getByText('Option 0')).toBeDefined();
+    });
+  });
+
+  test('prependedOptions should not be duplicative', async () => {
+    const client = new QueryClient();
+
+    render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete
+          queryKey="prepended-options-unique"
+          prependOptions={[{ label: 'Option 1', value: 1 }]}
+          loadOptions={loadOptions}
+          FieldProps={{ label: 'Test' }}
+        />
+      </QueryClientProvider>
+    );
+
+    const input = screen.getByRole('combobox');
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    waitFor(() => {
+      expect(screen.getAllByText('Option 1').length).toBe(1);
+    });
+  });
+
+  test('should filter duplicates using custom isOptionEqualToValue', async () => {
+    const client = new QueryClient();
+
+    render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete
+          queryKey="test-duplicates"
+          prependOptions={[{ label: 'Option 1', value: 1 }]}
+          isOptionEqualToValue={(option, value) => option.value === value.value}
+          loadOptions={loadOptions}
+          FieldProps={{ label: 'Test' }}
+        />
+      </QueryClientProvider>
+    );
+
+    const input = screen.getByRole('combobox');
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(screen.getByText('Option 1')).toBeDefined();
+      expect(screen.getByText('Option 2')).toBeDefined();
+      expect(screen.getAllByText('Option 1')).toHaveLength(1);
+    });
+  });
+
   test('should call loadOptions when scroll to the bottom', async () => {
     const client = new QueryClient();
 

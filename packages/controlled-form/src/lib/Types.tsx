@@ -240,7 +240,7 @@ export const TextFieldPropsCategorized: TextFieldPropsObject = {
   slots: { table: { category: 'Input Props' } },
   slotProps: { table: { category: 'Input Props' } },
   showCharacterCount: { table: { category: 'Input Props' } },
-  displayOverflowMaxLength: { table: { category: 'Input Props' } }
+  displayOverflowMaxLength: { table: { category: 'Input Props' } },
 };
 
 export const RadioGroupPropsCategorized: RadioGroupPropsObject = {
@@ -251,7 +251,7 @@ export const RadioGroupPropsCategorized: RadioGroupPropsObject = {
   label: { table: { category: 'Input Props' } },
   ref: { table: { category: 'Input Props' } },
   helperText: { table: { category: 'Input Props' } },
-  row: { table: { category: 'Input Props' } }
+  row: { table: { category: 'Input Props' } },
 };
 
 export const ProviderAutocompletePropsCategorized: ProviderAutocompletePropsObject = {
@@ -309,7 +309,12 @@ export const ProviderAutocompletePropsCategorized: ProviderAutocompletePropsObje
   defaultToFirstOption: { table: { category: 'Input Props' } },
   defaultToOnlyOption: { table: { category: 'Input Props' } },
   customerId: { table: { category: 'Input Props' } },
-  apiConfig: { table: { category: 'Input Props' } }
+  apiConfig: { table: { category: 'Input Props' } },
+  prependOptions: {
+    table: {
+      category: 'Input Props',
+    },
+  },
 };
 
 export const OrganizationAutocompletePropsCategorized: OrganizationAutocompletePropsObject = {
@@ -366,7 +371,12 @@ export const OrganizationAutocompletePropsCategorized: OrganizationAutocompleteP
   debounceTimeout: { table: { category: 'Input Props' } },
   defaultToFirstOption: { table: { category: 'Input Props' } },
   defaultToOnlyOption: { table: { category: 'Input Props' } },
-  apiConfig: { table: { category: 'Input Props' } }
+  apiConfig: { table: { category: 'Input Props' } },
+  prependOptions: {
+    table: {
+      category: 'Input Props',
+    },
+  },
 };
 
 export const DatepickerPropsCategorized: DatepickerPropsObject = {
@@ -416,7 +426,7 @@ export const DatepickerPropsCategorized: DatepickerPropsObject = {
   format: { table: { category: 'Input Props' } },
   disableOpenPicker: { table: { category: 'Input Props' } },
   placement: { table: { category: 'Input Props' } },
-  clearable: { table: { category: 'Input Props' } }
+  clearable: { table: { category: 'Input Props' } },
 };
 
 export const CodesAutocompletePropsCategorized: CodesAutocompletePropsObject = {
@@ -474,7 +484,12 @@ export const CodesAutocompletePropsCategorized: CodesAutocompletePropsObject = {
   debounceTimeout: { table: { category: 'Input Props' } },
   defaultToFirstOption: { table: { category: 'Input Props' } },
   defaultToOnlyOption: { table: { category: 'Input Props' } },
-  apiConfig: { table: { category: 'Input Props' } }
+  apiConfig: { table: { category: 'Input Props' } },
+  prependOptions: {
+    table: {
+      category: 'Input Props',
+    },
+  },
 };
 
 export const AsyncAutocompletePropsCategorized: AsyncAutocompletePropsObject = {
@@ -531,7 +546,12 @@ export const AsyncAutocompletePropsCategorized: AsyncAutocompletePropsObject = {
   watchParams: { table: { category: 'Input Props' } },
   debounceTimeout: { table: { category: 'Input Props' } },
   defaultToFirstOption: { table: { category: 'Input Props' } },
-  defaultToOnlyOption: { table: { category: 'Input Props' } }
+  defaultToOnlyOption: { table: { category: 'Input Props' } },
+  prependOptions: {
+    table: {
+      category: 'Input Props',
+    },
+  },
 };
 
 export const AutocompletePropsCategorized: AutocompletePropsObject = {
@@ -583,7 +603,7 @@ export const AutocompletePropsCategorized: AutocompletePropsObject = {
   isOptionEqualToValue: { table: { category: 'Input Props' } },
   onHighlightChange: { table: { category: 'Input Props' } },
   onInputChange: { table: { category: 'Input Props' } },
-  FieldProps: { table: { category: 'Input Props' } }
+  FieldProps: { table: { category: 'Input Props' } },
 };
 
 export const CheckboxPropsCategorized: CheckboxPropsObject = {
@@ -620,7 +640,7 @@ export const CheckboxPropsCategorized: CheckboxPropsObject = {
   checked: { table: { category: 'Input Props' } },
   edge: { table: { category: 'Input Props' } },
   indeterminate: { table: { category: 'Input Props' } },
-  indeterminateIcon: { table: { category: 'Input Props' } }
+  indeterminateIcon: { table: { category: 'Input Props' } },
 };
 
 export const InputPropsCategorized: InputPropsObject = {
@@ -715,7 +735,7 @@ export const SelectPropsCategorized: SelectPropsObject = {
   onClose: { table: { category: 'Input Props' } },
   onOpen: { table: { category: 'Input Props' } },
   renderValue: { table: { category: 'Input Props' } },
-  SelectDisplayProps: { table: { category: 'Input Props' } }
+  SelectDisplayProps: { table: { category: 'Input Props' } },
 };
 
 export const AllControllerPropsList = Object.keys(AllControllerPropertiesCategorized) as (keyof ControllerProps)[];
