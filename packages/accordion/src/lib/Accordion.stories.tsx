@@ -244,12 +244,12 @@ export const _States: StoryObj<typeof Accordion> = {
       </Grid>
       <Grid size={{ xs: 12 }}>
         <Accordion {...args} variant="flush" defaultExpanded>
-          <AccordionSummary aria-controls="outlinedexpanded-content" id="outlinedexpanded-header">
+          <AccordionSummary aria-controls="flushexpanded-content" id="flushexpanded-header">
             Flush Expanded
           </AccordionSummary>
           <AccordionDetails>
             <Accordion>
-              <AccordionSummary aria-controls="outlinedexpanded-nested-content" id="outlinedexpanded-nested-header">
+              <AccordionSummary aria-controls="flushexpanded-nested-content" id="flushexpanded-nested-header">
                 Flush  Nested Accordion
               </AccordionSummary>
               <AccordionDetails>
