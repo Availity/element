@@ -249,9 +249,7 @@ export const _States: StoryObj<typeof Accordion> = {
           </AccordionSummary>
           <AccordionDetails>
             <Accordion>
-              <AccordionSummary aria-controls="flushexpanded-nested-content" id="flush'& .MuiAccordionDetails-root .MuiAccordion-heading': {
-    borderRadius: 4,
-  }expanded-nested-header">
+              <AccordionSummary aria-controls="flushexpanded-nested-content" id="flushexpanded-nested-header">
                 Flush  Nested Accordion
               </AccordionSummary>
               <AccordionDetails>
