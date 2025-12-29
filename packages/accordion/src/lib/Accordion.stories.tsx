@@ -87,7 +87,7 @@ export const _Variants: StoryObj<typeof Accordion> = {
       </Grid>
       <Grid size={{ xs: 12 }}>
         <Accordion {...args} variant='flush'>
-          <AccordionSummary aria-controls="filled-summary-content" id="filled-summary-header" secondary="Secondary">
+          <AccordionSummary aria-controls="flush-summary-content" id="flush-summary-header" secondary="Secondary">
             Flush
           </AccordionSummary>
           <AccordionDetails>
@@ -95,7 +95,7 @@ export const _Variants: StoryObj<typeof Accordion> = {
             leo lobortis eget.
             <Box sx={{ mt: 2 }}>
               <Accordion {...args} variant='flush'>
-                <AccordionSummary aria-controls="filled-nested-content" id="filled-nested-header">
+                <AccordionSummary aria-controls="flush-nested-content" id="flush-nested-header">
                   Flush Nested Accordion
                 </AccordionSummary>
                 <AccordionDetails>
@@ -249,7 +249,9 @@ export const _States: StoryObj<typeof Accordion> = {
           </AccordionSummary>
           <AccordionDetails>
             <Accordion>
-              <AccordionSummary aria-controls="flushexpanded-nested-content" id="flushexpanded-nested-header">
+              <AccordionSummary aria-controls="flushexpanded-nested-content" id="flush'& .MuiAccordionDetails-root .MuiAccordion-heading': {
+    borderRadius: 4,
+  }expanded-nested-header">
                 Flush  Nested Accordion
               </AccordionSummary>
               <AccordionDetails>
