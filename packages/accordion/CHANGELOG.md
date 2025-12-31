@@ -2,6 +2,25 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.1.0](https://github.com/Availity/element/compare/@availity/mui-accordion@2.0.2...@availity/mui-accordion@2.1.0) (2025-12-31)
+
+
+### Features
+
+* added expanded flush variant to states as well as flush option to spacing, UXDS-999 ([0e43b14](https://github.com/Availity/element/commit/0e43b143f7a6afa64aede0066fae4ac9acaf6b2f))
+* added flush variant for accordion component, UXDS-999 ([31e6a5b](https://github.com/Availity/element/commit/31e6a5b21a7cf47d9f6eded41f57baaafe2cea26))
+* rounded the corners of nested accordions to 4px, UXDS-999 ([9e9013c](https://github.com/Availity/element/commit/9e9013c1a342b2a5cadba88ca8c6a09f3ec71a45))
+
+
+### Bug Fixes
+
+* added flush as an option for variants on accordion storybook page, UXDS-999 ([3ad5734](https://github.com/Availity/element/commit/3ad5734da5f53e0ebc28846345ba616836e3f215))
+* fixed accidental paste, UXDS-999 ([d12a542](https://github.com/Availity/element/commit/d12a54212456090e00ec9072fb0811025ff6e34c))
+* fixed another naming issue, UXDS-999 ([fe02598](https://github.com/Availity/element/commit/fe0259892eca9f569a7d0cb5a6012455f638c5c3))
+* fixed naming issue, UXDS-999 ([ddd24d2](https://github.com/Availity/element/commit/ddd24d299e6d953771b170e207386e65696684c5))
+* fixed spacing between button and header, UXDS-999 ([a5be06f](https://github.com/Availity/element/commit/a5be06fd731e0d55a34165f359d7fc22c5cdb1bc))
+* removed shared styles, UXDS-999 ([b150b28](https://github.com/Availity/element/commit/b150b28d2da33e0dc1e6b68f1e660e9de1d7b27f))
+
 ## [2.0.2](https://github.com/Availity/element/compare/@availity/mui-accordion@2.0.1...@availity/mui-accordion@2.0.2) (2025-12-09)
 
 ### Dependency Updates
