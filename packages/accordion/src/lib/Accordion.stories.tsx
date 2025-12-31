@@ -13,7 +13,7 @@ const meta: Meta<typeof Accordion> = {
   tags: ['autodocs'],
   argTypes: {
     variant: {
-      options: ['filled', 'outlined'],
+      options: ['filled', 'outlined', 'flush'],
     },
   },
 };
@@ -85,6 +85,28 @@ export const _Variants: StoryObj<typeof Accordion> = {
           </AccordionDetails>
         </Accordion>
       </Grid>
+      <Grid size={{ xs: 12 }}>
+        <Accordion {...args} variant='flush'>
+          <AccordionSummary aria-controls="flush-summary-content" id="flush-summary-header" secondary="Secondary">
+            Flush
+          </AccordionSummary>
+          <AccordionDetails>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
+            leo lobortis eget.
+            <Box sx={{ mt: 2 }}>
+              <Accordion {...args} variant='flush'>
+                <AccordionSummary aria-controls="flush-nested-content" id="flush-nested-header">
+                  Flush Nested Accordion
+                </AccordionSummary>
+                <AccordionDetails>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                  blandit leo lobortis eget.
+                </AccordionDetails>
+              </Accordion>
+            </Box>
+          </AccordionDetails>
+        </Accordion>
+      </Grid>
     </Grid>
   ),
 };
@@ -97,13 +119,13 @@ export const _Variants: StoryObj<typeof Accordion> = {
  * this is due to Material's default gutter behavior when expanded along with how they overwrite the behavior when disabling the gutters.
  */
 export const _Spacing: StoryObj<typeof Accordion> = {
-  render: () => (
+  render: (args: AccordionProps) => (
     <div>
       <Typography variant="h5" component="h2">
         Grouped
       </Typography>
       <div>
-        <Accordion>
+        <Accordion {...args}>
           <AccordionSummary aria-controls="grouped-panel1-content" id="grouped-panel1-header">
             Accordion 1
           </AccordionSummary>
@@ -112,7 +134,7 @@ export const _Spacing: StoryObj<typeof Accordion> = {
             leo lobortis eget.
           </AccordionDetails>
         </Accordion>
-        <Accordion>
+        <Accordion {...args}>
           <AccordionSummary aria-controls="grouped-panel2-content" id="grouped-panel2-header">
             Accordion 2
           </AccordionSummary>
@@ -121,7 +143,7 @@ export const _Spacing: StoryObj<typeof Accordion> = {
             leo lobortis eget.
           </AccordionDetails>
         </Accordion>
-        <Accordion>
+        <Accordion {...args}>
           <AccordionSummary aria-controls="grouped-panel3-content" id="grouped-panel3-header">
             Accordion 3 with Actions
           </AccordionSummary>
@@ -140,7 +162,7 @@ export const _Spacing: StoryObj<typeof Accordion> = {
           Separated in a Grid
         </Typography>
         <Grid size={{ xs: 12 }}>
-          <Accordion>
+          <Accordion {...args}>
             <AccordionSummary aria-controls="panel1-content" id="panel1-header">
               Accordion 4
             </AccordionSummary>
@@ -151,7 +173,7 @@ export const _Spacing: StoryObj<typeof Accordion> = {
           </Accordion>
         </Grid>
         <Grid size={{ xs: 12 }}>
-          <Accordion>
+          <Accordion {...args}>
             <AccordionSummary aria-controls="panel2-content" id="panel2-header">
               Accordion 5
             </AccordionSummary>
@@ -162,7 +184,7 @@ export const _Spacing: StoryObj<typeof Accordion> = {
           </Accordion>
         </Grid>
         <Grid size={{ xs: 12 }}>
-          <Accordion>
+          <Accordion {...args}>
             <AccordionSummary aria-controls="panel3-content" id="panel3-header">
               Accordion 6 with Actions
             </AccordionSummary>
@@ -211,6 +233,24 @@ export const _States: StoryObj<typeof Accordion> = {
             <Accordion>
               <AccordionSummary aria-controls="outlinedexpanded-nested-content" id="outlinedexpanded-nested-header">
                 Outlined Nested Accordion
+              </AccordionSummary>
+              <AccordionDetails>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                blandit leo lobortis eget.
+              </AccordionDetails>
+            </Accordion>
+          </AccordionDetails>
+        </Accordion>
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <Accordion {...args} variant="flush" defaultExpanded>
+          <AccordionSummary aria-controls="flushexpanded-content" id="flushexpanded-header">
+            Flush Expanded
+          </AccordionSummary>
+          <AccordionDetails>
+            <Accordion>
+              <AccordionSummary aria-controls="flushexpanded-nested-content" id="flushexpanded-nested-header">
+                Flush  Nested Accordion
               </AccordionSummary>
               <AccordionDetails>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet
