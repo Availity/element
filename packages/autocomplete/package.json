@@ -41,15 +41,15 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@mui/types": "^7.4.7",
-    "qs": "^6.14.0"
+    "@mui/types": "^7.4.9",
+    "qs": "^6.14.1"
   },
   "devDependencies": {
-    "@availity/api-axios": "^12.0.0",
+    "@availity/api-axios": "^12.0.1",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-icon": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
-    "@mui/material": "^7.3.4",
+    "@mui/material": "^7.3.6",
     "@tanstack/react-query": "^4.36.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
@@ -57,7 +57,7 @@
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "@availity/api-axios": "^12.0.0",
+    "@availity/api-axios": "^12.0.1",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-textfield": "workspace:^",
     "@mui/material": "^7.0.0",

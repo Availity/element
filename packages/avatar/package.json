@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@availity/mui-icon": "workspace:^",
-    "@mui/material": "^7.3.4",
+    "@mui/material": "^7.3.6",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "tsup": "^8.4.0",
@@ -56,7 +56,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^12.0.0"
+    "@availity/api-axios": "^12.0.1"
   },
   "sideEffects": false
 }
