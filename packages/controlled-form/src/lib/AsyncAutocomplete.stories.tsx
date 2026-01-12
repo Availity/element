@@ -114,7 +114,7 @@ export const _ControlledAsyncAutoCompleteMultiple: StoryObj<typeof ControlledAsy
     name: 'controlledAsyncAutocomplete',
     FieldProps: { label: 'Async Select', helperText: 'Helper Text', fullWidth: false, required: true },
     getOptionLabel: (val: Option) => val.label,
-    isOptionEqualToValue: (option, value) => option.label === value.label,
+    isOptionEqualToValue: (option: Option, value: Option) => option.label === value.label,
     loadOptions,
     limit: 5,
     queryKey: 'example',
@@ -165,5 +165,8 @@ export const _ControlledAsyncAutoCompleteDefaultToOnlyOption: StoryObj<typeof Co
     rules: { required: 'This is required.' },
     defaultToOnlyOption: true,
     disableClearable: true,
+    onChange: (value) => {
+      console.log(value);
+    },
   },
 };
