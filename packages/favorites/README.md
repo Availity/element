@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-favorites.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-favorites)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-favorites.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-favorites)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-favorites?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-favorites/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-favorites?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/favorites/package.json)
 
 ## Documentation
 

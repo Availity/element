@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-accordion.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-accordion)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-accordion.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-accordion)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-accordion?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-accordion/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-accordion?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/accordion/package.json)
 
 ## Documentation
 

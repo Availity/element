@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-chip.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-chip)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-chip.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-chip)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-chip?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-chip/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-chip?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/chip/package.json)
 
 ## Documentation
 

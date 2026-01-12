@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-checkbox.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-checkbox)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-checkbox.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-checkbox)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-checkbox?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-checkbox/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-checkbox?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/checkbox/package.json)
 
 ## Documentation
 

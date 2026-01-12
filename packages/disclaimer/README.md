@@ -4,11 +4,9 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-disclaimer.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-disclaimer)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-disclaimer.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-disclaimer)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-disclaimer?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-disclaimer/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-disclaimer?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/disclaimer/package.json)
 
 ## Documentation
-
-This package extends the MUI Disclaimer component: [MUI Disclaimer Docs](https://mui.com/components/disclaimer/)
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-disclaimer-introduction--docs)
 

@@ -4,11 +4,9 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-authorize.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-authorize)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-authorize.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-authorize)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-authorize?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-authorize/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-authorize?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/authorize/package.json)
 
 ## Documentation
-
-This package extends the MUI Authorize component: [MUI Authorize Docs](https://mui.com/components/authorize/)
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-authorize-introduction--docs)
 

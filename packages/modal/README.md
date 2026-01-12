@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-modal.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-modal)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-modal.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-modal)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-modal?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-modal/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-modal?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/modal/package.json)
 
 ## Documentation
 

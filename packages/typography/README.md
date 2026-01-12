@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-typography.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-typography)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-typography.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-typography)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-typography?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-typography/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-typography?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/typography/package.json)
 
 ## Documentation
 

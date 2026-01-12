@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-textfield.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-textfield)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-textfield.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-textfield)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-textfield?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-textfield/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-textfield?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/textfield/package.json)
 
 ## Documentation
 

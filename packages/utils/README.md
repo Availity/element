@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-utils.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-utils)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-utils.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-utils)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-utils?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-utils/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-utils?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/utils/package.json)
 
 ## Documentation
 
-This package extends the MUI Utils component: [MUI Utils Docs](https://mui.com/components/utils/)
+This package extends the MUI Utils components: [MUI Utils Docs](https://mui.com/material-ui/all-components/#utils)
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-utils-introduction--docs)
 

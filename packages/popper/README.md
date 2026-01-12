@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-popper.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-popper)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-popper.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-popper)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-popper?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-popper/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-popper?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/popper/package.json)
 
 ## Documentation
 
