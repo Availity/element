@@ -1,0 +1,428 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Testability" />
+
+# Testability
+
+This is a high-level explanation of how to make web user interfaces testable. For the purposes of this explanation, I will be using the Availity login page as an example. Note: any differences between when I'm writing this and when you are reading it are impossible to account for. Where possible, I will include snippets to describe the situation.
+
+## The Availity Login Page (HTML Only)
+
+```html
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Availity Essentials</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="favicon.ico" />
+    <script defer="defer" src="runtime-9c65dc7b.chunk.js"></script>
+    <script defer="defer" src="748-f6f35757.chunk.js"></script>
+    <script defer="defer" src="420-ca90005d.chunk.js"></script>
+    <script defer="defer" src="351-5329bead.chunk.js"></script>
+    <script defer="defer" src="564-348b1785.chunk.js"></script>
+    <script defer="defer" src="index-5954bb38.chunk.js"></script>
+    <link href="css/index-aeee8436.chunk.css" rel="stylesheet" />
+    <style data-emotion="css-global" data-s=""></style>
+    <style data-emotion="css-global" data-s=""></style>
+    <style data-emotion="css-global" data-s=""></style>
+    <style data-emotion="css" data-s=""></style>
+  </head>
+
+  <body>
+    <div id="root">
+      <div aria-busy="false" class="css-79elbk">
+        <div class="MuiContainer-root MuiContainer-disableGutters css-1eks6da" data-testid="availity-fr-ui-container">
+          <div class="MuiBox-root css-0" role="main">
+            <div
+              class="MuiGrid2-root MuiGrid2-container MuiGrid2-direction-xs-row css-x2wix7"
+              id="login-start-page-grid-container"
+            >
+              <div
+                class="MuiGrid2-root MuiGrid2-direction-xs-row MuiGrid2-grid-xs-12 MuiGrid2-grid-sm-12 MuiGrid2-grid-md-6 css-1mwqj4d"
+              >
+                <div class="MuiBox-root css-1yuhvjn"></div>
+                <div class="MuiGrid2-root MuiGrid2-direction-xs-row css-1vacdxy">
+                  <div class="MuiBox-root css-xi606m">
+                    <img
+                      src="https://apps.availity.com/web/onboarding/availity-fr-ui/images/availity_logo..png"
+                      alt="Availity Logo"
+                      style="max-width: 250px;"
+                    />
+                  </div>
+                </div>
+                <div class="MuiGrid2-root MuiGrid2-direction-xs-column css-17e4nxv">
+                  <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation6 css-vamfyk">
+                    <form>
+                      <div class="MuiCardContent-root css-10fxz6p">
+                        <h1 class="MuiTypography-root MuiTypography-h1 css-j466hk">Sign In</h1>
+                        <div class="MuiBox-root css-0">
+                          <div
+                            class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-1lm20rc"
+                          >
+                            <div class="MuiFormLabel-avWrapper MuiBox-root css-1d5cfx3">
+                              <label
+                                class="MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeSmall MuiInputLabel-outlined css-ov2ujp"
+                                id="userId-label"
+                                data-shrink="true"
+                                for="userId"
+                                >User ID</label
+                              >
+                            </div>
+                            <div
+                              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-1wsxhol"
+                            >
+                              <input
+                                aria-invalid="false"
+                                aria-describedby="userId-helper-text"
+                                id="userId"
+                                name="userId"
+                                placeholder="Enter your user ID."
+                                type="text"
+                                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1duwal8"
+                                value=""
+                              />
+                              <fieldset aria-hidden="true" class="MuiOutlinedInput-notchedOutline css-igs3ac">
+                                <legend class="css-yjsfm1"><span>User ID</span></legend>
+                              </fieldset>
+                            </div>
+                            <p
+                              class="MuiFormHelperText-root MuiFormHelperText-sizeSmall MuiFormHelperText-contained MuiFormHelperText-root MuiFormHelperText-sizeSmall MuiFormHelperText-contained css-1qnybb6"
+                              id="userId-helper-text"
+                            >
+                              <svg
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1n40ksa"
+                                focusable="false"
+                                aria-hidden="false"
+                                role="img"
+                                viewBox="0 0 512 512"
+                              >
+                                <path
+                                  d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
+                                ></path>
+                                <title>Error</title></svg
+                              ><span class="notranslate">​</span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-1lm20rc"
+                          >
+                            <div class="MuiFormLabel-avWrapper MuiBox-root css-1d5cfx3">
+                              <label
+                                class="MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeSmall MuiInputLabel-outlined css-ov2ujp"
+                                id="password-label"
+                                data-shrink="true"
+                                for="password"
+                                >Password</label
+                              >
+                            </div>
+                            <div
+                              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedEnd css-l5o2d4"
+                            >
+                              <input
+                                aria-invalid="false"
+                                aria-describedby="password-helper-text"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password."
+                                type="password"
+                                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-1r1wf8p"
+                                value=""
+                              />
+                              <div
+                                class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeSmall css-box7bo"
+                              >
+                                <button
+                                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorSecondary MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-vxsov3"
+                                  tabindex="0"
+                                  type="button"
+                                  aria-label="password visibility"
+                                >
+                                  <svg
+                                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-g7go18"
+                                    focusable="false"
+                                    aria-hidden="true"
+                                    viewBox="0 0 640 512"
+                                  >
+                                    <path
+                                      d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"
+                                    ></path></svg
+                                  ><span class="MuiTouchRipple-root css-w0pj6f"></span>
+                                </button>
+                              </div>
+                              <fieldset aria-hidden="true" class="MuiOutlinedInput-notchedOutline css-igs3ac">
+                                <legend class="css-yjsfm1"><span>Password</span></legend>
+                              </fieldset>
+                            </div>
+                            <p
+                              class="MuiFormHelperText-root MuiFormHelperText-sizeSmall MuiFormHelperText-contained MuiFormHelperText-root MuiFormHelperText-sizeSmall MuiFormHelperText-contained css-1qnybb6"
+                              id="password-helper-text"
+                            >
+                              <svg
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1n40ksa"
+                                focusable="false"
+                                aria-hidden="false"
+                                role="img"
+                                viewBox="0 0 512 512"
+                              >
+                                <path
+                                  d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
+                                ></path>
+                                <title>Error</title></svg
+                              ><span class="notranslate">​</span>
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-a0y2e3"
+                          style="min-height: 0px;"
+                        >
+                          <div class="MuiCollapse-wrapper MuiCollapse-vertical css-hboir5">
+                            <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-8atqhb">
+                              <div class="MuiBox-root css-1qm1lh"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="MuiBox-root css-0">
+                          <button
+                            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-disableElevation MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-disableElevation MuiButton-fullWidth css-1auhavx"
+                            tabindex="0"
+                            type="submit"
+                          >
+                            Sign In
+                          </button>
+                        </div>
+                      </div>
+                      <div class="MuiCardActions-root MuiCardActions-spacing css-1axr6t0">
+                        <div class="MuiBox-root css-1ufrzn0">
+                          <a
+                            class="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineHover css-s3rla4"
+                            href="#/forgot-userid"
+                            target="_self"
+                            ><span> Forgot your user ID? </span></a
+                          ><a
+                            class="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineHover css-uodtql"
+                            href="#/forgot-password"
+                            target="_self"
+                            ><span> Forgot your password? </span></a
+                          >
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="MuiGrid2-root MuiGrid2-direction-xs-row css-w1o5gz">
+                  <div
+                    class="MuiPaper-root MuiPaper-outlined MuiPaper-rounded MuiAlert-root MuiAlert-colorInfo MuiAlert-standardInfo MuiAlert-standard css-vw6uky"
+                    role="alert"
+                  >
+                    <div class="MuiAlert-message css-go4zc2">
+                      <div class="MuiTypography-root MuiTypography-subtitle2 css-f2hbwv">
+                        <span class="MuiBox-root css-1vg6q84">Note:</span> Your Availity account and login credentials
+                        belong only to you. Sharing accounts may violate HIPAA regulations regarding data privacy.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="MuiBox-root css-19midj6" style="width: 100%; text-align: center; margin-top: auto;">
+                  © 2023 Availity LLC. All rights reserved.
+                  <a
+                    class="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineHover css-wtzz8d"
+                    href="https://www.availity.com/Privacy-Policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><span
+                      ><svg
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vdj6uk"
+                        focusable="false"
+                        aria-hidden="false"
+                        role="img"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"
+                        ></path>
+                        <title>(opens in new window)</title>
+                      </svg>
+                      Privacy Policy
+                    </span></a
+                  >
+                </div>
+              </div>
+              <div
+                class="MuiGrid2-root MuiGrid2-direction-xs-row MuiGrid2-grid-xs-12 MuiGrid2-grid-sm-12 MuiGrid2-grid-md-6 css-1w36iu5"
+              >
+                <div class="MuiGrid2-root MuiGrid2-direction-xs-row css-150gpvp">
+                  <h1 class="MuiTypography-root MuiTypography-h1 css-j466hk">New to Availity?</h1>
+                  <h2 class="MuiTypography-root MuiTypography-h2 css-11xteie">
+                    Create a free account and discover all the benefits of using Availity.
+                  </h2>
+                  <ul class="MuiList-root css-ixr47s">
+                    <li class="MuiListItem-root MuiListItem-padding css-qav9xo">
+                      <div class="MuiListItemIcon-root css-1bd5sl8">
+                        <svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ukert4"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div class="MuiListItemText-root css-1tsvksn">
+                        <div class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-1xv42wa">
+                          Free, real-time access to hundreds of payers
+                        </div>
+                      </div>
+                    </li>
+                    <li class="MuiListItem-root MuiListItem-padding css-qav9xo">
+                      <div class="MuiListItemIcon-root css-1bd5sl8">
+                        <svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ukert4"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div class="MuiListItemText-root css-1tsvksn">
+                        <div class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-1xv42wa">
+                          Check eligibility, submit claims, collect patient payments and track ERAs
+                        </div>
+                      </div>
+                    </li>
+                    <li class="MuiListItem-root MuiListItem-padding css-qav9xo">
+                      <div class="MuiListItemIcon-root css-1bd5sl8">
+                        <svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ukert4"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div class="MuiListItemText-root css-1tsvksn">
+                        <div class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-1xv42wa">
+                          Update your provider profiles
+                        </div>
+                      </div>
+                    </li>
+                    <li class="MuiListItem-root MuiListItem-padding css-qav9xo">
+                      <div class="MuiListItemIcon-root css-1bd5sl8">
+                        <svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1ukert4"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div class="MuiListItemText-root css-1tsvksn">
+                        <div class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-1xv42wa">
+                          Manage quality-of-care paperwork
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="MuiGrid2-root MuiGrid2-direction-xs-row css-117ne66">
+                    <button
+                      class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedTertiary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorTertiary MuiButton-disableElevation MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedTertiary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorTertiary MuiButton-disableElevation MuiButton-fullWidth css-12j9wx7"
+                      tabindex="0"
+                      type="button"
+                    >
+                      Create a Free Account
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+## What makes something easily testable?
+
+HTML, as a construct, is a tree-like document in which a subset of pre-defined tags are used to represent elements on the page. When writing an automated test for such a page, there are a few approaches you can take:
+
+1. Structural
+2. Identifiers
+3. Contents
+
+### Structural
+
+Structural locators are often the least desirable, since they are brittle and fragile. They are also the most difficult to implement, since they require a deep understanding of the page's structure. This is especially true for pages that are dynamically generated, or that use JavaScript to manipulate the page.
+
+An example is trying to click the `Privacy Policy` link on the login page.
+
+- XPath - `/html/body/div/div/div/div/div/div[1]/div[5]/a/span`
+- CSS - `#login-start-page-grid-container > div > div > a > span`
+
+As you can see, these locators are long, and hard to understand why we need them. They give very little context to someone reading the code, and, if poorly documented, can result in a lot of lost time reverse-engineering what is taking place.
+
+### Identifiers
+
+Using identifiers provided by the HTML standard is the preferable approach for making a page more testable. They are not a one-size fits all approach, because they have rules governing where and how they should be used. That said, when available, they should be used, and there are some guidelines to follow.
+
+#### HTML ID Attribute
+
+Referring back to the Availity login page again, we can use an ID selector to discover the Username input field. It is written as `<input id="userId" ...><fieldset ...></fieldset></input>`. This allows us to write the following in Selenium:
+
+- ID - `By.id('userId')`
+- CSS - `By.css('input#userId')`
+- XPath - `By.xpath('//input[@id="userId"]')`
+
+As you can see, these selectors are much more terse in comparison to an equivalent structural locator. However, the HTML specification has some loose rules about the ID attribute. The rule is that they should be unique within a page. That means, on a dynamic page, if an element can be repeated, or if it shares a name with another element, you might have to come up with a different ID. More than likely, you will be better served using an HTML class.
+
+One of the problems with modern web frameworks is that they can often mangle a well-defined ID, appending a unique identifier for the purposes of tracking it, either as a virtual DOM element, or as something like a build artifact. Since these IDs are not stable, and subject to change on the next page load, or application build, having such an ID will make it functionally useless for the purpose of writing an automated test.
+
+#### HTML Class Attribute
+
+In HTML, a class isn't a formal definition, like you might see in other languages like Java. Instead, it's more like a way of describing a relationship. Elements with the same class should be treated the same. We can see this behavior in CSS libraries, such as Bootstrap and Material UI.
+
+While the Availity login page does not have a good candidate to demonstrate this concept, I will defer to the Claim Status page, which has a concept of patient cards. On the screen, it has a pane of cards that represent claims being processed at the facility. Since each card is equal to the others, defining an ID for them can be difficult, because any criteria might lead to a key collision. While this won't break the page, it will still be a problem for an automated test.
+
+Using a class selector, we can enumerate all patient cards, and then sift through the list of elements in code to find the one we want. That would look like this in Selenium:
+
+- Class Name - `By.className('patient-list-card')`
+- CSS - `By.css('div.patient-list-card')`
+
+From there, it is relatively trivial to do something like the following:
+
+```javascript
+const patientCardList = await driver.findElements(By.css('div#patientListContainer div.patient-list-card'));
+
+const patientCardDict = new Map();
+
+for (const patientCard of patientCardList) {
+  const memberIdElement = await patientCard.findElement(By.css('div.patient-list-content div + div'));
+  const memberId = await memberIdElement.getText();
+
+  patientCardDict.set(memberId, patientCard);
+}
+```
+
+Incidentally, you can see in this snippet from the QA Library how the lack of selectors has led to an ambiguous CSS selector. When selecting the member ID, it was not identified in a meaningful way, so I took the nearest identifiable element, and then looked for some child `div` that had a sibling `div`. If the layout of a patient card ever changes, it might lead to a long debugging session, because it is unclear why we might not have found the correct patient card.
+
+## How should I approach identifiers?
+
+You will be hard-pressed to find a strict guide on how to do what is being described here. Most of it is a matter of opinion, and subject to change based on the needs of the project. That said, there are some general guidelines that can be followed.
+
+1. If something is unique to the page, provide it an explicit ID that is unique to it.
+2. If something is repeatable, or you cannot guarantee the uniqueness, try adding an HTML class that describes what the element is for. The name should be descriptive of the element, and only be shared with elements of the same type/structure.
+3. If neither of the above are possible, add either a `name` or `data-*` attributes to the element. These attributes are standard HTML attributes, but don't have any specific rules or restrictions on their use. Additionally, they are still usable in a Selenium locator.
