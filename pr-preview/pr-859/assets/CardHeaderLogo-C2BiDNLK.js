@@ -1,0 +1,3 @@
+import{j as e,M as a,f as s}from"./iframe-DDdys5VZ.js";import{useMDXComponents as r}from"./index-DcwVjcr-.js";import"./preload-helper-PPVm8Dsz.js";function o(t){const n={a:"a",p:"p",...r(),...t.components};return e.jsxs(e.Fragment,{children:[e.jsx(a,{title:"Components/Card/CardHeader/CardHeaderWithLogo"}),`
+`,e.jsx(s,{children:e.jsxs(n.p,{children:["See the ",e.jsx(n.a,{href:"?path=/story/components-spaces-spacesimage--card-header-with-logo",children:"Card Header With Logo"}),` story in
+SpacesImage.`]})})]})}function m(t={}){const{wrapper:n}={...r(),...t.components};return n?e.jsx(n,{...t,children:e.jsx(o,{...t})}):o(t)}export{m as default};
