@@ -8,10 +8,6 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 * `mui-autocomplete` updated to version `2.1.0`
 
-### Features
-
-* prependOptions functionality for AsyncAutocompletes ([93c335e](https://github.com/Availity/element/commit/93c335ebb2910dbf60c1bd1a400dabd55bf7bd58))
-
 ## [2.1.0](https://github.com/Availity/element/compare/@availity/mui-controlled-form@2.0.3...@availity/mui-controlled-form@2.1.0) (2025-12-23)
 
 ### Dependency Updates
