@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-autocomplete.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-autocomplete)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-autocomplete.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-autocomplete)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-autocomplete?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-autocomplete/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-autocomplete?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/autocomplete/package.json)
 
 ## Documentation
 

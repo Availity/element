@@ -4,11 +4,9 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-block-ui.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-block-ui)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-block-ui.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-block-ui)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-block-ui?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-block-ui/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-block-ui?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/block-ui/package.json)
 
 ## Documentation
-
-This package extends the MUI BlockUi component: [MUI BlockUi Docs](https://mui.com/components/block-ui/)
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-block-ui-introduction--docs)
 

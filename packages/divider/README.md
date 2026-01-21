@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-divider.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-divider)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-divider.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-divider)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-divider?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-divider/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-divider?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/divider/package.json)
 
 ## Documentation
 

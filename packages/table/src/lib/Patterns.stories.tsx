@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useState } from 'react';
 import { StoryObj, Decorator } from '@storybook/react-vite';
 import FormControl from '@mui/material/FormControl';

@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-paper.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-paper)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-paper.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-paper)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-paper?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-paper/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-paper?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/paper/package.json)
 
 ## Documentation
 

@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-transitions.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-transitions)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-transitions.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-transitions)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-transitions?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-transitions/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-transitions?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/transitions/package.json)
 
 ## Documentation
 

@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-backdrop.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-backdrop)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-backdrop.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-backdrop)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-backdrop?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-backdrop/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-backdrop?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/backdrop/package.json)
 
 ## Documentation
 

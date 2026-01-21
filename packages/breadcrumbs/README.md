@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-breadcrumbs.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-breadcrumbs)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-breadcrumbs.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-breadcrumbs)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-breadcrumbs?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-breadcrumbs/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-breadcrumbs?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/breadcrumbs/package.json)
 
 ## Documentation
 

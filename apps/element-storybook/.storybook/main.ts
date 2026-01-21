@@ -53,6 +53,8 @@ const config: StorybookConfig = {
 
   staticDirs: ['../../../static'],
   features: {
+    actions: false,
+    interactions: false,
     storyStoreV7: false
   },
 

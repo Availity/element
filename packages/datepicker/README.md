@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-datepicker.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-datepicker)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-datepicker.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-datepicker)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-datepicker?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-datepicker/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-datepicker?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/datepicker/package.json)
 
 ## Documentation
 

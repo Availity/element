@@ -21,11 +21,11 @@ export default create({
   // Text colors
   textColor: 'rgb(33, 33, 33)',
   textInverseColor: 'rgb(255, 103, 31)',
-  textMutedColor: '#fafafa',
+  // textMutedColor: '#fafafa',
 
   // Toolbar default and active colors
   barTextColor: 'rgb(33, 33, 33)',
   barHoverColor: '#ff0000',
   barSelectedColor: 'rgb(255, 103, 31)',
-  barBg: '#ffffff',
+  // barBg: '#ffffff',
 });

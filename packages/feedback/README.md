@@ -4,11 +4,9 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-feedback.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-feedback)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-feedback.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-feedback)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-feedback?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-feedback/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-feedback?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/feedback/package.json)
 
 ## Documentation
-
-This package extends the MUI Feedback component: [MUI Feedback Docs](https://mui.com/components/feedback/)
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-feedback-introduction--docs)
 

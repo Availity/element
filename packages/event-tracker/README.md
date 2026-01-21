@@ -4,11 +4,9 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-event-tracker.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-event-tracker)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-event-tracker.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-event-tracker)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-event-tracker?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-event-tracker/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-event-tracker?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/event-tracker/package.json)
 
 ## Documentation
-
-This package extends the MUI EventTracker component: [MUI EventTracker Docs](https://mui.com/components/event-tracker/)
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-event-tracker-introduction--docs)
 

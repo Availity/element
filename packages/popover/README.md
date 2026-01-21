@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-popover.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-popover)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-popover.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-popover)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-popover?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-popover/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-popover?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/popover/package.json)
 
 ## Documentation
 

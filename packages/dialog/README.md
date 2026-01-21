@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-dialog.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-dialog)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-dialog.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-dialog)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-dialog?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-dialog/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-dialog?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/dialog/package.json)
 
 ## Documentation
 

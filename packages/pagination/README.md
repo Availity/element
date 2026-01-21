@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-pagination.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-pagination)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-pagination.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-pagination)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-pagination?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-pagination/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-pagination?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/pagination/package.json)
 
 ## Documentation
 

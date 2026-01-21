@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-form-utils.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-form-utils)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-form-utils.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-form-utils)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-form-utils?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-form-utils/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-form-utils?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/form-utils/package.json)
 
 ## Documentation
 

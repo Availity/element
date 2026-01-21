@@ -4,11 +4,9 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-page-header.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-page-header)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-page-header.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-page-header)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-page-header?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-page-header/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-page-header?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/page-header/package.json)
 
 ## Documentation
-
-This package extends the MUI PageHeader component: [MUI PageHeader Docs](https://mui.com/components/page-header/)
 
 Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/components-page-header-introduction--docs)
 

@@ -1,4 +1,5 @@
 /* eslint-disable @nx/enforce-module-boundaries */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 // Each exported component in the package should have its own stories file
 
 import type { Meta, StoryObj } from '@storybook/react-vite';

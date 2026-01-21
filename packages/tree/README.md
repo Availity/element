@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-tree.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-tree)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-tree.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-tree)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-tree?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-tree/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-tree?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/tree/package.json)
 
 ## Documentation
 

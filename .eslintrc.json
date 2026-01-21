@@ -40,11 +40,7 @@
       ],
       "extends": [
         "plugin:@nx/typescript"
-      ],
-      "rules": {
-        "@typescript-eslint/no-extra-semi": "error",
-        "no-extra-semi": "off"
-      }
+      ]
     },
     {
       "files": [
@@ -53,11 +49,7 @@
       ],
       "extends": [
         "plugin:@nx/javascript"
-      ],
-      "rules": {
-        "@typescript-eslint/no-extra-semi": "error",
-        "no-extra-semi": "off"
-      }
+      ]
     },
     {
       "files": [
@@ -73,11 +65,7 @@
       "extends": [
         "plugin:@nx/typescript"
       ],
-      "env": {},
-      "rules": {
-        "@typescript-eslint/no-extra-semi": "error",
-        "no-extra-semi": "off"
-      }
+      "env": {}
     },
     {
       "files": "*.json",

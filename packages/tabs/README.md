@@ -4,7 +4,7 @@
 
 [![Version](https://img.shields.io/npm/v/@availity/mui-tabs.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-tabs)
 [![NPM Downloads](https://img.shields.io/npm/dt/@availity/mui-tabs.svg?style=for-the-badge)](https://www.npmjs.com/package/@availity/mui-tabs)
-[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-tabs?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/mui-tabs/package.json)
+[![Dependency Status](https://img.shields.io/librariesio/release/npm/@availity/mui-tabs?style=for-the-badge)](https://github.com/Availity/element/blob/main/packages/tabs/package.json)
 
 ## Documentation
 
