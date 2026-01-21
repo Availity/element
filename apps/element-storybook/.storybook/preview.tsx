@@ -7,7 +7,7 @@ import { ThemeProvider } from '@availity/theme-provider';
 
 const withThemeProvider = (Story: () => React.JSX.Element, context: StoryContext) => {
   return (
-    <ThemeProvider theme={context.globals.theme !== '_reset' ? context.globals.theme : 'lightTheme'}>
+    <ThemeProvider theme={context.globals.theme || 'lightTheme'}>
       <Story />
     </ThemeProvider>
   );
