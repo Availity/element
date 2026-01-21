@@ -108,6 +108,6 @@
     "workerDirectory": "static"
   },
   "dependencies": {
-    "storybook": "10.1.4"
+    "storybook": "10.2.0"
   }
 }
