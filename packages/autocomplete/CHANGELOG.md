@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@2.1.0...@availity/mui-autocomplete@2.2.0) (2026-01-21)
+
+
+### Miscellaneous Chores
+
+* Rerelease of 2.1.0
+
 ## [2.1.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@2.0.2...@availity/mui-autocomplete@2.1.0) (2025-12-23)
 
 

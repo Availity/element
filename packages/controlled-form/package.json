@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-controlled-form",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Availity MUI/react-hook-form controlled form components - part of the @availity/element design system",
   "keywords": [
     "react",
