@@ -31,6 +31,6 @@
     "style-dictionary": "^3.9.2",
     "token-transformer": "^0.0.33",
     "tsup": "^8.4.0",
-    "typescript": "~5.4.5"
+    "typescript": "~5.9.3"
   }
 }

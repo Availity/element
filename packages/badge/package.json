@@ -43,10 +43,10 @@
   "devDependencies": {
     "@availity/mui-icon": "workspace:^",
     "@mui/material": "^7.3.4",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "tsup": "^8.4.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "@mui/material": "^7.0.0",
