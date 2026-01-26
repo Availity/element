@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import type { ChipTypeMap } from '@mui/material/Chip';
 import { useInfiniteQuery, UseInfiniteQueryOptions } from '@tanstack/react-query';
 import { AutocompleteInputChangeReason } from '@mui/material/Autocomplete';
@@ -57,6 +57,10 @@ export const AsyncAutocomplete = <
   ...rest
 }: AsyncAutocompleteProps<Option, Multiple, DisableClearable, FreeSolo, ChipComponent>) => {
   const [inputValue, setInputValue] = useState('');
+  const listboxRef = useRef<Element>(null);
+  const setListboxRef = useCallback((node: Element) => {
+    listboxRef.current = node;
+  }, [])
 
   const handleInputPropsOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -103,6 +107,24 @@ export const AsyncAutocomplete = <
     if (onInputChange) onInputChange(event, value, reason);
   };
 
+  const handleAddingOptions = async (event: React.SyntheticEvent) => {
+    const listboxNode = event.currentTarget;
+    const difference = listboxNode.scrollHeight - (listboxNode.scrollTop + listboxNode.clientHeight);
+
+    // Only fetch if we are near the bottom, not already fetching, and there are more results
+    if (difference <= 5 && !isLoading && !isFetching && hasNextPage) {
+      fetchNextPage();
+    }
+  }
+
+  // trigger scroll event every time options added in case too many options filtered out to allow for scroll
+  // allow onScroll to determine if next page should be fetched
+  useEffect(() => {
+    if (hasNextPage) {
+      listboxRef.current?.dispatchEvent(new UIEvent('scroll'));
+    }
+  }, [data?.pages.length, hasNextPage]);
+
   return (
     <Autocomplete
       {...rest}
@@ -118,15 +140,9 @@ export const AsyncAutocomplete = <
       options={finalOptions}
       ListboxProps={{
         ...ListboxProps,
-        onScroll: async (event: React.SyntheticEvent) => {
-          const listboxNode = event.currentTarget;
-          const difference = listboxNode.scrollHeight - (listboxNode.scrollTop + listboxNode.clientHeight);
-
-          // Only fetch if we are near the bottom, not already fetching, and there are more results
-          if (difference <= 5 && !isLoading && !isFetching && hasNextPage) {
-            fetchNextPage();
-          }
-        },
+        ref: setListboxRef,
+        onScroll: handleAddingOptions,
+        onPointerEnter: handleAddingOptions,
       }}
     />
   );
