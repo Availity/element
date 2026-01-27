@@ -1,1 +1,0 @@
-const i=Object.is;function s(t,e){if(t===e)return!0;if(!(t instanceof Object)||!(e instanceof Object))return!1;let r=0,f=0;for(const n in t)if(r+=1,!i(t[n],e[n])||!(n in e))return!1;for(const n in e)f+=1;return r===f}export{s as f};
