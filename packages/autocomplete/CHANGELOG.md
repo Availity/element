@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.2](https://github.com/Availity/element/compare/@availity/mui-autocomplete@2.2.1...@availity/mui-autocomplete@2.2.2) (2026-01-27)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** trigger loading options when not enough options for scroll ([84c1705](https://github.com/Availity/element/commit/84c1705eaacfe23c1cd39a164569dcfe816dff32))
+
 ## [2.2.1](https://github.com/Availity/element/compare/@availity/mui-autocomplete@2.2.0...@availity/mui-autocomplete@2.2.1) (2026-01-22)
 
 ## [2.2.0](https://github.com/Availity/element/compare/@availity/mui-autocomplete@2.1.0...@availity/mui-autocomplete@2.2.0) (2026-01-21)
