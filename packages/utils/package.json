@@ -41,10 +41,10 @@
   },
   "devDependencies": {
     "@mui/utils": "^7.3.3",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "tsup": "^8.4.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "@mui/utils": "^6.4.3",
