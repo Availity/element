@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.1.0](https://github.com/Availity/element/compare/@availity/mui-icon@2.0.1...@availity/mui-icon@2.1.0) (2026-02-02)
+
+
+### Features
+
+* **mui-icon:** add BuildingIcon and HospitalIcon ([3bd721d](https://github.com/Availity/element/commit/3bd721da819a2d5135634fbca8d0d17164a62feb))
+
 ## [2.0.1](https://github.com/Availity/element/compare/@availity/mui-icon@2.0.0...@availity/mui-icon@2.0.1) (2025-12-03)
 
 ### Dependency Updates

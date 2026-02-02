@@ -2,6 +2,51 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.9](https://github.com/Availity/element/compare/@availity/element@2.0.8...@availity/element@2.0.9) (2026-02-02)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `2.0.8`
+* `mui-alert` updated to version `2.0.8`
+* `mui-authorize` updated to version `2.0.8`
+* `mui-autocomplete` updated to version `2.0.8`
+* `mui-avatar` updated to version `2.0.8`
+* `mui-badge` updated to version `2.0.8`
+* `mui-block-ui` updated to version `2.0.8`
+* `mui-breadcrumbs` updated to version `2.0.8`
+* `mui-button` updated to version `2.0.8`
+* `mui-card` updated to version `2.0.8`
+* `mui-checkbox` updated to version `2.0.8`
+* `mui-chip` updated to version `2.0.8`
+* `mui-controlled-form` updated to version `2.0.8`
+* `mui-datepicker` updated to version `2.0.8`
+* `mui-dialog` updated to version `2.0.8`
+* `mui-disclaimer` updated to version `2.0.8`
+* `mui-empty-state` updated to version `2.0.8`
+* `mui-event-tracker` updated to version `2.0.8`
+* `mui-favorites` updated to version `2.0.8`
+* `mui-feedback` updated to version `2.0.8`
+* `mui-file-selector` updated to version `2.0.8`
+* `mui-form-utils` updated to version `2.0.8`
+* `mui-icon` updated to version `2.0.8`
+* `mui-link` updated to version `2.0.8`
+* `mui-list` updated to version `2.0.8`
+* `mui-menu` updated to version `2.0.8`
+* `mui-modal` updated to version `2.0.8`
+* `mui-page-header` updated to version `2.0.8`
+* `mui-pagination` updated to version `2.0.8`
+* `mui-popper` updated to version `2.0.8`
+* `mui-progress` updated to version `2.0.8`
+* `mui-snackbar` updated to version `2.0.8`
+* `mui-spaces` updated to version `2.0.8`
+* `mui-stepper` updated to version `2.0.8`
+* `mui-table` updated to version `2.0.8`
+* `mui-tabs` updated to version `2.0.8`
+* `mui-textfield` updated to version `2.0.8`
+* `mui-toggle-button` updated to version `2.0.8`
+* `mui-transitions` updated to version `2.0.8`
+* `mui-tree` updated to version `2.0.8`
+* `theme-provider` updated to version `2.0.8`
 ## [2.0.8](https://github.com/Availity/element/compare/@availity/element@2.0.7...@availity/element@2.0.8) (2026-01-27)
 
 ### Dependency Updates
