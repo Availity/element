@@ -2,6 +2,7 @@ import { faAsterisk } from '@fortawesome/free-solid-svg-icons/faAsterisk';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { faBell } from '@fortawesome/free-solid-svg-icons/faBell';
 import { faBellSlash } from '@fortawesome/free-solid-svg-icons/faBellSlash';
+import { faBuilding } from '@fortawesome/free-solid-svg-icons/faBuilding';
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons/faClipboardList';
 import { faClockRotateLeft } from '@fortawesome/free-solid-svg-icons/faClockRotateLeft';
 import { faCog } from '@fortawesome/free-solid-svg-icons/faCog';
@@ -14,6 +15,7 @@ import { faExternalLink } from '@fortawesome/free-solid-svg-icons/faExternalLink
 import { faFax } from '@fortawesome/free-solid-svg-icons/faFax';
 import { faFlask } from '@fortawesome/free-solid-svg-icons/faFlask';
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
+import { faHospital } from '@fortawesome/free-solid-svg-icons/faHospital';
 import { faInbox } from '@fortawesome/free-solid-svg-icons/faInbox';
 import { faKey } from '@fortawesome/free-solid-svg-icons/faKey';
 import { faList } from '@fortawesome/free-solid-svg-icons/faList';
@@ -47,7 +49,9 @@ export const UserCheckIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon
 
 export const UserPlusIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faUserPlus} {...props} />;
 
-export const OpenInNewIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faExternalLink} aria-hidden={false} titleAccess="(opens in new window)" {...props} />;
+export const OpenInNewIcon = (props: IconProps): React.JSX.Element => (
+  <FaSvgIcon icon={faExternalLink} aria-hidden={false} titleAccess="(opens in new window)" {...props} />
+);
 
 export const SettingsIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faCog} {...props} />;
 
@@ -71,7 +75,9 @@ export const BellSlashIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon
 
 export const BellEmptyIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faBellEmpty} {...props} />;
 
-export const BellSlashEmptyIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faBellSlashEmpty} {...props} />;
+export const BellSlashEmptyIcon = (props: IconProps): React.JSX.Element => (
+  <FaSvgIcon icon={faBellSlashEmpty} {...props} />
+);
 
 export const CopyrightIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faCopyright} {...props} />;
 
@@ -98,3 +104,7 @@ export const HistoryIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon i
 export const LockIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faLock} {...props} />;
 
 export const FlaskIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faFlask} {...props} />;
+
+export const BuildingIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faBuilding} {...props} />;
+
+export const HospitalIcon = (props: IconProps): React.JSX.Element => <FaSvgIcon icon={faHospital} {...props} />;
