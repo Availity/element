@@ -376,6 +376,8 @@ export {
   CreditCardVisaIcon,
   MoneyBillIcon,
   CartShoppingIcon,
+  BuildingIcon,
+  HospitalIcon
 } from '@availity/mui-icon';
 
 // Layout
