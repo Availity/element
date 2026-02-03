@@ -114,13 +114,7 @@ export { Datepicker } from '@availity/mui-datepicker';
 export type { DatepickerProps } from '@availity/mui-datepicker';
 
 // Dialog
-export {
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from '@availity/mui-dialog';
+export { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@availity/mui-dialog';
 export type {
   DialogProps,
   DialogActionsProps,
@@ -136,6 +130,10 @@ export type { DisclaimerProps } from '@availity/mui-disclaimer';
 // Divider
 export { Divider } from '@availity/mui-divider';
 export type { DividerProps } from '@availity/mui-divider';
+
+// Drawer
+export { Drawer } from '@availity/mui-drawer';
+export type { DrawerProps } from '@availity/mui-drawer';
 
 // Empty State
 export { EmptyState, EmptyStateImages, EmptyStateImage } from '@availity/mui-empty-state';

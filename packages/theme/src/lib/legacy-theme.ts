@@ -1175,6 +1175,30 @@ export const legacyTheme = {
         },
       },
     },
+    MuiDrawer: {
+      defaultProps: {
+        anchor: 'right',
+        contentPadding: false,
+      },
+      styleOverrides: {
+        avDrawerContent: {
+          overflowY: 'auto',
+        },
+        avDrawerHeader: {
+          padding: '16px 16px 24px 24px',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          flexWrap: 'nowrap',
+          flexShrink: 0,
+        },
+        paper: {
+          overflow: 'hidden',
+          '&.MuiPaper-elevation:not(.MuiPaper-elevation0)': {
+            boxShadow: tokens.shadows16
+          }
+        }
+      },
+    },
     MuiFormControl: {
       defaultProps: {
         size: 'small',

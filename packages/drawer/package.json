@@ -1,0 +1,66 @@
+{
+  "name": "@availity/mui-drawer",
+  "version": "0.0.0",
+  "description": "Availity MUI Drawer Component - part of the @availity/element design system",
+  "keywords": [
+    "react",
+    "typescript",
+    "availity",
+    "mui"
+  ],
+  "homepage": "https://availity.github.io/element/?path=/docs/components-drawer-introduction--docs",
+  "bugs": {
+    "url": "https://github.com/Availity/element/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Availity/element.git",
+    "directory": "packages/drawer"
+  },
+  "license": "MIT",
+  "author": "Availity Developers <AVOSS@availity.com>",
+  "browser": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "clean": "rm -rf dist",
+    "clean:nm": "rm -rf node_modules",
+    "publish": "yarn npm publish --tolerate-republish --access public",
+    "publish:canary": "yarn npm publish --access public --tag canary"
+  },
+  "devDependencies": {
+    "@availity/mui-checkbox": "workspace:^",
+    "@availity/mui-form-utils": "workspace:^",
+    "@availity/mui-list": "workspace:^",
+    "@mui/material": "^7.3.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@mui/material": "^7.0.0",
+    "react": ">=17.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@availity/mui-backdrop": "workspace:^",
+    "@availity/mui-button": "workspace:^",
+    "@availity/mui-icon": "workspace:^",
+    "@availity/mui-layout": "workspace:^",
+    "@availity/mui-typography": "workspace:^"
+  }
+}

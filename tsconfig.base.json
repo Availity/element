@@ -42,6 +42,7 @@
       "@availity/mui-dialog": ["packages/dialog/src/index.ts"],
       "@availity/mui-disclaimer": ["packages/disclaimer/src/index.ts"],
       "@availity/mui-divider": ["packages/divider/src/index.ts"],
+      "@availity/mui-drawer": ["packages/drawer/src/index.ts"],
       "@availity/mui-empty-state": ["packages/empty-state/src/index.ts"],
       "@availity/mui-event-tracker": ["packages/event-tracker/src/index.ts"],
       "@availity/mui-favorites": ["packages/favorites/src/index.ts"],
