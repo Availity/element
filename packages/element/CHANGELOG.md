@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.1.0](https://github.com/Availity/element/compare/@availity/element@2.0.9...@availity/element@2.1.0) (2026-02-03)
+
+
+### Features
+
+* **element:** export building and hospital icons ([d1cca0d](https://github.com/Availity/element/commit/d1cca0d53c2ff96a41de4fbd89b564d7b09217b5))
+
 ## [2.0.9](https://github.com/Availity/element/compare/@availity/element@2.0.8...@availity/element@2.0.9) (2026-02-02)
 
 ### Dependency Updates
