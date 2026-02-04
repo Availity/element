@@ -107,6 +107,7 @@ __metadata:
     "@availity/mui-dialog": "workspace:*"
     "@availity/mui-disclaimer": "workspace:*"
     "@availity/mui-divider": "workspace:*"
+    "@availity/mui-drawer": "workspace:*"
     "@availity/mui-empty-state": "workspace:*"
     "@availity/mui-event-tracker": "workspace:*"
     "@availity/mui-favorites": "workspace:*"
@@ -281,7 +282,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-backdrop@workspace:*, @availity/mui-backdrop@workspace:packages/backdrop":
+"@availity/mui-backdrop@workspace:*, @availity/mui-backdrop@workspace:^, @availity/mui-backdrop@workspace:packages/backdrop":
   version: 0.0.0-use.local
   resolution: "@availity/mui-backdrop@workspace:packages/backdrop"
   dependencies:
@@ -520,6 +521,29 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-divider@workspace:packages/divider"
   dependencies:
+    "@mui/material": "npm:^7.3.4"
+    react: "npm:19.2.0"
+    react-dom: "npm:19.2.0"
+    tsup: "npm:^8.4.0"
+    typescript: "npm:^5.4.5"
+  peerDependencies:
+    "@mui/material": ^7.0.0
+    react: ">=17.0.0"
+  languageName: unknown
+  linkType: soft
+
+"@availity/mui-drawer@workspace:*, @availity/mui-drawer@workspace:packages/drawer":
+  version: 0.0.0-use.local
+  resolution: "@availity/mui-drawer@workspace:packages/drawer"
+  dependencies:
+    "@availity/mui-backdrop": "workspace:^"
+    "@availity/mui-button": "workspace:^"
+    "@availity/mui-checkbox": "workspace:^"
+    "@availity/mui-form-utils": "workspace:^"
+    "@availity/mui-icon": "workspace:^"
+    "@availity/mui-layout": "workspace:^"
+    "@availity/mui-list": "workspace:^"
+    "@availity/mui-typography": "workspace:^"
     "@mui/material": "npm:^7.3.4"
     react: "npm:19.2.0"
     react-dom: "npm:19.2.0"

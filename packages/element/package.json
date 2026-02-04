@@ -40,6 +40,7 @@
     "@availity/mui-dialog": "workspace:*",
     "@availity/mui-disclaimer": "workspace:*",
     "@availity/mui-divider": "workspace:*",
+    "@availity/mui-drawer": "workspace:*",
     "@availity/mui-empty-state": "workspace:*",
     "@availity/mui-event-tracker": "workspace:*",
     "@availity/mui-favorites": "workspace:*",

@@ -1,21 +1,21 @@
 {
-  "name": "@availity/mui-<%= fileName %>",
+  "name": "@availity/mui-drawer",
   "version": "0.0.0",
-  "description": "Availity MUI <%= componentName %> Component - part of the @availity/element design system",
+  "description": "Availity MUI Drawer Component - part of the @availity/element design system",
   "keywords": [
     "react",
     "typescript",
     "availity",
     "mui"
   ],
-  "homepage": "https://availity.github.io/element/?path=/docs/components-<%= fileName %>-introduction--docs",
+  "homepage": "https://availity.github.io/element/?path=/docs/components-drawer-introduction--docs",
   "bugs": {
     "url": "https://github.com/Availity/element/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Availity/element.git",
-    "directory": "packages/<%= fileName %>"
+    "directory": "packages/drawer"
   },
   "license": "MIT",
   "author": "Availity Developers <AVOSS@availity.com>",
@@ -40,6 +40,9 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
+    "@availity/mui-checkbox": "workspace:^",
+    "@availity/mui-form-utils": "workspace:^",
+    "@availity/mui-list": "workspace:^",
     "@mui/material": "^7.3.4",
     "react": "19.2.0",
     "react-dom": "19.2.0",
@@ -52,5 +55,12 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@availity/mui-backdrop": "workspace:^",
+    "@availity/mui-button": "workspace:^",
+    "@availity/mui-icon": "workspace:^",
+    "@availity/mui-layout": "workspace:^",
+    "@availity/mui-typography": "workspace:^"
   }
 }
