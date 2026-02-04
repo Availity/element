@@ -282,7 +282,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@availity/mui-backdrop@workspace:*, @availity/mui-backdrop@workspace:^, @availity/mui-backdrop@workspace:packages/backdrop":
+"@availity/mui-backdrop@workspace:*, @availity/mui-backdrop@workspace:packages/backdrop":
   version: 0.0.0-use.local
   resolution: "@availity/mui-backdrop@workspace:packages/backdrop"
   dependencies:
@@ -536,14 +536,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-drawer@workspace:packages/drawer"
   dependencies:
-    "@availity/mui-backdrop": "workspace:^"
-    "@availity/mui-button": "workspace:^"
-    "@availity/mui-checkbox": "workspace:^"
-    "@availity/mui-form-utils": "workspace:^"
-    "@availity/mui-icon": "workspace:^"
-    "@availity/mui-layout": "workspace:^"
-    "@availity/mui-list": "workspace:^"
-    "@availity/mui-typography": "workspace:^"
+    "@availity/mui-backdrop": "workspace:*"
+    "@availity/mui-button": "workspace:*"
+    "@availity/mui-checkbox": "workspace:*"
+    "@availity/mui-form-utils": "workspace:*"
+    "@availity/mui-icon": "workspace:*"
+    "@availity/mui-layout": "workspace:*"
+    "@availity/mui-list": "workspace:*"
+    "@availity/mui-typography": "workspace:*"
     "@mui/material": "npm:^7.3.4"
     react: "npm:19.2.0"
     react-dom: "npm:19.2.0"

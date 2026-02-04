@@ -40,9 +40,9 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
-    "@availity/mui-checkbox": "workspace:^",
-    "@availity/mui-form-utils": "workspace:^",
-    "@availity/mui-list": "workspace:^",
+    "@availity/mui-checkbox": "workspace:*",
+    "@availity/mui-form-utils": "workspace:*",
+    "@availity/mui-list": "workspace:*",
     "@mui/material": "^7.3.4",
     "react": "19.2.0",
     "react-dom": "19.2.0",
@@ -57,10 +57,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/mui-backdrop": "workspace:^",
-    "@availity/mui-button": "workspace:^",
-    "@availity/mui-icon": "workspace:^",
-    "@availity/mui-layout": "workspace:^",
-    "@availity/mui-typography": "workspace:^"
+    "@availity/mui-backdrop": "workspace:*",
+    "@availity/mui-button": "workspace:*",
+    "@availity/mui-icon": "workspace:*",
+    "@availity/mui-layout": "workspace:*",
+    "@availity/mui-typography": "workspace:*"
   }
 }
