@@ -1,6 +1,0 @@
-import{j as r}from"./iframe-DV3He85V.js";import{S as s}from"./MuiSystemProperties-CtLr4Jcz.js";import{D as o}from"./DialogContentText-D1aOd08K.js";import"./preload-helper-PPVm8Dsz.js";import"./DialogContentText-DgvJ_YrE.js";import"./styled-BUFH9864.js";import"./generateUtilityClass-BtcU_pBl.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./Typography-CE44PW7B.js";import"./memoTheme-CqO710ep.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";const C={title:"Components/Dialog/DialogContentText",component:o,tags:["autodocs"],parameters:{docs:{controls:{exclude:s},description:{component:"> As a CSS utility, the `DialogContextText` component also supports all [system properties](https://mui.com/system/properties/). They are omitted for brevity, but can be used as props directly on the component."}}}},t={render:e=>r.jsx(o,{...e}),args:{children:"Modal Content Body"}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
-  render: (args: DialogContentTextProps) => <DialogContentText {...args} />,
-  args: {
-    children: 'Modal Content Body'
-  }
-}`,...t.parameters?.docs?.source}}};const y=["_DialogContentText"];export{t as _DialogContentText,y as __namedExportsOrder,C as default};
