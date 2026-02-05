@@ -1,6 +1,6 @@
 {
   "name": "@availity/mui-drawer",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "description": "Availity MUI Drawer Component - part of the @availity/element design system",
   "keywords": [
     "react",
@@ -40,8 +40,11 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
+    "@availity/mui-button": "workspace:*",
     "@availity/mui-checkbox": "workspace:*",
     "@availity/mui-form-utils": "workspace:*",
+    "@availity/mui-icon": "workspace:*",
+    "@availity/mui-layout": "workspace:*",
     "@availity/mui-list": "workspace:*",
     "@mui/material": "^7.3.4",
     "react": "19.2.0",
@@ -50,17 +53,15 @@
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
+    "@availity/mui-backdrop": "workspace:*",
+    "@availity/mui-button": "workspace:*",
+    "@availity/mui-icon": "workspace:*",
+    "@availity/mui-layout": "workspace:*",
+    "@availity/mui-typography": "workspace:*",
     "@mui/material": "^7.0.0",
     "react": ">=17.0.0"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@availity/mui-backdrop": "workspace:*",
-    "@availity/mui-button": "workspace:*",
-    "@availity/mui-icon": "workspace:*",
-    "@availity/mui-layout": "workspace:*",
-    "@availity/mui-typography": "workspace:*"
   }
 }
