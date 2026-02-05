@@ -44,7 +44,7 @@
     "@jscutlery/semver": "~5.7.0",
     "@mui/lab": "7.0.1-beta.18",
     "@mui/x-data-grid": "^8.16.0",
-    "@nx/devkit": "22.2.2",
+    "@nx/devkit": "22.4.4",
     "@nx/eslint": "22.2.2",
     "@nx/eslint-plugin": "22.2.2",
     "@nx/jest": "22.2.2",
@@ -108,6 +108,6 @@
     "workerDirectory": "static"
   },
   "dependencies": {
-    "storybook": "10.2.0"
+    "storybook": "10.2.3"
   }
 }
