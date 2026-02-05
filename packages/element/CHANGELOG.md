@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.0](https://github.com/Availity/element/compare/@availity/element@2.1.0...@availity/element@2.2.0) (2026-02-05)
+
+### Dependency Updates
+
+* `mui-controlled-form` updated to version `2.1.0`
+* `mui-datepicker` updated to version `2.1.0`
+* `mui-drawer` updated to version `2.1.0`
+* `theme-provider` updated to version `2.1.0`
+
+### Features
+
+* **mui-drawer:** add Drawer component ([e1579ca](https://github.com/Availity/element/commit/e1579caed4975cac296706da14a1b655e6764628))
+
 ## [2.1.0](https://github.com/Availity/element/compare/@availity/element@2.0.9...@availity/element@2.1.0) (2026-02-03)
 
 
