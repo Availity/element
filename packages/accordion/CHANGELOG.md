@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.3](https://github.com/Availity/element/compare/@availity/mui-accordion@2.2.2...@availity/mui-accordion@2.2.3) (2026-02-10)
+
+### Dependency Updates
+
+* `mui-chip` updated to version `2.2.2`
 ## [2.2.2](https://github.com/Availity/element/compare/@availity/mui-accordion@2.2.1...@availity/mui-accordion@2.2.2) (2026-02-02)
 
 ### Dependency Updates
