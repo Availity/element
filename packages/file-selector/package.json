@@ -40,7 +40,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/api-axios": "^12.0.0",
+    "@availity/api-axios": "^12.0.3",
     "@availity/mui-alert": "workspace:^",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-divider": "workspace:^",
