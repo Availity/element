@@ -1,0 +1,1 @@
+import{R as p}from"./iframe-D81qY2CF.js";function e(t,o){return e=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(r,n){return r.__proto__=n,r},e(t,o)}function s(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,e(t,o)}const i=p.createContext(null);export{i as T,s as _};
