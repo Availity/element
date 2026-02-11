@@ -58,7 +58,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@mui/x-tree-view": "^8.16.0"
+    "@mui/x-tree-view": "^8.26.0"
   },
   "sideEffects": false
 }
