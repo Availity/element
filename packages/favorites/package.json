@@ -42,7 +42,7 @@
   "dependencies": {
     "@availity/api-axios": "^12.0.3",
     "@availity/message-core": "^8.0.2",
-    "@tanstack/react-query": "^4.36.1"
+    "@tanstack/react-query": "^5.90.16"
   },
   "devDependencies": {
     "@availity/mui-icon": "workspace:^",
