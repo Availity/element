@@ -5,7 +5,7 @@ import { Box } from '@availity/mui-layout';
 import { ArrowsRotateIcon, ChartPieIcon, InboxIcon, SendIcon, SettingsIcon } from '@availity/mui-icon';
 import { Checkbox } from '@availity/mui-checkbox';
 import { FormControl, FormControlLabel, FormGroup, FormLabel } from '@availity/mui-form-utils';
-import { List, ListItemButton, ListItemIcon, ListItemText } from '@availity/mui-list';
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@availity/mui-list';
 import { Drawer, DrawerProps } from './Drawer';
 
 const meta: Meta<typeof Drawer> = {
@@ -31,6 +31,11 @@ export const _Drawer: StoryObj<typeof Drawer> = {
     );
   },
   args: {
+    slotProps: {
+      paper: {
+        'aria-label': 'test-drawer',
+      },
+    },
     children: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam
         beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
         quasi quidem quibusdam.`,
@@ -60,32 +65,45 @@ export const _NavDrawer: StoryObj<typeof Drawer> = {
   },
   args: {
     anchor: 'left',
+    slotProps: {
+      paper: {
+        'aria-label': 'navigation drawer',
+      },
+    },
     children: (
       <List disablePadding>
-        <ListItemButton divider>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <ListItemText>Inbox</ListItemText>
-        </ListItemButton>
-        <ListItemButton divider>
-          <ListItemIcon>
-            <SendIcon />
-          </ListItemIcon>
-          <ListItemText>Sent</ListItemText>
-        </ListItemButton>
-        <ListItemButton divider>
-          <ListItemIcon>
-            <ChartPieIcon />
-          </ListItemIcon>
-          <ListItemText>Reporting</ListItemText>
-        </ListItemButton>
-        <ListItemButton divider>
-          <ListItemIcon>
-            <SettingsIcon />
-          </ListItemIcon>
-          <ListItemText>Settings</ListItemText>
-        </ListItemButton>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText>Inbox</ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <SendIcon />
+            </ListItemIcon>
+            <ListItemText>Sent</ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <ChartPieIcon />
+            </ListItemIcon>
+            <ListItemText>Reporting</ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <SettingsIcon />
+            </ListItemIcon>
+            <ListItemText>Settings</ListItemText>
+          </ListItemButton>
+        </ListItem>
       </List>
     ),
   },
@@ -121,6 +139,7 @@ export const _PersistentDrawer: StoryObj<typeof Drawer> = {
     variant: 'persistent',
     slotProps: {
       paper: {
+        'aria-label': 'persistent drawer',
         variant: 'outlined',
       },
     },

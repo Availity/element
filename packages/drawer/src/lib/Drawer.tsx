@@ -39,6 +39,8 @@ export const Drawer = ({
   header,
   onClose,
   size = 'medium',
+  slots,
+  slotProps,
   ...rest
 }: DrawerProps): React.JSX.Element => {
   const drawerHeader = (
@@ -71,23 +73,28 @@ export const Drawer = ({
       anchor={anchor}
       onClose={onClose}
       slots={{
+        ...slots,
         backdrop: Backdrop,
       }}
       slotProps={{
+        ...slotProps,
         paper: {
+          ...(slotProps?.paper as any),
           sx:
             anchor === 'left' || anchor === 'right'
               ? {
+                  ...(slotProps?.paper as any)?.sx,
                   width,
                   [`@media (max-width: ${breakpoint}px)`]: {
                     width: 'calc(100% - 24px)',
                   },
                 }
-              : undefined,
+              : (slotProps?.paper as any)?.sx,
         },
         transition: {
           easing: { enter: 'cubic-bezier(0.4, 0, 1, 1)', exit: 'cubic-bezier(0.0, 0, 0.2, 1)' },
           timeout: { enter: 225, exit: 195 },
+          ...slotProps?.transition,
         },
       }}
     >
