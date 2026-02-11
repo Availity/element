@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.2](https://github.com/Availity/element/compare/@availity/mui-drawer@0.1.1...@availity/mui-drawer@0.1.2) (2026-02-11)
+
 ## [0.1.1](https://github.com/Availity/element/compare/@availity/mui-drawer@0.1.0...@availity/mui-drawer@0.1.1) (2026-02-10)
 
 ### Dependency Updates
