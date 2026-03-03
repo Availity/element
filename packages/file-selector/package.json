@@ -55,7 +55,7 @@
     "react-dropzone": "^11.7.1",
     "react-hook-form": "^7.55.0",
     "tus-js-client": "4.3.1",
-    "uuid": "^9.0.1"
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@availity/mui-paper": "workspace:^",
