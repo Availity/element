@@ -1,1 +1,0 @@
-import{G as a,B as e}from"./index-B87WwVT5.js";import{T as o}from"./index-B7n_TIRx.js";import"./iframe-Dv1Hb7kF.js";import{s as r}from"./styled-89sVFKyy.js";r(a,{name:"MuiDrawer",slot:"AvDrawerHeader"})();r(o,{name:"MuiDrawer",slot:"AvDrawerHeaderText"})();r(e,{name:"MuiDrawer",slot:"AvDrawerContent"})();
