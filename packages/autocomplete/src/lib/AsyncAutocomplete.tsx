@@ -112,7 +112,7 @@ export const AsyncAutocomplete = <
     const difference = listboxNode.scrollHeight - (listboxNode.scrollTop + listboxNode.clientHeight);
 
     // Only fetch if we are near the bottom, not already fetching, and there are more results
-    if (difference <= 5 && !isLoading && !isFetching && hasNextPage) {
+    if (difference <= 10 && !isLoading && !isFetching && hasNextPage) {
       fetchNextPage();
     }
   }
@@ -142,7 +142,7 @@ export const AsyncAutocomplete = <
         ...ListboxProps,
         ref: setListboxRef,
         onScroll: handleAddingOptions,
-        onPointerEnter: handleAddingOptions,
+        onPointerEnter: handleAddingOptions
       }}
     />
   );
