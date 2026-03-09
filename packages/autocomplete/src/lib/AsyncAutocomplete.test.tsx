@@ -5,6 +5,7 @@ import { server } from '@availity/mock/src/lib/server';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { AsyncAutocomplete } from './AsyncAutocomplete';
+import { mock } from 'node:test';
 
 const api = new AvApi({ name: 'example' } as ApiConfig);
 
@@ -182,63 +183,85 @@ describe('AsyncAutocomplete', () => {
     });
   });
 
-  // test('should call loadOptions when scroll to the bottom', async () => {
-  //   const client = new QueryClient();
+  test('should call loadOptions when scroll to the bottom', async () => {
+    const mockLoadOptions = jest.fn(loadOptions);
+    const client = new QueryClient();
 
-  //   render(
-  //     <QueryClientProvider client={client}>
-  //       <AsyncAutocomplete queryKey="test2" loadOptions={loadOptions} limit={10} FieldProps={{ label: 'Test' }} ListboxProps={{style: {maxHeight: '100px'}}} />
-  //     </QueryClientProvider>
-  //   );
+    render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete queryKey="test-loadoptions-scroll" loadOptions={mockLoadOptions} limit={10} FieldProps={{ label: 'Test' }} />
+      </QueryClientProvider>
+    );
 
-  //   const input = screen.getByRole('combobox');
-  //   fireEvent.click(input);
-  //   fireEvent.keyDown(input, { key: 'ArrowDown' });
+    const input = screen.getByRole('combobox');
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowUp' });
 
-  //   await waitFor(() => {
-  //     expect(screen.getByText('Option 0')).toBeDefined();
-  //     expect(() => screen.getByText('Option 10')).toThrow();
-  //   });
+    const listbox = await screen.findByRole('listbox');
+    Object.defineProperty(listbox, 'scrollHeight', { value: 500, writable: true });
+    Object.defineProperty(listbox, 'clientHeight', { value: 100, writable: true });
+    Object.defineProperty(listbox, 'scrollTop', { value: 0, writable: true });
 
-  //   await act(async () => {
-  //     const options = await screen.findByRole('listbox');
-  //     fireEvent.scroll(options, { target: { scrollTop: options.scrollHeight } });
-  //   });
+    // wait for no-scroll loading fallback to finish before testing scroll behavior
+    await waitFor(() => expect(() => screen.getByAltText('Loading')).toThrow());
+    const initialCallCount = mockLoadOptions.mock.calls.length;
 
-  //   await waitFor(() => {
-  //     expect(screen.getByText('Option 10')).toBeDefined();
-  //     expect(() => screen.getByText('Option 20')).toThrow();
-  //   });
-  // });
+    fireEvent.scroll(listbox, { target: { scrollTop: 200 } });
 
-  // test('should call loadOptions when mouse enters the listbox if not enough options for scroll', async () => {
-  //   const client = new QueryClient();
+    // should not loadOptions since not scrolled to bottom
+    await waitFor(() => {
+      expect(mockLoadOptions).toHaveBeenCalledTimes(initialCallCount);
+    });
 
-  //   render(
-  //     <QueryClientProvider client={client}>
-  //       <AsyncAutocomplete queryKey="test2" loadOptions={loadOptions} limit={5} FieldProps={{ label: 'Test' }} ListboxProps={{style: {maxHeight: '150px'}}} />
-  //     </QueryClientProvider>
-  //   );
+    fireEvent.scroll(listbox, { target: { scrollTop: 400 } });
 
-  //   const input = screen.getByRole('combobox');
-  //   fireEvent.click(input);
-  //   fireEvent.keyDown(input, { key: 'ArrowDown' });
+    await waitFor(() => {
+      expect(mockLoadOptions).toHaveBeenCalledTimes(initialCallCount + 1);
+    });
+  });
 
-  //   await waitFor(() => {
-  //     expect(screen.getByText('Option 0')).toBeDefined();
-  //     expect(() => screen.getByText('Option 5')).toThrow();
-  //   });
+  test('should call loadOptions if more options available and not enough options for scroll', async () => {
+    const mockLoadOptions = jest.fn(loadOptions);
+    const client = new QueryClient();
 
-  //   await act(async () => {
-  //     const options = await screen.findByRole('listbox');
-  //     fireEvent.mouseEnter(options);
-  //   });
+    render(
+      <QueryClientProvider client={client}>
+        <AsyncAutocomplete
+          queryKey="test-loadOptions-noscroll"
+          loadOptions={mockLoadOptions}
+          limit={5}
+          FieldProps={{ label: 'Test' }}
+        />
+      </QueryClientProvider>
+    );
 
-  //   await waitFor(() => {
-  //     expect(screen.getByText('Option 5')).toBeDefined();
-  //     expect(() => screen.getByText('Option 10')).toThrow();
-  //   });
-  // });
+    const input = screen.getByRole('combobox');
+    fireEvent.click(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(mockLoadOptions).toHaveBeenCalled();
+    });
+
+    // should load more options until enough options for scroll or no more options to load
+    const listbox = await screen.findByRole('listbox');
+    Object.defineProperty(listbox, 'scrollHeight', { value: 500, writable: true });
+    Object.defineProperty(listbox, 'clientHeight', { value: 100, writable: true });
+    Object.defineProperty(listbox, 'scrollTop', { value: 0, writable: true });
+
+    await waitFor(() => expect(() => screen.getByAltText('Loading')).toThrow());
+
+    // count number of calls before satisfying scrollable condition
+    const maxCallCount = mockLoadOptions.mock.calls.length;
+
+    fireEvent.pointerEnter(listbox);
+
+    // should not fallback to load more options as scrollable condition is satisfied
+    await waitFor(() => {
+      expect(mockLoadOptions).toHaveBeenCalledTimes(maxCallCount);
+    });
+  });
+
 
   test('should search with input value', async () => {
     const mockLoadOptions = jest.fn(async () => ({ options: [{ label: 'Option 1' }], hasMore: false, offset: 50 }));
