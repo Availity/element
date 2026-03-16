@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.6](https://github.com/Availity/element/compare/@availity/mui-autocomplete@2.2.5...@availity/mui-autocomplete@2.2.6) (2026-03-16)
+
+
+### Bug Fixes
+
+* **mui-autocomplete:** expand scroll check area for asyncautocomplete ([4cc7229](https://github.com/Availity/element/commit/4cc7229871f77afce0a21e5cd8741f3c92c2b721))
+
 ## [2.2.5](https://github.com/Availity/element/compare/@availity/mui-autocomplete@2.2.4...@availity/mui-autocomplete@2.2.5) (2026-03-03)
 
 ### Dependency Updates
