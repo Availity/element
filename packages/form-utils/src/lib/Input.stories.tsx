@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Input, InputProps } from './Input';
 
 const meta: Meta<typeof Input> = {
-  title: 'Form Components/FormUtils/Input',
+  title: 'Form Components/Uncontrolled FormUtils/Input',
   component: Input,
   tags: ['autodocs'],
   args: {

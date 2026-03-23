@@ -11,7 +11,7 @@ import { Datepicker, DatepickerProps } from './Datepicker';
 import { DateCalendar } from './DateCalendar';
 
 const meta: Meta<typeof Datepicker> = {
-  title: 'Form Components/Datepicker/Datepicker',
+  title: 'Form Components/Uncontrolled Fields/Datepicker',
   component: Datepicker,
   tags: ['autodocs'],
 };
@@ -43,7 +43,7 @@ export const _Datepicker: StoryObj<typeof Datepicker> = {
 };
 
 /** Notice the new `read-only` styling. We're moving away from `disabled` in favor of `read-only`.
- * _See the [Disabled Fields Explainer](./?path=/docs/bs4-migration-form-migration--disabled-fields) for more information on when to use each._
+ * _See the [Disabled Fields Explainer](./?path=/docs/upgrading/bs4-migration-form-migration--disabled-fields) for more information on when to use each._
 */
 export const _States: StoryObj<typeof Datepicker> = {
   render: (args) => (

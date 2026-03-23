@@ -13,7 +13,7 @@ import {
   InputGroupAddonExample,
 } from './MigrationExamples';
 
-<Meta title="BS4 Migration/Getting Started" />
+<Meta title="Upgrading/BS4 Migration/Getting Started" />
 
 <Markdown># Getting Started</Markdown>
 
@@ -21,7 +21,7 @@ import {
 
 <Markdown>## Planning and Strategy</Markdown>
 
-_Our guide is written assuming you're planning migration one component swap at a time. However, if you're doing whole sections at a time pay extra attention to the [Components Without a Drop-in Option](./?path=/docs/bs4-migration-getting-started--docs&args=#components-without-a-drop-in-option) section to plan accordingly._
+_Our guide is written assuming you're planning migration one component swap at a time. However, if you're doing whole sections at a time pay extra attention to the [Components Without a Drop-in Option](./?path=/docs/upgrading/bs4-migration-getting-started--docs&args=#components-without-a-drop-in-option) section to plan accordingly._
 
 ### Drop-in Components and the Migration Theme
 
@@ -42,7 +42,7 @@ The migration theme is accessible by passing `theme='legacyBS'` to the `ThemePro
 
 Where you're coming from will determine your strategy for form migration. We have moved away from `formik` (used by `@availity/form`) in favor of `react-hook-form`. We have also provided the base components to utilize with your own logic/libraries.
 
-There's additional pattern changes around the usage of `disabled` fields. See the [Form migration](./?path=/docs/bs4-migration-form-migration--docs) docs for more information.
+There's additional pattern changes around the usage of `disabled` fields. See the [Form migration](./?path=/docs/upgrading/bs4-migration-form-migration--docs) docs for more information.
 
 <Markdown>### Components Without a Drop-in Option</Markdown>
 
@@ -174,12 +174,12 @@ Not all classes/components from Bootstrap/Reactstrap have a similar name or 1:1 
 | `Badge`<sup>2</sup>                                 | [`Chip`](./?path=/docs/components-chip-chip--docs)                                                                                                                                        | Inline colored label/descriptor                                                                                                          |       <ChipExample/>       |
 | `Column`/`Row`                                      | [`Grid`](./?path=/docs/components-layout-grid--docs)                                                                                                                                      | Horizontal and Vertical layout                                                                                                           |       <GridExample/>       |
 | `Dropdown`                                          | [`Menu`](./?path=/docs/components-menu-menu--docs)                                                                                                                                        | Display a list on temporary surface                                                                                                      |       <MenuExample/>       |
-| `InputGroupAddon`                                   | [`InputAdornment`](./?path=/docs/form-components-formutils-input--docs) used in the `startAdornment` or `endAdornment` prop on the Input component or any component that takes InputProps | Extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs. | <InputGroupAddonExample /> |
+| `InputGroupAddon`                                   | [`InputAdornment`](./?path=/docs/form-components-uncontrolled-formutils-input--docs) used in the `startAdornment` or `endAdornment` prop on the Input component or any component that takes InputProps | Extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs. | <InputGroupAddonExample /> |
 | `ListGroup`, `ListGroupItem`, `ListGroupItemStatus` | [`List`](./?path=/docs/components-list-list--docs)                                                                                                                                        | List, ListItem, ListItemStatusCard                                                                                                       |     <ListItemExample/>     |
 | `ListGroupItemHeading`                              | [`Typography`](./?path=/docs/components-typography-typography--docs)                                                                                                                      | No longer a separate component                                                                                                           |                            |
 | `Modal`                                             | [`Dialog`](./?path=/docs/components-dialog-dialog--docs)                                                                                                                                  | Popover Dialog (Blocking and Non-Blocking)                                                                                               |      <DialogExample/>      |
 | `Nav`                                               | [`Tabs`](./?path=/docs/components-tabs-tabs--docs)                                                                                                                                        | Tab Navigation                                                                                                                           |       <TabExample/>        |
-| `Phone`                                             | [`TextField` with phone masking](https://availity.github.io/element/?path=/story/form-components-textfield-textfield--phone-with-ext)                                                     | TextField that auto-formats phone numbers                                                                                                |      <PhoneExample />      |
+| `Phone`                                             | [`TextField` with phone masking](https://availity.github.io/element/?path=/story/form-components-uncontrolled-fields-textfield--phone-with-ext)                                                     | TextField that auto-formats phone numbers                                                                                                |      <PhoneExample />      |
 | `Toast`                                             | [`Snackbar`](./?path=/docs/components-snackbar-snackbar--docs)                                                                                                                            | Brief Notifications                                                                                                                      |     <SnackbarExample/>     |
 | `Upload`                                            | [`FileSelector`](./?path=/docs/components-file-selector-file-selector--docs)                                                                                                              | Select a file to upload                                                                                                                  |                            |
 | `Wizard`                                            | [`Stepper`](./?path=/docs/components-stepper-stepper--docs)                                                                                                                               | Convey progress through numbered steps                                                                                                   |     <StepperExample/>      |

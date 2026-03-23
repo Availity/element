@@ -22,7 +22,7 @@ import { Typography } from '@availity/mui-typography';
 import { TextField, TextFieldProps } from './TextField';
 
 const meta: Meta<typeof TextField> = {
-  title: 'Form Components/TextField/TextField',
+  title: 'Form Components/Uncontrolled Fields/TextField',
   component: TextField,
   tags: ['autodocs'],
   args: { helperText: 'Helper Text', fullWidth: false },
@@ -60,7 +60,7 @@ export const _TextFieldCharacterCountOverflow: StoryObj<typeof TextField> = {
 };
 
 /** Notice the new `read-only` styling. We're moving away from `disabled` in favor of `read-only`.
- * _See the [Disabled Fields Explainer](./?path=/docs/bs4-migration-form-migration--disabled-fields) for more information on when to use each._
+ * _See the [Disabled Fields Explainer](./?path=/docs/upgrading/bs4-migration-form-migration--disabled-fields) for more information on when to use each._
 */
 export const _States: StoryObj<typeof TextField> = {
   render: (args: TextFieldProps) => (
@@ -392,7 +392,7 @@ export const _MultiSelect: StoryObj<typeof TextField> = {
   args: { label: 'MultiSelect' },
 };
 
-/** Wrap the fields in a `SearchByFormGroup` from the [@availity/mui-form-utils](./?path=/docs/form-components-formutils-introduction--docs) package for our combined search by styles.
+/** Wrap the fields in a `SearchByFormGroup` from the [@availity/mui-form-utils](./?path=/docs/form-components-uncontrolled-formutils-readme--docs) package for our combined search by styles.
  *
  * It is recommended to use `Autocomplete` for the "Search By" selection, however a `select` `TextField` can be used with `slotProps.select.labelId = {searchById passed to form group}-label`.
  */

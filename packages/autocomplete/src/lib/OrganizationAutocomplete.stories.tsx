@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { OrganizationAutocomplete } from './OrganizationAutocomplete';
 
 const meta: Meta<typeof OrganizationAutocomplete> = {
-  title: 'Form Components/Autocomplete/OrganizationAutocomplete',
+  title: 'Form Components/Uncontrolled Fields/OrganizationAutocomplete',
   component: OrganizationAutocomplete,
   tags: ['autodocs'],
   args: {

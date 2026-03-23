@@ -7,7 +7,7 @@ addons.setConfig({
   theme: elementTheme,
   sidebar: {
     collapsedRoots: [
-      'bs4-migration',
+      'upgrading',
       'sample-layouts',
       'design-system',
     ],

@@ -1,7 +1,7 @@
 There are two main changes made with the form components in `@availity/element`:
 
 - Removed `formik`
-- Updated [usage guidelines](./?path=/docs/bs4-migration-form-migration--disabled-fields)  for `disabled` fields and the new `read-only` fields
+- Updated [usage guidelines](./?path=/docs/upgrading/bs4-migration-form-migration--disabled-fields)  for `disabled` fields and the new `read-only` fields
 
 ## Why did we remove formik?
 
@@ -33,15 +33,15 @@ using it with `yup`+`@hookform/resolvers/yup` (don't worry,
 | availity-react<br />formik | element<br />react-hook-form | element<br />Not Controlled | Description |
 | ---------------------------- | ---------------------------- | --------------------------- | ----------- |
 | CheckboxGroup | _N/A_ | _N/A - built with `FormControl`, `FormLabel`, & `FormGroup`_ | Full checkbox group field |
-| CurrencyInput | _N/A_ | _N/A - built with `TextField` and replacing input. See [Input Masking](./?path=/docs/form-components-textfield-textfield--docs&args=#input-masking)_ | Field with currency input masking |
+| CurrencyInput | _N/A_ | _N/A - built with `TextField` and replacing input. See [Input Masking](./?path=/docs/form-components-uncontrolled-fields-textfield--docs&args=#input-masking)_ | Field with currency input masking |
 | DateField | ControlledDatepicker | Datepicker | Date field with picker |
-| DateRangeField | _N/A_ | _N/A - see [date range code example](./?path=/docs/form-components-datepicker-datepicker--docs#date-range-picker)_ | Date range field(s) with picker |
+| DateRangeField | _N/A_ | _N/A - see [date range code example](./?path=/docs/form-components-uncontrolled-fields-datepicker-datepicker--docs#date-range-picker)_ | Date range field(s) with picker |
 | Field | ControlledTextField | TextField | Text input field |
 | FieldHelpIcon | _N/A_ | FieldHelpIcon | Availity help topic link |
 | FormGroup | _N/A_ | FormControl | Context wrapper for a field. Syncs state, i.e. error, required, disabled, focused, etc |
 | Input | _N/A_ | Input | Bare input |
 | Label | _N/A_ | FormLabel<br />FormControlLabel | Label for input/group |
-| Phone | _N/A_ | _N/A - built with `TextField` and replacing input. See [Input Masking](./?path=/docs/form-components-textfield-textfield--docs&args=#input-masking)_ | Field with phone masking |
+| Phone | _N/A_ | _N/A - built with `TextField` and replacing input. See [Input Masking](./?path=/docs/form-components-uncontrolled-fields-textfield--docs&args=#input-masking)_ | Field with phone masking |
 | RadioGroup | ControlledRadioGroup | _N/A - built with `FormControl`, `FormLabel`, & `RadioGroup`_ | Full radio group field |
 | SelectField | ControlledAutocomplete | Autocomplete | Select field with autocompletion |
 | ResourceSelect | ControlledAsyncAutocomplete | AsyncAutocomplete | Select field with loader while loading options |

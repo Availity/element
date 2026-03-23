@@ -10,7 +10,7 @@
 
 This package extends the Element's Form components with [react-hook-form](https://react-hook-form.com/). The goal of this package is to decrease the amount of setup involved with building a form using Element components and react-hook-form. If you would like to use another form library, the raw Element form components are also available.
 
-Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/form-components-controlled-form-introduction--docs)
+Live demo and documentation in our [Storybook](https://availity.github.io/element/?path=/docs/form-components-controlled-form-readme--docs)
 
 Availity standards for design and usage can be found in the [Availity Design Guide](https://design.availity.com/2e36e50c7)
 

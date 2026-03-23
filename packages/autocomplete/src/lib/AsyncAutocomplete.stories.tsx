@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AsyncAutocomplete } from './AsyncAutocomplete';
 
 const meta: Meta<typeof AsyncAutocomplete> = {
-  title: 'Form Components/Autocomplete/AsyncAutocomplete',
+  title: 'Form Components/Uncontrolled Fields/AsyncAutocomplete',
   component: AsyncAutocomplete,
   tags: ['autodocs'],
   args: {

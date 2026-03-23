@@ -6,7 +6,7 @@ import { FormControlLabel, Switch, SwitchProps, FormGroup, FormLabel } from '..'
 import { Typography } from '@availity/mui-typography';
 
 const meta: Meta<typeof Switch> = {
-  title: 'Form Components/FormUtils/Switch',
+  title: 'Form Components/Uncontrolled FormUtils/Switch',
   component: Switch,
   tags: ['autodocs'],
   parameters: {

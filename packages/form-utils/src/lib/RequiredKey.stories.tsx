@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RequiredKey } from './RequiredKey';
 
 const meta: Meta<typeof RequiredKey> = {
-  title: 'Form Components/FormUtils/RequiredKey',
+  title: 'Form Components/Uncontrolled FormUtils/RequiredKey',
   component: RequiredKey,
   tags: ['autodocs'],
 };

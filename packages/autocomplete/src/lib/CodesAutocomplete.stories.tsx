@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { CodesAutocomplete } from './CodesAutocomplete';
 
 const meta: Meta<typeof CodesAutocomplete> = {
-  title: 'Form Components/Autocomplete/CodesAutocomplete',
+  title: 'Form Components/Uncontrolled Fields/CodesAutocomplete',
   component: CodesAutocomplete,
   tags: ['autodocs'],
   args: {

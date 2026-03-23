@@ -8,7 +8,7 @@ import { FormHelperText, FormLabel, FormLabelProps, Input } from '..';
 
 /** Label component for use with individual inputs, form controls,  and form groups. For labels to use with `checkbox`/`radio` see `FormControlLabel`. */
 const meta: Meta<typeof FormLabel> = {
-  title: 'Form Components/FormUtils/FormLabel',
+  title: 'Form Components/Uncontrolled FormUtils/FormLabel',
   component: FormLabel,
   tags: ['autodocs'],
 };
