@@ -5,7 +5,7 @@ import { Radio, RadioProps } from './Radio';
 import { FormControlLabel } from '..';
 
 const meta: Meta<typeof Radio> = {
-  title: 'Form Components/FormUtils/Radio',
+  title: 'Form Components/Uncontrolled FormUtils/Radio',
   component: Radio,
   tags: ['autodocs'],
   parameters: {

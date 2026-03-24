@@ -47,7 +47,7 @@ export const SearchByContainer = styled(FormGroup, {
 /** A wrapper for the search/searchby multi-input pattern.
  *
  * _Will only work with full fields (`TextField`, `Autocomplete`). If building a custom field, ensure it's wrapped in a `FormControl`.
- * The "Search By" field id must be passed as the FormGroup supplies the label. See [TextField documentation](https://availity.github.io/element/?path=/docs/form-components-textfield-textfield--docs) for additional steps if using `select` instead of `Autocomplete`._
+ * The "Search By" field id must be passed as the FormGroup supplies the label. See [TextField documentation](https://availity.github.io/element/?path=/docs/form-components-uncontrolled-fields-textfield--docs) for additional steps if using `select` instead of `Autocomplete`._
  */
 export const SearchByFormGroup = ({children, searchById, searchByLabel = 'Search By', ...rest}: SearchByFormGroupProps) => (
   <SearchByContainer {...rest}>

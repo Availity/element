@@ -28,7 +28,7 @@ import {
 import FormMigration from './form-migration.md?raw';
 
 const meta: Meta = {
-  title: 'BS4 Migration/Form Migration',
+  title: 'Upgrading/BS4 Migration/Form Migration',
   tags: ['autodocs'],
   parameters: { docs: {
     description: { component: `${FormMigration}`},

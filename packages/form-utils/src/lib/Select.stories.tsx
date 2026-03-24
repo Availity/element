@@ -11,7 +11,7 @@ import { Typography } from '@availity/mui-typography';
 import { FormLabel, Select, SelectProps, SelectChangeEvent } from '..';
 
 const meta: Meta<typeof Select> = {
-  title: 'Form Components/FormUtils/Select',
+  title: 'Form Components/Uncontrolled FormUtils/Select',
   component: Select,
   tags: ['autodocs'],
   args: { size: 'small' },

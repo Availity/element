@@ -18,16 +18,16 @@ This monorepo is managed using [yarn](https://yarnpkg.com/getting-started) and [
 
 ## Installation
 
-The currently recommended version of node to use when developing in this repo is: `v20`. We recommend using [fnm](https://github.com/Schniz/fnm#readme) to have your node version automatically changed when you `cd` into the repo.
+The currently recommended version of node to use when developing in this repo is: `v24`. We recommend using [fnm](https://github.com/Schniz/fnm#readme) to have your node version automatically changed when you `cd` into the repo.
 
-We use `yarn berry` (aka yarn v3) to manage dependencies. Install `yarn` globally:
+We use `yarn berry` (aka yarn v4) to manage dependencies. Install `yarn` globally:
 
 ```sh
 node --version
 npm -i -g yarn
 ```
 
-> This command will install yarn v1. When we run the next command then yarn v3 will be added.
+> This command will install yarn v1. When we run the next command then yarn v4 will be added.
 
 Then install the dependencies:
 
@@ -104,12 +104,14 @@ The generator assumes the package is a wrapper for an MUI component, as such:
 - `@mui/material` is a peer dependency
 - MUI link in README generated assuming package name is same as corresponding MUI component name
 - Default component code is a wrapper for the MUI `Card` component. Replace `Card` with whatever component you're building a wrapper for, or remove the `Card` references entirely.
+- Only original component generated that matches package name is added to the `@availity/element` exports. Any additional exports will need to be added manually.
 
 ### Dos and Don'ts
 
-- Don't add a default export to the package, this will affect `@availity/element`
 - Do create separate stories files for each exported component. The storybook automated documentation creates the arguments table based on the component in the `Meta` of that file.
 - Do make sure components stick to the Availity Design Standards. Add the corresponding component theme information to the themes in `@availity/theme`
+- Don't forget to add additional package exports to `@availity/element`, the generator only handles the namesake component.
+- Don't merge before setting up trusted publishing for the new package. We recommend publishing a canary version so the package is available in npm to setup trusted publishing, however don't push up the canary version version commit. _You can manually add the package tag if there's a certain major version you're targetting, i.e. matching the current major version of element `@availity/mui-<package-name>@2.0.0`_
 
 ## Commits
 

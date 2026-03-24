@@ -6,7 +6,7 @@ import { FormGroup, FormGroupProps, FormLabel, FormControl, FormControlLabel } f
 
 /** Form input context. Controls styling (`size`, etc) and state (`error`, `disabled`, etc) across input components, like `FormLabel`, `Input`, `FormHelperText`. */
 export default {
-  title: 'Form Components/FormUtils/FormGroup',
+  title: 'Form Components/Uncontrolled FormUtils/FormGroup',
   component: FormGroup,
   tags: ['autodocs'],
   args: {

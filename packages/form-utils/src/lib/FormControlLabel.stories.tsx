@@ -12,7 +12,7 @@ import { FormLabel, FormControlLabel, FormControlLabelProps, Switch } from '..';
 
 /** Drop-in replacement of the `Radio`, `Switch` and `Checkbox` component to display a label. */
 const meta: Meta<typeof FormControlLabel> = {
-  title: 'Form Components/FormUtils/FormControlLabel',
+  title: 'Form Components/Uncontrolled FormUtils/FormControlLabel',
   component: FormControlLabel,
   tags: ['autodocs'],
   parameters: {

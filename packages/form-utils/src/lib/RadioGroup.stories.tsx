@@ -6,7 +6,7 @@ import { FormControl, FormControlLabel, FormHelperText, FormLabel } from '..';
 import { Radio } from './Radio';
 
 const meta: Meta<typeof RadioGroup> = {
-  title: 'Form Components/FormUtils/RadioGroup',
+  title: 'Form Components/Uncontrolled FormUtils/RadioGroup',
   component: RadioGroup,
   tags: ['autodocs'],
 };

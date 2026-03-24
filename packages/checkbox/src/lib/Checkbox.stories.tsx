@@ -10,7 +10,7 @@ import { HeartEmptyIcon, HeartIcon } from '@availity/mui-icon';
 import { Checkbox, CheckboxProps } from './Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Form Components/Checkbox/Checkbox',
+  title: 'Form Components/Uncontrolled FormUtils/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
   argTypes: {

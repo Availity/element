@@ -9,7 +9,7 @@ import { SearchIcon } from '@availity/mui-icon';
 import { useState } from 'react';
 
 const meta: Meta<typeof SearchByFormGroup> = {
-  title: 'Form Components/FormUtils/SearchByFormGroup',
+  title: 'Form Components/Uncontrolled FormUtils/SearchByFormGroup',
   component: SearchByFormGroup,
   tags: ['autodocs'],
 };
