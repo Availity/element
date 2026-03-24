@@ -427,6 +427,7 @@ export const DatepickerPropsCategorized: DatepickerPropsObject = {
   disableOpenPicker: { table: { category: 'Input Props' } },
   placement: { table: { category: 'Input Props' } },
   clearable: { table: { category: 'Input Props' } },
+  onClear: { table: { category: 'Input Props' } }
 };
 
 export const CodesAutocompletePropsCategorized: CodesAutocompletePropsObject = {

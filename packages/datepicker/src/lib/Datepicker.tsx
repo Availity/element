@@ -4,7 +4,7 @@ import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } fr
 import type { Dayjs } from 'dayjs';
 import type {} from '@mui/x-date-pickers/AdapterDayjs';
 import { PickersTextField as MuiPickersTextField, PickersTextFieldProps as MuiPickersTextFieldProps } from '@mui/x-date-pickers/PickersTextField';
-import { PickerFieldUISlotProps } from '@mui/x-date-pickers/internals';
+import { ExportedPickerFieldUIProps, PickerFieldUISlotProps } from '@mui/x-date-pickers/internals';
 import { FormHelperText, FormLabel, InputPropOverrides } from '@availity/mui-form-utils';
 import { forwardRef } from 'react';
 
@@ -18,9 +18,8 @@ export type DatepickerProps = {
    * @default bottom-start
    */
   placement?: 'bottom-start' | 'bottom' | 'bottom-end';
-  /** Determines if the clear button appears in the action bar */
-  clearable?: boolean;
-} & Omit<
+} & Pick<ExportedPickerFieldUIProps, 'onClear' | 'clearable'>
+  & Omit<
   MuiDatePickerProps<false>,
   | 'components'
   | 'componentsProps'
@@ -76,6 +75,7 @@ export const Datepicker = ({
   FieldProps,
   placement = 'bottom-start',
   clearable,
+  onClear,
   ...props
 }: DatepickerProps): React.JSX.Element => {
   return (
@@ -83,15 +83,13 @@ export const Datepicker = ({
       {...props}
       dayOfWeekFormatter={(weekday: Dayjs) => weekday.format('dd')}
       slotProps={{
-        actionBar: {
-          actions: clearable ? ['clear'] : [],
-        },
         desktopPaper: paperProps,
         mobilePaper: {
           ...paperProps,
           'aria-label': FieldProps?.label?.toString() || FieldProps?.inputProps?.['aria-label'] || 'Date picker',
           'aria-labelledby': FieldProps?.inputProps?.['aria-labelledby'] || undefined,
         },
+        field: { clearable, onClear },
         textField: FieldProps,
         popper: {
           placement,
