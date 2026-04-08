@@ -1,0 +1,55 @@
+[tasks.install]
+run = "yarn install"
+description = "Install dependencies"
+
+[tasks.build]
+run = "yarn build"
+description = "Build all packages"
+
+[tasks.test]
+run = "yarn test"
+description = "Run all unit tests"
+
+[tasks."test:affected"]
+run = "yarn test:affected"
+description = "Run tests for affected packages"
+
+[tasks.lint]
+run = "yarn lint"
+description = "Lint all packages"
+
+[tasks."lint:affected"]
+run = "yarn lint:affected"
+description = "Lint affected packages"
+
+[tasks.start]
+run = "yarn start:storybook"
+description = "Start Storybook dev server"
+
+[tasks."build:storybook"]
+run = "yarn build:storybook"
+description = "Build Storybook"
+
+[tasks.clean]
+run = "yarn clean"
+description = "Clean build artifacts"
+
+[tasks."create:package"]
+run = "yarn create:package {{arg(name='package')}}"
+description = "Scaffold a new component package"
+
+[tasks."version:dry-run"]
+run = "yarn version:dry-run"
+description = "Dry-run version bump for affected packages"
+
+[tasks.ai]
+run = "kiro-cli chat --agent element-dev"
+description = "Start dev agent"
+
+[tasks."ai:planner"]
+run = "kiro-cli chat --agent code-planner"
+description = "Start code-planner agent"
+
+[tasks."ai:product"]
+run = "kiro-cli chat --agent product"
+description = "Start product knowledge agent"

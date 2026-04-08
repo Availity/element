@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "nx": {
+      "command": "yarn",
+      "args": ["nx", "mcp"],
+      "cwd": "/Users/jordan.young/Workspaces/element"
+    }
+  }
+}

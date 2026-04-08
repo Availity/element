@@ -2438,6 +2438,11 @@ export const legacyTheme = {
           '&.MuiInputBase-root': {
             width: 'auto',
           },
+          '&.Mui-focused': {
+            outline: `2px solid ${tokens.borderInputFocus}`,
+            outlineOffset: '-2px',
+            borderRadius: '3px',
+          },
         },
         select: {
           '&.MuiTablePagination-select.MuiSelect-select': {

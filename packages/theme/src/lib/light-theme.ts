@@ -2402,6 +2402,11 @@ export const lightTheme = {
           '&.MuiInputBase-root': {
             width: 'auto',
           },
+          '&.Mui-focused': {
+            outline: `2px solid ${tokens.borderInputFocus}`,
+            outlineOffset: '-2px',
+            borderRadius: '.25rem',
+          },
         },
         select: {
           '&.MuiTablePagination-select.MuiSelect-select': {
