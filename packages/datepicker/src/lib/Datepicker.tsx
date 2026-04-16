@@ -18,9 +18,12 @@ export type DatepickerProps = {
    * @default bottom-start
    */
   placement?: 'bottom-start' | 'bottom' | 'bottom-end';
-  /** Determines if the clear button appears in the action bar */
+  /** Determines if the clear button appears in the action bar and input. _No custom onClear available_ */
   clearable?: boolean;
-} & Omit<
+}
+  // TODO: v3 BREAKING CHANGE add onClear and remove action bar clear button
+  // & Pick<ExportedPickerFieldUIProps, 'onClear' | 'clearable'>
+  & Omit<
   MuiDatePickerProps<false>,
   | 'components'
   | 'componentsProps'
@@ -83,6 +86,7 @@ export const Datepicker = ({
       {...props}
       dayOfWeekFormatter={(weekday: Dayjs) => weekday.format('dd')}
       slotProps={{
+        // TODO: v3 BREAKING CHANGE remove action bar
         actionBar: {
           actions: clearable ? ['clear'] : [],
         },
@@ -92,6 +96,8 @@ export const Datepicker = ({
           'aria-label': FieldProps?.label?.toString() || FieldProps?.inputProps?.['aria-label'] || 'Date picker',
           'aria-labelledby': FieldProps?.inputProps?.['aria-labelledby'] || undefined,
         },
+        // TODO: v3 add onClear to field
+        field: { clearable },
         textField: FieldProps,
         popper: {
           placement,

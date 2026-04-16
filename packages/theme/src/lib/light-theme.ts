@@ -1858,6 +1858,10 @@ export const lightTheme = {
             // padding: '8px',
             color: tokens.colorGrey400,
           },
+          '.MuiInputAdornment-root .MuiIconButton-root': {
+            width: '2.25rem',
+            height: '2.25rem',
+          },
         },
       },
     },
