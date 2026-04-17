@@ -58,8 +58,8 @@
     "@mui/material": "^7.3.4",
     "@tanstack/react-query": "^4.36.1",
     "dayjs": "^1.11.13",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "tsup": "^8.4.0",
     "typescript": "^5.4.5",
     "yup": "^1.6.1"
