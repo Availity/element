@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.1.0](https://github.com/Availity/element/compare/@availity/mui-datepicker@2.0.6...@availity/mui-datepicker@2.1.0) (2026-04-17)
+
+### Dependency Updates
+
+* `theme-provider` updated to version `2.0.6`
+
+### Features
+
+* feat(mui-datepicker): add inputadornment clear button with no onclear ([6d57ddd](https://github.com/Availity/element/commit/6d57ddd35bbe7c1c2036743e49b8db75f26d4417))
+
 ## [2.0.6](https://github.com/Availity/element/compare/@availity/mui-datepicker@2.0.5...@availity/mui-datepicker@2.0.6) (2026-03-03)
 
 ### Dependency Updates

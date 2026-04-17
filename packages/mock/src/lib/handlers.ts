@@ -425,6 +425,11 @@ export const handlers = [
     });
   }),
 
+  // Stash
+  http.get(routes.STASH, ({ params }) => {
+    return HttpResponse.json({ memberId: 'member-123', sessionId: params.sessionId });
+  }),
+
   // Example
   http.post(routes.EXAMPLE, async ({ request }) => {
     await delayRequest();

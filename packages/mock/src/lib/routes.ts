@@ -17,5 +17,8 @@ export const ATTACHMENTS_CLOUD_POST = '/cloud/web/appl/vault/upload/v1/resumable
 export const ATTACHMENTS_CLOUD_PATCH = '/cloud/web/appl/vault/upload/v1/resumable/:bucket/:location';
 export const ATTACHMENTS_CLOUD_HEAD = '/cloud/web/appl/vault/upload/v1/resumable/:bucket/:location';
 
+// Stash
+export const STASH = '/cloud/web/appl/stash/v1/session/data/:sessionId';
+
 // Misc
 export const EXAMPLE = '/api/v1/example';

@@ -1,21 +1,21 @@
 {
-  "name": "@availity/mui-datepicker",
-  "version": "2.1.0",
-  "description": "Availity MUI Datepicker Component - part of the @availity/element design system",
+  "name": "@availity/mui-stash-receiver",
+  "version": "0.0.0",
+  "description": "Availity MUI StashReceiver Component - part of the @availity/element design system",
   "keywords": [
     "react",
     "typescript",
     "availity",
     "mui"
   ],
-  "homepage": "https://availity.github.io/element/?path=/docs/form-components-uncontrolled-fields-datepicker-readme--docs",
+  "homepage": "https://availity.github.io/element/?path=/docs/components-stash-receiver-introduction--docs",
   "bugs": {
     "url": "https://github.com/Availity/element/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Availity/element.git",
-    "directory": "packages/datepicker"
+    "directory": "packages/stash-receiver"
   },
   "license": "MIT",
   "author": "Availity Developers <AVOSS@availity.com>",
@@ -39,13 +39,8 @@
     "publish": "yarn npm publish --tolerate-republish --access public",
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
-  "dependencies": {
-    "@availity/mui-icon": "workspace:*",
-    "@availity/mui-textfield": "workspace:*",
-    "@mui/x-date-pickers": "^8.16.0",
-    "dayjs": "^1.11.13"
-  },
   "devDependencies": {
+    "axios": "^1.16.1",
     "@mui/material": "^7.3.4",
     "react": "19.2.0",
     "react-dom": "19.2.0",
@@ -53,11 +48,11 @@
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
+    "axios": ">=1.0.0",
     "@mui/material": "^7.0.0",
     "react": ">=17.0.0"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "sideEffects": false
+  }
 }

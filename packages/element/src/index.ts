@@ -375,7 +375,7 @@ export {
   MoneyBillIcon,
   CartShoppingIcon,
   BuildingIcon,
-  HospitalIcon
+  HospitalIcon,
 } from '@availity/mui-icon';
 
 // Layout
@@ -534,3 +534,7 @@ export type { TypographyProps } from '@availity/mui-typography';
 
 // Utils
 export { visuallyHidden } from '@availity/mui-utils';
+
+// StashReceiver
+export { StashReceiver, StashContext, useStashContext } from '@availity/mui-stash-receiver';
+export type { StashReceiverProps, StashContextType, StashData } from '@availity/mui-stash-receiver';
