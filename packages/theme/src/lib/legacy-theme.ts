@@ -1898,6 +1898,17 @@ export const legacyTheme = {
             },
           },
         },
+        sectionsContainer: {
+          variants: [
+            {
+              props: { hasStartAdornment: false, isFieldFocused: false, isFieldValueEmpty: true },
+              style: {
+                color: tokens.colorTextPlaceholder,
+                opacity: 1,
+              },
+            }
+          ]
+        },
       },
     },
     MuiPickersMonth: {

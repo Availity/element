@@ -1863,6 +1863,17 @@ export const lightTheme = {
             height: '2.25rem',
           },
         },
+        sectionsContainer: {
+          variants: [
+            {
+              props: { hasStartAdornment: false, isFieldFocused: false, isFieldValueEmpty: true },
+              style: {
+                color: tokens.colorTextPlaceholder,
+                opacity: 1,
+              },
+            }
+          ]
+        },
       },
     },
     MuiPickersOutlinedInput: {

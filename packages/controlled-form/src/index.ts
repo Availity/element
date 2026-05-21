@@ -9,6 +9,7 @@ export * from './lib/ProviderAutocomplete';
 export * from './lib/RadioGroup';
 export * from './lib/Select';
 export * from './lib/TextField';
+export * from './lib/Timepicker';
 
 export {
   FormProvider,

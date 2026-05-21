@@ -11,6 +11,7 @@ import {
   ControlledRadioGroupProps,
   ControlledSelectProps,
   ControlledTextFieldProps,
+  ControlledTimepickerProps,
 } from '..';
 import { HTMLAttributes } from 'react';
 
@@ -69,6 +70,14 @@ type RadioGroupPropsObject = Record<
 type DatepickerPropsObject = Record<
   keyof Omit<
     ControlledDatepickerProps,
+    keyof AllControllerProps | keyof Omit<HTMLAttributes<undefined>, 'autoFocus' | 'className' | 'onError'>
+  >,
+  { table: { category: 'Input Props' } }
+>;
+
+type TimepickerPropsObject = Record<
+  keyof Omit<
+    ControlledTimepickerProps,
     keyof AllControllerProps | keyof Omit<HTMLAttributes<undefined>, 'autoFocus' | 'className' | 'onError'>
   >,
   { table: { category: 'Input Props' } }
@@ -427,6 +436,48 @@ export const DatepickerPropsCategorized: DatepickerPropsObject = {
   disableOpenPicker: { table: { category: 'Input Props' } },
   placement: { table: { category: 'Input Props' } },
   clearable: { table: { category: 'Input Props' } },
+};
+
+export const TimepickerPropsCategorized: TimepickerPropsObject = {
+  autoFocus: { table: { category: 'Input Props' } },
+  className: { table: { category: 'Input Props' } },
+  onError: { table: { category: 'Input Props' } },
+  sx: { table: { category: 'Input Props' } },
+  label: { table: { category: 'Input Props' } },
+  view: { table: { category: 'Input Props' } },
+  readOnly: { table: { category: 'Input Props' } },
+  onClose: { table: { category: 'Input Props' } },
+  onOpen: { table: { category: 'Input Props' } },
+  open: { table: { category: 'Input Props' } },
+  FieldProps: { table: { category: 'Input Props' } },
+  disableFuture: { table: { category: 'Input Props' } },
+  disablePast: { table: { category: 'Input Props' } },
+  views: { table: { category: 'Input Props' } },
+  onViewChange: { table: { category: 'Input Props' } },
+  localeText: { table: { category: 'Input Props' } },
+  onAccept: { table: { category: 'Input Props' } },
+  viewRenderers: { table: { category: 'Input Props' } },
+  referenceDate: { table: { category: 'Input Props' } },
+  timezone: { table: { category: 'Input Props' } },
+  formatDensity: { table: { category: 'Input Props' } },
+  selectedSections: { table: { category: 'Input Props' } },
+  onSelectedSectionsChange: { table: { category: 'Input Props' } },
+  closeOnSelect: { table: { category: 'Input Props' } },
+  format: { table: { category: 'Input Props' } },
+  inputRef: { table: { category: 'Input Props' } },
+  placement: { table: { category: 'Input Props' } },
+  clearable: { table: { category: 'Input Props' } },
+  onClear: { table: { category: 'Input Props' } },
+  minutesStep: { table: { category: 'Input Props' } },
+  minTime: { table: { category: 'Input Props' } },
+  maxTime: { table: { category: 'Input Props' } },
+  shouldDisableTime: { table: { category: 'Input Props' } },
+  disableIgnoringDatePartForTimeValidation: { table: { category: 'Input Props' } },
+  ampm: { table: { category: 'Input Props' } },
+  skipDisabled: { table: { category: 'Input Props' } },
+  timeSteps: { table: { category: 'Input Props' } },
+  ampmInClock: { table: { category: 'Input Props' } },
+  thresholdToRenderTimeInASingleColumn: { table: { category: 'Input Props' } }
 };
 
 export const CodesAutocompletePropsCategorized: CodesAutocompletePropsObject = {
