@@ -44,7 +44,7 @@
     "@jscutlery/semver": "~5.7.0",
     "@mui/lab": "7.0.1-beta.18",
     "@mui/x-data-grid": "^8.16.0",
-    "@nx/devkit": "22.5.3",
+    "@nx/devkit": "22.7.2",
     "@nx/eslint": "22.5.3",
     "@nx/eslint-plugin": "22.5.3",
     "@nx/jest": "22.5.3",
@@ -64,7 +64,7 @@
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "30.0.0",
     "@types/node": "24.10.0",
-    "@types/qs": "^6.9.18",
+    "@types/qs": "^6.15.1",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "@typescript-eslint/eslint-plugin": "8.52.0",
@@ -91,7 +91,7 @@
     "lint-staged": "^15.5.0",
     "nx": "22.5.3",
     "prettier": "^3.5.3",
-    "react-hook-form": "^7.55.0",
+    "react-hook-form": "^7.76.0",
     "react-imask": "7.6.1",
     "react-number-format": "5.4.4",
     "remark-gfm": "^4.0.1",
@@ -108,6 +108,6 @@
     "workerDirectory": "static"
   },
   "dependencies": {
-    "storybook": "10.2.13"
+    "storybook": "10.4.1"
   }
 }
