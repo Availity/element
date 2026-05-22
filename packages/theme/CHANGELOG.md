@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.3.0](https://github.com/Availity/element/compare/@availity/theme@2.2.0...@availity/theme@2.3.0) (2026-05-22)
+
+
+### Features
+
+* **mui-datepicker:** add timepicker and update unfilled pickertextfield placeholder style ([cf95f5f](https://github.com/Availity/element/commit/cf95f5f1fdb1d29f1f66bd0a14f3dede759d834e))
+
 ## [2.2.0](https://github.com/Availity/element/compare/@availity/theme@2.1.0...@availity/theme@2.2.0) (2026-04-17)
 
 
