@@ -91,6 +91,7 @@ export {
   ControlledRadioGroup,
   ControlledSelect,
   ControlledTextField,
+  ControlledTimepicker,
 } from '@availity/mui-controlled-form';
 export type {
   SubmitHandler,
@@ -107,11 +108,12 @@ export type {
   ControlledRadioGroupProps,
   ControlledSelectProps,
   ControlledTextFieldProps,
+  ControlledTimepickerProps,
 } from '@availity/mui-controlled-form';
 
 // Datepicker
-export { Datepicker } from '@availity/mui-datepicker';
-export type { DatepickerProps } from '@availity/mui-datepicker';
+export { Datepicker, Timepicker } from '@availity/mui-datepicker';
+export type { DatepickerProps, TimepickerProps } from '@availity/mui-datepicker';
 
 // Dialog
 export { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@availity/mui-dialog';
