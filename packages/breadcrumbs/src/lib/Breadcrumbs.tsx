@@ -28,6 +28,10 @@ export interface BreadcrumbsProps extends Omit<MuiBreadcrumbsProps, 'separator' 
   /** The value to display when the active page or an ancestor does not have a value.
    * @default ... */
   emptyState?: string;
+  /** The target on the Home link
+   * @default _self
+   */
+  homeTarget?: string;
   /** Url for the Home route.
    * @default /public/apps/dashboard */
   homeUrl?: string;
@@ -52,6 +56,7 @@ export const Breadcrumbs = ({
   children,
   crumbs,
   emptyState = '...',
+  homeTarget = '_self',
   homeUrl = '/static/web/onb/onboarding-ui-apps/dashboard-ui/',
   LinkProps,
   ...rest
@@ -64,7 +69,7 @@ export const Breadcrumbs = ({
       slots={{ CollapsedIcon: MoreHorizontalIcon }}
       aria-label={rest['aria-label'] || 'breadcrumbs'}
     >
-      <Link aria-label="Home" href={homeUrl} loadApp={false}>
+      <Link aria-label="Home" href={homeUrl} target={homeTarget} loadApp={false}>
         Home
       </Link>
       {crumbs &&
