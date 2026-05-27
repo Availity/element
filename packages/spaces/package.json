@@ -87,8 +87,8 @@
     "@availity/native-form": "^7.0.16",
     "@availity/resolve-url": "^4.0.1",
     "@tanstack/react-query": "^4.36.1",
-    "dayjs": "^1.11.13",
-    "qs": "^6.15.0",
+    "dayjs": "^1.11.21",
+    "qs": "^6.15.2",
     "react-image": "^4.1.0",
     "react-markdown": "^6.0.3"
   },
