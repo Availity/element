@@ -2,6 +2,11 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.3.2](https://github.com/Availity/element/compare/@availity/element@2.3.1...@availity/element@2.3.2) (2026-06-03)
+
+### Dependency Updates
+
+* `mui-table` updated to version `2.3.1`
 ## [2.3.1](https://github.com/Availity/element/compare/@availity/element@2.3.0...@availity/element@2.3.1) (2026-05-27)
 
 ### Dependency Updates
