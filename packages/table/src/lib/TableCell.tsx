@@ -18,9 +18,9 @@ export type TableCellProps = {
   disableEmptyPlaceholder?: boolean;
 } & MuiTableCellProps;
 
-export const TableCell = ({disableEmptyPlaceholder = false, children, ...props}: TableCellProps): React.JSX.Element => {
+export const TableCell = ({ disableEmptyPlaceholder = false, children, ...props }: TableCellProps): React.JSX.Element => {
   const isPlaceholderActive = !disableEmptyPlaceholder && !children;
-  const placeholder = <><div aria-hidden>&mdash;</div><div style={visuallyHidden}>No Data</div></>;
+  const placeholder = <><div aria-hidden>&mdash;</div><div style={{ ...visuallyHidden, position: 'relative' }}>No Data</div></>;
 
   return <MuiTableCell {...props}>{isPlaceholderActive ? placeholder : children}</MuiTableCell>;
 };
