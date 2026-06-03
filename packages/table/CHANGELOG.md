@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.8](https://github.com/Availity/element/compare/@availity/mui-table@2.0.7...@availity/mui-table@2.0.8) (2026-06-03)
+
+
+### Bug Fixes
+
+* made the position for table cells placeholder be relative, GPS-498 ([47cd378](https://github.com/Availity/element/commit/47cd37870975434f2c372401f2167e205dbae2f4))
+
 ## [2.0.7](https://github.com/Availity/element/compare/@availity/mui-table@2.0.6...@availity/mui-table@2.0.7) (2026-05-27)
 
 ### Dependency Updates
