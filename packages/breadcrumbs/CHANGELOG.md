@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.1.0](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@2.0.2...@availity/mui-breadcrumbs@2.1.0) (2026-06-03)
+
+
+### Features
+
+* **mui-breadcrumbs:** allow custom target for home breadcrumb ([526a9e8](https://github.com/Availity/element/commit/526a9e861cff20841487187ec47e77f7746dc21c))
+
 ## [2.0.2](https://github.com/Availity/element/compare/@availity/mui-breadcrumbs@2.0.1...@availity/mui-breadcrumbs@2.0.2) (2026-02-02)
 
 ### Dependency Updates
