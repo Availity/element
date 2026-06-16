@@ -1,0 +1,73 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Upgrading/Upgrading to v3" />
+
+## Upgrading to Element v3
+
+Element v3 modernizes the build and development toolchain. Packages are now published as **ESM-only** and the minimum Node.js version has been raised.
+
+### Breaking Changes
+
+#### Node.js 22+ Required
+
+Node.js 20 is no longer supported. Update your project to Node.js 22 or 24.
+
+```bash
+# Check your version
+node --version
+
+# If using fnm
+fnm install 24
+fnm use 24
+```
+
+#### ESM-Only Packages
+
+All `@availity/element` and `@availity/mui-*` packages are now published as ES modules only. CommonJS `require()` is no longer supported.
+
+**If you're using standard `import` syntax, no changes are needed.**
+
+If you have any dynamic `require()` calls referencing these packages, switch to dynamic `import()`:
+
+```diff
+- const { Button } = require('@availity/element');
++ const { Button } = await import('@availity/element');
+```
+
+#### Test Configuration
+
+The internal test runner has moved from Jest to Vitest. This does **not** affect consumers unless you are importing test utilities from element packages.
+
+If your project uses Jest and encounters transform errors with `@availity` packages (because they are now ESM), add them to your transform ignore list:
+
+```js
+// jest.config.js
+module.exports = {
+  transformIgnorePatterns: [
+    'node_modules/(?!(@availity|axios)/)'
+  ],
+};
+```
+
+Or in `@availity/workflow`:
+
+```js
+// workflow.js
+config.development.jestOverrides = {
+  transformIgnorePatterns: [
+    'node_modules/(?!(@availity|axios)/)'
+  ],
+};
+```
+
+If using Vitest, no additional configuration is needed.
+
+### Non-Breaking Changes
+
+These changes are internal and should not require any action from consumers:
+
+- Build tooling migrated from Jest to Vitest
+- ESLint upgraded from v8 (legacy config) to v9 (flat config)
+- Internal build output changed from dual CJS/ESM to ESM-only
+- TypeScript target updated to ESNext
+- Dependency versions updated (React 19.2.7, MUI 7.3.11)

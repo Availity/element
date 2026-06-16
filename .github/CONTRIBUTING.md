@@ -51,10 +51,10 @@ yarn start:storybook
 
 All new features should have a unit test added. The unit tests will run when you push your code. If you run the tests on your own the results will be cached. This means subsequent executions of `yarn test` will only run tests against code that has changed.
 
-Currently you cannot run all of the tests in watchmode. You can run watchmode for one package at a time. Here is an example for the `@availity/mui-alert` package
+You can run tests in watch mode for a specific package:
 
 ```bash
-yarn nx test mui-alert --watch
+yarn vitest packages/alert
 ```
 
 It's always a good idea to make sure you didn't break anything else by running the unit test script
