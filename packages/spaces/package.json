@@ -89,7 +89,7 @@
     "dayjs": "^1.11.21",
     "qs": "^6.15.2",
     "react-image": "^4.1.0",
-    "react-markdown": "^6.0.3"
+    "react-markdown": "^10.1.0"
   },
   "sideEffects": false,
   "type": "module"
