@@ -38,7 +38,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/authorize": "^6.0.0",
+    "@availity/authorize": "^6.0.1",
     "@availity/mui-block-ui": "workspace:^"
   },
   "devDependencies": {

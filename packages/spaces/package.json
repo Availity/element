@@ -82,7 +82,7 @@
   },
   "dependencies": {
     "@availity/api-axios": "^13.2.0",
-    "@availity/hooks": "^6.0.0",
+    "@availity/hooks": "^6.0.1",
     "@availity/message-core": "^9.2.0",
     "@availity/native-form": "^8.2.0",
     "@availity/resolve-url": "^5.2.0",

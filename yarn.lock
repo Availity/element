@@ -88,9 +88,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/authorize@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "@availity/authorize@npm:6.0.0"
+"@availity/authorize@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "@availity/authorize@npm:6.0.1"
   dependencies:
     "@availity/block-ui": "npm:^1.0.0"
   peerDependencies:
@@ -99,7 +99,7 @@ __metadata:
     axios: ^1.13.2
     react: ^18.0.0
     react-dom: ^18.0.0
-  checksum: 10/7ca014d3293419896e33a84aed01c4e27131dfe0dd262d00e27e07e49e6fbfcb4a57d56a759ac017d6ee3797784cab49800fceccbb2f55e7a3401e2b65843984
+  checksum: 10/1fe155f135c5b554503ec42650449d2d6aa52340d7b7fff74ad46f7bdf677d2bf9c355f1873958fa5c0144e8160892f3a2f01546cef94a380d71d97fe0c95a73
   languageName: node
   linkType: hard
 
@@ -196,9 +196,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/hooks@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "@availity/hooks@npm:6.0.0"
+"@availity/hooks@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "@availity/hooks@npm:6.0.1"
   peerDependencies:
     "@availity/api-axios": ^12.0.0 || ^13.0.0
     "@availity/message-core": ^8.0.2 || ^9.0.2
@@ -206,7 +206,7 @@ __metadata:
     axios: ^1.13.2
     react: ^18.0.0 || ^19.0.0
     react-router-dom: ^6.26.0
-  checksum: 10/d5b9f247b1f2603df2c2b7e844353c24523cfac17587088092451a9ca9705d7727e51b54fe30c014771afa064eaebf9ebc830ac36fde853cc97f1620395543a2
+  checksum: 10/33e5ed105a8a09fa1da8a746ed79b5d62b42c370b14107f141bfb37a614f6943c685cab887088ba785e5757ea699d9dfa63a637e95f06eebcd8d21f8db01c3ee
   languageName: node
   linkType: hard
 
@@ -268,7 +268,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-authorize@workspace:packages/authorize"
   dependencies:
-    "@availity/authorize": "npm:^6.0.0"
+    "@availity/authorize": "npm:^6.0.1"
     "@availity/mui-block-ui": "workspace:^"
     "@mui/material": "npm:^7.3.11"
     "@tanstack/react-query": "npm:^5.101.0"
@@ -993,7 +993,7 @@ __metadata:
   resolution: "@availity/mui-spaces@workspace:packages/spaces"
   dependencies:
     "@availity/api-axios": "npm:^13.2.0"
-    "@availity/hooks": "npm:^6.0.0"
+    "@availity/hooks": "npm:^6.0.1"
     "@availity/message-core": "npm:^9.2.0"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-card": "workspace:^"
