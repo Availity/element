@@ -39,6 +39,9 @@ jobs:
           restore-keys: |
             nx-${{ runner.os }}-${{ hashFiles('yarn.lock') }}-
 
+      - name: Build Packages
+        run: yarn build
+
       - name: Lint Affected Code
         run: yarn lint:affected
 
