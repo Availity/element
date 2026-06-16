@@ -2,6 +2,82 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.0](https://github.com/Availity/element/compare/@availity/element@2.3.3...@availity/element@3.0.0) (2026-06-16)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `2.3.3`
+* `mui-alert` updated to version `2.3.3`
+* `mui-authorize` updated to version `2.3.3`
+* `mui-autocomplete` updated to version `2.3.3`
+* `mui-avatar` updated to version `2.3.3`
+* `mui-backdrop` updated to version `2.3.3`
+* `mui-badge` updated to version `2.3.3`
+* `mui-block-ui` updated to version `2.3.3`
+* `mui-breadcrumbs` updated to version `2.3.3`
+* `mui-button` updated to version `2.3.3`
+* `mui-card` updated to version `2.3.3`
+* `mui-checkbox` updated to version `2.3.3`
+* `mui-chip` updated to version `2.3.3`
+* `mui-controlled-form` updated to version `2.3.3`
+* `mui-datepicker` updated to version `2.3.3`
+* `mui-dialog` updated to version `2.3.3`
+* `mui-disclaimer` updated to version `2.3.3`
+* `mui-divider` updated to version `2.3.3`
+* `mui-drawer` updated to version `2.3.3`
+* `mui-empty-state` updated to version `2.3.3`
+* `mui-event-tracker` updated to version `2.3.3`
+* `mui-favorites` updated to version `2.3.3`
+* `mui-feedback` updated to version `2.3.3`
+* `mui-file-selector` updated to version `2.3.3`
+* `mui-form-utils` updated to version `2.3.3`
+* `mui-icon` updated to version `2.3.3`
+* `mui-layout` updated to version `2.3.3`
+* `mui-link` updated to version `2.3.3`
+* `mui-list` updated to version `2.3.3`
+* `mui-menu` updated to version `2.3.3`
+* `mui-modal` updated to version `2.3.3`
+* `mui-page-header` updated to version `2.3.3`
+* `mui-pagination` updated to version `2.3.3`
+* `mui-paper` updated to version `2.3.3`
+* `mui-popover` updated to version `2.3.3`
+* `mui-popper` updated to version `2.3.3`
+* `mui-progress` updated to version `2.3.3`
+* `mui-snackbar` updated to version `2.3.3`
+* `mui-spaces` updated to version `2.3.3`
+* `mui-stepper` updated to version `2.3.3`
+* `mui-table` updated to version `2.3.3`
+* `mui-tabs` updated to version `2.3.3`
+* `mui-textfield` updated to version `2.3.3`
+* `mui-toggle-button` updated to version `2.3.3`
+* `mui-tooltip` updated to version `2.3.3`
+* `mui-transitions` updated to version `2.3.3`
+* `mui-tree` updated to version `2.3.3`
+* `mui-typography` updated to version `2.3.3`
+* `mui-utils` updated to version `2.3.3`
+* `theme-provider` updated to version `2.3.3`
+
+### ⚠ BREAKING CHANGES
+
+* CJS builds removed, packages are ESM-only.
+
+- Convert all packages to ESM (type: module)
+- Replace Jest with Vitest for all test targets
+- Migrate ESLint to v9 flat config (eslint.config.js)
+- Build output ESM-only (removed CJS dist/index.js require path)
+- Upgrade @tanstack/react-query from v4 to v5
+- Upgrade @availity/api-axios to v13
+- Drop Node 20 support (engines: ^22.0.0 || ^24.0.0)
+- Bump React to 19.2.7, MUI to 7.3.11, TypeScript to 5.9.3
+- Simplify CI caching with built-in yarn cache action + Nx cache
+- Modernize nx.json configuration
+- Update husky hooks to use yarn directly
+- Replace lint-staged nx affected with direct eslint
+
+### Features
+
+* migrate to ESM, Vitest, and ESLint 9 flat config ([cc22bb4](https://github.com/Availity/element/commit/cc22bb4a230bc1f3b190f187c4e61249d015b25b))
+
 ## [2.3.3](https://github.com/Availity/element/compare/@availity/element@2.3.2...@availity/element@2.3.3) (2026-06-03)
 
 ### Dependency Updates

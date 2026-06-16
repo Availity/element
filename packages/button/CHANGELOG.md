@@ -2,6 +2,34 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.0](https://github.com/Availity/element/compare/@availity/mui-button@2.0.2...@availity/mui-button@3.0.0) (2026-06-16)
+
+### Dependency Updates
+
+* `mui-layout` updated to version `2.0.2`
+* `mui-icon` updated to version `2.0.2`
+
+### ⚠ BREAKING CHANGES
+
+* CJS builds removed, packages are ESM-only.
+
+- Convert all packages to ESM (type: module)
+- Replace Jest with Vitest for all test targets
+- Migrate ESLint to v9 flat config (eslint.config.js)
+- Build output ESM-only (removed CJS dist/index.js require path)
+- Upgrade @tanstack/react-query from v4 to v5
+- Upgrade @availity/api-axios to v13
+- Drop Node 20 support (engines: ^22.0.0 || ^24.0.0)
+- Bump React to 19.2.7, MUI to 7.3.11, TypeScript to 5.9.3
+- Simplify CI caching with built-in yarn cache action + Nx cache
+- Modernize nx.json configuration
+- Update husky hooks to use yarn directly
+- Replace lint-staged nx affected with direct eslint
+
+### Features
+
+* migrate to ESM, Vitest, and ESLint 9 flat config ([cc22bb4](https://github.com/Availity/element/commit/cc22bb4a230bc1f3b190f187c4e61249d015b25b))
+
 ## [2.0.2](https://github.com/Availity/element/compare/@availity/mui-button@2.0.1...@availity/mui-button@2.0.2) (2026-02-02)
 
 ### Dependency Updates
