@@ -1,0 +1,21 @@
+import{j as r}from"./iframe-DVscMr-A.js";import{T as i,a}from"./TablePagination-BFdqusNQ.js";import{T as p}from"./Table-CcqPjs-d.js";import{T as m}from"./TableRow-LNr2GDLL.js";import{T as n}from"./TableCell-qJfuHalH.js";import"./preload-helper-PPVm8Dsz.js";import"./TableCell-BwmBFP4i.js";import"./memoTheme-BWlAx59E.js";import"./styled-DQ7SGoXr.js";import"./generateUtilityClass-BtcU_pBl.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./index-sGuQEgWY.js";import"./useSlot-CcjURTXg.js";import"./mergeSlotProps-2ZD1Wa3p.js";import"./useForkRef-D_2VvoZd.js";import"./KeyboardArrowRight-AcQYhrmn.js";import"./createSvgIcon-ZxKINfNn.js";import"./SvgIcon-W7CV7YPZ.js";import"./PaginationItem-CsEU6jky.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./ButtonBase-Rik4d0uu.js";import"./useTimeout-zxUPRTwq.js";import"./TransitionGroupContext-BG8XIQuv.js";import"./useEventCallback-yUNJdQIx.js";import"./isFocusVisible-B8k4qzLc.js";import"./IconButton-Dq1PDEwT.js";import"./CircularProgress-DG2q71MX.js";import"./OutlinedInput-CY0TCNx8.js";import"./useFormControl-DkCKu5ph.js";import"./formControlState-Dq1zat_P.js";import"./utils-DoM3o7-Q.js";import"./ownerDocument-DW-IO8s5.js";import"./getActiveElement-CvEHRBc8.js";import"./debounce-Be36O1Ab.js";import"./MenuItem-B4Uje97_.js";import"./List-ct4XBHDF.js";import"./SelectFocusSourceContext-BTpAiLqB.js";import"./useSlotProps-pr2a7puG.js";import"./Popover-Cvu36zQJ.js";import"./Portal-DpqzBqCy.js";import"./useTheme-YOFO5C4H.js";import"./utils-3Br-A01V.js";import"./getReactElementRef-BdBU57AF.js";import"./mergeSlotProps-Bx8d2XL6.js";import"./Modal-CHyTrEbM.js";import"./createChainedFunction-BO_9K8Jh.js";import"./contains-DSD8CO72.js";import"./Backdrop-VQSY8Csy.js";import"./Fade-BDZpyD8d.js";import"./Paper-CQbuUb0F.js";import"./listItemIconClasses-BWL98Y3T.js";import"./listItemTextClasses-D_J2aVaO.js";import"./dividerClasses-qU9lkgJy.js";import"./Select-DvdmAFVR.js";import"./useControlled-DNBFEVpl.js";import"./index-BnViiisy.js";import"./faCircleArrowRight-B9UHrVR2.js";import"./faUser-BPZKYm75.js";import"./Pagination-d3D979B4.js";import"./index-Dslozi2v.js";import"./index-CrcoPoGw.js";import"./index-BeF-k_6p.js";import"./Tooltip-fH0F2vbV.js";import"./Button-C5YW8aoX.js";import"./index-MzdqpUr1.js";import"./Box-fBwpr0Q7.js";import"./Grid-QdwtLyJp.js";import"./isMuiElement-J0UlRgLR.js";import"./styled-BgmeM797.js";import"./Stack-D0PqJVFB.js";import"./Container-BdxHCcxG.js";import"./faCheck-1iOl5y2I.js";import"./FormLabel-BdI1jtcT.js";import"./FormHelperText-DTQfoS1X.js";import"./FormControlLabel-xHJRVqLE.js";import"./Typography-CU66rNGi.js";import"./Switch-D2p0E2hS.js";import"./SwitchBase-hRTrvGbO.js";import"./Radio-BkHQIpvX.js";import"./RadioGroup-Cfs5wAAA.js";import"./FormGroup-DpHjrUnv.js";import"./Divider-DIgW-ZID.js";import"./Table-BjWfrUNA.js";import"./TableRow-DnHa-v0p.js";import"./visuallyHidden-Dan1xhjv.js";const Ir={title:"Components/Table/TableFooter",component:i,tags:["autodocs"],args:{}},o={render:e=>r.jsx(p,{role:"presentation",children:r.jsx(i,{...e,children:r.jsx(m,{children:r.jsx(n,{children:"Footer"})})})})},t={render:e=>r.jsx(p,{children:r.jsx(i,{...e,children:r.jsx(m,{children:r.jsx(a,{count:50,page:0,rowsPerPage:10,rowsPerPageOptions:[5,10,25,{value:-1,label:"all"}],onPageChange:()=>null})})})}),args:{}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  render: (args: TableFooterProps) => <Table role="presentation">
+      <TableFooter {...args}>
+        <TableRow>
+          <TableCell>Footer</TableCell>
+        </TableRow>
+      </TableFooter>
+    </Table>
+}`,...o.parameters?.docs?.source}}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  render: (args: TableFooterProps) => <Table>
+      <TableFooter {...args}>
+        <TableRow>
+          <TablePagination count={50} page={0} rowsPerPage={10} rowsPerPageOptions={[5, 10, 25, {
+          value: -1,
+          label: 'all'
+        }]} onPageChange={() => null} />
+        </TableRow>
+      </TableFooter>
+    </Table>,
+  args: {}
+}`,...t.parameters?.docs?.source}}};const Jr=["_TableFooter","_Pagination"];export{t as _Pagination,o as _TableFooter,Jr as __namedExportsOrder,Ir as default};
