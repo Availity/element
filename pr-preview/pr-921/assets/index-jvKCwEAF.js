@@ -1,1 +1,0 @@
-import{r as a,j as s}from"./iframe-D9ubqhJK.js";import{T as t}from"./Typography-CmwrtNIv.js";var e=a.forwardRef(({children:r,...o},p)=>s.jsx(t,{...o,ref:p,children:r}));e.__docgenInfo={description:"",methods:[],displayName:"Typography"};export{e as T};
