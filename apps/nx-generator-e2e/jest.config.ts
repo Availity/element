@@ -1,7 +1,5 @@
-/* eslint-disable */
 export default {
   displayName: 'nx-generator-e2e',
-  preset: '../../jest.preset.js',
   globals: {},
   transform: {
     '^.+\\.[tj]s$': [

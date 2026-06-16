@@ -28,11 +28,9 @@ export const CloseButtonSlot = styled(CloseButton, {
   }
 });
 
-export const Dialog = ({ children, closeButton = true, onClose, ...rest }: DialogProps): React.JSX.Element => {
-  return (
+export const Dialog = ({ children, closeButton = true, onClose, ...rest }: DialogProps): React.JSX.Element => (
     <MuiDialog onClose={onClose} {...rest}>
       {closeButton ? <CloseButtonSlot onClick={onClose as IconButtonProps['onClick']}/> : null}
       {children}
     </MuiDialog>
   );
-};

@@ -118,7 +118,7 @@ export const TextField = forwardRef<HTMLDivElement | HTMLInputElement, TextField
         }),
         inputLabel: resolvedProps({
           component: FormLabel,
-          helpTopicId: helpTopicId,
+          helpTopicId,
           required,
           shrink: true,
           ...InputLabelProps,

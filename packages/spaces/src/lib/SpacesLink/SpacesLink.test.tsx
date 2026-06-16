@@ -1,13 +1,13 @@
 import { render, waitFor, cleanup } from '@testing-library/react';
 import dayjs from 'dayjs';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { FileIcon } from '@availity/mui-icon';
 import { SpacesLink } from './SpacesLink';
 import { Spaces } from '../Spaces';
-import { FileIcon } from '@availity/mui-icon';
 
 describe('SpacesLink', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     cleanup();
   });
 

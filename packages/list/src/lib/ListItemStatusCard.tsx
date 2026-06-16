@@ -52,7 +52,7 @@ const StatusAccent = styled('div', {
  * Renders as an `<li>` by default. */
 export const ListItemStatusCard = forwardRef<HTMLLIElement, ListItemStatusCardProps>((props, ref) => {
   const { alignItems = "flex-start", children, color, ...rest } = props;
-  const themeProps = useThemeProps({ props: props, name: 'AvListItemStatusCard' });
+  const themeProps = useThemeProps({ props, name: 'AvListItemStatusCard' });
   const ownerState = { ...themeProps, color };
   return (
     <ListItemStatusCardSlot alignItems={alignItems} divider={false} ownerState={ownerState} {...rest} ref={ref}>

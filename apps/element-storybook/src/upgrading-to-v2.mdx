@@ -46,9 +46,9 @@ We are cleaning up our exports to no longer include internal utils/components
 - Form Utils: `InputPropOverrides`, `SearchByContainer`, `SelectDivider`, `SelectExpandIcon`, `SelectPropOverrides`, `SelectAccessibilityOverrides`
 - Spaces: `INITIAL_STATE`
 
-#### Jest Testing in `@availity/workflow` Apps
+#### Testing in `@availity/workflow` Apps
 
-Depending on your configuration you may need to add `@availity` and `axios` to the ignore transform list
+Element v2 packages are now published as ESM-only. If your test runner does not support ESM natively, you may need to transform `@availity` packages:
 
 ```js
 // workflow.js
@@ -58,6 +58,8 @@ Depending on your configuration you may need to add `@availity` and `axios` to t
     ],
   }
 ```
+
+If using Vitest, no additional configuration is needed.
 
 ### Non-Impact Changes
 

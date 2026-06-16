@@ -1,10 +1,9 @@
-export const NoSearchFound = () => {
-  return (
+export const NoSearchFound = () => (
     <svg
       version="1.1"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="https://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
       viewBox="0 0 144 144"
@@ -262,4 +261,3 @@ export const NoSearchFound = () => {
       <line className="st72" x1="78.5" y1="78.4" x2="90.2" y2="90.1" />
     </svg>
   );
-};

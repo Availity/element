@@ -4,6 +4,4 @@ export interface CardContentProps extends MuiCardContentProps {
   children?: React.ReactNode;
 }
 
-export const CardContent = ({ children, ...rest }: CardContentProps): React.JSX.Element => {
-  return <MuiCardContent {...rest}>{children}</MuiCardContent>;
-};
+export const CardContent = ({ children, ...rest }: CardContentProps): React.JSX.Element => <MuiCardContent {...rest}>{children}</MuiCardContent>;

@@ -24,11 +24,9 @@ export interface TypographyProps extends MuiTypographyProps {
 }
 
 export const Typography = forwardRef<HTMLHeadElement | HTMLParagraphElement | HTMLSpanElement, TypographyProps>(
-  ({ children, ...rest }, ref) => {
-    return (
+  ({ children, ...rest }, ref) => (
       <MuiTypography {...rest} ref={ref}>
         {children}
       </MuiTypography>
-    );
-  }
+    )
 );

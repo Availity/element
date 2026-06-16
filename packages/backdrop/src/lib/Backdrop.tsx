@@ -4,6 +4,4 @@ export interface BackdropProps extends MuiBackdropProps {
   children?: React.ReactNode;
 }
 
-export const Backdrop = ({ children, ...rest }: BackdropProps): React.JSX.Element => {
-  return <MuiBackdrop {...rest}>{children}</MuiBackdrop>;
-};
+export const Backdrop = ({ children, ...rest }: BackdropProps): React.JSX.Element => <MuiBackdrop {...rest}>{children}</MuiBackdrop>;

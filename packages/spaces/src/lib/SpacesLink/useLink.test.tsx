@@ -1,14 +1,14 @@
 import { waitFor, cleanup, render, fireEvent, waitForElementToBeRemoved } from '@testing-library/react';
 import nativeForm from '@availity/native-form';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { server } from '@availity/mock/src/lib/server';
 import { Spaces } from '../Spaces';
 import { SpacesLink } from './SpacesLink';
 import type { Space } from '../spaces-types';
 
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import { server } from '@availity/mock/src/lib/server';
+ 
 
-jest.mock('@availity/native-form');
+vi.mock('@availity/native-form');
 
 const buildSpacesLink = (space: Space, linkAttributes: Record<any, any>) => {
   const queryClient = new QueryClient();
@@ -37,14 +37,14 @@ describe('useLink', () => {
     server.listen();
   });
   beforeEach(() => {
-    Object.defineProperty(window, 'open', { value: jest.fn() });
+    Object.defineProperty(window, 'open', { value: vi.fn() });
   });
   afterEach(() => {
     Object.defineProperty(document, 'referrer', {
       writable: true,
       value: originalDocumentReferrer,
     });
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     cleanup();
     server.resetHandlers();
 

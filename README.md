@@ -42,15 +42,17 @@ const App = () => {
 
 ## Development
 
-The currently recommended version of node to use when developing in this repo is: `v20`. We recommend using [fnm](https://github.com/Schniz/fnm#readme) to have your node version automatically changed when you `cd` into the repo.
+The currently recommended version of node to use when developing in this repo is: `v24`. We recommend using [fnm](https://github.com/Schniz/fnm#readme) to have your node version automatically changed when you `cd` into the repo.
 
-We use `yarn berry` (aka yarn v3) to manage dependencies. Install `yarn` globally:
+> **Note:** This is an ESM-only monorepo. All packages are published as ES modules.
+
+We use `yarn berry` (aka yarn v4) to manage dependencies. Install `yarn` globally:
 
 ```sh
 npm i -g yarn
 ```
 
-> This command will install yarn v1. When we run the next command then yarn v3 will be added.
+> This command will install yarn v1. When we run the next command then yarn v4 will be added.
 
 Then install the dependencies:
 

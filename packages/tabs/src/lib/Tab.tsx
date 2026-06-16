@@ -11,6 +11,4 @@ export type TabProps = Omit<
   | 'TouchRippleProps'
 >;
 
-export const Tab = (props: TabProps): React.JSX.Element => {
-  return <MuiTab {...props} disableRipple disableFocusRipple disableTouchRipple />;
-};
+export const Tab = (props: TabProps): React.JSX.Element => <MuiTab {...props} disableRipple disableFocusRipple disableTouchRipple />;

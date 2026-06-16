@@ -1,15 +1,12 @@
-import { avProvidersApi, ApiConfig } from '@availity/api-axios';
+import { avProvidersApi, ApiConfig, type ProvidersResponse, type Provider as BaseProvider } from '@availity/api-axios';
 import type { ChipTypeMap } from '@mui/material/Chip';
 
 import { AsyncAutocomplete, AsyncAutocompleteProps } from './AsyncAutocomplete';
 import type { Optional } from './util';
 
-export type Provider = {
-  id: string;
+export interface Provider extends BaseProvider {
   businessName: string;
   uiDisplayName: string;
-  lastName?: string;
-  firstName?: string;
   payerAssignedIdentifiers?: { payerId: string; identifier: string }[];
   atypical: boolean;
   npi: string;
@@ -31,18 +28,18 @@ export type Provider = {
     code: string;
     value: string;
   };
-};
+}
 
 export const fetchProviders = async (
   customerId: string,
   config: ApiConfig
 ): Promise<{ options: Provider[]; hasMore: boolean; offset: number }> => {
-  const resp = await avProvidersApi.getProviders(customerId, config);
+  const resp = await avProvidersApi.getProviders<ProvidersResponse>(customerId, config);
 
   return {
     options: resp.data.providers as Provider[],
-    hasMore: config.params.offset + config.params.limit < resp.data.totalCount,
-    offset: config.params.offset,
+    hasMore: (config.params!.offset as number) + (config.params!.limit as number) < resp.data.totalCount,
+    offset: config.params!.offset as number,
   };
 };
 

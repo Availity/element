@@ -17,6 +17,4 @@ const overrideProps = {
   disableRipple: true,
 };
 
-export const ButtonGroup = (props: ButtonGroupProps) => {
-  return <MUIButtonGroup {...props} {...overrideProps} variant="contained" color="tertiary" />;
-};
+export const ButtonGroup = (props: ButtonGroupProps) => <MUIButtonGroup {...props} {...overrideProps} variant="contained" color="tertiary" />;

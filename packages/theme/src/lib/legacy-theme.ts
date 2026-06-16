@@ -1343,8 +1343,7 @@ export const legacyTheme = {
         size: 'small',
       },
       styleOverrides: {
-        root: ({ ownerState }: { ownerState: { fullWidth: boolean | undefined } }) => {
-          return {
+        root: ({ ownerState }: { ownerState: { fullWidth: boolean | undefined } }) => ({
             boxSizing: 'border-box',
             '&.MuiInputBase-root, &.MuiInputBase-root.MuiAutocomplete-inputRoot': {
               width: ownerState.fullWidth ? '100%' : '220px',
@@ -1376,8 +1375,7 @@ export const legacyTheme = {
               fontSize: '.875rem',
               padding: '3px 6px',
             },
-          };
-        },
+          }),
         multiline: {
           padding: 0,
         },

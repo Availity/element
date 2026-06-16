@@ -19,8 +19,7 @@ export const ControlledTextField = <Output = string,>({
   value,
   transform,
   ...rest
-}: ControlledTextFieldProps<Output>) => {
-  return (
+}: ControlledTextFieldProps<Output>) => (
     <Controller
       name={name}
       defaultValue={defaultValue}
@@ -64,4 +63,3 @@ export const ControlledTextField = <Output = string,>({
       )}
     />
   );
-};

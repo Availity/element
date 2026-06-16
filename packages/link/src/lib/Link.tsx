@@ -18,9 +18,7 @@ function isAbsoluteUrl(url: string) {
 }
 
 // if absolute or loadApp is disabled, return url. otherwise loadappify the url
-const getUrl = (url = '') => {
-  return `/public/apps/home/#!/loadApp?appUrl=${encodeURIComponent(url)}`;
-};
+const getUrl = (url = '') => `/public/apps/home/#!/loadApp?appUrl=${encodeURIComponent(url)}`;
 
 // takes href and transforms it so that we can compare hostnames and other properties
 const getLocation = (href: string) => {

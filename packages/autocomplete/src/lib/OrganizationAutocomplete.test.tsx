@@ -1,5 +1,4 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-/* eslint-disable @nx/enforce-module-boundaries */
 import { server } from '@availity/mock/src/lib/server';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
@@ -17,7 +16,7 @@ describe('OrganizationAutocomplete', () => {
     // Remove any handlers you may have added
     // in individual tests (runtime handlers).
     server.resetHandlers();
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
     client.clear();
   });
 

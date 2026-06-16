@@ -5,6 +5,4 @@ export type SnackbarProps = Omit<MuiSnackbarProps, 'action' | 'ContentProps' | '
 
 export type SnackbarCloseReason = MuiSnackbarCloseReason;
 
-export const Snackbar = (props: SnackbarProps): React.JSX.Element => {
-  return <MuiSnackbar {...props}/>;
-};
+export const Snackbar = (props: SnackbarProps): React.JSX.Element => <MuiSnackbar {...props}/>;

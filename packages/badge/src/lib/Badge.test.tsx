@@ -1,13 +1,9 @@
 import { render } from '@testing-library/react';
 import { Badge } from './Badge';
 
-const findBadgeRoot = (container: any) => {
-  return container.firstChild;
-};
+const findBadgeRoot = (container: any) => container.firstChild;
 
-const findBadge = (container: any) => {
-  return findBadgeRoot(container)?.querySelector('span');
-};
+const findBadge = (container: any) => findBadgeRoot(container)?.querySelector('span');
 
 describe('Badge', () => {
   test('should render successfully', () => {

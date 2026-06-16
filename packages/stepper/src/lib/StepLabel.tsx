@@ -1,7 +1,7 @@
 import MuiStepLabel, { StepLabelProps as MuiStepLabelProps } from '@mui/material/StepLabel';
 
-import { StepIcon, StepIconProps } from './StepIcon';
 import { Typography } from '@availity/mui-typography';
+import { StepIcon, StepIconProps } from './StepIcon';
 
 export type StepLabelProps = Pick<StepIconProps, 'warning'> & MuiStepLabelProps;
 

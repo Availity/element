@@ -4,6 +4,4 @@ export interface StackProps extends MuiStackProps {
   children?: React.ReactNode;
 }
 
-export const Stack = ({ children, ...rest }: StackProps): React.JSX.Element => {
-  return <MuiStack {...rest}>{children}</MuiStack>;
-};
+export const Stack = ({ children, ...rest }: StackProps): React.JSX.Element => <MuiStack {...rest}>{children}</MuiStack>;

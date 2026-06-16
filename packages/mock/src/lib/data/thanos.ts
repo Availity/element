@@ -152,9 +152,7 @@ const configurations: any[] = [
 ];
 
 const buildLinkUrl = (configuration: any, isLocal: boolean) => {
-  const addElementPrefix = (url: string) => {
-    return !isLocal ? (url.startsWith('/element') ? url : `/element${url}`) : url;
-  };
+  const addElementPrefix = (url: string) => !isLocal ? (url.startsWith('/element') ? url : `/element${url}`) : url;
 
   if (configuration.url) {
     configuration.url = addElementPrefix(configuration.url);

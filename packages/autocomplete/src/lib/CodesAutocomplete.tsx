@@ -1,4 +1,4 @@
-import { avCodesApi, ApiConfig } from '@availity/api-axios';
+import { avCodesApi, ApiConfig, type CodesResponse } from '@availity/api-axios';
 import type { ChipTypeMap } from '@mui/material/Chip';
 
 import { AsyncAutocomplete, AsyncAutocompleteProps } from './AsyncAutocomplete';
@@ -10,12 +10,12 @@ export type Code = {
 };
 
 export const fetchCodes = async (config: ApiConfig) => {
-  const resp = await avCodesApi.query(config);
+  const resp = await avCodesApi.query<CodesResponse>(config);
 
   return {
-    options: resp.data.codes as Code[],
-    hasMore: config.params.offset + config.params.limit < resp.data.totalCount,
-    offset: config.params.offset,
+    options: resp.data.codes as unknown as Code[],
+    hasMore: (config.params!.offset as number) + (config.params!.limit as number) < resp.data.totalCount,
+    offset: config.params!.offset as number,
   };
 };
 

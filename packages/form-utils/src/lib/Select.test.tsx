@@ -3,16 +3,16 @@ import { Select } from './Select';
 
 describe('Select', () => {
   test('should render successfully', () => {
-    const { getByTestId } = render(<Select data-testid="test-select"></Select>);
+    const { getByTestId } = render(<Select data-testid="test-select" />);
     expect(getByTestId('test-select')).toBeTruthy();
   });
   test('aria-controls should be empty string when not open', () => {
-    const { getByRole } = render(<Select value=""></Select>);
+    const { getByRole } = render(<Select value="" />);
     const combobox = getByRole('combobox');
     expect(combobox.getAttribute('aria-controls')).toEqual('');
   });
   test('aria-controls should not be empty when open', () => {
-    const { getByRole } = render(<Select value="" open></Select>);
+    const { getByRole } = render(<Select value="" open />);
     const combobox = getByRole('combobox', { hidden: true });
     const listbox = getByRole('listbox');
     expect(combobox.getAttribute('aria-controls')).not.toEqual('');

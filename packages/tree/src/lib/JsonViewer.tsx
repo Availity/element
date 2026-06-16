@@ -6,18 +6,13 @@ export interface JsonViewerProps extends Omit<TreeViewProps, 'children'> {
   data: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const isPrimitive = (value: unknown): value is string | number | boolean => {
-  return ['string', 'number', 'boolean'].includes(typeof value);
-};
+const isPrimitive = (value: unknown): value is string | number | boolean => ['string', 'number', 'boolean'].includes(typeof value);
 
-const isObject = (value: unknown): value is Record<string, unknown> => {
-  return !!value && typeof value === 'object';
-};
+const isObject = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object';
 
-const validateId = (id: string) => id.replace(/[^.\w:-]+/gi, '');
+const validateId = (id: string) => id.replaceAll(/[^.\w:-]+/gi, '');
 
-const getDetails = ({ data }: JsonViewerProps, parentKey?: string): (React.JSX.Element | null)[] => {
-  return Object.entries(data).map(([key, value], index) => {
+const getDetails = ({ data }: JsonViewerProps, parentKey?: string): (React.JSX.Element | null)[] => Object.entries(data).map(([key, value], index) => {
     const id = validateId(parentKey ? `${parentKey}.${index}.${key}` : `${index}.${key}`);
 
     if (isPrimitive(value)) {
@@ -36,7 +31,6 @@ const getDetails = ({ data }: JsonViewerProps, parentKey?: string): (React.JSX.E
 
     return null;
   });
-};
 
 export const JsonViewer = ({ data, ...rest }: JsonViewerProps): React.JSX.Element => {
   const details = getDetails({ data });

@@ -49,7 +49,7 @@ const fontSize = (size = DEFAULT_SIZE) => {
   const [, number, unit] = match;
 
   // Parse the number, halve it, and return the new size string
-  const halvedNumber = parseFloat(number) / 2;
+  const halvedNumber = Number.parseFloat(number) / 2;
   return `${halvedNumber}${unit}`;
 }
 
@@ -70,12 +70,12 @@ const validateSize = (size: string) => {
   }
 
   const [, number, unit] = match;
-  const value = parseFloat(number);
+  const value = Number.parseFloat(number);
 
   // Validate the size based on the unit
   if (unit === 'rem' && value >= 1.5) {
     return true;
-  } else if (unit === 'px' && value >= 24) {
+  } if (unit === 'px' && value >= 24) {
     return true;
   }
 

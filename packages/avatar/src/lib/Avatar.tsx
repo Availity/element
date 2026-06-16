@@ -19,7 +19,7 @@ const sizeStyling = {
 
 const getInitials = (name: string, size: 'xs' | 's' | 'm' | 'l' | 'xl'): string => {
   if (name.split(' ').length > 1 && size !== 'xs') {
-    return `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`;
+    return `${name.split(' ', 1)[0][0]}${name.split(' ', 2)[1][0]}`;
   }
 
   return name.charAt(0);
@@ -41,7 +41,7 @@ export const Avatar = ({ children, size = 'xl', src, sx, ...rest }: AvatarProps)
       if (src) {
         setAvatar(src);
       } else {
-        const resp = await avSettingsApi.getApplication('AVATAR');
+        const resp = await avSettingsApi.getApplication<{ settings: { avatar: string }[] }>('AVATAR');
 
         const avi = resp.data.settings[0].avatar;
 
@@ -49,8 +49,10 @@ export const Avatar = ({ children, size = 'xl', src, sx, ...rest }: AvatarProps)
       }
     };
 
-    fetchAvatar();
-  }, [src]);
+    if (!children) {
+      fetchAvatar();
+    }
+  }, [src, children]);
 
   return (
     <MuiAvatar

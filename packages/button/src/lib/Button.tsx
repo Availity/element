@@ -39,6 +39,4 @@ const overrideProps = {
   disableTouchRipple: true,
 };
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  return <MUIButton {...props} {...overrideProps} ref={ref} />;
-});
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => <MUIButton {...props} {...overrideProps} ref={ref} />);

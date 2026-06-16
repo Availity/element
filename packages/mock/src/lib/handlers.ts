@@ -31,7 +31,7 @@ import codes from './data/codes.json';
 const parsers: Record<string, (value: unknown) => string | number | boolean> = {
   dropdown: (value: unknown) => value === 'true',
   limit: Number,
-  offset: (value: unknown) => Number(value),
+  offset: Number,
 };
 
 const defaultDelay = process.env.NODE_ENV === 'test' ? 0 : 1000; // 1 sec
@@ -60,7 +60,7 @@ export const handlers = [
   http.get(routes.REGIONS, async (whatup) => {
     const { request } = whatup;
     // Check if the request wants one region or a list
-    const { currentlySelected } = parse(request.url.split('?')[1], { ignoreQueryPrefix: true });
+    const { currentlySelected } = parse(request.url.split('?', 2)[1], { ignoreQueryPrefix: true });
 
     await delayRequest();
 
@@ -74,7 +74,7 @@ export const handlers = [
   // AXI User Permissions
   http.get(routes.AXI_USER_PERMISSIONS, async (whatup) => {
     const { request } = whatup;
-    const params = parse(request.url.split('?')[1], { ignoreQueryPrefix: true });
+    const params = parse(request.url.split('?', 2)[1], { ignoreQueryPrefix: true });
     const permissionIds = Array.isArray(params.permissionId) ? params.permissionId : [params.permissionId];
     // Only include permissions that were requested
     const response = {
@@ -91,12 +91,12 @@ export const handlers = [
   // Settings API
   http.get(routes.SETTINGS, async (context) => {
     const { request } = context;
-    const params = parse(request.url.split('?')[1], { ignoreQueryPrefix: true });
+    const params = parse(request.url.split('?', 2)[1], { ignoreQueryPrefix: true });
 
     if (params.applicationId === 'Gateway-AvNavigation') {
       await delay(defaultDelay);
       return HttpResponse.json(settings, { status: 200 });
-    } else if (params.applicationId === 'AVATAR') {
+    } if (params.applicationId === 'AVATAR') {
       await delay(defaultDelay);
       return HttpResponse.json(avatarSettings, { status: 200 });
     }
@@ -105,7 +105,7 @@ export const handlers = [
     const body = await context.request.json();
 
     await delay(defaultDelay);
-    return HttpResponse.json(body, { status: 201 });
+    return HttpResponse.json({ settings: [body] }, { status: 201 });
   }),
 
   // Codes
@@ -173,13 +173,11 @@ export const handlers = [
   }),
 
   // User
-  http.get(routes.USERS, () => {
-    return HttpResponse.json(user);
-  }),
+  http.get(routes.USERS, () => HttpResponse.json(user)),
 
   // Organizations
   http.post(routes.ORGANIZATIONS, ({ request }) => {
-    const params = new URLSearchParams(request.url.split('?')[1]);
+    const params = new URLSearchParams(request.url.split('?', 2)[1]);
     const parsedParams: Record<string, string> = {};
     for (const [key, value] of params.entries()) {
       parsedParams[key] = value;
@@ -207,7 +205,7 @@ export const handlers = [
     return HttpResponse.json(organizations);
   }),
   http.get(routes.ORGANIZATIONS, async ({ request }) => {
-    const params = new URLSearchParams(request.url.split('?')[1]);
+    const params = new URLSearchParams(request.url.split('?', 2)[1]);
     const parsedParams: Record<string, unknown> = {};
     for (const [key, value] of params.entries()) {
       parsedParams[key] = parsers[key]?.(value) ?? value;
@@ -216,7 +214,7 @@ export const handlers = [
     await delayRequest();
 
     if (typeof parsedParams.offset !== 'number' || typeof parsedParams.limit !== 'number') {
-      throw new Error('offset and limit not provided');
+      throw new TypeError('offset and limit not provided');
     }
 
     const total = 50;
@@ -232,14 +230,14 @@ export const handlers = [
   http.get(routes.PROVIDERS, async ({ request }) => {
     await delayRequest();
 
-    const params = new URLSearchParams(request.url.split('?')[1]);
+    const params = new URLSearchParams(request.url.split('?', 2)[1]);
     const parsedParams: Record<string, unknown> = {};
     for (const [key, value] of params.entries()) {
       parsedParams[key] = parsers[key]?.(value) ?? value;
     }
 
     if (typeof parsedParams.offset !== 'number' || typeof parsedParams.limit !== 'number') {
-      throw new Error('offset and limit not provided');
+      throw new TypeError('offset and limit not provided');
     }
 
     const total = 50;

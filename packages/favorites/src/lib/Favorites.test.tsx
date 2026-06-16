@@ -7,7 +7,7 @@ import avMessages from '@availity/message-core';
 import { FavoritesProvider } from './Favorites';
 import { FavoriteHeart } from './FavoriteHeart';
 
-jest.mock('@availity/message-core');
+vi.mock('@availity/message-core');
 
 const domain = () => {
   if (window.location.origin) {
@@ -22,7 +22,7 @@ const domain = () => {
   return '*';
 };
 
-avMessages.subscribe = jest.fn((event, fn) => {
+avMessages.subscribe = vi.fn((event, fn) => {
   window.addEventListener('message', (event) => {
     if (!event || !event.data) {
       // check origin as trusted domain
@@ -43,10 +43,10 @@ avMessages.subscribe = jest.fn((event, fn) => {
 
     fn(data);
   });
-  return () => jest.fn();
+  return () => vi.fn();
 });
 
-avMessages.send = jest.fn((payload, target) => {
+avMessages.send = vi.fn((payload, target) => {
   try {
     const message = typeof payload === 'string' ? payload : JSON.stringify(payload);
     target?.postMessage(message, domain());
@@ -68,7 +68,7 @@ describe('Favorites', () => {
     // Remove any handlers you may have added
     // in individual tests (runtime handlers).
     server.resetHandlers();
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     queryClient.clear();
   });
 

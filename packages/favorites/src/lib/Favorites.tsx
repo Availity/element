@@ -5,7 +5,7 @@ import type { Favorite } from './utils';
 import { useFavoritesQuery, useSubmitFavorites, sendUpdateMessage, openMaxModal } from './utils';
 import { AV_INTERNAL_GLOBALS, MAX_FAVORITES, NAV_APP_ID } from './constants';
 
-type StatusUnion = 'idle' | 'error' | 'loading' | 'reloading' | 'success';
+type StatusUnion = 'idle' | 'error' | 'loading' | 'pending' | 'reloading' | 'success';
 
 type FavoritesContextType = {
   favorites?: Favorite[];
@@ -40,7 +40,7 @@ export const FavoritesProvider = ({
   const queryClient = useQueryClient();
   const { data: favoritesData, status: favoritesDataStatus } = useFavoritesQuery(!settingsStatus, applicationId);
   const favorites = settingsStatus ? settingsFavorites : favoritesData;
-  const queryStatus = settingsStatus ? settingsStatus : favoritesDataStatus;
+  const queryStatus = settingsStatus || favoritesDataStatus;
 
   const { submitFavorites, status: mutationStatus } = useSubmitFavorites({
     onMutationStart(targetFavoriteId) {
@@ -54,8 +54,8 @@ export const FavoritesProvider = ({
         const unsubscribeFavoritesChanged = avMessages.subscribe(
           AV_INTERNAL_GLOBALS.FAVORITES_CHANGED,
           (data) => {
-            if (data?.favorites) {
-              queryClient.setQueryData(['favorites'], data?.favorites);
+            if (typeof data === 'object' && data?.favorites) {
+              queryClient.setQueryData(['favorites'], data.favorites);
             }
           },
           { ignoreSameWindow: false }
@@ -64,8 +64,8 @@ export const FavoritesProvider = ({
         const unsubscribeFavoritesUpdate = avMessages.subscribe(
           AV_INTERNAL_GLOBALS.FAVORITES_UPDATE,
           (data) => {
-            if (data?.favorites) {
-              queryClient.setQueryData(['favorites'], data?.favorites);
+            if (typeof data === 'object' && data?.favorites) {
+              queryClient.setQueryData(['favorites'], data.favorites);
             }
           },
           { ignoreSameWindow: false }
@@ -146,7 +146,7 @@ export const FavoritesProvider = ({
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
+ 
 const noOp = () => { };
 
 type MergedStatusUnion = 'initLoading' | 'reloading' | 'error' | 'success';

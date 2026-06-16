@@ -8,23 +8,20 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "eslintConfig": ".eslintrc.json",
         "silent": false,
         "fix": false,
         "cache": true,
         "cacheLocation": "./node_modules/.cache/<%= fileName %>/.eslintcache",
         "maxWarnings": -1,
         "quiet": false,
-        "noEslintrc": false,
         "hasTypeAwareRules": true,
         "cacheStrategy": "metadata"
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/<%= fileName %>"],
+      "executor": "nx:run-commands",
       "options": {
-        "jestConfig": "packages/<%= fileName %>/jest.config.js"
+        "command": "vitest run packages/<%= fileName %>"
       }
     },
     "version": {

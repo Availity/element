@@ -22,7 +22,7 @@ describe('Dialog', () => {
   });
 
   test('calls onClose when close button clicked', () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
     const { getByRole } = render(
       <Dialog open onClose={handleClose}/>
     );

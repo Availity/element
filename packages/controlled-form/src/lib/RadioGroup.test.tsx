@@ -3,7 +3,7 @@ import { FormControlLabel, Radio } from '@availity/mui-form-utils';
 import { ControlledRadioGroup } from './RadioGroup';
 import { TestForm } from './UtilComponents';
 
-const onSubmit = jest.fn();
+const onSubmit = vi.fn();
 
 describe('ControlledRadioGroup', () => {
   test('should set the value and submit the form data', async () => {

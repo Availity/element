@@ -9,6 +9,4 @@ export type PaperProps = Omit<MuiPaperProps, 'classes' | 'style' | 'className' |
   variant?: 'elevation' | 'outlined';
 };
 
-export const Paper = forwardRef<HTMLDivElement, PaperProps>((props, ref) => {
-  return <MuiPaper {...props} ref={ref} />;
-});
+export const Paper = forwardRef<HTMLDivElement, PaperProps>((props, ref) => <MuiPaper {...props} ref={ref} />);

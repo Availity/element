@@ -65,4 +65,4 @@ export const useResourcePagination = <TData,>({
   getResult,
   resource,
 }: LoadPageProps<TData>) =>
-  useQuery(['resource', page], () => loadPage({ page, itemsPerPage, parameters, getResult, resource }));
+  useQuery({ queryKey: ['resource', page], queryFn: () => loadPage({ page, itemsPerPage, parameters, getResult, resource }) });

@@ -17,7 +17,7 @@ describe('Dropzone', () => {
         <Dropzone2
           name="test"
           maxSize={1000}
-          setTotalSize={jest.fn()}
+          setTotalSize={vi.fn()}
           uploadOptions={{ customerId: '123', clientId: 'test', bucketId: 'abc' }}
         />
       </TestForm>

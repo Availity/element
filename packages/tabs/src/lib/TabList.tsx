@@ -1,6 +1,6 @@
 import { default as MuiTabList, TabListProps as MuiTabListProps } from '@mui/lab/TabList';
-import { TabsProps, secondaryTabStyling } from './Tabs';
 import { styled } from '@mui/material/styles';
+import { TabsProps, secondaryTabStyling } from './Tabs';
 
 export type TabListProps = Omit<
     MuiTabListProps,

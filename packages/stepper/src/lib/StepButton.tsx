@@ -5,10 +5,8 @@ export type StepButtonProps = Omit<
   'centerRipple' | 'disableRipple' | 'disableTouchRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef'
 >;
 
-export const StepButton = ({ children, ...rest }: StepButtonProps): React.JSX.Element => {
-  return (
+export const StepButton = ({ children, ...rest }: StepButtonProps): React.JSX.Element => (
     <MuiStepButton {...rest} disableRipple disableTouchRipple>
       {children}
     </MuiStepButton>
   );
-};

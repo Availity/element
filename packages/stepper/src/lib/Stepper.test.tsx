@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
+ 
 import { render, screen } from '@testing-library/react';
 
 import { Stepper } from './Stepper';
@@ -7,7 +7,9 @@ import { StepLabel } from './StepLabel';
 
 class ResizeObserver {
   observe() {}
+
   unobserve() {}
+
   disconnect() {}
 }
 

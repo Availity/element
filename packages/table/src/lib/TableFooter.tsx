@@ -6,6 +6,4 @@ export type TableFooterProps = {
   component?: ElementType<TableCellBaseProps>;
 } & MuiTableFooterProps;
 
-export const TableFooter = (props: TableFooterProps): React.JSX.Element => {
-  return <MuiTableFooter {...props} />;
-};
+export const TableFooter = (props: TableFooterProps): React.JSX.Element => <MuiTableFooter {...props} />;

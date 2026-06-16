@@ -19,21 +19,15 @@ export type MenuProps = Omit<
   | 'TransitionProps'
 >;
 
-export const Menu = (props: MenuProps): React.JSX.Element => {
-  return <MuiMenu {...props} />;
-};
+export const Menu = (props: MenuProps): React.JSX.Element => <MuiMenu {...props} />;
 
 export type MenuItemProps = Omit<
   MuiMenuItemProps,
   'centerRipple' | 'disableRipple' | 'disableTouchRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef'
 >;
 
-export const MenuItem = (props: MenuItemProps) => {
-  return <MuiMenuItem {...props} disableRipple disableTouchRipple />;
-};
+export const MenuItem = (props: MenuItemProps) => <MuiMenuItem {...props} disableRipple disableTouchRipple />;
 
 export type MenuListProps = MuiMenuListProps;
 
-export const MenuList = (props: MenuListProps) => {
-  return <MuiMenuList {...props} />;
-};
+export const MenuList = (props: MenuListProps) => <MuiMenuList {...props} />;

@@ -4,6 +4,4 @@ export interface ContainerProps extends MuiContainerProps {
   children?: React.ReactNode;
 }
 
-export const Container = ({ children, ...rest }: ContainerProps): React.JSX.Element => {
-  return <MuiContainer {...rest}>{children}</MuiContainer>;
-};
+export const Container = ({ children, ...rest }: ContainerProps): React.JSX.Element => <MuiContainer {...rest}>{children}</MuiContainer>;

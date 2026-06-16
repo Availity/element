@@ -3,9 +3,7 @@ import type { KeyboardEvent, KeyboardEventHandler, ReactNode } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import { styled } from '@mui/material/styles';
 
-const Loader = () => {
-  return <CircularProgress aria-label="Loading" variant="indeterminate" />;
-};
+const Loader = () => <CircularProgress aria-label="Loading" variant="indeterminate" />;
 
 const Block = styled('div')({
   position: 'relative',

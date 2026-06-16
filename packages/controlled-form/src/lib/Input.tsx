@@ -18,8 +18,7 @@ export const ControlledInput = <Output = string,>({
   value,
   transform,
   ...rest
-}: ControlledInputProps<Output>) => {
-  return (
+}: ControlledInputProps<Output>) => (
     <Controller
       name={name}
       defaultValue={defaultValue}
@@ -44,4 +43,3 @@ export const ControlledInput = <Output = string,>({
       )}
     />
   );
-};

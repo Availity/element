@@ -1,6 +1,5 @@
 import { forwardRef } from 'react';
 import MuiInput, { OutlinedInputProps as MuiInputProps } from '@mui/material/OutlinedInput';
-import InputAdornment, { InputAdornmentProps } from '@mui/material/InputAdornment';
 
 export type InputProps = Omit<
   MuiInputProps,
@@ -24,5 +23,7 @@ export const Input = forwardRef((props: InputProps, ref) => {
   );
 });
 
-export { InputAdornment };
-export type { InputAdornmentProps };
+
+
+
+export {default as InputAdornment, type InputAdornmentProps} from '@mui/material/InputAdornment';

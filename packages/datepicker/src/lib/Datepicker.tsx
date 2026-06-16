@@ -1,12 +1,8 @@
-import { TextField, TextFieldProps } from '@availity/mui-textfield';
 import { CalendarDaysIcon } from '@availity/mui-icon';
 import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } from '@mui/x-date-pickers/DatePicker';
 import type { Dayjs } from 'dayjs';
-import type {} from '@mui/x-date-pickers/AdapterDayjs';
-import { PickersTextField as MuiPickersTextField, PickersTextFieldProps as MuiPickersTextFieldProps } from '@mui/x-date-pickers/PickersTextField';
+
 import { PickerFieldUISlotProps } from '@mui/x-date-pickers/internals';
-import { FormHelperText, FormLabel, InputPropOverrides } from '@availity/mui-form-utils';
-import { forwardRef } from 'react';
 import { AvTextFieldAdditionalProps, PickersTextField } from './PickersTextField';
 
 export type DatepickerProps = {
@@ -54,8 +50,7 @@ export const Datepicker = ({
   placement = 'bottom-start',
   clearable,
   ...props
-}: DatepickerProps): React.JSX.Element => {
-  return (
+}: DatepickerProps): React.JSX.Element => (
     <MuiDatePicker
       {...props}
       dayOfWeekFormatter={(weekday: Dayjs) => weekday.format('dd')}
@@ -88,4 +83,3 @@ export const Datepicker = ({
       }}
     />
   );
-};

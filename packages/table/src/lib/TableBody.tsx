@@ -6,6 +6,4 @@ export type TableBodyProps = {
   component?: ElementType<TableCellBaseProps>;
 } & MuiTableBodyProps;
 
-export const TableBody = (props: TableBodyProps): React.JSX.Element => {
-  return <MuiTableBody {...props} />;
-};
+export const TableBody = (props: TableBodyProps): React.JSX.Element => <MuiTableBody {...props} />;

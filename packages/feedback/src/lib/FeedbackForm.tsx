@@ -38,7 +38,7 @@ const SmileButtons = styled(ToggleButtonGroup, { name: 'AvFeedbackContainer', sl
 
 const FormActions = styled(Grid, { name: 'AvFeedbackContainer', slot: 'FormActions' })({});
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
 const SmileButton = ({ disabled, Icon, label, value, ...props }: SmileButtonProps) => (
   <div>
     <ToggleButton
@@ -80,7 +80,7 @@ export const FeedbackForm = ({
       const response = await avRegionsApi.getCurrentRegion();
 
       await analytics.info({
-        surveyId: `${appName.replace(/\s/g, '_')}_Smile_Survey`,
+        surveyId: `${appName.replaceAll(/\s/g, '_')}_Smile_Survey`,
         smileLocation: `${appName}`,
         smile: `icon-${smileField}`,
         url: window.location.href,
@@ -140,8 +140,7 @@ export const FeedbackForm = ({
         <Controller
           control={control}
           name="smileField"
-          render={({ field }) => {
-            return (
+          render={({ field }) => (
               <SmileButtons
                 children={options.map((props, index) => (
                   <SmileButton autoFocus={index === 0} disabled={loading} key={props.value} {...props} />
@@ -154,8 +153,7 @@ export const FeedbackForm = ({
                 size="medium"
                 exclusive
               />
-            );
-          }}
+            )}
         />
         <TextField
           {...register('feedback', {
@@ -190,7 +188,7 @@ export const FeedbackForm = ({
         </FormActions>
       </Grid>
     );
-  } else {
+  } 
     return null;
-  }
+  
 };

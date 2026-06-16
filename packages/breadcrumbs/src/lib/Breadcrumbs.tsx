@@ -60,8 +60,7 @@ export const Breadcrumbs = ({
   homeUrl = '/static/web/onb/onboarding-ui-apps/dashboard-ui/',
   LinkProps,
   ...rest
-}: BreadcrumbsProps): React.JSX.Element => {
-  return (
+}: BreadcrumbsProps): React.JSX.Element => (
     <MuiBreadcrumbs
       {...rest}
       separator={<NavigateNextIcon fontSize="xsmall" />}
@@ -81,4 +80,3 @@ export const Breadcrumbs = ({
       <Typography>{active || emptyState}</Typography>
     </MuiBreadcrumbs>
   );
-};

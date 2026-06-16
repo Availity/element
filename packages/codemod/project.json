@@ -6,10 +6,9 @@
   "tags": [],
   "targets": {
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/codemod"],
+      "executor": "nx:run-commands",
       "options": {
-        "jestConfig": "packages/codemod/jest.config.js"
+        "command": "vitest run packages/codemod"
       }
     },
     "version": {
@@ -19,7 +18,9 @@
         "commitMessageFormat": "chore({projectName}): release version ${version} [skip ci]",
         "tagPrefix": "@availity/{projectName}@",
         "trackDeps": true,
-        "skipCommitTypes": ["docs"]
+        "skipCommitTypes": [
+          "docs"
+        ]
       }
     }
   }

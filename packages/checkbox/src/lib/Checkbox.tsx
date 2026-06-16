@@ -16,6 +16,4 @@ export interface CheckboxProps
   color?: 'primary' | 'error';
 }
 
-export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>((props, ref) => {
-  return <MuiCheckbox {...props} ref={ref} size="medium" />;
-});
+export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>((props, ref) => <MuiCheckbox {...props} ref={ref} size="medium" />);

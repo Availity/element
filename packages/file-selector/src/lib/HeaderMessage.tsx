@@ -17,11 +17,9 @@ export type HeaderMessageProps = {
   maxTotalSize?: number;
 };
 
-export const HeaderMessage = ({ maxFiles, maxSize, maxTotalSize }: HeaderMessageProps) => {
-  return (
+export const HeaderMessage = ({ maxFiles, maxSize, maxTotalSize }: HeaderMessageProps) => (
     <Typography variant="h6">
       Attach up to {maxFiles} file(s), with a maximum individual size of {formatBytes(maxSize)}{' '}
       {maxTotalSize && `and a maximum total size of ${formatBytes(maxTotalSize)}`}
     </Typography>
   );
-};

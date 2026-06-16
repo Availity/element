@@ -1,6 +1,6 @@
-import { FormGroup, FormGroupProps, FormLabel } from '..';
 import { Stack } from '@availity/mui-layout';
 import { styled } from '@mui/material/styles';
+import { FormGroup, FormGroupProps, FormLabel } from '..';
 
 export type SearchByFormGroupProps = {
   /** The id of the `searchBy` field. _Needed to accessibly link provided label to searchBy field._ */

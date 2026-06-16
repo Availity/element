@@ -8,25 +8,23 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "eslintConfig": ".eslintrc.json",
-        "lintFilePatterns": ["packages/authorize/**/*.{js,ts}"],
+        "lintFilePatterns": [
+          "packages/authorize/**/*.{js,ts}"
+        ],
         "silent": false,
         "fix": false,
         "cache": true,
         "cacheLocation": "./node_modules/.cache/authorize/.eslintcache",
         "maxWarnings": -1,
         "quiet": false,
-        "noEslintrc": false,
         "hasTypeAwareRules": true,
         "cacheStrategy": "metadata"
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/authorize"],
+      "executor": "nx:run-commands",
       "options": {
-        "jestConfig": "packages/authorize/jest.config.js",
-        "passWithNoTests": true
+        "command": "vitest run packages/authorize"
       }
     },
     "version": {
@@ -36,7 +34,9 @@
         "commitMessageFormat": "chore({projectName}): release version ${version} [skip ci]",
         "tagPrefix": "@availity/{projectName}@",
         "trackDeps": true,
-        "skipCommitTypes": ["docs"]
+        "skipCommitTypes": [
+          "docs"
+        ]
       }
     }
   }

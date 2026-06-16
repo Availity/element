@@ -4,7 +4,7 @@ import { ErrorAlert, formatFileTooLarge } from './ErrorAlert';
 
 describe('ErrorAlert', () => {
   test('should render error message', () => {
-    render(<ErrorAlert id={0} errors={[{ code: 'test', message: 'example' }]} fileName="file" onClose={jest.fn()} />);
+    render(<ErrorAlert id={0} errors={[{ code: 'test', message: 'example' }]} fileName="file" onClose={vi.fn()} />);
 
     expect(screen.getByText('Error: file')).toBeDefined();
   });

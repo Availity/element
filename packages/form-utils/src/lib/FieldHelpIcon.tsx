@@ -32,8 +32,7 @@ export type FieldHelpIconProps = {
   | 'variant'
 >;
 
-export const FieldHelpIcon = ({ helpTopicId, labelId, sx, ...rest }: FieldHelpIconProps): React.JSX.Element => {
-  return (
+export const FieldHelpIcon = ({ helpTopicId, labelId, sx, ...rest }: FieldHelpIconProps): React.JSX.Element => (
     <IconButton
       {...rest}
       color="primary"
@@ -47,4 +46,3 @@ export const FieldHelpIcon = ({ helpTopicId, labelId, sx, ...rest }: FieldHelpIc
       <HelpCircleIcon aria-hidden titleAccess={undefined} />
     </IconButton>
   );
-};

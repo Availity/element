@@ -5,10 +5,10 @@ import { server } from '@availity/mock/src/lib/server';
 import { SpacesImage } from './SpacesImage';
 import { Spaces } from './Spaces';
 
-const mockImage = jest.fn();
+const mockImage = vi.fn();
 
-jest.mock('react-image', () => ({
-  ...(jest.requireActual('react-image') as any),
+vi.mock('react-image', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('react-image')>()),
   Img: (props: any) => mockImage(props),
 }));
 
@@ -21,7 +21,7 @@ afterEach(() => {
   // Remove any handlers you may have added
   // in individual tests (runtime handlers).
   server.resetHandlers();
-  jest.restoreAllMocks();
+  vi.restoreAllMocks();
 });
 
 // terminate the server

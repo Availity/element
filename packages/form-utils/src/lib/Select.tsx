@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import MuiSelect, { SelectProps as MuiSelectProps, SelectChangeEvent } from '@mui/material/Select';
+import MuiSelect, { SelectProps as MuiSelectProps } from '@mui/material/Select';
 import Divider from '@mui/material/Divider';
 import Stack, { StackProps } from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
@@ -66,4 +66,6 @@ export const Select = <Value = unknown,>(props: SelectProps<Value>): React.JSX.E
   );
 };
 
-export type { SelectChangeEvent };
+
+
+export {type SelectChangeEvent} from '@mui/material/Select';

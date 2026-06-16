@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useMemo } from 'react';
-import { AvAnalytics } from '@availity/analytics-core';
+import { AvAnalytics, AvAnalyticsPlugin } from '@availity/analytics-core';
 
 export type EventTrackerProps = {
   /** */
@@ -50,7 +50,7 @@ export const EventTrackerProvider = ({
   eventModifiers = ['action'],
 }: EventTrackerProps) => {
   const analytics = useMemo(
-    () => new AvAnalytics(plugins, Promise, pageTracking, autoTrack, { recursive, attributePrefix, eventModifiers }),
+    () => new AvAnalytics(plugins as AvAnalyticsPlugin[], Promise, pageTracking, autoTrack, { recursive, attributePrefix, eventModifiers }),
     [attributePrefix, autoTrack, eventModifiers, pageTracking, plugins, recursive]
   );
 

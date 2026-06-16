@@ -22,16 +22,32 @@
   "author": "Availity Developers <AVOSS@availity.com>",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "devDependencies": {
-    "typescript": "^5.4.5"
+    "typescript": "^5.9.3"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "msw": "2.4.11",
-    "qs": "^6.15.0"
+    "msw": "^2.7.0",
+    "qs": "^6.15.2"
+  },
+  "type": "module",
+  "exports": {
+    "./src/lib/server": {
+      "types": "./src/lib/server.ts",
+      "import": "./src/lib/server.ts"
+    },
+    "./src/lib/browser": {
+      "types": "./src/lib/browser.ts",
+      "import": "./src/lib/browser.ts"
+    },
+    "./src/lib/handlers": {
+      "types": "./src/lib/handlers.ts",
+      "import": "./src/lib/handlers.ts"
+    },
+    "./src/lib/data/*": "./src/lib/data/*",
+    "./package.json": "./package.json"
   }
 }

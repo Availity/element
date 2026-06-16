@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import { TabContext } from './TabContext';
 import { Divider } from '@availity/mui-divider';
+import { TabContext } from './TabContext';
 import { TabList } from './TabList';
 import { Tab } from './Tab';
 import { TabPanel } from './TabPanel';

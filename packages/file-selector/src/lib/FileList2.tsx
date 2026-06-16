@@ -101,8 +101,7 @@ export const FileList2 = ({
 
   return (
     <List>
-      {uploads.map((upload) => {
-        return (
+      {uploads.map((upload) => (
           <FileRow2
             key={upload.id}
             upload={upload}
@@ -111,8 +110,7 @@ export const FileList2 = ({
             customFileRow={customFileRow}
             disableRemove={disableRemove}
           />
-        );
-      })}
+        ))}
     </List>
   );
 };

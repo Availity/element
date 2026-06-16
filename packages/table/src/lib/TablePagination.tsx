@@ -47,7 +47,7 @@ export const TablePagination = forwardRef<unknown, TablePaginationProps>((props,
 
   const ActionsPagination = (props: TablePaginationActionsProps): React.JSX.Element => {
     // Pull secondary props off so they are not passed to Pagination component
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+     
     const { count, page, rowsPerPage, onPageChange, nextIconButtonProps, backIconButtonProps, slotProps, ...rest } =
       props;
 
@@ -74,7 +74,7 @@ export const TablePagination = forwardRef<unknown, TablePaginationProps>((props,
       ActionsComponent={ActionsPagination}
       {...rest}
       slotProps={{
-        select: { IconComponent: IconComponent, ...SelectAccessibilityOverrides(openDetected, setOpenDetected) },
+        select: { IconComponent, ...SelectAccessibilityOverrides(openDetected, setOpenDetected) },
       }}
       ref={ref}
     />

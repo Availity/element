@@ -6,6 +6,4 @@ export type TableRowProps = {
   component?: ElementType<TableCellBaseProps>;
 } & MuiTableRowProps;
 
-export const TableRow = (props: TableRowProps): React.JSX.Element => {
-  return <MuiTableRow {...props} />;
-};
+export const TableRow = (props: TableRowProps): React.JSX.Element => <MuiTableRow {...props} />;

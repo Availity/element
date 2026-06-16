@@ -1,7 +1,7 @@
 import { ClockIcon } from '@availity/mui-icon';
 import { TimePicker as MuiTimePicker, TimePickerProps as MuiTimePickerProps } from '@mui/x-date-pickers/TimePicker';
 import type { Dayjs } from 'dayjs';
-import type {} from '@mui/x-date-pickers/AdapterDayjs';
+
 import { ExportedPickerFieldUIProps, PickerFieldUISlotProps } from '@mui/x-date-pickers/internals';
 import { AvTextFieldAdditionalProps, PickersTextField } from './PickersTextField';
 
@@ -50,8 +50,7 @@ export const Timepicker = ({
   clearable,
   onClear,
   ...props
-}: TimepickerProps): React.JSX.Element => {
-  return (
+}: TimepickerProps): React.JSX.Element => (
     <MuiTimePicker
       {...props}
       slotProps={{
@@ -78,4 +77,3 @@ export const Timepicker = ({
       }}
     />
   );
-};

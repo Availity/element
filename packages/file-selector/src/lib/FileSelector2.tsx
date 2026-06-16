@@ -186,7 +186,7 @@ export const FileSelector2 = ({
       {tooManyFilesRejections.length > 0 && (
         <Alert
           severity="error"
-          onClose={() => tooManyFilesRejections.forEach((rejection) => handleRemoveRejection(rejection.id))}
+          onClose={() => { for (const rejection of tooManyFilesRejections) handleRemoveRejection(rejection.id) }}
         >
           <AlertTitle>Items not allowed.</AlertTitle>
           Too many files are selected for upload, maximum {maxFiles} allowed.
