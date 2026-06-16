@@ -4,6 +4,4 @@ import MuiListItemIcon, { ListItemIconProps as MuiListItemIconProps } from '@mui
 export type ListItemIconProps = MuiListItemIconProps;
 
 /** Icon to be used inside of a list item */
-export const ListItemIcon = ({ children, ...rest }: ListItemIconProps): React.JSX.Element => {
-  return <MuiListItemIcon {...rest}>{children}</MuiListItemIcon>;
-};
+export const ListItemIcon = ({ children, ...rest }: ListItemIconProps): React.JSX.Element => <MuiListItemIcon {...rest}>{children}</MuiListItemIcon>;

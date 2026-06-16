@@ -20,22 +20,24 @@ type MutationVariables = {
   targetFavoriteId: string;
 }
 
-type SettingsResponse = { data: { favorites: Favorite[] } };
+interface FavoritesSettings {
+  settings: { favorites: Favorite[] }[];
+}
 
 const submit = async ({ favorites, targetFavoriteId }: MutationVariables, applicationId: string) => {
-  const response: SettingsResponse = await avSettingsApi.setApplication(applicationId, { favorites });
-  return { favorites: response.data.favorites, targetFavoriteId };
+  const response = await avSettingsApi.setApplication<FavoritesSettings>(applicationId, { favorites });
+  return { favorites: response.data.settings[0].favorites, targetFavoriteId };
 }
 
 const getFavorites = async (applicationId: string) => {
-  const result = await avSettingsApi.getApplication(applicationId);
+  const result = await avSettingsApi.getApplication<FavoritesSettings>(applicationId);
   const unvalidatedFavorites = result?.data?.settings?.[0]?.favorites;
   const validatedFavorites = validateFavorites(unvalidatedFavorites);
 
   return validatedFavorites;
 };
 
-export const useFavoritesQuery = (enabled: boolean, applicationId: string): UseQueryResult<Favorite[], unknown> => useQuery(['favorites'], () => getFavorites(applicationId), { enabled });
+export const useFavoritesQuery = (enabled: boolean, applicationId: string): UseQueryResult<Favorite[], Error> => useQuery({ queryKey: ['favorites'], queryFn: () => getFavorites(applicationId), enabled });
 
 type MutationOptions = {
   onMutationStart?: (targetFavoriteId: string) => void;
@@ -43,7 +45,8 @@ type MutationOptions = {
 
 export const useSubmitFavorites = ({ onMutationStart }: MutationOptions, applicationId: string) => {
   const queryClient = useQueryClient();
-  const { mutateAsync: submitFavorites, ...rest } = useMutation(({ favorites, targetFavoriteId }: MutationVariables) => submit({ favorites, targetFavoriteId }, applicationId), {
+  const { mutateAsync: submitFavorites, ...rest } = useMutation({
+    mutationFn: ({ favorites, targetFavoriteId }: MutationVariables) => submit({ favorites, targetFavoriteId }, applicationId),
     onMutate(variables) {
       onMutationStart?.(variables.targetFavoriteId);
     },

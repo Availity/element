@@ -1,5 +1,5 @@
 import { TextFieldProps } from '@availity/mui-textfield';
-import type {} from '@mui/x-date-pickers/AdapterDayjs';
+
 import { PickersTextField as MuiPickersTextField, PickersTextFieldProps as MuiPickersTextFieldProps } from '@mui/x-date-pickers/PickersTextField';
 import { FormHelperText, FormLabel } from '@availity/mui-form-utils';
 import { forwardRef } from 'react';

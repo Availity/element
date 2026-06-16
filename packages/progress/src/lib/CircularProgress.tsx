@@ -9,7 +9,7 @@ import { Typography } from '@availity/mui-typography';
 
 export interface CircularProgressProps
   extends Omit<MuiCircularProgressProps, 'disableShrink' | 'thickness' | 'variant'> {
-  /**@default 'primary' */
+  /** @default 'primary' */
   color?: 'primary' | 'inherit';
   /** If `true` the the loading animation is replaced with Error Icon and the words "Loading error" display.
    * @default false

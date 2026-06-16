@@ -6,7 +6,7 @@ describe('Timepicker', () => {
   test('should render successfully', () => {
     const { getAllByText } = render(
       <ThemeProvider>
-        <Timepicker FieldProps={{ label: 'Test' }} onChange={jest.fn()} value={null} />
+        <Timepicker FieldProps={{ label: 'Test' }} onChange={vi.fn()} value={null} />
       </ThemeProvider>
     );
     expect(getAllByText('Test')).toBeTruthy();

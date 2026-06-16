@@ -1,5 +1,4 @@
-export const PageNotFound = () => {
-  return (
+export const PageNotFound = () => (
     <svg
       id="Layer_1"
       data-name="Layer 1"
@@ -41,4 +40,3 @@ export const PageNotFound = () => {
       </g>
     </svg>
   );
-};

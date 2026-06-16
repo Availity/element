@@ -4,6 +4,4 @@ export interface TabContextProps extends MuiTabContextProps {
   children?: React.ReactNode;
 }
 
-export const TabContext = ({ children, ...rest }: TabContextProps): React.JSX.Element => {
-  return <MuiTabContext {...rest}>{children}</MuiTabContext>;
-};
+export const TabContext = ({ children, ...rest }: TabContextProps): React.JSX.Element => <MuiTabContext {...rest}>{children}</MuiTabContext>;

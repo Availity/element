@@ -1,10 +1,10 @@
 import { render, fireEvent } from '@testing-library/react';
 import { FeedbackForm } from './FeedbackForm';
 
-const analytics = { info: jest.fn() };
-const handleClose = jest.fn();
-const setLoading = jest.fn();
-const setSent = jest.fn();
+const analytics = { info: vi.fn() };
+const handleClose = vi.fn();
+const setLoading = vi.fn();
+const setSent = vi.fn();
 
 describe('Feedback', () => {
   test('should render Send Feedback button disabled', () => {

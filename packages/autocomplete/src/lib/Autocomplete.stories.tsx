@@ -151,7 +151,7 @@ export const _FreeSolo: StoryObj<typeof Autocomplete> = {
       return filtered;
     };
 
-    const renderOption = (props: React.HTMLAttributes<HTMLLIElement>, option: Option) => {
+    const renderOption = (props: React.HTMLAttributes<HTMLLIElement> & { key?: string }, option: Option) => {
       const { key, ...optionProps } = props;
       return (
         <li key={key} {...optionProps}>

@@ -4,6 +4,4 @@ export interface TabPanelProps extends MuiTabPanelProps {
   children?: React.ReactNode;
 }
 
-export const TabPanel = ({ children, ...rest }: TabPanelProps): React.JSX.Element => {
-  return <MuiTabPanel {...rest}>{children}</MuiTabPanel>;
-};
+export const TabPanel = ({ children, ...rest }: TabPanelProps): React.JSX.Element => <MuiTabPanel {...rest}>{children}</MuiTabPanel>;

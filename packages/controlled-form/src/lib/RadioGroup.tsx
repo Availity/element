@@ -1,6 +1,5 @@
-import { FormControlProps, RadioGroup, RadioGroupProps } from '@availity/mui-form-utils';
+import { FormControlProps, RadioGroup, RadioGroupProps , FormControl, FormLabel, FormHelperText } from '@availity/mui-form-utils';
 import { Controller, RegisterOptions, FieldValues } from 'react-hook-form';
-import { FormControl, FormLabel, FormHelperText } from '@availity/mui-form-utils';
 import { ControllerProps, TransformProp } from './Types';
 
 export type ControlledRadioGroupProps<Output = string> = {
@@ -26,8 +25,7 @@ export const ControlledRadioGroup = <Output = string,>({
   value,
   transform,
   ...rest
-}: ControlledRadioGroupProps<Output>) => {
-  return (
+}: ControlledRadioGroupProps<Output>) => (
     <Controller
       name={name}
       defaultValue={defaultValue}
@@ -61,4 +59,3 @@ export const ControlledRadioGroup = <Output = string,>({
       )}
     />
   );
-};

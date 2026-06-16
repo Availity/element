@@ -21,8 +21,7 @@ export const ControlledSelect = <Output = string, Input = unknown>({
   value,
   transform,
   ...rest
-}: ControlledSelectProps<Output, Input>) => {
-  return (
+}: ControlledSelectProps<Output, Input>) => (
     <Controller
       name={name}
       defaultValue={defaultValue}
@@ -47,4 +46,3 @@ export const ControlledSelect = <Output = string, Input = unknown>({
       )}
     />
   );
-};

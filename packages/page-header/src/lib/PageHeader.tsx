@@ -64,7 +64,7 @@ const Logo = (props: LogoSpaceId | LogoPayerId) => {
         Loader={({ id }) => <Skeleton id={id} height="60px" width="234px" />}
       />
     );
-  else if (props.payerId)
+  if (props.payerId)
     return (
       <SpacesImage
         imageType="images.logo"
@@ -72,7 +72,7 @@ const Logo = (props: LogoSpaceId | LogoPayerId) => {
         Loader={({ id }) => <Skeleton id={id} height="60px" width="234px" />}
       />
     );
-  else return null;
+  return null;
 };
 
 export const PageHeader = ({
@@ -83,8 +83,7 @@ export const PageHeader = ({
   logo,
   help,
   divider = <Divider />
-}: PageHeaderProps): React.JSX.Element => {
-  return (
+}: PageHeaderProps): React.JSX.Element => (
     <Grid
       component={Box}
       container
@@ -150,4 +149,3 @@ export const PageHeader = ({
       { divider }
     </Grid>
   );
-};

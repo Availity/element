@@ -10,7 +10,7 @@ describe('StepButton', () => {
   });
 
   test('should handle clicks', () => {
-    const fn = jest.fn();
+    const fn = vi.fn();
     render(<StepButton onClick={fn}>Next</StepButton>);
 
     fireEvent.click(screen.getByText('Next'));

@@ -3,7 +3,7 @@ import { FormControl, FormLabel, FormControlLabel, FormGroup } from '@availity/m
 import { ControlledCheckbox } from './Checkbox';
 import { TestForm } from './UtilComponents';
 
-const onSubmit = jest.fn();
+const onSubmit = vi.fn();
 
 describe('ControlledCheckbox', () => {
   test('should set the value and submit the form data', async () => {

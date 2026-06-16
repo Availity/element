@@ -22,8 +22,7 @@ export const CardHeader = ({
   title,
   logo,
   ...rest
-}: CardHeaderProps): React.JSX.Element => {
-  return (
+}: CardHeaderProps): React.JSX.Element => (
     <MuiCardHeader
       {...rest}
       title={
@@ -65,4 +64,3 @@ export const CardHeader = ({
       }
     />
   );
-};

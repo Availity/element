@@ -48,7 +48,7 @@ const MultiPayerModal = () => {
 
 describe('MultiPayerModal', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
   it('renders modal when space has payerspace parents', async () => {
     const { getByText } = render(<MultiPayerModal />);

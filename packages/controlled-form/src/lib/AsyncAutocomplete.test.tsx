@@ -42,7 +42,7 @@ const loadOptions = async (offset: number, limit: number) => {
   };
 };
 
-const onSubmit = jest.fn();
+const onSubmit = vi.fn();
 
 describe('ControlledAsyncAutocomplete', () => {
   beforeAll(() => {
@@ -54,7 +54,7 @@ describe('ControlledAsyncAutocomplete', () => {
     // Remove any handlers you may have added
     // in individual tests (runtime handlers).
     server.resetHandlers();
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   // terminate the server

@@ -21,10 +21,9 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/<%= fileName %>"],
+      "executor": "nx:run-commands",
       "options": {
-        "jestConfig": "packages/<%= fileName %>/jest.config.js"
+        "command": "vitest run packages/<%= fileName %>"
       }
     },
     "version": {

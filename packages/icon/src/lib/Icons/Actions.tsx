@@ -3,7 +3,6 @@ import { faAngleUp } from '@fortawesome/free-solid-svg-icons/faAngleUp';
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons/faArrowsRotate';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
 import { faClose } from '@fortawesome/free-solid-svg-icons/faClose';
 import { faComments } from '@fortawesome/free-solid-svg-icons/faComments';
 import { faGears } from '@fortawesome/free-solid-svg-icons/faGears';

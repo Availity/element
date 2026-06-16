@@ -1,4 +1,3 @@
-import { faCalendar } from '@fortawesome/free-solid-svg-icons/faCalendar';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons/faCalendarDays';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';

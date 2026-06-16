@@ -6,6 +6,4 @@ import { OverridableComponent } from '@mui/material/OverridableComponent';
 export type ListItemButtonProps = Omit<MuiListItemButtonProps, 'centerRipple' | 'disableRipple' | 'disableTouchRipple' | 'focusRipple' | 'TouchRippleProps' | 'touchRippleRef'>
 
 /** Action element to be used inside a list item. */
-export const ListItemButton = forwardRef<HTMLDivElement, ListItemButtonProps>((props, ref) => {
-  return <MuiListItemButton {...props} ref={ref}/>;
-}) as OverridableComponent<ListItemButtonTypeMap>;
+export const ListItemButton = forwardRef<HTMLDivElement, ListItemButtonProps>((props, ref) => <MuiListItemButton {...props} ref={ref}/>) as OverridableComponent<ListItemButtonTypeMap>;

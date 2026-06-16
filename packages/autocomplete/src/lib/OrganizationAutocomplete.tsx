@@ -1,17 +1,11 @@
-import { avOrganizationsApi, ApiConfig } from '@availity/api-axios';
+import { avOrganizationsApi, ApiConfig, type OrganizationsResponse, type Organization } from '@availity/api-axios';
 import type { ChipTypeMap } from '@mui/material/Chip';
 import qs from 'qs';
 
 import { AsyncAutocomplete, AsyncAutocompleteProps } from './AsyncAutocomplete';
 import type { Optional } from './util';
 
-export type Organization = {
-  customerId: string;
-  name: string;
-  id: string;
-  createDate: string;
-  links: Record<string, Record<string, string>>;
-};
+export type { Organization } from '@availity/api-axios';
 
 export const fetchOrgs = async (
   config: ApiConfig
@@ -24,12 +18,12 @@ export const fetchOrgs = async (
     },
   };
 
-  const resp = await avOrganizationsApi.getOrganizations(configWithParamsSerializer);
+  const resp = await avOrganizationsApi.getOrganizations<OrganizationsResponse>(configWithParamsSerializer);
 
   return {
-    options: resp.data.organizations as Organization[],
-    hasMore: config.params.offset + config.params.limit < resp.data.totalCount,
-    offset: config.params.offset,
+    options: resp.data.organizations,
+    hasMore: (config.params!.offset as number) + (config.params!.limit as number) < resp.data.totalCount,
+    offset: config.params!.offset as number,
   };
 };
 

@@ -1,7 +1,7 @@
+import { server } from "@availity/mock/src/lib/server";
 import { fetchAllSpaces, parseOperationName } from './spaces-data';
 import configurationFindMany from './configurationFindMany';
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import { server } from '../../../mock/src/lib/server';
+ 
 
 beforeAll(() => {
   // Start the interception.

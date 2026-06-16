@@ -41,6 +41,7 @@ describe('Link', () => {
 
     const spanChildren = container.getElementsByTagName('span')[0].children;
 
+    // eslint-disable-next-line unicorn/prefer-at
     expect(spanChildren[spanChildren.length - 1].tagName).toBe('svg');
   });
 
@@ -101,7 +102,7 @@ describe('Link', () => {
   });
 
   test('should call onClick', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
 
     const { getByRole } = render(
       <Link loadApp={false} href="/public/apps/my-app" onClick={onClick}>
@@ -129,7 +130,7 @@ describe('Link', () => {
 
   test('should set target to _top when loadApp is true', () => {
     const { getByRole } = render(
-      <Link href="/public/apps/my-app" loadApp={true} target="_self">
+      <Link href="/public/apps/my-app" loadApp target="_self">
         My App
       </Link>
     );

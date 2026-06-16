@@ -5,8 +5,7 @@ import MuiLinearProgress, { LinearProgressProps as MuiLinearProgressProps } from
 
 export type LinearProgressProps = Omit<MuiLinearProgressProps, 'color'> & { hidePercentage?: boolean };
 
-export const LinearProgress = ({ variant = 'determinate', value = 0, sx, hidePercentage = false, ...props }: LinearProgressProps) => {
-  return (
+export const LinearProgress = ({ variant = 'determinate', value = 0, sx, hidePercentage = false, ...props }: LinearProgressProps) => (
     <Stack direction="row" sx={{ alignItems: 'center' }}>
       <Box sx={{ width: '100%', mr: 0.5 }}>
         <MuiLinearProgress variant={variant} {...props} value={value} color="success" sx={{ width: '100%', ...sx }} />
@@ -17,4 +16,3 @@ export const LinearProgress = ({ variant = 'determinate', value = 0, sx, hidePer
       )}
     </Stack>
   );
-};

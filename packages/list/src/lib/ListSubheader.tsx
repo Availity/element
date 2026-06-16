@@ -4,6 +4,4 @@ import MuiListSubheader, { ListSubheaderProps as MuiListSubheaderProps } from '@
 export type ListSubheaderProps = MuiListSubheaderProps
 
 /** A label for a nested list. */
-export const ListSubheader = ({ children, ...rest }: ListSubheaderProps): React.JSX.Element => {
-  return <MuiListSubheader {...rest}>{children}</MuiListSubheader>;
-};
+export const ListSubheader = ({ children, ...rest }: ListSubheaderProps): React.JSX.Element => <MuiListSubheader {...rest}>{children}</MuiListSubheader>;

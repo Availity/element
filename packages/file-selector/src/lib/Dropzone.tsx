@@ -156,7 +156,7 @@ export const Dropzone = ({
 
       // Check for allowed file name characters
       if (allowedFileNameCharacters) {
-        const fileName = file.name.substring(0, file.name.lastIndexOf('.'));
+        const fileName = file.name.slice(0, Math.max(0, file.name.lastIndexOf('.')));
         const regExp = new RegExp(`([^${allowedFileNameCharacters}])`, 'g');
 
         if (fileName.match(regExp) !== null) {
@@ -170,7 +170,7 @@ export const Dropzone = ({
       // Explicit check for allowed file types
       if (allowedFileTypes.length > 0) {
         const fileName = file.name;
-        const fileExt = fileName.substring(fileName.lastIndexOf('.')).toLowerCase();
+        const fileExt = fileName.slice(Math.max(0, fileName.lastIndexOf('.'))).toLowerCase();
 
         // Convert all file types to lowercase for comparison
         const lowerCaseAllowedTypes = allowedFileTypes.map((type) => type.toLowerCase());
@@ -325,7 +325,7 @@ export const Dropzone = ({
   });
 
   // Remove role and tabIndex for accessibility
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+   
   const { role, tabIndex, ...rootProps } = getRootProps();
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {

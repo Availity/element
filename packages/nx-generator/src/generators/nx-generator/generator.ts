@@ -10,7 +10,7 @@ import {
   Tree,
   updateJson,
 } from '@nx/devkit';
-import { join } from 'path';
+import { join } from 'node:path';
 import { NxGeneratorGeneratorSchema } from './schema';
 
 interface NormalizedSchema extends NxGeneratorGeneratorSchema {
@@ -27,7 +27,7 @@ function normalizeOptions(tree: Tree, options: NxGeneratorGeneratorSchema): Norm
   const componentName = names(options.name).className;
   const packageName = `mui-${names(options.name).fileName}`;
   const projectDirectory = options.directory ? `${names(options.directory).fileName}/${name}` : name;
-  const projectName = projectDirectory.replace(new RegExp('/', 'g'), '-');
+  const projectName = projectDirectory.replaceAll('/', '-');
   const projectRoot = `${getWorkspaceLayout(tree).libsDir}/${projectDirectory}`;
   const parsedTags = options.tags ? options.tags.split(',').map((s) => s.trim()) : [];
 

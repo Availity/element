@@ -12,8 +12,6 @@ const getItemAriaLabel: MuiPaginationProps['getItemAriaLabel'] = (type, page) =>
   return `Go to ${type} page`;
 };
 
-export const Pagination = (props: PaginationProps): React.JSX.Element => {
-  return (
+export const Pagination = (props: PaginationProps): React.JSX.Element => (
     <MuiPagination {...props} getItemAriaLabel={getItemAriaLabel} renderItem={(item) => <PaginationItem {...item} />} />
   );
-};

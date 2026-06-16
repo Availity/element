@@ -4,22 +4,20 @@
   "description": "Design tokens for the Element design system",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    "./package.json": "./package.json",
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
     "transform": "token-transformer src/tokens.json src/tokens/core.json --expandTypography=true",
     "transform-legacy": "token-transformer src/legacytokens.json src/tokens/legacy.json --expandTypography=true",
-    "build:style-dict": "node ../../tools/scripts/style-dictionary.build.js",
-    "build": "yarn transform && yarn transform-legacy && yarn build:style-dict && tsup src/index.ts --format esm,cjs --dts && yarn format",
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "build:style-dict": "node ../../tools/scripts/style-dictionary.build.cjs",
+    "build": "yarn transform && yarn transform-legacy && yarn build:style-dict && tsup src/index.ts --format esm --dts && yarn format",
+    "dev": "tsup src/index.ts --format esm --watch --dts",
     "clean": "rm -rf dist && rm -rf src/tokens",
     "clean:nm": "rm -rf node_modules",
     "format": "prettier ./src --write",
@@ -27,10 +25,11 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
+    "prettier": "^3.8.4",
     "style-dictionary": "^3.9.2",
     "token-transformer": "^0.0.33",
-    "tsup": "^8.4.0",
+    "tsup": "^8.5.1",
     "typescript": "~5.4.5"
-  }
+  },
+  "type": "module"
 }

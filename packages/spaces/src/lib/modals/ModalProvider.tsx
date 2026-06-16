@@ -100,10 +100,8 @@ export const modalReducer: ModalReducerType = (state, { type, ...action }) => {
   if (type === 'RESET') return modalActions.RESET();
   if (isModalOptions(action)) {
     if (type === 'OPEN_MULTI_PAYER_MODAL') return modalActions.OPEN_MULTI_PAYER_MODAL(state, action);
-    else if (type === 'OPEN_DISCLAIMER_MODAL') return modalActions.OPEN_DISCLAIMER_MODAL(state, action);
-  } else if (isModalState(action)) {
-    if (type === 'UPDATE_MODAL_STATE') return modalActions.UPDATE_MODAL_STATE(state, action);
-  }
+    if (type === 'OPEN_DISCLAIMER_MODAL') return modalActions.OPEN_DISCLAIMER_MODAL(state, action);
+  } else if (isModalState(action) && type === 'UPDATE_MODAL_STATE') return modalActions.UPDATE_MODAL_STATE(state, action);
   return state;
 };
 

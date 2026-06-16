@@ -1362,8 +1362,7 @@ export const lightTheme = {
         maxRows: 3,
       },
       styleOverrides: {
-        root: ({ ownerState }: { ownerState: { size: 'small' | 'medium'; fullWidth: boolean | undefined } }) => {
-          return {
+        root: ({ ownerState }: { ownerState: { size: 'small' | 'medium'; fullWidth: boolean | undefined } }) => ({
             boxSizing: 'border-box',
             '&.MuiInputBase-root, &.MuiInputBase-root.MuiAutocomplete-inputRoot': {
               width: ownerState.fullWidth ? '100%' : '220px',
@@ -1438,8 +1437,7 @@ export const lightTheme = {
                 fontSize: '.75rem',
               },
             },
-          };
-        },
+          }),
         input: {
           borderRadius: '4px',
           color: tokens.colorGrey400,

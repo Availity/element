@@ -138,8 +138,7 @@ export const Spaces = ({
         }
       }
     }
-    if (payerIdsToQuery.size > 0) {
-      if (spacesByPayerIds) {
+    if (payerIdsToQuery.size > 0 && spacesByPayerIds) {
         for (const space of spacesByPayerIds) {
           if (!spacesMap.has(space.id)) {
             spacesMap.set(space.id, space);
@@ -161,7 +160,6 @@ export const Spaces = ({
           }
         }
       }
-    }
     dispatch({
       type: 'SPACES',
       spaces: spacesMap,

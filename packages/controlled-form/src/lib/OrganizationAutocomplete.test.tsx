@@ -5,7 +5,7 @@ import { server } from '@availity/mock/src/lib/server';
 import { ControlledOrganizationAutocomplete } from './OrganizationAutocomplete';
 import { TestForm } from './UtilComponents';
 
-const onSubmit = jest.fn();
+const onSubmit = vi.fn();
 
 describe('ControlledOrganizationAutocomplete', () => {
   beforeAll(() => {
@@ -17,7 +17,7 @@ describe('ControlledOrganizationAutocomplete', () => {
     // Remove any handlers you may have added
     // in individual tests (runtime handlers).
     server.resetHandlers();
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   // terminate the server

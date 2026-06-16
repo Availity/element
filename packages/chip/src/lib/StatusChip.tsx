@@ -19,6 +19,4 @@ export type StatusChipProps = {
   | 'onDelete'
 >;
 
-export const StatusChip = ({ color = 'default', ...rest }: StatusChipProps): React.JSX.Element => {
-  return <MuiChip color={color} {...rest} size="small" />;
-};
+export const StatusChip = ({ color = 'default', ...rest }: StatusChipProps): React.JSX.Element => <MuiChip color={color} {...rest} size="small" />;

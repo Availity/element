@@ -9,10 +9,10 @@ const LoadingIndicator = <CircularProgress color="inherit" size={16} aria-label=
 
 export const LoadingButton = forwardRef<HTMLButtonElement, LoadingButtonProps>((props, ref) => {
   const { children, loading = false, ...rest } = props;
-  //changing default loading button behavior to add end loading icon instead of replacing contents completely with icon
+  // changing default loading button behavior to add end loading icon instead of replacing contents completely with icon
   const loadingPosition = rest.startIcon ? 'start' : 'end';
   const nonLoadingStyling = rest.startIcon || rest.endIcon || loading ? {} : { padding: '0 .7rem' };
-  const endIcon = rest.startIcon ? undefined : <span style={loading ? { padding: '0 .7rem' } : {}}></span>;
+  const endIcon = rest.startIcon ? undefined : <span style={loading ? { padding: '0 .7rem' } : {}} />;
 
   return (
     <MUIButton

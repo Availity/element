@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { ControlledDatepicker } from './Datepicker';
 import { TestForm } from './UtilComponents';
 
-const onSubmit = jest.fn();
+const onSubmit = vi.fn();
 
 describe('ControlledDatepicker', () => {
   test('should render successfully and submit selection', async () => {

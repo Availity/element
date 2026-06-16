@@ -1,4 +1,1 @@
-import { default as FormGroup, FormGroupProps } from '@mui/material/FormGroup';
-
-export { FormGroup };
-export type { FormGroupProps };
+export {default as FormGroup, type FormGroupProps} from '@mui/material/FormGroup';

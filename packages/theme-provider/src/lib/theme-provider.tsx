@@ -16,7 +16,7 @@ export type ThemeProviderProps = {
 };
 
 const themes: Record<string, Theme> = {
-  lightTheme: lightTheme,
+  lightTheme,
   legacyBS: legacyTheme,
 };
 

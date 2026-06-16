@@ -25,7 +25,7 @@ describe('FileList', () => {
   });
 
   test('should call onRemoveFile', async () => {
-    const mockRemove = jest.fn();
+    const mockRemove = vi.fn();
     const mockFile = new File(['file content'], 'mock.txt', { type: 'text/plain' });
 
     render(
@@ -49,7 +49,7 @@ describe('FileList', () => {
   });
 
   test('should not display remove button when disableRemove is set to true', async () => {
-    const mockRemove = jest.fn();
+    const mockRemove = vi.fn();
     const mockFile = new File(['file content'], 'mock.txt', { type: 'text/plain' });
 
     render(

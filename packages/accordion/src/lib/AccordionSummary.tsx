@@ -23,7 +23,7 @@ const SecondaryContent = styled(Typography, {
 export type AccordionSummaryProps = {
   /** The main content element. Aliased by the `children` prop. */
   primary?: ReactNode;
-  /** These props will be forwarded to the primary typography component. Update `component` to reflect the correct heading level for accessibility.*/
+  /** These props will be forwarded to the primary typography component. Update `component` to reflect the correct heading level for accessibility. */
   primaryProps?: Omit<TypographyProps, 'className'>;
   /** The secondary content element. */
   secondary?: ReactNode;

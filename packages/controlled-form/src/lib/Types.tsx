@@ -1,4 +1,5 @@
 import { FieldValues, ControllerProps as MuiControllerProps, RegisterOptions } from 'react-hook-form';
+import { HTMLAttributes } from 'react';
 import { ControlledAutocompleteProps } from './Autocomplete';
 import {
   ControlledAsyncAutocompleteProps,
@@ -13,7 +14,6 @@ import {
   ControlledTextFieldProps,
   ControlledTimepickerProps,
 } from '..';
-import { HTMLAttributes } from 'react';
 
 export type ControllerProps = {
   /** Unique name of your input */

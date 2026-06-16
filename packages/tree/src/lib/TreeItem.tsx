@@ -5,8 +5,7 @@ export interface TreeItemProps extends MuiTreeItemProps {
   truncate?: boolean;
 }
 
-export const TreeItem = ({ children, label, slots, slotProps, truncate, ...rest }: TreeItemProps): React.JSX.Element => {
-  return (
+export const TreeItem = ({ children, label, slots, slotProps, truncate, ...rest }: TreeItemProps): React.JSX.Element => (
     <MuiTreeItem
       {...rest}
       label={label}
@@ -33,4 +32,3 @@ export const TreeItem = ({ children, label, slots, slotProps, truncate, ...rest 
       {children}
     </MuiTreeItem>
   );
-};

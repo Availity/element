@@ -1,4 +1,4 @@
-export * from './/lib/AsyncAutocomplete';
+export * from "./lib/AsyncAutocomplete";
 export * from './lib/Autocomplete';
 export * from './lib/Checkbox';
 export * from './lib/CodesAutocomplete';

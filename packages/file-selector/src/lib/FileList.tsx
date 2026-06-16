@@ -114,8 +114,7 @@ export const FileList = ({
 
   return (
     <List>
-      {files.map((file) => {
-        return (
+      {files.map((file) => (
           <FileRow
             key={file.name}
             file={file}
@@ -125,8 +124,7 @@ export const FileList = ({
             customFileRow={customFileRow}
             disableRemove={disableRemove}
           />
-        );
-      })}
+        ))}
     </List>
   );
 };

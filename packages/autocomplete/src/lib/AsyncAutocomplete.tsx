@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import type { ChipTypeMap } from '@mui/material/Chip';
-import { useInfiniteQuery, UseInfiniteQueryOptions } from '@tanstack/react-query';
+import { useInfiniteQuery, type InfiniteData, type UseInfiniteQueryOptions } from '@tanstack/react-query';
 import { AutocompleteInputChangeReason } from '@mui/material/Autocomplete';
 
 import { Autocomplete, AutocompleteProps } from './Autocomplete';
@@ -28,7 +28,12 @@ export interface AsyncAutocompleteProps<
    * @default 50 */
   limit?: number;
   /** Config options for the useInfiniteQuery hook */
-  queryOptions?: UseInfiniteQueryOptions<{ options: Option[]; hasMore: boolean; offset: number }>;
+  queryOptions?: Partial<
+    Omit<
+      UseInfiniteQueryOptions<{ options: Option[]; hasMore: boolean; offset: number }, Error, InfiniteData<{ options: Option[]; hasMore: boolean; offset: number }>, readonly unknown[], number>,
+      'queryKey' | 'queryFn' | 'initialPageParam' | 'getNextPageParam'
+    >
+  >;
   /** Object of parameters used for the cacheKey. Options are re-refetched when a value in the object changes  */
   watchParams?: Record<string, unknown>;
   /** Time to wait before searching with the input value typed into the component */
@@ -72,13 +77,14 @@ export const AsyncAutocomplete = <
 
   const { isLoading, isFetching, data, hasNextPage, fetchNextPage } = useInfiniteQuery({
     queryKey: [queryKey, limit, debouncedInput, watchParams],
-    queryFn: async ({ pageParam = 0 }) => loadOptions(pageParam, limit, debouncedInput),
+    queryFn: ({ pageParam }) => loadOptions(pageParam, limit, debouncedInput),
+    initialPageParam: 0,
     staleTime: 10000,
     getNextPageParam: (lastPage) => (lastPage.hasMore ? lastPage.offset + limit : undefined),
     ...queryOptions,
   });
 
-  const options = data?.pages ? data.pages.map((page) => page.options).flat() : [];
+  const options = data?.pages ? data.pages.flatMap((page) => page.options) : [];
 
   const finalOptions =
     prependOptions.length > 0
@@ -99,7 +105,7 @@ export const AsyncAutocomplete = <
     reason: AutocompleteInputChangeReason
   ) => {
     if (reason === 'clear') {
-      setInputValue(event.target.value);
+      setInputValue(value);
     } else if (reason === 'blur') {
       setInputValue(value);
     }

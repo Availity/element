@@ -1,8 +1,7 @@
-import { ElementType } from 'react';
+import { ElementType , useMemo, cloneElement } from 'react';
 import dayjs from 'dayjs';
 import { Card, CardContent } from '@availity/mui-card';
 import { Typography } from '@availity/mui-typography';
-import { useMemo, cloneElement } from 'react';
 import { StatusChip } from '@availity/mui-chip';
 import { CircularProgress } from '@availity/mui-progress';
 import Link from '@mui/material/Link';
@@ -256,7 +255,7 @@ export const SpacesLink = ({
                   {stacked && dateInfo}
                   {showDescription && linkSpace?.description && (
                     <TextTag
-                      component={'div'}
+                      component="div"
                       style={{
                         marginTop: '.5rem',
                         textAlign: stacked ? 'center' : undefined,

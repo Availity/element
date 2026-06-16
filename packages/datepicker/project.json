@@ -14,23 +14,20 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "eslintConfig": ".eslintrc.json",
         "silent": false,
         "fix": false,
         "cache": true,
         "cacheLocation": "./node_modules/.cache/datepicker/.eslintcache",
         "maxWarnings": -1,
         "quiet": false,
-        "noEslintrc": false,
         "hasTypeAwareRules": true,
         "cacheStrategy": "metadata"
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/datepicker"],
+      "executor": "nx:run-commands",
       "options": {
-        "jestConfig": "packages/datepicker/jest.config.js"
+        "command": "vitest run packages/datepicker"
       }
     },
     "version": {
@@ -40,7 +37,9 @@
         "commitMessageFormat": "chore({projectName}): release version ${version} [skip ci]",
         "tagPrefix": "@availity/{projectName}@",
         "trackDeps": true,
-        "skipCommitTypes": ["docs"]
+        "skipCommitTypes": [
+          "docs"
+        ]
       }
     }
   }

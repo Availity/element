@@ -8,6 +8,4 @@ export type ListItemProps = Omit<
 >;
 
 /** A common list item. Renders as an `<li>` by default. */
-export const ListItem = forwardRef<HTMLLIElement, ListItemProps>((props, ref) => {
-  return <MuiListItem {...props} ref={ref} />;
-});
+export const ListItem = forwardRef<HTMLLIElement, ListItemProps>((props, ref) => <MuiListItem {...props} ref={ref} />);

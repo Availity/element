@@ -214,7 +214,7 @@ export const FileSelector = ({
 
       // Remove from context and cache
       formMethods.setValue(name, newFiles);
-      client.removeQueries(['upload', upload.file.name]);
+      client.removeQueries({ queryKey: ['upload', upload.file.name] });
 
       if (removedFile?.size) setTotalSize(totalSize - removedFile.size);
 
@@ -309,7 +309,7 @@ export const FileSelector = ({
       {tooManyFilesRejections.length > 0 && (
         <Alert
           severity="error"
-          onClose={() => tooManyFilesRejections.forEach((rejection) => handleRemoveRejection(rejection.id))}
+          onClose={() => { for (const rejection of tooManyFilesRejections) handleRemoveRejection(rejection.id) }}
         >
           <AlertTitle>Items not allowed.</AlertTitle>
           Too many files are selected for upload, maximum {maxFiles} allowed.

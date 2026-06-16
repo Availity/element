@@ -1,12 +1,12 @@
 import { render, waitFor, fireEvent } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { server } from '@availity/mock/src/lib/server';
 import { Spaces } from '../Spaces';
 import { SpacesLink } from '../SpacesLink/SpacesLink';
 
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import { server } from '@availity/mock/src/lib/server';
+ 
 
-window.open = jest.fn();
+window.open = vi.fn();
 
 const queryClient = new QueryClient();
 
@@ -43,7 +43,7 @@ describe('DisclaimerModal', () => {
     server.listen();
   });
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     server.resetHandlers();
   });
 

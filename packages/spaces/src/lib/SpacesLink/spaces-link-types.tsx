@@ -1,7 +1,7 @@
 import type { StatusChipProps } from '@availity/mui-chip';
-import type { Space } from '../spaces-types';
 import { ElementType } from 'react';
 import { SvgIconProps } from '@mui/material';
+import type { Space } from '../spaces-types';
 
 export type SpacesLinkVariants = 'card' | 'list' | 'default' | undefined;
 

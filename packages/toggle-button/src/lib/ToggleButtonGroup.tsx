@@ -13,10 +13,8 @@ export interface ToggleButtonGroupProps extends Omit<MuiToggleButtonGroupProps, 
   size?: 'small' | 'medium' | 'large';
 }
 
-export const ToggleButtonGroup = forwardRef(({ children, ...rest }: ToggleButtonGroupProps, ref): React.JSX.Element => {
-  return (
+export const ToggleButtonGroup = forwardRef(({ children, ...rest }: ToggleButtonGroupProps, ref): React.JSX.Element => (
     <MuiToggleButtonGroup {...rest} ref={ref} orientation="horizontal">
       {children}
     </MuiToggleButtonGroup>
-  );
-});
+  ));

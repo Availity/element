@@ -1,6 +1,6 @@
-import { getUrl, getTarget, updateUrl } from '../helpers';
 import nativeForm from '@availity/native-form';
 import { isAbsoluteUrl } from '@availity/resolve-url';
+import { getUrl, getTarget, updateUrl } from '../helpers';
 import { updateTopApps } from '../topApps';
 import { OpenLink, OpenLinkWithSso } from './spaces-link-types';
 

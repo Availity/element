@@ -2,13 +2,13 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import { ControlledAutocomplete } from './Autocomplete';
 import { TestForm } from './UtilComponents';
 
-const onSubmit = jest.fn();
+const onSubmit = vi.fn();
 
 describe('ControlledAutocomplete', () => {
   afterEach(() => {
     // Remove any handlers you may have added
     // in individual tests (runtime handlers).
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   test('should set the value and submit the form', async () => {

@@ -64,9 +64,7 @@ export function useFileDelivery({
     return responses;
   };
 
-  const validate = (errors: Record<string, unknown>) => {
-    return Object.keys(errors).length === 0;
-  };
+  const validate = (errors: Record<string, unknown>) => Object.keys(errors).length === 0;
 
   const isQueryEnabled =
     !!customerId &&

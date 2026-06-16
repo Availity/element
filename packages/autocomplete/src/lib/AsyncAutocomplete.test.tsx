@@ -1,11 +1,9 @@
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import AvApi, { ApiConfig } from '@availity/api-axios';
-/* eslint-disable @nx/enforce-module-boundaries */
 import { server } from '@availity/mock/src/lib/server';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { AsyncAutocomplete } from './AsyncAutocomplete';
-import { mock } from 'node:test';
 
 const api = new AvApi({ name: 'example' } as ApiConfig);
 
@@ -62,7 +60,7 @@ describe('AsyncAutocomplete', () => {
     // Remove any handlers you may have added
     // in individual tests (runtime handlers).
     server.resetHandlers();
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   // terminate the server
@@ -184,7 +182,7 @@ describe('AsyncAutocomplete', () => {
   });
 
   test('should call loadOptions when scroll to the bottom', async () => {
-    const mockLoadOptions = jest.fn(loadOptions);
+    const mockLoadOptions = vi.fn(loadOptions);
     const client = new QueryClient();
 
     render(
@@ -221,7 +219,7 @@ describe('AsyncAutocomplete', () => {
   });
 
   test('should call loadOptions if more options available and not enough options for scroll', async () => {
-    const mockLoadOptions = jest.fn(loadOptions);
+    const mockLoadOptions = vi.fn(loadOptions);
     const client = new QueryClient();
 
     render(
@@ -264,7 +262,7 @@ describe('AsyncAutocomplete', () => {
 
 
   test('should search with input value', async () => {
-    const mockLoadOptions = jest.fn(async () => ({ options: [{ label: 'Option 1' }], hasMore: false, offset: 50 }));
+    const mockLoadOptions = vi.fn(async () => ({ options: [{ label: 'Option 1' }], hasMore: false, offset: 50 }));
     const client = new QueryClient();
 
     render(
@@ -288,7 +286,7 @@ describe('AsyncAutocomplete', () => {
   });
 
   test('should make call when watchParams changes', async () => {
-    const mockLoadOptions = jest.fn(async () => ({ options: [{ label: 'Option 1' }], hasMore: false, offset: 50 }));
+    const mockLoadOptions = vi.fn(async () => ({ options: [{ label: 'Option 1' }], hasMore: false, offset: 50 }));
     const client = new QueryClient();
 
     const watchParams = { foo: 'bar' };

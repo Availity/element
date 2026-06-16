@@ -1,8 +1,8 @@
 import type { AsyncAutocompleteProps, Provider } from '@availity/mui-autocomplete';
 import { handleGetProviderOptionLabel, fetchProviders } from '@availity/mui-autocomplete';
 import type { ChipTypeMap } from '@mui/material/Chip';
-import type { Optional } from './utils';
 import type { ApiConfig } from '@availity/api-axios';
+import type { Optional } from './utils';
 import { ControlledAsyncAutocomplete, type ControlledAsyncAutocompleteProps } from './AsyncAutocomplete';
 
 export interface ControlledProviderAutocompleteProps<

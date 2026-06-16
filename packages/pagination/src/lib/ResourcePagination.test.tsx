@@ -1,11 +1,11 @@
 import { render, waitForElementToBeRemoved } from '@testing-library/react';
-import { useResourcePagination } from './ResourcePagination';
 import { avOrganizationsApi } from '@availity/api-axios';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '@availity/mock/src/lib/server';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import organizations from '@availity/mock/src/lib/data/organizations.json';
+import { useResourcePagination } from './ResourcePagination';
 
 beforeAll(() => {
   // Start the interception.

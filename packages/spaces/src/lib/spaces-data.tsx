@@ -39,7 +39,7 @@ export const fetchSpaces = async ({ query, clientId, variables, operationName }:
   if (clientId) {
     headers['X-Client-ID'] = clientId;
   }
-  // eslint-disable-next-line no-useless-catch
+   
   const {
     data: {
       data: { configurationPagination },

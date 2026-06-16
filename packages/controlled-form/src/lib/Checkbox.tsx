@@ -17,8 +17,7 @@ export const ControlledCheckbox = <Output = boolean,>({
   shouldUnregister,
   transform,
   ...rest
-}: ControlledCheckboxProps<Output>) => {
-  return (
+}: ControlledCheckboxProps<Output>) => (
     <Controller
       name={name}
       defaultValue={defaultValue}
@@ -42,4 +41,3 @@ export const ControlledCheckbox = <Output = boolean,>({
       )}
     />
   );
-};

@@ -9,6 +9,4 @@ export type TableContainerProps = {
   component?: ElementType<TableCellBaseProps>;
 } & MuiTableContainerProps;
 
-export const TableContainer = (props: TableContainerProps): React.JSX.Element => {
-  return <MuiTableContainer {...props} />;
-};
+export const TableContainer = (props: TableContainerProps): React.JSX.Element => <MuiTableContainer {...props} />;

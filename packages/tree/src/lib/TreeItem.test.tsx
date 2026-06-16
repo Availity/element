@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
+import { TriangleRightIcon, TriangleExpandIcon } from '@availity/mui-icon';
 import { TreeItem } from './TreeItem';
 import { TreeView } from './TreeView';
-import { TriangleRightIcon, TriangleExpandIcon } from '@availity/mui-icon';
 
 describe('TreeView', () => {
   test('should render successfully', () => {

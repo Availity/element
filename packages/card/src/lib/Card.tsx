@@ -4,6 +4,4 @@ export interface CardProps extends Omit<MuiCardProps, 'elevation' | 'raised' | '
   children?: React.ReactNode;
 }
 
-export const Card = ({ children, ...rest }: CardProps): React.JSX.Element => {
-  return <MuiCard {...rest}>{children}</MuiCard>;
-};
+export const Card = ({ children, ...rest }: CardProps): React.JSX.Element => <MuiCard {...rest}>{children}</MuiCard>;

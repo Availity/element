@@ -3,7 +3,7 @@ import { FeedbackHeader } from './FeedbackHeader';
 
 describe('FeedbackHeader', () => {
   test('should render successfully', () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
     const { getByText, getByLabelText } = render(
       <FeedbackHeader appName="This App" handleClose={handleClose} loading={false} sent={false} />
     );
@@ -18,9 +18,9 @@ describe('FeedbackHeader', () => {
   });
 
   test('should render sent text successfully', () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
     const { getByText } = render(
-      <FeedbackHeader appName="This App" handleClose={handleClose} loading={false} sent={true} />
+      <FeedbackHeader appName="This App" handleClose={handleClose} loading={false} sent />
     );
 
     expect(getByText('Thank you for your feedback.')).toBeTruthy();

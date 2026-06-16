@@ -1,12 +1,10 @@
-import '@testing-library/jest-dom';
 import { useState } from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { server } from "@availity/mock/src/lib/server";
 import { Spaces, useSpaces, useSpacesContext } from '..';
-import { fetchAllSpaces } from './spaces-data';
 
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import { server } from '../../../mock/src/lib/server';
+ 
 
 beforeAll(() => {
   // Start the interception.
@@ -82,11 +80,11 @@ describe('Spaces', () => {
 
 it('toggles whether the spaces provider is loading', async () => {
   const queryClient = new QueryClient();
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  const fn = jest.fn();
+   
+  const fn = vi.fn();
   // Create component to call mock function
   const SpaceComponent = ({ spaceId }: { spaceId: string }) => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
+     
 
     const space = useSpaces(spaceId);
     const { loading } = useSpacesContext();
@@ -199,8 +197,8 @@ describe('useSpaces', () => {
   });
 
   it('renders with warning when returning all spaces because no ids were passed in', async () => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const consoleWarnMock = jest.spyOn(console, 'warn').mockImplementation(() => {});
+     
+    const consoleWarnMock = vi.spyOn(console, 'warn').mockImplementation(() => {});
     const SpacesComponent = ({ ids = [] }) => {
       const spaces = useSpaces(...ids) || [];
 
@@ -260,11 +258,11 @@ it('returns first payer space with when no spaceId passed', async () => {
   expect(spc2).toBeDefined();
 });
 describe('ID validation', () => {
-  let mockFetchAllSpaces: jest.SpyInstance;
+  let mockFetchAllSpaces: ReturnType<typeof vi.spyOn>;
 
-  beforeEach(() => {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    mockFetchAllSpaces = jest.spyOn(require('./spaces-data'), 'fetchAllSpaces').mockResolvedValue([]);
+  beforeEach(async () => {
+    const spacesData = await import('./spaces-data');
+    mockFetchAllSpaces = vi.spyOn(spacesData, 'fetchAllSpaces').mockResolvedValue([]);
   });
 
   afterEach(() => {

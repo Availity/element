@@ -2,24 +2,24 @@ import { updateUrl, getUrl } from './helpers';
 
 describe('updateUrl', () => {
   it('should parse the given url return the existing and new params in alphabetical order', () => {
-    let updatedUrl = updateUrl('http://www.example.com?foo=bar#hashme', 'fakeKey', 'fakeValue');
-    expect(updatedUrl).toBe('http://www.example.com?fakeKey=fakeValue&foo=bar%23hashme');
+    let updatedUrl = updateUrl('https://www.example.com?foo=bar#hashme', 'fakeKey', 'fakeValue');
+    expect(updatedUrl).toBe('https://www.example.com?fakeKey=fakeValue&foo=bar%23hashme');
 
-    updatedUrl = updateUrl('http://www.example.com', 'fakeKey', 'fakeValue');
-    expect(updatedUrl).toBe('http://www.example.com?fakeKey=fakeValue');
+    updatedUrl = updateUrl('https://www.example.com', 'fakeKey', 'fakeValue');
+    expect(updatedUrl).toBe('https://www.example.com?fakeKey=fakeValue');
 
-    updatedUrl = updateUrl('http://www.example.com?foo=bar', 'fakeKey', 'fakeValue');
-    expect(updatedUrl).toBe('http://www.example.com?fakeKey=fakeValue&foo=bar');
+    updatedUrl = updateUrl('https://www.example.com?foo=bar', 'fakeKey', 'fakeValue');
+    expect(updatedUrl).toBe('https://www.example.com?fakeKey=fakeValue&foo=bar');
 
-    updatedUrl = updateUrl('http://www.example.com?foo=bar');
-    expect(updatedUrl).toBe('http://www.example.com?foo=bar');
+    updatedUrl = updateUrl('https://www.example.com?foo=bar');
+    expect(updatedUrl).toBe('https://www.example.com?foo=bar');
   });
 });
 
 describe('getUrl', () => {
   it('should return an absolute url', () => {
-    const url = getUrl('http://www.availity.com', false, true);
-    expect(url).toBe('http://www.availity.com');
+    const url = getUrl('https://www.availity.com', false, true);
+    expect(url).toBe('https://www.availity.com');
   });
 
   it('should return a relative url', () => {
