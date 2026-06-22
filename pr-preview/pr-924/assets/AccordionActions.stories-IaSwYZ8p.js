@@ -1,0 +1,6 @@
+import{j as r}from"./iframe-D9VxGUXm.js";import{B as t}from"./Button-Bh2oDbYg.js";import{A as n}from"./AccordionActions-BlyduvNB.js";import"./preload-helper-Dab_6GC_.js";import"./Button-CSvshhUs.js";import"./styled-D8Xb_hHx.js";import"./memoTheme-CUWoCynM.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./generateUtilityClass-BtcU_pBl.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./ButtonBase-IEWOwJJy.js";import"./useTimeout-CCeZqBN_.js";import"./TransitionGroupContext-BLR2oRR2.js";import"./useForkRef-5-P7CGIn.js";import"./useEventCallback-BrENIvCl.js";import"./isFocusVisible-B8k4qzLc.js";import"./CircularProgress-rsn-iR-g.js";const C={title:"Components/Accordion/AccordionActions",component:n,tags:["autodocs"]},o={render:c=>r.jsxs(n,{...c,children:[r.jsx(t,{children:"Cancel"}),r.jsx(t,{children:"Agree"})]})};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  render: (args: AccordionActionsProps) => <AccordionActions {...args}>
+      <Button>Cancel</Button>
+      <Button>Agree</Button>
+    </AccordionActions>
+}`,...o.parameters?.docs?.source}}};const E=["_AccordionActions"];export{o as _AccordionActions,E as __namedExportsOrder,C as default};
