@@ -23,6 +23,8 @@ const preview: Preview = {
         items: [
           { value: 'lightTheme', icon: 'sun', title: 'Light (default)' },
           { value: 'legacyBS', icon: 'markup', title: 'Legacy Bootstrap' },
+          { value: 'docsLight', icon: 'document', title: 'Docs Light' },
+          { value: 'docsDark', icon: 'moon', title: 'Docs Dark' },
         ],
         dynamicTitle: true,
         showName: true,

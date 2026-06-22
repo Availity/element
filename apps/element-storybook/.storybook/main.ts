@@ -1,9 +1,12 @@
 // This file has been automatically migrated to valid ESM format by Storybook.
 import { createRequire } from "node:module";
+import { fileURLToPath } from "node:url";
 import { dirname, join } from 'path';
 import remarkGfm from 'remark-gfm';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { StorybookConfig } from '@storybook/react-vite';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
@@ -58,7 +61,12 @@ const config: StorybookConfig = {
     storyStoreV7: false
   },
 
-  docs: {}
+  docs: {},
+
+  viteFinal: async (config) => {
+    config.plugins = [...(config.plugins || []), tsconfigPaths({ root: join(__dirname, '../../..') })];
+    return config;
+  },
 };
 
 export default config;
