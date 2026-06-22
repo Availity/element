@@ -1,0 +1,3 @@
+import{j as o}from"./iframe-DHkqGgbi.js";import{R as e}from"./RequiredKey-BHuK2WVB.js";import"./preload-helper-PPVm8Dsz.js";import"./Typography-BunlOy3h.js";import"./Typography-i96SYvKe.js";import"./memoTheme-vxEZSkJ8.js";import"./styled-BFLY3dn7.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./generateUtilityClass-BtcU_pBl.js";import"./generateUtilityClasses-DDbjFgb8.js";const R={title:"Form Components/Uncontrolled FormUtils/RequiredKey",component:e,tags:["autodocs"]},r={render:()=>o.jsx(e,{})};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
+  render: () => <RequiredKey />
+}`,...r.parameters?.docs?.source}}};const l=["_RequiredKey"];export{r as _RequiredKey,l as __namedExportsOrder,R as default};

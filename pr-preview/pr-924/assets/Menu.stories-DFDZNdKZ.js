@@ -1,0 +1,77 @@
+import{r as s,j as e}from"./iframe-DHkqGgbi.js";import{B as C}from"./Button-BBqhYll5.js";import{U as h,b}from"./Common-BLIi_r9Z.js";import{H as f}from"./Form-CBGs9Zxl.js";import{A as M}from"./Navigation-DNeAUlyb.js";import{a as m,M as t}from"./Menu-DhkrTVCV.js";import"./preload-helper-PPVm8Dsz.js";import"./Button-CHAexKoQ.js";import"./styled-BFLY3dn7.js";import"./memoTheme-vxEZSkJ8.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./generateUtilityClass-BtcU_pBl.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./ButtonBase-BwqJJF5q.js";import"./useTimeout-Bjfnw5AG.js";import"./TransitionGroupContext-3E4Xv_Lx.js";import"./useForkRef-B4h6zx_x.js";import"./useEventCallback-LtXdtY4h.js";import"./isFocusVisible-B8k4qzLc.js";import"./CircularProgress-D39cxiof.js";import"./faMagnifyingGlass-DEVYYJwr.js";import"./FaSvgIcon-BtkjvlUV.js";import"./SvgIcon-D9Y7JiS_.js";import"./faCircleArrowRight-C4kufxUN.js";import"./SelectFocusSourceContext-21Yu2WtQ.js";import"./useSlot-CAeYipRU.js";import"./mergeSlotProps-Dp8H4ez1.js";import"./useSlotProps-CZQ_I0Kw.js";import"./Popover-B_wJwpIg.js";import"./ownerDocument-DW-IO8s5.js";import"./getActiveElement-CvEHRBc8.js";import"./Grow-CwxupgJl.js";import"./useTheme-DTNKpojL.js";import"./utils-BQBkKAg6.js";import"./getReactElementRef-BRoKhHqU.js";import"./mergeSlotProps-BNZZW_n2.js";import"./debounce-Be36O1Ab.js";import"./Modal-BHwxEFT_.js";import"./createChainedFunction-BO_9K8Jh.js";import"./Portal-CtpwjVP0.js";import"./contains-DSD8CO72.js";import"./Backdrop-D3ggRYPY.js";import"./Fade-CqjyPa8q.js";import"./Paper-Cer6O457.js";import"./List-BX9VmHQj.js";import"./MenuItem-ClLGuXdD.js";import"./listItemIconClasses-BWL98Y3T.js";import"./listItemTextClasses-D_J2aVaO.js";import"./dividerClasses-qU9lkgJy.js";const Ce={title:"Components/Menu/Menu",component:m,tags:["autodocs"]},i={render:({open:n,...c})=>{const l=s.useRef(null),[d,r]=s.useState(!1);s.useEffect(()=>{r(n)},[n]);const p=()=>{r(u=>!u)},o=()=>{r(!1)};return e.jsxs("div",{children:[e.jsx(C,{id:"basic-button","aria-controls":n?"basic-menu":void 0,"aria-haspopup":"true","aria-expanded":n?"true":void 0,onClick:p,ref:l,children:"Dashboard"}),e.jsxs(m,{id:"basic-menu",anchorEl:l.current,open:d,onClose:o,MenuListProps:{"aria-labelledby":"basic-button"},...c,children:[e.jsx(t,{onClick:o,children:"Profile"}),e.jsx(t,{onClick:o,selected:!0,children:"My account"}),e.jsx(t,{onClick:o,disabled:!0,children:"Help"}),e.jsx(t,{onClick:o,children:"Logout"})]})]})}},a={render:({open:n,...c})=>{const l=s.useRef(null),[d,r]=s.useState(!1);s.useEffect(()=>{r(n)},[n]);const p=()=>{r(u=>!u)},o=()=>{r(!1)};return e.jsxs("div",{children:[e.jsx(C,{id:"basic-button","aria-controls":n?"basic-menu":void 0,"aria-haspopup":"true","aria-expanded":n?"true":void 0,onClick:p,ref:l,children:"Dashboard"}),e.jsxs(m,{id:"basic-menu",anchorEl:l.current,open:d,onClose:o,MenuListProps:{"aria-labelledby":"basic-button"},...c,children:[e.jsxs(t,{onClick:o,children:[e.jsx(h,{}),"Profile"]}),e.jsxs(t,{onClick:o,selected:!0,children:[e.jsx(b,{}),"My account"]}),e.jsxs(t,{onClick:o,disabled:!0,children:[e.jsx(f,{}),"Help"]}),e.jsxs(t,{onClick:o,children:[e.jsx(M,{}),"Logout"]})]})]})}};i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  render: ({
+    open,
+    ...args
+  }) => {
+    const anchorEl = useRef<HTMLButtonElement>(null);
+    const [controlledOpen, setControlledOpen] = useState(false);
+    useEffect(() => {
+      setControlledOpen(open);
+    }, [open]);
+    const handleClick = () => {
+      setControlledOpen(prev => !prev);
+    };
+    const handleClose = () => {
+      setControlledOpen(false);
+    };
+    return <div>
+        <Button id="basic-button" aria-controls={open ? 'basic-menu' : undefined} aria-haspopup="true" aria-expanded={open ? 'true' : undefined} onClick={handleClick} ref={anchorEl}>
+          Dashboard
+        </Button>
+        <Menu id="basic-menu" anchorEl={anchorEl.current} open={controlledOpen} onClose={handleClose} MenuListProps={{
+        'aria-labelledby': 'basic-button'
+      }} {...args}>
+          <MenuItem onClick={handleClose}>Profile</MenuItem>
+          <MenuItem onClick={handleClose} selected>
+            My account
+          </MenuItem>
+          <MenuItem onClick={handleClose} disabled>
+            Help
+          </MenuItem>
+          <MenuItem onClick={handleClose}>Logout</MenuItem>
+        </Menu>
+      </div>;
+  }
+}`,...i.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  render: ({
+    open,
+    ...args
+  }) => {
+    const anchorEl = useRef<HTMLButtonElement>(null);
+    const [controlledOpen, setControlledOpen] = useState(false);
+    useEffect(() => {
+      setControlledOpen(open);
+    }, [open]);
+    const handleClick = () => {
+      setControlledOpen(prev => !prev);
+    };
+    const handleClose = () => {
+      setControlledOpen(false);
+    };
+    return <div>
+        <Button id="basic-button" aria-controls={open ? 'basic-menu' : undefined} aria-haspopup="true" aria-expanded={open ? 'true' : undefined} onClick={handleClick} ref={anchorEl}>
+          Dashboard
+        </Button>
+        <Menu id="basic-menu" anchorEl={anchorEl.current} open={controlledOpen} onClose={handleClose} MenuListProps={{
+        'aria-labelledby': 'basic-button'
+      }} {...args}>
+          <MenuItem onClick={handleClose}>
+            <UserIcon />
+            Profile
+          </MenuItem>
+          <MenuItem onClick={handleClose} selected>
+            <SettingsIcon />
+            My account
+          </MenuItem>
+          <MenuItem onClick={handleClose} disabled>
+            <HelpCircleIcon />
+            Help
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <ArrowCircleLeftIcon />
+            Logout
+          </MenuItem>
+        </Menu>
+      </div>;
+  }
+}`,...a.parameters?.docs?.source}}};const he=["_Menu","_MenuWithIcons"];export{i as _Menu,a as _MenuWithIcons,he as __namedExportsOrder,Ce as default};

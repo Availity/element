@@ -1,0 +1,1 @@
+import{j as o,r as a}from"./iframe-DHkqGgbi.js";import{G as t}from"./Grid-BLry6rK7.js";import{B as i}from"./Box-DMMQfXcC.js";var m=a.forwardRef((r,s)=>o.jsx(i,{...r,ref:s})),d=r=>o.jsx(t,{...r});m.__docgenInfo={description:"",methods:[],displayName:"Box"};export{m as B,d as G};
