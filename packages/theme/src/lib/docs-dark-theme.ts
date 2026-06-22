@@ -401,6 +401,44 @@ export const docsDarkTheme = {
         },
       },
     },
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: '#FFFFFF',
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          padding: '10px 16px',
+          fontFamily: 'Lato',
+          fontWeight: 400,
+          fontSize: '15px',
+          lineHeight: '24px',
+          letterSpacing: '0.01em',
+          textTransform: 'none' as const,
+          color: 'rgba(239, 243, 255, 0.9)',
+          borderRadius: 0,
+          minHeight: '44px',
+          '&:hover': {
+            fontWeight: 700,
+            color: '#FFFFFF',
+          },
+          '&:focus-visible': {
+            border: '2px solid #369CFF',
+            borderRadius: '8px',
+          },
+          '&.Mui-selected': {
+            fontWeight: 700,
+            color: 'rgba(239, 243, 255, 0.9)',
+          },
+          '&.Mui-disabled': {
+            opacity: 0.5,
+          },
+        },
+      },
+    },
     MuiAlert: {
       styleOverrides: {
         root: {

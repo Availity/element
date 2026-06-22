@@ -65,6 +65,9 @@ const config: StorybookConfig = {
 
   viteFinal: async (config) => {
     config.plugins = [...(config.plugins || []), tsconfigPaths({ root: join(__dirname, '../../..') })];
+    if (process.env.STORYBOOK_BASE) {
+      config.base = process.env.STORYBOOK_BASE;
+    }
     return config;
   },
 };
