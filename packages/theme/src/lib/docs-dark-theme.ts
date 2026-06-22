@@ -176,8 +176,8 @@ export const docsDarkTheme = {
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          borderRadius: '100px',
-          padding: '8px 16px',
+          borderRadius: '8px',
+          padding: '0 12px',
           height: '40px',
           backgroundColor: 'rgba(0, 12, 48, 0.9)',
           '& fieldset': {
@@ -198,15 +198,50 @@ export const docsDarkTheme = {
           },
         },
         input: {
-          padding: 0,
-          fontSize: '15px',
+          padding: '8px 0',
+          fontSize: '18px',
           fontFamily: 'Lato',
-          lineHeight: '24px',
-          letterSpacing: '0.01em',
+          lineHeight: '26px',
           color: '#FFFFFF',
           '&::placeholder': {
-            color: '#FFFFFF',
-            opacity: 0.8,
+            color: '#838795',
+            opacity: 1,
+          },
+        },
+      },
+    },
+    MuiFormLabel: {
+      styleOverrides: {
+        avWrapper: {
+          display: 'flex',
+          alignItems: 'center',
+          gap: '4px',
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'Lato',
+          fontSize: '18px',
+          lineHeight: '26px',
+          fontWeight: 400,
+          color: '#EFF3FF',
+        },
+      },
+    },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'Lato',
+          fontSize: '12px',
+          lineHeight: '18px',
+          color: '#BBD5EA',
+          display: 'flex',
+          alignItems: 'center',
+          marginLeft: 0,
+          '& .MuiSvgIcon-root': {
+            fontSize: '14px',
           },
         },
       },
@@ -287,6 +322,29 @@ export const docsDarkTheme = {
           '&.Mui-disabled': {
             opacity: 0.5,
             border: '1px solid #519EE6',
+          },
+        },
+        sizeSmall: {
+          width: 'auto',
+          height: 'auto',
+          padding: '2px',
+          border: 'none',
+          backgroundColor: 'transparent',
+          '&:hover': {
+            background: 'transparent',
+            border: 'none',
+          },
+          '&:focus-visible': {
+            border: 'none',
+            outline: '2px solid #369CFF',
+            borderRadius: '4px',
+          },
+          '&:active': {
+            border: 'none',
+            backgroundColor: 'transparent',
+          },
+          '&.Mui-disabled': {
+            border: 'none',
           },
         },
       },
