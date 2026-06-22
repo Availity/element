@@ -15,6 +15,12 @@ export const docsDarkTheme = {
       paper: '#061645',
     },
     divider: '#0F2A7C',
+    tertiary: {
+      main: '#000C30',
+      light: '#061645',
+      dark: '#000820',
+      contrastText: '#FFFFFF',
+    },
   },
   components: {
     MuiAccordion: {
@@ -321,11 +327,70 @@ export const docsDarkTheme = {
             color: '#FFFFFF',
           },
         },
+        outlinedPrimary: {
+          borderColor: '#91B0DA',
+          color: 'rgba(255, 255, 255, 0.9)',
+          '&:hover': {
+            background: 'linear-gradient(90deg, rgba(145,176,218,0) 0%, rgba(145,176,218,0.3) 100%)',
+            borderColor: '#FFFFFF',
+            color: '#FFFFFF',
+          },
+          '&:focus-visible': {
+            outline: '2px solid #369CFF',
+            border: '1px solid #FFFFFF',
+          },
+          '&:active': {
+            borderColor: '#91B0DA',
+          },
+          '&.Mui-disabled': {
+            background: '#838795',
+            color: '#EEEFF2',
+            border: 'none',
+          },
+        },
         outlinedSecondary: {
           borderColor: '#91B0DA',
           color: 'rgba(255, 255, 255, 0.9)',
           '&:hover': {
             background: 'linear-gradient(90deg, rgba(145,176,218,0) 0%, rgba(145,176,218,0.3) 100%)',
+            borderColor: '#FFFFFF',
+            color: '#FFFFFF',
+          },
+          '&:focus-visible': {
+            outline: '2px solid #369CFF',
+            border: '1px solid #FFFFFF',
+          },
+          '&:active': {
+            borderColor: '#91B0DA',
+          },
+          '&.Mui-disabled': {
+            background: '#838795',
+            color: '#EEEFF2',
+            border: 'none',
+          },
+        },
+        containedTertiary: {
+          backgroundColor: 'transparent',
+          color: '#FFFFFF',
+          '&:hover': {
+            backgroundColor: 'rgba(15, 42, 124, 0.2)',
+          },
+          '&:focus-visible': {
+            outline: '2px solid #369CFF',
+          },
+          '&:active': {
+            backgroundColor: 'rgba(15, 42, 124, 0.3)',
+          },
+          '&.Mui-disabled': {
+            background: '#838795',
+            color: '#EEEFF2',
+          },
+        },
+        outlinedTertiary: {
+          borderColor: '#91B0DA',
+          color: 'rgba(255, 255, 255, 0.9)',
+          '&:hover': {
+            backgroundColor: 'rgba(145, 176, 218, 0.1)',
             borderColor: '#FFFFFF',
             color: '#FFFFFF',
           },
@@ -365,6 +430,9 @@ export const docsDarkTheme = {
           '&.Mui-disabled': {
             opacity: 0.5,
             color: '#FFFFFF',
+          },
+          '& .MuiSvgIcon-root': {
+            fontSize: 'inherit',
           },
         },
       },

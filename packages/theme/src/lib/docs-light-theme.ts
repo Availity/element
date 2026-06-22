@@ -9,6 +9,12 @@ export const docsLightTheme = {
     secondary: {
       main: '#FFD300',
     },
+    tertiary: {
+      main: '#F5F6F8',
+      light: '#FFFFFF',
+      dark: '#E8EAF0',
+      contrastText: '#0F2A7C',
+    },
     error: {
       main: '#C70002',
       light: '#FA7AA5',
@@ -404,19 +410,76 @@ export const docsLightTheme = {
             color: '#FFFFFF',
           },
         },
-        outlinedSecondary: {
-          borderColor: '#0F2A7C',
-          color: '#0D2543',
+        outlinedPrimary: {
+          borderColor: '#FF671F',
+          color: '#CA4F16',
           '&:hover': {
-            background: 'linear-gradient(90deg, rgba(145,176,218,0) 0%, rgba(145,176,218,0.5) 100%)',
+            background: 'rgba(255, 103, 31, 0.08)',
+            borderColor: '#CA4F16',
+          },
+          '&:focus-visible': {
+            outline: '2px solid #1B74CB',
+            border: '1px solid #FF671F',
+          },
+          '&:active': {
+            borderColor: '#FF671F',
+          },
+          '&.Mui-disabled': {
+            background: '#838795',
+            color: '#FFFFFF',
+            border: 'none',
+          },
+        },
+        outlinedSecondary: {
+          borderColor: '#B89600',
+          color: '#806D0F',
+          '&:hover': {
+            background: 'rgba(255, 211, 0, 0.1)',
+            borderColor: '#806D0F',
+          },
+          '&:focus-visible': {
+            outline: '2px solid #1B74CB',
+            border: '1px solid #B89600',
+          },
+          '&:active': {
+            borderColor: '#B89600',
+          },
+          '&.Mui-disabled': {
+            background: '#838795',
+            color: '#FFFFFF',
+            border: 'none',
+          },
+        },
+        containedTertiary: {
+          backgroundColor: 'transparent',
+          color: '#0F2A7C',
+          '&:hover': {
+            backgroundColor: 'rgba(15, 42, 124, 0.08)',
+          },
+          '&:focus-visible': {
+            outline: '2px solid #1B74CB',
+          },
+          '&:active': {
+            backgroundColor: 'rgba(15, 42, 124, 0.12)',
+          },
+          '&.Mui-disabled': {
+            background: '#838795',
+            color: '#FFFFFF',
+          },
+        },
+        outlinedTertiary: {
+          borderColor: '#0F2A7C',
+          color: '#0F2A7C',
+          '&:hover': {
+            backgroundColor: 'rgba(15, 42, 124, 0.08)',
             borderColor: '#0F2A7C',
           },
           '&:focus-visible': {
             outline: '2px solid #1B74CB',
-            border: '1px solid #FFFFFF',
+            border: '1px solid #0F2A7C',
           },
           '&:active': {
-            borderColor: '#0F2A7C',
+            backgroundColor: 'rgba(15, 42, 124, 0.12)',
           },
           '&.Mui-disabled': {
             background: '#838795',
@@ -447,6 +510,9 @@ export const docsLightTheme = {
           '&.Mui-disabled': {
             opacity: 0.5,
             color: '#0F2A7C',
+          },
+          '& .MuiSvgIcon-root': {
+            fontSize: 'inherit',
           },
         },
       },
