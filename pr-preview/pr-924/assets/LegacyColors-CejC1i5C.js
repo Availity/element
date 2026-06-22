@@ -1,0 +1,6 @@
+import{j as e,M as a,C as m,l as p,a as h}from"./iframe-BdOkmXSO.js";import{useMDXComponents as c}from"./index-CoAYcpgs.js";import"./preload-helper-Dab_6GC_.js";function i(r){const t={a:"a",code:"code",h1:"h1",p:"p",...c(),...r.components};return e.jsxs(e.Fragment,{children:[e.jsx(a,{title:"Design System/Theme/Legacy/Colors"}),`
+`,e.jsx(t.h1,{id:"colors",children:"Colors"}),`
+`,e.jsx(t.p,{children:"Colors for 'legacyBS' theme."}),`
+`,e.jsxs(t.p,{children:["Listed colors are directly available through the ",e.jsx(t.code,{children:"sx"})," property for select properties (see ",e.jsx(t.a,{href:"https://mui.com/system/properties/",rel:"nofollow",children:"MUI System Properties Documentation"}),")"]}),`
+`,e.jsxs(t.p,{children:["e.g. ",e.jsx(t.code,{children:"sx={{ bgcolor: 'primary.main' }}"})]}),`
+`,e.jsx(m,{children:Object.entries(p.palette).map(([n,s])=>{let o=typeof s=="object"?s:{[n]:s};if(o=Object.fromEntries(Object.entries(o).filter(([d,l])=>isNaN(l))),JSON.stringify(o)!=="{}")return e.jsx(h,{title:n,colors:{...o}})})})]})}function u(r={}){const{wrapper:t}={...c(),...r.components};return t?e.jsx(t,{...r,children:e.jsx(i,{...r})}):i(r)}export{u as default};
