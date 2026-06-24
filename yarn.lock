@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 8
+  version: 10
   cacheKey: 10
 
 "@adobe/css-tools@npm:^4.4.0":
@@ -493,7 +493,6 @@ __metadata:
     dayjs: "npm:^1.11.21"
     react: "npm:19.2.7"
     react-dom: "npm:19.2.7"
-    react-hook-form: "npm:^7.79.0"
     tsup: "npm:^8.5.1"
     typescript: "npm:^5.9.3"
     yup: "npm:^1.6.1"
@@ -502,6 +501,7 @@ __metadata:
     "@mui/material": ^7.0.0
     "@tanstack/react-query": ^5.101.0
     react: ">=17.0.0"
+    react-hook-form: ^7.79.0
   languageName: unknown
   linkType: soft
 
@@ -684,12 +684,12 @@ __metadata:
     "@mui/material": "npm:^7.3.11"
     react: "npm:19.2.7"
     react-dom: "npm:19.2.7"
-    react-hook-form: "npm:^7.79.0"
     tsup: "npm:^8.5.1"
     typescript: "npm:^5.9.3"
   peerDependencies:
     "@mui/material": ^7.0.0
     react: ">=17.0.0"
+    react-hook-form: ^7.79.0
   languageName: unknown
   linkType: soft
 
