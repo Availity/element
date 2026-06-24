@@ -41,6 +41,8 @@ jobs:
         run: yarn build
 
       - name: Build Docs
+        env:
+          STORYBOOK_BASE: /element/pr-preview/pr-${{ github.event.number }}/
         run: yarn build:storybook:ci
 
       - name: Deploy PR Preview
