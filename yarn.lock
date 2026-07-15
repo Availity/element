@@ -8333,7 +8333,7 @@ __metadata:
     eslint: "npm:^9.39.4"
     eslint-config-availity: "npm:^14.0.0"
     eslint-plugin-storybook: "npm:10.4.5"
-    glob: "npm:^7.2.3"
+    glob: "npm:^13.0.6"
     husky: "npm:^9.1.7"
     is-ci: "npm:^4.1.0"
     jiti: "npm:2.4.2"
@@ -12251,7 +12251,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^13.0.0, glob@npm:^13.0.1":
+"glob@npm:^13.0.0, glob@npm:^13.0.1, glob@npm:^13.0.6":
   version: 13.0.6
   resolution: "glob@npm:13.0.6"
   dependencies:
@@ -12262,7 +12262,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.1.4, glob@npm:^7.2.3":
+"glob@npm:^7.1.4":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
   dependencies:
