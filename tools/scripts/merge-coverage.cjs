@@ -3,6 +3,7 @@ const glob = require('glob');
 const fs = require('fs');
 const path = require('path');
 
+
 function getReport() {
   return new Promise((resolve, reject) => {
     glob('coverage/**/coverage-final.json', (error, result) => {
