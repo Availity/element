@@ -55,7 +55,7 @@
     "@tanstack/react-query": "^5.101.0",
     "react": "19.2.7",
     "react-dom": "19.2.7",
-    "react-router-dom": "^6.30.4",
+    "react-router": "7.18.2",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   },
@@ -75,14 +75,14 @@
     "@mui/material": "^7.0.0",
     "@tanstack/react-query": "^5.101.0",
     "react": ">=17.0.0",
-    "react-router-dom": "^6.26.0"
+    "react-router": "^7.0.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "@availity/api-axios": "^13.2.0",
-    "@availity/hooks": "^6.0.1",
+    "@availity/hooks": "^7.0.0",
     "@availity/message-core": "^9.2.0",
     "@availity/native-form": "^8.2.0",
     "@availity/resolve-url": "^5.2.0",

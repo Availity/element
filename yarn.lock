@@ -196,17 +196,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/hooks@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "@availity/hooks@npm:6.0.1"
+"@availity/hooks@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "@availity/hooks@npm:7.0.0"
   peerDependencies:
     "@availity/api-axios": ^12.0.0 || ^13.0.0
     "@availity/message-core": ^8.0.2 || ^9.0.2
     "@tanstack/react-query": ^5.75.5
     axios: ^1.13.2
     react: ^18.0.0 || ^19.0.0
-    react-router-dom: ^6.26.0
-  checksum: 10/33e5ed105a8a09fa1da8a746ed79b5d62b42c370b14107f141bfb37a614f6943c685cab887088ba785e5757ea699d9dfa63a637e95f06eebcd8d21f8db01c3ee
+    react-router: ^7.0.0
+  checksum: 10/87cd13d244052d33401a9e2e45e18fa53ba48eb6e00e149f0ae1e48a844e8bc97888ed1a31e5bc91ca6e65aea17c309bdb856419998bb02ce6d089ae40891dd3
   languageName: node
   linkType: hard
 
@@ -993,7 +993,7 @@ __metadata:
   resolution: "@availity/mui-spaces@workspace:packages/spaces"
   dependencies:
     "@availity/api-axios": "npm:^13.2.0"
-    "@availity/hooks": "npm:^6.0.1"
+    "@availity/hooks": "npm:^7.0.0"
     "@availity/message-core": "npm:^9.2.0"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-card": "workspace:^"
@@ -1018,7 +1018,7 @@ __metadata:
     react-dom: "npm:19.2.7"
     react-image: "npm:^4.1.0"
     react-markdown: "npm:^10.1.0"
-    react-router-dom: "npm:^6.30.4"
+    react-router: "npm:7.18.2"
     tsup: "npm:^8.5.1"
     typescript: "npm:^5.9.3"
   peerDependencies:
@@ -1037,7 +1037,7 @@ __metadata:
     "@mui/material": ^7.0.0
     "@tanstack/react-query": ^5.101.0
     react: ">=17.0.0"
-    react-router-dom: ^6.26.0
+    react-router: ^7.0.0
   languageName: unknown
   linkType: soft
 
@@ -5629,13 +5629,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/router@npm:1.23.3":
-  version: 1.23.3
-  resolution: "@remix-run/router@npm:1.23.3"
-  checksum: 10/a12ae9994bf017d47392ce2be24252b4e2281f4b27eac78f0e9b48afa5f522be9c0ec64b85db013ded1fff140d9512b97ac8ea5dd182138dcd6d3ded3136cbf6
-  languageName: node
-  linkType: hard
-
 "@rolldown/binding-android-arm64@npm:1.0.3":
   version: 1.0.3
   resolution: "@rolldown/binding-android-arm64@npm:1.0.3"
@@ -9699,7 +9692,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cookie@npm:^1.1.1":
+"cookie@npm:^1.0.1, cookie@npm:^1.1.1":
   version: 1.1.1
   resolution: "cookie@npm:1.1.1"
   checksum: 10/85538153054791155cf4d38d2e807e3b9382d71bf71d92fc46fca348515ea574049d0d9ef8eb84d2d54a681ad1d7a7316b1989b901dace50a6c0f4c3858dbdb2
@@ -17461,27 +17454,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^6.30.4":
-  version: 6.30.4
-  resolution: "react-router-dom@npm:6.30.4"
+"react-router@npm:7.18.2":
+  version: 7.18.2
+  resolution: "react-router@npm:7.18.2"
   dependencies:
-    "@remix-run/router": "npm:1.23.3"
-    react-router: "npm:6.30.4"
+    cookie: "npm:^1.0.1"
+    set-cookie-parser: "npm:^2.6.0"
   peerDependencies:
-    react: ">=16.8"
-    react-dom: ">=16.8"
-  checksum: 10/e220abac766bb9bcc56a99b78d30d99745cae3618f84baa92bd6ec481eccb6afb12c724d49dc68e6f870b70ff449f751f20f4aa33f1896d3f7d3bda8e47a6ce1
-  languageName: node
-  linkType: hard
-
-"react-router@npm:6.30.4":
-  version: 6.30.4
-  resolution: "react-router@npm:6.30.4"
-  dependencies:
-    "@remix-run/router": "npm:1.23.3"
-  peerDependencies:
-    react: ">=16.8"
-  checksum: 10/59c1b64a210cde2f1d069ffc47dce2d58991bd4d81bb0743e22ba7c6b742e63ebbdc976c42c3a3ebd90bf38a2f05258bd0efa82c162b259be000d39787716043
+    react: ">=18"
+    react-dom: ">=18"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+  checksum: 10/e68aa655e5ec2d4143f66ab3b745c50b8588152d89e4ec66c099625357c6a16dfaee5a7e963a9f4f9fbe0adaa37cf9731d63a108a2c4abfaa00124a06da16c24
   languageName: node
   linkType: hard
 
@@ -18324,6 +18309,13 @@ __metadata:
     parseurl: "npm:~1.3.3"
     send: "npm:~0.19.1"
   checksum: 10/149d6718dd9e53166784d0a65535e21a7c01249d9c51f57224b786a7306354c6807e7811a9f6c143b45c863b1524721fca2f52b5c81a8b5194e3dde034a03b9c
+  languageName: node
+  linkType: hard
+
+"set-cookie-parser@npm:^2.6.0":
+  version: 2.7.2
+  resolution: "set-cookie-parser@npm:2.7.2"
+  checksum: 10/4b6f5ec4e3fa1aef471d9207117704d217ba6bb6443400b41f5ea945c4a7f6fc08e405a122c1a32b4ebde41f06dea75e02c2af87cee9abb27f3e3fe911e5839b
   languageName: node
   linkType: hard
 
