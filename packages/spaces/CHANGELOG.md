@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.1.0](https://github.com/Availity/element/compare/@availity/mui-spaces@3.0.0...@availity/mui-spaces@3.1.0) (2026-08-05)
+
+
+### Features
+
+* **mui-spaces:** update hooks dependency to v7 and react-router peer dep ([bb1e835](https://github.com/Availity/element/commit/bb1e835c5e9b14608d0ac45bf7d9ca7af108ab7c))
+
 ## [3.0.0](https://github.com/Availity/element/compare/@availity/mui-spaces@2.0.6...@availity/mui-spaces@3.0.0) (2026-06-16)
 
 ### Dependency Updates
