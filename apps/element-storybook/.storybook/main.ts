@@ -1,9 +1,12 @@
 // This file has been automatically migrated to valid ESM format by Storybook.
-import { createRequire } from "node:module";
-import { dirname, join } from 'path';
+import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import remarkGfm from 'remark-gfm';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { StorybookConfig } from '@storybook/react-vite';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
@@ -20,7 +23,7 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-themes'),
     getAbsolutePath('@storybook/addon-a11y'),
     {
-      name: getAbsolutePath("@storybook/addon-docs"),
+      name: getAbsolutePath('@storybook/addon-docs'),
       options: {
         mdxPluginOptions: {
           mdxCompileOptions: {
@@ -28,7 +31,7 @@ const config: StorybookConfig = {
           },
         },
       },
-    }
+    },
   ],
 
   framework: {
@@ -55,10 +58,18 @@ const config: StorybookConfig = {
   features: {
     actions: false,
     interactions: false,
-    storyStoreV7: false
+    storyStoreV7: false,
   },
 
-  docs: {}
+  docs: {},
+
+  viteFinal: async (config) => {
+    config.plugins = [...(config.plugins || []), tsconfigPaths({ root: join(__dirname, '../../..') })];
+    if (process.env.STORYBOOK_BASE) {
+      config.base = process.env.STORYBOOK_BASE;
+    }
+    return config;
+  },
 };
 
 export default config;

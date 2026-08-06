@@ -1,4 +1,4 @@
-import { lightTheme as lightThemeOptions, legacyTheme as legacyThemeOptions } from '@availity/theme';
+import { lightTheme as lightThemeOptions, legacyTheme as legacyThemeOptions, docsLightTheme as docsLightThemeOptions, docsDarkTheme as docsDarkThemeOptions } from '@availity/theme';
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
 import type { Theme, ThemeOptions } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,16 +8,20 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
 const lightTheme = createTheme(lightThemeOptions as ThemeOptions);
 const legacyTheme = createTheme(legacyThemeOptions as ThemeOptions);
+const docsLightTheme = createTheme(docsLightThemeOptions as ThemeOptions);
+const docsDarkTheme = createTheme(docsDarkThemeOptions as ThemeOptions);
 
 export type ThemeProviderProps = {
   children: React.ReactNode;
   /** Availity theme to use */
-  theme?: 'lightTheme' | 'legacyBS';
+  theme?: 'lightTheme' | 'legacyBS' | 'docsLight' | 'docsDark';
 };
 
 const themes: Record<string, Theme> = {
   lightTheme,
   legacyBS: legacyTheme,
+  docsLight: docsLightTheme,
+  docsDark: docsDarkTheme,
 };
 
 export function ThemeProvider({ children, theme = 'lightTheme' }: ThemeProviderProps) {
@@ -26,7 +30,7 @@ export function ThemeProvider({ children, theme = 'lightTheme' }: ThemeProviderP
       dateAdapter={AdapterDayjs}
       localeText={enUSDate.components.MuiLocalizationProvider.defaultProps.localeText}
     >
-      <MuiThemeProvider theme={themes[theme]}>
+      <MuiThemeProvider theme={themes[theme] || themes.lightTheme}>
         <CssBaseline />
         {children}
       </MuiThemeProvider>
