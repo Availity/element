@@ -58,7 +58,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/analytics-core": "^7.2.0"
+    "@availity/analytics-core": "^7.2.1"
   },
   "sideEffects": false,
   "type": "module"

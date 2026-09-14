@@ -3,7 +3,15 @@ import { TableBody } from './TableBody';
 
 describe('TableBody', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<TableBody>Test</TableBody>);
+    const { getByText } = render(
+      <table>
+        <TableBody>
+          <tr>
+            <td>Test</td>
+          </tr>
+        </TableBody>
+      </table>
+    );
     expect(getByText('Test')).toBeTruthy();
   });
 });

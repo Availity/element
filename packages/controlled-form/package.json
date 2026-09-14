@@ -45,7 +45,7 @@
     "@availity/mui-textfield": "workspace:^"
   },
   "devDependencies": {
-    "@availity/api-axios": "^13.2.0",
+    "@availity/api-axios": "^13.2.1",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-layout": "workspace:^",
     "@availity/mui-menu": "workspace:^",

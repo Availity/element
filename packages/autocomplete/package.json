@@ -40,10 +40,10 @@
   },
   "dependencies": {
     "@mui/types": "^7.4.12",
-    "qs": "^6.15.2"
+    "qs": "^6.16.0"
   },
   "devDependencies": {
-    "@availity/api-axios": "^13.2.0",
+    "@availity/api-axios": "^13.2.1",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-icon": "workspace:^",
     "@availity/mui-textfield": "workspace:^",

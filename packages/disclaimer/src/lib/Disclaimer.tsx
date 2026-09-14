@@ -18,6 +18,10 @@ export interface DisclaimerProps extends AvDisclaimerProps {
   headerText?: string;
   /** The text to display in the body */
   description: ReactNode;
+  /** Override the root element used by the description Typography wrapper.
+   *  Use `"div"` when description contains block-level content (e.g. rendered markdown).
+   *  @default "p" (via Typography body1/body2 default) */
+  descriptionComponent?: React.ElementType;
   /** The link to display */
   link?: LinkProps;
 }
@@ -33,6 +37,7 @@ interface AvDisclaimerLinkProps extends LinkProps {
 const AvDisclaimer = styled('div', {
   name: 'AvDisclaimer',
   slot: 'root',
+  shouldForwardProp: (prop) => prop !== 'accent' && prop !== 'dense',
   overridesResolver: (props, styles) => [styles.root, props.accent && styles.accent, props.dense && styles.dense],
 })<AvDisclaimerProps>({});
 
@@ -55,6 +60,7 @@ export const Disclaimer = ({
   accent = true,
   dense = false,
   description,
+  descriptionComponent,
   headerText,
   link,
   ...rest
@@ -76,7 +82,7 @@ export const Disclaimer = ({
           {headerText}
         </AvDisclaimerHeader>
       )}
-      <Typography variant={textVariant} color="text.secondary">
+      <Typography component={descriptionComponent} variant={textVariant} color="text.secondary">
         {description}
       </Typography>
       {link && <AvDisclaimerLink ownerState={ownerState} {...link} iconPosition="end" variant={textVariant} />}

@@ -1,4 +1,5 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { FeedbackForm } from './FeedbackForm';
 
 const analytics = { info: vi.fn() };
@@ -7,7 +8,7 @@ const setLoading = vi.fn();
 const setSent = vi.fn();
 
 describe('Feedback', () => {
-  test('should render Send Feedback button disabled', () => {
+  test('should render Send Feedback button disabled', async () => {
     const { getAllByRole } = render(
       <FeedbackForm
         appName="This App"
@@ -19,12 +20,14 @@ describe('Feedback', () => {
         setSent={setSent}
       />
     );
+    await act(async () => {});
     const submitButton = getAllByRole('button')[4];
 
     expect(submitButton).toHaveAttribute('disabled');
   });
 
-  test('should not render Send Feedback button disabled if smile is selected', () => {
+  test('should not render Send Feedback button disabled if smile is selected', async () => {
+    const user = userEvent.setup();
     const { getAllByRole } = render(
       <FeedbackForm
         appName="This App"
@@ -39,7 +42,7 @@ describe('Feedback', () => {
 
     const smileButton = getAllByRole('button')[0];
 
-    fireEvent.click(smileButton);
+    await user.click(smileButton);
 
     const submitButton = getAllByRole('button')[4];
 

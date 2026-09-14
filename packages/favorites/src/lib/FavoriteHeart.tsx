@@ -17,12 +17,13 @@ const icons = {
 const DEFAULT_SIZE = '2.5rem';
 
 interface SizableHeartProps {
-  customSize?: string
+  customSize?: string;
 }
 
 const FavoriteHeartContainer = styled('div', {
   name: 'AvFavoriteHeart',
   slot: 'Root',
+  shouldForwardProp: (prop) => prop !== 'customSize',
 })<SizableHeartProps>(({ customSize }) => ({
   height: customSize,
   width: customSize,
@@ -31,6 +32,7 @@ const FavoriteHeartContainer = styled('div', {
 const FavoriteInput = styled('input', {
   name: 'AvFavoriteHeart',
   slot: 'input',
+  shouldForwardProp: (prop) => prop !== 'customSize',
 })<SizableHeartProps>(({ customSize }) => ({
   height: customSize,
   width: customSize,
@@ -51,11 +53,12 @@ const fontSize = (size = DEFAULT_SIZE) => {
   // Parse the number, halve it, and return the new size string
   const halvedNumber = Number.parseFloat(number) / 2;
   return `${halvedNumber}${unit}`;
-}
+};
 
 const FavoriteIcon = styled('div', {
   name: 'AvFavoriteHeart',
   slot: 'icon',
+  shouldForwardProp: (prop) => prop !== 'customSize',
 })<SizableHeartProps>(({ customSize }) => ({
   fontSize: fontSize(customSize),
 }));
@@ -75,12 +78,13 @@ const validateSize = (size: string) => {
   // Validate the size based on the unit
   if (unit === 'rem' && value >= 1.5) {
     return true;
-  } if (unit === 'px' && value >= 24) {
+  }
+  if (unit === 'px' && value >= 24) {
     return true;
   }
 
   return false;
-}
+};
 
 type FavoriteHeartProps = {
   /** The configuration's id */

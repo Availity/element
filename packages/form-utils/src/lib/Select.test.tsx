@@ -3,7 +3,7 @@ import { Select } from './Select';
 
 describe('Select', () => {
   test('should render successfully', () => {
-    const { getByTestId } = render(<Select data-testid="test-select" />);
+    const { getByTestId } = render(<Select data-testid="test-select" value="" />);
     expect(getByTestId('test-select')).toBeTruthy();
   });
   test('aria-controls should be empty string when not open', () => {
