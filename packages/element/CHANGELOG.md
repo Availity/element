@@ -2,6 +2,38 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.3](https://github.com/Availity/element/compare/@availity/element@3.0.2...@availity/element@3.0.3) (2026-09-14)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `3.0.2`
+* `mui-alert` updated to version `3.0.2`
+* `mui-authorize` updated to version `3.0.2`
+* `mui-autocomplete` updated to version `3.0.2`
+* `mui-block-ui` updated to version `3.0.2`
+* `mui-button` updated to version `3.0.2`
+* `mui-card` updated to version `3.0.2`
+* `mui-controlled-form` updated to version `3.0.2`
+* `mui-datepicker` updated to version `3.0.2`
+* `mui-dialog` updated to version `3.0.2`
+* `mui-drawer` updated to version `3.0.2`
+* `mui-event-tracker` updated to version `3.0.2`
+* `mui-feedback` updated to version `3.0.2`
+* `mui-file-selector` updated to version `3.0.2`
+* `mui-form-utils` updated to version `3.0.2`
+* `mui-list` updated to version `3.0.2`
+* `mui-menu` updated to version `3.0.2`
+* `mui-modal` updated to version `3.0.2`
+* `mui-page-header` updated to version `3.0.2`
+* `mui-pagination` updated to version `3.0.2`
+* `mui-popper` updated to version `3.0.2`
+* `mui-snackbar` updated to version `3.0.2`
+* `mui-spaces` updated to version `3.0.2`
+* `mui-stepper` updated to version `3.0.2`
+* `mui-table` updated to version `3.0.2`
+* `mui-textfield` updated to version `3.0.2`
+* `mui-transitions` updated to version `3.0.2`
+* `theme-provider` updated to version `3.0.2`
 ## [3.0.2](https://github.com/Availity/element/compare/@availity/element@3.0.1...@availity/element@3.0.2) (2026-08-05)
 
 ### Dependency Updates
