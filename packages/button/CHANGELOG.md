@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.1](https://github.com/Availity/element/compare/@availity/mui-button@3.0.0...@availity/mui-button@3.0.1) (2026-09-14)
+
+
+### Bug Fixes
+
+* **mui-button:** wrap disabled IconButton in span inside Tooltip ([22b4719](https://github.com/Availity/element/commit/22b4719ad97e2bf6931a7da98fa574ac50b97c51))
+
 ## [3.0.0](https://github.com/Availity/element/compare/@availity/mui-button@2.0.2...@availity/mui-button@3.0.0) (2026-06-16)
 
 ### Dependency Updates
