@@ -38,14 +38,15 @@ const outlinedStyles = {
 };
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
-  const { title, variant = 'text', sx, size = 'medium', ...rest } = props;
+  const { title, variant = 'text', sx, size = 'medium', disabled, ...rest } = props;
   const styles = {
     ...sx,
     ...(variant === 'outlined' && outlinedStyles),
   };
-  return (
-    <Tooltip title={title}>
-      <MuiIconButton aria-label={title} sx={{ ...styles }} {...rest} ref={ref} size={size} />
-    </Tooltip>
+
+  const button = (
+    <MuiIconButton aria-label={title} sx={{ ...styles }} disabled={disabled} {...rest} ref={ref} size={size} />
   );
+
+  return <Tooltip title={title}>{disabled ? <span>{button}</span> : button}</Tooltip>;
 });

@@ -3,6 +3,32 @@ import { HomeIcon } from '@availity/mui-icon';
 import { IconButton } from './IconButton';
 
 describe('Button', () => {
+  test('should not warn when disabled button is inside Tooltip', () => {
+    const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+
+    render(
+      <IconButton title="disabled action" disabled>
+        <HomeIcon />
+      </IconButton>
+    );
+
+    const muiTooltipWarning = consoleSpy.mock.calls.find((args) =>
+      args.some((arg) => typeof arg === 'string' && arg.includes('disabled'))
+    );
+    expect(muiTooltipWarning).toBeUndefined();
+
+    consoleSpy.mockRestore();
+  });
+
+  test('should render disabled button', () => {
+    const { getByRole } = render(
+      <IconButton title="disabled action" disabled>
+        <HomeIcon />
+      </IconButton>
+    );
+    expect(getByRole('button')).toBeDisabled();
+  });
+
   test('should render successfully', () => {
     const { getByRole } = render(
       <IconButton title="test">
