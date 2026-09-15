@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.1.1](https://github.com/Availity/element/compare/@availity/mui-spaces@3.1.0...@availity/mui-spaces@3.1.1) (2026-09-14)
+
+### Dependency Updates
+
+* `mui-button` updated to version `3.1.0`
+* `mui-card` updated to version `3.1.0`
+* `mui-dialog` updated to version `3.1.0`
+* `mui-list` updated to version `3.1.0`
+* `mui-modal` updated to version `3.1.0`
 ## [3.1.0](https://github.com/Availity/element/compare/@availity/mui-spaces@3.0.0...@availity/mui-spaces@3.1.0) (2026-08-05)
 
 
