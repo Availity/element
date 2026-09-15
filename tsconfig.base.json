@@ -19,6 +19,7 @@
     "target": "ESNext",
     "jsx": "react-jsx",
     "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
     "types": ["vitest/globals"],
     "paths": {
       "@availity/design-tokens": ["packages/design-tokens/src/index.ts"],
