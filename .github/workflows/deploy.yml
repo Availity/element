@@ -8,6 +8,8 @@ jobs:
   setup:
     if: "${{!contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, 'Release: Version Updates')}}"
     runs-on: ubuntu-latest
+    env:
+      NX_DAEMON: 'false'
     permissions:
       actions: read
 
@@ -28,9 +30,6 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: 'yarn.lock'
 
-      - name: Install Dependencies
-        run: yarn install --immutable
-
       - name: Restore Nx Cache
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
@@ -39,8 +38,18 @@ jobs:
           restore-keys: |
             nx-${{ runner.os }}-${{ hashFiles('yarn.lock') }}-
 
+      - name: Install Dependencies
+        run: yarn install --immutable
+
       - name: Build Packages
         run: yarn build
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: package-dist
+          path: packages/*/dist
+          retention-days: 1
 
       - name: Lint Affected Code
         run: yarn lint:affected
@@ -52,6 +61,8 @@ jobs:
     if: "${{!contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, 'Release: Version Updates')}}"
     needs: [setup]
     runs-on: ubuntu-latest
+    env:
+      NX_DAEMON: 'false'
     outputs:
       has_changes: ${{ steps.changes.outputs.has_changes }}
     permissions:
@@ -76,9 +87,6 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: 'yarn.lock'
 
-      - name: Install Dependencies
-        run: yarn install --immutable
-
       - name: Restore Nx Cache
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
@@ -87,8 +95,14 @@ jobs:
           restore-keys: |
             nx-${{ runner.os }}-${{ hashFiles('yarn.lock') }}-
 
-      - name: Build Packages
-        run: yarn build
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: package-dist
+          path: packages
 
       - name: Setup Publish Config
         run: |
@@ -137,6 +151,8 @@ jobs:
     if: "${{!contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, 'Release: Version Updates')}}"
     needs: [setup]
     runs-on: ubuntu-latest
+    env:
+      NX_DAEMON: 'false'
     permissions:
       contents: write
     steps:
@@ -156,8 +172,11 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
-      - name: Build Packages
-        run: yarn build
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: package-dist
+          path: packages
 
       - name: Build Docs
         run: yarn build:storybook:ci

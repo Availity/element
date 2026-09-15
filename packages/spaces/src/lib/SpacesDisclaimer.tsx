@@ -29,6 +29,7 @@ export const SpacesDisclaimer = ({
           accent={accent}
           id={elementId || `spaces-disclaimer-${spaceId || id}`}
           description={children}
+          descriptionComponent={markdown ? 'div' : undefined}
           {...props}
         />
       );

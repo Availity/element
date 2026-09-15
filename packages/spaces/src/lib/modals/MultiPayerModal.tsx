@@ -10,7 +10,7 @@ export const MultiPayerModal = ({ parentPayerSpaces, name, state: { selectedOpti
     <Grid direction="row">
       {parentPayerSpaces &&
         parentPayerSpaces.map((payerSpace) => (
-          <Box onClick={() => setState({ selectedOption: payerSpace })}>
+          <Box key={payerSpace.configurationId} onClick={() => setState({ selectedOption: payerSpace })}>
             <SpacesImage spaceId={payerSpace.configurationId} imageType="images.tile" />
           </Box>
         ))}

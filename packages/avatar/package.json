@@ -54,7 +54,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^13.2.0"
+    "@availity/api-axios": "^13.2.1"
   },
   "sideEffects": false,
   "type": "module"

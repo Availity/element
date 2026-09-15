@@ -1,5 +1,4 @@
-/// <reference types="vitest" />
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
@@ -12,6 +11,7 @@ export default defineConfig({
     css: { modules: { classNameStrategy: 'non-scoped' } },
     coverage: {
       reporter: ['json-summary'],
+      reportsDirectory: './coverage',
     },
   },
 });
