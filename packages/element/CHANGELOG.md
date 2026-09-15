@@ -2,6 +2,35 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.4](https://github.com/Availity/element/compare/@availity/element@3.0.3...@availity/element@3.0.4) (2026-09-15)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `3.0.3`
+* `mui-authorize` updated to version `3.0.3`
+* `mui-autocomplete` updated to version `3.0.3`
+* `mui-avatar` updated to version `3.0.3`
+* `mui-card` updated to version `3.0.3`
+* `mui-chip` updated to version `3.0.3`
+* `mui-controlled-form` updated to version `3.0.3`
+* `mui-datepicker` updated to version `3.0.3`
+* `mui-dialog` updated to version `3.0.3`
+* `mui-disclaimer` updated to version `3.0.3`
+* `mui-drawer` updated to version `3.0.3`
+* `mui-event-tracker` updated to version `3.0.3`
+* `mui-favorites` updated to version `3.0.3`
+* `mui-feedback` updated to version `3.0.3`
+* `mui-file-selector` updated to version `3.0.3`
+* `mui-form-utils` updated to version `3.0.3`
+* `mui-list` updated to version `3.0.3`
+* `mui-modal` updated to version `3.0.3`
+* `mui-page-header` updated to version `3.0.3`
+* `mui-pagination` updated to version `3.0.3`
+* `mui-spaces` updated to version `3.0.3`
+* `mui-stepper` updated to version `3.0.3`
+* `mui-table` updated to version `3.0.3`
+* `mui-textfield` updated to version `3.0.3`
+* `theme-provider` updated to version `3.0.3`
 ## [3.0.3](https://github.com/Availity/element/compare/@availity/element@3.0.2...@availity/element@3.0.3) (2026-09-14)
 
 ### Dependency Updates
