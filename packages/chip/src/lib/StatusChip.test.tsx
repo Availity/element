@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import { Chip } from './Chip';
+import { StatusChip } from './StatusChip';
 
-describe('Chip', () => {
+describe('StatusChip', () => {
   test('should render successfully', () => {
-    const { getByText } = render(<Chip label="Test" />);
+    const { getByText } = render(<StatusChip label="Test" />);
     expect(getByText('Test')).toBeTruthy();
   });
 });
