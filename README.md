@@ -42,17 +42,21 @@ const App = () => {
 
 ## Development
 
-The currently recommended version of node to use when developing in this repo is: `v24`. We recommend using [fnm](https://github.com/Schniz/fnm#readme) to have your node version automatically changed when you `cd` into the repo.
+This repo requires **Node.js v22 or v24** and **yarn v4**. We recommend using [fnm](https://github.com/Schniz/fnm#readme) to automatically switch Node versions when you `cd` into the repo (the `.nvmrc` is set to `24`).
 
 > **Note:** This is an ESM-only monorepo. All packages are published as ES modules.
 
-We use `yarn berry` (aka yarn v4) to manage dependencies. Install `yarn` globally:
+We use `yarn berry` (aka yarn v4) to manage dependencies. The recommended way to activate yarn v4 is via [Corepack](https://nodejs.org/api/corepack.html), which ships with Node.js 16.10+:
 
 ```sh
-npm i -g yarn
+corepack enable
 ```
 
-> This command will install yarn v1. When we run the next command then yarn v4 will be added.
+Alternatively, you can install yarn v1 globally and yarn v4 will be activated when you run `yarn install` in this repo (the version is pinned in `package.json#packageManager`):
+
+```sh
+npm install -g yarn
+```
 
 Then install the dependencies:
 
@@ -71,6 +75,10 @@ Want to make sure you didn't break anything? Run the unit test script
 ```sh
 yarn test
 ```
+
+## Contributing
+
+Want to contribute? Read the [Contributing Guide](.github/CONTRIBUTING.md) for setup instructions, commit format, and the full contributor workflow.
 
 ## Further help
 
