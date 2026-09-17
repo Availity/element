@@ -1,9 +1,11 @@
 import browser from 'eslint-config-availity/browser';
+import { withVitest } from 'eslint-config-availity';
 import nxPlugin from '@nx/eslint-plugin';
 import storybook from 'eslint-plugin-storybook';
 
 export default [
   ...browser,
+  ...withVitest,
   ...storybook.configs['flat/recommended'],
   {
     plugins: { '@nx': nxPlugin },

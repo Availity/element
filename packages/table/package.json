@@ -60,7 +60,7 @@
     "react-dom": "19.2.7",
     "react-hook-form": "^7.79.0",
     "tsup": "^8.5.1",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.0"
   },
   "peerDependencies": {
     "@mui/material": "^7.0.0",

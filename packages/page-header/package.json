@@ -51,7 +51,7 @@
     "react-dom": "19.2.7",
     "react-image": "^4.1.0",
     "tsup": "^8.5.1",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.0"
   },
   "peerDependencies": {
     "@availity/mui-breadcrumbs": "workspace:^",
