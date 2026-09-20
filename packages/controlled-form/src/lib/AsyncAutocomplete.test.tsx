@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, act } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AvApi, { ApiConfig } from '@availity/api-axios';
 // eslint-disable-next-line @nx/enforce-module-boundaries
@@ -69,7 +69,7 @@ describe('ControlledAsyncAutocomplete', () => {
   });
 
   test('should loadOptions successfully', async () => {
-    const screen = render(
+    render(
       <QueryClientProvider client={client}>
         <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
           <ControlledAsyncAutocomplete
@@ -85,14 +85,17 @@ describe('ControlledAsyncAutocomplete', () => {
     );
 
     const dropdown = screen.getByRole('combobox');
-    fireEvent.click(dropdown);
-    fireEvent.keyDown(dropdown, { key: 'ArrowDown' });
 
-    await waitFor(() => expect(screen.getByText('Option 1')).toBeDefined());
+    act(() => {
+      fireEvent.click(dropdown);
+      fireEvent.keyDown(dropdown, { key: 'ArrowDown' });
+    });
+
+    await waitFor(() => expect(screen.getByText('Option 0')).toBeDefined());
   });
 
   test('should set the value and submit the form data', async () => {
-    const screen = render(
+    render(
       <QueryClientProvider client={client}>
         <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
           <ControlledAsyncAutocomplete
@@ -130,7 +133,7 @@ describe('ControlledAsyncAutocomplete', () => {
   describe('when using rules', () => {
     describe('when required', () => {
       test('should indicate it is required when passing a string', async () => {
-        const screen = render(
+        render(
           <QueryClientProvider client={client}>
             <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
               <ControlledAsyncAutocomplete
@@ -150,7 +153,7 @@ describe('ControlledAsyncAutocomplete', () => {
       });
 
       test('should indicate it is required when passing an object with true', async () => {
-        const screen = render(
+        render(
           <QueryClientProvider client={client}>
             <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
               <ControlledAsyncAutocomplete
@@ -170,7 +173,7 @@ describe('ControlledAsyncAutocomplete', () => {
       });
 
       test('should not indicate it is required when passing an object with false', async () => {
-        const screen = render(
+        render(
           <QueryClientProvider client={client}>
             <TestForm UseFormOptions={{ values: { controlledAutocomplete: undefined } }} onSubmit={onSubmit}>
               <ControlledAsyncAutocomplete
