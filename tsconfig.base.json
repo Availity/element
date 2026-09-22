@@ -84,5 +84,6 @@
     "compilerOptions": {
       "module": "commonjs"
     }
-  }
+  },
+  "files": ["testing-library.d.ts"]
 }

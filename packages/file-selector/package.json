@@ -38,7 +38,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/api-axios": "^13.2.1",
+    "@availity/api-axios": "^13.3.1",
     "@availity/mui-alert": "workspace:^",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-divider": "workspace:^",
@@ -48,7 +48,7 @@
     "@availity/mui-list": "workspace:^",
     "@availity/mui-progress": "workspace:^",
     "@availity/mui-typography": "workspace:^",
-    "@availity/upload-core": "^9.2.0",
+    "@availity/upload-core": "^9.3.1",
     "react-dropzone": "^11.7.1",
     "react-hook-form": "^7.79.0",
     "tus-js-client": "4.3.1",

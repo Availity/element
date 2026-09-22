@@ -39,9 +39,9 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.2.2",
-    "@commitlint/config-conventional": "^21.2.2",
-    "@commitlint/config-nx-scopes": "^21.2.0",
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@commitlint/config-nx-scopes": "^21.2.3",
     "@jscutlery/semver": "^5.8.1",
     "@mui/lab": "7.0.1-beta.18",
     "@mui/x-data-grid": "^8.29.1",
@@ -66,8 +66,8 @@
     "@types/qs": "^6.15.1",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
-    "@vitest/coverage-v8": "^5.0.0",
-    "@vitest/eslint-plugin": "^1.0.0",
+    "@vitest/coverage-v8": "^5.0.1",
+    "@vitest/eslint-plugin": "^1.6.27",
     "eslint": "^9.39.4",
     "eslint-config-availity": "^16.0.1",
     "eslint-plugin-storybook": "10.4.5",
@@ -91,7 +91,7 @@
     "vite": "7.3.5",
     "vite-plugin-node-polyfills": "^0.24.0",
     "vite-tsconfig-paths": "^6.1.1",
-    "vitest": "^5.0.0"
+    "vitest": "^5.0.1"
   },
   "packageManager": "yarn@4.17.0",
   "msw": {

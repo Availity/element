@@ -81,11 +81,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^13.2.1",
-    "@availity/hooks": "^7.0.0",
-    "@availity/message-core": "^9.2.0",
-    "@availity/native-form": "^8.2.1",
-    "@availity/resolve-url": "^5.2.0",
+    "@availity/api-axios": "^13.3.1",
+    "@availity/hooks": "^7.0.1",
+    "@availity/message-core": "^9.3.1",
+    "@availity/native-form": "^8.3.1",
+    "@availity/resolve-url": "^5.3.1",
     "dayjs": "^1.11.21",
     "qs": "^6.16.0",
     "react-image": "^4.1.0",

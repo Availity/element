@@ -43,6 +43,7 @@
     "@availity/mui-divider": "workspace:^",
     "@availity/mui-layout": "workspace:^",
     "@availity/mui-link": "workspace:^",
+    "@availity/mui-spaces": "workspace:^",
     "@availity/mui-tabs": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "@mui/material": "^7.3.11",
@@ -59,7 +60,6 @@
     "@availity/mui-divider": "workspace:^",
     "@availity/mui-layout": "workspace:^",
     "@availity/mui-link": "workspace:^",
-    "@availity/mui-spaces": "workspace:^",
     "@availity/mui-typography": "workspace:^",
     "@mui/material": "^7.0.0",
     "@tanstack/react-query": "^5.101.0",
@@ -69,8 +69,14 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/mui-feedback": "workspace:^"
+    "@availity/mui-feedback": "workspace:^",
+    "@availity/mui-spaces": "workspace:^"
   },
   "sideEffects": false,
-  "type": "module"
+  "type": "module",
+  "peerDependenciesMeta": {
+    "@tanstack/react-query": {
+      "optional": true
+    }
+  }
 }

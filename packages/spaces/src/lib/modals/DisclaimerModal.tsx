@@ -19,7 +19,9 @@ export const DisclaimerModal = ({ disclaimerId }: ModalProps) => {
   useEffect(() => {
     const fetchDisclaimer = async () => {
       if (disclaimerId) {
-        const result = await avWebQLApi.create({ query: disclaimerQuery, variables: { id: disclaimerId } });
+        const result = (await avWebQLApi.create({ query: disclaimerQuery, variables: { id: disclaimerId } })) as {
+          data: { data: { configurationFindOne: { description: string } } };
+        };
 
         setDisclaimer(result.data.data.configurationFindOne.description);
       }
