@@ -39,19 +39,23 @@ export const fetchSpaces = async ({ query, clientId, variables, operationName }:
   if (clientId) {
     headers['X-Client-ID'] = clientId;
   }
-   
+
   const {
     data: {
       data: { configurationPagination },
     },
-  } = await avWebQLApi.create(
+  } = (await avWebQLApi.create(
     {
       query,
       variables: { ...variables },
       operationName: operationName || parseOperationName(query) || 'PuiSpacesCmpAnonymousOperation',
     },
     { headers: { ...headers } }
-  );
+  )) as {
+    data: {
+      data: { configurationPagination: { pageInfo: { currentPage: number; hasNextPage: boolean }; items: Space[] } };
+    };
+  };
 
   const {
     pageInfo: { currentPage, hasNextPage },

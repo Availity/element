@@ -38,7 +38,7 @@
     "publish:canary": "yarn npm publish --access public --tag canary"
   },
   "dependencies": {
-    "@availity/authorize": "^6.0.1",
+    "@availity/authorize": "^6.1.0",
     "@availity/mui-block-ui": "workspace:^"
   },
   "devDependencies": {
@@ -58,5 +58,10 @@
     "access": "public"
   },
   "sideEffects": false,
-  "type": "module"
+  "type": "module",
+  "peerDependenciesMeta": {
+    "@tanstack/react-query": {
+      "optional": true
+    }
+  }
 }

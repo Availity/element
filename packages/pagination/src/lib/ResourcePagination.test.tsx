@@ -26,8 +26,8 @@ const client = new QueryClient();
 const ResourcePaginationComponent = (): React.JSX.Element => {
   const resp = useResourcePagination({
     page: 1,
-    resource: avOrganizationsApi,
-    getResult: (result) => result.organizations,
+    resource: avOrganizationsApi as never,
+    getResult: (result) => (result as { organizations: unknown[] }).organizations,
   });
 
   if (resp.isLoading) {

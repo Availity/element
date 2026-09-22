@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { avFilesDeliveryApi } from '@availity/api-axios';
 import Upload from '@availity/upload-core';
-import { AxiosResponse } from 'axios';
 
 export type UploadDeliveryOptions = {
   /** ID of the vault bucket */
@@ -38,7 +37,7 @@ export function useFileDelivery({
   const errors = {};
 
   const callFileDelivery = async (uploadList: Upload[]) => {
-    const results: Promise<AxiosResponse>[] = [];
+    const results: Promise<unknown>[] = [];
 
     for (const upload of uploadList) {
       const data = {

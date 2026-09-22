@@ -7,8 +7,7 @@ export type SearchByFormGroupProps = {
   searchById: string;
   /** The label of the `searchBy` field. */
   searchByLabel?: string;
-} & FormGroupProps
-
+} & FormGroupProps;
 
 export const SearchByContainer = styled(FormGroup, {
   name: 'AvSearchBy',
@@ -17,43 +16,48 @@ export const SearchByContainer = styled(FormGroup, {
 })(() => ({
   // TODO v7: check if Autocomplete fullWidth bug is fixed https://github.com/mui/material-ui/issues/36841
   '.MuiAutocomplete-root, .MuiAutocomplete-fullWidth': {
-    width: 'auto'
+    width: 'auto',
   },
   '.MuiFormControl-fullWidth': {
-    flex: 1
+    flex: 1,
   },
   '> .MuiStack-root': {
     display: 'flex',
     flexWrap: 'wrap',
     '> .MuiFormControl-root': {
-      minWidth: '10rem'
+      minWidth: '10rem',
     },
   },
-  '& :is(.MuiFormControl-root, .MuiAutocomplete-root):not(:is(.MuiFormControl-root, .MuiAutocomplete-root):first-of-type)': {
-    '.MuiInputBase-root': {
-      borderBottomLeftRadius: 0,
-      borderTopLeftRadius: 0
-    }
-  },
-  '& :is(.MuiFormControl-root, .MuiAutocomplete-root):not(:is(.MuiFormControl-root, .MuiAutocomplete-root):last-of-type)': {
-    '.MuiInputBase-root': {
-      borderBottomRightRadius: 0,
-      borderTopRightRadius: 0,
-      marginRight: '-1px'
-    }
-  }
-}));
+  '& :is(.MuiFormControl-root, .MuiAutocomplete-root):not(:is(.MuiFormControl-root, .MuiAutocomplete-root):first-of-type)':
+    {
+      '.MuiInputBase-root': {
+        borderBottomLeftRadius: 0,
+        borderTopLeftRadius: 0,
+      },
+    },
+  '& :is(.MuiFormControl-root, .MuiAutocomplete-root):not(:is(.MuiFormControl-root, .MuiAutocomplete-root):last-of-type)':
+    {
+      '.MuiInputBase-root': {
+        borderBottomRightRadius: 0,
+        borderTopRightRadius: 0,
+        marginRight: '-1px',
+      },
+    },
+})) as typeof FormGroup;
 
 /** A wrapper for the search/searchby multi-input pattern.
  *
  * _Will only work with full fields (`TextField`, `Autocomplete`). If building a custom field, ensure it's wrapped in a `FormControl`.
  * The "Search By" field id must be passed as the FormGroup supplies the label. See [TextField documentation](https://availity.github.io/element/?path=/docs/form-components-uncontrolled-fields-textfield--docs) for additional steps if using `select` instead of `Autocomplete`._
  */
-export const SearchByFormGroup = ({children, searchById, searchByLabel = 'Search By', ...rest}: SearchByFormGroupProps) => (
+export const SearchByFormGroup = ({
+  children,
+  searchById,
+  searchByLabel = 'Search By',
+  ...rest
+}: SearchByFormGroupProps) => (
   <SearchByContainer {...rest}>
     <FormLabel htmlFor={searchById}>{searchByLabel}</FormLabel>
-    <Stack direction="row">
-      {children}
-    </Stack>
+    <Stack direction="row">{children}</Stack>
   </SearchByContainer>
 );

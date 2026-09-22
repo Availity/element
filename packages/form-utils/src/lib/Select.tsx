@@ -15,13 +15,13 @@ export const SelectDivider = styled(Divider, {
   name: 'MuiSelect',
   slot: 'AvEndAdornmentDivider',
   overridesResolver: (props, styles) => styles.avEndAdornmentDivider,
-})({});
+})({}) as typeof Divider;
 
 export const SelectExpandIcon = styled(ExpandIcon, {
   name: 'MuiSelect',
   slot: 'AvExpandIcon',
   overridesResolver: (props, styles) => styles.avExpandIcon,
-})({});
+})({}) as typeof ExpandIcon;
 
 // IconComponent is absolutely positioned, combining divider and icon to position together
 const InnerEndAdornment = (args: StackProps) => (
@@ -66,6 +66,4 @@ export const Select = <Value = unknown,>(props: SelectProps<Value>): React.JSX.E
   );
 };
 
-
-
-export {type SelectChangeEvent} from '@mui/material/Select';
+export { type SelectChangeEvent } from '@mui/material/Select';

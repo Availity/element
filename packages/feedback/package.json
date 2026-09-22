@@ -41,6 +41,7 @@
     "@mui/material": "^7.3.11",
     "react": "19.2.7",
     "react-dom": "19.2.7",
+    "react-hook-form": "^7.79.0",
     "tsup": "^8.5.1",
     "typescript": "^6.0.0"
   },
@@ -53,7 +54,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@availity/api-axios": "^13.2.1",
+    "@availity/api-axios": "^13.3.1",
     "@availity/mui-button": "workspace:^",
     "@availity/mui-form-utils": "workspace:^",
     "@availity/mui-icon": "workspace:^",
