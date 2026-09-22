@@ -166,13 +166,13 @@ __metadata:
     "@availity/mui-typography": "workspace:*"
     "@availity/mui-utils": "workspace:*"
     "@availity/theme-provider": "workspace:*"
+    "@mui/material": "npm:^7.3.11"
+    "@mui/system": "npm:^7.3.11"
     react: "npm:19.2.7"
     react-dom: "npm:19.2.7"
     tsup: "npm:^8.5.1"
     typescript: "npm:^6.0.0"
   peerDependencies:
-    "@mui/material": ^7.0.0
-    "@mui/system": ^7.0.0
     react: ">=17.0.0"
   languageName: unknown
   linkType: soft
@@ -269,6 +269,9 @@ __metadata:
     "@mui/material": ^7.0.0
     "@tanstack/react-query": ^5.101.0
     react: ">=17.0.0"
+  peerDependenciesMeta:
+    "@tanstack/react-query":
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -295,6 +298,9 @@ __metadata:
     "@mui/material": ^7.0.0
     "@tanstack/react-query": ^5.101.0
     react: ">=17.0.0"
+  peerDependenciesMeta:
+    "@tanstack/react-query":
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -482,6 +488,7 @@ __metadata:
     dayjs: "npm:^1.11.21"
     react: "npm:19.2.7"
     react-dom: "npm:19.2.7"
+    react-hook-form: "npm:^7.79.0"
     tsup: "npm:^8.5.1"
     typescript: "npm:^6.0.0"
     yup: "npm:^1.7.1"
@@ -491,6 +498,9 @@ __metadata:
     "@tanstack/react-query": ^5.101.0
     react: ">=17.0.0"
     react-hook-form: ^7.79.0
+  peerDependenciesMeta:
+    "@tanstack/react-query":
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -675,6 +685,7 @@ __metadata:
     "@mui/material": "npm:^7.3.11"
     react: "npm:19.2.7"
     react-dom: "npm:19.2.7"
+    react-hook-form: "npm:^7.79.0"
     tsup: "npm:^8.5.1"
     typescript: "npm:^6.0.0"
   peerDependencies:
@@ -868,11 +879,13 @@ __metadata:
     "@availity/mui-divider": "workspace:^"
     "@availity/mui-layout": "workspace:^"
     "@availity/mui-link": "workspace:^"
-    "@availity/mui-spaces": "workspace:^"
     "@availity/mui-typography": "workspace:^"
     "@mui/material": ^7.0.0
     "@tanstack/react-query": ^5.101.0
     react: ">=17.0.0"
+  peerDependenciesMeta:
+    "@tanstack/react-query":
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -1211,7 +1224,7 @@ __metadata:
     tsup: "npm:^8.5.1"
     typescript: "npm:^6.0.0"
   peerDependencies:
-    "@mui/utils": ^6.4.3
+    "@mui/utils": ^7.0.0
     react: ">=17.0.0"
   languageName: unknown
   linkType: soft
