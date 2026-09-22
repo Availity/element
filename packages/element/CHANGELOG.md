@@ -2,6 +2,37 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.6](https://github.com/Availity/element/compare/@availity/element@3.0.5...@availity/element@3.0.6) (2026-09-22)
+
+### Dependency Updates
+
+* `mui-accordion` updated to version `3.0.5`
+* `mui-authorize` updated to version `3.0.5`
+* `mui-autocomplete` updated to version `3.0.5`
+* `mui-avatar` updated to version `3.0.5`
+* `mui-card` updated to version `3.0.5`
+* `mui-chip` updated to version `3.0.5`
+* `mui-controlled-form` updated to version `3.0.5`
+* `mui-datepicker` updated to version `3.0.5`
+* `mui-dialog` updated to version `3.0.5`
+* `mui-drawer` updated to version `3.0.5`
+* `mui-empty-state` updated to version `3.0.5`
+* `mui-event-tracker` updated to version `3.0.5`
+* `mui-favorites` updated to version `3.0.5`
+* `mui-feedback` updated to version `3.0.5`
+* `mui-file-selector` updated to version `3.0.5`
+* `mui-form-utils` updated to version `3.0.5`
+* `mui-list` updated to version `3.0.5`
+* `mui-modal` updated to version `3.0.5`
+* `mui-page-header` updated to version `3.0.5`
+* `mui-pagination` updated to version `3.0.5`
+* `mui-snackbar` updated to version `3.0.5`
+* `mui-spaces` updated to version `3.0.5`
+* `mui-table` updated to version `3.0.5`
+* `mui-textfield` updated to version `3.0.5`
+* `mui-transitions` updated to version `3.0.5`
+* `mui-utils` updated to version `3.0.5`
+* `theme-provider` updated to version `3.0.5`
 ## [3.0.5](https://github.com/Availity/element/compare/@availity/element@3.0.4...@availity/element@3.0.5) (2026-09-17)
 
 ### Dependency Updates

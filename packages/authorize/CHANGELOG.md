@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.4](https://github.com/Availity/element/compare/@availity/mui-authorize@3.0.3...@availity/mui-authorize@3.0.4) (2026-09-22)
+
+
+### Bug Fixes
+
+* dep alignment, type fixes, treeshaking, and testing-library types ([f955b74](https://github.com/Availity/element/commit/f955b74ad9af76989c49372d3cfacae711c29c9c))
+
 ## [3.0.3](https://github.com/Availity/element/compare/@availity/mui-authorize@3.0.2...@availity/mui-authorize@3.0.3) (2026-09-17)
 
 ### Dependency Updates

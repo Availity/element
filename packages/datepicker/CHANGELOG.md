@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.4](https://github.com/Availity/element/compare/@availity/mui-datepicker@3.0.3...@availity/mui-datepicker@3.0.4) (2026-09-22)
+
+### Dependency Updates
+
+* `mui-textfield` updated to version `3.0.3`
+* `theme-provider` updated to version `3.0.3`
+* `mui-form-utils` updated to version `3.0.3`
 ## [3.0.3](https://github.com/Availity/element/compare/@availity/mui-datepicker@3.0.2...@availity/mui-datepicker@3.0.3) (2026-09-17)
 
 ### Dependency Updates
