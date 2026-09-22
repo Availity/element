@@ -76,9 +76,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/authorize@npm:^6.0.2":
-  version: 6.0.2
-  resolution: "@availity/authorize@npm:6.0.2"
+"@availity/authorize@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "@availity/authorize@npm:6.1.0"
   dependencies:
     "@availity/block-ui": "npm:^1.0.0"
   peerDependencies:
@@ -87,7 +87,7 @@ __metadata:
     axios: ^1.13.2
     react: ^18.0.0
     react-dom: ^18.0.0
-  checksum: 10/eeb6872917ee19b6bcdf22371311b891b925805392962354a2ff812625cf54e4e6e40cc0c21f4b6bca8b59ce782b8dbb42a9797de543b1b2f66c805878a8c5f0
+  checksum: 10/25240fe6740d917596bceaadb3564a2c54465bbdb622ff3c8f50419e7f8ce48094e2489821c0cd427b9b907d6d4992e24bea0015a18e32668d4dc69a32e91190
   languageName: node
   linkType: hard
 
@@ -184,9 +184,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@availity/hooks@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "@availity/hooks@npm:7.0.1"
+"@availity/hooks@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "@availity/hooks@npm:7.1.0"
   peerDependencies:
     "@availity/api-axios": ^12.0.0 || ^13.0.0
     "@availity/message-core": ^8.0.2 || ^9.0.2
@@ -194,14 +194,14 @@ __metadata:
     axios: ^1.13.2
     react: ^18.0.0 || ^19.0.0
     react-router: ^7.0.0
-  checksum: 10/dc6e973388b9abd62147ea4c6724d5d55dc472cbd429702ce65719b2b8afe53a0869680f058bde73aec09fc7574fb86262c30b53004aa3d5b97d5ebbedc6f472
+  checksum: 10/b7d5294ca86dc163a4245c3d15774236be4a8292251baef46501520d316712367e1ce06d63e10aec2d50eb25474743507c3862fab86e148e28602710e07cbbd9
   languageName: node
   linkType: hard
 
-"@availity/message-core@npm:^9.3.1":
-  version: 9.3.1
-  resolution: "@availity/message-core@npm:9.3.1"
-  checksum: 10/a582b5414116e78a6edf5ced327d526e6f103c92874689fe618d9f7f03a35258382dc8be43b2e68f71d2bc182012d067f5ea9c8867302ecc574aa7b61804c30e
+"@availity/message-core@npm:^9.3.2":
+  version: 9.3.2
+  resolution: "@availity/message-core@npm:9.3.2"
+  checksum: 10/518cacb504c9869a6cb8bd7a191d74bea1f2f0bdf8a0310512b7106477728251db4f03cb3cebc678c6fb0b8b84cc4eecfbe5d1bfdb9f3cef5d8a266b61a62513
   languageName: node
   linkType: hard
 
@@ -257,7 +257,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-authorize@workspace:packages/authorize"
   dependencies:
-    "@availity/authorize": "npm:^6.0.2"
+    "@availity/authorize": "npm:^6.1.0"
     "@availity/mui-block-ui": "workspace:^"
     "@mui/material": "npm:^7.3.11"
     "@tanstack/react-query": "npm:^5.101.0"
@@ -649,7 +649,7 @@ __metadata:
   resolution: "@availity/mui-favorites@workspace:packages/favorites"
   dependencies:
     "@availity/api-axios": "npm:^13.3.1"
-    "@availity/message-core": "npm:^9.3.1"
+    "@availity/message-core": "npm:^9.3.2"
     "@availity/mui-icon": "workspace:^"
     "@availity/mui-progress": "workspace:^"
     "@availity/mui-tooltip": "workspace:^"
@@ -732,7 +732,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@availity/mui-form-utils@workspace:packages/form-utils"
   dependencies:
-    "@availity/message-core": "npm:^9.3.1"
+    "@availity/message-core": "npm:^9.3.2"
     "@availity/mui-button": "workspace:*"
     "@availity/mui-checkbox": "workspace:^"
     "@availity/mui-icon": "workspace:*"
@@ -998,8 +998,8 @@ __metadata:
   resolution: "@availity/mui-spaces@workspace:packages/spaces"
   dependencies:
     "@availity/api-axios": "npm:^13.3.1"
-    "@availity/hooks": "npm:^7.0.1"
-    "@availity/message-core": "npm:^9.3.1"
+    "@availity/hooks": "npm:^7.1.0"
+    "@availity/message-core": "npm:^9.3.2"
     "@availity/mui-button": "workspace:^"
     "@availity/mui-card": "workspace:^"
     "@availity/mui-chip": "workspace:^"
