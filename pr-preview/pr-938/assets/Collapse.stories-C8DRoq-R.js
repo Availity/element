@@ -1,0 +1,92 @@
+import{j as e,r as c}from"./iframe-DKvnFaXU.js";import{C as u}from"./Collapse-BBQsUP8L.js";import{b as h}from"./index-BGDQU2EH.js";import{B as i}from"./Box-D54lZQNO.js";import{F as f}from"./FormControlLabel-DwYTjEvZ.js";import{S as x}from"./Switch-DxotU7Ib.js";import{T as b}from"./Table-BFsW-A6j.js";import{T as C}from"./TableHead-B57TkbAI.js";import{T as p}from"./TableRow-DGkgg5cG.js";import{T as t}from"./TableCell-BnVTRC_G.js";import{v as T}from"./visuallyHidden-Dan1xhjv.js";import{T as g}from"./TableBody-DPoXbLLq.js";import{P as y}from"./Paper-DT4unmmL.js";import"./preload-helper-PPVm8Dsz.js";import"./useTheme-CSDDNwq2.js";import"./styled-CmsEx6_f.js";import"./memoTheme-CqfCSJ2X.js";import"./utils-Bp7Prb7W.js";import"./TransitionGroupContext-Ywi-MhlW.js";import"./useSlot-CCglkhUf.js";import"./mergeSlotProps-DgX6bSST.js";import"./useForkRef-BZiVfW-q.js";import"./generateUtilityClass-BtcU_pBl.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./useTimeout-CHMS-cR8.js";import"./index-goOPcPYN.js";import"./IconButton-Dk2wxJIq.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./ButtonBase-t7rDwPbd.js";import"./useEventCallback-BMp-rMhG.js";import"./isFocusVisible-B8k4qzLc.js";import"./CircularProgress-1gU5OTOX.js";import"./Tooltip-D9ZPYqEU.js";import"./useControlled-DXzaWELJ.js";import"./getReactElementRef-CqgsFiRl.js";import"./Portal-D0mCJoig.js";import"./ownerDocument-DW-IO8s5.js";import"./useSlotProps-DYzgJZQm.js";import"./Button-CcwmilXM.js";import"./index-Dp9gWiw7.js";import"./faCircleArrowRight-B9UHrVR2.js";import"./faUser-BPZKYm75.js";import"./SvgIcon-CXEooahZ.js";import"./Alert-kA6WJvA2.js";import"./createSvgIcon-2KwAvjFg.js";import"./Close-BJ35LOVq.js";import"./AlertTitle-D28Nw8YW.js";import"./Typography-D7JJPpmc.js";import"./formControlState-Dq1zat_P.js";import"./useFormControl-DSlP_RFA.js";import"./SwitchBase-DhDyeBWH.js";import"./mergeSlotProps-BLQDwcQN.js";const l=o=>e.jsx(u,{...o});try{l.displayName="Collapse",l.__docgenInfo={description:"",displayName:"Collapse",props:{children:{defaultValue:null,description:"The content node to be collapsed.",name:"children",required:!1,type:{name:"ReactNode"}},className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string | undefined"}},classes:{defaultValue:null,description:"Override or extend the styles applied to the component.",name:"classes",required:!1,type:{name:"Partial<CollapseClasses> | undefined"}},collapsedSize:{defaultValue:{value:"'0px'"},description:"The width (horizontal) or height (vertical) of the container when collapsed.",name:"collapsedSize",required:!1,type:{name:"string | number | undefined"}},component:{defaultValue:null,description:`The component used for the root node.
+Either a string to use a HTML element or a component.`,name:"component",required:!1,type:{name:"ElementType<TransitionProps, keyof IntrinsicElements> | undefined"}},easing:{defaultValue:null,description:`The transition timing function.
+You may specify a single easing or a object containing enter and exit values.`,name:"easing",required:!1,type:{name:"string | { enter?: string | undefined; exit?: string | undefined; } | undefined"}},in:{defaultValue:null,description:"If `true`, the component will transition in.",name:"in",required:!1,type:{name:"boolean | undefined"}},orientation:{defaultValue:{value:"'vertical'"},description:"The transition orientation.",name:"orientation",required:!1,type:{name:'"horizontal" | "vertical" | undefined'}},timeout:{defaultValue:{value:"duration.standard"},description:`The duration for the transition, in milliseconds.
+You may specify a single timeout for all transitions, or individually with an object.
+
+Set to 'auto' to automatically calculate transition time based on height.`,name:"timeout",required:!1,type:{name:'number | "auto" | { appear?: number | undefined; enter?: number | undefined; exit?: number | undefined; } | { appear?: number | undefined; enter?: number | undefined; exit?: number | undefined; } | undefined'}},sx:{defaultValue:null,description:"The system prop that allows defining system overrides as well as additional CSS styles.",name:"sx",required:!1,type:{name:"SxProps<Theme> | undefined"}},ref:{defaultValue:null,description:"",name:"ref",required:!1,type:{name:"Ref<unknown> | undefined"}},slots:{defaultValue:{value:"{}"},description:"The components used for each slot inside.",name:"slots",required:!1,type:{name:"Partial<CollapseSlots> | undefined"}},slotProps:{defaultValue:{value:"{}"},description:"The props used for each slot inside.",name:"slotProps",required:!1,type:{name:'{ root?: SlotProps<"div", CollapseRootSlotPropsOverrides, CollapseOwnerState> | undefined; wrapper?: SlotProps<...> | undefined; wrapperInner?: SlotProps<...> | undefined; } | undefined'}}}}}catch{}const ge={title:"Components/Transitions/Collapse",component:l,tags:["autodocs"],parameters:{docs:{description:{component:"Expand from the start edge of the child element."}}}},a={render:o=>{const[d,r]=c.useState(!0),n=()=>{r(!1),setTimeout(()=>r(!0),1e3)};return e.jsx(l,{in:d,...o,children:e.jsx(h,{onClose:n,children:"Dismissable Alert"})})}},s={render:()=>{const[o,d]=c.useState(!0),r=()=>{d(m=>!m)},n=e.jsx(y,{sx:{m:1,width:100,height:100,bgcolor:"grey.200"},elevation:4});return e.jsxs(i,{children:[e.jsx(f,{control:e.jsx(x,{checked:o,onChange:r}),label:"Show"}),e.jsxs(b,{role:"presentation",sx:{width:250},children:[e.jsx(C,{children:e.jsxs(p,{children:[e.jsx(t,{children:e.jsx(i,{sx:T,children:"Orientation"})}),e.jsx(t,{children:e.jsx(i,{sx:{width:120},children:"collapsedSize 0"})}),e.jsx(t,{children:e.jsx(i,{sx:{width:120},children:"collapsedSize 40"})})]})}),e.jsxs(g,{children:[e.jsxs(p,{sx:{verticalAlign:"top"},children:[e.jsx(t,{children:e.jsx(i,{sx:{height:120},children:"Vertical"})}),e.jsx(t,{children:e.jsx(l,{in:o,children:n})}),e.jsx(t,{children:e.jsx(l,{in:o,collapsedSize:40,children:n})})]}),e.jsxs(p,{sx:{verticalAlign:"top"},children:[e.jsx(t,{children:e.jsx(i,{sx:{height:120},children:"Horizontal"})}),e.jsx(t,{children:e.jsx(l,{orientation:"horizontal",in:o,children:n})}),e.jsx(t,{children:e.jsx(l,{orientation:"horizontal",in:o,collapsedSize:40,children:n})})]})]})]})]})}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  render: (args: CollapseProps) => {
+    const [visible, setVisible] = useState(true);
+    const onClose = () => {
+      setVisible(false);
+      setTimeout(() => setVisible(true), 1000);
+    };
+    return <Collapse in={visible} {...args}>
+        <Alert onClose={onClose}>Dismissable Alert</Alert>
+      </Collapse>;
+  }
+}`,...a.parameters?.docs?.source}}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  render: () => {
+    const [checked, setChecked] = useState(true);
+    const handleChange = () => {
+      setChecked(prev => !prev);
+    };
+    const background = <Paper sx={{
+      m: 1,
+      width: 100,
+      height: 100,
+      bgcolor: 'grey.200'
+    }} elevation={4} />;
+    return <Box>
+        <FormControlLabel control={<Switch checked={checked} onChange={handleChange} />} label="Show" />
+        <Table role="presentation" sx={{
+        width: 250
+      }}>
+          <TableHead>
+            <TableRow>
+              <TableCell>
+                <Box sx={visuallyHidden}>Orientation</Box>
+              </TableCell>
+              <TableCell>
+                <Box sx={{
+                width: 120
+              }}>collapsedSize 0</Box>
+              </TableCell>
+              <TableCell>
+                <Box sx={{
+                width: 120
+              }}>collapsedSize 40</Box>
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow sx={{
+            verticalAlign: 'top'
+          }}>
+              <TableCell>
+                <Box sx={{
+                height: 120
+              }}>Vertical</Box>
+              </TableCell>
+              <TableCell>
+                <Collapse in={checked}>{background}</Collapse>
+              </TableCell>
+              <TableCell>
+                <Collapse in={checked} collapsedSize={40}>
+                  {background}
+                </Collapse>
+              </TableCell>
+            </TableRow>
+            <TableRow sx={{
+            verticalAlign: 'top'
+          }}>
+              <TableCell>
+                <Box sx={{
+                height: 120
+              }}>Horizontal</Box>
+              </TableCell>
+              <TableCell>
+                <Collapse orientation="horizontal" in={checked}>
+                  {background}
+                </Collapse>
+              </TableCell>
+              <TableCell>
+                <Collapse orientation="horizontal" in={checked} collapsedSize={40}>
+                  {background}
+                </Collapse>
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </Box>;
+  }
+}`,...s.parameters?.docs?.source}}};const ye=["_Collapse","_Options"];export{a as _Collapse,s as _Options,ye as __namedExportsOrder,ge as default};
