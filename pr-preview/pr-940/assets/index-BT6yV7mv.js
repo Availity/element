@@ -1,0 +1,1 @@
+import{j as a}from"./iframe-CGrCKeT2.js";import{C as i}from"./Chip-CurS7vqd.js";var o=s=>a.jsx(i,{...s,color:"default",size:"medium"}),e=({color:s="default",...r})=>a.jsx(i,{color:s,...r,size:"small"});export{o as C,e as S};
