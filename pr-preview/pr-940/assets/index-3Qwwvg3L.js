@@ -1,0 +1,1 @@
+import{j as s}from"./iframe-Cn9qPtrp.js";import{T as e}from"./Tooltip-DKs25lhA.js";var m=o=>{const{children:t,dangerouslySetTransitionTimer:r,...i}=o;return s.jsx(e,{...i,TransitionProps:{timeout:r!==void 0?r:100},arrow:!0,children:t})};export{m as T};
