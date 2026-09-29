@@ -1,0 +1,41 @@
+import{r as s,j as e}from"./iframe-5qL0mprR.js";import{a as t,T as P}from"./TablePagination-CxPSHRXd.js";import{T as l}from"./Table-BHzaplUb.js";import{T as d}from"./TableRow-DwWtuUGq.js";import"./preload-helper-PPVm8Dsz.js";import"./TableCell-BCG8XBWT.js";import"./memoTheme-DGTRKnQQ.js";import"./styled-CoUwmM87.js";import"./generateUtilityClass-BtcU_pBl.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./index-_l6Yv5fQ.js";import"./useSlot-Cn1CdUSX.js";import"./mergeSlotProps-BLlOPPFY.js";import"./useForkRef-B_tBAx6E.js";import"./KeyboardArrowRight-SmIc0Lqf.js";import"./createSvgIcon-CZsBBnxz.js";import"./SvgIcon-D8DRNpD6.js";import"./PaginationItem-Csket4Xc.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./ButtonBase-CEBWCJ86.js";import"./useTimeout-B8tDrGFN.js";import"./TransitionGroupContext-DG4g3onZ.js";import"./useEventCallback-DqMc6arA.js";import"./isFocusVisible-B8k4qzLc.js";import"./IconButton-B8_cpiYd.js";import"./CircularProgress-BqSWo9RJ.js";import"./OutlinedInput-exuQdaqt.js";import"./useFormControl-D5FH_KgV.js";import"./formControlState-Dq1zat_P.js";import"./utils-DoM3o7-Q.js";import"./ownerDocument-DW-IO8s5.js";import"./getActiveElement-CvEHRBc8.js";import"./debounce-Be36O1Ab.js";import"./MenuItem-CR2p5bYS.js";import"./List-8rgLrAmz.js";import"./SelectFocusSourceContext-CEJvL2Re.js";import"./useSlotProps-BldRbwm9.js";import"./Popover-fOCUh9Nt.js";import"./Portal-BaL9DcFZ.js";import"./useTheme-Dl3uMx7u.js";import"./utils-ZWxhk7o5.js";import"./getReactElementRef-DBt8lh_B.js";import"./mergeSlotProps-BAEmNdNM.js";import"./Modal-CAwaW-IN.js";import"./createChainedFunction-BO_9K8Jh.js";import"./contains-DSD8CO72.js";import"./Backdrop-DdJYMJ-d.js";import"./Fade-CwTmGpyj.js";import"./Paper-CT3iXlM2.js";import"./listItemIconClasses-BWL98Y3T.js";import"./listItemTextClasses-D_J2aVaO.js";import"./dividerClasses-qU9lkgJy.js";import"./Select-Dc1mU1Pl.js";import"./useControlled-CSqunifB.js";import"./index-CD_y2Btm.js";import"./faCircleArrowRight-B9UHrVR2.js";import"./faUser-BPZKYm75.js";import"./Pagination-4XVaruaM.js";import"./index-C3SWmzio.js";import"./index-CrcoPoGw.js";import"./index-D6eeRdCr.js";import"./Tooltip-P-kE-0cn.js";import"./Button-8WJV18MQ.js";import"./index-ClcKetnN.js";import"./Box-jTQ-hmH5.js";import"./Grid-B5L6Dh7M.js";import"./isMuiElement-DHbarLNo.js";import"./styled-rFpyV319.js";import"./Stack-CnLSR6do.js";import"./Container-B0mlIeY3.js";import"./faCheck-1iOl5y2I.js";import"./FormLabel-DVY6ao7R.js";import"./FormHelperText-Bngb2_Es.js";import"./FormControlLabel-cDTw_uEy.js";import"./Typography-F-Y5u_yh.js";import"./Switch-DUksUYmW.js";import"./SwitchBase-C72NdBTb.js";import"./Radio-BRuYCTD8.js";import"./RadioGroup-PluZ5qs0.js";import"./FormGroup-DUp1hayB.js";import"./Divider-DdnnBiCY.js";import"./Table-DObcMn6G.js";import"./TableRow-CWYrWU2n.js";const Mr={title:"Components/Table/TablePagination",component:t,tags:["autodocs"],args:{component:"div",count:50,page:0,rowsPerPage:10,rowsPerPageOptions:[5,10,25,{value:-1,label:"all"}],onPageChange:()=>null},parameters:{controls:{exclude:["align","padding","sortDirection","scope","size","variant"]}}},a={render:r=>{const[m,o]=s.useState(r.page);return s.useEffect(()=>{o(r.page)},[r.page]),e.jsx(t,{...r,page:m,onPageChange:(c,g)=>{o(g)}})}},p={render:r=>{const[m,o]=s.useState(r.page);return s.useEffect(()=>{o(r.page)},[r.page]),e.jsx(l,{role:"presentation",children:e.jsx(P,{children:e.jsx(d,{children:e.jsx(t,{...r,page:m,onPageChange:(c,g)=>{o(g)}})})})})},args:{component:void 0}},i={render:r=>e.jsx(t,{...r}),args:{rowsPerPageOptions:[]}},n={render:r=>e.jsx(t,{...r}),args:{rowsPerPage:-1,rowsPerPageOptions:[-1]}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  render: (args: TablePaginationProps) => {
+    const [page, setPage] = useState(args.page);
+    useEffect(() => {
+      setPage(args.page);
+    }, [args.page]);
+    return <TablePagination {...args} page={page} onPageChange={(event, page) => {
+      setPage(page);
+    }} />;
+  }
+}`,...a.parameters?.docs?.source}}};p.parameters={...p.parameters,docs:{...p.parameters?.docs,source:{originalSource:`{
+  render: (args: TablePaginationProps) => {
+    const [page, setPage] = useState(args.page);
+    useEffect(() => {
+      setPage(args.page);
+    }, [args.page]);
+    return <Table role="presentation">
+        <TableFooter>
+          <TableRow>
+            <TablePagination {...args} page={page} onPageChange={(event, page) => {
+            setPage(page);
+          }} />
+          </TableRow>
+        </TableFooter>
+      </Table>;
+  },
+  args: {
+    component: undefined
+  }
+}`,...p.parameters?.docs?.source}}};i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  render: (args: TablePaginationProps) => <TablePagination {...args} />,
+  args: {
+    rowsPerPageOptions: []
+  }
+}`,...i.parameters?.docs?.source}}};n.parameters={...n.parameters,docs:{...n.parameters?.docs,source:{originalSource:`{
+  render: (args: TablePaginationProps) => <TablePagination {...args} />,
+  args: {
+    rowsPerPage: -1,
+    rowsPerPageOptions: [-1]
+  }
+}`,...n.parameters?.docs?.source}}};const Nr=["_TablePagination","_AsPartOfTable","_FixedRowsPerPage","_ShowAll"];export{p as _AsPartOfTable,i as _FixedRowsPerPage,n as _ShowAll,a as _TablePagination,Nr as __namedExportsOrder,Mr as default};
