@@ -10,12 +10,17 @@ updates:
           - "minor"
           - "patch"
           - "major"
+
   - package-ecosystem: npm
-    directory: '/'
+    directory: "/"
+    versioning-strategy: increase-if-necessary
     schedule:
       interval: monthly
-      time: '10:00'
+      time: "10:00"
     open-pull-requests-limit: 10
+    commit-message:
+      prefix: build
+      prefix-development: chore
     groups:
       mui:
         patterns:
