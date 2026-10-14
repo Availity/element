@@ -42,7 +42,7 @@ const App = () => {
 
 ## Development
 
-This repo requires **Node.js v22 or v24** and **yarn v4**. We recommend using [fnm](https://github.com/Schniz/fnm#readme) to automatically switch Node versions when you `cd` into the repo (the `.nvmrc` is set to `24`).
+This repo requires **Node.js v22.12+ or v24** and **yarn v4**. We recommend using [fnm](https://github.com/Schniz/fnm#readme) to automatically switch Node versions when you `cd` into the repo (the `.nvmrc` is set to `24`).
 
 > **Note:** This is an ESM-only monorepo. All packages are published as ES modules.
 

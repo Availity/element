@@ -21,7 +21,7 @@ This monorepo is managed using [yarn](https://yarnpkg.com/getting-started) and [
 
 ## Prerequisites
 
-- **Node.js v22 or v24** — CI runs on both. We recommend [fnm](https://github.com/Schniz/fnm#readme) to automatically switch versions when you `cd` into the repo (the `.nvmrc` is set to `24`).
+- **Node.js v22.12+ or v24** — CI runs on both. We recommend [fnm](https://github.com/Schniz/fnm#readme) to automatically switch versions when you `cd` into the repo (the `.nvmrc` is set to `24`).
 - **yarn v4** — pinned via `package.json#packageManager`. Activated automatically via Corepack (see Installation).
 
 ## Installation

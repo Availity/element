@@ -10,7 +10,7 @@ Nx monorepo for `@availity/element` and related `@availity/mui-*`, `@availity/th
 
 ## Environment
 
-- Node `^22 || ^24` (`.nvmrc` is 24).
+- Node `^22.12 || ^24` (`.nvmrc` is 24).
 - Yarn 4 (`packageManager: yarn@4.12.0`). Do not use npm or yarn 1.
 - Install with `yarn install --immutable`. Do not hand-edit `yarn.lock`.
 
