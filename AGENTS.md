@@ -6,7 +6,7 @@ Nx monorepo for `@availity/element` and related `@availity/mui-*`, `@availity/th
 
 - Default and PR target: `main` (see `.github/workflows/pr-build.yml`).
 - Check `git branch --show-current` before editing. Local clones can sit on feature branches (for example `feature/new-theme`). Compare to `origin/main` before treating local code as released.
-- Never push to `main`. Work on `feature/<JIRA-###>-description`.
+- Never push to `main`. Work on a branch named `feature/<short-description>`.
 
 ## Environment
 
