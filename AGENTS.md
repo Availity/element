@@ -39,7 +39,7 @@ Before you say a change is done, run `yarn lint:affected`, `yarn test:affected`,
 
 ## Code rules
 
-- Import from `@availity/element`, not from individual `@availity/mui-*` packages, unless there is a reason.
+- Inside this repo, import from the individual `@availity/mui-*` packages directly, not from `@availity/element`. `@availity/element` re-exports those packages, so importing from it inside the monorepo creates a circular dependency.
 - Style through the theme and `sx` with `@availity/design-tokens`. No hardcoded hex colors where a token exists.
 - No Bootstrap classes or reactstrap/Formik. That is the legacy `availity-react` stack.
 - Do not change the Node or Yarn engine pins without a human decision.
