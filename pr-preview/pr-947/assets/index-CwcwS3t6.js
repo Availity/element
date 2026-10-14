@@ -1,1 +1,0 @@
-import{r,j as s}from"./iframe-C7RYpRRO.js";import{C as a}from"./Checkbox-H5uFIfcI.js";var m=r.forwardRef((o,e)=>s.jsx(a,{...o,ref:e,size:"medium"}));m.__docgenInfo={description:"",methods:[],displayName:"Checkbox"};export{m as C};
