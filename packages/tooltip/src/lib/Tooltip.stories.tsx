@@ -53,7 +53,7 @@ const argTypes = {
     },
   },
   leaveDelay: {
-    description: 'Delay before the tooltip is hidden. (micro seconds)',
+    description: 'Delay before the tooltip is hidden. (milliseconds)',
     control: { type: 'number' },
     table: { type: { summary: 'number' } },
     defaultValue: { summary: 0 },
