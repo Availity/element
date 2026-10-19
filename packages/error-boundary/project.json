@@ -1,0 +1,38 @@
+{
+  "name": "mui-error-boundary",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/error-boundary/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "silent": false,
+        "fix": false,
+        "cache": true,
+        "cacheLocation": "./node_modules/.cache/error-boundary/.eslintcache",
+        "maxWarnings": -1,
+        "quiet": false,
+        "hasTypeAwareRules": true,
+        "cacheStrategy": "metadata"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vitest run packages/error-boundary"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "commitMessageFormat": "chore({projectName}): release version ${version} [skip ci]",
+        "tagPrefix": "@availity/{projectName}@",
+        "trackDeps": true,
+        "skipCommitTypes": ["docs"]
+      }
+    }
+  }
+}
