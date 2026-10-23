@@ -21,6 +21,20 @@ fnm install 24
 fnm use 24
 ```
 
+#### @tanstack/react-query v5 Upgrade
+
+`yarn up @tanstack/react-query@^5.0.0`
+
+Declared as an optional peer dependency for many packages - needed for components like
+
+- Authorize
+- AsyncAutocompletes (including resource autocompletes like `Codes`, `Organization`, `Provider`, etc)
+- Favorites
+- FileSelector and hooks
+- PageHeader with Logo
+- ResourcePagination
+- Spaces
+
 #### ESM-Only Packages
 
 All `@availity/element` and `@availity/mui-*` packages are now published as ES modules only. CommonJS `require()` is no longer supported.
