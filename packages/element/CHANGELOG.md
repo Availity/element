@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.1.0](https://github.com/Availity/element/compare/@availity/element@3.0.7...@availity/element@3.1.0) (2026-10-23)
+
+### Dependency Updates
+
+* `mui-error-boundary` updated to version `3.0.7`
+
+### Features
+
+* **mui-error-boundary:** add ErrorBoundary component ([0be00e6](https://github.com/Availity/element/commit/0be00e66dff5c74340419e7fa0dbb4a61050d1d7))
+
 ## [3.0.7](https://github.com/Availity/element/compare/@availity/element@3.0.6...@availity/element@3.0.7) (2026-10-01)
 
 ### Dependency Updates
