@@ -1,1 +1,0 @@
-import{g as i}from"./generateUtilityClass-BtcU_pBl.js";import{g as e}from"./generateUtilityClasses-DDbjFgb8.js";function a(t){return i("MuiDialogTitle",t)}const o=e("MuiDialogTitle",["root"]);export{o as d,a as g};

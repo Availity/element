@@ -1,1 +1,0 @@
-import{j as r}from"./iframe-V3tbPOwE.js";import{M as s}from"./MenuItem-CkfZme_c.js";import{M as a}from"./SelectFocusSourceContext-DV7K2vKu.js";var p=e=>r.jsx(a,{...e}),i=e=>r.jsx(s,{...e,disableRipple:!0,disableTouchRipple:!0});export{i as M,p as a};
