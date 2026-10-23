@@ -1,0 +1,62 @@
+{
+  "name": "@availity/mui-error-boundary",
+  "version": "0.0.0",
+  "description": "Availity MUI ErrorBoundary Component - part of the @availity/element design system",
+  "keywords": [
+    "react",
+    "typescript",
+    "availity",
+    "mui"
+  ],
+  "homepage": "https://availity.github.io/element/?path=/docs/components-error-boundary-introduction--docs",
+  "bugs": {
+    "url": "https://github.com/Availity/element/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Availity/element.git",
+    "directory": "packages/error-boundary"
+  },
+  "license": "MIT",
+  "author": "Availity Developers <AVOSS@availity.com>",
+  "browser": "./dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "dev": "tsup src/index.ts --format esm --watch --dts",
+    "clean": "rm -rf dist",
+    "clean:nm": "rm -rf node_modules",
+    "publish": "yarn npm publish --tolerate-republish --access public",
+    "publish:canary": "yarn npm publish --access public --tag canary"
+  },
+  "dependencies": {
+    "@availity/mui-button": "workspace:^",
+    "@availity/mui-empty-state": "workspace:^",
+    "@availity/mui-layout": "workspace:^",
+    "@availity/mui-typography": "workspace:^"
+  },
+  "devDependencies": {
+    "@mui/material": "^7.3.11",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.0"
+  },
+  "peerDependencies": {
+    "@mui/material": "^7.0.0",
+    "react": ">=17.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "type": "module"
+}

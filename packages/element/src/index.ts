@@ -141,6 +141,10 @@ export type { DrawerProps } from '@availity/mui-drawer';
 export { EmptyState, EmptyStateImages, EmptyStateImage } from '@availity/mui-empty-state';
 export type { EmptyStateProps, EmptyStateImageProps } from '@availity/mui-empty-state';
 
+// ErrorBoundary
+export { ErrorBoundary } from '@availity/mui-error-boundary';
+export type { ErrorBoundaryProps, ErrorBoundaryFallbackProps } from '@availity/mui-error-boundary';
+
 // Event Tracker
 export { EventTrackerContext, useEventTracker, EventTrackerProvider } from '@availity/mui-event-tracker';
 export type { EventTrackerProps } from '@availity/mui-event-tracker';
@@ -377,7 +381,7 @@ export {
   MoneyBillIcon,
   CartShoppingIcon,
   BuildingIcon,
-  HospitalIcon
+  HospitalIcon,
 } from '@availity/mui-icon';
 
 // Layout
