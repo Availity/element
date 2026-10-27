@@ -96,7 +96,8 @@ export const handlers = [
     if (params.applicationId === 'Gateway-AvNavigation') {
       await delay(defaultDelay);
       return HttpResponse.json(settings, { status: 200 });
-    } if (params.applicationId === 'AVATAR') {
+    }
+    if (params.applicationId === 'AVATAR') {
       await delay(defaultDelay);
       return HttpResponse.json(avatarSettings, { status: 200 });
     }
@@ -105,7 +106,8 @@ export const handlers = [
     const body = await context.request.json();
 
     await delay(defaultDelay);
-    return HttpResponse.json({ settings: [body] }, { status: 201 });
+    // The real Settings API PUT returns the saved settings object directly (not wrapped in `settings`)
+    return HttpResponse.json(body, { status: 201 });
   }),
 
   // Codes
@@ -365,42 +367,41 @@ export const handlers = [
     };
 
     if (password) {
-      return password === "1234" ?
-      new HttpResponse(null, {
-        status: 200,
-        headers: {
-          'av-scan-bytes': fileSize,
-          'av-scan-result': 'accepted',
-          'cache-control': 'no-store',
-          'decryption-result': 'accepted',
-          references: `["approved/${params.bucket}/${params.location}"]`,
-          's3-references': `["s3://path-to-vault/approved/${params.bucket}/${params.location}"]`,
-          'transfer-encoding': 'chunked',
-          'tus-resumable': '1.0.0',
-          'upload-length': fileSize,
-          'upload-metadata': metadata,
-          'upload-offset': fileSize,
-          'upload-result': 'accepted',
-        },
-      })
-      :
-      new HttpResponse(null, {
-        status: 200,
-        headers: {
-          'av-scan-bytes': fileSize,
-          'av-scan-result': 'accepted',
-          'cache-control': 'no-store',
-          'decryption-result': 'rejected',
-          references: `["approved/${params.bucket}/${params.location}"]`,
-          's3-references': `["s3://path-to-vault/approved/${params.bucket}/${params.location}"]`,
-          'transfer-encoding': 'chunked',
-          'tus-resumable': '1.0.0',
-          'upload-length': fileSize,
-          'upload-metadata': metadata,
-          'upload-offset': fileSize,
-          'upload-result': 'encrypted',
-        },
-      });
+      return password === '1234'
+        ? new HttpResponse(null, {
+            status: 200,
+            headers: {
+              'av-scan-bytes': fileSize,
+              'av-scan-result': 'accepted',
+              'cache-control': 'no-store',
+              'decryption-result': 'accepted',
+              references: `["approved/${params.bucket}/${params.location}"]`,
+              's3-references': `["s3://path-to-vault/approved/${params.bucket}/${params.location}"]`,
+              'transfer-encoding': 'chunked',
+              'tus-resumable': '1.0.0',
+              'upload-length': fileSize,
+              'upload-metadata': metadata,
+              'upload-offset': fileSize,
+              'upload-result': 'accepted',
+            },
+          })
+        : new HttpResponse(null, {
+            status: 200,
+            headers: {
+              'av-scan-bytes': fileSize,
+              'av-scan-result': 'accepted',
+              'cache-control': 'no-store',
+              'decryption-result': 'rejected',
+              references: `["approved/${params.bucket}/${params.location}"]`,
+              's3-references': `["s3://path-to-vault/approved/${params.bucket}/${params.location}"]`,
+              'transfer-encoding': 'chunked',
+              'tus-resumable': '1.0.0',
+              'upload-length': fileSize,
+              'upload-metadata': metadata,
+              'upload-offset': fileSize,
+              'upload-result': 'encrypted',
+            },
+          });
     }
 
     await delay(1000);
