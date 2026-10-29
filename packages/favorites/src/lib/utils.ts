@@ -13,31 +13,38 @@ export const isFavorite = (arg: Favorite) => Boolean(typeof arg?.id === 'string'
 export const validateFavorites = (unvalidatedFavorites: Favorite[]) => {
   const validatedFavorites = Array.isArray(unvalidatedFavorites) ? unvalidatedFavorites?.filter(isFavorite) : [];
   return validatedFavorites;
-}
+};
 
 type MutationVariables = {
   favorites: Favorite[];
   targetFavoriteId: string;
-}
+};
 
-interface FavoritesSettings {
+/** Settings API GET response: the saved settings are wrapped in a `settings` list. */
+interface FavoritesGetResponse {
   settings: { favorites: Favorite[] }[];
 }
 
-const submit = async ({ favorites, targetFavoriteId }: MutationVariables, applicationId: string) => {
-  const response = await avSettingsApi.setApplication<FavoritesSettings>(applicationId, { favorites });
-  return { favorites: response.data.settings[0].favorites, targetFavoriteId };
+/** Settings API PUT response: the saved settings object is returned directly, NOT wrapped in `settings`. */
+interface FavoritesPutResponse {
+  favorites: Favorite[];
 }
 
+const submit = async ({ favorites, targetFavoriteId }: MutationVariables, applicationId: string) => {
+  const response = await avSettingsApi.setApplication<FavoritesPutResponse>(applicationId, { favorites });
+  return { favorites: response.data.favorites, targetFavoriteId };
+};
+
 const getFavorites = async (applicationId: string) => {
-  const result = await avSettingsApi.getApplication<FavoritesSettings>(applicationId);
+  const result = await avSettingsApi.getApplication<FavoritesGetResponse>(applicationId);
   const unvalidatedFavorites = result?.data?.settings?.[0]?.favorites;
   const validatedFavorites = validateFavorites(unvalidatedFavorites);
 
   return validatedFavorites;
 };
 
-export const useFavoritesQuery = (enabled: boolean, applicationId: string): UseQueryResult<Favorite[], Error> => useQuery({ queryKey: ['favorites'], queryFn: () => getFavorites(applicationId), enabled });
+export const useFavoritesQuery = (enabled: boolean, applicationId: string): UseQueryResult<Favorite[], Error> =>
+  useQuery({ queryKey: ['favorites'], queryFn: () => getFavorites(applicationId), enabled });
 
 type MutationOptions = {
   onMutationStart?: (targetFavoriteId: string) => void;
@@ -46,13 +53,14 @@ type MutationOptions = {
 export const useSubmitFavorites = ({ onMutationStart }: MutationOptions, applicationId: string) => {
   const queryClient = useQueryClient();
   const { mutateAsync: submitFavorites, ...rest } = useMutation({
-    mutationFn: ({ favorites, targetFavoriteId }: MutationVariables) => submit({ favorites, targetFavoriteId }, applicationId),
+    mutationFn: ({ favorites, targetFavoriteId }: MutationVariables) =>
+      submit({ favorites, targetFavoriteId }, applicationId),
     onMutate(variables) {
       onMutationStart?.(variables.targetFavoriteId);
     },
     onSuccess(data) {
       queryClient.setQueryData(['favorites'], data.favorites);
-    }
+    },
   });
   return { submitFavorites, ...rest };
 };

@@ -3,6 +3,7 @@ import { render, waitFor, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { server } from '@availity/mock/src/lib/server';
+import { http, HttpResponse } from 'msw';
 import avMessages from '@availity/message-core';
 import { FavoritesProvider } from './Favorites';
 import { FavoriteHeart } from './FavoriteHeart';
@@ -15,8 +16,9 @@ const domain = () => {
   }
 
   if (window.location.hostname) {
-    return `${window.location.protocol}//${window.location.hostname}${window.location.port ? `:${window.location.port}` : ''
-      }`;
+    return `${window.location.protocol}//${window.location.hostname}${
+      window.location.port ? `:${window.location.port}` : ''
+    }`;
   }
 
   return '*';
@@ -274,5 +276,81 @@ describe('Favorites', () => {
     });
   });
 
+  // The Settings API PUT responds with the saved settings object ({ favorites: [...] }),
+  // NOT wrapped in `settings: []` like the GET list response. These tests use a fixed
+  // response (not an echo of the request) so the mock cannot hide a response-shape mismatch.
+  describe('Settings PUT response shape', () => {
+    it('should add favorite when PUT responds with an unwrapped { favorites } body', async () => {
+      server.use(
+        http.put('/api/utils/v1/settings', () =>
+          HttpResponse.json(
+            {
+              favorites: [
+                { id: '123', pos: 0 },
+                { id: '456', pos: 1 },
+                { id: '789', pos: 2 },
+              ],
+            },
+            { status: 200 }
+          )
+        )
+      );
+      const user = userEvent.setup();
 
+      const { container } = render(
+        <QueryClientProvider client={queryClient}>
+          <FavoritesProvider>
+            <FavoriteHeart id="789" name="App #3" />
+          </FavoritesProvider>
+        </QueryClientProvider>
+      );
+
+      const heart = container.querySelector('#av-favorite-heart-789');
+
+      await waitFor(() => expect(heart).not.toBeChecked());
+
+      if (heart) await user.click(heart);
+
+      await waitFor(() => expect(heart).toBeChecked());
+
+      expect(avMessages.send).toHaveBeenCalledWith({
+        event: 'av:favorites:update',
+        favorites: [
+          { id: '123', pos: 0 },
+          { id: '456', pos: 1 },
+          { id: '789', pos: 2 },
+        ],
+      });
+    });
+
+    it('should remove favorite when PUT responds with an unwrapped { favorites } body', async () => {
+      server.use(
+        http.put('/api/utils/v1/settings', () =>
+          HttpResponse.json({ favorites: [{ id: '456', pos: 1 }] }, { status: 200 })
+        )
+      );
+      const user = userEvent.setup();
+
+      const { container } = render(
+        <QueryClientProvider client={queryClient}>
+          <FavoritesProvider>
+            <FavoriteHeart id="123" name="App #1" />
+          </FavoritesProvider>
+        </QueryClientProvider>
+      );
+
+      const heart = container.querySelector('#av-favorite-heart-123');
+
+      await waitFor(() => expect(heart).toBeChecked());
+
+      if (heart) await user.click(heart);
+
+      await waitFor(() => expect(heart).not.toBeChecked());
+
+      expect(avMessages.send).toHaveBeenCalledWith({
+        event: 'av:favorites:update',
+        favorites: [{ id: '456', pos: 1 }],
+      });
+    });
+  });
 });
