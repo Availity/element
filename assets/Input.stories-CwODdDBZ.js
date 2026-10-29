@@ -1,0 +1,6 @@
+import{j as p}from"./iframe-CLut6yOe.js";import{I as t}from"./Input-ITcMCnkO.js";import"./preload-helper-PPVm8Dsz.js";import"./OutlinedInput-NqaTAoz7.js";import"./styled-B56iE4qf.js";import"./memoTheme-BCZ6py50.js";import"./useFormControl-CsURvBpr.js";import"./formControlState-Dq1zat_P.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./generateUtilityClasses-DDbjFgb8.js";import"./generateUtilityClass-BtcU_pBl.js";import"./utils-DoM3o7-Q.js";import"./useForkRef-CW7nwTzV.js";import"./ownerDocument-DW-IO8s5.js";import"./getActiveElement-CvEHRBc8.js";import"./useEventCallback-BXl50wnQ.js";import"./debounce-Be36O1Ab.js";import"./mergeSlotProps-BoE-e40D.js";import"./useSlot-C8ASSSxZ.js";const F={title:"Form Components/Uncontrolled FormUtils/Input",component:t,tags:["autodocs"],args:{size:"small"}},r={render:o=>p.jsx(t,{inputProps:{"aria-label":"Example Input"},...o}),args:{}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
+  render: (args: InputProps) => <Input inputProps={{
+    'aria-label': 'Example Input'
+  }} {...args} />,
+  args: {}
+}`,...r.parameters?.docs?.source}}};const U=["_Input"];export{r as _Input,U as __namedExportsOrder,F as default};
