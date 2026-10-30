@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.0.5](https://github.com/Availity/element/compare/@availity/mui-favorites@3.0.4...@availity/mui-favorites@3.0.5) (2026-10-29)
+
+### Dependency Updates
+
+* `@availity/mock` updated to version `3.0.4`
+
+### Bug Fixes
+
+* **mui-favorites:** read favorites from unwrapped settings PUT response ([2a84783](https://github.com/Availity/element/commit/2a8478363494aa3a27b51a8e90770fac17e9fdde))
+
 ## [3.0.4](https://github.com/Availity/element/compare/@availity/mui-favorites@3.0.3...@availity/mui-favorites@3.0.4) (2026-10-01)
 
 ## [3.0.3](https://github.com/Availity/element/compare/@availity/mui-favorites@3.0.2...@availity/mui-favorites@3.0.3) (2026-09-22)
