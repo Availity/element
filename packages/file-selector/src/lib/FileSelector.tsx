@@ -9,7 +9,7 @@ import { Typography } from '@availity/mui-typography';
 import { Alert, AlertTitle } from '@availity/mui-alert';
 
 import { Dropzone } from './Dropzone';
-import { ErrorAlert } from './ErrorAlert';
+import { ErrorAlert, GetErrorMessageFn } from './ErrorAlert';
 import { FileList } from './FileList';
 import { FileTypesMessage } from './FileTypesMessage';
 import { HeaderMessage } from './HeaderMessage';
@@ -147,6 +147,12 @@ export type FileSelectorProps = {
    * @default false
    */
   disableRemove?: boolean;
+  /**
+   * Custom function to format error messages. Return undefined to use default message.
+   * @param error - The file error object with code and message
+   * @returns Custom error message string, or undefined to use default
+   */
+  getErrorMessage?: GetErrorMessageFn;
 };
 
 export const FileSelector = ({
@@ -177,6 +183,7 @@ export const FileSelector = ({
   uploadOptions,
   validator,
   disableRemove,
+  getErrorMessage,
 }: FileSelectorProps) => {
   const [totalSize, setTotalSize] = useState(0);
   const [fileRejections, setFileRejections] = useState<(FileRejection & { id: number })[]>([]);
@@ -323,6 +330,7 @@ export const FileSelector = ({
             errors={rejection.errors}
             fileName={rejection.file.name}
             id={rejection.id}
+            getErrorMessage={getErrorMessage}
             onClose={() => handleRemoveRejection(rejection.id)}
           />
         ))}

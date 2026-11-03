@@ -1,7 +1,7 @@
 import { Alert, AlertTitle } from '@availity/mui-alert';
 import { List, ListItem } from '@availity/mui-list';
-import type { FileRejection } from 'react-dropzone';
-import { formatBytes } from './util';
+import type { FileError, FileRejection } from 'react-dropzone';
+import { dedupeErrors, formatBytes } from './util';
 
 const codes: Record<string, string> = {
   'file-too-large': 'File exceeds maximum size',
@@ -11,6 +11,8 @@ const codes: Record<string, string> = {
   'too-many-file': 'Too many files',
   'duplicate-name': 'Duplicate file selected',
 };
+
+export type GetErrorMessageFn = (error: FileError) => string | null | undefined;
 
 export type ErrorAlertProps = {
   /**
@@ -25,6 +27,10 @@ export type ErrorAlertProps = {
    * Unique identifier for the error alert
    */
   id: number;
+  /**
+   * Custom function to format error messages. Return null/undefined to use default message.
+   */
+  getErrorMessage?: GetErrorMessageFn;
 
   onClose: () => void;
 };
@@ -41,15 +47,30 @@ export const formatFileTooLarge = (message: string): string => {
   return message.replace(` bytes`, '').replace(FILE_SIZE_REGEX, formattedSize);
 };
 
-export const ErrorAlert = ({ errors, fileName, id, onClose }: ErrorAlertProps) => {
+export const ErrorAlert = ({ errors, fileName, id, getErrorMessage, onClose }: ErrorAlertProps) => {
   if (errors.length === 0) return null;
+
+  // Dedupe errors by code (e.g., react-dropzone may produce multiple file-invalid-type errors)
+  const uniqueErrors = dedupeErrors(errors);
+
+  const formatMessage = (error: FileRejection['errors'][0]) => {
+    // Try custom error message first
+    const customMessage = getErrorMessage?.(error);
+    if (customMessage) return customMessage;
+    
+    // Fall back to default formatting
+    if (error.code === 'file-too-large') {
+      return formatFileTooLarge(error.message);
+    }
+    return error.message;
+  };
 
   return (
     <Alert severity="error" onClose={onClose}>
-      {errors.length > 1 ? (
+      {uniqueErrors.length > 1 ? (
         <>
           <AlertTitle>
-            There were {errors.length} error(s) found when uploading {fileName}
+            There were {uniqueErrors.length} error(s) found when uploading {fileName}
           </AlertTitle>
           <List
             sx={{
@@ -63,23 +84,20 @@ export const ErrorAlert = ({ errors, fileName, id, onClose }: ErrorAlertProps) =
             disablePadding
           >
             <>
-              {errors.map((error) => {
-                const message = error.code === 'file-too-large' ? formatFileTooLarge(error.message) : error.message;
-                return (
-                  <ListItem disableGutters disablePadding divider={false} key={`${id}-${error.code}`}>
-                    {message}
-                  </ListItem>
-                );
-              })}
+              {uniqueErrors.map((error) => (
+                <ListItem disableGutters disablePadding divider={false} key={`${id}-${error.code}`}>
+                  {formatMessage(error)}
+                </ListItem>
+              ))}
             </>
           </List>
         </>
       ) : (
         <>
           <AlertTitle>
-            {codes[errors[0].code] || 'Error'}: {fileName}
+            {codes[uniqueErrors[0].code] || 'Error'}: {fileName}
           </AlertTitle>
-          {errors[0].code === 'file-too-large' ? formatFileTooLarge(errors[0].message) : errors[0].message}
+          {formatMessage(uniqueErrors[0])}
         </>
       )}
     </Alert>

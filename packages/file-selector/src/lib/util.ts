@@ -15,7 +15,7 @@ import type { FileError } from 'react-dropzone';
 export function formatBytes(bytes: number, decimals = 2) {
   if (!+bytes) return '0 Bytes';
 
-  const k = 1024;
+  const k = 1000; // SI standard (decimal)
   const dm = Math.max(decimals, 0);
   const sizes = ['Bytes', 'KB', 'MB', 'GB'];
 
