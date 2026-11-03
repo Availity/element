@@ -12,7 +12,8 @@ describe('ErrorAlert', () => {
 
 describe('formatFileTooLarge', () => {
   test('should format file too large error message', () => {
-    const formattedError = formatFileTooLarge('File is larger than 10485760 bytes');
+    // 10000000 bytes = 10 MB with SI standard (1000 divisor)
+    const formattedError = formatFileTooLarge('File is larger than 10000000 bytes');
 
     expect(formattedError).toEqual('File is larger than 10 MB');
   });
