@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.1.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@3.0.5...@availity/mui-file-selector@3.1.0) (2026-11-04)
+
+
+### Features
+
+* **mui-file-selector:** add getErrorMessage prop and improve error handling ([5ca9a36](https://github.com/Availity/element/commit/5ca9a36d9295dd53e14fc76ced9a25e65aadd43f))
+
 ## [3.0.5](https://github.com/Availity/element/compare/@availity/mui-file-selector@3.0.4...@availity/mui-file-selector@3.0.5) (2026-10-01)
 
 ### Dependency Updates
