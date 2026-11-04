@@ -42,6 +42,10 @@ const ERROR_MAPPINGS: ErrorMapping[] = [
     pattern: /but has an extension for/i,
     friendlyMessage: 'File format does not match file extension.',
   },
+  {
+    pattern: /tus: failed to upload/i,
+    friendlyMessage: 'Oops! There was an issue trying to upload your attachment.',
+  },
 ];
 
 const friendlyErrorMessage = (errorMessage: string): string => {

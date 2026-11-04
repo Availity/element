@@ -7,7 +7,7 @@ import { Typography } from '@availity/mui-typography';
 import { Alert, AlertTitle } from '@availity/mui-alert';
 
 import { Dropzone2 } from './Dropzone2';
-import { ErrorAlert } from './ErrorAlert';
+import { ErrorAlert, GetErrorMessageFn } from './ErrorAlert';
 import { FileList2 } from './FileList2';
 import { FileTypesMessage } from './FileTypesMessage';
 import { HeaderMessage } from './HeaderMessage';
@@ -18,6 +18,12 @@ import type { FileSelectorProps } from './FileSelector';
 
 export type FileSelector2Props = Omit<FileSelectorProps, 'onUploadRemove' | 'queryOptions'> & {
   onUploadRemove?: (uploads: Upload[], removedUploadId: string) => void;
+  /**
+   * Custom function to format error messages. Return undefined to use default message.
+   * @param error - The file error object with code and message
+   * @returns Custom error message string, or undefined to use default
+   */
+  getErrorMessage?: GetErrorMessageFn;
 };
 
 /**
@@ -56,6 +62,7 @@ export const FileSelector2 = ({
   uploadOptions,
   validator,
   disableRemove,
+  getErrorMessage,
 }: FileSelector2Props) => {
   const [totalSize, setTotalSize] = useState(0);
   const [fileRejections, setFileRejections] = useState<(FileRejection & { id: number })[]>([]);
@@ -200,6 +207,7 @@ export const FileSelector2 = ({
             errors={rejection.errors}
             fileName={rejection.file.name}
             id={rejection.id}
+            getErrorMessage={getErrorMessage}
             onClose={() => handleRemoveRejection(rejection.id)}
           />
         ))}
