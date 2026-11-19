@@ -63,6 +63,7 @@ export const FileSelector2 = ({
   validator,
   disableRemove,
   getErrorMessage,
+  customHeaderMessage,
 }: FileSelector2Props) => {
   const [totalSize, setTotalSize] = useState(0);
   const [fileRejections, setFileRejections] = useState<(FileRejection & { id: number })[]>([]);
@@ -160,7 +161,11 @@ export const FileSelector2 = ({
       ) : (
         <Grid container rowSpacing={3} flexDirection="column">
           <Grid>
-            <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} maxTotalSize={maxTotalSize} />
+            {customHeaderMessage ? (
+              <Typography variant="h6">{customHeaderMessage}</Typography>
+            ) : (
+              <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} maxTotalSize={maxTotalSize} />
+            )}
             <FileTypesMessage
               allowedFileTypes={allowedFileTypes}
               customSizeMessage={customSizeMessage}
@@ -193,7 +198,9 @@ export const FileSelector2 = ({
       {tooManyFilesRejections.length > 0 && (
         <Alert
           severity="error"
-          onClose={() => { for (const rejection of tooManyFilesRejections) handleRemoveRejection(rejection.id) }}
+          onClose={() => {
+            for (const rejection of tooManyFilesRejections) handleRemoveRejection(rejection.id);
+          }}
         >
           <AlertTitle>Items not allowed.</AlertTitle>
           Too many files are selected for upload, maximum {maxFiles} allowed.

@@ -153,6 +153,12 @@ export type FileSelectorProps = {
    * @returns Custom error message string, or undefined to use default
    */
   getErrorMessage?: GetErrorMessageFn;
+  /**
+   * Custom header message to replace the auto-generated "Attach up to X file(s)..." text.
+   * Only used when `enableDropArea` is `false`. When provided, the default `HeaderMessage`
+   * is not rendered.
+   */
+  customHeaderMessage?: ReactNode;
 };
 
 export const FileSelector = ({
@@ -184,6 +190,7 @@ export const FileSelector = ({
   validator,
   disableRemove,
   getErrorMessage,
+  customHeaderMessage,
 }: FileSelectorProps) => {
   const [totalSize, setTotalSize] = useState(0);
   const [fileRejections, setFileRejections] = useState<(FileRejection & { id: number })[]>([]);
@@ -283,7 +290,11 @@ export const FileSelector = ({
       ) : (
         <Grid container rowSpacing={3} flexDirection="column">
           <Grid>
-            <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} maxTotalSize={maxTotalSize} />
+            {customHeaderMessage ? (
+              <Typography variant="h6">{customHeaderMessage}</Typography>
+            ) : (
+              <HeaderMessage maxFiles={maxFiles} maxSize={maxSize} maxTotalSize={maxTotalSize} />
+            )}
             <FileTypesMessage
               allowedFileTypes={allowedFileTypes}
               customTotalSizeMessage={customTotalSizeMessage}
@@ -316,7 +327,9 @@ export const FileSelector = ({
       {tooManyFilesRejections.length > 0 && (
         <Alert
           severity="error"
-          onClose={() => { for (const rejection of tooManyFilesRejections) handleRemoveRejection(rejection.id) }}
+          onClose={() => {
+            for (const rejection of tooManyFilesRejections) handleRemoveRejection(rejection.id);
+          }}
         >
           <AlertTitle>Items not allowed.</AlertTitle>
           Too many files are selected for upload, maximum {maxFiles} allowed.
