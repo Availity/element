@@ -34,10 +34,16 @@ type ErrorMapping = {
 };
 
 /**
- * These errors are separate from the errors associated with ErrorAlert.
- * These are errors received in the response from vault.
+ * Default message shown when the server error does not match any known pattern.
+ * Prevents stack traces and internal details from being displayed to users.
  */
-const ERROR_MAPPINGS: ErrorMapping[] = [
+export const DEFAULT_UPLOAD_ERROR = 'Oops! There was an issue trying to upload your attachment.';
+
+/**
+ * Known error patterns from vault/TUS that have specific user-facing messages.
+ * Any error that does NOT match a pattern here will show the DEFAULT_UPLOAD_ERROR.
+ */
+const KNOWN_ERROR_PATTERNS: ErrorMapping[] = [
   {
     pattern: /but has an extension for/i,
     friendlyMessage: 'File format does not match file extension.',
@@ -48,9 +54,9 @@ const ERROR_MAPPINGS: ErrorMapping[] = [
   },
 ];
 
-const friendlyErrorMessage = (errorMessage: string): string => {
-  const mapping = ERROR_MAPPINGS.find(({ pattern }) => pattern.test(errorMessage));
-  return mapping ? mapping.friendlyMessage : errorMessage;
+export const friendlyErrorMessage = (errorMessage: string): string => {
+  const mapping = KNOWN_ERROR_PATTERNS.find(({ pattern }) => pattern.test(errorMessage));
+  return mapping ? mapping.friendlyMessage : DEFAULT_UPLOAD_ERROR;
 };
 
 export const UploadProgressBar = ({ upload, onProgress, onError, onSuccess }: UploadProgressBarProps) => {
