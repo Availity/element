@@ -24,4 +24,48 @@ describe('FileSelector', () => {
 
     expect(getByText('Upload file')).toBeTruthy();
   });
+
+  test('renders default HeaderMessage when customHeaderMessage is not provided and enableDropArea is false', () => {
+    const client = new QueryClient();
+    const { getByText } = render(
+      <QueryClientProvider client={client}>
+        <TestForm>
+          <FileSelector
+            name="test"
+            bucketId="test"
+            customerId="123"
+            clientId="test"
+            maxSize={10485760}
+            maxFiles={10}
+            enableDropArea={false}
+          />
+        </TestForm>
+      </QueryClientProvider>
+    );
+
+    expect(getByText(/Attach up to 10 file\(s\)/)).toBeTruthy();
+  });
+
+  test('renders customHeaderMessage instead of default HeaderMessage when provided', () => {
+    const client = new QueryClient();
+    const { getByText, queryByText } = render(
+      <QueryClientProvider client={client}>
+        <TestForm>
+          <FileSelector
+            name="test"
+            bucketId="test"
+            customerId="123"
+            clientId="test"
+            maxSize={10485760}
+            maxFiles={10}
+            enableDropArea={false}
+            customHeaderMessage="Attach up to 10 file(s), max 5 MB per file, 50 MB total"
+          />
+        </TestForm>
+      </QueryClientProvider>
+    );
+
+    expect(getByText('Attach up to 10 file(s), max 5 MB per file, 50 MB total')).toBeTruthy();
+    expect(queryByText(/maximum individual size/)).toBeNull();
+  });
 });
