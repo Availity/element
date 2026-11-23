@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [3.2.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@3.1.0...@availity/mui-file-selector@3.2.0) (2026-11-23)
+
+
+### Features
+
+* **mui-file-selector:** add customHeaderMessage to fileSelector ([166c02a](https://github.com/Availity/element/commit/166c02a8f2022028c35c040b0b5edf3e71dea759))
+
 ## [3.1.0](https://github.com/Availity/element/compare/@availity/mui-file-selector@3.0.5...@availity/mui-file-selector@3.1.0) (2026-11-04)
 
 
