@@ -37,9 +37,9 @@ export const openLinkWithSso: OpenLinkWithSso = async (space, { akaname, clientI
       options = space.link?.target ?
       {
         target: getTarget(space.link.target),
-        action: `${new URL(document.referrer).origin}/ms/api/availity/internal/spc/magneto/sso/v1/saml/${space.meta.ssoId}`
+        action: `${new URL(document.referrer).origin.replace('essentials', 'apps')}/ms/api/availity/internal/spc/magneto/sso/v1/saml/${space.meta.ssoId}`
       } :
-      { action: `${new URL(document.referrer).origin}/ms/api/availity/internal/spc/magneto/sso/v1/saml/${space.meta.ssoId}`};
+      { action: `${new URL(document.referrer).origin.replace('essentials', 'apps')}/ms/api/availity/internal/spc/magneto/sso/v1/saml/${space.meta.ssoId}`};
     } else {
       options = space.link?.target ? { target: getTarget(space.link.target) } : undefined;
     }
